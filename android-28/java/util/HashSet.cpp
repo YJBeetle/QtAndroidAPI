@@ -39,7 +39,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean HashSet::add(JObject arg0)
+	jboolean HashSet::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -47,21 +47,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void HashSet::clear()
+	void HashSet::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject HashSet::clone()
+	JObject HashSet::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean HashSet::contains(JObject arg0)
+	jboolean HashSet::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -69,21 +69,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean HashSet::isEmpty()
+	jboolean HashSet::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject HashSet::iterator()
+	JObject HashSet::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean HashSet::remove(JObject arg0)
+	jboolean HashSet::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -91,28 +91,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint HashSet::size()
+	jint HashSet::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject HashSet::spliterator()
+	JObject HashSet::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObjectArray HashSet::toArray()
+	JObjectArray HashSet::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray HashSet::toArray(JObjectArray arg0)
+	JObjectArray HashSet::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",

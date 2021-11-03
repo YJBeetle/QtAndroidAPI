@@ -20,7 +20,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void Entity::addSubValue(android::net::Uri arg0, android::content::ContentValues arg1)
+	void Entity::addSubValue(android::net::Uri arg0, android::content::ContentValues arg1) const
 	{
 		callMethod<void>(
 			"addSubValue",
@@ -29,21 +29,21 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::ContentValues Entity::getEntityValues()
+	android::content::ContentValues Entity::getEntityValues() const
 	{
 		return callObjectMethod(
 			"getEntityValues",
 			"()Landroid/content/ContentValues;"
 		);
 	}
-	java::util::ArrayList Entity::getSubValues()
+	java::util::ArrayList Entity::getSubValues() const
 	{
 		return callObjectMethod(
 			"getSubValues",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	JString Entity::toString()
+	JString Entity::toString() const
 	{
 		return callObjectMethod(
 			"toString",

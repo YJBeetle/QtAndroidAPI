@@ -93,35 +93,35 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	jfloat Sampler::getAnisotropy()
+	jfloat Sampler::getAnisotropy() const
 	{
 		return callMethod<jfloat>(
 			"getAnisotropy",
 			"()F"
 		);
 	}
-	android::renderscript::Sampler_Value Sampler::getMagnification()
+	android::renderscript::Sampler_Value Sampler::getMagnification() const
 	{
 		return callObjectMethod(
 			"getMagnification",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	android::renderscript::Sampler_Value Sampler::getMinification()
+	android::renderscript::Sampler_Value Sampler::getMinification() const
 	{
 		return callObjectMethod(
 			"getMinification",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	android::renderscript::Sampler_Value Sampler::getWrapS()
+	android::renderscript::Sampler_Value Sampler::getWrapS() const
 	{
 		return callObjectMethod(
 			"getWrapS",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	android::renderscript::Sampler_Value Sampler::getWrapT()
+	android::renderscript::Sampler_Value Sampler::getWrapT() const
 	{
 		return callObjectMethod(
 			"getWrapT",

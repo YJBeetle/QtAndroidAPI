@@ -51,7 +51,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void ViewStub::draw(android::graphics::Canvas arg0)
+	void ViewStub::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -59,35 +59,35 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jint ViewStub::getInflatedId()
+	jint ViewStub::getInflatedId() const
 	{
 		return callMethod<jint>(
 			"getInflatedId",
 			"()I"
 		);
 	}
-	android::view::LayoutInflater ViewStub::getLayoutInflater()
+	android::view::LayoutInflater ViewStub::getLayoutInflater() const
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	jint ViewStub::getLayoutResource()
+	jint ViewStub::getLayoutResource() const
 	{
 		return callMethod<jint>(
 			"getLayoutResource",
 			"()I"
 		);
 	}
-	android::view::View ViewStub::inflate()
+	android::view::View ViewStub::inflate() const
 	{
 		return callObjectMethod(
 			"inflate",
 			"()Landroid/view/View;"
 		);
 	}
-	void ViewStub::setInflatedId(jint arg0)
+	void ViewStub::setInflatedId(jint arg0) const
 	{
 		callMethod<void>(
 			"setInflatedId",
@@ -95,7 +95,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStub::setLayoutInflater(android::view::LayoutInflater arg0)
+	void ViewStub::setLayoutInflater(android::view::LayoutInflater arg0) const
 	{
 		callMethod<void>(
 			"setLayoutInflater",
@@ -103,7 +103,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStub::setLayoutResource(jint arg0)
+	void ViewStub::setLayoutResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setLayoutResource",
@@ -111,7 +111,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStub::setOnInflateListener(JObject arg0)
+	void ViewStub::setOnInflateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnInflateListener",
@@ -119,7 +119,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStub::setVisibility(jint arg0)
+	void ViewStub::setVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setVisibility",

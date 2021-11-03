@@ -30,11 +30,11 @@ namespace android::net::nsd
 		// Constructors
 		
 		// Methods
-		void discoverServices(JString arg0, jint arg1, JObject arg2);
-		void registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, JObject arg2);
-		void resolveService(android::net::nsd::NsdServiceInfo arg0, JObject arg1);
-		void stopServiceDiscovery(JObject arg0);
-		void unregisterService(JObject arg0);
+		void discoverServices(JString arg0, jint arg1, JObject arg2) const;
+		void registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, JObject arg2) const;
+		void resolveService(android::net::nsd::NsdServiceInfo arg0, JObject arg1) const;
+		void stopServiceDiscovery(JObject arg0) const;
+		void unregisterService(JObject arg0) const;
 	};
 } // namespace android::net::nsd
 

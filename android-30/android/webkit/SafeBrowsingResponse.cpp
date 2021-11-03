@@ -15,7 +15,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void SafeBrowsingResponse::backToSafety(jboolean arg0)
+	void SafeBrowsingResponse::backToSafety(jboolean arg0) const
 	{
 		callMethod<void>(
 			"backToSafety",
@@ -23,7 +23,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void SafeBrowsingResponse::proceed(jboolean arg0)
+	void SafeBrowsingResponse::proceed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"proceed",
@@ -31,7 +31,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void SafeBrowsingResponse::showInterstitial(jboolean arg0)
+	void SafeBrowsingResponse::showInterstitial(jboolean arg0) const
 	{
 		callMethod<void>(
 			"showInterstitial",

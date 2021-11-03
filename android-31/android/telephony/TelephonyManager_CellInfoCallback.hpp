@@ -21,8 +21,8 @@ namespace android::telephony
 		TelephonyManager_CellInfoCallback();
 		
 		// Methods
-		void onCellInfo(JObject arg0);
-		void onError(jint arg0, JThrowable arg1);
+		void onCellInfo(JObject arg0) const;
+		void onError(jint arg0, JThrowable arg1) const;
 	};
 } // namespace android::telephony
 

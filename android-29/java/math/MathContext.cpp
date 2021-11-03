@@ -65,7 +65,7 @@ namespace java::math
 		) {}
 	
 	// Methods
-	jboolean MathContext::equals(JObject arg0)
+	jboolean MathContext::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -73,28 +73,28 @@ namespace java::math
 			arg0.object<jobject>()
 		);
 	}
-	jint MathContext::getPrecision()
+	jint MathContext::getPrecision() const
 	{
 		return callMethod<jint>(
 			"getPrecision",
 			"()I"
 		);
 	}
-	java::math::RoundingMode MathContext::getRoundingMode()
+	java::math::RoundingMode MathContext::getRoundingMode() const
 	{
 		return callObjectMethod(
 			"getRoundingMode",
 			"()Ljava/math/RoundingMode;"
 		);
 	}
-	jint MathContext::hashCode()
+	jint MathContext::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString MathContext::toString()
+	JString MathContext::toString() const
 	{
 		return callObjectMethod(
 			"toString",

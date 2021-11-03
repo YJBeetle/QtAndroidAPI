@@ -21,13 +21,13 @@ namespace android::print
 		PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getBottomMils();
-		jint getLeftMils();
-		jint getRightMils();
-		jint getTopMils();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getBottomMils() const;
+		jint getLeftMils() const;
+		jint getRightMils() const;
+		jint getTopMils() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::print
 

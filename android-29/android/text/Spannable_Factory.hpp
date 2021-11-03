@@ -20,7 +20,7 @@ namespace android::text
 		
 		// Methods
 		static android::text::Spannable_Factory getInstance();
-		JObject newSpannable(JString arg0);
+		JObject newSpannable(JString arg0) const;
 	};
 } // namespace android::text
 

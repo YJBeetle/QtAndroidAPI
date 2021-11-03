@@ -134,14 +134,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	JObject BluetoothHeadset::getConnectedDevices()
+	JObject BluetoothHeadset::getConnectedDevices() const
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint BluetoothHeadset::getConnectionState(android::bluetooth::BluetoothDevice arg0)
+	jint BluetoothHeadset::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
@@ -149,7 +149,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothHeadset::getDevicesMatchingConnectionStates(JIntArray arg0)
+	JObject BluetoothHeadset::getDevicesMatchingConnectionStates(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -157,7 +157,7 @@ namespace android::bluetooth
 			arg0.object<jintArray>()
 		);
 	}
-	jboolean BluetoothHeadset::isAudioConnected(android::bluetooth::BluetoothDevice arg0)
+	jboolean BluetoothHeadset::isAudioConnected(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAudioConnected",
@@ -165,7 +165,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothHeadset::sendVendorSpecificResultCode(android::bluetooth::BluetoothDevice arg0, JString arg1, JString arg2)
+	jboolean BluetoothHeadset::sendVendorSpecificResultCode(android::bluetooth::BluetoothDevice arg0, JString arg1, JString arg2) const
 	{
 		return callMethod<jboolean>(
 			"sendVendorSpecificResultCode",
@@ -175,7 +175,7 @@ namespace android::bluetooth
 			arg2.object<jstring>()
 		);
 	}
-	jboolean BluetoothHeadset::startVoiceRecognition(android::bluetooth::BluetoothDevice arg0)
+	jboolean BluetoothHeadset::startVoiceRecognition(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jboolean>(
 			"startVoiceRecognition",
@@ -183,7 +183,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothHeadset::stopVoiceRecognition(android::bluetooth::BluetoothDevice arg0)
+	jboolean BluetoothHeadset::stopVoiceRecognition(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jboolean>(
 			"stopVoiceRecognition",

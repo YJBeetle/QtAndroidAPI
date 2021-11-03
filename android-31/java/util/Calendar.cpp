@@ -426,7 +426,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Calendar::add(jint arg0, jint arg1)
+	void Calendar::add(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -435,7 +435,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean Calendar::after(JObject arg0)
+	jboolean Calendar::after(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"after",
@@ -443,7 +443,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Calendar::before(JObject arg0)
+	jboolean Calendar::before(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"before",
@@ -451,14 +451,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void Calendar::clear()
+	void Calendar::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void Calendar::clear(jint arg0)
+	void Calendar::clear(jint arg0) const
 	{
 		callMethod<void>(
 			"clear",
@@ -466,14 +466,14 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject Calendar::clone()
+	JObject Calendar::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Calendar::compareTo(JObject arg0)
+	jint Calendar::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -481,7 +481,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Calendar::compareTo(java::util::Calendar arg0)
+	jint Calendar::compareTo(java::util::Calendar arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -489,7 +489,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Calendar::equals(JObject arg0)
+	jboolean Calendar::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -497,7 +497,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Calendar::get(jint arg0)
+	jint Calendar::get(jint arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -505,7 +505,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Calendar::getActualMaximum(jint arg0)
+	jint Calendar::getActualMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMaximum",
@@ -513,7 +513,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Calendar::getActualMinimum(jint arg0)
+	jint Calendar::getActualMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMinimum",
@@ -521,14 +521,14 @@ namespace java::util
 			arg0
 		);
 	}
-	JString Calendar::getCalendarType()
+	JString Calendar::getCalendarType() const
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Calendar::getDisplayName(jint arg0, jint arg1, java::util::Locale arg2)
+	JString Calendar::getDisplayName(jint arg0, jint arg1, java::util::Locale arg2) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -538,7 +538,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	JObject Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2)
+	JObject Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2) const
 	{
 		return callObjectMethod(
 			"getDisplayNames",
@@ -548,14 +548,14 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	jint Calendar::getFirstDayOfWeek()
+	jint Calendar::getFirstDayOfWeek() const
 	{
 		return callMethod<jint>(
 			"getFirstDayOfWeek",
 			"()I"
 		);
 	}
-	jint Calendar::getGreatestMinimum(jint arg0)
+	jint Calendar::getGreatestMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getGreatestMinimum",
@@ -563,7 +563,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Calendar::getLeastMaximum(jint arg0)
+	jint Calendar::getLeastMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLeastMaximum",
@@ -571,7 +571,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Calendar::getMaximum(jint arg0)
+	jint Calendar::getMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMaximum",
@@ -579,14 +579,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Calendar::getMinimalDaysInFirstWeek()
+	jint Calendar::getMinimalDaysInFirstWeek() const
 	{
 		return callMethod<jint>(
 			"getMinimalDaysInFirstWeek",
 			"()I"
 		);
 	}
-	jint Calendar::getMinimum(jint arg0)
+	jint Calendar::getMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMinimum",
@@ -594,56 +594,56 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::Date Calendar::getTime()
+	java::util::Date Calendar::getTime() const
 	{
 		return callObjectMethod(
 			"getTime",
 			"()Ljava/util/Date;"
 		);
 	}
-	jlong Calendar::getTimeInMillis()
+	jlong Calendar::getTimeInMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeInMillis",
 			"()J"
 		);
 	}
-	java::util::TimeZone Calendar::getTimeZone()
+	java::util::TimeZone Calendar::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/util/TimeZone;"
 		);
 	}
-	jint Calendar::getWeekYear()
+	jint Calendar::getWeekYear() const
 	{
 		return callMethod<jint>(
 			"getWeekYear",
 			"()I"
 		);
 	}
-	jint Calendar::getWeeksInWeekYear()
+	jint Calendar::getWeeksInWeekYear() const
 	{
 		return callMethod<jint>(
 			"getWeeksInWeekYear",
 			"()I"
 		);
 	}
-	jint Calendar::hashCode()
+	jint Calendar::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Calendar::isLenient()
+	jboolean Calendar::isLenient() const
 	{
 		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
-	jboolean Calendar::isSet(jint arg0)
+	jboolean Calendar::isSet(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSet",
@@ -651,14 +651,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Calendar::isWeekDateSupported()
+	jboolean Calendar::isWeekDateSupported() const
 	{
 		return callMethod<jboolean>(
 			"isWeekDateSupported",
 			"()Z"
 		);
 	}
-	void Calendar::roll(jint arg0, jboolean arg1)
+	void Calendar::roll(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"roll",
@@ -667,7 +667,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Calendar::roll(jint arg0, jint arg1)
+	void Calendar::roll(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"roll",
@@ -676,7 +676,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1)
+	void Calendar::set(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -685,7 +685,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1, jint arg2)
+	void Calendar::set(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"set",
@@ -695,7 +695,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"set",
@@ -707,7 +707,7 @@ namespace java::util
 			arg4
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"set",
@@ -720,7 +720,7 @@ namespace java::util
 			arg5
 		);
 	}
-	void Calendar::setFirstDayOfWeek(jint arg0)
+	void Calendar::setFirstDayOfWeek(jint arg0) const
 	{
 		callMethod<void>(
 			"setFirstDayOfWeek",
@@ -728,7 +728,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Calendar::setLenient(jboolean arg0)
+	void Calendar::setLenient(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLenient",
@@ -736,7 +736,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Calendar::setMinimalDaysInFirstWeek(jint arg0)
+	void Calendar::setMinimalDaysInFirstWeek(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimalDaysInFirstWeek",
@@ -744,7 +744,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Calendar::setTime(java::util::Date arg0)
+	void Calendar::setTime(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -752,7 +752,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Calendar::setTimeInMillis(jlong arg0)
+	void Calendar::setTimeInMillis(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTimeInMillis",
@@ -760,7 +760,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Calendar::setTimeZone(java::util::TimeZone arg0)
+	void Calendar::setTimeZone(java::util::TimeZone arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",
@@ -768,7 +768,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Calendar::setWeekDate(jint arg0, jint arg1, jint arg2)
+	void Calendar::setWeekDate(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setWeekDate",
@@ -778,14 +778,14 @@ namespace java::util
 			arg2
 		);
 	}
-	java::time::Instant Calendar::toInstant()
+	java::time::Instant Calendar::toInstant() const
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	JString Calendar::toString()
+	JString Calendar::toString() const
 	{
 		return callObjectMethod(
 			"toString",

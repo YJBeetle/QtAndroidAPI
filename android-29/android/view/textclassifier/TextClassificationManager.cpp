@@ -12,7 +12,7 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	JObject TextClassificationManager::createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0)
+	JObject TextClassificationManager::createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0) const
 	{
 		return callObjectMethod(
 			"createTextClassificationSession",
@@ -20,14 +20,14 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	JObject TextClassificationManager::getTextClassifier()
+	JObject TextClassificationManager::getTextClassifier() const
 	{
 		return callObjectMethod(
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;"
 		);
 	}
-	void TextClassificationManager::setTextClassificationSessionFactory(JObject arg0)
+	void TextClassificationManager::setTextClassificationSessionFactory(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTextClassificationSessionFactory",
@@ -35,7 +35,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	void TextClassificationManager::setTextClassifier(JObject arg0)
+	void TextClassificationManager::setTextClassifier(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTextClassifier",

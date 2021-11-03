@@ -99,17 +99,17 @@ namespace android::renderscript
 		static android::renderscript::Element YUV(android::renderscript::RenderScript arg0);
 		static android::renderscript::Element createPixel(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, android::renderscript::Element_DataKind arg2);
 		static android::renderscript::Element createVector(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, jint arg2);
-		jint getBytesSize();
-		android::renderscript::Element_DataKind getDataKind();
-		android::renderscript::Element_DataType getDataType();
-		android::renderscript::Element getSubElement(jint arg0);
-		jint getSubElementArraySize(jint arg0);
-		jint getSubElementCount();
-		JString getSubElementName(jint arg0);
-		jint getSubElementOffsetBytes(jint arg0);
-		jint getVectorSize();
-		jboolean isCompatible(android::renderscript::Element arg0);
-		jboolean isComplex();
+		jint getBytesSize() const;
+		android::renderscript::Element_DataKind getDataKind() const;
+		android::renderscript::Element_DataType getDataType() const;
+		android::renderscript::Element getSubElement(jint arg0) const;
+		jint getSubElementArraySize(jint arg0) const;
+		jint getSubElementCount() const;
+		JString getSubElementName(jint arg0) const;
+		jint getSubElementOffsetBytes(jint arg0) const;
+		jint getVectorSize() const;
+		jboolean isCompatible(android::renderscript::Element arg0) const;
+		jboolean isComplex() const;
 	};
 } // namespace android::renderscript
 

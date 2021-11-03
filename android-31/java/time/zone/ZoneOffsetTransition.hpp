@@ -40,21 +40,21 @@ namespace java::time::zone
 		
 		// Methods
 		static java::time::zone::ZoneOffsetTransition of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
-		jint compareTo(JObject arg0);
-		jint compareTo(java::time::zone::ZoneOffsetTransition arg0);
-		jboolean equals(JObject arg0);
-		java::time::LocalDateTime getDateTimeAfter();
-		java::time::LocalDateTime getDateTimeBefore();
-		java::time::Duration getDuration();
-		java::time::Instant getInstant();
-		java::time::ZoneOffset getOffsetAfter();
-		java::time::ZoneOffset getOffsetBefore();
-		jint hashCode();
-		jboolean isGap();
-		jboolean isOverlap();
-		jboolean isValidOffset(java::time::ZoneOffset arg0);
-		jlong toEpochSecond();
-		JString toString();
+		jint compareTo(JObject arg0) const;
+		jint compareTo(java::time::zone::ZoneOffsetTransition arg0) const;
+		jboolean equals(JObject arg0) const;
+		java::time::LocalDateTime getDateTimeAfter() const;
+		java::time::LocalDateTime getDateTimeBefore() const;
+		java::time::Duration getDuration() const;
+		java::time::Instant getInstant() const;
+		java::time::ZoneOffset getOffsetAfter() const;
+		java::time::ZoneOffset getOffsetBefore() const;
+		jint hashCode() const;
+		jboolean isGap() const;
+		jboolean isOverlap() const;
+		jboolean isValidOffset(java::time::ZoneOffset arg0) const;
+		jlong toEpochSecond() const;
+		JString toString() const;
 	};
 } // namespace java::time::zone
 

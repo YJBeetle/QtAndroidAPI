@@ -42,21 +42,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void Properties::clear()
+	void Properties::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject Properties::clone()
+	JObject Properties::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject Properties::compute(JObject arg0, JObject arg1)
+	JObject Properties::compute(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compute",
@@ -65,7 +65,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject Properties::computeIfAbsent(JObject arg0, JObject arg1)
+	JObject Properties::computeIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -74,7 +74,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject Properties::computeIfPresent(JObject arg0, JObject arg1)
+	JObject Properties::computeIfPresent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -83,7 +83,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean Properties::contains(JObject arg0)
+	jboolean Properties::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -91,7 +91,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Properties::containsKey(JObject arg0)
+	jboolean Properties::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -99,7 +99,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Properties::containsValue(JObject arg0)
+	jboolean Properties::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -107,21 +107,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject Properties::elements()
+	JObject Properties::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Properties::entrySet()
+	JObject Properties::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean Properties::equals(JObject arg0)
+	jboolean Properties::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -129,7 +129,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void Properties::forEach(JObject arg0)
+	void Properties::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -137,7 +137,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Properties::get(JObject arg0)
+	JObject Properties::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -145,7 +145,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject Properties::getOrDefault(JObject arg0, JObject arg1)
+	JObject Properties::getOrDefault(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getOrDefault",
@@ -154,7 +154,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JString Properties::getProperty(JString arg0)
+	JString Properties::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -162,7 +162,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JString Properties::getProperty(JString arg0, JString arg1)
+	JString Properties::getProperty(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -171,35 +171,35 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	jint Properties::hashCode()
+	jint Properties::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Properties::isEmpty()
+	jboolean Properties::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject Properties::keySet()
+	JObject Properties::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Properties::keys()
+	JObject Properties::keys() const
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	void Properties::list(java::io::PrintStream arg0)
+	void Properties::list(java::io::PrintStream arg0) const
 	{
 		callMethod<void>(
 			"list",
@@ -207,7 +207,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Properties::list(java::io::PrintWriter arg0)
+	void Properties::list(java::io::PrintWriter arg0) const
 	{
 		callMethod<void>(
 			"list",
@@ -215,7 +215,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Properties::load(java::io::InputStream arg0)
+	void Properties::load(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -223,7 +223,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Properties::load(java::io::Reader arg0)
+	void Properties::load(java::io::Reader arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -231,7 +231,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Properties::loadFromXML(java::io::InputStream arg0)
+	void Properties::loadFromXML(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"loadFromXML",
@@ -239,7 +239,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Properties::merge(JObject arg0, JObject arg1, JObject arg2)
+	JObject Properties::merge(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -249,14 +249,14 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	JObject Properties::propertyNames()
+	JObject Properties::propertyNames() const
 	{
 		return callObjectMethod(
 			"propertyNames",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Properties::put(JObject arg0, JObject arg1)
+	JObject Properties::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -265,7 +265,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void Properties::putAll(JObject arg0)
+	void Properties::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -273,7 +273,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Properties::putIfAbsent(JObject arg0, JObject arg1)
+	JObject Properties::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
@@ -282,7 +282,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean Properties::remove(JObject arg0, JObject arg1)
+	jboolean Properties::remove(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -291,7 +291,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject Properties::remove(JObject arg0)
+	JObject Properties::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -299,7 +299,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Properties::replace(JObject arg0, JObject arg1, JObject arg2)
+	jboolean Properties::replace(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"replace",
@@ -309,7 +309,7 @@ namespace java::util
 			arg2.object<jobject>()
 		);
 	}
-	JObject Properties::replace(JObject arg0, JObject arg1)
+	JObject Properties::replace(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -318,7 +318,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void Properties::replaceAll(JObject arg0)
+	void Properties::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -326,7 +326,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Properties::save(java::io::OutputStream arg0, JString arg1)
+	void Properties::save(java::io::OutputStream arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"save",
@@ -335,7 +335,7 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	JObject Properties::setProperty(JString arg0, JString arg1)
+	JObject Properties::setProperty(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setProperty",
@@ -344,14 +344,14 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	jint Properties::size()
+	jint Properties::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	void Properties::store(java::io::OutputStream arg0, JString arg1)
+	void Properties::store(java::io::OutputStream arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"store",
@@ -360,7 +360,7 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	void Properties::store(java::io::Writer arg0, JString arg1)
+	void Properties::store(java::io::Writer arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"store",
@@ -369,7 +369,7 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1)
+	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"storeToXML",
@@ -378,7 +378,7 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1, JString arg2)
+	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"storeToXML",
@@ -388,7 +388,7 @@ namespace java::util
 			arg2.object<jstring>()
 		);
 	}
-	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1, java::nio::charset::Charset arg2)
+	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1, java::nio::charset::Charset arg2) const
 	{
 		callMethod<void>(
 			"storeToXML",
@@ -398,21 +398,21 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	JObject Properties::stringPropertyNames()
+	JObject Properties::stringPropertyNames() const
 	{
 		return callObjectMethod(
 			"stringPropertyNames",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString Properties::toString()
+	JString Properties::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Properties::values()
+	JObject Properties::values() const
 	{
 		return callObjectMethod(
 			"values",

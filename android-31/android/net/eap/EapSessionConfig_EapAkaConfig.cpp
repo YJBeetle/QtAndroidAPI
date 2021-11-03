@@ -11,7 +11,7 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig_EapAkaConfig::equals(JObject arg0)
+	jboolean EapSessionConfig_EapAkaConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -19,21 +19,21 @@ namespace android::net::eap
 			arg0.object<jobject>()
 		);
 	}
-	jint EapSessionConfig_EapAkaConfig::getAppType()
+	jint EapSessionConfig_EapAkaConfig::getAppType() const
 	{
 		return callMethod<jint>(
 			"getAppType",
 			"()I"
 		);
 	}
-	jint EapSessionConfig_EapAkaConfig::getSubId()
+	jint EapSessionConfig_EapAkaConfig::getSubId() const
 	{
 		return callMethod<jint>(
 			"getSubId",
 			"()I"
 		);
 	}
-	jint EapSessionConfig_EapAkaConfig::hashCode()
+	jint EapSessionConfig_EapAkaConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

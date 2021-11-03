@@ -25,11 +25,11 @@ namespace android::nfc
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JByteArray getId();
-		JArray getTechList();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JByteArray getId() const;
+		JArray getTechList() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::nfc
 

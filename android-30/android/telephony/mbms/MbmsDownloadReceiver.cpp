@@ -17,7 +17,7 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	void MbmsDownloadReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1)
+	void MbmsDownloadReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onReceive",

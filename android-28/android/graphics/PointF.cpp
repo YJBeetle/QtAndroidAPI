@@ -62,14 +62,14 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jint PointF::describeContents()
+	jint PointF::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PointF::equals(JObject arg0)
+	jboolean PointF::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -77,7 +77,7 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jboolean PointF::equals(jfloat arg0, jfloat arg1)
+	jboolean PointF::equals(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -86,28 +86,28 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jint PointF::hashCode()
+	jint PointF::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jfloat PointF::length()
+	jfloat PointF::length() const
 	{
 		return callMethod<jfloat>(
 			"length",
 			"()F"
 		);
 	}
-	void PointF::negate()
+	void PointF::negate() const
 	{
 		callMethod<void>(
 			"negate",
 			"()V"
 		);
 	}
-	void PointF::offset(jfloat arg0, jfloat arg1)
+	void PointF::offset(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"offset",
@@ -116,7 +116,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void PointF::readFromParcel(android::os::Parcel arg0)
+	void PointF::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -124,7 +124,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void PointF::set(android::graphics::PointF arg0)
+	void PointF::set(android::graphics::PointF arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -132,7 +132,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void PointF::set(jfloat arg0, jfloat arg1)
+	void PointF::set(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -141,14 +141,14 @@ namespace android::graphics
 			arg1
 		);
 	}
-	JString PointF::toString()
+	JString PointF::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PointF::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PointF::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

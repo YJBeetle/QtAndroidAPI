@@ -48,7 +48,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void ScrollView::addView(android::view::View arg0)
+	void ScrollView::addView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addView",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ScrollView::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void ScrollView::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -65,7 +65,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void ScrollView::addView(android::view::View arg0, jint arg1)
+	void ScrollView::addView(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -74,7 +74,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ScrollView::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void ScrollView::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -84,7 +84,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean ScrollView::arrowScroll(jint arg0)
+	jboolean ScrollView::arrowScroll(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"arrowScroll",
@@ -92,14 +92,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ScrollView::computeScroll()
+	void ScrollView::computeScroll() const
 	{
 		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
-	jboolean ScrollView::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean ScrollView::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -107,7 +107,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ScrollView::draw(android::graphics::Canvas arg0)
+	void ScrollView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -115,7 +115,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ScrollView::executeKeyEvent(android::view::KeyEvent arg0)
+	jboolean ScrollView::executeKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"executeKeyEvent",
@@ -123,7 +123,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ScrollView::fling(jint arg0)
+	void ScrollView::fling(jint arg0) const
 	{
 		callMethod<void>(
 			"fling",
@@ -131,7 +131,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean ScrollView::fullScroll(jint arg0)
+	jboolean ScrollView::fullScroll(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"fullScroll",
@@ -139,49 +139,49 @@ namespace android::widget
 			arg0
 		);
 	}
-	JString ScrollView::getAccessibilityClassName()
+	JString ScrollView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint ScrollView::getBottomEdgeEffectColor()
+	jint ScrollView::getBottomEdgeEffectColor() const
 	{
 		return callMethod<jint>(
 			"getBottomEdgeEffectColor",
 			"()I"
 		);
 	}
-	jint ScrollView::getMaxScrollAmount()
+	jint ScrollView::getMaxScrollAmount() const
 	{
 		return callMethod<jint>(
 			"getMaxScrollAmount",
 			"()I"
 		);
 	}
-	jint ScrollView::getTopEdgeEffectColor()
+	jint ScrollView::getTopEdgeEffectColor() const
 	{
 		return callMethod<jint>(
 			"getTopEdgeEffectColor",
 			"()I"
 		);
 	}
-	jboolean ScrollView::isFillViewport()
+	jboolean ScrollView::isFillViewport() const
 	{
 		return callMethod<jboolean>(
 			"isFillViewport",
 			"()Z"
 		);
 	}
-	jboolean ScrollView::isSmoothScrollingEnabled()
+	jboolean ScrollView::isSmoothScrollingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSmoothScrollingEnabled",
 			"()Z"
 		);
 	}
-	jboolean ScrollView::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean ScrollView::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -189,7 +189,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ScrollView::onInterceptTouchEvent(android::view::MotionEvent arg0)
+	jboolean ScrollView::onInterceptTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
@@ -197,7 +197,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ScrollView::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3)
+	jboolean ScrollView::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3) const
 	{
 		return callMethod<jboolean>(
 			"onNestedFling",
@@ -208,7 +208,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void ScrollView::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void ScrollView::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"onNestedScroll",
@@ -220,7 +220,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	void ScrollView::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2)
+	void ScrollView::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onNestedScrollAccepted",
@@ -230,7 +230,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	jboolean ScrollView::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2)
+	jboolean ScrollView::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"onStartNestedScroll",
@@ -240,7 +240,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ScrollView::onStopNestedScroll(android::view::View arg0)
+	void ScrollView::onStopNestedScroll(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onStopNestedScroll",
@@ -248,7 +248,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ScrollView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean ScrollView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -256,7 +256,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ScrollView::pageScroll(jint arg0)
+	jboolean ScrollView::pageScroll(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"pageScroll",
@@ -264,7 +264,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ScrollView::requestChildFocus(android::view::View arg0, android::view::View arg1)
+	void ScrollView::requestChildFocus(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"requestChildFocus",
@@ -273,7 +273,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean ScrollView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
+	jboolean ScrollView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
@@ -283,7 +283,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ScrollView::requestDisallowInterceptTouchEvent(jboolean arg0)
+	void ScrollView::requestDisallowInterceptTouchEvent(jboolean arg0) const
 	{
 		callMethod<void>(
 			"requestDisallowInterceptTouchEvent",
@@ -291,14 +291,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ScrollView::requestLayout()
+	void ScrollView::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void ScrollView::scrollTo(jint arg0, jint arg1)
+	void ScrollView::scrollTo(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"scrollTo",
@@ -307,7 +307,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ScrollView::scrollToDescendant(android::view::View arg0)
+	void ScrollView::scrollToDescendant(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"scrollToDescendant",
@@ -315,7 +315,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ScrollView::setBottomEdgeEffectColor(jint arg0)
+	void ScrollView::setBottomEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setBottomEdgeEffectColor",
@@ -323,7 +323,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ScrollView::setEdgeEffectColor(jint arg0)
+	void ScrollView::setEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setEdgeEffectColor",
@@ -331,7 +331,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ScrollView::setFillViewport(jboolean arg0)
+	void ScrollView::setFillViewport(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFillViewport",
@@ -339,7 +339,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ScrollView::setSmoothScrollingEnabled(jboolean arg0)
+	void ScrollView::setSmoothScrollingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSmoothScrollingEnabled",
@@ -347,7 +347,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ScrollView::setTopEdgeEffectColor(jint arg0)
+	void ScrollView::setTopEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setTopEdgeEffectColor",
@@ -355,14 +355,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean ScrollView::shouldDelayChildPressedState()
+	jboolean ScrollView::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);
 	}
-	void ScrollView::smoothScrollBy(jint arg0, jint arg1)
+	void ScrollView::smoothScrollBy(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"smoothScrollBy",
@@ -371,7 +371,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ScrollView::smoothScrollTo(jint arg0, jint arg1)
+	void ScrollView::smoothScrollTo(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"smoothScrollTo",

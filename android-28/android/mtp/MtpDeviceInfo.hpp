@@ -19,14 +19,14 @@ namespace android::mtp
 		// Constructors
 		
 		// Methods
-		JIntArray getEventsSupported();
-		JString getManufacturer();
-		JString getModel();
-		JIntArray getOperationsSupported();
-		JString getSerialNumber();
-		JString getVersion();
-		jboolean isEventSupported(jint arg0);
-		jboolean isOperationSupported(jint arg0);
+		JIntArray getEventsSupported() const;
+		JString getManufacturer() const;
+		JString getModel() const;
+		JIntArray getOperationsSupported() const;
+		JString getSerialNumber() const;
+		JString getVersion() const;
+		jboolean isEventSupported(jint arg0) const;
+		jboolean isOperationSupported(jint arg0) const;
 	};
 } // namespace android::mtp
 

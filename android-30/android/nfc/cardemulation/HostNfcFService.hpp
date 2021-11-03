@@ -31,10 +31,10 @@ namespace android::nfc::cardemulation
 		HostNfcFService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onDeactivated(jint arg0);
-		JByteArray processNfcFPacket(JByteArray arg0, android::os::Bundle arg1);
-		void sendResponsePacket(JByteArray arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		void onDeactivated(jint arg0) const;
+		JByteArray processNfcFPacket(JByteArray arg0, android::os::Bundle arg1) const;
+		void sendResponsePacket(JByteArray arg0) const;
 	};
 } // namespace android::nfc::cardemulation
 

@@ -41,11 +41,11 @@ namespace android::telecom
 		static jboolean isTransmissionEnabled(jint arg0);
 		static jboolean isVideo(jint arg0);
 		static JString videoStateToString(jint arg0);
-		jint describeContents();
-		jint getQuality();
-		jint getVideoState();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getQuality() const;
+		jint getVideoState() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telecom
 

@@ -33,11 +33,11 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		void finishAndRemoveTask();
-		android::app::ActivityManager_RecentTaskInfo getTaskInfo();
-		void moveToFront();
-		void setExcludeFromRecents(jboolean arg0);
-		void startActivity(android::content::Context arg0, android::content::Intent arg1, android::os::Bundle arg2);
+		void finishAndRemoveTask() const;
+		android::app::ActivityManager_RecentTaskInfo getTaskInfo() const;
+		void moveToFront() const;
+		void setExcludeFromRecents(jboolean arg0) const;
+		void startActivity(android::content::Context arg0, android::content::Intent arg1, android::os::Bundle arg2) const;
 	};
 } // namespace android::app
 

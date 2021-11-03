@@ -22,7 +22,7 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	jfloat Matrix2f::get(jint arg0, jint arg1)
+	jfloat Matrix2f::get(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"get",
@@ -31,14 +31,14 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	JFloatArray Matrix2f::getArray()
+	JFloatArray Matrix2f::getArray() const
 	{
 		return callObjectMethod(
 			"getArray",
 			"()[F"
 		);
 	}
-	void Matrix2f::load(android::renderscript::Matrix2f arg0)
+	void Matrix2f::load(android::renderscript::Matrix2f arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -46,14 +46,14 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Matrix2f::loadIdentity()
+	void Matrix2f::loadIdentity() const
 	{
 		callMethod<void>(
 			"loadIdentity",
 			"()V"
 		);
 	}
-	void Matrix2f::loadMultiply(android::renderscript::Matrix2f arg0, android::renderscript::Matrix2f arg1)
+	void Matrix2f::loadMultiply(android::renderscript::Matrix2f arg0, android::renderscript::Matrix2f arg1) const
 	{
 		callMethod<void>(
 			"loadMultiply",
@@ -62,7 +62,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void Matrix2f::loadRotate(jfloat arg0)
+	void Matrix2f::loadRotate(jfloat arg0) const
 	{
 		callMethod<void>(
 			"loadRotate",
@@ -70,7 +70,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Matrix2f::loadScale(jfloat arg0, jfloat arg1)
+	void Matrix2f::loadScale(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"loadScale",
@@ -79,7 +79,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Matrix2f::multiply(android::renderscript::Matrix2f arg0)
+	void Matrix2f::multiply(android::renderscript::Matrix2f arg0) const
 	{
 		callMethod<void>(
 			"multiply",
@@ -87,7 +87,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Matrix2f::rotate(jfloat arg0)
+	void Matrix2f::rotate(jfloat arg0) const
 	{
 		callMethod<void>(
 			"rotate",
@@ -95,7 +95,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Matrix2f::scale(jfloat arg0, jfloat arg1)
+	void Matrix2f::scale(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"scale",
@@ -104,7 +104,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Matrix2f::set(jint arg0, jint arg1, jfloat arg2)
+	void Matrix2f::set(jint arg0, jint arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"set",
@@ -114,7 +114,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	void Matrix2f::transpose()
+	void Matrix2f::transpose() const
 	{
 		callMethod<void>(
 			"transpose",

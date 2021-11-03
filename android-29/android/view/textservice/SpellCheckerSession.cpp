@@ -23,21 +23,21 @@ namespace android::view::textservice
 	// Constructors
 	
 	// Methods
-	void SpellCheckerSession::cancel()
+	void SpellCheckerSession::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	void SpellCheckerSession::close()
+	void SpellCheckerSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void SpellCheckerSession::getSentenceSuggestions(JArray arg0, jint arg1)
+	void SpellCheckerSession::getSentenceSuggestions(JArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"getSentenceSuggestions",
@@ -46,14 +46,14 @@ namespace android::view::textservice
 			arg1
 		);
 	}
-	android::view::textservice::SpellCheckerInfo SpellCheckerSession::getSpellChecker()
+	android::view::textservice::SpellCheckerInfo SpellCheckerSession::getSpellChecker() const
 	{
 		return callObjectMethod(
 			"getSpellChecker",
 			"()Landroid/view/textservice/SpellCheckerInfo;"
 		);
 	}
-	void SpellCheckerSession::getSuggestions(android::view::textservice::TextInfo arg0, jint arg1)
+	void SpellCheckerSession::getSuggestions(android::view::textservice::TextInfo arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"getSuggestions",
@@ -62,7 +62,7 @@ namespace android::view::textservice
 			arg1
 		);
 	}
-	void SpellCheckerSession::getSuggestions(JArray arg0, jint arg1, jboolean arg2)
+	void SpellCheckerSession::getSuggestions(JArray arg0, jint arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"getSuggestions",
@@ -72,7 +72,7 @@ namespace android::view::textservice
 			arg2
 		);
 	}
-	jboolean SpellCheckerSession::isSessionDisconnected()
+	jboolean SpellCheckerSession::isSessionDisconnected() const
 	{
 		return callMethod<jboolean>(
 			"isSessionDisconnected",

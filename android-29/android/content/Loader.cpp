@@ -22,28 +22,28 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void Loader::abandon()
+	void Loader::abandon() const
 	{
 		callMethod<void>(
 			"abandon",
 			"()V"
 		);
 	}
-	jboolean Loader::cancelLoad()
+	jboolean Loader::cancelLoad() const
 	{
 		return callMethod<jboolean>(
 			"cancelLoad",
 			"()Z"
 		);
 	}
-	void Loader::commitContentChanged()
+	void Loader::commitContentChanged() const
 	{
 		callMethod<void>(
 			"commitContentChanged",
 			"()V"
 		);
 	}
-	JString Loader::dataToString(JObject arg0)
+	JString Loader::dataToString(JObject arg0) const
 	{
 		return callObjectMethod(
 			"dataToString",
@@ -51,14 +51,14 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	void Loader::deliverCancellation()
+	void Loader::deliverCancellation() const
 	{
 		callMethod<void>(
 			"deliverCancellation",
 			"()V"
 		);
 	}
-	void Loader::deliverResult(JObject arg0)
+	void Loader::deliverResult(JObject arg0) const
 	{
 		callMethod<void>(
 			"deliverResult",
@@ -66,7 +66,7 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	void Loader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void Loader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -77,56 +77,56 @@ namespace android::content
 			arg3.object<jarray>()
 		);
 	}
-	void Loader::forceLoad()
+	void Loader::forceLoad() const
 	{
 		callMethod<void>(
 			"forceLoad",
 			"()V"
 		);
 	}
-	android::content::Context Loader::getContext()
+	android::content::Context Loader::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	jint Loader::getId()
+	jint Loader::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jboolean Loader::isAbandoned()
+	jboolean Loader::isAbandoned() const
 	{
 		return callMethod<jboolean>(
 			"isAbandoned",
 			"()Z"
 		);
 	}
-	jboolean Loader::isReset()
+	jboolean Loader::isReset() const
 	{
 		return callMethod<jboolean>(
 			"isReset",
 			"()Z"
 		);
 	}
-	jboolean Loader::isStarted()
+	jboolean Loader::isStarted() const
 	{
 		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
-	void Loader::onContentChanged()
+	void Loader::onContentChanged() const
 	{
 		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
-	void Loader::registerListener(jint arg0, JObject arg1)
+	void Loader::registerListener(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"registerListener",
@@ -135,7 +135,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void Loader::registerOnLoadCanceledListener(JObject arg0)
+	void Loader::registerOnLoadCanceledListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerOnLoadCanceledListener",
@@ -143,49 +143,49 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Loader::reset()
+	void Loader::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Loader::rollbackContentChanged()
+	void Loader::rollbackContentChanged() const
 	{
 		callMethod<void>(
 			"rollbackContentChanged",
 			"()V"
 		);
 	}
-	void Loader::startLoading()
+	void Loader::startLoading() const
 	{
 		callMethod<void>(
 			"startLoading",
 			"()V"
 		);
 	}
-	void Loader::stopLoading()
+	void Loader::stopLoading() const
 	{
 		callMethod<void>(
 			"stopLoading",
 			"()V"
 		);
 	}
-	jboolean Loader::takeContentChanged()
+	jboolean Loader::takeContentChanged() const
 	{
 		return callMethod<jboolean>(
 			"takeContentChanged",
 			"()Z"
 		);
 	}
-	JString Loader::toString()
+	JString Loader::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Loader::unregisterListener(JObject arg0)
+	void Loader::unregisterListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterListener",
@@ -193,7 +193,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Loader::unregisterOnLoadCanceledListener(JObject arg0)
+	void Loader::unregisterOnLoadCanceledListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterOnLoadCanceledListener",

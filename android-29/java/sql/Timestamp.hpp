@@ -36,21 +36,21 @@ namespace java::sql
 		static java::sql::Timestamp from(java::time::Instant arg0);
 		static java::sql::Timestamp valueOf(JString arg0);
 		static java::sql::Timestamp valueOf(java::time::LocalDateTime arg0);
-		jboolean after(java::sql::Timestamp arg0);
-		jboolean before(java::sql::Timestamp arg0);
-		jint compareTo(JObject arg0);
-		jint compareTo(java::sql::Timestamp arg0);
-		jint compareTo(java::util::Date arg0);
-		jboolean equals(JObject arg0);
-		jboolean equals(java::sql::Timestamp arg0);
-		jint getNanos();
-		jlong getTime();
-		jint hashCode();
-		void setNanos(jint arg0);
-		void setTime(jlong arg0);
-		java::time::Instant toInstant();
-		java::time::LocalDateTime toLocalDateTime();
-		JString toString();
+		jboolean after(java::sql::Timestamp arg0) const;
+		jboolean before(java::sql::Timestamp arg0) const;
+		jint compareTo(JObject arg0) const;
+		jint compareTo(java::sql::Timestamp arg0) const;
+		jint compareTo(java::util::Date arg0) const;
+		jboolean equals(JObject arg0) const;
+		jboolean equals(java::sql::Timestamp arg0) const;
+		jint getNanos() const;
+		jlong getTime() const;
+		jint hashCode() const;
+		void setNanos(jint arg0) const;
+		void setTime(jlong arg0) const;
+		java::time::Instant toInstant() const;
+		java::time::LocalDateTime toLocalDateTime() const;
+		JString toString() const;
 	};
 } // namespace java::sql
 

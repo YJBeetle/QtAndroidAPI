@@ -27,8 +27,8 @@ namespace android::net::ipsec::ike
 		IkeTrafficSelector(jint arg0, jint arg1, java::net::InetAddress arg2, java::net::InetAddress arg3);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

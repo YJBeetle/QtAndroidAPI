@@ -62,21 +62,21 @@ namespace android::icu::text
 		static android::icu::text::BreakIterator getWordInstance();
 		static android::icu::text::BreakIterator getWordInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::BreakIterator getWordInstance(java::util::Locale arg0);
-		JObject clone();
-		jint current();
-		jint first();
-		jint following(jint arg0);
-		jint getRuleStatus();
-		jint getRuleStatusVec(JIntArray arg0);
-		JObject getText();
-		jboolean isBoundary(jint arg0);
-		jint last();
-		jint next();
-		jint next(jint arg0);
-		jint preceding(jint arg0);
-		jint previous();
-		void setText(JString arg0);
-		void setText(JObject arg0);
+		JObject clone() const;
+		jint current() const;
+		jint first() const;
+		jint following(jint arg0) const;
+		jint getRuleStatus() const;
+		jint getRuleStatusVec(JIntArray arg0) const;
+		JObject getText() const;
+		jboolean isBoundary(jint arg0) const;
+		jint last() const;
+		jint next() const;
+		jint next(jint arg0) const;
+		jint preceding(jint arg0) const;
+		jint previous() const;
+		void setText(JString arg0) const;
+		void setText(JObject arg0) const;
 	};
 } // namespace android::icu::text
 

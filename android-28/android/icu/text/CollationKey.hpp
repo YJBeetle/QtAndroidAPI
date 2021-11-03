@@ -21,15 +21,15 @@ namespace android::icu::text
 		CollationKey(JString arg0, JByteArray arg1);
 		
 		// Methods
-		jint compareTo(android::icu::text::CollationKey arg0);
-		jint compareTo(JObject arg0);
-		jboolean equals(android::icu::text::CollationKey arg0);
-		jboolean equals(JObject arg0);
-		android::icu::text::CollationKey getBound(jint arg0, jint arg1);
-		JString getSourceString();
-		jint hashCode();
-		android::icu::text::CollationKey merge(android::icu::text::CollationKey arg0);
-		JByteArray toByteArray();
+		jint compareTo(android::icu::text::CollationKey arg0) const;
+		jint compareTo(JObject arg0) const;
+		jboolean equals(android::icu::text::CollationKey arg0) const;
+		jboolean equals(JObject arg0) const;
+		android::icu::text::CollationKey getBound(jint arg0, jint arg1) const;
+		JString getSourceString() const;
+		jint hashCode() const;
+		android::icu::text::CollationKey merge(android::icu::text::CollationKey arg0) const;
+		JByteArray toByteArray() const;
 	};
 } // namespace android::icu::text
 

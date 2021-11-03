@@ -81,7 +81,7 @@ namespace org::json
 			arg0.object<jobject>()
 		);
 	}
-	org::json::JSONObject JSONObject::accumulate(JString arg0, JObject arg1)
+	org::json::JSONObject JSONObject::accumulate(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"accumulate",
@@ -90,7 +90,7 @@ namespace org::json
 			arg1.object<jobject>()
 		);
 	}
-	JObject JSONObject::get(JString arg0)
+	JObject JSONObject::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -98,7 +98,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jboolean JSONObject::getBoolean(JString arg0)
+	jboolean JSONObject::getBoolean(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
@@ -106,7 +106,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jdouble JSONObject::getDouble(JString arg0)
+	jdouble JSONObject::getDouble(JString arg0) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -114,7 +114,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jint JSONObject::getInt(JString arg0)
+	jint JSONObject::getInt(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -122,7 +122,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	org::json::JSONArray JSONObject::getJSONArray(JString arg0)
+	org::json::JSONArray JSONObject::getJSONArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getJSONArray",
@@ -130,7 +130,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	org::json::JSONObject JSONObject::getJSONObject(JString arg0)
+	org::json::JSONObject JSONObject::getJSONObject(JString arg0) const
 	{
 		return callObjectMethod(
 			"getJSONObject",
@@ -138,7 +138,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jlong JSONObject::getLong(JString arg0)
+	jlong JSONObject::getLong(JString arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -146,7 +146,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	JString JSONObject::getString(JString arg0)
+	JString JSONObject::getString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -154,7 +154,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jboolean JSONObject::has(JString arg0)
+	jboolean JSONObject::has(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"has",
@@ -162,7 +162,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jboolean JSONObject::isNull(JString arg0)
+	jboolean JSONObject::isNull(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNull",
@@ -170,28 +170,28 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	JObject JSONObject::keys()
+	JObject JSONObject::keys() const
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint JSONObject::length()
+	jint JSONObject::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	org::json::JSONArray JSONObject::names()
+	org::json::JSONArray JSONObject::names() const
 	{
 		return callObjectMethod(
 			"names",
 			"()Lorg/json/JSONArray;"
 		);
 	}
-	JObject JSONObject::opt(JString arg0)
+	JObject JSONObject::opt(JString arg0) const
 	{
 		return callObjectMethod(
 			"opt",
@@ -199,7 +199,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jboolean JSONObject::optBoolean(JString arg0)
+	jboolean JSONObject::optBoolean(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"optBoolean",
@@ -207,7 +207,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jboolean JSONObject::optBoolean(JString arg0, jboolean arg1)
+	jboolean JSONObject::optBoolean(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"optBoolean",
@@ -216,7 +216,7 @@ namespace org::json
 			arg1
 		);
 	}
-	jdouble JSONObject::optDouble(JString arg0)
+	jdouble JSONObject::optDouble(JString arg0) const
 	{
 		return callMethod<jdouble>(
 			"optDouble",
@@ -224,7 +224,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jdouble JSONObject::optDouble(JString arg0, jdouble arg1)
+	jdouble JSONObject::optDouble(JString arg0, jdouble arg1) const
 	{
 		return callMethod<jdouble>(
 			"optDouble",
@@ -233,7 +233,7 @@ namespace org::json
 			arg1
 		);
 	}
-	jint JSONObject::optInt(JString arg0)
+	jint JSONObject::optInt(JString arg0) const
 	{
 		return callMethod<jint>(
 			"optInt",
@@ -241,7 +241,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jint JSONObject::optInt(JString arg0, jint arg1)
+	jint JSONObject::optInt(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"optInt",
@@ -250,7 +250,7 @@ namespace org::json
 			arg1
 		);
 	}
-	org::json::JSONArray JSONObject::optJSONArray(JString arg0)
+	org::json::JSONArray JSONObject::optJSONArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"optJSONArray",
@@ -258,7 +258,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	org::json::JSONObject JSONObject::optJSONObject(JString arg0)
+	org::json::JSONObject JSONObject::optJSONObject(JString arg0) const
 	{
 		return callObjectMethod(
 			"optJSONObject",
@@ -266,7 +266,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jlong JSONObject::optLong(JString arg0)
+	jlong JSONObject::optLong(JString arg0) const
 	{
 		return callMethod<jlong>(
 			"optLong",
@@ -274,7 +274,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jlong JSONObject::optLong(JString arg0, jlong arg1)
+	jlong JSONObject::optLong(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"optLong",
@@ -283,7 +283,7 @@ namespace org::json
 			arg1
 		);
 	}
-	JString JSONObject::optString(JString arg0)
+	JString JSONObject::optString(JString arg0) const
 	{
 		return callObjectMethod(
 			"optString",
@@ -291,7 +291,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	JString JSONObject::optString(JString arg0, JString arg1)
+	JString JSONObject::optString(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"optString",
@@ -300,7 +300,7 @@ namespace org::json
 			arg1.object<jstring>()
 		);
 	}
-	org::json::JSONObject JSONObject::put(JString arg0, jboolean arg1)
+	org::json::JSONObject JSONObject::put(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -309,7 +309,7 @@ namespace org::json
 			arg1
 		);
 	}
-	org::json::JSONObject JSONObject::put(JString arg0, jdouble arg1)
+	org::json::JSONObject JSONObject::put(JString arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -318,7 +318,7 @@ namespace org::json
 			arg1
 		);
 	}
-	org::json::JSONObject JSONObject::put(JString arg0, jint arg1)
+	org::json::JSONObject JSONObject::put(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -327,7 +327,7 @@ namespace org::json
 			arg1
 		);
 	}
-	org::json::JSONObject JSONObject::put(JString arg0, JObject arg1)
+	org::json::JSONObject JSONObject::put(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -336,7 +336,7 @@ namespace org::json
 			arg1.object<jobject>()
 		);
 	}
-	org::json::JSONObject JSONObject::put(JString arg0, jlong arg1)
+	org::json::JSONObject JSONObject::put(JString arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -345,7 +345,7 @@ namespace org::json
 			arg1
 		);
 	}
-	org::json::JSONObject JSONObject::putOpt(JString arg0, JObject arg1)
+	org::json::JSONObject JSONObject::putOpt(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putOpt",
@@ -354,7 +354,7 @@ namespace org::json
 			arg1.object<jobject>()
 		);
 	}
-	JObject JSONObject::remove(JString arg0)
+	JObject JSONObject::remove(JString arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -362,7 +362,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	org::json::JSONArray JSONObject::toJSONArray(org::json::JSONArray arg0)
+	org::json::JSONArray JSONObject::toJSONArray(org::json::JSONArray arg0) const
 	{
 		return callObjectMethod(
 			"toJSONArray",
@@ -370,14 +370,14 @@ namespace org::json
 			arg0.object()
 		);
 	}
-	JString JSONObject::toString()
+	JString JSONObject::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString JSONObject::toString(jint arg0)
+	JString JSONObject::toString(jint arg0) const
 	{
 		return callObjectMethod(
 			"toString",

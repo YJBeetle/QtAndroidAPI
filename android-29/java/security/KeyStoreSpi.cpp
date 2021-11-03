@@ -24,14 +24,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject KeyStoreSpi::engineAliases()
+	JObject KeyStoreSpi::engineAliases() const
 	{
 		return callObjectMethod(
 			"engineAliases",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jboolean KeyStoreSpi::engineContainsAlias(JString arg0)
+	jboolean KeyStoreSpi::engineContainsAlias(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"engineContainsAlias",
@@ -39,7 +39,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	void KeyStoreSpi::engineDeleteEntry(JString arg0)
+	void KeyStoreSpi::engineDeleteEntry(JString arg0) const
 	{
 		callMethod<void>(
 			"engineDeleteEntry",
@@ -47,7 +47,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	jboolean KeyStoreSpi::engineEntryInstanceOf(JString arg0, JClass arg1)
+	jboolean KeyStoreSpi::engineEntryInstanceOf(JString arg0, JClass arg1) const
 	{
 		return callMethod<jboolean>(
 			"engineEntryInstanceOf",
@@ -56,7 +56,7 @@ namespace java::security
 			arg1.object<jclass>()
 		);
 	}
-	java::security::cert::Certificate KeyStoreSpi::engineGetCertificate(JString arg0)
+	java::security::cert::Certificate KeyStoreSpi::engineGetCertificate(JString arg0) const
 	{
 		return callObjectMethod(
 			"engineGetCertificate",
@@ -64,7 +64,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	JString KeyStoreSpi::engineGetCertificateAlias(java::security::cert::Certificate arg0)
+	JString KeyStoreSpi::engineGetCertificateAlias(java::security::cert::Certificate arg0) const
 	{
 		return callObjectMethod(
 			"engineGetCertificateAlias",
@@ -72,7 +72,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JArray KeyStoreSpi::engineGetCertificateChain(JString arg0)
+	JArray KeyStoreSpi::engineGetCertificateChain(JString arg0) const
 	{
 		return callObjectMethod(
 			"engineGetCertificateChain",
@@ -80,7 +80,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Date KeyStoreSpi::engineGetCreationDate(JString arg0)
+	java::util::Date KeyStoreSpi::engineGetCreationDate(JString arg0) const
 	{
 		return callObjectMethod(
 			"engineGetCreationDate",
@@ -88,7 +88,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	JObject KeyStoreSpi::engineGetEntry(JString arg0, JObject arg1)
+	JObject KeyStoreSpi::engineGetEntry(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"engineGetEntry",
@@ -97,7 +97,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JObject KeyStoreSpi::engineGetKey(JString arg0, JCharArray arg1)
+	JObject KeyStoreSpi::engineGetKey(JString arg0, JCharArray arg1) const
 	{
 		return callObjectMethod(
 			"engineGetKey",
@@ -106,7 +106,7 @@ namespace java::security
 			arg1.object<jcharArray>()
 		);
 	}
-	jboolean KeyStoreSpi::engineIsCertificateEntry(JString arg0)
+	jboolean KeyStoreSpi::engineIsCertificateEntry(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"engineIsCertificateEntry",
@@ -114,7 +114,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	jboolean KeyStoreSpi::engineIsKeyEntry(JString arg0)
+	jboolean KeyStoreSpi::engineIsKeyEntry(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"engineIsKeyEntry",
@@ -122,7 +122,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	void KeyStoreSpi::engineLoad(JObject arg0)
+	void KeyStoreSpi::engineLoad(JObject arg0) const
 	{
 		callMethod<void>(
 			"engineLoad",
@@ -130,7 +130,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyStoreSpi::engineLoad(java::io::InputStream arg0, JCharArray arg1)
+	void KeyStoreSpi::engineLoad(java::io::InputStream arg0, JCharArray arg1) const
 	{
 		callMethod<void>(
 			"engineLoad",
@@ -139,7 +139,7 @@ namespace java::security
 			arg1.object<jcharArray>()
 		);
 	}
-	jboolean KeyStoreSpi::engineProbe(java::io::InputStream arg0)
+	jboolean KeyStoreSpi::engineProbe(java::io::InputStream arg0) const
 	{
 		return callMethod<jboolean>(
 			"engineProbe",
@@ -147,7 +147,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyStoreSpi::engineSetCertificateEntry(JString arg0, java::security::cert::Certificate arg1)
+	void KeyStoreSpi::engineSetCertificateEntry(JString arg0, java::security::cert::Certificate arg1) const
 	{
 		callMethod<void>(
 			"engineSetCertificateEntry",
@@ -156,7 +156,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyStoreSpi::engineSetEntry(JString arg0, JObject arg1, JObject arg2)
+	void KeyStoreSpi::engineSetEntry(JString arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"engineSetEntry",
@@ -166,7 +166,7 @@ namespace java::security
 			arg2.object()
 		);
 	}
-	void KeyStoreSpi::engineSetKeyEntry(JString arg0, JByteArray arg1, JArray arg2)
+	void KeyStoreSpi::engineSetKeyEntry(JString arg0, JByteArray arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"engineSetKeyEntry",
@@ -176,7 +176,7 @@ namespace java::security
 			arg2.object<jarray>()
 		);
 	}
-	void KeyStoreSpi::engineSetKeyEntry(JString arg0, JObject arg1, JCharArray arg2, JArray arg3)
+	void KeyStoreSpi::engineSetKeyEntry(JString arg0, JObject arg1, JCharArray arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"engineSetKeyEntry",
@@ -187,14 +187,14 @@ namespace java::security
 			arg3.object<jarray>()
 		);
 	}
-	jint KeyStoreSpi::engineSize()
+	jint KeyStoreSpi::engineSize() const
 	{
 		return callMethod<jint>(
 			"engineSize",
 			"()I"
 		);
 	}
-	void KeyStoreSpi::engineStore(JObject arg0)
+	void KeyStoreSpi::engineStore(JObject arg0) const
 	{
 		callMethod<void>(
 			"engineStore",
@@ -202,7 +202,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyStoreSpi::engineStore(java::io::OutputStream arg0, JCharArray arg1)
+	void KeyStoreSpi::engineStore(java::io::OutputStream arg0, JCharArray arg1) const
 	{
 		callMethod<void>(
 			"engineStore",

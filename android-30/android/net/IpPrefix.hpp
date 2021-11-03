@@ -29,15 +29,15 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jboolean contains(java::net::InetAddress arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		java::net::InetAddress getAddress();
-		jint getPrefixLength();
-		JByteArray getRawAddress();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean contains(java::net::InetAddress arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		java::net::InetAddress getAddress() const;
+		jint getPrefixLength() const;
+		JByteArray getRawAddress() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

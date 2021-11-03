@@ -11,14 +11,14 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	void HttpAuthHandler::cancel()
+	void HttpAuthHandler::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	void HttpAuthHandler::proceed(JString arg0, JString arg1)
+	void HttpAuthHandler::proceed(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"proceed",
@@ -27,7 +27,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	jboolean HttpAuthHandler::useHttpAuthUsernamePassword()
+	jboolean HttpAuthHandler::useHttpAuthUsernamePassword() const
 	{
 		return callMethod<jboolean>(
 			"useHttpAuthUsernamePassword",

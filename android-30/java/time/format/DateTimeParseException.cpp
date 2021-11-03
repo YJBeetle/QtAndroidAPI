@@ -30,14 +30,14 @@ namespace java::time::format
 		) {}
 	
 	// Methods
-	jint DateTimeParseException::getErrorIndex()
+	jint DateTimeParseException::getErrorIndex() const
 	{
 		return callMethod<jint>(
 			"getErrorIndex",
 			"()I"
 		);
 	}
-	JString DateTimeParseException::getParsedString()
+	JString DateTimeParseException::getParsedString() const
 	{
 		return callObjectMethod(
 			"getParsedString",

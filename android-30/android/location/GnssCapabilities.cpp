@@ -10,7 +10,7 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jboolean GnssCapabilities::hasGnssAntennaInfo()
+	jboolean GnssCapabilities::hasGnssAntennaInfo() const
 	{
 		return callMethod<jboolean>(
 			"hasGnssAntennaInfo",

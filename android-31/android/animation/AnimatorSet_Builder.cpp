@@ -12,7 +12,7 @@ namespace android::animation
 	// Constructors
 	
 	// Methods
-	android::animation::AnimatorSet_Builder AnimatorSet_Builder::after(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::after(android::animation::Animator arg0) const
 	{
 		return callObjectMethod(
 			"after",
@@ -20,7 +20,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	android::animation::AnimatorSet_Builder AnimatorSet_Builder::after(jlong arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::after(jlong arg0) const
 	{
 		return callObjectMethod(
 			"after",
@@ -28,7 +28,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	android::animation::AnimatorSet_Builder AnimatorSet_Builder::before(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::before(android::animation::Animator arg0) const
 	{
 		return callObjectMethod(
 			"before",
@@ -36,7 +36,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	android::animation::AnimatorSet_Builder AnimatorSet_Builder::with(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::with(android::animation::Animator arg0) const
 	{
 		return callObjectMethod(
 			"with",

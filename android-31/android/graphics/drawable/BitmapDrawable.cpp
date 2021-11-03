@@ -78,7 +78,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void BitmapDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void BitmapDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -86,14 +86,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean BitmapDrawable::canApplyTheme()
+	jboolean BitmapDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void BitmapDrawable::draw(android::graphics::Canvas arg0)
+	void BitmapDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -101,77 +101,77 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint BitmapDrawable::getAlpha()
+	jint BitmapDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	android::graphics::Bitmap BitmapDrawable::getBitmap()
+	android::graphics::Bitmap BitmapDrawable::getBitmap() const
 	{
 		return callObjectMethod(
 			"getBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	jint BitmapDrawable::getChangingConfigurations()
+	jint BitmapDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::ColorFilter BitmapDrawable::getColorFilter()
+	android::graphics::ColorFilter BitmapDrawable::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState BitmapDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState BitmapDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jint BitmapDrawable::getGravity()
+	jint BitmapDrawable::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	jint BitmapDrawable::getIntrinsicHeight()
+	jint BitmapDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint BitmapDrawable::getIntrinsicWidth()
+	jint BitmapDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint BitmapDrawable::getOpacity()
+	jint BitmapDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Insets BitmapDrawable::getOpticalInsets()
+	android::graphics::Insets BitmapDrawable::getOpticalInsets() const
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	void BitmapDrawable::getOutline(android::graphics::Outline arg0)
+	void BitmapDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -179,49 +179,49 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::Paint BitmapDrawable::getPaint()
+	android::graphics::Paint BitmapDrawable::getPaint() const
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	android::graphics::Shader_TileMode BitmapDrawable::getTileModeX()
+	android::graphics::Shader_TileMode BitmapDrawable::getTileModeX() const
 	{
 		return callObjectMethod(
 			"getTileModeX",
 			"()Landroid/graphics/Shader$TileMode;"
 		);
 	}
-	android::graphics::Shader_TileMode BitmapDrawable::getTileModeY()
+	android::graphics::Shader_TileMode BitmapDrawable::getTileModeY() const
 	{
 		return callObjectMethod(
 			"getTileModeY",
 			"()Landroid/graphics/Shader$TileMode;"
 		);
 	}
-	jboolean BitmapDrawable::hasAntiAlias()
+	jboolean BitmapDrawable::hasAntiAlias() const
 	{
 		return callMethod<jboolean>(
 			"hasAntiAlias",
 			"()Z"
 		);
 	}
-	jboolean BitmapDrawable::hasFocusStateSpecified()
+	jboolean BitmapDrawable::hasFocusStateSpecified() const
 	{
 		return callMethod<jboolean>(
 			"hasFocusStateSpecified",
 			"()Z"
 		);
 	}
-	jboolean BitmapDrawable::hasMipMap()
+	jboolean BitmapDrawable::hasMipMap() const
 	{
 		return callMethod<jboolean>(
 			"hasMipMap",
 			"()Z"
 		);
 	}
-	void BitmapDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void BitmapDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -232,35 +232,35 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean BitmapDrawable::isAutoMirrored()
+	jboolean BitmapDrawable::isAutoMirrored() const
 	{
 		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
-	jboolean BitmapDrawable::isFilterBitmap()
+	jboolean BitmapDrawable::isFilterBitmap() const
 	{
 		return callMethod<jboolean>(
 			"isFilterBitmap",
 			"()Z"
 		);
 	}
-	jboolean BitmapDrawable::isStateful()
+	jboolean BitmapDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable BitmapDrawable::mutate()
+	android::graphics::drawable::Drawable BitmapDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void BitmapDrawable::setAlpha(jint arg0)
+	void BitmapDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -268,7 +268,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setAntiAlias(jboolean arg0)
+	void BitmapDrawable::setAntiAlias(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAntiAlias",
@@ -276,7 +276,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setAutoMirrored(jboolean arg0)
+	void BitmapDrawable::setAutoMirrored(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoMirrored",
@@ -284,7 +284,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setBitmap(android::graphics::Bitmap arg0)
+	void BitmapDrawable::setBitmap(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"setBitmap",
@@ -292,7 +292,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void BitmapDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void BitmapDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -300,7 +300,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void BitmapDrawable::setDither(jboolean arg0)
+	void BitmapDrawable::setDither(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDither",
@@ -308,7 +308,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setFilterBitmap(jboolean arg0)
+	void BitmapDrawable::setFilterBitmap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFilterBitmap",
@@ -316,7 +316,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setGravity(jint arg0)
+	void BitmapDrawable::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -324,7 +324,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setMipMap(jboolean arg0)
+	void BitmapDrawable::setMipMap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMipMap",
@@ -332,7 +332,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setTargetDensity(android::graphics::Canvas arg0)
+	void BitmapDrawable::setTargetDensity(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"setTargetDensity",
@@ -340,7 +340,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void BitmapDrawable::setTargetDensity(android::util::DisplayMetrics arg0)
+	void BitmapDrawable::setTargetDensity(android::util::DisplayMetrics arg0) const
 	{
 		callMethod<void>(
 			"setTargetDensity",
@@ -348,7 +348,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void BitmapDrawable::setTargetDensity(jint arg0)
+	void BitmapDrawable::setTargetDensity(jint arg0) const
 	{
 		callMethod<void>(
 			"setTargetDensity",
@@ -356,7 +356,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void BitmapDrawable::setTileModeX(android::graphics::Shader_TileMode arg0)
+	void BitmapDrawable::setTileModeX(android::graphics::Shader_TileMode arg0) const
 	{
 		callMethod<void>(
 			"setTileModeX",
@@ -364,7 +364,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void BitmapDrawable::setTileModeXY(android::graphics::Shader_TileMode arg0, android::graphics::Shader_TileMode arg1)
+	void BitmapDrawable::setTileModeXY(android::graphics::Shader_TileMode arg0, android::graphics::Shader_TileMode arg1) const
 	{
 		callMethod<void>(
 			"setTileModeXY",
@@ -373,7 +373,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	void BitmapDrawable::setTileModeY(android::graphics::Shader_TileMode arg0)
+	void BitmapDrawable::setTileModeY(android::graphics::Shader_TileMode arg0) const
 	{
 		callMethod<void>(
 			"setTileModeY",
@@ -381,7 +381,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void BitmapDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void BitmapDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -389,7 +389,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void BitmapDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void BitmapDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",

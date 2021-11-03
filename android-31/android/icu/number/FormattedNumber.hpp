@@ -27,14 +27,14 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		JObject appendTo(JObject arg0);
-		jchar charAt(jint arg0);
-		jint length();
-		jboolean nextPosition(android::icu::text::ConstrainedFieldPosition arg0);
-		JString subSequence(jint arg0, jint arg1);
-		java::math::BigDecimal toBigDecimal();
-		JObject toCharacterIterator();
-		JString toString();
+		JObject appendTo(JObject arg0) const;
+		jchar charAt(jint arg0) const;
+		jint length() const;
+		jboolean nextPosition(android::icu::text::ConstrainedFieldPosition arg0) const;
+		JString subSequence(jint arg0, jint arg1) const;
+		java::math::BigDecimal toBigDecimal() const;
+		JObject toCharacterIterator() const;
+		JString toString() const;
 	};
 } // namespace android::icu::number
 

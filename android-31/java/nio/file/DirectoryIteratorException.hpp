@@ -27,7 +27,7 @@ namespace java::nio::file
 		DirectoryIteratorException(java::io::IOException arg0);
 		
 		// Methods
-		java::io::IOException getCause();
+		java::io::IOException getCause() const;
 	};
 } // namespace java::nio::file
 

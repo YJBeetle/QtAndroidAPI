@@ -16,9 +16,9 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jint getAliveDocumentsCount();
-		jint getAliveNamespacesCount();
-		jlong getSizeBytes();
+		jint getAliveDocumentsCount() const;
+		jint getAliveNamespacesCount() const;
+		jlong getSizeBytes() const;
 	};
 } // namespace android::app::appsearch
 

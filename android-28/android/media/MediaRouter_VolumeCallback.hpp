@@ -22,8 +22,8 @@ namespace android::media
 		MediaRouter_VolumeCallback();
 		
 		// Methods
-		void onVolumeSetRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1);
-		void onVolumeUpdateRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1);
+		void onVolumeSetRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const;
+		void onVolumeUpdateRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const;
 	};
 } // namespace android::media
 

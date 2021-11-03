@@ -19,9 +19,9 @@ namespace android::drm
 		// Constructors
 		
 		// Methods
-		JString getAccountId();
-		JByteArray getData();
-		JString getSubscriptionId();
+		JString getAccountId() const;
+		JByteArray getData() const;
+		JString getSubscriptionId() const;
 	};
 } // namespace android::drm
 

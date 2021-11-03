@@ -25,21 +25,21 @@ namespace java::io
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jint InputStream::available()
+	jint InputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void InputStream::close()
+	void InputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void InputStream::mark(jint arg0)
+	void InputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -47,21 +47,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean InputStream::markSupported()
+	jboolean InputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint InputStream::read()
+	jint InputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint InputStream::read(JByteArray arg0)
+	jint InputStream::read(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -69,7 +69,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint InputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint InputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -79,14 +79,14 @@ namespace java::io
 			arg2
 		);
 	}
-	JByteArray InputStream::readAllBytes()
+	JByteArray InputStream::readAllBytes() const
 	{
 		return callObjectMethod(
 			"readAllBytes",
 			"()[B"
 		);
 	}
-	JByteArray InputStream::readNBytes(jint arg0)
+	JByteArray InputStream::readNBytes(jint arg0) const
 	{
 		return callObjectMethod(
 			"readNBytes",
@@ -94,7 +94,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jint InputStream::readNBytes(JByteArray arg0, jint arg1, jint arg2)
+	jint InputStream::readNBytes(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"readNBytes",
@@ -104,14 +104,14 @@ namespace java::io
 			arg2
 		);
 	}
-	void InputStream::reset()
+	void InputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong InputStream::skip(jlong arg0)
+	jlong InputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",
@@ -119,7 +119,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void InputStream::skipNBytes(jlong arg0)
+	void InputStream::skipNBytes(jlong arg0) const
 	{
 		callMethod<void>(
 			"skipNBytes",
@@ -127,7 +127,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jlong InputStream::transferTo(java::io::OutputStream arg0)
+	jlong InputStream::transferTo(java::io::OutputStream arg0) const
 	{
 		return callMethod<jlong>(
 			"transferTo",

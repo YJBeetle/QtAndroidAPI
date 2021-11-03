@@ -46,16 +46,16 @@ namespace android::net
 		ConnectivityDiagnosticsManager_DataStallReport(android::net::Network arg0, jlong arg1, jint arg2, android::net::LinkProperties arg3, android::net::NetworkCapabilities arg4, android::os::PersistableBundle arg5);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getDetectionMethod();
-		android::net::LinkProperties getLinkProperties();
-		android::net::Network getNetwork();
-		android::net::NetworkCapabilities getNetworkCapabilities();
-		jlong getReportTimestamp();
-		android::os::PersistableBundle getStallDetails();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getDetectionMethod() const;
+		android::net::LinkProperties getLinkProperties() const;
+		android::net::Network getNetwork() const;
+		android::net::NetworkCapabilities getNetworkCapabilities() const;
+		jlong getReportTimestamp() const;
+		android::os::PersistableBundle getStallDetails() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

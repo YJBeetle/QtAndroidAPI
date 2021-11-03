@@ -23,9 +23,9 @@ namespace android::accessibilityservice
 		// Methods
 		static jlong getMaxGestureDuration();
 		static jint getMaxStrokeCount();
-		jint getDisplayId();
-		android::accessibilityservice::GestureDescription_StrokeDescription getStroke(jint arg0);
-		jint getStrokeCount();
+		jint getDisplayId() const;
+		android::accessibilityservice::GestureDescription_StrokeDescription getStroke(jint arg0) const;
+		jint getStrokeCount() const;
 	};
 } // namespace android::accessibilityservice
 

@@ -40,26 +40,26 @@ namespace android::view::accessibility
 		// Methods
 		static android::view::accessibility::AccessibilityWindowInfo obtain();
 		static android::view::accessibility::AccessibilityWindowInfo obtain(android::view::accessibility::AccessibilityWindowInfo arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::view::accessibility::AccessibilityNodeInfo getAnchor();
-		void getBoundsInScreen(android::graphics::Rect arg0);
-		android::view::accessibility::AccessibilityWindowInfo getChild(jint arg0);
-		jint getChildCount();
-		jint getId();
-		jint getLayer();
-		android::view::accessibility::AccessibilityWindowInfo getParent();
-		android::view::accessibility::AccessibilityNodeInfo getRoot();
-		JString getTitle();
-		jint getType();
-		jint hashCode();
-		jboolean isAccessibilityFocused();
-		jboolean isActive();
-		jboolean isFocused();
-		jboolean isInPictureInPictureMode();
-		void recycle();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::view::accessibility::AccessibilityNodeInfo getAnchor() const;
+		void getBoundsInScreen(android::graphics::Rect arg0) const;
+		android::view::accessibility::AccessibilityWindowInfo getChild(jint arg0) const;
+		jint getChildCount() const;
+		jint getId() const;
+		jint getLayer() const;
+		android::view::accessibility::AccessibilityWindowInfo getParent() const;
+		android::view::accessibility::AccessibilityNodeInfo getRoot() const;
+		JString getTitle() const;
+		jint getType() const;
+		jint hashCode() const;
+		jboolean isAccessibilityFocused() const;
+		jboolean isActive() const;
+		jboolean isFocused() const;
+		jboolean isInPictureInPictureMode() const;
+		void recycle() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::accessibility
 

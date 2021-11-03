@@ -183,14 +183,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	jbyte Short::byteValue()
+	jbyte Short::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jint Short::compareTo(JObject arg0)
+	jint Short::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -198,7 +198,7 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jint Short::compareTo(java::lang::Short arg0)
+	jint Short::compareTo(java::lang::Short arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -206,21 +206,21 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::util::Optional Short::describeConstable()
+	java::util::Optional Short::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jdouble Short::doubleValue()
+	jdouble Short::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Short::equals(JObject arg0)
+	jboolean Short::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -228,42 +228,42 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Short::floatValue()
+	jfloat Short::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Short::hashCode()
+	jint Short::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Short::intValue()
+	jint Short::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong Short::longValue()
+	jlong Short::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	jshort Short::shortValue()
+	jshort Short::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Short::toString()
+	JString Short::toString() const
 	{
 		return callObjectMethod(
 			"toString",

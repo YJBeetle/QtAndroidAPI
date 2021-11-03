@@ -33,105 +33,105 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void Magnifier::dismiss()
+	void Magnifier::dismiss() const
 	{
 		callMethod<void>(
 			"dismiss",
 			"()V"
 		);
 	}
-	jfloat Magnifier::getCornerRadius()
+	jfloat Magnifier::getCornerRadius() const
 	{
 		return callMethod<jfloat>(
 			"getCornerRadius",
 			"()F"
 		);
 	}
-	jint Magnifier::getDefaultHorizontalSourceToMagnifierOffset()
+	jint Magnifier::getDefaultHorizontalSourceToMagnifierOffset() const
 	{
 		return callMethod<jint>(
 			"getDefaultHorizontalSourceToMagnifierOffset",
 			"()I"
 		);
 	}
-	jint Magnifier::getDefaultVerticalSourceToMagnifierOffset()
+	jint Magnifier::getDefaultVerticalSourceToMagnifierOffset() const
 	{
 		return callMethod<jint>(
 			"getDefaultVerticalSourceToMagnifierOffset",
 			"()I"
 		);
 	}
-	jfloat Magnifier::getElevation()
+	jfloat Magnifier::getElevation() const
 	{
 		return callMethod<jfloat>(
 			"getElevation",
 			"()F"
 		);
 	}
-	jint Magnifier::getHeight()
+	jint Magnifier::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable Magnifier::getOverlay()
+	android::graphics::drawable::Drawable Magnifier::getOverlay() const
 	{
 		return callObjectMethod(
 			"getOverlay",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::Point Magnifier::getPosition()
+	android::graphics::Point Magnifier::getPosition() const
 	{
 		return callObjectMethod(
 			"getPosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	jint Magnifier::getSourceHeight()
+	jint Magnifier::getSourceHeight() const
 	{
 		return callMethod<jint>(
 			"getSourceHeight",
 			"()I"
 		);
 	}
-	android::graphics::Point Magnifier::getSourcePosition()
+	android::graphics::Point Magnifier::getSourcePosition() const
 	{
 		return callObjectMethod(
 			"getSourcePosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	jint Magnifier::getSourceWidth()
+	jint Magnifier::getSourceWidth() const
 	{
 		return callMethod<jint>(
 			"getSourceWidth",
 			"()I"
 		);
 	}
-	jint Magnifier::getWidth()
+	jint Magnifier::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jfloat Magnifier::getZoom()
+	jfloat Magnifier::getZoom() const
 	{
 		return callMethod<jfloat>(
 			"getZoom",
 			"()F"
 		);
 	}
-	jboolean Magnifier::isClippingEnabled()
+	jboolean Magnifier::isClippingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isClippingEnabled",
 			"()Z"
 		);
 	}
-	void Magnifier::setZoom(jfloat arg0)
+	void Magnifier::setZoom(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setZoom",
@@ -139,7 +139,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Magnifier::show(jfloat arg0, jfloat arg1)
+	void Magnifier::show(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"show",
@@ -148,7 +148,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Magnifier::show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Magnifier::show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"show",
@@ -159,7 +159,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void Magnifier::update()
+	void Magnifier::update() const
 	{
 		callMethod<void>(
 			"update",

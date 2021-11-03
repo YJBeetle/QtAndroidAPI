@@ -25,21 +25,21 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	JString MidiDeviceInfo_PortInfo::getName()
+	JString MidiDeviceInfo_PortInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MidiDeviceInfo_PortInfo::getPortNumber()
+	jint MidiDeviceInfo_PortInfo::getPortNumber() const
 	{
 		return callMethod<jint>(
 			"getPortNumber",
 			"()I"
 		);
 	}
-	jint MidiDeviceInfo_PortInfo::getType()
+	jint MidiDeviceInfo_PortInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",

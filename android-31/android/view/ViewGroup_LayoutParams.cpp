@@ -73,7 +73,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void ViewGroup_LayoutParams::resolveLayoutDirection(jint arg0)
+	void ViewGroup_LayoutParams::resolveLayoutDirection(jint arg0) const
 	{
 		callMethod<void>(
 			"resolveLayoutDirection",

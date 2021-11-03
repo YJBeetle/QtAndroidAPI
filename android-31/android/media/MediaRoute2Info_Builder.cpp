@@ -28,7 +28,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeature(JString arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeature(JString arg0) const
 	{
 		return callObjectMethod(
 			"addFeature",
@@ -36,7 +36,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeatures(JObject arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeatures(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addFeatures",
@@ -44,21 +44,21 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaRoute2Info MediaRoute2Info_Builder::build()
+	android::media::MediaRoute2Info MediaRoute2Info_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/MediaRoute2Info;"
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::clearFeatures()
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::clearFeatures() const
 	{
 		return callObjectMethod(
 			"clearFeatures",
 			"()Landroid/media/MediaRoute2Info$Builder;"
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setClientPackageName(JString arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setClientPackageName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setClientPackageName",
@@ -66,7 +66,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setConnectionState(jint arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setConnectionState(jint arg0) const
 	{
 		return callObjectMethod(
 			"setConnectionState",
@@ -74,7 +74,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setDescription(JString arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -82,7 +82,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setExtras(android::os::Bundle arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -90,7 +90,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setIconUri(android::net::Uri arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setIconUri(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setIconUri",
@@ -98,7 +98,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setVolume(jint arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setVolume(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVolume",
@@ -106,7 +106,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setVolumeHandling(jint arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setVolumeHandling(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVolumeHandling",
@@ -114,7 +114,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setVolumeMax(jint arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setVolumeMax(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVolumeMax",

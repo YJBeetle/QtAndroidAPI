@@ -42,7 +42,7 @@ namespace android::nfc::cardemulation
 		) {}
 	
 	// Methods
-	JObject HostNfcFService::onBind(android::content::Intent arg0)
+	JObject HostNfcFService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -50,7 +50,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	void HostNfcFService::onDeactivated(jint arg0)
+	void HostNfcFService::onDeactivated(jint arg0) const
 	{
 		callMethod<void>(
 			"onDeactivated",
@@ -58,7 +58,7 @@ namespace android::nfc::cardemulation
 			arg0
 		);
 	}
-	JByteArray HostNfcFService::processNfcFPacket(JByteArray arg0, android::os::Bundle arg1)
+	JByteArray HostNfcFService::processNfcFPacket(JByteArray arg0, android::os::Bundle arg1) const
 	{
 		return callObjectMethod(
 			"processNfcFPacket",
@@ -67,7 +67,7 @@ namespace android::nfc::cardemulation
 			arg1.object()
 		);
 	}
-	void HostNfcFService::sendResponsePacket(JByteArray arg0)
+	void HostNfcFService::sendResponsePacket(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"sendResponsePacket",

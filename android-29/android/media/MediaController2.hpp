@@ -38,11 +38,11 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void cancelSessionCommand(JObject arg0);
-		void close();
-		android::media::Session2Token getConnectedToken();
-		jboolean isPlaybackActive();
-		JObject sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
+		void cancelSessionCommand(JObject arg0) const;
+		void close() const;
+		android::media::Session2Token getConnectedToken() const;
+		jboolean isPlaybackActive() const;
+		JObject sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::media
 

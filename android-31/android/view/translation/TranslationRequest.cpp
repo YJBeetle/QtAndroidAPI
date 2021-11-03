@@ -48,42 +48,42 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	jint TranslationRequest::describeContents()
+	jint TranslationRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint TranslationRequest::getFlags()
+	jint TranslationRequest::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	JObject TranslationRequest::getTranslationRequestValues()
+	JObject TranslationRequest::getTranslationRequestValues() const
 	{
 		return callObjectMethod(
 			"getTranslationRequestValues",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject TranslationRequest::getViewTranslationRequests()
+	JObject TranslationRequest::getViewTranslationRequests() const
 	{
 		return callObjectMethod(
 			"getViewTranslationRequests",
 			"()Ljava/util/List;"
 		);
 	}
-	JString TranslationRequest::toString()
+	JString TranslationRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TranslationRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TranslationRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

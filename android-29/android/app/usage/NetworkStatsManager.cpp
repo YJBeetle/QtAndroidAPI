@@ -15,7 +15,7 @@ namespace android::app::usage
 	// Constructors
 	
 	// Methods
-	android::app::usage::NetworkStats NetworkStatsManager::queryDetails(jint arg0, JString arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetails(jint arg0, JString arg1, jlong arg2, jlong arg3) const
 	{
 		return callObjectMethod(
 			"queryDetails",
@@ -26,7 +26,7 @@ namespace android::app::usage
 			arg3
 		);
 	}
-	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUid(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUid(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"queryDetailsForUid",
@@ -38,7 +38,7 @@ namespace android::app::usage
 			arg4
 		);
 	}
-	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUidTag(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUidTag(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5) const
 	{
 		return callObjectMethod(
 			"queryDetailsForUidTag",
@@ -51,7 +51,7 @@ namespace android::app::usage
 			arg5
 		);
 	}
-	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUidTagState(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUidTagState(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6) const
 	{
 		return callObjectMethod(
 			"queryDetailsForUidTagState",
@@ -65,7 +65,7 @@ namespace android::app::usage
 			arg6
 		);
 	}
-	android::app::usage::NetworkStats NetworkStatsManager::querySummary(jint arg0, JString arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats NetworkStatsManager::querySummary(jint arg0, JString arg1, jlong arg2, jlong arg3) const
 	{
 		return callObjectMethod(
 			"querySummary",
@@ -76,7 +76,7 @@ namespace android::app::usage
 			arg3
 		);
 	}
-	android::app::usage::NetworkStats_Bucket NetworkStatsManager::querySummaryForDevice(jint arg0, JString arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats_Bucket NetworkStatsManager::querySummaryForDevice(jint arg0, JString arg1, jlong arg2, jlong arg3) const
 	{
 		return callObjectMethod(
 			"querySummaryForDevice",
@@ -87,7 +87,7 @@ namespace android::app::usage
 			arg3
 		);
 	}
-	android::app::usage::NetworkStats_Bucket NetworkStatsManager::querySummaryForUser(jint arg0, JString arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats_Bucket NetworkStatsManager::querySummaryForUser(jint arg0, JString arg1, jlong arg2, jlong arg3) const
 	{
 		return callObjectMethod(
 			"querySummaryForUser",
@@ -98,7 +98,7 @@ namespace android::app::usage
 			arg3
 		);
 	}
-	void NetworkStatsManager::registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3)
+	void NetworkStatsManager::registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3) const
 	{
 		callMethod<void>(
 			"registerUsageCallback",
@@ -109,7 +109,7 @@ namespace android::app::usage
 			arg3.object()
 		);
 	}
-	void NetworkStatsManager::registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3, android::os::Handler arg4)
+	void NetworkStatsManager::registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3, android::os::Handler arg4) const
 	{
 		callMethod<void>(
 			"registerUsageCallback",
@@ -121,7 +121,7 @@ namespace android::app::usage
 			arg4.object()
 		);
 	}
-	void NetworkStatsManager::unregisterUsageCallback(android::app::usage::NetworkStatsManager_UsageCallback arg0)
+	void NetworkStatsManager::unregisterUsageCallback(android::app::usage::NetworkStatsManager_UsageCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterUsageCallback",

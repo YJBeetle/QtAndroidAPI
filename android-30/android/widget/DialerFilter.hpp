@@ -38,20 +38,20 @@ namespace android::widget
 		DialerFilter(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void append(JString arg0);
-		void clearText();
-		JString getDigits();
-		JString getFilterText();
-		JString getLetters();
-		jint getMode();
-		jboolean isQwertyKeyboard();
-		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		void removeFilterWatcher(JObject arg0);
-		void setDigitsWatcher(JObject arg0);
-		void setFilterWatcher(JObject arg0);
-		void setLettersWatcher(JObject arg0);
-		void setMode(jint arg0);
+		void append(JString arg0) const;
+		void clearText() const;
+		JString getDigits() const;
+		JString getFilterText() const;
+		JString getLetters() const;
+		jint getMode() const;
+		jboolean isQwertyKeyboard() const;
+		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1) const;
+		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1) const;
+		void removeFilterWatcher(JObject arg0) const;
+		void setDigitsWatcher(JObject arg0) const;
+		void setFilterWatcher(JObject arg0) const;
+		void setLettersWatcher(JObject arg0) const;
+		void setMode(jint arg0) const;
 	};
 } // namespace android::widget
 

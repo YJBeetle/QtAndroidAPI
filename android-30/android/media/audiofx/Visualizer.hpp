@@ -41,20 +41,20 @@ namespace android::media::audiofx
 		// Methods
 		static JIntArray getCaptureSizeRange();
 		static jint getMaxCaptureRate();
-		jint getCaptureSize();
-		jboolean getEnabled();
-		jint getFft(JByteArray arg0);
-		jint getMeasurementMode();
-		jint getMeasurementPeakRms(android::media::audiofx::Visualizer_MeasurementPeakRms arg0);
-		jint getSamplingRate();
-		jint getScalingMode();
-		jint getWaveForm(JByteArray arg0);
-		void release();
-		jint setCaptureSize(jint arg0);
-		jint setDataCaptureListener(JObject arg0, jint arg1, jboolean arg2, jboolean arg3);
-		jint setEnabled(jboolean arg0);
-		jint setMeasurementMode(jint arg0);
-		jint setScalingMode(jint arg0);
+		jint getCaptureSize() const;
+		jboolean getEnabled() const;
+		jint getFft(JByteArray arg0) const;
+		jint getMeasurementMode() const;
+		jint getMeasurementPeakRms(android::media::audiofx::Visualizer_MeasurementPeakRms arg0) const;
+		jint getSamplingRate() const;
+		jint getScalingMode() const;
+		jint getWaveForm(JByteArray arg0) const;
+		void release() const;
+		jint setCaptureSize(jint arg0) const;
+		jint setDataCaptureListener(JObject arg0, jint arg1, jboolean arg2, jboolean arg3) const;
+		jint setEnabled(jboolean arg0) const;
+		jint setMeasurementMode(jint arg0) const;
+		jint setScalingMode(jint arg0) const;
 	};
 } // namespace android::media::audiofx
 

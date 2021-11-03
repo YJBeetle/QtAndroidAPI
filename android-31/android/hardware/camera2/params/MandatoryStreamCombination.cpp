@@ -12,7 +12,7 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean MandatoryStreamCombination::equals(JObject arg0)
+	jboolean MandatoryStreamCombination::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,28 +20,28 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	JString MandatoryStreamCombination::getDescription()
+	JString MandatoryStreamCombination::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject MandatoryStreamCombination::getStreamsInformation()
+	JObject MandatoryStreamCombination::getStreamsInformation() const
 	{
 		return callObjectMethod(
 			"getStreamsInformation",
 			"()Ljava/util/List;"
 		);
 	}
-	jint MandatoryStreamCombination::hashCode()
+	jint MandatoryStreamCombination::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean MandatoryStreamCombination::isReprocessable()
+	jboolean MandatoryStreamCombination::isReprocessable() const
 	{
 		return callMethod<jboolean>(
 			"isReprocessable",

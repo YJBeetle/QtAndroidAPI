@@ -31,16 +31,16 @@ namespace android::view
 		WindowInsets_Builder(android::view::WindowInsets arg0);
 		
 		// Methods
-		android::view::WindowInsets build();
-		android::view::WindowInsets_Builder setDisplayCutout(android::view::DisplayCutout arg0);
-		android::view::WindowInsets_Builder setInsets(jint arg0, android::graphics::Insets arg1);
-		android::view::WindowInsets_Builder setInsetsIgnoringVisibility(jint arg0, android::graphics::Insets arg1);
-		android::view::WindowInsets_Builder setMandatorySystemGestureInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setStableInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setSystemGestureInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setSystemWindowInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setTappableElementInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setVisible(jint arg0, jboolean arg1);
+		android::view::WindowInsets build() const;
+		android::view::WindowInsets_Builder setDisplayCutout(android::view::DisplayCutout arg0) const;
+		android::view::WindowInsets_Builder setInsets(jint arg0, android::graphics::Insets arg1) const;
+		android::view::WindowInsets_Builder setInsetsIgnoringVisibility(jint arg0, android::graphics::Insets arg1) const;
+		android::view::WindowInsets_Builder setMandatorySystemGestureInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setStableInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setSystemGestureInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setSystemWindowInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setTappableElementInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setVisible(jint arg0, jboolean arg1) const;
 	};
 } // namespace android::view
 

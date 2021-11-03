@@ -10,14 +10,14 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	JObject ChildSessionConfiguration::getInboundTrafficSelectors()
+	JObject ChildSessionConfiguration::getInboundTrafficSelectors() const
 	{
 		return callObjectMethod(
 			"getInboundTrafficSelectors",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ChildSessionConfiguration::getOutboundTrafficSelectors()
+	JObject ChildSessionConfiguration::getOutboundTrafficSelectors() const
 	{
 		return callObjectMethod(
 			"getOutboundTrafficSelectors",

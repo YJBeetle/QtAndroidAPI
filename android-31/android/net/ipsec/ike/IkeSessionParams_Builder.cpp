@@ -30,7 +30,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::addIkeOption(jint arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::addIkeOption(jint arg0) const
 	{
 		return callObjectMethod(
 			"addIkeOption",
@@ -38,7 +38,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::addIkeSaProposal(android::net::ipsec::ike::IkeSaProposal arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::addIkeSaProposal(android::net::ipsec::ike::IkeSaProposal arg0) const
 	{
 		return callObjectMethod(
 			"addIkeSaProposal",
@@ -46,14 +46,14 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams IkeSessionParams_Builder::build()
+	android::net::ipsec::ike::IkeSessionParams IkeSessionParams_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/ipsec/ike/IkeSessionParams;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::removeIkeOption(jint arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::removeIkeOption(jint arg0) const
 	{
 		return callObjectMethod(
 			"removeIkeOption",
@@ -61,7 +61,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"setAuthDigitalSignature",
@@ -71,7 +71,7 @@ namespace android::net::ipsec::ike
 			arg2.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2, JObject arg3)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"setAuthDigitalSignature",
@@ -82,7 +82,7 @@ namespace android::net::ipsec::ike
 			arg3.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthEap(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthEap(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1) const
 	{
 		return callObjectMethod(
 			"setAuthEap",
@@ -91,7 +91,7 @@ namespace android::net::ipsec::ike
 			arg1.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthPsk(JByteArray arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthPsk(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setAuthPsk",
@@ -99,7 +99,7 @@ namespace android::net::ipsec::ike
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setDpdDelaySeconds(jint arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setDpdDelaySeconds(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDpdDelaySeconds",
@@ -107,7 +107,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setLifetimeSeconds(jint arg0, jint arg1)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setLifetimeSeconds(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setLifetimeSeconds",
@@ -116,7 +116,7 @@ namespace android::net::ipsec::ike
 			arg1
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setLocalIdentification(android::net::ipsec::ike::IkeIdentification arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setLocalIdentification(android::net::ipsec::ike::IkeIdentification arg0) const
 	{
 		return callObjectMethod(
 			"setLocalIdentification",
@@ -124,7 +124,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setNattKeepAliveDelaySeconds(jint arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setNattKeepAliveDelaySeconds(jint arg0) const
 	{
 		return callObjectMethod(
 			"setNattKeepAliveDelaySeconds",
@@ -132,7 +132,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setNetwork(android::net::Network arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setNetwork(android::net::Network arg0) const
 	{
 		return callObjectMethod(
 			"setNetwork",
@@ -140,7 +140,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setRemoteIdentification(android::net::ipsec::ike::IkeIdentification arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setRemoteIdentification(android::net::ipsec::ike::IkeIdentification arg0) const
 	{
 		return callObjectMethod(
 			"setRemoteIdentification",
@@ -148,7 +148,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setRetransmissionTimeoutsMillis(JIntArray arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setRetransmissionTimeoutsMillis(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"setRetransmissionTimeoutsMillis",
@@ -156,7 +156,7 @@ namespace android::net::ipsec::ike
 			arg0.object<jintArray>()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setServerHostname(JString arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setServerHostname(JString arg0) const
 	{
 		return callObjectMethod(
 			"setServerHostname",

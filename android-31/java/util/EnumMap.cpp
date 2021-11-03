@@ -35,21 +35,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void EnumMap::clear()
+	void EnumMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	java::util::EnumMap EnumMap::clone()
+	java::util::EnumMap EnumMap::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/util/EnumMap;"
 		);
 	}
-	jboolean EnumMap::containsKey(JObject arg0)
+	jboolean EnumMap::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -57,7 +57,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean EnumMap::containsValue(JObject arg0)
+	jboolean EnumMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -65,14 +65,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject EnumMap::entrySet()
+	JObject EnumMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean EnumMap::equals(JObject arg0)
+	jboolean EnumMap::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -80,7 +80,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject EnumMap::get(JObject arg0)
+	JObject EnumMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -88,21 +88,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint EnumMap::hashCode()
+	jint EnumMap::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject EnumMap::keySet()
+	JObject EnumMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject EnumMap::put(java::lang::Enum arg0, JObject arg1)
+	JObject EnumMap::put(java::lang::Enum arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -111,7 +111,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject EnumMap::put(JObject arg0, JObject arg1)
+	JObject EnumMap::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -120,7 +120,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void EnumMap::putAll(JObject arg0)
+	void EnumMap::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -128,7 +128,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject EnumMap::remove(JObject arg0)
+	JObject EnumMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -136,14 +136,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint EnumMap::size()
+	jint EnumMap::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject EnumMap::values()
+	JObject EnumMap::values() const
 	{
 		return callObjectMethod(
 			"values",

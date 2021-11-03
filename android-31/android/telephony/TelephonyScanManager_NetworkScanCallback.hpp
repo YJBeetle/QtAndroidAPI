@@ -17,9 +17,9 @@ namespace android::telephony
 		TelephonyScanManager_NetworkScanCallback();
 		
 		// Methods
-		void onComplete();
-		void onError(jint arg0);
-		void onResults(JObject arg0);
+		void onComplete() const;
+		void onError(jint arg0) const;
+		void onResults(JObject arg0) const;
 	};
 } // namespace android::telephony
 

@@ -21,21 +21,21 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void MultiResolutionImageReader::close()
+	void MultiResolutionImageReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void MultiResolutionImageReader::flush()
+	void MultiResolutionImageReader::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	android::hardware::camera2::params::MultiResolutionStreamInfo MultiResolutionImageReader::getStreamInfoForImageReader(android::media::ImageReader arg0)
+	android::hardware::camera2::params::MultiResolutionStreamInfo MultiResolutionImageReader::getStreamInfoForImageReader(android::media::ImageReader arg0) const
 	{
 		return callObjectMethod(
 			"getStreamInfoForImageReader",
@@ -43,14 +43,14 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	android::view::Surface MultiResolutionImageReader::getSurface()
+	android::view::Surface MultiResolutionImageReader::getSurface() const
 	{
 		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	void MultiResolutionImageReader::setOnImageAvailableListener(JObject arg0, JObject arg1)
+	void MultiResolutionImageReader::setOnImageAvailableListener(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setOnImageAvailableListener",

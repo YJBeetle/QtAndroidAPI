@@ -25,7 +25,7 @@ namespace java::lang
 			arg1.object<jstring>()
 		);
 	}
-	jint Enum::compareTo(java::lang::Enum arg0)
+	jint Enum::compareTo(java::lang::Enum arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -33,7 +33,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Enum::compareTo(JObject arg0)
+	jint Enum::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -41,14 +41,14 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Enum::describeConstable()
+	java::util::Optional Enum::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jboolean Enum::equals(JObject arg0)
+	jboolean Enum::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -56,35 +56,35 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	JClass Enum::getDeclaringClass()
+	JClass Enum::getDeclaringClass() const
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	jint Enum::hashCode()
+	jint Enum::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Enum::name()
+	JString Enum::name() const
 	{
 		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Enum::ordinal()
+	jint Enum::ordinal() const
 	{
 		return callMethod<jint>(
 			"ordinal",
 			"()I"
 		);
 	}
-	JString Enum::toString()
+	JString Enum::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -49,7 +49,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jint OperationApplicationException::getNumSuccessfulYieldPoints()
+	jint OperationApplicationException::getNumSuccessfulYieldPoints() const
 	{
 		return callMethod<jint>(
 			"getNumSuccessfulYieldPoints",

@@ -24,14 +24,14 @@ namespace android::service::quickaccesswallet
 		) {}
 	
 	// Methods
-	android::service::quickaccesswallet::WalletCard WalletCard_Builder::build()
+	android::service::quickaccesswallet::WalletCard WalletCard_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/quickaccesswallet/WalletCard;"
 		);
 	}
-	android::service::quickaccesswallet::WalletCard_Builder WalletCard_Builder::setCardIcon(android::graphics::drawable::Icon arg0)
+	android::service::quickaccesswallet::WalletCard_Builder WalletCard_Builder::setCardIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setCardIcon",
@@ -39,7 +39,7 @@ namespace android::service::quickaccesswallet
 			arg0.object()
 		);
 	}
-	android::service::quickaccesswallet::WalletCard_Builder WalletCard_Builder::setCardLabel(JString arg0)
+	android::service::quickaccesswallet::WalletCard_Builder WalletCard_Builder::setCardLabel(JString arg0) const
 	{
 		return callObjectMethod(
 			"setCardLabel",

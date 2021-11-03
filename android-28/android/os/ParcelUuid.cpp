@@ -37,14 +37,14 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jint ParcelUuid::describeContents()
+	jint ParcelUuid::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ParcelUuid::equals(JObject arg0)
+	jboolean ParcelUuid::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -52,28 +52,28 @@ namespace android::os
 			arg0.object<jobject>()
 		);
 	}
-	java::util::UUID ParcelUuid::getUuid()
+	java::util::UUID ParcelUuid::getUuid() const
 	{
 		return callObjectMethod(
 			"getUuid",
 			"()Ljava/util/UUID;"
 		);
 	}
-	jint ParcelUuid::hashCode()
+	jint ParcelUuid::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ParcelUuid::toString()
+	JString ParcelUuid::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ParcelUuid::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ParcelUuid::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

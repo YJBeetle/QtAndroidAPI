@@ -52,14 +52,14 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	JObject DecimalFormatSymbols::clone()
+	JObject DecimalFormatSymbols::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DecimalFormatSymbols::equals(JObject arg0)
+	jboolean DecimalFormatSymbols::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -67,126 +67,126 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Currency DecimalFormatSymbols::getCurrency()
+	java::util::Currency DecimalFormatSymbols::getCurrency() const
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Ljava/util/Currency;"
 		);
 	}
-	JString DecimalFormatSymbols::getCurrencySymbol()
+	JString DecimalFormatSymbols::getCurrencySymbol() const
 	{
 		return callObjectMethod(
 			"getCurrencySymbol",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getDecimalSeparator()
+	jchar DecimalFormatSymbols::getDecimalSeparator() const
 	{
 		return callMethod<jchar>(
 			"getDecimalSeparator",
 			"()C"
 		);
 	}
-	jchar DecimalFormatSymbols::getDigit()
+	jchar DecimalFormatSymbols::getDigit() const
 	{
 		return callMethod<jchar>(
 			"getDigit",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getExponentSeparator()
+	JString DecimalFormatSymbols::getExponentSeparator() const
 	{
 		return callObjectMethod(
 			"getExponentSeparator",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getGroupingSeparator()
+	jchar DecimalFormatSymbols::getGroupingSeparator() const
 	{
 		return callMethod<jchar>(
 			"getGroupingSeparator",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getInfinity()
+	JString DecimalFormatSymbols::getInfinity() const
 	{
 		return callObjectMethod(
 			"getInfinity",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormatSymbols::getInternationalCurrencySymbol()
+	JString DecimalFormatSymbols::getInternationalCurrencySymbol() const
 	{
 		return callObjectMethod(
 			"getInternationalCurrencySymbol",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getMinusSign()
+	jchar DecimalFormatSymbols::getMinusSign() const
 	{
 		return callMethod<jchar>(
 			"getMinusSign",
 			"()C"
 		);
 	}
-	jchar DecimalFormatSymbols::getMonetaryDecimalSeparator()
+	jchar DecimalFormatSymbols::getMonetaryDecimalSeparator() const
 	{
 		return callMethod<jchar>(
 			"getMonetaryDecimalSeparator",
 			"()C"
 		);
 	}
-	jchar DecimalFormatSymbols::getMonetaryGroupingSeparator()
+	jchar DecimalFormatSymbols::getMonetaryGroupingSeparator() const
 	{
 		return callMethod<jchar>(
 			"getMonetaryGroupingSeparator",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getNaN()
+	JString DecimalFormatSymbols::getNaN() const
 	{
 		return callObjectMethod(
 			"getNaN",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getPatternSeparator()
+	jchar DecimalFormatSymbols::getPatternSeparator() const
 	{
 		return callMethod<jchar>(
 			"getPatternSeparator",
 			"()C"
 		);
 	}
-	jchar DecimalFormatSymbols::getPerMill()
+	jchar DecimalFormatSymbols::getPerMill() const
 	{
 		return callMethod<jchar>(
 			"getPerMill",
 			"()C"
 		);
 	}
-	jchar DecimalFormatSymbols::getPercent()
+	jchar DecimalFormatSymbols::getPercent() const
 	{
 		return callMethod<jchar>(
 			"getPercent",
 			"()C"
 		);
 	}
-	jchar DecimalFormatSymbols::getZeroDigit()
+	jchar DecimalFormatSymbols::getZeroDigit() const
 	{
 		return callMethod<jchar>(
 			"getZeroDigit",
 			"()C"
 		);
 	}
-	jint DecimalFormatSymbols::hashCode()
+	jint DecimalFormatSymbols::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void DecimalFormatSymbols::setCurrency(java::util::Currency arg0)
+	void DecimalFormatSymbols::setCurrency(java::util::Currency arg0) const
 	{
 		callMethod<void>(
 			"setCurrency",
@@ -194,7 +194,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void DecimalFormatSymbols::setCurrencySymbol(JString arg0)
+	void DecimalFormatSymbols::setCurrencySymbol(JString arg0) const
 	{
 		callMethod<void>(
 			"setCurrencySymbol",
@@ -202,7 +202,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0)
+	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setDecimalSeparator",
@@ -210,7 +210,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setDigit(jchar arg0)
+	void DecimalFormatSymbols::setDigit(jchar arg0) const
 	{
 		callMethod<void>(
 			"setDigit",
@@ -218,7 +218,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setExponentSeparator(JString arg0)
+	void DecimalFormatSymbols::setExponentSeparator(JString arg0) const
 	{
 		callMethod<void>(
 			"setExponentSeparator",
@@ -226,7 +226,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0)
+	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setGroupingSeparator",
@@ -234,7 +234,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setInfinity(JString arg0)
+	void DecimalFormatSymbols::setInfinity(JString arg0) const
 	{
 		callMethod<void>(
 			"setInfinity",
@@ -242,7 +242,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setInternationalCurrencySymbol(JString arg0)
+	void DecimalFormatSymbols::setInternationalCurrencySymbol(JString arg0) const
 	{
 		callMethod<void>(
 			"setInternationalCurrencySymbol",
@@ -250,7 +250,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setMinusSign(jchar arg0)
+	void DecimalFormatSymbols::setMinusSign(jchar arg0) const
 	{
 		callMethod<void>(
 			"setMinusSign",
@@ -258,7 +258,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar arg0)
+	void DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setMonetaryDecimalSeparator",
@@ -266,7 +266,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setMonetaryGroupingSeparator(jchar arg0)
+	void DecimalFormatSymbols::setMonetaryGroupingSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setMonetaryGroupingSeparator",
@@ -274,7 +274,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setNaN(JString arg0)
+	void DecimalFormatSymbols::setNaN(JString arg0) const
 	{
 		callMethod<void>(
 			"setNaN",
@@ -282,7 +282,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setPatternSeparator(jchar arg0)
+	void DecimalFormatSymbols::setPatternSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPatternSeparator",
@@ -290,7 +290,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setPerMill(jchar arg0)
+	void DecimalFormatSymbols::setPerMill(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPerMill",
@@ -298,7 +298,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setPercent(jchar arg0)
+	void DecimalFormatSymbols::setPercent(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPercent",
@@ -306,7 +306,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setZeroDigit(jchar arg0)
+	void DecimalFormatSymbols::setZeroDigit(jchar arg0) const
 	{
 		callMethod<void>(
 			"setZeroDigit",

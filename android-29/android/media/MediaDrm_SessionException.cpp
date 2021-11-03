@@ -32,7 +32,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint MediaDrm_SessionException::getErrorCode()
+	jint MediaDrm_SessionException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",

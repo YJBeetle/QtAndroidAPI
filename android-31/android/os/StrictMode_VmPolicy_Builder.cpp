@@ -23,140 +23,140 @@ namespace android::os
 		) {}
 	
 	// Methods
-	android::os::StrictMode_VmPolicy StrictMode_VmPolicy_Builder::build()
+	android::os::StrictMode_VmPolicy StrictMode_VmPolicy_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/os/StrictMode$VmPolicy;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectActivityLeaks()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectActivityLeaks() const
 	{
 		return callObjectMethod(
 			"detectActivityLeaks",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectAll()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectAll() const
 	{
 		return callObjectMethod(
 			"detectAll",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectCleartextNetwork()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectCleartextNetwork() const
 	{
 		return callObjectMethod(
 			"detectCleartextNetwork",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectContentUriWithoutPermission()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectContentUriWithoutPermission() const
 	{
 		return callObjectMethod(
 			"detectContentUriWithoutPermission",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectCredentialProtectedWhileLocked()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectCredentialProtectedWhileLocked() const
 	{
 		return callObjectMethod(
 			"detectCredentialProtectedWhileLocked",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectFileUriExposure()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectFileUriExposure() const
 	{
 		return callObjectMethod(
 			"detectFileUriExposure",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectImplicitDirectBoot()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectImplicitDirectBoot() const
 	{
 		return callObjectMethod(
 			"detectImplicitDirectBoot",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectIncorrectContextUse()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectIncorrectContextUse() const
 	{
 		return callObjectMethod(
 			"detectIncorrectContextUse",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedClosableObjects()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedClosableObjects() const
 	{
 		return callObjectMethod(
 			"detectLeakedClosableObjects",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedRegistrationObjects()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedRegistrationObjects() const
 	{
 		return callObjectMethod(
 			"detectLeakedRegistrationObjects",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedSqlLiteObjects()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedSqlLiteObjects() const
 	{
 		return callObjectMethod(
 			"detectLeakedSqlLiteObjects",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectNonSdkApiUsage()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectNonSdkApiUsage() const
 	{
 		return callObjectMethod(
 			"detectNonSdkApiUsage",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectUnsafeIntentLaunch()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectUnsafeIntentLaunch() const
 	{
 		return callObjectMethod(
 			"detectUnsafeIntentLaunch",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectUntaggedSockets()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectUntaggedSockets() const
 	{
 		return callObjectMethod(
 			"detectUntaggedSockets",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeath()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeath() const
 	{
 		return callObjectMethod(
 			"penaltyDeath",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeathOnCleartextNetwork()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeathOnCleartextNetwork() const
 	{
 		return callObjectMethod(
 			"penaltyDeathOnCleartextNetwork",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeathOnFileUriExposure()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeathOnFileUriExposure() const
 	{
 		return callObjectMethod(
 			"penaltyDeathOnFileUriExposure",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDropBox()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDropBox() const
 	{
 		return callObjectMethod(
 			"penaltyDropBox",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyListener(JObject arg0, JObject arg1)
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyListener(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"penaltyListener",
@@ -165,28 +165,28 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyLog()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyLog() const
 	{
 		return callObjectMethod(
 			"penaltyLog",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::permitNonSdkApiUsage()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::permitNonSdkApiUsage() const
 	{
 		return callObjectMethod(
 			"permitNonSdkApiUsage",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::permitUnsafeIntentLaunch()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::permitUnsafeIntentLaunch() const
 	{
 		return callObjectMethod(
 			"permitUnsafeIntentLaunch",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::setClassInstanceLimit(JClass arg0, jint arg1)
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::setClassInstanceLimit(JClass arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setClassInstanceLimit",

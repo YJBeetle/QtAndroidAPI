@@ -17,7 +17,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void ObjectOutputStream_PutField::put(JString arg0, jboolean arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -26,7 +26,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, jbyte arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jbyte arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -35,7 +35,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, jchar arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jchar arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -44,7 +44,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, jdouble arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jdouble arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -53,7 +53,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, jfloat arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -62,7 +62,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, jint arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -71,7 +71,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, JObject arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -80,7 +80,7 @@ namespace java::io
 			arg1.object<jobject>()
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, jlong arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -89,7 +89,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::put(JString arg0, jshort arg1)
+	void ObjectOutputStream_PutField::put(JString arg0, jshort arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -98,7 +98,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::write(JObject arg0)
+	void ObjectOutputStream_PutField::write(JObject arg0) const
 	{
 		callMethod<void>(
 			"write",

@@ -31,11 +31,11 @@ namespace java::sql
 		SQLException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
-		jint getErrorCode();
-		java::sql::SQLException getNextException();
-		JString getSQLState();
-		JObject iterator();
-		void setNextException(java::sql::SQLException arg0);
+		jint getErrorCode() const;
+		java::sql::SQLException getNextException() const;
+		JString getSQLState() const;
+		JObject iterator() const;
+		void setNextException(java::sql::SQLException arg0) const;
 	};
 } // namespace java::sql
 

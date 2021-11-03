@@ -16,9 +16,9 @@ namespace android::opengl
 		// Constructors
 		
 		// Methods
-		jint getHandle();
-		jlong getNativeHandle();
-		jint hashCode();
+		jint getHandle() const;
+		jlong getNativeHandle() const;
+		jint hashCode() const;
 	};
 } // namespace android::opengl
 

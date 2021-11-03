@@ -56,17 +56,17 @@ namespace android::animation
 		static android::animation::PropertyValuesHolder ofObject(JString arg0, android::animation::TypeConverter arg1, android::graphics::Path arg2);
 		static android::animation::PropertyValuesHolder ofObject(JString arg0, JObject arg1, JObjectArray arg2);
 		static android::animation::PropertyValuesHolder ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, JObject arg2, JObjectArray arg3);
-		android::animation::PropertyValuesHolder clone();
-		JString getPropertyName();
-		void setConverter(android::animation::TypeConverter arg0);
-		void setEvaluator(JObject arg0);
-		void setFloatValues(JFloatArray arg0);
-		void setIntValues(JIntArray arg0);
-		void setKeyframes(JArray arg0);
-		void setObjectValues(JObjectArray arg0);
-		void setProperty(android::util::Property arg0);
-		void setPropertyName(JString arg0);
-		JString toString();
+		android::animation::PropertyValuesHolder clone() const;
+		JString getPropertyName() const;
+		void setConverter(android::animation::TypeConverter arg0) const;
+		void setEvaluator(JObject arg0) const;
+		void setFloatValues(JFloatArray arg0) const;
+		void setIntValues(JIntArray arg0) const;
+		void setKeyframes(JArray arg0) const;
+		void setObjectValues(JObjectArray arg0) const;
+		void setProperty(android::util::Property arg0) const;
+		void setPropertyName(JString arg0) const;
+		JString toString() const;
 	};
 } // namespace android::animation
 

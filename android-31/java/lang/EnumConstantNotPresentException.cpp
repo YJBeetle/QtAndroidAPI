@@ -19,14 +19,14 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	JString EnumConstantNotPresentException::constantName()
+	JString EnumConstantNotPresentException::constantName() const
 	{
 		return callObjectMethod(
 			"constantName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JClass EnumConstantNotPresentException::enumType()
+	JClass EnumConstantNotPresentException::enumType() const
 	{
 		return callObjectMethod(
 			"enumType",

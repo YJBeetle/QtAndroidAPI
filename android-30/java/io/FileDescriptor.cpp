@@ -39,14 +39,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void FileDescriptor::sync()
+	void FileDescriptor::sync() const
 	{
 		callMethod<void>(
 			"sync",
 			"()V"
 		);
 	}
-	jboolean FileDescriptor::valid()
+	jboolean FileDescriptor::valid() const
 	{
 		return callMethod<jboolean>(
 			"valid",

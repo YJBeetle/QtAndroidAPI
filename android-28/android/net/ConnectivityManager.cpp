@@ -295,7 +295,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::addDefaultNetworkActiveListener(JObject arg0)
+	void ConnectivityManager::addDefaultNetworkActiveListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addDefaultNetworkActiveListener",
@@ -303,7 +303,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jboolean ConnectivityManager::bindProcessToNetwork(android::net::Network arg0)
+	jboolean ConnectivityManager::bindProcessToNetwork(android::net::Network arg0) const
 	{
 		return callMethod<jboolean>(
 			"bindProcessToNetwork",
@@ -311,56 +311,56 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::Network ConnectivityManager::getActiveNetwork()
+	android::net::Network ConnectivityManager::getActiveNetwork() const
 	{
 		return callObjectMethod(
 			"getActiveNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
-	android::net::NetworkInfo ConnectivityManager::getActiveNetworkInfo()
+	android::net::NetworkInfo ConnectivityManager::getActiveNetworkInfo() const
 	{
 		return callObjectMethod(
 			"getActiveNetworkInfo",
 			"()Landroid/net/NetworkInfo;"
 		);
 	}
-	JArray ConnectivityManager::getAllNetworkInfo()
+	JArray ConnectivityManager::getAllNetworkInfo() const
 	{
 		return callObjectMethod(
 			"getAllNetworkInfo",
 			"()[Landroid/net/NetworkInfo;"
 		);
 	}
-	JArray ConnectivityManager::getAllNetworks()
+	JArray ConnectivityManager::getAllNetworks() const
 	{
 		return callObjectMethod(
 			"getAllNetworks",
 			"()[Landroid/net/Network;"
 		);
 	}
-	jboolean ConnectivityManager::getBackgroundDataSetting()
+	jboolean ConnectivityManager::getBackgroundDataSetting() const
 	{
 		return callMethod<jboolean>(
 			"getBackgroundDataSetting",
 			"()Z"
 		);
 	}
-	android::net::Network ConnectivityManager::getBoundNetworkForProcess()
+	android::net::Network ConnectivityManager::getBoundNetworkForProcess() const
 	{
 		return callObjectMethod(
 			"getBoundNetworkForProcess",
 			"()Landroid/net/Network;"
 		);
 	}
-	android::net::ProxyInfo ConnectivityManager::getDefaultProxy()
+	android::net::ProxyInfo ConnectivityManager::getDefaultProxy() const
 	{
 		return callObjectMethod(
 			"getDefaultProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	android::net::LinkProperties ConnectivityManager::getLinkProperties(android::net::Network arg0)
+	android::net::LinkProperties ConnectivityManager::getLinkProperties(android::net::Network arg0) const
 	{
 		return callObjectMethod(
 			"getLinkProperties",
@@ -368,7 +368,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jint ConnectivityManager::getMultipathPreference(android::net::Network arg0)
+	jint ConnectivityManager::getMultipathPreference(android::net::Network arg0) const
 	{
 		return callMethod<jint>(
 			"getMultipathPreference",
@@ -376,7 +376,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::NetworkCapabilities ConnectivityManager::getNetworkCapabilities(android::net::Network arg0)
+	android::net::NetworkCapabilities ConnectivityManager::getNetworkCapabilities(android::net::Network arg0) const
 	{
 		return callObjectMethod(
 			"getNetworkCapabilities",
@@ -384,7 +384,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::NetworkInfo ConnectivityManager::getNetworkInfo(android::net::Network arg0)
+	android::net::NetworkInfo ConnectivityManager::getNetworkInfo(android::net::Network arg0) const
 	{
 		return callObjectMethod(
 			"getNetworkInfo",
@@ -392,7 +392,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::NetworkInfo ConnectivityManager::getNetworkInfo(jint arg0)
+	android::net::NetworkInfo ConnectivityManager::getNetworkInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getNetworkInfo",
@@ -400,42 +400,42 @@ namespace android::net
 			arg0
 		);
 	}
-	jint ConnectivityManager::getNetworkPreference()
+	jint ConnectivityManager::getNetworkPreference() const
 	{
 		return callMethod<jint>(
 			"getNetworkPreference",
 			"()I"
 		);
 	}
-	JByteArray ConnectivityManager::getNetworkWatchlistConfigHash()
+	JByteArray ConnectivityManager::getNetworkWatchlistConfigHash() const
 	{
 		return callObjectMethod(
 			"getNetworkWatchlistConfigHash",
 			"()[B"
 		);
 	}
-	jint ConnectivityManager::getRestrictBackgroundStatus()
+	jint ConnectivityManager::getRestrictBackgroundStatus() const
 	{
 		return callMethod<jint>(
 			"getRestrictBackgroundStatus",
 			"()I"
 		);
 	}
-	jboolean ConnectivityManager::isActiveNetworkMetered()
+	jboolean ConnectivityManager::isActiveNetworkMetered() const
 	{
 		return callMethod<jboolean>(
 			"isActiveNetworkMetered",
 			"()Z"
 		);
 	}
-	jboolean ConnectivityManager::isDefaultNetworkActive()
+	jboolean ConnectivityManager::isDefaultNetworkActive() const
 	{
 		return callMethod<jboolean>(
 			"isDefaultNetworkActive",
 			"()Z"
 		);
 	}
-	void ConnectivityManager::registerDefaultNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0)
+	void ConnectivityManager::registerDefaultNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0) const
 	{
 		callMethod<void>(
 			"registerDefaultNetworkCallback",
@@ -443,7 +443,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::registerDefaultNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0, android::os::Handler arg1)
+	void ConnectivityManager::registerDefaultNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerDefaultNetworkCallback",
@@ -452,7 +452,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::app::PendingIntent arg1)
+	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"registerNetworkCallback",
@@ -461,7 +461,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1)
+	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1) const
 	{
 		callMethod<void>(
 			"registerNetworkCallback",
@@ -470,7 +470,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2)
+	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"registerNetworkCallback",
@@ -480,7 +480,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	void ConnectivityManager::releaseNetworkRequest(android::app::PendingIntent arg0)
+	void ConnectivityManager::releaseNetworkRequest(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"releaseNetworkRequest",
@@ -488,7 +488,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::removeDefaultNetworkActiveListener(JObject arg0)
+	void ConnectivityManager::removeDefaultNetworkActiveListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeDefaultNetworkActiveListener",
@@ -496,7 +496,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::reportBadNetwork(android::net::Network arg0)
+	void ConnectivityManager::reportBadNetwork(android::net::Network arg0) const
 	{
 		callMethod<void>(
 			"reportBadNetwork",
@@ -504,7 +504,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::reportNetworkConnectivity(android::net::Network arg0, jboolean arg1)
+	void ConnectivityManager::reportNetworkConnectivity(android::net::Network arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"reportNetworkConnectivity",
@@ -513,7 +513,7 @@ namespace android::net
 			arg1
 		);
 	}
-	jboolean ConnectivityManager::requestBandwidthUpdate(android::net::Network arg0)
+	jboolean ConnectivityManager::requestBandwidthUpdate(android::net::Network arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestBandwidthUpdate",
@@ -521,7 +521,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::app::PendingIntent arg1)
+	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"requestNetwork",
@@ -530,7 +530,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1)
+	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1) const
 	{
 		callMethod<void>(
 			"requestNetwork",
@@ -539,7 +539,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2)
+	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"requestNetwork",
@@ -549,7 +549,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, jint arg2)
+	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"requestNetwork",
@@ -559,7 +559,7 @@ namespace android::net
 			arg2
 		);
 	}
-	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2, jint arg3)
+	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"requestNetwork",
@@ -570,7 +570,7 @@ namespace android::net
 			arg3
 		);
 	}
-	void ConnectivityManager::setNetworkPreference(jint arg0)
+	void ConnectivityManager::setNetworkPreference(jint arg0) const
 	{
 		callMethod<void>(
 			"setNetworkPreference",
@@ -578,7 +578,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void ConnectivityManager::unregisterNetworkCallback(android::app::PendingIntent arg0)
+	void ConnectivityManager::unregisterNetworkCallback(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"unregisterNetworkCallback",
@@ -586,7 +586,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::unregisterNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0)
+	void ConnectivityManager::unregisterNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterNetworkCallback",

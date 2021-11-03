@@ -19,7 +19,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void IntProperty::set(JObject arg0, java::lang::Integer arg1)
+	void IntProperty::set(JObject arg0, java::lang::Integer arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -28,7 +28,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	void IntProperty::set(JObject arg0, JObject arg1)
+	void IntProperty::set(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -37,7 +37,7 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	void IntProperty::setValue(JObject arg0, jint arg1)
+	void IntProperty::setValue(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setValue",

@@ -10,28 +10,28 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject SetSchemaResponse::getDeletedTypes()
+	JObject SetSchemaResponse::getDeletedTypes() const
 	{
 		return callObjectMethod(
 			"getDeletedTypes",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject SetSchemaResponse::getIncompatibleTypes()
+	JObject SetSchemaResponse::getIncompatibleTypes() const
 	{
 		return callObjectMethod(
 			"getIncompatibleTypes",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject SetSchemaResponse::getMigratedTypes()
+	JObject SetSchemaResponse::getMigratedTypes() const
 	{
 		return callObjectMethod(
 			"getMigratedTypes",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject SetSchemaResponse::getMigrationFailures()
+	JObject SetSchemaResponse::getMigrationFailures() const
 	{
 		return callObjectMethod(
 			"getMigrationFailures",

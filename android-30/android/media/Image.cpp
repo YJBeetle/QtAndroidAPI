@@ -13,63 +13,63 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void Image::close()
+	void Image::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::graphics::Rect Image::getCropRect()
+	android::graphics::Rect Image::getCropRect() const
 	{
 		return callObjectMethod(
 			"getCropRect",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jint Image::getFormat()
+	jint Image::getFormat() const
 	{
 		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
-	android::hardware::HardwareBuffer Image::getHardwareBuffer()
+	android::hardware::HardwareBuffer Image::getHardwareBuffer() const
 	{
 		return callObjectMethod(
 			"getHardwareBuffer",
 			"()Landroid/hardware/HardwareBuffer;"
 		);
 	}
-	jint Image::getHeight()
+	jint Image::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	JArray Image::getPlanes()
+	JArray Image::getPlanes() const
 	{
 		return callObjectMethod(
 			"getPlanes",
 			"()[Landroid/media/Image$Plane;"
 		);
 	}
-	jlong Image::getTimestamp()
+	jlong Image::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",
 			"()J"
 		);
 	}
-	jint Image::getWidth()
+	jint Image::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	void Image::setCropRect(android::graphics::Rect arg0)
+	void Image::setCropRect(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setCropRect",
@@ -77,7 +77,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void Image::setTimestamp(jlong arg0)
+	void Image::setTimestamp(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTimestamp",

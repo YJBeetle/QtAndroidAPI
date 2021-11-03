@@ -20,10 +20,10 @@ namespace java::security::cert
 		PolicyQualifierInfo(JByteArray arg0);
 		
 		// Methods
-		JByteArray getEncoded();
-		JByteArray getPolicyQualifier();
-		JString getPolicyQualifierId();
-		JString toString();
+		JByteArray getEncoded() const;
+		JByteArray getPolicyQualifier() const;
+		JString getPolicyQualifierId() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

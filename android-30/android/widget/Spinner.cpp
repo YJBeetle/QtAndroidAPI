@@ -88,70 +88,70 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString Spinner::getAccessibilityClassName()
+	JString Spinner::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint Spinner::getBaseline()
+	jint Spinner::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	jint Spinner::getDropDownHorizontalOffset()
+	jint Spinner::getDropDownHorizontalOffset() const
 	{
 		return callMethod<jint>(
 			"getDropDownHorizontalOffset",
 			"()I"
 		);
 	}
-	jint Spinner::getDropDownVerticalOffset()
+	jint Spinner::getDropDownVerticalOffset() const
 	{
 		return callMethod<jint>(
 			"getDropDownVerticalOffset",
 			"()I"
 		);
 	}
-	jint Spinner::getDropDownWidth()
+	jint Spinner::getDropDownWidth() const
 	{
 		return callMethod<jint>(
 			"getDropDownWidth",
 			"()I"
 		);
 	}
-	jint Spinner::getGravity()
+	jint Spinner::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable Spinner::getPopupBackground()
+	android::graphics::drawable::Drawable Spinner::getPopupBackground() const
 	{
 		return callObjectMethod(
 			"getPopupBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::content::Context Spinner::getPopupContext()
+	android::content::Context Spinner::getPopupContext() const
 	{
 		return callObjectMethod(
 			"getPopupContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JString Spinner::getPrompt()
+	JString Spinner::getPrompt() const
 	{
 		return callObjectMethod(
 			"getPrompt",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void Spinner::onClick(JObject arg0, jint arg1)
+	void Spinner::onClick(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -160,7 +160,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	android::view::PointerIcon Spinner::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon Spinner::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -169,7 +169,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Spinner::onRestoreInstanceState(JObject arg0)
+	void Spinner::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -177,14 +177,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject Spinner::onSaveInstanceState()
+	JObject Spinner::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	jboolean Spinner::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean Spinner::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -192,14 +192,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean Spinner::performClick()
+	jboolean Spinner::performClick() const
 	{
 		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
-	void Spinner::setAdapter(JObject arg0)
+	void Spinner::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -207,7 +207,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Spinner::setDropDownHorizontalOffset(jint arg0)
+	void Spinner::setDropDownHorizontalOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownHorizontalOffset",
@@ -215,7 +215,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setDropDownVerticalOffset(jint arg0)
+	void Spinner::setDropDownVerticalOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownVerticalOffset",
@@ -223,7 +223,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setDropDownWidth(jint arg0)
+	void Spinner::setDropDownWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownWidth",
@@ -231,7 +231,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setEnabled(jboolean arg0)
+	void Spinner::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -239,7 +239,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setGravity(jint arg0)
+	void Spinner::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -247,7 +247,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setOnItemClickListener(JObject arg0)
+	void Spinner::setOnItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -255,7 +255,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Spinner::setPopupBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void Spinner::setPopupBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setPopupBackgroundDrawable",
@@ -263,7 +263,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Spinner::setPopupBackgroundResource(jint arg0)
+	void Spinner::setPopupBackgroundResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setPopupBackgroundResource",
@@ -271,7 +271,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setPrompt(JString arg0)
+	void Spinner::setPrompt(JString arg0) const
 	{
 		callMethod<void>(
 			"setPrompt",
@@ -279,7 +279,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Spinner::setPromptId(jint arg0)
+	void Spinner::setPromptId(jint arg0) const
 	{
 		callMethod<void>(
 			"setPromptId",

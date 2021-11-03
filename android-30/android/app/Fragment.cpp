@@ -61,7 +61,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void Fragment::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -72,7 +72,7 @@ namespace android::app
 			arg3.object<jarray>()
 		);
 	}
-	jboolean Fragment::equals(JObject arg0)
+	jboolean Fragment::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -80,147 +80,147 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	android::app::Activity Fragment::getActivity()
+	android::app::Activity Fragment::getActivity() const
 	{
 		return callObjectMethod(
 			"getActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	jboolean Fragment::getAllowEnterTransitionOverlap()
+	jboolean Fragment::getAllowEnterTransitionOverlap() const
 	{
 		return callMethod<jboolean>(
 			"getAllowEnterTransitionOverlap",
 			"()Z"
 		);
 	}
-	jboolean Fragment::getAllowReturnTransitionOverlap()
+	jboolean Fragment::getAllowReturnTransitionOverlap() const
 	{
 		return callMethod<jboolean>(
 			"getAllowReturnTransitionOverlap",
 			"()Z"
 		);
 	}
-	android::os::Bundle Fragment::getArguments()
+	android::os::Bundle Fragment::getArguments() const
 	{
 		return callObjectMethod(
 			"getArguments",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::app::FragmentManager Fragment::getChildFragmentManager()
+	android::app::FragmentManager Fragment::getChildFragmentManager() const
 	{
 		return callObjectMethod(
 			"getChildFragmentManager",
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	android::content::Context Fragment::getContext()
+	android::content::Context Fragment::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::transition::Transition Fragment::getEnterTransition()
+	android::transition::Transition Fragment::getEnterTransition() const
 	{
 		return callObjectMethod(
 			"getEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Fragment::getExitTransition()
+	android::transition::Transition Fragment::getExitTransition() const
 	{
 		return callObjectMethod(
 			"getExitTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::app::FragmentManager Fragment::getFragmentManager()
+	android::app::FragmentManager Fragment::getFragmentManager() const
 	{
 		return callObjectMethod(
 			"getFragmentManager",
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	JObject Fragment::getHost()
+	JObject Fragment::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Fragment::getId()
+	jint Fragment::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	android::view::LayoutInflater Fragment::getLayoutInflater()
+	android::view::LayoutInflater Fragment::getLayoutInflater() const
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	android::app::LoaderManager Fragment::getLoaderManager()
+	android::app::LoaderManager Fragment::getLoaderManager() const
 	{
 		return callObjectMethod(
 			"getLoaderManager",
 			"()Landroid/app/LoaderManager;"
 		);
 	}
-	android::app::Fragment Fragment::getParentFragment()
+	android::app::Fragment Fragment::getParentFragment() const
 	{
 		return callObjectMethod(
 			"getParentFragment",
 			"()Landroid/app/Fragment;"
 		);
 	}
-	android::transition::Transition Fragment::getReenterTransition()
+	android::transition::Transition Fragment::getReenterTransition() const
 	{
 		return callObjectMethod(
 			"getReenterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::content::res::Resources Fragment::getResources()
+	android::content::res::Resources Fragment::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	jboolean Fragment::getRetainInstance()
+	jboolean Fragment::getRetainInstance() const
 	{
 		return callMethod<jboolean>(
 			"getRetainInstance",
 			"()Z"
 		);
 	}
-	android::transition::Transition Fragment::getReturnTransition()
+	android::transition::Transition Fragment::getReturnTransition() const
 	{
 		return callObjectMethod(
 			"getReturnTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Fragment::getSharedElementEnterTransition()
+	android::transition::Transition Fragment::getSharedElementEnterTransition() const
 	{
 		return callObjectMethod(
 			"getSharedElementEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Fragment::getSharedElementReturnTransition()
+	android::transition::Transition Fragment::getSharedElementReturnTransition() const
 	{
 		return callObjectMethod(
 			"getSharedElementReturnTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	JString Fragment::getString(jint arg0)
+	JString Fragment::getString(jint arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -228,7 +228,7 @@ namespace android::app
 			arg0
 		);
 	}
-	JString Fragment::getString(jint arg0, JObjectArray arg1)
+	JString Fragment::getString(jint arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -237,28 +237,28 @@ namespace android::app
 			arg1.object<jobjectArray>()
 		);
 	}
-	JString Fragment::getTag()
+	JString Fragment::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::app::Fragment Fragment::getTargetFragment()
+	android::app::Fragment Fragment::getTargetFragment() const
 	{
 		return callObjectMethod(
 			"getTargetFragment",
 			"()Landroid/app/Fragment;"
 		);
 	}
-	jint Fragment::getTargetRequestCode()
+	jint Fragment::getTargetRequestCode() const
 	{
 		return callMethod<jint>(
 			"getTargetRequestCode",
 			"()I"
 		);
 	}
-	JString Fragment::getText(jint arg0)
+	JString Fragment::getText(jint arg0) const
 	{
 		return callObjectMethod(
 			"getText",
@@ -266,84 +266,84 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Fragment::getUserVisibleHint()
+	jboolean Fragment::getUserVisibleHint() const
 	{
 		return callMethod<jboolean>(
 			"getUserVisibleHint",
 			"()Z"
 		);
 	}
-	android::view::View Fragment::getView()
+	android::view::View Fragment::getView() const
 	{
 		return callObjectMethod(
 			"getView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint Fragment::hashCode()
+	jint Fragment::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Fragment::isAdded()
+	jboolean Fragment::isAdded() const
 	{
 		return callMethod<jboolean>(
 			"isAdded",
 			"()Z"
 		);
 	}
-	jboolean Fragment::isDetached()
+	jboolean Fragment::isDetached() const
 	{
 		return callMethod<jboolean>(
 			"isDetached",
 			"()Z"
 		);
 	}
-	jboolean Fragment::isHidden()
+	jboolean Fragment::isHidden() const
 	{
 		return callMethod<jboolean>(
 			"isHidden",
 			"()Z"
 		);
 	}
-	jboolean Fragment::isInLayout()
+	jboolean Fragment::isInLayout() const
 	{
 		return callMethod<jboolean>(
 			"isInLayout",
 			"()Z"
 		);
 	}
-	jboolean Fragment::isRemoving()
+	jboolean Fragment::isRemoving() const
 	{
 		return callMethod<jboolean>(
 			"isRemoving",
 			"()Z"
 		);
 	}
-	jboolean Fragment::isResumed()
+	jboolean Fragment::isResumed() const
 	{
 		return callMethod<jboolean>(
 			"isResumed",
 			"()Z"
 		);
 	}
-	jboolean Fragment::isStateSaved()
+	jboolean Fragment::isStateSaved() const
 	{
 		return callMethod<jboolean>(
 			"isStateSaved",
 			"()Z"
 		);
 	}
-	jboolean Fragment::isVisible()
+	jboolean Fragment::isVisible() const
 	{
 		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
-	void Fragment::onActivityCreated(android::os::Bundle arg0)
+	void Fragment::onActivityCreated(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onActivityCreated",
@@ -351,7 +351,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onActivityResult(jint arg0, jint arg1, android::content::Intent arg2)
+	void Fragment::onActivityResult(jint arg0, jint arg1, android::content::Intent arg2) const
 	{
 		callMethod<void>(
 			"onActivityResult",
@@ -361,7 +361,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::onAttach(android::app::Activity arg0)
+	void Fragment::onAttach(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"onAttach",
@@ -369,7 +369,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onAttach(android::content::Context arg0)
+	void Fragment::onAttach(android::content::Context arg0) const
 	{
 		callMethod<void>(
 			"onAttach",
@@ -377,7 +377,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onAttachFragment(android::app::Fragment arg0)
+	void Fragment::onAttachFragment(android::app::Fragment arg0) const
 	{
 		callMethod<void>(
 			"onAttachFragment",
@@ -385,7 +385,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onConfigurationChanged(android::content::res::Configuration arg0)
+	void Fragment::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -393,7 +393,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Fragment::onContextItemSelected(JObject arg0)
+	jboolean Fragment::onContextItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onContextItemSelected",
@@ -401,7 +401,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onCreate(android::os::Bundle arg0)
+	void Fragment::onCreate(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onCreate",
@@ -409,7 +409,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::animation::Animator Fragment::onCreateAnimator(jint arg0, jboolean arg1, jint arg2)
+	android::animation::Animator Fragment::onCreateAnimator(jint arg0, jboolean arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"onCreateAnimator",
@@ -419,7 +419,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Fragment::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2)
+	void Fragment::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onCreateContextMenu",
@@ -429,7 +429,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::onCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1)
+	void Fragment::onCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1) const
 	{
 		callMethod<void>(
 			"onCreateOptionsMenu",
@@ -438,7 +438,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::view::View Fragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
+	android::view::View Fragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -448,35 +448,35 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::onDestroy()
+	void Fragment::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void Fragment::onDestroyOptionsMenu()
+	void Fragment::onDestroyOptionsMenu() const
 	{
 		callMethod<void>(
 			"onDestroyOptionsMenu",
 			"()V"
 		);
 	}
-	void Fragment::onDestroyView()
+	void Fragment::onDestroyView() const
 	{
 		callMethod<void>(
 			"onDestroyView",
 			"()V"
 		);
 	}
-	void Fragment::onDetach()
+	void Fragment::onDetach() const
 	{
 		callMethod<void>(
 			"onDetach",
 			"()V"
 		);
 	}
-	android::view::LayoutInflater Fragment::onGetLayoutInflater(android::os::Bundle arg0)
+	android::view::LayoutInflater Fragment::onGetLayoutInflater(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"onGetLayoutInflater",
@@ -484,7 +484,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onHiddenChanged(jboolean arg0)
+	void Fragment::onHiddenChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onHiddenChanged",
@@ -492,7 +492,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::onInflate(JObject arg0, android::os::Bundle arg1)
+	void Fragment::onInflate(JObject arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onInflate",
@@ -501,7 +501,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Fragment::onInflate(android::app::Activity arg0, JObject arg1, android::os::Bundle arg2)
+	void Fragment::onInflate(android::app::Activity arg0, JObject arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onInflate",
@@ -511,7 +511,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::onInflate(android::content::Context arg0, JObject arg1, android::os::Bundle arg2)
+	void Fragment::onInflate(android::content::Context arg0, JObject arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onInflate",
@@ -521,14 +521,14 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::onLowMemory()
+	void Fragment::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	void Fragment::onMultiWindowModeChanged(jboolean arg0)
+	void Fragment::onMultiWindowModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onMultiWindowModeChanged",
@@ -536,7 +536,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::onMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1)
+	void Fragment::onMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1) const
 	{
 		callMethod<void>(
 			"onMultiWindowModeChanged",
@@ -545,7 +545,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Fragment::onOptionsItemSelected(JObject arg0)
+	jboolean Fragment::onOptionsItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -553,7 +553,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onOptionsMenuClosed(JObject arg0)
+	void Fragment::onOptionsMenuClosed(JObject arg0) const
 	{
 		callMethod<void>(
 			"onOptionsMenuClosed",
@@ -561,14 +561,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onPause()
+	void Fragment::onPause() const
 	{
 		callMethod<void>(
 			"onPause",
 			"()V"
 		);
 	}
-	void Fragment::onPictureInPictureModeChanged(jboolean arg0)
+	void Fragment::onPictureInPictureModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onPictureInPictureModeChanged",
@@ -576,7 +576,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1)
+	void Fragment::onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1) const
 	{
 		callMethod<void>(
 			"onPictureInPictureModeChanged",
@@ -585,7 +585,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Fragment::onPrepareOptionsMenu(JObject arg0)
+	void Fragment::onPrepareOptionsMenu(JObject arg0) const
 	{
 		callMethod<void>(
 			"onPrepareOptionsMenu",
@@ -593,7 +593,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2)
+	void Fragment::onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"onRequestPermissionsResult",
@@ -603,14 +603,14 @@ namespace android::app
 			arg2.object<jintArray>()
 		);
 	}
-	void Fragment::onResume()
+	void Fragment::onResume() const
 	{
 		callMethod<void>(
 			"onResume",
 			"()V"
 		);
 	}
-	void Fragment::onSaveInstanceState(android::os::Bundle arg0)
+	void Fragment::onSaveInstanceState(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onSaveInstanceState",
@@ -618,21 +618,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onStart()
+	void Fragment::onStart() const
 	{
 		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
-	void Fragment::onStop()
+	void Fragment::onStop() const
 	{
 		callMethod<void>(
 			"onStop",
 			"()V"
 		);
 	}
-	void Fragment::onTrimMemory(jint arg0)
+	void Fragment::onTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"onTrimMemory",
@@ -640,7 +640,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::onViewCreated(android::view::View arg0, android::os::Bundle arg1)
+	void Fragment::onViewCreated(android::view::View arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onViewCreated",
@@ -649,7 +649,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Fragment::onViewStateRestored(android::os::Bundle arg0)
+	void Fragment::onViewStateRestored(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onViewStateRestored",
@@ -657,14 +657,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::postponeEnterTransition()
+	void Fragment::postponeEnterTransition() const
 	{
 		callMethod<void>(
 			"postponeEnterTransition",
 			"()V"
 		);
 	}
-	void Fragment::registerForContextMenu(android::view::View arg0)
+	void Fragment::registerForContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"registerForContextMenu",
@@ -672,7 +672,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::requestPermissions(JArray arg0, jint arg1)
+	void Fragment::requestPermissions(JArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"requestPermissions",
@@ -681,7 +681,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Fragment::setAllowEnterTransitionOverlap(jboolean arg0)
+	void Fragment::setAllowEnterTransitionOverlap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowEnterTransitionOverlap",
@@ -689,7 +689,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::setAllowReturnTransitionOverlap(jboolean arg0)
+	void Fragment::setAllowReturnTransitionOverlap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowReturnTransitionOverlap",
@@ -697,7 +697,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::setArguments(android::os::Bundle arg0)
+	void Fragment::setArguments(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setArguments",
@@ -705,7 +705,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setEnterSharedElementCallback(android::app::SharedElementCallback arg0)
+	void Fragment::setEnterSharedElementCallback(android::app::SharedElementCallback arg0) const
 	{
 		callMethod<void>(
 			"setEnterSharedElementCallback",
@@ -713,7 +713,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setEnterTransition(android::transition::Transition arg0)
+	void Fragment::setEnterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setEnterTransition",
@@ -721,7 +721,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setExitSharedElementCallback(android::app::SharedElementCallback arg0)
+	void Fragment::setExitSharedElementCallback(android::app::SharedElementCallback arg0) const
 	{
 		callMethod<void>(
 			"setExitSharedElementCallback",
@@ -729,7 +729,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setExitTransition(android::transition::Transition arg0)
+	void Fragment::setExitTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setExitTransition",
@@ -737,7 +737,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setHasOptionsMenu(jboolean arg0)
+	void Fragment::setHasOptionsMenu(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHasOptionsMenu",
@@ -745,7 +745,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::setInitialSavedState(android::app::Fragment_SavedState arg0)
+	void Fragment::setInitialSavedState(android::app::Fragment_SavedState arg0) const
 	{
 		callMethod<void>(
 			"setInitialSavedState",
@@ -753,7 +753,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setMenuVisibility(jboolean arg0)
+	void Fragment::setMenuVisibility(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMenuVisibility",
@@ -761,7 +761,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::setReenterTransition(android::transition::Transition arg0)
+	void Fragment::setReenterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setReenterTransition",
@@ -769,7 +769,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setRetainInstance(jboolean arg0)
+	void Fragment::setRetainInstance(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRetainInstance",
@@ -777,7 +777,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::setReturnTransition(android::transition::Transition arg0)
+	void Fragment::setReturnTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setReturnTransition",
@@ -785,7 +785,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setSharedElementEnterTransition(android::transition::Transition arg0)
+	void Fragment::setSharedElementEnterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setSharedElementEnterTransition",
@@ -793,7 +793,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setSharedElementReturnTransition(android::transition::Transition arg0)
+	void Fragment::setSharedElementReturnTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setSharedElementReturnTransition",
@@ -801,7 +801,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::setTargetFragment(android::app::Fragment arg0, jint arg1)
+	void Fragment::setTargetFragment(android::app::Fragment arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTargetFragment",
@@ -810,7 +810,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Fragment::setUserVisibleHint(jboolean arg0)
+	void Fragment::setUserVisibleHint(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUserVisibleHint",
@@ -818,7 +818,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Fragment::shouldShowRequestPermissionRationale(JString arg0)
+	jboolean Fragment::shouldShowRequestPermissionRationale(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"shouldShowRequestPermissionRationale",
@@ -826,7 +826,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void Fragment::startActivity(android::content::Intent arg0)
+	void Fragment::startActivity(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -834,7 +834,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::startActivity(android::content::Intent arg0, android::os::Bundle arg1)
+	void Fragment::startActivity(android::content::Intent arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -843,7 +843,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Fragment::startActivityForResult(android::content::Intent arg0, jint arg1)
+	void Fragment::startActivityForResult(android::content::Intent arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"startActivityForResult",
@@ -852,7 +852,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Fragment::startActivityForResult(android::content::Intent arg0, jint arg1, android::os::Bundle arg2)
+	void Fragment::startActivityForResult(android::content::Intent arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"startActivityForResult",
@@ -862,7 +862,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::startIntentSenderForResult(android::content::IntentSender arg0, jint arg1, android::content::Intent arg2, jint arg3, jint arg4, jint arg5, android::os::Bundle arg6)
+	void Fragment::startIntentSenderForResult(android::content::IntentSender arg0, jint arg1, android::content::Intent arg2, jint arg3, jint arg4, jint arg5, android::os::Bundle arg6) const
 	{
 		callMethod<void>(
 			"startIntentSenderForResult",
@@ -876,21 +876,21 @@ namespace android::app
 			arg6.object()
 		);
 	}
-	void Fragment::startPostponedEnterTransition()
+	void Fragment::startPostponedEnterTransition() const
 	{
 		callMethod<void>(
 			"startPostponedEnterTransition",
 			"()V"
 		);
 	}
-	JString Fragment::toString()
+	JString Fragment::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Fragment::unregisterForContextMenu(android::view::View arg0)
+	void Fragment::unregisterForContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"unregisterForContextMenu",

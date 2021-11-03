@@ -17,14 +17,14 @@ namespace android::security
 		) {}
 	
 	// Methods
-	void ConfirmationCallback::onCanceled()
+	void ConfirmationCallback::onCanceled() const
 	{
 		callMethod<void>(
 			"onCanceled",
 			"()V"
 		);
 	}
-	void ConfirmationCallback::onConfirmed(JByteArray arg0)
+	void ConfirmationCallback::onConfirmed(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"onConfirmed",
@@ -32,14 +32,14 @@ namespace android::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	void ConfirmationCallback::onDismissed()
+	void ConfirmationCallback::onDismissed() const
 	{
 		callMethod<void>(
 			"onDismissed",
 			"()V"
 		);
 	}
-	void ConfirmationCallback::onError(JThrowable arg0)
+	void ConfirmationCallback::onError(JThrowable arg0) const
 	{
 		callMethod<void>(
 			"onError",

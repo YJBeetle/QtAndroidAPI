@@ -48,7 +48,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean Gallery::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean Gallery::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Gallery::dispatchSetSelected(jboolean arg0)
+	void Gallery::dispatchSetSelected(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchSetSelected",
@@ -64,7 +64,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::view::ViewGroup_LayoutParams Gallery::generateLayoutParams(JObject arg0)
+	android::view::ViewGroup_LayoutParams Gallery::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -72,14 +72,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString Gallery::getAccessibilityClassName()
+	JString Gallery::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean Gallery::onDown(android::view::MotionEvent arg0)
+	jboolean Gallery::onDown(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onDown",
@@ -87,7 +87,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean Gallery::onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
+	jboolean Gallery::onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"onFling",
@@ -98,7 +98,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	jboolean Gallery::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean Gallery::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -107,7 +107,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean Gallery::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean Gallery::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -116,7 +116,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void Gallery::onLongPress(android::view::MotionEvent arg0)
+	void Gallery::onLongPress(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"onLongPress",
@@ -124,7 +124,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean Gallery::onScroll(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
+	jboolean Gallery::onScroll(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"onScroll",
@@ -135,7 +135,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void Gallery::onShowPress(android::view::MotionEvent arg0)
+	void Gallery::onShowPress(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"onShowPress",
@@ -143,7 +143,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean Gallery::onSingleTapUp(android::view::MotionEvent arg0)
+	jboolean Gallery::onSingleTapUp(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSingleTapUp",
@@ -151,7 +151,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean Gallery::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean Gallery::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -159,7 +159,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Gallery::setAnimationDuration(jint arg0)
+	void Gallery::setAnimationDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setAnimationDuration",
@@ -167,7 +167,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Gallery::setCallbackDuringFling(jboolean arg0)
+	void Gallery::setCallbackDuringFling(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCallbackDuringFling",
@@ -175,7 +175,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Gallery::setGravity(jint arg0)
+	void Gallery::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -183,7 +183,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Gallery::setSpacing(jint arg0)
+	void Gallery::setSpacing(jint arg0) const
 	{
 		callMethod<void>(
 			"setSpacing",
@@ -191,7 +191,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Gallery::setUnselectedAlpha(jfloat arg0)
+	void Gallery::setUnselectedAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setUnselectedAlpha",
@@ -199,14 +199,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean Gallery::showContextMenu()
+	jboolean Gallery::showContextMenu() const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",
 			"()Z"
 		);
 	}
-	jboolean Gallery::showContextMenu(jfloat arg0, jfloat arg1)
+	jboolean Gallery::showContextMenu(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",
@@ -215,7 +215,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jboolean Gallery::showContextMenuForChild(android::view::View arg0)
+	jboolean Gallery::showContextMenuForChild(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenuForChild",
@@ -223,7 +223,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean Gallery::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2)
+	jboolean Gallery::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenuForChild",

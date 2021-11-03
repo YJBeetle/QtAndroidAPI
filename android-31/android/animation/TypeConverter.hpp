@@ -20,7 +20,7 @@ namespace android::animation
 		TypeConverter(JClass arg0, JClass arg1);
 		
 		// Methods
-		JObject convert(JObject arg0);
+		JObject convert(JObject arg0) const;
 	};
 } // namespace android::animation
 

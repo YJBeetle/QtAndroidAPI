@@ -20,12 +20,12 @@ namespace android::icu::text
 		DateIntervalInfo_PatternInfo(JString arg0, JString arg1, jboolean arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jboolean firstDateInPtnIsLaterDate();
-		JString getFirstPart();
-		JString getSecondPart();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jboolean firstDateInPtnIsLaterDate() const;
+		JString getFirstPart() const;
+		JString getSecondPart() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

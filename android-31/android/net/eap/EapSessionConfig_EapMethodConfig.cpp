@@ -46,7 +46,7 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig_EapMethodConfig::equals(JObject arg0)
+	jboolean EapSessionConfig_EapMethodConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -54,14 +54,14 @@ namespace android::net::eap
 			arg0.object<jobject>()
 		);
 	}
-	jint EapSessionConfig_EapMethodConfig::getMethodType()
+	jint EapSessionConfig_EapMethodConfig::getMethodType() const
 	{
 		return callMethod<jint>(
 			"getMethodType",
 			"()I"
 		);
 	}
-	jint EapSessionConfig_EapMethodConfig::hashCode()
+	jint EapSessionConfig_EapMethodConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

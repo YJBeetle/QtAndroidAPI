@@ -149,28 +149,28 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	jint WifiConfiguration::describeContents()
+	jint WifiConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::net::ProxyInfo WifiConfiguration::getHttpProxy()
+	android::net::ProxyInfo WifiConfiguration::getHttpProxy() const
 	{
 		return callObjectMethod(
 			"getHttpProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	jboolean WifiConfiguration::isPasspoint()
+	jboolean WifiConfiguration::isPasspoint() const
 	{
 		return callMethod<jboolean>(
 			"isPasspoint",
 			"()Z"
 		);
 	}
-	void WifiConfiguration::setHttpProxy(android::net::ProxyInfo arg0)
+	void WifiConfiguration::setHttpProxy(android::net::ProxyInfo arg0) const
 	{
 		callMethod<void>(
 			"setHttpProxy",
@@ -178,14 +178,14 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	JString WifiConfiguration::toString()
+	JString WifiConfiguration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

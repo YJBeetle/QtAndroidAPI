@@ -22,9 +22,9 @@ namespace java::lang::ref
 		ReferenceQueue();
 		
 		// Methods
-		java::lang::ref::Reference poll();
-		java::lang::ref::Reference remove();
-		java::lang::ref::Reference remove(jlong arg0);
+		java::lang::ref::Reference poll() const;
+		java::lang::ref::Reference remove() const;
+		java::lang::ref::Reference remove(jlong arg0) const;
 	};
 } // namespace java::lang::ref
 

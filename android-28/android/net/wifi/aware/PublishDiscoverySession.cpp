@@ -12,7 +12,7 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	void PublishDiscoverySession::updatePublish(android::net::wifi::aware::PublishConfig arg0)
+	void PublishDiscoverySession::updatePublish(android::net::wifi::aware::PublishConfig arg0) const
 	{
 		callMethod<void>(
 			"updatePublish",

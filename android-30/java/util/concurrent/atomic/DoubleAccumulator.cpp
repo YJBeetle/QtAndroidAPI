@@ -20,7 +20,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	void DoubleAccumulator::accumulate(jdouble arg0)
+	void DoubleAccumulator::accumulate(jdouble arg0) const
 	{
 		callMethod<void>(
 			"accumulate",
@@ -28,56 +28,56 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jdouble DoubleAccumulator::doubleValue()
+	jdouble DoubleAccumulator::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jfloat DoubleAccumulator::floatValue()
+	jfloat DoubleAccumulator::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jdouble DoubleAccumulator::get()
+	jdouble DoubleAccumulator::get() const
 	{
 		return callMethod<jdouble>(
 			"get",
 			"()D"
 		);
 	}
-	jdouble DoubleAccumulator::getThenReset()
+	jdouble DoubleAccumulator::getThenReset() const
 	{
 		return callMethod<jdouble>(
 			"getThenReset",
 			"()D"
 		);
 	}
-	jint DoubleAccumulator::intValue()
+	jint DoubleAccumulator::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong DoubleAccumulator::longValue()
+	jlong DoubleAccumulator::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	void DoubleAccumulator::reset()
+	void DoubleAccumulator::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	JString DoubleAccumulator::toString()
+	JString DoubleAccumulator::toString() const
 	{
 		return callObjectMethod(
 			"toString",

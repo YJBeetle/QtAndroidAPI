@@ -20,7 +20,7 @@ namespace android::sax
 		RootElement(JString arg0, JString arg1);
 		
 		// Methods
-		JObject getContentHandler();
+		JObject getContentHandler() const;
 	};
 } // namespace android::sax
 

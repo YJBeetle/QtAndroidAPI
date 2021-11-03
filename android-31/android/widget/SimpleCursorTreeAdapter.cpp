@@ -59,14 +59,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JObject SimpleCursorTreeAdapter::getViewBinder()
+	JObject SimpleCursorTreeAdapter::getViewBinder() const
 	{
 		return callObjectMethod(
 			"getViewBinder",
 			"()Landroid/widget/SimpleCursorTreeAdapter$ViewBinder;"
 		);
 	}
-	void SimpleCursorTreeAdapter::setViewBinder(JObject arg0)
+	void SimpleCursorTreeAdapter::setViewBinder(JObject arg0) const
 	{
 		callMethod<void>(
 			"setViewBinder",
@@ -74,7 +74,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SimpleCursorTreeAdapter::setViewText(android::widget::TextView arg0, JString arg1)
+	void SimpleCursorTreeAdapter::setViewText(android::widget::TextView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setViewText",

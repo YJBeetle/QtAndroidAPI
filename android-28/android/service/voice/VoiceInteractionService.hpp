@@ -59,15 +59,15 @@ namespace android::service::voice
 		
 		// Methods
 		static jboolean isActiveService(android::content::Context arg0, android::content::ComponentName arg1);
-		android::service::voice::AlwaysOnHotwordDetector createAlwaysOnHotwordDetector(JString arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2);
-		jint getDisabledShowContext();
-		JObject onBind(android::content::Intent arg0);
-		void onCreate();
-		void onLaunchVoiceAssistFromKeyguard();
-		void onReady();
-		void onShutdown();
-		void setDisabledShowContext(jint arg0);
-		void showSession(android::os::Bundle arg0, jint arg1);
+		android::service::voice::AlwaysOnHotwordDetector createAlwaysOnHotwordDetector(JString arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2) const;
+		jint getDisabledShowContext() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onCreate() const;
+		void onLaunchVoiceAssistFromKeyguard() const;
+		void onReady() const;
+		void onShutdown() const;
+		void setDisabledShowContext(jint arg0) const;
+		void showSession(android::os::Bundle arg0, jint arg1) const;
 	};
 } // namespace android::service::voice
 

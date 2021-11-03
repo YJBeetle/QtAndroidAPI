@@ -11,7 +11,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::ScientificNotation ScientificNotation::withExponentSignDisplay(android::icu::number::NumberFormatter_SignDisplay arg0)
+	android::icu::number::ScientificNotation ScientificNotation::withExponentSignDisplay(android::icu::number::NumberFormatter_SignDisplay arg0) const
 	{
 		return callObjectMethod(
 			"withExponentSignDisplay",
@@ -19,7 +19,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::ScientificNotation ScientificNotation::withMinExponentDigits(jint arg0)
+	android::icu::number::ScientificNotation ScientificNotation::withMinExponentDigits(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMinExponentDigits",

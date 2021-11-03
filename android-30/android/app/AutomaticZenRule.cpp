@@ -52,14 +52,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint AutomaticZenRule::describeContents()
+	jint AutomaticZenRule::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AutomaticZenRule::equals(JObject arg0)
+	jboolean AutomaticZenRule::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -67,70 +67,70 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	android::net::Uri AutomaticZenRule::getConditionId()
+	android::net::Uri AutomaticZenRule::getConditionId() const
 	{
 		return callObjectMethod(
 			"getConditionId",
 			"()Landroid/net/Uri;"
 		);
 	}
-	android::content::ComponentName AutomaticZenRule::getConfigurationActivity()
+	android::content::ComponentName AutomaticZenRule::getConfigurationActivity() const
 	{
 		return callObjectMethod(
 			"getConfigurationActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jlong AutomaticZenRule::getCreationTime()
+	jlong AutomaticZenRule::getCreationTime() const
 	{
 		return callMethod<jlong>(
 			"getCreationTime",
 			"()J"
 		);
 	}
-	jint AutomaticZenRule::getInterruptionFilter()
+	jint AutomaticZenRule::getInterruptionFilter() const
 	{
 		return callMethod<jint>(
 			"getInterruptionFilter",
 			"()I"
 		);
 	}
-	JString AutomaticZenRule::getName()
+	JString AutomaticZenRule::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::ComponentName AutomaticZenRule::getOwner()
+	android::content::ComponentName AutomaticZenRule::getOwner() const
 	{
 		return callObjectMethod(
 			"getOwner",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::service::notification::ZenPolicy AutomaticZenRule::getZenPolicy()
+	android::service::notification::ZenPolicy AutomaticZenRule::getZenPolicy() const
 	{
 		return callObjectMethod(
 			"getZenPolicy",
 			"()Landroid/service/notification/ZenPolicy;"
 		);
 	}
-	jint AutomaticZenRule::hashCode()
+	jint AutomaticZenRule::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AutomaticZenRule::isEnabled()
+	jboolean AutomaticZenRule::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void AutomaticZenRule::setConditionId(android::net::Uri arg0)
+	void AutomaticZenRule::setConditionId(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setConditionId",
@@ -138,7 +138,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AutomaticZenRule::setConfigurationActivity(android::content::ComponentName arg0)
+	void AutomaticZenRule::setConfigurationActivity(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"setConfigurationActivity",
@@ -146,7 +146,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AutomaticZenRule::setEnabled(jboolean arg0)
+	void AutomaticZenRule::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -154,7 +154,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void AutomaticZenRule::setInterruptionFilter(jint arg0)
+	void AutomaticZenRule::setInterruptionFilter(jint arg0) const
 	{
 		callMethod<void>(
 			"setInterruptionFilter",
@@ -162,7 +162,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void AutomaticZenRule::setName(JString arg0)
+	void AutomaticZenRule::setName(JString arg0) const
 	{
 		callMethod<void>(
 			"setName",
@@ -170,7 +170,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void AutomaticZenRule::setZenPolicy(android::service::notification::ZenPolicy arg0)
+	void AutomaticZenRule::setZenPolicy(android::service::notification::ZenPolicy arg0) const
 	{
 		callMethod<void>(
 			"setZenPolicy",
@@ -178,14 +178,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JString AutomaticZenRule::toString()
+	JString AutomaticZenRule::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AutomaticZenRule::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AutomaticZenRule::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

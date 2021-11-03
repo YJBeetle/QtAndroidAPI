@@ -24,8 +24,8 @@ namespace java::util::concurrent
 		Exchanger();
 		
 		// Methods
-		JObject exchange(JObject arg0);
-		JObject exchange(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject exchange(JObject arg0) const;
+		JObject exchange(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
 	};
 } // namespace java::util::concurrent
 

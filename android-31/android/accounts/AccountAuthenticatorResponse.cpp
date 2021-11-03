@@ -27,14 +27,14 @@ namespace android::accounts
 		) {}
 	
 	// Methods
-	jint AccountAuthenticatorResponse::describeContents()
+	jint AccountAuthenticatorResponse::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void AccountAuthenticatorResponse::onError(jint arg0, JString arg1)
+	void AccountAuthenticatorResponse::onError(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -43,14 +43,14 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	void AccountAuthenticatorResponse::onRequestContinued()
+	void AccountAuthenticatorResponse::onRequestContinued() const
 	{
 		callMethod<void>(
 			"onRequestContinued",
 			"()V"
 		);
 	}
-	void AccountAuthenticatorResponse::onResult(android::os::Bundle arg0)
+	void AccountAuthenticatorResponse::onResult(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onResult",
@@ -58,7 +58,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	void AccountAuthenticatorResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AccountAuthenticatorResponse::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

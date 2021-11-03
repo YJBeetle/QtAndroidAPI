@@ -314,7 +314,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jlong DownloadManager::addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6)
+	jlong DownloadManager::addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6) const
 	{
 		return callMethod<jlong>(
 			"addCompletedDownload",
@@ -328,7 +328,7 @@ namespace android::app
 			arg6
 		);
 	}
-	jlong DownloadManager::addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8)
+	jlong DownloadManager::addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8) const
 	{
 		return callMethod<jlong>(
 			"addCompletedDownload",
@@ -344,7 +344,7 @@ namespace android::app
 			arg8.object()
 		);
 	}
-	jlong DownloadManager::enqueue(android::app::DownloadManager_Request arg0)
+	jlong DownloadManager::enqueue(android::app::DownloadManager_Request arg0) const
 	{
 		return callMethod<jlong>(
 			"enqueue",
@@ -352,7 +352,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JString DownloadManager::getMimeTypeForDownloadedFile(jlong arg0)
+	JString DownloadManager::getMimeTypeForDownloadedFile(jlong arg0) const
 	{
 		return callObjectMethod(
 			"getMimeTypeForDownloadedFile",
@@ -360,7 +360,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::net::Uri DownloadManager::getUriForDownloadedFile(jlong arg0)
+	android::net::Uri DownloadManager::getUriForDownloadedFile(jlong arg0) const
 	{
 		return callObjectMethod(
 			"getUriForDownloadedFile",
@@ -368,7 +368,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::os::ParcelFileDescriptor DownloadManager::openDownloadedFile(jlong arg0)
+	android::os::ParcelFileDescriptor DownloadManager::openDownloadedFile(jlong arg0) const
 	{
 		return callObjectMethod(
 			"openDownloadedFile",
@@ -376,7 +376,7 @@ namespace android::app
 			arg0
 		);
 	}
-	JObject DownloadManager::query(android::app::DownloadManager_Query arg0)
+	JObject DownloadManager::query(android::app::DownloadManager_Query arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -384,7 +384,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint DownloadManager::remove(JLongArray arg0)
+	jint DownloadManager::remove(JLongArray arg0) const
 	{
 		return callMethod<jint>(
 			"remove",

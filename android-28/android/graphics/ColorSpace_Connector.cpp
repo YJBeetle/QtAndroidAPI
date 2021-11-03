@@ -13,28 +13,28 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace ColorSpace_Connector::getDestination()
+	android::graphics::ColorSpace ColorSpace_Connector::getDestination() const
 	{
 		return callObjectMethod(
 			"getDestination",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	android::graphics::ColorSpace_RenderIntent ColorSpace_Connector::getRenderIntent()
+	android::graphics::ColorSpace_RenderIntent ColorSpace_Connector::getRenderIntent() const
 	{
 		return callObjectMethod(
 			"getRenderIntent",
 			"()Landroid/graphics/ColorSpace$RenderIntent;"
 		);
 	}
-	android::graphics::ColorSpace ColorSpace_Connector::getSource()
+	android::graphics::ColorSpace ColorSpace_Connector::getSource() const
 	{
 		return callObjectMethod(
 			"getSource",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	JFloatArray ColorSpace_Connector::transform(JFloatArray arg0)
+	JFloatArray ColorSpace_Connector::transform(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"transform",
@@ -42,7 +42,7 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	JFloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callObjectMethod(
 			"transform",

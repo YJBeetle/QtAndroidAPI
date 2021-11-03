@@ -37,11 +37,11 @@ namespace android::net::wifi::aware
 		WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession arg0, android::net::wifi::aware::PeerHandle arg1);
 		
 		// Methods
-		android::net::wifi::aware::WifiAwareNetworkSpecifier build();
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPmk(JByteArray arg0);
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPort(jint arg0);
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPskPassphrase(JString arg0);
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setTransportProtocol(jint arg0);
+		android::net::wifi::aware::WifiAwareNetworkSpecifier build() const;
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPmk(JByteArray arg0) const;
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPort(jint arg0) const;
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPskPassphrase(JString arg0) const;
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setTransportProtocol(jint arg0) const;
 	};
 } // namespace android::net::wifi::aware
 

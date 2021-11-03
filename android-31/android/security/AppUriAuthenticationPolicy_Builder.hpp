@@ -27,8 +27,8 @@ namespace android::security
 		AppUriAuthenticationPolicy_Builder();
 		
 		// Methods
-		android::security::AppUriAuthenticationPolicy_Builder addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2);
-		android::security::AppUriAuthenticationPolicy build();
+		android::security::AppUriAuthenticationPolicy_Builder addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2) const;
+		android::security::AppUriAuthenticationPolicy build() const;
 	};
 } // namespace android::security
 

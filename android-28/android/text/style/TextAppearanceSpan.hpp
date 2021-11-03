@@ -38,16 +38,16 @@ namespace android::text::style
 		TextAppearanceSpan(JString arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4);
 		
 		// Methods
-		jint describeContents();
-		JString getFamily();
-		android::content::res::ColorStateList getLinkTextColor();
-		jint getSpanTypeId();
-		android::content::res::ColorStateList getTextColor();
-		jint getTextSize();
-		jint getTextStyle();
-		void updateDrawState(android::text::TextPaint arg0);
-		void updateMeasureState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getFamily() const;
+		android::content::res::ColorStateList getLinkTextColor() const;
+		jint getSpanTypeId() const;
+		android::content::res::ColorStateList getTextColor() const;
+		jint getTextSize() const;
+		jint getTextStyle() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void updateMeasureState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

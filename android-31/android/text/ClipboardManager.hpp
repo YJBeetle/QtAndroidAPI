@@ -19,9 +19,9 @@ namespace android::text
 		ClipboardManager();
 		
 		// Methods
-		JString getText();
-		jboolean hasText();
-		void setText(JString arg0);
+		JString getText() const;
+		jboolean hasText() const;
+		void setText(JString arg0) const;
 	};
 } // namespace android::text
 

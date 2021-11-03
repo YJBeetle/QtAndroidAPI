@@ -17,7 +17,7 @@ namespace android::hardware::fingerprint
 		) {}
 	
 	// Methods
-	void FingerprintManager_AuthenticationCallback::onAuthenticationError(jint arg0, JString arg1)
+	void FingerprintManager_AuthenticationCallback::onAuthenticationError(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onAuthenticationError",
@@ -26,14 +26,14 @@ namespace android::hardware::fingerprint
 			arg1.object<jstring>()
 		);
 	}
-	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed()
+	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed() const
 	{
 		callMethod<void>(
 			"onAuthenticationFailed",
 			"()V"
 		);
 	}
-	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, JString arg1)
+	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onAuthenticationHelp",
@@ -42,7 +42,7 @@ namespace android::hardware::fingerprint
 			arg1.object<jstring>()
 		);
 	}
-	void FingerprintManager_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0)
+	void FingerprintManager_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0) const
 	{
 		callMethod<void>(
 			"onAuthenticationSucceeded",

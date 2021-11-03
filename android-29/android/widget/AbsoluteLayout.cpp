@@ -42,7 +42,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::view::ViewGroup_LayoutParams AbsoluteLayout::generateLayoutParams(JObject arg0)
+	android::view::ViewGroup_LayoutParams AbsoluteLayout::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean AbsoluteLayout::shouldDelayChildPressedState()
+	jboolean AbsoluteLayout::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",

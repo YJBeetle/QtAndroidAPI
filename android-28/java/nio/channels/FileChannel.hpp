@@ -38,26 +38,26 @@ namespace java::nio::channels
 		// Methods
 		static java::nio::channels::FileChannel open(JObject arg0, JArray arg1);
 		static java::nio::channels::FileChannel open(JObject arg0, JObject arg1, JArray arg2);
-		void force(jboolean arg0);
-		java::nio::channels::FileLock lock();
-		java::nio::channels::FileLock lock(jlong arg0, jlong arg1, jboolean arg2);
-		java::nio::MappedByteBuffer map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2);
-		java::nio::channels::FileChannel position(jlong arg0);
-		jlong position();
-		jint read(java::nio::ByteBuffer arg0);
-		jint read(java::nio::ByteBuffer arg0, jlong arg1);
-		jlong read(JArray arg0);
-		jlong read(JArray arg0, jint arg1, jint arg2);
-		jlong size();
-		jlong transferFrom(JObject arg0, jlong arg1, jlong arg2);
-		jlong transferTo(jlong arg0, jlong arg1, JObject arg2);
-		java::nio::channels::FileChannel truncate(jlong arg0);
-		java::nio::channels::FileLock tryLock();
-		java::nio::channels::FileLock tryLock(jlong arg0, jlong arg1, jboolean arg2);
-		jint write(java::nio::ByteBuffer arg0);
-		jint write(java::nio::ByteBuffer arg0, jlong arg1);
-		jlong write(JArray arg0);
-		jlong write(JArray arg0, jint arg1, jint arg2);
+		void force(jboolean arg0) const;
+		java::nio::channels::FileLock lock() const;
+		java::nio::channels::FileLock lock(jlong arg0, jlong arg1, jboolean arg2) const;
+		java::nio::MappedByteBuffer map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2) const;
+		java::nio::channels::FileChannel position(jlong arg0) const;
+		jlong position() const;
+		jint read(java::nio::ByteBuffer arg0) const;
+		jint read(java::nio::ByteBuffer arg0, jlong arg1) const;
+		jlong read(JArray arg0) const;
+		jlong read(JArray arg0, jint arg1, jint arg2) const;
+		jlong size() const;
+		jlong transferFrom(JObject arg0, jlong arg1, jlong arg2) const;
+		jlong transferTo(jlong arg0, jlong arg1, JObject arg2) const;
+		java::nio::channels::FileChannel truncate(jlong arg0) const;
+		java::nio::channels::FileLock tryLock() const;
+		java::nio::channels::FileLock tryLock(jlong arg0, jlong arg1, jboolean arg2) const;
+		jint write(java::nio::ByteBuffer arg0) const;
+		jint write(java::nio::ByteBuffer arg0, jlong arg1) const;
+		jlong write(JArray arg0) const;
+		jlong write(JArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::nio::channels
 

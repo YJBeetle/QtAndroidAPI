@@ -126,7 +126,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	JObject OffsetTime::adjustInto(JObject arg0)
+	JObject OffsetTime::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -134,7 +134,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetTime::atDate(java::time::LocalDate arg0)
+	java::time::OffsetDateTime OffsetTime::atDate(java::time::LocalDate arg0) const
 	{
 		return callObjectMethod(
 			"atDate",
@@ -142,7 +142,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetTime::compareTo(JObject arg0)
+	jint OffsetTime::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -150,7 +150,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint OffsetTime::compareTo(java::time::OffsetTime arg0)
+	jint OffsetTime::compareTo(java::time::OffsetTime arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -158,7 +158,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetTime::equals(JObject arg0)
+	jboolean OffsetTime::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -166,7 +166,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	JString OffsetTime::format(java::time::format::DateTimeFormatter arg0)
+	JString OffsetTime::format(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -174,7 +174,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetTime::get(JObject arg0)
+	jint OffsetTime::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -182,14 +182,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetTime::getHour()
+	jint OffsetTime::getHour() const
 	{
 		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
-	jlong OffsetTime::getLong(JObject arg0)
+	jlong OffsetTime::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -197,42 +197,42 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetTime::getMinute()
+	jint OffsetTime::getMinute() const
 	{
 		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
-	jint OffsetTime::getNano()
+	jint OffsetTime::getNano() const
 	{
 		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
-	java::time::ZoneOffset OffsetTime::getOffset()
+	java::time::ZoneOffset OffsetTime::getOffset() const
 	{
 		return callObjectMethod(
 			"getOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	jint OffsetTime::getSecond()
+	jint OffsetTime::getSecond() const
 	{
 		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
-	jint OffsetTime::hashCode()
+	jint OffsetTime::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean OffsetTime::isAfter(java::time::OffsetTime arg0)
+	jboolean OffsetTime::isAfter(java::time::OffsetTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAfter",
@@ -240,7 +240,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetTime::isBefore(java::time::OffsetTime arg0)
+	jboolean OffsetTime::isBefore(java::time::OffsetTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBefore",
@@ -248,7 +248,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetTime::isEqual(java::time::OffsetTime arg0)
+	jboolean OffsetTime::isEqual(java::time::OffsetTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEqual",
@@ -256,7 +256,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetTime::isSupported(JObject arg0)
+	jboolean OffsetTime::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -264,7 +264,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::minus(JObject arg0)
+	java::time::OffsetTime OffsetTime::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -272,7 +272,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::minus(jlong arg0, JObject arg1)
+	java::time::OffsetTime OffsetTime::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -281,7 +281,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::minusHours(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusHours",
@@ -289,7 +289,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::minusMinutes(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMinutes",
@@ -297,7 +297,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::minusNanos(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -305,7 +305,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::minusSeconds(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -313,7 +313,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::plus(JObject arg0)
+	java::time::OffsetTime OffsetTime::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -321,7 +321,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::plus(jlong arg0, JObject arg1)
+	java::time::OffsetTime OffsetTime::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -330,7 +330,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::plusHours(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusHours",
@@ -338,7 +338,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::plusMinutes(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMinutes",
@@ -346,7 +346,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::plusNanos(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -354,7 +354,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::plusSeconds(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -362,7 +362,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject OffsetTime::query(JObject arg0)
+	JObject OffsetTime::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -370,7 +370,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange OffsetTime::range(JObject arg0)
+	java::time::temporal::ValueRange OffsetTime::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -378,7 +378,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong OffsetTime::toEpochSecond(java::time::LocalDate arg0)
+	jlong OffsetTime::toEpochSecond(java::time::LocalDate arg0) const
 	{
 		return callMethod<jlong>(
 			"toEpochSecond",
@@ -386,21 +386,21 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime OffsetTime::toLocalTime()
+	java::time::LocalTime OffsetTime::toLocalTime() const
 	{
 		return callObjectMethod(
 			"toLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	JString OffsetTime::toString()
+	JString OffsetTime::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::OffsetTime OffsetTime::truncatedTo(JObject arg0)
+	java::time::OffsetTime OffsetTime::truncatedTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -408,7 +408,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong OffsetTime::until(JObject arg0, JObject arg1)
+	jlong OffsetTime::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -417,7 +417,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::with(JObject arg0)
+	java::time::OffsetTime OffsetTime::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -425,7 +425,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::with(JObject arg0, jlong arg1)
+	java::time::OffsetTime OffsetTime::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",
@@ -434,7 +434,7 @@ namespace java::time
 			arg1
 		);
 	}
-	java::time::OffsetTime OffsetTime::withHour(jint arg0)
+	java::time::OffsetTime OffsetTime::withHour(jint arg0) const
 	{
 		return callObjectMethod(
 			"withHour",
@@ -442,7 +442,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::withMinute(jint arg0)
+	java::time::OffsetTime OffsetTime::withMinute(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMinute",
@@ -450,7 +450,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::withNano(jint arg0)
+	java::time::OffsetTime OffsetTime::withNano(jint arg0) const
 	{
 		return callObjectMethod(
 			"withNano",
@@ -458,7 +458,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::withOffsetSameInstant(java::time::ZoneOffset arg0)
+	java::time::OffsetTime OffsetTime::withOffsetSameInstant(java::time::ZoneOffset arg0) const
 	{
 		return callObjectMethod(
 			"withOffsetSameInstant",
@@ -466,7 +466,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::withOffsetSameLocal(java::time::ZoneOffset arg0)
+	java::time::OffsetTime OffsetTime::withOffsetSameLocal(java::time::ZoneOffset arg0) const
 	{
 		return callObjectMethod(
 			"withOffsetSameLocal",
@@ -474,7 +474,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::withSecond(jint arg0)
+	java::time::OffsetTime OffsetTime::withSecond(jint arg0) const
 	{
 		return callObjectMethod(
 			"withSecond",

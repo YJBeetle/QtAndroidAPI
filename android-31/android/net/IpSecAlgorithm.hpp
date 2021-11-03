@@ -38,12 +38,12 @@ namespace android::net
 		
 		// Methods
 		static JObject getSupportedAlgorithms();
-		jint describeContents();
-		JByteArray getKey();
-		JString getName();
-		jint getTruncationLengthBits();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JByteArray getKey() const;
+		JString getName() const;
+		jint getTruncationLengthBits() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

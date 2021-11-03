@@ -10,7 +10,7 @@ namespace android::net::wifi::p2p
 	// Constructors
 	
 	// Methods
-	void WifiP2pManager_Channel::close()
+	void WifiP2pManager_Channel::close() const
 	{
 		callMethod<void>(
 			"close",

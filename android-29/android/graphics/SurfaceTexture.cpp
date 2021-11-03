@@ -31,7 +31,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	void SurfaceTexture::attachToGLContext(jint arg0)
+	void SurfaceTexture::attachToGLContext(jint arg0) const
 	{
 		callMethod<void>(
 			"attachToGLContext",
@@ -39,21 +39,21 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void SurfaceTexture::detachFromGLContext()
+	void SurfaceTexture::detachFromGLContext() const
 	{
 		callMethod<void>(
 			"detachFromGLContext",
 			"()V"
 		);
 	}
-	jlong SurfaceTexture::getTimestamp()
+	jlong SurfaceTexture::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",
 			"()J"
 		);
 	}
-	void SurfaceTexture::getTransformMatrix(JFloatArray arg0)
+	void SurfaceTexture::getTransformMatrix(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"getTransformMatrix",
@@ -61,28 +61,28 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	jboolean SurfaceTexture::isReleased()
+	jboolean SurfaceTexture::isReleased() const
 	{
 		return callMethod<jboolean>(
 			"isReleased",
 			"()Z"
 		);
 	}
-	void SurfaceTexture::release()
+	void SurfaceTexture::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void SurfaceTexture::releaseTexImage()
+	void SurfaceTexture::releaseTexImage() const
 	{
 		callMethod<void>(
 			"releaseTexImage",
 			"()V"
 		);
 	}
-	void SurfaceTexture::setDefaultBufferSize(jint arg0, jint arg1)
+	void SurfaceTexture::setDefaultBufferSize(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setDefaultBufferSize",
@@ -91,7 +91,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void SurfaceTexture::setOnFrameAvailableListener(JObject arg0)
+	void SurfaceTexture::setOnFrameAvailableListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnFrameAvailableListener",
@@ -99,7 +99,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void SurfaceTexture::setOnFrameAvailableListener(JObject arg0, android::os::Handler arg1)
+	void SurfaceTexture::setOnFrameAvailableListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnFrameAvailableListener",
@@ -108,7 +108,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void SurfaceTexture::updateTexImage()
+	void SurfaceTexture::updateTexImage() const
 	{
 		callMethod<void>(
 			"updateTexImage",

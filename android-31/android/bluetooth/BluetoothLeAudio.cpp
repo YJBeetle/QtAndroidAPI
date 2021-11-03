@@ -21,21 +21,21 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	void BluetoothLeAudio::close()
+	void BluetoothLeAudio::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject BluetoothLeAudio::getConnectedDevices()
+	JObject BluetoothLeAudio::getConnectedDevices() const
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint BluetoothLeAudio::getConnectionState(android::bluetooth::BluetoothDevice arg0)
+	jint BluetoothLeAudio::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
@@ -43,7 +43,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothLeAudio::getDevicesMatchingConnectionStates(JIntArray arg0)
+	JObject BluetoothLeAudio::getDevicesMatchingConnectionStates(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

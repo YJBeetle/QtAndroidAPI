@@ -26,28 +26,28 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString ZoomControls::getAccessibilityClassName()
+	JString ZoomControls::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ZoomControls::hasFocus()
+	jboolean ZoomControls::hasFocus() const
 	{
 		return callMethod<jboolean>(
 			"hasFocus",
 			"()Z"
 		);
 	}
-	void ZoomControls::hide()
+	void ZoomControls::hide() const
 	{
 		callMethod<void>(
 			"hide",
 			"()V"
 		);
 	}
-	jboolean ZoomControls::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean ZoomControls::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ZoomControls::setIsZoomInEnabled(jboolean arg0)
+	void ZoomControls::setIsZoomInEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIsZoomInEnabled",
@@ -63,7 +63,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomControls::setIsZoomOutEnabled(jboolean arg0)
+	void ZoomControls::setIsZoomOutEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIsZoomOutEnabled",
@@ -71,7 +71,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomControls::setOnZoomInClickListener(JObject arg0)
+	void ZoomControls::setOnZoomInClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnZoomInClickListener",
@@ -79,7 +79,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ZoomControls::setOnZoomOutClickListener(JObject arg0)
+	void ZoomControls::setOnZoomOutClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnZoomOutClickListener",
@@ -87,7 +87,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ZoomControls::setZoomSpeed(jlong arg0)
+	void ZoomControls::setZoomSpeed(jlong arg0) const
 	{
 		callMethod<void>(
 			"setZoomSpeed",
@@ -95,7 +95,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomControls::show()
+	void ZoomControls::show() const
 	{
 		callMethod<void>(
 			"show",

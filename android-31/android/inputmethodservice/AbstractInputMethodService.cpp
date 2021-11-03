@@ -23,21 +23,21 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	android::view::KeyEvent_DispatcherState AbstractInputMethodService::getKeyDispatcherState()
+	android::view::KeyEvent_DispatcherState AbstractInputMethodService::getKeyDispatcherState() const
 	{
 		return callObjectMethod(
 			"getKeyDispatcherState",
 			"()Landroid/view/KeyEvent$DispatcherState;"
 		);
 	}
-	jboolean AbstractInputMethodService::isUiContext()
+	jboolean AbstractInputMethodService::isUiContext() const
 	{
 		return callMethod<jboolean>(
 			"isUiContext",
 			"()Z"
 		);
 	}
-	JObject AbstractInputMethodService::onBind(android::content::Intent arg0)
+	JObject AbstractInputMethodService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -45,21 +45,21 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl AbstractInputMethodService::onCreateInputMethodInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl AbstractInputMethodService::onCreateInputMethodInterface() const
 	{
 		return callObjectMethod(
 			"onCreateInputMethodInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodImpl;"
 		);
 	}
-	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl AbstractInputMethodService::onCreateInputMethodSessionInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl AbstractInputMethodService::onCreateInputMethodSessionInterface() const
 	{
 		return callObjectMethod(
 			"onCreateInputMethodSessionInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;"
 		);
 	}
-	jboolean AbstractInputMethodService::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean AbstractInputMethodService::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -67,7 +67,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	jboolean AbstractInputMethodService::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean AbstractInputMethodService::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",

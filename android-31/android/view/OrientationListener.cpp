@@ -32,21 +32,21 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void OrientationListener::disable()
+	void OrientationListener::disable() const
 	{
 		callMethod<void>(
 			"disable",
 			"()V"
 		);
 	}
-	void OrientationListener::enable()
+	void OrientationListener::enable() const
 	{
 		callMethod<void>(
 			"enable",
 			"()V"
 		);
 	}
-	void OrientationListener::onAccuracyChanged(jint arg0, jint arg1)
+	void OrientationListener::onAccuracyChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onAccuracyChanged",
@@ -55,7 +55,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void OrientationListener::onOrientationChanged(jint arg0)
+	void OrientationListener::onOrientationChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onOrientationChanged",
@@ -63,7 +63,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void OrientationListener::onSensorChanged(jint arg0, JFloatArray arg1)
+	void OrientationListener::onSensorChanged(jint arg0, JFloatArray arg1) const
 	{
 		callMethod<void>(
 			"onSensorChanged",

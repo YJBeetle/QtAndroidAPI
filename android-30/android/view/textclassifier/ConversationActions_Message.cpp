@@ -39,42 +39,42 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint ConversationActions_Message::describeContents()
+	jint ConversationActions_Message::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::app::Person ConversationActions_Message::getAuthor()
+	android::app::Person ConversationActions_Message::getAuthor() const
 	{
 		return callObjectMethod(
 			"getAuthor",
 			"()Landroid/app/Person;"
 		);
 	}
-	android::os::Bundle ConversationActions_Message::getExtras()
+	android::os::Bundle ConversationActions_Message::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	java::time::ZonedDateTime ConversationActions_Message::getReferenceTime()
+	java::time::ZonedDateTime ConversationActions_Message::getReferenceTime() const
 	{
 		return callObjectMethod(
 			"getReferenceTime",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
-	JString ConversationActions_Message::getText()
+	JString ConversationActions_Message::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void ConversationActions_Message::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConversationActions_Message::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

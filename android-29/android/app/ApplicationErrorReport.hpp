@@ -64,10 +64,10 @@ namespace android::app
 		
 		// Methods
 		static android::content::ComponentName getErrorReportReceiver(android::content::Context arg0, JString arg1, jint arg2);
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		void readFromParcel(android::os::Parcel arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

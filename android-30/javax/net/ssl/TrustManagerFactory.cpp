@@ -52,28 +52,28 @@ namespace javax::net::ssl
 			arg1.object()
 		);
 	}
-	JString TrustManagerFactory::getAlgorithm()
+	JString TrustManagerFactory::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider TrustManagerFactory::getProvider()
+	java::security::Provider TrustManagerFactory::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JArray TrustManagerFactory::getTrustManagers()
+	JArray TrustManagerFactory::getTrustManagers() const
 	{
 		return callObjectMethod(
 			"getTrustManagers",
 			"()[Ljavax/net/ssl/TrustManager;"
 		);
 	}
-	void TrustManagerFactory::init(java::security::KeyStore arg0)
+	void TrustManagerFactory::init(java::security::KeyStore arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -81,7 +81,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void TrustManagerFactory::init(JObject arg0)
+	void TrustManagerFactory::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",

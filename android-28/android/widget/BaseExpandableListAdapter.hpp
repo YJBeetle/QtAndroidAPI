@@ -22,20 +22,20 @@ namespace android::widget
 		BaseExpandableListAdapter();
 		
 		// Methods
-		jboolean areAllItemsEnabled();
-		jint getChildType(jint arg0, jint arg1);
-		jint getChildTypeCount();
-		jlong getCombinedChildId(jlong arg0, jlong arg1);
-		jlong getCombinedGroupId(jlong arg0);
-		jint getGroupType(jint arg0);
-		jint getGroupTypeCount();
-		jboolean isEmpty();
-		void notifyDataSetChanged();
-		void notifyDataSetInvalidated();
-		void onGroupCollapsed(jint arg0);
-		void onGroupExpanded(jint arg0);
-		void registerDataSetObserver(android::database::DataSetObserver arg0);
-		void unregisterDataSetObserver(android::database::DataSetObserver arg0);
+		jboolean areAllItemsEnabled() const;
+		jint getChildType(jint arg0, jint arg1) const;
+		jint getChildTypeCount() const;
+		jlong getCombinedChildId(jlong arg0, jlong arg1) const;
+		jlong getCombinedGroupId(jlong arg0) const;
+		jint getGroupType(jint arg0) const;
+		jint getGroupTypeCount() const;
+		jboolean isEmpty() const;
+		void notifyDataSetChanged() const;
+		void notifyDataSetInvalidated() const;
+		void onGroupCollapsed(jint arg0) const;
+		void onGroupExpanded(jint arg0) const;
+		void registerDataSetObserver(android::database::DataSetObserver arg0) const;
+		void unregisterDataSetObserver(android::database::DataSetObserver arg0) const;
 	};
 } // namespace android::widget
 

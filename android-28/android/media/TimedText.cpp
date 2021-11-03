@@ -13,14 +13,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::graphics::Rect TimedText::getBounds()
+	android::graphics::Rect TimedText::getBounds() const
 	{
 		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	JString TimedText::getText()
+	JString TimedText::getText() const
 	{
 		return callObjectMethod(
 			"getText",

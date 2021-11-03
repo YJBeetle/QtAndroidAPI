@@ -11,21 +11,21 @@ namespace android::hardware::biometrics
 	// Constructors
 	
 	// Methods
-	JString BiometricManager_Strings::getButtonLabel()
+	JString BiometricManager_Strings::getButtonLabel() const
 	{
 		return callObjectMethod(
 			"getButtonLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString BiometricManager_Strings::getPromptMessage()
+	JString BiometricManager_Strings::getPromptMessage() const
 	{
 		return callObjectMethod(
 			"getPromptMessage",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString BiometricManager_Strings::getSettingName()
+	JString BiometricManager_Strings::getSettingName() const
 	{
 		return callObjectMethod(
 			"getSettingName",

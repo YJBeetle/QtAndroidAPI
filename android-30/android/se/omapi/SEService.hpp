@@ -28,11 +28,11 @@ namespace android::se::omapi
 		SEService(android::content::Context arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		JArray getReaders();
-		android::se::omapi::Reader getUiccReader(jint arg0);
-		JString getVersion();
-		jboolean isConnected();
-		void shutdown();
+		JArray getReaders() const;
+		android::se::omapi::Reader getUiccReader(jint arg0) const;
+		JString getVersion() const;
+		jboolean isConnected() const;
+		void shutdown() const;
 	};
 } // namespace android::se::omapi
 

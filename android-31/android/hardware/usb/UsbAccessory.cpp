@@ -21,14 +21,14 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	jint UsbAccessory::describeContents()
+	jint UsbAccessory::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean UsbAccessory::equals(JObject arg0)
+	jboolean UsbAccessory::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,63 +36,63 @@ namespace android::hardware::usb
 			arg0.object<jobject>()
 		);
 	}
-	JString UsbAccessory::getDescription()
+	JString UsbAccessory::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsbAccessory::getManufacturer()
+	JString UsbAccessory::getManufacturer() const
 	{
 		return callObjectMethod(
 			"getManufacturer",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsbAccessory::getModel()
+	JString UsbAccessory::getModel() const
 	{
 		return callObjectMethod(
 			"getModel",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsbAccessory::getSerial()
+	JString UsbAccessory::getSerial() const
 	{
 		return callObjectMethod(
 			"getSerial",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsbAccessory::getUri()
+	JString UsbAccessory::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsbAccessory::getVersion()
+	JString UsbAccessory::getVersion() const
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UsbAccessory::hashCode()
+	jint UsbAccessory::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString UsbAccessory::toString()
+	JString UsbAccessory::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UsbAccessory::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UsbAccessory::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

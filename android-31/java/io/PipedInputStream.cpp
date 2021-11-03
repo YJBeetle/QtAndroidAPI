@@ -37,21 +37,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint PipedInputStream::available()
+	jint PipedInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void PipedInputStream::close()
+	void PipedInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PipedInputStream::connect(java::io::PipedOutputStream arg0)
+	void PipedInputStream::connect(java::io::PipedOutputStream arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -59,14 +59,14 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint PipedInputStream::read()
+	jint PipedInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint PipedInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint PipedInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",

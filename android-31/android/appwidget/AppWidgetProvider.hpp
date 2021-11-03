@@ -35,13 +35,13 @@ namespace android::appwidget
 		AppWidgetProvider();
 		
 		// Methods
-		void onAppWidgetOptionsChanged(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, jint arg2, android::os::Bundle arg3);
-		void onDeleted(android::content::Context arg0, JIntArray arg1);
-		void onDisabled(android::content::Context arg0);
-		void onEnabled(android::content::Context arg0);
-		void onReceive(android::content::Context arg0, android::content::Intent arg1);
-		void onRestored(android::content::Context arg0, JIntArray arg1, JIntArray arg2);
-		void onUpdate(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, JIntArray arg2);
+		void onAppWidgetOptionsChanged(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, jint arg2, android::os::Bundle arg3) const;
+		void onDeleted(android::content::Context arg0, JIntArray arg1) const;
+		void onDisabled(android::content::Context arg0) const;
+		void onEnabled(android::content::Context arg0) const;
+		void onReceive(android::content::Context arg0, android::content::Intent arg1) const;
+		void onRestored(android::content::Context arg0, JIntArray arg1, JIntArray arg2) const;
+		void onUpdate(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, JIntArray arg2) const;
 	};
 } // namespace android::appwidget
 

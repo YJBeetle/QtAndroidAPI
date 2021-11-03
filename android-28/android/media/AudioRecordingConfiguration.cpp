@@ -22,14 +22,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint AudioRecordingConfiguration::describeContents()
+	jint AudioRecordingConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AudioRecordingConfiguration::equals(JObject arg0)
+	jboolean AudioRecordingConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,49 +37,49 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	android::media::AudioDeviceInfo AudioRecordingConfiguration::getAudioDevice()
+	android::media::AudioDeviceInfo AudioRecordingConfiguration::getAudioDevice() const
 	{
 		return callObjectMethod(
 			"getAudioDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	jint AudioRecordingConfiguration::getClientAudioSessionId()
+	jint AudioRecordingConfiguration::getClientAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getClientAudioSessionId",
 			"()I"
 		);
 	}
-	jint AudioRecordingConfiguration::getClientAudioSource()
+	jint AudioRecordingConfiguration::getClientAudioSource() const
 	{
 		return callMethod<jint>(
 			"getClientAudioSource",
 			"()I"
 		);
 	}
-	android::media::AudioFormat AudioRecordingConfiguration::getClientFormat()
+	android::media::AudioFormat AudioRecordingConfiguration::getClientFormat() const
 	{
 		return callObjectMethod(
 			"getClientFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	android::media::AudioFormat AudioRecordingConfiguration::getFormat()
+	android::media::AudioFormat AudioRecordingConfiguration::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	jint AudioRecordingConfiguration::hashCode()
+	jint AudioRecordingConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void AudioRecordingConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AudioRecordingConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

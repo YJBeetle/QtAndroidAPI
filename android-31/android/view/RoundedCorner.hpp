@@ -33,14 +33,14 @@ namespace android::view
 		RoundedCorner(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::graphics::Point getCenter();
-		jint getPosition();
-		jint getRadius();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::graphics::Point getCenter() const;
+		jint getPosition() const;
+		jint getRadius() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

@@ -29,16 +29,16 @@ namespace android::inputmethodservice
 		ExtractEditText(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void finishInternalChanges();
-		jboolean hasFocus();
-		jboolean hasVerticalScrollBar();
-		jboolean hasWindowFocus();
-		jboolean isFocused();
-		jboolean isInputMethodTarget();
-		jboolean onTextContextMenuItem(jint arg0);
-		jboolean performClick();
-		void setExtractedText(android::view::inputmethod::ExtractedText arg0);
-		void startInternalChanges();
+		void finishInternalChanges() const;
+		jboolean hasFocus() const;
+		jboolean hasVerticalScrollBar() const;
+		jboolean hasWindowFocus() const;
+		jboolean isFocused() const;
+		jboolean isInputMethodTarget() const;
+		jboolean onTextContextMenuItem(jint arg0) const;
+		jboolean performClick() const;
+		void setExtractedText(android::view::inputmethod::ExtractedText arg0) const;
+		void startInternalChanges() const;
 	};
 } // namespace android::inputmethodservice
 

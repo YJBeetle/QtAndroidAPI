@@ -19,14 +19,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	android::media::metrics::PlaybackSession MediaMetricsManager::createPlaybackSession()
+	android::media::metrics::PlaybackSession MediaMetricsManager::createPlaybackSession() const
 	{
 		return callObjectMethod(
 			"createPlaybackSession",
 			"()Landroid/media/metrics/PlaybackSession;"
 		);
 	}
-	android::media::metrics::RecordingSession MediaMetricsManager::createRecordingSession()
+	android::media::metrics::RecordingSession MediaMetricsManager::createRecordingSession() const
 	{
 		return callObjectMethod(
 			"createRecordingSession",

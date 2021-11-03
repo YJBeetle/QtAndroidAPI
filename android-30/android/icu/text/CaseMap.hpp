@@ -41,7 +41,7 @@ namespace android::icu::text
 		static android::icu::text::CaseMap_Lower toLower();
 		static android::icu::text::CaseMap_Title toTitle();
 		static android::icu::text::CaseMap_Upper toUpper();
-		android::icu::text::CaseMap omitUnchangedText();
+		android::icu::text::CaseMap omitUnchangedText() const;
 	};
 } // namespace android::icu::text
 

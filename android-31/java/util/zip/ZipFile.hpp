@@ -47,14 +47,14 @@ namespace java::util::zip
 		ZipFile(java::io::File arg0, jint arg1, java::nio::charset::Charset arg2);
 		
 		// Methods
-		void close();
-		JObject entries();
-		JString getComment();
-		java::util::zip::ZipEntry getEntry(JString arg0);
-		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
-		JString getName();
-		jint size();
-		JObject stream();
+		void close() const;
+		JObject entries() const;
+		JString getComment() const;
+		java::util::zip::ZipEntry getEntry(JString arg0) const;
+		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0) const;
+		JString getName() const;
+		jint size() const;
+		JObject stream() const;
 	};
 } // namespace java::util::zip
 

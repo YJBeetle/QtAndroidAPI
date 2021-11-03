@@ -17,21 +17,21 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	jlong Adler32::getValue()
+	jlong Adler32::getValue() const
 	{
 		return callMethod<jlong>(
 			"getValue",
 			"()J"
 		);
 	}
-	void Adler32::reset()
+	void Adler32::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Adler32::update(jint arg0)
+	void Adler32::update(jint arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -39,7 +39,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void Adler32::update(java::nio::ByteBuffer arg0)
+	void Adler32::update(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -47,7 +47,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Adler32::update(JByteArray arg0, jint arg1, jint arg2)
+	void Adler32::update(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"update",

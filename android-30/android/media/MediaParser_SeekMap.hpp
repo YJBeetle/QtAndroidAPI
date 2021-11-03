@@ -22,9 +22,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jlong getDurationMicros();
-		android::util::Pair getSeekPoints(jlong arg0);
-		jboolean isSeekable();
+		jlong getDurationMicros() const;
+		android::util::Pair getSeekPoints(jlong arg0) const;
+		jboolean isSeekable() const;
 	};
 } // namespace android::media
 

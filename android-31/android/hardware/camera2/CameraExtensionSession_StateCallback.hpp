@@ -22,9 +22,9 @@ namespace android::hardware::camera2
 		CameraExtensionSession_StateCallback();
 		
 		// Methods
-		void onClosed(android::hardware::camera2::CameraExtensionSession arg0);
-		void onConfigureFailed(android::hardware::camera2::CameraExtensionSession arg0);
-		void onConfigured(android::hardware::camera2::CameraExtensionSession arg0);
+		void onClosed(android::hardware::camera2::CameraExtensionSession arg0) const;
+		void onConfigureFailed(android::hardware::camera2::CameraExtensionSession arg0) const;
+		void onConfigured(android::hardware::camera2::CameraExtensionSession arg0) const;
 	};
 } // namespace android::hardware::camera2
 

@@ -20,11 +20,11 @@ namespace java::io
 		StringBufferInputStream(JString arg0);
 		
 		// Methods
-		jint available();
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		void reset();
-		jlong skip(jlong arg0);
+		jint available() const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		void reset() const;
+		jlong skip(jlong arg0) const;
 	};
 } // namespace java::io
 

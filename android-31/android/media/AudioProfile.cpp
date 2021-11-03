@@ -26,42 +26,42 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JIntArray AudioProfile::getChannelIndexMasks()
+	JIntArray AudioProfile::getChannelIndexMasks() const
 	{
 		return callObjectMethod(
 			"getChannelIndexMasks",
 			"()[I"
 		);
 	}
-	JIntArray AudioProfile::getChannelMasks()
+	JIntArray AudioProfile::getChannelMasks() const
 	{
 		return callObjectMethod(
 			"getChannelMasks",
 			"()[I"
 		);
 	}
-	jint AudioProfile::getEncapsulationType()
+	jint AudioProfile::getEncapsulationType() const
 	{
 		return callMethod<jint>(
 			"getEncapsulationType",
 			"()I"
 		);
 	}
-	jint AudioProfile::getFormat()
+	jint AudioProfile::getFormat() const
 	{
 		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
-	JIntArray AudioProfile::getSampleRates()
+	JIntArray AudioProfile::getSampleRates() const
 	{
 		return callObjectMethod(
 			"getSampleRates",
 			"()[I"
 		);
 	}
-	JString AudioProfile::toString()
+	JString AudioProfile::toString() const
 	{
 		return callObjectMethod(
 			"toString",

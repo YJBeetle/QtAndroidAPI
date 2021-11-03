@@ -47,23 +47,23 @@ namespace android::telecom
 		Connection_VideoProvider();
 		
 		// Methods
-		void changeCameraCapabilities(android::telecom::VideoProfile_CameraCapabilities arg0);
-		void changePeerDimensions(jint arg0, jint arg1);
-		void changeVideoQuality(jint arg0);
-		void handleCallSessionEvent(jint arg0);
-		void onRequestCameraCapabilities();
-		void onRequestConnectionDataUsage();
-		void onSendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1);
-		void onSendSessionModifyResponse(android::telecom::VideoProfile arg0);
-		void onSetCamera(JString arg0);
-		void onSetDeviceOrientation(jint arg0);
-		void onSetDisplaySurface(android::view::Surface arg0);
-		void onSetPauseImage(android::net::Uri arg0);
-		void onSetPreviewSurface(android::view::Surface arg0);
-		void onSetZoom(jfloat arg0);
-		void receiveSessionModifyRequest(android::telecom::VideoProfile arg0);
-		void receiveSessionModifyResponse(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2);
-		void setCallDataUsage(jlong arg0);
+		void changeCameraCapabilities(android::telecom::VideoProfile_CameraCapabilities arg0) const;
+		void changePeerDimensions(jint arg0, jint arg1) const;
+		void changeVideoQuality(jint arg0) const;
+		void handleCallSessionEvent(jint arg0) const;
+		void onRequestCameraCapabilities() const;
+		void onRequestConnectionDataUsage() const;
+		void onSendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1) const;
+		void onSendSessionModifyResponse(android::telecom::VideoProfile arg0) const;
+		void onSetCamera(JString arg0) const;
+		void onSetDeviceOrientation(jint arg0) const;
+		void onSetDisplaySurface(android::view::Surface arg0) const;
+		void onSetPauseImage(android::net::Uri arg0) const;
+		void onSetPreviewSurface(android::view::Surface arg0) const;
+		void onSetZoom(jfloat arg0) const;
+		void receiveSessionModifyRequest(android::telecom::VideoProfile arg0) const;
+		void receiveSessionModifyResponse(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2) const;
+		void setCallDataUsage(jlong arg0) const;
 	};
 } // namespace android::telecom
 

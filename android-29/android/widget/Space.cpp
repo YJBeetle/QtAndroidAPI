@@ -42,7 +42,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void Space::draw(android::graphics::Canvas arg0)
+	void Space::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",

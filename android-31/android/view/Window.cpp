@@ -243,7 +243,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void Window::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addContentView",
@@ -252,7 +252,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void Window::addFlags(jint arg0)
+	void Window::addFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"addFlags",
@@ -260,7 +260,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::addOnFrameMetricsAvailableListener(JObject arg0, android::os::Handler arg1)
+	void Window::addOnFrameMetricsAvailableListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addOnFrameMetricsAvailableListener",
@@ -269,7 +269,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void Window::clearFlags(jint arg0)
+	void Window::clearFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"clearFlags",
@@ -277,14 +277,14 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::closeAllPanels()
+	void Window::closeAllPanels() const
 	{
 		callMethod<void>(
 			"closeAllPanels",
 			"()V"
 		);
 	}
-	void Window::closePanel(jint arg0)
+	void Window::closePanel(jint arg0) const
 	{
 		callMethod<void>(
 			"closePanel",
@@ -292,7 +292,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::View Window::findViewById(jint arg0)
+	android::view::View Window::findViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -300,238 +300,238 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean Window::getAllowEnterTransitionOverlap()
+	jboolean Window::getAllowEnterTransitionOverlap() const
 	{
 		return callMethod<jboolean>(
 			"getAllowEnterTransitionOverlap",
 			"()Z"
 		);
 	}
-	jboolean Window::getAllowReturnTransitionOverlap()
+	jboolean Window::getAllowReturnTransitionOverlap() const
 	{
 		return callMethod<jboolean>(
 			"getAllowReturnTransitionOverlap",
 			"()Z"
 		);
 	}
-	android::view::WindowManager_LayoutParams Window::getAttributes()
+	android::view::WindowManager_LayoutParams Window::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Landroid/view/WindowManager$LayoutParams;"
 		);
 	}
-	JObject Window::getCallback()
+	JObject Window::getCallback() const
 	{
 		return callObjectMethod(
 			"getCallback",
 			"()Landroid/view/Window$Callback;"
 		);
 	}
-	jint Window::getColorMode()
+	jint Window::getColorMode() const
 	{
 		return callMethod<jint>(
 			"getColorMode",
 			"()I"
 		);
 	}
-	android::view::Window Window::getContainer()
+	android::view::Window Window::getContainer() const
 	{
 		return callObjectMethod(
 			"getContainer",
 			"()Landroid/view/Window;"
 		);
 	}
-	android::transition::Scene Window::getContentScene()
+	android::transition::Scene Window::getContentScene() const
 	{
 		return callObjectMethod(
 			"getContentScene",
 			"()Landroid/transition/Scene;"
 		);
 	}
-	android::content::Context Window::getContext()
+	android::content::Context Window::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::view::View Window::getCurrentFocus()
+	android::view::View Window::getCurrentFocus() const
 	{
 		return callObjectMethod(
 			"getCurrentFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View Window::getDecorView()
+	android::view::View Window::getDecorView() const
 	{
 		return callObjectMethod(
 			"getDecorView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::transition::Transition Window::getEnterTransition()
+	android::transition::Transition Window::getEnterTransition() const
 	{
 		return callObjectMethod(
 			"getEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Window::getExitTransition()
+	android::transition::Transition Window::getExitTransition() const
 	{
 		return callObjectMethod(
 			"getExitTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	JObject Window::getInsetsController()
+	JObject Window::getInsetsController() const
 	{
 		return callObjectMethod(
 			"getInsetsController",
 			"()Landroid/view/WindowInsetsController;"
 		);
 	}
-	android::view::LayoutInflater Window::getLayoutInflater()
+	android::view::LayoutInflater Window::getLayoutInflater() const
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	android::media::session::MediaController Window::getMediaController()
+	android::media::session::MediaController Window::getMediaController() const
 	{
 		return callObjectMethod(
 			"getMediaController",
 			"()Landroid/media/session/MediaController;"
 		);
 	}
-	jint Window::getNavigationBarColor()
+	jint Window::getNavigationBarColor() const
 	{
 		return callMethod<jint>(
 			"getNavigationBarColor",
 			"()I"
 		);
 	}
-	jint Window::getNavigationBarDividerColor()
+	jint Window::getNavigationBarDividerColor() const
 	{
 		return callMethod<jint>(
 			"getNavigationBarDividerColor",
 			"()I"
 		);
 	}
-	android::transition::Transition Window::getReenterTransition()
+	android::transition::Transition Window::getReenterTransition() const
 	{
 		return callObjectMethod(
 			"getReenterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Window::getReturnTransition()
+	android::transition::Transition Window::getReturnTransition() const
 	{
 		return callObjectMethod(
 			"getReturnTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	JObject Window::getRootSurfaceControl()
+	JObject Window::getRootSurfaceControl() const
 	{
 		return callObjectMethod(
 			"getRootSurfaceControl",
 			"()Landroid/view/AttachedSurfaceControl;"
 		);
 	}
-	android::transition::Transition Window::getSharedElementEnterTransition()
+	android::transition::Transition Window::getSharedElementEnterTransition() const
 	{
 		return callObjectMethod(
 			"getSharedElementEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Window::getSharedElementExitTransition()
+	android::transition::Transition Window::getSharedElementExitTransition() const
 	{
 		return callObjectMethod(
 			"getSharedElementExitTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Window::getSharedElementReenterTransition()
+	android::transition::Transition Window::getSharedElementReenterTransition() const
 	{
 		return callObjectMethod(
 			"getSharedElementReenterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition Window::getSharedElementReturnTransition()
+	android::transition::Transition Window::getSharedElementReturnTransition() const
 	{
 		return callObjectMethod(
 			"getSharedElementReturnTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	jboolean Window::getSharedElementsUseOverlay()
+	jboolean Window::getSharedElementsUseOverlay() const
 	{
 		return callMethod<jboolean>(
 			"getSharedElementsUseOverlay",
 			"()Z"
 		);
 	}
-	jint Window::getStatusBarColor()
+	jint Window::getStatusBarColor() const
 	{
 		return callMethod<jint>(
 			"getStatusBarColor",
 			"()I"
 		);
 	}
-	JObject Window::getSystemGestureExclusionRects()
+	JObject Window::getSystemGestureExclusionRects() const
 	{
 		return callObjectMethod(
 			"getSystemGestureExclusionRects",
 			"()Ljava/util/List;"
 		);
 	}
-	jlong Window::getTransitionBackgroundFadeDuration()
+	jlong Window::getTransitionBackgroundFadeDuration() const
 	{
 		return callMethod<jlong>(
 			"getTransitionBackgroundFadeDuration",
 			"()J"
 		);
 	}
-	android::transition::TransitionManager Window::getTransitionManager()
+	android::transition::TransitionManager Window::getTransitionManager() const
 	{
 		return callObjectMethod(
 			"getTransitionManager",
 			"()Landroid/transition/TransitionManager;"
 		);
 	}
-	jint Window::getVolumeControlStream()
+	jint Window::getVolumeControlStream() const
 	{
 		return callMethod<jint>(
 			"getVolumeControlStream",
 			"()I"
 		);
 	}
-	JObject Window::getWindowManager()
+	JObject Window::getWindowManager() const
 	{
 		return callObjectMethod(
 			"getWindowManager",
 			"()Landroid/view/WindowManager;"
 		);
 	}
-	android::content::res::TypedArray Window::getWindowStyle()
+	android::content::res::TypedArray Window::getWindowStyle() const
 	{
 		return callObjectMethod(
 			"getWindowStyle",
 			"()Landroid/content/res/TypedArray;"
 		);
 	}
-	jboolean Window::hasChildren()
+	jboolean Window::hasChildren() const
 	{
 		return callMethod<jboolean>(
 			"hasChildren",
 			"()Z"
 		);
 	}
-	jboolean Window::hasFeature(jint arg0)
+	jboolean Window::hasFeature(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasFeature",
@@ -539,7 +539,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::injectInputEvent(android::view::InputEvent arg0)
+	void Window::injectInputEvent(android::view::InputEvent arg0) const
 	{
 		callMethod<void>(
 			"injectInputEvent",
@@ -547,7 +547,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::invalidatePanelMenu(jint arg0)
+	void Window::invalidatePanelMenu(jint arg0) const
 	{
 		callMethod<void>(
 			"invalidatePanelMenu",
@@ -555,28 +555,28 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean Window::isActive()
+	jboolean Window::isActive() const
 	{
 		return callMethod<jboolean>(
 			"isActive",
 			"()Z"
 		);
 	}
-	jboolean Window::isFloating()
+	jboolean Window::isFloating() const
 	{
 		return callMethod<jboolean>(
 			"isFloating",
 			"()Z"
 		);
 	}
-	jboolean Window::isNavigationBarContrastEnforced()
+	jboolean Window::isNavigationBarContrastEnforced() const
 	{
 		return callMethod<jboolean>(
 			"isNavigationBarContrastEnforced",
 			"()Z"
 		);
 	}
-	jboolean Window::isShortcutKey(jint arg0, android::view::KeyEvent arg1)
+	jboolean Window::isShortcutKey(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"isShortcutKey",
@@ -585,28 +585,28 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean Window::isStatusBarContrastEnforced()
+	jboolean Window::isStatusBarContrastEnforced() const
 	{
 		return callMethod<jboolean>(
 			"isStatusBarContrastEnforced",
 			"()Z"
 		);
 	}
-	jboolean Window::isWideColorGamut()
+	jboolean Window::isWideColorGamut() const
 	{
 		return callMethod<jboolean>(
 			"isWideColorGamut",
 			"()Z"
 		);
 	}
-	void Window::makeActive()
+	void Window::makeActive() const
 	{
 		callMethod<void>(
 			"makeActive",
 			"()V"
 		);
 	}
-	void Window::onConfigurationChanged(android::content::res::Configuration arg0)
+	void Window::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -614,7 +614,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::openPanel(jint arg0, android::view::KeyEvent arg1)
+	void Window::openPanel(jint arg0, android::view::KeyEvent arg1) const
 	{
 		callMethod<void>(
 			"openPanel",
@@ -623,14 +623,14 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::View Window::peekDecorView()
+	android::view::View Window::peekDecorView() const
 	{
 		return callObjectMethod(
 			"peekDecorView",
 			"()Landroid/view/View;"
 		);
 	}
-	jboolean Window::performContextMenuIdentifierAction(jint arg0, jint arg1)
+	jboolean Window::performContextMenuIdentifierAction(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"performContextMenuIdentifierAction",
@@ -639,7 +639,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jboolean Window::performPanelIdentifierAction(jint arg0, jint arg1, jint arg2)
+	jboolean Window::performPanelIdentifierAction(jint arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"performPanelIdentifierAction",
@@ -649,7 +649,7 @@ namespace android::view
 			arg2
 		);
 	}
-	jboolean Window::performPanelShortcut(jint arg0, jint arg1, android::view::KeyEvent arg2, jint arg3)
+	jboolean Window::performPanelShortcut(jint arg0, jint arg1, android::view::KeyEvent arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"performPanelShortcut",
@@ -660,7 +660,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void Window::registerScrollCaptureCallback(JObject arg0)
+	void Window::registerScrollCaptureCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerScrollCaptureCallback",
@@ -668,7 +668,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::removeOnFrameMetricsAvailableListener(JObject arg0)
+	void Window::removeOnFrameMetricsAvailableListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnFrameMetricsAvailableListener",
@@ -676,7 +676,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean Window::requestFeature(jint arg0)
+	jboolean Window::requestFeature(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestFeature",
@@ -684,7 +684,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::View Window::requireViewById(jint arg0)
+	android::view::View Window::requireViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -692,7 +692,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::restoreHierarchyState(android::os::Bundle arg0)
+	void Window::restoreHierarchyState(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"restoreHierarchyState",
@@ -700,14 +700,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::os::Bundle Window::saveHierarchyState()
+	android::os::Bundle Window::saveHierarchyState() const
 	{
 		return callObjectMethod(
 			"saveHierarchyState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void Window::setAllowEnterTransitionOverlap(jboolean arg0)
+	void Window::setAllowEnterTransitionOverlap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowEnterTransitionOverlap",
@@ -715,7 +715,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setAllowReturnTransitionOverlap(jboolean arg0)
+	void Window::setAllowReturnTransitionOverlap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowReturnTransitionOverlap",
@@ -723,7 +723,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setAttributes(android::view::WindowManager_LayoutParams arg0)
+	void Window::setAttributes(android::view::WindowManager_LayoutParams arg0) const
 	{
 		callMethod<void>(
 			"setAttributes",
@@ -731,7 +731,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setBackgroundBlurRadius(jint arg0)
+	void Window::setBackgroundBlurRadius(jint arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundBlurRadius",
@@ -739,7 +739,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void Window::setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawable",
@@ -747,7 +747,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setBackgroundDrawableResource(jint arg0)
+	void Window::setBackgroundDrawableResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawableResource",
@@ -755,7 +755,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setCallback(JObject arg0)
+	void Window::setCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCallback",
@@ -763,7 +763,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setChildDrawable(jint arg0, android::graphics::drawable::Drawable arg1)
+	void Window::setChildDrawable(jint arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		callMethod<void>(
 			"setChildDrawable",
@@ -772,7 +772,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void Window::setChildInt(jint arg0, jint arg1)
+	void Window::setChildInt(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setChildInt",
@@ -781,7 +781,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setClipToOutline(jboolean arg0)
+	void Window::setClipToOutline(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClipToOutline",
@@ -789,7 +789,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setColorMode(jint arg0)
+	void Window::setColorMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setColorMode",
@@ -797,7 +797,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setContainer(android::view::Window arg0)
+	void Window::setContainer(android::view::Window arg0) const
 	{
 		callMethod<void>(
 			"setContainer",
@@ -805,7 +805,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setContentView(android::view::View arg0)
+	void Window::setContentView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -813,7 +813,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setContentView(jint arg0)
+	void Window::setContentView(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -821,7 +821,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void Window::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -830,7 +830,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void Window::setDecorCaptionShade(jint arg0)
+	void Window::setDecorCaptionShade(jint arg0) const
 	{
 		callMethod<void>(
 			"setDecorCaptionShade",
@@ -838,7 +838,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setDecorFitsSystemWindows(jboolean arg0)
+	void Window::setDecorFitsSystemWindows(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDecorFitsSystemWindows",
@@ -846,7 +846,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setDimAmount(jfloat arg0)
+	void Window::setDimAmount(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setDimAmount",
@@ -854,7 +854,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setElevation(jfloat arg0)
+	void Window::setElevation(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setElevation",
@@ -862,7 +862,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setEnterTransition(android::transition::Transition arg0)
+	void Window::setEnterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setEnterTransition",
@@ -870,7 +870,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setExitTransition(android::transition::Transition arg0)
+	void Window::setExitTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setExitTransition",
@@ -878,7 +878,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setFeatureDrawable(jint arg0, android::graphics::drawable::Drawable arg1)
+	void Window::setFeatureDrawable(jint arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawable",
@@ -887,7 +887,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void Window::setFeatureDrawableAlpha(jint arg0, jint arg1)
+	void Window::setFeatureDrawableAlpha(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableAlpha",
@@ -896,7 +896,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setFeatureDrawableResource(jint arg0, jint arg1)
+	void Window::setFeatureDrawableResource(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableResource",
@@ -905,7 +905,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setFeatureDrawableUri(jint arg0, android::net::Uri arg1)
+	void Window::setFeatureDrawableUri(jint arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableUri",
@@ -914,7 +914,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void Window::setFeatureInt(jint arg0, jint arg1)
+	void Window::setFeatureInt(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFeatureInt",
@@ -923,7 +923,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setFlags(jint arg0, jint arg1)
+	void Window::setFlags(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFlags",
@@ -932,7 +932,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setFormat(jint arg0)
+	void Window::setFormat(jint arg0) const
 	{
 		callMethod<void>(
 			"setFormat",
@@ -940,7 +940,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setGravity(jint arg0)
+	void Window::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -948,7 +948,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setHideOverlayWindows(jboolean arg0)
+	void Window::setHideOverlayWindows(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHideOverlayWindows",
@@ -956,7 +956,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setIcon(jint arg0)
+	void Window::setIcon(jint arg0) const
 	{
 		callMethod<void>(
 			"setIcon",
@@ -964,7 +964,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setLayout(jint arg0, jint arg1)
+	void Window::setLayout(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayout",
@@ -973,7 +973,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setLocalFocus(jboolean arg0, jboolean arg1)
+	void Window::setLocalFocus(jboolean arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setLocalFocus",
@@ -982,7 +982,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setLogo(jint arg0)
+	void Window::setLogo(jint arg0) const
 	{
 		callMethod<void>(
 			"setLogo",
@@ -990,7 +990,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setMediaController(android::media::session::MediaController arg0)
+	void Window::setMediaController(android::media::session::MediaController arg0) const
 	{
 		callMethod<void>(
 			"setMediaController",
@@ -998,7 +998,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setNavigationBarColor(jint arg0)
+	void Window::setNavigationBarColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setNavigationBarColor",
@@ -1006,7 +1006,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setNavigationBarContrastEnforced(jboolean arg0)
+	void Window::setNavigationBarContrastEnforced(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNavigationBarContrastEnforced",
@@ -1014,7 +1014,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setNavigationBarDividerColor(jint arg0)
+	void Window::setNavigationBarDividerColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setNavigationBarDividerColor",
@@ -1022,7 +1022,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setPreferMinimalPostProcessing(jboolean arg0)
+	void Window::setPreferMinimalPostProcessing(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPreferMinimalPostProcessing",
@@ -1030,7 +1030,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setReenterTransition(android::transition::Transition arg0)
+	void Window::setReenterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setReenterTransition",
@@ -1038,7 +1038,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setResizingCaptionDrawable(android::graphics::drawable::Drawable arg0)
+	void Window::setResizingCaptionDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setResizingCaptionDrawable",
@@ -1046,7 +1046,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setRestrictedCaptionAreaListener(JObject arg0)
+	void Window::setRestrictedCaptionAreaListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setRestrictedCaptionAreaListener",
@@ -1054,7 +1054,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setReturnTransition(android::transition::Transition arg0)
+	void Window::setReturnTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setReturnTransition",
@@ -1062,7 +1062,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setSharedElementEnterTransition(android::transition::Transition arg0)
+	void Window::setSharedElementEnterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setSharedElementEnterTransition",
@@ -1070,7 +1070,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setSharedElementExitTransition(android::transition::Transition arg0)
+	void Window::setSharedElementExitTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setSharedElementExitTransition",
@@ -1078,7 +1078,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setSharedElementReenterTransition(android::transition::Transition arg0)
+	void Window::setSharedElementReenterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setSharedElementReenterTransition",
@@ -1086,7 +1086,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setSharedElementReturnTransition(android::transition::Transition arg0)
+	void Window::setSharedElementReturnTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setSharedElementReturnTransition",
@@ -1094,7 +1094,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setSharedElementsUseOverlay(jboolean arg0)
+	void Window::setSharedElementsUseOverlay(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSharedElementsUseOverlay",
@@ -1102,7 +1102,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setSoftInputMode(jint arg0)
+	void Window::setSoftInputMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setSoftInputMode",
@@ -1110,7 +1110,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setStatusBarColor(jint arg0)
+	void Window::setStatusBarColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setStatusBarColor",
@@ -1118,7 +1118,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setStatusBarContrastEnforced(jboolean arg0)
+	void Window::setStatusBarContrastEnforced(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setStatusBarContrastEnforced",
@@ -1126,7 +1126,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setSustainedPerformanceMode(jboolean arg0)
+	void Window::setSustainedPerformanceMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSustainedPerformanceMode",
@@ -1134,7 +1134,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setSystemGestureExclusionRects(JObject arg0)
+	void Window::setSystemGestureExclusionRects(JObject arg0) const
 	{
 		callMethod<void>(
 			"setSystemGestureExclusionRects",
@@ -1142,7 +1142,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setTitle(JString arg0)
+	void Window::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -1150,7 +1150,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void Window::setTitleColor(jint arg0)
+	void Window::setTitleColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitleColor",
@@ -1158,7 +1158,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setTransitionBackgroundFadeDuration(jlong arg0)
+	void Window::setTransitionBackgroundFadeDuration(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTransitionBackgroundFadeDuration",
@@ -1166,7 +1166,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setTransitionManager(android::transition::TransitionManager arg0)
+	void Window::setTransitionManager(android::transition::TransitionManager arg0) const
 	{
 		callMethod<void>(
 			"setTransitionManager",
@@ -1174,7 +1174,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setType(jint arg0)
+	void Window::setType(jint arg0) const
 	{
 		callMethod<void>(
 			"setType",
@@ -1182,7 +1182,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setUiOptions(jint arg0)
+	void Window::setUiOptions(jint arg0) const
 	{
 		callMethod<void>(
 			"setUiOptions",
@@ -1190,7 +1190,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setUiOptions(jint arg0, jint arg1)
+	void Window::setUiOptions(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setUiOptions",
@@ -1199,7 +1199,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Window::setVolumeControlStream(jint arg0)
+	void Window::setVolumeControlStream(jint arg0) const
 	{
 		callMethod<void>(
 			"setVolumeControlStream",
@@ -1207,7 +1207,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setWindowAnimations(jint arg0)
+	void Window::setWindowAnimations(jint arg0) const
 	{
 		callMethod<void>(
 			"setWindowAnimations",
@@ -1215,7 +1215,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setWindowManager(JObject arg0, JObject arg1, JString arg2)
+	void Window::setWindowManager(JObject arg0, JObject arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setWindowManager",
@@ -1225,7 +1225,7 @@ namespace android::view
 			arg2.object<jstring>()
 		);
 	}
-	void Window::setWindowManager(JObject arg0, JObject arg1, JString arg2, jboolean arg3)
+	void Window::setWindowManager(JObject arg0, JObject arg1, JString arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"setWindowManager",
@@ -1236,7 +1236,7 @@ namespace android::view
 			arg3
 		);
 	}
-	jboolean Window::superDispatchGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean Window::superDispatchGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"superDispatchGenericMotionEvent",
@@ -1244,7 +1244,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean Window::superDispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean Window::superDispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"superDispatchKeyEvent",
@@ -1252,7 +1252,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean Window::superDispatchKeyShortcutEvent(android::view::KeyEvent arg0)
+	jboolean Window::superDispatchKeyShortcutEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"superDispatchKeyShortcutEvent",
@@ -1260,7 +1260,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean Window::superDispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean Window::superDispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"superDispatchTouchEvent",
@@ -1268,7 +1268,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean Window::superDispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean Window::superDispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"superDispatchTrackballEvent",
@@ -1276,7 +1276,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::takeInputQueue(JObject arg0)
+	void Window::takeInputQueue(JObject arg0) const
 	{
 		callMethod<void>(
 			"takeInputQueue",
@@ -1284,7 +1284,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::takeKeyEvents(jboolean arg0)
+	void Window::takeKeyEvents(jboolean arg0) const
 	{
 		callMethod<void>(
 			"takeKeyEvents",
@@ -1292,7 +1292,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::takeSurface(JObject arg0)
+	void Window::takeSurface(JObject arg0) const
 	{
 		callMethod<void>(
 			"takeSurface",
@@ -1300,7 +1300,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::togglePanel(jint arg0, android::view::KeyEvent arg1)
+	void Window::togglePanel(jint arg0, android::view::KeyEvent arg1) const
 	{
 		callMethod<void>(
 			"togglePanel",
@@ -1309,7 +1309,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void Window::unregisterScrollCaptureCallback(JObject arg0)
+	void Window::unregisterScrollCaptureCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterScrollCaptureCallback",

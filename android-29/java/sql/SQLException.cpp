@@ -69,35 +69,35 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	jint SQLException::getErrorCode()
+	jint SQLException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
-	java::sql::SQLException SQLException::getNextException()
+	java::sql::SQLException SQLException::getNextException() const
 	{
 		return callObjectMethod(
 			"getNextException",
 			"()Ljava/sql/SQLException;"
 		);
 	}
-	JString SQLException::getSQLState()
+	JString SQLException::getSQLState() const
 	{
 		return callObjectMethod(
 			"getSQLState",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SQLException::iterator()
+	JObject SQLException::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void SQLException::setNextException(java::sql::SQLException arg0)
+	void SQLException::setNextException(java::sql::SQLException arg0) const
 	{
 		callMethod<void>(
 			"setNextException",

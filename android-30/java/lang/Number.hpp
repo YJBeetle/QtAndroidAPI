@@ -17,12 +17,12 @@ namespace java::lang
 		Number();
 		
 		// Methods
-		jbyte byteValue();
-		jdouble doubleValue();
-		jfloat floatValue();
-		jint intValue();
-		jlong longValue();
-		jshort shortValue();
+		jbyte byteValue() const;
+		jdouble doubleValue() const;
+		jfloat floatValue() const;
+		jint intValue() const;
+		jlong longValue() const;
+		jshort shortValue() const;
 	};
 } // namespace java::lang
 

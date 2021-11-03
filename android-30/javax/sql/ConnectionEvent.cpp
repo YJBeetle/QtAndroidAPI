@@ -24,7 +24,7 @@ namespace javax::sql
 		) {}
 	
 	// Methods
-	java::sql::SQLException ConnectionEvent::getSQLException()
+	java::sql::SQLException ConnectionEvent::getSQLException() const
 	{
 		return callObjectMethod(
 			"getSQLException",

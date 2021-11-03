@@ -20,7 +20,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void AsyncQueryHandler_WorkerHandler::handleMessage(android::os::Message arg0)
+	void AsyncQueryHandler_WorkerHandler::handleMessage(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"handleMessage",

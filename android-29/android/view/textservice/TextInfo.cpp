@@ -51,42 +51,42 @@ namespace android::view::textservice
 		) {}
 	
 	// Methods
-	jint TextInfo::describeContents()
+	jint TextInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString TextInfo::getCharSequence()
+	JString TextInfo::getCharSequence() const
 	{
 		return callObjectMethod(
 			"getCharSequence",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TextInfo::getCookie()
+	jint TextInfo::getCookie() const
 	{
 		return callMethod<jint>(
 			"getCookie",
 			"()I"
 		);
 	}
-	jint TextInfo::getSequence()
+	jint TextInfo::getSequence() const
 	{
 		return callMethod<jint>(
 			"getSequence",
 			"()I"
 		);
 	}
-	JString TextInfo::getText()
+	JString TextInfo::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

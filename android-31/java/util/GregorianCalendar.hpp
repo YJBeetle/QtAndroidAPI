@@ -51,29 +51,29 @@ namespace java::util
 		
 		// Methods
 		static java::util::GregorianCalendar from(java::time::ZonedDateTime arg0);
-		void add(jint arg0, jint arg1);
-		JObject clone();
-		jboolean equals(JObject arg0);
-		jint getActualMaximum(jint arg0);
-		jint getActualMinimum(jint arg0);
-		JString getCalendarType();
-		jint getGreatestMinimum(jint arg0);
-		java::util::Date getGregorianChange();
-		jint getLeastMaximum(jint arg0);
-		jint getMaximum(jint arg0);
-		jint getMinimum(jint arg0);
-		java::util::TimeZone getTimeZone();
-		jint getWeekYear();
-		jint getWeeksInWeekYear();
-		jint hashCode();
-		jboolean isLeapYear(jint arg0);
-		jboolean isWeekDateSupported();
-		void roll(jint arg0, jboolean arg1);
-		void roll(jint arg0, jint arg1);
-		void setGregorianChange(java::util::Date arg0);
-		void setTimeZone(java::util::TimeZone arg0);
-		void setWeekDate(jint arg0, jint arg1, jint arg2);
-		java::time::ZonedDateTime toZonedDateTime();
+		void add(jint arg0, jint arg1) const;
+		JObject clone() const;
+		jboolean equals(JObject arg0) const;
+		jint getActualMaximum(jint arg0) const;
+		jint getActualMinimum(jint arg0) const;
+		JString getCalendarType() const;
+		jint getGreatestMinimum(jint arg0) const;
+		java::util::Date getGregorianChange() const;
+		jint getLeastMaximum(jint arg0) const;
+		jint getMaximum(jint arg0) const;
+		jint getMinimum(jint arg0) const;
+		java::util::TimeZone getTimeZone() const;
+		jint getWeekYear() const;
+		jint getWeeksInWeekYear() const;
+		jint hashCode() const;
+		jboolean isLeapYear(jint arg0) const;
+		jboolean isWeekDateSupported() const;
+		void roll(jint arg0, jboolean arg1) const;
+		void roll(jint arg0, jint arg1) const;
+		void setGregorianChange(java::util::Date arg0) const;
+		void setTimeZone(java::util::TimeZone arg0) const;
+		void setWeekDate(jint arg0, jint arg1, jint arg2) const;
+		java::time::ZonedDateTime toZonedDateTime() const;
 	};
 } // namespace java::util
 

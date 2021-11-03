@@ -47,7 +47,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void TabWidget::addView(android::view::View arg0)
+	void TabWidget::addView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addView",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabWidget::childDrawableStateChanged(android::view::View arg0)
+	void TabWidget::childDrawableStateChanged(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"childDrawableStateChanged",
@@ -63,7 +63,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabWidget::dispatchDraw(android::graphics::Canvas arg0)
+	void TabWidget::dispatchDraw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"dispatchDraw",
@@ -71,7 +71,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabWidget::focusCurrentTab(jint arg0)
+	void TabWidget::focusCurrentTab(jint arg0) const
 	{
 		callMethod<void>(
 			"focusCurrentTab",
@@ -79,14 +79,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	JString TabWidget::getAccessibilityClassName()
+	JString TabWidget::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View TabWidget::getChildTabViewAt(jint arg0)
+	android::view::View TabWidget::getChildTabViewAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getChildTabViewAt",
@@ -94,35 +94,35 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::graphics::drawable::Drawable TabWidget::getLeftStripDrawable()
+	android::graphics::drawable::Drawable TabWidget::getLeftStripDrawable() const
 	{
 		return callObjectMethod(
 			"getLeftStripDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable TabWidget::getRightStripDrawable()
+	android::graphics::drawable::Drawable TabWidget::getRightStripDrawable() const
 	{
 		return callObjectMethod(
 			"getRightStripDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint TabWidget::getTabCount()
+	jint TabWidget::getTabCount() const
 	{
 		return callMethod<jint>(
 			"getTabCount",
 			"()I"
 		);
 	}
-	jboolean TabWidget::isStripEnabled()
+	jboolean TabWidget::isStripEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isStripEnabled",
 			"()Z"
 		);
 	}
-	void TabWidget::onFocusChange(android::view::View arg0, jboolean arg1)
+	void TabWidget::onFocusChange(android::view::View arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onFocusChange",
@@ -131,7 +131,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	android::view::PointerIcon TabWidget::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon TabWidget::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -140,14 +140,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TabWidget::removeAllViews()
+	void TabWidget::removeAllViews() const
 	{
 		callMethod<void>(
 			"removeAllViews",
 			"()V"
 		);
 	}
-	void TabWidget::setCurrentTab(jint arg0)
+	void TabWidget::setCurrentTab(jint arg0) const
 	{
 		callMethod<void>(
 			"setCurrentTab",
@@ -155,7 +155,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabWidget::setDividerDrawable(android::graphics::drawable::Drawable arg0)
+	void TabWidget::setDividerDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setDividerDrawable",
@@ -163,7 +163,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabWidget::setDividerDrawable(jint arg0)
+	void TabWidget::setDividerDrawable(jint arg0) const
 	{
 		callMethod<void>(
 			"setDividerDrawable",
@@ -171,7 +171,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabWidget::setEnabled(jboolean arg0)
+	void TabWidget::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -179,7 +179,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabWidget::setLeftStripDrawable(android::graphics::drawable::Drawable arg0)
+	void TabWidget::setLeftStripDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setLeftStripDrawable",
@@ -187,7 +187,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabWidget::setLeftStripDrawable(jint arg0)
+	void TabWidget::setLeftStripDrawable(jint arg0) const
 	{
 		callMethod<void>(
 			"setLeftStripDrawable",
@@ -195,7 +195,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabWidget::setRightStripDrawable(android::graphics::drawable::Drawable arg0)
+	void TabWidget::setRightStripDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setRightStripDrawable",
@@ -203,7 +203,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabWidget::setRightStripDrawable(jint arg0)
+	void TabWidget::setRightStripDrawable(jint arg0) const
 	{
 		callMethod<void>(
 			"setRightStripDrawable",
@@ -211,7 +211,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabWidget::setStripEnabled(jboolean arg0)
+	void TabWidget::setStripEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setStripEnabled",

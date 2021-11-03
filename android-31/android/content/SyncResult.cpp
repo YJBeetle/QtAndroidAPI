@@ -89,63 +89,63 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void SyncResult::clear()
+	void SyncResult::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jint SyncResult::describeContents()
+	jint SyncResult::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SyncResult::hasError()
+	jboolean SyncResult::hasError() const
 	{
 		return callMethod<jboolean>(
 			"hasError",
 			"()Z"
 		);
 	}
-	jboolean SyncResult::hasHardError()
+	jboolean SyncResult::hasHardError() const
 	{
 		return callMethod<jboolean>(
 			"hasHardError",
 			"()Z"
 		);
 	}
-	jboolean SyncResult::hasSoftError()
+	jboolean SyncResult::hasSoftError() const
 	{
 		return callMethod<jboolean>(
 			"hasSoftError",
 			"()Z"
 		);
 	}
-	jboolean SyncResult::madeSomeProgress()
+	jboolean SyncResult::madeSomeProgress() const
 	{
 		return callMethod<jboolean>(
 			"madeSomeProgress",
 			"()Z"
 		);
 	}
-	JString SyncResult::toDebugString()
+	JString SyncResult::toDebugString() const
 	{
 		return callObjectMethod(
 			"toDebugString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SyncResult::toString()
+	JString SyncResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SyncResult::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SyncResult::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

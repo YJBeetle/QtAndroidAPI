@@ -16,14 +16,14 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	void ConsoleHandler::close()
+	void ConsoleHandler::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ConsoleHandler::publish(java::util::logging::LogRecord arg0)
+	void ConsoleHandler::publish(java::util::logging::LogRecord arg0) const
 	{
 		callMethod<void>(
 			"publish",

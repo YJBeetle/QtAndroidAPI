@@ -54,7 +54,7 @@ namespace android::graphics
 		BitmapFactory_Options();
 		
 		// Methods
-		void requestCancelDecode();
+		void requestCancelDecode() const;
 	};
 } // namespace android::graphics
 

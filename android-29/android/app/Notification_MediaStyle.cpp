@@ -24,7 +24,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_MediaStyle Notification_MediaStyle::setMediaSession(android::media::session::MediaSession_Token arg0)
+	android::app::Notification_MediaStyle Notification_MediaStyle::setMediaSession(android::media::session::MediaSession_Token arg0) const
 	{
 		return callObjectMethod(
 			"setMediaSession",
@@ -32,7 +32,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_MediaStyle Notification_MediaStyle::setShowActionsInCompactView(JIntArray arg0)
+	android::app::Notification_MediaStyle Notification_MediaStyle::setShowActionsInCompactView(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"setShowActionsInCompactView",

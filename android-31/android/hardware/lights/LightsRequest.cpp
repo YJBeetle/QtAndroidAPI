@@ -10,21 +10,21 @@ namespace android::hardware::lights
 	// Constructors
 	
 	// Methods
-	JObject LightsRequest::getLightStates()
+	JObject LightsRequest::getLightStates() const
 	{
 		return callObjectMethod(
 			"getLightStates",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject LightsRequest::getLights()
+	JObject LightsRequest::getLights() const
 	{
 		return callObjectMethod(
 			"getLights",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject LightsRequest::getLightsAndStates()
+	JObject LightsRequest::getLightsAndStates() const
 	{
 		return callObjectMethod(
 			"getLightsAndStates",

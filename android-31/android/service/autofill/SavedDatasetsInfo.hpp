@@ -22,11 +22,11 @@ namespace android::service::autofill
 		SavedDatasetsInfo(JString arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getCount();
-		JString getType();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getCount() const;
+		JString getType() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::service::autofill
 

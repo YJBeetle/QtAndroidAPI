@@ -56,9 +56,9 @@ namespace android::icu::util
 		EthiopicCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		JString getType();
-		jboolean isAmeteAlemEra();
-		void setAmeteAlemEra(jboolean arg0);
+		JString getType() const;
+		jboolean isAmeteAlemEra() const;
+		void setAmeteAlemEra(jboolean arg0) const;
 	};
 } // namespace android::icu::util
 

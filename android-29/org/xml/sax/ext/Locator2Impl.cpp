@@ -22,21 +22,21 @@ namespace org::xml::sax::ext
 		) {}
 	
 	// Methods
-	JString Locator2Impl::getEncoding()
+	JString Locator2Impl::getEncoding() const
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locator2Impl::getXMLVersion()
+	JString Locator2Impl::getXMLVersion() const
 	{
 		return callObjectMethod(
 			"getXMLVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Locator2Impl::setEncoding(JString arg0)
+	void Locator2Impl::setEncoding(JString arg0) const
 	{
 		callMethod<void>(
 			"setEncoding",
@@ -44,7 +44,7 @@ namespace org::xml::sax::ext
 			arg0.object<jstring>()
 		);
 	}
-	void Locator2Impl::setXMLVersion(JString arg0)
+	void Locator2Impl::setXMLVersion(JString arg0) const
 	{
 		callMethod<void>(
 			"setXMLVersion",

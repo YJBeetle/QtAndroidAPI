@@ -24,11 +24,11 @@ namespace java::io
 		PipedWriter(java::io::PipedReader arg0);
 		
 		// Methods
-		void close();
-		void connect(java::io::PipedReader arg0);
-		void flush();
-		void write(jint arg0);
-		void write(JCharArray arg0, jint arg1, jint arg2);
+		void close() const;
+		void connect(java::io::PipedReader arg0) const;
+		void flush() const;
+		void write(jint arg0) const;
+		void write(JCharArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

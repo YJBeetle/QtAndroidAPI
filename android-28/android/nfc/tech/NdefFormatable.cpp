@@ -21,21 +21,21 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	void NdefFormatable::close()
+	void NdefFormatable::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void NdefFormatable::connect()
+	void NdefFormatable::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	void NdefFormatable::format(android::nfc::NdefMessage arg0)
+	void NdefFormatable::format(android::nfc::NdefMessage arg0) const
 	{
 		callMethod<void>(
 			"format",
@@ -43,7 +43,7 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	void NdefFormatable::formatReadOnly(android::nfc::NdefMessage arg0)
+	void NdefFormatable::formatReadOnly(android::nfc::NdefMessage arg0) const
 	{
 		callMethod<void>(
 			"formatReadOnly",
@@ -51,14 +51,14 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	android::nfc::Tag NdefFormatable::getTag()
+	android::nfc::Tag NdefFormatable::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jboolean NdefFormatable::isConnected()
+	jboolean NdefFormatable::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",

@@ -72,14 +72,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jint LocaleList::describeContents()
+	jint LocaleList::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean LocaleList::equals(JObject arg0)
+	jboolean LocaleList::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -87,7 +87,7 @@ namespace android::os
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Locale LocaleList::get(jint arg0)
+	java::util::Locale LocaleList::get(jint arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -95,7 +95,7 @@ namespace android::os
 			arg0
 		);
 	}
-	java::util::Locale LocaleList::getFirstMatch(JArray arg0)
+	java::util::Locale LocaleList::getFirstMatch(JArray arg0) const
 	{
 		return callObjectMethod(
 			"getFirstMatch",
@@ -103,14 +103,14 @@ namespace android::os
 			arg0.object<jarray>()
 		);
 	}
-	jint LocaleList::hashCode()
+	jint LocaleList::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint LocaleList::indexOf(java::util::Locale arg0)
+	jint LocaleList::indexOf(java::util::Locale arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -118,35 +118,35 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean LocaleList::isEmpty()
+	jboolean LocaleList::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jint LocaleList::size()
+	jint LocaleList::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString LocaleList::toLanguageTags()
+	JString LocaleList::toLanguageTags() const
 	{
 		return callObjectMethod(
 			"toLanguageTags",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString LocaleList::toString()
+	JString LocaleList::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LocaleList::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LocaleList::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

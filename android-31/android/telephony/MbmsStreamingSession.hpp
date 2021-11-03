@@ -39,9 +39,9 @@ namespace android::telephony
 		// Methods
 		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, JObject arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2);
 		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, JObject arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3);
-		void close();
-		void requestUpdateStreamingServices(JObject arg0);
-		android::telephony::mbms::StreamingService startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, JObject arg1, android::telephony::mbms::StreamingServiceCallback arg2);
+		void close() const;
+		void requestUpdateStreamingServices(JObject arg0) const;
+		android::telephony::mbms::StreamingService startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, JObject arg1, android::telephony::mbms::StreamingServiceCallback arg2) const;
 	};
 } // namespace android::telephony
 

@@ -23,21 +23,21 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint StrikethroughSpan::describeContents()
+	jint StrikethroughSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint StrikethroughSpan::getSpanTypeId()
+	jint StrikethroughSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void StrikethroughSpan::updateDrawState(android::text::TextPaint arg0)
+	void StrikethroughSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -45,7 +45,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void StrikethroughSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void StrikethroughSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

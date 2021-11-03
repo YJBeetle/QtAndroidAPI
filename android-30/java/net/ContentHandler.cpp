@@ -18,7 +18,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	JObject ContentHandler::getContent(java::net::URLConnection arg0)
+	JObject ContentHandler::getContent(java::net::URLConnection arg0) const
 	{
 		return callObjectMethod(
 			"getContent",
@@ -26,7 +26,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	JObject ContentHandler::getContent(java::net::URLConnection arg0, JArray arg1)
+	JObject ContentHandler::getContent(java::net::URLConnection arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"getContent",

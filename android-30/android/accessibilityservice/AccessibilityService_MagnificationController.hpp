@@ -25,16 +25,16 @@ namespace android::accessibilityservice
 		// Constructors
 		
 		// Methods
-		void addListener(JObject arg0);
-		void addListener(JObject arg0, android::os::Handler arg1);
-		jfloat getCenterX();
-		jfloat getCenterY();
-		android::graphics::Region getMagnificationRegion();
-		jfloat getScale();
-		jboolean removeListener(JObject arg0);
-		jboolean reset(jboolean arg0);
-		jboolean setCenter(jfloat arg0, jfloat arg1, jboolean arg2);
-		jboolean setScale(jfloat arg0, jboolean arg1);
+		void addListener(JObject arg0) const;
+		void addListener(JObject arg0, android::os::Handler arg1) const;
+		jfloat getCenterX() const;
+		jfloat getCenterY() const;
+		android::graphics::Region getMagnificationRegion() const;
+		jfloat getScale() const;
+		jboolean removeListener(JObject arg0) const;
+		jboolean reset(jboolean arg0) const;
+		jboolean setCenter(jfloat arg0, jfloat arg1, jboolean arg2) const;
+		jboolean setScale(jfloat arg0, jboolean arg1) const;
 	};
 } // namespace android::accessibilityservice
 

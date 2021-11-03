@@ -23,11 +23,11 @@ namespace android::media
 		ApplicationMediaCapabilities_Builder();
 		
 		// Methods
-		android::media::ApplicationMediaCapabilities_Builder addSupportedHdrType(JString arg0);
-		android::media::ApplicationMediaCapabilities_Builder addSupportedVideoMimeType(JString arg0);
-		android::media::ApplicationMediaCapabilities_Builder addUnsupportedHdrType(JString arg0);
-		android::media::ApplicationMediaCapabilities_Builder addUnsupportedVideoMimeType(JString arg0);
-		android::media::ApplicationMediaCapabilities build();
+		android::media::ApplicationMediaCapabilities_Builder addSupportedHdrType(JString arg0) const;
+		android::media::ApplicationMediaCapabilities_Builder addSupportedVideoMimeType(JString arg0) const;
+		android::media::ApplicationMediaCapabilities_Builder addUnsupportedHdrType(JString arg0) const;
+		android::media::ApplicationMediaCapabilities_Builder addUnsupportedVideoMimeType(JString arg0) const;
+		android::media::ApplicationMediaCapabilities build() const;
 	};
 } // namespace android::media
 

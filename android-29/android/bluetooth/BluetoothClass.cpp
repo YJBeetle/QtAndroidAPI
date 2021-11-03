@@ -21,14 +21,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	jint BluetoothClass::describeContents()
+	jint BluetoothClass::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean BluetoothClass::equals(JObject arg0)
+	jboolean BluetoothClass::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,21 +36,21 @@ namespace android::bluetooth
 			arg0.object<jobject>()
 		);
 	}
-	jint BluetoothClass::getDeviceClass()
+	jint BluetoothClass::getDeviceClass() const
 	{
 		return callMethod<jint>(
 			"getDeviceClass",
 			"()I"
 		);
 	}
-	jint BluetoothClass::getMajorDeviceClass()
+	jint BluetoothClass::getMajorDeviceClass() const
 	{
 		return callMethod<jint>(
 			"getMajorDeviceClass",
 			"()I"
 		);
 	}
-	jboolean BluetoothClass::hasService(jint arg0)
+	jboolean BluetoothClass::hasService(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasService",
@@ -58,21 +58,21 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jint BluetoothClass::hashCode()
+	jint BluetoothClass::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString BluetoothClass::toString()
+	JString BluetoothClass::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BluetoothClass::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothClass::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -42,42 +42,42 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void AdapterViewFlipper::fyiWillBeAdvancedByHostKThx()
+	void AdapterViewFlipper::fyiWillBeAdvancedByHostKThx() const
 	{
 		callMethod<void>(
 			"fyiWillBeAdvancedByHostKThx",
 			"()V"
 		);
 	}
-	JString AdapterViewFlipper::getAccessibilityClassName()
+	JString AdapterViewFlipper::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AdapterViewFlipper::getFlipInterval()
+	jint AdapterViewFlipper::getFlipInterval() const
 	{
 		return callMethod<jint>(
 			"getFlipInterval",
 			"()I"
 		);
 	}
-	jboolean AdapterViewFlipper::isAutoStart()
+	jboolean AdapterViewFlipper::isAutoStart() const
 	{
 		return callMethod<jboolean>(
 			"isAutoStart",
 			"()Z"
 		);
 	}
-	jboolean AdapterViewFlipper::isFlipping()
+	jboolean AdapterViewFlipper::isFlipping() const
 	{
 		return callMethod<jboolean>(
 			"isFlipping",
 			"()Z"
 		);
 	}
-	void AdapterViewFlipper::setAdapter(JObject arg0)
+	void AdapterViewFlipper::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -85,7 +85,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterViewFlipper::setAutoStart(jboolean arg0)
+	void AdapterViewFlipper::setAutoStart(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoStart",
@@ -93,7 +93,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterViewFlipper::setFlipInterval(jint arg0)
+	void AdapterViewFlipper::setFlipInterval(jint arg0) const
 	{
 		callMethod<void>(
 			"setFlipInterval",
@@ -101,28 +101,28 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterViewFlipper::showNext()
+	void AdapterViewFlipper::showNext() const
 	{
 		callMethod<void>(
 			"showNext",
 			"()V"
 		);
 	}
-	void AdapterViewFlipper::showPrevious()
+	void AdapterViewFlipper::showPrevious() const
 	{
 		callMethod<void>(
 			"showPrevious",
 			"()V"
 		);
 	}
-	void AdapterViewFlipper::startFlipping()
+	void AdapterViewFlipper::startFlipping() const
 	{
 		callMethod<void>(
 			"startFlipping",
 			"()V"
 		);
 	}
-	void AdapterViewFlipper::stopFlipping()
+	void AdapterViewFlipper::stopFlipping() const
 	{
 		callMethod<void>(
 			"stopFlipping",

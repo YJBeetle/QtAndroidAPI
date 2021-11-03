@@ -16,7 +16,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	void AnimatorListenerAdapter::onAnimationCancel(android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationCancel(android::animation::Animator arg0) const
 	{
 		callMethod<void>(
 			"onAnimationCancel",
@@ -24,7 +24,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationEnd(android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationEnd(android::animation::Animator arg0) const
 	{
 		callMethod<void>(
 			"onAnimationEnd",
@@ -32,7 +32,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationPause(android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationPause(android::animation::Animator arg0) const
 	{
 		callMethod<void>(
 			"onAnimationPause",
@@ -40,7 +40,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationRepeat(android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationRepeat(android::animation::Animator arg0) const
 	{
 		callMethod<void>(
 			"onAnimationRepeat",
@@ -48,7 +48,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationResume(android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationResume(android::animation::Animator arg0) const
 	{
 		callMethod<void>(
 			"onAnimationResume",
@@ -56,7 +56,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationStart(android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationStart(android::animation::Animator arg0) const
 	{
 		callMethod<void>(
 			"onAnimationStart",

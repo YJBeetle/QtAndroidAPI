@@ -33,7 +33,7 @@ namespace java::lang
 			"()[Ljava/lang/Package;"
 		);
 	}
-	JObject Package::getAnnotation(JClass arg0)
+	JObject Package::getAnnotation(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -41,14 +41,14 @@ namespace java::lang
 			arg0.object<jclass>()
 		);
 	}
-	JArray Package::getAnnotations()
+	JArray Package::getAnnotations() const
 	{
 		return callObjectMethod(
 			"getAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	JArray Package::getAnnotationsByType(JClass arg0)
+	JArray Package::getAnnotationsByType(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
@@ -56,7 +56,7 @@ namespace java::lang
 			arg0.object<jclass>()
 		);
 	}
-	JObject Package::getDeclaredAnnotation(JClass arg0)
+	JObject Package::getDeclaredAnnotation(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",
@@ -64,14 +64,14 @@ namespace java::lang
 			arg0.object<jclass>()
 		);
 	}
-	JArray Package::getDeclaredAnnotations()
+	JArray Package::getDeclaredAnnotations() const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	JArray Package::getDeclaredAnnotationsByType(JClass arg0)
+	JArray Package::getDeclaredAnnotationsByType(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotationsByType",
@@ -79,63 +79,63 @@ namespace java::lang
 			arg0.object<jclass>()
 		);
 	}
-	JString Package::getImplementationTitle()
+	JString Package::getImplementationTitle() const
 	{
 		return callObjectMethod(
 			"getImplementationTitle",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Package::getImplementationVendor()
+	JString Package::getImplementationVendor() const
 	{
 		return callObjectMethod(
 			"getImplementationVendor",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Package::getImplementationVersion()
+	JString Package::getImplementationVersion() const
 	{
 		return callObjectMethod(
 			"getImplementationVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Package::getName()
+	JString Package::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Package::getSpecificationTitle()
+	JString Package::getSpecificationTitle() const
 	{
 		return callObjectMethod(
 			"getSpecificationTitle",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Package::getSpecificationVendor()
+	JString Package::getSpecificationVendor() const
 	{
 		return callObjectMethod(
 			"getSpecificationVendor",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Package::getSpecificationVersion()
+	JString Package::getSpecificationVersion() const
 	{
 		return callObjectMethod(
 			"getSpecificationVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Package::hashCode()
+	jint Package::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Package::isAnnotationPresent(JClass arg0)
+	jboolean Package::isAnnotationPresent(JClass arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAnnotationPresent",
@@ -143,7 +143,7 @@ namespace java::lang
 			arg0.object<jclass>()
 		);
 	}
-	jboolean Package::isCompatibleWith(JString arg0)
+	jboolean Package::isCompatibleWith(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCompatibleWith",
@@ -151,14 +151,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Package::isSealed()
+	jboolean Package::isSealed() const
 	{
 		return callMethod<jboolean>(
 			"isSealed",
 			"()Z"
 		);
 	}
-	jboolean Package::isSealed(java::net::URL arg0)
+	jboolean Package::isSealed(java::net::URL arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSealed",
@@ -166,7 +166,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	JString Package::toString()
+	JString Package::toString() const
 	{
 		return callObjectMethod(
 			"toString",

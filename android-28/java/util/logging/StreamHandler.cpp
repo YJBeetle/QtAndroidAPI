@@ -28,21 +28,21 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	void StreamHandler::close()
+	void StreamHandler::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void StreamHandler::flush()
+	void StreamHandler::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	jboolean StreamHandler::isLoggable(java::util::logging::LogRecord arg0)
+	jboolean StreamHandler::isLoggable(java::util::logging::LogRecord arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLoggable",
@@ -50,7 +50,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void StreamHandler::publish(java::util::logging::LogRecord arg0)
+	void StreamHandler::publish(java::util::logging::LogRecord arg0) const
 	{
 		callMethod<void>(
 			"publish",
@@ -58,7 +58,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void StreamHandler::setEncoding(JString arg0)
+	void StreamHandler::setEncoding(JString arg0) const
 	{
 		callMethod<void>(
 			"setEncoding",

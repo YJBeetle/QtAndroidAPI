@@ -22,12 +22,12 @@ namespace android::telephony::data
 		NetworkSliceInfo_Builder();
 		
 		// Methods
-		android::telephony::data::NetworkSliceInfo build();
-		android::telephony::data::NetworkSliceInfo_Builder setMappedHplmnSliceDifferentiator(jint arg0);
-		android::telephony::data::NetworkSliceInfo_Builder setMappedHplmnSliceServiceType(jint arg0);
-		android::telephony::data::NetworkSliceInfo_Builder setSliceDifferentiator(jint arg0);
-		android::telephony::data::NetworkSliceInfo_Builder setSliceServiceType(jint arg0);
-		android::telephony::data::NetworkSliceInfo_Builder setStatus(jint arg0);
+		android::telephony::data::NetworkSliceInfo build() const;
+		android::telephony::data::NetworkSliceInfo_Builder setMappedHplmnSliceDifferentiator(jint arg0) const;
+		android::telephony::data::NetworkSliceInfo_Builder setMappedHplmnSliceServiceType(jint arg0) const;
+		android::telephony::data::NetworkSliceInfo_Builder setSliceDifferentiator(jint arg0) const;
+		android::telephony::data::NetworkSliceInfo_Builder setSliceServiceType(jint arg0) const;
+		android::telephony::data::NetworkSliceInfo_Builder setStatus(jint arg0) const;
 	};
 } // namespace android::telephony::data
 

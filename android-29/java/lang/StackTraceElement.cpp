@@ -36,7 +36,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	jboolean StackTraceElement::equals(JObject arg0)
+	jboolean StackTraceElement::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,70 +44,70 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	JString StackTraceElement::getClassLoaderName()
+	JString StackTraceElement::getClassLoaderName() const
 	{
 		return callObjectMethod(
 			"getClassLoaderName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString StackTraceElement::getClassName()
+	JString StackTraceElement::getClassName() const
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString StackTraceElement::getFileName()
+	JString StackTraceElement::getFileName() const
 	{
 		return callObjectMethod(
 			"getFileName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint StackTraceElement::getLineNumber()
+	jint StackTraceElement::getLineNumber() const
 	{
 		return callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
 	}
-	JString StackTraceElement::getMethodName()
+	JString StackTraceElement::getMethodName() const
 	{
 		return callObjectMethod(
 			"getMethodName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString StackTraceElement::getModuleName()
+	JString StackTraceElement::getModuleName() const
 	{
 		return callObjectMethod(
 			"getModuleName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString StackTraceElement::getModuleVersion()
+	JString StackTraceElement::getModuleVersion() const
 	{
 		return callObjectMethod(
 			"getModuleVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint StackTraceElement::hashCode()
+	jint StackTraceElement::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean StackTraceElement::isNativeMethod()
+	jboolean StackTraceElement::isNativeMethod() const
 	{
 		return callMethod<jboolean>(
 			"isNativeMethod",
 			"()Z"
 		);
 	}
-	JString StackTraceElement::toString()
+	JString StackTraceElement::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -59,19 +59,19 @@ namespace java::time::temporal
 		// Methods
 		static java::time::temporal::ChronoField valueOf(JString arg0);
 		static JArray values();
-		JObject adjustInto(JObject arg0, jlong arg1);
-		jint checkValidIntValue(jlong arg0);
-		jlong checkValidValue(jlong arg0);
-		JObject getBaseUnit();
-		JString getDisplayName(java::util::Locale arg0);
-		jlong getFrom(JObject arg0);
-		JObject getRangeUnit();
-		jboolean isDateBased();
-		jboolean isSupportedBy(JObject arg0);
-		jboolean isTimeBased();
-		java::time::temporal::ValueRange range();
-		java::time::temporal::ValueRange rangeRefinedBy(JObject arg0);
-		JString toString();
+		JObject adjustInto(JObject arg0, jlong arg1) const;
+		jint checkValidIntValue(jlong arg0) const;
+		jlong checkValidValue(jlong arg0) const;
+		JObject getBaseUnit() const;
+		JString getDisplayName(java::util::Locale arg0) const;
+		jlong getFrom(JObject arg0) const;
+		JObject getRangeUnit() const;
+		jboolean isDateBased() const;
+		jboolean isSupportedBy(JObject arg0) const;
+		jboolean isTimeBased() const;
+		java::time::temporal::ValueRange range() const;
+		java::time::temporal::ValueRange rangeRefinedBy(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace java::time::temporal
 

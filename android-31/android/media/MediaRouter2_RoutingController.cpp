@@ -14,7 +14,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaRouter2_RoutingController::deselectRoute(android::media::MediaRoute2Info arg0)
+	void MediaRouter2_RoutingController::deselectRoute(android::media::MediaRoute2Info arg0) const
 	{
 		callMethod<void>(
 			"deselectRoute",
@@ -22,77 +22,77 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::os::Bundle MediaRouter2_RoutingController::getControlHints()
+	android::os::Bundle MediaRouter2_RoutingController::getControlHints() const
 	{
 		return callObjectMethod(
 			"getControlHints",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject MediaRouter2_RoutingController::getDeselectableRoutes()
+	JObject MediaRouter2_RoutingController::getDeselectableRoutes() const
 	{
 		return callObjectMethod(
 			"getDeselectableRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	JString MediaRouter2_RoutingController::getId()
+	JString MediaRouter2_RoutingController::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject MediaRouter2_RoutingController::getSelectableRoutes()
+	JObject MediaRouter2_RoutingController::getSelectableRoutes() const
 	{
 		return callObjectMethod(
 			"getSelectableRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject MediaRouter2_RoutingController::getSelectedRoutes()
+	JObject MediaRouter2_RoutingController::getSelectedRoutes() const
 	{
 		return callObjectMethod(
 			"getSelectedRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	jint MediaRouter2_RoutingController::getVolume()
+	jint MediaRouter2_RoutingController::getVolume() const
 	{
 		return callMethod<jint>(
 			"getVolume",
 			"()I"
 		);
 	}
-	jint MediaRouter2_RoutingController::getVolumeHandling()
+	jint MediaRouter2_RoutingController::getVolumeHandling() const
 	{
 		return callMethod<jint>(
 			"getVolumeHandling",
 			"()I"
 		);
 	}
-	jint MediaRouter2_RoutingController::getVolumeMax()
+	jint MediaRouter2_RoutingController::getVolumeMax() const
 	{
 		return callMethod<jint>(
 			"getVolumeMax",
 			"()I"
 		);
 	}
-	jboolean MediaRouter2_RoutingController::isReleased()
+	jboolean MediaRouter2_RoutingController::isReleased() const
 	{
 		return callMethod<jboolean>(
 			"isReleased",
 			"()Z"
 		);
 	}
-	void MediaRouter2_RoutingController::release()
+	void MediaRouter2_RoutingController::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaRouter2_RoutingController::selectRoute(android::media::MediaRoute2Info arg0)
+	void MediaRouter2_RoutingController::selectRoute(android::media::MediaRoute2Info arg0) const
 	{
 		callMethod<void>(
 			"selectRoute",
@@ -100,7 +100,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter2_RoutingController::setVolume(jint arg0)
+	void MediaRouter2_RoutingController::setVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"setVolume",
@@ -108,7 +108,7 @@ namespace android::media
 			arg0
 		);
 	}
-	JString MediaRouter2_RoutingController::toString()
+	JString MediaRouter2_RoutingController::toString() const
 	{
 		return callObjectMethod(
 			"toString",

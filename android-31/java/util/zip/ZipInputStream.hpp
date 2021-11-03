@@ -37,12 +37,12 @@ namespace java::util::zip
 		ZipInputStream(java::io::InputStream arg0, java::nio::charset::Charset arg1);
 		
 		// Methods
-		jint available();
-		void close();
-		void closeEntry();
-		java::util::zip::ZipEntry getNextEntry();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		jlong skip(jlong arg0);
+		jint available() const;
+		void close() const;
+		void closeEntry() const;
+		java::util::zip::ZipEntry getNextEntry() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		jlong skip(jlong arg0) const;
 	};
 } // namespace java::util::zip
 

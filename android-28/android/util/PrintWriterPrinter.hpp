@@ -23,7 +23,7 @@ namespace android::util
 		PrintWriterPrinter(java::io::PrintWriter arg0);
 		
 		// Methods
-		void println(JString arg0);
+		void println(JString arg0) const;
 	};
 } // namespace android::util
 

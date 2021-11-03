@@ -21,8 +21,8 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jint getType();
-		JString getTypeString();
+		jint getType() const;
+		JString getTypeString() const;
 	};
 } // namespace android::net
 

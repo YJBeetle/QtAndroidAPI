@@ -33,7 +33,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void Slide::captureEndValues(android::transition::TransitionValues arg0)
+	void Slide::captureEndValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureEndValues",
@@ -41,7 +41,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Slide::captureStartValues(android::transition::TransitionValues arg0)
+	void Slide::captureStartValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureStartValues",
@@ -49,14 +49,14 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	jint Slide::getSlideEdge()
+	jint Slide::getSlideEdge() const
 	{
 		return callMethod<jint>(
 			"getSlideEdge",
 			"()I"
 		);
 	}
-	android::animation::Animator Slide::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Slide::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callObjectMethod(
 			"onAppear",
@@ -67,7 +67,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	android::animation::Animator Slide::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Slide::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callObjectMethod(
 			"onDisappear",
@@ -78,7 +78,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	void Slide::setSlideEdge(jint arg0)
+	void Slide::setSlideEdge(jint arg0) const
 	{
 		callMethod<void>(
 			"setSlideEdge",

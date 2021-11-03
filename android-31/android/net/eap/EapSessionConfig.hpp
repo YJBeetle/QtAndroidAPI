@@ -39,14 +39,14 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::net::eap::EapSessionConfig_EapAkaConfig getEapAkaConfig();
-		android::net::eap::EapSessionConfig_EapAkaPrimeConfig getEapAkaPrimeConfig();
-		JByteArray getEapIdentity();
-		android::net::eap::EapSessionConfig_EapMsChapV2Config getEapMsChapV2Config();
-		android::net::eap::EapSessionConfig_EapSimConfig getEapSimConfig();
-		android::net::eap::EapSessionConfig_EapTtlsConfig getEapTtlsConfig();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		android::net::eap::EapSessionConfig_EapAkaConfig getEapAkaConfig() const;
+		android::net::eap::EapSessionConfig_EapAkaPrimeConfig getEapAkaPrimeConfig() const;
+		JByteArray getEapIdentity() const;
+		android::net::eap::EapSessionConfig_EapMsChapV2Config getEapMsChapV2Config() const;
+		android::net::eap::EapSessionConfig_EapSimConfig getEapSimConfig() const;
+		android::net::eap::EapSessionConfig_EapTtlsConfig getEapTtlsConfig() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::eap
 

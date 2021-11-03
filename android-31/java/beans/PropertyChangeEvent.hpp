@@ -24,12 +24,12 @@ namespace java::beans
 		PropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3);
 		
 		// Methods
-		JObject getNewValue();
-		JObject getOldValue();
-		JObject getPropagationId();
-		JString getPropertyName();
-		void setPropagationId(JObject arg0);
-		JString toString();
+		JObject getNewValue() const;
+		JObject getOldValue() const;
+		JObject getPropagationId() const;
+		JString getPropertyName() const;
+		void setPropagationId(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace java::beans
 

@@ -104,7 +104,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void Connection_VideoProvider::changeCameraCapabilities(android::telecom::VideoProfile_CameraCapabilities arg0)
+	void Connection_VideoProvider::changeCameraCapabilities(android::telecom::VideoProfile_CameraCapabilities arg0) const
 	{
 		callMethod<void>(
 			"changeCameraCapabilities",
@@ -112,7 +112,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection_VideoProvider::changePeerDimensions(jint arg0, jint arg1)
+	void Connection_VideoProvider::changePeerDimensions(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"changePeerDimensions",
@@ -121,7 +121,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Connection_VideoProvider::changeVideoQuality(jint arg0)
+	void Connection_VideoProvider::changeVideoQuality(jint arg0) const
 	{
 		callMethod<void>(
 			"changeVideoQuality",
@@ -129,7 +129,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection_VideoProvider::handleCallSessionEvent(jint arg0)
+	void Connection_VideoProvider::handleCallSessionEvent(jint arg0) const
 	{
 		callMethod<void>(
 			"handleCallSessionEvent",
@@ -137,21 +137,21 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection_VideoProvider::onRequestCameraCapabilities()
+	void Connection_VideoProvider::onRequestCameraCapabilities() const
 	{
 		callMethod<void>(
 			"onRequestCameraCapabilities",
 			"()V"
 		);
 	}
-	void Connection_VideoProvider::onRequestConnectionDataUsage()
+	void Connection_VideoProvider::onRequestConnectionDataUsage() const
 	{
 		callMethod<void>(
 			"onRequestConnectionDataUsage",
 			"()V"
 		);
 	}
-	void Connection_VideoProvider::onSendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1)
+	void Connection_VideoProvider::onSendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1) const
 	{
 		callMethod<void>(
 			"onSendSessionModifyRequest",
@@ -160,7 +160,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Connection_VideoProvider::onSendSessionModifyResponse(android::telecom::VideoProfile arg0)
+	void Connection_VideoProvider::onSendSessionModifyResponse(android::telecom::VideoProfile arg0) const
 	{
 		callMethod<void>(
 			"onSendSessionModifyResponse",
@@ -168,7 +168,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection_VideoProvider::onSetCamera(JString arg0)
+	void Connection_VideoProvider::onSetCamera(JString arg0) const
 	{
 		callMethod<void>(
 			"onSetCamera",
@@ -176,7 +176,7 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	void Connection_VideoProvider::onSetDeviceOrientation(jint arg0)
+	void Connection_VideoProvider::onSetDeviceOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"onSetDeviceOrientation",
@@ -184,7 +184,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection_VideoProvider::onSetDisplaySurface(android::view::Surface arg0)
+	void Connection_VideoProvider::onSetDisplaySurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"onSetDisplaySurface",
@@ -192,7 +192,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection_VideoProvider::onSetPauseImage(android::net::Uri arg0)
+	void Connection_VideoProvider::onSetPauseImage(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onSetPauseImage",
@@ -200,7 +200,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection_VideoProvider::onSetPreviewSurface(android::view::Surface arg0)
+	void Connection_VideoProvider::onSetPreviewSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"onSetPreviewSurface",
@@ -208,7 +208,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection_VideoProvider::onSetZoom(jfloat arg0)
+	void Connection_VideoProvider::onSetZoom(jfloat arg0) const
 	{
 		callMethod<void>(
 			"onSetZoom",
@@ -216,7 +216,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection_VideoProvider::receiveSessionModifyRequest(android::telecom::VideoProfile arg0)
+	void Connection_VideoProvider::receiveSessionModifyRequest(android::telecom::VideoProfile arg0) const
 	{
 		callMethod<void>(
 			"receiveSessionModifyRequest",
@@ -224,7 +224,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection_VideoProvider::receiveSessionModifyResponse(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2)
+	void Connection_VideoProvider::receiveSessionModifyResponse(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2) const
 	{
 		callMethod<void>(
 			"receiveSessionModifyResponse",
@@ -234,7 +234,7 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void Connection_VideoProvider::setCallDataUsage(jlong arg0)
+	void Connection_VideoProvider::setCallDataUsage(jlong arg0) const
 	{
 		callMethod<void>(
 			"setCallDataUsage",

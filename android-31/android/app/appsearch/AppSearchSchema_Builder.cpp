@@ -19,7 +19,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchSchema_Builder AppSearchSchema_Builder::addProperty(android::app::appsearch::AppSearchSchema_PropertyConfig arg0)
+	android::app::appsearch::AppSearchSchema_Builder AppSearchSchema_Builder::addProperty(android::app::appsearch::AppSearchSchema_PropertyConfig arg0) const
 	{
 		return callObjectMethod(
 			"addProperty",
@@ -27,7 +27,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::AppSearchSchema AppSearchSchema_Builder::build()
+	android::app::appsearch::AppSearchSchema AppSearchSchema_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

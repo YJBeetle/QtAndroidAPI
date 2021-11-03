@@ -26,14 +26,14 @@ namespace android::service::controls::actions
 		) {}
 	
 	// Methods
-	jint ModeAction::getActionType()
+	jint ModeAction::getActionType() const
 	{
 		return callMethod<jint>(
 			"getActionType",
 			"()I"
 		);
 	}
-	jint ModeAction::getNewMode()
+	jint ModeAction::getNewMode() const
 	{
 		return callMethod<jint>(
 			"getNewMode",

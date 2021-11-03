@@ -22,8 +22,8 @@ namespace android::database
 		AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0);
 		
 		// Methods
-		jboolean deliverSelfNotifications();
-		void onChange(jboolean arg0);
+		jboolean deliverSelfNotifications() const;
+		void onChange(jboolean arg0) const;
 	};
 } // namespace android::database
 

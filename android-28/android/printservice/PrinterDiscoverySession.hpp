@@ -30,19 +30,19 @@ namespace android::printservice
 		PrinterDiscoverySession();
 		
 		// Methods
-		void addPrinters(JObject arg0);
-		JObject getPrinters();
-		JObject getTrackedPrinters();
-		jboolean isDestroyed();
-		jboolean isPrinterDiscoveryStarted();
-		void onDestroy();
-		void onRequestCustomPrinterIcon(android::print::PrinterId arg0, android::os::CancellationSignal arg1, android::printservice::CustomPrinterIconCallback arg2);
-		void onStartPrinterDiscovery(JObject arg0);
-		void onStartPrinterStateTracking(android::print::PrinterId arg0);
-		void onStopPrinterDiscovery();
-		void onStopPrinterStateTracking(android::print::PrinterId arg0);
-		void onValidatePrinters(JObject arg0);
-		void removePrinters(JObject arg0);
+		void addPrinters(JObject arg0) const;
+		JObject getPrinters() const;
+		JObject getTrackedPrinters() const;
+		jboolean isDestroyed() const;
+		jboolean isPrinterDiscoveryStarted() const;
+		void onDestroy() const;
+		void onRequestCustomPrinterIcon(android::print::PrinterId arg0, android::os::CancellationSignal arg1, android::printservice::CustomPrinterIconCallback arg2) const;
+		void onStartPrinterDiscovery(JObject arg0) const;
+		void onStartPrinterStateTracking(android::print::PrinterId arg0) const;
+		void onStopPrinterDiscovery() const;
+		void onStopPrinterStateTracking(android::print::PrinterId arg0) const;
+		void onValidatePrinters(JObject arg0) const;
+		void removePrinters(JObject arg0) const;
 	};
 } // namespace android::printservice
 

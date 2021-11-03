@@ -37,21 +37,21 @@ namespace javax::xml::transform
 		) {}
 	
 	// Methods
-	JThrowable TransformerFactoryConfigurationError::getCause()
+	JThrowable TransformerFactoryConfigurationError::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	java::lang::Exception TransformerFactoryConfigurationError::getException()
+	java::lang::Exception TransformerFactoryConfigurationError::getException() const
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
 	}
-	JString TransformerFactoryConfigurationError::getMessage()
+	JString TransformerFactoryConfigurationError::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

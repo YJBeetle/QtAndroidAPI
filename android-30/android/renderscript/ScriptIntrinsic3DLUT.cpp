@@ -25,7 +25,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsic3DLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1)
+	void ScriptIntrinsic3DLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -34,7 +34,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsic3DLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2)
+	void ScriptIntrinsic3DLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -44,14 +44,14 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	android::renderscript::Script_KernelID ScriptIntrinsic3DLUT::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsic3DLUT::getKernelID() const
 	{
 		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsic3DLUT::setLUT(android::renderscript::Allocation arg0)
+	void ScriptIntrinsic3DLUT::setLUT(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"setLUT",

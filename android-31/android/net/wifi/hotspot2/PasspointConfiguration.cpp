@@ -34,14 +34,14 @@ namespace android::net::wifi::hotspot2
 		) {}
 	
 	// Methods
-	jint PasspointConfiguration::describeContents()
+	jint PasspointConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PasspointConfiguration::equals(JObject arg0)
+	jboolean PasspointConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -49,56 +49,56 @@ namespace android::net::wifi::hotspot2
 			arg0.object<jobject>()
 		);
 	}
-	android::net::wifi::hotspot2::pps::Credential PasspointConfiguration::getCredential()
+	android::net::wifi::hotspot2::pps::Credential PasspointConfiguration::getCredential() const
 	{
 		return callObjectMethod(
 			"getCredential",
 			"()Landroid/net/wifi/hotspot2/pps/Credential;"
 		);
 	}
-	JString PasspointConfiguration::getDecoratedIdentityPrefix()
+	JString PasspointConfiguration::getDecoratedIdentityPrefix() const
 	{
 		return callObjectMethod(
 			"getDecoratedIdentityPrefix",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::wifi::hotspot2::pps::HomeSp PasspointConfiguration::getHomeSp()
+	android::net::wifi::hotspot2::pps::HomeSp PasspointConfiguration::getHomeSp() const
 	{
 		return callObjectMethod(
 			"getHomeSp",
 			"()Landroid/net/wifi/hotspot2/pps/HomeSp;"
 		);
 	}
-	jlong PasspointConfiguration::getSubscriptionExpirationTimeMillis()
+	jlong PasspointConfiguration::getSubscriptionExpirationTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getSubscriptionExpirationTimeMillis",
 			"()J"
 		);
 	}
-	JString PasspointConfiguration::getUniqueId()
+	JString PasspointConfiguration::getUniqueId() const
 	{
 		return callObjectMethod(
 			"getUniqueId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PasspointConfiguration::hashCode()
+	jint PasspointConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PasspointConfiguration::isOsuProvisioned()
+	jboolean PasspointConfiguration::isOsuProvisioned() const
 	{
 		return callMethod<jboolean>(
 			"isOsuProvisioned",
 			"()Z"
 		);
 	}
-	void PasspointConfiguration::setCredential(android::net::wifi::hotspot2::pps::Credential arg0)
+	void PasspointConfiguration::setCredential(android::net::wifi::hotspot2::pps::Credential arg0) const
 	{
 		callMethod<void>(
 			"setCredential",
@@ -106,7 +106,7 @@ namespace android::net::wifi::hotspot2
 			arg0.object()
 		);
 	}
-	void PasspointConfiguration::setDecoratedIdentityPrefix(JString arg0)
+	void PasspointConfiguration::setDecoratedIdentityPrefix(JString arg0) const
 	{
 		callMethod<void>(
 			"setDecoratedIdentityPrefix",
@@ -114,7 +114,7 @@ namespace android::net::wifi::hotspot2
 			arg0.object<jstring>()
 		);
 	}
-	void PasspointConfiguration::setHomeSp(android::net::wifi::hotspot2::pps::HomeSp arg0)
+	void PasspointConfiguration::setHomeSp(android::net::wifi::hotspot2::pps::HomeSp arg0) const
 	{
 		callMethod<void>(
 			"setHomeSp",
@@ -122,14 +122,14 @@ namespace android::net::wifi::hotspot2
 			arg0.object()
 		);
 	}
-	JString PasspointConfiguration::toString()
+	JString PasspointConfiguration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PasspointConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PasspointConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -51,12 +51,12 @@ namespace android::net::ipsec::ike
 		
 		// Methods
 		static JObject getSupportedDhGroups();
-		jboolean equals(JObject arg0);
-		JObject getDhGroups();
-		JObject getEncryptionAlgorithms();
-		JObject getIntegrityAlgorithms();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getDhGroups() const;
+		JObject getEncryptionAlgorithms() const;
+		JObject getIntegrityAlgorithms() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::net::ipsec::ike
 

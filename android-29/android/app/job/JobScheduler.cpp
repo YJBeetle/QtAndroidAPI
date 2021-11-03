@@ -31,7 +31,7 @@ namespace android::app::job
 		) {}
 	
 	// Methods
-	void JobScheduler::cancel(jint arg0)
+	void JobScheduler::cancel(jint arg0) const
 	{
 		callMethod<void>(
 			"cancel",
@@ -39,14 +39,14 @@ namespace android::app::job
 			arg0
 		);
 	}
-	void JobScheduler::cancelAll()
+	void JobScheduler::cancelAll() const
 	{
 		callMethod<void>(
 			"cancelAll",
 			"()V"
 		);
 	}
-	jint JobScheduler::enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1)
+	jint JobScheduler::enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1) const
 	{
 		return callMethod<jint>(
 			"enqueue",
@@ -55,14 +55,14 @@ namespace android::app::job
 			arg1.object()
 		);
 	}
-	JObject JobScheduler::getAllPendingJobs()
+	JObject JobScheduler::getAllPendingJobs() const
 	{
 		return callObjectMethod(
 			"getAllPendingJobs",
 			"()Ljava/util/List;"
 		);
 	}
-	android::app::job::JobInfo JobScheduler::getPendingJob(jint arg0)
+	android::app::job::JobInfo JobScheduler::getPendingJob(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPendingJob",
@@ -70,7 +70,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	jint JobScheduler::schedule(android::app::job::JobInfo arg0)
+	jint JobScheduler::schedule(android::app::job::JobInfo arg0) const
 	{
 		return callMethod<jint>(
 			"schedule",

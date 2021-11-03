@@ -90,14 +90,14 @@ namespace java::text
 			arg2
 		);
 	}
-	jboolean Bidi::baseIsLeftToRight()
+	jboolean Bidi::baseIsLeftToRight() const
 	{
 		return callMethod<jboolean>(
 			"baseIsLeftToRight",
 			"()Z"
 		);
 	}
-	java::text::Bidi Bidi::createLineBidi(jint arg0, jint arg1)
+	java::text::Bidi Bidi::createLineBidi(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createLineBidi",
@@ -106,21 +106,21 @@ namespace java::text
 			arg1
 		);
 	}
-	jint Bidi::getBaseLevel()
+	jint Bidi::getBaseLevel() const
 	{
 		return callMethod<jint>(
 			"getBaseLevel",
 			"()I"
 		);
 	}
-	jint Bidi::getLength()
+	jint Bidi::getLength() const
 	{
 		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
-	jint Bidi::getLevelAt(jint arg0)
+	jint Bidi::getLevelAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLevelAt",
@@ -128,14 +128,14 @@ namespace java::text
 			arg0
 		);
 	}
-	jint Bidi::getRunCount()
+	jint Bidi::getRunCount() const
 	{
 		return callMethod<jint>(
 			"getRunCount",
 			"()I"
 		);
 	}
-	jint Bidi::getRunLevel(jint arg0)
+	jint Bidi::getRunLevel(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getRunLevel",
@@ -143,7 +143,7 @@ namespace java::text
 			arg0
 		);
 	}
-	jint Bidi::getRunLimit(jint arg0)
+	jint Bidi::getRunLimit(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getRunLimit",
@@ -151,7 +151,7 @@ namespace java::text
 			arg0
 		);
 	}
-	jint Bidi::getRunStart(jint arg0)
+	jint Bidi::getRunStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getRunStart",
@@ -159,28 +159,28 @@ namespace java::text
 			arg0
 		);
 	}
-	jboolean Bidi::isLeftToRight()
+	jboolean Bidi::isLeftToRight() const
 	{
 		return callMethod<jboolean>(
 			"isLeftToRight",
 			"()Z"
 		);
 	}
-	jboolean Bidi::isMixed()
+	jboolean Bidi::isMixed() const
 	{
 		return callMethod<jboolean>(
 			"isMixed",
 			"()Z"
 		);
 	}
-	jboolean Bidi::isRightToLeft()
+	jboolean Bidi::isRightToLeft() const
 	{
 		return callMethod<jboolean>(
 			"isRightToLeft",
 			"()Z"
 		);
 	}
-	JString Bidi::toString()
+	JString Bidi::toString() const
 	{
 		return callObjectMethod(
 			"toString",

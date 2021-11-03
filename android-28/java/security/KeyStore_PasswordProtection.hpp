@@ -21,11 +21,11 @@ namespace java::security
 		KeyStore_PasswordProtection(JCharArray arg0, JString arg1, JObject arg2);
 		
 		// Methods
-		void destroy();
-		JCharArray getPassword();
-		JString getProtectionAlgorithm();
-		JObject getProtectionParameters();
-		jboolean isDestroyed();
+		void destroy() const;
+		JCharArray getPassword() const;
+		JString getProtectionAlgorithm() const;
+		JObject getProtectionParameters() const;
+		jboolean isDestroyed() const;
 	};
 } // namespace java::security
 

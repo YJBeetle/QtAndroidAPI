@@ -28,11 +28,11 @@ namespace android::net::vcn
 		VcnGatewayConnectionConfig_Builder(JString arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1);
 		
 		// Methods
-		android::net::vcn::VcnGatewayConnectionConfig_Builder addExposedCapability(jint arg0);
-		android::net::vcn::VcnGatewayConnectionConfig build();
-		android::net::vcn::VcnGatewayConnectionConfig_Builder removeExposedCapability(jint arg0);
-		android::net::vcn::VcnGatewayConnectionConfig_Builder setMaxMtu(jint arg0);
-		android::net::vcn::VcnGatewayConnectionConfig_Builder setRetryIntervalsMillis(JLongArray arg0);
+		android::net::vcn::VcnGatewayConnectionConfig_Builder addExposedCapability(jint arg0) const;
+		android::net::vcn::VcnGatewayConnectionConfig build() const;
+		android::net::vcn::VcnGatewayConnectionConfig_Builder removeExposedCapability(jint arg0) const;
+		android::net::vcn::VcnGatewayConnectionConfig_Builder setMaxMtu(jint arg0) const;
+		android::net::vcn::VcnGatewayConnectionConfig_Builder setRetryIntervalsMillis(JLongArray arg0) const;
 	};
 } // namespace android::net::vcn
 

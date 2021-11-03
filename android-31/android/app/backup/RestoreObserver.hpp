@@ -19,9 +19,9 @@ namespace android::app::backup
 		RestoreObserver();
 		
 		// Methods
-		void onUpdate(jint arg0, JString arg1);
-		void restoreFinished(jint arg0);
-		void restoreStarting(jint arg0);
+		void onUpdate(jint arg0, JString arg1) const;
+		void restoreFinished(jint arg0) const;
+		void restoreStarting(jint arg0) const;
 	};
 } // namespace android::app::backup
 

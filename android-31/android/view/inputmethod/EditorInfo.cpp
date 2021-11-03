@@ -261,14 +261,14 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint EditorInfo::describeContents()
+	jint EditorInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void EditorInfo::dump(JObject arg0, JString arg1)
+	void EditorInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -277,7 +277,7 @@ namespace android::view::inputmethod
 			arg1.object<jstring>()
 		);
 	}
-	JString EditorInfo::getInitialSelectedText(jint arg0)
+	JString EditorInfo::getInitialSelectedText(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInitialSelectedText",
@@ -285,7 +285,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	android::view::inputmethod::SurroundingText EditorInfo::getInitialSurroundingText(jint arg0, jint arg1, jint arg2)
+	android::view::inputmethod::SurroundingText EditorInfo::getInitialSurroundingText(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"getInitialSurroundingText",
@@ -295,7 +295,7 @@ namespace android::view::inputmethod
 			arg2
 		);
 	}
-	JString EditorInfo::getInitialTextAfterCursor(jint arg0, jint arg1)
+	JString EditorInfo::getInitialTextAfterCursor(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getInitialTextAfterCursor",
@@ -304,7 +304,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	JString EditorInfo::getInitialTextBeforeCursor(jint arg0, jint arg1)
+	JString EditorInfo::getInitialTextBeforeCursor(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getInitialTextBeforeCursor",
@@ -313,7 +313,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void EditorInfo::makeCompatible(jint arg0)
+	void EditorInfo::makeCompatible(jint arg0) const
 	{
 		callMethod<void>(
 			"makeCompatible",
@@ -321,7 +321,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	void EditorInfo::setInitialSurroundingSubText(JString arg0, jint arg1)
+	void EditorInfo::setInitialSurroundingSubText(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setInitialSurroundingSubText",
@@ -330,7 +330,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void EditorInfo::setInitialSurroundingText(JString arg0)
+	void EditorInfo::setInitialSurroundingText(JString arg0) const
 	{
 		callMethod<void>(
 			"setInitialSurroundingText",
@@ -338,7 +338,7 @@ namespace android::view::inputmethod
 			arg0.object<jstring>()
 		);
 	}
-	void EditorInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void EditorInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

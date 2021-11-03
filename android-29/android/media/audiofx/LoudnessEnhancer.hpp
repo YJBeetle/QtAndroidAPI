@@ -18,8 +18,8 @@ namespace android::media::audiofx
 		LoudnessEnhancer(jint arg0);
 		
 		// Methods
-		jfloat getTargetGain();
-		void setTargetGain(jint arg0);
+		jfloat getTargetGain() const;
+		void setTargetGain(jint arg0) const;
 	};
 } // namespace android::media::audiofx
 

@@ -23,9 +23,9 @@ namespace android::content
 		Intent_FilterComparison(android::content::Intent arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::content::Intent getIntent();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		android::content::Intent getIntent() const;
+		jint hashCode() const;
 	};
 } // namespace android::content
 

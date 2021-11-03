@@ -27,7 +27,7 @@ namespace android::text::method
 		// Methods
 		static android::text::method::DateTimeKeyListener getInstance();
 		static android::text::method::DateTimeKeyListener getInstance(java::util::Locale arg0);
-		jint getInputType();
+		jint getInputType() const;
 	};
 } // namespace android::text::method
 

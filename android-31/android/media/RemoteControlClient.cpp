@@ -160,7 +160,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::RemoteControlClient_MetadataEditor RemoteControlClient::editMetadata(jboolean arg0)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient::editMetadata(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"editMetadata",
@@ -168,14 +168,14 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::session::MediaSession RemoteControlClient::getMediaSession()
+	android::media::session::MediaSession RemoteControlClient::getMediaSession() const
 	{
 		return callObjectMethod(
 			"getMediaSession",
 			"()Landroid/media/session/MediaSession;"
 		);
 	}
-	void RemoteControlClient::setMetadataUpdateListener(JObject arg0)
+	void RemoteControlClient::setMetadataUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setMetadataUpdateListener",
@@ -183,7 +183,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void RemoteControlClient::setOnGetPlaybackPositionListener(JObject arg0)
+	void RemoteControlClient::setOnGetPlaybackPositionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnGetPlaybackPositionListener",
@@ -191,7 +191,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void RemoteControlClient::setPlaybackPositionUpdateListener(JObject arg0)
+	void RemoteControlClient::setPlaybackPositionUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackPositionUpdateListener",
@@ -199,7 +199,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void RemoteControlClient::setPlaybackState(jint arg0)
+	void RemoteControlClient::setPlaybackState(jint arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackState",
@@ -207,7 +207,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void RemoteControlClient::setPlaybackState(jint arg0, jlong arg1, jfloat arg2)
+	void RemoteControlClient::setPlaybackState(jint arg0, jlong arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"setPlaybackState",
@@ -217,7 +217,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void RemoteControlClient::setTransportControlFlags(jint arg0)
+	void RemoteControlClient::setTransportControlFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"setTransportControlFlags",

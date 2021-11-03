@@ -18,7 +18,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	JObject AbstractExecutorService::invokeAll(JObject arg0)
+	JObject AbstractExecutorService::invokeAll(JObject arg0) const
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -26,7 +26,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject AbstractExecutorService::invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject AbstractExecutorService::invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -36,7 +36,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject AbstractExecutorService::invokeAny(JObject arg0)
+	JObject AbstractExecutorService::invokeAny(JObject arg0) const
 	{
 		return callObjectMethod(
 			"invokeAny",
@@ -44,7 +44,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject AbstractExecutorService::invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject AbstractExecutorService::invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callObjectMethod(
 			"invokeAny",
@@ -54,7 +54,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject AbstractExecutorService::submit(JObject arg0)
+	JObject AbstractExecutorService::submit(JObject arg0) const
 	{
 		return callObjectMethod(
 			"submit",
@@ -62,7 +62,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject AbstractExecutorService::submit(JObject arg0, JObject arg1)
+	JObject AbstractExecutorService::submit(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"submit",

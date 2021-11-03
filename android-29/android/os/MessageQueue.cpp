@@ -11,7 +11,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void MessageQueue::addIdleHandler(JObject arg0)
+	void MessageQueue::addIdleHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"addIdleHandler",
@@ -19,7 +19,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void MessageQueue::addOnFileDescriptorEventListener(java::io::FileDescriptor arg0, jint arg1, JObject arg2)
+	void MessageQueue::addOnFileDescriptorEventListener(java::io::FileDescriptor arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"addOnFileDescriptorEventListener",
@@ -29,14 +29,14 @@ namespace android::os
 			arg2.object()
 		);
 	}
-	jboolean MessageQueue::isIdle()
+	jboolean MessageQueue::isIdle() const
 	{
 		return callMethod<jboolean>(
 			"isIdle",
 			"()Z"
 		);
 	}
-	void MessageQueue::removeIdleHandler(JObject arg0)
+	void MessageQueue::removeIdleHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeIdleHandler",
@@ -44,7 +44,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void MessageQueue::removeOnFileDescriptorEventListener(java::io::FileDescriptor arg0)
+	void MessageQueue::removeOnFileDescriptorEventListener(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"removeOnFileDescriptorEventListener",

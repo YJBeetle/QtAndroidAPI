@@ -34,14 +34,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint LeadingMarginSpan_Standard::describeContents()
+	jint LeadingMarginSpan_Standard::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void LeadingMarginSpan_Standard::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
+	void LeadingMarginSpan_Standard::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11) const
 	{
 		callMethod<void>(
 			"drawLeadingMargin",
@@ -60,7 +60,7 @@ namespace android::text::style
 			arg11.object()
 		);
 	}
-	jint LeadingMarginSpan_Standard::getLeadingMargin(jboolean arg0)
+	jint LeadingMarginSpan_Standard::getLeadingMargin(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"getLeadingMargin",
@@ -68,14 +68,14 @@ namespace android::text::style
 			arg0
 		);
 	}
-	jint LeadingMarginSpan_Standard::getSpanTypeId()
+	jint LeadingMarginSpan_Standard::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void LeadingMarginSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LeadingMarginSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

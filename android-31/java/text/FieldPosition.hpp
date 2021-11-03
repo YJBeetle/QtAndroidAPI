@@ -26,15 +26,15 @@ namespace java::text
 		FieldPosition(java::text::Format_Field arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getBeginIndex();
-		jint getEndIndex();
-		jint getField();
-		java::text::Format_Field getFieldAttribute();
-		jint hashCode();
-		void setBeginIndex(jint arg0);
-		void setEndIndex(jint arg0);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getBeginIndex() const;
+		jint getEndIndex() const;
+		jint getField() const;
+		java::text::Format_Field getFieldAttribute() const;
+		jint hashCode() const;
+		void setBeginIndex(jint arg0) const;
+		void setEndIndex(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace java::text
 

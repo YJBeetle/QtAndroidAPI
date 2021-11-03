@@ -18,14 +18,14 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	JIntArray CarrierMessagingService_SendMultipartSmsResult::getMessageRefs()
+	JIntArray CarrierMessagingService_SendMultipartSmsResult::getMessageRefs() const
 	{
 		return callObjectMethod(
 			"getMessageRefs",
 			"()[I"
 		);
 	}
-	jint CarrierMessagingService_SendMultipartSmsResult::getSendStatus()
+	jint CarrierMessagingService_SendMultipartSmsResult::getSendStatus() const
 	{
 		return callMethod<jint>(
 			"getSendStatus",

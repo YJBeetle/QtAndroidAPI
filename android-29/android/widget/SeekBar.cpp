@@ -42,14 +42,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString SeekBar::getAccessibilityClassName()
+	JString SeekBar::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void SeekBar::setOnSeekBarChangeListener(JObject arg0)
+	void SeekBar::setOnSeekBarChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnSeekBarChangeListener",

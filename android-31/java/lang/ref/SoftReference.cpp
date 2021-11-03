@@ -25,7 +25,7 @@ namespace java::lang::ref
 		) {}
 	
 	// Methods
-	JObject SoftReference::get()
+	JObject SoftReference::get() const
 	{
 		return callObjectMethod(
 			"get",

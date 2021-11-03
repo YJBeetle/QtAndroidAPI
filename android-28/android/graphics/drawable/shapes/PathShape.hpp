@@ -35,8 +35,8 @@ namespace android::graphics::drawable::shapes
 		PathShape(android::graphics::Path arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		android::graphics::drawable::shapes::PathShape clone();
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
+		android::graphics::drawable::shapes::PathShape clone() const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
 	};
 } // namespace android::graphics::drawable::shapes
 

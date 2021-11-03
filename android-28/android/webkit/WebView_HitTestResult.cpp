@@ -81,14 +81,14 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	JString WebView_HitTestResult::getExtra()
+	JString WebView_HitTestResult::getExtra() const
 	{
 		return callObjectMethod(
 			"getExtra",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint WebView_HitTestResult::getType()
+	jint WebView_HitTestResult::getType() const
 	{
 		return callMethod<jint>(
 			"getType",

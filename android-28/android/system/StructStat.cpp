@@ -147,7 +147,7 @@ namespace android::system
 		) {}
 	
 	// Methods
-	JString StructStat::toString()
+	JString StructStat::toString() const
 	{
 		return callObjectMethod(
 			"toString",

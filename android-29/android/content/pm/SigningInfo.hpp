@@ -25,12 +25,12 @@ namespace android::content::pm
 		SigningInfo(android::content::pm::SigningInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		JArray getApkContentsSigners();
-		JArray getSigningCertificateHistory();
-		jboolean hasMultipleSigners();
-		jboolean hasPastSigningCertificates();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JArray getApkContentsSigners() const;
+		JArray getSigningCertificateHistory() const;
+		jboolean hasMultipleSigners() const;
+		jboolean hasPastSigningCertificates() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

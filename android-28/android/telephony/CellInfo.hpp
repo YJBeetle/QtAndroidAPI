@@ -28,14 +28,14 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getCellConnectionStatus();
-		jlong getTimeStamp();
-		jint hashCode();
-		jboolean isRegistered();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getCellConnectionStatus() const;
+		jlong getTimeStamp() const;
+		jint hashCode() const;
+		jboolean isRegistered() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

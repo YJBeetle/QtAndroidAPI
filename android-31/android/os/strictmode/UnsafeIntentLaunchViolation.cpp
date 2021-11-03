@@ -17,7 +17,7 @@ namespace android::os::strictmode
 		) {}
 	
 	// Methods
-	android::content::Intent UnsafeIntentLaunchViolation::getIntent()
+	android::content::Intent UnsafeIntentLaunchViolation::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",

@@ -10,14 +10,14 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	void JsResult::cancel()
+	void JsResult::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	void JsResult::confirm()
+	void JsResult::confirm() const
 	{
 		callMethod<void>(
 			"confirm",

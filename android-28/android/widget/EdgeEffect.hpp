@@ -26,17 +26,17 @@ namespace android::widget
 		EdgeEffect(android::content::Context arg0);
 		
 		// Methods
-		jboolean draw(android::graphics::Canvas arg0);
-		void finish();
-		jint getColor();
-		jint getMaxHeight();
-		jboolean isFinished();
-		void onAbsorb(jint arg0);
-		void onPull(jfloat arg0);
-		void onPull(jfloat arg0, jfloat arg1);
-		void onRelease();
-		void setColor(jint arg0);
-		void setSize(jint arg0, jint arg1);
+		jboolean draw(android::graphics::Canvas arg0) const;
+		void finish() const;
+		jint getColor() const;
+		jint getMaxHeight() const;
+		jboolean isFinished() const;
+		void onAbsorb(jint arg0) const;
+		void onPull(jfloat arg0) const;
+		void onPull(jfloat arg0, jfloat arg1) const;
+		void onRelease() const;
+		void setColor(jint arg0) const;
+		void setSize(jint arg0, jint arg1) const;
 	};
 } // namespace android::widget
 

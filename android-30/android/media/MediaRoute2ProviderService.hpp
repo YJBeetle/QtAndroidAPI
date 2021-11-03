@@ -42,22 +42,22 @@ namespace android::media
 		MediaRoute2ProviderService();
 		
 		// Methods
-		JObject getAllSessionInfo();
-		android::media::RoutingSessionInfo getSessionInfo(JString arg0);
-		void notifyRequestFailed(jlong arg0, jint arg1);
-		void notifyRoutes(JObject arg0);
-		void notifySessionCreated(jlong arg0, android::media::RoutingSessionInfo arg1);
-		void notifySessionReleased(JString arg0);
-		void notifySessionUpdated(android::media::RoutingSessionInfo arg0);
-		JObject onBind(android::content::Intent arg0);
-		void onCreateSession(jlong arg0, JString arg1, JString arg2, android::os::Bundle arg3);
-		void onDeselectRoute(jlong arg0, JString arg1, JString arg2);
-		void onDiscoveryPreferenceChanged(android::media::RouteDiscoveryPreference arg0);
-		void onReleaseSession(jlong arg0, JString arg1);
-		void onSelectRoute(jlong arg0, JString arg1, JString arg2);
-		void onSetRouteVolume(jlong arg0, JString arg1, jint arg2);
-		void onSetSessionVolume(jlong arg0, JString arg1, jint arg2);
-		void onTransferToRoute(jlong arg0, JString arg1, JString arg2);
+		JObject getAllSessionInfo() const;
+		android::media::RoutingSessionInfo getSessionInfo(JString arg0) const;
+		void notifyRequestFailed(jlong arg0, jint arg1) const;
+		void notifyRoutes(JObject arg0) const;
+		void notifySessionCreated(jlong arg0, android::media::RoutingSessionInfo arg1) const;
+		void notifySessionReleased(JString arg0) const;
+		void notifySessionUpdated(android::media::RoutingSessionInfo arg0) const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onCreateSession(jlong arg0, JString arg1, JString arg2, android::os::Bundle arg3) const;
+		void onDeselectRoute(jlong arg0, JString arg1, JString arg2) const;
+		void onDiscoveryPreferenceChanged(android::media::RouteDiscoveryPreference arg0) const;
+		void onReleaseSession(jlong arg0, JString arg1) const;
+		void onSelectRoute(jlong arg0, JString arg1, JString arg2) const;
+		void onSetRouteVolume(jlong arg0, JString arg1, jint arg2) const;
+		void onSetSessionVolume(jlong arg0, JString arg1, jint arg2) const;
+		void onTransferToRoute(jlong arg0, JString arg1, JString arg2) const;
 	};
 } // namespace android::media
 

@@ -49,7 +49,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	jint LayerDrawable::addLayer(android::graphics::drawable::Drawable arg0)
+	jint LayerDrawable::addLayer(android::graphics::drawable::Drawable arg0) const
 	{
 		return callMethod<jint>(
 			"addLayer",
@@ -57,7 +57,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void LayerDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void LayerDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -65,14 +65,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean LayerDrawable::canApplyTheme()
+	jboolean LayerDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void LayerDrawable::draw(android::graphics::Canvas arg0)
+	void LayerDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -80,7 +80,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable LayerDrawable::findDrawableByLayerId(jint arg0)
+	android::graphics::drawable::Drawable LayerDrawable::findDrawableByLayerId(jint arg0) const
 	{
 		return callObjectMethod(
 			"findDrawableByLayerId",
@@ -88,7 +88,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::findIndexByLayerId(jint arg0)
+	jint LayerDrawable::findIndexByLayerId(jint arg0) const
 	{
 		return callMethod<jint>(
 			"findIndexByLayerId",
@@ -96,35 +96,35 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getAlpha()
+	jint LayerDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getBottomPadding()
+	jint LayerDrawable::getBottomPadding() const
 	{
 		return callMethod<jint>(
 			"getBottomPadding",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getChangingConfigurations()
+	jint LayerDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState LayerDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState LayerDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	android::graphics::drawable::Drawable LayerDrawable::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable LayerDrawable::getDrawable(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -132,14 +132,14 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getEndPadding()
+	jint LayerDrawable::getEndPadding() const
 	{
 		return callMethod<jint>(
 			"getEndPadding",
 			"()I"
 		);
 	}
-	void LayerDrawable::getHotspotBounds(android::graphics::Rect arg0)
+	void LayerDrawable::getHotspotBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getHotspotBounds",
@@ -147,7 +147,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint LayerDrawable::getId(jint arg0)
+	jint LayerDrawable::getId(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getId",
@@ -155,21 +155,21 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getIntrinsicHeight()
+	jint LayerDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getIntrinsicWidth()
+	jint LayerDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getLayerGravity(jint arg0)
+	jint LayerDrawable::getLayerGravity(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerGravity",
@@ -177,7 +177,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerHeight(jint arg0)
+	jint LayerDrawable::getLayerHeight(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerHeight",
@@ -185,7 +185,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerInsetBottom(jint arg0)
+	jint LayerDrawable::getLayerInsetBottom(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerInsetBottom",
@@ -193,7 +193,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerInsetEnd(jint arg0)
+	jint LayerDrawable::getLayerInsetEnd(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerInsetEnd",
@@ -201,7 +201,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerInsetLeft(jint arg0)
+	jint LayerDrawable::getLayerInsetLeft(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerInsetLeft",
@@ -209,7 +209,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerInsetRight(jint arg0)
+	jint LayerDrawable::getLayerInsetRight(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerInsetRight",
@@ -217,7 +217,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerInsetStart(jint arg0)
+	jint LayerDrawable::getLayerInsetStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerInsetStart",
@@ -225,7 +225,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerInsetTop(jint arg0)
+	jint LayerDrawable::getLayerInsetTop(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerInsetTop",
@@ -233,7 +233,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLayerWidth(jint arg0)
+	jint LayerDrawable::getLayerWidth(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLayerWidth",
@@ -241,28 +241,28 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint LayerDrawable::getLeftPadding()
+	jint LayerDrawable::getLeftPadding() const
 	{
 		return callMethod<jint>(
 			"getLeftPadding",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getNumberOfLayers()
+	jint LayerDrawable::getNumberOfLayers() const
 	{
 		return callMethod<jint>(
 			"getNumberOfLayers",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getOpacity()
+	jint LayerDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void LayerDrawable::getOutline(android::graphics::Outline arg0)
+	void LayerDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -270,7 +270,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean LayerDrawable::getPadding(android::graphics::Rect arg0)
+	jboolean LayerDrawable::getPadding(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPadding",
@@ -278,35 +278,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint LayerDrawable::getPaddingMode()
+	jint LayerDrawable::getPaddingMode() const
 	{
 		return callMethod<jint>(
 			"getPaddingMode",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getRightPadding()
+	jint LayerDrawable::getRightPadding() const
 	{
 		return callMethod<jint>(
 			"getRightPadding",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getStartPadding()
+	jint LayerDrawable::getStartPadding() const
 	{
 		return callMethod<jint>(
 			"getStartPadding",
 			"()I"
 		);
 	}
-	jint LayerDrawable::getTopPadding()
+	jint LayerDrawable::getTopPadding() const
 	{
 		return callMethod<jint>(
 			"getTopPadding",
 			"()I"
 		);
 	}
-	void LayerDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void LayerDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -317,7 +317,7 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	void LayerDrawable::invalidateDrawable(android::graphics::drawable::Drawable arg0)
+	void LayerDrawable::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"invalidateDrawable",
@@ -325,42 +325,42 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean LayerDrawable::isAutoMirrored()
+	jboolean LayerDrawable::isAutoMirrored() const
 	{
 		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
-	jboolean LayerDrawable::isProjected()
+	jboolean LayerDrawable::isProjected() const
 	{
 		return callMethod<jboolean>(
 			"isProjected",
 			"()Z"
 		);
 	}
-	jboolean LayerDrawable::isStateful()
+	jboolean LayerDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	void LayerDrawable::jumpToCurrentState()
+	void LayerDrawable::jumpToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
-	android::graphics::drawable::Drawable LayerDrawable::mutate()
+	android::graphics::drawable::Drawable LayerDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jboolean LayerDrawable::onLayoutDirectionChanged(jint arg0)
+	jboolean LayerDrawable::onLayoutDirectionChanged(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onLayoutDirectionChanged",
@@ -368,7 +368,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void LayerDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
+	void LayerDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -378,7 +378,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	void LayerDrawable::setAlpha(jint arg0)
+	void LayerDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -386,7 +386,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void LayerDrawable::setAutoMirrored(jboolean arg0)
+	void LayerDrawable::setAutoMirrored(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoMirrored",
@@ -394,7 +394,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void LayerDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void LayerDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -402,7 +402,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void LayerDrawable::setDither(jboolean arg0)
+	void LayerDrawable::setDither(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDither",
@@ -410,7 +410,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void LayerDrawable::setDrawable(jint arg0, android::graphics::drawable::Drawable arg1)
+	void LayerDrawable::setDrawable(jint arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		callMethod<void>(
 			"setDrawable",
@@ -419,7 +419,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	jboolean LayerDrawable::setDrawableByLayerId(jint arg0, android::graphics::drawable::Drawable arg1)
+	jboolean LayerDrawable::setDrawableByLayerId(jint arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		return callMethod<jboolean>(
 			"setDrawableByLayerId",
@@ -428,7 +428,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	void LayerDrawable::setHotspot(jfloat arg0, jfloat arg1)
+	void LayerDrawable::setHotspot(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setHotspot",
@@ -437,7 +437,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void LayerDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setHotspotBounds",
@@ -448,7 +448,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void LayerDrawable::setId(jint arg0, jint arg1)
+	void LayerDrawable::setId(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setId",
@@ -457,7 +457,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerGravity(jint arg0, jint arg1)
+	void LayerDrawable::setLayerGravity(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerGravity",
@@ -466,7 +466,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerHeight(jint arg0, jint arg1)
+	void LayerDrawable::setLayerHeight(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerHeight",
@@ -475,7 +475,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerInset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void LayerDrawable::setLayerInset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"setLayerInset",
@@ -487,7 +487,7 @@ namespace android::graphics::drawable
 			arg4
 		);
 	}
-	void LayerDrawable::setLayerInsetBottom(jint arg0, jint arg1)
+	void LayerDrawable::setLayerInsetBottom(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerInsetBottom",
@@ -496,7 +496,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerInsetEnd(jint arg0, jint arg1)
+	void LayerDrawable::setLayerInsetEnd(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerInsetEnd",
@@ -505,7 +505,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerInsetLeft(jint arg0, jint arg1)
+	void LayerDrawable::setLayerInsetLeft(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerInsetLeft",
@@ -514,7 +514,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerInsetRelative(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void LayerDrawable::setLayerInsetRelative(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"setLayerInsetRelative",
@@ -526,7 +526,7 @@ namespace android::graphics::drawable
 			arg4
 		);
 	}
-	void LayerDrawable::setLayerInsetRight(jint arg0, jint arg1)
+	void LayerDrawable::setLayerInsetRight(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerInsetRight",
@@ -535,7 +535,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerInsetStart(jint arg0, jint arg1)
+	void LayerDrawable::setLayerInsetStart(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerInsetStart",
@@ -544,7 +544,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerInsetTop(jint arg0, jint arg1)
+	void LayerDrawable::setLayerInsetTop(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerInsetTop",
@@ -553,7 +553,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setLayerSize(jint arg0, jint arg1, jint arg2)
+	void LayerDrawable::setLayerSize(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setLayerSize",
@@ -563,7 +563,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	void LayerDrawable::setLayerWidth(jint arg0, jint arg1)
+	void LayerDrawable::setLayerWidth(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLayerWidth",
@@ -572,7 +572,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::setOpacity(jint arg0)
+	void LayerDrawable::setOpacity(jint arg0) const
 	{
 		callMethod<void>(
 			"setOpacity",
@@ -580,7 +580,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void LayerDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
+	void LayerDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPadding",
@@ -591,7 +591,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void LayerDrawable::setPaddingMode(jint arg0)
+	void LayerDrawable::setPaddingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setPaddingMode",
@@ -599,7 +599,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void LayerDrawable::setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3)
+	void LayerDrawable::setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPaddingRelative",
@@ -610,7 +610,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void LayerDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void LayerDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -618,7 +618,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void LayerDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void LayerDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -626,7 +626,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean LayerDrawable::setVisible(jboolean arg0, jboolean arg1)
+	jboolean LayerDrawable::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",
@@ -635,7 +635,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void LayerDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
+	void LayerDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

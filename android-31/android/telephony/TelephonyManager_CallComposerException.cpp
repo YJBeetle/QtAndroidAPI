@@ -67,14 +67,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	jint TelephonyManager_CallComposerException::getErrorCode()
+	jint TelephonyManager_CallComposerException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
-	java::io::IOException TelephonyManager_CallComposerException::getIOException()
+	java::io::IOException TelephonyManager_CallComposerException::getIOException() const
 	{
 		return callObjectMethod(
 			"getIOException",

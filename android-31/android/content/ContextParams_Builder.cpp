@@ -24,14 +24,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	android::content::ContextParams ContextParams_Builder::build()
+	android::content::ContextParams ContextParams_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/content/ContextParams;"
 		);
 	}
-	android::content::ContextParams_Builder ContextParams_Builder::setAttributionTag(JString arg0)
+	android::content::ContextParams_Builder ContextParams_Builder::setAttributionTag(JString arg0) const
 	{
 		return callObjectMethod(
 			"setAttributionTag",
@@ -39,7 +39,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::ContextParams_Builder ContextParams_Builder::setNextAttributionSource(android::content::AttributionSource arg0)
+	android::content::ContextParams_Builder ContextParams_Builder::setNextAttributionSource(android::content::AttributionSource arg0) const
 	{
 		return callObjectMethod(
 			"setNextAttributionSource",

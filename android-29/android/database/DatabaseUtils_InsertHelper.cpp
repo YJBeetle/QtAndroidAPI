@@ -21,7 +21,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void DatabaseUtils_InsertHelper::bind(jint arg0, JByteArray arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -30,7 +30,7 @@ namespace android::database
 			arg1.object<jbyteArray>()
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, jboolean arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -39,7 +39,7 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, jdouble arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, jdouble arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -48,7 +48,7 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, jfloat arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -57,7 +57,7 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, jint arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -66,7 +66,7 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, JString arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -75,7 +75,7 @@ namespace android::database
 			arg1.object<jstring>()
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, jlong arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -84,7 +84,7 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils_InsertHelper::bindNull(jint arg0)
+	void DatabaseUtils_InsertHelper::bindNull(jint arg0) const
 	{
 		callMethod<void>(
 			"bindNull",
@@ -92,21 +92,21 @@ namespace android::database
 			arg0
 		);
 	}
-	void DatabaseUtils_InsertHelper::close()
+	void DatabaseUtils_InsertHelper::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jlong DatabaseUtils_InsertHelper::execute()
+	jlong DatabaseUtils_InsertHelper::execute() const
 	{
 		return callMethod<jlong>(
 			"execute",
 			"()J"
 		);
 	}
-	jint DatabaseUtils_InsertHelper::getColumnIndex(JString arg0)
+	jint DatabaseUtils_InsertHelper::getColumnIndex(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getColumnIndex",
@@ -114,7 +114,7 @@ namespace android::database
 			arg0.object<jstring>()
 		);
 	}
-	jlong DatabaseUtils_InsertHelper::insert(android::content::ContentValues arg0)
+	jlong DatabaseUtils_InsertHelper::insert(android::content::ContentValues arg0) const
 	{
 		return callMethod<jlong>(
 			"insert",
@@ -122,21 +122,21 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	void DatabaseUtils_InsertHelper::prepareForInsert()
+	void DatabaseUtils_InsertHelper::prepareForInsert() const
 	{
 		callMethod<void>(
 			"prepareForInsert",
 			"()V"
 		);
 	}
-	void DatabaseUtils_InsertHelper::prepareForReplace()
+	void DatabaseUtils_InsertHelper::prepareForReplace() const
 	{
 		callMethod<void>(
 			"prepareForReplace",
 			"()V"
 		);
 	}
-	jlong DatabaseUtils_InsertHelper::replace(android::content::ContentValues arg0)
+	jlong DatabaseUtils_InsertHelper::replace(android::content::ContentValues arg0) const
 	{
 		return callMethod<jlong>(
 			"replace",

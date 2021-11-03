@@ -26,8 +26,8 @@ namespace java::security::spec
 		ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1);
 		
 		// Methods
-		java::security::spec::ECParameterSpec getParams();
-		java::math::BigInteger getS();
+		java::security::spec::ECParameterSpec getParams() const;
+		java::math::BigInteger getS() const;
 	};
 } // namespace java::security::spec
 

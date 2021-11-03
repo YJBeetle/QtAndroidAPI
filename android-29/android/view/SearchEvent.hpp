@@ -22,7 +22,7 @@ namespace android::view
 		SearchEvent(android::view::InputDevice arg0);
 		
 		// Methods
-		android::view::InputDevice getInputDevice();
+		android::view::InputDevice getInputDevice() const;
 	};
 } // namespace android::view
 

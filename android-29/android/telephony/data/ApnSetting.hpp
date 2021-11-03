@@ -61,31 +61,31 @@ namespace android::telephony::data
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getApnName();
-		jint getApnTypeBitmask();
-		jint getAuthType();
-		jint getCarrierId();
-		JString getEntryName();
-		jint getId();
-		java::net::InetAddress getMmsProxyAddress();
-		JString getMmsProxyAddressAsString();
-		jint getMmsProxyPort();
-		android::net::Uri getMmsc();
-		jint getMvnoType();
-		jint getNetworkTypeBitmask();
-		JString getOperatorNumeric();
-		JString getPassword();
-		jint getProtocol();
-		java::net::InetAddress getProxyAddress();
-		JString getProxyAddressAsString();
-		jint getProxyPort();
-		jint getRoamingProtocol();
-		JString getUser();
-		jboolean isEnabled();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getApnName() const;
+		jint getApnTypeBitmask() const;
+		jint getAuthType() const;
+		jint getCarrierId() const;
+		JString getEntryName() const;
+		jint getId() const;
+		java::net::InetAddress getMmsProxyAddress() const;
+		JString getMmsProxyAddressAsString() const;
+		jint getMmsProxyPort() const;
+		android::net::Uri getMmsc() const;
+		jint getMvnoType() const;
+		jint getNetworkTypeBitmask() const;
+		JString getOperatorNumeric() const;
+		JString getPassword() const;
+		jint getProtocol() const;
+		java::net::InetAddress getProxyAddress() const;
+		JString getProxyAddressAsString() const;
+		jint getProxyPort() const;
+		jint getRoamingProtocol() const;
+		JString getUser() const;
+		jboolean isEnabled() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::data
 

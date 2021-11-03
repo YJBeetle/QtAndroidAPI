@@ -24,8 +24,8 @@ namespace android::os
 		RemoteException(JString arg0);
 		
 		// Methods
-		java::lang::RuntimeException rethrowAsRuntimeException();
-		java::lang::RuntimeException rethrowFromSystemServer();
+		java::lang::RuntimeException rethrowAsRuntimeException() const;
+		java::lang::RuntimeException rethrowFromSystemServer() const;
 	};
 } // namespace android::os
 

@@ -30,10 +30,10 @@ namespace java::security::spec
 		ECParameterSpec(java::security::spec::EllipticCurve arg0, java::security::spec::ECPoint arg1, java::math::BigInteger arg2, jint arg3);
 		
 		// Methods
-		jint getCofactor();
-		java::security::spec::EllipticCurve getCurve();
-		java::security::spec::ECPoint getGenerator();
-		java::math::BigInteger getOrder();
+		jint getCofactor() const;
+		java::security::spec::EllipticCurve getCurve() const;
+		java::security::spec::ECPoint getGenerator() const;
+		java::math::BigInteger getOrder() const;
 	};
 } // namespace java::security::spec
 

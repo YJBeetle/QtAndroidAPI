@@ -38,13 +38,13 @@ namespace android::widget
 		ZoomButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean dispatchUnhandledMove(android::view::View arg0, jint arg1);
-		JString getAccessibilityClassName();
-		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		jboolean onLongClick(android::view::View arg0);
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setEnabled(jboolean arg0);
-		void setZoomSpeed(jlong arg0);
+		jboolean dispatchUnhandledMove(android::view::View arg0, jint arg1) const;
+		JString getAccessibilityClassName() const;
+		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1) const;
+		jboolean onLongClick(android::view::View arg0) const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setZoomSpeed(jlong arg0) const;
 	};
 } // namespace android::widget
 

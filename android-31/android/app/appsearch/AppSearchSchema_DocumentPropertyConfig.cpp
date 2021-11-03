@@ -11,14 +11,14 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JString AppSearchSchema_DocumentPropertyConfig::getSchemaType()
+	JString AppSearchSchema_DocumentPropertyConfig::getSchemaType() const
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean AppSearchSchema_DocumentPropertyConfig::shouldIndexNestedProperties()
+	jboolean AppSearchSchema_DocumentPropertyConfig::shouldIndexNestedProperties() const
 	{
 		return callMethod<jboolean>(
 			"shouldIndexNestedProperties",

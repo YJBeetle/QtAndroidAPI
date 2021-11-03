@@ -19,8 +19,8 @@ namespace android::app
 		DownloadManager_Query();
 		
 		// Methods
-		android::app::DownloadManager_Query setFilterById(JLongArray arg0);
-		android::app::DownloadManager_Query setFilterByStatus(jint arg0);
+		android::app::DownloadManager_Query setFilterById(JLongArray arg0) const;
+		android::app::DownloadManager_Query setFilterByStatus(jint arg0) const;
 	};
 } // namespace android::app
 

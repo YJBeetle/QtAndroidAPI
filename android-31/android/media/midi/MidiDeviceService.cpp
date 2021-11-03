@@ -28,21 +28,21 @@ namespace android::media::midi
 		) {}
 	
 	// Methods
-	android::media::midi::MidiDeviceInfo MidiDeviceService::getDeviceInfo()
+	android::media::midi::MidiDeviceInfo MidiDeviceService::getDeviceInfo() const
 	{
 		return callObjectMethod(
 			"getDeviceInfo",
 			"()Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
-	JArray MidiDeviceService::getOutputPortReceivers()
+	JArray MidiDeviceService::getOutputPortReceivers() const
 	{
 		return callObjectMethod(
 			"getOutputPortReceivers",
 			"()[Landroid/media/midi/MidiReceiver;"
 		);
 	}
-	JObject MidiDeviceService::onBind(android::content::Intent arg0)
+	JObject MidiDeviceService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -50,21 +50,21 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	void MidiDeviceService::onClose()
+	void MidiDeviceService::onClose() const
 	{
 		callMethod<void>(
 			"onClose",
 			"()V"
 		);
 	}
-	void MidiDeviceService::onCreate()
+	void MidiDeviceService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void MidiDeviceService::onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0)
+	void MidiDeviceService::onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0) const
 	{
 		callMethod<void>(
 			"onDeviceStatusChanged",
@@ -72,7 +72,7 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	JArray MidiDeviceService::onGetInputPortReceivers()
+	JArray MidiDeviceService::onGetInputPortReceivers() const
 	{
 		return callObjectMethod(
 			"onGetInputPortReceivers",

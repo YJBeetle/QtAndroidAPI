@@ -23,7 +23,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean PropertyPermission::equals(JObject arg0)
+	jboolean PropertyPermission::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -31,21 +31,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JString PropertyPermission::getActions()
+	JString PropertyPermission::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PropertyPermission::hashCode()
+	jint PropertyPermission::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PropertyPermission::implies(java::security::Permission arg0)
+	jboolean PropertyPermission::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -53,7 +53,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection PropertyPermission::newPermissionCollection()
+	java::security::PermissionCollection PropertyPermission::newPermissionCollection() const
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

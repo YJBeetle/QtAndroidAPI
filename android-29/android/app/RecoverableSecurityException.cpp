@@ -30,28 +30,28 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint RecoverableSecurityException::describeContents()
+	jint RecoverableSecurityException::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::app::RemoteAction RecoverableSecurityException::getUserAction()
+	android::app::RemoteAction RecoverableSecurityException::getUserAction() const
 	{
 		return callObjectMethod(
 			"getUserAction",
 			"()Landroid/app/RemoteAction;"
 		);
 	}
-	JString RecoverableSecurityException::getUserMessage()
+	JString RecoverableSecurityException::getUserMessage() const
 	{
 		return callObjectMethod(
 			"getUserMessage",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void RecoverableSecurityException::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RecoverableSecurityException::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -26,7 +26,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	java::io::StringWriter StringWriter::append(jchar arg0)
+	java::io::StringWriter StringWriter::append(jchar arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -34,7 +34,7 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::StringWriter StringWriter::append(JString arg0)
+	java::io::StringWriter StringWriter::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -42,7 +42,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	java::io::StringWriter StringWriter::append(JString arg0, jint arg1, jint arg2)
+	java::io::StringWriter StringWriter::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -52,35 +52,35 @@ namespace java::io
 			arg2
 		);
 	}
-	void StringWriter::close()
+	void StringWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void StringWriter::flush()
+	void StringWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	java::lang::StringBuffer StringWriter::getBuffer()
+	java::lang::StringBuffer StringWriter::getBuffer() const
 	{
 		return callObjectMethod(
 			"getBuffer",
 			"()Ljava/lang/StringBuffer;"
 		);
 	}
-	JString StringWriter::toString()
+	JString StringWriter::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void StringWriter::write(jint arg0)
+	void StringWriter::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -88,7 +88,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void StringWriter::write(JString arg0)
+	void StringWriter::write(JString arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -96,7 +96,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void StringWriter::write(JCharArray arg0, jint arg1, jint arg2)
+	void StringWriter::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -106,7 +106,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void StringWriter::write(JString arg0, jint arg1, jint arg2)
+	void StringWriter::write(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

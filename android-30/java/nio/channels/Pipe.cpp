@@ -20,14 +20,14 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/Pipe;"
 		);
 	}
-	java::nio::channels::Pipe_SinkChannel Pipe::sink()
+	java::nio::channels::Pipe_SinkChannel Pipe::sink() const
 	{
 		return callObjectMethod(
 			"sink",
 			"()Ljava/nio/channels/Pipe$SinkChannel;"
 		);
 	}
-	java::nio::channels::Pipe_SourceChannel Pipe::source()
+	java::nio::channels::Pipe_SourceChannel Pipe::source() const
 	{
 		return callObjectMethod(
 			"source",

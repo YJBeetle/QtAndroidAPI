@@ -21,63 +21,63 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	void NfcA::close()
+	void NfcA::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void NfcA::connect()
+	void NfcA::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	JByteArray NfcA::getAtqa()
+	JByteArray NfcA::getAtqa() const
 	{
 		return callObjectMethod(
 			"getAtqa",
 			"()[B"
 		);
 	}
-	jint NfcA::getMaxTransceiveLength()
+	jint NfcA::getMaxTransceiveLength() const
 	{
 		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
-	jshort NfcA::getSak()
+	jshort NfcA::getSak() const
 	{
 		return callMethod<jshort>(
 			"getSak",
 			"()S"
 		);
 	}
-	android::nfc::Tag NfcA::getTag()
+	android::nfc::Tag NfcA::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jint NfcA::getTimeout()
+	jint NfcA::getTimeout() const
 	{
 		return callMethod<jint>(
 			"getTimeout",
 			"()I"
 		);
 	}
-	jboolean NfcA::isConnected()
+	jboolean NfcA::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	void NfcA::setTimeout(jint arg0)
+	void NfcA::setTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setTimeout",
@@ -85,7 +85,7 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	JByteArray NfcA::transceive(JByteArray arg0)
+	JByteArray NfcA::transceive(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"transceive",

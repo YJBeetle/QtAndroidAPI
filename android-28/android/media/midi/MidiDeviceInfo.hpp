@@ -40,18 +40,18 @@ namespace android::media::midi
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getId();
-		jint getInputPortCount();
-		jint getOutputPortCount();
-		JArray getPorts();
-		android::os::Bundle getProperties();
-		jint getType();
-		jint hashCode();
-		jboolean isPrivate();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getId() const;
+		jint getInputPortCount() const;
+		jint getOutputPortCount() const;
+		JArray getPorts() const;
+		android::os::Bundle getProperties() const;
+		jint getType() const;
+		jint hashCode() const;
+		jboolean isPrivate() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::midi
 

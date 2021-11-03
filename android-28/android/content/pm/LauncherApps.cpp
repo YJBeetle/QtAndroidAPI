@@ -50,7 +50,7 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	JObject LauncherApps::getActivityList(JString arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getActivityList(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getActivityList",
@@ -59,7 +59,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	android::content::pm::ApplicationInfo LauncherApps::getApplicationInfo(JString arg0, jint arg1, android::os::UserHandle arg2)
+	android::content::pm::ApplicationInfo LauncherApps::getApplicationInfo(JString arg0, jint arg1, android::os::UserHandle arg2) const
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
@@ -69,7 +69,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	android::content::pm::LauncherApps_PinItemRequest LauncherApps::getPinItemRequest(android::content::Intent arg0)
+	android::content::pm::LauncherApps_PinItemRequest LauncherApps::getPinItemRequest(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"getPinItemRequest",
@@ -77,14 +77,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject LauncherApps::getProfiles()
+	JObject LauncherApps::getProfiles() const
 	{
 		return callObjectMethod(
 			"getProfiles",
 			"()Ljava/util/List;"
 		);
 	}
-	android::graphics::drawable::Drawable LauncherApps::getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1)
+	android::graphics::drawable::Drawable LauncherApps::getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getShortcutBadgedIconDrawable",
@@ -93,7 +93,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::IntentSender LauncherApps::getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0)
+	android::content::IntentSender LauncherApps::getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0) const
 	{
 		return callObjectMethod(
 			"getShortcutConfigActivityIntent",
@@ -101,7 +101,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject LauncherApps::getShortcutConfigActivityList(JString arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getShortcutConfigActivityList(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getShortcutConfigActivityList",
@@ -110,7 +110,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	android::graphics::drawable::Drawable LauncherApps::getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1)
+	android::graphics::drawable::Drawable LauncherApps::getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getShortcutIconDrawable",
@@ -119,7 +119,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject LauncherApps::getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getShortcuts",
@@ -128,7 +128,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	android::os::Bundle LauncherApps::getSuspendedPackageLauncherExtras(JString arg0, android::os::UserHandle arg1)
+	android::os::Bundle LauncherApps::getSuspendedPackageLauncherExtras(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getSuspendedPackageLauncherExtras",
@@ -137,14 +137,14 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jboolean LauncherApps::hasShortcutHostPermission()
+	jboolean LauncherApps::hasShortcutHostPermission() const
 	{
 		return callMethod<jboolean>(
 			"hasShortcutHostPermission",
 			"()Z"
 		);
 	}
-	jboolean LauncherApps::isActivityEnabled(android::content::ComponentName arg0, android::os::UserHandle arg1)
+	jboolean LauncherApps::isActivityEnabled(android::content::ComponentName arg0, android::os::UserHandle arg1) const
 	{
 		return callMethod<jboolean>(
 			"isActivityEnabled",
@@ -153,7 +153,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jboolean LauncherApps::isPackageEnabled(JString arg0, android::os::UserHandle arg1)
+	jboolean LauncherApps::isPackageEnabled(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callMethod<jboolean>(
 			"isPackageEnabled",
@@ -162,7 +162,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps::pinShortcuts(JString arg0, JObject arg1, android::os::UserHandle arg2)
+	void LauncherApps::pinShortcuts(JString arg0, JObject arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"pinShortcuts",
@@ -172,7 +172,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	void LauncherApps::registerCallback(android::content::pm::LauncherApps_Callback arg0)
+	void LauncherApps::registerCallback(android::content::pm::LauncherApps_Callback arg0) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -180,7 +180,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void LauncherApps::registerCallback(android::content::pm::LauncherApps_Callback arg0, android::os::Handler arg1)
+	void LauncherApps::registerCallback(android::content::pm::LauncherApps_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -189,7 +189,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	android::content::pm::LauncherActivityInfo LauncherApps::resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1)
+	android::content::pm::LauncherActivityInfo LauncherApps::resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"resolveActivity",
@@ -198,7 +198,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps::startAppDetailsActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3)
+	void LauncherApps::startAppDetailsActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"startAppDetailsActivity",
@@ -209,7 +209,7 @@ namespace android::content::pm
 			arg3.object()
 		);
 	}
-	void LauncherApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3)
+	void LauncherApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"startMainActivity",
@@ -220,7 +220,7 @@ namespace android::content::pm
 			arg3.object()
 		);
 	}
-	void LauncherApps::startShortcut(android::content::pm::ShortcutInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2)
+	void LauncherApps::startShortcut(android::content::pm::ShortcutInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"startShortcut",
@@ -230,7 +230,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	void LauncherApps::startShortcut(JString arg0, JString arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4)
+	void LauncherApps::startShortcut(JString arg0, JString arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4) const
 	{
 		callMethod<void>(
 			"startShortcut",
@@ -242,7 +242,7 @@ namespace android::content::pm
 			arg4.object()
 		);
 	}
-	void LauncherApps::unregisterCallback(android::content::pm::LauncherApps_Callback arg0)
+	void LauncherApps::unregisterCallback(android::content::pm::LauncherApps_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

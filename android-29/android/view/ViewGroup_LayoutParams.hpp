@@ -38,7 +38,7 @@ namespace android::view
 		ViewGroup_LayoutParams(jint arg0, jint arg1);
 		
 		// Methods
-		void resolveLayoutDirection(jint arg0);
+		void resolveLayoutDirection(jint arg0) const;
 	};
 } // namespace android::view
 

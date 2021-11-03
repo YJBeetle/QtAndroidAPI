@@ -18,7 +18,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	JObject IntentService::onBind(android::content::Intent arg0)
+	JObject IntentService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -26,21 +26,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void IntentService::onCreate()
+	void IntentService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void IntentService::onDestroy()
+	void IntentService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void IntentService::onStart(android::content::Intent arg0, jint arg1)
+	void IntentService::onStart(android::content::Intent arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onStart",
@@ -49,7 +49,7 @@ namespace android::app
 			arg1
 		);
 	}
-	jint IntentService::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2)
+	jint IntentService::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"onStartCommand",
@@ -59,7 +59,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void IntentService::setIntentRedelivery(jboolean arg0)
+	void IntentService::setIntentRedelivery(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIntentRedelivery",

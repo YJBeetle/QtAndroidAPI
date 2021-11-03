@@ -66,14 +66,14 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	void SearchRecentSuggestions::clearHistory()
+	void SearchRecentSuggestions::clearHistory() const
 	{
 		callMethod<void>(
 			"clearHistory",
 			"()V"
 		);
 	}
-	void SearchRecentSuggestions::saveRecentQuery(JString arg0, JString arg1)
+	void SearchRecentSuggestions::saveRecentQuery(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"saveRecentQuery",

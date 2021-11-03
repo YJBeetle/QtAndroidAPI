@@ -25,13 +25,13 @@ namespace android::app::slice
 		SliceSpec(JString arg0, jint arg1);
 		
 		// Methods
-		jboolean canRender(android::app::slice::SliceSpec arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getRevision();
-		JString getType();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean canRender(android::app::slice::SliceSpec arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getRevision() const;
+		JString getType() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::slice
 

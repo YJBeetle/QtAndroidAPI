@@ -23,7 +23,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellInfoNr::equals(JObject arg0)
+	jboolean CellInfoNr::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -31,35 +31,35 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	android::telephony::CellIdentity CellInfoNr::getCellIdentity()
+	android::telephony::CellIdentity CellInfoNr::getCellIdentity() const
 	{
 		return callObjectMethod(
 			"getCellIdentity",
 			"()Landroid/telephony/CellIdentity;"
 		);
 	}
-	android::telephony::CellSignalStrength CellInfoNr::getCellSignalStrength()
+	android::telephony::CellSignalStrength CellInfoNr::getCellSignalStrength() const
 	{
 		return callObjectMethod(
 			"getCellSignalStrength",
 			"()Landroid/telephony/CellSignalStrength;"
 		);
 	}
-	jint CellInfoNr::hashCode()
+	jint CellInfoNr::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellInfoNr::toString()
+	JString CellInfoNr::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellInfoNr::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellInfoNr::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

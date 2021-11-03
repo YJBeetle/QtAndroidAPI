@@ -140,42 +140,42 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	jint Icon::describeContents()
+	jint Icon::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint Icon::getResId()
+	jint Icon::getResId() const
 	{
 		return callMethod<jint>(
 			"getResId",
 			"()I"
 		);
 	}
-	JString Icon::getResPackage()
+	JString Icon::getResPackage() const
 	{
 		return callObjectMethod(
 			"getResPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Icon::getType()
+	jint Icon::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	android::net::Uri Icon::getUri()
+	android::net::Uri Icon::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	android::graphics::drawable::Drawable Icon::loadDrawable(android::content::Context arg0)
+	android::graphics::drawable::Drawable Icon::loadDrawable(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"loadDrawable",
@@ -183,7 +183,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void Icon::loadDrawableAsync(android::content::Context arg0, android::os::Message arg1)
+	void Icon::loadDrawableAsync(android::content::Context arg0, android::os::Message arg1) const
 	{
 		callMethod<void>(
 			"loadDrawableAsync",
@@ -192,7 +192,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	void Icon::loadDrawableAsync(android::content::Context arg0, JObject arg1, android::os::Handler arg2)
+	void Icon::loadDrawableAsync(android::content::Context arg0, JObject arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"loadDrawableAsync",
@@ -202,7 +202,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	android::graphics::drawable::Icon Icon::setTint(jint arg0)
+	android::graphics::drawable::Icon Icon::setTint(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTint",
@@ -210,7 +210,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	android::graphics::drawable::Icon Icon::setTintList(android::content::res::ColorStateList arg0)
+	android::graphics::drawable::Icon Icon::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		return callObjectMethod(
 			"setTintList",
@@ -218,7 +218,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Icon Icon::setTintMode(android::graphics::PorterDuff_Mode arg0)
+	android::graphics::drawable::Icon Icon::setTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		return callObjectMethod(
 			"setTintMode",
@@ -226,14 +226,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	JString Icon::toString()
+	JString Icon::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Icon::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Icon::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

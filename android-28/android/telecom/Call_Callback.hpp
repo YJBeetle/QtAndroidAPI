@@ -44,22 +44,22 @@ namespace android::telecom
 		Call_Callback();
 		
 		// Methods
-		void onCallDestroyed(android::telecom::Call arg0);
-		void onCannedTextResponsesLoaded(android::telecom::Call arg0, JObject arg1);
-		void onChildrenChanged(android::telecom::Call arg0, JObject arg1);
-		void onConferenceableCallsChanged(android::telecom::Call arg0, JObject arg1);
-		void onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2);
-		void onDetailsChanged(android::telecom::Call arg0, android::telecom::Call_Details arg1);
-		void onHandoverComplete(android::telecom::Call arg0);
-		void onHandoverFailed(android::telecom::Call arg0, jint arg1);
-		void onParentChanged(android::telecom::Call arg0, android::telecom::Call arg1);
-		void onPostDialWait(android::telecom::Call arg0, JString arg1);
-		void onRttInitiationFailure(android::telecom::Call arg0, jint arg1);
-		void onRttModeChanged(android::telecom::Call arg0, jint arg1);
-		void onRttRequest(android::telecom::Call arg0, jint arg1);
-		void onRttStatusChanged(android::telecom::Call arg0, jboolean arg1, android::telecom::Call_RttCall arg2);
-		void onStateChanged(android::telecom::Call arg0, jint arg1);
-		void onVideoCallChanged(android::telecom::Call arg0, android::telecom::InCallService_VideoCall arg1);
+		void onCallDestroyed(android::telecom::Call arg0) const;
+		void onCannedTextResponsesLoaded(android::telecom::Call arg0, JObject arg1) const;
+		void onChildrenChanged(android::telecom::Call arg0, JObject arg1) const;
+		void onConferenceableCallsChanged(android::telecom::Call arg0, JObject arg1) const;
+		void onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2) const;
+		void onDetailsChanged(android::telecom::Call arg0, android::telecom::Call_Details arg1) const;
+		void onHandoverComplete(android::telecom::Call arg0) const;
+		void onHandoverFailed(android::telecom::Call arg0, jint arg1) const;
+		void onParentChanged(android::telecom::Call arg0, android::telecom::Call arg1) const;
+		void onPostDialWait(android::telecom::Call arg0, JString arg1) const;
+		void onRttInitiationFailure(android::telecom::Call arg0, jint arg1) const;
+		void onRttModeChanged(android::telecom::Call arg0, jint arg1) const;
+		void onRttRequest(android::telecom::Call arg0, jint arg1) const;
+		void onRttStatusChanged(android::telecom::Call arg0, jboolean arg1, android::telecom::Call_RttCall arg2) const;
+		void onStateChanged(android::telecom::Call arg0, jint arg1) const;
+		void onVideoCallChanged(android::telecom::Call arg0, android::telecom::InCallService_VideoCall arg1) const;
 	};
 } // namespace android::telecom
 

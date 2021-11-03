@@ -24,10 +24,10 @@ namespace android::app::appsearch
 		GetByDocumentIdRequest_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(JArray arg0);
-		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(JObject arg0);
-		android::app::appsearch::GetByDocumentIdRequest_Builder addProjection(JString arg0, JObject arg1);
-		android::app::appsearch::GetByDocumentIdRequest build();
+		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(JArray arg0) const;
+		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(JObject arg0) const;
+		android::app::appsearch::GetByDocumentIdRequest_Builder addProjection(JString arg0, JObject arg1) const;
+		android::app::appsearch::GetByDocumentIdRequest build() const;
 	};
 } // namespace android::app::appsearch
 

@@ -17,8 +17,8 @@ namespace android::widget
 		Toast_Callback();
 		
 		// Methods
-		void onToastHidden();
-		void onToastShown();
+		void onToastHidden() const;
+		void onToastShown() const;
 	};
 } // namespace android::widget
 

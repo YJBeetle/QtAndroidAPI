@@ -35,12 +35,12 @@ namespace android::view
 		ContentInfo_Builder(android::content::ClipData arg0, jint arg1);
 		
 		// Methods
-		android::view::ContentInfo build();
-		android::view::ContentInfo_Builder setClip(android::content::ClipData arg0);
-		android::view::ContentInfo_Builder setExtras(android::os::Bundle arg0);
-		android::view::ContentInfo_Builder setFlags(jint arg0);
-		android::view::ContentInfo_Builder setLinkUri(android::net::Uri arg0);
-		android::view::ContentInfo_Builder setSource(jint arg0);
+		android::view::ContentInfo build() const;
+		android::view::ContentInfo_Builder setClip(android::content::ClipData arg0) const;
+		android::view::ContentInfo_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::ContentInfo_Builder setFlags(jint arg0) const;
+		android::view::ContentInfo_Builder setLinkUri(android::net::Uri arg0) const;
+		android::view::ContentInfo_Builder setSource(jint arg0) const;
 	};
 } // namespace android::view
 

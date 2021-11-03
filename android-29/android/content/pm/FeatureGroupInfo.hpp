@@ -26,8 +26,8 @@ namespace android::content::pm
 		FeatureGroupInfo(android::content::pm::FeatureGroupInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

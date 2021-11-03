@@ -54,7 +54,7 @@ namespace java::security::cert
 			arg2.object()
 		);
 	}
-	JObject CertStore::getCRLs(JObject arg0)
+	JObject CertStore::getCRLs(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getCRLs",
@@ -62,14 +62,14 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertStore::getCertStoreParameters()
+	JObject CertStore::getCertStoreParameters() const
 	{
 		return callObjectMethod(
 			"getCertStoreParameters",
 			"()Ljava/security/cert/CertStoreParameters;"
 		);
 	}
-	JObject CertStore::getCertificates(JObject arg0)
+	JObject CertStore::getCertificates(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getCertificates",
@@ -77,14 +77,14 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::Provider CertStore::getProvider()
+	java::security::Provider CertStore::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JString CertStore::getType()
+	JString CertStore::getType() const
 	{
 		return callObjectMethod(
 			"getType",

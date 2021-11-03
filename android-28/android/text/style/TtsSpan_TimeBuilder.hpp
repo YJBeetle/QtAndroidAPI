@@ -18,8 +18,8 @@ namespace android::text::style
 		TtsSpan_TimeBuilder(jint arg0, jint arg1);
 		
 		// Methods
-		android::text::style::TtsSpan_TimeBuilder setHours(jint arg0);
-		android::text::style::TtsSpan_TimeBuilder setMinutes(jint arg0);
+		android::text::style::TtsSpan_TimeBuilder setHours(jint arg0) const;
+		android::text::style::TtsSpan_TimeBuilder setMinutes(jint arg0) const;
 	};
 } // namespace android::text::style
 

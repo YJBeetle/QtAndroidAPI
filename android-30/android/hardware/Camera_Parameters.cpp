@@ -450,14 +450,14 @@ namespace android::hardware
 	// Constructors
 	
 	// Methods
-	JString Camera_Parameters::flatten()
+	JString Camera_Parameters::flatten() const
 	{
 		return callObjectMethod(
 			"flatten",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Camera_Parameters::get(JString arg0)
+	JString Camera_Parameters::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -465,70 +465,70 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	JString Camera_Parameters::getAntibanding()
+	JString Camera_Parameters::getAntibanding() const
 	{
 		return callObjectMethod(
 			"getAntibanding",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Camera_Parameters::getAutoExposureLock()
+	jboolean Camera_Parameters::getAutoExposureLock() const
 	{
 		return callMethod<jboolean>(
 			"getAutoExposureLock",
 			"()Z"
 		);
 	}
-	jboolean Camera_Parameters::getAutoWhiteBalanceLock()
+	jboolean Camera_Parameters::getAutoWhiteBalanceLock() const
 	{
 		return callMethod<jboolean>(
 			"getAutoWhiteBalanceLock",
 			"()Z"
 		);
 	}
-	JString Camera_Parameters::getColorEffect()
+	JString Camera_Parameters::getColorEffect() const
 	{
 		return callObjectMethod(
 			"getColorEffect",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Camera_Parameters::getExposureCompensation()
+	jint Camera_Parameters::getExposureCompensation() const
 	{
 		return callMethod<jint>(
 			"getExposureCompensation",
 			"()I"
 		);
 	}
-	jfloat Camera_Parameters::getExposureCompensationStep()
+	jfloat Camera_Parameters::getExposureCompensationStep() const
 	{
 		return callMethod<jfloat>(
 			"getExposureCompensationStep",
 			"()F"
 		);
 	}
-	JString Camera_Parameters::getFlashMode()
+	JString Camera_Parameters::getFlashMode() const
 	{
 		return callObjectMethod(
 			"getFlashMode",
 			"()Ljava/lang/String;"
 		);
 	}
-	jfloat Camera_Parameters::getFocalLength()
+	jfloat Camera_Parameters::getFocalLength() const
 	{
 		return callMethod<jfloat>(
 			"getFocalLength",
 			"()F"
 		);
 	}
-	JObject Camera_Parameters::getFocusAreas()
+	JObject Camera_Parameters::getFocusAreas() const
 	{
 		return callObjectMethod(
 			"getFocusAreas",
 			"()Ljava/util/List;"
 		);
 	}
-	void Camera_Parameters::getFocusDistances(JFloatArray arg0)
+	void Camera_Parameters::getFocusDistances(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"getFocusDistances",
@@ -536,21 +536,21 @@ namespace android::hardware
 			arg0.object<jfloatArray>()
 		);
 	}
-	JString Camera_Parameters::getFocusMode()
+	JString Camera_Parameters::getFocusMode() const
 	{
 		return callObjectMethod(
 			"getFocusMode",
 			"()Ljava/lang/String;"
 		);
 	}
-	jfloat Camera_Parameters::getHorizontalViewAngle()
+	jfloat Camera_Parameters::getHorizontalViewAngle() const
 	{
 		return callMethod<jfloat>(
 			"getHorizontalViewAngle",
 			"()F"
 		);
 	}
-	jint Camera_Parameters::getInt(JString arg0)
+	jint Camera_Parameters::getInt(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -558,105 +558,105 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	jint Camera_Parameters::getJpegQuality()
+	jint Camera_Parameters::getJpegQuality() const
 	{
 		return callMethod<jint>(
 			"getJpegQuality",
 			"()I"
 		);
 	}
-	jint Camera_Parameters::getJpegThumbnailQuality()
+	jint Camera_Parameters::getJpegThumbnailQuality() const
 	{
 		return callMethod<jint>(
 			"getJpegThumbnailQuality",
 			"()I"
 		);
 	}
-	android::hardware::Camera_Size Camera_Parameters::getJpegThumbnailSize()
+	android::hardware::Camera_Size Camera_Parameters::getJpegThumbnailSize() const
 	{
 		return callObjectMethod(
 			"getJpegThumbnailSize",
 			"()Landroid/hardware/Camera$Size;"
 		);
 	}
-	jint Camera_Parameters::getMaxExposureCompensation()
+	jint Camera_Parameters::getMaxExposureCompensation() const
 	{
 		return callMethod<jint>(
 			"getMaxExposureCompensation",
 			"()I"
 		);
 	}
-	jint Camera_Parameters::getMaxNumDetectedFaces()
+	jint Camera_Parameters::getMaxNumDetectedFaces() const
 	{
 		return callMethod<jint>(
 			"getMaxNumDetectedFaces",
 			"()I"
 		);
 	}
-	jint Camera_Parameters::getMaxNumFocusAreas()
+	jint Camera_Parameters::getMaxNumFocusAreas() const
 	{
 		return callMethod<jint>(
 			"getMaxNumFocusAreas",
 			"()I"
 		);
 	}
-	jint Camera_Parameters::getMaxNumMeteringAreas()
+	jint Camera_Parameters::getMaxNumMeteringAreas() const
 	{
 		return callMethod<jint>(
 			"getMaxNumMeteringAreas",
 			"()I"
 		);
 	}
-	jint Camera_Parameters::getMaxZoom()
+	jint Camera_Parameters::getMaxZoom() const
 	{
 		return callMethod<jint>(
 			"getMaxZoom",
 			"()I"
 		);
 	}
-	JObject Camera_Parameters::getMeteringAreas()
+	JObject Camera_Parameters::getMeteringAreas() const
 	{
 		return callObjectMethod(
 			"getMeteringAreas",
 			"()Ljava/util/List;"
 		);
 	}
-	jint Camera_Parameters::getMinExposureCompensation()
+	jint Camera_Parameters::getMinExposureCompensation() const
 	{
 		return callMethod<jint>(
 			"getMinExposureCompensation",
 			"()I"
 		);
 	}
-	jint Camera_Parameters::getPictureFormat()
+	jint Camera_Parameters::getPictureFormat() const
 	{
 		return callMethod<jint>(
 			"getPictureFormat",
 			"()I"
 		);
 	}
-	android::hardware::Camera_Size Camera_Parameters::getPictureSize()
+	android::hardware::Camera_Size Camera_Parameters::getPictureSize() const
 	{
 		return callObjectMethod(
 			"getPictureSize",
 			"()Landroid/hardware/Camera$Size;"
 		);
 	}
-	android::hardware::Camera_Size Camera_Parameters::getPreferredPreviewSizeForVideo()
+	android::hardware::Camera_Size Camera_Parameters::getPreferredPreviewSizeForVideo() const
 	{
 		return callObjectMethod(
 			"getPreferredPreviewSizeForVideo",
 			"()Landroid/hardware/Camera$Size;"
 		);
 	}
-	jint Camera_Parameters::getPreviewFormat()
+	jint Camera_Parameters::getPreviewFormat() const
 	{
 		return callMethod<jint>(
 			"getPreviewFormat",
 			"()I"
 		);
 	}
-	void Camera_Parameters::getPreviewFpsRange(JIntArray arg0)
+	void Camera_Parameters::getPreviewFpsRange(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"getPreviewFpsRange",
@@ -664,203 +664,203 @@ namespace android::hardware
 			arg0.object<jintArray>()
 		);
 	}
-	jint Camera_Parameters::getPreviewFrameRate()
+	jint Camera_Parameters::getPreviewFrameRate() const
 	{
 		return callMethod<jint>(
 			"getPreviewFrameRate",
 			"()I"
 		);
 	}
-	android::hardware::Camera_Size Camera_Parameters::getPreviewSize()
+	android::hardware::Camera_Size Camera_Parameters::getPreviewSize() const
 	{
 		return callObjectMethod(
 			"getPreviewSize",
 			"()Landroid/hardware/Camera$Size;"
 		);
 	}
-	JString Camera_Parameters::getSceneMode()
+	JString Camera_Parameters::getSceneMode() const
 	{
 		return callObjectMethod(
 			"getSceneMode",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedAntibanding()
+	JObject Camera_Parameters::getSupportedAntibanding() const
 	{
 		return callObjectMethod(
 			"getSupportedAntibanding",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedColorEffects()
+	JObject Camera_Parameters::getSupportedColorEffects() const
 	{
 		return callObjectMethod(
 			"getSupportedColorEffects",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedFlashModes()
+	JObject Camera_Parameters::getSupportedFlashModes() const
 	{
 		return callObjectMethod(
 			"getSupportedFlashModes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedFocusModes()
+	JObject Camera_Parameters::getSupportedFocusModes() const
 	{
 		return callObjectMethod(
 			"getSupportedFocusModes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedJpegThumbnailSizes()
+	JObject Camera_Parameters::getSupportedJpegThumbnailSizes() const
 	{
 		return callObjectMethod(
 			"getSupportedJpegThumbnailSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedPictureFormats()
+	JObject Camera_Parameters::getSupportedPictureFormats() const
 	{
 		return callObjectMethod(
 			"getSupportedPictureFormats",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedPictureSizes()
+	JObject Camera_Parameters::getSupportedPictureSizes() const
 	{
 		return callObjectMethod(
 			"getSupportedPictureSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedPreviewFormats()
+	JObject Camera_Parameters::getSupportedPreviewFormats() const
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFormats",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedPreviewFpsRange()
+	JObject Camera_Parameters::getSupportedPreviewFpsRange() const
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFpsRange",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedPreviewFrameRates()
+	JObject Camera_Parameters::getSupportedPreviewFrameRates() const
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFrameRates",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedPreviewSizes()
+	JObject Camera_Parameters::getSupportedPreviewSizes() const
 	{
 		return callObjectMethod(
 			"getSupportedPreviewSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedSceneModes()
+	JObject Camera_Parameters::getSupportedSceneModes() const
 	{
 		return callObjectMethod(
 			"getSupportedSceneModes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedVideoSizes()
+	JObject Camera_Parameters::getSupportedVideoSizes() const
 	{
 		return callObjectMethod(
 			"getSupportedVideoSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Camera_Parameters::getSupportedWhiteBalance()
+	JObject Camera_Parameters::getSupportedWhiteBalance() const
 	{
 		return callObjectMethod(
 			"getSupportedWhiteBalance",
 			"()Ljava/util/List;"
 		);
 	}
-	jfloat Camera_Parameters::getVerticalViewAngle()
+	jfloat Camera_Parameters::getVerticalViewAngle() const
 	{
 		return callMethod<jfloat>(
 			"getVerticalViewAngle",
 			"()F"
 		);
 	}
-	jboolean Camera_Parameters::getVideoStabilization()
+	jboolean Camera_Parameters::getVideoStabilization() const
 	{
 		return callMethod<jboolean>(
 			"getVideoStabilization",
 			"()Z"
 		);
 	}
-	JString Camera_Parameters::getWhiteBalance()
+	JString Camera_Parameters::getWhiteBalance() const
 	{
 		return callObjectMethod(
 			"getWhiteBalance",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Camera_Parameters::getZoom()
+	jint Camera_Parameters::getZoom() const
 	{
 		return callMethod<jint>(
 			"getZoom",
 			"()I"
 		);
 	}
-	JObject Camera_Parameters::getZoomRatios()
+	JObject Camera_Parameters::getZoomRatios() const
 	{
 		return callObjectMethod(
 			"getZoomRatios",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean Camera_Parameters::isAutoExposureLockSupported()
+	jboolean Camera_Parameters::isAutoExposureLockSupported() const
 	{
 		return callMethod<jboolean>(
 			"isAutoExposureLockSupported",
 			"()Z"
 		);
 	}
-	jboolean Camera_Parameters::isAutoWhiteBalanceLockSupported()
+	jboolean Camera_Parameters::isAutoWhiteBalanceLockSupported() const
 	{
 		return callMethod<jboolean>(
 			"isAutoWhiteBalanceLockSupported",
 			"()Z"
 		);
 	}
-	jboolean Camera_Parameters::isSmoothZoomSupported()
+	jboolean Camera_Parameters::isSmoothZoomSupported() const
 	{
 		return callMethod<jboolean>(
 			"isSmoothZoomSupported",
 			"()Z"
 		);
 	}
-	jboolean Camera_Parameters::isVideoSnapshotSupported()
+	jboolean Camera_Parameters::isVideoSnapshotSupported() const
 	{
 		return callMethod<jboolean>(
 			"isVideoSnapshotSupported",
 			"()Z"
 		);
 	}
-	jboolean Camera_Parameters::isVideoStabilizationSupported()
+	jboolean Camera_Parameters::isVideoStabilizationSupported() const
 	{
 		return callMethod<jboolean>(
 			"isVideoStabilizationSupported",
 			"()Z"
 		);
 	}
-	jboolean Camera_Parameters::isZoomSupported()
+	jboolean Camera_Parameters::isZoomSupported() const
 	{
 		return callMethod<jboolean>(
 			"isZoomSupported",
 			"()Z"
 		);
 	}
-	void Camera_Parameters::remove(JString arg0)
+	void Camera_Parameters::remove(JString arg0) const
 	{
 		callMethod<void>(
 			"remove",
@@ -868,14 +868,14 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::removeGpsData()
+	void Camera_Parameters::removeGpsData() const
 	{
 		callMethod<void>(
 			"removeGpsData",
 			"()V"
 		);
 	}
-	void Camera_Parameters::set(JString arg0, jint arg1)
+	void Camera_Parameters::set(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -884,7 +884,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void Camera_Parameters::set(JString arg0, JString arg1)
+	void Camera_Parameters::set(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -893,7 +893,7 @@ namespace android::hardware
 			arg1.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setAntibanding(JString arg0)
+	void Camera_Parameters::setAntibanding(JString arg0) const
 	{
 		callMethod<void>(
 			"setAntibanding",
@@ -901,7 +901,7 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setAutoExposureLock(jboolean arg0)
+	void Camera_Parameters::setAutoExposureLock(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoExposureLock",
@@ -909,7 +909,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setAutoWhiteBalanceLock(jboolean arg0)
+	void Camera_Parameters::setAutoWhiteBalanceLock(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoWhiteBalanceLock",
@@ -917,7 +917,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setColorEffect(JString arg0)
+	void Camera_Parameters::setColorEffect(JString arg0) const
 	{
 		callMethod<void>(
 			"setColorEffect",
@@ -925,7 +925,7 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setExposureCompensation(jint arg0)
+	void Camera_Parameters::setExposureCompensation(jint arg0) const
 	{
 		callMethod<void>(
 			"setExposureCompensation",
@@ -933,7 +933,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setFlashMode(JString arg0)
+	void Camera_Parameters::setFlashMode(JString arg0) const
 	{
 		callMethod<void>(
 			"setFlashMode",
@@ -941,7 +941,7 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setFocusAreas(JObject arg0)
+	void Camera_Parameters::setFocusAreas(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFocusAreas",
@@ -949,7 +949,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera_Parameters::setFocusMode(JString arg0)
+	void Camera_Parameters::setFocusMode(JString arg0) const
 	{
 		callMethod<void>(
 			"setFocusMode",
@@ -957,7 +957,7 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setGpsAltitude(jdouble arg0)
+	void Camera_Parameters::setGpsAltitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setGpsAltitude",
@@ -965,7 +965,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setGpsLatitude(jdouble arg0)
+	void Camera_Parameters::setGpsLatitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setGpsLatitude",
@@ -973,7 +973,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setGpsLongitude(jdouble arg0)
+	void Camera_Parameters::setGpsLongitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setGpsLongitude",
@@ -981,7 +981,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setGpsProcessingMethod(JString arg0)
+	void Camera_Parameters::setGpsProcessingMethod(JString arg0) const
 	{
 		callMethod<void>(
 			"setGpsProcessingMethod",
@@ -989,7 +989,7 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setGpsTimestamp(jlong arg0)
+	void Camera_Parameters::setGpsTimestamp(jlong arg0) const
 	{
 		callMethod<void>(
 			"setGpsTimestamp",
@@ -997,7 +997,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setJpegQuality(jint arg0)
+	void Camera_Parameters::setJpegQuality(jint arg0) const
 	{
 		callMethod<void>(
 			"setJpegQuality",
@@ -1005,7 +1005,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setJpegThumbnailQuality(jint arg0)
+	void Camera_Parameters::setJpegThumbnailQuality(jint arg0) const
 	{
 		callMethod<void>(
 			"setJpegThumbnailQuality",
@@ -1013,7 +1013,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setJpegThumbnailSize(jint arg0, jint arg1)
+	void Camera_Parameters::setJpegThumbnailSize(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setJpegThumbnailSize",
@@ -1022,7 +1022,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void Camera_Parameters::setMeteringAreas(JObject arg0)
+	void Camera_Parameters::setMeteringAreas(JObject arg0) const
 	{
 		callMethod<void>(
 			"setMeteringAreas",
@@ -1030,7 +1030,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera_Parameters::setPictureFormat(jint arg0)
+	void Camera_Parameters::setPictureFormat(jint arg0) const
 	{
 		callMethod<void>(
 			"setPictureFormat",
@@ -1038,7 +1038,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setPictureSize(jint arg0, jint arg1)
+	void Camera_Parameters::setPictureSize(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPictureSize",
@@ -1047,7 +1047,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void Camera_Parameters::setPreviewFormat(jint arg0)
+	void Camera_Parameters::setPreviewFormat(jint arg0) const
 	{
 		callMethod<void>(
 			"setPreviewFormat",
@@ -1055,7 +1055,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setPreviewFpsRange(jint arg0, jint arg1)
+	void Camera_Parameters::setPreviewFpsRange(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPreviewFpsRange",
@@ -1064,7 +1064,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void Camera_Parameters::setPreviewFrameRate(jint arg0)
+	void Camera_Parameters::setPreviewFrameRate(jint arg0) const
 	{
 		callMethod<void>(
 			"setPreviewFrameRate",
@@ -1072,7 +1072,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setPreviewSize(jint arg0, jint arg1)
+	void Camera_Parameters::setPreviewSize(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPreviewSize",
@@ -1081,7 +1081,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void Camera_Parameters::setRecordingHint(jboolean arg0)
+	void Camera_Parameters::setRecordingHint(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRecordingHint",
@@ -1089,7 +1089,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setRotation(jint arg0)
+	void Camera_Parameters::setRotation(jint arg0) const
 	{
 		callMethod<void>(
 			"setRotation",
@@ -1097,7 +1097,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setSceneMode(JString arg0)
+	void Camera_Parameters::setSceneMode(JString arg0) const
 	{
 		callMethod<void>(
 			"setSceneMode",
@@ -1105,7 +1105,7 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setVideoStabilization(jboolean arg0)
+	void Camera_Parameters::setVideoStabilization(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVideoStabilization",
@@ -1113,7 +1113,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setWhiteBalance(JString arg0)
+	void Camera_Parameters::setWhiteBalance(JString arg0) const
 	{
 		callMethod<void>(
 			"setWhiteBalance",
@@ -1121,7 +1121,7 @@ namespace android::hardware
 			arg0.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setZoom(jint arg0)
+	void Camera_Parameters::setZoom(jint arg0) const
 	{
 		callMethod<void>(
 			"setZoom",
@@ -1129,7 +1129,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::unflatten(JString arg0)
+	void Camera_Parameters::unflatten(JString arg0) const
 	{
 		callMethod<void>(
 			"unflatten",

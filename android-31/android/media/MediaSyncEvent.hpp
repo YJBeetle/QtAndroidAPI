@@ -27,14 +27,14 @@ namespace android::media
 		
 		// Methods
 		static android::media::MediaSyncEvent createEvent(jint arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAudioSessionId();
-		jint getType();
-		jint hashCode();
-		android::media::MediaSyncEvent setAudioSessionId(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAudioSessionId() const;
+		jint getType() const;
+		jint hashCode() const;
+		android::media::MediaSyncEvent setAudioSessionId(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

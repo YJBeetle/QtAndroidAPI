@@ -24,15 +24,15 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jboolean hasAntennaInfo();
-		jboolean hasGnssAntennaInfo();
-		jboolean hasMeasurements();
-		jboolean hasNavigationMessages();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jboolean hasAntennaInfo() const;
+		jboolean hasGnssAntennaInfo() const;
+		jboolean hasMeasurements() const;
+		jboolean hasNavigationMessages() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

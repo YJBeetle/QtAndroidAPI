@@ -24,7 +24,7 @@ namespace javax::security::auth
 		) {}
 	
 	// Methods
-	jboolean PrivateCredentialPermission::equals(JObject arg0)
+	jboolean PrivateCredentialPermission::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -32,35 +32,35 @@ namespace javax::security::auth
 			arg0.object<jobject>()
 		);
 	}
-	JString PrivateCredentialPermission::getActions()
+	JString PrivateCredentialPermission::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PrivateCredentialPermission::getCredentialClass()
+	JString PrivateCredentialPermission::getCredentialClass() const
 	{
 		return callObjectMethod(
 			"getCredentialClass",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray PrivateCredentialPermission::getPrincipals()
+	JArray PrivateCredentialPermission::getPrincipals() const
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"()[[Ljava/lang/String;"
 		);
 	}
-	jint PrivateCredentialPermission::hashCode()
+	jint PrivateCredentialPermission::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PrivateCredentialPermission::implies(java::security::Permission arg0)
+	jboolean PrivateCredentialPermission::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -68,7 +68,7 @@ namespace javax::security::auth
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection PrivateCredentialPermission::newPermissionCollection()
+	java::security::PermissionCollection PrivateCredentialPermission::newPermissionCollection() const
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

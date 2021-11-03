@@ -26,12 +26,12 @@ namespace java::security::spec
 		EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, JByteArray arg3);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::math::BigInteger getA();
-		java::math::BigInteger getB();
-		JObject getField();
-		JByteArray getSeed();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		java::math::BigInteger getA() const;
+		java::math::BigInteger getB() const;
+		JObject getField() const;
+		JByteArray getSeed() const;
+		jint hashCode() const;
 	};
 } // namespace java::security::spec
 

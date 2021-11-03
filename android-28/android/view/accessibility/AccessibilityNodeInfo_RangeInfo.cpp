@@ -43,28 +43,28 @@ namespace android::view::accessibility
 			arg3
 		);
 	}
-	jfloat AccessibilityNodeInfo_RangeInfo::getCurrent()
+	jfloat AccessibilityNodeInfo_RangeInfo::getCurrent() const
 	{
 		return callMethod<jfloat>(
 			"getCurrent",
 			"()F"
 		);
 	}
-	jfloat AccessibilityNodeInfo_RangeInfo::getMax()
+	jfloat AccessibilityNodeInfo_RangeInfo::getMax() const
 	{
 		return callMethod<jfloat>(
 			"getMax",
 			"()F"
 		);
 	}
-	jfloat AccessibilityNodeInfo_RangeInfo::getMin()
+	jfloat AccessibilityNodeInfo_RangeInfo::getMin() const
 	{
 		return callMethod<jfloat>(
 			"getMin",
 			"()F"
 		);
 	}
-	jint AccessibilityNodeInfo_RangeInfo::getType()
+	jint AccessibilityNodeInfo_RangeInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",

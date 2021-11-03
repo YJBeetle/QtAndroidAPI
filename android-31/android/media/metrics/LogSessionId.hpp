@@ -20,10 +20,10 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getStringId();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getStringId() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::media::metrics
 

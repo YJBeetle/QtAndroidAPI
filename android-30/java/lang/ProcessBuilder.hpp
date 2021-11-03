@@ -34,25 +34,25 @@ namespace java::lang
 		
 		// Methods
 		static JObject startPipeline(JObject arg0);
-		java::lang::ProcessBuilder command(JArray arg0);
-		java::lang::ProcessBuilder command(JObject arg0);
-		JObject command();
-		java::io::File directory();
-		java::lang::ProcessBuilder directory(java::io::File arg0);
-		JObject environment();
-		java::lang::ProcessBuilder inheritIO();
-		java::lang::ProcessBuilder redirectError(java::io::File arg0);
-		java::lang::ProcessBuilder redirectError(java::lang::ProcessBuilder_Redirect arg0);
-		java::lang::ProcessBuilder_Redirect redirectError();
-		jboolean redirectErrorStream();
-		java::lang::ProcessBuilder redirectErrorStream(jboolean arg0);
-		java::lang::ProcessBuilder redirectInput(java::io::File arg0);
-		java::lang::ProcessBuilder redirectInput(java::lang::ProcessBuilder_Redirect arg0);
-		java::lang::ProcessBuilder_Redirect redirectInput();
-		java::lang::ProcessBuilder redirectOutput(java::io::File arg0);
-		java::lang::ProcessBuilder redirectOutput(java::lang::ProcessBuilder_Redirect arg0);
-		java::lang::ProcessBuilder_Redirect redirectOutput();
-		java::lang::Process start();
+		java::lang::ProcessBuilder command(JArray arg0) const;
+		java::lang::ProcessBuilder command(JObject arg0) const;
+		JObject command() const;
+		java::io::File directory() const;
+		java::lang::ProcessBuilder directory(java::io::File arg0) const;
+		JObject environment() const;
+		java::lang::ProcessBuilder inheritIO() const;
+		java::lang::ProcessBuilder redirectError(java::io::File arg0) const;
+		java::lang::ProcessBuilder redirectError(java::lang::ProcessBuilder_Redirect arg0) const;
+		java::lang::ProcessBuilder_Redirect redirectError() const;
+		jboolean redirectErrorStream() const;
+		java::lang::ProcessBuilder redirectErrorStream(jboolean arg0) const;
+		java::lang::ProcessBuilder redirectInput(java::io::File arg0) const;
+		java::lang::ProcessBuilder redirectInput(java::lang::ProcessBuilder_Redirect arg0) const;
+		java::lang::ProcessBuilder_Redirect redirectInput() const;
+		java::lang::ProcessBuilder redirectOutput(java::io::File arg0) const;
+		java::lang::ProcessBuilder redirectOutput(java::lang::ProcessBuilder_Redirect arg0) const;
+		java::lang::ProcessBuilder_Redirect redirectOutput() const;
+		java::lang::Process start() const;
 	};
 } // namespace java::lang
 

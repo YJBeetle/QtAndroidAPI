@@ -47,16 +47,16 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		android::net::IpSecManager_SecurityParameterIndex allocateSecurityParameterIndex(java::net::InetAddress arg0);
-		android::net::IpSecManager_SecurityParameterIndex allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1);
-		void applyTransportModeTransform(java::io::FileDescriptor arg0, jint arg1, android::net::IpSecTransform arg2);
-		void applyTransportModeTransform(java::net::DatagramSocket arg0, jint arg1, android::net::IpSecTransform arg2);
-		void applyTransportModeTransform(java::net::Socket arg0, jint arg1, android::net::IpSecTransform arg2);
-		android::net::IpSecManager_UdpEncapsulationSocket openUdpEncapsulationSocket();
-		android::net::IpSecManager_UdpEncapsulationSocket openUdpEncapsulationSocket(jint arg0);
-		void removeTransportModeTransforms(java::io::FileDescriptor arg0);
-		void removeTransportModeTransforms(java::net::DatagramSocket arg0);
-		void removeTransportModeTransforms(java::net::Socket arg0);
+		android::net::IpSecManager_SecurityParameterIndex allocateSecurityParameterIndex(java::net::InetAddress arg0) const;
+		android::net::IpSecManager_SecurityParameterIndex allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1) const;
+		void applyTransportModeTransform(java::io::FileDescriptor arg0, jint arg1, android::net::IpSecTransform arg2) const;
+		void applyTransportModeTransform(java::net::DatagramSocket arg0, jint arg1, android::net::IpSecTransform arg2) const;
+		void applyTransportModeTransform(java::net::Socket arg0, jint arg1, android::net::IpSecTransform arg2) const;
+		android::net::IpSecManager_UdpEncapsulationSocket openUdpEncapsulationSocket() const;
+		android::net::IpSecManager_UdpEncapsulationSocket openUdpEncapsulationSocket(jint arg0) const;
+		void removeTransportModeTransforms(java::io::FileDescriptor arg0) const;
+		void removeTransportModeTransforms(java::net::DatagramSocket arg0) const;
+		void removeTransportModeTransforms(java::net::Socket arg0) const;
 	};
 } // namespace android::net
 

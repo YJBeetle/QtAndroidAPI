@@ -17,21 +17,21 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	jlong CRC32::getValue()
+	jlong CRC32::getValue() const
 	{
 		return callMethod<jlong>(
 			"getValue",
 			"()J"
 		);
 	}
-	void CRC32::reset()
+	void CRC32::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void CRC32::update(jint arg0)
+	void CRC32::update(jint arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -39,7 +39,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void CRC32::update(java::nio::ByteBuffer arg0)
+	void CRC32::update(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -47,7 +47,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void CRC32::update(JByteArray arg0, jint arg1, jint arg2)
+	void CRC32::update(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"update",

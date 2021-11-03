@@ -325,14 +325,14 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void NotificationListenerService::cancelAllNotifications()
+	void NotificationListenerService::cancelAllNotifications() const
 	{
 		callMethod<void>(
 			"cancelAllNotifications",
 			"()V"
 		);
 	}
-	void NotificationListenerService::cancelNotification(JString arg0)
+	void NotificationListenerService::cancelNotification(JString arg0) const
 	{
 		callMethod<void>(
 			"cancelNotification",
@@ -340,7 +340,7 @@ namespace android::service::notification
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationListenerService::cancelNotification(JString arg0, JString arg1, jint arg2)
+	void NotificationListenerService::cancelNotification(JString arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"cancelNotification",
@@ -350,7 +350,7 @@ namespace android::service::notification
 			arg2
 		);
 	}
-	void NotificationListenerService::cancelNotifications(JArray arg0)
+	void NotificationListenerService::cancelNotifications(JArray arg0) const
 	{
 		callMethod<void>(
 			"cancelNotifications",
@@ -358,21 +358,21 @@ namespace android::service::notification
 			arg0.object<jarray>()
 		);
 	}
-	void NotificationListenerService::clearRequestedListenerHints()
+	void NotificationListenerService::clearRequestedListenerHints() const
 	{
 		callMethod<void>(
 			"clearRequestedListenerHints",
 			"()V"
 		);
 	}
-	JArray NotificationListenerService::getActiveNotifications()
+	JArray NotificationListenerService::getActiveNotifications() const
 	{
 		return callObjectMethod(
 			"getActiveNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
 		);
 	}
-	JArray NotificationListenerService::getActiveNotifications(JArray arg0)
+	JArray NotificationListenerService::getActiveNotifications(JArray arg0) const
 	{
 		return callObjectMethod(
 			"getActiveNotifications",
@@ -380,28 +380,28 @@ namespace android::service::notification
 			arg0.object<jarray>()
 		);
 	}
-	jint NotificationListenerService::getCurrentInterruptionFilter()
+	jint NotificationListenerService::getCurrentInterruptionFilter() const
 	{
 		return callMethod<jint>(
 			"getCurrentInterruptionFilter",
 			"()I"
 		);
 	}
-	jint NotificationListenerService::getCurrentListenerHints()
+	jint NotificationListenerService::getCurrentListenerHints() const
 	{
 		return callMethod<jint>(
 			"getCurrentListenerHints",
 			"()I"
 		);
 	}
-	android::service::notification::NotificationListenerService_RankingMap NotificationListenerService::getCurrentRanking()
+	android::service::notification::NotificationListenerService_RankingMap NotificationListenerService::getCurrentRanking() const
 	{
 		return callObjectMethod(
 			"getCurrentRanking",
 			"()Landroid/service/notification/NotificationListenerService$RankingMap;"
 		);
 	}
-	JObject NotificationListenerService::getNotificationChannelGroups(JString arg0, android::os::UserHandle arg1)
+	JObject NotificationListenerService::getNotificationChannelGroups(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroups",
@@ -410,7 +410,7 @@ namespace android::service::notification
 			arg1.object()
 		);
 	}
-	JObject NotificationListenerService::getNotificationChannels(JString arg0, android::os::UserHandle arg1)
+	JObject NotificationListenerService::getNotificationChannels(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getNotificationChannels",
@@ -419,14 +419,14 @@ namespace android::service::notification
 			arg1.object()
 		);
 	}
-	JArray NotificationListenerService::getSnoozedNotifications()
+	JArray NotificationListenerService::getSnoozedNotifications() const
 	{
 		return callObjectMethod(
 			"getSnoozedNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
 		);
 	}
-	void NotificationListenerService::migrateNotificationFilter(jint arg0, JObject arg1)
+	void NotificationListenerService::migrateNotificationFilter(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"migrateNotificationFilter",
@@ -435,7 +435,7 @@ namespace android::service::notification
 			arg1.object()
 		);
 	}
-	JObject NotificationListenerService::onBind(android::content::Intent arg0)
+	JObject NotificationListenerService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -443,14 +443,14 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void NotificationListenerService::onDestroy()
+	void NotificationListenerService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void NotificationListenerService::onInterruptionFilterChanged(jint arg0)
+	void NotificationListenerService::onInterruptionFilterChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onInterruptionFilterChanged",
@@ -458,21 +458,21 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void NotificationListenerService::onListenerConnected()
+	void NotificationListenerService::onListenerConnected() const
 	{
 		callMethod<void>(
 			"onListenerConnected",
 			"()V"
 		);
 	}
-	void NotificationListenerService::onListenerDisconnected()
+	void NotificationListenerService::onListenerDisconnected() const
 	{
 		callMethod<void>(
 			"onListenerDisconnected",
 			"()V"
 		);
 	}
-	void NotificationListenerService::onListenerHintsChanged(jint arg0)
+	void NotificationListenerService::onListenerHintsChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onListenerHintsChanged",
@@ -480,7 +480,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void NotificationListenerService::onNotificationChannelGroupModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3)
+	void NotificationListenerService::onNotificationChannelGroupModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onNotificationChannelGroupModified",
@@ -491,7 +491,7 @@ namespace android::service::notification
 			arg3
 		);
 	}
-	void NotificationListenerService::onNotificationChannelModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3)
+	void NotificationListenerService::onNotificationChannelModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onNotificationChannelModified",
@@ -502,7 +502,7 @@ namespace android::service::notification
 			arg3
 		);
 	}
-	void NotificationListenerService::onNotificationPosted(android::service::notification::StatusBarNotification arg0)
+	void NotificationListenerService::onNotificationPosted(android::service::notification::StatusBarNotification arg0) const
 	{
 		callMethod<void>(
 			"onNotificationPosted",
@@ -510,7 +510,7 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void NotificationListenerService::onNotificationPosted(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1)
+	void NotificationListenerService::onNotificationPosted(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1) const
 	{
 		callMethod<void>(
 			"onNotificationPosted",
@@ -519,7 +519,7 @@ namespace android::service::notification
 			arg1.object()
 		);
 	}
-	void NotificationListenerService::onNotificationRankingUpdate(android::service::notification::NotificationListenerService_RankingMap arg0)
+	void NotificationListenerService::onNotificationRankingUpdate(android::service::notification::NotificationListenerService_RankingMap arg0) const
 	{
 		callMethod<void>(
 			"onNotificationRankingUpdate",
@@ -527,7 +527,7 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0)
+	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0) const
 	{
 		callMethod<void>(
 			"onNotificationRemoved",
@@ -535,7 +535,7 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1)
+	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1) const
 	{
 		callMethod<void>(
 			"onNotificationRemoved",
@@ -544,7 +544,7 @@ namespace android::service::notification
 			arg1.object()
 		);
 	}
-	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1, jint arg2)
+	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onNotificationRemoved",
@@ -554,7 +554,7 @@ namespace android::service::notification
 			arg2
 		);
 	}
-	void NotificationListenerService::onSilentStatusBarIconsVisibilityChanged(jboolean arg0)
+	void NotificationListenerService::onSilentStatusBarIconsVisibilityChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onSilentStatusBarIconsVisibilityChanged",
@@ -562,7 +562,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void NotificationListenerService::requestInterruptionFilter(jint arg0)
+	void NotificationListenerService::requestInterruptionFilter(jint arg0) const
 	{
 		callMethod<void>(
 			"requestInterruptionFilter",
@@ -570,7 +570,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void NotificationListenerService::requestListenerHints(jint arg0)
+	void NotificationListenerService::requestListenerHints(jint arg0) const
 	{
 		callMethod<void>(
 			"requestListenerHints",
@@ -578,14 +578,14 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void NotificationListenerService::requestUnbind()
+	void NotificationListenerService::requestUnbind() const
 	{
 		callMethod<void>(
 			"requestUnbind",
 			"()V"
 		);
 	}
-	void NotificationListenerService::setNotificationsShown(JArray arg0)
+	void NotificationListenerService::setNotificationsShown(JArray arg0) const
 	{
 		callMethod<void>(
 			"setNotificationsShown",
@@ -593,7 +593,7 @@ namespace android::service::notification
 			arg0.object<jarray>()
 		);
 	}
-	void NotificationListenerService::snoozeNotification(JString arg0, jlong arg1)
+	void NotificationListenerService::snoozeNotification(JString arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"snoozeNotification",
@@ -602,7 +602,7 @@ namespace android::service::notification
 			arg1
 		);
 	}
-	void NotificationListenerService::updateNotificationChannel(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2)
+	void NotificationListenerService::updateNotificationChannel(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2) const
 	{
 		callMethod<void>(
 			"updateNotificationChannel",

@@ -25,7 +25,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		);
 	}
-	void Application::onConfigurationChanged(android::content::res::Configuration arg0)
+	void Application::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -33,28 +33,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::onCreate()
+	void Application::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void Application::onLowMemory()
+	void Application::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	void Application::onTerminate()
+	void Application::onTerminate() const
 	{
 		callMethod<void>(
 			"onTerminate",
 			"()V"
 		);
 	}
-	void Application::onTrimMemory(jint arg0)
+	void Application::onTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"onTrimMemory",
@@ -62,7 +62,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Application::registerActivityLifecycleCallbacks(JObject arg0)
+	void Application::registerActivityLifecycleCallbacks(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerActivityLifecycleCallbacks",
@@ -70,7 +70,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::registerComponentCallbacks(JObject arg0)
+	void Application::registerComponentCallbacks(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerComponentCallbacks",
@@ -78,7 +78,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::registerOnProvideAssistDataListener(JObject arg0)
+	void Application::registerOnProvideAssistDataListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerOnProvideAssistDataListener",
@@ -86,7 +86,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::unregisterActivityLifecycleCallbacks(JObject arg0)
+	void Application::unregisterActivityLifecycleCallbacks(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterActivityLifecycleCallbacks",
@@ -94,7 +94,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::unregisterComponentCallbacks(JObject arg0)
+	void Application::unregisterComponentCallbacks(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterComponentCallbacks",
@@ -102,7 +102,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::unregisterOnProvideAssistDataListener(JObject arg0)
+	void Application::unregisterOnProvideAssistDataListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterOnProvideAssistDataListener",

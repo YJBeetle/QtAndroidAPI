@@ -94,49 +94,49 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	jint WifiP2pConfig::describeContents()
+	jint WifiP2pConfig::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint WifiP2pConfig::getGroupOwnerBand()
+	jint WifiP2pConfig::getGroupOwnerBand() const
 	{
 		return callMethod<jint>(
 			"getGroupOwnerBand",
 			"()I"
 		);
 	}
-	jint WifiP2pConfig::getNetworkId()
+	jint WifiP2pConfig::getNetworkId() const
 	{
 		return callMethod<jint>(
 			"getNetworkId",
 			"()I"
 		);
 	}
-	JString WifiP2pConfig::getNetworkName()
+	JString WifiP2pConfig::getNetworkName() const
 	{
 		return callObjectMethod(
 			"getNetworkName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WifiP2pConfig::getPassphrase()
+	JString WifiP2pConfig::getPassphrase() const
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WifiP2pConfig::toString()
+	JString WifiP2pConfig::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiP2pConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiP2pConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

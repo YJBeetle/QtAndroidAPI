@@ -30,17 +30,17 @@ namespace org::xml::sax
 		InputSource(JString arg0);
 		
 		// Methods
-		java::io::InputStream getByteStream();
-		java::io::Reader getCharacterStream();
-		JString getEncoding();
-		JString getPublicId();
-		JString getSystemId();
-		jboolean isEmpty();
-		void setByteStream(java::io::InputStream arg0);
-		void setCharacterStream(java::io::Reader arg0);
-		void setEncoding(JString arg0);
-		void setPublicId(JString arg0);
-		void setSystemId(JString arg0);
+		java::io::InputStream getByteStream() const;
+		java::io::Reader getCharacterStream() const;
+		JString getEncoding() const;
+		JString getPublicId() const;
+		JString getSystemId() const;
+		jboolean isEmpty() const;
+		void setByteStream(java::io::InputStream arg0) const;
+		void setCharacterStream(java::io::Reader arg0) const;
+		void setEncoding(JString arg0) const;
+		void setPublicId(JString arg0) const;
+		void setSystemId(JString arg0) const;
 	};
 } // namespace org::xml::sax
 

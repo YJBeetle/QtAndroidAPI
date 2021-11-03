@@ -50,14 +50,14 @@ namespace android::hardware::usb
 		// Constructors
 		
 		// Methods
-		JArray getAccessoryList();
-		java::util::HashMap getDeviceList();
-		jboolean hasPermission(android::hardware::usb::UsbAccessory arg0);
-		jboolean hasPermission(android::hardware::usb::UsbDevice arg0);
-		android::os::ParcelFileDescriptor openAccessory(android::hardware::usb::UsbAccessory arg0);
-		android::hardware::usb::UsbDeviceConnection openDevice(android::hardware::usb::UsbDevice arg0);
-		void requestPermission(android::hardware::usb::UsbAccessory arg0, android::app::PendingIntent arg1);
-		void requestPermission(android::hardware::usb::UsbDevice arg0, android::app::PendingIntent arg1);
+		JArray getAccessoryList() const;
+		java::util::HashMap getDeviceList() const;
+		jboolean hasPermission(android::hardware::usb::UsbAccessory arg0) const;
+		jboolean hasPermission(android::hardware::usb::UsbDevice arg0) const;
+		android::os::ParcelFileDescriptor openAccessory(android::hardware::usb::UsbAccessory arg0) const;
+		android::hardware::usb::UsbDeviceConnection openDevice(android::hardware::usb::UsbDevice arg0) const;
+		void requestPermission(android::hardware::usb::UsbAccessory arg0, android::app::PendingIntent arg1) const;
+		void requestPermission(android::hardware::usb::UsbDevice arg0, android::app::PendingIntent arg1) const;
 	};
 } // namespace android::hardware::usb
 

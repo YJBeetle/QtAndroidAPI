@@ -22,49 +22,49 @@ namespace android::media::session
 	// Constructors
 	
 	// Methods
-	jint PlaybackState_CustomAction::describeContents()
+	jint PlaybackState_CustomAction::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString PlaybackState_CustomAction::getAction()
+	JString PlaybackState_CustomAction::getAction() const
 	{
 		return callObjectMethod(
 			"getAction",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle PlaybackState_CustomAction::getExtras()
+	android::os::Bundle PlaybackState_CustomAction::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint PlaybackState_CustomAction::getIcon()
+	jint PlaybackState_CustomAction::getIcon() const
 	{
 		return callMethod<jint>(
 			"getIcon",
 			"()I"
 		);
 	}
-	JString PlaybackState_CustomAction::getName()
+	JString PlaybackState_CustomAction::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString PlaybackState_CustomAction::toString()
+	JString PlaybackState_CustomAction::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PlaybackState_CustomAction::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PlaybackState_CustomAction::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

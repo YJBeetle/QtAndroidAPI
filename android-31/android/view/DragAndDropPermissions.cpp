@@ -19,21 +19,21 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint DragAndDropPermissions::describeContents()
+	jint DragAndDropPermissions::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void DragAndDropPermissions::release()
+	void DragAndDropPermissions::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void DragAndDropPermissions::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DragAndDropPermissions::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

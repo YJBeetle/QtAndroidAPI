@@ -36,14 +36,14 @@ namespace android::view::textservice
 		) {}
 	
 	// Methods
-	jint SentenceSuggestionsInfo::describeContents()
+	jint SentenceSuggestionsInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint SentenceSuggestionsInfo::getLengthAt(jint arg0)
+	jint SentenceSuggestionsInfo::getLengthAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLengthAt",
@@ -51,7 +51,7 @@ namespace android::view::textservice
 			arg0
 		);
 	}
-	jint SentenceSuggestionsInfo::getOffsetAt(jint arg0)
+	jint SentenceSuggestionsInfo::getOffsetAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getOffsetAt",
@@ -59,14 +59,14 @@ namespace android::view::textservice
 			arg0
 		);
 	}
-	jint SentenceSuggestionsInfo::getSuggestionsCount()
+	jint SentenceSuggestionsInfo::getSuggestionsCount() const
 	{
 		return callMethod<jint>(
 			"getSuggestionsCount",
 			"()I"
 		);
 	}
-	android::view::textservice::SuggestionsInfo SentenceSuggestionsInfo::getSuggestionsInfoAt(jint arg0)
+	android::view::textservice::SuggestionsInfo SentenceSuggestionsInfo::getSuggestionsInfoAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSuggestionsInfoAt",
@@ -74,7 +74,7 @@ namespace android::view::textservice
 			arg0
 		);
 	}
-	void SentenceSuggestionsInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SentenceSuggestionsInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

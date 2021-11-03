@@ -19,14 +19,14 @@ namespace android::view::translation
 		) {}
 	
 	// Methods
-	android::view::translation::TranslationContext TranslationContext_Builder::build()
+	android::view::translation::TranslationContext TranslationContext_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/translation/TranslationContext;"
 		);
 	}
-	android::view::translation::TranslationContext_Builder TranslationContext_Builder::setTranslationFlags(jint arg0)
+	android::view::translation::TranslationContext_Builder TranslationContext_Builder::setTranslationFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTranslationFlags",

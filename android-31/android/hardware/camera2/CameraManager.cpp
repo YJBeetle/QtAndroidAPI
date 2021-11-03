@@ -18,7 +18,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	android::hardware::camera2::CameraCharacteristics CameraManager::getCameraCharacteristics(JString arg0)
+	android::hardware::camera2::CameraCharacteristics CameraManager::getCameraCharacteristics(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCameraCharacteristics",
@@ -26,7 +26,7 @@ namespace android::hardware::camera2
 			arg0.object<jstring>()
 		);
 	}
-	android::hardware::camera2::CameraExtensionCharacteristics CameraManager::getCameraExtensionCharacteristics(JString arg0)
+	android::hardware::camera2::CameraExtensionCharacteristics CameraManager::getCameraExtensionCharacteristics(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCameraExtensionCharacteristics",
@@ -34,21 +34,21 @@ namespace android::hardware::camera2
 			arg0.object<jstring>()
 		);
 	}
-	JArray CameraManager::getCameraIdList()
+	JArray CameraManager::getCameraIdList() const
 	{
 		return callObjectMethod(
 			"getCameraIdList",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JObject CameraManager::getConcurrentCameraIds()
+	JObject CameraManager::getConcurrentCameraIds() const
 	{
 		return callObjectMethod(
 			"getConcurrentCameraIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean CameraManager::isConcurrentSessionConfigurationSupported(JObject arg0)
+	jboolean CameraManager::isConcurrentSessionConfigurationSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isConcurrentSessionConfigurationSupported",
@@ -56,7 +56,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraManager::openCamera(JString arg0, android::hardware::camera2::CameraDevice_StateCallback arg1, android::os::Handler arg2)
+	void CameraManager::openCamera(JString arg0, android::hardware::camera2::CameraDevice_StateCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"openCamera",
@@ -66,7 +66,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraManager::openCamera(JString arg0, JObject arg1, android::hardware::camera2::CameraDevice_StateCallback arg2)
+	void CameraManager::openCamera(JString arg0, JObject arg1, android::hardware::camera2::CameraDevice_StateCallback arg2) const
 	{
 		callMethod<void>(
 			"openCamera",
@@ -76,7 +76,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraManager::registerAvailabilityCallback(android::hardware::camera2::CameraManager_AvailabilityCallback arg0, android::os::Handler arg1)
+	void CameraManager::registerAvailabilityCallback(android::hardware::camera2::CameraManager_AvailabilityCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerAvailabilityCallback",
@@ -85,7 +85,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraManager::registerAvailabilityCallback(JObject arg0, android::hardware::camera2::CameraManager_AvailabilityCallback arg1)
+	void CameraManager::registerAvailabilityCallback(JObject arg0, android::hardware::camera2::CameraManager_AvailabilityCallback arg1) const
 	{
 		callMethod<void>(
 			"registerAvailabilityCallback",
@@ -94,7 +94,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraManager::registerTorchCallback(android::hardware::camera2::CameraManager_TorchCallback arg0, android::os::Handler arg1)
+	void CameraManager::registerTorchCallback(android::hardware::camera2::CameraManager_TorchCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerTorchCallback",
@@ -103,7 +103,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraManager::registerTorchCallback(JObject arg0, android::hardware::camera2::CameraManager_TorchCallback arg1)
+	void CameraManager::registerTorchCallback(JObject arg0, android::hardware::camera2::CameraManager_TorchCallback arg1) const
 	{
 		callMethod<void>(
 			"registerTorchCallback",
@@ -112,7 +112,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraManager::setTorchMode(JString arg0, jboolean arg1)
+	void CameraManager::setTorchMode(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setTorchMode",
@@ -121,7 +121,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	void CameraManager::unregisterAvailabilityCallback(android::hardware::camera2::CameraManager_AvailabilityCallback arg0)
+	void CameraManager::unregisterAvailabilityCallback(android::hardware::camera2::CameraManager_AvailabilityCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterAvailabilityCallback",
@@ -129,7 +129,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraManager::unregisterTorchCallback(android::hardware::camera2::CameraManager_TorchCallback arg0)
+	void CameraManager::unregisterTorchCallback(android::hardware::camera2::CameraManager_TorchCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterTorchCallback",

@@ -107,7 +107,7 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	jint Deflater::deflate(JByteArray arg0)
+	jint Deflater::deflate(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"deflate",
@@ -115,7 +115,7 @@ namespace java::util::zip
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint Deflater::deflate(java::nio::ByteBuffer arg0)
+	jint Deflater::deflate(java::nio::ByteBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"deflate",
@@ -123,7 +123,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	jint Deflater::deflate(java::nio::ByteBuffer arg0, jint arg1)
+	jint Deflater::deflate(java::nio::ByteBuffer arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"deflate",
@@ -132,7 +132,7 @@ namespace java::util::zip
 			arg1
 		);
 	}
-	jint Deflater::deflate(JByteArray arg0, jint arg1, jint arg2)
+	jint Deflater::deflate(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"deflate",
@@ -142,7 +142,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	jint Deflater::deflate(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint Deflater::deflate(JByteArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"deflate",
@@ -153,77 +153,77 @@ namespace java::util::zip
 			arg3
 		);
 	}
-	void Deflater::end()
+	void Deflater::end() const
 	{
 		callMethod<void>(
 			"end",
 			"()V"
 		);
 	}
-	void Deflater::finish()
+	void Deflater::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	jboolean Deflater::finished()
+	jboolean Deflater::finished() const
 	{
 		return callMethod<jboolean>(
 			"finished",
 			"()Z"
 		);
 	}
-	jint Deflater::getAdler()
+	jint Deflater::getAdler() const
 	{
 		return callMethod<jint>(
 			"getAdler",
 			"()I"
 		);
 	}
-	jlong Deflater::getBytesRead()
+	jlong Deflater::getBytesRead() const
 	{
 		return callMethod<jlong>(
 			"getBytesRead",
 			"()J"
 		);
 	}
-	jlong Deflater::getBytesWritten()
+	jlong Deflater::getBytesWritten() const
 	{
 		return callMethod<jlong>(
 			"getBytesWritten",
 			"()J"
 		);
 	}
-	jint Deflater::getTotalIn()
+	jint Deflater::getTotalIn() const
 	{
 		return callMethod<jint>(
 			"getTotalIn",
 			"()I"
 		);
 	}
-	jint Deflater::getTotalOut()
+	jint Deflater::getTotalOut() const
 	{
 		return callMethod<jint>(
 			"getTotalOut",
 			"()I"
 		);
 	}
-	jboolean Deflater::needsInput()
+	jboolean Deflater::needsInput() const
 	{
 		return callMethod<jboolean>(
 			"needsInput",
 			"()Z"
 		);
 	}
-	void Deflater::reset()
+	void Deflater::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Deflater::setDictionary(JByteArray arg0)
+	void Deflater::setDictionary(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setDictionary",
@@ -231,7 +231,7 @@ namespace java::util::zip
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Deflater::setDictionary(java::nio::ByteBuffer arg0)
+	void Deflater::setDictionary(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"setDictionary",
@@ -239,7 +239,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Deflater::setDictionary(JByteArray arg0, jint arg1, jint arg2)
+	void Deflater::setDictionary(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setDictionary",
@@ -249,7 +249,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	void Deflater::setInput(JByteArray arg0)
+	void Deflater::setInput(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setInput",
@@ -257,7 +257,7 @@ namespace java::util::zip
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Deflater::setInput(java::nio::ByteBuffer arg0)
+	void Deflater::setInput(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"setInput",
@@ -265,7 +265,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Deflater::setInput(JByteArray arg0, jint arg1, jint arg2)
+	void Deflater::setInput(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setInput",
@@ -275,7 +275,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	void Deflater::setLevel(jint arg0)
+	void Deflater::setLevel(jint arg0) const
 	{
 		callMethod<void>(
 			"setLevel",
@@ -283,7 +283,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void Deflater::setStrategy(jint arg0)
+	void Deflater::setStrategy(jint arg0) const
 	{
 		callMethod<void>(
 			"setStrategy",

@@ -13,7 +13,7 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	jboolean PrecomputedText_Params::equals(JObject arg0)
+	jboolean PrecomputedText_Params::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -21,42 +21,42 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	jint PrecomputedText_Params::getBreakStrategy()
+	jint PrecomputedText_Params::getBreakStrategy() const
 	{
 		return callMethod<jint>(
 			"getBreakStrategy",
 			"()I"
 		);
 	}
-	jint PrecomputedText_Params::getHyphenationFrequency()
+	jint PrecomputedText_Params::getHyphenationFrequency() const
 	{
 		return callMethod<jint>(
 			"getHyphenationFrequency",
 			"()I"
 		);
 	}
-	JObject PrecomputedText_Params::getTextDirection()
+	JObject PrecomputedText_Params::getTextDirection() const
 	{
 		return callObjectMethod(
 			"getTextDirection",
 			"()Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	android::text::TextPaint PrecomputedText_Params::getTextPaint()
+	android::text::TextPaint PrecomputedText_Params::getTextPaint() const
 	{
 		return callObjectMethod(
 			"getTextPaint",
 			"()Landroid/text/TextPaint;"
 		);
 	}
-	jint PrecomputedText_Params::hashCode()
+	jint PrecomputedText_Params::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrecomputedText_Params::toString()
+	JString PrecomputedText_Params::toString() const
 	{
 		return callObjectMethod(
 			"toString",

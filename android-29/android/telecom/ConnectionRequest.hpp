@@ -41,15 +41,15 @@ namespace android::telecom
 		ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2, jint arg3);
 		
 		// Methods
-		jint describeContents();
-		android::telecom::PhoneAccountHandle getAccountHandle();
-		android::net::Uri getAddress();
-		android::os::Bundle getExtras();
-		android::telecom::Connection_RttTextStream getRttTextStream();
-		jint getVideoState();
-		jboolean isRequestingRtt();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::telecom::PhoneAccountHandle getAccountHandle() const;
+		android::net::Uri getAddress() const;
+		android::os::Bundle getExtras() const;
+		android::telecom::Connection_RttTextStream getRttTextStream() const;
+		jint getVideoState() const;
+		jboolean isRequestingRtt() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telecom
 

@@ -11,7 +11,7 @@ namespace android::hardware::biometrics
 	// Constructors
 	
 	// Methods
-	android::hardware::biometrics::BiometricPrompt_CryptoObject BiometricPrompt_AuthenticationResult::getCryptoObject()
+	android::hardware::biometrics::BiometricPrompt_CryptoObject BiometricPrompt_AuthenticationResult::getCryptoObject() const
 	{
 		return callObjectMethod(
 			"getCryptoObject",

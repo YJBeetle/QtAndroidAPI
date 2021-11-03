@@ -94,84 +94,84 @@ namespace android::location
 		) {}
 	
 	// Methods
-	jint Criteria::describeContents()
+	jint Criteria::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint Criteria::getAccuracy()
+	jint Criteria::getAccuracy() const
 	{
 		return callMethod<jint>(
 			"getAccuracy",
 			"()I"
 		);
 	}
-	jint Criteria::getBearingAccuracy()
+	jint Criteria::getBearingAccuracy() const
 	{
 		return callMethod<jint>(
 			"getBearingAccuracy",
 			"()I"
 		);
 	}
-	jint Criteria::getHorizontalAccuracy()
+	jint Criteria::getHorizontalAccuracy() const
 	{
 		return callMethod<jint>(
 			"getHorizontalAccuracy",
 			"()I"
 		);
 	}
-	jint Criteria::getPowerRequirement()
+	jint Criteria::getPowerRequirement() const
 	{
 		return callMethod<jint>(
 			"getPowerRequirement",
 			"()I"
 		);
 	}
-	jint Criteria::getSpeedAccuracy()
+	jint Criteria::getSpeedAccuracy() const
 	{
 		return callMethod<jint>(
 			"getSpeedAccuracy",
 			"()I"
 		);
 	}
-	jint Criteria::getVerticalAccuracy()
+	jint Criteria::getVerticalAccuracy() const
 	{
 		return callMethod<jint>(
 			"getVerticalAccuracy",
 			"()I"
 		);
 	}
-	jboolean Criteria::isAltitudeRequired()
+	jboolean Criteria::isAltitudeRequired() const
 	{
 		return callMethod<jboolean>(
 			"isAltitudeRequired",
 			"()Z"
 		);
 	}
-	jboolean Criteria::isBearingRequired()
+	jboolean Criteria::isBearingRequired() const
 	{
 		return callMethod<jboolean>(
 			"isBearingRequired",
 			"()Z"
 		);
 	}
-	jboolean Criteria::isCostAllowed()
+	jboolean Criteria::isCostAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isCostAllowed",
 			"()Z"
 		);
 	}
-	jboolean Criteria::isSpeedRequired()
+	jboolean Criteria::isSpeedRequired() const
 	{
 		return callMethod<jboolean>(
 			"isSpeedRequired",
 			"()Z"
 		);
 	}
-	void Criteria::setAccuracy(jint arg0)
+	void Criteria::setAccuracy(jint arg0) const
 	{
 		callMethod<void>(
 			"setAccuracy",
@@ -179,7 +179,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setAltitudeRequired(jboolean arg0)
+	void Criteria::setAltitudeRequired(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAltitudeRequired",
@@ -187,7 +187,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setBearingAccuracy(jint arg0)
+	void Criteria::setBearingAccuracy(jint arg0) const
 	{
 		callMethod<void>(
 			"setBearingAccuracy",
@@ -195,7 +195,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setBearingRequired(jboolean arg0)
+	void Criteria::setBearingRequired(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setBearingRequired",
@@ -203,7 +203,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setCostAllowed(jboolean arg0)
+	void Criteria::setCostAllowed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCostAllowed",
@@ -211,7 +211,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setHorizontalAccuracy(jint arg0)
+	void Criteria::setHorizontalAccuracy(jint arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalAccuracy",
@@ -219,7 +219,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setPowerRequirement(jint arg0)
+	void Criteria::setPowerRequirement(jint arg0) const
 	{
 		callMethod<void>(
 			"setPowerRequirement",
@@ -227,7 +227,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setSpeedAccuracy(jint arg0)
+	void Criteria::setSpeedAccuracy(jint arg0) const
 	{
 		callMethod<void>(
 			"setSpeedAccuracy",
@@ -235,7 +235,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setSpeedRequired(jboolean arg0)
+	void Criteria::setSpeedRequired(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSpeedRequired",
@@ -243,7 +243,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Criteria::setVerticalAccuracy(jint arg0)
+	void Criteria::setVerticalAccuracy(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalAccuracy",
@@ -251,14 +251,14 @@ namespace android::location
 			arg0
 		);
 	}
-	JString Criteria::toString()
+	JString Criteria::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Criteria::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Criteria::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

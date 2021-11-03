@@ -20,7 +20,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::addIkeExtension(jint arg0)
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::addIkeExtension(jint arg0) const
 	{
 		return callObjectMethod(
 			"addIkeExtension",
@@ -28,7 +28,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::addRemoteVendorId(JByteArray arg0)
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::addRemoteVendorId(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"addRemoteVendorId",
@@ -36,35 +36,35 @@ namespace android::net::ipsec::ike
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration IkeSessionConfiguration_Builder::build()
+	android::net::ipsec::ike::IkeSessionConfiguration IkeSessionConfiguration_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/ipsec/ike/IkeSessionConfiguration;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::clearIkeExtensions()
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::clearIkeExtensions() const
 	{
 		return callObjectMethod(
 			"clearIkeExtensions",
 			"()Landroid/net/ipsec/ike/IkeSessionConfiguration$Builder;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::clearRemoteApplicationVersion()
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::clearRemoteApplicationVersion() const
 	{
 		return callObjectMethod(
 			"clearRemoteApplicationVersion",
 			"()Landroid/net/ipsec/ike/IkeSessionConfiguration$Builder;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::clearRemoteVendorIds()
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::clearRemoteVendorIds() const
 	{
 		return callObjectMethod(
 			"clearRemoteVendorIds",
 			"()Landroid/net/ipsec/ike/IkeSessionConfiguration$Builder;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::setRemoteApplicationVersion(JString arg0)
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::setRemoteApplicationVersion(JString arg0) const
 	{
 		return callObjectMethod(
 			"setRemoteApplicationVersion",

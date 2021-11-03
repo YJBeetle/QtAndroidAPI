@@ -21,21 +21,21 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	jint Dataset::describeContents()
+	jint Dataset::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString Dataset::toString()
+	JString Dataset::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Dataset::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Dataset::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

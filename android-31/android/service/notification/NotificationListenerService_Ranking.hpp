@@ -33,26 +33,26 @@ namespace android::service::notification
 		NotificationListenerService_Ranking();
 		
 		// Methods
-		jboolean canBubble();
-		jboolean canShowBadge();
-		jboolean equals(JObject arg0);
-		android::app::NotificationChannel getChannel();
-		android::content::pm::ShortcutInfo getConversationShortcutInfo();
-		jint getImportance();
-		JString getImportanceExplanation();
-		JString getKey();
-		jlong getLastAudiblyAlertedMillis();
-		jint getLockscreenVisibilityOverride();
-		JString getOverrideGroupKey();
-		jint getRank();
-		JObject getSmartActions();
-		JObject getSmartReplies();
-		jint getSuppressedVisualEffects();
-		jint getUserSentiment();
-		jboolean isAmbient();
-		jboolean isConversation();
-		jboolean isSuspended();
-		jboolean matchesInterruptionFilter();
+		jboolean canBubble() const;
+		jboolean canShowBadge() const;
+		jboolean equals(JObject arg0) const;
+		android::app::NotificationChannel getChannel() const;
+		android::content::pm::ShortcutInfo getConversationShortcutInfo() const;
+		jint getImportance() const;
+		JString getImportanceExplanation() const;
+		JString getKey() const;
+		jlong getLastAudiblyAlertedMillis() const;
+		jint getLockscreenVisibilityOverride() const;
+		JString getOverrideGroupKey() const;
+		jint getRank() const;
+		JObject getSmartActions() const;
+		JObject getSmartReplies() const;
+		jint getSuppressedVisualEffects() const;
+		jint getUserSentiment() const;
+		jboolean isAmbient() const;
+		jboolean isConversation() const;
+		jboolean isSuspended() const;
+		jboolean matchesInterruptionFilter() const;
 	};
 } // namespace android::service::notification
 

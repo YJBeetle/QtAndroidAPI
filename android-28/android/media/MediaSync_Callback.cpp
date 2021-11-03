@@ -17,7 +17,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaSync_Callback::onAudioBufferConsumed(android::media::MediaSync arg0, java::nio::ByteBuffer arg1, jint arg2)
+	void MediaSync_Callback::onAudioBufferConsumed(android::media::MediaSync arg0, java::nio::ByteBuffer arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onAudioBufferConsumed",

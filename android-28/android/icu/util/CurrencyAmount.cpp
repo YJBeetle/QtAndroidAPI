@@ -26,7 +26,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	android::icu::util::Currency CurrencyAmount::getCurrency()
+	android::icu::util::Currency CurrencyAmount::getCurrency() const
 	{
 		return callObjectMethod(
 			"getCurrency",

@@ -17,7 +17,7 @@ namespace android::media
 		AudioManager_AudioPlaybackCallback();
 		
 		// Methods
-		void onPlaybackConfigChanged(JObject arg0);
+		void onPlaybackConfigChanged(JObject arg0) const;
 	};
 } // namespace android::media
 

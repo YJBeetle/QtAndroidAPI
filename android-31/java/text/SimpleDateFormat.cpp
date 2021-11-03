@@ -52,7 +52,7 @@ namespace java::text
 		) {}
 	
 	// Methods
-	void SimpleDateFormat::applyLocalizedPattern(JString arg0)
+	void SimpleDateFormat::applyLocalizedPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
@@ -60,7 +60,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void SimpleDateFormat::applyPattern(JString arg0)
+	void SimpleDateFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -68,14 +68,14 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject SimpleDateFormat::clone()
+	JObject SimpleDateFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean SimpleDateFormat::equals(JObject arg0)
+	jboolean SimpleDateFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -83,7 +83,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer SimpleDateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer SimpleDateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -93,7 +93,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	JObject SimpleDateFormat::formatToCharacterIterator(JObject arg0)
+	JObject SimpleDateFormat::formatToCharacterIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -101,28 +101,28 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Date SimpleDateFormat::get2DigitYearStart()
+	java::util::Date SimpleDateFormat::get2DigitYearStart() const
 	{
 		return callObjectMethod(
 			"get2DigitYearStart",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::text::DateFormatSymbols SimpleDateFormat::getDateFormatSymbols()
+	java::text::DateFormatSymbols SimpleDateFormat::getDateFormatSymbols() const
 	{
 		return callObjectMethod(
 			"getDateFormatSymbols",
 			"()Ljava/text/DateFormatSymbols;"
 		);
 	}
-	jint SimpleDateFormat::hashCode()
+	jint SimpleDateFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::util::Date SimpleDateFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::util::Date SimpleDateFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -131,7 +131,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	void SimpleDateFormat::set2DigitYearStart(java::util::Date arg0)
+	void SimpleDateFormat::set2DigitYearStart(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"set2DigitYearStart",
@@ -139,7 +139,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void SimpleDateFormat::setDateFormatSymbols(java::text::DateFormatSymbols arg0)
+	void SimpleDateFormat::setDateFormatSymbols(java::text::DateFormatSymbols arg0) const
 	{
 		callMethod<void>(
 			"setDateFormatSymbols",
@@ -147,14 +147,14 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	JString SimpleDateFormat::toLocalizedPattern()
+	JString SimpleDateFormat::toLocalizedPattern() const
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SimpleDateFormat::toPattern()
+	JString SimpleDateFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",

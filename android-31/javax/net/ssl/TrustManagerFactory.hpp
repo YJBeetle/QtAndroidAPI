@@ -35,11 +35,11 @@ namespace javax::net::ssl
 		static javax::net::ssl::TrustManagerFactory getInstance(JString arg0);
 		static javax::net::ssl::TrustManagerFactory getInstance(JString arg0, JString arg1);
 		static javax::net::ssl::TrustManagerFactory getInstance(JString arg0, java::security::Provider arg1);
-		JString getAlgorithm();
-		java::security::Provider getProvider();
-		JArray getTrustManagers();
-		void init(java::security::KeyStore arg0);
-		void init(JObject arg0);
+		JString getAlgorithm() const;
+		java::security::Provider getProvider() const;
+		JArray getTrustManagers() const;
+		void init(java::security::KeyStore arg0) const;
+		void init(JObject arg0) const;
 	};
 } // namespace javax::net::ssl
 

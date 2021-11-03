@@ -16,14 +16,14 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	JObject CertPathValidatorSpi::engineGetRevocationChecker()
+	JObject CertPathValidatorSpi::engineGetRevocationChecker() const
 	{
 		return callObjectMethod(
 			"engineGetRevocationChecker",
 			"()Ljava/security/cert/CertPathChecker;"
 		);
 	}
-	JObject CertPathValidatorSpi::engineValidate(java::security::cert::CertPath arg0, JObject arg1)
+	JObject CertPathValidatorSpi::engineValidate(java::security::cert::CertPath arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"engineValidate",

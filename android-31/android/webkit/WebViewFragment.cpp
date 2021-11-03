@@ -20,14 +20,14 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	android::webkit::WebView WebViewFragment::getWebView()
+	android::webkit::WebView WebViewFragment::getWebView() const
 	{
 		return callObjectMethod(
 			"getWebView",
 			"()Landroid/webkit/WebView;"
 		);
 	}
-	android::view::View WebViewFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
+	android::view::View WebViewFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -37,28 +37,28 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewFragment::onDestroy()
+	void WebViewFragment::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void WebViewFragment::onDestroyView()
+	void WebViewFragment::onDestroyView() const
 	{
 		callMethod<void>(
 			"onDestroyView",
 			"()V"
 		);
 	}
-	void WebViewFragment::onPause()
+	void WebViewFragment::onPause() const
 	{
 		callMethod<void>(
 			"onPause",
 			"()V"
 		);
 	}
-	void WebViewFragment::onResume()
+	void WebViewFragment::onResume() const
 	{
 		callMethod<void>(
 			"onResume",

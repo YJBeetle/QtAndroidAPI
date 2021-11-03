@@ -34,10 +34,10 @@ namespace android::icu::text
 		
 		// Methods
 		static android::icu::text::IDNA getUTS46Instance(jint arg0);
-		java::lang::StringBuilder labelToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		java::lang::StringBuilder labelToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		java::lang::StringBuilder nameToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		java::lang::StringBuilder nameToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder labelToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const;
+		java::lang::StringBuilder labelToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const;
+		java::lang::StringBuilder nameToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const;
+		java::lang::StringBuilder nameToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const;
 	};
 } // namespace android::icu::text
 

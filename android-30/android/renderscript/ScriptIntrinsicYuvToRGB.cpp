@@ -25,7 +25,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsicYuvToRGB::forEach(android::renderscript::Allocation arg0)
+	void ScriptIntrinsicYuvToRGB::forEach(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -33,21 +33,21 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	android::renderscript::Script_FieldID ScriptIntrinsicYuvToRGB::getFieldID_Input()
+	android::renderscript::Script_FieldID ScriptIntrinsicYuvToRGB::getFieldID_Input() const
 	{
 		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
-	android::renderscript::Script_KernelID ScriptIntrinsicYuvToRGB::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsicYuvToRGB::getKernelID() const
 	{
 		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsicYuvToRGB::setInput(android::renderscript::Allocation arg0)
+	void ScriptIntrinsicYuvToRGB::setInput(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"setInput",

@@ -12,21 +12,21 @@ namespace android::accessibilityservice
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace AccessibilityService_ScreenshotResult::getColorSpace()
+	android::graphics::ColorSpace AccessibilityService_ScreenshotResult::getColorSpace() const
 	{
 		return callObjectMethod(
 			"getColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	android::hardware::HardwareBuffer AccessibilityService_ScreenshotResult::getHardwareBuffer()
+	android::hardware::HardwareBuffer AccessibilityService_ScreenshotResult::getHardwareBuffer() const
 	{
 		return callObjectMethod(
 			"getHardwareBuffer",
 			"()Landroid/hardware/HardwareBuffer;"
 		);
 	}
-	jlong AccessibilityService_ScreenshotResult::getTimestamp()
+	jlong AccessibilityService_ScreenshotResult::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",

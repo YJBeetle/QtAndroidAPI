@@ -55,28 +55,28 @@ namespace android::service::quicksettings
 			arg1.object()
 		);
 	}
-	android::service::quicksettings::Tile TileService::getQsTile()
+	android::service::quicksettings::Tile TileService::getQsTile() const
 	{
 		return callObjectMethod(
 			"getQsTile",
 			"()Landroid/service/quicksettings/Tile;"
 		);
 	}
-	jboolean TileService::isLocked()
+	jboolean TileService::isLocked() const
 	{
 		return callMethod<jboolean>(
 			"isLocked",
 			"()Z"
 		);
 	}
-	jboolean TileService::isSecure()
+	jboolean TileService::isSecure() const
 	{
 		return callMethod<jboolean>(
 			"isSecure",
 			"()Z"
 		);
 	}
-	JObject TileService::onBind(android::content::Intent arg0)
+	JObject TileService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -84,49 +84,49 @@ namespace android::service::quicksettings
 			arg0.object()
 		);
 	}
-	void TileService::onClick()
+	void TileService::onClick() const
 	{
 		callMethod<void>(
 			"onClick",
 			"()V"
 		);
 	}
-	void TileService::onDestroy()
+	void TileService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void TileService::onStartListening()
+	void TileService::onStartListening() const
 	{
 		callMethod<void>(
 			"onStartListening",
 			"()V"
 		);
 	}
-	void TileService::onStopListening()
+	void TileService::onStopListening() const
 	{
 		callMethod<void>(
 			"onStopListening",
 			"()V"
 		);
 	}
-	void TileService::onTileAdded()
+	void TileService::onTileAdded() const
 	{
 		callMethod<void>(
 			"onTileAdded",
 			"()V"
 		);
 	}
-	void TileService::onTileRemoved()
+	void TileService::onTileRemoved() const
 	{
 		callMethod<void>(
 			"onTileRemoved",
 			"()V"
 		);
 	}
-	void TileService::showDialog(android::app::Dialog arg0)
+	void TileService::showDialog(android::app::Dialog arg0) const
 	{
 		callMethod<void>(
 			"showDialog",
@@ -134,7 +134,7 @@ namespace android::service::quicksettings
 			arg0.object()
 		);
 	}
-	void TileService::startActivityAndCollapse(android::content::Intent arg0)
+	void TileService::startActivityAndCollapse(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"startActivityAndCollapse",
@@ -142,7 +142,7 @@ namespace android::service::quicksettings
 			arg0.object()
 		);
 	}
-	void TileService::unlockAndRun(JObject arg0)
+	void TileService::unlockAndRun(JObject arg0) const
 	{
 		callMethod<void>(
 			"unlockAndRun",

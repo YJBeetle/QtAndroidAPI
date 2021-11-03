@@ -23,10 +23,10 @@ namespace java::security::spec
 		ECFieldFp(java::math::BigInteger arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getFieldSize();
-		java::math::BigInteger getP();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getFieldSize() const;
+		java::math::BigInteger getP() const;
+		jint hashCode() const;
 	};
 } // namespace java::security::spec
 

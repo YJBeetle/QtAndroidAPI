@@ -32,7 +32,7 @@ namespace java::text
 		) {}
 	
 	// Methods
-	jboolean FieldPosition::equals(JObject arg0)
+	jboolean FieldPosition::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -40,42 +40,42 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	jint FieldPosition::getBeginIndex()
+	jint FieldPosition::getBeginIndex() const
 	{
 		return callMethod<jint>(
 			"getBeginIndex",
 			"()I"
 		);
 	}
-	jint FieldPosition::getEndIndex()
+	jint FieldPosition::getEndIndex() const
 	{
 		return callMethod<jint>(
 			"getEndIndex",
 			"()I"
 		);
 	}
-	jint FieldPosition::getField()
+	jint FieldPosition::getField() const
 	{
 		return callMethod<jint>(
 			"getField",
 			"()I"
 		);
 	}
-	java::text::Format_Field FieldPosition::getFieldAttribute()
+	java::text::Format_Field FieldPosition::getFieldAttribute() const
 	{
 		return callObjectMethod(
 			"getFieldAttribute",
 			"()Ljava/text/Format$Field;"
 		);
 	}
-	jint FieldPosition::hashCode()
+	jint FieldPosition::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void FieldPosition::setBeginIndex(jint arg0)
+	void FieldPosition::setBeginIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setBeginIndex",
@@ -83,7 +83,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void FieldPosition::setEndIndex(jint arg0)
+	void FieldPosition::setEndIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setEndIndex",
@@ -91,7 +91,7 @@ namespace java::text
 			arg0
 		);
 	}
-	JString FieldPosition::toString()
+	JString FieldPosition::toString() const
 	{
 		return callObjectMethod(
 			"toString",

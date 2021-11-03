@@ -96,7 +96,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	java::io::PrintWriter PrintWriter::append(jchar arg0)
+	java::io::PrintWriter PrintWriter::append(jchar arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -104,7 +104,7 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::PrintWriter PrintWriter::append(JString arg0)
+	java::io::PrintWriter PrintWriter::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -112,7 +112,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	java::io::PrintWriter PrintWriter::append(JString arg0, jint arg1, jint arg2)
+	java::io::PrintWriter PrintWriter::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -122,28 +122,28 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean PrintWriter::checkError()
+	jboolean PrintWriter::checkError() const
 	{
 		return callMethod<jboolean>(
 			"checkError",
 			"()Z"
 		);
 	}
-	void PrintWriter::close()
+	void PrintWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PrintWriter::flush()
+	void PrintWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	java::io::PrintWriter PrintWriter::format(JString arg0, JObjectArray arg1)
+	java::io::PrintWriter PrintWriter::format(JString arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"format",
@@ -152,7 +152,7 @@ namespace java::io
 			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::PrintWriter PrintWriter::format(java::util::Locale arg0, JString arg1, JObjectArray arg2)
+	java::io::PrintWriter PrintWriter::format(java::util::Locale arg0, JString arg1, JObjectArray arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -162,7 +162,7 @@ namespace java::io
 			arg2.object<jobjectArray>()
 		);
 	}
-	void PrintWriter::print(JCharArray arg0)
+	void PrintWriter::print(JCharArray arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -170,7 +170,7 @@ namespace java::io
 			arg0.object<jcharArray>()
 		);
 	}
-	void PrintWriter::print(jboolean arg0)
+	void PrintWriter::print(jboolean arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -178,7 +178,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::print(jchar arg0)
+	void PrintWriter::print(jchar arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -186,7 +186,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::print(jdouble arg0)
+	void PrintWriter::print(jdouble arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -194,7 +194,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::print(jfloat arg0)
+	void PrintWriter::print(jfloat arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -202,7 +202,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::print(jint arg0)
+	void PrintWriter::print(jint arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -210,7 +210,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::print(JObject arg0)
+	void PrintWriter::print(JObject arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -218,7 +218,7 @@ namespace java::io
 			arg0.object<jobject>()
 		);
 	}
-	void PrintWriter::print(JString arg0)
+	void PrintWriter::print(JString arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -226,7 +226,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void PrintWriter::print(jlong arg0)
+	void PrintWriter::print(jlong arg0) const
 	{
 		callMethod<void>(
 			"print",
@@ -234,7 +234,7 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::PrintWriter PrintWriter::printf(JString arg0, JObjectArray arg1)
+	java::io::PrintWriter PrintWriter::printf(JString arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"printf",
@@ -243,7 +243,7 @@ namespace java::io
 			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::PrintWriter PrintWriter::printf(java::util::Locale arg0, JString arg1, JObjectArray arg2)
+	java::io::PrintWriter PrintWriter::printf(java::util::Locale arg0, JString arg1, JObjectArray arg2) const
 	{
 		return callObjectMethod(
 			"printf",
@@ -253,14 +253,14 @@ namespace java::io
 			arg2.object<jobjectArray>()
 		);
 	}
-	void PrintWriter::println()
+	void PrintWriter::println() const
 	{
 		callMethod<void>(
 			"println",
 			"()V"
 		);
 	}
-	void PrintWriter::println(JCharArray arg0)
+	void PrintWriter::println(JCharArray arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -268,7 +268,7 @@ namespace java::io
 			arg0.object<jcharArray>()
 		);
 	}
-	void PrintWriter::println(jboolean arg0)
+	void PrintWriter::println(jboolean arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -276,7 +276,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::println(jchar arg0)
+	void PrintWriter::println(jchar arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -284,7 +284,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::println(jdouble arg0)
+	void PrintWriter::println(jdouble arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -292,7 +292,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::println(jfloat arg0)
+	void PrintWriter::println(jfloat arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -300,7 +300,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::println(jint arg0)
+	void PrintWriter::println(jint arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -308,7 +308,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::println(JObject arg0)
+	void PrintWriter::println(JObject arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -316,7 +316,7 @@ namespace java::io
 			arg0.object<jobject>()
 		);
 	}
-	void PrintWriter::println(JString arg0)
+	void PrintWriter::println(JString arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -324,7 +324,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void PrintWriter::println(jlong arg0)
+	void PrintWriter::println(jlong arg0) const
 	{
 		callMethod<void>(
 			"println",
@@ -332,7 +332,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::write(JCharArray arg0)
+	void PrintWriter::write(JCharArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -340,7 +340,7 @@ namespace java::io
 			arg0.object<jcharArray>()
 		);
 	}
-	void PrintWriter::write(jint arg0)
+	void PrintWriter::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -348,7 +348,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::write(JString arg0)
+	void PrintWriter::write(JString arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -356,7 +356,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void PrintWriter::write(JCharArray arg0, jint arg1, jint arg2)
+	void PrintWriter::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -366,7 +366,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void PrintWriter::write(JString arg0, jint arg1, jint arg2)
+	void PrintWriter::write(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

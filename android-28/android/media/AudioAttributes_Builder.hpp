@@ -23,11 +23,11 @@ namespace android::media
 		AudioAttributes_Builder(android::media::AudioAttributes arg0);
 		
 		// Methods
-		android::media::AudioAttributes build();
-		android::media::AudioAttributes_Builder setContentType(jint arg0);
-		android::media::AudioAttributes_Builder setFlags(jint arg0);
-		android::media::AudioAttributes_Builder setLegacyStreamType(jint arg0);
-		android::media::AudioAttributes_Builder setUsage(jint arg0);
+		android::media::AudioAttributes build() const;
+		android::media::AudioAttributes_Builder setContentType(jint arg0) const;
+		android::media::AudioAttributes_Builder setFlags(jint arg0) const;
+		android::media::AudioAttributes_Builder setLegacyStreamType(jint arg0) const;
+		android::media::AudioAttributes_Builder setUsage(jint arg0) const;
 	};
 } // namespace android::media
 

@@ -45,21 +45,21 @@ namespace android::content::res
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	void Resources::finishPreloading()
+	void Resources::finishPreloading() const
 	{
 		callMethod<void>(
 			"finishPreloading",
 			"()V"
 		);
 	}
-	void Resources::flushLayoutCache()
+	void Resources::flushLayoutCache() const
 	{
 		callMethod<void>(
 			"flushLayoutCache",
 			"()V"
 		);
 	}
-	JObject Resources::getAnimation(jint arg0)
+	JObject Resources::getAnimation(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAnimation",
@@ -67,14 +67,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	android::content::res::AssetManager Resources::getAssets()
+	android::content::res::AssetManager Resources::getAssets() const
 	{
 		return callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
 		);
 	}
-	jboolean Resources::getBoolean(jint arg0)
+	jboolean Resources::getBoolean(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
@@ -82,7 +82,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint Resources::getColor(jint arg0)
+	jint Resources::getColor(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getColor",
@@ -90,7 +90,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint Resources::getColor(jint arg0, android::content::res::Resources_Theme arg1)
+	jint Resources::getColor(jint arg0, android::content::res::Resources_Theme arg1) const
 	{
 		return callMethod<jint>(
 			"getColor",
@@ -99,7 +99,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	android::content::res::ColorStateList Resources::getColorStateList(jint arg0)
+	android::content::res::ColorStateList Resources::getColorStateList(jint arg0) const
 	{
 		return callObjectMethod(
 			"getColorStateList",
@@ -107,7 +107,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	android::content::res::ColorStateList Resources::getColorStateList(jint arg0, android::content::res::Resources_Theme arg1)
+	android::content::res::ColorStateList Resources::getColorStateList(jint arg0, android::content::res::Resources_Theme arg1) const
 	{
 		return callObjectMethod(
 			"getColorStateList",
@@ -116,14 +116,14 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	android::content::res::Configuration Resources::getConfiguration()
+	android::content::res::Configuration Resources::getConfiguration() const
 	{
 		return callObjectMethod(
 			"getConfiguration",
 			"()Landroid/content/res/Configuration;"
 		);
 	}
-	jfloat Resources::getDimension(jint arg0)
+	jfloat Resources::getDimension(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getDimension",
@@ -131,7 +131,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint Resources::getDimensionPixelOffset(jint arg0)
+	jint Resources::getDimensionPixelOffset(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getDimensionPixelOffset",
@@ -139,7 +139,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint Resources::getDimensionPixelSize(jint arg0)
+	jint Resources::getDimensionPixelSize(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getDimensionPixelSize",
@@ -147,14 +147,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	android::util::DisplayMetrics Resources::getDisplayMetrics()
+	android::util::DisplayMetrics Resources::getDisplayMetrics() const
 	{
 		return callObjectMethod(
 			"getDisplayMetrics",
 			"()Landroid/util/DisplayMetrics;"
 		);
 	}
-	android::graphics::drawable::Drawable Resources::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable Resources::getDrawable(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -162,7 +162,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	android::graphics::drawable::Drawable Resources::getDrawable(jint arg0, android::content::res::Resources_Theme arg1)
+	android::graphics::drawable::Drawable Resources::getDrawable(jint arg0, android::content::res::Resources_Theme arg1) const
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -171,7 +171,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	android::graphics::drawable::Drawable Resources::getDrawableForDensity(jint arg0, jint arg1)
+	android::graphics::drawable::Drawable Resources::getDrawableForDensity(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getDrawableForDensity",
@@ -180,7 +180,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	android::graphics::drawable::Drawable Resources::getDrawableForDensity(jint arg0, jint arg1, android::content::res::Resources_Theme arg2)
+	android::graphics::drawable::Drawable Resources::getDrawableForDensity(jint arg0, jint arg1, android::content::res::Resources_Theme arg2) const
 	{
 		return callObjectMethod(
 			"getDrawableForDensity",
@@ -190,7 +190,7 @@ namespace android::content::res
 			arg2.object()
 		);
 	}
-	android::graphics::Typeface Resources::getFont(jint arg0)
+	android::graphics::Typeface Resources::getFont(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFont",
@@ -198,7 +198,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jfloat Resources::getFraction(jint arg0, jint arg1, jint arg2)
+	jfloat Resources::getFraction(jint arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jfloat>(
 			"getFraction",
@@ -208,7 +208,7 @@ namespace android::content::res
 			arg2
 		);
 	}
-	jint Resources::getIdentifier(JString arg0, JString arg1, JString arg2)
+	jint Resources::getIdentifier(JString arg0, JString arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"getIdentifier",
@@ -218,7 +218,7 @@ namespace android::content::res
 			arg2.object<jstring>()
 		);
 	}
-	JIntArray Resources::getIntArray(jint arg0)
+	JIntArray Resources::getIntArray(jint arg0) const
 	{
 		return callObjectMethod(
 			"getIntArray",
@@ -226,7 +226,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint Resources::getInteger(jint arg0)
+	jint Resources::getInteger(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getInteger",
@@ -234,7 +234,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JObject Resources::getLayout(jint arg0)
+	JObject Resources::getLayout(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLayout",
@@ -242,7 +242,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	android::graphics::Movie Resources::getMovie(jint arg0)
+	android::graphics::Movie Resources::getMovie(jint arg0) const
 	{
 		return callObjectMethod(
 			"getMovie",
@@ -250,7 +250,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getQuantityString(jint arg0, jint arg1)
+	JString Resources::getQuantityString(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getQuantityString",
@@ -259,7 +259,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	JString Resources::getQuantityString(jint arg0, jint arg1, JObjectArray arg2)
+	JString Resources::getQuantityString(jint arg0, jint arg1, JObjectArray arg2) const
 	{
 		return callObjectMethod(
 			"getQuantityString",
@@ -269,7 +269,7 @@ namespace android::content::res
 			arg2.object<jobjectArray>()
 		);
 	}
-	JString Resources::getQuantityText(jint arg0, jint arg1)
+	JString Resources::getQuantityText(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getQuantityText",
@@ -278,7 +278,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	JString Resources::getResourceEntryName(jint arg0)
+	JString Resources::getResourceEntryName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getResourceEntryName",
@@ -286,7 +286,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getResourceName(jint arg0)
+	JString Resources::getResourceName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getResourceName",
@@ -294,7 +294,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getResourcePackageName(jint arg0)
+	JString Resources::getResourcePackageName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getResourcePackageName",
@@ -302,7 +302,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getResourceTypeName(jint arg0)
+	JString Resources::getResourceTypeName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getResourceTypeName",
@@ -310,7 +310,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getString(jint arg0)
+	JString Resources::getString(jint arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -318,7 +318,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getString(jint arg0, JObjectArray arg1)
+	JString Resources::getString(jint arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -327,7 +327,7 @@ namespace android::content::res
 			arg1.object<jobjectArray>()
 		);
 	}
-	JArray Resources::getStringArray(jint arg0)
+	JArray Resources::getStringArray(jint arg0) const
 	{
 		return callObjectMethod(
 			"getStringArray",
@@ -335,7 +335,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getText(jint arg0)
+	JString Resources::getText(jint arg0) const
 	{
 		return callObjectMethod(
 			"getText",
@@ -343,7 +343,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString Resources::getText(jint arg0, JString arg1)
+	JString Resources::getText(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getText",
@@ -352,7 +352,7 @@ namespace android::content::res
 			arg1.object<jstring>()
 		);
 	}
-	JArray Resources::getTextArray(jint arg0)
+	JArray Resources::getTextArray(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTextArray",
@@ -360,7 +360,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void Resources::getValue(jint arg0, android::util::TypedValue arg1, jboolean arg2)
+	void Resources::getValue(jint arg0, android::util::TypedValue arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"getValue",
@@ -370,7 +370,7 @@ namespace android::content::res
 			arg2
 		);
 	}
-	void Resources::getValue(JString arg0, android::util::TypedValue arg1, jboolean arg2)
+	void Resources::getValue(JString arg0, android::util::TypedValue arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"getValue",
@@ -380,7 +380,7 @@ namespace android::content::res
 			arg2
 		);
 	}
-	void Resources::getValueForDensity(jint arg0, jint arg1, android::util::TypedValue arg2, jboolean arg3)
+	void Resources::getValueForDensity(jint arg0, jint arg1, android::util::TypedValue arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"getValueForDensity",
@@ -391,7 +391,7 @@ namespace android::content::res
 			arg3
 		);
 	}
-	JObject Resources::getXml(jint arg0)
+	JObject Resources::getXml(jint arg0) const
 	{
 		return callObjectMethod(
 			"getXml",
@@ -399,14 +399,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	android::content::res::Resources_Theme Resources::newTheme()
+	android::content::res::Resources_Theme Resources::newTheme() const
 	{
 		return callObjectMethod(
 			"newTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	android::content::res::TypedArray Resources::obtainAttributes(JObject arg0, JIntArray arg1)
+	android::content::res::TypedArray Resources::obtainAttributes(JObject arg0, JIntArray arg1) const
 	{
 		return callObjectMethod(
 			"obtainAttributes",
@@ -415,7 +415,7 @@ namespace android::content::res
 			arg1.object<jintArray>()
 		);
 	}
-	android::content::res::TypedArray Resources::obtainTypedArray(jint arg0)
+	android::content::res::TypedArray Resources::obtainTypedArray(jint arg0) const
 	{
 		return callObjectMethod(
 			"obtainTypedArray",
@@ -423,7 +423,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	java::io::InputStream Resources::openRawResource(jint arg0)
+	java::io::InputStream Resources::openRawResource(jint arg0) const
 	{
 		return callObjectMethod(
 			"openRawResource",
@@ -431,7 +431,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	java::io::InputStream Resources::openRawResource(jint arg0, android::util::TypedValue arg1)
+	java::io::InputStream Resources::openRawResource(jint arg0, android::util::TypedValue arg1) const
 	{
 		return callObjectMethod(
 			"openRawResource",
@@ -440,7 +440,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor Resources::openRawResourceFd(jint arg0)
+	android::content::res::AssetFileDescriptor Resources::openRawResourceFd(jint arg0) const
 	{
 		return callObjectMethod(
 			"openRawResourceFd",
@@ -448,7 +448,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void Resources::parseBundleExtra(JString arg0, JObject arg1, android::os::Bundle arg2)
+	void Resources::parseBundleExtra(JString arg0, JObject arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"parseBundleExtra",
@@ -458,7 +458,7 @@ namespace android::content::res
 			arg2.object()
 		);
 	}
-	void Resources::parseBundleExtras(JObject arg0, android::os::Bundle arg1)
+	void Resources::parseBundleExtras(JObject arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"parseBundleExtras",
@@ -467,7 +467,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	void Resources::updateConfiguration(android::content::res::Configuration arg0, android::util::DisplayMetrics arg1)
+	void Resources::updateConfiguration(android::content::res::Configuration arg0, android::util::DisplayMetrics arg1) const
 	{
 		callMethod<void>(
 			"updateConfiguration",

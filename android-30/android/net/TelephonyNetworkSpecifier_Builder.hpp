@@ -22,8 +22,8 @@ namespace android::net
 		TelephonyNetworkSpecifier_Builder();
 		
 		// Methods
-		android::net::TelephonyNetworkSpecifier build();
-		android::net::TelephonyNetworkSpecifier_Builder setSubscriptionId(jint arg0);
+		android::net::TelephonyNetworkSpecifier build() const;
+		android::net::TelephonyNetworkSpecifier_Builder setSubscriptionId(jint arg0) const;
 	};
 } // namespace android::net
 

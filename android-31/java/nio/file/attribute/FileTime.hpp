@@ -34,14 +34,14 @@ namespace java::nio::file::attribute
 		static java::nio::file::attribute::FileTime from(java::time::Instant arg0);
 		static java::nio::file::attribute::FileTime from(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		static java::nio::file::attribute::FileTime fromMillis(jlong arg0);
-		jint compareTo(JObject arg0);
-		jint compareTo(java::nio::file::attribute::FileTime arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jlong to(java::util::concurrent::TimeUnit arg0);
-		java::time::Instant toInstant();
-		jlong toMillis();
-		JString toString();
+		jint compareTo(JObject arg0) const;
+		jint compareTo(java::nio::file::attribute::FileTime arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jlong to(java::util::concurrent::TimeUnit arg0) const;
+		java::time::Instant toInstant() const;
+		jlong toMillis() const;
+		JString toString() const;
 	};
 } // namespace java::nio::file::attribute
 

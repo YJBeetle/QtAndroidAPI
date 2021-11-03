@@ -33,7 +33,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jint SearchRecentSuggestionsProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
+	jint SearchRecentSuggestionsProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -43,7 +43,7 @@ namespace android::content
 			arg2.object<jarray>()
 		);
 	}
-	JString SearchRecentSuggestionsProvider::getType(android::net::Uri arg0)
+	JString SearchRecentSuggestionsProvider::getType(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -51,7 +51,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::net::Uri SearchRecentSuggestionsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri SearchRecentSuggestionsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -60,14 +60,14 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jboolean SearchRecentSuggestionsProvider::onCreate()
+	jboolean SearchRecentSuggestionsProvider::onCreate() const
 	{
 		return callMethod<jboolean>(
 			"onCreate",
 			"()Z"
 		);
 	}
-	JObject SearchRecentSuggestionsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
+	JObject SearchRecentSuggestionsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"query",
@@ -79,7 +79,7 @@ namespace android::content
 			arg4.object<jstring>()
 		);
 	}
-	jint SearchRecentSuggestionsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
+	jint SearchRecentSuggestionsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const
 	{
 		return callMethod<jint>(
 			"update",

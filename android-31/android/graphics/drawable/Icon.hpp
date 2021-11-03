@@ -76,20 +76,20 @@ namespace android::graphics::drawable
 		static android::graphics::drawable::Icon createWithFilePath(JString arg0);
 		static android::graphics::drawable::Icon createWithResource(android::content::Context arg0, jint arg1);
 		static android::graphics::drawable::Icon createWithResource(JString arg0, jint arg1);
-		jint describeContents();
-		jint getResId();
-		JString getResPackage();
-		jint getType();
-		android::net::Uri getUri();
-		android::graphics::drawable::Drawable loadDrawable(android::content::Context arg0);
-		void loadDrawableAsync(android::content::Context arg0, android::os::Message arg1);
-		void loadDrawableAsync(android::content::Context arg0, JObject arg1, android::os::Handler arg2);
-		android::graphics::drawable::Icon setTint(jint arg0);
-		android::graphics::drawable::Icon setTintBlendMode(android::graphics::BlendMode arg0);
-		android::graphics::drawable::Icon setTintList(android::content::res::ColorStateList arg0);
-		android::graphics::drawable::Icon setTintMode(android::graphics::PorterDuff_Mode arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getResId() const;
+		JString getResPackage() const;
+		jint getType() const;
+		android::net::Uri getUri() const;
+		android::graphics::drawable::Drawable loadDrawable(android::content::Context arg0) const;
+		void loadDrawableAsync(android::content::Context arg0, android::os::Message arg1) const;
+		void loadDrawableAsync(android::content::Context arg0, JObject arg1, android::os::Handler arg2) const;
+		android::graphics::drawable::Icon setTint(jint arg0) const;
+		android::graphics::drawable::Icon setTintBlendMode(android::graphics::BlendMode arg0) const;
+		android::graphics::drawable::Icon setTintList(android::content::res::ColorStateList arg0) const;
+		android::graphics::drawable::Icon setTintMode(android::graphics::PorterDuff_Mode arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::graphics::drawable
 

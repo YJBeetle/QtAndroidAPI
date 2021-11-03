@@ -19,7 +19,7 @@ namespace android::net::http
 		) {}
 	
 	// Methods
-	JObject X509TrustManagerExtensions::checkServerTrusted(JArray arg0, JString arg1, JString arg2)
+	JObject X509TrustManagerExtensions::checkServerTrusted(JArray arg0, JString arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"checkServerTrusted",
@@ -29,7 +29,7 @@ namespace android::net::http
 			arg2.object<jstring>()
 		);
 	}
-	jboolean X509TrustManagerExtensions::isSameTrustConfiguration(JString arg0, JString arg1)
+	jboolean X509TrustManagerExtensions::isSameTrustConfiguration(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isSameTrustConfiguration",
@@ -38,7 +38,7 @@ namespace android::net::http
 			arg1.object<jstring>()
 		);
 	}
-	jboolean X509TrustManagerExtensions::isUserAddedCertificate(java::security::cert::X509Certificate arg0)
+	jboolean X509TrustManagerExtensions::isUserAddedCertificate(java::security::cert::X509Certificate arg0) const
 	{
 		return callMethod<jboolean>(
 			"isUserAddedCertificate",

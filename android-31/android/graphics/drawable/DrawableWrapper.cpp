@@ -28,7 +28,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void DrawableWrapper::applyTheme(android::content::res::Resources_Theme arg0)
+	void DrawableWrapper::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -36,14 +36,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableWrapper::canApplyTheme()
+	jboolean DrawableWrapper::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void DrawableWrapper::draw(android::graphics::Canvas arg0)
+	void DrawableWrapper::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -51,42 +51,42 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint DrawableWrapper::getAlpha()
+	jint DrawableWrapper::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint DrawableWrapper::getChangingConfigurations()
+	jint DrawableWrapper::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::ColorFilter DrawableWrapper::getColorFilter()
+	android::graphics::ColorFilter DrawableWrapper::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState DrawableWrapper::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState DrawableWrapper::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	android::graphics::drawable::Drawable DrawableWrapper::getDrawable()
+	android::graphics::drawable::Drawable DrawableWrapper::getDrawable() const
 	{
 		return callObjectMethod(
 			"getDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void DrawableWrapper::getHotspotBounds(android::graphics::Rect arg0)
+	void DrawableWrapper::getHotspotBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getHotspotBounds",
@@ -94,35 +94,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint DrawableWrapper::getIntrinsicHeight()
+	jint DrawableWrapper::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint DrawableWrapper::getIntrinsicWidth()
+	jint DrawableWrapper::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint DrawableWrapper::getOpacity()
+	jint DrawableWrapper::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Insets DrawableWrapper::getOpticalInsets()
+	android::graphics::Insets DrawableWrapper::getOpticalInsets() const
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	void DrawableWrapper::getOutline(android::graphics::Outline arg0)
+	void DrawableWrapper::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -130,7 +130,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableWrapper::getPadding(android::graphics::Rect arg0)
+	jboolean DrawableWrapper::getPadding(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPadding",
@@ -138,14 +138,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableWrapper::hasFocusStateSpecified()
+	jboolean DrawableWrapper::hasFocusStateSpecified() const
 	{
 		return callMethod<jboolean>(
 			"hasFocusStateSpecified",
 			"()Z"
 		);
 	}
-	void DrawableWrapper::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void DrawableWrapper::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -156,7 +156,7 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	void DrawableWrapper::invalidateDrawable(android::graphics::drawable::Drawable arg0)
+	void DrawableWrapper::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"invalidateDrawable",
@@ -164,28 +164,28 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableWrapper::isStateful()
+	jboolean DrawableWrapper::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	void DrawableWrapper::jumpToCurrentState()
+	void DrawableWrapper::jumpToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
-	android::graphics::drawable::Drawable DrawableWrapper::mutate()
+	android::graphics::drawable::Drawable DrawableWrapper::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jboolean DrawableWrapper::onLayoutDirectionChanged(jint arg0)
+	jboolean DrawableWrapper::onLayoutDirectionChanged(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onLayoutDirectionChanged",
@@ -193,7 +193,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableWrapper::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
+	void DrawableWrapper::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -203,7 +203,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	void DrawableWrapper::setAlpha(jint arg0)
+	void DrawableWrapper::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -211,7 +211,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableWrapper::setColorFilter(android::graphics::ColorFilter arg0)
+	void DrawableWrapper::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -219,7 +219,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void DrawableWrapper::setDrawable(android::graphics::drawable::Drawable arg0)
+	void DrawableWrapper::setDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setDrawable",
@@ -227,7 +227,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void DrawableWrapper::setHotspot(jfloat arg0, jfloat arg1)
+	void DrawableWrapper::setHotspot(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setHotspot",
@@ -236,7 +236,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void DrawableWrapper::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void DrawableWrapper::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setHotspotBounds",
@@ -247,7 +247,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void DrawableWrapper::setTintBlendMode(android::graphics::BlendMode arg0)
+	void DrawableWrapper::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -255,7 +255,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void DrawableWrapper::setTintList(android::content::res::ColorStateList arg0)
+	void DrawableWrapper::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -263,7 +263,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableWrapper::setVisible(jboolean arg0, jboolean arg1)
+	jboolean DrawableWrapper::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",
@@ -272,7 +272,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void DrawableWrapper::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
+	void DrawableWrapper::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

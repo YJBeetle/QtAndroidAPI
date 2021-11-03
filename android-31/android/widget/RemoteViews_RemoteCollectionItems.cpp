@@ -20,21 +20,21 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	jint RemoteViews_RemoteCollectionItems::describeContents()
+	jint RemoteViews_RemoteCollectionItems::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint RemoteViews_RemoteCollectionItems::getItemCount()
+	jint RemoteViews_RemoteCollectionItems::getItemCount() const
 	{
 		return callMethod<jint>(
 			"getItemCount",
 			"()I"
 		);
 	}
-	jlong RemoteViews_RemoteCollectionItems::getItemId(jint arg0)
+	jlong RemoteViews_RemoteCollectionItems::getItemId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getItemId",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::widget::RemoteViews RemoteViews_RemoteCollectionItems::getItemView(jint arg0)
+	android::widget::RemoteViews RemoteViews_RemoteCollectionItems::getItemView(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItemView",
@@ -50,21 +50,21 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint RemoteViews_RemoteCollectionItems::getViewTypeCount()
+	jint RemoteViews_RemoteCollectionItems::getViewTypeCount() const
 	{
 		return callMethod<jint>(
 			"getViewTypeCount",
 			"()I"
 		);
 	}
-	jboolean RemoteViews_RemoteCollectionItems::hasStableIds()
+	jboolean RemoteViews_RemoteCollectionItems::hasStableIds() const
 	{
 		return callMethod<jboolean>(
 			"hasStableIds",
 			"()Z"
 		);
 	}
-	void RemoteViews_RemoteCollectionItems::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RemoteViews_RemoteCollectionItems::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

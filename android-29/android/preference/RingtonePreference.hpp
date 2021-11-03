@@ -42,13 +42,13 @@ namespace android::preference
 		RingtonePreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint getRingtoneType();
-		jboolean getShowDefault();
-		jboolean getShowSilent();
-		jboolean onActivityResult(jint arg0, jint arg1, android::content::Intent arg2);
-		void setRingtoneType(jint arg0);
-		void setShowDefault(jboolean arg0);
-		void setShowSilent(jboolean arg0);
+		jint getRingtoneType() const;
+		jboolean getShowDefault() const;
+		jboolean getShowSilent() const;
+		jboolean onActivityResult(jint arg0, jint arg1, android::content::Intent arg2) const;
+		void setRingtoneType(jint arg0) const;
+		void setShowDefault(jboolean arg0) const;
+		void setShowSilent(jboolean arg0) const;
 	};
 } // namespace android::preference
 

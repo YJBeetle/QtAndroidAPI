@@ -38,15 +38,15 @@ namespace android::content
 		SyncResult();
 		
 		// Methods
-		void clear();
-		jint describeContents();
-		jboolean hasError();
-		jboolean hasHardError();
-		jboolean hasSoftError();
-		jboolean madeSomeProgress();
-		JString toDebugString();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void clear() const;
+		jint describeContents() const;
+		jboolean hasError() const;
+		jboolean hasHardError() const;
+		jboolean hasSoftError() const;
+		jboolean madeSomeProgress() const;
+		JString toDebugString() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

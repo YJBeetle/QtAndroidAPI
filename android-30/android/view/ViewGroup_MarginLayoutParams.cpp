@@ -62,35 +62,35 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jint ViewGroup_MarginLayoutParams::getLayoutDirection()
+	jint ViewGroup_MarginLayoutParams::getLayoutDirection() const
 	{
 		return callMethod<jint>(
 			"getLayoutDirection",
 			"()I"
 		);
 	}
-	jint ViewGroup_MarginLayoutParams::getMarginEnd()
+	jint ViewGroup_MarginLayoutParams::getMarginEnd() const
 	{
 		return callMethod<jint>(
 			"getMarginEnd",
 			"()I"
 		);
 	}
-	jint ViewGroup_MarginLayoutParams::getMarginStart()
+	jint ViewGroup_MarginLayoutParams::getMarginStart() const
 	{
 		return callMethod<jint>(
 			"getMarginStart",
 			"()I"
 		);
 	}
-	jboolean ViewGroup_MarginLayoutParams::isMarginRelative()
+	jboolean ViewGroup_MarginLayoutParams::isMarginRelative() const
 	{
 		return callMethod<jboolean>(
 			"isMarginRelative",
 			"()Z"
 		);
 	}
-	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0)
+	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0) const
 	{
 		callMethod<void>(
 			"resolveLayoutDirection",
@@ -98,7 +98,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup_MarginLayoutParams::setLayoutDirection(jint arg0)
+	void ViewGroup_MarginLayoutParams::setLayoutDirection(jint arg0) const
 	{
 		callMethod<void>(
 			"setLayoutDirection",
@@ -106,7 +106,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup_MarginLayoutParams::setMarginEnd(jint arg0)
+	void ViewGroup_MarginLayoutParams::setMarginEnd(jint arg0) const
 	{
 		callMethod<void>(
 			"setMarginEnd",
@@ -114,7 +114,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup_MarginLayoutParams::setMarginStart(jint arg0)
+	void ViewGroup_MarginLayoutParams::setMarginStart(jint arg0) const
 	{
 		callMethod<void>(
 			"setMarginStart",
@@ -122,7 +122,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup_MarginLayoutParams::setMargins(jint arg0, jint arg1, jint arg2, jint arg3)
+	void ViewGroup_MarginLayoutParams::setMargins(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setMargins",

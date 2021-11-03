@@ -23,11 +23,11 @@ namespace java::util
 		StringJoiner(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		java::util::StringJoiner add(JString arg0);
-		jint length();
-		java::util::StringJoiner merge(java::util::StringJoiner arg0);
-		java::util::StringJoiner setEmptyValue(JString arg0);
-		JString toString();
+		java::util::StringJoiner add(JString arg0) const;
+		jint length() const;
+		java::util::StringJoiner merge(java::util::StringJoiner arg0) const;
+		java::util::StringJoiner setEmptyValue(JString arg0) const;
+		JString toString() const;
 	};
 } // namespace java::util
 

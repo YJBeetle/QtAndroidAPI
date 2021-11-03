@@ -42,26 +42,26 @@ namespace android::widget
 		TimePicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void autofill(android::view::autofill::AutofillValue arg0);
-		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
-		JString getAccessibilityClassName();
-		jint getAutofillType();
-		android::view::autofill::AutofillValue getAutofillValue();
-		jint getBaseline();
-		java::lang::Integer getCurrentHour();
-		java::lang::Integer getCurrentMinute();
-		jint getHour();
-		jint getMinute();
-		jboolean is24HourView();
-		jboolean isEnabled();
-		void setCurrentHour(java::lang::Integer arg0);
-		void setCurrentMinute(java::lang::Integer arg0);
-		void setEnabled(jboolean arg0);
-		void setHour(jint arg0);
-		void setIs24HourView(java::lang::Boolean arg0);
-		void setMinute(jint arg0);
-		void setOnTimeChangedListener(JObject arg0);
-		jboolean validateInput();
+		void autofill(android::view::autofill::AutofillValue arg0) const;
+		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const;
+		JString getAccessibilityClassName() const;
+		jint getAutofillType() const;
+		android::view::autofill::AutofillValue getAutofillValue() const;
+		jint getBaseline() const;
+		java::lang::Integer getCurrentHour() const;
+		java::lang::Integer getCurrentMinute() const;
+		jint getHour() const;
+		jint getMinute() const;
+		jboolean is24HourView() const;
+		jboolean isEnabled() const;
+		void setCurrentHour(java::lang::Integer arg0) const;
+		void setCurrentMinute(java::lang::Integer arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setHour(jint arg0) const;
+		void setIs24HourView(java::lang::Boolean arg0) const;
+		void setMinute(jint arg0) const;
+		void setOnTimeChangedListener(JObject arg0) const;
+		jboolean validateInput() const;
 	};
 } // namespace android::widget
 

@@ -31,63 +31,63 @@ namespace android::location
 		) {}
 	
 	// Methods
-	jint GnssAntennaInfo_PhaseCenterOffset::describeContents()
+	jint GnssAntennaInfo_PhaseCenterOffset::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jdouble GnssAntennaInfo_PhaseCenterOffset::getXOffsetMm()
+	jdouble GnssAntennaInfo_PhaseCenterOffset::getXOffsetMm() const
 	{
 		return callMethod<jdouble>(
 			"getXOffsetMm",
 			"()D"
 		);
 	}
-	jdouble GnssAntennaInfo_PhaseCenterOffset::getXOffsetUncertaintyMm()
+	jdouble GnssAntennaInfo_PhaseCenterOffset::getXOffsetUncertaintyMm() const
 	{
 		return callMethod<jdouble>(
 			"getXOffsetUncertaintyMm",
 			"()D"
 		);
 	}
-	jdouble GnssAntennaInfo_PhaseCenterOffset::getYOffsetMm()
+	jdouble GnssAntennaInfo_PhaseCenterOffset::getYOffsetMm() const
 	{
 		return callMethod<jdouble>(
 			"getYOffsetMm",
 			"()D"
 		);
 	}
-	jdouble GnssAntennaInfo_PhaseCenterOffset::getYOffsetUncertaintyMm()
+	jdouble GnssAntennaInfo_PhaseCenterOffset::getYOffsetUncertaintyMm() const
 	{
 		return callMethod<jdouble>(
 			"getYOffsetUncertaintyMm",
 			"()D"
 		);
 	}
-	jdouble GnssAntennaInfo_PhaseCenterOffset::getZOffsetMm()
+	jdouble GnssAntennaInfo_PhaseCenterOffset::getZOffsetMm() const
 	{
 		return callMethod<jdouble>(
 			"getZOffsetMm",
 			"()D"
 		);
 	}
-	jdouble GnssAntennaInfo_PhaseCenterOffset::getZOffsetUncertaintyMm()
+	jdouble GnssAntennaInfo_PhaseCenterOffset::getZOffsetUncertaintyMm() const
 	{
 		return callMethod<jdouble>(
 			"getZOffsetUncertaintyMm",
 			"()D"
 		);
 	}
-	JString GnssAntennaInfo_PhaseCenterOffset::toString()
+	JString GnssAntennaInfo_PhaseCenterOffset::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssAntennaInfo_PhaseCenterOffset::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssAntennaInfo_PhaseCenterOffset::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

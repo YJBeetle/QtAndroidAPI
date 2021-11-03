@@ -17,7 +17,7 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	void BluetoothLeAdvertiser::startAdvertising(android::bluetooth::le::AdvertiseSettings arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseCallback arg2)
+	void BluetoothLeAdvertiser::startAdvertising(android::bluetooth::le::AdvertiseSettings arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseCallback arg2) const
 	{
 		callMethod<void>(
 			"startAdvertising",
@@ -27,7 +27,7 @@ namespace android::bluetooth::le
 			arg2.object()
 		);
 	}
-	void BluetoothLeAdvertiser::startAdvertising(android::bluetooth::le::AdvertiseSettings arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::AdvertiseCallback arg3)
+	void BluetoothLeAdvertiser::startAdvertising(android::bluetooth::le::AdvertiseSettings arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::AdvertiseCallback arg3) const
 	{
 		callMethod<void>(
 			"startAdvertising",
@@ -38,7 +38,7 @@ namespace android::bluetooth::le
 			arg3.object()
 		);
 	}
-	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, android::bluetooth::le::AdvertisingSetCallback arg5)
+	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, android::bluetooth::le::AdvertisingSetCallback arg5) const
 	{
 		callMethod<void>(
 			"startAdvertisingSet",
@@ -51,7 +51,7 @@ namespace android::bluetooth::le
 			arg5.object()
 		);
 	}
-	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, android::bluetooth::le::AdvertisingSetCallback arg5, android::os::Handler arg6)
+	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, android::bluetooth::le::AdvertisingSetCallback arg5, android::os::Handler arg6) const
 	{
 		callMethod<void>(
 			"startAdvertisingSet",
@@ -65,7 +65,7 @@ namespace android::bluetooth::le
 			arg6.object()
 		);
 	}
-	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, jint arg5, jint arg6, android::bluetooth::le::AdvertisingSetCallback arg7)
+	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, jint arg5, jint arg6, android::bluetooth::le::AdvertisingSetCallback arg7) const
 	{
 		callMethod<void>(
 			"startAdvertisingSet",
@@ -80,7 +80,7 @@ namespace android::bluetooth::le
 			arg7.object()
 		);
 	}
-	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, jint arg5, jint arg6, android::bluetooth::le::AdvertisingSetCallback arg7, android::os::Handler arg8)
+	void BluetoothLeAdvertiser::startAdvertisingSet(android::bluetooth::le::AdvertisingSetParameters arg0, android::bluetooth::le::AdvertiseData arg1, android::bluetooth::le::AdvertiseData arg2, android::bluetooth::le::PeriodicAdvertisingParameters arg3, android::bluetooth::le::AdvertiseData arg4, jint arg5, jint arg6, android::bluetooth::le::AdvertisingSetCallback arg7, android::os::Handler arg8) const
 	{
 		callMethod<void>(
 			"startAdvertisingSet",
@@ -96,7 +96,7 @@ namespace android::bluetooth::le
 			arg8.object()
 		);
 	}
-	void BluetoothLeAdvertiser::stopAdvertising(android::bluetooth::le::AdvertiseCallback arg0)
+	void BluetoothLeAdvertiser::stopAdvertising(android::bluetooth::le::AdvertiseCallback arg0) const
 	{
 		callMethod<void>(
 			"stopAdvertising",
@@ -104,7 +104,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void BluetoothLeAdvertiser::stopAdvertisingSet(android::bluetooth::le::AdvertisingSetCallback arg0)
+	void BluetoothLeAdvertiser::stopAdvertisingSet(android::bluetooth::le::AdvertisingSetCallback arg0) const
 	{
 		callMethod<void>(
 			"stopAdvertisingSet",

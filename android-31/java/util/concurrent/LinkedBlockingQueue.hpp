@@ -43,29 +43,29 @@ namespace java::util::concurrent
 		LinkedBlockingQueue(JObject arg0);
 		
 		// Methods
-		void clear();
-		jboolean contains(JObject arg0);
-		jint drainTo(JObject arg0);
-		jint drainTo(JObject arg0, jint arg1);
-		void forEach(JObject arg0);
-		JObject iterator();
-		jboolean offer(JObject arg0);
-		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		JObject peek();
-		JObject poll();
-		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void put(JObject arg0);
-		jint remainingCapacity();
-		jboolean remove(JObject arg0);
-		jboolean removeAll(JObject arg0);
-		jboolean removeIf(JObject arg0);
-		jboolean retainAll(JObject arg0);
-		jint size();
-		JObject spliterator();
-		JObject take();
-		JObjectArray toArray();
-		JObjectArray toArray(JObjectArray arg0);
-		JString toString();
+		void clear() const;
+		jboolean contains(JObject arg0) const;
+		jint drainTo(JObject arg0) const;
+		jint drainTo(JObject arg0, jint arg1) const;
+		void forEach(JObject arg0) const;
+		JObject iterator() const;
+		jboolean offer(JObject arg0) const;
+		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
+		JObject peek() const;
+		JObject poll() const;
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void put(JObject arg0) const;
+		jint remainingCapacity() const;
+		jboolean remove(JObject arg0) const;
+		jboolean removeAll(JObject arg0) const;
+		jboolean removeIf(JObject arg0) const;
+		jboolean retainAll(JObject arg0) const;
+		jint size() const;
+		JObject spliterator() const;
+		JObject take() const;
+		JObjectArray toArray() const;
+		JObjectArray toArray(JObjectArray arg0) const;
+		JString toString() const;
 	};
 } // namespace java::util::concurrent
 

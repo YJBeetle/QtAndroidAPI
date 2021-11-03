@@ -22,10 +22,10 @@ namespace android::hardware::camera2::params
 		ExtensionSessionConfiguration(jint arg0, JObject arg1, JObject arg2, android::hardware::camera2::CameraExtensionSession_StateCallback arg3);
 		
 		// Methods
-		JObject getExecutor();
-		jint getExtension();
-		JObject getOutputConfigurations();
-		android::hardware::camera2::CameraExtensionSession_StateCallback getStateCallback();
+		JObject getExecutor() const;
+		jint getExtension() const;
+		JObject getOutputConfigurations() const;
+		android::hardware::camera2::CameraExtensionSession_StateCallback getStateCallback() const;
 	};
 } // namespace android::hardware::camera2::params
 

@@ -44,14 +44,14 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	JByteArray ExemptionMechanism::genExemptionBlob()
+	JByteArray ExemptionMechanism::genExemptionBlob() const
 	{
 		return callObjectMethod(
 			"genExemptionBlob",
 			"()[B"
 		);
 	}
-	jint ExemptionMechanism::genExemptionBlob(JByteArray arg0)
+	jint ExemptionMechanism::genExemptionBlob(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"genExemptionBlob",
@@ -59,7 +59,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint ExemptionMechanism::genExemptionBlob(JByteArray arg0, jint arg1)
+	jint ExemptionMechanism::genExemptionBlob(JByteArray arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"genExemptionBlob",
@@ -68,14 +68,14 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	JString ExemptionMechanism::getName()
+	JString ExemptionMechanism::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ExemptionMechanism::getOutputSize(jint arg0)
+	jint ExemptionMechanism::getOutputSize(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getOutputSize",
@@ -83,14 +83,14 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	java::security::Provider ExemptionMechanism::getProvider()
+	java::security::Provider ExemptionMechanism::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void ExemptionMechanism::init(JObject arg0)
+	void ExemptionMechanism::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -98,7 +98,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void ExemptionMechanism::init(JObject arg0, java::security::AlgorithmParameters arg1)
+	void ExemptionMechanism::init(JObject arg0, java::security::AlgorithmParameters arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -107,7 +107,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void ExemptionMechanism::init(JObject arg0, JObject arg1)
+	void ExemptionMechanism::init(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -116,7 +116,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	jboolean ExemptionMechanism::isCryptoAllowed(JObject arg0)
+	jboolean ExemptionMechanism::isCryptoAllowed(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCryptoAllowed",

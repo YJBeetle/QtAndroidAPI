@@ -19,49 +19,49 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void ClientCertRequest::cancel()
+	void ClientCertRequest::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	JString ClientCertRequest::getHost()
+	JString ClientCertRequest::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray ClientCertRequest::getKeyTypes()
+	JArray ClientCertRequest::getKeyTypes() const
 	{
 		return callObjectMethod(
 			"getKeyTypes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint ClientCertRequest::getPort()
+	jint ClientCertRequest::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JArray ClientCertRequest::getPrincipals()
+	JArray ClientCertRequest::getPrincipals() const
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"()[Ljava/security/Principal;"
 		);
 	}
-	void ClientCertRequest::ignore()
+	void ClientCertRequest::ignore() const
 	{
 		callMethod<void>(
 			"ignore",
 			"()V"
 		);
 	}
-	void ClientCertRequest::proceed(JObject arg0, JArray arg1)
+	void ClientCertRequest::proceed(JObject arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"proceed",

@@ -28,35 +28,35 @@ namespace android::graphics::pdf
 	// Constructors
 	
 	// Methods
-	void PdfRenderer_Page::close()
+	void PdfRenderer_Page::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint PdfRenderer_Page::getHeight()
+	jint PdfRenderer_Page::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint PdfRenderer_Page::getIndex()
+	jint PdfRenderer_Page::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	jint PdfRenderer_Page::getWidth()
+	jint PdfRenderer_Page::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	void PdfRenderer_Page::render(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::Matrix arg2, jint arg3)
+	void PdfRenderer_Page::render(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::Matrix arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"render",

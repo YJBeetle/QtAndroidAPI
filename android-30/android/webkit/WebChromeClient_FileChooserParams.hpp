@@ -30,12 +30,12 @@ namespace android::webkit
 		
 		// Methods
 		static JArray parseResult(jint arg0, android::content::Intent arg1);
-		android::content::Intent createIntent();
-		JArray getAcceptTypes();
-		JString getFilenameHint();
-		jint getMode();
-		JString getTitle();
-		jboolean isCaptureEnabled();
+		android::content::Intent createIntent() const;
+		JArray getAcceptTypes() const;
+		JString getFilenameHint() const;
+		jint getMode() const;
+		JString getTitle() const;
+		jboolean isCaptureEnabled() const;
 	};
 } // namespace android::webkit
 

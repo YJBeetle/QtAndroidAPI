@@ -19,7 +19,7 @@ namespace android::view
 			"()Landroid/view/VelocityTracker;"
 		);
 	}
-	void VelocityTracker::addMovement(android::view::MotionEvent arg0)
+	void VelocityTracker::addMovement(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"addMovement",
@@ -27,14 +27,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void VelocityTracker::clear()
+	void VelocityTracker::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void VelocityTracker::computeCurrentVelocity(jint arg0)
+	void VelocityTracker::computeCurrentVelocity(jint arg0) const
 	{
 		callMethod<void>(
 			"computeCurrentVelocity",
@@ -42,7 +42,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void VelocityTracker::computeCurrentVelocity(jint arg0, jfloat arg1)
+	void VelocityTracker::computeCurrentVelocity(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"computeCurrentVelocity",
@@ -51,14 +51,14 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat VelocityTracker::getXVelocity()
+	jfloat VelocityTracker::getXVelocity() const
 	{
 		return callMethod<jfloat>(
 			"getXVelocity",
 			"()F"
 		);
 	}
-	jfloat VelocityTracker::getXVelocity(jint arg0)
+	jfloat VelocityTracker::getXVelocity(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getXVelocity",
@@ -66,14 +66,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat VelocityTracker::getYVelocity()
+	jfloat VelocityTracker::getYVelocity() const
 	{
 		return callMethod<jfloat>(
 			"getYVelocity",
 			"()F"
 		);
 	}
-	jfloat VelocityTracker::getYVelocity(jint arg0)
+	jfloat VelocityTracker::getYVelocity(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getYVelocity",
@@ -81,7 +81,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void VelocityTracker::recycle()
+	void VelocityTracker::recycle() const
 	{
 		callMethod<void>(
 			"recycle",

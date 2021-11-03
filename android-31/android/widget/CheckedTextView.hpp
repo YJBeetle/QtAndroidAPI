@@ -47,25 +47,25 @@ namespace android::widget
 		CheckedTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		JString getAccessibilityClassName();
-		android::graphics::drawable::Drawable getCheckMarkDrawable();
-		android::graphics::BlendMode getCheckMarkTintBlendMode();
-		android::content::res::ColorStateList getCheckMarkTintList();
-		android::graphics::PorterDuff_Mode getCheckMarkTintMode();
-		jboolean isChecked();
-		void jumpDrawablesToCurrentState();
-		void onRestoreInstanceState(JObject arg0);
-		void onRtlPropertiesChanged(jint arg0);
-		JObject onSaveInstanceState();
-		void setCheckMarkDrawable(android::graphics::drawable::Drawable arg0);
-		void setCheckMarkDrawable(jint arg0);
-		void setCheckMarkTintBlendMode(android::graphics::BlendMode arg0);
-		void setCheckMarkTintList(android::content::res::ColorStateList arg0);
-		void setCheckMarkTintMode(android::graphics::PorterDuff_Mode arg0);
-		void setChecked(jboolean arg0);
-		void setVisibility(jint arg0);
-		void toggle();
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1) const;
+		JString getAccessibilityClassName() const;
+		android::graphics::drawable::Drawable getCheckMarkDrawable() const;
+		android::graphics::BlendMode getCheckMarkTintBlendMode() const;
+		android::content::res::ColorStateList getCheckMarkTintList() const;
+		android::graphics::PorterDuff_Mode getCheckMarkTintMode() const;
+		jboolean isChecked() const;
+		void jumpDrawablesToCurrentState() const;
+		void onRestoreInstanceState(JObject arg0) const;
+		void onRtlPropertiesChanged(jint arg0) const;
+		JObject onSaveInstanceState() const;
+		void setCheckMarkDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setCheckMarkDrawable(jint arg0) const;
+		void setCheckMarkTintBlendMode(android::graphics::BlendMode arg0) const;
+		void setCheckMarkTintList(android::content::res::ColorStateList arg0) const;
+		void setCheckMarkTintMode(android::graphics::PorterDuff_Mode arg0) const;
+		void setChecked(jboolean arg0) const;
+		void setVisibility(jint arg0) const;
+		void toggle() const;
 	};
 } // namespace android::widget
 

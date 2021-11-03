@@ -25,7 +25,7 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::Precision withCurrency(android::icu::util::Currency arg0);
+		android::icu::number::Precision withCurrency(android::icu::util::Currency arg0) const;
 	};
 } // namespace android::icu::number
 

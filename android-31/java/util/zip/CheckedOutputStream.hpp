@@ -23,9 +23,9 @@ namespace java::util::zip
 		CheckedOutputStream(java::io::OutputStream arg0, JObject arg1);
 		
 		// Methods
-		JObject getChecksum();
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
+		JObject getChecksum() const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::util::zip
 

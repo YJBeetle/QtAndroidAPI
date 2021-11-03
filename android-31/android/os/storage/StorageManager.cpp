@@ -62,7 +62,7 @@ namespace android::os::storage
 	// Constructors
 	
 	// Methods
-	void StorageManager::allocateBytes(java::io::FileDescriptor arg0, jlong arg1)
+	void StorageManager::allocateBytes(java::io::FileDescriptor arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"allocateBytes",
@@ -71,7 +71,7 @@ namespace android::os::storage
 			arg1
 		);
 	}
-	void StorageManager::allocateBytes(java::util::UUID arg0, jlong arg1)
+	void StorageManager::allocateBytes(java::util::UUID arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"allocateBytes",
@@ -80,7 +80,7 @@ namespace android::os::storage
 			arg1
 		);
 	}
-	jlong StorageManager::getAllocatableBytes(java::util::UUID arg0)
+	jlong StorageManager::getAllocatableBytes(java::util::UUID arg0) const
 	{
 		return callMethod<jlong>(
 			"getAllocatableBytes",
@@ -88,7 +88,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jlong StorageManager::getCacheQuotaBytes(java::util::UUID arg0)
+	jlong StorageManager::getCacheQuotaBytes(java::util::UUID arg0) const
 	{
 		return callMethod<jlong>(
 			"getCacheQuotaBytes",
@@ -96,7 +96,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jlong StorageManager::getCacheSizeBytes(java::util::UUID arg0)
+	jlong StorageManager::getCacheSizeBytes(java::util::UUID arg0) const
 	{
 		return callMethod<jlong>(
 			"getCacheSizeBytes",
@@ -104,7 +104,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	android::app::PendingIntent StorageManager::getManageSpaceActivityIntent(JString arg0, jint arg1)
+	android::app::PendingIntent StorageManager::getManageSpaceActivityIntent(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getManageSpaceActivityIntent",
@@ -113,7 +113,7 @@ namespace android::os::storage
 			arg1
 		);
 	}
-	JString StorageManager::getMountedObbPath(JString arg0)
+	JString StorageManager::getMountedObbPath(JString arg0) const
 	{
 		return callObjectMethod(
 			"getMountedObbPath",
@@ -121,21 +121,21 @@ namespace android::os::storage
 			arg0.object<jstring>()
 		);
 	}
-	android::os::storage::StorageVolume StorageManager::getPrimaryStorageVolume()
+	android::os::storage::StorageVolume StorageManager::getPrimaryStorageVolume() const
 	{
 		return callObjectMethod(
 			"getPrimaryStorageVolume",
 			"()Landroid/os/storage/StorageVolume;"
 		);
 	}
-	JObject StorageManager::getRecentStorageVolumes()
+	JObject StorageManager::getRecentStorageVolumes() const
 	{
 		return callObjectMethod(
 			"getRecentStorageVolumes",
 			"()Ljava/util/List;"
 		);
 	}
-	android::os::storage::StorageVolume StorageManager::getStorageVolume(android::net::Uri arg0)
+	android::os::storage::StorageVolume StorageManager::getStorageVolume(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getStorageVolume",
@@ -143,7 +143,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	android::os::storage::StorageVolume StorageManager::getStorageVolume(java::io::File arg0)
+	android::os::storage::StorageVolume StorageManager::getStorageVolume(java::io::File arg0) const
 	{
 		return callObjectMethod(
 			"getStorageVolume",
@@ -151,14 +151,14 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	JObject StorageManager::getStorageVolumes()
+	JObject StorageManager::getStorageVolumes() const
 	{
 		return callObjectMethod(
 			"getStorageVolumes",
 			"()Ljava/util/List;"
 		);
 	}
-	java::util::UUID StorageManager::getUuidForPath(java::io::File arg0)
+	java::util::UUID StorageManager::getUuidForPath(java::io::File arg0) const
 	{
 		return callObjectMethod(
 			"getUuidForPath",
@@ -166,7 +166,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jboolean StorageManager::isAllocationSupported(java::io::FileDescriptor arg0)
+	jboolean StorageManager::isAllocationSupported(java::io::FileDescriptor arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAllocationSupported",
@@ -174,7 +174,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jboolean StorageManager::isCacheBehaviorGroup(java::io::File arg0)
+	jboolean StorageManager::isCacheBehaviorGroup(java::io::File arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCacheBehaviorGroup",
@@ -182,7 +182,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jboolean StorageManager::isCacheBehaviorTombstone(java::io::File arg0)
+	jboolean StorageManager::isCacheBehaviorTombstone(java::io::File arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCacheBehaviorTombstone",
@@ -190,14 +190,14 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jboolean StorageManager::isCheckpointSupported()
+	jboolean StorageManager::isCheckpointSupported() const
 	{
 		return callMethod<jboolean>(
 			"isCheckpointSupported",
 			"()Z"
 		);
 	}
-	jboolean StorageManager::isEncrypted(java::io::File arg0)
+	jboolean StorageManager::isEncrypted(java::io::File arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEncrypted",
@@ -205,7 +205,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jboolean StorageManager::isObbMounted(JString arg0)
+	jboolean StorageManager::isObbMounted(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isObbMounted",
@@ -213,7 +213,7 @@ namespace android::os::storage
 			arg0.object<jstring>()
 		);
 	}
-	jboolean StorageManager::mountObb(JString arg0, JString arg1, android::os::storage::OnObbStateChangeListener arg2)
+	jboolean StorageManager::mountObb(JString arg0, JString arg1, android::os::storage::OnObbStateChangeListener arg2) const
 	{
 		return callMethod<jboolean>(
 			"mountObb",
@@ -223,7 +223,7 @@ namespace android::os::storage
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor StorageManager::openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2)
+	android::os::ParcelFileDescriptor StorageManager::openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2) const
 	{
 		return callObjectMethod(
 			"openProxyFileDescriptor",
@@ -233,7 +233,7 @@ namespace android::os::storage
 			arg2.object()
 		);
 	}
-	void StorageManager::registerStorageVolumeCallback(JObject arg0, android::os::storage::StorageManager_StorageVolumeCallback arg1)
+	void StorageManager::registerStorageVolumeCallback(JObject arg0, android::os::storage::StorageManager_StorageVolumeCallback arg1) const
 	{
 		callMethod<void>(
 			"registerStorageVolumeCallback",
@@ -242,7 +242,7 @@ namespace android::os::storage
 			arg1.object()
 		);
 	}
-	void StorageManager::setCacheBehaviorGroup(java::io::File arg0, jboolean arg1)
+	void StorageManager::setCacheBehaviorGroup(java::io::File arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setCacheBehaviorGroup",
@@ -251,7 +251,7 @@ namespace android::os::storage
 			arg1
 		);
 	}
-	void StorageManager::setCacheBehaviorTombstone(java::io::File arg0, jboolean arg1)
+	void StorageManager::setCacheBehaviorTombstone(java::io::File arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setCacheBehaviorTombstone",
@@ -260,7 +260,7 @@ namespace android::os::storage
 			arg1
 		);
 	}
-	jboolean StorageManager::unmountObb(JString arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2)
+	jboolean StorageManager::unmountObb(JString arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2) const
 	{
 		return callMethod<jboolean>(
 			"unmountObb",
@@ -270,7 +270,7 @@ namespace android::os::storage
 			arg2.object()
 		);
 	}
-	void StorageManager::unregisterStorageVolumeCallback(android::os::storage::StorageManager_StorageVolumeCallback arg0)
+	void StorageManager::unregisterStorageVolumeCallback(android::os::storage::StorageManager_StorageVolumeCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterStorageVolumeCallback",

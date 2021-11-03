@@ -22,7 +22,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(jint arg0, JObject arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"openAsynchronousChannelGroup",
@@ -31,7 +31,7 @@ namespace java::nio::channels::spi
 			arg1.object()
 		);
 	}
-	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(JObject arg0, jint arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(JObject arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"openAsynchronousChannelGroup",
@@ -40,7 +40,7 @@ namespace java::nio::channels::spi
 			arg1
 		);
 	}
-	java::nio::channels::AsynchronousServerSocketChannel AsynchronousChannelProvider::openAsynchronousServerSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0)
+	java::nio::channels::AsynchronousServerSocketChannel AsynchronousChannelProvider::openAsynchronousServerSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0) const
 	{
 		return callObjectMethod(
 			"openAsynchronousServerSocketChannel",
@@ -48,7 +48,7 @@ namespace java::nio::channels::spi
 			arg0.object()
 		);
 	}
-	java::nio::channels::AsynchronousSocketChannel AsynchronousChannelProvider::openAsynchronousSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousChannelProvider::openAsynchronousSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0) const
 	{
 		return callObjectMethod(
 			"openAsynchronousSocketChannel",

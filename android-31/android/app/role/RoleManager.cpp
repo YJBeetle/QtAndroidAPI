@@ -76,7 +76,7 @@ namespace android::app::role
 	// Constructors
 	
 	// Methods
-	android::content::Intent RoleManager::createRequestRoleIntent(JString arg0)
+	android::content::Intent RoleManager::createRequestRoleIntent(JString arg0) const
 	{
 		return callObjectMethod(
 			"createRequestRoleIntent",
@@ -84,7 +84,7 @@ namespace android::app::role
 			arg0.object<jstring>()
 		);
 	}
-	jboolean RoleManager::isRoleAvailable(JString arg0)
+	jboolean RoleManager::isRoleAvailable(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRoleAvailable",
@@ -92,7 +92,7 @@ namespace android::app::role
 			arg0.object<jstring>()
 		);
 	}
-	jboolean RoleManager::isRoleHeld(JString arg0)
+	jboolean RoleManager::isRoleHeld(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRoleHeld",

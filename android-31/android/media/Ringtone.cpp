@@ -13,21 +13,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::AudioAttributes Ringtone::getAudioAttributes()
+	android::media::AudioAttributes Ringtone::getAudioAttributes() const
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	jint Ringtone::getStreamType()
+	jint Ringtone::getStreamType() const
 	{
 		return callMethod<jint>(
 			"getStreamType",
 			"()I"
 		);
 	}
-	JString Ringtone::getTitle(android::content::Context arg0)
+	JString Ringtone::getTitle(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"getTitle",
@@ -35,42 +35,42 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jfloat Ringtone::getVolume()
+	jfloat Ringtone::getVolume() const
 	{
 		return callMethod<jfloat>(
 			"getVolume",
 			"()F"
 		);
 	}
-	jboolean Ringtone::isHapticGeneratorEnabled()
+	jboolean Ringtone::isHapticGeneratorEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isHapticGeneratorEnabled",
 			"()Z"
 		);
 	}
-	jboolean Ringtone::isLooping()
+	jboolean Ringtone::isLooping() const
 	{
 		return callMethod<jboolean>(
 			"isLooping",
 			"()Z"
 		);
 	}
-	jboolean Ringtone::isPlaying()
+	jboolean Ringtone::isPlaying() const
 	{
 		return callMethod<jboolean>(
 			"isPlaying",
 			"()Z"
 		);
 	}
-	void Ringtone::play()
+	void Ringtone::play() const
 	{
 		callMethod<void>(
 			"play",
 			"()V"
 		);
 	}
-	void Ringtone::setAudioAttributes(android::media::AudioAttributes arg0)
+	void Ringtone::setAudioAttributes(android::media::AudioAttributes arg0) const
 	{
 		callMethod<void>(
 			"setAudioAttributes",
@@ -78,7 +78,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean Ringtone::setHapticGeneratorEnabled(jboolean arg0)
+	jboolean Ringtone::setHapticGeneratorEnabled(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setHapticGeneratorEnabled",
@@ -86,7 +86,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void Ringtone::setLooping(jboolean arg0)
+	void Ringtone::setLooping(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLooping",
@@ -94,7 +94,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void Ringtone::setStreamType(jint arg0)
+	void Ringtone::setStreamType(jint arg0) const
 	{
 		callMethod<void>(
 			"setStreamType",
@@ -102,7 +102,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void Ringtone::setVolume(jfloat arg0)
+	void Ringtone::setVolume(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setVolume",
@@ -110,7 +110,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void Ringtone::stop()
+	void Ringtone::stop() const
 	{
 		callMethod<void>(
 			"stop",

@@ -21,9 +21,9 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		void close();
-		jboolean getNextBucket(android::app::usage::NetworkStats_Bucket arg0);
-		jboolean hasNextBucket();
+		void close() const;
+		jboolean getNextBucket(android::app::usage::NetworkStats_Bucket arg0) const;
+		jboolean hasNextBucket() const;
 	};
 } // namespace android::app::usage
 

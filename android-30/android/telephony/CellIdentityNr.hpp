@@ -25,18 +25,18 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getAdditionalPlmns();
-		JIntArray getBands();
-		JString getMccString();
-		JString getMncString();
-		jlong getNci();
-		jint getNrarfcn();
-		jint getPci();
-		jint getTac();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean equals(JObject arg0) const;
+		JObject getAdditionalPlmns() const;
+		JIntArray getBands() const;
+		JString getMccString() const;
+		JString getMncString() const;
+		jlong getNci() const;
+		jint getNrarfcn() const;
+		jint getPci() const;
+		jint getTac() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

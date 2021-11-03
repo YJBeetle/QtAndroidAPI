@@ -30,9 +30,9 @@ namespace android::app::role
 		// Constructors
 		
 		// Methods
-		android::content::Intent createRequestRoleIntent(JString arg0);
-		jboolean isRoleAvailable(JString arg0);
-		jboolean isRoleHeld(JString arg0);
+		android::content::Intent createRequestRoleIntent(JString arg0) const;
+		jboolean isRoleAvailable(JString arg0) const;
+		jboolean isRoleHeld(JString arg0) const;
 	};
 } // namespace android::app::role
 

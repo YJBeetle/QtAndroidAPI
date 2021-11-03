@@ -45,42 +45,42 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::PlaybackParams PlaybackParams::allowDefaults()
+	android::media::PlaybackParams PlaybackParams::allowDefaults() const
 	{
 		return callObjectMethod(
 			"allowDefaults",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
-	jint PlaybackParams::describeContents()
+	jint PlaybackParams::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint PlaybackParams::getAudioFallbackMode()
+	jint PlaybackParams::getAudioFallbackMode() const
 	{
 		return callMethod<jint>(
 			"getAudioFallbackMode",
 			"()I"
 		);
 	}
-	jfloat PlaybackParams::getPitch()
+	jfloat PlaybackParams::getPitch() const
 	{
 		return callMethod<jfloat>(
 			"getPitch",
 			"()F"
 		);
 	}
-	jfloat PlaybackParams::getSpeed()
+	jfloat PlaybackParams::getSpeed() const
 	{
 		return callMethod<jfloat>(
 			"getSpeed",
 			"()F"
 		);
 	}
-	android::media::PlaybackParams PlaybackParams::setAudioFallbackMode(jint arg0)
+	android::media::PlaybackParams PlaybackParams::setAudioFallbackMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioFallbackMode",
@@ -88,7 +88,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::PlaybackParams PlaybackParams::setPitch(jfloat arg0)
+	android::media::PlaybackParams PlaybackParams::setPitch(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setPitch",
@@ -96,7 +96,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::PlaybackParams PlaybackParams::setSpeed(jfloat arg0)
+	android::media::PlaybackParams PlaybackParams::setSpeed(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setSpeed",
@@ -104,7 +104,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void PlaybackParams::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PlaybackParams::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

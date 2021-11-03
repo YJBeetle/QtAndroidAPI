@@ -26,12 +26,12 @@ namespace android::drm
 		DrmInfoRequest(jint arg0, JString arg1);
 		
 		// Methods
-		JObject get(JString arg0);
-		jint getInfoType();
-		JString getMimeType();
-		JObject iterator();
-		JObject keyIterator();
-		void put(JString arg0, JObject arg1);
+		JObject get(JString arg0) const;
+		jint getInfoType() const;
+		JString getMimeType() const;
+		JObject iterator() const;
+		JObject keyIterator() const;
+		void put(JString arg0, JObject arg1) const;
 	};
 } // namespace android::drm
 

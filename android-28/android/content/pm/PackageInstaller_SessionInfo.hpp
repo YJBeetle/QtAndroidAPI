@@ -36,24 +36,24 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		android::content::Intent createDetailsIntent();
-		jint describeContents();
-		android::graphics::Bitmap getAppIcon();
-		JString getAppLabel();
-		JString getAppPackageName();
-		jint getInstallLocation();
-		jint getInstallReason();
-		JString getInstallerPackageName();
-		jint getMode();
-		jint getOriginatingUid();
-		android::net::Uri getOriginatingUri();
-		jfloat getProgress();
-		android::net::Uri getReferrerUri();
-		jint getSessionId();
-		jlong getSize();
-		jboolean isActive();
-		jboolean isSealed();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::content::Intent createDetailsIntent() const;
+		jint describeContents() const;
+		android::graphics::Bitmap getAppIcon() const;
+		JString getAppLabel() const;
+		JString getAppPackageName() const;
+		jint getInstallLocation() const;
+		jint getInstallReason() const;
+		JString getInstallerPackageName() const;
+		jint getMode() const;
+		jint getOriginatingUid() const;
+		android::net::Uri getOriginatingUri() const;
+		jfloat getProgress() const;
+		android::net::Uri getReferrerUri() const;
+		jint getSessionId() const;
+		jlong getSize() const;
+		jboolean isActive() const;
+		jboolean isSealed() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

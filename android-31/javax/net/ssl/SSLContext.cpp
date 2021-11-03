@@ -66,14 +66,14 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	javax::net::ssl::SSLEngine SSLContext::createSSLEngine()
+	javax::net::ssl::SSLEngine SSLContext::createSSLEngine() const
 	{
 		return callObjectMethod(
 			"createSSLEngine",
 			"()Ljavax/net/ssl/SSLEngine;"
 		);
 	}
-	javax::net::ssl::SSLEngine SSLContext::createSSLEngine(JString arg0, jint arg1)
+	javax::net::ssl::SSLEngine SSLContext::createSSLEngine(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createSSLEngine",
@@ -82,63 +82,63 @@ namespace javax::net::ssl
 			arg1
 		);
 	}
-	JObject SSLContext::getClientSessionContext()
+	JObject SSLContext::getClientSessionContext() const
 	{
 		return callObjectMethod(
 			"getClientSessionContext",
 			"()Ljavax/net/ssl/SSLSessionContext;"
 		);
 	}
-	javax::net::ssl::SSLParameters SSLContext::getDefaultSSLParameters()
+	javax::net::ssl::SSLParameters SSLContext::getDefaultSSLParameters() const
 	{
 		return callObjectMethod(
 			"getDefaultSSLParameters",
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	JString SSLContext::getProtocol()
+	JString SSLContext::getProtocol() const
 	{
 		return callObjectMethod(
 			"getProtocol",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider SSLContext::getProvider()
+	java::security::Provider SSLContext::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JObject SSLContext::getServerSessionContext()
+	JObject SSLContext::getServerSessionContext() const
 	{
 		return callObjectMethod(
 			"getServerSessionContext",
 			"()Ljavax/net/ssl/SSLSessionContext;"
 		);
 	}
-	javax::net::ssl::SSLServerSocketFactory SSLContext::getServerSocketFactory()
+	javax::net::ssl::SSLServerSocketFactory SSLContext::getServerSocketFactory() const
 	{
 		return callObjectMethod(
 			"getServerSocketFactory",
 			"()Ljavax/net/ssl/SSLServerSocketFactory;"
 		);
 	}
-	javax::net::ssl::SSLSocketFactory SSLContext::getSocketFactory()
+	javax::net::ssl::SSLSocketFactory SSLContext::getSocketFactory() const
 	{
 		return callObjectMethod(
 			"getSocketFactory",
 			"()Ljavax/net/ssl/SSLSocketFactory;"
 		);
 	}
-	javax::net::ssl::SSLParameters SSLContext::getSupportedSSLParameters()
+	javax::net::ssl::SSLParameters SSLContext::getSupportedSSLParameters() const
 	{
 		return callObjectMethod(
 			"getSupportedSSLParameters",
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	void SSLContext::init(JArray arg0, JArray arg1, java::security::SecureRandom arg2)
+	void SSLContext::init(JArray arg0, JArray arg1, java::security::SecureRandom arg2) const
 	{
 		callMethod<void>(
 			"init",

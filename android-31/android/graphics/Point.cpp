@@ -51,14 +51,14 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jint Point::describeContents()
+	jint Point::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Point::equals(JObject arg0)
+	jboolean Point::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -66,7 +66,7 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Point::equals(jint arg0, jint arg1)
+	jboolean Point::equals(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -75,21 +75,21 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jint Point::hashCode()
+	jint Point::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Point::negate()
+	void Point::negate() const
 	{
 		callMethod<void>(
 			"negate",
 			"()V"
 		);
 	}
-	void Point::offset(jint arg0, jint arg1)
+	void Point::offset(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"offset",
@@ -98,7 +98,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Point::readFromParcel(android::os::Parcel arg0)
+	void Point::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -106,7 +106,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Point::set(jint arg0, jint arg1)
+	void Point::set(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -115,14 +115,14 @@ namespace android::graphics
 			arg1
 		);
 	}
-	JString Point::toString()
+	JString Point::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Point::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Point::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

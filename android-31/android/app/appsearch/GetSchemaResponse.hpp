@@ -16,8 +16,8 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JObject getSchemas();
-		jint getVersion();
+		JObject getSchemas() const;
+		jint getVersion() const;
 	};
 } // namespace android::app::appsearch
 

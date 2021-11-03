@@ -38,9 +38,9 @@ namespace android::media
 		MediaController2_Builder(android::content::Context arg0, android::media::Session2Token arg1);
 		
 		// Methods
-		android::media::MediaController2 build();
-		android::media::MediaController2_Builder setConnectionHints(android::os::Bundle arg0);
-		android::media::MediaController2_Builder setControllerCallback(JObject arg0, android::media::MediaController2_ControllerCallback arg1);
+		android::media::MediaController2 build() const;
+		android::media::MediaController2_Builder setConnectionHints(android::os::Bundle arg0) const;
+		android::media::MediaController2_Builder setControllerCallback(JObject arg0, android::media::MediaController2_ControllerCallback arg1) const;
 	};
 } // namespace android::media
 

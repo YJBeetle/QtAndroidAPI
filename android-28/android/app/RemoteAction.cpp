@@ -34,21 +34,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::RemoteAction RemoteAction::clone()
+	android::app::RemoteAction RemoteAction::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/app/RemoteAction;"
 		);
 	}
-	jint RemoteAction::describeContents()
+	jint RemoteAction::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void RemoteAction::dump(JString arg0, java::io::PrintWriter arg1)
+	void RemoteAction::dump(JString arg0, java::io::PrintWriter arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -57,42 +57,42 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::PendingIntent RemoteAction::getActionIntent()
+	android::app::PendingIntent RemoteAction::getActionIntent() const
 	{
 		return callObjectMethod(
 			"getActionIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	JString RemoteAction::getContentDescription()
+	JString RemoteAction::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::graphics::drawable::Icon RemoteAction::getIcon()
+	android::graphics::drawable::Icon RemoteAction::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString RemoteAction::getTitle()
+	JString RemoteAction::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean RemoteAction::isEnabled()
+	jboolean RemoteAction::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void RemoteAction::setEnabled(jboolean arg0)
+	void RemoteAction::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -100,7 +100,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void RemoteAction::setShouldShowIcon(jboolean arg0)
+	void RemoteAction::setShouldShowIcon(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShouldShowIcon",
@@ -108,14 +108,14 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean RemoteAction::shouldShowIcon()
+	jboolean RemoteAction::shouldShowIcon() const
 	{
 		return callMethod<jboolean>(
 			"shouldShowIcon",
 			"()Z"
 		);
 	}
-	void RemoteAction::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RemoteAction::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

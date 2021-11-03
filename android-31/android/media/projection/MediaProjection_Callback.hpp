@@ -17,7 +17,7 @@ namespace android::media::projection
 		MediaProjection_Callback();
 		
 		// Methods
-		void onStop();
+		void onStop() const;
 	};
 } // namespace android::media::projection
 

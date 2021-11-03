@@ -22,8 +22,8 @@ namespace android::media::effect
 		
 		// Methods
 		static android::media::effect::EffectContext createWithCurrentGlContext();
-		android::media::effect::EffectFactory getFactory();
-		void release();
+		android::media::effect::EffectFactory getFactory() const;
+		void release() const;
 	};
 } // namespace android::media::effect
 

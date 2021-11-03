@@ -28,15 +28,15 @@ namespace android::telephony
 		AvailableNetworkInfo(jint arg0, jint arg1, JObject arg2, JObject arg3);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getBands();
-		JObject getMccMncs();
-		jint getPriority();
-		jint getSubId();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getBands() const;
+		JObject getMccMncs() const;
+		jint getPriority() const;
+		jint getSubId() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

@@ -79,7 +79,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	android::graphics::drawable::Drawable PackageItemInfo::loadBanner(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadBanner(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadBanner",
@@ -87,7 +87,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageItemInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -95,7 +95,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString PackageItemInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString PackageItemInfo::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -103,7 +103,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageItemInfo::loadLogo(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadLogo(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLogo",
@@ -111,7 +111,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageItemInfo::loadUnbadgedIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadUnbadgedIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadUnbadgedIcon",
@@ -119,7 +119,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, JString arg1)
+	JObject PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"loadXmlMetaData",
@@ -128,7 +128,7 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	void PackageItemInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PackageItemInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

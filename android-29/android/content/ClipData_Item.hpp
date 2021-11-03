@@ -37,14 +37,14 @@ namespace android::content
 		ClipData_Item(JString arg0, JString arg1, android::content::Intent arg2, android::net::Uri arg3);
 		
 		// Methods
-		JString coerceToHtmlText(android::content::Context arg0);
-		JString coerceToStyledText(android::content::Context arg0);
-		JString coerceToText(android::content::Context arg0);
-		JString getHtmlText();
-		android::content::Intent getIntent();
-		JString getText();
-		android::net::Uri getUri();
-		JString toString();
+		JString coerceToHtmlText(android::content::Context arg0) const;
+		JString coerceToStyledText(android::content::Context arg0) const;
+		JString coerceToText(android::content::Context arg0) const;
+		JString getHtmlText() const;
+		android::content::Intent getIntent() const;
+		JString getText() const;
+		android::net::Uri getUri() const;
+		JString toString() const;
 	};
 } // namespace android::content
 

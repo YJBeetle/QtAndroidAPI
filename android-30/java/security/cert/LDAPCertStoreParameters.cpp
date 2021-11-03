@@ -30,28 +30,28 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	JObject LDAPCertStoreParameters::clone()
+	JObject LDAPCertStoreParameters::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint LDAPCertStoreParameters::getPort()
+	jint LDAPCertStoreParameters::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JString LDAPCertStoreParameters::getServerName()
+	JString LDAPCertStoreParameters::getServerName() const
 	{
 		return callObjectMethod(
 			"getServerName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString LDAPCertStoreParameters::toString()
+	JString LDAPCertStoreParameters::toString() const
 	{
 		return callObjectMethod(
 			"toString",

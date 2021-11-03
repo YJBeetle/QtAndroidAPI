@@ -60,7 +60,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jboolean Timestamp::after(java::sql::Timestamp arg0)
+	jboolean Timestamp::after(java::sql::Timestamp arg0) const
 	{
 		return callMethod<jboolean>(
 			"after",
@@ -68,7 +68,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jboolean Timestamp::before(java::sql::Timestamp arg0)
+	jboolean Timestamp::before(java::sql::Timestamp arg0) const
 	{
 		return callMethod<jboolean>(
 			"before",
@@ -76,7 +76,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jint Timestamp::compareTo(JObject arg0)
+	jint Timestamp::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -84,7 +84,7 @@ namespace java::sql
 			arg0.object<jobject>()
 		);
 	}
-	jint Timestamp::compareTo(java::sql::Timestamp arg0)
+	jint Timestamp::compareTo(java::sql::Timestamp arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -92,7 +92,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jint Timestamp::compareTo(java::util::Date arg0)
+	jint Timestamp::compareTo(java::util::Date arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -100,7 +100,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jboolean Timestamp::equals(JObject arg0)
+	jboolean Timestamp::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -108,7 +108,7 @@ namespace java::sql
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Timestamp::equals(java::sql::Timestamp arg0)
+	jboolean Timestamp::equals(java::sql::Timestamp arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -116,28 +116,28 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jint Timestamp::getNanos()
+	jint Timestamp::getNanos() const
 	{
 		return callMethod<jint>(
 			"getNanos",
 			"()I"
 		);
 	}
-	jlong Timestamp::getTime()
+	jlong Timestamp::getTime() const
 	{
 		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
-	jint Timestamp::hashCode()
+	jint Timestamp::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Timestamp::setNanos(jint arg0)
+	void Timestamp::setNanos(jint arg0) const
 	{
 		callMethod<void>(
 			"setNanos",
@@ -145,7 +145,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void Timestamp::setTime(jlong arg0)
+	void Timestamp::setTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -153,21 +153,21 @@ namespace java::sql
 			arg0
 		);
 	}
-	java::time::Instant Timestamp::toInstant()
+	java::time::Instant Timestamp::toInstant() const
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	java::time::LocalDateTime Timestamp::toLocalDateTime()
+	java::time::LocalDateTime Timestamp::toLocalDateTime() const
 	{
 		return callObjectMethod(
 			"toLocalDateTime",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	JString Timestamp::toString()
+	JString Timestamp::toString() const
 	{
 		return callObjectMethod(
 			"toString",

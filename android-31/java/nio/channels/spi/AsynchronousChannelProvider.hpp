@@ -34,10 +34,10 @@ namespace java::nio::channels::spi
 		
 		// Methods
 		static java::nio::channels::spi::AsynchronousChannelProvider provider();
-		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(jint arg0, JObject arg1);
-		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(JObject arg0, jint arg1);
-		java::nio::channels::AsynchronousServerSocketChannel openAsynchronousServerSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0);
-		java::nio::channels::AsynchronousSocketChannel openAsynchronousSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0);
+		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(jint arg0, JObject arg1) const;
+		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(JObject arg0, jint arg1) const;
+		java::nio::channels::AsynchronousServerSocketChannel openAsynchronousServerSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0) const;
+		java::nio::channels::AsynchronousSocketChannel openAsynchronousSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0) const;
 	};
 } // namespace java::nio::channels::spi
 

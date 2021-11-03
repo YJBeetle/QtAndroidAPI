@@ -32,13 +32,13 @@ namespace java::nio::channels
 		// Methods
 		static java::nio::channels::AsynchronousServerSocketChannel open();
 		static java::nio::channels::AsynchronousServerSocketChannel open(java::nio::channels::AsynchronousChannelGroup arg0);
-		JObject accept();
-		void accept(JObject arg0, JObject arg1);
-		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0);
-		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1);
-		java::net::SocketAddress getLocalAddress();
-		java::nio::channels::spi::AsynchronousChannelProvider provider();
-		java::nio::channels::AsynchronousServerSocketChannel setOption(JObject arg0, JObject arg1);
+		JObject accept() const;
+		void accept(JObject arg0, JObject arg1) const;
+		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0) const;
+		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1) const;
+		java::net::SocketAddress getLocalAddress() const;
+		java::nio::channels::spi::AsynchronousChannelProvider provider() const;
+		java::nio::channels::AsynchronousServerSocketChannel setOption(JObject arg0, JObject arg1) const;
 	};
 } // namespace java::nio::channels
 

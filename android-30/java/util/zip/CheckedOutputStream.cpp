@@ -19,14 +19,14 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	JObject CheckedOutputStream::getChecksum()
+	JObject CheckedOutputStream::getChecksum() const
 	{
 		return callObjectMethod(
 			"getChecksum",
 			"()Ljava/util/zip/Checksum;"
 		);
 	}
-	void CheckedOutputStream::write(jint arg0)
+	void CheckedOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -34,7 +34,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void CheckedOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void CheckedOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

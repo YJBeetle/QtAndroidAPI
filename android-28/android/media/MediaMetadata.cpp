@@ -258,7 +258,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaMetadata::containsKey(JString arg0)
+	jboolean MediaMetadata::containsKey(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -266,14 +266,14 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jint MediaMetadata::describeContents()
+	jint MediaMetadata::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MediaMetadata::equals(JObject arg0)
+	jboolean MediaMetadata::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -281,7 +281,7 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::Bitmap MediaMetadata::getBitmap(JString arg0)
+	android::graphics::Bitmap MediaMetadata::getBitmap(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -289,14 +289,14 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaDescription MediaMetadata::getDescription()
+	android::media::MediaDescription MediaMetadata::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
-	jlong MediaMetadata::getLong(JString arg0)
+	jlong MediaMetadata::getLong(JString arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -304,7 +304,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::Rating MediaMetadata::getRating(JString arg0)
+	android::media::Rating MediaMetadata::getRating(JString arg0) const
 	{
 		return callObjectMethod(
 			"getRating",
@@ -312,7 +312,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JString MediaMetadata::getString(JString arg0)
+	JString MediaMetadata::getString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -320,7 +320,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JString MediaMetadata::getText(JString arg0)
+	JString MediaMetadata::getText(JString arg0) const
 	{
 		return callObjectMethod(
 			"getText",
@@ -328,28 +328,28 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jint MediaMetadata::hashCode()
+	jint MediaMetadata::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject MediaMetadata::keySet()
+	JObject MediaMetadata::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint MediaMetadata::size()
+	jint MediaMetadata::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	void MediaMetadata::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaMetadata::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

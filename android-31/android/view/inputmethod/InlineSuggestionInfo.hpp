@@ -33,16 +33,16 @@ namespace android::view::inputmethod
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JArray getAutofillHints();
-		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec();
-		JString getSource();
-		JString getType();
-		jint hashCode();
-		jboolean isPinned();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JArray getAutofillHints() const;
+		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec() const;
+		JString getSource() const;
+		JString getType() const;
+		jint hashCode() const;
+		jboolean isPinned() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

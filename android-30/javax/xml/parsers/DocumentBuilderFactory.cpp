@@ -67,7 +67,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	JObject DocumentBuilderFactory::getAttribute(JString arg0)
+	JObject DocumentBuilderFactory::getAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttribute",
@@ -75,7 +75,7 @@ namespace javax::xml::parsers
 			arg0.object<jstring>()
 		);
 	}
-	jboolean DocumentBuilderFactory::getFeature(JString arg0)
+	jboolean DocumentBuilderFactory::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -83,70 +83,70 @@ namespace javax::xml::parsers
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::validation::Schema DocumentBuilderFactory::getSchema()
+	javax::xml::validation::Schema DocumentBuilderFactory::getSchema() const
 	{
 		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
-	jboolean DocumentBuilderFactory::isCoalescing()
+	jboolean DocumentBuilderFactory::isCoalescing() const
 	{
 		return callMethod<jboolean>(
 			"isCoalescing",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilderFactory::isExpandEntityReferences()
+	jboolean DocumentBuilderFactory::isExpandEntityReferences() const
 	{
 		return callMethod<jboolean>(
 			"isExpandEntityReferences",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilderFactory::isIgnoringComments()
+	jboolean DocumentBuilderFactory::isIgnoringComments() const
 	{
 		return callMethod<jboolean>(
 			"isIgnoringComments",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilderFactory::isIgnoringElementContentWhitespace()
+	jboolean DocumentBuilderFactory::isIgnoringElementContentWhitespace() const
 	{
 		return callMethod<jboolean>(
 			"isIgnoringElementContentWhitespace",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilderFactory::isNamespaceAware()
+	jboolean DocumentBuilderFactory::isNamespaceAware() const
 	{
 		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilderFactory::isValidating()
+	jboolean DocumentBuilderFactory::isValidating() const
 	{
 		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilderFactory::isXIncludeAware()
+	jboolean DocumentBuilderFactory::isXIncludeAware() const
 	{
 		return callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z"
 		);
 	}
-	javax::xml::parsers::DocumentBuilder DocumentBuilderFactory::newDocumentBuilder()
+	javax::xml::parsers::DocumentBuilder DocumentBuilderFactory::newDocumentBuilder() const
 	{
 		return callObjectMethod(
 			"newDocumentBuilder",
 			"()Ljavax/xml/parsers/DocumentBuilder;"
 		);
 	}
-	void DocumentBuilderFactory::setAttribute(JString arg0, JObject arg1)
+	void DocumentBuilderFactory::setAttribute(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setAttribute",
@@ -155,7 +155,7 @@ namespace javax::xml::parsers
 			arg1.object<jobject>()
 		);
 	}
-	void DocumentBuilderFactory::setCoalescing(jboolean arg0)
+	void DocumentBuilderFactory::setCoalescing(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCoalescing",
@@ -163,7 +163,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void DocumentBuilderFactory::setExpandEntityReferences(jboolean arg0)
+	void DocumentBuilderFactory::setExpandEntityReferences(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setExpandEntityReferences",
@@ -171,7 +171,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void DocumentBuilderFactory::setFeature(JString arg0, jboolean arg1)
+	void DocumentBuilderFactory::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -180,7 +180,7 @@ namespace javax::xml::parsers
 			arg1
 		);
 	}
-	void DocumentBuilderFactory::setIgnoringComments(jboolean arg0)
+	void DocumentBuilderFactory::setIgnoringComments(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIgnoringComments",
@@ -188,7 +188,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void DocumentBuilderFactory::setIgnoringElementContentWhitespace(jboolean arg0)
+	void DocumentBuilderFactory::setIgnoringElementContentWhitespace(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIgnoringElementContentWhitespace",
@@ -196,7 +196,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void DocumentBuilderFactory::setNamespaceAware(jboolean arg0)
+	void DocumentBuilderFactory::setNamespaceAware(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNamespaceAware",
@@ -204,7 +204,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void DocumentBuilderFactory::setSchema(javax::xml::validation::Schema arg0)
+	void DocumentBuilderFactory::setSchema(javax::xml::validation::Schema arg0) const
 	{
 		callMethod<void>(
 			"setSchema",
@@ -212,7 +212,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	void DocumentBuilderFactory::setValidating(jboolean arg0)
+	void DocumentBuilderFactory::setValidating(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setValidating",
@@ -220,7 +220,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void DocumentBuilderFactory::setXIncludeAware(jboolean arg0)
+	void DocumentBuilderFactory::setXIncludeAware(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setXIncludeAware",

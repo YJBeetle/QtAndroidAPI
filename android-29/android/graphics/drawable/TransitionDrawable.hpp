@@ -23,12 +23,12 @@ namespace android::graphics::drawable
 		TransitionDrawable(JArray arg0);
 		
 		// Methods
-		void draw(android::graphics::Canvas arg0);
-		jboolean isCrossFadeEnabled();
-		void resetTransition();
-		void reverseTransition(jint arg0);
-		void setCrossFadeEnabled(jboolean arg0);
-		void startTransition(jint arg0);
+		void draw(android::graphics::Canvas arg0) const;
+		jboolean isCrossFadeEnabled() const;
+		void resetTransition() const;
+		void reverseTransition(jint arg0) const;
+		void setCrossFadeEnabled(jboolean arg0) const;
+		void startTransition(jint arg0) const;
 	};
 } // namespace android::graphics::drawable
 

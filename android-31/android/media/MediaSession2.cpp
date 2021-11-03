@@ -16,7 +16,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaSession2::broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1)
+	void MediaSession2::broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"broadcastSessionCommand",
@@ -25,7 +25,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaSession2::cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, JObject arg1)
+	void MediaSession2::cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"cancelSessionCommand",
@@ -34,42 +34,42 @@ namespace android::media
 			arg1.object<jobject>()
 		);
 	}
-	void MediaSession2::close()
+	void MediaSession2::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject MediaSession2::getConnectedControllers()
+	JObject MediaSession2::getConnectedControllers() const
 	{
 		return callObjectMethod(
 			"getConnectedControllers",
 			"()Ljava/util/List;"
 		);
 	}
-	JString MediaSession2::getId()
+	JString MediaSession2::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::media::Session2Token MediaSession2::getToken()
+	android::media::Session2Token MediaSession2::getToken() const
 	{
 		return callObjectMethod(
 			"getToken",
 			"()Landroid/media/Session2Token;"
 		);
 	}
-	jboolean MediaSession2::isPlaybackActive()
+	jboolean MediaSession2::isPlaybackActive() const
 	{
 		return callMethod<jboolean>(
 			"isPlaybackActive",
 			"()Z"
 		);
 	}
-	JObject MediaSession2::sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2)
+	JObject MediaSession2::sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"sendSessionCommand",
@@ -79,7 +79,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	void MediaSession2::setPlaybackActive(jboolean arg0)
+	void MediaSession2::setPlaybackActive(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackActive",

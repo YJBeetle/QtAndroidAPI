@@ -27,14 +27,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	JThrowable WriteAbortedException::getCause()
+	JThrowable WriteAbortedException::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	JString WriteAbortedException::getMessage()
+	JString WriteAbortedException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

@@ -262,56 +262,56 @@ namespace android::app::slice
 	// Constructors
 	
 	// Methods
-	jint Slice::describeContents()
+	jint Slice::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject Slice::getHints()
+	JObject Slice::getHints() const
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Slice::getItems()
+	JObject Slice::getItems() const
 	{
 		return callObjectMethod(
 			"getItems",
 			"()Ljava/util/List;"
 		);
 	}
-	android::app::slice::SliceSpec Slice::getSpec()
+	android::app::slice::SliceSpec Slice::getSpec() const
 	{
 		return callObjectMethod(
 			"getSpec",
 			"()Landroid/app/slice/SliceSpec;"
 		);
 	}
-	android::net::Uri Slice::getUri()
+	android::net::Uri Slice::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jboolean Slice::isCallerNeeded()
+	jboolean Slice::isCallerNeeded() const
 	{
 		return callMethod<jboolean>(
 			"isCallerNeeded",
 			"()Z"
 		);
 	}
-	JString Slice::toString()
+	JString Slice::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Slice::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Slice::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

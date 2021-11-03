@@ -26,8 +26,8 @@ namespace android::text::style
 		ClickableSpan();
 		
 		// Methods
-		void onClick(android::view::View arg0);
-		void updateDrawState(android::text::TextPaint arg0);
+		void onClick(android::view::View arg0) const;
+		void updateDrawState(android::text::TextPaint arg0) const;
 	};
 } // namespace android::text::style
 

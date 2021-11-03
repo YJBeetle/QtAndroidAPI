@@ -12,28 +12,28 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	void MidiInputPort::close()
+	void MidiInputPort::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint MidiInputPort::getPortNumber()
+	jint MidiInputPort::getPortNumber() const
 	{
 		return callMethod<jint>(
 			"getPortNumber",
 			"()I"
 		);
 	}
-	void MidiInputPort::onFlush()
+	void MidiInputPort::onFlush() const
 	{
 		callMethod<void>(
 			"onFlush",
 			"()V"
 		);
 	}
-	void MidiInputPort::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3)
+	void MidiInputPort::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"onSend",

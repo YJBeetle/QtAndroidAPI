@@ -25,14 +25,14 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsicLUT::destroy()
+	void ScriptIntrinsicLUT::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	void ScriptIntrinsicLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1)
+	void ScriptIntrinsicLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -41,7 +41,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsicLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2)
+	void ScriptIntrinsicLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -51,14 +51,14 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	android::renderscript::Script_KernelID ScriptIntrinsicLUT::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsicLUT::getKernelID() const
 	{
 		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsicLUT::setAlpha(jint arg0, jint arg1)
+	void ScriptIntrinsicLUT::setAlpha(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -67,7 +67,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void ScriptIntrinsicLUT::setBlue(jint arg0, jint arg1)
+	void ScriptIntrinsicLUT::setBlue(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setBlue",
@@ -76,7 +76,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void ScriptIntrinsicLUT::setGreen(jint arg0, jint arg1)
+	void ScriptIntrinsicLUT::setGreen(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setGreen",
@@ -85,7 +85,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void ScriptIntrinsicLUT::setRed(jint arg0, jint arg1)
+	void ScriptIntrinsicLUT::setRed(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setRed",

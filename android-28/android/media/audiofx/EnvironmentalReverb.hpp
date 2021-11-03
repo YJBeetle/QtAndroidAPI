@@ -32,29 +32,29 @@ namespace android::media::audiofx
 		EnvironmentalReverb(jint arg0, jint arg1);
 		
 		// Methods
-		jshort getDecayHFRatio();
-		jint getDecayTime();
-		jshort getDensity();
-		jshort getDiffusion();
-		android::media::audiofx::EnvironmentalReverb_Settings getProperties();
-		jint getReflectionsDelay();
-		jshort getReflectionsLevel();
-		jint getReverbDelay();
-		jshort getReverbLevel();
-		jshort getRoomHFLevel();
-		jshort getRoomLevel();
-		void setDecayHFRatio(jshort arg0);
-		void setDecayTime(jint arg0);
-		void setDensity(jshort arg0);
-		void setDiffusion(jshort arg0);
-		void setParameterListener(JObject arg0);
-		void setProperties(android::media::audiofx::EnvironmentalReverb_Settings arg0);
-		void setReflectionsDelay(jint arg0);
-		void setReflectionsLevel(jshort arg0);
-		void setReverbDelay(jint arg0);
-		void setReverbLevel(jshort arg0);
-		void setRoomHFLevel(jshort arg0);
-		void setRoomLevel(jshort arg0);
+		jshort getDecayHFRatio() const;
+		jint getDecayTime() const;
+		jshort getDensity() const;
+		jshort getDiffusion() const;
+		android::media::audiofx::EnvironmentalReverb_Settings getProperties() const;
+		jint getReflectionsDelay() const;
+		jshort getReflectionsLevel() const;
+		jint getReverbDelay() const;
+		jshort getReverbLevel() const;
+		jshort getRoomHFLevel() const;
+		jshort getRoomLevel() const;
+		void setDecayHFRatio(jshort arg0) const;
+		void setDecayTime(jint arg0) const;
+		void setDensity(jshort arg0) const;
+		void setDiffusion(jshort arg0) const;
+		void setParameterListener(JObject arg0) const;
+		void setProperties(android::media::audiofx::EnvironmentalReverb_Settings arg0) const;
+		void setReflectionsDelay(jint arg0) const;
+		void setReflectionsLevel(jshort arg0) const;
+		void setReverbDelay(jint arg0) const;
+		void setReverbLevel(jshort arg0) const;
+		void setRoomHFLevel(jshort arg0) const;
+		void setRoomLevel(jshort arg0) const;
 	};
 } // namespace android::media::audiofx
 

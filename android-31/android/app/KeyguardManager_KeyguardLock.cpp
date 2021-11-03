@@ -11,14 +11,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	void KeyguardManager_KeyguardLock::disableKeyguard()
+	void KeyguardManager_KeyguardLock::disableKeyguard() const
 	{
 		callMethod<void>(
 			"disableKeyguard",
 			"()V"
 		);
 	}
-	void KeyguardManager_KeyguardLock::reenableKeyguard()
+	void KeyguardManager_KeyguardLock::reenableKeyguard() const
 	{
 		callMethod<void>(
 			"reenableKeyguard",

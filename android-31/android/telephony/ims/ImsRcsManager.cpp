@@ -21,7 +21,7 @@ namespace android::telephony::ims
 	// Constructors
 	
 	// Methods
-	void ImsRcsManager::getRegistrationState(JObject arg0, JObject arg1)
+	void ImsRcsManager::getRegistrationState(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getRegistrationState",
@@ -30,7 +30,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsRcsManager::getRegistrationTransportType(JObject arg0, JObject arg1)
+	void ImsRcsManager::getRegistrationTransportType(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getRegistrationTransportType",
@@ -39,14 +39,14 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	android::telephony::ims::RcsUceAdapter ImsRcsManager::getUceAdapter()
+	android::telephony::ims::RcsUceAdapter ImsRcsManager::getUceAdapter() const
 	{
 		return callObjectMethod(
 			"getUceAdapter",
 			"()Landroid/telephony/ims/RcsUceAdapter;"
 		);
 	}
-	void ImsRcsManager::registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1)
+	void ImsRcsManager::registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1) const
 	{
 		callMethod<void>(
 			"registerImsRegistrationCallback",
@@ -55,7 +55,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsRcsManager::unregisterImsRegistrationCallback(android::telephony::ims::RegistrationManager_RegistrationCallback arg0)
+	void ImsRcsManager::unregisterImsRegistrationCallback(android::telephony::ims::RegistrationManager_RegistrationCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterImsRegistrationCallback",

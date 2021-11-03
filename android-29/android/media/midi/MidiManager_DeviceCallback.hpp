@@ -26,9 +26,9 @@ namespace android::media::midi
 		MidiManager_DeviceCallback();
 		
 		// Methods
-		void onDeviceAdded(android::media::midi::MidiDeviceInfo arg0);
-		void onDeviceRemoved(android::media::midi::MidiDeviceInfo arg0);
-		void onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0);
+		void onDeviceAdded(android::media::midi::MidiDeviceInfo arg0) const;
+		void onDeviceRemoved(android::media::midi::MidiDeviceInfo arg0) const;
+		void onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0) const;
 	};
 } // namespace android::media::midi
 

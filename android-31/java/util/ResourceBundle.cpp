@@ -127,7 +127,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	jboolean ResourceBundle::containsKey(JString arg0)
+	jboolean ResourceBundle::containsKey(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -135,28 +135,28 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JString ResourceBundle::getBaseBundleName()
+	JString ResourceBundle::getBaseBundleName() const
 	{
 		return callObjectMethod(
 			"getBaseBundleName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ResourceBundle::getKeys()
+	JObject ResourceBundle::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	java::util::Locale ResourceBundle::getLocale()
+	java::util::Locale ResourceBundle::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	JObject ResourceBundle::getObject(JString arg0)
+	JObject ResourceBundle::getObject(JString arg0) const
 	{
 		return callObjectMethod(
 			"getObject",
@@ -164,7 +164,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JString ResourceBundle::getString(JString arg0)
+	JString ResourceBundle::getString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -172,7 +172,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JArray ResourceBundle::getStringArray(JString arg0)
+	JArray ResourceBundle::getStringArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getStringArray",
@@ -180,7 +180,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JObject ResourceBundle::keySet()
+	JObject ResourceBundle::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",

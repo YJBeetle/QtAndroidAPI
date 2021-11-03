@@ -25,21 +25,21 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jint Interpolator::getKeyFrameCount()
+	jint Interpolator::getKeyFrameCount() const
 	{
 		return callMethod<jint>(
 			"getKeyFrameCount",
 			"()I"
 		);
 	}
-	jint Interpolator::getValueCount()
+	jint Interpolator::getValueCount() const
 	{
 		return callMethod<jint>(
 			"getValueCount",
 			"()I"
 		);
 	}
-	void Interpolator::reset(jint arg0)
+	void Interpolator::reset(jint arg0) const
 	{
 		callMethod<void>(
 			"reset",
@@ -47,7 +47,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Interpolator::reset(jint arg0, jint arg1)
+	void Interpolator::reset(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"reset",
@@ -56,7 +56,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Interpolator::setKeyFrame(jint arg0, jint arg1, JFloatArray arg2)
+	void Interpolator::setKeyFrame(jint arg0, jint arg1, JFloatArray arg2) const
 	{
 		callMethod<void>(
 			"setKeyFrame",
@@ -66,7 +66,7 @@ namespace android::graphics
 			arg2.object<jfloatArray>()
 		);
 	}
-	void Interpolator::setKeyFrame(jint arg0, jint arg1, JFloatArray arg2, JFloatArray arg3)
+	void Interpolator::setKeyFrame(jint arg0, jint arg1, JFloatArray arg2, JFloatArray arg3) const
 	{
 		callMethod<void>(
 			"setKeyFrame",
@@ -77,7 +77,7 @@ namespace android::graphics
 			arg3.object<jfloatArray>()
 		);
 	}
-	void Interpolator::setRepeatMirror(jfloat arg0, jboolean arg1)
+	void Interpolator::setRepeatMirror(jfloat arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setRepeatMirror",
@@ -86,7 +86,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	android::graphics::Interpolator_Result Interpolator::timeToValues(JFloatArray arg0)
+	android::graphics::Interpolator_Result Interpolator::timeToValues(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"timeToValues",
@@ -94,7 +94,7 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	android::graphics::Interpolator_Result Interpolator::timeToValues(jint arg0, JFloatArray arg1)
+	android::graphics::Interpolator_Result Interpolator::timeToValues(jint arg0, JFloatArray arg1) const
 	{
 		return callObjectMethod(
 			"timeToValues",

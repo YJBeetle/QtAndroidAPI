@@ -26,14 +26,14 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void acquire();
-		void acquire(jlong arg0);
-		jboolean isHeld();
-		void release();
-		void release(jint arg0);
-		void setReferenceCounted(jboolean arg0);
-		void setWorkSource(android::os::WorkSource arg0);
-		JString toString();
+		void acquire() const;
+		void acquire(jlong arg0) const;
+		jboolean isHeld() const;
+		void release() const;
+		void release(jint arg0) const;
+		void setReferenceCounted(jboolean arg0) const;
+		void setWorkSource(android::os::WorkSource arg0) const;
+		JString toString() const;
 	};
 } // namespace android::os
 

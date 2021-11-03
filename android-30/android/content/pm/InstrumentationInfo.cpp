@@ -100,21 +100,21 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint InstrumentationInfo::describeContents()
+	jint InstrumentationInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString InstrumentationInfo::toString()
+	JString InstrumentationInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InstrumentationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InstrumentationInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -31,105 +31,105 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jint NetworkInfo::describeContents()
+	jint NetworkInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::net::NetworkInfo_DetailedState NetworkInfo::getDetailedState()
+	android::net::NetworkInfo_DetailedState NetworkInfo::getDetailedState() const
 	{
 		return callObjectMethod(
 			"getDetailedState",
 			"()Landroid/net/NetworkInfo$DetailedState;"
 		);
 	}
-	JString NetworkInfo::getExtraInfo()
+	JString NetworkInfo::getExtraInfo() const
 	{
 		return callObjectMethod(
 			"getExtraInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NetworkInfo::getReason()
+	JString NetworkInfo::getReason() const
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::NetworkInfo_State NetworkInfo::getState()
+	android::net::NetworkInfo_State NetworkInfo::getState() const
 	{
 		return callObjectMethod(
 			"getState",
 			"()Landroid/net/NetworkInfo$State;"
 		);
 	}
-	jint NetworkInfo::getSubtype()
+	jint NetworkInfo::getSubtype() const
 	{
 		return callMethod<jint>(
 			"getSubtype",
 			"()I"
 		);
 	}
-	JString NetworkInfo::getSubtypeName()
+	JString NetworkInfo::getSubtypeName() const
 	{
 		return callObjectMethod(
 			"getSubtypeName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint NetworkInfo::getType()
+	jint NetworkInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JString NetworkInfo::getTypeName()
+	JString NetworkInfo::getTypeName() const
 	{
 		return callObjectMethod(
 			"getTypeName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean NetworkInfo::isAvailable()
+	jboolean NetworkInfo::isAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isAvailable",
 			"()Z"
 		);
 	}
-	jboolean NetworkInfo::isConnected()
+	jboolean NetworkInfo::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	jboolean NetworkInfo::isConnectedOrConnecting()
+	jboolean NetworkInfo::isConnectedOrConnecting() const
 	{
 		return callMethod<jboolean>(
 			"isConnectedOrConnecting",
 			"()Z"
 		);
 	}
-	jboolean NetworkInfo::isFailover()
+	jboolean NetworkInfo::isFailover() const
 	{
 		return callMethod<jboolean>(
 			"isFailover",
 			"()Z"
 		);
 	}
-	jboolean NetworkInfo::isRoaming()
+	jboolean NetworkInfo::isRoaming() const
 	{
 		return callMethod<jboolean>(
 			"isRoaming",
 			"()Z"
 		);
 	}
-	void NetworkInfo::setDetailedState(android::net::NetworkInfo_DetailedState arg0, JString arg1, JString arg2)
+	void NetworkInfo::setDetailedState(android::net::NetworkInfo_DetailedState arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setDetailedState",
@@ -139,14 +139,14 @@ namespace android::net
 			arg2.object<jstring>()
 		);
 	}
-	JString NetworkInfo::toString()
+	JString NetworkInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -41,15 +41,15 @@ namespace android::view::animation
 		GridLayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		jfloat getColumnDelay();
-		jint getDirection();
-		jint getDirectionPriority();
-		jfloat getRowDelay();
-		void setColumnDelay(jfloat arg0);
-		void setDirection(jint arg0);
-		void setDirectionPriority(jint arg0);
-		void setRowDelay(jfloat arg0);
-		jboolean willOverlap();
+		jfloat getColumnDelay() const;
+		jint getDirection() const;
+		jint getDirectionPriority() const;
+		jfloat getRowDelay() const;
+		void setColumnDelay(jfloat arg0) const;
+		void setDirection(jint arg0) const;
+		void setDirectionPriority(jint arg0) const;
+		void setRowDelay(jfloat arg0) const;
+		jboolean willOverlap() const;
 	};
 } // namespace android::view::animation
 

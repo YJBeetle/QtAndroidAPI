@@ -28,7 +28,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jboolean LinkProperties::addRoute(android::net::RouteInfo arg0)
+	jboolean LinkProperties::addRoute(android::net::RouteInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"addRoute",
@@ -36,21 +36,21 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LinkProperties::clear()
+	void LinkProperties::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jint LinkProperties::describeContents()
+	jint LinkProperties::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean LinkProperties::equals(JObject arg0)
+	jboolean LinkProperties::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -58,77 +58,77 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	JObject LinkProperties::getDnsServers()
+	JObject LinkProperties::getDnsServers() const
 	{
 		return callObjectMethod(
 			"getDnsServers",
 			"()Ljava/util/List;"
 		);
 	}
-	JString LinkProperties::getDomains()
+	JString LinkProperties::getDomains() const
 	{
 		return callObjectMethod(
 			"getDomains",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::ProxyInfo LinkProperties::getHttpProxy()
+	android::net::ProxyInfo LinkProperties::getHttpProxy() const
 	{
 		return callObjectMethod(
 			"getHttpProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	JString LinkProperties::getInterfaceName()
+	JString LinkProperties::getInterfaceName() const
 	{
 		return callObjectMethod(
 			"getInterfaceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject LinkProperties::getLinkAddresses()
+	JObject LinkProperties::getLinkAddresses() const
 	{
 		return callObjectMethod(
 			"getLinkAddresses",
 			"()Ljava/util/List;"
 		);
 	}
-	jint LinkProperties::getMtu()
+	jint LinkProperties::getMtu() const
 	{
 		return callMethod<jint>(
 			"getMtu",
 			"()I"
 		);
 	}
-	JString LinkProperties::getPrivateDnsServerName()
+	JString LinkProperties::getPrivateDnsServerName() const
 	{
 		return callObjectMethod(
 			"getPrivateDnsServerName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject LinkProperties::getRoutes()
+	JObject LinkProperties::getRoutes() const
 	{
 		return callObjectMethod(
 			"getRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	jint LinkProperties::hashCode()
+	jint LinkProperties::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean LinkProperties::isPrivateDnsActive()
+	jboolean LinkProperties::isPrivateDnsActive() const
 	{
 		return callMethod<jboolean>(
 			"isPrivateDnsActive",
 			"()Z"
 		);
 	}
-	void LinkProperties::setDnsServers(JObject arg0)
+	void LinkProperties::setDnsServers(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDnsServers",
@@ -136,7 +136,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LinkProperties::setDomains(JString arg0)
+	void LinkProperties::setDomains(JString arg0) const
 	{
 		callMethod<void>(
 			"setDomains",
@@ -144,7 +144,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	void LinkProperties::setHttpProxy(android::net::ProxyInfo arg0)
+	void LinkProperties::setHttpProxy(android::net::ProxyInfo arg0) const
 	{
 		callMethod<void>(
 			"setHttpProxy",
@@ -152,7 +152,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LinkProperties::setInterfaceName(JString arg0)
+	void LinkProperties::setInterfaceName(JString arg0) const
 	{
 		callMethod<void>(
 			"setInterfaceName",
@@ -160,7 +160,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	void LinkProperties::setLinkAddresses(JObject arg0)
+	void LinkProperties::setLinkAddresses(JObject arg0) const
 	{
 		callMethod<void>(
 			"setLinkAddresses",
@@ -168,7 +168,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LinkProperties::setMtu(jint arg0)
+	void LinkProperties::setMtu(jint arg0) const
 	{
 		callMethod<void>(
 			"setMtu",
@@ -176,14 +176,14 @@ namespace android::net
 			arg0
 		);
 	}
-	JString LinkProperties::toString()
+	JString LinkProperties::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LinkProperties::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LinkProperties::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

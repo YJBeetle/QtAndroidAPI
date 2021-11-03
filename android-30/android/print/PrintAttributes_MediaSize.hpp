@@ -107,16 +107,16 @@ namespace android::print
 		PrintAttributes_MediaSize(JString arg0, JString arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::print::PrintAttributes_MediaSize asLandscape();
-		android::print::PrintAttributes_MediaSize asPortrait();
-		jboolean equals(JObject arg0);
-		jint getHeightMils();
-		JString getId();
-		JString getLabel(android::content::pm::PackageManager arg0);
-		jint getWidthMils();
-		jint hashCode();
-		jboolean isPortrait();
-		JString toString();
+		android::print::PrintAttributes_MediaSize asLandscape() const;
+		android::print::PrintAttributes_MediaSize asPortrait() const;
+		jboolean equals(JObject arg0) const;
+		jint getHeightMils() const;
+		JString getId() const;
+		JString getLabel(android::content::pm::PackageManager arg0) const;
+		jint getWidthMils() const;
+		jint hashCode() const;
+		jboolean isPortrait() const;
+		JString toString() const;
 	};
 } // namespace android::print
 

@@ -25,12 +25,12 @@ namespace android::view
 		KeyboardShortcutInfo(JString arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint describeContents();
-		jchar getBaseCharacter();
-		jint getKeycode();
-		JString getLabel();
-		jint getModifiers();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jchar getBaseCharacter() const;
+		jint getKeycode() const;
+		JString getLabel() const;
+		jint getModifiers() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

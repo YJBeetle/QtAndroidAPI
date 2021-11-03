@@ -28,9 +28,9 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		JArray getCpuUsages();
-		JFloatArray getDeviceTemperatures(jint arg0, jint arg1);
-		JFloatArray getFanSpeeds();
+		JArray getCpuUsages() const;
+		JFloatArray getDeviceTemperatures(jint arg0, jint arg1) const;
+		JFloatArray getFanSpeeds() const;
 	};
 } // namespace android::os
 

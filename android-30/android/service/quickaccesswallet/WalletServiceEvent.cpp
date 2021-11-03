@@ -32,21 +32,21 @@ namespace android::service::quickaccesswallet
 		) {}
 	
 	// Methods
-	jint WalletServiceEvent::describeContents()
+	jint WalletServiceEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint WalletServiceEvent::getEventType()
+	jint WalletServiceEvent::getEventType() const
 	{
 		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
-	void WalletServiceEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WalletServiceEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

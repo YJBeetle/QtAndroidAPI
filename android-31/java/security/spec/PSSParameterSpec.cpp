@@ -42,42 +42,42 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	JString PSSParameterSpec::getDigestAlgorithm()
+	JString PSSParameterSpec::getDigestAlgorithm() const
 	{
 		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PSSParameterSpec::getMGFAlgorithm()
+	JString PSSParameterSpec::getMGFAlgorithm() const
 	{
 		return callObjectMethod(
 			"getMGFAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject PSSParameterSpec::getMGFParameters()
+	JObject PSSParameterSpec::getMGFParameters() const
 	{
 		return callObjectMethod(
 			"getMGFParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	jint PSSParameterSpec::getSaltLength()
+	jint PSSParameterSpec::getSaltLength() const
 	{
 		return callMethod<jint>(
 			"getSaltLength",
 			"()I"
 		);
 	}
-	jint PSSParameterSpec::getTrailerField()
+	jint PSSParameterSpec::getTrailerField() const
 	{
 		return callMethod<jint>(
 			"getTrailerField",
 			"()I"
 		);
 	}
-	JString PSSParameterSpec::toString()
+	JString PSSParameterSpec::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -20,28 +20,28 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger DSAPublicKeySpec::getG()
+	java::math::BigInteger DSAPublicKeySpec::getG() const
 	{
 		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger DSAPublicKeySpec::getP()
+	java::math::BigInteger DSAPublicKeySpec::getP() const
 	{
 		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger DSAPublicKeySpec::getQ()
+	java::math::BigInteger DSAPublicKeySpec::getQ() const
 	{
 		return callObjectMethod(
 			"getQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger DSAPublicKeySpec::getY()
+	java::math::BigInteger DSAPublicKeySpec::getY() const
 	{
 		return callObjectMethod(
 			"getY",

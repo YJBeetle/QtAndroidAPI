@@ -29,13 +29,13 @@ namespace android::view::displayhash
 		VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, JString arg2, JByteArray arg3);
 		
 		// Methods
-		jint describeContents();
-		android::graphics::Rect getBoundsInWindow();
-		JString getHashAlgorithm();
-		JByteArray getImageHash();
-		jlong getTimeMillis();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::graphics::Rect getBoundsInWindow() const;
+		JString getHashAlgorithm() const;
+		JByteArray getImageHash() const;
+		jlong getTimeMillis() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::displayhash
 

@@ -33,14 +33,14 @@ namespace android::nfc
 		NdefMessage(android::nfc::NdefRecord arg0, JArray arg1);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getByteArrayLength();
-		JArray getRecords();
-		jint hashCode();
-		JByteArray toByteArray();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getByteArrayLength() const;
+		JArray getRecords() const;
+		jint hashCode() const;
+		JByteArray toByteArray() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::nfc
 

@@ -34,12 +34,12 @@ namespace android::view
 		GestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2, jboolean arg3);
 		
 		// Methods
-		jboolean isLongpressEnabled();
-		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setContextClickListener(JObject arg0);
-		void setIsLongpressEnabled(jboolean arg0);
-		void setOnDoubleTapListener(JObject arg0);
+		jboolean isLongpressEnabled() const;
+		jboolean onGenericMotionEvent(android::view::MotionEvent arg0) const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		void setContextClickListener(JObject arg0) const;
+		void setIsLongpressEnabled(jboolean arg0) const;
+		void setOnDoubleTapListener(JObject arg0) const;
 	};
 } // namespace android::view
 

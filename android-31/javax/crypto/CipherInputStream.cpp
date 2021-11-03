@@ -20,35 +20,35 @@ namespace javax::crypto
 		) {}
 	
 	// Methods
-	jint CipherInputStream::available()
+	jint CipherInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void CipherInputStream::close()
+	void CipherInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean CipherInputStream::markSupported()
+	jboolean CipherInputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint CipherInputStream::read()
+	jint CipherInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint CipherInputStream::read(JByteArray arg0)
+	jint CipherInputStream::read(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -56,7 +56,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint CipherInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint CipherInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -66,7 +66,7 @@ namespace javax::crypto
 			arg2
 		);
 	}
-	jlong CipherInputStream::skip(jlong arg0)
+	jlong CipherInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

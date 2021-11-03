@@ -36,42 +36,42 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::content::IntentFilter Instrumentation_ActivityMonitor::getFilter()
+	android::content::IntentFilter Instrumentation_ActivityMonitor::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/content/IntentFilter;"
 		);
 	}
-	jint Instrumentation_ActivityMonitor::getHits()
+	jint Instrumentation_ActivityMonitor::getHits() const
 	{
 		return callMethod<jint>(
 			"getHits",
 			"()I"
 		);
 	}
-	android::app::Activity Instrumentation_ActivityMonitor::getLastActivity()
+	android::app::Activity Instrumentation_ActivityMonitor::getLastActivity() const
 	{
 		return callObjectMethod(
 			"getLastActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	android::app::Instrumentation_ActivityResult Instrumentation_ActivityMonitor::getResult()
+	android::app::Instrumentation_ActivityResult Instrumentation_ActivityMonitor::getResult() const
 	{
 		return callObjectMethod(
 			"getResult",
 			"()Landroid/app/Instrumentation$ActivityResult;"
 		);
 	}
-	jboolean Instrumentation_ActivityMonitor::isBlocking()
+	jboolean Instrumentation_ActivityMonitor::isBlocking() const
 	{
 		return callMethod<jboolean>(
 			"isBlocking",
 			"()Z"
 		);
 	}
-	android::app::Instrumentation_ActivityResult Instrumentation_ActivityMonitor::onStartActivity(android::content::Intent arg0)
+	android::app::Instrumentation_ActivityResult Instrumentation_ActivityMonitor::onStartActivity(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onStartActivity",
@@ -79,14 +79,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Activity Instrumentation_ActivityMonitor::waitForActivity()
+	android::app::Activity Instrumentation_ActivityMonitor::waitForActivity() const
 	{
 		return callObjectMethod(
 			"waitForActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	android::app::Activity Instrumentation_ActivityMonitor::waitForActivityWithTimeout(jlong arg0)
+	android::app::Activity Instrumentation_ActivityMonitor::waitForActivityWithTimeout(jlong arg0) const
 	{
 		return callObjectMethod(
 			"waitForActivityWithTimeout",

@@ -27,21 +27,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void BufferedReader::close()
+	void BufferedReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject BufferedReader::lines()
+	JObject BufferedReader::lines() const
 	{
 		return callObjectMethod(
 			"lines",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	void BufferedReader::mark(jint arg0)
+	void BufferedReader::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -49,21 +49,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean BufferedReader::markSupported()
+	jboolean BufferedReader::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint BufferedReader::read()
+	jint BufferedReader::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint BufferedReader::read(JCharArray arg0, jint arg1, jint arg2)
+	jint BufferedReader::read(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -73,28 +73,28 @@ namespace java::io
 			arg2
 		);
 	}
-	JString BufferedReader::readLine()
+	JString BufferedReader::readLine() const
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean BufferedReader::ready()
+	jboolean BufferedReader::ready() const
 	{
 		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
-	void BufferedReader::reset()
+	void BufferedReader::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong BufferedReader::skip(jlong arg0)
+	jlong BufferedReader::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

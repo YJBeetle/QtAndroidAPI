@@ -31,16 +31,16 @@ namespace android::net::wifi::aware
 		DiscoverySessionCallback();
 		
 		// Methods
-		void onMessageReceived(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1);
-		void onMessageSendFailed(jint arg0);
-		void onMessageSendSucceeded(jint arg0);
-		void onPublishStarted(android::net::wifi::aware::PublishDiscoverySession arg0);
-		void onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2);
-		void onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2, jint arg3);
-		void onSessionConfigFailed();
-		void onSessionConfigUpdated();
-		void onSessionTerminated();
-		void onSubscribeStarted(android::net::wifi::aware::SubscribeDiscoverySession arg0);
+		void onMessageReceived(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1) const;
+		void onMessageSendFailed(jint arg0) const;
+		void onMessageSendSucceeded(jint arg0) const;
+		void onPublishStarted(android::net::wifi::aware::PublishDiscoverySession arg0) const;
+		void onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2) const;
+		void onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2, jint arg3) const;
+		void onSessionConfigFailed() const;
+		void onSessionConfigUpdated() const;
+		void onSessionTerminated() const;
+		void onSubscribeStarted(android::net::wifi::aware::SubscribeDiscoverySession arg0) const;
 	};
 } // namespace android::net::wifi::aware
 

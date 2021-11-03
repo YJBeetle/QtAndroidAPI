@@ -34,15 +34,15 @@ namespace android::net::wifi::hotspot2
 		PasspointConfiguration(android::net::wifi::hotspot2::PasspointConfiguration &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::net::wifi::hotspot2::pps::Credential getCredential();
-		android::net::wifi::hotspot2::pps::HomeSp getHomeSp();
-		jint hashCode();
-		void setCredential(android::net::wifi::hotspot2::pps::Credential arg0);
-		void setHomeSp(android::net::wifi::hotspot2::pps::HomeSp arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::net::wifi::hotspot2::pps::Credential getCredential() const;
+		android::net::wifi::hotspot2::pps::HomeSp getHomeSp() const;
+		jint hashCode() const;
+		void setCredential(android::net::wifi::hotspot2::pps::Credential arg0) const;
+		void setHomeSp(android::net::wifi::hotspot2::pps::HomeSp arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::hotspot2
 

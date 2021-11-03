@@ -21,9 +21,9 @@ namespace java::security::cert
 		CollectionCertStoreParameters(JObject arg0);
 		
 		// Methods
-		JObject clone();
-		JObject getCollection();
-		JString toString();
+		JObject clone() const;
+		JObject getCollection() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

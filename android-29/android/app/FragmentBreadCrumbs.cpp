@@ -34,14 +34,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void FragmentBreadCrumbs::onBackStackChanged()
+	void FragmentBreadCrumbs::onBackStackChanged() const
 	{
 		callMethod<void>(
 			"onBackStackChanged",
 			"()V"
 		);
 	}
-	void FragmentBreadCrumbs::setActivity(android::app::Activity arg0)
+	void FragmentBreadCrumbs::setActivity(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"setActivity",
@@ -49,7 +49,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentBreadCrumbs::setMaxVisible(jint arg0)
+	void FragmentBreadCrumbs::setMaxVisible(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxVisible",
@@ -57,7 +57,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(JObject arg0)
+	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnBreadCrumbClickListener",
@@ -65,7 +65,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentBreadCrumbs::setParentTitle(JString arg0, JString arg1, JObject arg2)
+	void FragmentBreadCrumbs::setParentTitle(JString arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setParentTitle",
@@ -75,7 +75,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentBreadCrumbs::setTitle(JString arg0, JString arg1)
+	void FragmentBreadCrumbs::setTitle(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setTitle",

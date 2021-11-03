@@ -72,56 +72,56 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint ContentInfo::describeContents()
+	jint ContentInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::content::ClipData ContentInfo::getClip()
+	android::content::ClipData ContentInfo::getClip() const
 	{
 		return callObjectMethod(
 			"getClip",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	android::os::Bundle ContentInfo::getExtras()
+	android::os::Bundle ContentInfo::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint ContentInfo::getFlags()
+	jint ContentInfo::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	android::net::Uri ContentInfo::getLinkUri()
+	android::net::Uri ContentInfo::getLinkUri() const
 	{
 		return callObjectMethod(
 			"getLinkUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint ContentInfo::getSource()
+	jint ContentInfo::getSource() const
 	{
 		return callMethod<jint>(
 			"getSource",
 			"()I"
 		);
 	}
-	JString ContentInfo::toString()
+	JString ContentInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ContentInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContentInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

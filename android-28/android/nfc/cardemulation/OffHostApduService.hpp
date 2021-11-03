@@ -25,7 +25,7 @@ namespace android::nfc::cardemulation
 		OffHostApduService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0) const;
 	};
 } // namespace android::nfc::cardemulation
 

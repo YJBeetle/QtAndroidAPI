@@ -36,14 +36,14 @@ namespace android::media
 		MediaSession2Service();
 		
 		// Methods
-		void addSession(android::media::MediaSession2 arg0);
-		JObject getSessions();
-		JObject onBind(android::content::Intent arg0);
-		void onCreate();
-		void onDestroy();
-		android::media::MediaSession2 onGetSession(android::media::MediaSession2_ControllerInfo arg0);
-		android::media::MediaSession2Service_MediaNotification onUpdateNotification(android::media::MediaSession2 arg0);
-		void removeSession(android::media::MediaSession2 arg0);
+		void addSession(android::media::MediaSession2 arg0) const;
+		JObject getSessions() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onCreate() const;
+		void onDestroy() const;
+		android::media::MediaSession2 onGetSession(android::media::MediaSession2_ControllerInfo arg0) const;
+		android::media::MediaSession2Service_MediaNotification onUpdateNotification(android::media::MediaSession2 arg0) const;
+		void removeSession(android::media::MediaSession2 arg0) const;
 	};
 } // namespace android::media
 

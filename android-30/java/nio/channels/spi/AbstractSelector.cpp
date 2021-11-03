@@ -15,21 +15,21 @@ namespace java::nio::channels::spi
 	// Constructors
 	
 	// Methods
-	void AbstractSelector::close()
+	void AbstractSelector::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean AbstractSelector::isOpen()
+	jboolean AbstractSelector::isOpen() const
 	{
 		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
-	java::nio::channels::spi::SelectorProvider AbstractSelector::provider()
+	java::nio::channels::spi::SelectorProvider AbstractSelector::provider() const
 	{
 		return callObjectMethod(
 			"provider",

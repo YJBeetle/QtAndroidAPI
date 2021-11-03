@@ -36,7 +36,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void ShapeDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void ShapeDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -44,7 +44,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ShapeDrawable::draw(android::graphics::Canvas arg0)
+	void ShapeDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -52,49 +52,49 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint ShapeDrawable::getAlpha()
+	jint ShapeDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint ShapeDrawable::getChangingConfigurations()
+	jint ShapeDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState ShapeDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState ShapeDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jint ShapeDrawable::getIntrinsicHeight()
+	jint ShapeDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint ShapeDrawable::getIntrinsicWidth()
+	jint ShapeDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint ShapeDrawable::getOpacity()
+	jint ShapeDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void ShapeDrawable::getOutline(android::graphics::Outline arg0)
+	void ShapeDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -102,7 +102,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean ShapeDrawable::getPadding(android::graphics::Rect arg0)
+	jboolean ShapeDrawable::getPadding(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPadding",
@@ -110,28 +110,28 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::Paint ShapeDrawable::getPaint()
+	android::graphics::Paint ShapeDrawable::getPaint() const
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	android::graphics::drawable::ShapeDrawable_ShaderFactory ShapeDrawable::getShaderFactory()
+	android::graphics::drawable::ShapeDrawable_ShaderFactory ShapeDrawable::getShaderFactory() const
 	{
 		return callObjectMethod(
 			"getShaderFactory",
 			"()Landroid/graphics/drawable/ShapeDrawable$ShaderFactory;"
 		);
 	}
-	android::graphics::drawable::shapes::Shape ShapeDrawable::getShape()
+	android::graphics::drawable::shapes::Shape ShapeDrawable::getShape() const
 	{
 		return callObjectMethod(
 			"getShape",
 			"()Landroid/graphics/drawable/shapes/Shape;"
 		);
 	}
-	void ShapeDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void ShapeDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -142,21 +142,21 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean ShapeDrawable::isStateful()
+	jboolean ShapeDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable ShapeDrawable::mutate()
+	android::graphics::drawable::Drawable ShapeDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void ShapeDrawable::setAlpha(jint arg0)
+	void ShapeDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -164,7 +164,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void ShapeDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void ShapeDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -172,7 +172,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ShapeDrawable::setDither(jboolean arg0)
+	void ShapeDrawable::setDither(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDither",
@@ -180,7 +180,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void ShapeDrawable::setIntrinsicHeight(jint arg0)
+	void ShapeDrawable::setIntrinsicHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setIntrinsicHeight",
@@ -188,7 +188,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void ShapeDrawable::setIntrinsicWidth(jint arg0)
+	void ShapeDrawable::setIntrinsicWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setIntrinsicWidth",
@@ -196,7 +196,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void ShapeDrawable::setPadding(android::graphics::Rect arg0)
+	void ShapeDrawable::setPadding(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setPadding",
@@ -204,7 +204,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ShapeDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
+	void ShapeDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPadding",
@@ -215,7 +215,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void ShapeDrawable::setShaderFactory(android::graphics::drawable::ShapeDrawable_ShaderFactory arg0)
+	void ShapeDrawable::setShaderFactory(android::graphics::drawable::ShapeDrawable_ShaderFactory arg0) const
 	{
 		callMethod<void>(
 			"setShaderFactory",
@@ -223,7 +223,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ShapeDrawable::setShape(android::graphics::drawable::shapes::Shape arg0)
+	void ShapeDrawable::setShape(android::graphics::drawable::shapes::Shape arg0) const
 	{
 		callMethod<void>(
 			"setShape",
@@ -231,7 +231,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ShapeDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void ShapeDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -239,7 +239,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ShapeDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void ShapeDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",

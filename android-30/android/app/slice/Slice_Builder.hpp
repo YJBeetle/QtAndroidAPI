@@ -49,17 +49,17 @@ namespace android::app::slice
 		Slice_Builder(android::net::Uri arg0, android::app::slice::SliceSpec arg1);
 		
 		// Methods
-		android::app::slice::Slice_Builder addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, JString arg2);
-		android::app::slice::Slice_Builder addBundle(android::os::Bundle arg0, JString arg1, JObject arg2);
-		android::app::slice::Slice_Builder addHints(JObject arg0);
-		android::app::slice::Slice_Builder addIcon(android::graphics::drawable::Icon arg0, JString arg1, JObject arg2);
-		android::app::slice::Slice_Builder addInt(jint arg0, JString arg1, JObject arg2);
-		android::app::slice::Slice_Builder addLong(jlong arg0, JString arg1, JObject arg2);
-		android::app::slice::Slice_Builder addRemoteInput(android::app::RemoteInput arg0, JString arg1, JObject arg2);
-		android::app::slice::Slice_Builder addSubSlice(android::app::slice::Slice arg0, JString arg1);
-		android::app::slice::Slice_Builder addText(JString arg0, JString arg1, JObject arg2);
-		android::app::slice::Slice build();
-		android::app::slice::Slice_Builder setCallerNeeded(jboolean arg0);
+		android::app::slice::Slice_Builder addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, JString arg2) const;
+		android::app::slice::Slice_Builder addBundle(android::os::Bundle arg0, JString arg1, JObject arg2) const;
+		android::app::slice::Slice_Builder addHints(JObject arg0) const;
+		android::app::slice::Slice_Builder addIcon(android::graphics::drawable::Icon arg0, JString arg1, JObject arg2) const;
+		android::app::slice::Slice_Builder addInt(jint arg0, JString arg1, JObject arg2) const;
+		android::app::slice::Slice_Builder addLong(jlong arg0, JString arg1, JObject arg2) const;
+		android::app::slice::Slice_Builder addRemoteInput(android::app::RemoteInput arg0, JString arg1, JObject arg2) const;
+		android::app::slice::Slice_Builder addSubSlice(android::app::slice::Slice arg0, JString arg1) const;
+		android::app::slice::Slice_Builder addText(JString arg0, JString arg1, JObject arg2) const;
+		android::app::slice::Slice build() const;
+		android::app::slice::Slice_Builder setCallerNeeded(jboolean arg0) const;
 	};
 } // namespace android::app::slice
 

@@ -26,18 +26,18 @@ namespace android::telephony::cdma
 		
 		// Methods
 		static jdouble convertQuartSecToDecDegrees(jint arg0);
-		jboolean equals(JObject arg0);
-		void fillInNotifierBundle(android::os::Bundle arg0);
-		jint getBaseStationId();
-		jint getBaseStationLatitude();
-		jint getBaseStationLongitude();
-		jint getNetworkId();
-		jint getSystemId();
-		jint hashCode();
-		void setCellLocationData(jint arg0, jint arg1, jint arg2);
-		void setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		void setStateInvalid();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		void fillInNotifierBundle(android::os::Bundle arg0) const;
+		jint getBaseStationId() const;
+		jint getBaseStationLatitude() const;
+		jint getBaseStationLongitude() const;
+		jint getNetworkId() const;
+		jint getSystemId() const;
+		jint hashCode() const;
+		void setCellLocationData(jint arg0, jint arg1, jint arg2) const;
+		void setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
+		void setStateInvalid() const;
+		JString toString() const;
 	};
 } // namespace android::telephony::cdma
 

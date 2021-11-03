@@ -38,7 +38,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint GameManager::getGameMode()
+	jint GameManager::getGameMode() const
 	{
 		return callMethod<jint>(
 			"getGameMode",

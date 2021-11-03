@@ -38,9 +38,9 @@ namespace java::util::jar
 		Attributes_Name(JString arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::util::jar
 

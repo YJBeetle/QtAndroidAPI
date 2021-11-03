@@ -271,7 +271,7 @@ namespace java::time::temporal
 			"()[Ljava/time/temporal/ChronoField;"
 		);
 	}
-	JObject ChronoField::adjustInto(JObject arg0, jlong arg1)
+	JObject ChronoField::adjustInto(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -280,7 +280,7 @@ namespace java::time::temporal
 			arg1
 		);
 	}
-	jint ChronoField::checkValidIntValue(jlong arg0)
+	jint ChronoField::checkValidIntValue(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"checkValidIntValue",
@@ -288,7 +288,7 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	jlong ChronoField::checkValidValue(jlong arg0)
+	jlong ChronoField::checkValidValue(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"checkValidValue",
@@ -296,14 +296,14 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	JObject ChronoField::getBaseUnit()
+	JObject ChronoField::getBaseUnit() const
 	{
 		return callObjectMethod(
 			"getBaseUnit",
 			"()Ljava/time/temporal/TemporalUnit;"
 		);
 	}
-	JString ChronoField::getDisplayName(java::util::Locale arg0)
+	JString ChronoField::getDisplayName(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -311,7 +311,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	jlong ChronoField::getFrom(JObject arg0)
+	jlong ChronoField::getFrom(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getFrom",
@@ -319,21 +319,21 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	JObject ChronoField::getRangeUnit()
+	JObject ChronoField::getRangeUnit() const
 	{
 		return callObjectMethod(
 			"getRangeUnit",
 			"()Ljava/time/temporal/TemporalUnit;"
 		);
 	}
-	jboolean ChronoField::isDateBased()
+	jboolean ChronoField::isDateBased() const
 	{
 		return callMethod<jboolean>(
 			"isDateBased",
 			"()Z"
 		);
 	}
-	jboolean ChronoField::isSupportedBy(JObject arg0)
+	jboolean ChronoField::isSupportedBy(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupportedBy",
@@ -341,21 +341,21 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	jboolean ChronoField::isTimeBased()
+	jboolean ChronoField::isTimeBased() const
 	{
 		return callMethod<jboolean>(
 			"isTimeBased",
 			"()Z"
 		);
 	}
-	java::time::temporal::ValueRange ChronoField::range()
+	java::time::temporal::ValueRange ChronoField::range() const
 	{
 		return callObjectMethod(
 			"range",
 			"()Ljava/time/temporal/ValueRange;"
 		);
 	}
-	java::time::temporal::ValueRange ChronoField::rangeRefinedBy(JObject arg0)
+	java::time::temporal::ValueRange ChronoField::rangeRefinedBy(JObject arg0) const
 	{
 		return callObjectMethod(
 			"rangeRefinedBy",
@@ -363,7 +363,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	JString ChronoField::toString()
+	JString ChronoField::toString() const
 	{
 		return callObjectMethod(
 			"toString",

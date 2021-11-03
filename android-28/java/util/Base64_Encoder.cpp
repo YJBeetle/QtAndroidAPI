@@ -15,7 +15,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	JByteArray Base64_Encoder::encode(JByteArray arg0)
+	JByteArray Base64_Encoder::encode(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"encode",
@@ -23,7 +23,7 @@ namespace java::util
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint Base64_Encoder::encode(JByteArray arg0, JByteArray arg1)
+	jint Base64_Encoder::encode(JByteArray arg0, JByteArray arg1) const
 	{
 		return callMethod<jint>(
 			"encode",
@@ -32,7 +32,7 @@ namespace java::util
 			arg1.object<jbyteArray>()
 		);
 	}
-	java::nio::ByteBuffer Base64_Encoder::encode(java::nio::ByteBuffer arg0)
+	java::nio::ByteBuffer Base64_Encoder::encode(java::nio::ByteBuffer arg0) const
 	{
 		return callObjectMethod(
 			"encode",
@@ -40,7 +40,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Base64_Encoder::encodeToString(JByteArray arg0)
+	JString Base64_Encoder::encodeToString(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"encodeToString",
@@ -48,14 +48,14 @@ namespace java::util
 			arg0.object<jbyteArray>()
 		);
 	}
-	java::util::Base64_Encoder Base64_Encoder::withoutPadding()
+	java::util::Base64_Encoder Base64_Encoder::withoutPadding() const
 	{
 		return callObjectMethod(
 			"withoutPadding",
 			"()Ljava/util/Base64$Encoder;"
 		);
 	}
-	java::io::OutputStream Base64_Encoder::wrap(java::io::OutputStream arg0)
+	java::io::OutputStream Base64_Encoder::wrap(java::io::OutputStream arg0) const
 	{
 		return callObjectMethod(
 			"wrap",

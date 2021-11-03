@@ -23,13 +23,13 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::util::Range getBitrateRange();
-		JArray getInputChannelCountRanges();
-		jint getMaxInputChannelCount();
-		jint getMinInputChannelCount();
-		JArray getSupportedSampleRateRanges();
-		JIntArray getSupportedSampleRates();
-		jboolean isSampleRateSupported(jint arg0);
+		android::util::Range getBitrateRange() const;
+		JArray getInputChannelCountRanges() const;
+		jint getMaxInputChannelCount() const;
+		jint getMinInputChannelCount() const;
+		JArray getSupportedSampleRateRanges() const;
+		JIntArray getSupportedSampleRates() const;
+		jboolean isSampleRateSupported(jint arg0) const;
 	};
 } // namespace android::media
 

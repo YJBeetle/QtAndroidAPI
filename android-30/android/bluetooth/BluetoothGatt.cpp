@@ -107,14 +107,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	void BluetoothGatt::abortReliableWrite()
+	void BluetoothGatt::abortReliableWrite() const
 	{
 		callMethod<void>(
 			"abortReliableWrite",
 			"()V"
 		);
 	}
-	void BluetoothGatt::abortReliableWrite(android::bluetooth::BluetoothDevice arg0)
+	void BluetoothGatt::abortReliableWrite(android::bluetooth::BluetoothDevice arg0) const
 	{
 		callMethod<void>(
 			"abortReliableWrite",
@@ -122,56 +122,56 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothGatt::beginReliableWrite()
+	jboolean BluetoothGatt::beginReliableWrite() const
 	{
 		return callMethod<jboolean>(
 			"beginReliableWrite",
 			"()Z"
 		);
 	}
-	void BluetoothGatt::close()
+	void BluetoothGatt::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean BluetoothGatt::connect()
+	jboolean BluetoothGatt::connect() const
 	{
 		return callMethod<jboolean>(
 			"connect",
 			"()Z"
 		);
 	}
-	void BluetoothGatt::disconnect()
+	void BluetoothGatt::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	jboolean BluetoothGatt::discoverServices()
+	jboolean BluetoothGatt::discoverServices() const
 	{
 		return callMethod<jboolean>(
 			"discoverServices",
 			"()Z"
 		);
 	}
-	jboolean BluetoothGatt::executeReliableWrite()
+	jboolean BluetoothGatt::executeReliableWrite() const
 	{
 		return callMethod<jboolean>(
 			"executeReliableWrite",
 			"()Z"
 		);
 	}
-	JObject BluetoothGatt::getConnectedDevices()
+	JObject BluetoothGatt::getConnectedDevices() const
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint BluetoothGatt::getConnectionState(android::bluetooth::BluetoothDevice arg0)
+	jint BluetoothGatt::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
@@ -179,14 +179,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	android::bluetooth::BluetoothDevice BluetoothGatt::getDevice()
+	android::bluetooth::BluetoothDevice BluetoothGatt::getDevice() const
 	{
 		return callObjectMethod(
 			"getDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
-	JObject BluetoothGatt::getDevicesMatchingConnectionStates(JIntArray arg0)
+	JObject BluetoothGatt::getDevicesMatchingConnectionStates(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -194,7 +194,7 @@ namespace android::bluetooth
 			arg0.object<jintArray>()
 		);
 	}
-	android::bluetooth::BluetoothGattService BluetoothGatt::getService(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattService BluetoothGatt::getService(java::util::UUID arg0) const
 	{
 		return callObjectMethod(
 			"getService",
@@ -202,14 +202,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothGatt::getServices()
+	JObject BluetoothGatt::getServices() const
 	{
 		return callObjectMethod(
 			"getServices",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean BluetoothGatt::readCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0)
+	jboolean BluetoothGatt::readCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0) const
 	{
 		return callMethod<jboolean>(
 			"readCharacteristic",
@@ -217,7 +217,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothGatt::readDescriptor(android::bluetooth::BluetoothGattDescriptor arg0)
+	jboolean BluetoothGatt::readDescriptor(android::bluetooth::BluetoothGattDescriptor arg0) const
 	{
 		return callMethod<jboolean>(
 			"readDescriptor",
@@ -225,21 +225,21 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	void BluetoothGatt::readPhy()
+	void BluetoothGatt::readPhy() const
 	{
 		callMethod<void>(
 			"readPhy",
 			"()V"
 		);
 	}
-	jboolean BluetoothGatt::readRemoteRssi()
+	jboolean BluetoothGatt::readRemoteRssi() const
 	{
 		return callMethod<jboolean>(
 			"readRemoteRssi",
 			"()Z"
 		);
 	}
-	jboolean BluetoothGatt::requestConnectionPriority(jint arg0)
+	jboolean BluetoothGatt::requestConnectionPriority(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestConnectionPriority",
@@ -247,7 +247,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothGatt::requestMtu(jint arg0)
+	jboolean BluetoothGatt::requestMtu(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestMtu",
@@ -255,7 +255,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothGatt::setCharacteristicNotification(android::bluetooth::BluetoothGattCharacteristic arg0, jboolean arg1)
+	jboolean BluetoothGatt::setCharacteristicNotification(android::bluetooth::BluetoothGattCharacteristic arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setCharacteristicNotification",
@@ -264,7 +264,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothGatt::setPreferredPhy(jint arg0, jint arg1, jint arg2)
+	void BluetoothGatt::setPreferredPhy(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setPreferredPhy",
@@ -274,7 +274,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	jboolean BluetoothGatt::writeCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0)
+	jboolean BluetoothGatt::writeCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0) const
 	{
 		return callMethod<jboolean>(
 			"writeCharacteristic",
@@ -282,7 +282,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothGatt::writeDescriptor(android::bluetooth::BluetoothGattDescriptor arg0)
+	jboolean BluetoothGatt::writeDescriptor(android::bluetooth::BluetoothGattDescriptor arg0) const
 	{
 		return callMethod<jboolean>(
 			"writeDescriptor",

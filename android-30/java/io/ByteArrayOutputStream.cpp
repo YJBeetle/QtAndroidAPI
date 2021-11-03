@@ -25,42 +25,42 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void ByteArrayOutputStream::close()
+	void ByteArrayOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ByteArrayOutputStream::reset()
+	void ByteArrayOutputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jint ByteArrayOutputStream::size()
+	jint ByteArrayOutputStream::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JByteArray ByteArrayOutputStream::toByteArray()
+	JByteArray ByteArrayOutputStream::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	JString ByteArrayOutputStream::toString()
+	JString ByteArrayOutputStream::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ByteArrayOutputStream::toString(jint arg0)
+	JString ByteArrayOutputStream::toString(jint arg0) const
 	{
 		return callObjectMethod(
 			"toString",
@@ -68,7 +68,7 @@ namespace java::io
 			arg0
 		);
 	}
-	JString ByteArrayOutputStream::toString(JString arg0)
+	JString ByteArrayOutputStream::toString(JString arg0) const
 	{
 		return callObjectMethod(
 			"toString",
@@ -76,7 +76,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	JString ByteArrayOutputStream::toString(java::nio::charset::Charset arg0)
+	JString ByteArrayOutputStream::toString(java::nio::charset::Charset arg0) const
 	{
 		return callObjectMethod(
 			"toString",
@@ -84,7 +84,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	void ByteArrayOutputStream::write(jint arg0)
+	void ByteArrayOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -92,7 +92,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ByteArrayOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void ByteArrayOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -102,7 +102,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void ByteArrayOutputStream::writeBytes(JByteArray arg0)
+	void ByteArrayOutputStream::writeBytes(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"writeBytes",
@@ -110,7 +110,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void ByteArrayOutputStream::writeTo(java::io::OutputStream arg0)
+	void ByteArrayOutputStream::writeTo(java::io::OutputStream arg0) const
 	{
 		callMethod<void>(
 			"writeTo",

@@ -30,18 +30,18 @@ namespace android::app
 		ExpandableListActivity();
 		
 		// Methods
-		JObject getExpandableListAdapter();
-		android::widget::ExpandableListView getExpandableListView();
-		jlong getSelectedId();
-		jlong getSelectedPosition();
-		jboolean onChildClick(android::widget::ExpandableListView arg0, android::view::View arg1, jint arg2, jint arg3, jlong arg4);
-		void onContentChanged();
-		void onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2);
-		void onGroupCollapse(jint arg0);
-		void onGroupExpand(jint arg0);
-		void setListAdapter(JObject arg0);
-		jboolean setSelectedChild(jint arg0, jint arg1, jboolean arg2);
-		void setSelectedGroup(jint arg0);
+		JObject getExpandableListAdapter() const;
+		android::widget::ExpandableListView getExpandableListView() const;
+		jlong getSelectedId() const;
+		jlong getSelectedPosition() const;
+		jboolean onChildClick(android::widget::ExpandableListView arg0, android::view::View arg1, jint arg2, jint arg3, jlong arg4) const;
+		void onContentChanged() const;
+		void onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2) const;
+		void onGroupCollapse(jint arg0) const;
+		void onGroupExpand(jint arg0) const;
+		void setListAdapter(JObject arg0) const;
+		jboolean setSelectedChild(jint arg0, jint arg1, jboolean arg2) const;
+		void setSelectedGroup(jint arg0) const;
 	};
 } // namespace android::app
 

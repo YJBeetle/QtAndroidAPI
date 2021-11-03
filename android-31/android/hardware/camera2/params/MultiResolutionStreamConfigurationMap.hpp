@@ -20,13 +20,13 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JIntArray getInputFormats();
-		JObject getInputInfo(jint arg0);
-		JIntArray getOutputFormats();
-		JObject getOutputInfo(jint arg0);
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JIntArray getInputFormats() const;
+		JObject getInputInfo(jint arg0) const;
+		JIntArray getOutputFormats() const;
+		JObject getOutputInfo(jint arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

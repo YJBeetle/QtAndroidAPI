@@ -56,14 +56,14 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket()
+	java::net::Socket SSLCertificateSocketFactory::createSocket() const
 	{
 		return callObjectMethod(
 			"createSocket",
 			"()Ljava/net/Socket;"
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(JString arg0, jint arg1)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -72,7 +72,7 @@ namespace android::net
 			arg1
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -81,7 +81,7 @@ namespace android::net
 			arg1
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -92,7 +92,7 @@ namespace android::net
 			arg3
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -103,7 +103,7 @@ namespace android::net
 			arg3
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -114,14 +114,14 @@ namespace android::net
 			arg3
 		);
 	}
-	JArray SSLCertificateSocketFactory::getDefaultCipherSuites()
+	JArray SSLCertificateSocketFactory::getDefaultCipherSuites() const
 	{
 		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JByteArray SSLCertificateSocketFactory::getNpnSelectedProtocol(java::net::Socket arg0)
+	JByteArray SSLCertificateSocketFactory::getNpnSelectedProtocol(java::net::Socket arg0) const
 	{
 		return callObjectMethod(
 			"getNpnSelectedProtocol",
@@ -129,14 +129,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	JArray SSLCertificateSocketFactory::getSupportedCipherSuites()
+	JArray SSLCertificateSocketFactory::getSupportedCipherSuites() const
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
 		);
 	}
-	void SSLCertificateSocketFactory::setHostname(java::net::Socket arg0, JString arg1)
+	void SSLCertificateSocketFactory::setHostname(java::net::Socket arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setHostname",
@@ -145,7 +145,7 @@ namespace android::net
 			arg1.object<jstring>()
 		);
 	}
-	void SSLCertificateSocketFactory::setKeyManagers(JArray arg0)
+	void SSLCertificateSocketFactory::setKeyManagers(JArray arg0) const
 	{
 		callMethod<void>(
 			"setKeyManagers",
@@ -153,7 +153,7 @@ namespace android::net
 			arg0.object<jarray>()
 		);
 	}
-	void SSLCertificateSocketFactory::setNpnProtocols(JArray arg0)
+	void SSLCertificateSocketFactory::setNpnProtocols(JArray arg0) const
 	{
 		callMethod<void>(
 			"setNpnProtocols",
@@ -161,7 +161,7 @@ namespace android::net
 			arg0.object<jarray>()
 		);
 	}
-	void SSLCertificateSocketFactory::setTrustManagers(JArray arg0)
+	void SSLCertificateSocketFactory::setTrustManagers(JArray arg0) const
 	{
 		callMethod<void>(
 			"setTrustManagers",
@@ -169,7 +169,7 @@ namespace android::net
 			arg0.object<jarray>()
 		);
 	}
-	void SSLCertificateSocketFactory::setUseSessionTickets(java::net::Socket arg0, jboolean arg1)
+	void SSLCertificateSocketFactory::setUseSessionTickets(java::net::Socket arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setUseSessionTickets",

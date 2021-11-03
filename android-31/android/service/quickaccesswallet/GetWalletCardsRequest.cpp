@@ -28,42 +28,42 @@ namespace android::service::quickaccesswallet
 		) {}
 	
 	// Methods
-	jint GetWalletCardsRequest::describeContents()
+	jint GetWalletCardsRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint GetWalletCardsRequest::getCardHeightPx()
+	jint GetWalletCardsRequest::getCardHeightPx() const
 	{
 		return callMethod<jint>(
 			"getCardHeightPx",
 			"()I"
 		);
 	}
-	jint GetWalletCardsRequest::getCardWidthPx()
+	jint GetWalletCardsRequest::getCardWidthPx() const
 	{
 		return callMethod<jint>(
 			"getCardWidthPx",
 			"()I"
 		);
 	}
-	jint GetWalletCardsRequest::getIconSizePx()
+	jint GetWalletCardsRequest::getIconSizePx() const
 	{
 		return callMethod<jint>(
 			"getIconSizePx",
 			"()I"
 		);
 	}
-	jint GetWalletCardsRequest::getMaxCards()
+	jint GetWalletCardsRequest::getMaxCards() const
 	{
 		return callMethod<jint>(
 			"getMaxCards",
 			"()I"
 		);
 	}
-	void GetWalletCardsRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GetWalletCardsRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

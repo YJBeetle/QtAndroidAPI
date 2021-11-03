@@ -32,18 +32,18 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::Ndef get(android::nfc::Tag arg0);
-		jboolean canMakeReadOnly();
-		void close();
-		void connect();
-		android::nfc::NdefMessage getCachedNdefMessage();
-		jint getMaxSize();
-		android::nfc::NdefMessage getNdefMessage();
-		android::nfc::Tag getTag();
-		JString getType();
-		jboolean isConnected();
-		jboolean isWritable();
-		jboolean makeReadOnly();
-		void writeNdefMessage(android::nfc::NdefMessage arg0);
+		jboolean canMakeReadOnly() const;
+		void close() const;
+		void connect() const;
+		android::nfc::NdefMessage getCachedNdefMessage() const;
+		jint getMaxSize() const;
+		android::nfc::NdefMessage getNdefMessage() const;
+		android::nfc::Tag getTag() const;
+		JString getType() const;
+		jboolean isConnected() const;
+		jboolean isWritable() const;
+		jboolean makeReadOnly() const;
+		void writeNdefMessage(android::nfc::NdefMessage arg0) const;
 	};
 } // namespace android::nfc::tech
 

@@ -23,7 +23,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void SparseBooleanArray::append(jint arg0, jboolean arg1)
+	void SparseBooleanArray::append(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"append",
@@ -32,21 +32,21 @@ namespace android::util
 			arg1
 		);
 	}
-	void SparseBooleanArray::clear()
+	void SparseBooleanArray::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	android::util::SparseBooleanArray SparseBooleanArray::clone()
+	android::util::SparseBooleanArray SparseBooleanArray::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/util/SparseBooleanArray;"
 		);
 	}
-	void SparseBooleanArray::_delete(jint arg0)
+	void SparseBooleanArray::_delete(jint arg0) const
 	{
 		callMethod<void>(
 			"delete",
@@ -54,7 +54,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean SparseBooleanArray::equals(JObject arg0)
+	jboolean SparseBooleanArray::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -62,7 +62,7 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean SparseBooleanArray::get(jint arg0)
+	jboolean SparseBooleanArray::get(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"get",
@@ -70,7 +70,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean SparseBooleanArray::get(jint arg0, jboolean arg1)
+	jboolean SparseBooleanArray::get(jint arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"get",
@@ -79,14 +79,14 @@ namespace android::util
 			arg1
 		);
 	}
-	jint SparseBooleanArray::hashCode()
+	jint SparseBooleanArray::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint SparseBooleanArray::indexOfKey(jint arg0)
+	jint SparseBooleanArray::indexOfKey(jint arg0) const
 	{
 		return callMethod<jint>(
 			"indexOfKey",
@@ -94,7 +94,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseBooleanArray::indexOfValue(jboolean arg0)
+	jint SparseBooleanArray::indexOfValue(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"indexOfValue",
@@ -102,7 +102,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseBooleanArray::keyAt(jint arg0)
+	jint SparseBooleanArray::keyAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"keyAt",
@@ -110,7 +110,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void SparseBooleanArray::put(jint arg0, jboolean arg1)
+	void SparseBooleanArray::put(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -119,7 +119,7 @@ namespace android::util
 			arg1
 		);
 	}
-	void SparseBooleanArray::removeAt(jint arg0)
+	void SparseBooleanArray::removeAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeAt",
@@ -127,21 +127,21 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseBooleanArray::size()
+	jint SparseBooleanArray::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString SparseBooleanArray::toString()
+	JString SparseBooleanArray::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean SparseBooleanArray::valueAt(jint arg0)
+	jboolean SparseBooleanArray::valueAt(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"valueAt",

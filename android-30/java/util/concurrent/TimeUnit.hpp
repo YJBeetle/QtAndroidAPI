@@ -42,19 +42,19 @@ namespace java::util::concurrent
 		static java::util::concurrent::TimeUnit of(java::time::temporal::ChronoUnit arg0);
 		static java::util::concurrent::TimeUnit valueOf(JString arg0);
 		static JArray values();
-		jlong convert(java::time::Duration arg0);
-		jlong convert(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void sleep(jlong arg0);
-		void timedJoin(java::lang::Thread arg0, jlong arg1);
-		void timedWait(JObject arg0, jlong arg1);
-		java::time::temporal::ChronoUnit toChronoUnit();
-		jlong toDays(jlong arg0);
-		jlong toHours(jlong arg0);
-		jlong toMicros(jlong arg0);
-		jlong toMillis(jlong arg0);
-		jlong toMinutes(jlong arg0);
-		jlong toNanos(jlong arg0);
-		jlong toSeconds(jlong arg0);
+		jlong convert(java::time::Duration arg0) const;
+		jlong convert(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void sleep(jlong arg0) const;
+		void timedJoin(java::lang::Thread arg0, jlong arg1) const;
+		void timedWait(JObject arg0, jlong arg1) const;
+		java::time::temporal::ChronoUnit toChronoUnit() const;
+		jlong toDays(jlong arg0) const;
+		jlong toHours(jlong arg0) const;
+		jlong toMicros(jlong arg0) const;
+		jlong toMillis(jlong arg0) const;
+		jlong toMinutes(jlong arg0) const;
+		jlong toNanos(jlong arg0) const;
+		jlong toSeconds(jlong arg0) const;
 	};
 } // namespace java::util::concurrent
 

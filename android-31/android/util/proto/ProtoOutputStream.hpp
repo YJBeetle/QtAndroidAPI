@@ -67,20 +67,20 @@ namespace android::util::proto
 		static jlong makeFieldId(jint arg0, jlong arg1);
 		static jlong makeToken(jint arg0, jboolean arg1, jint arg2, jint arg3, jint arg4);
 		static JString token2String(jlong arg0);
-		void dump(JString arg0);
-		void end(jlong arg0);
-		void flush();
-		JByteArray getBytes();
-		jint getRawSize();
-		jlong start(jlong arg0);
-		void write(jlong arg0, JByteArray arg1);
-		void write(jlong arg0, jboolean arg1);
-		void write(jlong arg0, jdouble arg1);
-		void write(jlong arg0, jfloat arg1);
-		void write(jlong arg0, jint arg1);
-		void write(jlong arg0, JString arg1);
-		void write(jlong arg0, jlong arg1);
-		void writeTag(jint arg0, jint arg1);
+		void dump(JString arg0) const;
+		void end(jlong arg0) const;
+		void flush() const;
+		JByteArray getBytes() const;
+		jint getRawSize() const;
+		jlong start(jlong arg0) const;
+		void write(jlong arg0, JByteArray arg1) const;
+		void write(jlong arg0, jboolean arg1) const;
+		void write(jlong arg0, jdouble arg1) const;
+		void write(jlong arg0, jfloat arg1) const;
+		void write(jlong arg0, jint arg1) const;
+		void write(jlong arg0, JString arg1) const;
+		void write(jlong arg0, jlong arg1) const;
+		void writeTag(jint arg0, jint arg1) const;
 	};
 } // namespace android::util::proto
 

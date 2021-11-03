@@ -37,14 +37,14 @@ namespace android::service::chooser
 		ChooserTarget(JString arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4);
 		
 		// Methods
-		jint describeContents();
-		android::content::ComponentName getComponentName();
-		android::graphics::drawable::Icon getIcon();
-		android::os::Bundle getIntentExtras();
-		jfloat getScore();
-		JString getTitle();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::content::ComponentName getComponentName() const;
+		android::graphics::drawable::Icon getIcon() const;
+		android::os::Bundle getIntentExtras() const;
+		jfloat getScore() const;
+		JString getTitle() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::chooser
 

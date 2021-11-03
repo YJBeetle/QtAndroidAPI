@@ -26,7 +26,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean ConcurrentLinkedQueue::add(JObject arg0)
+	jboolean ConcurrentLinkedQueue::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -34,7 +34,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedQueue::addAll(JObject arg0)
+	jboolean ConcurrentLinkedQueue::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -42,14 +42,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ConcurrentLinkedQueue::clear()
+	void ConcurrentLinkedQueue::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean ConcurrentLinkedQueue::contains(JObject arg0)
+	jboolean ConcurrentLinkedQueue::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -57,7 +57,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ConcurrentLinkedQueue::forEach(JObject arg0)
+	void ConcurrentLinkedQueue::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -65,21 +65,21 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ConcurrentLinkedQueue::isEmpty()
+	jboolean ConcurrentLinkedQueue::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject ConcurrentLinkedQueue::iterator()
+	JObject ConcurrentLinkedQueue::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ConcurrentLinkedQueue::offer(JObject arg0)
+	jboolean ConcurrentLinkedQueue::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -87,21 +87,21 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentLinkedQueue::peek()
+	JObject ConcurrentLinkedQueue::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedQueue::poll()
+	JObject ConcurrentLinkedQueue::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ConcurrentLinkedQueue::remove(JObject arg0)
+	jboolean ConcurrentLinkedQueue::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -109,7 +109,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedQueue::removeAll(JObject arg0)
+	jboolean ConcurrentLinkedQueue::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -117,7 +117,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ConcurrentLinkedQueue::removeIf(JObject arg0)
+	jboolean ConcurrentLinkedQueue::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -125,7 +125,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ConcurrentLinkedQueue::retainAll(JObject arg0)
+	jboolean ConcurrentLinkedQueue::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -133,28 +133,28 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ConcurrentLinkedQueue::size()
+	jint ConcurrentLinkedQueue::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject ConcurrentLinkedQueue::spliterator()
+	JObject ConcurrentLinkedQueue::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObjectArray ConcurrentLinkedQueue::toArray()
+	JObjectArray ConcurrentLinkedQueue::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray ConcurrentLinkedQueue::toArray(JObjectArray arg0)
+	JObjectArray ConcurrentLinkedQueue::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -162,7 +162,7 @@ namespace java::util::concurrent
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString ConcurrentLinkedQueue::toString()
+	JString ConcurrentLinkedQueue::toString() const
 	{
 		return callObjectMethod(
 			"toString",

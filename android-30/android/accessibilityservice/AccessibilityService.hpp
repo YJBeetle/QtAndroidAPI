@@ -148,31 +148,31 @@ namespace android::accessibilityservice
 		AccessibilityService();
 		
 		// Methods
-		android::content::Context createDisplayContext(android::view::Display arg0);
-		void disableSelf();
-		jboolean dispatchGesture(android::accessibilityservice::GestureDescription arg0, android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, android::os::Handler arg2);
-		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
-		android::accessibilityservice::AccessibilityButtonController getAccessibilityButtonController();
-		android::accessibilityservice::AccessibilityButtonController getAccessibilityButtonController(jint arg0);
-		android::accessibilityservice::FingerprintGestureController getFingerprintGestureController();
-		android::accessibilityservice::AccessibilityService_MagnificationController getMagnificationController();
-		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow();
-		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
-		android::accessibilityservice::AccessibilityService_SoftKeyboardController getSoftKeyboardController();
-		JObject getSystemActions();
-		JObject getSystemService(JString arg0);
-		JObject getWindows();
-		android::util::SparseArray getWindowsOnAllDisplays();
-		void onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
-		JObject onBind(android::content::Intent arg0);
-		jboolean onGesture(android::accessibilityservice::AccessibilityGestureEvent arg0);
-		void onInterrupt();
-		void onSystemActionsChanged();
-		jboolean performGlobalAction(jint arg0);
-		void setGestureDetectionPassthroughRegion(jint arg0, android::graphics::Region arg1);
-		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0);
-		void setTouchExplorationPassthroughRegion(jint arg0, android::graphics::Region arg1);
-		void takeScreenshot(jint arg0, JObject arg1, JObject arg2);
+		android::content::Context createDisplayContext(android::view::Display arg0) const;
+		void disableSelf() const;
+		jboolean dispatchGesture(android::accessibilityservice::GestureDescription arg0, android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, android::os::Handler arg2) const;
+		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0) const;
+		android::accessibilityservice::AccessibilityButtonController getAccessibilityButtonController() const;
+		android::accessibilityservice::AccessibilityButtonController getAccessibilityButtonController(jint arg0) const;
+		android::accessibilityservice::FingerprintGestureController getFingerprintGestureController() const;
+		android::accessibilityservice::AccessibilityService_MagnificationController getMagnificationController() const;
+		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow() const;
+		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo() const;
+		android::accessibilityservice::AccessibilityService_SoftKeyboardController getSoftKeyboardController() const;
+		JObject getSystemActions() const;
+		JObject getSystemService(JString arg0) const;
+		JObject getWindows() const;
+		android::util::SparseArray getWindowsOnAllDisplays() const;
+		void onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const;
+		JObject onBind(android::content::Intent arg0) const;
+		jboolean onGesture(android::accessibilityservice::AccessibilityGestureEvent arg0) const;
+		void onInterrupt() const;
+		void onSystemActionsChanged() const;
+		jboolean performGlobalAction(jint arg0) const;
+		void setGestureDetectionPassthroughRegion(jint arg0, android::graphics::Region arg1) const;
+		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0) const;
+		void setTouchExplorationPassthroughRegion(jint arg0, android::graphics::Region arg1) const;
+		void takeScreenshot(jint arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::accessibilityservice
 

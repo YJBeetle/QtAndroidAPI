@@ -26,10 +26,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void close();
-		void processEcm(JByteArray arg0);
-		void processEcm(JByteArray arg0, jint arg1, jint arg2);
-		void setPrivateData(JByteArray arg0);
+		void close() const;
+		void processEcm(JByteArray arg0) const;
+		void processEcm(JByteArray arg0, jint arg1, jint arg2) const;
+		void setPrivateData(JByteArray arg0) const;
 	};
 } // namespace android::media
 

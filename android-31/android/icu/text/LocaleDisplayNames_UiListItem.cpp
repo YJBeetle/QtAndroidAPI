@@ -60,7 +60,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	jboolean LocaleDisplayNames_UiListItem::equals(JObject arg0)
+	jboolean LocaleDisplayNames_UiListItem::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -68,14 +68,14 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	jint LocaleDisplayNames_UiListItem::hashCode()
+	jint LocaleDisplayNames_UiListItem::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString LocaleDisplayNames_UiListItem::toString()
+	JString LocaleDisplayNames_UiListItem::toString() const
 	{
 		return callObjectMethod(
 			"toString",

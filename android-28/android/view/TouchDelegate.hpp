@@ -34,7 +34,7 @@ namespace android::view
 		TouchDelegate(android::graphics::Rect arg0, android::view::View arg1);
 		
 		// Methods
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
 	};
 } // namespace android::view
 

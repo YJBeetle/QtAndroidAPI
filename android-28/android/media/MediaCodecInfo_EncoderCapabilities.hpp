@@ -24,9 +24,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::util::Range getComplexityRange();
-		android::util::Range getQualityRange();
-		jboolean isBitrateModeSupported(jint arg0);
+		android::util::Range getComplexityRange() const;
+		android::util::Range getQualityRange() const;
+		jboolean isBitrateModeSupported(jint arg0) const;
 	};
 } // namespace android::media
 

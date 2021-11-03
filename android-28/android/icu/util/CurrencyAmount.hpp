@@ -27,7 +27,7 @@ namespace android::icu::util
 		CurrencyAmount(java::lang::Number arg0, android::icu::util::Currency arg1);
 		
 		// Methods
-		android::icu::util::Currency getCurrency();
+		android::icu::util::Currency getCurrency() const;
 	};
 } // namespace android::icu::util
 

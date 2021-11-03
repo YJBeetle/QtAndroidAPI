@@ -15,28 +15,28 @@ namespace android::database::sqlite
 		) {}
 	
 	// Methods
-	void SQLiteClosable::acquireReference()
+	void SQLiteClosable::acquireReference() const
 	{
 		callMethod<void>(
 			"acquireReference",
 			"()V"
 		);
 	}
-	void SQLiteClosable::close()
+	void SQLiteClosable::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void SQLiteClosable::releaseReference()
+	void SQLiteClosable::releaseReference() const
 	{
 		callMethod<void>(
 			"releaseReference",
 			"()V"
 		);
 	}
-	void SQLiteClosable::releaseReferenceFromContainer()
+	void SQLiteClosable::releaseReferenceFromContainer() const
 	{
 		callMethod<void>(
 			"releaseReferenceFromContainer",

@@ -118,14 +118,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint SuggestionSpan::describeContents()
+	jint SuggestionSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SuggestionSpan::equals(JObject arg0)
+	jboolean SuggestionSpan::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -133,56 +133,56 @@ namespace android::text::style
 			arg0.object<jobject>()
 		);
 	}
-	jint SuggestionSpan::getFlags()
+	jint SuggestionSpan::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	JString SuggestionSpan::getLocale()
+	JString SuggestionSpan::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::Locale SuggestionSpan::getLocaleObject()
+	java::util::Locale SuggestionSpan::getLocaleObject() const
 	{
 		return callObjectMethod(
 			"getLocaleObject",
 			"()Ljava/util/Locale;"
 		);
 	}
-	jint SuggestionSpan::getSpanTypeId()
+	jint SuggestionSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	JArray SuggestionSpan::getSuggestions()
+	JArray SuggestionSpan::getSuggestions() const
 	{
 		return callObjectMethod(
 			"getSuggestions",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint SuggestionSpan::getUnderlineColor()
+	jint SuggestionSpan::getUnderlineColor() const
 	{
 		return callMethod<jint>(
 			"getUnderlineColor",
 			"()I"
 		);
 	}
-	jint SuggestionSpan::hashCode()
+	jint SuggestionSpan::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void SuggestionSpan::setFlags(jint arg0)
+	void SuggestionSpan::setFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"setFlags",
@@ -190,7 +190,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	void SuggestionSpan::updateDrawState(android::text::TextPaint arg0)
+	void SuggestionSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -198,7 +198,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void SuggestionSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SuggestionSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -22,9 +22,9 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		JString getCommand();
-		void sendIntermediateResult(android::os::Bundle arg0);
-		void sendResult(android::os::Bundle arg0);
+		JString getCommand() const;
+		void sendIntermediateResult(android::os::Bundle arg0) const;
+		void sendResult(android::os::Bundle arg0) const;
 	};
 } // namespace android::service::voice
 

@@ -12,7 +12,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::Precision CurrencyPrecision::withCurrency(android::icu::util::Currency arg0)
+	android::icu::number::Precision CurrencyPrecision::withCurrency(android::icu::util::Currency arg0) const
 	{
 		return callObjectMethod(
 			"withCurrency",

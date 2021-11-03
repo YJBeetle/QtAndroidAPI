@@ -22,9 +22,9 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		JString getType();
-		jboolean isRevoked(java::security::cert::Certificate arg0);
-		JString toString();
+		JString getType() const;
+		jboolean isRevoked(java::security::cert::Certificate arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

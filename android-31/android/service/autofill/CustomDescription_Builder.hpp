@@ -30,10 +30,10 @@ namespace android::service::autofill
 		CustomDescription_Builder(android::widget::RemoteViews arg0);
 		
 		// Methods
-		android::service::autofill::CustomDescription_Builder addChild(jint arg0, JObject arg1);
-		android::service::autofill::CustomDescription_Builder addOnClickAction(jint arg0, JObject arg1);
-		android::service::autofill::CustomDescription_Builder batchUpdate(JObject arg0, android::service::autofill::BatchUpdates arg1);
-		android::service::autofill::CustomDescription build();
+		android::service::autofill::CustomDescription_Builder addChild(jint arg0, JObject arg1) const;
+		android::service::autofill::CustomDescription_Builder addOnClickAction(jint arg0, JObject arg1) const;
+		android::service::autofill::CustomDescription_Builder batchUpdate(JObject arg0, android::service::autofill::BatchUpdates arg1) const;
+		android::service::autofill::CustomDescription build() const;
 	};
 } // namespace android::service::autofill
 

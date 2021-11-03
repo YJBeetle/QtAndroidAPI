@@ -21,8 +21,8 @@ namespace android::hardware::lights
 		// Constructors
 		
 		// Methods
-		void close();
-		void requestLights(android::hardware::lights::LightsRequest arg0);
+		void close() const;
+		void requestLights(android::hardware::lights::LightsRequest arg0) const;
 	};
 } // namespace android::hardware::lights
 

@@ -28,14 +28,14 @@ namespace java::nio::charset
 		// Methods
 		static java::nio::charset::CoderResult malformedForLength(jint arg0);
 		static java::nio::charset::CoderResult unmappableForLength(jint arg0);
-		jboolean isError();
-		jboolean isMalformed();
-		jboolean isOverflow();
-		jboolean isUnderflow();
-		jboolean isUnmappable();
-		jint length();
-		void throwException();
-		JString toString();
+		jboolean isError() const;
+		jboolean isMalformed() const;
+		jboolean isOverflow() const;
+		jboolean isUnderflow() const;
+		jboolean isUnmappable() const;
+		jint length() const;
+		void throwException() const;
+		JString toString() const;
 	};
 } // namespace java::nio::charset
 

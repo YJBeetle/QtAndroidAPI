@@ -30,49 +30,49 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jfloat DynamicsProcessing_Limiter::getAttackTime()
+	jfloat DynamicsProcessing_Limiter::getAttackTime() const
 	{
 		return callMethod<jfloat>(
 			"getAttackTime",
 			"()F"
 		);
 	}
-	jint DynamicsProcessing_Limiter::getLinkGroup()
+	jint DynamicsProcessing_Limiter::getLinkGroup() const
 	{
 		return callMethod<jint>(
 			"getLinkGroup",
 			"()I"
 		);
 	}
-	jfloat DynamicsProcessing_Limiter::getPostGain()
+	jfloat DynamicsProcessing_Limiter::getPostGain() const
 	{
 		return callMethod<jfloat>(
 			"getPostGain",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_Limiter::getRatio()
+	jfloat DynamicsProcessing_Limiter::getRatio() const
 	{
 		return callMethod<jfloat>(
 			"getRatio",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_Limiter::getReleaseTime()
+	jfloat DynamicsProcessing_Limiter::getReleaseTime() const
 	{
 		return callMethod<jfloat>(
 			"getReleaseTime",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_Limiter::getThreshold()
+	jfloat DynamicsProcessing_Limiter::getThreshold() const
 	{
 		return callMethod<jfloat>(
 			"getThreshold",
 			"()F"
 		);
 	}
-	void DynamicsProcessing_Limiter::setAttackTime(jfloat arg0)
+	void DynamicsProcessing_Limiter::setAttackTime(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAttackTime",
@@ -80,7 +80,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Limiter::setLinkGroup(jint arg0)
+	void DynamicsProcessing_Limiter::setLinkGroup(jint arg0) const
 	{
 		callMethod<void>(
 			"setLinkGroup",
@@ -88,7 +88,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Limiter::setPostGain(jfloat arg0)
+	void DynamicsProcessing_Limiter::setPostGain(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPostGain",
@@ -96,7 +96,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Limiter::setRatio(jfloat arg0)
+	void DynamicsProcessing_Limiter::setRatio(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRatio",
@@ -104,7 +104,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Limiter::setReleaseTime(jfloat arg0)
+	void DynamicsProcessing_Limiter::setReleaseTime(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setReleaseTime",
@@ -112,7 +112,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Limiter::setThreshold(jfloat arg0)
+	void DynamicsProcessing_Limiter::setThreshold(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setThreshold",
@@ -120,7 +120,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	JString DynamicsProcessing_Limiter::toString()
+	JString DynamicsProcessing_Limiter::toString() const
 	{
 		return callObjectMethod(
 			"toString",

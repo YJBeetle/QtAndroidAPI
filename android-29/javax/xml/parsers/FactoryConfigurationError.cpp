@@ -37,21 +37,21 @@ namespace javax::xml::parsers
 		) {}
 	
 	// Methods
-	JThrowable FactoryConfigurationError::getCause()
+	JThrowable FactoryConfigurationError::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	java::lang::Exception FactoryConfigurationError::getException()
+	java::lang::Exception FactoryConfigurationError::getException() const
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
 	}
-	JString FactoryConfigurationError::getMessage()
+	JString FactoryConfigurationError::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

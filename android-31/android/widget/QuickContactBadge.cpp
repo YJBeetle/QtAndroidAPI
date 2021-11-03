@@ -49,7 +49,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void QuickContactBadge::assignContactFromEmail(JString arg0, jboolean arg1)
+	void QuickContactBadge::assignContactFromEmail(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"assignContactFromEmail",
@@ -58,7 +58,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void QuickContactBadge::assignContactFromEmail(JString arg0, jboolean arg1, android::os::Bundle arg2)
+	void QuickContactBadge::assignContactFromEmail(JString arg0, jboolean arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"assignContactFromEmail",
@@ -68,7 +68,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void QuickContactBadge::assignContactFromPhone(JString arg0, jboolean arg1)
+	void QuickContactBadge::assignContactFromPhone(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"assignContactFromPhone",
@@ -77,7 +77,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void QuickContactBadge::assignContactFromPhone(JString arg0, jboolean arg1, android::os::Bundle arg2)
+	void QuickContactBadge::assignContactFromPhone(JString arg0, jboolean arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"assignContactFromPhone",
@@ -87,7 +87,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void QuickContactBadge::assignContactUri(android::net::Uri arg0)
+	void QuickContactBadge::assignContactUri(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"assignContactUri",
@@ -95,7 +95,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void QuickContactBadge::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void QuickContactBadge::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"drawableHotspotChanged",
@@ -104,14 +104,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString QuickContactBadge::getAccessibilityClassName()
+	JString QuickContactBadge::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void QuickContactBadge::onClick(android::view::View arg0)
+	void QuickContactBadge::onClick(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -119,7 +119,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void QuickContactBadge::setExcludeMimes(JArray arg0)
+	void QuickContactBadge::setExcludeMimes(JArray arg0) const
 	{
 		callMethod<void>(
 			"setExcludeMimes",
@@ -127,14 +127,14 @@ namespace android::widget
 			arg0.object<jarray>()
 		);
 	}
-	void QuickContactBadge::setImageToDefault()
+	void QuickContactBadge::setImageToDefault() const
 	{
 		callMethod<void>(
 			"setImageToDefault",
 			"()V"
 		);
 	}
-	void QuickContactBadge::setMode(jint arg0)
+	void QuickContactBadge::setMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setMode",
@@ -142,7 +142,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void QuickContactBadge::setOverlay(android::graphics::drawable::Drawable arg0)
+	void QuickContactBadge::setOverlay(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setOverlay",
@@ -150,7 +150,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void QuickContactBadge::setPrioritizedMimeType(JString arg0)
+	void QuickContactBadge::setPrioritizedMimeType(JString arg0) const
 	{
 		callMethod<void>(
 			"setPrioritizedMimeType",

@@ -23,10 +23,10 @@ namespace android::view
 		WindowInsetsAnimation_Bounds(android::graphics::Insets arg0, android::graphics::Insets arg1);
 		
 		// Methods
-		android::graphics::Insets getLowerBound();
-		android::graphics::Insets getUpperBound();
-		android::view::WindowInsetsAnimation_Bounds inset(android::graphics::Insets arg0);
-		JString toString();
+		android::graphics::Insets getLowerBound() const;
+		android::graphics::Insets getUpperBound() const;
+		android::view::WindowInsetsAnimation_Bounds inset(android::graphics::Insets arg0) const;
+		JString toString() const;
 	};
 } // namespace android::view
 

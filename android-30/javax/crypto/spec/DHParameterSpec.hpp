@@ -23,9 +23,9 @@ namespace javax::crypto::spec
 		DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, jint arg2);
 		
 		// Methods
-		java::math::BigInteger getG();
-		jint getL();
-		java::math::BigInteger getP();
+		java::math::BigInteger getG() const;
+		jint getL() const;
+		java::math::BigInteger getP() const;
 	};
 } // namespace javax::crypto::spec
 

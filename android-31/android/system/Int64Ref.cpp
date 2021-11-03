@@ -23,7 +23,7 @@ namespace android::system
 		) {}
 	
 	// Methods
-	JString Int64Ref::toString()
+	JString Int64Ref::toString() const
 	{
 		return callObjectMethod(
 			"toString",

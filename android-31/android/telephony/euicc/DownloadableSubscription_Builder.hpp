@@ -24,9 +24,9 @@ namespace android::telephony::euicc
 		DownloadableSubscription_Builder(JString arg0);
 		
 		// Methods
-		android::telephony::euicc::DownloadableSubscription build();
-		android::telephony::euicc::DownloadableSubscription_Builder setConfirmationCode(JString arg0);
-		android::telephony::euicc::DownloadableSubscription_Builder setEncodedActivationCode(JString arg0);
+		android::telephony::euicc::DownloadableSubscription build() const;
+		android::telephony::euicc::DownloadableSubscription_Builder setConfirmationCode(JString arg0) const;
+		android::telephony::euicc::DownloadableSubscription_Builder setEncodedActivationCode(JString arg0) const;
 	};
 } // namespace android::telephony::euicc
 

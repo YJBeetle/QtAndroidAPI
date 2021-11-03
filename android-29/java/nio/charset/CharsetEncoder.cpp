@@ -19,14 +19,14 @@ namespace java::nio::charset
 	// Constructors
 	
 	// Methods
-	jfloat CharsetEncoder::averageBytesPerChar()
+	jfloat CharsetEncoder::averageBytesPerChar() const
 	{
 		return callMethod<jfloat>(
 			"averageBytesPerChar",
 			"()F"
 		);
 	}
-	jboolean CharsetEncoder::canEncode(jchar arg0)
+	jboolean CharsetEncoder::canEncode(jchar arg0) const
 	{
 		return callMethod<jboolean>(
 			"canEncode",
@@ -34,7 +34,7 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	jboolean CharsetEncoder::canEncode(JString arg0)
+	jboolean CharsetEncoder::canEncode(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"canEncode",
@@ -42,14 +42,14 @@ namespace java::nio::charset
 			arg0.object<jstring>()
 		);
 	}
-	java::nio::charset::Charset CharsetEncoder::charset()
+	java::nio::charset::Charset CharsetEncoder::charset() const
 	{
 		return callObjectMethod(
 			"charset",
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
-	java::nio::ByteBuffer CharsetEncoder::encode(java::nio::CharBuffer arg0)
+	java::nio::ByteBuffer CharsetEncoder::encode(java::nio::CharBuffer arg0) const
 	{
 		return callObjectMethod(
 			"encode",
@@ -57,7 +57,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CoderResult CharsetEncoder::encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2)
+	java::nio::charset::CoderResult CharsetEncoder::encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"encode",
@@ -67,7 +67,7 @@ namespace java::nio::charset
 			arg2
 		);
 	}
-	java::nio::charset::CoderResult CharsetEncoder::flush(java::nio::ByteBuffer arg0)
+	java::nio::charset::CoderResult CharsetEncoder::flush(java::nio::ByteBuffer arg0) const
 	{
 		return callObjectMethod(
 			"flush",
@@ -75,7 +75,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	jboolean CharsetEncoder::isLegalReplacement(JByteArray arg0)
+	jboolean CharsetEncoder::isLegalReplacement(JByteArray arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLegalReplacement",
@@ -83,21 +83,21 @@ namespace java::nio::charset
 			arg0.object<jbyteArray>()
 		);
 	}
-	java::nio::charset::CodingErrorAction CharsetEncoder::malformedInputAction()
+	java::nio::charset::CodingErrorAction CharsetEncoder::malformedInputAction() const
 	{
 		return callObjectMethod(
 			"malformedInputAction",
 			"()Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
-	jfloat CharsetEncoder::maxBytesPerChar()
+	jfloat CharsetEncoder::maxBytesPerChar() const
 	{
 		return callMethod<jfloat>(
 			"maxBytesPerChar",
 			"()F"
 		);
 	}
-	java::nio::charset::CharsetEncoder CharsetEncoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0)
+	java::nio::charset::CharsetEncoder CharsetEncoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0) const
 	{
 		return callObjectMethod(
 			"onMalformedInput",
@@ -105,7 +105,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CharsetEncoder CharsetEncoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0)
+	java::nio::charset::CharsetEncoder CharsetEncoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0) const
 	{
 		return callObjectMethod(
 			"onUnmappableCharacter",
@@ -113,7 +113,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CharsetEncoder CharsetEncoder::replaceWith(JByteArray arg0)
+	java::nio::charset::CharsetEncoder CharsetEncoder::replaceWith(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"replaceWith",
@@ -121,21 +121,21 @@ namespace java::nio::charset
 			arg0.object<jbyteArray>()
 		);
 	}
-	JByteArray CharsetEncoder::replacement()
+	JByteArray CharsetEncoder::replacement() const
 	{
 		return callObjectMethod(
 			"replacement",
 			"()[B"
 		);
 	}
-	java::nio::charset::CharsetEncoder CharsetEncoder::reset()
+	java::nio::charset::CharsetEncoder CharsetEncoder::reset() const
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/charset/CharsetEncoder;"
 		);
 	}
-	java::nio::charset::CodingErrorAction CharsetEncoder::unmappableCharacterAction()
+	java::nio::charset::CodingErrorAction CharsetEncoder::unmappableCharacterAction() const
 	{
 		return callObjectMethod(
 			"unmappableCharacterAction",

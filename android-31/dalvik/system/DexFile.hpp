@@ -31,11 +31,11 @@ namespace dalvik::system
 		// Methods
 		static jboolean isDexOptNeeded(JString arg0);
 		static dalvik::system::DexFile loadDex(JString arg0, JString arg1, jint arg2);
-		void close();
-		JObject entries();
-		JString getName();
-		JClass loadClass(JString arg0, java::lang::ClassLoader arg1);
-		JString toString();
+		void close() const;
+		JObject entries() const;
+		JString getName() const;
+		JClass loadClass(JString arg0, java::lang::ClassLoader arg1) const;
+		JString toString() const;
 	};
 } // namespace dalvik::system
 

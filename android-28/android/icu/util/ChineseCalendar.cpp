@@ -104,7 +104,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	void ChineseCalendar::add(jint arg0, jint arg1)
+	void ChineseCalendar::add(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -113,14 +113,14 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	JString ChineseCalendar::getType()
+	JString ChineseCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ChineseCalendar::roll(jint arg0, jint arg1)
+	void ChineseCalendar::roll(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"roll",

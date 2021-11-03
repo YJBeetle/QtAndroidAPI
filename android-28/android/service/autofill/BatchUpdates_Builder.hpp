@@ -26,9 +26,9 @@ namespace android::service::autofill
 		BatchUpdates_Builder();
 		
 		// Methods
-		android::service::autofill::BatchUpdates build();
-		android::service::autofill::BatchUpdates_Builder transformChild(jint arg0, JObject arg1);
-		android::service::autofill::BatchUpdates_Builder updateTemplate(android::widget::RemoteViews arg0);
+		android::service::autofill::BatchUpdates build() const;
+		android::service::autofill::BatchUpdates_Builder transformChild(jint arg0, JObject arg1) const;
+		android::service::autofill::BatchUpdates_Builder updateTemplate(android::widget::RemoteViews arg0) const;
 	};
 } // namespace android::service::autofill
 

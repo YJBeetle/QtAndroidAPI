@@ -34,13 +34,13 @@ namespace android::widget
 		FrameLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0);
-		JString getAccessibilityClassName();
-		jboolean getConsiderGoneChildrenWhenMeasuring();
-		jboolean getMeasureAllChildren();
-		void setForegroundGravity(jint arg0);
-		void setMeasureAllChildren(jboolean arg0);
-		jboolean shouldDelayChildPressedState();
+		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0) const;
+		JString getAccessibilityClassName() const;
+		jboolean getConsiderGoneChildrenWhenMeasuring() const;
+		jboolean getMeasureAllChildren() const;
+		void setForegroundGravity(jint arg0) const;
+		void setMeasureAllChildren(jboolean arg0) const;
+		jboolean shouldDelayChildPressedState() const;
 	};
 } // namespace android::widget
 

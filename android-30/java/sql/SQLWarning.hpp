@@ -27,8 +27,8 @@ namespace java::sql
 		SQLWarning(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
-		java::sql::SQLWarning getNextWarning();
-		void setNextWarning(java::sql::SQLWarning arg0);
+		java::sql::SQLWarning getNextWarning() const;
+		void setNextWarning(java::sql::SQLWarning arg0) const;
 	};
 } // namespace java::sql
 

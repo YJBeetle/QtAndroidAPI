@@ -17,7 +17,7 @@ namespace javax::net::ssl
 		CertPathTrustManagerParameters(JObject arg0);
 		
 		// Methods
-		JObject getParameters();
+		JObject getParameters() const;
 	};
 } // namespace javax::net::ssl
 

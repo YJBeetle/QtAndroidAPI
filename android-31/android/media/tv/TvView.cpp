@@ -44,7 +44,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	jboolean TvView::dispatchGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean TvView::dispatchGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchGenericMotionEvent",
@@ -52,7 +52,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvView::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean TvView::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -60,7 +60,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvView::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean TvView::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -68,7 +68,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvView::dispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean TvView::dispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
@@ -76,7 +76,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvView::dispatchUnhandledInputEvent(android::view::InputEvent arg0)
+	jboolean TvView::dispatchUnhandledInputEvent(android::view::InputEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchUnhandledInputEvent",
@@ -84,7 +84,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvView::dispatchWindowFocusChanged(jboolean arg0)
+	void TvView::dispatchWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowFocusChanged",
@@ -92,7 +92,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvView::draw(android::graphics::Canvas arg0)
+	void TvView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -100,7 +100,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvView::gatherTransparentRegion(android::graphics::Region arg0)
+	jboolean TvView::gatherTransparentRegion(android::graphics::Region arg0) const
 	{
 		return callMethod<jboolean>(
 			"gatherTransparentRegion",
@@ -108,7 +108,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	JString TvView::getSelectedTrack(jint arg0)
+	JString TvView::getSelectedTrack(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSelectedTrack",
@@ -116,7 +116,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	JObject TvView::getTracks(jint arg0)
+	JObject TvView::getTracks(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTracks",
@@ -124,7 +124,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	jboolean TvView::onUnhandledInputEvent(android::view::InputEvent arg0)
+	jboolean TvView::onUnhandledInputEvent(android::view::InputEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnhandledInputEvent",
@@ -132,14 +132,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvView::reset()
+	void TvView::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void TvView::selectTrack(jint arg0, JString arg1)
+	void TvView::selectTrack(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"selectTrack",
@@ -148,7 +148,7 @@ namespace android::media::tv
 			arg1.object<jstring>()
 		);
 	}
-	void TvView::sendAppPrivateCommand(JString arg0, android::os::Bundle arg1)
+	void TvView::sendAppPrivateCommand(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendAppPrivateCommand",
@@ -157,7 +157,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvView::setCallback(android::media::tv::TvView_TvInputCallback arg0)
+	void TvView::setCallback(android::media::tv::TvView_TvInputCallback arg0) const
 	{
 		callMethod<void>(
 			"setCallback",
@@ -165,7 +165,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvView::setCaptionEnabled(jboolean arg0)
+	void TvView::setCaptionEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCaptionEnabled",
@@ -173,7 +173,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvView::setOnUnhandledInputEventListener(JObject arg0)
+	void TvView::setOnUnhandledInputEventListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnUnhandledInputEventListener",
@@ -181,7 +181,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvView::setStreamVolume(jfloat arg0)
+	void TvView::setStreamVolume(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setStreamVolume",
@@ -189,7 +189,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvView::setTimeShiftPositionCallback(android::media::tv::TvView_TimeShiftPositionCallback arg0)
+	void TvView::setTimeShiftPositionCallback(android::media::tv::TvView_TimeShiftPositionCallback arg0) const
 	{
 		callMethod<void>(
 			"setTimeShiftPositionCallback",
@@ -197,7 +197,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvView::setZOrderMediaOverlay(jboolean arg0)
+	void TvView::setZOrderMediaOverlay(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZOrderMediaOverlay",
@@ -205,7 +205,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvView::setZOrderOnTop(jboolean arg0)
+	void TvView::setZOrderOnTop(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZOrderOnTop",
@@ -213,14 +213,14 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvView::timeShiftPause()
+	void TvView::timeShiftPause() const
 	{
 		callMethod<void>(
 			"timeShiftPause",
 			"()V"
 		);
 	}
-	void TvView::timeShiftPlay(JString arg0, android::net::Uri arg1)
+	void TvView::timeShiftPlay(JString arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"timeShiftPlay",
@@ -229,14 +229,14 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvView::timeShiftResume()
+	void TvView::timeShiftResume() const
 	{
 		callMethod<void>(
 			"timeShiftResume",
 			"()V"
 		);
 	}
-	void TvView::timeShiftSeekTo(jlong arg0)
+	void TvView::timeShiftSeekTo(jlong arg0) const
 	{
 		callMethod<void>(
 			"timeShiftSeekTo",
@@ -244,7 +244,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvView::timeShiftSetPlaybackParams(android::media::PlaybackParams arg0)
+	void TvView::timeShiftSetPlaybackParams(android::media::PlaybackParams arg0) const
 	{
 		callMethod<void>(
 			"timeShiftSetPlaybackParams",
@@ -252,7 +252,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvView::tune(JString arg0, android::net::Uri arg1)
+	void TvView::tune(JString arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"tune",
@@ -261,7 +261,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvView::tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2)
+	void TvView::tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"tune",

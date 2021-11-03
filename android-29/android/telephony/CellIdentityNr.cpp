@@ -21,7 +21,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityNr::equals(JObject arg0)
+	jboolean CellIdentityNr::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -29,63 +29,63 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	JString CellIdentityNr::getMccString()
+	JString CellIdentityNr::getMccString() const
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CellIdentityNr::getMncString()
+	JString CellIdentityNr::getMncString() const
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong CellIdentityNr::getNci()
+	jlong CellIdentityNr::getNci() const
 	{
 		return callMethod<jlong>(
 			"getNci",
 			"()J"
 		);
 	}
-	jint CellIdentityNr::getNrarfcn()
+	jint CellIdentityNr::getNrarfcn() const
 	{
 		return callMethod<jint>(
 			"getNrarfcn",
 			"()I"
 		);
 	}
-	jint CellIdentityNr::getPci()
+	jint CellIdentityNr::getPci() const
 	{
 		return callMethod<jint>(
 			"getPci",
 			"()I"
 		);
 	}
-	jint CellIdentityNr::getTac()
+	jint CellIdentityNr::getTac() const
 	{
 		return callMethod<jint>(
 			"getTac",
 			"()I"
 		);
 	}
-	jint CellIdentityNr::hashCode()
+	jint CellIdentityNr::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellIdentityNr::toString()
+	JString CellIdentityNr::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellIdentityNr::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellIdentityNr::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

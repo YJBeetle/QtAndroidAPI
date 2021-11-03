@@ -41,17 +41,17 @@ namespace android::os
 		static android::os::LocaleList getEmptyLocaleList();
 		static jboolean isPseudoLocale(android::icu::util::ULocale arg0);
 		static void setDefault(android::os::LocaleList arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		java::util::Locale get(jint arg0);
-		java::util::Locale getFirstMatch(JArray arg0);
-		jint hashCode();
-		jint indexOf(java::util::Locale arg0);
-		jboolean isEmpty();
-		jint size();
-		JString toLanguageTags();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		java::util::Locale get(jint arg0) const;
+		java::util::Locale getFirstMatch(JArray arg0) const;
+		jint hashCode() const;
+		jint indexOf(java::util::Locale arg0) const;
+		jboolean isEmpty() const;
+		jint size() const;
+		JString toLanguageTags() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

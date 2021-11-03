@@ -54,21 +54,21 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jint ContentProviderResult::describeContents()
+	jint ContentProviderResult::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString ContentProviderResult::toString()
+	JString ContentProviderResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ContentProviderResult::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContentProviderResult::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

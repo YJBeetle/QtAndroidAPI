@@ -34,56 +34,56 @@ namespace android::service::chooser
 		) {}
 	
 	// Methods
-	jint ChooserTarget::describeContents()
+	jint ChooserTarget::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::content::ComponentName ChooserTarget::getComponentName()
+	android::content::ComponentName ChooserTarget::getComponentName() const
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::graphics::drawable::Icon ChooserTarget::getIcon()
+	android::graphics::drawable::Icon ChooserTarget::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	android::os::Bundle ChooserTarget::getIntentExtras()
+	android::os::Bundle ChooserTarget::getIntentExtras() const
 	{
 		return callObjectMethod(
 			"getIntentExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jfloat ChooserTarget::getScore()
+	jfloat ChooserTarget::getScore() const
 	{
 		return callMethod<jfloat>(
 			"getScore",
 			"()F"
 		);
 	}
-	JString ChooserTarget::getTitle()
+	JString ChooserTarget::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString ChooserTarget::toString()
+	JString ChooserTarget::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ChooserTarget::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ChooserTarget::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

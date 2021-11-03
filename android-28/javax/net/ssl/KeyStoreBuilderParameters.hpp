@@ -23,7 +23,7 @@ namespace javax::net::ssl
 		KeyStoreBuilderParameters(JObject arg0);
 		
 		// Methods
-		JObject getParameters();
+		JObject getParameters() const;
 	};
 } // namespace javax::net::ssl
 

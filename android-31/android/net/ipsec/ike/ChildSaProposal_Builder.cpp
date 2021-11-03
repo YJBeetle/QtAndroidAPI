@@ -16,7 +16,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	android::net::ipsec::ike::ChildSaProposal_Builder ChildSaProposal_Builder::addDhGroup(jint arg0)
+	android::net::ipsec::ike::ChildSaProposal_Builder ChildSaProposal_Builder::addDhGroup(jint arg0) const
 	{
 		return callObjectMethod(
 			"addDhGroup",
@@ -24,7 +24,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::ChildSaProposal_Builder ChildSaProposal_Builder::addEncryptionAlgorithm(jint arg0, jint arg1)
+	android::net::ipsec::ike::ChildSaProposal_Builder ChildSaProposal_Builder::addEncryptionAlgorithm(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addEncryptionAlgorithm",
@@ -33,7 +33,7 @@ namespace android::net::ipsec::ike
 			arg1
 		);
 	}
-	android::net::ipsec::ike::ChildSaProposal_Builder ChildSaProposal_Builder::addIntegrityAlgorithm(jint arg0)
+	android::net::ipsec::ike::ChildSaProposal_Builder ChildSaProposal_Builder::addIntegrityAlgorithm(jint arg0) const
 	{
 		return callObjectMethod(
 			"addIntegrityAlgorithm",
@@ -41,7 +41,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::ChildSaProposal ChildSaProposal_Builder::build()
+	android::net::ipsec::ike::ChildSaProposal ChildSaProposal_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

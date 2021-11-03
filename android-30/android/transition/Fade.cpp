@@ -47,7 +47,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void Fade::captureStartValues(android::transition::TransitionValues arg0)
+	void Fade::captureStartValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureStartValues",
@@ -55,7 +55,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::animation::Animator Fade::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Fade::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callObjectMethod(
 			"onAppear",
@@ -66,7 +66,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	android::animation::Animator Fade::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Fade::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callObjectMethod(
 			"onDisappear",

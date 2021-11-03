@@ -32,11 +32,11 @@ namespace android::view::textclassifier
 		ConversationAction_Builder(JString arg0);
 		
 		// Methods
-		android::view::textclassifier::ConversationAction build();
-		android::view::textclassifier::ConversationAction_Builder setAction(android::app::RemoteAction arg0);
-		android::view::textclassifier::ConversationAction_Builder setConfidenceScore(jfloat arg0);
-		android::view::textclassifier::ConversationAction_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::ConversationAction_Builder setTextReply(JString arg0);
+		android::view::textclassifier::ConversationAction build() const;
+		android::view::textclassifier::ConversationAction_Builder setAction(android::app::RemoteAction arg0) const;
+		android::view::textclassifier::ConversationAction_Builder setConfidenceScore(jfloat arg0) const;
+		android::view::textclassifier::ConversationAction_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::textclassifier::ConversationAction_Builder setTextReply(JString arg0) const;
 	};
 } // namespace android::view::textclassifier
 

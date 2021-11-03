@@ -15,21 +15,21 @@ namespace android::media::browse
 		) {}
 	
 	// Methods
-	void MediaBrowser_ConnectionCallback::onConnected()
+	void MediaBrowser_ConnectionCallback::onConnected() const
 	{
 		callMethod<void>(
 			"onConnected",
 			"()V"
 		);
 	}
-	void MediaBrowser_ConnectionCallback::onConnectionFailed()
+	void MediaBrowser_ConnectionCallback::onConnectionFailed() const
 	{
 		callMethod<void>(
 			"onConnectionFailed",
 			"()V"
 		);
 	}
-	void MediaBrowser_ConnectionCallback::onConnectionSuspended()
+	void MediaBrowser_ConnectionCallback::onConnectionSuspended() const
 	{
 		callMethod<void>(
 			"onConnectionSuspended",

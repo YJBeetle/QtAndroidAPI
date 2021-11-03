@@ -16,7 +16,7 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jint getUserOperationResult();
+		jint getUserOperationResult() const;
 	};
 } // namespace android::os
 

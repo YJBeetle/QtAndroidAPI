@@ -25,17 +25,17 @@ namespace android::hardware::usb
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getDescription();
-		JString getManufacturer();
-		JString getModel();
-		JString getSerial();
-		JString getUri();
-		JString getVersion();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getDescription() const;
+		JString getManufacturer() const;
+		JString getModel() const;
+		JString getSerial() const;
+		JString getUri() const;
+		JString getVersion() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::usb
 

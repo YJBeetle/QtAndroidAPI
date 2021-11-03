@@ -16,14 +16,14 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	android::app::admin::FactoryResetProtectionPolicy FactoryResetProtectionPolicy_Builder::build()
+	android::app::admin::FactoryResetProtectionPolicy FactoryResetProtectionPolicy_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/admin/FactoryResetProtectionPolicy;"
 		);
 	}
-	android::app::admin::FactoryResetProtectionPolicy_Builder FactoryResetProtectionPolicy_Builder::setFactoryResetProtectionAccounts(JObject arg0)
+	android::app::admin::FactoryResetProtectionPolicy_Builder FactoryResetProtectionPolicy_Builder::setFactoryResetProtectionAccounts(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setFactoryResetProtectionAccounts",
@@ -31,7 +31,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	android::app::admin::FactoryResetProtectionPolicy_Builder FactoryResetProtectionPolicy_Builder::setFactoryResetProtectionEnabled(jboolean arg0)
+	android::app::admin::FactoryResetProtectionPolicy_Builder FactoryResetProtectionPolicy_Builder::setFactoryResetProtectionEnabled(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setFactoryResetProtectionEnabled",

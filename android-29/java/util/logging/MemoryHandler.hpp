@@ -32,13 +32,13 @@ namespace java::util::logging
 		MemoryHandler(java::util::logging::Handler arg0, jint arg1, java::util::logging::Level arg2);
 		
 		// Methods
-		void close();
-		void flush();
-		java::util::logging::Level getPushLevel();
-		jboolean isLoggable(java::util::logging::LogRecord arg0);
-		void publish(java::util::logging::LogRecord arg0);
-		void push();
-		void setPushLevel(java::util::logging::Level arg0);
+		void close() const;
+		void flush() const;
+		java::util::logging::Level getPushLevel() const;
+		jboolean isLoggable(java::util::logging::LogRecord arg0) const;
+		void publish(java::util::logging::LogRecord arg0) const;
+		void push() const;
+		void setPushLevel(java::util::logging::Level arg0) const;
 	};
 } // namespace java::util::logging
 

@@ -30,13 +30,13 @@ namespace android::app
 		ListActivity();
 		
 		// Methods
-		JObject getListAdapter();
-		android::widget::ListView getListView();
-		jlong getSelectedItemId();
-		jint getSelectedItemPosition();
-		void onContentChanged();
-		void setListAdapter(JObject arg0);
-		void setSelection(jint arg0);
+		JObject getListAdapter() const;
+		android::widget::ListView getListView() const;
+		jlong getSelectedItemId() const;
+		jint getSelectedItemPosition() const;
+		void onContentChanged() const;
+		void setListAdapter(JObject arg0) const;
+		void setSelection(jint arg0) const;
 	};
 } // namespace android::app
 

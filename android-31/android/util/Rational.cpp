@@ -60,7 +60,7 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	jint Rational::compareTo(android::util::Rational arg0)
+	jint Rational::compareTo(android::util::Rational arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -68,7 +68,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jint Rational::compareTo(JObject arg0)
+	jint Rational::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -76,14 +76,14 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jdouble Rational::doubleValue()
+	jdouble Rational::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Rational::equals(JObject arg0)
+	jboolean Rational::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -91,84 +91,84 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Rational::floatValue()
+	jfloat Rational::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Rational::getDenominator()
+	jint Rational::getDenominator() const
 	{
 		return callMethod<jint>(
 			"getDenominator",
 			"()I"
 		);
 	}
-	jint Rational::getNumerator()
+	jint Rational::getNumerator() const
 	{
 		return callMethod<jint>(
 			"getNumerator",
 			"()I"
 		);
 	}
-	jint Rational::hashCode()
+	jint Rational::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Rational::intValue()
+	jint Rational::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jboolean Rational::isFinite()
+	jboolean Rational::isFinite() const
 	{
 		return callMethod<jboolean>(
 			"isFinite",
 			"()Z"
 		);
 	}
-	jboolean Rational::isInfinite()
+	jboolean Rational::isInfinite() const
 	{
 		return callMethod<jboolean>(
 			"isInfinite",
 			"()Z"
 		);
 	}
-	jboolean Rational::isNaN()
+	jboolean Rational::isNaN() const
 	{
 		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
-	jboolean Rational::isZero()
+	jboolean Rational::isZero() const
 	{
 		return callMethod<jboolean>(
 			"isZero",
 			"()Z"
 		);
 	}
-	jlong Rational::longValue()
+	jlong Rational::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	jshort Rational::shortValue()
+	jshort Rational::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Rational::toString()
+	JString Rational::toString() const
 	{
 		return callObjectMethod(
 			"toString",

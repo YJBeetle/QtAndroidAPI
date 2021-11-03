@@ -11,7 +11,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jint IpSecManager_SpiUnavailableException::getSpi()
+	jint IpSecManager_SpiUnavailableException::getSpi() const
 	{
 		return callMethod<jint>(
 			"getSpi",

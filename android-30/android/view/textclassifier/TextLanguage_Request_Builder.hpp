@@ -27,8 +27,8 @@ namespace android::view::textclassifier
 		TextLanguage_Request_Builder(JString arg0);
 		
 		// Methods
-		android::view::textclassifier::TextLanguage_Request build();
-		android::view::textclassifier::TextLanguage_Request_Builder setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::TextLanguage_Request build() const;
+		android::view::textclassifier::TextLanguage_Request_Builder setExtras(android::os::Bundle arg0) const;
 	};
 } // namespace android::view::textclassifier
 

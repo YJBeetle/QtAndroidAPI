@@ -12,14 +12,14 @@ namespace java::nio::channels::spi
 	// Constructors
 	
 	// Methods
-	void AbstractInterruptibleChannel::close()
+	void AbstractInterruptibleChannel::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean AbstractInterruptibleChannel::isOpen()
+	jboolean AbstractInterruptibleChannel::isOpen() const
 	{
 		return callMethod<jboolean>(
 			"isOpen",

@@ -26,14 +26,14 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	JObject ExecutorCompletionService::poll()
+	JObject ExecutorCompletionService::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	JObject ExecutorCompletionService::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject ExecutorCompletionService::poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"poll",
@@ -42,7 +42,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ExecutorCompletionService::submit(JObject arg0)
+	JObject ExecutorCompletionService::submit(JObject arg0) const
 	{
 		return callObjectMethod(
 			"submit",
@@ -50,7 +50,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ExecutorCompletionService::submit(JObject arg0, JObject arg1)
+	JObject ExecutorCompletionService::submit(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"submit",
@@ -59,7 +59,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	JObject ExecutorCompletionService::take()
+	JObject ExecutorCompletionService::take() const
 	{
 		return callObjectMethod(
 			"take",

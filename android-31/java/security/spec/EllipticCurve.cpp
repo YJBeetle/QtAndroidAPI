@@ -31,7 +31,7 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	jboolean EllipticCurve::equals(JObject arg0)
+	jboolean EllipticCurve::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -39,35 +39,35 @@ namespace java::security::spec
 			arg0.object<jobject>()
 		);
 	}
-	java::math::BigInteger EllipticCurve::getA()
+	java::math::BigInteger EllipticCurve::getA() const
 	{
 		return callObjectMethod(
 			"getA",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger EllipticCurve::getB()
+	java::math::BigInteger EllipticCurve::getB() const
 	{
 		return callObjectMethod(
 			"getB",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	JObject EllipticCurve::getField()
+	JObject EllipticCurve::getField() const
 	{
 		return callObjectMethod(
 			"getField",
 			"()Ljava/security/spec/ECField;"
 		);
 	}
-	JByteArray EllipticCurve::getSeed()
+	JByteArray EllipticCurve::getSeed() const
 	{
 		return callObjectMethod(
 			"getSeed",
 			"()[B"
 		);
 	}
-	jint EllipticCurve::hashCode()
+	jint EllipticCurve::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

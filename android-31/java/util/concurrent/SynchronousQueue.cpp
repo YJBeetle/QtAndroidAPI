@@ -28,14 +28,14 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	void SynchronousQueue::clear()
+	void SynchronousQueue::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean SynchronousQueue::contains(JObject arg0)
+	jboolean SynchronousQueue::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -43,7 +43,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean SynchronousQueue::containsAll(JObject arg0)
+	jboolean SynchronousQueue::containsAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -51,7 +51,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint SynchronousQueue::drainTo(JObject arg0)
+	jint SynchronousQueue::drainTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -59,7 +59,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint SynchronousQueue::drainTo(JObject arg0, jint arg1)
+	jint SynchronousQueue::drainTo(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -68,21 +68,21 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	jboolean SynchronousQueue::isEmpty()
+	jboolean SynchronousQueue::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject SynchronousQueue::iterator()
+	JObject SynchronousQueue::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean SynchronousQueue::offer(JObject arg0)
+	jboolean SynchronousQueue::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -90,7 +90,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean SynchronousQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean SynchronousQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -100,21 +100,21 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject SynchronousQueue::peek()
+	JObject SynchronousQueue::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject SynchronousQueue::poll()
+	JObject SynchronousQueue::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject SynchronousQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject SynchronousQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"poll",
@@ -123,7 +123,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void SynchronousQueue::put(JObject arg0)
+	void SynchronousQueue::put(JObject arg0) const
 	{
 		callMethod<void>(
 			"put",
@@ -131,14 +131,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint SynchronousQueue::remainingCapacity()
+	jint SynchronousQueue::remainingCapacity() const
 	{
 		return callMethod<jint>(
 			"remainingCapacity",
 			"()I"
 		);
 	}
-	jboolean SynchronousQueue::remove(JObject arg0)
+	jboolean SynchronousQueue::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -146,7 +146,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean SynchronousQueue::removeAll(JObject arg0)
+	jboolean SynchronousQueue::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -154,7 +154,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean SynchronousQueue::retainAll(JObject arg0)
+	jboolean SynchronousQueue::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -162,35 +162,35 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint SynchronousQueue::size()
+	jint SynchronousQueue::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject SynchronousQueue::spliterator()
+	JObject SynchronousQueue::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject SynchronousQueue::take()
+	JObject SynchronousQueue::take() const
 	{
 		return callObjectMethod(
 			"take",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObjectArray SynchronousQueue::toArray()
+	JObjectArray SynchronousQueue::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray SynchronousQueue::toArray(JObjectArray arg0)
+	JObjectArray SynchronousQueue::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -198,7 +198,7 @@ namespace java::util::concurrent
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString SynchronousQueue::toString()
+	JString SynchronousQueue::toString() const
 	{
 		return callObjectMethod(
 			"toString",

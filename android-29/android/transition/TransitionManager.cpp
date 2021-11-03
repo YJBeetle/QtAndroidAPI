@@ -65,7 +65,7 @@ namespace android::transition
 			arg1.object()
 		);
 	}
-	void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Transition arg1)
+	void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Transition arg1) const
 	{
 		callMethod<void>(
 			"setTransition",
@@ -74,7 +74,7 @@ namespace android::transition
 			arg1.object()
 		);
 	}
-	void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Scene arg1, android::transition::Transition arg2)
+	void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Scene arg1, android::transition::Transition arg2) const
 	{
 		callMethod<void>(
 			"setTransition",
@@ -84,7 +84,7 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	void TransitionManager::transitionTo(android::transition::Scene arg0)
+	void TransitionManager::transitionTo(android::transition::Scene arg0) const
 	{
 		callMethod<void>(
 			"transitionTo",

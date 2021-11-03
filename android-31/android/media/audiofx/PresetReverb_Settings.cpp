@@ -28,7 +28,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	JString PresetReverb_Settings::toString()
+	JString PresetReverb_Settings::toString() const
 	{
 		return callObjectMethod(
 			"toString",

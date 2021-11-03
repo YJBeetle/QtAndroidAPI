@@ -24,10 +24,10 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		void close();
-		JObject getConnectedDevices();
-		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
+		void close() const;
+		JObject getConnectedDevices() const;
+		jint getConnectionState(android::bluetooth::BluetoothDevice arg0) const;
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0) const;
 	};
 } // namespace android::bluetooth
 

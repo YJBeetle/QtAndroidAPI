@@ -54,14 +54,14 @@ namespace android::media
 		RemoteControlClient(android::app::PendingIntent arg0, android::os::Looper arg1);
 		
 		// Methods
-		android::media::RemoteControlClient_MetadataEditor editMetadata(jboolean arg0);
-		android::media::session::MediaSession getMediaSession();
-		void setMetadataUpdateListener(JObject arg0);
-		void setOnGetPlaybackPositionListener(JObject arg0);
-		void setPlaybackPositionUpdateListener(JObject arg0);
-		void setPlaybackState(jint arg0);
-		void setPlaybackState(jint arg0, jlong arg1, jfloat arg2);
-		void setTransportControlFlags(jint arg0);
+		android::media::RemoteControlClient_MetadataEditor editMetadata(jboolean arg0) const;
+		android::media::session::MediaSession getMediaSession() const;
+		void setMetadataUpdateListener(JObject arg0) const;
+		void setOnGetPlaybackPositionListener(JObject arg0) const;
+		void setPlaybackPositionUpdateListener(JObject arg0) const;
+		void setPlaybackState(jint arg0) const;
+		void setPlaybackState(jint arg0, jlong arg1, jfloat arg2) const;
+		void setTransportControlFlags(jint arg0) const;
 	};
 } // namespace android::media
 

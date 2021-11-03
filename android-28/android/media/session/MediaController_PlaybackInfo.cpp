@@ -25,35 +25,35 @@ namespace android::media::session
 	// Constructors
 	
 	// Methods
-	android::media::AudioAttributes MediaController_PlaybackInfo::getAudioAttributes()
+	android::media::AudioAttributes MediaController_PlaybackInfo::getAudioAttributes() const
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	jint MediaController_PlaybackInfo::getCurrentVolume()
+	jint MediaController_PlaybackInfo::getCurrentVolume() const
 	{
 		return callMethod<jint>(
 			"getCurrentVolume",
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getMaxVolume()
+	jint MediaController_PlaybackInfo::getMaxVolume() const
 	{
 		return callMethod<jint>(
 			"getMaxVolume",
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getPlaybackType()
+	jint MediaController_PlaybackInfo::getPlaybackType() const
 	{
 		return callMethod<jint>(
 			"getPlaybackType",
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getVolumeControl()
+	jint MediaController_PlaybackInfo::getVolumeControl() const
 	{
 		return callMethod<jint>(
 			"getVolumeControl",

@@ -27,21 +27,21 @@ namespace android::media::audiofx
 			"()Z"
 		);
 	}
-	void HapticGenerator::close()
+	void HapticGenerator::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void HapticGenerator::release()
+	void HapticGenerator::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	jint HapticGenerator::setEnabled(jboolean arg0)
+	jint HapticGenerator::setEnabled(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"setEnabled",

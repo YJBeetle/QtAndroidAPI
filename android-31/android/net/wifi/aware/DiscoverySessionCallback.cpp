@@ -19,7 +19,7 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	void DiscoverySessionCallback::onMessageReceived(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1)
+	void DiscoverySessionCallback::onMessageReceived(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"onMessageReceived",
@@ -28,7 +28,7 @@ namespace android::net::wifi::aware
 			arg1.object<jbyteArray>()
 		);
 	}
-	void DiscoverySessionCallback::onMessageSendFailed(jint arg0)
+	void DiscoverySessionCallback::onMessageSendFailed(jint arg0) const
 	{
 		callMethod<void>(
 			"onMessageSendFailed",
@@ -36,7 +36,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	void DiscoverySessionCallback::onMessageSendSucceeded(jint arg0)
+	void DiscoverySessionCallback::onMessageSendSucceeded(jint arg0) const
 	{
 		callMethod<void>(
 			"onMessageSendSucceeded",
@@ -44,7 +44,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	void DiscoverySessionCallback::onPublishStarted(android::net::wifi::aware::PublishDiscoverySession arg0)
+	void DiscoverySessionCallback::onPublishStarted(android::net::wifi::aware::PublishDiscoverySession arg0) const
 	{
 		callMethod<void>(
 			"onPublishStarted",
@@ -52,7 +52,7 @@ namespace android::net::wifi::aware
 			arg0.object()
 		);
 	}
-	void DiscoverySessionCallback::onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2)
+	void DiscoverySessionCallback::onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onServiceDiscovered",
@@ -62,7 +62,7 @@ namespace android::net::wifi::aware
 			arg2.object()
 		);
 	}
-	void DiscoverySessionCallback::onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2, jint arg3)
+	void DiscoverySessionCallback::onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onServiceDiscoveredWithinRange",
@@ -73,7 +73,7 @@ namespace android::net::wifi::aware
 			arg3
 		);
 	}
-	void DiscoverySessionCallback::onServiceLost(android::net::wifi::aware::PeerHandle arg0, jint arg1)
+	void DiscoverySessionCallback::onServiceLost(android::net::wifi::aware::PeerHandle arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onServiceLost",
@@ -82,28 +82,28 @@ namespace android::net::wifi::aware
 			arg1
 		);
 	}
-	void DiscoverySessionCallback::onSessionConfigFailed()
+	void DiscoverySessionCallback::onSessionConfigFailed() const
 	{
 		callMethod<void>(
 			"onSessionConfigFailed",
 			"()V"
 		);
 	}
-	void DiscoverySessionCallback::onSessionConfigUpdated()
+	void DiscoverySessionCallback::onSessionConfigUpdated() const
 	{
 		callMethod<void>(
 			"onSessionConfigUpdated",
 			"()V"
 		);
 	}
-	void DiscoverySessionCallback::onSessionTerminated()
+	void DiscoverySessionCallback::onSessionTerminated() const
 	{
 		callMethod<void>(
 			"onSessionTerminated",
 			"()V"
 		);
 	}
-	void DiscoverySessionCallback::onSubscribeStarted(android::net::wifi::aware::SubscribeDiscoverySession arg0)
+	void DiscoverySessionCallback::onSubscribeStarted(android::net::wifi::aware::SubscribeDiscoverySession arg0) const
 	{
 		callMethod<void>(
 			"onSubscribeStarted",

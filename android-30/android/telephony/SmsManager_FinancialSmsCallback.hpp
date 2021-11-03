@@ -22,7 +22,7 @@ namespace android::telephony
 		SmsManager_FinancialSmsCallback();
 		
 		// Methods
-		void onFinancialSmsMessages(android::database::CursorWindow arg0);
+		void onFinancialSmsMessages(android::database::CursorWindow arg0) const;
 	};
 } // namespace android::telephony
 

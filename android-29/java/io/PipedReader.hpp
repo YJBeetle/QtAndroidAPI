@@ -30,11 +30,11 @@ namespace java::io
 		PipedReader(java::io::PipedWriter arg0, jint arg1);
 		
 		// Methods
-		void close();
-		void connect(java::io::PipedWriter arg0);
-		jint read();
-		jint read(JCharArray arg0, jint arg1, jint arg2);
-		jboolean ready();
+		void close() const;
+		void connect(java::io::PipedWriter arg0) const;
+		jint read() const;
+		jint read(JCharArray arg0, jint arg1, jint arg2) const;
+		jboolean ready() const;
 	};
 } // namespace java::io
 

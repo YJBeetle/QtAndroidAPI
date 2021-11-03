@@ -19,14 +19,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Person Person_Builder::build()
+	android::app::Person Person_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Person;"
 		);
 	}
-	android::app::Person_Builder Person_Builder::setBot(jboolean arg0)
+	android::app::Person_Builder Person_Builder::setBot(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setBot",
@@ -34,7 +34,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Person_Builder Person_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::app::Person_Builder Person_Builder::setIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -42,7 +42,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Person_Builder Person_Builder::setImportant(jboolean arg0)
+	android::app::Person_Builder Person_Builder::setImportant(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setImportant",
@@ -50,7 +50,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Person_Builder Person_Builder::setKey(JString arg0)
+	android::app::Person_Builder Person_Builder::setKey(JString arg0) const
 	{
 		return callObjectMethod(
 			"setKey",
@@ -58,7 +58,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Person_Builder Person_Builder::setName(JString arg0)
+	android::app::Person_Builder Person_Builder::setName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setName",
@@ -66,7 +66,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Person_Builder Person_Builder::setUri(JString arg0)
+	android::app::Person_Builder Person_Builder::setUri(JString arg0) const
 	{
 		return callObjectMethod(
 			"setUri",

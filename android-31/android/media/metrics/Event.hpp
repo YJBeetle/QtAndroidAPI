@@ -21,8 +21,8 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		android::os::Bundle getMetricsBundle();
-		jlong getTimeSinceCreatedMillis();
+		android::os::Bundle getMetricsBundle() const;
+		jlong getTimeSinceCreatedMillis() const;
 	};
 } // namespace android::media::metrics
 

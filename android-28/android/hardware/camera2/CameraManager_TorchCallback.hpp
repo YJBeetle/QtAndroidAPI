@@ -19,8 +19,8 @@ namespace android::hardware::camera2
 		CameraManager_TorchCallback();
 		
 		// Methods
-		void onTorchModeChanged(JString arg0, jboolean arg1);
-		void onTorchModeUnavailable(JString arg0);
+		void onTorchModeChanged(JString arg0, jboolean arg1) const;
+		void onTorchModeUnavailable(JString arg0) const;
 	};
 } // namespace android::hardware::camera2
 

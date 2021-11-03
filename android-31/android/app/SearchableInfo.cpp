@@ -21,182 +21,182 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jboolean SearchableInfo::autoUrlDetect()
+	jboolean SearchableInfo::autoUrlDetect() const
 	{
 		return callMethod<jboolean>(
 			"autoUrlDetect",
 			"()Z"
 		);
 	}
-	jint SearchableInfo::describeContents()
+	jint SearchableInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint SearchableInfo::getHintId()
+	jint SearchableInfo::getHintId() const
 	{
 		return callMethod<jint>(
 			"getHintId",
 			"()I"
 		);
 	}
-	jint SearchableInfo::getImeOptions()
+	jint SearchableInfo::getImeOptions() const
 	{
 		return callMethod<jint>(
 			"getImeOptions",
 			"()I"
 		);
 	}
-	jint SearchableInfo::getInputType()
+	jint SearchableInfo::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
-	android::content::ComponentName SearchableInfo::getSearchActivity()
+	android::content::ComponentName SearchableInfo::getSearchActivity() const
 	{
 		return callObjectMethod(
 			"getSearchActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jint SearchableInfo::getSettingsDescriptionId()
+	jint SearchableInfo::getSettingsDescriptionId() const
 	{
 		return callMethod<jint>(
 			"getSettingsDescriptionId",
 			"()I"
 		);
 	}
-	JString SearchableInfo::getSuggestAuthority()
+	JString SearchableInfo::getSuggestAuthority() const
 	{
 		return callObjectMethod(
 			"getSuggestAuthority",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SearchableInfo::getSuggestIntentAction()
+	JString SearchableInfo::getSuggestIntentAction() const
 	{
 		return callObjectMethod(
 			"getSuggestIntentAction",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SearchableInfo::getSuggestIntentData()
+	JString SearchableInfo::getSuggestIntentData() const
 	{
 		return callObjectMethod(
 			"getSuggestIntentData",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SearchableInfo::getSuggestPackage()
+	JString SearchableInfo::getSuggestPackage() const
 	{
 		return callObjectMethod(
 			"getSuggestPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SearchableInfo::getSuggestPath()
+	JString SearchableInfo::getSuggestPath() const
 	{
 		return callObjectMethod(
 			"getSuggestPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SearchableInfo::getSuggestSelection()
+	JString SearchableInfo::getSuggestSelection() const
 	{
 		return callObjectMethod(
 			"getSuggestSelection",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SearchableInfo::getSuggestThreshold()
+	jint SearchableInfo::getSuggestThreshold() const
 	{
 		return callMethod<jint>(
 			"getSuggestThreshold",
 			"()I"
 		);
 	}
-	jint SearchableInfo::getVoiceLanguageId()
+	jint SearchableInfo::getVoiceLanguageId() const
 	{
 		return callMethod<jint>(
 			"getVoiceLanguageId",
 			"()I"
 		);
 	}
-	jint SearchableInfo::getVoiceLanguageModeId()
+	jint SearchableInfo::getVoiceLanguageModeId() const
 	{
 		return callMethod<jint>(
 			"getVoiceLanguageModeId",
 			"()I"
 		);
 	}
-	jint SearchableInfo::getVoiceMaxResults()
+	jint SearchableInfo::getVoiceMaxResults() const
 	{
 		return callMethod<jint>(
 			"getVoiceMaxResults",
 			"()I"
 		);
 	}
-	jint SearchableInfo::getVoicePromptTextId()
+	jint SearchableInfo::getVoicePromptTextId() const
 	{
 		return callMethod<jint>(
 			"getVoicePromptTextId",
 			"()I"
 		);
 	}
-	jboolean SearchableInfo::getVoiceSearchEnabled()
+	jboolean SearchableInfo::getVoiceSearchEnabled() const
 	{
 		return callMethod<jboolean>(
 			"getVoiceSearchEnabled",
 			"()Z"
 		);
 	}
-	jboolean SearchableInfo::getVoiceSearchLaunchRecognizer()
+	jboolean SearchableInfo::getVoiceSearchLaunchRecognizer() const
 	{
 		return callMethod<jboolean>(
 			"getVoiceSearchLaunchRecognizer",
 			"()Z"
 		);
 	}
-	jboolean SearchableInfo::getVoiceSearchLaunchWebSearch()
+	jboolean SearchableInfo::getVoiceSearchLaunchWebSearch() const
 	{
 		return callMethod<jboolean>(
 			"getVoiceSearchLaunchWebSearch",
 			"()Z"
 		);
 	}
-	jboolean SearchableInfo::queryAfterZeroResults()
+	jboolean SearchableInfo::queryAfterZeroResults() const
 	{
 		return callMethod<jboolean>(
 			"queryAfterZeroResults",
 			"()Z"
 		);
 	}
-	jboolean SearchableInfo::shouldIncludeInGlobalSearch()
+	jboolean SearchableInfo::shouldIncludeInGlobalSearch() const
 	{
 		return callMethod<jboolean>(
 			"shouldIncludeInGlobalSearch",
 			"()Z"
 		);
 	}
-	jboolean SearchableInfo::shouldRewriteQueryFromData()
+	jboolean SearchableInfo::shouldRewriteQueryFromData() const
 	{
 		return callMethod<jboolean>(
 			"shouldRewriteQueryFromData",
 			"()Z"
 		);
 	}
-	jboolean SearchableInfo::shouldRewriteQueryFromText()
+	jboolean SearchableInfo::shouldRewriteQueryFromText() const
 	{
 		return callMethod<jboolean>(
 			"shouldRewriteQueryFromText",
 			"()Z"
 		);
 	}
-	void SearchableInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SearchableInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

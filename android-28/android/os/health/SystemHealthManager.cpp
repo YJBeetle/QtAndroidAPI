@@ -13,14 +13,14 @@ namespace android::os::health
 	// Constructors
 	
 	// Methods
-	android::os::health::HealthStats SystemHealthManager::takeMyUidSnapshot()
+	android::os::health::HealthStats SystemHealthManager::takeMyUidSnapshot() const
 	{
 		return callObjectMethod(
 			"takeMyUidSnapshot",
 			"()Landroid/os/health/HealthStats;"
 		);
 	}
-	android::os::health::HealthStats SystemHealthManager::takeUidSnapshot(jint arg0)
+	android::os::health::HealthStats SystemHealthManager::takeUidSnapshot(jint arg0) const
 	{
 		return callObjectMethod(
 			"takeUidSnapshot",
@@ -28,7 +28,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	JArray SystemHealthManager::takeUidSnapshots(JIntArray arg0)
+	JArray SystemHealthManager::takeUidSnapshots(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"takeUidSnapshots",

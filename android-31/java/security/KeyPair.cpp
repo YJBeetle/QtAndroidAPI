@@ -17,14 +17,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject KeyPair::getPrivate()
+	JObject KeyPair::getPrivate() const
 	{
 		return callObjectMethod(
 			"getPrivate",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	JObject KeyPair::getPublic()
+	JObject KeyPair::getPublic() const
 	{
 		return callObjectMethod(
 			"getPublic",

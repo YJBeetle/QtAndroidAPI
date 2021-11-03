@@ -17,14 +17,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jint IllegalFormatCodePointException::getCodePoint()
+	jint IllegalFormatCodePointException::getCodePoint() const
 	{
 		return callMethod<jint>(
 			"getCodePoint",
 			"()I"
 		);
 	}
-	JString IllegalFormatCodePointException::getMessage()
+	JString IllegalFormatCodePointException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

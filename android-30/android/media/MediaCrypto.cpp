@@ -29,14 +29,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCrypto::release()
+	void MediaCrypto::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	jboolean MediaCrypto::requiresSecureDecoderComponent(JString arg0)
+	jboolean MediaCrypto::requiresSecureDecoderComponent(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"requiresSecureDecoderComponent",
@@ -44,7 +44,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaCrypto::setMediaDrmSession(JByteArray arg0)
+	void MediaCrypto::setMediaDrmSession(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setMediaDrmSession",

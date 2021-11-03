@@ -18,7 +18,7 @@ namespace android::security
 		) {}
 	
 	// Methods
-	android::security::AppUriAuthenticationPolicy_Builder AppUriAuthenticationPolicy_Builder::addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2)
+	android::security::AppUriAuthenticationPolicy_Builder AppUriAuthenticationPolicy_Builder::addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"addAppAndUriMapping",
@@ -28,7 +28,7 @@ namespace android::security
 			arg2.object<jstring>()
 		);
 	}
-	android::security::AppUriAuthenticationPolicy AppUriAuthenticationPolicy_Builder::build()
+	android::security::AppUriAuthenticationPolicy AppUriAuthenticationPolicy_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

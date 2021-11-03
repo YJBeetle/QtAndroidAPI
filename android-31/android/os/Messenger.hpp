@@ -35,12 +35,12 @@ namespace android::os
 		// Methods
 		static android::os::Messenger readMessengerOrNullFromParcel(android::os::Parcel arg0);
 		static void writeMessengerOrNullToParcel(android::os::Messenger arg0, android::os::Parcel arg1);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getBinder();
-		jint hashCode();
-		void send(android::os::Message arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getBinder() const;
+		jint hashCode() const;
+		void send(android::os::Message arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

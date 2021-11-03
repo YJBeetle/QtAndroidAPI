@@ -18,28 +18,28 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	jboolean Drawable_ConstantState::canApplyTheme()
+	jboolean Drawable_ConstantState::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	jint Drawable_ConstantState::getChangingConfigurations()
+	jint Drawable_ConstantState::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable()
+	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable() const
 	{
 		return callObjectMethod(
 			"newDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0)
+	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0) const
 	{
 		return callObjectMethod(
 			"newDrawable",
@@ -47,7 +47,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1)
+	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1) const
 	{
 		return callObjectMethod(
 			"newDrawable",

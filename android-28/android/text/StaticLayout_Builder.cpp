@@ -29,14 +29,14 @@ namespace android::text
 			arg4
 		);
 	}
-	android::text::StaticLayout StaticLayout_Builder::build()
+	android::text::StaticLayout StaticLayout_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/StaticLayout;"
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setAlignment(android::text::Layout_Alignment arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setAlignment(android::text::Layout_Alignment arg0) const
 	{
 		return callObjectMethod(
 			"setAlignment",
@@ -44,7 +44,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setBreakStrategy(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setBreakStrategy(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBreakStrategy",
@@ -52,7 +52,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0) const
 	{
 		return callObjectMethod(
 			"setEllipsize",
@@ -60,7 +60,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setEllipsizedWidth(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setEllipsizedWidth(jint arg0) const
 	{
 		return callObjectMethod(
 			"setEllipsizedWidth",
@@ -68,7 +68,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setHyphenationFrequency(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setHyphenationFrequency(jint arg0) const
 	{
 		return callObjectMethod(
 			"setHyphenationFrequency",
@@ -76,7 +76,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setIncludePad(jboolean arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setIncludePad(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIncludePad",
@@ -84,7 +84,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setIndents(JIntArray arg0, JIntArray arg1)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setIndents(JIntArray arg0, JIntArray arg1) const
 	{
 		return callObjectMethod(
 			"setIndents",
@@ -93,7 +93,7 @@ namespace android::text
 			arg1.object<jintArray>()
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setJustificationMode(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setJustificationMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setJustificationMode",
@@ -101,7 +101,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"setLineSpacing",
@@ -110,7 +110,7 @@ namespace android::text
 			arg1
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setMaxLines(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setMaxLines(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxLines",
@@ -118,7 +118,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setText(JString arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setText",
@@ -126,7 +126,7 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setTextDirection(JObject arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setTextDirection(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setTextDirection",
@@ -134,7 +134,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUseLineSpacingFromFallbacks",

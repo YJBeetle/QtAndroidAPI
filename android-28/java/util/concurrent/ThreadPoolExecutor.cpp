@@ -51,7 +51,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	void ThreadPoolExecutor::allowCoreThreadTimeOut(jboolean arg0)
+	void ThreadPoolExecutor::allowCoreThreadTimeOut(jboolean arg0) const
 	{
 		callMethod<void>(
 			"allowCoreThreadTimeOut",
@@ -59,14 +59,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ThreadPoolExecutor::allowsCoreThreadTimeOut()
+	jboolean ThreadPoolExecutor::allowsCoreThreadTimeOut() const
 	{
 		return callMethod<jboolean>(
 			"allowsCoreThreadTimeOut",
 			"()Z"
 		);
 	}
-	jboolean ThreadPoolExecutor::awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean ThreadPoolExecutor::awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"awaitTermination",
@@ -75,7 +75,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ThreadPoolExecutor::execute(JObject arg0)
+	void ThreadPoolExecutor::execute(JObject arg0) const
 	{
 		callMethod<void>(
 			"execute",
@@ -83,28 +83,28 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ThreadPoolExecutor::getActiveCount()
+	jint ThreadPoolExecutor::getActiveCount() const
 	{
 		return callMethod<jint>(
 			"getActiveCount",
 			"()I"
 		);
 	}
-	jlong ThreadPoolExecutor::getCompletedTaskCount()
+	jlong ThreadPoolExecutor::getCompletedTaskCount() const
 	{
 		return callMethod<jlong>(
 			"getCompletedTaskCount",
 			"()J"
 		);
 	}
-	jint ThreadPoolExecutor::getCorePoolSize()
+	jint ThreadPoolExecutor::getCorePoolSize() const
 	{
 		return callMethod<jint>(
 			"getCorePoolSize",
 			"()I"
 		);
 	}
-	jlong ThreadPoolExecutor::getKeepAliveTime(java::util::concurrent::TimeUnit arg0)
+	jlong ThreadPoolExecutor::getKeepAliveTime(java::util::concurrent::TimeUnit arg0) const
 	{
 		return callMethod<jlong>(
 			"getKeepAliveTime",
@@ -112,98 +112,98 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ThreadPoolExecutor::getLargestPoolSize()
+	jint ThreadPoolExecutor::getLargestPoolSize() const
 	{
 		return callMethod<jint>(
 			"getLargestPoolSize",
 			"()I"
 		);
 	}
-	jint ThreadPoolExecutor::getMaximumPoolSize()
+	jint ThreadPoolExecutor::getMaximumPoolSize() const
 	{
 		return callMethod<jint>(
 			"getMaximumPoolSize",
 			"()I"
 		);
 	}
-	jint ThreadPoolExecutor::getPoolSize()
+	jint ThreadPoolExecutor::getPoolSize() const
 	{
 		return callMethod<jint>(
 			"getPoolSize",
 			"()I"
 		);
 	}
-	JObject ThreadPoolExecutor::getQueue()
+	JObject ThreadPoolExecutor::getQueue() const
 	{
 		return callObjectMethod(
 			"getQueue",
 			"()Ljava/util/concurrent/BlockingQueue;"
 		);
 	}
-	JObject ThreadPoolExecutor::getRejectedExecutionHandler()
+	JObject ThreadPoolExecutor::getRejectedExecutionHandler() const
 	{
 		return callObjectMethod(
 			"getRejectedExecutionHandler",
 			"()Ljava/util/concurrent/RejectedExecutionHandler;"
 		);
 	}
-	jlong ThreadPoolExecutor::getTaskCount()
+	jlong ThreadPoolExecutor::getTaskCount() const
 	{
 		return callMethod<jlong>(
 			"getTaskCount",
 			"()J"
 		);
 	}
-	JObject ThreadPoolExecutor::getThreadFactory()
+	JObject ThreadPoolExecutor::getThreadFactory() const
 	{
 		return callObjectMethod(
 			"getThreadFactory",
 			"()Ljava/util/concurrent/ThreadFactory;"
 		);
 	}
-	jboolean ThreadPoolExecutor::isShutdown()
+	jboolean ThreadPoolExecutor::isShutdown() const
 	{
 		return callMethod<jboolean>(
 			"isShutdown",
 			"()Z"
 		);
 	}
-	jboolean ThreadPoolExecutor::isTerminated()
+	jboolean ThreadPoolExecutor::isTerminated() const
 	{
 		return callMethod<jboolean>(
 			"isTerminated",
 			"()Z"
 		);
 	}
-	jboolean ThreadPoolExecutor::isTerminating()
+	jboolean ThreadPoolExecutor::isTerminating() const
 	{
 		return callMethod<jboolean>(
 			"isTerminating",
 			"()Z"
 		);
 	}
-	jint ThreadPoolExecutor::prestartAllCoreThreads()
+	jint ThreadPoolExecutor::prestartAllCoreThreads() const
 	{
 		return callMethod<jint>(
 			"prestartAllCoreThreads",
 			"()I"
 		);
 	}
-	jboolean ThreadPoolExecutor::prestartCoreThread()
+	jboolean ThreadPoolExecutor::prestartCoreThread() const
 	{
 		return callMethod<jboolean>(
 			"prestartCoreThread",
 			"()Z"
 		);
 	}
-	void ThreadPoolExecutor::purge()
+	void ThreadPoolExecutor::purge() const
 	{
 		callMethod<void>(
 			"purge",
 			"()V"
 		);
 	}
-	jboolean ThreadPoolExecutor::remove(JObject arg0)
+	jboolean ThreadPoolExecutor::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -211,7 +211,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ThreadPoolExecutor::setCorePoolSize(jint arg0)
+	void ThreadPoolExecutor::setCorePoolSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setCorePoolSize",
@@ -219,7 +219,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ThreadPoolExecutor::setKeepAliveTime(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	void ThreadPoolExecutor::setKeepAliveTime(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		callMethod<void>(
 			"setKeepAliveTime",
@@ -228,7 +228,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ThreadPoolExecutor::setMaximumPoolSize(jint arg0)
+	void ThreadPoolExecutor::setMaximumPoolSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumPoolSize",
@@ -236,7 +236,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ThreadPoolExecutor::setRejectedExecutionHandler(JObject arg0)
+	void ThreadPoolExecutor::setRejectedExecutionHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setRejectedExecutionHandler",
@@ -244,7 +244,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ThreadPoolExecutor::setThreadFactory(JObject arg0)
+	void ThreadPoolExecutor::setThreadFactory(JObject arg0) const
 	{
 		callMethod<void>(
 			"setThreadFactory",
@@ -252,21 +252,21 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ThreadPoolExecutor::shutdown()
+	void ThreadPoolExecutor::shutdown() const
 	{
 		callMethod<void>(
 			"shutdown",
 			"()V"
 		);
 	}
-	JObject ThreadPoolExecutor::shutdownNow()
+	JObject ThreadPoolExecutor::shutdownNow() const
 	{
 		return callObjectMethod(
 			"shutdownNow",
 			"()Ljava/util/List;"
 		);
 	}
-	JString ThreadPoolExecutor::toString()
+	JString ThreadPoolExecutor::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -31,11 +31,11 @@ namespace javax::crypto
 		static javax::crypto::SecretKeyFactory getInstance(JString arg0);
 		static javax::crypto::SecretKeyFactory getInstance(JString arg0, JString arg1);
 		static javax::crypto::SecretKeyFactory getInstance(JString arg0, java::security::Provider arg1);
-		JObject generateSecret(JObject arg0);
-		JString getAlgorithm();
-		JObject getKeySpec(JObject arg0, JClass arg1);
-		java::security::Provider getProvider();
-		JObject translateKey(JObject arg0);
+		JObject generateSecret(JObject arg0) const;
+		JString getAlgorithm() const;
+		JObject getKeySpec(JObject arg0, JClass arg1) const;
+		java::security::Provider getProvider() const;
+		JObject translateKey(JObject arg0) const;
 	};
 } // namespace javax::crypto
 

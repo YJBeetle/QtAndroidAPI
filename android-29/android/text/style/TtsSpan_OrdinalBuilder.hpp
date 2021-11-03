@@ -21,8 +21,8 @@ namespace android::text::style
 		TtsSpan_OrdinalBuilder(jlong arg0);
 		
 		// Methods
-		android::text::style::TtsSpan_OrdinalBuilder setNumber(JString arg0);
-		android::text::style::TtsSpan_OrdinalBuilder setNumber(jlong arg0);
+		android::text::style::TtsSpan_OrdinalBuilder setNumber(JString arg0) const;
+		android::text::style::TtsSpan_OrdinalBuilder setNumber(jlong arg0) const;
 	};
 } // namespace android::text::style
 

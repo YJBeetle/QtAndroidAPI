@@ -13,14 +13,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaRouter_RouteCategory::getName()
+	JString MediaRouter_RouteCategory::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString MediaRouter_RouteCategory::getName(android::content::Context arg0)
+	JString MediaRouter_RouteCategory::getName(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -28,7 +28,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JObject MediaRouter_RouteCategory::getRoutes(JObject arg0)
+	JObject MediaRouter_RouteCategory::getRoutes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getRoutes",
@@ -36,21 +36,21 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint MediaRouter_RouteCategory::getSupportedTypes()
+	jint MediaRouter_RouteCategory::getSupportedTypes() const
 	{
 		return callMethod<jint>(
 			"getSupportedTypes",
 			"()I"
 		);
 	}
-	jboolean MediaRouter_RouteCategory::isGroupable()
+	jboolean MediaRouter_RouteCategory::isGroupable() const
 	{
 		return callMethod<jboolean>(
 			"isGroupable",
 			"()Z"
 		);
 	}
-	JString MediaRouter_RouteCategory::toString()
+	JString MediaRouter_RouteCategory::toString() const
 	{
 		return callObjectMethod(
 			"toString",

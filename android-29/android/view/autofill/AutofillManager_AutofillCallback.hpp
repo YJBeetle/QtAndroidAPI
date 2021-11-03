@@ -25,8 +25,8 @@ namespace android::view::autofill
 		AutofillManager_AutofillCallback();
 		
 		// Methods
-		void onAutofillEvent(android::view::View arg0, jint arg1);
-		void onAutofillEvent(android::view::View arg0, jint arg1, jint arg2);
+		void onAutofillEvent(android::view::View arg0, jint arg1) const;
+		void onAutofillEvent(android::view::View arg0, jint arg1, jint arg2) const;
 	};
 } // namespace android::view::autofill
 

@@ -28,19 +28,19 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getDnsServers();
-		JString getDomains();
-		android::net::ProxyInfo getHttpProxy();
-		JString getInterfaceName();
-		JObject getLinkAddresses();
-		JString getPrivateDnsServerName();
-		JObject getRoutes();
-		jint hashCode();
-		jboolean isPrivateDnsActive();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getDnsServers() const;
+		JString getDomains() const;
+		android::net::ProxyInfo getHttpProxy() const;
+		JString getInterfaceName() const;
+		JObject getLinkAddresses() const;
+		JString getPrivateDnsServerName() const;
+		JObject getRoutes() const;
+		jint hashCode() const;
+		jboolean isPrivateDnsActive() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

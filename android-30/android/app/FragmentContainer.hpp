@@ -22,8 +22,8 @@ namespace android::app
 		FragmentContainer();
 		
 		// Methods
-		android::view::View onFindViewById(jint arg0);
-		jboolean onHasView();
+		android::view::View onFindViewById(jint arg0) const;
+		jboolean onHasView() const;
 	};
 } // namespace android::app
 

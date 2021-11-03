@@ -23,10 +23,10 @@ namespace android::webkit
 		ConsoleMessage(JString arg0, JString arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3);
 		
 		// Methods
-		jint lineNumber();
-		JString message();
-		android::webkit::ConsoleMessage_MessageLevel messageLevel();
-		JString sourceId();
+		jint lineNumber() const;
+		JString message() const;
+		android::webkit::ConsoleMessage_MessageLevel messageLevel() const;
+		JString sourceId() const;
 	};
 } // namespace android::webkit
 

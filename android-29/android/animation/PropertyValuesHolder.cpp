@@ -225,21 +225,21 @@ namespace android::animation
 			arg3.object<jobjectArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::clone()
+	android::animation::PropertyValuesHolder PropertyValuesHolder::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/PropertyValuesHolder;"
 		);
 	}
-	JString PropertyValuesHolder::getPropertyName()
+	JString PropertyValuesHolder::getPropertyName() const
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PropertyValuesHolder::setConverter(android::animation::TypeConverter arg0)
+	void PropertyValuesHolder::setConverter(android::animation::TypeConverter arg0) const
 	{
 		callMethod<void>(
 			"setConverter",
@@ -247,7 +247,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void PropertyValuesHolder::setEvaluator(JObject arg0)
+	void PropertyValuesHolder::setEvaluator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEvaluator",
@@ -255,7 +255,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void PropertyValuesHolder::setFloatValues(JFloatArray arg0)
+	void PropertyValuesHolder::setFloatValues(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"setFloatValues",
@@ -263,7 +263,7 @@ namespace android::animation
 			arg0.object<jfloatArray>()
 		);
 	}
-	void PropertyValuesHolder::setIntValues(JIntArray arg0)
+	void PropertyValuesHolder::setIntValues(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"setIntValues",
@@ -271,7 +271,7 @@ namespace android::animation
 			arg0.object<jintArray>()
 		);
 	}
-	void PropertyValuesHolder::setKeyframes(JArray arg0)
+	void PropertyValuesHolder::setKeyframes(JArray arg0) const
 	{
 		callMethod<void>(
 			"setKeyframes",
@@ -279,7 +279,7 @@ namespace android::animation
 			arg0.object<jarray>()
 		);
 	}
-	void PropertyValuesHolder::setObjectValues(JObjectArray arg0)
+	void PropertyValuesHolder::setObjectValues(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"setObjectValues",
@@ -287,7 +287,7 @@ namespace android::animation
 			arg0.object<jobjectArray>()
 		);
 	}
-	void PropertyValuesHolder::setProperty(android::util::Property arg0)
+	void PropertyValuesHolder::setProperty(android::util::Property arg0) const
 	{
 		callMethod<void>(
 			"setProperty",
@@ -295,7 +295,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void PropertyValuesHolder::setPropertyName(JString arg0)
+	void PropertyValuesHolder::setPropertyName(JString arg0) const
 	{
 		callMethod<void>(
 			"setPropertyName",
@@ -303,7 +303,7 @@ namespace android::animation
 			arg0.object<jstring>()
 		);
 	}
-	JString PropertyValuesHolder::toString()
+	JString PropertyValuesHolder::toString() const
 	{
 		return callObjectMethod(
 			"toString",

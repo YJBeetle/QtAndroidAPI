@@ -29,7 +29,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint MediaMuxer::addTrack(android::media::MediaFormat arg0)
+	jint MediaMuxer::addTrack(android::media::MediaFormat arg0) const
 	{
 		return callMethod<jint>(
 			"addTrack",
@@ -37,14 +37,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaMuxer::release()
+	void MediaMuxer::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaMuxer::setLocation(jfloat arg0, jfloat arg1)
+	void MediaMuxer::setLocation(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setLocation",
@@ -53,7 +53,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaMuxer::setOrientationHint(jint arg0)
+	void MediaMuxer::setOrientationHint(jint arg0) const
 	{
 		callMethod<void>(
 			"setOrientationHint",
@@ -61,21 +61,21 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaMuxer::start()
+	void MediaMuxer::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void MediaMuxer::stop()
+	void MediaMuxer::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	void MediaMuxer::writeSampleData(jint arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_BufferInfo arg2)
+	void MediaMuxer::writeSampleData(jint arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_BufferInfo arg2) const
 	{
 		callMethod<void>(
 			"writeSampleData",

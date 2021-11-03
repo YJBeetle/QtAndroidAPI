@@ -27,7 +27,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jboolean UnresolvedPermission::equals(JObject arg0)
+	jboolean UnresolvedPermission::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,49 +35,49 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JString UnresolvedPermission::getActions()
+	JString UnresolvedPermission::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UnresolvedPermission::getUnresolvedActions()
+	JString UnresolvedPermission::getUnresolvedActions() const
 	{
 		return callObjectMethod(
 			"getUnresolvedActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray UnresolvedPermission::getUnresolvedCerts()
+	JArray UnresolvedPermission::getUnresolvedCerts() const
 	{
 		return callObjectMethod(
 			"getUnresolvedCerts",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JString UnresolvedPermission::getUnresolvedName()
+	JString UnresolvedPermission::getUnresolvedName() const
 	{
 		return callObjectMethod(
 			"getUnresolvedName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UnresolvedPermission::getUnresolvedType()
+	JString UnresolvedPermission::getUnresolvedType() const
 	{
 		return callObjectMethod(
 			"getUnresolvedType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UnresolvedPermission::hashCode()
+	jint UnresolvedPermission::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean UnresolvedPermission::implies(java::security::Permission arg0)
+	jboolean UnresolvedPermission::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -85,14 +85,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection UnresolvedPermission::newPermissionCollection()
+	java::security::PermissionCollection UnresolvedPermission::newPermissionCollection() const
 	{
 		return callObjectMethod(
 			"newPermissionCollection",
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
-	JString UnresolvedPermission::toString()
+	JString UnresolvedPermission::toString() const
 	{
 		return callObjectMethod(
 			"toString",

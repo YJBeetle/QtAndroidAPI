@@ -52,17 +52,17 @@ namespace android::app
 		Notification_Action(jint arg0, JString arg1, android::app::PendingIntent arg2);
 		
 		// Methods
-		android::app::Notification_Action clone();
-		jint describeContents();
-		jboolean getAllowGeneratedReplies();
-		JArray getDataOnlyRemoteInputs();
-		android::os::Bundle getExtras();
-		android::graphics::drawable::Icon getIcon();
-		JArray getRemoteInputs();
-		jint getSemanticAction();
-		jboolean isAuthenticationRequired();
-		jboolean isContextual();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::app::Notification_Action clone() const;
+		jint describeContents() const;
+		jboolean getAllowGeneratedReplies() const;
+		JArray getDataOnlyRemoteInputs() const;
+		android::os::Bundle getExtras() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JArray getRemoteInputs() const;
+		jint getSemanticAction() const;
+		jboolean isAuthenticationRequired() const;
+		jboolean isContextual() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

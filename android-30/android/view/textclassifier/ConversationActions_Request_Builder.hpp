@@ -30,11 +30,11 @@ namespace android::view::textclassifier
 		ConversationActions_Request_Builder(JObject arg0);
 		
 		// Methods
-		android::view::textclassifier::ConversationActions_Request build();
-		android::view::textclassifier::ConversationActions_Request_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::ConversationActions_Request_Builder setHints(JObject arg0);
-		android::view::textclassifier::ConversationActions_Request_Builder setMaxSuggestions(jint arg0);
-		android::view::textclassifier::ConversationActions_Request_Builder setTypeConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0);
+		android::view::textclassifier::ConversationActions_Request build() const;
+		android::view::textclassifier::ConversationActions_Request_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::textclassifier::ConversationActions_Request_Builder setHints(JObject arg0) const;
+		android::view::textclassifier::ConversationActions_Request_Builder setMaxSuggestions(jint arg0) const;
+		android::view::textclassifier::ConversationActions_Request_Builder setTypeConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0) const;
 	};
 } // namespace android::view::textclassifier
 

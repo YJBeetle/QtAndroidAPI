@@ -25,13 +25,13 @@ namespace android::bluetooth
 		BluetoothHidDeviceAppSdpSettings(JString arg0, JString arg1, JString arg2, jbyte arg3, JByteArray arg4);
 		
 		// Methods
-		jint describeContents();
-		JString getDescription();
-		JByteArray getDescriptors();
-		JString getName();
-		JString getProvider();
-		jbyte getSubclass();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getDescription() const;
+		JByteArray getDescriptors() const;
+		JString getName() const;
+		JString getProvider() const;
+		jbyte getSubclass() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

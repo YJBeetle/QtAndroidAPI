@@ -21,14 +21,14 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint GnssMeasurementRequest::describeContents()
+	jint GnssMeasurementRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean GnssMeasurementRequest::equals(JObject arg0)
+	jboolean GnssMeasurementRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,28 +36,28 @@ namespace android::location
 			arg0.object<jobject>()
 		);
 	}
-	jint GnssMeasurementRequest::hashCode()
+	jint GnssMeasurementRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean GnssMeasurementRequest::isFullTracking()
+	jboolean GnssMeasurementRequest::isFullTracking() const
 	{
 		return callMethod<jboolean>(
 			"isFullTracking",
 			"()Z"
 		);
 	}
-	JString GnssMeasurementRequest::toString()
+	JString GnssMeasurementRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssMeasurementRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssMeasurementRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -22,8 +22,8 @@ namespace android::content
 		Loader_ForceLoadContentObserver(android::content::Loader arg0);
 		
 		// Methods
-		jboolean deliverSelfNotifications();
-		void onChange(jboolean arg0);
+		jboolean deliverSelfNotifications() const;
+		void onChange(jboolean arg0) const;
 	};
 } // namespace android::content
 

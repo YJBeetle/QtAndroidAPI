@@ -22,28 +22,28 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	jint ECParameterSpec::getCofactor()
+	jint ECParameterSpec::getCofactor() const
 	{
 		return callMethod<jint>(
 			"getCofactor",
 			"()I"
 		);
 	}
-	java::security::spec::EllipticCurve ECParameterSpec::getCurve()
+	java::security::spec::EllipticCurve ECParameterSpec::getCurve() const
 	{
 		return callObjectMethod(
 			"getCurve",
 			"()Ljava/security/spec/EllipticCurve;"
 		);
 	}
-	java::security::spec::ECPoint ECParameterSpec::getGenerator()
+	java::security::spec::ECPoint ECParameterSpec::getGenerator() const
 	{
 		return callObjectMethod(
 			"getGenerator",
 			"()Ljava/security/spec/ECPoint;"
 		);
 	}
-	java::math::BigInteger ECParameterSpec::getOrder()
+	java::math::BigInteger ECParameterSpec::getOrder() const
 	{
 		return callObjectMethod(
 			"getOrder",

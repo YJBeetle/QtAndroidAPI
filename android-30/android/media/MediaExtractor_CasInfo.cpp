@@ -12,21 +12,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray MediaExtractor_CasInfo::getPrivateData()
+	JByteArray MediaExtractor_CasInfo::getPrivateData() const
 	{
 		return callObjectMethod(
 			"getPrivateData",
 			"()[B"
 		);
 	}
-	android::media::MediaCas_Session MediaExtractor_CasInfo::getSession()
+	android::media::MediaCas_Session MediaExtractor_CasInfo::getSession() const
 	{
 		return callObjectMethod(
 			"getSession",
 			"()Landroid/media/MediaCas$Session;"
 		);
 	}
-	jint MediaExtractor_CasInfo::getSystemId()
+	jint MediaExtractor_CasInfo::getSystemId() const
 	{
 		return callMethod<jint>(
 			"getSystemId",

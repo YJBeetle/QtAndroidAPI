@@ -55,25 +55,25 @@ namespace java::text
 		
 		// Methods
 		static JString format(JString arg0, JObjectArray arg1);
-		void applyPattern(JString arg0);
-		JObject clone();
-		jboolean equals(JObject arg0);
-		java::lang::StringBuffer format(JObjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObject formatToCharacterIterator(JObject arg0);
-		JArray getFormats();
-		JArray getFormatsByArgumentIndex();
-		java::util::Locale getLocale();
-		jint hashCode();
-		JObjectArray parse(JString arg0);
-		JObjectArray parse(JString arg0, java::text::ParsePosition arg1);
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
-		void setFormat(jint arg0, java::text::Format arg1);
-		void setFormatByArgumentIndex(jint arg0, java::text::Format arg1);
-		void setFormats(JArray arg0);
-		void setFormatsByArgumentIndex(JArray arg0);
-		void setLocale(java::util::Locale arg0);
-		JString toPattern();
+		void applyPattern(JString arg0) const;
+		JObject clone() const;
+		jboolean equals(JObject arg0) const;
+		java::lang::StringBuffer format(JObjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		JObject formatToCharacterIterator(JObject arg0) const;
+		JArray getFormats() const;
+		JArray getFormatsByArgumentIndex() const;
+		java::util::Locale getLocale() const;
+		jint hashCode() const;
+		JObjectArray parse(JString arg0) const;
+		JObjectArray parse(JString arg0, java::text::ParsePosition arg1) const;
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
+		void setFormat(jint arg0, java::text::Format arg1) const;
+		void setFormatByArgumentIndex(jint arg0, java::text::Format arg1) const;
+		void setFormats(JArray arg0) const;
+		void setFormatsByArgumentIndex(JArray arg0) const;
+		void setLocale(java::util::Locale arg0) const;
+		JString toPattern() const;
 	};
 } // namespace java::text
 

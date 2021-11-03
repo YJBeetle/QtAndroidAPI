@@ -23,12 +23,12 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean isValid();
-		void readFromParcel(android::os::Parcel arg0);
-		void release();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean isValid() const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void release() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

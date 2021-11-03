@@ -17,7 +17,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvRecordingClient_RecordingCallback::onConnectionFailed(JString arg0)
+	void TvRecordingClient_RecordingCallback::onConnectionFailed(JString arg0) const
 	{
 		callMethod<void>(
 			"onConnectionFailed",
@@ -25,7 +25,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvRecordingClient_RecordingCallback::onDisconnected(JString arg0)
+	void TvRecordingClient_RecordingCallback::onDisconnected(JString arg0) const
 	{
 		callMethod<void>(
 			"onDisconnected",
@@ -33,7 +33,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvRecordingClient_RecordingCallback::onError(jint arg0)
+	void TvRecordingClient_RecordingCallback::onError(jint arg0) const
 	{
 		callMethod<void>(
 			"onError",
@@ -41,7 +41,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvRecordingClient_RecordingCallback::onRecordingStopped(android::net::Uri arg0)
+	void TvRecordingClient_RecordingCallback::onRecordingStopped(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onRecordingStopped",
@@ -49,7 +49,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvRecordingClient_RecordingCallback::onTuned(android::net::Uri arg0)
+	void TvRecordingClient_RecordingCallback::onTuned(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onTuned",

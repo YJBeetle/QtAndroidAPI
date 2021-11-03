@@ -38,11 +38,11 @@ namespace android::renderscript
 		
 		// Methods
 		static android::renderscript::ScriptIntrinsicResize create(android::renderscript::RenderScript arg0);
-		void forEach_bicubic(android::renderscript::Allocation arg0);
-		void forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1);
-		android::renderscript::Script_FieldID getFieldID_Input();
-		android::renderscript::Script_KernelID getKernelID_bicubic();
-		void setInput(android::renderscript::Allocation arg0);
+		void forEach_bicubic(android::renderscript::Allocation arg0) const;
+		void forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const;
+		android::renderscript::Script_FieldID getFieldID_Input() const;
+		android::renderscript::Script_KernelID getKernelID_bicubic() const;
+		void setInput(android::renderscript::Allocation arg0) const;
 	};
 } // namespace android::renderscript
 

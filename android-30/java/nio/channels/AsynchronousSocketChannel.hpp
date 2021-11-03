@@ -41,23 +41,23 @@ namespace java::nio::channels
 		// Methods
 		static java::nio::channels::AsynchronousSocketChannel open();
 		static java::nio::channels::AsynchronousSocketChannel open(java::nio::channels::AsynchronousChannelGroup arg0);
-		java::nio::channels::AsynchronousSocketChannel bind(java::net::SocketAddress arg0);
-		JObject connect(java::net::SocketAddress arg0);
-		void connect(java::net::SocketAddress arg0, JObject arg1, JObject arg2);
-		java::net::SocketAddress getLocalAddress();
-		java::net::SocketAddress getRemoteAddress();
-		java::nio::channels::spi::AsynchronousChannelProvider provider();
-		JObject read(java::nio::ByteBuffer arg0);
-		void read(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2);
-		void read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4);
-		void read(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6);
-		java::nio::channels::AsynchronousSocketChannel setOption(JObject arg0, JObject arg1);
-		java::nio::channels::AsynchronousSocketChannel shutdownInput();
-		java::nio::channels::AsynchronousSocketChannel shutdownOutput();
-		JObject write(java::nio::ByteBuffer arg0);
-		void write(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2);
-		void write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4);
-		void write(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6);
+		java::nio::channels::AsynchronousSocketChannel bind(java::net::SocketAddress arg0) const;
+		JObject connect(java::net::SocketAddress arg0) const;
+		void connect(java::net::SocketAddress arg0, JObject arg1, JObject arg2) const;
+		java::net::SocketAddress getLocalAddress() const;
+		java::net::SocketAddress getRemoteAddress() const;
+		java::nio::channels::spi::AsynchronousChannelProvider provider() const;
+		JObject read(java::nio::ByteBuffer arg0) const;
+		void read(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2) const;
+		void read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4) const;
+		void read(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6) const;
+		java::nio::channels::AsynchronousSocketChannel setOption(JObject arg0, JObject arg1) const;
+		java::nio::channels::AsynchronousSocketChannel shutdownInput() const;
+		java::nio::channels::AsynchronousSocketChannel shutdownOutput() const;
+		JObject write(java::nio::ByteBuffer arg0) const;
+		void write(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2) const;
+		void write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4) const;
+		void write(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6) const;
 	};
 } // namespace java::nio::channels
 

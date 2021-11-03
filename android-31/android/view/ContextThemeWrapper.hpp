@@ -42,13 +42,13 @@ namespace android::view
 		ContextThemeWrapper(android::content::Context arg0, jint arg1);
 		
 		// Methods
-		void applyOverrideConfiguration(android::content::res::Configuration arg0);
-		android::content::res::AssetManager getAssets();
-		android::content::res::Resources getResources();
-		JObject getSystemService(JString arg0);
-		android::content::res::Resources_Theme getTheme();
-		void setTheme(android::content::res::Resources_Theme arg0);
-		void setTheme(jint arg0);
+		void applyOverrideConfiguration(android::content::res::Configuration arg0) const;
+		android::content::res::AssetManager getAssets() const;
+		android::content::res::Resources getResources() const;
+		JObject getSystemService(JString arg0) const;
+		android::content::res::Resources_Theme getTheme() const;
+		void setTheme(android::content::res::Resources_Theme arg0) const;
+		void setTheme(jint arg0) const;
 	};
 } // namespace android::view
 

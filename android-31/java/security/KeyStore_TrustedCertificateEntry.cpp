@@ -25,21 +25,21 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject KeyStore_TrustedCertificateEntry::getAttributes()
+	JObject KeyStore_TrustedCertificateEntry::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::security::cert::Certificate KeyStore_TrustedCertificateEntry::getTrustedCertificate()
+	java::security::cert::Certificate KeyStore_TrustedCertificateEntry::getTrustedCertificate() const
 	{
 		return callObjectMethod(
 			"getTrustedCertificate",
 			"()Ljava/security/cert/Certificate;"
 		);
 	}
-	JString KeyStore_TrustedCertificateEntry::toString()
+	JString KeyStore_TrustedCertificateEntry::toString() const
 	{
 		return callObjectMethod(
 			"toString",

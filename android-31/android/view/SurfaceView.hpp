@@ -45,19 +45,19 @@ namespace android::view
 		SurfaceView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void draw(android::graphics::Canvas arg0);
-		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		JObject getHolder();
-		JObject getHostToken();
-		jint getImportantForAccessibility();
-		android::view::SurfaceControl getSurfaceControl();
-		void setAlpha(jfloat arg0);
-		void setChildSurfacePackage(android::view::SurfaceControlViewHost_SurfacePackage arg0);
-		void setClipBounds(android::graphics::Rect arg0);
-		void setSecure(jboolean arg0);
-		void setVisibility(jint arg0);
-		void setZOrderMediaOverlay(jboolean arg0);
-		void setZOrderOnTop(jboolean arg0);
+		void draw(android::graphics::Canvas arg0) const;
+		jboolean gatherTransparentRegion(android::graphics::Region arg0) const;
+		JObject getHolder() const;
+		JObject getHostToken() const;
+		jint getImportantForAccessibility() const;
+		android::view::SurfaceControl getSurfaceControl() const;
+		void setAlpha(jfloat arg0) const;
+		void setChildSurfacePackage(android::view::SurfaceControlViewHost_SurfacePackage arg0) const;
+		void setClipBounds(android::graphics::Rect arg0) const;
+		void setSecure(jboolean arg0) const;
+		void setVisibility(jint arg0) const;
+		void setZOrderMediaOverlay(jboolean arg0) const;
+		void setZOrderOnTop(jboolean arg0) const;
 	};
 } // namespace android::view
 

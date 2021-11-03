@@ -14,28 +14,28 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	android::renderscript::Allocation Script_FieldBase::getAllocation()
+	android::renderscript::Allocation Script_FieldBase::getAllocation() const
 	{
 		return callObjectMethod(
 			"getAllocation",
 			"()Landroid/renderscript/Allocation;"
 		);
 	}
-	android::renderscript::Element Script_FieldBase::getElement()
+	android::renderscript::Element Script_FieldBase::getElement() const
 	{
 		return callObjectMethod(
 			"getElement",
 			"()Landroid/renderscript/Element;"
 		);
 	}
-	android::renderscript::Type Script_FieldBase::getType()
+	android::renderscript::Type Script_FieldBase::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Landroid/renderscript/Type;"
 		);
 	}
-	void Script_FieldBase::updateAllocation()
+	void Script_FieldBase::updateAllocation() const
 	{
 		callMethod<void>(
 			"updateAllocation",

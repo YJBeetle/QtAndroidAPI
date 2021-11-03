@@ -27,9 +27,9 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JObject getSuperState();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getSuperState() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

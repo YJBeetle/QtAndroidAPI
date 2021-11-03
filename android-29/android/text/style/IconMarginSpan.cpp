@@ -29,7 +29,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	void IconMarginSpan::chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5)
+	void IconMarginSpan::chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5) const
 	{
 		callMethod<void>(
 			"chooseHeight",
@@ -42,7 +42,7 @@ namespace android::text::style
 			arg5.object()
 		);
 	}
-	void IconMarginSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
+	void IconMarginSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11) const
 	{
 		callMethod<void>(
 			"drawLeadingMargin",
@@ -61,7 +61,7 @@ namespace android::text::style
 			arg11.object()
 		);
 	}
-	jint IconMarginSpan::getLeadingMargin(jboolean arg0)
+	jint IconMarginSpan::getLeadingMargin(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"getLeadingMargin",

@@ -23,9 +23,9 @@ namespace android::media
 		RouteDiscoveryPreference_Builder(JObject arg0, jboolean arg1);
 		
 		// Methods
-		android::media::RouteDiscoveryPreference build();
-		android::media::RouteDiscoveryPreference_Builder setPreferredFeatures(JObject arg0);
-		android::media::RouteDiscoveryPreference_Builder setShouldPerformActiveScan(jboolean arg0);
+		android::media::RouteDiscoveryPreference build() const;
+		android::media::RouteDiscoveryPreference_Builder setPreferredFeatures(JObject arg0) const;
+		android::media::RouteDiscoveryPreference_Builder setShouldPerformActiveScan(jboolean arg0) const;
 	};
 } // namespace android::media
 

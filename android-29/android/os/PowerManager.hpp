@@ -44,20 +44,20 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void addThermalStatusListener(JObject arg0);
-		void addThermalStatusListener(JObject arg0, JObject arg1);
-		jint getCurrentThermalStatus();
-		jint getLocationPowerSaveMode();
-		jboolean isDeviceIdleMode();
-		jboolean isIgnoringBatteryOptimizations(JString arg0);
-		jboolean isInteractive();
-		jboolean isPowerSaveMode();
-		jboolean isScreenOn();
-		jboolean isSustainedPerformanceModeSupported();
-		jboolean isWakeLockLevelSupported(jint arg0);
-		android::os::PowerManager_WakeLock newWakeLock(jint arg0, JString arg1);
-		void reboot(JString arg0);
-		void removeThermalStatusListener(JObject arg0);
+		void addThermalStatusListener(JObject arg0) const;
+		void addThermalStatusListener(JObject arg0, JObject arg1) const;
+		jint getCurrentThermalStatus() const;
+		jint getLocationPowerSaveMode() const;
+		jboolean isDeviceIdleMode() const;
+		jboolean isIgnoringBatteryOptimizations(JString arg0) const;
+		jboolean isInteractive() const;
+		jboolean isPowerSaveMode() const;
+		jboolean isScreenOn() const;
+		jboolean isSustainedPerformanceModeSupported() const;
+		jboolean isWakeLockLevelSupported(jint arg0) const;
+		android::os::PowerManager_WakeLock newWakeLock(jint arg0, JString arg1) const;
+		void reboot(JString arg0) const;
+		void removeThermalStatusListener(JObject arg0) const;
 	};
 } // namespace android::os
 

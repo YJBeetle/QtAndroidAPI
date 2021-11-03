@@ -10,14 +10,14 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	JObject TotalCaptureResult::getPartialResults()
+	JObject TotalCaptureResult::getPartialResults() const
 	{
 		return callObjectMethod(
 			"getPartialResults",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject TotalCaptureResult::getPhysicalCameraResults()
+	JObject TotalCaptureResult::getPhysicalCameraResults() const
 	{
 		return callObjectMethod(
 			"getPhysicalCameraResults",

@@ -41,7 +41,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void Dialog::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void Dialog::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addContentView",
@@ -50,35 +50,35 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Dialog::cancel()
+	void Dialog::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	void Dialog::closeOptionsMenu()
+	void Dialog::closeOptionsMenu() const
 	{
 		callMethod<void>(
 			"closeOptionsMenu",
 			"()V"
 		);
 	}
-	void Dialog::create()
+	void Dialog::create() const
 	{
 		callMethod<void>(
 			"create",
 			"()V"
 		);
 	}
-	void Dialog::dismiss()
+	void Dialog::dismiss() const
 	{
 		callMethod<void>(
 			"dismiss",
 			"()V"
 		);
 	}
-	jboolean Dialog::dispatchGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean Dialog::dispatchGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchGenericMotionEvent",
@@ -86,7 +86,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean Dialog::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -94,7 +94,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::dispatchKeyShortcutEvent(android::view::KeyEvent arg0)
+	jboolean Dialog::dispatchKeyShortcutEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
@@ -102,7 +102,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	jboolean Dialog::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchPopulateAccessibilityEvent",
@@ -110,7 +110,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean Dialog::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -118,7 +118,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::dispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean Dialog::dispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
@@ -126,7 +126,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::View Dialog::findViewById(jint arg0)
+	android::view::View Dialog::findViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -134,84 +134,84 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar Dialog::getActionBar()
+	android::app::ActionBar Dialog::getActionBar() const
 	{
 		return callObjectMethod(
 			"getActionBar",
 			"()Landroid/app/ActionBar;"
 		);
 	}
-	android::content::Context Dialog::getContext()
+	android::content::Context Dialog::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::view::View Dialog::getCurrentFocus()
+	android::view::View Dialog::getCurrentFocus() const
 	{
 		return callObjectMethod(
 			"getCurrentFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::LayoutInflater Dialog::getLayoutInflater()
+	android::view::LayoutInflater Dialog::getLayoutInflater() const
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	android::app::Activity Dialog::getOwnerActivity()
+	android::app::Activity Dialog::getOwnerActivity() const
 	{
 		return callObjectMethod(
 			"getOwnerActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	android::view::SearchEvent Dialog::getSearchEvent()
+	android::view::SearchEvent Dialog::getSearchEvent() const
 	{
 		return callObjectMethod(
 			"getSearchEvent",
 			"()Landroid/view/SearchEvent;"
 		);
 	}
-	jint Dialog::getVolumeControlStream()
+	jint Dialog::getVolumeControlStream() const
 	{
 		return callMethod<jint>(
 			"getVolumeControlStream",
 			"()I"
 		);
 	}
-	android::view::Window Dialog::getWindow()
+	android::view::Window Dialog::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/view/Window;"
 		);
 	}
-	void Dialog::hide()
+	void Dialog::hide() const
 	{
 		callMethod<void>(
 			"hide",
 			"()V"
 		);
 	}
-	void Dialog::invalidateOptionsMenu()
+	void Dialog::invalidateOptionsMenu() const
 	{
 		callMethod<void>(
 			"invalidateOptionsMenu",
 			"()V"
 		);
 	}
-	jboolean Dialog::isShowing()
+	jboolean Dialog::isShowing() const
 	{
 		return callMethod<jboolean>(
 			"isShowing",
 			"()Z"
 		);
 	}
-	void Dialog::onActionModeFinished(android::view::ActionMode arg0)
+	void Dialog::onActionModeFinished(android::view::ActionMode arg0) const
 	{
 		callMethod<void>(
 			"onActionModeFinished",
@@ -219,7 +219,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onActionModeStarted(android::view::ActionMode arg0)
+	void Dialog::onActionModeStarted(android::view::ActionMode arg0) const
 	{
 		callMethod<void>(
 			"onActionModeStarted",
@@ -227,28 +227,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onAttachedToWindow()
+	void Dialog::onAttachedToWindow() const
 	{
 		callMethod<void>(
 			"onAttachedToWindow",
 			"()V"
 		);
 	}
-	void Dialog::onBackPressed()
+	void Dialog::onBackPressed() const
 	{
 		callMethod<void>(
 			"onBackPressed",
 			"()V"
 		);
 	}
-	void Dialog::onContentChanged()
+	void Dialog::onContentChanged() const
 	{
 		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
-	jboolean Dialog::onContextItemSelected(JObject arg0)
+	jboolean Dialog::onContextItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onContextItemSelected",
@@ -256,7 +256,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onContextMenuClosed(JObject arg0)
+	void Dialog::onContextMenuClosed(JObject arg0) const
 	{
 		callMethod<void>(
 			"onContextMenuClosed",
@@ -264,7 +264,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2)
+	void Dialog::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onCreateContextMenu",
@@ -274,7 +274,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	jboolean Dialog::onCreateOptionsMenu(JObject arg0)
+	jboolean Dialog::onCreateOptionsMenu(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onCreateOptionsMenu",
@@ -282,7 +282,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::onCreatePanelMenu(jint arg0, JObject arg1)
+	jboolean Dialog::onCreatePanelMenu(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onCreatePanelMenu",
@@ -291,7 +291,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::view::View Dialog::onCreatePanelView(jint arg0)
+	android::view::View Dialog::onCreatePanelView(jint arg0) const
 	{
 		return callObjectMethod(
 			"onCreatePanelView",
@@ -299,14 +299,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::onDetachedFromWindow()
+	void Dialog::onDetachedFromWindow() const
 	{
 		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
-	jboolean Dialog::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean Dialog::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -314,7 +314,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean Dialog::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -323,7 +323,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onKeyLongPress(jint arg0, android::view::KeyEvent arg1)
+	jboolean Dialog::onKeyLongPress(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyLongPress",
@@ -332,7 +332,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean Dialog::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -342,7 +342,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	jboolean Dialog::onKeyShortcut(jint arg0, android::view::KeyEvent arg1)
+	jboolean Dialog::onKeyShortcut(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyShortcut",
@@ -351,7 +351,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean Dialog::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -360,7 +360,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onMenuItemSelected(jint arg0, JObject arg1)
+	jboolean Dialog::onMenuItemSelected(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMenuItemSelected",
@@ -369,7 +369,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onMenuOpened(jint arg0, JObject arg1)
+	jboolean Dialog::onMenuOpened(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMenuOpened",
@@ -378,7 +378,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onOptionsItemSelected(JObject arg0)
+	jboolean Dialog::onOptionsItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -386,7 +386,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onOptionsMenuClosed(JObject arg0)
+	void Dialog::onOptionsMenuClosed(JObject arg0) const
 	{
 		callMethod<void>(
 			"onOptionsMenuClosed",
@@ -394,7 +394,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onPanelClosed(jint arg0, JObject arg1)
+	void Dialog::onPanelClosed(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onPanelClosed",
@@ -403,7 +403,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onPrepareOptionsMenu(JObject arg0)
+	jboolean Dialog::onPrepareOptionsMenu(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onPrepareOptionsMenu",
@@ -411,7 +411,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2)
+	jboolean Dialog::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"onPreparePanel",
@@ -421,7 +421,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Dialog::onRestoreInstanceState(android::os::Bundle arg0)
+	void Dialog::onRestoreInstanceState(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -429,21 +429,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::os::Bundle Dialog::onSaveInstanceState()
+	android::os::Bundle Dialog::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jboolean Dialog::onSearchRequested()
+	jboolean Dialog::onSearchRequested() const
 	{
 		return callMethod<jboolean>(
 			"onSearchRequested",
 			"()Z"
 		);
 	}
-	jboolean Dialog::onSearchRequested(android::view::SearchEvent arg0)
+	jboolean Dialog::onSearchRequested(android::view::SearchEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSearchRequested",
@@ -451,7 +451,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean Dialog::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -459,7 +459,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean Dialog::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -467,7 +467,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0)
+	void Dialog::onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0) const
 	{
 		callMethod<void>(
 			"onWindowAttributesChanged",
@@ -475,7 +475,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onWindowFocusChanged(jboolean arg0)
+	void Dialog::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -483,7 +483,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::ActionMode Dialog::onWindowStartingActionMode(JObject arg0)
+	android::view::ActionMode Dialog::onWindowStartingActionMode(JObject arg0) const
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -491,7 +491,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::ActionMode Dialog::onWindowStartingActionMode(JObject arg0, jint arg1)
+	android::view::ActionMode Dialog::onWindowStartingActionMode(JObject arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -500,7 +500,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Dialog::openContextMenu(android::view::View arg0)
+	void Dialog::openContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"openContextMenu",
@@ -508,14 +508,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::openOptionsMenu()
+	void Dialog::openOptionsMenu() const
 	{
 		callMethod<void>(
 			"openOptionsMenu",
 			"()V"
 		);
 	}
-	void Dialog::registerForContextMenu(android::view::View arg0)
+	void Dialog::registerForContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"registerForContextMenu",
@@ -523,7 +523,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::requestWindowFeature(jint arg0)
+	jboolean Dialog::requestWindowFeature(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestWindowFeature",
@@ -531,7 +531,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::View Dialog::requireViewById(jint arg0)
+	android::view::View Dialog::requireViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -539,7 +539,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::setCancelMessage(android::os::Message arg0)
+	void Dialog::setCancelMessage(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"setCancelMessage",
@@ -547,7 +547,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setCancelable(jboolean arg0)
+	void Dialog::setCancelable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCancelable",
@@ -555,7 +555,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::setCanceledOnTouchOutside(jboolean arg0)
+	void Dialog::setCanceledOnTouchOutside(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCanceledOnTouchOutside",
@@ -563,7 +563,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::setContentView(android::view::View arg0)
+	void Dialog::setContentView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -571,7 +571,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setContentView(jint arg0)
+	void Dialog::setContentView(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -579,7 +579,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void Dialog::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -588,7 +588,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Dialog::setDismissMessage(android::os::Message arg0)
+	void Dialog::setDismissMessage(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"setDismissMessage",
@@ -596,7 +596,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setFeatureDrawable(jint arg0, android::graphics::drawable::Drawable arg1)
+	void Dialog::setFeatureDrawable(jint arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawable",
@@ -605,7 +605,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Dialog::setFeatureDrawableAlpha(jint arg0, jint arg1)
+	void Dialog::setFeatureDrawableAlpha(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableAlpha",
@@ -614,7 +614,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Dialog::setFeatureDrawableResource(jint arg0, jint arg1)
+	void Dialog::setFeatureDrawableResource(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableResource",
@@ -623,7 +623,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Dialog::setFeatureDrawableUri(jint arg0, android::net::Uri arg1)
+	void Dialog::setFeatureDrawableUri(jint arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableUri",
@@ -632,7 +632,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Dialog::setOnCancelListener(JObject arg0)
+	void Dialog::setOnCancelListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCancelListener",
@@ -640,7 +640,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setOnDismissListener(JObject arg0)
+	void Dialog::setOnDismissListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -648,7 +648,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setOnKeyListener(JObject arg0)
+	void Dialog::setOnKeyListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnKeyListener",
@@ -656,7 +656,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setOnShowListener(JObject arg0)
+	void Dialog::setOnShowListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnShowListener",
@@ -664,7 +664,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setOwnerActivity(android::app::Activity arg0)
+	void Dialog::setOwnerActivity(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"setOwnerActivity",
@@ -672,7 +672,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setTitle(jint arg0)
+	void Dialog::setTitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -680,7 +680,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::setTitle(JString arg0)
+	void Dialog::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -688,7 +688,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void Dialog::setVolumeControlStream(jint arg0)
+	void Dialog::setVolumeControlStream(jint arg0) const
 	{
 		callMethod<void>(
 			"setVolumeControlStream",
@@ -696,14 +696,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::show()
+	void Dialog::show() const
 	{
 		callMethod<void>(
 			"show",
 			"()V"
 		);
 	}
-	void Dialog::takeKeyEvents(jboolean arg0)
+	void Dialog::takeKeyEvents(jboolean arg0) const
 	{
 		callMethod<void>(
 			"takeKeyEvents",
@@ -711,7 +711,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::unregisterForContextMenu(android::view::View arg0)
+	void Dialog::unregisterForContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"unregisterForContextMenu",

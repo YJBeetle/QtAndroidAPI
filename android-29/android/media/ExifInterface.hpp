@@ -191,22 +191,22 @@ namespace android::media
 		ExifInterface(JString arg0);
 		
 		// Methods
-		jdouble getAltitude(jdouble arg0);
-		JString getAttribute(JString arg0);
-		JByteArray getAttributeBytes(JString arg0);
-		jdouble getAttributeDouble(JString arg0, jdouble arg1);
-		jint getAttributeInt(JString arg0, jint arg1);
-		JLongArray getAttributeRange(JString arg0);
-		jboolean getLatLong(JFloatArray arg0);
-		JByteArray getThumbnail();
-		android::graphics::Bitmap getThumbnailBitmap();
-		JByteArray getThumbnailBytes();
-		JLongArray getThumbnailRange();
-		jboolean hasAttribute(JString arg0);
-		jboolean hasThumbnail();
-		jboolean isThumbnailCompressed();
-		void saveAttributes();
-		void setAttribute(JString arg0, JString arg1);
+		jdouble getAltitude(jdouble arg0) const;
+		JString getAttribute(JString arg0) const;
+		JByteArray getAttributeBytes(JString arg0) const;
+		jdouble getAttributeDouble(JString arg0, jdouble arg1) const;
+		jint getAttributeInt(JString arg0, jint arg1) const;
+		JLongArray getAttributeRange(JString arg0) const;
+		jboolean getLatLong(JFloatArray arg0) const;
+		JByteArray getThumbnail() const;
+		android::graphics::Bitmap getThumbnailBitmap() const;
+		JByteArray getThumbnailBytes() const;
+		JLongArray getThumbnailRange() const;
+		jboolean hasAttribute(JString arg0) const;
+		jboolean hasThumbnail() const;
+		jboolean isThumbnailCompressed() const;
+		void saveAttributes() const;
+		void setAttribute(JString arg0, JString arg1) const;
 	};
 } // namespace android::media
 

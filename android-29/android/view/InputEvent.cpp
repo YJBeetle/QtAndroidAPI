@@ -19,42 +19,42 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint InputEvent::describeContents()
+	jint InputEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::view::InputDevice InputEvent::getDevice()
+	android::view::InputDevice InputEvent::getDevice() const
 	{
 		return callObjectMethod(
 			"getDevice",
 			"()Landroid/view/InputDevice;"
 		);
 	}
-	jint InputEvent::getDeviceId()
+	jint InputEvent::getDeviceId() const
 	{
 		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
-	jlong InputEvent::getEventTime()
+	jlong InputEvent::getEventTime() const
 	{
 		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
-	jint InputEvent::getSource()
+	jint InputEvent::getSource() const
 	{
 		return callMethod<jint>(
 			"getSource",
 			"()I"
 		);
 	}
-	jboolean InputEvent::isFromSource(jint arg0)
+	jboolean InputEvent::isFromSource(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isFromSource",

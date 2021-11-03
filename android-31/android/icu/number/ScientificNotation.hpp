@@ -21,8 +21,8 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::ScientificNotation withExponentSignDisplay(android::icu::number::NumberFormatter_SignDisplay arg0);
-		android::icu::number::ScientificNotation withMinExponentDigits(jint arg0);
+		android::icu::number::ScientificNotation withExponentSignDisplay(android::icu::number::NumberFormatter_SignDisplay arg0) const;
+		android::icu::number::ScientificNotation withMinExponentDigits(jint arg0) const;
 	};
 } // namespace android::icu::number
 

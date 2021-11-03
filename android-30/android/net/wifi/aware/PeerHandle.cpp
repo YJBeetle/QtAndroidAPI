@@ -11,7 +11,7 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	jboolean PeerHandle::equals(JObject arg0)
+	jboolean PeerHandle::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -19,7 +19,7 @@ namespace android::net::wifi::aware
 			arg0.object<jobject>()
 		);
 	}
-	jint PeerHandle::hashCode()
+	jint PeerHandle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -118,14 +118,14 @@ namespace javax::crypto
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray Cipher::doFinal()
+	JByteArray Cipher::doFinal() const
 	{
 		return callObjectMethod(
 			"doFinal",
 			"()[B"
 		);
 	}
-	JByteArray Cipher::doFinal(JByteArray arg0)
+	JByteArray Cipher::doFinal(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"doFinal",
@@ -133,7 +133,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	JByteArray Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2)
+	JByteArray Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"doFinal",
@@ -143,7 +143,7 @@ namespace javax::crypto
 			arg2
 		);
 	}
-	jint Cipher::doFinal(JByteArray arg0, jint arg1)
+	jint Cipher::doFinal(JByteArray arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"doFinal",
@@ -152,7 +152,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	jint Cipher::doFinal(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1)
+	jint Cipher::doFinal(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1) const
 	{
 		return callMethod<jint>(
 			"doFinal",
@@ -161,7 +161,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	jint Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3)
+	jint Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3) const
 	{
 		return callMethod<jint>(
 			"doFinal",
@@ -172,7 +172,7 @@ namespace javax::crypto
 			arg3.object<jbyteArray>()
 		);
 	}
-	jint Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4)
+	jint Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4) const
 	{
 		return callMethod<jint>(
 			"doFinal",
@@ -184,35 +184,35 @@ namespace javax::crypto
 			arg4
 		);
 	}
-	JString Cipher::getAlgorithm()
+	JString Cipher::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Cipher::getBlockSize()
+	jint Cipher::getBlockSize() const
 	{
 		return callMethod<jint>(
 			"getBlockSize",
 			"()I"
 		);
 	}
-	javax::crypto::ExemptionMechanism Cipher::getExemptionMechanism()
+	javax::crypto::ExemptionMechanism Cipher::getExemptionMechanism() const
 	{
 		return callObjectMethod(
 			"getExemptionMechanism",
 			"()Ljavax/crypto/ExemptionMechanism;"
 		);
 	}
-	JByteArray Cipher::getIV()
+	JByteArray Cipher::getIV() const
 	{
 		return callObjectMethod(
 			"getIV",
 			"()[B"
 		);
 	}
-	jint Cipher::getOutputSize(jint arg0)
+	jint Cipher::getOutputSize(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getOutputSize",
@@ -220,21 +220,21 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	java::security::AlgorithmParameters Cipher::getParameters()
+	java::security::AlgorithmParameters Cipher::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	java::security::Provider Cipher::getProvider()
+	java::security::Provider Cipher::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void Cipher::init(jint arg0, JObject arg1)
+	void Cipher::init(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -243,7 +243,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void Cipher::init(jint arg0, java::security::cert::Certificate arg1)
+	void Cipher::init(jint arg0, java::security::cert::Certificate arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -252,7 +252,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void Cipher::init(jint arg0, JObject arg1, java::security::AlgorithmParameters arg2)
+	void Cipher::init(jint arg0, JObject arg1, java::security::AlgorithmParameters arg2) const
 	{
 		callMethod<void>(
 			"init",
@@ -262,7 +262,7 @@ namespace javax::crypto
 			arg2.object()
 		);
 	}
-	void Cipher::init(jint arg0, JObject arg1, java::security::SecureRandom arg2)
+	void Cipher::init(jint arg0, JObject arg1, java::security::SecureRandom arg2) const
 	{
 		callMethod<void>(
 			"init",
@@ -272,7 +272,7 @@ namespace javax::crypto
 			arg2.object()
 		);
 	}
-	void Cipher::init(jint arg0, JObject arg1, JObject arg2)
+	void Cipher::init(jint arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"init",
@@ -282,7 +282,7 @@ namespace javax::crypto
 			arg2.object()
 		);
 	}
-	void Cipher::init(jint arg0, java::security::cert::Certificate arg1, java::security::SecureRandom arg2)
+	void Cipher::init(jint arg0, java::security::cert::Certificate arg1, java::security::SecureRandom arg2) const
 	{
 		callMethod<void>(
 			"init",
@@ -292,7 +292,7 @@ namespace javax::crypto
 			arg2.object()
 		);
 	}
-	void Cipher::init(jint arg0, JObject arg1, java::security::AlgorithmParameters arg2, java::security::SecureRandom arg3)
+	void Cipher::init(jint arg0, JObject arg1, java::security::AlgorithmParameters arg2, java::security::SecureRandom arg3) const
 	{
 		callMethod<void>(
 			"init",
@@ -303,7 +303,7 @@ namespace javax::crypto
 			arg3.object()
 		);
 	}
-	void Cipher::init(jint arg0, JObject arg1, JObject arg2, java::security::SecureRandom arg3)
+	void Cipher::init(jint arg0, JObject arg1, JObject arg2, java::security::SecureRandom arg3) const
 	{
 		callMethod<void>(
 			"init",
@@ -314,14 +314,14 @@ namespace javax::crypto
 			arg3.object()
 		);
 	}
-	JString Cipher::toString()
+	JString Cipher::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Cipher::unwrap(JByteArray arg0, JString arg1, jint arg2)
+	JObject Cipher::unwrap(JByteArray arg0, JString arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"unwrap",
@@ -331,7 +331,7 @@ namespace javax::crypto
 			arg2
 		);
 	}
-	JByteArray Cipher::update(JByteArray arg0)
+	JByteArray Cipher::update(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"update",
@@ -339,7 +339,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	JByteArray Cipher::update(JByteArray arg0, jint arg1, jint arg2)
+	JByteArray Cipher::update(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"update",
@@ -349,7 +349,7 @@ namespace javax::crypto
 			arg2
 		);
 	}
-	jint Cipher::update(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1)
+	jint Cipher::update(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1) const
 	{
 		return callMethod<jint>(
 			"update",
@@ -358,7 +358,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	jint Cipher::update(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3)
+	jint Cipher::update(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3) const
 	{
 		return callMethod<jint>(
 			"update",
@@ -369,7 +369,7 @@ namespace javax::crypto
 			arg3.object<jbyteArray>()
 		);
 	}
-	jint Cipher::update(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4)
+	jint Cipher::update(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4) const
 	{
 		return callMethod<jint>(
 			"update",
@@ -381,7 +381,7 @@ namespace javax::crypto
 			arg4
 		);
 	}
-	void Cipher::updateAAD(JByteArray arg0)
+	void Cipher::updateAAD(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"updateAAD",
@@ -389,7 +389,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Cipher::updateAAD(java::nio::ByteBuffer arg0)
+	void Cipher::updateAAD(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"updateAAD",
@@ -397,7 +397,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void Cipher::updateAAD(JByteArray arg0, jint arg1, jint arg2)
+	void Cipher::updateAAD(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"updateAAD",
@@ -407,7 +407,7 @@ namespace javax::crypto
 			arg2
 		);
 	}
-	JByteArray Cipher::wrap(JObject arg0)
+	JByteArray Cipher::wrap(JObject arg0) const
 	{
 		return callObjectMethod(
 			"wrap",

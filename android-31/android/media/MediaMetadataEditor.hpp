@@ -27,19 +27,19 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void addEditableKey(jint arg0);
-		void apply();
-		void clear();
-		android::graphics::Bitmap getBitmap(jint arg0, android::graphics::Bitmap arg1);
-		JIntArray getEditableKeys();
-		jlong getLong(jint arg0, jlong arg1);
-		JObject getObject(jint arg0, JObject arg1);
-		JString getString(jint arg0, JString arg1);
-		android::media::MediaMetadataEditor putBitmap(jint arg0, android::graphics::Bitmap arg1);
-		android::media::MediaMetadataEditor putLong(jint arg0, jlong arg1);
-		android::media::MediaMetadataEditor putObject(jint arg0, JObject arg1);
-		android::media::MediaMetadataEditor putString(jint arg0, JString arg1);
-		void removeEditableKeys();
+		void addEditableKey(jint arg0) const;
+		void apply() const;
+		void clear() const;
+		android::graphics::Bitmap getBitmap(jint arg0, android::graphics::Bitmap arg1) const;
+		JIntArray getEditableKeys() const;
+		jlong getLong(jint arg0, jlong arg1) const;
+		JObject getObject(jint arg0, JObject arg1) const;
+		JString getString(jint arg0, JString arg1) const;
+		android::media::MediaMetadataEditor putBitmap(jint arg0, android::graphics::Bitmap arg1) const;
+		android::media::MediaMetadataEditor putLong(jint arg0, jlong arg1) const;
+		android::media::MediaMetadataEditor putObject(jint arg0, JObject arg1) const;
+		android::media::MediaMetadataEditor putString(jint arg0, JString arg1) const;
+		void removeEditableKeys() const;
 	};
 } // namespace android::media
 

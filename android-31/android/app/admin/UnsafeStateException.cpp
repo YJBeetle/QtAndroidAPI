@@ -20,28 +20,28 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	jint UnsafeStateException::describeContents()
+	jint UnsafeStateException::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString UnsafeStateException::getMessage()
+	JString UnsafeStateException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject UnsafeStateException::getReasons()
+	JObject UnsafeStateException::getReasons() const
 	{
 		return callObjectMethod(
 			"getReasons",
 			"()Ljava/util/List;"
 		);
 	}
-	void UnsafeStateException::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UnsafeStateException::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

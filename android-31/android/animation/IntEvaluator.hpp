@@ -23,8 +23,8 @@ namespace android::animation
 		IntEvaluator();
 		
 		// Methods
-		java::lang::Integer evaluate(jfloat arg0, java::lang::Integer arg1, java::lang::Integer arg2);
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
+		java::lang::Integer evaluate(jfloat arg0, java::lang::Integer arg1, java::lang::Integer arg2) const;
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::animation
 

@@ -31,9 +31,9 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		JObject apply(java::util::Locale arg0, JString arg1, JObject arg2, android::icu::text::Edits arg3);
-		JString apply(java::util::Locale arg0, JString arg1);
-		android::icu::text::CaseMap_Upper omitUnchangedText();
+		JObject apply(java::util::Locale arg0, JString arg1, JObject arg2, android::icu::text::Edits arg3) const;
+		JString apply(java::util::Locale arg0, JString arg1) const;
+		android::icu::text::CaseMap_Upper omitUnchangedText() const;
 	};
 } // namespace android::icu::text
 

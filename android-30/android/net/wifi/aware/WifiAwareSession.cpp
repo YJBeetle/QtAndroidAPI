@@ -17,14 +17,14 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	void WifiAwareSession::close()
+	void WifiAwareSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierOpen(jint arg0, JByteArray arg1)
+	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierOpen(jint arg0, JByteArray arg1) const
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierOpen",
@@ -33,7 +33,7 @@ namespace android::net::wifi::aware
 			arg1.object<jbyteArray>()
 		);
 	}
-	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, JByteArray arg1, JString arg2)
+	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, JByteArray arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierPassphrase",
@@ -43,7 +43,7 @@ namespace android::net::wifi::aware
 			arg2.object<jstring>()
 		);
 	}
-	void WifiAwareSession::publish(android::net::wifi::aware::PublishConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2)
+	void WifiAwareSession::publish(android::net::wifi::aware::PublishConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"publish",
@@ -53,7 +53,7 @@ namespace android::net::wifi::aware
 			arg2.object()
 		);
 	}
-	void WifiAwareSession::subscribe(android::net::wifi::aware::SubscribeConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2)
+	void WifiAwareSession::subscribe(android::net::wifi::aware::SubscribeConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"subscribe",

@@ -31,27 +31,27 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		JArray getAnnotatedExceptionTypes();
-		JArray getAnnotatedParameterTypes();
-		JObject getAnnotatedReceiverType();
-		JObject getAnnotatedReturnType();
-		JObject getAnnotation(JClass arg0);
-		JArray getAnnotationsByType(JClass arg0);
-		JArray getDeclaredAnnotations();
-		JClass getDeclaringClass();
-		JArray getExceptionTypes();
-		JArray getGenericExceptionTypes();
-		JArray getGenericParameterTypes();
-		jint getModifiers();
-		JString getName();
-		JArray getParameterAnnotations();
-		jint getParameterCount();
-		JArray getParameterTypes();
-		JArray getParameters();
-		JArray getTypeParameters();
-		jboolean isSynthetic();
-		jboolean isVarArgs();
-		JString toGenericString();
+		JArray getAnnotatedExceptionTypes() const;
+		JArray getAnnotatedParameterTypes() const;
+		JObject getAnnotatedReceiverType() const;
+		JObject getAnnotatedReturnType() const;
+		JObject getAnnotation(JClass arg0) const;
+		JArray getAnnotationsByType(JClass arg0) const;
+		JArray getDeclaredAnnotations() const;
+		JClass getDeclaringClass() const;
+		JArray getExceptionTypes() const;
+		JArray getGenericExceptionTypes() const;
+		JArray getGenericParameterTypes() const;
+		jint getModifiers() const;
+		JString getName() const;
+		JArray getParameterAnnotations() const;
+		jint getParameterCount() const;
+		JArray getParameterTypes() const;
+		JArray getParameters() const;
+		JArray getTypeParameters() const;
+		jboolean isSynthetic() const;
+		jboolean isVarArgs() const;
+		JString toGenericString() const;
 	};
 } // namespace java::lang::reflect
 

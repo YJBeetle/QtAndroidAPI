@@ -50,14 +50,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean GestureDetector::isLongpressEnabled()
+	jboolean GestureDetector::isLongpressEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isLongpressEnabled",
 			"()Z"
 		);
 	}
-	jboolean GestureDetector::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean GestureDetector::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -65,7 +65,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean GestureDetector::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -73,7 +73,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void GestureDetector::setContextClickListener(JObject arg0)
+	void GestureDetector::setContextClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setContextClickListener",
@@ -81,7 +81,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void GestureDetector::setIsLongpressEnabled(jboolean arg0)
+	void GestureDetector::setIsLongpressEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIsLongpressEnabled",
@@ -89,7 +89,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void GestureDetector::setOnDoubleTapListener(JObject arg0)
+	void GestureDetector::setOnDoubleTapListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDoubleTapListener",

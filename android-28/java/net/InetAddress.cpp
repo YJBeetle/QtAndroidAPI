@@ -71,7 +71,7 @@ namespace java::net
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jboolean InetAddress::equals(JObject arg0)
+	jboolean InetAddress::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -79,105 +79,105 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray InetAddress::getAddress()
+	JByteArray InetAddress::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()[B"
 		);
 	}
-	JString InetAddress::getCanonicalHostName()
+	JString InetAddress::getCanonicalHostName() const
 	{
 		return callObjectMethod(
 			"getCanonicalHostName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InetAddress::getHostAddress()
+	JString InetAddress::getHostAddress() const
 	{
 		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InetAddress::getHostName()
+	JString InetAddress::getHostName() const
 	{
 		return callObjectMethod(
 			"getHostName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint InetAddress::hashCode()
+	jint InetAddress::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean InetAddress::isAnyLocalAddress()
+	jboolean InetAddress::isAnyLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isAnyLocalAddress",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isLinkLocalAddress()
+	jboolean InetAddress::isLinkLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isLinkLocalAddress",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isLoopbackAddress()
+	jboolean InetAddress::isLoopbackAddress() const
 	{
 		return callMethod<jboolean>(
 			"isLoopbackAddress",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isMCGlobal()
+	jboolean InetAddress::isMCGlobal() const
 	{
 		return callMethod<jboolean>(
 			"isMCGlobal",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isMCLinkLocal()
+	jboolean InetAddress::isMCLinkLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCLinkLocal",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isMCNodeLocal()
+	jboolean InetAddress::isMCNodeLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCNodeLocal",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isMCOrgLocal()
+	jboolean InetAddress::isMCOrgLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCOrgLocal",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isMCSiteLocal()
+	jboolean InetAddress::isMCSiteLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCSiteLocal",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isMulticastAddress()
+	jboolean InetAddress::isMulticastAddress() const
 	{
 		return callMethod<jboolean>(
 			"isMulticastAddress",
 			"()Z"
 		);
 	}
-	jboolean InetAddress::isReachable(jint arg0)
+	jboolean InetAddress::isReachable(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isReachable",
@@ -185,7 +185,7 @@ namespace java::net
 			arg0
 		);
 	}
-	jboolean InetAddress::isReachable(java::net::NetworkInterface arg0, jint arg1, jint arg2)
+	jboolean InetAddress::isReachable(java::net::NetworkInterface arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"isReachable",
@@ -195,14 +195,14 @@ namespace java::net
 			arg2
 		);
 	}
-	jboolean InetAddress::isSiteLocalAddress()
+	jboolean InetAddress::isSiteLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isSiteLocalAddress",
 			"()Z"
 		);
 	}
-	JString InetAddress::toString()
+	JString InetAddress::toString() const
 	{
 		return callObjectMethod(
 			"toString",

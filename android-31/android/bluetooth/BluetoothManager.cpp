@@ -16,14 +16,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	android::bluetooth::BluetoothAdapter BluetoothManager::getAdapter()
+	android::bluetooth::BluetoothAdapter BluetoothManager::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/bluetooth/BluetoothAdapter;"
 		);
 	}
-	JObject BluetoothManager::getConnectedDevices(jint arg0)
+	JObject BluetoothManager::getConnectedDevices(jint arg0) const
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -31,7 +31,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jint BluetoothManager::getConnectionState(android::bluetooth::BluetoothDevice arg0, jint arg1)
+	jint BluetoothManager::getConnectionState(android::bluetooth::BluetoothDevice arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
@@ -40,7 +40,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	JObject BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, JIntArray arg1)
+	JObject BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, JIntArray arg1) const
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -49,7 +49,7 @@ namespace android::bluetooth
 			arg1.object<jintArray>()
 		);
 	}
-	android::bluetooth::BluetoothGattServer BluetoothManager::openGattServer(android::content::Context arg0, android::bluetooth::BluetoothGattServerCallback arg1)
+	android::bluetooth::BluetoothGattServer BluetoothManager::openGattServer(android::content::Context arg0, android::bluetooth::BluetoothGattServerCallback arg1) const
 	{
 		return callObjectMethod(
 			"openGattServer",

@@ -43,12 +43,12 @@ namespace android::graphics
 		static android::graphics::Typeface createFromFile(java::io::File arg0);
 		static android::graphics::Typeface createFromFile(JString arg0);
 		static android::graphics::Typeface defaultFromStyle(jint arg0);
-		jboolean equals(JObject arg0);
-		jint getStyle();
-		jint getWeight();
-		jint hashCode();
-		jboolean isBold();
-		jboolean isItalic();
+		jboolean equals(JObject arg0) const;
+		jint getStyle() const;
+		jint getWeight() const;
+		jint hashCode() const;
+		jboolean isBold() const;
+		jboolean isItalic() const;
 	};
 } // namespace android::graphics
 

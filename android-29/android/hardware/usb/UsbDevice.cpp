@@ -41,14 +41,14 @@ namespace android::hardware::usb
 			arg0
 		);
 	}
-	jint UsbDevice::describeContents()
+	jint UsbDevice::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean UsbDevice::equals(JObject arg0)
+	jboolean UsbDevice::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -56,7 +56,7 @@ namespace android::hardware::usb
 			arg0.object<jobject>()
 		);
 	}
-	android::hardware::usb::UsbConfiguration UsbDevice::getConfiguration(jint arg0)
+	android::hardware::usb::UsbConfiguration UsbDevice::getConfiguration(jint arg0) const
 	{
 		return callObjectMethod(
 			"getConfiguration",
@@ -64,49 +64,49 @@ namespace android::hardware::usb
 			arg0
 		);
 	}
-	jint UsbDevice::getConfigurationCount()
+	jint UsbDevice::getConfigurationCount() const
 	{
 		return callMethod<jint>(
 			"getConfigurationCount",
 			"()I"
 		);
 	}
-	jint UsbDevice::getDeviceClass()
+	jint UsbDevice::getDeviceClass() const
 	{
 		return callMethod<jint>(
 			"getDeviceClass",
 			"()I"
 		);
 	}
-	jint UsbDevice::getDeviceId()
+	jint UsbDevice::getDeviceId() const
 	{
 		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
-	JString UsbDevice::getDeviceName()
+	JString UsbDevice::getDeviceName() const
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UsbDevice::getDeviceProtocol()
+	jint UsbDevice::getDeviceProtocol() const
 	{
 		return callMethod<jint>(
 			"getDeviceProtocol",
 			"()I"
 		);
 	}
-	jint UsbDevice::getDeviceSubclass()
+	jint UsbDevice::getDeviceSubclass() const
 	{
 		return callMethod<jint>(
 			"getDeviceSubclass",
 			"()I"
 		);
 	}
-	android::hardware::usb::UsbInterface UsbDevice::getInterface(jint arg0)
+	android::hardware::usb::UsbInterface UsbDevice::getInterface(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInterface",
@@ -114,70 +114,70 @@ namespace android::hardware::usb
 			arg0
 		);
 	}
-	jint UsbDevice::getInterfaceCount()
+	jint UsbDevice::getInterfaceCount() const
 	{
 		return callMethod<jint>(
 			"getInterfaceCount",
 			"()I"
 		);
 	}
-	JString UsbDevice::getManufacturerName()
+	JString UsbDevice::getManufacturerName() const
 	{
 		return callObjectMethod(
 			"getManufacturerName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UsbDevice::getProductId()
+	jint UsbDevice::getProductId() const
 	{
 		return callMethod<jint>(
 			"getProductId",
 			"()I"
 		);
 	}
-	JString UsbDevice::getProductName()
+	JString UsbDevice::getProductName() const
 	{
 		return callObjectMethod(
 			"getProductName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsbDevice::getSerialNumber()
+	JString UsbDevice::getSerialNumber() const
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UsbDevice::getVendorId()
+	jint UsbDevice::getVendorId() const
 	{
 		return callMethod<jint>(
 			"getVendorId",
 			"()I"
 		);
 	}
-	JString UsbDevice::getVersion()
+	JString UsbDevice::getVersion() const
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UsbDevice::hashCode()
+	jint UsbDevice::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString UsbDevice::toString()
+	JString UsbDevice::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UsbDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UsbDevice::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

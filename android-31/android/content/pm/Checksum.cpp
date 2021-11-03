@@ -76,28 +76,28 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint Checksum::describeContents()
+	jint Checksum::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint Checksum::getType()
+	jint Checksum::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JByteArray Checksum::getValue()
+	JByteArray Checksum::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
 		);
 	}
-	void Checksum::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Checksum::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -27,8 +27,8 @@ namespace java::security::cert
 		PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, JObject arg2, JObject arg3);
 		
 		// Methods
-		java::security::cert::CertPath getCertPath();
-		JString toString();
+		java::security::cert::CertPath getCertPath() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

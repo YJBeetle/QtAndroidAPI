@@ -24,9 +24,9 @@ namespace android::animation
 		StateListAnimator();
 		
 		// Methods
-		void addState(JIntArray arg0, android::animation::Animator arg1);
-		android::animation::StateListAnimator clone();
-		void jumpToCurrentState();
+		void addState(JIntArray arg0, android::animation::Animator arg1) const;
+		android::animation::StateListAnimator clone() const;
+		void jumpToCurrentState() const;
 	};
 } // namespace android::animation
 

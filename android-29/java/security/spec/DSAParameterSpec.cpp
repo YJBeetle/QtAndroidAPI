@@ -19,21 +19,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger DSAParameterSpec::getG()
+	java::math::BigInteger DSAParameterSpec::getG() const
 	{
 		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger DSAParameterSpec::getP()
+	java::math::BigInteger DSAParameterSpec::getP() const
 	{
 		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger DSAParameterSpec::getQ()
+	java::math::BigInteger DSAParameterSpec::getQ() const
 	{
 		return callObjectMethod(
 			"getQ",

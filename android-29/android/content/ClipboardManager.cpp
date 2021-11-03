@@ -13,7 +13,7 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	void ClipboardManager::addPrimaryClipChangedListener(JObject arg0)
+	void ClipboardManager::addPrimaryClipChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addPrimaryClipChangedListener",
@@ -21,49 +21,49 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ClipboardManager::clearPrimaryClip()
+	void ClipboardManager::clearPrimaryClip() const
 	{
 		callMethod<void>(
 			"clearPrimaryClip",
 			"()V"
 		);
 	}
-	android::content::ClipData ClipboardManager::getPrimaryClip()
+	android::content::ClipData ClipboardManager::getPrimaryClip() const
 	{
 		return callObjectMethod(
 			"getPrimaryClip",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	android::content::ClipDescription ClipboardManager::getPrimaryClipDescription()
+	android::content::ClipDescription ClipboardManager::getPrimaryClipDescription() const
 	{
 		return callObjectMethod(
 			"getPrimaryClipDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	JString ClipboardManager::getText()
+	JString ClipboardManager::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ClipboardManager::hasPrimaryClip()
+	jboolean ClipboardManager::hasPrimaryClip() const
 	{
 		return callMethod<jboolean>(
 			"hasPrimaryClip",
 			"()Z"
 		);
 	}
-	jboolean ClipboardManager::hasText()
+	jboolean ClipboardManager::hasText() const
 	{
 		return callMethod<jboolean>(
 			"hasText",
 			"()Z"
 		);
 	}
-	void ClipboardManager::removePrimaryClipChangedListener(JObject arg0)
+	void ClipboardManager::removePrimaryClipChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removePrimaryClipChangedListener",
@@ -71,7 +71,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ClipboardManager::setPrimaryClip(android::content::ClipData arg0)
+	void ClipboardManager::setPrimaryClip(android::content::ClipData arg0) const
 	{
 		callMethod<void>(
 			"setPrimaryClip",
@@ -79,7 +79,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ClipboardManager::setText(JString arg0)
+	void ClipboardManager::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",

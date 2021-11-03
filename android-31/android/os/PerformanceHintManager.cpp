@@ -12,7 +12,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	android::os::PerformanceHintManager_Session PerformanceHintManager::createHintSession(JIntArray arg0, jlong arg1)
+	android::os::PerformanceHintManager_Session PerformanceHintManager::createHintSession(JIntArray arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"createHintSession",
@@ -21,7 +21,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jlong PerformanceHintManager::getPreferredUpdateRateNanos()
+	jlong PerformanceHintManager::getPreferredUpdateRateNanos() const
 	{
 		return callMethod<jlong>(
 			"getPreferredUpdateRateNanos",

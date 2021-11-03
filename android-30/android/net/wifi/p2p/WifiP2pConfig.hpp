@@ -38,13 +38,13 @@ namespace android::net::wifi::p2p
 		WifiP2pConfig(android::net::wifi::p2p::WifiP2pConfig &arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getGroupOwnerBand();
-		jint getNetworkId();
-		JString getNetworkName();
-		JString getPassphrase();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getGroupOwnerBand() const;
+		jint getNetworkId() const;
+		JString getNetworkName() const;
+		JString getPassphrase() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::p2p
 

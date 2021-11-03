@@ -25,7 +25,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void AsyncQueryHandler::cancelOperation(jint arg0)
+	void AsyncQueryHandler::cancelOperation(jint arg0) const
 	{
 		callMethod<void>(
 			"cancelOperation",
@@ -33,7 +33,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void AsyncQueryHandler::handleMessage(android::os::Message arg0)
+	void AsyncQueryHandler::handleMessage(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"handleMessage",
@@ -41,7 +41,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void AsyncQueryHandler::startDelete(jint arg0, JObject arg1, android::net::Uri arg2, JString arg3, JArray arg4)
+	void AsyncQueryHandler::startDelete(jint arg0, JObject arg1, android::net::Uri arg2, JString arg3, JArray arg4) const
 	{
 		callMethod<void>(
 			"startDelete",
@@ -53,7 +53,7 @@ namespace android::content
 			arg4.object<jarray>()
 		);
 	}
-	void AsyncQueryHandler::startInsert(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3)
+	void AsyncQueryHandler::startInsert(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3) const
 	{
 		callMethod<void>(
 			"startInsert",
@@ -64,7 +64,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	void AsyncQueryHandler::startQuery(jint arg0, JObject arg1, android::net::Uri arg2, JArray arg3, JString arg4, JArray arg5, JString arg6)
+	void AsyncQueryHandler::startQuery(jint arg0, JObject arg1, android::net::Uri arg2, JArray arg3, JString arg4, JArray arg5, JString arg6) const
 	{
 		callMethod<void>(
 			"startQuery",
@@ -78,7 +78,7 @@ namespace android::content
 			arg6.object<jstring>()
 		);
 	}
-	void AsyncQueryHandler::startUpdate(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3, JString arg4, JArray arg5)
+	void AsyncQueryHandler::startUpdate(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3, JString arg4, JArray arg5) const
 	{
 		callMethod<void>(
 			"startUpdate",

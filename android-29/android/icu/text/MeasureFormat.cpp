@@ -91,7 +91,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	jboolean MeasureFormat::equals(JObject arg0)
+	jboolean MeasureFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -99,7 +99,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer MeasureFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MeasureFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -109,7 +109,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuilder MeasureFormat::formatMeasurePerUnit(android::icu::util::Measure arg0, android::icu::util::MeasureUnit arg1, java::lang::StringBuilder arg2, java::text::FieldPosition arg3)
+	java::lang::StringBuilder MeasureFormat::formatMeasurePerUnit(android::icu::util::Measure arg0, android::icu::util::MeasureUnit arg1, java::lang::StringBuilder arg2, java::text::FieldPosition arg3) const
 	{
 		return callObjectMethod(
 			"formatMeasurePerUnit",
@@ -120,7 +120,7 @@ namespace android::icu::text
 			arg3.object()
 		);
 	}
-	JString MeasureFormat::formatMeasures(JArray arg0)
+	JString MeasureFormat::formatMeasures(JArray arg0) const
 	{
 		return callObjectMethod(
 			"formatMeasures",
@@ -128,7 +128,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	java::lang::StringBuilder MeasureFormat::formatMeasures(java::lang::StringBuilder arg0, java::text::FieldPosition arg1, JArray arg2)
+	java::lang::StringBuilder MeasureFormat::formatMeasures(java::lang::StringBuilder arg0, java::text::FieldPosition arg1, JArray arg2) const
 	{
 		return callObjectMethod(
 			"formatMeasures",
@@ -138,21 +138,21 @@ namespace android::icu::text
 			arg2.object<jarray>()
 		);
 	}
-	android::icu::util::ULocale MeasureFormat::getLocale()
+	android::icu::util::ULocale MeasureFormat::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	android::icu::text::NumberFormat MeasureFormat::getNumberFormat()
+	android::icu::text::NumberFormat MeasureFormat::getNumberFormat() const
 	{
 		return callObjectMethod(
 			"getNumberFormat",
 			"()Landroid/icu/text/NumberFormat;"
 		);
 	}
-	JString MeasureFormat::getUnitDisplayName(android::icu::util::MeasureUnit arg0)
+	JString MeasureFormat::getUnitDisplayName(android::icu::util::MeasureUnit arg0) const
 	{
 		return callObjectMethod(
 			"getUnitDisplayName",
@@ -160,21 +160,21 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::MeasureFormat_FormatWidth MeasureFormat::getWidth()
+	android::icu::text::MeasureFormat_FormatWidth MeasureFormat::getWidth() const
 	{
 		return callObjectMethod(
 			"getWidth",
 			"()Landroid/icu/text/MeasureFormat$FormatWidth;"
 		);
 	}
-	jint MeasureFormat::hashCode()
+	jint MeasureFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::icu::util::Measure MeasureFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	android::icu::util::Measure MeasureFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",

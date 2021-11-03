@@ -28,8 +28,8 @@ namespace android::text::method
 		NumberKeyListener();
 		
 		// Methods
-		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
+		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const;
+		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
 	};
 } // namespace android::text::method
 

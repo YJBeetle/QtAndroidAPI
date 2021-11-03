@@ -26,11 +26,11 @@ namespace android::accessibilityservice
 		// Constructors
 		
 		// Methods
-		void addOnShowModeChangedListener(JObject arg0);
-		void addOnShowModeChangedListener(JObject arg0, android::os::Handler arg1);
-		jint getShowMode();
-		jboolean removeOnShowModeChangedListener(JObject arg0);
-		jboolean setShowMode(jint arg0);
+		void addOnShowModeChangedListener(JObject arg0) const;
+		void addOnShowModeChangedListener(JObject arg0, android::os::Handler arg1) const;
+		jint getShowMode() const;
+		jboolean removeOnShowModeChangedListener(JObject arg0) const;
+		jboolean setShowMode(jint arg0) const;
 	};
 } // namespace android::accessibilityservice
 

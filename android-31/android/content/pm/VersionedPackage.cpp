@@ -35,14 +35,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint VersionedPackage::describeContents()
+	jint VersionedPackage::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean VersionedPackage::equals(JObject arg0)
+	jboolean VersionedPackage::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -50,42 +50,42 @@ namespace android::content::pm
 			arg0.object<jobject>()
 		);
 	}
-	jlong VersionedPackage::getLongVersionCode()
+	jlong VersionedPackage::getLongVersionCode() const
 	{
 		return callMethod<jlong>(
 			"getLongVersionCode",
 			"()J"
 		);
 	}
-	JString VersionedPackage::getPackageName()
+	JString VersionedPackage::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint VersionedPackage::getVersionCode()
+	jint VersionedPackage::getVersionCode() const
 	{
 		return callMethod<jint>(
 			"getVersionCode",
 			"()I"
 		);
 	}
-	jint VersionedPackage::hashCode()
+	jint VersionedPackage::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString VersionedPackage::toString()
+	JString VersionedPackage::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VersionedPackage::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VersionedPackage::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

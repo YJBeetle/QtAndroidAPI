@@ -34,21 +34,21 @@ namespace android::app
 		AutomaticZenRule(JString arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::net::Uri getConditionId();
-		jlong getCreationTime();
-		jint getInterruptionFilter();
-		JString getName();
-		android::content::ComponentName getOwner();
-		jint hashCode();
-		jboolean isEnabled();
-		void setConditionId(android::net::Uri arg0);
-		void setEnabled(jboolean arg0);
-		void setInterruptionFilter(jint arg0);
-		void setName(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::net::Uri getConditionId() const;
+		jlong getCreationTime() const;
+		jint getInterruptionFilter() const;
+		JString getName() const;
+		android::content::ComponentName getOwner() const;
+		jint hashCode() const;
+		jboolean isEnabled() const;
+		void setConditionId(android::net::Uri arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setInterruptionFilter(jint arg0) const;
+		void setName(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

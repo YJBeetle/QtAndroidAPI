@@ -21,28 +21,28 @@ namespace android::se::omapi
 		) {}
 	
 	// Methods
-	JArray SEService::getReaders()
+	JArray SEService::getReaders() const
 	{
 		return callObjectMethod(
 			"getReaders",
 			"()[Landroid/se/omapi/Reader;"
 		);
 	}
-	JString SEService::getVersion()
+	JString SEService::getVersion() const
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean SEService::isConnected()
+	jboolean SEService::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	void SEService::shutdown()
+	void SEService::shutdown() const
 	{
 		callMethod<void>(
 			"shutdown",

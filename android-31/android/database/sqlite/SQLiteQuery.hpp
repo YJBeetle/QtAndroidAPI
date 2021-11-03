@@ -18,7 +18,7 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::database::sqlite
 

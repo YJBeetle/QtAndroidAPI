@@ -32,35 +32,35 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	jint DataTruncation::getDataSize()
+	jint DataTruncation::getDataSize() const
 	{
 		return callMethod<jint>(
 			"getDataSize",
 			"()I"
 		);
 	}
-	jint DataTruncation::getIndex()
+	jint DataTruncation::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	jboolean DataTruncation::getParameter()
+	jboolean DataTruncation::getParameter() const
 	{
 		return callMethod<jboolean>(
 			"getParameter",
 			"()Z"
 		);
 	}
-	jboolean DataTruncation::getRead()
+	jboolean DataTruncation::getRead() const
 	{
 		return callMethod<jboolean>(
 			"getRead",
 			"()Z"
 		);
 	}
-	jint DataTruncation::getTransferSize()
+	jint DataTruncation::getTransferSize() const
 	{
 		return callMethod<jint>(
 			"getTransferSize",

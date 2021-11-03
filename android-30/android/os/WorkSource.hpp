@@ -26,16 +26,16 @@ namespace android::os
 		WorkSource(android::os::WorkSource &arg0);
 		
 		// Methods
-		jboolean add(android::os::WorkSource arg0);
-		void clear();
-		jint describeContents();
-		jboolean diff(android::os::WorkSource arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jboolean remove(android::os::WorkSource arg0);
-		void set(android::os::WorkSource arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean add(android::os::WorkSource arg0) const;
+		void clear() const;
+		jint describeContents() const;
+		jboolean diff(android::os::WorkSource arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jboolean remove(android::os::WorkSource arg0) const;
+		void set(android::os::WorkSource arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

@@ -33,23 +33,23 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		void abandon();
-		void addChildSessionId(jint arg0);
-		void close();
-		void commit(android::content::IntentSender arg0);
-		void fsync(java::io::OutputStream arg0);
-		JIntArray getChildSessionIds();
-		JArray getNames();
-		jint getParentSessionId();
-		jboolean isMultiPackage();
-		jboolean isStaged();
-		java::io::InputStream openRead(JString arg0);
-		java::io::OutputStream openWrite(JString arg0, jlong arg1, jlong arg2);
-		void removeChildSessionId(jint arg0);
-		void removeSplit(JString arg0);
-		void setChecksums(JString arg0, JObject arg1, JByteArray arg2);
-		void setStagingProgress(jfloat arg0);
-		void transfer(JString arg0);
+		void abandon() const;
+		void addChildSessionId(jint arg0) const;
+		void close() const;
+		void commit(android::content::IntentSender arg0) const;
+		void fsync(java::io::OutputStream arg0) const;
+		JIntArray getChildSessionIds() const;
+		JArray getNames() const;
+		jint getParentSessionId() const;
+		jboolean isMultiPackage() const;
+		jboolean isStaged() const;
+		java::io::InputStream openRead(JString arg0) const;
+		java::io::OutputStream openWrite(JString arg0, jlong arg1, jlong arg2) const;
+		void removeChildSessionId(jint arg0) const;
+		void removeSplit(JString arg0) const;
+		void setChecksums(JString arg0, JObject arg1, JByteArray arg2) const;
+		void setStagingProgress(jfloat arg0) const;
+		void transfer(JString arg0) const;
 	};
 } // namespace android::content::pm
 

@@ -123,20 +123,20 @@ namespace android::media
 		static android::media::MediaFormat createAudioFormat(JString arg0, jint arg1, jint arg2);
 		static android::media::MediaFormat createSubtitleFormat(JString arg0, JString arg1);
 		static android::media::MediaFormat createVideoFormat(JString arg0, jint arg1, jint arg2);
-		jboolean containsKey(JString arg0);
-		java::nio::ByteBuffer getByteBuffer(JString arg0);
-		jboolean getFeatureEnabled(JString arg0);
-		jfloat getFloat(JString arg0);
-		jint getInteger(JString arg0);
-		jlong getLong(JString arg0);
-		JString getString(JString arg0);
-		void setByteBuffer(JString arg0, java::nio::ByteBuffer arg1);
-		void setFeatureEnabled(JString arg0, jboolean arg1);
-		void setFloat(JString arg0, jfloat arg1);
-		void setInteger(JString arg0, jint arg1);
-		void setLong(JString arg0, jlong arg1);
-		void setString(JString arg0, JString arg1);
-		JString toString();
+		jboolean containsKey(JString arg0) const;
+		java::nio::ByteBuffer getByteBuffer(JString arg0) const;
+		jboolean getFeatureEnabled(JString arg0) const;
+		jfloat getFloat(JString arg0) const;
+		jint getInteger(JString arg0) const;
+		jlong getLong(JString arg0) const;
+		JString getString(JString arg0) const;
+		void setByteBuffer(JString arg0, java::nio::ByteBuffer arg1) const;
+		void setFeatureEnabled(JString arg0, jboolean arg1) const;
+		void setFloat(JString arg0, jfloat arg1) const;
+		void setInteger(JString arg0, jint arg1) const;
+		void setLong(JString arg0, jlong arg1) const;
+		void setString(JString arg0, JString arg1) const;
+		JString toString() const;
 	};
 } // namespace android::media
 

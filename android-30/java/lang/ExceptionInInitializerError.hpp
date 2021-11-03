@@ -31,7 +31,7 @@ namespace java::lang
 		ExceptionInInitializerError(JThrowable arg0);
 		
 		// Methods
-		JThrowable getException();
+		JThrowable getException() const;
 	};
 } // namespace java::lang
 

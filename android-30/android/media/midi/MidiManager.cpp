@@ -15,14 +15,14 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	JArray MidiManager::getDevices()
+	JArray MidiManager::getDevices() const
 	{
 		return callObjectMethod(
 			"getDevices",
 			"()[Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
-	void MidiManager::openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, JObject arg1, android::os::Handler arg2)
+	void MidiManager::openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, JObject arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"openBluetoothDevice",
@@ -32,7 +32,7 @@ namespace android::media::midi
 			arg2.object()
 		);
 	}
-	void MidiManager::openDevice(android::media::midi::MidiDeviceInfo arg0, JObject arg1, android::os::Handler arg2)
+	void MidiManager::openDevice(android::media::midi::MidiDeviceInfo arg0, JObject arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"openDevice",
@@ -42,7 +42,7 @@ namespace android::media::midi
 			arg2.object()
 		);
 	}
-	void MidiManager::registerDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0, android::os::Handler arg1)
+	void MidiManager::registerDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerDeviceCallback",
@@ -51,7 +51,7 @@ namespace android::media::midi
 			arg1.object()
 		);
 	}
-	void MidiManager::unregisterDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0)
+	void MidiManager::unregisterDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterDeviceCallback",

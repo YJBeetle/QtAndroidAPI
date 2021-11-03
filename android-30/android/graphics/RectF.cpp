@@ -82,21 +82,21 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jfloat RectF::centerX()
+	jfloat RectF::centerX() const
 	{
 		return callMethod<jfloat>(
 			"centerX",
 			"()F"
 		);
 	}
-	jfloat RectF::centerY()
+	jfloat RectF::centerY() const
 	{
 		return callMethod<jfloat>(
 			"centerY",
 			"()F"
 		);
 	}
-	jboolean RectF::contains(android::graphics::RectF arg0)
+	jboolean RectF::contains(android::graphics::RectF arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -104,7 +104,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean RectF::contains(jfloat arg0, jfloat arg1)
+	jboolean RectF::contains(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -113,7 +113,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean RectF::contains(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	jboolean RectF::contains(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -124,14 +124,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jint RectF::describeContents()
+	jint RectF::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RectF::equals(JObject arg0)
+	jboolean RectF::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -139,21 +139,21 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jint RectF::hashCode()
+	jint RectF::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jfloat RectF::height()
+	jfloat RectF::height() const
 	{
 		return callMethod<jfloat>(
 			"height",
 			"()F"
 		);
 	}
-	void RectF::inset(jfloat arg0, jfloat arg1)
+	void RectF::inset(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"inset",
@@ -162,7 +162,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean RectF::intersect(android::graphics::RectF arg0)
+	jboolean RectF::intersect(android::graphics::RectF arg0) const
 	{
 		return callMethod<jboolean>(
 			"intersect",
@@ -170,7 +170,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean RectF::intersect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	jboolean RectF::intersect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"intersect",
@@ -181,7 +181,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean RectF::intersects(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	jboolean RectF::intersects(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"intersects",
@@ -192,14 +192,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean RectF::isEmpty()
+	jboolean RectF::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void RectF::offset(jfloat arg0, jfloat arg1)
+	void RectF::offset(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"offset",
@@ -208,7 +208,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void RectF::offsetTo(jfloat arg0, jfloat arg1)
+	void RectF::offsetTo(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"offsetTo",
@@ -217,7 +217,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void RectF::readFromParcel(android::os::Parcel arg0)
+	void RectF::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -225,7 +225,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RectF::round(android::graphics::Rect arg0)
+	void RectF::round(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"round",
@@ -233,7 +233,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RectF::roundOut(android::graphics::Rect arg0)
+	void RectF::roundOut(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"roundOut",
@@ -241,7 +241,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RectF::set(android::graphics::Rect arg0)
+	void RectF::set(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -249,7 +249,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RectF::set(android::graphics::RectF arg0)
+	void RectF::set(android::graphics::RectF arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -257,7 +257,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RectF::set(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void RectF::set(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"set",
@@ -268,14 +268,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void RectF::setEmpty()
+	void RectF::setEmpty() const
 	{
 		callMethod<void>(
 			"setEmpty",
 			"()V"
 		);
 	}
-	jboolean RectF::setIntersect(android::graphics::RectF arg0, android::graphics::RectF arg1)
+	jboolean RectF::setIntersect(android::graphics::RectF arg0, android::graphics::RectF arg1) const
 	{
 		return callMethod<jboolean>(
 			"setIntersect",
@@ -284,28 +284,28 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RectF::sort()
+	void RectF::sort() const
 	{
 		callMethod<void>(
 			"sort",
 			"()V"
 		);
 	}
-	JString RectF::toShortString()
+	JString RectF::toShortString() const
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString RectF::toString()
+	JString RectF::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RectF::_union(android::graphics::RectF arg0)
+	void RectF::_union(android::graphics::RectF arg0) const
 	{
 		callMethod<void>(
 			"union",
@@ -313,7 +313,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RectF::_union(jfloat arg0, jfloat arg1)
+	void RectF::_union(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"union",
@@ -322,7 +322,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void RectF::_union(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void RectF::_union(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"union",
@@ -333,14 +333,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jfloat RectF::width()
+	jfloat RectF::width() const
 	{
 		return callMethod<jfloat>(
 			"width",
 			"()F"
 		);
 	}
-	void RectF::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RectF::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

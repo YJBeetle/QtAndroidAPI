@@ -14,7 +14,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(android::icu::util::Measure arg0)
+	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(android::icu::util::Measure arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -22,7 +22,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(jdouble arg0)
+	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -30,7 +30,7 @@ namespace android::icu::number
 			arg0
 		);
 	}
-	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(java::lang::Number arg0)
+	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(java::lang::Number arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -38,7 +38,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(jlong arg0)
+	android::icu::number::FormattedNumber LocalizedNumberFormatter::format(jlong arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -46,7 +46,7 @@ namespace android::icu::number
 			arg0
 		);
 	}
-	java::text::Format LocalizedNumberFormatter::toFormat()
+	java::text::Format LocalizedNumberFormatter::toFormat() const
 	{
 		return callObjectMethod(
 			"toFormat",

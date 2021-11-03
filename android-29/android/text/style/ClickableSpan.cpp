@@ -17,7 +17,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	void ClickableSpan::onClick(android::view::View arg0)
+	void ClickableSpan::onClick(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -25,7 +25,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void ClickableSpan::updateDrawState(android::text::TextPaint arg0)
+	void ClickableSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",

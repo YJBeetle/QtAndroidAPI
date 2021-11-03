@@ -56,26 +56,26 @@ namespace android::app
 		Service();
 		
 		// Methods
-		android::app::Application getApplication();
-		jint getForegroundServiceType();
-		JObject onBind(android::content::Intent arg0);
-		void onConfigurationChanged(android::content::res::Configuration arg0);
-		void onCreate();
-		void onDestroy();
-		void onLowMemory();
-		void onRebind(android::content::Intent arg0);
-		void onStart(android::content::Intent arg0, jint arg1);
-		jint onStartCommand(android::content::Intent arg0, jint arg1, jint arg2);
-		void onTaskRemoved(android::content::Intent arg0);
-		void onTrimMemory(jint arg0);
-		jboolean onUnbind(android::content::Intent arg0);
-		void startForeground(jint arg0, android::app::Notification arg1);
-		void startForeground(jint arg0, android::app::Notification arg1, jint arg2);
-		void stopForeground(jboolean arg0);
-		void stopForeground(jint arg0);
-		void stopSelf();
-		void stopSelf(jint arg0);
-		jboolean stopSelfResult(jint arg0);
+		android::app::Application getApplication() const;
+		jint getForegroundServiceType() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onConfigurationChanged(android::content::res::Configuration arg0) const;
+		void onCreate() const;
+		void onDestroy() const;
+		void onLowMemory() const;
+		void onRebind(android::content::Intent arg0) const;
+		void onStart(android::content::Intent arg0, jint arg1) const;
+		jint onStartCommand(android::content::Intent arg0, jint arg1, jint arg2) const;
+		void onTaskRemoved(android::content::Intent arg0) const;
+		void onTrimMemory(jint arg0) const;
+		jboolean onUnbind(android::content::Intent arg0) const;
+		void startForeground(jint arg0, android::app::Notification arg1) const;
+		void startForeground(jint arg0, android::app::Notification arg1, jint arg2) const;
+		void stopForeground(jboolean arg0) const;
+		void stopForeground(jint arg0) const;
+		void stopSelf() const;
+		void stopSelf(jint arg0) const;
+		jboolean stopSelfResult(jint arg0) const;
 	};
 } // namespace android::app
 

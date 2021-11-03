@@ -24,9 +24,9 @@ namespace java::io
 		BufferedOutputStream(java::io::OutputStream arg0, jint arg1);
 		
 		// Methods
-		void flush();
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
+		void flush() const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

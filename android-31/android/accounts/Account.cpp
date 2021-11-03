@@ -48,14 +48,14 @@ namespace android::accounts
 		) {}
 	
 	// Methods
-	jint Account::describeContents()
+	jint Account::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Account::equals(JObject arg0)
+	jboolean Account::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -63,21 +63,21 @@ namespace android::accounts
 			arg0.object<jobject>()
 		);
 	}
-	jint Account::hashCode()
+	jint Account::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Account::toString()
+	JString Account::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Account::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Account::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -27,14 +27,14 @@ namespace android::mtp
 		) {}
 	
 	// Methods
-	void MtpDevice::close()
+	void MtpDevice::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean MtpDevice::deleteObject(jint arg0)
+	jboolean MtpDevice::deleteObject(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"deleteObject",
@@ -42,28 +42,28 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jint MtpDevice::getDeviceId()
+	jint MtpDevice::getDeviceId() const
 	{
 		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
-	android::mtp::MtpDeviceInfo MtpDevice::getDeviceInfo()
+	android::mtp::MtpDeviceInfo MtpDevice::getDeviceInfo() const
 	{
 		return callObjectMethod(
 			"getDeviceInfo",
 			"()Landroid/mtp/MtpDeviceInfo;"
 		);
 	}
-	JString MtpDevice::getDeviceName()
+	JString MtpDevice::getDeviceName() const
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray MtpDevice::getObject(jint arg0, jint arg1)
+	JByteArray MtpDevice::getObject(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getObject",
@@ -72,7 +72,7 @@ namespace android::mtp
 			arg1
 		);
 	}
-	JIntArray MtpDevice::getObjectHandles(jint arg0, jint arg1, jint arg2)
+	JIntArray MtpDevice::getObjectHandles(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"getObjectHandles",
@@ -82,7 +82,7 @@ namespace android::mtp
 			arg2
 		);
 	}
-	android::mtp::MtpObjectInfo MtpDevice::getObjectInfo(jint arg0)
+	android::mtp::MtpObjectInfo MtpDevice::getObjectInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getObjectInfo",
@@ -90,7 +90,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jlong MtpDevice::getParent(jint arg0)
+	jlong MtpDevice::getParent(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getParent",
@@ -98,7 +98,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jlong MtpDevice::getPartialObject(jint arg0, jlong arg1, jlong arg2, JByteArray arg3)
+	jlong MtpDevice::getPartialObject(jint arg0, jlong arg1, jlong arg2, JByteArray arg3) const
 	{
 		return callMethod<jlong>(
 			"getPartialObject",
@@ -109,7 +109,7 @@ namespace android::mtp
 			arg3.object<jbyteArray>()
 		);
 	}
-	jlong MtpDevice::getPartialObject64(jint arg0, jlong arg1, jlong arg2, JByteArray arg3)
+	jlong MtpDevice::getPartialObject64(jint arg0, jlong arg1, jlong arg2, JByteArray arg3) const
 	{
 		return callMethod<jlong>(
 			"getPartialObject64",
@@ -120,7 +120,7 @@ namespace android::mtp
 			arg3.object<jbyteArray>()
 		);
 	}
-	jlong MtpDevice::getStorageId(jint arg0)
+	jlong MtpDevice::getStorageId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getStorageId",
@@ -128,14 +128,14 @@ namespace android::mtp
 			arg0
 		);
 	}
-	JIntArray MtpDevice::getStorageIds()
+	JIntArray MtpDevice::getStorageIds() const
 	{
 		return callObjectMethod(
 			"getStorageIds",
 			"()[I"
 		);
 	}
-	android::mtp::MtpStorageInfo MtpDevice::getStorageInfo(jint arg0)
+	android::mtp::MtpStorageInfo MtpDevice::getStorageInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getStorageInfo",
@@ -143,7 +143,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	JByteArray MtpDevice::getThumbnail(jint arg0)
+	JByteArray MtpDevice::getThumbnail(jint arg0) const
 	{
 		return callObjectMethod(
 			"getThumbnail",
@@ -151,7 +151,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jboolean MtpDevice::importFile(jint arg0, android::os::ParcelFileDescriptor arg1)
+	jboolean MtpDevice::importFile(jint arg0, android::os::ParcelFileDescriptor arg1) const
 	{
 		return callMethod<jboolean>(
 			"importFile",
@@ -160,7 +160,7 @@ namespace android::mtp
 			arg1.object()
 		);
 	}
-	jboolean MtpDevice::importFile(jint arg0, JString arg1)
+	jboolean MtpDevice::importFile(jint arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"importFile",
@@ -169,7 +169,7 @@ namespace android::mtp
 			arg1.object<jstring>()
 		);
 	}
-	jboolean MtpDevice::open(android::hardware::usb::UsbDeviceConnection arg0)
+	jboolean MtpDevice::open(android::hardware::usb::UsbDeviceConnection arg0) const
 	{
 		return callMethod<jboolean>(
 			"open",
@@ -177,7 +177,7 @@ namespace android::mtp
 			arg0.object()
 		);
 	}
-	android::mtp::MtpEvent MtpDevice::readEvent(android::os::CancellationSignal arg0)
+	android::mtp::MtpEvent MtpDevice::readEvent(android::os::CancellationSignal arg0) const
 	{
 		return callObjectMethod(
 			"readEvent",
@@ -185,7 +185,7 @@ namespace android::mtp
 			arg0.object()
 		);
 	}
-	jboolean MtpDevice::sendObject(jint arg0, jlong arg1, android::os::ParcelFileDescriptor arg2)
+	jboolean MtpDevice::sendObject(jint arg0, jlong arg1, android::os::ParcelFileDescriptor arg2) const
 	{
 		return callMethod<jboolean>(
 			"sendObject",
@@ -195,7 +195,7 @@ namespace android::mtp
 			arg2.object()
 		);
 	}
-	android::mtp::MtpObjectInfo MtpDevice::sendObjectInfo(android::mtp::MtpObjectInfo arg0)
+	android::mtp::MtpObjectInfo MtpDevice::sendObjectInfo(android::mtp::MtpObjectInfo arg0) const
 	{
 		return callObjectMethod(
 			"sendObjectInfo",
@@ -203,7 +203,7 @@ namespace android::mtp
 			arg0.object()
 		);
 	}
-	JString MtpDevice::toString()
+	JString MtpDevice::toString() const
 	{
 		return callObjectMethod(
 			"toString",

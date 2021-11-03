@@ -23,11 +23,11 @@ namespace android::transition
 		VisibilityPropagation();
 		
 		// Methods
-		void captureValues(android::transition::TransitionValues arg0);
-		JArray getPropagationProperties();
-		jint getViewVisibility(android::transition::TransitionValues arg0);
-		jint getViewX(android::transition::TransitionValues arg0);
-		jint getViewY(android::transition::TransitionValues arg0);
+		void captureValues(android::transition::TransitionValues arg0) const;
+		JArray getPropagationProperties() const;
+		jint getViewVisibility(android::transition::TransitionValues arg0) const;
+		jint getViewX(android::transition::TransitionValues arg0) const;
+		jint getViewY(android::transition::TransitionValues arg0) const;
 	};
 } // namespace android::transition
 

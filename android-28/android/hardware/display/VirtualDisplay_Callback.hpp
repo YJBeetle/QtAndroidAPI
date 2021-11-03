@@ -17,9 +17,9 @@ namespace android::hardware::display
 		VirtualDisplay_Callback();
 		
 		// Methods
-		void onPaused();
-		void onResumed();
-		void onStopped();
+		void onPaused() const;
+		void onResumed() const;
+		void onStopped() const;
 	};
 } // namespace android::hardware::display
 

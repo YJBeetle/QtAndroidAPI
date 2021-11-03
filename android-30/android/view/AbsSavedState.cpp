@@ -28,21 +28,21 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint AbsSavedState::describeContents()
+	jint AbsSavedState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject AbsSavedState::getSuperState()
+	JObject AbsSavedState::getSuperState() const
 	{
 		return callObjectMethod(
 			"getSuperState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	void AbsSavedState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AbsSavedState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

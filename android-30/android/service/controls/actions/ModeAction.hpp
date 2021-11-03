@@ -20,8 +20,8 @@ namespace android::service::controls::actions
 		ModeAction(JString arg0, jint arg1, JString arg2);
 		
 		// Methods
-		jint getActionType();
-		jint getNewMode();
+		jint getActionType() const;
+		jint getNewMode() const;
 	};
 } // namespace android::service::controls::actions
 

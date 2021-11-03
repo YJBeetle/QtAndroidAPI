@@ -26,21 +26,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger RSAPublicKeySpec::getModulus()
+	java::math::BigInteger RSAPublicKeySpec::getModulus() const
 	{
 		return callObjectMethod(
 			"getModulus",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	JObject RSAPublicKeySpec::getParams()
+	JObject RSAPublicKeySpec::getParams() const
 	{
 		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	java::math::BigInteger RSAPublicKeySpec::getPublicExponent()
+	java::math::BigInteger RSAPublicKeySpec::getPublicExponent() const
 	{
 		return callObjectMethod(
 			"getPublicExponent",

@@ -29,21 +29,21 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	jint RegexValidator::describeContents()
+	jint RegexValidator::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString RegexValidator::toString()
+	JString RegexValidator::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RegexValidator::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RegexValidator::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

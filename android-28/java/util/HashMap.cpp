@@ -40,21 +40,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void HashMap::clear()
+	void HashMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject HashMap::clone()
+	JObject HashMap::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject HashMap::compute(JObject arg0, JObject arg1)
+	JObject HashMap::compute(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compute",
@@ -63,7 +63,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject HashMap::computeIfAbsent(JObject arg0, JObject arg1)
+	JObject HashMap::computeIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -72,7 +72,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject HashMap::computeIfPresent(JObject arg0, JObject arg1)
+	JObject HashMap::computeIfPresent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -81,7 +81,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean HashMap::containsKey(JObject arg0)
+	jboolean HashMap::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -89,7 +89,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean HashMap::containsValue(JObject arg0)
+	jboolean HashMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -97,14 +97,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject HashMap::entrySet()
+	JObject HashMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void HashMap::forEach(JObject arg0)
+	void HashMap::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -112,7 +112,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject HashMap::get(JObject arg0)
+	JObject HashMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -120,7 +120,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject HashMap::getOrDefault(JObject arg0, JObject arg1)
+	JObject HashMap::getOrDefault(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getOrDefault",
@@ -129,21 +129,21 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean HashMap::isEmpty()
+	jboolean HashMap::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject HashMap::keySet()
+	JObject HashMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject HashMap::merge(JObject arg0, JObject arg1, JObject arg2)
+	JObject HashMap::merge(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -153,7 +153,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	JObject HashMap::put(JObject arg0, JObject arg1)
+	JObject HashMap::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -162,7 +162,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void HashMap::putAll(JObject arg0)
+	void HashMap::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -170,7 +170,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject HashMap::putIfAbsent(JObject arg0, JObject arg1)
+	JObject HashMap::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
@@ -179,7 +179,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean HashMap::remove(JObject arg0, JObject arg1)
+	jboolean HashMap::remove(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -188,7 +188,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject HashMap::remove(JObject arg0)
+	JObject HashMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -196,7 +196,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean HashMap::replace(JObject arg0, JObject arg1, JObject arg2)
+	jboolean HashMap::replace(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"replace",
@@ -206,7 +206,7 @@ namespace java::util
 			arg2.object<jobject>()
 		);
 	}
-	JObject HashMap::replace(JObject arg0, JObject arg1)
+	JObject HashMap::replace(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -215,7 +215,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void HashMap::replaceAll(JObject arg0)
+	void HashMap::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -223,14 +223,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint HashMap::size()
+	jint HashMap::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject HashMap::values()
+	JObject HashMap::values() const
 	{
 		return callObjectMethod(
 			"values",

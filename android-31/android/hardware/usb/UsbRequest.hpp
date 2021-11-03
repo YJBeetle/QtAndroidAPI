@@ -31,14 +31,14 @@ namespace android::hardware::usb
 		UsbRequest();
 		
 		// Methods
-		jboolean cancel();
-		void close();
-		JObject getClientData();
-		android::hardware::usb::UsbEndpoint getEndpoint();
-		jboolean initialize(android::hardware::usb::UsbDeviceConnection arg0, android::hardware::usb::UsbEndpoint arg1);
-		jboolean queue(java::nio::ByteBuffer arg0);
-		jboolean queue(java::nio::ByteBuffer arg0, jint arg1);
-		void setClientData(JObject arg0);
+		jboolean cancel() const;
+		void close() const;
+		JObject getClientData() const;
+		android::hardware::usb::UsbEndpoint getEndpoint() const;
+		jboolean initialize(android::hardware::usb::UsbDeviceConnection arg0, android::hardware::usb::UsbEndpoint arg1) const;
+		jboolean queue(java::nio::ByteBuffer arg0) const;
+		jboolean queue(java::nio::ByteBuffer arg0, jint arg1) const;
+		void setClientData(JObject arg0) const;
 	};
 } // namespace android::hardware::usb
 

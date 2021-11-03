@@ -26,9 +26,9 @@ namespace java::lang::invoke
 		ConstantCallSite(java::lang::invoke::MethodHandle arg0);
 		
 		// Methods
-		java::lang::invoke::MethodHandle dynamicInvoker();
-		java::lang::invoke::MethodHandle getTarget();
-		void setTarget(java::lang::invoke::MethodHandle arg0);
+		java::lang::invoke::MethodHandle dynamicInvoker() const;
+		java::lang::invoke::MethodHandle getTarget() const;
+		void setTarget(java::lang::invoke::MethodHandle arg0) const;
 	};
 } // namespace java::lang::invoke
 

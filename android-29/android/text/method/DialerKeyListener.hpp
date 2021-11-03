@@ -25,7 +25,7 @@ namespace android::text::method
 		
 		// Methods
 		static android::text::method::DialerKeyListener getInstance();
-		jint getInputType();
+		jint getInputType() const;
 	};
 } // namespace android::text::method
 

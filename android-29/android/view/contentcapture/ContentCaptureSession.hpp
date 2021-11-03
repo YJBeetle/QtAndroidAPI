@@ -40,20 +40,20 @@ namespace android::view::contentcapture
 		// Constructors
 		
 		// Methods
-		void close();
-		android::view::contentcapture::ContentCaptureSession createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0);
-		void destroy();
-		android::view::contentcapture::ContentCaptureContext getContentCaptureContext();
-		android::view::contentcapture::ContentCaptureSessionId getContentCaptureSessionId();
-		android::view::autofill::AutofillId newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1);
-		android::view::ViewStructure newViewStructure(android::view::View arg0);
-		android::view::ViewStructure newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1);
-		void notifyViewAppeared(android::view::ViewStructure arg0);
-		void notifyViewDisappeared(android::view::autofill::AutofillId arg0);
-		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, JString arg1);
-		void notifyViewsDisappeared(android::view::autofill::AutofillId arg0, JLongArray arg1);
-		void setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0);
-		JString toString();
+		void close() const;
+		android::view::contentcapture::ContentCaptureSession createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0) const;
+		void destroy() const;
+		android::view::contentcapture::ContentCaptureContext getContentCaptureContext() const;
+		android::view::contentcapture::ContentCaptureSessionId getContentCaptureSessionId() const;
+		android::view::autofill::AutofillId newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1) const;
+		android::view::ViewStructure newViewStructure(android::view::View arg0) const;
+		android::view::ViewStructure newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1) const;
+		void notifyViewAppeared(android::view::ViewStructure arg0) const;
+		void notifyViewDisappeared(android::view::autofill::AutofillId arg0) const;
+		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, JString arg1) const;
+		void notifyViewsDisappeared(android::view::autofill::AutofillId arg0, JLongArray arg1) const;
+		void setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0) const;
+		JString toString() const;
 	};
 } // namespace android::view::contentcapture
 

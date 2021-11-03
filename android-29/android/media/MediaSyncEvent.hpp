@@ -19,9 +19,9 @@ namespace android::media
 		
 		// Methods
 		static android::media::MediaSyncEvent createEvent(jint arg0);
-		jint getAudioSessionId();
-		jint getType();
-		android::media::MediaSyncEvent setAudioSessionId(jint arg0);
+		jint getAudioSessionId() const;
+		jint getType() const;
+		android::media::MediaSyncEvent setAudioSessionId(jint arg0) const;
 	};
 } // namespace android::media
 

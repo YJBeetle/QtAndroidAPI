@@ -59,7 +59,7 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	void ErrorManager::error(JString arg0, java::lang::Exception arg1, jint arg2)
+	void ErrorManager::error(JString arg0, java::lang::Exception arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"error",

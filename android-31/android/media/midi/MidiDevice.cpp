@@ -15,14 +15,14 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	void MidiDevice::close()
+	void MidiDevice::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::media::midi::MidiDevice_MidiConnection MidiDevice::connectPorts(android::media::midi::MidiInputPort arg0, jint arg1)
+	android::media::midi::MidiDevice_MidiConnection MidiDevice::connectPorts(android::media::midi::MidiInputPort arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"connectPorts",
@@ -31,14 +31,14 @@ namespace android::media::midi
 			arg1
 		);
 	}
-	android::media::midi::MidiDeviceInfo MidiDevice::getInfo()
+	android::media::midi::MidiDeviceInfo MidiDevice::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
-	android::media::midi::MidiInputPort MidiDevice::openInputPort(jint arg0)
+	android::media::midi::MidiInputPort MidiDevice::openInputPort(jint arg0) const
 	{
 		return callObjectMethod(
 			"openInputPort",
@@ -46,7 +46,7 @@ namespace android::media::midi
 			arg0
 		);
 	}
-	android::media::midi::MidiOutputPort MidiDevice::openOutputPort(jint arg0)
+	android::media::midi::MidiOutputPort MidiDevice::openOutputPort(jint arg0) const
 	{
 		return callObjectMethod(
 			"openOutputPort",
@@ -54,7 +54,7 @@ namespace android::media::midi
 			arg0
 		);
 	}
-	JString MidiDevice::toString()
+	JString MidiDevice::toString() const
 	{
 		return callObjectMethod(
 			"toString",

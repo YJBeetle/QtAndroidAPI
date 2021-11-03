@@ -33,11 +33,11 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void addData(JString arg0, JByteArray arg1, jint arg2);
-		void addFile(JString arg0, java::io::File arg1, jint arg2);
-		void addText(JString arg0, JString arg1);
-		android::os::DropBoxManager_Entry getNextEntry(JString arg0, jlong arg1);
-		jboolean isTagEnabled(JString arg0);
+		void addData(JString arg0, JByteArray arg1, jint arg2) const;
+		void addFile(JString arg0, java::io::File arg1, jint arg2) const;
+		void addText(JString arg0, JString arg1) const;
+		android::os::DropBoxManager_Entry getNextEntry(JString arg0, jlong arg1) const;
+		jboolean isTagEnabled(JString arg0) const;
 	};
 } // namespace android::os
 

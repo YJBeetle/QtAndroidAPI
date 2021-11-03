@@ -31,19 +31,19 @@ namespace android::view
 		
 		// Methods
 		static android::view::LayoutInflater from(android::content::Context arg0);
-		android::view::LayoutInflater cloneInContext(android::content::Context arg0);
-		android::view::View createView(JString arg0, JString arg1, JObject arg2);
-		android::content::Context getContext();
-		JObject getFactory();
-		JObject getFactory2();
-		JObject getFilter();
-		android::view::View inflate(jint arg0, android::view::ViewGroup arg1);
-		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1);
-		android::view::View inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2);
-		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1, jboolean arg2);
-		void setFactory(JObject arg0);
-		void setFactory2(JObject arg0);
-		void setFilter(JObject arg0);
+		android::view::LayoutInflater cloneInContext(android::content::Context arg0) const;
+		android::view::View createView(JString arg0, JString arg1, JObject arg2) const;
+		android::content::Context getContext() const;
+		JObject getFactory() const;
+		JObject getFactory2() const;
+		JObject getFilter() const;
+		android::view::View inflate(jint arg0, android::view::ViewGroup arg1) const;
+		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1) const;
+		android::view::View inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2) const;
+		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1, jboolean arg2) const;
+		void setFactory(JObject arg0) const;
+		void setFactory2(JObject arg0) const;
+		void setFilter(JObject arg0) const;
 	};
 } // namespace android::view
 

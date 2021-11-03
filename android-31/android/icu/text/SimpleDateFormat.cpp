@@ -66,7 +66,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	void SimpleDateFormat::applyLocalizedPattern(JString arg0)
+	void SimpleDateFormat::applyLocalizedPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
@@ -74,7 +74,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void SimpleDateFormat::applyPattern(JString arg0)
+	void SimpleDateFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -82,14 +82,14 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject SimpleDateFormat::clone()
+	JObject SimpleDateFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean SimpleDateFormat::equals(JObject arg0)
+	jboolean SimpleDateFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -97,7 +97,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer SimpleDateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer SimpleDateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -107,7 +107,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject SimpleDateFormat::formatToCharacterIterator(JObject arg0)
+	JObject SimpleDateFormat::formatToCharacterIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -115,21 +115,21 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Date SimpleDateFormat::get2DigitYearStart()
+	java::util::Date SimpleDateFormat::get2DigitYearStart() const
 	{
 		return callObjectMethod(
 			"get2DigitYearStart",
 			"()Ljava/util/Date;"
 		);
 	}
-	android::icu::text::DateFormatSymbols SimpleDateFormat::getDateFormatSymbols()
+	android::icu::text::DateFormatSymbols SimpleDateFormat::getDateFormatSymbols() const
 	{
 		return callObjectMethod(
 			"getDateFormatSymbols",
 			"()Landroid/icu/text/DateFormatSymbols;"
 		);
 	}
-	android::icu::text::NumberFormat SimpleDateFormat::getNumberFormat(jchar arg0)
+	android::icu::text::NumberFormat SimpleDateFormat::getNumberFormat(jchar arg0) const
 	{
 		return callObjectMethod(
 			"getNumberFormat",
@@ -137,21 +137,21 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::TimeZoneFormat SimpleDateFormat::getTimeZoneFormat()
+	android::icu::text::TimeZoneFormat SimpleDateFormat::getTimeZoneFormat() const
 	{
 		return callObjectMethod(
 			"getTimeZoneFormat",
 			"()Landroid/icu/text/TimeZoneFormat;"
 		);
 	}
-	jint SimpleDateFormat::hashCode()
+	jint SimpleDateFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void SimpleDateFormat::parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2)
+	void SimpleDateFormat::parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2) const
 	{
 		callMethod<void>(
 			"parse",
@@ -161,7 +161,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	void SimpleDateFormat::set2DigitYearStart(java::util::Date arg0)
+	void SimpleDateFormat::set2DigitYearStart(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"set2DigitYearStart",
@@ -169,7 +169,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void SimpleDateFormat::setContext(android::icu::text::DisplayContext arg0)
+	void SimpleDateFormat::setContext(android::icu::text::DisplayContext arg0) const
 	{
 		callMethod<void>(
 			"setContext",
@@ -177,7 +177,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void SimpleDateFormat::setDateFormatSymbols(android::icu::text::DateFormatSymbols arg0)
+	void SimpleDateFormat::setDateFormatSymbols(android::icu::text::DateFormatSymbols arg0) const
 	{
 		callMethod<void>(
 			"setDateFormatSymbols",
@@ -185,7 +185,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void SimpleDateFormat::setNumberFormat(android::icu::text::NumberFormat arg0)
+	void SimpleDateFormat::setNumberFormat(android::icu::text::NumberFormat arg0) const
 	{
 		callMethod<void>(
 			"setNumberFormat",
@@ -193,7 +193,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void SimpleDateFormat::setNumberFormat(JString arg0, android::icu::text::NumberFormat arg1)
+	void SimpleDateFormat::setNumberFormat(JString arg0, android::icu::text::NumberFormat arg1) const
 	{
 		callMethod<void>(
 			"setNumberFormat",
@@ -202,7 +202,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void SimpleDateFormat::setTimeZoneFormat(android::icu::text::TimeZoneFormat arg0)
+	void SimpleDateFormat::setTimeZoneFormat(android::icu::text::TimeZoneFormat arg0) const
 	{
 		callMethod<void>(
 			"setTimeZoneFormat",
@@ -210,14 +210,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString SimpleDateFormat::toLocalizedPattern()
+	JString SimpleDateFormat::toLocalizedPattern() const
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SimpleDateFormat::toPattern()
+	JString SimpleDateFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",

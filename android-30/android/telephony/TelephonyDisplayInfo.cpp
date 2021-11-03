@@ -56,14 +56,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint TelephonyDisplayInfo::describeContents()
+	jint TelephonyDisplayInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TelephonyDisplayInfo::equals(JObject arg0)
+	jboolean TelephonyDisplayInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -71,35 +71,35 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint TelephonyDisplayInfo::getNetworkType()
+	jint TelephonyDisplayInfo::getNetworkType() const
 	{
 		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
-	jint TelephonyDisplayInfo::getOverrideNetworkType()
+	jint TelephonyDisplayInfo::getOverrideNetworkType() const
 	{
 		return callMethod<jint>(
 			"getOverrideNetworkType",
 			"()I"
 		);
 	}
-	jint TelephonyDisplayInfo::hashCode()
+	jint TelephonyDisplayInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TelephonyDisplayInfo::toString()
+	JString TelephonyDisplayInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TelephonyDisplayInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TelephonyDisplayInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

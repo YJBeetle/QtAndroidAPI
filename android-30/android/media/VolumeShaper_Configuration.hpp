@@ -34,15 +34,15 @@ namespace android::media
 		
 		// Methods
 		static jint getMaximumCurvePoints();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jlong getDuration();
-		jint getInterpolatorType();
-		JFloatArray getTimes();
-		JFloatArray getVolumes();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jlong getDuration() const;
+		jint getInterpolatorType() const;
+		JFloatArray getTimes() const;
+		JFloatArray getVolumes() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

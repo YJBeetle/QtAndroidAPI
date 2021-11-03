@@ -33,13 +33,13 @@ namespace android::text::style
 		TypefaceSpan(JString arg0);
 		
 		// Methods
-		jint describeContents();
-		JString getFamily();
-		jint getSpanTypeId();
-		android::graphics::Typeface getTypeface();
-		void updateDrawState(android::text::TextPaint arg0);
-		void updateMeasureState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getFamily() const;
+		jint getSpanTypeId() const;
+		android::graphics::Typeface getTypeface() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void updateMeasureState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

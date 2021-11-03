@@ -121,7 +121,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jint JapaneseCalendar::getActualMaximum(jint arg0)
+	jint JapaneseCalendar::getActualMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMaximum",
@@ -129,7 +129,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	JString JapaneseCalendar::getType()
+	JString JapaneseCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",

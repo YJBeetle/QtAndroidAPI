@@ -433,14 +433,14 @@ namespace android::util
 			arg0
 		);
 	}
-	jbyte Half::byteValue()
+	jbyte Half::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jint Half::compareTo(android::util::Half arg0)
+	jint Half::compareTo(android::util::Half arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -448,7 +448,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jint Half::compareTo(JObject arg0)
+	jint Half::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -456,14 +456,14 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jdouble Half::doubleValue()
+	jdouble Half::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Half::equals(JObject arg0)
+	jboolean Half::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -471,56 +471,56 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Half::floatValue()
+	jfloat Half::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jshort Half::halfValue()
+	jshort Half::halfValue() const
 	{
 		return callMethod<jshort>(
 			"halfValue",
 			"()S"
 		);
 	}
-	jint Half::hashCode()
+	jint Half::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Half::intValue()
+	jint Half::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jboolean Half::isNaN()
+	jboolean Half::isNaN() const
 	{
 		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
-	jlong Half::longValue()
+	jlong Half::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	jshort Half::shortValue()
+	jshort Half::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Half::toString()
+	JString Half::toString() const
 	{
 		return callObjectMethod(
 			"toString",

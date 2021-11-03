@@ -20,7 +20,7 @@ namespace java::lang
 		TypeNotPresentException(JString arg0, JThrowable arg1);
 		
 		// Methods
-		JString typeName();
+		JString typeName() const;
 	};
 } // namespace java::lang
 

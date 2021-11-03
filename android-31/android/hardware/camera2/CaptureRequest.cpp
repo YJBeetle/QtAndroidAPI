@@ -501,14 +501,14 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	jint CaptureRequest::describeContents()
+	jint CaptureRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CaptureRequest::equals(JObject arg0)
+	jboolean CaptureRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -516,7 +516,7 @@ namespace android::hardware::camera2
 			arg0.object<jobject>()
 		);
 	}
-	JObject CaptureRequest::get(android::hardware::camera2::CaptureRequest_Key arg0)
+	JObject CaptureRequest::get(android::hardware::camera2::CaptureRequest_Key arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -524,35 +524,35 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	JObject CaptureRequest::getKeys()
+	JObject CaptureRequest::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject CaptureRequest::getTag()
+	JObject CaptureRequest::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint CaptureRequest::hashCode()
+	jint CaptureRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean CaptureRequest::isReprocess()
+	jboolean CaptureRequest::isReprocess() const
 	{
 		return callMethod<jboolean>(
 			"isReprocess",
 			"()Z"
 		);
 	}
-	void CaptureRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CaptureRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

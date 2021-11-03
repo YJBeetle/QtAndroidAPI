@@ -16,7 +16,7 @@ namespace android::location
 		) {}
 	
 	// Methods
-	android::location::GnssStatus_Builder GnssStatus_Builder::addSatellite(jint arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jboolean arg5, jboolean arg6, jboolean arg7, jboolean arg8, jfloat arg9, jboolean arg10, jfloat arg11)
+	android::location::GnssStatus_Builder GnssStatus_Builder::addSatellite(jint arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jboolean arg5, jboolean arg6, jboolean arg7, jboolean arg8, jfloat arg9, jboolean arg10, jfloat arg11) const
 	{
 		return callObjectMethod(
 			"addSatellite",
@@ -35,14 +35,14 @@ namespace android::location
 			arg11
 		);
 	}
-	android::location::GnssStatus GnssStatus_Builder::build()
+	android::location::GnssStatus GnssStatus_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/location/GnssStatus;"
 		);
 	}
-	android::location::GnssStatus_Builder GnssStatus_Builder::clearSatellites()
+	android::location::GnssStatus_Builder GnssStatus_Builder::clearSatellites() const
 	{
 		return callObjectMethod(
 			"clearSatellites",

@@ -18,28 +18,28 @@ namespace android::util
 		) {}
 	
 	// Methods
-	jint LruCache::createCount()
+	jint LruCache::createCount() const
 	{
 		return callMethod<jint>(
 			"createCount",
 			"()I"
 		);
 	}
-	void LruCache::evictAll()
+	void LruCache::evictAll() const
 	{
 		callMethod<void>(
 			"evictAll",
 			"()V"
 		);
 	}
-	jint LruCache::evictionCount()
+	jint LruCache::evictionCount() const
 	{
 		return callMethod<jint>(
 			"evictionCount",
 			"()I"
 		);
 	}
-	JObject LruCache::get(JObject arg0)
+	JObject LruCache::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -47,28 +47,28 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jint LruCache::hitCount()
+	jint LruCache::hitCount() const
 	{
 		return callMethod<jint>(
 			"hitCount",
 			"()I"
 		);
 	}
-	jint LruCache::maxSize()
+	jint LruCache::maxSize() const
 	{
 		return callMethod<jint>(
 			"maxSize",
 			"()I"
 		);
 	}
-	jint LruCache::missCount()
+	jint LruCache::missCount() const
 	{
 		return callMethod<jint>(
 			"missCount",
 			"()I"
 		);
 	}
-	JObject LruCache::put(JObject arg0, JObject arg1)
+	JObject LruCache::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -77,14 +77,14 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	jint LruCache::putCount()
+	jint LruCache::putCount() const
 	{
 		return callMethod<jint>(
 			"putCount",
 			"()I"
 		);
 	}
-	JObject LruCache::remove(JObject arg0)
+	JObject LruCache::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -92,7 +92,7 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	void LruCache::resize(jint arg0)
+	void LruCache::resize(jint arg0) const
 	{
 		callMethod<void>(
 			"resize",
@@ -100,28 +100,28 @@ namespace android::util
 			arg0
 		);
 	}
-	jint LruCache::size()
+	jint LruCache::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject LruCache::snapshot()
+	JObject LruCache::snapshot() const
 	{
 		return callObjectMethod(
 			"snapshot",
 			"()Ljava/util/Map;"
 		);
 	}
-	JString LruCache::toString()
+	JString LruCache::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LruCache::trimToSize(jint arg0)
+	void LruCache::trimToSize(jint arg0) const
 	{
 		callMethod<void>(
 			"trimToSize",

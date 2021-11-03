@@ -23,7 +23,7 @@ namespace android::app::appsearch
 		AppSearchManager_SearchContext_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::AppSearchManager_SearchContext build();
+		android::app::appsearch::AppSearchManager_SearchContext build() const;
 	};
 } // namespace android::app::appsearch
 

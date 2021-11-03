@@ -37,7 +37,7 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1)
+	void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"attach",
@@ -46,7 +46,7 @@ namespace android::net::wifi::aware
 			arg1.object()
 		);
 	}
-	void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2)
+	void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"attach",
@@ -56,14 +56,14 @@ namespace android::net::wifi::aware
 			arg2.object()
 		);
 	}
-	android::net::wifi::aware::Characteristics WifiAwareManager::getCharacteristics()
+	android::net::wifi::aware::Characteristics WifiAwareManager::getCharacteristics() const
 	{
 		return callObjectMethod(
 			"getCharacteristics",
 			"()Landroid/net/wifi/aware/Characteristics;"
 		);
 	}
-	jboolean WifiAwareManager::isAvailable()
+	jboolean WifiAwareManager::isAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isAvailable",

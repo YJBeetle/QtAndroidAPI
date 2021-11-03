@@ -18,7 +18,7 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	void BluetoothGattCallback::onCharacteristicChanged(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1)
+	void BluetoothGattCallback::onCharacteristicChanged(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1) const
 	{
 		callMethod<void>(
 			"onCharacteristicChanged",
@@ -27,7 +27,7 @@ namespace android::bluetooth
 			arg1.object()
 		);
 	}
-	void BluetoothGattCallback::onCharacteristicRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2)
+	void BluetoothGattCallback::onCharacteristicRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onCharacteristicRead",
@@ -37,7 +37,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onCharacteristicWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2)
+	void BluetoothGattCallback::onCharacteristicWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onCharacteristicWrite",
@@ -47,7 +47,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onConnectionStateChange(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
+	void BluetoothGattCallback::onConnectionStateChange(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onConnectionStateChange",
@@ -57,7 +57,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onDescriptorRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2)
+	void BluetoothGattCallback::onDescriptorRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onDescriptorRead",
@@ -67,7 +67,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onDescriptorWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2)
+	void BluetoothGattCallback::onDescriptorWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onDescriptorWrite",
@@ -77,7 +77,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onMtuChanged(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
+	void BluetoothGattCallback::onMtuChanged(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onMtuChanged",
@@ -87,7 +87,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onPhyRead(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3)
+	void BluetoothGattCallback::onPhyRead(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onPhyRead",
@@ -98,7 +98,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothGattCallback::onPhyUpdate(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3)
+	void BluetoothGattCallback::onPhyUpdate(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onPhyUpdate",
@@ -109,7 +109,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothGattCallback::onReadRemoteRssi(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
+	void BluetoothGattCallback::onReadRemoteRssi(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onReadRemoteRssi",
@@ -119,7 +119,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onReliableWriteCompleted(android::bluetooth::BluetoothGatt arg0, jint arg1)
+	void BluetoothGattCallback::onReliableWriteCompleted(android::bluetooth::BluetoothGatt arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onReliableWriteCompleted",
@@ -128,7 +128,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothGattCallback::onServicesDiscovered(android::bluetooth::BluetoothGatt arg0, jint arg1)
+	void BluetoothGattCallback::onServicesDiscovered(android::bluetooth::BluetoothGatt arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onServicesDiscovered",

@@ -22,7 +22,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_TextBuilder TtsSpan_TextBuilder::setText(JString arg0)
+	android::text::style::TtsSpan_TextBuilder TtsSpan_TextBuilder::setText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setText",

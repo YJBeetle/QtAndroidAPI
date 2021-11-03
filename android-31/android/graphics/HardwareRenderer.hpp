@@ -36,19 +36,19 @@ namespace android::graphics
 		HardwareRenderer();
 		
 		// Methods
-		void clearContent();
-		android::graphics::HardwareRenderer_FrameRenderRequest createRenderRequest();
-		void destroy();
-		jboolean isOpaque();
-		void notifyFramePending();
-		void setContentRoot(android::graphics::RenderNode arg0);
-		void setLightSourceAlpha(jfloat arg0, jfloat arg1);
-		void setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setName(JString arg0);
-		void setOpaque(jboolean arg0);
-		void setSurface(android::view::Surface arg0);
-		void start();
-		void stop();
+		void clearContent() const;
+		android::graphics::HardwareRenderer_FrameRenderRequest createRenderRequest() const;
+		void destroy() const;
+		jboolean isOpaque() const;
+		void notifyFramePending() const;
+		void setContentRoot(android::graphics::RenderNode arg0) const;
+		void setLightSourceAlpha(jfloat arg0, jfloat arg1) const;
+		void setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void setName(JString arg0) const;
+		void setOpaque(jboolean arg0) const;
+		void setSurface(android::view::Surface arg0) const;
+		void start() const;
+		void stop() const;
 	};
 } // namespace android::graphics
 

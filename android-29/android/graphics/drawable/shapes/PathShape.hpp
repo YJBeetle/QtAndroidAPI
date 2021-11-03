@@ -35,10 +35,10 @@ namespace android::graphics::drawable::shapes
 		PathShape(android::graphics::Path arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		android::graphics::drawable::shapes::PathShape clone();
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		android::graphics::drawable::shapes::PathShape clone() const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::graphics::drawable::shapes
 

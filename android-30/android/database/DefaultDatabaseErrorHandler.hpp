@@ -22,7 +22,7 @@ namespace android::database
 		DefaultDatabaseErrorHandler();
 		
 		// Methods
-		void onCorruption(android::database::sqlite::SQLiteDatabase arg0);
+		void onCorruption(android::database::sqlite::SQLiteDatabase arg0) const;
 	};
 } // namespace android::database
 

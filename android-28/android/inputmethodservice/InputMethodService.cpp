@@ -66,77 +66,77 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	jboolean InputMethodService::enableHardwareAcceleration()
+	jboolean InputMethodService::enableHardwareAcceleration() const
 	{
 		return callMethod<jboolean>(
 			"enableHardwareAcceleration",
 			"()Z"
 		);
 	}
-	jint InputMethodService::getBackDisposition()
+	jint InputMethodService::getBackDisposition() const
 	{
 		return callMethod<jint>(
 			"getBackDisposition",
 			"()I"
 		);
 	}
-	jint InputMethodService::getCandidatesHiddenVisibility()
+	jint InputMethodService::getCandidatesHiddenVisibility() const
 	{
 		return callMethod<jint>(
 			"getCandidatesHiddenVisibility",
 			"()I"
 		);
 	}
-	android::view::inputmethod::InputBinding InputMethodService::getCurrentInputBinding()
+	android::view::inputmethod::InputBinding InputMethodService::getCurrentInputBinding() const
 	{
 		return callObjectMethod(
 			"getCurrentInputBinding",
 			"()Landroid/view/inputmethod/InputBinding;"
 		);
 	}
-	JObject InputMethodService::getCurrentInputConnection()
+	JObject InputMethodService::getCurrentInputConnection() const
 	{
 		return callObjectMethod(
 			"getCurrentInputConnection",
 			"()Landroid/view/inputmethod/InputConnection;"
 		);
 	}
-	android::view::inputmethod::EditorInfo InputMethodService::getCurrentInputEditorInfo()
+	android::view::inputmethod::EditorInfo InputMethodService::getCurrentInputEditorInfo() const
 	{
 		return callObjectMethod(
 			"getCurrentInputEditorInfo",
 			"()Landroid/view/inputmethod/EditorInfo;"
 		);
 	}
-	jboolean InputMethodService::getCurrentInputStarted()
+	jboolean InputMethodService::getCurrentInputStarted() const
 	{
 		return callMethod<jboolean>(
 			"getCurrentInputStarted",
 			"()Z"
 		);
 	}
-	jint InputMethodService::getInputMethodWindowRecommendedHeight()
+	jint InputMethodService::getInputMethodWindowRecommendedHeight() const
 	{
 		return callMethod<jint>(
 			"getInputMethodWindowRecommendedHeight",
 			"()I"
 		);
 	}
-	android::view::LayoutInflater InputMethodService::getLayoutInflater()
+	android::view::LayoutInflater InputMethodService::getLayoutInflater() const
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	jint InputMethodService::getMaxWidth()
+	jint InputMethodService::getMaxWidth() const
 	{
 		return callMethod<jint>(
 			"getMaxWidth",
 			"()I"
 		);
 	}
-	JString InputMethodService::getTextForImeAction(jint arg0)
+	JString InputMethodService::getTextForImeAction(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTextForImeAction",
@@ -144,56 +144,56 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	android::app::Dialog InputMethodService::getWindow()
+	android::app::Dialog InputMethodService::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/app/Dialog;"
 		);
 	}
-	void InputMethodService::hideStatusIcon()
+	void InputMethodService::hideStatusIcon() const
 	{
 		callMethod<void>(
 			"hideStatusIcon",
 			"()V"
 		);
 	}
-	void InputMethodService::hideWindow()
+	void InputMethodService::hideWindow() const
 	{
 		callMethod<void>(
 			"hideWindow",
 			"()V"
 		);
 	}
-	jboolean InputMethodService::isExtractViewShown()
+	jboolean InputMethodService::isExtractViewShown() const
 	{
 		return callMethod<jboolean>(
 			"isExtractViewShown",
 			"()Z"
 		);
 	}
-	jboolean InputMethodService::isFullscreenMode()
+	jboolean InputMethodService::isFullscreenMode() const
 	{
 		return callMethod<jboolean>(
 			"isFullscreenMode",
 			"()Z"
 		);
 	}
-	jboolean InputMethodService::isInputViewShown()
+	jboolean InputMethodService::isInputViewShown() const
 	{
 		return callMethod<jboolean>(
 			"isInputViewShown",
 			"()Z"
 		);
 	}
-	jboolean InputMethodService::isShowInputRequested()
+	jboolean InputMethodService::isShowInputRequested() const
 	{
 		return callMethod<jboolean>(
 			"isShowInputRequested",
 			"()Z"
 		);
 	}
-	void InputMethodService::onAppPrivateCommand(JString arg0, android::os::Bundle arg1)
+	void InputMethodService::onAppPrivateCommand(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onAppPrivateCommand",
@@ -202,14 +202,14 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	void InputMethodService::onBindInput()
+	void InputMethodService::onBindInput() const
 	{
 		callMethod<void>(
 			"onBindInput",
 			"()V"
 		);
 	}
-	void InputMethodService::onComputeInsets(android::inputmethodservice::InputMethodService_Insets arg0)
+	void InputMethodService::onComputeInsets(android::inputmethodservice::InputMethodService_Insets arg0) const
 	{
 		callMethod<void>(
 			"onComputeInsets",
@@ -217,7 +217,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onConfigurationChanged(android::content::res::Configuration arg0)
+	void InputMethodService::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -225,7 +225,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onConfigureWindow(android::view::Window arg0, jboolean arg1, jboolean arg2)
+	void InputMethodService::onConfigureWindow(android::view::Window arg0, jboolean arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"onConfigureWindow",
@@ -235,56 +235,56 @@ namespace android::inputmethodservice
 			arg2
 		);
 	}
-	void InputMethodService::onCreate()
+	void InputMethodService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	android::view::View InputMethodService::onCreateCandidatesView()
+	android::view::View InputMethodService::onCreateCandidatesView() const
 	{
 		return callObjectMethod(
 			"onCreateCandidatesView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View InputMethodService::onCreateExtractTextView()
+	android::view::View InputMethodService::onCreateExtractTextView() const
 	{
 		return callObjectMethod(
 			"onCreateExtractTextView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl InputMethodService::onCreateInputMethodInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl InputMethodService::onCreateInputMethodInterface() const
 	{
 		return callObjectMethod(
 			"onCreateInputMethodInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodImpl;"
 		);
 	}
-	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl InputMethodService::onCreateInputMethodSessionInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl InputMethodService::onCreateInputMethodSessionInterface() const
 	{
 		return callObjectMethod(
 			"onCreateInputMethodSessionInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;"
 		);
 	}
-	android::view::View InputMethodService::onCreateInputView()
+	android::view::View InputMethodService::onCreateInputView() const
 	{
 		return callObjectMethod(
 			"onCreateInputView",
 			"()Landroid/view/View;"
 		);
 	}
-	void InputMethodService::onDestroy()
+	void InputMethodService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void InputMethodService::onDisplayCompletions(JArray arg0)
+	void InputMethodService::onDisplayCompletions(JArray arg0) const
 	{
 		callMethod<void>(
 			"onDisplayCompletions",
@@ -292,21 +292,21 @@ namespace android::inputmethodservice
 			arg0.object<jarray>()
 		);
 	}
-	jboolean InputMethodService::onEvaluateFullscreenMode()
+	jboolean InputMethodService::onEvaluateFullscreenMode() const
 	{
 		return callMethod<jboolean>(
 			"onEvaluateFullscreenMode",
 			"()Z"
 		);
 	}
-	jboolean InputMethodService::onEvaluateInputViewShown()
+	jboolean InputMethodService::onEvaluateInputViewShown() const
 	{
 		return callMethod<jboolean>(
 			"onEvaluateInputViewShown",
 			"()Z"
 		);
 	}
-	jboolean InputMethodService::onExtractTextContextMenuItem(jint arg0)
+	jboolean InputMethodService::onExtractTextContextMenuItem(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onExtractTextContextMenuItem",
@@ -314,7 +314,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::onExtractedCursorMovement(jint arg0, jint arg1)
+	void InputMethodService::onExtractedCursorMovement(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onExtractedCursorMovement",
@@ -323,7 +323,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void InputMethodService::onExtractedSelectionChanged(jint arg0, jint arg1)
+	void InputMethodService::onExtractedSelectionChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onExtractedSelectionChanged",
@@ -332,14 +332,14 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void InputMethodService::onExtractedTextClicked()
+	void InputMethodService::onExtractedTextClicked() const
 	{
 		callMethod<void>(
 			"onExtractedTextClicked",
 			"()V"
 		);
 	}
-	void InputMethodService::onExtractingInputChanged(android::view::inputmethod::EditorInfo arg0)
+	void InputMethodService::onExtractingInputChanged(android::view::inputmethod::EditorInfo arg0) const
 	{
 		callMethod<void>(
 			"onExtractingInputChanged",
@@ -347,7 +347,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onFinishCandidatesView(jboolean arg0)
+	void InputMethodService::onFinishCandidatesView(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onFinishCandidatesView",
@@ -355,14 +355,14 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::onFinishInput()
+	void InputMethodService::onFinishInput() const
 	{
 		callMethod<void>(
 			"onFinishInput",
 			"()V"
 		);
 	}
-	void InputMethodService::onFinishInputView(jboolean arg0)
+	void InputMethodService::onFinishInputView(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onFinishInputView",
@@ -370,7 +370,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean InputMethodService::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean InputMethodService::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -378,14 +378,14 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onInitializeInterface()
+	void InputMethodService::onInitializeInterface() const
 	{
 		callMethod<void>(
 			"onInitializeInterface",
 			"()V"
 		);
 	}
-	jboolean InputMethodService::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean InputMethodService::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -394,7 +394,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	jboolean InputMethodService::onKeyLongPress(jint arg0, android::view::KeyEvent arg1)
+	jboolean InputMethodService::onKeyLongPress(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyLongPress",
@@ -403,7 +403,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	jboolean InputMethodService::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean InputMethodService::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -413,7 +413,7 @@ namespace android::inputmethodservice
 			arg2.object()
 		);
 	}
-	jboolean InputMethodService::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean InputMethodService::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -422,7 +422,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	jboolean InputMethodService::onShowInputRequested(jint arg0, jboolean arg1)
+	jboolean InputMethodService::onShowInputRequested(jint arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"onShowInputRequested",
@@ -431,7 +431,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void InputMethodService::onStartCandidatesView(android::view::inputmethod::EditorInfo arg0, jboolean arg1)
+	void InputMethodService::onStartCandidatesView(android::view::inputmethod::EditorInfo arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onStartCandidatesView",
@@ -440,7 +440,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void InputMethodService::onStartInput(android::view::inputmethod::EditorInfo arg0, jboolean arg1)
+	void InputMethodService::onStartInput(android::view::inputmethod::EditorInfo arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onStartInput",
@@ -449,7 +449,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void InputMethodService::onStartInputView(android::view::inputmethod::EditorInfo arg0, jboolean arg1)
+	void InputMethodService::onStartInputView(android::view::inputmethod::EditorInfo arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onStartInputView",
@@ -458,7 +458,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	jboolean InputMethodService::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean InputMethodService::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -466,14 +466,14 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onUnbindInput()
+	void InputMethodService::onUnbindInput() const
 	{
 		callMethod<void>(
 			"onUnbindInput",
 			"()V"
 		);
 	}
-	void InputMethodService::onUpdateCursor(android::graphics::Rect arg0)
+	void InputMethodService::onUpdateCursor(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"onUpdateCursor",
@@ -481,7 +481,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onUpdateCursorAnchorInfo(android::view::inputmethod::CursorAnchorInfo arg0)
+	void InputMethodService::onUpdateCursorAnchorInfo(android::view::inputmethod::CursorAnchorInfo arg0) const
 	{
 		callMethod<void>(
 			"onUpdateCursorAnchorInfo",
@@ -489,7 +489,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onUpdateExtractedText(jint arg0, android::view::inputmethod::ExtractedText arg1)
+	void InputMethodService::onUpdateExtractedText(jint arg0, android::view::inputmethod::ExtractedText arg1) const
 	{
 		callMethod<void>(
 			"onUpdateExtractedText",
@@ -498,7 +498,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	void InputMethodService::onUpdateExtractingViews(android::view::inputmethod::EditorInfo arg0)
+	void InputMethodService::onUpdateExtractingViews(android::view::inputmethod::EditorInfo arg0) const
 	{
 		callMethod<void>(
 			"onUpdateExtractingViews",
@@ -506,7 +506,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onUpdateExtractingVisibility(android::view::inputmethod::EditorInfo arg0)
+	void InputMethodService::onUpdateExtractingVisibility(android::view::inputmethod::EditorInfo arg0) const
 	{
 		callMethod<void>(
 			"onUpdateExtractingVisibility",
@@ -514,7 +514,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::onUpdateSelection(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void InputMethodService::onUpdateSelection(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"onUpdateSelection",
@@ -527,7 +527,7 @@ namespace android::inputmethodservice
 			arg5
 		);
 	}
-	void InputMethodService::onViewClicked(jboolean arg0)
+	void InputMethodService::onViewClicked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onViewClicked",
@@ -535,21 +535,21 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::onWindowHidden()
+	void InputMethodService::onWindowHidden() const
 	{
 		callMethod<void>(
 			"onWindowHidden",
 			"()V"
 		);
 	}
-	void InputMethodService::onWindowShown()
+	void InputMethodService::onWindowShown() const
 	{
 		callMethod<void>(
 			"onWindowShown",
 			"()V"
 		);
 	}
-	void InputMethodService::requestHideSelf(jint arg0)
+	void InputMethodService::requestHideSelf(jint arg0) const
 	{
 		callMethod<void>(
 			"requestHideSelf",
@@ -557,7 +557,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::requestShowSelf(jint arg0)
+	void InputMethodService::requestShowSelf(jint arg0) const
 	{
 		callMethod<void>(
 			"requestShowSelf",
@@ -565,7 +565,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean InputMethodService::sendDefaultEditorAction(jboolean arg0)
+	jboolean InputMethodService::sendDefaultEditorAction(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"sendDefaultEditorAction",
@@ -573,7 +573,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::sendDownUpKeyEvents(jint arg0)
+	void InputMethodService::sendDownUpKeyEvents(jint arg0) const
 	{
 		callMethod<void>(
 			"sendDownUpKeyEvents",
@@ -581,7 +581,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::sendKeyChar(jchar arg0)
+	void InputMethodService::sendKeyChar(jchar arg0) const
 	{
 		callMethod<void>(
 			"sendKeyChar",
@@ -589,7 +589,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::setBackDisposition(jint arg0)
+	void InputMethodService::setBackDisposition(jint arg0) const
 	{
 		callMethod<void>(
 			"setBackDisposition",
@@ -597,7 +597,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::setCandidatesView(android::view::View arg0)
+	void InputMethodService::setCandidatesView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setCandidatesView",
@@ -605,7 +605,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::setCandidatesViewShown(jboolean arg0)
+	void InputMethodService::setCandidatesViewShown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCandidatesViewShown",
@@ -613,7 +613,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::setExtractView(android::view::View arg0)
+	void InputMethodService::setExtractView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setExtractView",
@@ -621,7 +621,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::setExtractViewShown(jboolean arg0)
+	void InputMethodService::setExtractViewShown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setExtractViewShown",
@@ -629,7 +629,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::setInputView(android::view::View arg0)
+	void InputMethodService::setInputView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setInputView",
@@ -637,7 +637,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService::setTheme(jint arg0)
+	void InputMethodService::setTheme(jint arg0) const
 	{
 		callMethod<void>(
 			"setTheme",
@@ -645,14 +645,14 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean InputMethodService::shouldOfferSwitchingToNextInputMethod()
+	jboolean InputMethodService::shouldOfferSwitchingToNextInputMethod() const
 	{
 		return callMethod<jboolean>(
 			"shouldOfferSwitchingToNextInputMethod",
 			"()Z"
 		);
 	}
-	void InputMethodService::showStatusIcon(jint arg0)
+	void InputMethodService::showStatusIcon(jint arg0) const
 	{
 		callMethod<void>(
 			"showStatusIcon",
@@ -660,7 +660,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::showWindow(jboolean arg0)
+	void InputMethodService::showWindow(jboolean arg0) const
 	{
 		callMethod<void>(
 			"showWindow",
@@ -668,7 +668,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::switchInputMethod(JString arg0)
+	void InputMethodService::switchInputMethod(JString arg0) const
 	{
 		callMethod<void>(
 			"switchInputMethod",
@@ -676,7 +676,7 @@ namespace android::inputmethodservice
 			arg0.object<jstring>()
 		);
 	}
-	void InputMethodService::switchInputMethod(JString arg0, android::view::inputmethod::InputMethodSubtype arg1)
+	void InputMethodService::switchInputMethod(JString arg0, android::view::inputmethod::InputMethodSubtype arg1) const
 	{
 		callMethod<void>(
 			"switchInputMethod",
@@ -685,7 +685,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	jboolean InputMethodService::switchToNextInputMethod(jboolean arg0)
+	jboolean InputMethodService::switchToNextInputMethod(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"switchToNextInputMethod",
@@ -693,21 +693,21 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean InputMethodService::switchToPreviousInputMethod()
+	jboolean InputMethodService::switchToPreviousInputMethod() const
 	{
 		return callMethod<jboolean>(
 			"switchToPreviousInputMethod",
 			"()Z"
 		);
 	}
-	void InputMethodService::updateFullscreenMode()
+	void InputMethodService::updateFullscreenMode() const
 	{
 		callMethod<void>(
 			"updateFullscreenMode",
 			"()V"
 		);
 	}
-	void InputMethodService::updateInputViewShown()
+	void InputMethodService::updateInputViewShown() const
 	{
 		callMethod<void>(
 			"updateInputViewShown",

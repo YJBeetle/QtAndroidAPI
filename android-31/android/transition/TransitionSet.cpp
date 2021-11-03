@@ -46,7 +46,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	android::transition::TransitionSet TransitionSet::addListener(JObject arg0)
+	android::transition::TransitionSet TransitionSet::addListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addListener",
@@ -54,7 +54,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::addTarget(android::view::View arg0)
+	android::transition::TransitionSet TransitionSet::addTarget(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -62,7 +62,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::addTarget(jint arg0)
+	android::transition::TransitionSet TransitionSet::addTarget(jint arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -70,7 +70,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::TransitionSet TransitionSet::addTarget(JClass arg0)
+	android::transition::TransitionSet TransitionSet::addTarget(JClass arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -78,7 +78,7 @@ namespace android::transition
 			arg0.object<jclass>()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::addTarget(JString arg0)
+	android::transition::TransitionSet TransitionSet::addTarget(JString arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -86,7 +86,7 @@ namespace android::transition
 			arg0.object<jstring>()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::addTransition(android::transition::Transition arg0)
+	android::transition::TransitionSet TransitionSet::addTransition(android::transition::Transition arg0) const
 	{
 		return callObjectMethod(
 			"addTransition",
@@ -94,7 +94,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void TransitionSet::captureEndValues(android::transition::TransitionValues arg0)
+	void TransitionSet::captureEndValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureEndValues",
@@ -102,7 +102,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void TransitionSet::captureStartValues(android::transition::TransitionValues arg0)
+	void TransitionSet::captureStartValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureStartValues",
@@ -110,14 +110,14 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::clone()
+	android::transition::TransitionSet TransitionSet::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/transition/TransitionSet;"
 		);
 	}
-	android::transition::Transition TransitionSet::excludeTarget(android::view::View arg0, jboolean arg1)
+	android::transition::Transition TransitionSet::excludeTarget(android::view::View arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -126,7 +126,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition TransitionSet::excludeTarget(jint arg0, jboolean arg1)
+	android::transition::Transition TransitionSet::excludeTarget(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -135,7 +135,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition TransitionSet::excludeTarget(JClass arg0, jboolean arg1)
+	android::transition::Transition TransitionSet::excludeTarget(JClass arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -144,7 +144,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition TransitionSet::excludeTarget(JString arg0, jboolean arg1)
+	android::transition::Transition TransitionSet::excludeTarget(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -153,14 +153,14 @@ namespace android::transition
 			arg1
 		);
 	}
-	jint TransitionSet::getOrdering()
+	jint TransitionSet::getOrdering() const
 	{
 		return callMethod<jint>(
 			"getOrdering",
 			"()I"
 		);
 	}
-	android::transition::Transition TransitionSet::getTransitionAt(jint arg0)
+	android::transition::Transition TransitionSet::getTransitionAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTransitionAt",
@@ -168,14 +168,14 @@ namespace android::transition
 			arg0
 		);
 	}
-	jint TransitionSet::getTransitionCount()
+	jint TransitionSet::getTransitionCount() const
 	{
 		return callMethod<jint>(
 			"getTransitionCount",
 			"()I"
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeListener(JObject arg0)
+	android::transition::TransitionSet TransitionSet::removeListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"removeListener",
@@ -183,7 +183,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeTarget(android::view::View arg0)
+	android::transition::TransitionSet TransitionSet::removeTarget(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -191,7 +191,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeTarget(jint arg0)
+	android::transition::TransitionSet TransitionSet::removeTarget(jint arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -199,7 +199,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeTarget(JClass arg0)
+	android::transition::TransitionSet TransitionSet::removeTarget(JClass arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -207,7 +207,7 @@ namespace android::transition
 			arg0.object<jclass>()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeTarget(JString arg0)
+	android::transition::TransitionSet TransitionSet::removeTarget(JString arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -215,7 +215,7 @@ namespace android::transition
 			arg0.object<jstring>()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeTransition(android::transition::Transition arg0)
+	android::transition::TransitionSet TransitionSet::removeTransition(android::transition::Transition arg0) const
 	{
 		return callObjectMethod(
 			"removeTransition",
@@ -223,7 +223,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::setDuration(jlong arg0)
+	android::transition::TransitionSet TransitionSet::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -231,7 +231,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	void TransitionSet::setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0)
+	void TransitionSet::setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0) const
 	{
 		callMethod<void>(
 			"setEpicenterCallback",
@@ -239,7 +239,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::setInterpolator(JObject arg0)
+	android::transition::TransitionSet TransitionSet::setInterpolator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setInterpolator",
@@ -247,7 +247,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::setOrdering(jint arg0)
+	android::transition::TransitionSet TransitionSet::setOrdering(jint arg0) const
 	{
 		return callObjectMethod(
 			"setOrdering",
@@ -255,7 +255,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	void TransitionSet::setPathMotion(android::transition::PathMotion arg0)
+	void TransitionSet::setPathMotion(android::transition::PathMotion arg0) const
 	{
 		callMethod<void>(
 			"setPathMotion",
@@ -263,7 +263,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void TransitionSet::setPropagation(android::transition::TransitionPropagation arg0)
+	void TransitionSet::setPropagation(android::transition::TransitionPropagation arg0) const
 	{
 		callMethod<void>(
 			"setPropagation",
@@ -271,7 +271,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::setStartDelay(jlong arg0)
+	android::transition::TransitionSet TransitionSet::setStartDelay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setStartDelay",

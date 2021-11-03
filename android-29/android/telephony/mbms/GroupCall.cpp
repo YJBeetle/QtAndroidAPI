@@ -73,21 +73,21 @@ namespace android::telephony::mbms
 	// Constructors
 	
 	// Methods
-	void GroupCall::close()
+	void GroupCall::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jlong GroupCall::getTmgi()
+	jlong GroupCall::getTmgi() const
 	{
 		return callMethod<jlong>(
 			"getTmgi",
 			"()J"
 		);
 	}
-	void GroupCall::updateGroupCall(JObject arg0, JObject arg1)
+	void GroupCall::updateGroupCall(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"updateGroupCall",

@@ -34,7 +34,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	java::lang::StringBuilder StringBuilder::append(JCharArray arg0)
+	java::lang::StringBuilder StringBuilder::append(JCharArray arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -42,7 +42,7 @@ namespace java::lang
 			arg0.object<jcharArray>()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(jboolean arg0)
+	java::lang::StringBuilder StringBuilder::append(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -50,7 +50,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(jchar arg0)
+	java::lang::StringBuilder StringBuilder::append(jchar arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -58,7 +58,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(jdouble arg0)
+	java::lang::StringBuilder StringBuilder::append(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -66,7 +66,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(jfloat arg0)
+	java::lang::StringBuilder StringBuilder::append(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -74,7 +74,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(jint arg0)
+	java::lang::StringBuilder StringBuilder::append(jint arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -82,7 +82,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(JString arg0)
+	java::lang::StringBuilder StringBuilder::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -90,7 +90,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(JObject arg0)
+	java::lang::StringBuilder StringBuilder::append(JObject arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -98,7 +98,7 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(java::lang::StringBuffer arg0)
+	java::lang::StringBuilder StringBuilder::append(java::lang::StringBuffer arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -106,7 +106,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(jlong arg0)
+	java::lang::StringBuilder StringBuilder::append(jlong arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -114,7 +114,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(JCharArray arg0, jint arg1, jint arg2)
+	java::lang::StringBuilder StringBuilder::append(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -124,7 +124,7 @@ namespace java::lang
 			arg2
 		);
 	}
-	java::lang::StringBuilder StringBuilder::append(JString arg0, jint arg1, jint arg2)
+	java::lang::StringBuilder StringBuilder::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -134,7 +134,7 @@ namespace java::lang
 			arg2
 		);
 	}
-	java::lang::StringBuilder StringBuilder::appendCodePoint(jint arg0)
+	java::lang::StringBuilder StringBuilder::appendCodePoint(jint arg0) const
 	{
 		return callObjectMethod(
 			"appendCodePoint",
@@ -142,14 +142,14 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuilder::capacity()
+	jint StringBuilder::capacity() const
 	{
 		return callMethod<jint>(
 			"capacity",
 			"()I"
 		);
 	}
-	jchar StringBuilder::charAt(jint arg0)
+	jchar StringBuilder::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -157,14 +157,14 @@ namespace java::lang
 			arg0
 		);
 	}
-	JObject StringBuilder::chars()
+	JObject StringBuilder::chars() const
 	{
 		return callObjectMethod(
 			"chars",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	jint StringBuilder::codePointAt(jint arg0)
+	jint StringBuilder::codePointAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"codePointAt",
@@ -172,7 +172,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuilder::codePointBefore(jint arg0)
+	jint StringBuilder::codePointBefore(jint arg0) const
 	{
 		return callMethod<jint>(
 			"codePointBefore",
@@ -180,7 +180,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuilder::codePointCount(jint arg0, jint arg1)
+	jint StringBuilder::codePointCount(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"codePointCount",
@@ -189,14 +189,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	JObject StringBuilder::codePoints()
+	JObject StringBuilder::codePoints() const
 	{
 		return callObjectMethod(
 			"codePoints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	jint StringBuilder::compareTo(JObject arg0)
+	jint StringBuilder::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -204,7 +204,7 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jint StringBuilder::compareTo(java::lang::StringBuilder arg0)
+	jint StringBuilder::compareTo(java::lang::StringBuilder arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -212,7 +212,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::_delete(jint arg0, jint arg1)
+	java::lang::StringBuilder StringBuilder::_delete(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"delete",
@@ -221,7 +221,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::deleteCharAt(jint arg0)
+	java::lang::StringBuilder StringBuilder::deleteCharAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"deleteCharAt",
@@ -229,7 +229,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void StringBuilder::ensureCapacity(jint arg0)
+	void StringBuilder::ensureCapacity(jint arg0) const
 	{
 		callMethod<void>(
 			"ensureCapacity",
@@ -237,7 +237,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void StringBuilder::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3)
+	void StringBuilder::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"getChars",
@@ -248,7 +248,7 @@ namespace java::lang
 			arg3
 		);
 	}
-	jint StringBuilder::indexOf(JString arg0)
+	jint StringBuilder::indexOf(JString arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -256,7 +256,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jint StringBuilder::indexOf(JString arg0, jint arg1)
+	jint StringBuilder::indexOf(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -265,7 +265,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, JCharArray arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, JCharArray arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -274,7 +274,7 @@ namespace java::lang
 			arg1.object<jcharArray>()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, jboolean arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -283,7 +283,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, jchar arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, jchar arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -292,7 +292,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, jdouble arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -301,7 +301,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, jfloat arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -310,7 +310,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, jint arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -319,7 +319,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, JString arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -328,7 +328,7 @@ namespace java::lang
 			arg1.object<jstring>()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, JObject arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -337,7 +337,7 @@ namespace java::lang
 			arg1.object<jobject>()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, jlong arg1)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -346,7 +346,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, JCharArray arg1, jint arg2, jint arg3)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, JCharArray arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -357,7 +357,7 @@ namespace java::lang
 			arg3
 		);
 	}
-	java::lang::StringBuilder StringBuilder::insert(jint arg0, JString arg1, jint arg2, jint arg3)
+	java::lang::StringBuilder StringBuilder::insert(jint arg0, JString arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -368,7 +368,7 @@ namespace java::lang
 			arg3
 		);
 	}
-	jint StringBuilder::lastIndexOf(JString arg0)
+	jint StringBuilder::lastIndexOf(JString arg0) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -376,7 +376,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jint StringBuilder::lastIndexOf(JString arg0, jint arg1)
+	jint StringBuilder::lastIndexOf(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -385,14 +385,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	jint StringBuilder::length()
+	jint StringBuilder::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jint StringBuilder::offsetByCodePoints(jint arg0, jint arg1)
+	jint StringBuilder::offsetByCodePoints(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"offsetByCodePoints",
@@ -401,7 +401,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuilder StringBuilder::replace(jint arg0, jint arg1, JString arg2)
+	java::lang::StringBuilder StringBuilder::replace(jint arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -411,14 +411,14 @@ namespace java::lang
 			arg2.object<jstring>()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::reverse()
+	java::lang::StringBuilder StringBuilder::reverse() const
 	{
 		return callObjectMethod(
 			"reverse",
 			"()Ljava/lang/StringBuilder;"
 		);
 	}
-	void StringBuilder::setCharAt(jint arg0, jchar arg1)
+	void StringBuilder::setCharAt(jint arg0, jchar arg1) const
 	{
 		callMethod<void>(
 			"setCharAt",
@@ -427,7 +427,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	void StringBuilder::setLength(jint arg0)
+	void StringBuilder::setLength(jint arg0) const
 	{
 		callMethod<void>(
 			"setLength",
@@ -435,7 +435,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	JString StringBuilder::subSequence(jint arg0, jint arg1)
+	JString StringBuilder::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -444,7 +444,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	JString StringBuilder::substring(jint arg0)
+	JString StringBuilder::substring(jint arg0) const
 	{
 		return callObjectMethod(
 			"substring",
@@ -452,7 +452,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	JString StringBuilder::substring(jint arg0, jint arg1)
+	JString StringBuilder::substring(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"substring",
@@ -461,14 +461,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	JString StringBuilder::toString()
+	JString StringBuilder::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void StringBuilder::trimToSize()
+	void StringBuilder::trimToSize() const
 	{
 		callMethod<void>(
 			"trimToSize",

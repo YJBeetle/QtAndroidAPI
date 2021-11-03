@@ -12,21 +12,21 @@ namespace android::os::strictmode
 	// Constructors
 	
 	// Methods
-	JThrowable Violation::fillInStackTrace()
+	JThrowable Violation::fillInStackTrace() const
 	{
 		return callObjectMethod(
 			"fillInStackTrace",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	jint Violation::hashCode()
+	jint Violation::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JThrowable Violation::initCause(JThrowable arg0)
+	JThrowable Violation::initCause(JThrowable arg0) const
 	{
 		return callObjectMethod(
 			"initCause",
@@ -34,7 +34,7 @@ namespace android::os::strictmode
 			arg0.object<jthrowable>()
 		);
 	}
-	void Violation::setStackTrace(JArray arg0)
+	void Violation::setStackTrace(JArray arg0) const
 	{
 		callMethod<void>(
 			"setStackTrace",

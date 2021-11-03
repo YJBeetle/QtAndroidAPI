@@ -24,8 +24,8 @@ namespace android::animation
 		RectEvaluator(android::graphics::Rect arg0);
 		
 		// Methods
-		android::graphics::Rect evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2);
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
+		android::graphics::Rect evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2) const;
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::animation
 

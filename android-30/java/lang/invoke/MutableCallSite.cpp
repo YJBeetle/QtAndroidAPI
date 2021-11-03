@@ -35,21 +35,21 @@ namespace java::lang::invoke
 			arg0.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodHandle MutableCallSite::dynamicInvoker()
+	java::lang::invoke::MethodHandle MutableCallSite::dynamicInvoker() const
 	{
 		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	java::lang::invoke::MethodHandle MutableCallSite::getTarget()
+	java::lang::invoke::MethodHandle MutableCallSite::getTarget() const
 	{
 		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	void MutableCallSite::setTarget(java::lang::invoke::MethodHandle arg0)
+	void MutableCallSite::setTarget(java::lang::invoke::MethodHandle arg0) const
 	{
 		callMethod<void>(
 			"setTarget",

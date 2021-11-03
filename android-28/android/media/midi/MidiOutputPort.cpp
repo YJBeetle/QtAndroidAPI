@@ -12,21 +12,21 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	void MidiOutputPort::close()
+	void MidiOutputPort::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint MidiOutputPort::getPortNumber()
+	jint MidiOutputPort::getPortNumber() const
 	{
 		return callMethod<jint>(
 			"getPortNumber",
 			"()I"
 		);
 	}
-	void MidiOutputPort::onConnect(android::media::midi::MidiReceiver arg0)
+	void MidiOutputPort::onConnect(android::media::midi::MidiReceiver arg0) const
 	{
 		callMethod<void>(
 			"onConnect",
@@ -34,7 +34,7 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	void MidiOutputPort::onDisconnect(android::media::midi::MidiReceiver arg0)
+	void MidiOutputPort::onDisconnect(android::media::midi::MidiReceiver arg0) const
 	{
 		callMethod<void>(
 			"onDisconnect",

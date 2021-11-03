@@ -19,7 +19,7 @@ namespace android::icu::number
 			arg0
 		);
 	}
-	android::icu::number::IntegerWidth IntegerWidth::truncateAt(jint arg0)
+	android::icu::number::IntegerWidth IntegerWidth::truncateAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"truncateAt",

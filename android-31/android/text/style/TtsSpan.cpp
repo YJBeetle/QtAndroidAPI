@@ -647,35 +647,35 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint TtsSpan::describeContents()
+	jint TtsSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::PersistableBundle TtsSpan::getArgs()
+	android::os::PersistableBundle TtsSpan::getArgs() const
 	{
 		return callObjectMethod(
 			"getArgs",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jint TtsSpan::getSpanTypeId()
+	jint TtsSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	JString TtsSpan::getType()
+	JString TtsSpan::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TtsSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TtsSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

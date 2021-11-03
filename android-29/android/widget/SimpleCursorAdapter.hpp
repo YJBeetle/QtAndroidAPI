@@ -39,18 +39,18 @@ namespace android::widget
 		SimpleCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, JArray arg3, JIntArray arg4, jint arg5);
 		
 		// Methods
-		void bindView(android::view::View arg0, android::content::Context arg1, JObject arg2);
-		void changeCursorAndColumns(JObject arg0, JArray arg1, JIntArray arg2);
-		JString convertToString(JObject arg0);
-		JObject getCursorToStringConverter();
-		jint getStringConversionColumn();
-		JObject getViewBinder();
-		void setCursorToStringConverter(JObject arg0);
-		void setStringConversionColumn(jint arg0);
-		void setViewBinder(JObject arg0);
-		void setViewImage(android::widget::ImageView arg0, JString arg1);
-		void setViewText(android::widget::TextView arg0, JString arg1);
-		JObject swapCursor(JObject arg0);
+		void bindView(android::view::View arg0, android::content::Context arg1, JObject arg2) const;
+		void changeCursorAndColumns(JObject arg0, JArray arg1, JIntArray arg2) const;
+		JString convertToString(JObject arg0) const;
+		JObject getCursorToStringConverter() const;
+		jint getStringConversionColumn() const;
+		JObject getViewBinder() const;
+		void setCursorToStringConverter(JObject arg0) const;
+		void setStringConversionColumn(jint arg0) const;
+		void setViewBinder(JObject arg0) const;
+		void setViewImage(android::widget::ImageView arg0, JString arg1) const;
+		void setViewText(android::widget::TextView arg0, JString arg1) const;
+		JObject swapCursor(JObject arg0) const;
 	};
 } // namespace android::widget
 

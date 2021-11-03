@@ -26,13 +26,13 @@ namespace android::hardware::camera2
 		CameraCaptureSession_StateCallback();
 		
 		// Methods
-		void onActive(android::hardware::camera2::CameraCaptureSession arg0);
-		void onCaptureQueueEmpty(android::hardware::camera2::CameraCaptureSession arg0);
-		void onClosed(android::hardware::camera2::CameraCaptureSession arg0);
-		void onConfigureFailed(android::hardware::camera2::CameraCaptureSession arg0);
-		void onConfigured(android::hardware::camera2::CameraCaptureSession arg0);
-		void onReady(android::hardware::camera2::CameraCaptureSession arg0);
-		void onSurfacePrepared(android::hardware::camera2::CameraCaptureSession arg0, android::view::Surface arg1);
+		void onActive(android::hardware::camera2::CameraCaptureSession arg0) const;
+		void onCaptureQueueEmpty(android::hardware::camera2::CameraCaptureSession arg0) const;
+		void onClosed(android::hardware::camera2::CameraCaptureSession arg0) const;
+		void onConfigureFailed(android::hardware::camera2::CameraCaptureSession arg0) const;
+		void onConfigured(android::hardware::camera2::CameraCaptureSession arg0) const;
+		void onReady(android::hardware::camera2::CameraCaptureSession arg0) const;
+		void onSurfacePrepared(android::hardware::camera2::CameraCaptureSession arg0, android::view::Surface arg1) const;
 	};
 } // namespace android::hardware::camera2
 

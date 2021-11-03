@@ -22,7 +22,7 @@ namespace android::net::ipsec::ike
 		ChildSessionConfiguration_Builder(JObject arg0, JObject arg1);
 		
 		// Methods
-		android::net::ipsec::ike::ChildSessionConfiguration build();
+		android::net::ipsec::ike::ChildSessionConfiguration build() const;
 	};
 } // namespace android::net::ipsec::ike
 

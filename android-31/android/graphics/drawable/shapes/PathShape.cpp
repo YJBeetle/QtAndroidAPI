@@ -23,14 +23,14 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	android::graphics::drawable::shapes::PathShape PathShape::clone()
+	android::graphics::drawable::shapes::PathShape PathShape::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/PathShape;"
 		);
 	}
-	void PathShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
+	void PathShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -39,7 +39,7 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	jboolean PathShape::equals(JObject arg0)
+	jboolean PathShape::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -47,7 +47,7 @@ namespace android::graphics::drawable::shapes
 			arg0.object<jobject>()
 		);
 	}
-	jint PathShape::hashCode()
+	jint PathShape::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

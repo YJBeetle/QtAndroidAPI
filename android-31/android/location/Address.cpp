@@ -28,28 +28,28 @@ namespace android::location
 		) {}
 	
 	// Methods
-	void Address::clearLatitude()
+	void Address::clearLatitude() const
 	{
 		callMethod<void>(
 			"clearLatitude",
 			"()V"
 		);
 	}
-	void Address::clearLongitude()
+	void Address::clearLongitude() const
 	{
 		callMethod<void>(
 			"clearLongitude",
 			"()V"
 		);
 	}
-	jint Address::describeContents()
+	jint Address::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString Address::getAddressLine(jint arg0)
+	JString Address::getAddressLine(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAddressLine",
@@ -57,147 +57,147 @@ namespace android::location
 			arg0
 		);
 	}
-	JString Address::getAdminArea()
+	JString Address::getAdminArea() const
 	{
 		return callObjectMethod(
 			"getAdminArea",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getCountryCode()
+	JString Address::getCountryCode() const
 	{
 		return callObjectMethod(
 			"getCountryCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getCountryName()
+	JString Address::getCountryName() const
 	{
 		return callObjectMethod(
 			"getCountryName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle Address::getExtras()
+	android::os::Bundle Address::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString Address::getFeatureName()
+	JString Address::getFeatureName() const
 	{
 		return callObjectMethod(
 			"getFeatureName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jdouble Address::getLatitude()
+	jdouble Address::getLatitude() const
 	{
 		return callMethod<jdouble>(
 			"getLatitude",
 			"()D"
 		);
 	}
-	java::util::Locale Address::getLocale()
+	java::util::Locale Address::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	JString Address::getLocality()
+	JString Address::getLocality() const
 	{
 		return callObjectMethod(
 			"getLocality",
 			"()Ljava/lang/String;"
 		);
 	}
-	jdouble Address::getLongitude()
+	jdouble Address::getLongitude() const
 	{
 		return callMethod<jdouble>(
 			"getLongitude",
 			"()D"
 		);
 	}
-	jint Address::getMaxAddressLineIndex()
+	jint Address::getMaxAddressLineIndex() const
 	{
 		return callMethod<jint>(
 			"getMaxAddressLineIndex",
 			"()I"
 		);
 	}
-	JString Address::getPhone()
+	JString Address::getPhone() const
 	{
 		return callObjectMethod(
 			"getPhone",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getPostalCode()
+	JString Address::getPostalCode() const
 	{
 		return callObjectMethod(
 			"getPostalCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getPremises()
+	JString Address::getPremises() const
 	{
 		return callObjectMethod(
 			"getPremises",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getSubAdminArea()
+	JString Address::getSubAdminArea() const
 	{
 		return callObjectMethod(
 			"getSubAdminArea",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getSubLocality()
+	JString Address::getSubLocality() const
 	{
 		return callObjectMethod(
 			"getSubLocality",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getSubThoroughfare()
+	JString Address::getSubThoroughfare() const
 	{
 		return callObjectMethod(
 			"getSubThoroughfare",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getThoroughfare()
+	JString Address::getThoroughfare() const
 	{
 		return callObjectMethod(
 			"getThoroughfare",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Address::getUrl()
+	JString Address::getUrl() const
 	{
 		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Address::hasLatitude()
+	jboolean Address::hasLatitude() const
 	{
 		return callMethod<jboolean>(
 			"hasLatitude",
 			"()Z"
 		);
 	}
-	jboolean Address::hasLongitude()
+	jboolean Address::hasLongitude() const
 	{
 		return callMethod<jboolean>(
 			"hasLongitude",
 			"()Z"
 		);
 	}
-	void Address::setAddressLine(jint arg0, JString arg1)
+	void Address::setAddressLine(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setAddressLine",
@@ -206,7 +206,7 @@ namespace android::location
 			arg1.object<jstring>()
 		);
 	}
-	void Address::setAdminArea(JString arg0)
+	void Address::setAdminArea(JString arg0) const
 	{
 		callMethod<void>(
 			"setAdminArea",
@@ -214,7 +214,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setCountryCode(JString arg0)
+	void Address::setCountryCode(JString arg0) const
 	{
 		callMethod<void>(
 			"setCountryCode",
@@ -222,7 +222,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setCountryName(JString arg0)
+	void Address::setCountryName(JString arg0) const
 	{
 		callMethod<void>(
 			"setCountryName",
@@ -230,7 +230,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setExtras(android::os::Bundle arg0)
+	void Address::setExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setExtras",
@@ -238,7 +238,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void Address::setFeatureName(JString arg0)
+	void Address::setFeatureName(JString arg0) const
 	{
 		callMethod<void>(
 			"setFeatureName",
@@ -246,7 +246,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setLatitude(jdouble arg0)
+	void Address::setLatitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setLatitude",
@@ -254,7 +254,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setLocality(JString arg0)
+	void Address::setLocality(JString arg0) const
 	{
 		callMethod<void>(
 			"setLocality",
@@ -262,7 +262,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setLongitude(jdouble arg0)
+	void Address::setLongitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setLongitude",
@@ -270,7 +270,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setPhone(JString arg0)
+	void Address::setPhone(JString arg0) const
 	{
 		callMethod<void>(
 			"setPhone",
@@ -278,7 +278,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setPostalCode(JString arg0)
+	void Address::setPostalCode(JString arg0) const
 	{
 		callMethod<void>(
 			"setPostalCode",
@@ -286,7 +286,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setPremises(JString arg0)
+	void Address::setPremises(JString arg0) const
 	{
 		callMethod<void>(
 			"setPremises",
@@ -294,7 +294,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setSubAdminArea(JString arg0)
+	void Address::setSubAdminArea(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubAdminArea",
@@ -302,7 +302,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setSubLocality(JString arg0)
+	void Address::setSubLocality(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubLocality",
@@ -310,7 +310,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setSubThoroughfare(JString arg0)
+	void Address::setSubThoroughfare(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubThoroughfare",
@@ -318,7 +318,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setThoroughfare(JString arg0)
+	void Address::setThoroughfare(JString arg0) const
 	{
 		callMethod<void>(
 			"setThoroughfare",
@@ -326,7 +326,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Address::setUrl(JString arg0)
+	void Address::setUrl(JString arg0) const
 	{
 		callMethod<void>(
 			"setUrl",
@@ -334,14 +334,14 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	JString Address::toString()
+	JString Address::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Address::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Address::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

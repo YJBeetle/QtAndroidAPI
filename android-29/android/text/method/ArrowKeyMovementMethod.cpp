@@ -26,14 +26,14 @@ namespace android::text::method
 			"()Landroid/text/method/MovementMethod;"
 		);
 	}
-	jboolean ArrowKeyMovementMethod::canSelectArbitrarily()
+	jboolean ArrowKeyMovementMethod::canSelectArbitrarily() const
 	{
 		return callMethod<jboolean>(
 			"canSelectArbitrarily",
 			"()Z"
 		);
 	}
-	void ArrowKeyMovementMethod::initialize(android::widget::TextView arg0, JObject arg1)
+	void ArrowKeyMovementMethod::initialize(android::widget::TextView arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -42,7 +42,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	void ArrowKeyMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2)
+	void ArrowKeyMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onTakeFocus",
@@ -52,7 +52,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean ArrowKeyMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
+	jboolean ArrowKeyMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",

@@ -43,17 +43,17 @@ namespace android::service::carrier
 		CarrierMessagingService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onDownloadMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3);
-		void onFilterSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4);
-		void onReceiveTextSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4);
-		void onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, JObject arg4);
-		void onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, jint arg4, JObject arg5);
-		void onSendMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3);
-		void onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, JObject arg3);
-		void onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, jint arg3, JObject arg4);
-		void onSendTextSms(JString arg0, jint arg1, JString arg2, JObject arg3);
-		void onSendTextSms(JString arg0, jint arg1, JString arg2, jint arg3, JObject arg4);
+		JObject onBind(android::content::Intent arg0) const;
+		void onDownloadMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3) const;
+		void onFilterSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4) const;
+		void onReceiveTextSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4) const;
+		void onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, JObject arg4) const;
+		void onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, jint arg4, JObject arg5) const;
+		void onSendMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3) const;
+		void onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, JObject arg3) const;
+		void onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, jint arg3, JObject arg4) const;
+		void onSendTextSms(JString arg0, jint arg1, JString arg2, JObject arg3) const;
+		void onSendTextSms(JString arg0, jint arg1, JString arg2, jint arg3, JObject arg4) const;
 	};
 } // namespace android::service::carrier
 

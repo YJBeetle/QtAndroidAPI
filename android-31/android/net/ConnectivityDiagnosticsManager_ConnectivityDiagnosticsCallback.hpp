@@ -30,9 +30,9 @@ namespace android::net
 		ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback();
 		
 		// Methods
-		void onConnectivityReportAvailable(android::net::ConnectivityDiagnosticsManager_ConnectivityReport arg0);
-		void onDataStallSuspected(android::net::ConnectivityDiagnosticsManager_DataStallReport arg0);
-		void onNetworkConnectivityReported(android::net::Network arg0, jboolean arg1);
+		void onConnectivityReportAvailable(android::net::ConnectivityDiagnosticsManager_ConnectivityReport arg0) const;
+		void onDataStallSuspected(android::net::ConnectivityDiagnosticsManager_DataStallReport arg0) const;
+		void onNetworkConnectivityReported(android::net::Network arg0, jboolean arg1) const;
 	};
 } // namespace android::net
 

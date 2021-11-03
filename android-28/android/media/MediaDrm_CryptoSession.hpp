@@ -23,10 +23,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JByteArray decrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2);
-		JByteArray encrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2);
-		JByteArray sign(JByteArray arg0, JByteArray arg1);
-		jboolean verify(JByteArray arg0, JByteArray arg1, JByteArray arg2);
+		JByteArray decrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const;
+		JByteArray encrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const;
+		JByteArray sign(JByteArray arg0, JByteArray arg1) const;
+		jboolean verify(JByteArray arg0, JByteArray arg1, JByteArray arg2) const;
 	};
 } // namespace android::media
 

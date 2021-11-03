@@ -16,7 +16,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	JObject CertStoreSpi::engineGetCRLs(JObject arg0)
+	JObject CertStoreSpi::engineGetCRLs(JObject arg0) const
 	{
 		return callObjectMethod(
 			"engineGetCRLs",
@@ -24,7 +24,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertStoreSpi::engineGetCertificates(JObject arg0)
+	JObject CertStoreSpi::engineGetCertificates(JObject arg0) const
 	{
 		return callObjectMethod(
 			"engineGetCertificates",

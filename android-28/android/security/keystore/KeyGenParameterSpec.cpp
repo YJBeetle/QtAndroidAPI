@@ -16,182 +16,182 @@ namespace android::security::keystore
 	// Constructors
 	
 	// Methods
-	JObject KeyGenParameterSpec::getAlgorithmParameterSpec()
+	JObject KeyGenParameterSpec::getAlgorithmParameterSpec() const
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	JByteArray KeyGenParameterSpec::getAttestationChallenge()
+	JByteArray KeyGenParameterSpec::getAttestationChallenge() const
 	{
 		return callObjectMethod(
 			"getAttestationChallenge",
 			"()[B"
 		);
 	}
-	JArray KeyGenParameterSpec::getBlockModes()
+	JArray KeyGenParameterSpec::getBlockModes() const
 	{
 		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	java::util::Date KeyGenParameterSpec::getCertificateNotAfter()
+	java::util::Date KeyGenParameterSpec::getCertificateNotAfter() const
 	{
 		return callObjectMethod(
 			"getCertificateNotAfter",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date KeyGenParameterSpec::getCertificateNotBefore()
+	java::util::Date KeyGenParameterSpec::getCertificateNotBefore() const
 	{
 		return callObjectMethod(
 			"getCertificateNotBefore",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::math::BigInteger KeyGenParameterSpec::getCertificateSerialNumber()
+	java::math::BigInteger KeyGenParameterSpec::getCertificateSerialNumber() const
 	{
 		return callObjectMethod(
 			"getCertificateSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	javax::security::auth::x500::X500Principal KeyGenParameterSpec::getCertificateSubject()
+	javax::security::auth::x500::X500Principal KeyGenParameterSpec::getCertificateSubject() const
 	{
 		return callObjectMethod(
 			"getCertificateSubject",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	JArray KeyGenParameterSpec::getDigests()
+	JArray KeyGenParameterSpec::getDigests() const
 	{
 		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray KeyGenParameterSpec::getEncryptionPaddings()
+	JArray KeyGenParameterSpec::getEncryptionPaddings() const
 	{
 		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint KeyGenParameterSpec::getKeySize()
+	jint KeyGenParameterSpec::getKeySize() const
 	{
 		return callMethod<jint>(
 			"getKeySize",
 			"()I"
 		);
 	}
-	java::util::Date KeyGenParameterSpec::getKeyValidityForConsumptionEnd()
+	java::util::Date KeyGenParameterSpec::getKeyValidityForConsumptionEnd() const
 	{
 		return callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date KeyGenParameterSpec::getKeyValidityForOriginationEnd()
+	java::util::Date KeyGenParameterSpec::getKeyValidityForOriginationEnd() const
 	{
 		return callObjectMethod(
 			"getKeyValidityForOriginationEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date KeyGenParameterSpec::getKeyValidityStart()
+	java::util::Date KeyGenParameterSpec::getKeyValidityStart() const
 	{
 		return callObjectMethod(
 			"getKeyValidityStart",
 			"()Ljava/util/Date;"
 		);
 	}
-	JString KeyGenParameterSpec::getKeystoreAlias()
+	JString KeyGenParameterSpec::getKeystoreAlias() const
 	{
 		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint KeyGenParameterSpec::getPurposes()
+	jint KeyGenParameterSpec::getPurposes() const
 	{
 		return callMethod<jint>(
 			"getPurposes",
 			"()I"
 		);
 	}
-	JArray KeyGenParameterSpec::getSignaturePaddings()
+	JArray KeyGenParameterSpec::getSignaturePaddings() const
 	{
 		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint KeyGenParameterSpec::getUserAuthenticationValidityDurationSeconds()
+	jint KeyGenParameterSpec::getUserAuthenticationValidityDurationSeconds() const
 	{
 		return callMethod<jint>(
 			"getUserAuthenticationValidityDurationSeconds",
 			"()I"
 		);
 	}
-	jboolean KeyGenParameterSpec::isDigestsSpecified()
+	jboolean KeyGenParameterSpec::isDigestsSpecified() const
 	{
 		return callMethod<jboolean>(
 			"isDigestsSpecified",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isInvalidatedByBiometricEnrollment()
+	jboolean KeyGenParameterSpec::isInvalidatedByBiometricEnrollment() const
 	{
 		return callMethod<jboolean>(
 			"isInvalidatedByBiometricEnrollment",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isRandomizedEncryptionRequired()
+	jboolean KeyGenParameterSpec::isRandomizedEncryptionRequired() const
 	{
 		return callMethod<jboolean>(
 			"isRandomizedEncryptionRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isStrongBoxBacked()
+	jboolean KeyGenParameterSpec::isStrongBoxBacked() const
 	{
 		return callMethod<jboolean>(
 			"isStrongBoxBacked",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isUnlockedDeviceRequired()
+	jboolean KeyGenParameterSpec::isUnlockedDeviceRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUnlockedDeviceRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isUserAuthenticationRequired()
+	jboolean KeyGenParameterSpec::isUserAuthenticationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserAuthenticationRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isUserAuthenticationValidWhileOnBody()
+	jboolean KeyGenParameterSpec::isUserAuthenticationValidWhileOnBody() const
 	{
 		return callMethod<jboolean>(
 			"isUserAuthenticationValidWhileOnBody",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isUserConfirmationRequired()
+	jboolean KeyGenParameterSpec::isUserConfirmationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserConfirmationRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyGenParameterSpec::isUserPresenceRequired()
+	jboolean KeyGenParameterSpec::isUserPresenceRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserPresenceRequired",

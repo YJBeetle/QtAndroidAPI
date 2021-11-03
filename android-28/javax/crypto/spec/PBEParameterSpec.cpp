@@ -26,21 +26,21 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	jint PBEParameterSpec::getIterationCount()
+	jint PBEParameterSpec::getIterationCount() const
 	{
 		return callMethod<jint>(
 			"getIterationCount",
 			"()I"
 		);
 	}
-	JObject PBEParameterSpec::getParameterSpec()
+	JObject PBEParameterSpec::getParameterSpec() const
 	{
 		return callObjectMethod(
 			"getParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	JByteArray PBEParameterSpec::getSalt()
+	JByteArray PBEParameterSpec::getSalt() const
 	{
 		return callObjectMethod(
 			"getSalt",

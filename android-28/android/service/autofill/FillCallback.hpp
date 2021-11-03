@@ -22,8 +22,8 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		void onFailure(JString arg0);
-		void onSuccess(android::service::autofill::FillResponse arg0);
+		void onFailure(JString arg0) const;
+		void onSuccess(android::service::autofill::FillResponse arg0) const;
 	};
 } // namespace android::service::autofill
 

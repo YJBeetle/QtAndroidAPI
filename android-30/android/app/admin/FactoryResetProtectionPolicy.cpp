@@ -20,35 +20,35 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	jint FactoryResetProtectionPolicy::describeContents()
+	jint FactoryResetProtectionPolicy::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject FactoryResetProtectionPolicy::getFactoryResetProtectionAccounts()
+	JObject FactoryResetProtectionPolicy::getFactoryResetProtectionAccounts() const
 	{
 		return callObjectMethod(
 			"getFactoryResetProtectionAccounts",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean FactoryResetProtectionPolicy::isFactoryResetProtectionEnabled()
+	jboolean FactoryResetProtectionPolicy::isFactoryResetProtectionEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isFactoryResetProtectionEnabled",
 			"()Z"
 		);
 	}
-	JString FactoryResetProtectionPolicy::toString()
+	JString FactoryResetProtectionPolicy::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void FactoryResetProtectionPolicy::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void FactoryResetProtectionPolicy::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

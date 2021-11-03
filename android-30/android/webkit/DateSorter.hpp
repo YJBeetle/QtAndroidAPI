@@ -24,9 +24,9 @@ namespace android::webkit
 		DateSorter(android::content::Context arg0);
 		
 		// Methods
-		jlong getBoundary(jint arg0);
-		jint getIndex(jlong arg0);
-		JString getLabel(jint arg0);
+		jlong getBoundary(jint arg0) const;
+		jint getIndex(jlong arg0) const;
+		JString getLabel(jint arg0) const;
 	};
 } // namespace android::webkit
 

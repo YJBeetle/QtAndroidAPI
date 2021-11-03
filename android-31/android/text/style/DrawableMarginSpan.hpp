@@ -40,9 +40,9 @@ namespace android::text::style
 		DrawableMarginSpan(android::graphics::drawable::Drawable arg0, jint arg1);
 		
 		// Methods
-		void chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5);
-		void drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11);
-		jint getLeadingMargin(jboolean arg0);
+		void chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5) const;
+		void drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11) const;
+		jint getLeadingMargin(jboolean arg0) const;
 	};
 } // namespace android::text::style
 

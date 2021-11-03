@@ -19,7 +19,7 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	JObject TextToSpeechService::onBind(android::content::Intent arg0)
+	JObject TextToSpeechService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -27,21 +27,21 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	void TextToSpeechService::onCreate()
+	void TextToSpeechService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void TextToSpeechService::onDestroy()
+	void TextToSpeechService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	JString TextToSpeechService::onGetDefaultVoiceNameFor(JString arg0, JString arg1, JString arg2)
+	JString TextToSpeechService::onGetDefaultVoiceNameFor(JString arg0, JString arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"onGetDefaultVoiceNameFor",
@@ -51,14 +51,14 @@ namespace android::speech::tts
 			arg2.object<jstring>()
 		);
 	}
-	JObject TextToSpeechService::onGetVoices()
+	JObject TextToSpeechService::onGetVoices() const
 	{
 		return callObjectMethod(
 			"onGetVoices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint TextToSpeechService::onIsValidVoiceName(JString arg0)
+	jint TextToSpeechService::onIsValidVoiceName(JString arg0) const
 	{
 		return callMethod<jint>(
 			"onIsValidVoiceName",
@@ -66,7 +66,7 @@ namespace android::speech::tts
 			arg0.object<jstring>()
 		);
 	}
-	jint TextToSpeechService::onLoadVoice(JString arg0)
+	jint TextToSpeechService::onLoadVoice(JString arg0) const
 	{
 		return callMethod<jint>(
 			"onLoadVoice",

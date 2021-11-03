@@ -26,8 +26,8 @@ namespace android::security
 		
 		// Methods
 		static jboolean isSupported(android::content::Context arg0);
-		void cancelPrompt();
-		void presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1);
+		void cancelPrompt() const;
+		void presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1) const;
 	};
 } // namespace android::security
 

@@ -43,23 +43,23 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getClientPackageName();
-		jint getConnectionState();
-		JString getDescription();
-		android::os::Bundle getExtras();
-		JObject getFeatures();
-		android::net::Uri getIconUri();
-		JString getId();
-		JString getName();
-		jint getVolume();
-		jint getVolumeHandling();
-		jint getVolumeMax();
-		jint hashCode();
-		jboolean isSystemRoute();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getClientPackageName() const;
+		jint getConnectionState() const;
+		JString getDescription() const;
+		android::os::Bundle getExtras() const;
+		JObject getFeatures() const;
+		android::net::Uri getIconUri() const;
+		JString getId() const;
+		JString getName() const;
+		jint getVolume() const;
+		jint getVolumeHandling() const;
+		jint getVolumeMax() const;
+		jint hashCode() const;
+		jboolean isSystemRoute() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

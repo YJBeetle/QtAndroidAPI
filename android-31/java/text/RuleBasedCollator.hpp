@@ -32,14 +32,14 @@ namespace java::text
 		RuleBasedCollator(JString arg0);
 		
 		// Methods
-		JObject clone();
-		jint compare(JString arg0, JString arg1);
-		jboolean equals(JObject arg0);
-		java::text::CollationElementIterator getCollationElementIterator(JString arg0);
-		java::text::CollationElementIterator getCollationElementIterator(JObject arg0);
-		java::text::CollationKey getCollationKey(JString arg0);
-		JString getRules();
-		jint hashCode();
+		JObject clone() const;
+		jint compare(JString arg0, JString arg1) const;
+		jboolean equals(JObject arg0) const;
+		java::text::CollationElementIterator getCollationElementIterator(JString arg0) const;
+		java::text::CollationElementIterator getCollationElementIterator(JObject arg0) const;
+		java::text::CollationKey getCollationKey(JString arg0) const;
+		JString getRules() const;
+		jint hashCode() const;
 	};
 } // namespace java::text
 

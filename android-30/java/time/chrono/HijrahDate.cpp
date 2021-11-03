@@ -65,7 +65,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	JObject HijrahDate::atTime(java::time::LocalTime arg0)
+	JObject HijrahDate::atTime(java::time::LocalTime arg0) const
 	{
 		return callObjectMethod(
 			"atTime",
@@ -73,7 +73,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jboolean HijrahDate::equals(JObject arg0)
+	jboolean HijrahDate::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -81,21 +81,21 @@ namespace java::time::chrono
 			arg0.object<jobject>()
 		);
 	}
-	java::time::chrono::HijrahChronology HijrahDate::getChronology()
+	java::time::chrono::HijrahChronology HijrahDate::getChronology() const
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/HijrahChronology;"
 		);
 	}
-	java::time::chrono::HijrahEra HijrahDate::getEra()
+	java::time::chrono::HijrahEra HijrahDate::getEra() const
 	{
 		return callObjectMethod(
 			"getEra",
 			"()Ljava/time/chrono/HijrahEra;"
 		);
 	}
-	jlong HijrahDate::getLong(JObject arg0)
+	jlong HijrahDate::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -103,35 +103,35 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint HijrahDate::hashCode()
+	jint HijrahDate::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean HijrahDate::isLeapYear()
+	jboolean HijrahDate::isLeapYear() const
 	{
 		return callMethod<jboolean>(
 			"isLeapYear",
 			"()Z"
 		);
 	}
-	jint HijrahDate::lengthOfMonth()
+	jint HijrahDate::lengthOfMonth() const
 	{
 		return callMethod<jint>(
 			"lengthOfMonth",
 			"()I"
 		);
 	}
-	jint HijrahDate::lengthOfYear()
+	jint HijrahDate::lengthOfYear() const
 	{
 		return callMethod<jint>(
 			"lengthOfYear",
 			"()I"
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::minus(JObject arg0)
+	java::time::chrono::HijrahDate HijrahDate::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -139,7 +139,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::minus(jlong arg0, JObject arg1)
+	java::time::chrono::HijrahDate HijrahDate::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -148,7 +148,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::plus(JObject arg0)
+	java::time::chrono::HijrahDate HijrahDate::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -156,7 +156,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::plus(jlong arg0, JObject arg1)
+	java::time::chrono::HijrahDate HijrahDate::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -165,7 +165,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::temporal::ValueRange HijrahDate::range(JObject arg0)
+	java::time::temporal::ValueRange HijrahDate::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -173,21 +173,21 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong HijrahDate::toEpochDay()
+	jlong HijrahDate::toEpochDay() const
 	{
 		return callMethod<jlong>(
 			"toEpochDay",
 			"()J"
 		);
 	}
-	JString HijrahDate::toString()
+	JString HijrahDate::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject HijrahDate::until(JObject arg0)
+	JObject HijrahDate::until(JObject arg0) const
 	{
 		return callObjectMethod(
 			"until",
@@ -195,7 +195,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong HijrahDate::until(JObject arg0, JObject arg1)
+	jlong HijrahDate::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -204,7 +204,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::with(JObject arg0)
+	java::time::chrono::HijrahDate HijrahDate::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -212,7 +212,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::with(JObject arg0, jlong arg1)
+	java::time::chrono::HijrahDate HijrahDate::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",
@@ -221,7 +221,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::withVariant(java::time::chrono::HijrahChronology arg0)
+	java::time::chrono::HijrahDate HijrahDate::withVariant(java::time::chrono::HijrahChronology arg0) const
 	{
 		return callObjectMethod(
 			"withVariant",

@@ -24,9 +24,9 @@ namespace android::companion
 		CompanionDeviceService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onDeviceAppeared(JString arg0);
-		void onDeviceDisappeared(JString arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		void onDeviceAppeared(JString arg0) const;
+		void onDeviceDisappeared(JString arg0) const;
 	};
 } // namespace android::companion
 

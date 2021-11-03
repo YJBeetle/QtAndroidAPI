@@ -22,8 +22,8 @@ namespace android::graphics::drawable
 		Animatable2_AnimationCallback();
 		
 		// Methods
-		void onAnimationEnd(android::graphics::drawable::Drawable arg0);
-		void onAnimationStart(android::graphics::drawable::Drawable arg0);
+		void onAnimationEnd(android::graphics::drawable::Drawable arg0) const;
+		void onAnimationStart(android::graphics::drawable::Drawable arg0) const;
 	};
 } // namespace android::graphics::drawable
 

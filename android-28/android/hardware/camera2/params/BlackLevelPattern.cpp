@@ -20,7 +20,7 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	void BlackLevelPattern::copyTo(JIntArray arg0, jint arg1)
+	void BlackLevelPattern::copyTo(JIntArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -29,7 +29,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jboolean BlackLevelPattern::equals(JObject arg0)
+	jboolean BlackLevelPattern::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,7 +37,7 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jint BlackLevelPattern::getOffsetForIndex(jint arg0, jint arg1)
+	jint BlackLevelPattern::getOffsetForIndex(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getOffsetForIndex",
@@ -46,14 +46,14 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jint BlackLevelPattern::hashCode()
+	jint BlackLevelPattern::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString BlackLevelPattern::toString()
+	JString BlackLevelPattern::toString() const
 	{
 		return callObjectMethod(
 			"toString",

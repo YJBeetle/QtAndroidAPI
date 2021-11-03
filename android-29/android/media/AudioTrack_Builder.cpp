@@ -18,14 +18,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::AudioTrack AudioTrack_Builder::build()
+	android::media::AudioTrack AudioTrack_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioTrack;"
 		);
 	}
-	android::media::AudioTrack_Builder AudioTrack_Builder::setAudioAttributes(android::media::AudioAttributes arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setAudioAttributes(android::media::AudioAttributes arg0) const
 	{
 		return callObjectMethod(
 			"setAudioAttributes",
@@ -33,7 +33,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioTrack_Builder AudioTrack_Builder::setAudioFormat(android::media::AudioFormat arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setAudioFormat(android::media::AudioFormat arg0) const
 	{
 		return callObjectMethod(
 			"setAudioFormat",
@@ -41,7 +41,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioTrack_Builder AudioTrack_Builder::setBufferSizeInBytes(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setBufferSizeInBytes(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBufferSizeInBytes",
@@ -49,7 +49,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioTrack_Builder AudioTrack_Builder::setOffloadedPlayback(jboolean arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setOffloadedPlayback(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setOffloadedPlayback",
@@ -57,7 +57,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioTrack_Builder AudioTrack_Builder::setPerformanceMode(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setPerformanceMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPerformanceMode",
@@ -65,7 +65,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioTrack_Builder AudioTrack_Builder::setSessionId(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setSessionId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSessionId",
@@ -73,7 +73,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioTrack_Builder AudioTrack_Builder::setTransferMode(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setTransferMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTransferMode",

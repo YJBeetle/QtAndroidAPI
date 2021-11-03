@@ -26,11 +26,11 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::os::Bundle getClientState();
-		JObject getDatasetIds();
-		JObject getFillContexts();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::os::Bundle getClientState() const;
+		JObject getDatasetIds() const;
+		JObject getFillContexts() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::autofill
 

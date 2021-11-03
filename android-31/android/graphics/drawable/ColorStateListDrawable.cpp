@@ -30,7 +30,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void ColorStateListDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void ColorStateListDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -38,21 +38,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean ColorStateListDrawable::canApplyTheme()
+	jboolean ColorStateListDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void ColorStateListDrawable::clearAlpha()
+	void ColorStateListDrawable::clearAlpha() const
 	{
 		callMethod<void>(
 			"clearAlpha",
 			"()V"
 		);
 	}
-	void ColorStateListDrawable::draw(android::graphics::Canvas arg0)
+	void ColorStateListDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -60,63 +60,63 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint ColorStateListDrawable::getAlpha()
+	jint ColorStateListDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint ColorStateListDrawable::getChangingConfigurations()
+	jint ColorStateListDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::ColorFilter ColorStateListDrawable::getColorFilter()
+	android::graphics::ColorFilter ColorStateListDrawable::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	android::content::res::ColorStateList ColorStateListDrawable::getColorStateList()
+	android::content::res::ColorStateList ColorStateListDrawable::getColorStateList() const
 	{
 		return callObjectMethod(
 			"getColorStateList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState ColorStateListDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState ColorStateListDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	android::graphics::drawable::Drawable ColorStateListDrawable::getCurrent()
+	android::graphics::drawable::Drawable ColorStateListDrawable::getCurrent() const
 	{
 		return callObjectMethod(
 			"getCurrent",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint ColorStateListDrawable::getOpacity()
+	jint ColorStateListDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	jboolean ColorStateListDrawable::hasFocusStateSpecified()
+	jboolean ColorStateListDrawable::hasFocusStateSpecified() const
 	{
 		return callMethod<jboolean>(
 			"hasFocusStateSpecified",
 			"()Z"
 		);
 	}
-	void ColorStateListDrawable::invalidateDrawable(android::graphics::drawable::Drawable arg0)
+	void ColorStateListDrawable::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"invalidateDrawable",
@@ -124,21 +124,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean ColorStateListDrawable::isStateful()
+	jboolean ColorStateListDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable ColorStateListDrawable::mutate()
+	android::graphics::drawable::Drawable ColorStateListDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void ColorStateListDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
+	void ColorStateListDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -148,7 +148,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	void ColorStateListDrawable::setAlpha(jint arg0)
+	void ColorStateListDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -156,7 +156,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void ColorStateListDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void ColorStateListDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -164,7 +164,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ColorStateListDrawable::setColorStateList(android::content::res::ColorStateList arg0)
+	void ColorStateListDrawable::setColorStateList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setColorStateList",
@@ -172,7 +172,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ColorStateListDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void ColorStateListDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -180,7 +180,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ColorStateListDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void ColorStateListDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -188,7 +188,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ColorStateListDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
+	void ColorStateListDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

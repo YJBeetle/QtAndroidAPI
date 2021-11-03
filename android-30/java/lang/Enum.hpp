@@ -29,15 +29,15 @@ namespace java::lang
 		
 		// Methods
 		static java::lang::Enum valueOf(JClass arg0, JString arg1);
-		jint compareTo(java::lang::Enum arg0);
-		jint compareTo(JObject arg0);
-		java::util::Optional describeConstable();
-		jboolean equals(JObject arg0);
-		JClass getDeclaringClass();
-		jint hashCode();
-		JString name();
-		jint ordinal();
-		JString toString();
+		jint compareTo(java::lang::Enum arg0) const;
+		jint compareTo(JObject arg0) const;
+		java::util::Optional describeConstable() const;
+		jboolean equals(JObject arg0) const;
+		JClass getDeclaringClass() const;
+		jint hashCode() const;
+		JString name() const;
+		jint ordinal() const;
+		JString toString() const;
 	};
 } // namespace java::lang
 

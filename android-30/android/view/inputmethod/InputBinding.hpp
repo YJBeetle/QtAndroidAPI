@@ -25,13 +25,13 @@ namespace android::view::inputmethod
 		InputBinding(JObject arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint describeContents();
-		JObject getConnection();
-		JObject getConnectionToken();
-		jint getPid();
-		jint getUid();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getConnection() const;
+		JObject getConnectionToken() const;
+		jint getPid() const;
+		jint getUid() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

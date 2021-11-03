@@ -22,14 +22,14 @@ namespace java::io
 			"()Ljava/io/Reader;"
 		);
 	}
-	void Reader::close()
+	void Reader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Reader::mark(jint arg0)
+	void Reader::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -37,21 +37,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean Reader::markSupported()
+	jboolean Reader::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint Reader::read()
+	jint Reader::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint Reader::read(JCharArray arg0)
+	jint Reader::read(JCharArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -59,7 +59,7 @@ namespace java::io
 			arg0.object<jcharArray>()
 		);
 	}
-	jint Reader::read(java::nio::CharBuffer arg0)
+	jint Reader::read(java::nio::CharBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -67,7 +67,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint Reader::read(JCharArray arg0, jint arg1, jint arg2)
+	jint Reader::read(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -77,21 +77,21 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean Reader::ready()
+	jboolean Reader::ready() const
 	{
 		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
-	void Reader::reset()
+	void Reader::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong Reader::skip(jlong arg0)
+	jlong Reader::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",
@@ -99,7 +99,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jlong Reader::transferTo(java::io::Writer arg0)
+	jlong Reader::transferTo(java::io::Writer arg0) const
 	{
 		return callMethod<jlong>(
 			"transferTo",

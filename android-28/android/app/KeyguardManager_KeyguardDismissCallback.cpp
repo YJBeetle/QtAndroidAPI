@@ -15,21 +15,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void KeyguardManager_KeyguardDismissCallback::onDismissCancelled()
+	void KeyguardManager_KeyguardDismissCallback::onDismissCancelled() const
 	{
 		callMethod<void>(
 			"onDismissCancelled",
 			"()V"
 		);
 	}
-	void KeyguardManager_KeyguardDismissCallback::onDismissError()
+	void KeyguardManager_KeyguardDismissCallback::onDismissError() const
 	{
 		callMethod<void>(
 			"onDismissError",
 			"()V"
 		);
 	}
-	void KeyguardManager_KeyguardDismissCallback::onDismissSucceeded()
+	void KeyguardManager_KeyguardDismissCallback::onDismissSucceeded() const
 	{
 		callMethod<void>(
 			"onDismissSucceeded",

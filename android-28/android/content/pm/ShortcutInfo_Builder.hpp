@@ -45,17 +45,17 @@ namespace android::content::pm
 		ShortcutInfo_Builder(android::content::Context arg0, JString arg1);
 		
 		// Methods
-		android::content::pm::ShortcutInfo build();
-		android::content::pm::ShortcutInfo_Builder setActivity(android::content::ComponentName arg0);
-		android::content::pm::ShortcutInfo_Builder setCategories(JObject arg0);
-		android::content::pm::ShortcutInfo_Builder setDisabledMessage(JString arg0);
-		android::content::pm::ShortcutInfo_Builder setExtras(android::os::PersistableBundle arg0);
-		android::content::pm::ShortcutInfo_Builder setIcon(android::graphics::drawable::Icon arg0);
-		android::content::pm::ShortcutInfo_Builder setIntent(android::content::Intent arg0);
-		android::content::pm::ShortcutInfo_Builder setIntents(JArray arg0);
-		android::content::pm::ShortcutInfo_Builder setLongLabel(JString arg0);
-		android::content::pm::ShortcutInfo_Builder setRank(jint arg0);
-		android::content::pm::ShortcutInfo_Builder setShortLabel(JString arg0);
+		android::content::pm::ShortcutInfo build() const;
+		android::content::pm::ShortcutInfo_Builder setActivity(android::content::ComponentName arg0) const;
+		android::content::pm::ShortcutInfo_Builder setCategories(JObject arg0) const;
+		android::content::pm::ShortcutInfo_Builder setDisabledMessage(JString arg0) const;
+		android::content::pm::ShortcutInfo_Builder setExtras(android::os::PersistableBundle arg0) const;
+		android::content::pm::ShortcutInfo_Builder setIcon(android::graphics::drawable::Icon arg0) const;
+		android::content::pm::ShortcutInfo_Builder setIntent(android::content::Intent arg0) const;
+		android::content::pm::ShortcutInfo_Builder setIntents(JArray arg0) const;
+		android::content::pm::ShortcutInfo_Builder setLongLabel(JString arg0) const;
+		android::content::pm::ShortcutInfo_Builder setRank(jint arg0) const;
+		android::content::pm::ShortcutInfo_Builder setShortLabel(JString arg0) const;
 	};
 } // namespace android::content::pm
 

@@ -18,14 +18,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject EventObject::getSource()
+	JObject EventObject::getSource() const
 	{
 		return callObjectMethod(
 			"getSource",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString EventObject::toString()
+	JString EventObject::toString() const
 	{
 		return callObjectMethod(
 			"toString",

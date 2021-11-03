@@ -25,14 +25,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void CharArrayReader::close()
+	void CharArrayReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void CharArrayReader::mark(jint arg0)
+	void CharArrayReader::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -40,21 +40,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean CharArrayReader::markSupported()
+	jboolean CharArrayReader::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint CharArrayReader::read()
+	jint CharArrayReader::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint CharArrayReader::read(JCharArray arg0, jint arg1, jint arg2)
+	jint CharArrayReader::read(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -64,21 +64,21 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean CharArrayReader::ready()
+	jboolean CharArrayReader::ready() const
 	{
 		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
-	void CharArrayReader::reset()
+	void CharArrayReader::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong CharArrayReader::skip(jlong arg0)
+	jlong CharArrayReader::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

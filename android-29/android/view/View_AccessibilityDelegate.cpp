@@ -22,7 +22,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void View_AccessibilityDelegate::addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3)
+	void View_AccessibilityDelegate::addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
@@ -33,7 +33,7 @@ namespace android::view
 			arg3.object()
 		);
 	}
-	jboolean View_AccessibilityDelegate::dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
+	jboolean View_AccessibilityDelegate::dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"dispatchPopulateAccessibilityEvent",
@@ -42,7 +42,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeProvider View_AccessibilityDelegate::getAccessibilityNodeProvider(android::view::View arg0)
+	android::view::accessibility::AccessibilityNodeProvider View_AccessibilityDelegate::getAccessibilityNodeProvider(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",
@@ -50,7 +50,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View_AccessibilityDelegate::onInitializeAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
+	void View_AccessibilityDelegate::onInitializeAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityEvent",
@@ -59,7 +59,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View_AccessibilityDelegate::onInitializeAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1)
+	void View_AccessibilityDelegate::onInitializeAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityNodeInfo",
@@ -68,7 +68,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View_AccessibilityDelegate::onPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
+	void View_AccessibilityDelegate::onPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
 	{
 		callMethod<void>(
 			"onPopulateAccessibilityEvent",
@@ -77,7 +77,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View_AccessibilityDelegate::onRequestSendAccessibilityEvent(android::view::ViewGroup arg0, android::view::View arg1, android::view::accessibility::AccessibilityEvent arg2)
+	jboolean View_AccessibilityDelegate::onRequestSendAccessibilityEvent(android::view::ViewGroup arg0, android::view::View arg1, android::view::accessibility::AccessibilityEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onRequestSendAccessibilityEvent",
@@ -87,7 +87,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	jboolean View_AccessibilityDelegate::performAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2)
+	jboolean View_AccessibilityDelegate::performAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"performAccessibilityAction",
@@ -97,7 +97,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	void View_AccessibilityDelegate::sendAccessibilityEvent(android::view::View arg0, jint arg1)
+	void View_AccessibilityDelegate::sendAccessibilityEvent(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"sendAccessibilityEvent",
@@ -106,7 +106,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View_AccessibilityDelegate::sendAccessibilityEventUnchecked(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
+	void View_AccessibilityDelegate::sendAccessibilityEventUnchecked(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
 	{
 		callMethod<void>(
 			"sendAccessibilityEventUnchecked",

@@ -19,7 +19,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void PictureDrawable::draw(android::graphics::Canvas arg0)
+	void PictureDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -27,35 +27,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint PictureDrawable::getIntrinsicHeight()
+	jint PictureDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint PictureDrawable::getIntrinsicWidth()
+	jint PictureDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint PictureDrawable::getOpacity()
+	jint PictureDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Picture PictureDrawable::getPicture()
+	android::graphics::Picture PictureDrawable::getPicture() const
 	{
 		return callObjectMethod(
 			"getPicture",
 			"()Landroid/graphics/Picture;"
 		);
 	}
-	void PictureDrawable::setAlpha(jint arg0)
+	void PictureDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -63,7 +63,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void PictureDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void PictureDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -71,7 +71,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void PictureDrawable::setPicture(android::graphics::Picture arg0)
+	void PictureDrawable::setPicture(android::graphics::Picture arg0) const
 	{
 		callMethod<void>(
 			"setPicture",

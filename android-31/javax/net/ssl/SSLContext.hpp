@@ -53,17 +53,17 @@ namespace javax::net::ssl
 		static javax::net::ssl::SSLContext getInstance(JString arg0, JString arg1);
 		static javax::net::ssl::SSLContext getInstance(JString arg0, java::security::Provider arg1);
 		static void setDefault(javax::net::ssl::SSLContext arg0);
-		javax::net::ssl::SSLEngine createSSLEngine();
-		javax::net::ssl::SSLEngine createSSLEngine(JString arg0, jint arg1);
-		JObject getClientSessionContext();
-		javax::net::ssl::SSLParameters getDefaultSSLParameters();
-		JString getProtocol();
-		java::security::Provider getProvider();
-		JObject getServerSessionContext();
-		javax::net::ssl::SSLServerSocketFactory getServerSocketFactory();
-		javax::net::ssl::SSLSocketFactory getSocketFactory();
-		javax::net::ssl::SSLParameters getSupportedSSLParameters();
-		void init(JArray arg0, JArray arg1, java::security::SecureRandom arg2);
+		javax::net::ssl::SSLEngine createSSLEngine() const;
+		javax::net::ssl::SSLEngine createSSLEngine(JString arg0, jint arg1) const;
+		JObject getClientSessionContext() const;
+		javax::net::ssl::SSLParameters getDefaultSSLParameters() const;
+		JString getProtocol() const;
+		java::security::Provider getProvider() const;
+		JObject getServerSessionContext() const;
+		javax::net::ssl::SSLServerSocketFactory getServerSocketFactory() const;
+		javax::net::ssl::SSLSocketFactory getSocketFactory() const;
+		javax::net::ssl::SSLParameters getSupportedSSLParameters() const;
+		void init(JArray arg0, JArray arg1, java::security::SecureRandom arg2) const;
 	};
 } // namespace javax::net::ssl
 

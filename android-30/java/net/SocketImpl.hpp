@@ -40,7 +40,7 @@ namespace java::net
 		SocketImpl();
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace java::net
 

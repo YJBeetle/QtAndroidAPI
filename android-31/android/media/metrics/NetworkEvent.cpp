@@ -92,14 +92,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	jint NetworkEvent::describeContents()
+	jint NetworkEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NetworkEvent::equals(JObject arg0)
+	jboolean NetworkEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -107,42 +107,42 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle NetworkEvent::getMetricsBundle()
+	android::os::Bundle NetworkEvent::getMetricsBundle() const
 	{
 		return callObjectMethod(
 			"getMetricsBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint NetworkEvent::getNetworkType()
+	jint NetworkEvent::getNetworkType() const
 	{
 		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
-	jlong NetworkEvent::getTimeSinceCreatedMillis()
+	jlong NetworkEvent::getTimeSinceCreatedMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeSinceCreatedMillis",
 			"()J"
 		);
 	}
-	jint NetworkEvent::hashCode()
+	jint NetworkEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString NetworkEvent::toString()
+	JString NetworkEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NetworkEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

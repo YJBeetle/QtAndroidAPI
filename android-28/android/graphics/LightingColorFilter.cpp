@@ -17,14 +17,14 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jint LightingColorFilter::getColorAdd()
+	jint LightingColorFilter::getColorAdd() const
 	{
 		return callMethod<jint>(
 			"getColorAdd",
 			"()I"
 		);
 	}
-	jint LightingColorFilter::getColorMultiply()
+	jint LightingColorFilter::getColorMultiply() const
 	{
 		return callMethod<jint>(
 			"getColorMultiply",

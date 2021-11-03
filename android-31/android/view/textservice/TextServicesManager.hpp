@@ -37,11 +37,11 @@ namespace android::view::textservice
 		// Constructors
 		
 		// Methods
-		android::view::textservice::SpellCheckerInfo getCurrentSpellCheckerInfo();
-		JObject getEnabledSpellCheckerInfos();
-		jboolean isSpellCheckerEnabled();
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, JObject arg1, JObject arg2);
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3);
+		android::view::textservice::SpellCheckerInfo getCurrentSpellCheckerInfo() const;
+		JObject getEnabledSpellCheckerInfos() const;
+		jboolean isSpellCheckerEnabled() const;
+		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, JObject arg1, JObject arg2) const;
+		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3) const;
 	};
 } // namespace android::view::textservice
 

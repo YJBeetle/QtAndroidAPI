@@ -36,11 +36,11 @@ namespace java::util
 		PropertyPermission(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getActions();
-		jint hashCode();
-		jboolean implies(java::security::Permission arg0);
-		java::security::PermissionCollection newPermissionCollection();
+		jboolean equals(JObject arg0) const;
+		JString getActions() const;
+		jint hashCode() const;
+		jboolean implies(java::security::Permission arg0) const;
+		java::security::PermissionCollection newPermissionCollection() const;
 	};
 } // namespace java::util
 

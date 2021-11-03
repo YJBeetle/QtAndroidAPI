@@ -45,35 +45,35 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jint Time::getDate()
+	jint Time::getDate() const
 	{
 		return callMethod<jint>(
 			"getDate",
 			"()I"
 		);
 	}
-	jint Time::getDay()
+	jint Time::getDay() const
 	{
 		return callMethod<jint>(
 			"getDay",
 			"()I"
 		);
 	}
-	jint Time::getMonth()
+	jint Time::getMonth() const
 	{
 		return callMethod<jint>(
 			"getMonth",
 			"()I"
 		);
 	}
-	jint Time::getYear()
+	jint Time::getYear() const
 	{
 		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
-	void Time::setDate(jint arg0)
+	void Time::setDate(jint arg0) const
 	{
 		callMethod<void>(
 			"setDate",
@@ -81,7 +81,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void Time::setMonth(jint arg0)
+	void Time::setMonth(jint arg0) const
 	{
 		callMethod<void>(
 			"setMonth",
@@ -89,7 +89,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void Time::setTime(jlong arg0)
+	void Time::setTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -97,7 +97,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void Time::setYear(jint arg0)
+	void Time::setYear(jint arg0) const
 	{
 		callMethod<void>(
 			"setYear",
@@ -105,21 +105,21 @@ namespace java::sql
 			arg0
 		);
 	}
-	java::time::Instant Time::toInstant()
+	java::time::Instant Time::toInstant() const
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	java::time::LocalTime Time::toLocalTime()
+	java::time::LocalTime Time::toLocalTime() const
 	{
 		return callObjectMethod(
 			"toLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	JString Time::toString()
+	JString Time::toString() const
 	{
 		return callObjectMethod(
 			"toString",

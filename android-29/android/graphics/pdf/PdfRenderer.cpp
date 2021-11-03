@@ -18,21 +18,21 @@ namespace android::graphics::pdf
 		) {}
 	
 	// Methods
-	void PdfRenderer::close()
+	void PdfRenderer::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint PdfRenderer::getPageCount()
+	jint PdfRenderer::getPageCount() const
 	{
 		return callMethod<jint>(
 			"getPageCount",
 			"()I"
 		);
 	}
-	android::graphics::pdf::PdfRenderer_Page PdfRenderer::openPage(jint arg0)
+	android::graphics::pdf::PdfRenderer_Page PdfRenderer::openPage(jint arg0) const
 	{
 		return callObjectMethod(
 			"openPage",
@@ -40,7 +40,7 @@ namespace android::graphics::pdf
 			arg0
 		);
 	}
-	jboolean PdfRenderer::shouldScaleForPrinting()
+	jboolean PdfRenderer::shouldScaleForPrinting() const
 	{
 		return callMethod<jboolean>(
 			"shouldScaleForPrinting",

@@ -28,7 +28,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(JString arg0)
+	android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(JString arg0) const
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -36,7 +36,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(jlong arg0)
+	android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setNumber",

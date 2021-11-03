@@ -12,14 +12,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	android::bluetooth::BluetoothSocket BluetoothServerSocket::accept()
+	android::bluetooth::BluetoothSocket BluetoothServerSocket::accept() const
 	{
 		return callObjectMethod(
 			"accept",
 			"()Landroid/bluetooth/BluetoothSocket;"
 		);
 	}
-	android::bluetooth::BluetoothSocket BluetoothServerSocket::accept(jint arg0)
+	android::bluetooth::BluetoothSocket BluetoothServerSocket::accept(jint arg0) const
 	{
 		return callObjectMethod(
 			"accept",
@@ -27,14 +27,14 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	void BluetoothServerSocket::close()
+	void BluetoothServerSocket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JString BluetoothServerSocket::toString()
+	JString BluetoothServerSocket::toString() const
 	{
 		return callObjectMethod(
 			"toString",

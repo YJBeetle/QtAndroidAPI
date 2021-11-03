@@ -44,29 +44,29 @@ namespace android::inputmethodservice
 		KeyboardView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void closing();
-		android::inputmethodservice::Keyboard getKeyboard();
-		jboolean handleBack();
-		void invalidateAllKeys();
-		void invalidateKey(jint arg0);
-		jboolean isPreviewEnabled();
-		jboolean isProximityCorrectionEnabled();
-		jboolean isShifted();
-		void onClick(android::view::View arg0);
-		void onDetachedFromWindow();
-		void onDraw(android::graphics::Canvas arg0);
-		jboolean onHoverEvent(android::view::MotionEvent arg0);
-		void onMeasure(jint arg0, jint arg1);
-		void onSizeChanged(jint arg0, jint arg1, jint arg2, jint arg3);
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setKeyboard(android::inputmethodservice::Keyboard arg0);
-		void setOnKeyboardActionListener(JObject arg0);
-		void setPopupOffset(jint arg0, jint arg1);
-		void setPopupParent(android::view::View arg0);
-		void setPreviewEnabled(jboolean arg0);
-		void setProximityCorrectionEnabled(jboolean arg0);
-		jboolean setShifted(jboolean arg0);
-		void setVerticalCorrection(jint arg0);
+		void closing() const;
+		android::inputmethodservice::Keyboard getKeyboard() const;
+		jboolean handleBack() const;
+		void invalidateAllKeys() const;
+		void invalidateKey(jint arg0) const;
+		jboolean isPreviewEnabled() const;
+		jboolean isProximityCorrectionEnabled() const;
+		jboolean isShifted() const;
+		void onClick(android::view::View arg0) const;
+		void onDetachedFromWindow() const;
+		void onDraw(android::graphics::Canvas arg0) const;
+		jboolean onHoverEvent(android::view::MotionEvent arg0) const;
+		void onMeasure(jint arg0, jint arg1) const;
+		void onSizeChanged(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		void setKeyboard(android::inputmethodservice::Keyboard arg0) const;
+		void setOnKeyboardActionListener(JObject arg0) const;
+		void setPopupOffset(jint arg0, jint arg1) const;
+		void setPopupParent(android::view::View arg0) const;
+		void setPreviewEnabled(jboolean arg0) const;
+		void setProximityCorrectionEnabled(jboolean arg0) const;
+		jboolean setShifted(jboolean arg0) const;
+		void setVerticalCorrection(jint arg0) const;
 	};
 } // namespace android::inputmethodservice
 

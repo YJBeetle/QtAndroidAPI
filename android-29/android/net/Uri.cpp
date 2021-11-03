@@ -108,14 +108,14 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	android::net::Uri_Builder Uri::buildUpon()
+	android::net::Uri_Builder Uri::buildUpon() const
 	{
 		return callObjectMethod(
 			"buildUpon",
 			"()Landroid/net/Uri$Builder;"
 		);
 	}
-	jint Uri::compareTo(android::net::Uri arg0)
+	jint Uri::compareTo(android::net::Uri arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -123,7 +123,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jint Uri::compareTo(JObject arg0)
+	jint Uri::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -131,7 +131,7 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Uri::equals(JObject arg0)
+	jboolean Uri::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -139,14 +139,14 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	JString Uri::getAuthority()
+	JString Uri::getAuthority() const
 	{
 		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Uri::getBooleanQueryParameter(JString arg0, jboolean arg1)
+	jboolean Uri::getBooleanQueryParameter(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"getBooleanQueryParameter",
@@ -155,98 +155,98 @@ namespace android::net
 			arg1
 		);
 	}
-	JString Uri::getEncodedAuthority()
+	JString Uri::getEncodedAuthority() const
 	{
 		return callObjectMethod(
 			"getEncodedAuthority",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getEncodedFragment()
+	JString Uri::getEncodedFragment() const
 	{
 		return callObjectMethod(
 			"getEncodedFragment",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getEncodedPath()
+	JString Uri::getEncodedPath() const
 	{
 		return callObjectMethod(
 			"getEncodedPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getEncodedQuery()
+	JString Uri::getEncodedQuery() const
 	{
 		return callObjectMethod(
 			"getEncodedQuery",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getEncodedSchemeSpecificPart()
+	JString Uri::getEncodedSchemeSpecificPart() const
 	{
 		return callObjectMethod(
 			"getEncodedSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getEncodedUserInfo()
+	JString Uri::getEncodedUserInfo() const
 	{
 		return callObjectMethod(
 			"getEncodedUserInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getFragment()
+	JString Uri::getFragment() const
 	{
 		return callObjectMethod(
 			"getFragment",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getHost()
+	JString Uri::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getLastPathSegment()
+	JString Uri::getLastPathSegment() const
 	{
 		return callObjectMethod(
 			"getLastPathSegment",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getPath()
+	JString Uri::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Uri::getPathSegments()
+	JObject Uri::getPathSegments() const
 	{
 		return callObjectMethod(
 			"getPathSegments",
 			"()Ljava/util/List;"
 		);
 	}
-	jint Uri::getPort()
+	jint Uri::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JString Uri::getQuery()
+	JString Uri::getQuery() const
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getQueryParameter(JString arg0)
+	JString Uri::getQueryParameter(JString arg0) const
 	{
 		return callObjectMethod(
 			"getQueryParameter",
@@ -254,14 +254,14 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	JObject Uri::getQueryParameterNames()
+	JObject Uri::getQueryParameterNames() const
 	{
 		return callObjectMethod(
 			"getQueryParameterNames",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Uri::getQueryParameters(JString arg0)
+	JObject Uri::getQueryParameters(JString arg0) const
 	{
 		return callObjectMethod(
 			"getQueryParameters",
@@ -269,70 +269,70 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	JString Uri::getScheme()
+	JString Uri::getScheme() const
 	{
 		return callObjectMethod(
 			"getScheme",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getSchemeSpecificPart()
+	JString Uri::getSchemeSpecificPart() const
 	{
 		return callObjectMethod(
 			"getSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Uri::getUserInfo()
+	JString Uri::getUserInfo() const
 	{
 		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Uri::hashCode()
+	jint Uri::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Uri::isAbsolute()
+	jboolean Uri::isAbsolute() const
 	{
 		return callMethod<jboolean>(
 			"isAbsolute",
 			"()Z"
 		);
 	}
-	jboolean Uri::isHierarchical()
+	jboolean Uri::isHierarchical() const
 	{
 		return callMethod<jboolean>(
 			"isHierarchical",
 			"()Z"
 		);
 	}
-	jboolean Uri::isOpaque()
+	jboolean Uri::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	jboolean Uri::isRelative()
+	jboolean Uri::isRelative() const
 	{
 		return callMethod<jboolean>(
 			"isRelative",
 			"()Z"
 		);
 	}
-	android::net::Uri Uri::normalizeScheme()
+	android::net::Uri Uri::normalizeScheme() const
 	{
 		return callObjectMethod(
 			"normalizeScheme",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString Uri::toString()
+	JString Uri::toString() const
 	{
 		return callObjectMethod(
 			"toString",

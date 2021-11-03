@@ -22,13 +22,13 @@ namespace android::app::assist
 		// Constructors
 		
 		// Methods
-		jint getDisplayId();
-		jint getHeight();
-		jint getLeft();
-		android::app::assist::AssistStructure_ViewNode getRootViewNode();
-		JString getTitle();
-		jint getTop();
-		jint getWidth();
+		jint getDisplayId() const;
+		jint getHeight() const;
+		jint getLeft() const;
+		android::app::assist::AssistStructure_ViewNode getRootViewNode() const;
+		JString getTitle() const;
+		jint getTop() const;
+		jint getWidth() const;
 	};
 } // namespace android::app::assist
 

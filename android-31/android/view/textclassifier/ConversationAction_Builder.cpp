@@ -21,14 +21,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::ConversationAction ConversationAction_Builder::build()
+	android::view::textclassifier::ConversationAction ConversationAction_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/ConversationAction;"
 		);
 	}
-	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setAction(android::app::RemoteAction arg0)
+	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setAction(android::app::RemoteAction arg0) const
 	{
 		return callObjectMethod(
 			"setAction",
@@ -36,7 +36,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setConfidenceScore(jfloat arg0)
+	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setConfidenceScore(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setConfidenceScore",
@@ -44,7 +44,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -52,7 +52,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setTextReply(JString arg0)
+	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setTextReply(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTextReply",

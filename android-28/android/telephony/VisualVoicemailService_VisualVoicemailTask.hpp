@@ -22,9 +22,9 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		void finish();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		void finish() const;
+		jint hashCode() const;
 	};
 } // namespace android::telephony
 

@@ -26,19 +26,19 @@ namespace java::time::temporal
 		static java::time::temporal::ValueRange of(jlong arg0, jlong arg1);
 		static java::time::temporal::ValueRange of(jlong arg0, jlong arg1, jlong arg2);
 		static java::time::temporal::ValueRange of(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
-		jint checkValidIntValue(jlong arg0, JObject arg1);
-		jlong checkValidValue(jlong arg0, JObject arg1);
-		jboolean equals(JObject arg0);
-		jlong getLargestMinimum();
-		jlong getMaximum();
-		jlong getMinimum();
-		jlong getSmallestMaximum();
-		jint hashCode();
-		jboolean isFixed();
-		jboolean isIntValue();
-		jboolean isValidIntValue(jlong arg0);
-		jboolean isValidValue(jlong arg0);
-		JString toString();
+		jint checkValidIntValue(jlong arg0, JObject arg1) const;
+		jlong checkValidValue(jlong arg0, JObject arg1) const;
+		jboolean equals(JObject arg0) const;
+		jlong getLargestMinimum() const;
+		jlong getMaximum() const;
+		jlong getMinimum() const;
+		jlong getSmallestMaximum() const;
+		jint hashCode() const;
+		jboolean isFixed() const;
+		jboolean isIntValue() const;
+		jboolean isValidIntValue(jlong arg0) const;
+		jboolean isValidValue(jlong arg0) const;
+		JString toString() const;
 	};
 } // namespace java::time::temporal
 

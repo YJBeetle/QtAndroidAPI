@@ -61,7 +61,7 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jfloat GnssStatus::getAzimuthDegrees(jint arg0)
+	jfloat GnssStatus::getAzimuthDegrees(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getAzimuthDegrees",
@@ -69,7 +69,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jfloat GnssStatus::getCarrierFrequencyHz(jint arg0)
+	jfloat GnssStatus::getCarrierFrequencyHz(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getCarrierFrequencyHz",
@@ -77,7 +77,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jfloat GnssStatus::getCn0DbHz(jint arg0)
+	jfloat GnssStatus::getCn0DbHz(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getCn0DbHz",
@@ -85,7 +85,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jint GnssStatus::getConstellationType(jint arg0)
+	jint GnssStatus::getConstellationType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getConstellationType",
@@ -93,7 +93,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jfloat GnssStatus::getElevationDegrees(jint arg0)
+	jfloat GnssStatus::getElevationDegrees(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getElevationDegrees",
@@ -101,14 +101,14 @@ namespace android::location
 			arg0
 		);
 	}
-	jint GnssStatus::getSatelliteCount()
+	jint GnssStatus::getSatelliteCount() const
 	{
 		return callMethod<jint>(
 			"getSatelliteCount",
 			"()I"
 		);
 	}
-	jint GnssStatus::getSvid(jint arg0)
+	jint GnssStatus::getSvid(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getSvid",
@@ -116,7 +116,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jboolean GnssStatus::hasAlmanacData(jint arg0)
+	jboolean GnssStatus::hasAlmanacData(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasAlmanacData",
@@ -124,7 +124,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jboolean GnssStatus::hasCarrierFrequencyHz(jint arg0)
+	jboolean GnssStatus::hasCarrierFrequencyHz(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCarrierFrequencyHz",
@@ -132,7 +132,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jboolean GnssStatus::hasEphemerisData(jint arg0)
+	jboolean GnssStatus::hasEphemerisData(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasEphemerisData",
@@ -140,7 +140,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jboolean GnssStatus::usedInFix(jint arg0)
+	jboolean GnssStatus::usedInFix(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"usedInFix",

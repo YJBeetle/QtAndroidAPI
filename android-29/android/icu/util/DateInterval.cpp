@@ -19,7 +19,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jboolean DateInterval::equals(JObject arg0)
+	jboolean DateInterval::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,28 +27,28 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	jlong DateInterval::getFromDate()
+	jlong DateInterval::getFromDate() const
 	{
 		return callMethod<jlong>(
 			"getFromDate",
 			"()J"
 		);
 	}
-	jlong DateInterval::getToDate()
+	jlong DateInterval::getToDate() const
 	{
 		return callMethod<jlong>(
 			"getToDate",
 			"()J"
 		);
 	}
-	jint DateInterval::hashCode()
+	jint DateInterval::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DateInterval::toString()
+	JString DateInterval::toString() const
 	{
 		return callObjectMethod(
 			"toString",

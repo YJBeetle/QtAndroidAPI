@@ -30,7 +30,7 @@ namespace android::media::audiofx
 		EnvironmentalReverb_Settings(JString arg0);
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

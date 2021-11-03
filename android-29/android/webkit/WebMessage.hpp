@@ -21,8 +21,8 @@ namespace android::webkit
 		WebMessage(JString arg0, JArray arg1);
 		
 		// Methods
-		JString getData();
-		JArray getPorts();
+		JString getData() const;
+		JArray getPorts() const;
 	};
 } // namespace android::webkit
 

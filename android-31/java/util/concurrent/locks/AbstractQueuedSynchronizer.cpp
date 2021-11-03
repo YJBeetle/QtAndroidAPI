@@ -13,7 +13,7 @@ namespace java::util::concurrent::locks
 	// Constructors
 	
 	// Methods
-	void AbstractQueuedSynchronizer::acquire(jint arg0)
+	void AbstractQueuedSynchronizer::acquire(jint arg0) const
 	{
 		callMethod<void>(
 			"acquire",
@@ -21,7 +21,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void AbstractQueuedSynchronizer::acquireInterruptibly(jint arg0)
+	void AbstractQueuedSynchronizer::acquireInterruptibly(jint arg0) const
 	{
 		callMethod<void>(
 			"acquireInterruptibly",
@@ -29,7 +29,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void AbstractQueuedSynchronizer::acquireShared(jint arg0)
+	void AbstractQueuedSynchronizer::acquireShared(jint arg0) const
 	{
 		callMethod<void>(
 			"acquireShared",
@@ -37,7 +37,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void AbstractQueuedSynchronizer::acquireSharedInterruptibly(jint arg0)
+	void AbstractQueuedSynchronizer::acquireSharedInterruptibly(jint arg0) const
 	{
 		callMethod<void>(
 			"acquireSharedInterruptibly",
@@ -45,42 +45,42 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	JObject AbstractQueuedSynchronizer::getExclusiveQueuedThreads()
+	JObject AbstractQueuedSynchronizer::getExclusiveQueuedThreads() const
 	{
 		return callObjectMethod(
 			"getExclusiveQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	java::lang::Thread AbstractQueuedSynchronizer::getFirstQueuedThread()
+	java::lang::Thread AbstractQueuedSynchronizer::getFirstQueuedThread() const
 	{
 		return callObjectMethod(
 			"getFirstQueuedThread",
 			"()Ljava/lang/Thread;"
 		);
 	}
-	jint AbstractQueuedSynchronizer::getQueueLength()
+	jint AbstractQueuedSynchronizer::getQueueLength() const
 	{
 		return callMethod<jint>(
 			"getQueueLength",
 			"()I"
 		);
 	}
-	JObject AbstractQueuedSynchronizer::getQueuedThreads()
+	JObject AbstractQueuedSynchronizer::getQueuedThreads() const
 	{
 		return callObjectMethod(
 			"getQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject AbstractQueuedSynchronizer::getSharedQueuedThreads()
+	JObject AbstractQueuedSynchronizer::getSharedQueuedThreads() const
 	{
 		return callObjectMethod(
 			"getSharedQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	jint AbstractQueuedSynchronizer::getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
+	jint AbstractQueuedSynchronizer::getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0) const
 	{
 		return callMethod<jint>(
 			"getWaitQueueLength",
@@ -88,7 +88,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	JObject AbstractQueuedSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
+	JObject AbstractQueuedSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0) const
 	{
 		return callObjectMethod(
 			"getWaitingThreads",
@@ -96,28 +96,28 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::hasContended()
+	jboolean AbstractQueuedSynchronizer::hasContended() const
 	{
 		return callMethod<jboolean>(
 			"hasContended",
 			"()Z"
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::hasQueuedPredecessors()
+	jboolean AbstractQueuedSynchronizer::hasQueuedPredecessors() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedPredecessors",
 			"()Z"
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::hasQueuedThreads()
+	jboolean AbstractQueuedSynchronizer::hasQueuedThreads() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedThreads",
 			"()Z"
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::hasWaiters(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
+	jboolean AbstractQueuedSynchronizer::hasWaiters(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasWaiters",
@@ -125,7 +125,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::isQueued(java::lang::Thread arg0)
+	jboolean AbstractQueuedSynchronizer::isQueued(java::lang::Thread arg0) const
 	{
 		return callMethod<jboolean>(
 			"isQueued",
@@ -133,7 +133,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::owns(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
+	jboolean AbstractQueuedSynchronizer::owns(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"owns",
@@ -141,7 +141,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::release(jint arg0)
+	jboolean AbstractQueuedSynchronizer::release(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"release",
@@ -149,7 +149,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::releaseShared(jint arg0)
+	jboolean AbstractQueuedSynchronizer::releaseShared(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"releaseShared",
@@ -157,14 +157,14 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	JString AbstractQueuedSynchronizer::toString()
+	JString AbstractQueuedSynchronizer::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::tryAcquireNanos(jint arg0, jlong arg1)
+	jboolean AbstractQueuedSynchronizer::tryAcquireNanos(jint arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"tryAcquireNanos",
@@ -173,7 +173,7 @@ namespace java::util::concurrent::locks
 			arg1
 		);
 	}
-	jboolean AbstractQueuedSynchronizer::tryAcquireSharedNanos(jint arg0, jlong arg1)
+	jboolean AbstractQueuedSynchronizer::tryAcquireSharedNanos(jint arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"tryAcquireSharedNanos",

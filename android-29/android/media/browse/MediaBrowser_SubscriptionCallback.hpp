@@ -23,10 +23,10 @@ namespace android::media::browse
 		MediaBrowser_SubscriptionCallback();
 		
 		// Methods
-		void onChildrenLoaded(JString arg0, JObject arg1);
-		void onChildrenLoaded(JString arg0, JObject arg1, android::os::Bundle arg2);
-		void onError(JString arg0);
-		void onError(JString arg0, android::os::Bundle arg1);
+		void onChildrenLoaded(JString arg0, JObject arg1) const;
+		void onChildrenLoaded(JString arg0, JObject arg1, android::os::Bundle arg2) const;
+		void onError(JString arg0) const;
+		void onError(JString arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::media::browse
 

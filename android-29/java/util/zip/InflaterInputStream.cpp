@@ -34,21 +34,21 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	jint InflaterInputStream::available()
+	jint InflaterInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void InflaterInputStream::close()
+	void InflaterInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void InflaterInputStream::mark(jint arg0)
+	void InflaterInputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -56,21 +56,21 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	jboolean InflaterInputStream::markSupported()
+	jboolean InflaterInputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint InflaterInputStream::read()
+	jint InflaterInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint InflaterInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint InflaterInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -80,14 +80,14 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	void InflaterInputStream::reset()
+	void InflaterInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong InflaterInputStream::skip(jlong arg0)
+	jlong InflaterInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

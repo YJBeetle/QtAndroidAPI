@@ -27,10 +27,10 @@ namespace android::app
 		AlarmManager_AlarmClockInfo(jlong arg0, android::app::PendingIntent arg1);
 		
 		// Methods
-		jint describeContents();
-		android::app::PendingIntent getShowIntent();
-		jlong getTriggerTime();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::app::PendingIntent getShowIntent() const;
+		jlong getTriggerTime() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

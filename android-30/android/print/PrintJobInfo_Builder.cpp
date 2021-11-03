@@ -20,14 +20,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	android::print::PrintJobInfo PrintJobInfo_Builder::build()
+	android::print::PrintJobInfo PrintJobInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/print/PrintJobInfo;"
 		);
 	}
-	void PrintJobInfo_Builder::putAdvancedOption(JString arg0, jint arg1)
+	void PrintJobInfo_Builder::putAdvancedOption(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"putAdvancedOption",
@@ -36,7 +36,7 @@ namespace android::print
 			arg1
 		);
 	}
-	void PrintJobInfo_Builder::putAdvancedOption(JString arg0, JString arg1)
+	void PrintJobInfo_Builder::putAdvancedOption(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"putAdvancedOption",
@@ -45,7 +45,7 @@ namespace android::print
 			arg1.object<jstring>()
 		);
 	}
-	void PrintJobInfo_Builder::setAttributes(android::print::PrintAttributes arg0)
+	void PrintJobInfo_Builder::setAttributes(android::print::PrintAttributes arg0) const
 	{
 		callMethod<void>(
 			"setAttributes",
@@ -53,7 +53,7 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	void PrintJobInfo_Builder::setCopies(jint arg0)
+	void PrintJobInfo_Builder::setCopies(jint arg0) const
 	{
 		callMethod<void>(
 			"setCopies",
@@ -61,7 +61,7 @@ namespace android::print
 			arg0
 		);
 	}
-	void PrintJobInfo_Builder::setPages(JArray arg0)
+	void PrintJobInfo_Builder::setPages(JArray arg0) const
 	{
 		callMethod<void>(
 			"setPages",

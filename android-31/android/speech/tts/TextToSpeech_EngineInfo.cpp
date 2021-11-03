@@ -36,7 +36,7 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	JString TextToSpeech_EngineInfo::toString()
+	JString TextToSpeech_EngineInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

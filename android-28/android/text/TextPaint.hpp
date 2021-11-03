@@ -30,7 +30,7 @@ namespace android::text
 		TextPaint(jint arg0);
 		
 		// Methods
-		void set(android::text::TextPaint arg0);
+		void set(android::text::TextPaint arg0) const;
 	};
 } // namespace android::text
 

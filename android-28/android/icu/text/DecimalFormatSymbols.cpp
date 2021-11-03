@@ -90,14 +90,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JObject DecimalFormatSymbols::clone()
+	JObject DecimalFormatSymbols::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DecimalFormatSymbols::equals(JObject arg0)
+	jboolean DecimalFormatSymbols::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -105,161 +105,161 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::util::Currency DecimalFormatSymbols::getCurrency()
+	android::icu::util::Currency DecimalFormatSymbols::getCurrency() const
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Landroid/icu/util/Currency;"
 		);
 	}
-	JString DecimalFormatSymbols::getCurrencySymbol()
+	JString DecimalFormatSymbols::getCurrencySymbol() const
 	{
 		return callObjectMethod(
 			"getCurrencySymbol",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getDecimalSeparator()
+	jchar DecimalFormatSymbols::getDecimalSeparator() const
 	{
 		return callMethod<jchar>(
 			"getDecimalSeparator",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getDecimalSeparatorString()
+	JString DecimalFormatSymbols::getDecimalSeparatorString() const
 	{
 		return callObjectMethod(
 			"getDecimalSeparatorString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getDigit()
+	jchar DecimalFormatSymbols::getDigit() const
 	{
 		return callMethod<jchar>(
 			"getDigit",
 			"()C"
 		);
 	}
-	JArray DecimalFormatSymbols::getDigitStrings()
+	JArray DecimalFormatSymbols::getDigitStrings() const
 	{
 		return callObjectMethod(
 			"getDigitStrings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JCharArray DecimalFormatSymbols::getDigits()
+	JCharArray DecimalFormatSymbols::getDigits() const
 	{
 		return callObjectMethod(
 			"getDigits",
 			"()[C"
 		);
 	}
-	JString DecimalFormatSymbols::getExponentMultiplicationSign()
+	JString DecimalFormatSymbols::getExponentMultiplicationSign() const
 	{
 		return callObjectMethod(
 			"getExponentMultiplicationSign",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormatSymbols::getExponentSeparator()
+	JString DecimalFormatSymbols::getExponentSeparator() const
 	{
 		return callObjectMethod(
 			"getExponentSeparator",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getGroupingSeparator()
+	jchar DecimalFormatSymbols::getGroupingSeparator() const
 	{
 		return callMethod<jchar>(
 			"getGroupingSeparator",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getGroupingSeparatorString()
+	JString DecimalFormatSymbols::getGroupingSeparatorString() const
 	{
 		return callObjectMethod(
 			"getGroupingSeparatorString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormatSymbols::getInfinity()
+	JString DecimalFormatSymbols::getInfinity() const
 	{
 		return callObjectMethod(
 			"getInfinity",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormatSymbols::getInternationalCurrencySymbol()
+	JString DecimalFormatSymbols::getInternationalCurrencySymbol() const
 	{
 		return callObjectMethod(
 			"getInternationalCurrencySymbol",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::Locale DecimalFormatSymbols::getLocale()
+	java::util::Locale DecimalFormatSymbols::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	jchar DecimalFormatSymbols::getMinusSign()
+	jchar DecimalFormatSymbols::getMinusSign() const
 	{
 		return callMethod<jchar>(
 			"getMinusSign",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getMinusSignString()
+	JString DecimalFormatSymbols::getMinusSignString() const
 	{
 		return callObjectMethod(
 			"getMinusSignString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getMonetaryDecimalSeparator()
+	jchar DecimalFormatSymbols::getMonetaryDecimalSeparator() const
 	{
 		return callMethod<jchar>(
 			"getMonetaryDecimalSeparator",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getMonetaryDecimalSeparatorString()
+	JString DecimalFormatSymbols::getMonetaryDecimalSeparatorString() const
 	{
 		return callObjectMethod(
 			"getMonetaryDecimalSeparatorString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getMonetaryGroupingSeparator()
+	jchar DecimalFormatSymbols::getMonetaryGroupingSeparator() const
 	{
 		return callMethod<jchar>(
 			"getMonetaryGroupingSeparator",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getMonetaryGroupingSeparatorString()
+	JString DecimalFormatSymbols::getMonetaryGroupingSeparatorString() const
 	{
 		return callObjectMethod(
 			"getMonetaryGroupingSeparatorString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormatSymbols::getNaN()
+	JString DecimalFormatSymbols::getNaN() const
 	{
 		return callObjectMethod(
 			"getNaN",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getPadEscape()
+	jchar DecimalFormatSymbols::getPadEscape() const
 	{
 		return callMethod<jchar>(
 			"getPadEscape",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getPatternForCurrencySpacing(jint arg0, jboolean arg1)
+	JString DecimalFormatSymbols::getPatternForCurrencySpacing(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"getPatternForCurrencySpacing",
@@ -268,84 +268,84 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	jchar DecimalFormatSymbols::getPatternSeparator()
+	jchar DecimalFormatSymbols::getPatternSeparator() const
 	{
 		return callMethod<jchar>(
 			"getPatternSeparator",
 			"()C"
 		);
 	}
-	jchar DecimalFormatSymbols::getPerMill()
+	jchar DecimalFormatSymbols::getPerMill() const
 	{
 		return callMethod<jchar>(
 			"getPerMill",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getPerMillString()
+	JString DecimalFormatSymbols::getPerMillString() const
 	{
 		return callObjectMethod(
 			"getPerMillString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getPercent()
+	jchar DecimalFormatSymbols::getPercent() const
 	{
 		return callMethod<jchar>(
 			"getPercent",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getPercentString()
+	JString DecimalFormatSymbols::getPercentString() const
 	{
 		return callObjectMethod(
 			"getPercentString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getPlusSign()
+	jchar DecimalFormatSymbols::getPlusSign() const
 	{
 		return callMethod<jchar>(
 			"getPlusSign",
 			"()C"
 		);
 	}
-	JString DecimalFormatSymbols::getPlusSignString()
+	JString DecimalFormatSymbols::getPlusSignString() const
 	{
 		return callObjectMethod(
 			"getPlusSignString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormatSymbols::getSignificantDigit()
+	jchar DecimalFormatSymbols::getSignificantDigit() const
 	{
 		return callMethod<jchar>(
 			"getSignificantDigit",
 			"()C"
 		);
 	}
-	android::icu::util::ULocale DecimalFormatSymbols::getULocale()
+	android::icu::util::ULocale DecimalFormatSymbols::getULocale() const
 	{
 		return callObjectMethod(
 			"getULocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	jchar DecimalFormatSymbols::getZeroDigit()
+	jchar DecimalFormatSymbols::getZeroDigit() const
 	{
 		return callMethod<jchar>(
 			"getZeroDigit",
 			"()C"
 		);
 	}
-	jint DecimalFormatSymbols::hashCode()
+	jint DecimalFormatSymbols::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void DecimalFormatSymbols::setCurrency(android::icu::util::Currency arg0)
+	void DecimalFormatSymbols::setCurrency(android::icu::util::Currency arg0) const
 	{
 		callMethod<void>(
 			"setCurrency",
@@ -353,7 +353,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormatSymbols::setCurrencySymbol(JString arg0)
+	void DecimalFormatSymbols::setCurrencySymbol(JString arg0) const
 	{
 		callMethod<void>(
 			"setCurrencySymbol",
@@ -361,7 +361,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0)
+	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setDecimalSeparator",
@@ -369,7 +369,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setDecimalSeparatorString(JString arg0)
+	void DecimalFormatSymbols::setDecimalSeparatorString(JString arg0) const
 	{
 		callMethod<void>(
 			"setDecimalSeparatorString",
@@ -377,7 +377,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setDigit(jchar arg0)
+	void DecimalFormatSymbols::setDigit(jchar arg0) const
 	{
 		callMethod<void>(
 			"setDigit",
@@ -385,7 +385,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setDigitStrings(JArray arg0)
+	void DecimalFormatSymbols::setDigitStrings(JArray arg0) const
 	{
 		callMethod<void>(
 			"setDigitStrings",
@@ -393,7 +393,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DecimalFormatSymbols::setExponentMultiplicationSign(JString arg0)
+	void DecimalFormatSymbols::setExponentMultiplicationSign(JString arg0) const
 	{
 		callMethod<void>(
 			"setExponentMultiplicationSign",
@@ -401,7 +401,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setExponentSeparator(JString arg0)
+	void DecimalFormatSymbols::setExponentSeparator(JString arg0) const
 	{
 		callMethod<void>(
 			"setExponentSeparator",
@@ -409,7 +409,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0)
+	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setGroupingSeparator",
@@ -417,7 +417,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setGroupingSeparatorString(JString arg0)
+	void DecimalFormatSymbols::setGroupingSeparatorString(JString arg0) const
 	{
 		callMethod<void>(
 			"setGroupingSeparatorString",
@@ -425,7 +425,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setInfinity(JString arg0)
+	void DecimalFormatSymbols::setInfinity(JString arg0) const
 	{
 		callMethod<void>(
 			"setInfinity",
@@ -433,7 +433,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setInternationalCurrencySymbol(JString arg0)
+	void DecimalFormatSymbols::setInternationalCurrencySymbol(JString arg0) const
 	{
 		callMethod<void>(
 			"setInternationalCurrencySymbol",
@@ -441,7 +441,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setMinusSign(jchar arg0)
+	void DecimalFormatSymbols::setMinusSign(jchar arg0) const
 	{
 		callMethod<void>(
 			"setMinusSign",
@@ -449,7 +449,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setMinusSignString(JString arg0)
+	void DecimalFormatSymbols::setMinusSignString(JString arg0) const
 	{
 		callMethod<void>(
 			"setMinusSignString",
@@ -457,7 +457,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar arg0)
+	void DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setMonetaryDecimalSeparator",
@@ -465,7 +465,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setMonetaryDecimalSeparatorString(JString arg0)
+	void DecimalFormatSymbols::setMonetaryDecimalSeparatorString(JString arg0) const
 	{
 		callMethod<void>(
 			"setMonetaryDecimalSeparatorString",
@@ -473,7 +473,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setMonetaryGroupingSeparator(jchar arg0)
+	void DecimalFormatSymbols::setMonetaryGroupingSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setMonetaryGroupingSeparator",
@@ -481,7 +481,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setMonetaryGroupingSeparatorString(JString arg0)
+	void DecimalFormatSymbols::setMonetaryGroupingSeparatorString(JString arg0) const
 	{
 		callMethod<void>(
 			"setMonetaryGroupingSeparatorString",
@@ -489,7 +489,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setNaN(JString arg0)
+	void DecimalFormatSymbols::setNaN(JString arg0) const
 	{
 		callMethod<void>(
 			"setNaN",
@@ -497,7 +497,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setPadEscape(jchar arg0)
+	void DecimalFormatSymbols::setPadEscape(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPadEscape",
@@ -505,7 +505,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setPatternForCurrencySpacing(jint arg0, jboolean arg1, JString arg2)
+	void DecimalFormatSymbols::setPatternForCurrencySpacing(jint arg0, jboolean arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setPatternForCurrencySpacing",
@@ -515,7 +515,7 @@ namespace android::icu::text
 			arg2.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setPatternSeparator(jchar arg0)
+	void DecimalFormatSymbols::setPatternSeparator(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPatternSeparator",
@@ -523,7 +523,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setPerMill(jchar arg0)
+	void DecimalFormatSymbols::setPerMill(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPerMill",
@@ -531,7 +531,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setPerMillString(JString arg0)
+	void DecimalFormatSymbols::setPerMillString(JString arg0) const
 	{
 		callMethod<void>(
 			"setPerMillString",
@@ -539,7 +539,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setPercent(jchar arg0)
+	void DecimalFormatSymbols::setPercent(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPercent",
@@ -547,7 +547,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setPercentString(JString arg0)
+	void DecimalFormatSymbols::setPercentString(JString arg0) const
 	{
 		callMethod<void>(
 			"setPercentString",
@@ -555,7 +555,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setPlusSign(jchar arg0)
+	void DecimalFormatSymbols::setPlusSign(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPlusSign",
@@ -563,7 +563,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setPlusSignString(JString arg0)
+	void DecimalFormatSymbols::setPlusSignString(JString arg0) const
 	{
 		callMethod<void>(
 			"setPlusSignString",
@@ -571,7 +571,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setSignificantDigit(jchar arg0)
+	void DecimalFormatSymbols::setSignificantDigit(jchar arg0) const
 	{
 		callMethod<void>(
 			"setSignificantDigit",
@@ -579,7 +579,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setZeroDigit(jchar arg0)
+	void DecimalFormatSymbols::setZeroDigit(jchar arg0) const
 	{
 		callMethod<void>(
 			"setZeroDigit",

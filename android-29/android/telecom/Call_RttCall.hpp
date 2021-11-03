@@ -21,11 +21,11 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		jint getRttAudioMode();
-		JString read();
-		JString readImmediately();
-		void setRttMode(jint arg0);
-		void write(JString arg0);
+		jint getRttAudioMode() const;
+		JString read() const;
+		JString readImmediately() const;
+		void setRttMode(jint arg0) const;
+		void write(JString arg0) const;
 	};
 } // namespace android::telecom
 

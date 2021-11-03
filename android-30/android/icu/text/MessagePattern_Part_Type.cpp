@@ -141,7 +141,7 @@ namespace android::icu::text
 			"()[Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	jboolean MessagePattern_Part_Type::hasNumericValue()
+	jboolean MessagePattern_Part_Type::hasNumericValue() const
 	{
 		return callMethod<jboolean>(
 			"hasNumericValue",

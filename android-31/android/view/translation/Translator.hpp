@@ -25,9 +25,9 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		void destroy();
-		jboolean isDestroyed();
-		void translate(android::view::translation::TranslationRequest arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3);
+		void destroy() const;
+		jboolean isDestroyed() const;
+		void translate(android::view::translation::TranslationRequest arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3) const;
 	};
 } // namespace android::view::translation
 

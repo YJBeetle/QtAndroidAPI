@@ -21,14 +21,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	jint PrinterId::describeContents()
+	jint PrinterId::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PrinterId::equals(JObject arg0)
+	jboolean PrinterId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,28 +36,28 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	JString PrinterId::getLocalId()
+	JString PrinterId::getLocalId() const
 	{
 		return callObjectMethod(
 			"getLocalId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PrinterId::hashCode()
+	jint PrinterId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrinterId::toString()
+	JString PrinterId::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PrinterId::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PrinterId::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

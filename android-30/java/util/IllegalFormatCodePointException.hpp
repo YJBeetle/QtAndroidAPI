@@ -19,8 +19,8 @@ namespace java::util
 		IllegalFormatCodePointException(jint arg0);
 		
 		// Methods
-		jint getCodePoint();
-		JString getMessage();
+		jint getCodePoint() const;
+		JString getMessage() const;
 	};
 } // namespace java::util
 

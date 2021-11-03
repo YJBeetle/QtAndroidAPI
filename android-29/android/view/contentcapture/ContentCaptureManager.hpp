@@ -25,11 +25,11 @@ namespace android::view::contentcapture
 		// Constructors
 		
 		// Methods
-		JObject getContentCaptureConditions();
-		android::content::ComponentName getServiceComponentName();
-		jboolean isContentCaptureEnabled();
-		void removeData(android::view::contentcapture::DataRemovalRequest arg0);
-		void setContentCaptureEnabled(jboolean arg0);
+		JObject getContentCaptureConditions() const;
+		android::content::ComponentName getServiceComponentName() const;
+		jboolean isContentCaptureEnabled() const;
+		void removeData(android::view::contentcapture::DataRemovalRequest arg0) const;
+		void setContentCaptureEnabled(jboolean arg0) const;
 	};
 } // namespace android::view::contentcapture
 

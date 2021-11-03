@@ -35,17 +35,17 @@ namespace android::net
 		// Methods
 		static android::net::MacAddress fromBytes(JByteArray arg0);
 		static android::net::MacAddress fromString(JString arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAddressType();
-		java::net::Inet6Address getLinkLocalIpv6FromEui48Mac();
-		jint hashCode();
-		jboolean isLocallyAssigned();
-		jboolean matches(android::net::MacAddress arg0, android::net::MacAddress arg1);
-		JByteArray toByteArray();
-		JString toOuiString();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAddressType() const;
+		java::net::Inet6Address getLinkLocalIpv6FromEui48Mac() const;
+		jint hashCode() const;
+		jboolean isLocallyAssigned() const;
+		jboolean matches(android::net::MacAddress arg0, android::net::MacAddress arg1) const;
+		JByteArray toByteArray() const;
+		JString toOuiString() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

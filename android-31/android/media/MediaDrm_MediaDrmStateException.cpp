@@ -11,21 +11,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaDrm_MediaDrmStateException::getDiagnosticInfo()
+	JString MediaDrm_MediaDrmStateException::getDiagnosticInfo() const
 	{
 		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaDrm_MediaDrmStateException::getErrorCode()
+	jint MediaDrm_MediaDrmStateException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
-	jboolean MediaDrm_MediaDrmStateException::isTransient()
+	jboolean MediaDrm_MediaDrmStateException::isTransient() const
 	{
 		return callMethod<jboolean>(
 			"isTransient",

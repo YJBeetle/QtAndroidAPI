@@ -27,7 +27,7 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	void AnimationSet::addAnimation(android::view::animation::Animation arg0)
+	void AnimationSet::addAnimation(android::view::animation::Animation arg0) const
 	{
 		callMethod<void>(
 			"addAnimation",
@@ -35,35 +35,35 @@ namespace android::view::animation
 			arg0.object()
 		);
 	}
-	jlong AnimationSet::computeDurationHint()
+	jlong AnimationSet::computeDurationHint() const
 	{
 		return callMethod<jlong>(
 			"computeDurationHint",
 			"()J"
 		);
 	}
-	JObject AnimationSet::getAnimations()
+	JObject AnimationSet::getAnimations() const
 	{
 		return callObjectMethod(
 			"getAnimations",
 			"()Ljava/util/List;"
 		);
 	}
-	jlong AnimationSet::getDuration()
+	jlong AnimationSet::getDuration() const
 	{
 		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
-	jlong AnimationSet::getStartTime()
+	jlong AnimationSet::getStartTime() const
 	{
 		return callMethod<jlong>(
 			"getStartTime",
 			"()J"
 		);
 	}
-	jboolean AnimationSet::getTransformation(jlong arg0, android::view::animation::Transformation arg1)
+	jboolean AnimationSet::getTransformation(jlong arg0, android::view::animation::Transformation arg1) const
 	{
 		return callMethod<jboolean>(
 			"getTransformation",
@@ -72,7 +72,7 @@ namespace android::view::animation
 			arg1.object()
 		);
 	}
-	void AnimationSet::initialize(jint arg0, jint arg1, jint arg2, jint arg3)
+	void AnimationSet::initialize(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -83,14 +83,14 @@ namespace android::view::animation
 			arg3
 		);
 	}
-	void AnimationSet::reset()
+	void AnimationSet::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void AnimationSet::restrictDuration(jlong arg0)
+	void AnimationSet::restrictDuration(jlong arg0) const
 	{
 		callMethod<void>(
 			"restrictDuration",
@@ -98,7 +98,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void AnimationSet::scaleCurrentDuration(jfloat arg0)
+	void AnimationSet::scaleCurrentDuration(jfloat arg0) const
 	{
 		callMethod<void>(
 			"scaleCurrentDuration",
@@ -106,7 +106,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void AnimationSet::setDuration(jlong arg0)
+	void AnimationSet::setDuration(jlong arg0) const
 	{
 		callMethod<void>(
 			"setDuration",
@@ -114,7 +114,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void AnimationSet::setFillAfter(jboolean arg0)
+	void AnimationSet::setFillAfter(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFillAfter",
@@ -122,7 +122,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void AnimationSet::setFillBefore(jboolean arg0)
+	void AnimationSet::setFillBefore(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFillBefore",
@@ -130,7 +130,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void AnimationSet::setRepeatMode(jint arg0)
+	void AnimationSet::setRepeatMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setRepeatMode",
@@ -138,7 +138,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void AnimationSet::setStartOffset(jlong arg0)
+	void AnimationSet::setStartOffset(jlong arg0) const
 	{
 		callMethod<void>(
 			"setStartOffset",
@@ -146,7 +146,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void AnimationSet::setStartTime(jlong arg0)
+	void AnimationSet::setStartTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setStartTime",
@@ -154,14 +154,14 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	jboolean AnimationSet::willChangeBounds()
+	jboolean AnimationSet::willChangeBounds() const
 	{
 		return callMethod<jboolean>(
 			"willChangeBounds",
 			"()Z"
 		);
 	}
-	jboolean AnimationSet::willChangeTransformationMatrix()
+	jboolean AnimationSet::willChangeTransformationMatrix() const
 	{
 		return callMethod<jboolean>(
 			"willChangeTransformationMatrix",

@@ -12,21 +12,21 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	void Translator::destroy()
+	void Translator::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	jboolean Translator::isDestroyed()
+	jboolean Translator::isDestroyed() const
 	{
 		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
-	void Translator::translate(android::view::translation::TranslationRequest arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3)
+	void Translator::translate(android::view::translation::TranslationRequest arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"translate",

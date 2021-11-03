@@ -39,11 +39,11 @@ namespace android::service::quickaccesswallet
 		QuickAccessWalletService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onWalletCardSelected(android::service::quickaccesswallet::SelectWalletCardRequest arg0);
-		void onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, JObject arg1);
-		void onWalletDismissed();
-		void sendWalletServiceEvent(android::service::quickaccesswallet::WalletServiceEvent arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		void onWalletCardSelected(android::service::quickaccesswallet::SelectWalletCardRequest arg0) const;
+		void onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, JObject arg1) const;
+		void onWalletDismissed() const;
+		void sendWalletServiceEvent(android::service::quickaccesswallet::WalletServiceEvent arg0) const;
 	};
 } // namespace android::service::quickaccesswallet
 

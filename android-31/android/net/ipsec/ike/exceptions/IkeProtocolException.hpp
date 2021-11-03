@@ -32,7 +32,7 @@ namespace android::net::ipsec::ike::exceptions
 		// Constructors
 		
 		// Methods
-		jint getErrorType();
+		jint getErrorType() const;
 	};
 } // namespace android::net::ipsec::ike::exceptions
 

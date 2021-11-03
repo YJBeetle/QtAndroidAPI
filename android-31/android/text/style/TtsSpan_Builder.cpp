@@ -18,14 +18,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan TtsSpan_Builder::build()
+	android::text::style::TtsSpan TtsSpan_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/style/TtsSpan;"
 		);
 	}
-	android::text::style::TtsSpan_Builder TtsSpan_Builder::setIntArgument(JString arg0, jint arg1)
+	android::text::style::TtsSpan_Builder TtsSpan_Builder::setIntArgument(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setIntArgument",
@@ -34,7 +34,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	android::text::style::TtsSpan_Builder TtsSpan_Builder::setLongArgument(JString arg0, jlong arg1)
+	android::text::style::TtsSpan_Builder TtsSpan_Builder::setLongArgument(JString arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"setLongArgument",
@@ -43,7 +43,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	android::text::style::TtsSpan_Builder TtsSpan_Builder::setStringArgument(JString arg0, JString arg1)
+	android::text::style::TtsSpan_Builder TtsSpan_Builder::setStringArgument(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setStringArgument",

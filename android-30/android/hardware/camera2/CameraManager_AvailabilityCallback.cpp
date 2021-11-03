@@ -16,14 +16,14 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraManager_AvailabilityCallback::onCameraAccessPrioritiesChanged()
+	void CameraManager_AvailabilityCallback::onCameraAccessPrioritiesChanged() const
 	{
 		callMethod<void>(
 			"onCameraAccessPrioritiesChanged",
 			"()V"
 		);
 	}
-	void CameraManager_AvailabilityCallback::onCameraAvailable(JString arg0)
+	void CameraManager_AvailabilityCallback::onCameraAvailable(JString arg0) const
 	{
 		callMethod<void>(
 			"onCameraAvailable",
@@ -31,7 +31,7 @@ namespace android::hardware::camera2
 			arg0.object<jstring>()
 		);
 	}
-	void CameraManager_AvailabilityCallback::onCameraUnavailable(JString arg0)
+	void CameraManager_AvailabilityCallback::onCameraUnavailable(JString arg0) const
 	{
 		callMethod<void>(
 			"onCameraUnavailable",
@@ -39,7 +39,7 @@ namespace android::hardware::camera2
 			arg0.object<jstring>()
 		);
 	}
-	void CameraManager_AvailabilityCallback::onPhysicalCameraAvailable(JString arg0, JString arg1)
+	void CameraManager_AvailabilityCallback::onPhysicalCameraAvailable(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onPhysicalCameraAvailable",
@@ -48,7 +48,7 @@ namespace android::hardware::camera2
 			arg1.object<jstring>()
 		);
 	}
-	void CameraManager_AvailabilityCallback::onPhysicalCameraUnavailable(JString arg0, JString arg1)
+	void CameraManager_AvailabilityCallback::onPhysicalCameraUnavailable(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onPhysicalCameraUnavailable",

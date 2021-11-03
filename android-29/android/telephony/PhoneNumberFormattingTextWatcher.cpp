@@ -23,7 +23,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void PhoneNumberFormattingTextWatcher::afterTextChanged(JObject arg0)
+	void PhoneNumberFormattingTextWatcher::afterTextChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"afterTextChanged",
@@ -31,7 +31,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneNumberFormattingTextWatcher::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
+	void PhoneNumberFormattingTextWatcher::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"beforeTextChanged",
@@ -42,7 +42,7 @@ namespace android::telephony
 			arg3
 		);
 	}
-	void PhoneNumberFormattingTextWatcher::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
+	void PhoneNumberFormattingTextWatcher::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onTextChanged",

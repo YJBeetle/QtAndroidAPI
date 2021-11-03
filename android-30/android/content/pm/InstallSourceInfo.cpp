@@ -21,42 +21,42 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jint InstallSourceInfo::describeContents()
+	jint InstallSourceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString InstallSourceInfo::getInitiatingPackageName()
+	JString InstallSourceInfo::getInitiatingPackageName() const
 	{
 		return callObjectMethod(
 			"getInitiatingPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::pm::SigningInfo InstallSourceInfo::getInitiatingPackageSigningInfo()
+	android::content::pm::SigningInfo InstallSourceInfo::getInitiatingPackageSigningInfo() const
 	{
 		return callObjectMethod(
 			"getInitiatingPackageSigningInfo",
 			"()Landroid/content/pm/SigningInfo;"
 		);
 	}
-	JString InstallSourceInfo::getInstallingPackageName()
+	JString InstallSourceInfo::getInstallingPackageName() const
 	{
 		return callObjectMethod(
 			"getInstallingPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InstallSourceInfo::getOriginatingPackageName()
+	JString InstallSourceInfo::getOriginatingPackageName() const
 	{
 		return callObjectMethod(
 			"getOriginatingPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InstallSourceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InstallSourceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

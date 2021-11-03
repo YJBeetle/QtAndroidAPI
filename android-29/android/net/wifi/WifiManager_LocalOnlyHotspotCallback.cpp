@@ -44,7 +44,7 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
+	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0) const
 	{
 		callMethod<void>(
 			"onFailed",
@@ -52,7 +52,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager_LocalOnlyHotspotCallback::onStarted(android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0)
+	void WifiManager_LocalOnlyHotspotCallback::onStarted(android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0) const
 	{
 		callMethod<void>(
 			"onStarted",
@@ -60,7 +60,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	void WifiManager_LocalOnlyHotspotCallback::onStopped()
+	void WifiManager_LocalOnlyHotspotCallback::onStopped() const
 	{
 		callMethod<void>(
 			"onStopped",

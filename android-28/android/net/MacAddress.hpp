@@ -31,15 +31,15 @@ namespace android::net
 		// Methods
 		static android::net::MacAddress fromBytes(JByteArray arg0);
 		static android::net::MacAddress fromString(JString arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAddressType();
-		jint hashCode();
-		jboolean isLocallyAssigned();
-		JByteArray toByteArray();
-		JString toOuiString();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAddressType() const;
+		jint hashCode() const;
+		jboolean isLocallyAssigned() const;
+		JByteArray toByteArray() const;
+		JString toOuiString() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

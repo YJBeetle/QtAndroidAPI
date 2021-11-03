@@ -85,21 +85,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Application Service::getApplication()
+	android::app::Application Service::getApplication() const
 	{
 		return callObjectMethod(
 			"getApplication",
 			"()Landroid/app/Application;"
 		);
 	}
-	jint Service::getForegroundServiceType()
+	jint Service::getForegroundServiceType() const
 	{
 		return callMethod<jint>(
 			"getForegroundServiceType",
 			"()I"
 		);
 	}
-	JObject Service::onBind(android::content::Intent arg0)
+	JObject Service::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -107,7 +107,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Service::onConfigurationChanged(android::content::res::Configuration arg0)
+	void Service::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -115,28 +115,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Service::onCreate()
+	void Service::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void Service::onDestroy()
+	void Service::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void Service::onLowMemory()
+	void Service::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	void Service::onRebind(android::content::Intent arg0)
+	void Service::onRebind(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"onRebind",
@@ -144,7 +144,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Service::onStart(android::content::Intent arg0, jint arg1)
+	void Service::onStart(android::content::Intent arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onStart",
@@ -153,7 +153,7 @@ namespace android::app
 			arg1
 		);
 	}
-	jint Service::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2)
+	jint Service::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"onStartCommand",
@@ -163,7 +163,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Service::onTaskRemoved(android::content::Intent arg0)
+	void Service::onTaskRemoved(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"onTaskRemoved",
@@ -171,7 +171,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Service::onTrimMemory(jint arg0)
+	void Service::onTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"onTrimMemory",
@@ -179,7 +179,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Service::onUnbind(android::content::Intent arg0)
+	jboolean Service::onUnbind(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnbind",
@@ -187,7 +187,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Service::startForeground(jint arg0, android::app::Notification arg1)
+	void Service::startForeground(jint arg0, android::app::Notification arg1) const
 	{
 		callMethod<void>(
 			"startForeground",
@@ -196,7 +196,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Service::startForeground(jint arg0, android::app::Notification arg1, jint arg2)
+	void Service::startForeground(jint arg0, android::app::Notification arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"startForeground",
@@ -206,7 +206,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Service::stopForeground(jboolean arg0)
+	void Service::stopForeground(jboolean arg0) const
 	{
 		callMethod<void>(
 			"stopForeground",
@@ -214,7 +214,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Service::stopForeground(jint arg0)
+	void Service::stopForeground(jint arg0) const
 	{
 		callMethod<void>(
 			"stopForeground",
@@ -222,14 +222,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Service::stopSelf()
+	void Service::stopSelf() const
 	{
 		callMethod<void>(
 			"stopSelf",
 			"()V"
 		);
 	}
-	void Service::stopSelf(jint arg0)
+	void Service::stopSelf(jint arg0) const
 	{
 		callMethod<void>(
 			"stopSelf",
@@ -237,7 +237,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Service::stopSelfResult(jint arg0)
+	jboolean Service::stopSelfResult(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"stopSelfResult",

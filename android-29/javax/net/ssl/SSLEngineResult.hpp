@@ -28,12 +28,12 @@ namespace javax::net::ssl
 		SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3, jlong arg4);
 		
 		// Methods
-		jint bytesConsumed();
-		jint bytesProduced();
-		javax::net::ssl::SSLEngineResult_HandshakeStatus getHandshakeStatus();
-		javax::net::ssl::SSLEngineResult_Status getStatus();
-		jlong sequenceNumber();
-		JString toString();
+		jint bytesConsumed() const;
+		jint bytesProduced() const;
+		javax::net::ssl::SSLEngineResult_HandshakeStatus getHandshakeStatus() const;
+		javax::net::ssl::SSLEngineResult_Status getStatus() const;
+		jlong sequenceNumber() const;
+		JString toString() const;
 	};
 } // namespace javax::net::ssl
 

@@ -27,29 +27,29 @@ namespace android::opengl
 		GLSurfaceView(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jint getDebugFlags();
-		jboolean getPreserveEGLContextOnPause();
-		jint getRenderMode();
-		void onPause();
-		void onResume();
-		void queueEvent(JObject arg0);
-		void requestRender();
-		void setDebugFlags(jint arg0);
-		void setEGLConfigChooser(JObject arg0);
-		void setEGLConfigChooser(jboolean arg0);
-		void setEGLConfigChooser(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void setEGLContextClientVersion(jint arg0);
-		void setEGLContextFactory(JObject arg0);
-		void setEGLWindowSurfaceFactory(JObject arg0);
-		void setGLWrapper(JObject arg0);
-		void setPreserveEGLContextOnPause(jboolean arg0);
-		void setRenderMode(jint arg0);
-		void setRenderer(JObject arg0);
-		void surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3);
-		void surfaceCreated(JObject arg0);
-		void surfaceDestroyed(JObject arg0);
-		void surfaceRedrawNeeded(JObject arg0);
-		void surfaceRedrawNeededAsync(JObject arg0, JObject arg1);
+		jint getDebugFlags() const;
+		jboolean getPreserveEGLContextOnPause() const;
+		jint getRenderMode() const;
+		void onPause() const;
+		void onResume() const;
+		void queueEvent(JObject arg0) const;
+		void requestRender() const;
+		void setDebugFlags(jint arg0) const;
+		void setEGLConfigChooser(JObject arg0) const;
+		void setEGLConfigChooser(jboolean arg0) const;
+		void setEGLConfigChooser(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
+		void setEGLContextClientVersion(jint arg0) const;
+		void setEGLContextFactory(JObject arg0) const;
+		void setEGLWindowSurfaceFactory(JObject arg0) const;
+		void setGLWrapper(JObject arg0) const;
+		void setPreserveEGLContextOnPause(jboolean arg0) const;
+		void setRenderMode(jint arg0) const;
+		void setRenderer(JObject arg0) const;
+		void surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3) const;
+		void surfaceCreated(JObject arg0) const;
+		void surfaceDestroyed(JObject arg0) const;
+		void surfaceRedrawNeeded(JObject arg0) const;
+		void surfaceRedrawNeededAsync(JObject arg0, JObject arg1) const;
 	};
 } // namespace android::opengl
 

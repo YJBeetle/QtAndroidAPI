@@ -71,7 +71,7 @@ namespace android::content::res::loader
 			arg1.object()
 		);
 	}
-	void ResourcesProvider::close()
+	void ResourcesProvider::close() const
 	{
 		callMethod<void>(
 			"close",

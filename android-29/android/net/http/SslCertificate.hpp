@@ -39,14 +39,14 @@ namespace android::net::http
 		// Methods
 		static android::net::http::SslCertificate restoreState(android::os::Bundle arg0);
 		static android::os::Bundle saveState(android::net::http::SslCertificate arg0);
-		android::net::http::SslCertificate_DName getIssuedBy();
-		android::net::http::SslCertificate_DName getIssuedTo();
-		JString getValidNotAfter();
-		java::util::Date getValidNotAfterDate();
-		JString getValidNotBefore();
-		java::util::Date getValidNotBeforeDate();
-		java::security::cert::X509Certificate getX509Certificate();
-		JString toString();
+		android::net::http::SslCertificate_DName getIssuedBy() const;
+		android::net::http::SslCertificate_DName getIssuedTo() const;
+		JString getValidNotAfter() const;
+		java::util::Date getValidNotAfterDate() const;
+		JString getValidNotBefore() const;
+		java::util::Date getValidNotBeforeDate() const;
+		java::security::cert::X509Certificate getX509Certificate() const;
+		JString toString() const;
 	};
 } // namespace android::net::http
 

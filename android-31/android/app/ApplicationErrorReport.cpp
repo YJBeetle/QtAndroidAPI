@@ -144,14 +144,14 @@ namespace android::app
 			arg2
 		);
 	}
-	jint ApplicationErrorReport::describeContents()
+	jint ApplicationErrorReport::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ApplicationErrorReport::dump(JObject arg0, JString arg1)
+	void ApplicationErrorReport::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -160,7 +160,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void ApplicationErrorReport::readFromParcel(android::os::Parcel arg0)
+	void ApplicationErrorReport::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -168,7 +168,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ApplicationErrorReport::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ApplicationErrorReport::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

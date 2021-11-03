@@ -13,7 +13,7 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean MultiResolutionStreamConfigurationMap::equals(JObject arg0)
+	jboolean MultiResolutionStreamConfigurationMap::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -21,14 +21,14 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	JIntArray MultiResolutionStreamConfigurationMap::getInputFormats()
+	JIntArray MultiResolutionStreamConfigurationMap::getInputFormats() const
 	{
 		return callObjectMethod(
 			"getInputFormats",
 			"()[I"
 		);
 	}
-	JObject MultiResolutionStreamConfigurationMap::getInputInfo(jint arg0)
+	JObject MultiResolutionStreamConfigurationMap::getInputInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInputInfo",
@@ -36,14 +36,14 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	JIntArray MultiResolutionStreamConfigurationMap::getOutputFormats()
+	JIntArray MultiResolutionStreamConfigurationMap::getOutputFormats() const
 	{
 		return callObjectMethod(
 			"getOutputFormats",
 			"()[I"
 		);
 	}
-	JObject MultiResolutionStreamConfigurationMap::getOutputInfo(jint arg0)
+	JObject MultiResolutionStreamConfigurationMap::getOutputInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getOutputInfo",
@@ -51,14 +51,14 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	jint MultiResolutionStreamConfigurationMap::hashCode()
+	jint MultiResolutionStreamConfigurationMap::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString MultiResolutionStreamConfigurationMap::toString()
+	JString MultiResolutionStreamConfigurationMap::toString() const
 	{
 		return callObjectMethod(
 			"toString",

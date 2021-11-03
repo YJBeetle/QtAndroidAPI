@@ -30,7 +30,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	java::time::chrono::JapaneseDate JapaneseChronology::date(JObject arg0)
+	java::time::chrono::JapaneseDate JapaneseChronology::date(JObject arg0) const
 	{
 		return callObjectMethod(
 			"date",
@@ -38,7 +38,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::date(jint arg0, jint arg1, jint arg2)
+	java::time::chrono::JapaneseDate JapaneseChronology::date(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"date",
@@ -48,7 +48,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3)
+	java::time::chrono::JapaneseDate JapaneseChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"date",
@@ -59,7 +59,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::dateEpochDay(jlong arg0)
+	java::time::chrono::JapaneseDate JapaneseChronology::dateEpochDay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"dateEpochDay",
@@ -67,14 +67,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::dateNow()
+	java::time::chrono::JapaneseDate JapaneseChronology::dateNow() const
 	{
 		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/chrono/JapaneseDate;"
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::dateNow(java::time::Clock arg0)
+	java::time::chrono::JapaneseDate JapaneseChronology::dateNow(java::time::Clock arg0) const
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -82,7 +82,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::dateNow(java::time::ZoneId arg0)
+	java::time::chrono::JapaneseDate JapaneseChronology::dateNow(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -90,7 +90,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::dateYearDay(jint arg0, jint arg1)
+	java::time::chrono::JapaneseDate JapaneseChronology::dateYearDay(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -99,7 +99,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::dateYearDay(JObject arg0, jint arg1, jint arg2)
+	java::time::chrono::JapaneseDate JapaneseChronology::dateYearDay(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -109,7 +109,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::chrono::JapaneseEra JapaneseChronology::eraOf(jint arg0)
+	java::time::chrono::JapaneseEra JapaneseChronology::eraOf(jint arg0) const
 	{
 		return callObjectMethod(
 			"eraOf",
@@ -117,28 +117,28 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	JObject JapaneseChronology::eras()
+	JObject JapaneseChronology::eras() const
 	{
 		return callObjectMethod(
 			"eras",
 			"()Ljava/util/List;"
 		);
 	}
-	JString JapaneseChronology::getCalendarType()
+	JString JapaneseChronology::getCalendarType() const
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString JapaneseChronology::getId()
+	JString JapaneseChronology::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean JapaneseChronology::isLeapYear(jlong arg0)
+	jboolean JapaneseChronology::isLeapYear(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLeapYear",
@@ -146,7 +146,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	JObject JapaneseChronology::localDateTime(JObject arg0)
+	JObject JapaneseChronology::localDateTime(JObject arg0) const
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -154,7 +154,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint JapaneseChronology::prolepticYear(JObject arg0, jint arg1)
+	jint JapaneseChronology::prolepticYear(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"prolepticYear",
@@ -163,7 +163,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::temporal::ValueRange JapaneseChronology::range(java::time::temporal::ChronoField arg0)
+	java::time::temporal::ValueRange JapaneseChronology::range(java::time::temporal::ChronoField arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -171,7 +171,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
+	java::time::chrono::JapaneseDate JapaneseChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -180,7 +180,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	JObject JapaneseChronology::zonedDateTime(JObject arg0)
+	JObject JapaneseChronology::zonedDateTime(JObject arg0) const
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -188,7 +188,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	JObject JapaneseChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	JObject JapaneseChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1) const
 	{
 		return callObjectMethod(
 			"zonedDateTime",

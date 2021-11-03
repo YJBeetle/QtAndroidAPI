@@ -26,7 +26,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean ConcurrentLinkedDeque::add(JObject arg0)
+	jboolean ConcurrentLinkedDeque::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -34,7 +34,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedDeque::addAll(JObject arg0)
+	jboolean ConcurrentLinkedDeque::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -42,7 +42,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ConcurrentLinkedDeque::addFirst(JObject arg0)
+	void ConcurrentLinkedDeque::addFirst(JObject arg0) const
 	{
 		callMethod<void>(
 			"addFirst",
@@ -50,7 +50,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ConcurrentLinkedDeque::addLast(JObject arg0)
+	void ConcurrentLinkedDeque::addLast(JObject arg0) const
 	{
 		callMethod<void>(
 			"addLast",
@@ -58,14 +58,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ConcurrentLinkedDeque::clear()
+	void ConcurrentLinkedDeque::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean ConcurrentLinkedDeque::contains(JObject arg0)
+	jboolean ConcurrentLinkedDeque::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -73,21 +73,21 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentLinkedDeque::descendingIterator()
+	JObject ConcurrentLinkedDeque::descendingIterator() const
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::element()
+	JObject ConcurrentLinkedDeque::element() const
 	{
 		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void ConcurrentLinkedDeque::forEach(JObject arg0)
+	void ConcurrentLinkedDeque::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -95,35 +95,35 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ConcurrentLinkedDeque::getFirst()
+	JObject ConcurrentLinkedDeque::getFirst() const
 	{
 		return callObjectMethod(
 			"getFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::getLast()
+	JObject ConcurrentLinkedDeque::getLast() const
 	{
 		return callObjectMethod(
 			"getLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ConcurrentLinkedDeque::isEmpty()
+	jboolean ConcurrentLinkedDeque::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject ConcurrentLinkedDeque::iterator()
+	JObject ConcurrentLinkedDeque::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ConcurrentLinkedDeque::offer(JObject arg0)
+	jboolean ConcurrentLinkedDeque::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -131,7 +131,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedDeque::offerFirst(JObject arg0)
+	jboolean ConcurrentLinkedDeque::offerFirst(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offerFirst",
@@ -139,7 +139,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedDeque::offerLast(JObject arg0)
+	jboolean ConcurrentLinkedDeque::offerLast(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offerLast",
@@ -147,56 +147,56 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentLinkedDeque::peek()
+	JObject ConcurrentLinkedDeque::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::peekFirst()
+	JObject ConcurrentLinkedDeque::peekFirst() const
 	{
 		return callObjectMethod(
 			"peekFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::peekLast()
+	JObject ConcurrentLinkedDeque::peekLast() const
 	{
 		return callObjectMethod(
 			"peekLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::poll()
+	JObject ConcurrentLinkedDeque::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::pollFirst()
+	JObject ConcurrentLinkedDeque::pollFirst() const
 	{
 		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::pollLast()
+	JObject ConcurrentLinkedDeque::pollLast() const
 	{
 		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentLinkedDeque::pop()
+	JObject ConcurrentLinkedDeque::pop() const
 	{
 		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void ConcurrentLinkedDeque::push(JObject arg0)
+	void ConcurrentLinkedDeque::push(JObject arg0) const
 	{
 		callMethod<void>(
 			"push",
@@ -204,7 +204,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedDeque::remove(JObject arg0)
+	jboolean ConcurrentLinkedDeque::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -212,14 +212,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentLinkedDeque::remove()
+	JObject ConcurrentLinkedDeque::remove() const
 	{
 		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ConcurrentLinkedDeque::removeAll(JObject arg0)
+	jboolean ConcurrentLinkedDeque::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -227,14 +227,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ConcurrentLinkedDeque::removeFirst()
+	JObject ConcurrentLinkedDeque::removeFirst() const
 	{
 		return callObjectMethod(
 			"removeFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ConcurrentLinkedDeque::removeFirstOccurrence(JObject arg0)
+	jboolean ConcurrentLinkedDeque::removeFirstOccurrence(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeFirstOccurrence",
@@ -242,7 +242,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedDeque::removeIf(JObject arg0)
+	jboolean ConcurrentLinkedDeque::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -250,14 +250,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ConcurrentLinkedDeque::removeLast()
+	JObject ConcurrentLinkedDeque::removeLast() const
 	{
 		return callObjectMethod(
 			"removeLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ConcurrentLinkedDeque::removeLastOccurrence(JObject arg0)
+	jboolean ConcurrentLinkedDeque::removeLastOccurrence(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeLastOccurrence",
@@ -265,7 +265,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentLinkedDeque::retainAll(JObject arg0)
+	jboolean ConcurrentLinkedDeque::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -273,28 +273,28 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ConcurrentLinkedDeque::size()
+	jint ConcurrentLinkedDeque::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject ConcurrentLinkedDeque::spliterator()
+	JObject ConcurrentLinkedDeque::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObjectArray ConcurrentLinkedDeque::toArray()
+	JObjectArray ConcurrentLinkedDeque::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray ConcurrentLinkedDeque::toArray(JObjectArray arg0)
+	JObjectArray ConcurrentLinkedDeque::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -302,7 +302,7 @@ namespace java::util::concurrent
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString ConcurrentLinkedDeque::toString()
+	JString ConcurrentLinkedDeque::toString() const
 	{
 		return callObjectMethod(
 			"toString",

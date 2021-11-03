@@ -22,9 +22,9 @@ namespace android::bluetooth::le
 		PeriodicAdvertisingParameters_Builder();
 		
 		// Methods
-		android::bluetooth::le::PeriodicAdvertisingParameters build();
-		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setIncludeTxPower(jboolean arg0);
-		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setInterval(jint arg0);
+		android::bluetooth::le::PeriodicAdvertisingParameters build() const;
+		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setIncludeTxPower(jboolean arg0) const;
+		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setInterval(jint arg0) const;
 	};
 } // namespace android::bluetooth::le
 

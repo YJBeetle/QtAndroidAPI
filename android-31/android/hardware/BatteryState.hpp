@@ -22,9 +22,9 @@ namespace android::hardware
 		BatteryState();
 		
 		// Methods
-		jfloat getCapacity();
-		jint getStatus();
-		jboolean isPresent();
+		jfloat getCapacity() const;
+		jint getStatus() const;
+		jboolean isPresent() const;
 	};
 } // namespace android::hardware
 

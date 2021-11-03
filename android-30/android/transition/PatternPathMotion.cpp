@@ -30,7 +30,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	android::graphics::Path PatternPathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	android::graphics::Path PatternPathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callObjectMethod(
 			"getPath",
@@ -41,14 +41,14 @@ namespace android::transition
 			arg3
 		);
 	}
-	android::graphics::Path PatternPathMotion::getPatternPath()
+	android::graphics::Path PatternPathMotion::getPatternPath() const
 	{
 		return callObjectMethod(
 			"getPatternPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	void PatternPathMotion::setPatternPath(android::graphics::Path arg0)
+	void PatternPathMotion::setPatternPath(android::graphics::Path arg0) const
 	{
 		callMethod<void>(
 			"setPatternPath",

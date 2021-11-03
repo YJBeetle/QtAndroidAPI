@@ -20,21 +20,21 @@ namespace android::service::controls::templates
 		) {}
 	
 	// Methods
-	JString ToggleTemplate::getContentDescription()
+	JString ToggleTemplate::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint ToggleTemplate::getTemplateType()
+	jint ToggleTemplate::getTemplateType() const
 	{
 		return callMethod<jint>(
 			"getTemplateType",
 			"()I"
 		);
 	}
-	jboolean ToggleTemplate::isChecked()
+	jboolean ToggleTemplate::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",

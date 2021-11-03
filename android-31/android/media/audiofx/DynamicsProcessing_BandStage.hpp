@@ -19,8 +19,8 @@ namespace android::media::audiofx
 		DynamicsProcessing_BandStage(jboolean arg0, jboolean arg1, jint arg2);
 		
 		// Methods
-		jint getBandCount();
-		JString toString();
+		jint getBandCount() const;
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

@@ -24,14 +24,14 @@ namespace java::security
 		Permission(JString arg0);
 		
 		// Methods
-		void checkGuard(JObject arg0);
-		jboolean equals(JObject arg0);
-		JString getActions();
-		JString getName();
-		jint hashCode();
-		jboolean implies(java::security::Permission arg0);
-		java::security::PermissionCollection newPermissionCollection();
-		JString toString();
+		void checkGuard(JObject arg0) const;
+		jboolean equals(JObject arg0) const;
+		JString getActions() const;
+		JString getName() const;
+		jint hashCode() const;
+		jboolean implies(java::security::Permission arg0) const;
+		java::security::PermissionCollection newPermissionCollection() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

@@ -47,7 +47,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/CaseMap$Upper;"
 		);
 	}
-	android::icu::text::CaseMap CaseMap::omitUnchangedText()
+	android::icu::text::CaseMap CaseMap::omitUnchangedText() const
 	{
 		return callObjectMethod(
 			"omitUnchangedText",

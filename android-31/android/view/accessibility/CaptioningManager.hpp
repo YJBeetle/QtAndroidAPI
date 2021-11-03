@@ -29,12 +29,12 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		void addCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0);
-		jfloat getFontScale();
-		java::util::Locale getLocale();
-		android::view::accessibility::CaptioningManager_CaptionStyle getUserStyle();
-		jboolean isEnabled();
-		void removeCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0);
+		void addCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0) const;
+		jfloat getFontScale() const;
+		java::util::Locale getLocale() const;
+		android::view::accessibility::CaptioningManager_CaptionStyle getUserStyle() const;
+		jboolean isEnabled() const;
+		void removeCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0) const;
 	};
 } // namespace android::view::accessibility
 

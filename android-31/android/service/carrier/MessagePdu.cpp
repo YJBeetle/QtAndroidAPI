@@ -25,21 +25,21 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	jint MessagePdu::describeContents()
+	jint MessagePdu::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject MessagePdu::getPdus()
+	JObject MessagePdu::getPdus() const
 	{
 		return callObjectMethod(
 			"getPdus",
 			"()Ljava/util/List;"
 		);
 	}
-	void MessagePdu::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MessagePdu::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

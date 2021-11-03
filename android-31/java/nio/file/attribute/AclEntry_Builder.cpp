@@ -15,14 +15,14 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	java::nio::file::attribute::AclEntry AclEntry_Builder::build()
+	java::nio::file::attribute::AclEntry AclEntry_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Ljava/nio/file/attribute/AclEntry;"
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(JArray arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -30,7 +30,7 @@ namespace java::nio::file::attribute
 			arg0.object<jarray>()
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(JObject arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -38,7 +38,7 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(JArray arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setPermissions",
@@ -46,7 +46,7 @@ namespace java::nio::file::attribute
 			arg0.object<jarray>()
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(JObject arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setPermissions",
@@ -54,7 +54,7 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPrincipal(JObject arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPrincipal(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setPrincipal",
@@ -62,7 +62,7 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setType(java::nio::file::attribute::AclEntryType arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setType(java::nio::file::attribute::AclEntryType arg0) const
 	{
 		return callObjectMethod(
 			"setType",

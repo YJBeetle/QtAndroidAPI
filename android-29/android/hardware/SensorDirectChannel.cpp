@@ -54,14 +54,14 @@ namespace android::hardware
 	// Constructors
 	
 	// Methods
-	void SensorDirectChannel::close()
+	void SensorDirectChannel::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint SensorDirectChannel::configure(android::hardware::Sensor arg0, jint arg1)
+	jint SensorDirectChannel::configure(android::hardware::Sensor arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"configure",
@@ -70,7 +70,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	jboolean SensorDirectChannel::isOpen()
+	jboolean SensorDirectChannel::isOpen() const
 	{
 		return callMethod<jboolean>(
 			"isOpen",

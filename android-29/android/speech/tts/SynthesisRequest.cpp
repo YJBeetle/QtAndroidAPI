@@ -20,70 +20,70 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	jint SynthesisRequest::getCallerUid()
+	jint SynthesisRequest::getCallerUid() const
 	{
 		return callMethod<jint>(
 			"getCallerUid",
 			"()I"
 		);
 	}
-	JString SynthesisRequest::getCharSequenceText()
+	JString SynthesisRequest::getCharSequenceText() const
 	{
 		return callObjectMethod(
 			"getCharSequenceText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString SynthesisRequest::getCountry()
+	JString SynthesisRequest::getCountry() const
 	{
 		return callObjectMethod(
 			"getCountry",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SynthesisRequest::getLanguage()
+	JString SynthesisRequest::getLanguage() const
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle SynthesisRequest::getParams()
+	android::os::Bundle SynthesisRequest::getParams() const
 	{
 		return callObjectMethod(
 			"getParams",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint SynthesisRequest::getPitch()
+	jint SynthesisRequest::getPitch() const
 	{
 		return callMethod<jint>(
 			"getPitch",
 			"()I"
 		);
 	}
-	jint SynthesisRequest::getSpeechRate()
+	jint SynthesisRequest::getSpeechRate() const
 	{
 		return callMethod<jint>(
 			"getSpeechRate",
 			"()I"
 		);
 	}
-	JString SynthesisRequest::getText()
+	JString SynthesisRequest::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SynthesisRequest::getVariant()
+	JString SynthesisRequest::getVariant() const
 	{
 		return callObjectMethod(
 			"getVariant",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SynthesisRequest::getVoiceName()
+	JString SynthesisRequest::getVoiceName() const
 	{
 		return callObjectMethod(
 			"getVoiceName",

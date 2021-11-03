@@ -30,11 +30,11 @@ namespace android::graphics::drawable
 		Drawable_ConstantState();
 		
 		// Methods
-		jboolean canApplyTheme();
-		jint getChangingConfigurations();
-		android::graphics::drawable::Drawable newDrawable();
-		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0);
-		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1);
+		jboolean canApplyTheme() const;
+		jint getChangingConfigurations() const;
+		android::graphics::drawable::Drawable newDrawable() const;
+		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0) const;
+		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1) const;
 	};
 } // namespace android::graphics::drawable
 

@@ -39,9 +39,9 @@ namespace android::widget
 		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, JArray arg4, JIntArray arg5, jint arg6, jint arg7, JArray arg8, JIntArray arg9);
 		
 		// Methods
-		JObject getViewBinder();
-		void setViewBinder(JObject arg0);
-		void setViewText(android::widget::TextView arg0, JString arg1);
+		JObject getViewBinder() const;
+		void setViewBinder(JObject arg0) const;
+		void setViewText(android::widget::TextView arg0, JString arg1) const;
 	};
 } // namespace android::widget
 

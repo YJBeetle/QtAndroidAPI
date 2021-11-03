@@ -17,8 +17,8 @@ namespace java::security::cert
 		CertStoreSpi(JObject arg0);
 		
 		// Methods
-		JObject engineGetCRLs(JObject arg0);
-		JObject engineGetCertificates(JObject arg0);
+		JObject engineGetCRLs(JObject arg0) const;
+		JObject engineGetCertificates(JObject arg0) const;
 	};
 } // namespace java::security::cert
 

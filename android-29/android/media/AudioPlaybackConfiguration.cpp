@@ -21,14 +21,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint AudioPlaybackConfiguration::describeContents()
+	jint AudioPlaybackConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AudioPlaybackConfiguration::equals(JObject arg0)
+	jboolean AudioPlaybackConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,21 +36,21 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	android::media::AudioAttributes AudioPlaybackConfiguration::getAudioAttributes()
+	android::media::AudioAttributes AudioPlaybackConfiguration::getAudioAttributes() const
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	jint AudioPlaybackConfiguration::hashCode()
+	jint AudioPlaybackConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void AudioPlaybackConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AudioPlaybackConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

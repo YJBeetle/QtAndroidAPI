@@ -16,7 +16,7 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	void RenderScript_RSMessageHandler::run()
+	void RenderScript_RSMessageHandler::run() const
 	{
 		callMethod<void>(
 			"run",

@@ -109,14 +109,14 @@ namespace android::net::wifi::rtt
 	// Constructors
 	
 	// Methods
-	jint ResponderLocation::describeContents()
+	jint ResponderLocation::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ResponderLocation::equals(JObject arg0)
+	jboolean ResponderLocation::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -124,168 +124,168 @@ namespace android::net::wifi::rtt
 			arg0.object<jobject>()
 		);
 	}
-	jdouble ResponderLocation::getAltitude()
+	jdouble ResponderLocation::getAltitude() const
 	{
 		return callMethod<jdouble>(
 			"getAltitude",
 			"()D"
 		);
 	}
-	jint ResponderLocation::getAltitudeType()
+	jint ResponderLocation::getAltitudeType() const
 	{
 		return callMethod<jint>(
 			"getAltitudeType",
 			"()I"
 		);
 	}
-	jdouble ResponderLocation::getAltitudeUncertainty()
+	jdouble ResponderLocation::getAltitudeUncertainty() const
 	{
 		return callMethod<jdouble>(
 			"getAltitudeUncertainty",
 			"()D"
 		);
 	}
-	JObject ResponderLocation::getColocatedBssids()
+	JObject ResponderLocation::getColocatedBssids() const
 	{
 		return callObjectMethod(
 			"getColocatedBssids",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ResponderLocation::getDatum()
+	jint ResponderLocation::getDatum() const
 	{
 		return callMethod<jint>(
 			"getDatum",
 			"()I"
 		);
 	}
-	jint ResponderLocation::getExpectedToMove()
+	jint ResponderLocation::getExpectedToMove() const
 	{
 		return callMethod<jint>(
 			"getExpectedToMove",
 			"()I"
 		);
 	}
-	jdouble ResponderLocation::getFloorNumber()
+	jdouble ResponderLocation::getFloorNumber() const
 	{
 		return callMethod<jdouble>(
 			"getFloorNumber",
 			"()D"
 		);
 	}
-	jdouble ResponderLocation::getHeightAboveFloorMeters()
+	jdouble ResponderLocation::getHeightAboveFloorMeters() const
 	{
 		return callMethod<jdouble>(
 			"getHeightAboveFloorMeters",
 			"()D"
 		);
 	}
-	jdouble ResponderLocation::getHeightAboveFloorUncertaintyMeters()
+	jdouble ResponderLocation::getHeightAboveFloorUncertaintyMeters() const
 	{
 		return callMethod<jdouble>(
 			"getHeightAboveFloorUncertaintyMeters",
 			"()D"
 		);
 	}
-	jdouble ResponderLocation::getLatitude()
+	jdouble ResponderLocation::getLatitude() const
 	{
 		return callMethod<jdouble>(
 			"getLatitude",
 			"()D"
 		);
 	}
-	jdouble ResponderLocation::getLatitudeUncertainty()
+	jdouble ResponderLocation::getLatitudeUncertainty() const
 	{
 		return callMethod<jdouble>(
 			"getLatitudeUncertainty",
 			"()D"
 		);
 	}
-	jint ResponderLocation::getLciVersion()
+	jint ResponderLocation::getLciVersion() const
 	{
 		return callMethod<jint>(
 			"getLciVersion",
 			"()I"
 		);
 	}
-	jdouble ResponderLocation::getLongitude()
+	jdouble ResponderLocation::getLongitude() const
 	{
 		return callMethod<jdouble>(
 			"getLongitude",
 			"()D"
 		);
 	}
-	jdouble ResponderLocation::getLongitudeUncertainty()
+	jdouble ResponderLocation::getLongitudeUncertainty() const
 	{
 		return callMethod<jdouble>(
 			"getLongitudeUncertainty",
 			"()D"
 		);
 	}
-	JString ResponderLocation::getMapImageMimeType()
+	JString ResponderLocation::getMapImageMimeType() const
 	{
 		return callObjectMethod(
 			"getMapImageMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri ResponderLocation::getMapImageUri()
+	android::net::Uri ResponderLocation::getMapImageUri() const
 	{
 		return callObjectMethod(
 			"getMapImageUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jboolean ResponderLocation::getRegisteredLocationAgreementIndication()
+	jboolean ResponderLocation::getRegisteredLocationAgreementIndication() const
 	{
 		return callMethod<jboolean>(
 			"getRegisteredLocationAgreementIndication",
 			"()Z"
 		);
 	}
-	jint ResponderLocation::hashCode()
+	jint ResponderLocation::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ResponderLocation::isLciSubelementValid()
+	jboolean ResponderLocation::isLciSubelementValid() const
 	{
 		return callMethod<jboolean>(
 			"isLciSubelementValid",
 			"()Z"
 		);
 	}
-	jboolean ResponderLocation::isZaxisSubelementValid()
+	jboolean ResponderLocation::isZaxisSubelementValid() const
 	{
 		return callMethod<jboolean>(
 			"isZaxisSubelementValid",
 			"()Z"
 		);
 	}
-	android::location::Address ResponderLocation::toCivicLocationAddress()
+	android::location::Address ResponderLocation::toCivicLocationAddress() const
 	{
 		return callObjectMethod(
 			"toCivicLocationAddress",
 			"()Landroid/location/Address;"
 		);
 	}
-	android::util::SparseArray ResponderLocation::toCivicLocationSparseArray()
+	android::util::SparseArray ResponderLocation::toCivicLocationSparseArray() const
 	{
 		return callObjectMethod(
 			"toCivicLocationSparseArray",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	android::location::Location ResponderLocation::toLocation()
+	android::location::Location ResponderLocation::toLocation() const
 	{
 		return callObjectMethod(
 			"toLocation",
 			"()Landroid/location/Location;"
 		);
 	}
-	void ResponderLocation::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ResponderLocation::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

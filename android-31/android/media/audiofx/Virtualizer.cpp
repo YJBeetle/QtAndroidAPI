@@ -61,7 +61,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jboolean Virtualizer::canVirtualize(jint arg0, jint arg1)
+	jboolean Virtualizer::canVirtualize(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"canVirtualize",
@@ -70,7 +70,7 @@ namespace android::media::audiofx
 			arg1
 		);
 	}
-	jboolean Virtualizer::forceVirtualizationMode(jint arg0)
+	jboolean Virtualizer::forceVirtualizationMode(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"forceVirtualizationMode",
@@ -78,21 +78,21 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	android::media::audiofx::Virtualizer_Settings Virtualizer::getProperties()
+	android::media::audiofx::Virtualizer_Settings Virtualizer::getProperties() const
 	{
 		return callObjectMethod(
 			"getProperties",
 			"()Landroid/media/audiofx/Virtualizer$Settings;"
 		);
 	}
-	jshort Virtualizer::getRoundedStrength()
+	jshort Virtualizer::getRoundedStrength() const
 	{
 		return callMethod<jshort>(
 			"getRoundedStrength",
 			"()S"
 		);
 	}
-	jboolean Virtualizer::getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2)
+	jboolean Virtualizer::getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2) const
 	{
 		return callMethod<jboolean>(
 			"getSpeakerAngles",
@@ -102,21 +102,21 @@ namespace android::media::audiofx
 			arg2.object<jintArray>()
 		);
 	}
-	jboolean Virtualizer::getStrengthSupported()
+	jboolean Virtualizer::getStrengthSupported() const
 	{
 		return callMethod<jboolean>(
 			"getStrengthSupported",
 			"()Z"
 		);
 	}
-	jint Virtualizer::getVirtualizationMode()
+	jint Virtualizer::getVirtualizationMode() const
 	{
 		return callMethod<jint>(
 			"getVirtualizationMode",
 			"()I"
 		);
 	}
-	void Virtualizer::setParameterListener(JObject arg0)
+	void Virtualizer::setParameterListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParameterListener",
@@ -124,7 +124,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void Virtualizer::setProperties(android::media::audiofx::Virtualizer_Settings arg0)
+	void Virtualizer::setProperties(android::media::audiofx::Virtualizer_Settings arg0) const
 	{
 		callMethod<void>(
 			"setProperties",
@@ -132,7 +132,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void Virtualizer::setStrength(jshort arg0)
+	void Virtualizer::setStrength(jshort arg0) const
 	{
 		callMethod<void>(
 			"setStrength",

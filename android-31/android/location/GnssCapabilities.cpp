@@ -21,14 +21,14 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint GnssCapabilities::describeContents()
+	jint GnssCapabilities::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean GnssCapabilities::equals(JObject arg0)
+	jboolean GnssCapabilities::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,49 +36,49 @@ namespace android::location
 			arg0.object<jobject>()
 		);
 	}
-	jboolean GnssCapabilities::hasAntennaInfo()
+	jboolean GnssCapabilities::hasAntennaInfo() const
 	{
 		return callMethod<jboolean>(
 			"hasAntennaInfo",
 			"()Z"
 		);
 	}
-	jboolean GnssCapabilities::hasGnssAntennaInfo()
+	jboolean GnssCapabilities::hasGnssAntennaInfo() const
 	{
 		return callMethod<jboolean>(
 			"hasGnssAntennaInfo",
 			"()Z"
 		);
 	}
-	jboolean GnssCapabilities::hasMeasurements()
+	jboolean GnssCapabilities::hasMeasurements() const
 	{
 		return callMethod<jboolean>(
 			"hasMeasurements",
 			"()Z"
 		);
 	}
-	jboolean GnssCapabilities::hasNavigationMessages()
+	jboolean GnssCapabilities::hasNavigationMessages() const
 	{
 		return callMethod<jboolean>(
 			"hasNavigationMessages",
 			"()Z"
 		);
 	}
-	jint GnssCapabilities::hashCode()
+	jint GnssCapabilities::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString GnssCapabilities::toString()
+	JString GnssCapabilities::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

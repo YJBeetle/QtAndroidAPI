@@ -25,14 +25,14 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	android::text::style::CharacterStyle CharacterStyle::getUnderlying()
+	android::text::style::CharacterStyle CharacterStyle::getUnderlying() const
 	{
 		return callObjectMethod(
 			"getUnderlying",
 			"()Landroid/text/style/CharacterStyle;"
 		);
 	}
-	void CharacterStyle::updateDrawState(android::text::TextPaint arg0)
+	void CharacterStyle::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",

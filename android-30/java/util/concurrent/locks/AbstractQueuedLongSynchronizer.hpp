@@ -27,28 +27,28 @@ namespace java::util::concurrent::locks
 		AbstractQueuedLongSynchronizer();
 		
 		// Methods
-		void acquire(jlong arg0);
-		void acquireInterruptibly(jlong arg0);
-		void acquireShared(jlong arg0);
-		void acquireSharedInterruptibly(jlong arg0);
-		JObject getExclusiveQueuedThreads();
-		java::lang::Thread getFirstQueuedThread();
-		jint getQueueLength();
-		JObject getQueuedThreads();
-		JObject getSharedQueuedThreads();
-		jint getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0);
-		JObject getWaitingThreads(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0);
-		jboolean hasContended();
-		jboolean hasQueuedPredecessors();
-		jboolean hasQueuedThreads();
-		jboolean hasWaiters(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0);
-		jboolean isQueued(java::lang::Thread arg0);
-		jboolean owns(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0);
-		jboolean release(jlong arg0);
-		jboolean releaseShared(jlong arg0);
-		JString toString();
-		jboolean tryAcquireNanos(jlong arg0, jlong arg1);
-		jboolean tryAcquireSharedNanos(jlong arg0, jlong arg1);
+		void acquire(jlong arg0) const;
+		void acquireInterruptibly(jlong arg0) const;
+		void acquireShared(jlong arg0) const;
+		void acquireSharedInterruptibly(jlong arg0) const;
+		JObject getExclusiveQueuedThreads() const;
+		java::lang::Thread getFirstQueuedThread() const;
+		jint getQueueLength() const;
+		JObject getQueuedThreads() const;
+		JObject getSharedQueuedThreads() const;
+		jint getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const;
+		JObject getWaitingThreads(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const;
+		jboolean hasContended() const;
+		jboolean hasQueuedPredecessors() const;
+		jboolean hasQueuedThreads() const;
+		jboolean hasWaiters(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const;
+		jboolean isQueued(java::lang::Thread arg0) const;
+		jboolean owns(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const;
+		jboolean release(jlong arg0) const;
+		jboolean releaseShared(jlong arg0) const;
+		JString toString() const;
+		jboolean tryAcquireNanos(jlong arg0, jlong arg1) const;
+		jboolean tryAcquireSharedNanos(jlong arg0, jlong arg1) const;
 	};
 } // namespace java::util::concurrent::locks
 

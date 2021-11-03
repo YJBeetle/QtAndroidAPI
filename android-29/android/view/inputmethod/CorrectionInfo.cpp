@@ -29,42 +29,42 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint CorrectionInfo::describeContents()
+	jint CorrectionInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString CorrectionInfo::getNewText()
+	JString CorrectionInfo::getNewText() const
 	{
 		return callObjectMethod(
 			"getNewText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint CorrectionInfo::getOffset()
+	jint CorrectionInfo::getOffset() const
 	{
 		return callMethod<jint>(
 			"getOffset",
 			"()I"
 		);
 	}
-	JString CorrectionInfo::getOldText()
+	JString CorrectionInfo::getOldText() const
 	{
 		return callObjectMethod(
 			"getOldText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString CorrectionInfo::toString()
+	JString CorrectionInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CorrectionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CorrectionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

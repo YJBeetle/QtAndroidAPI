@@ -18,13 +18,13 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getChildSaProposals();
-		jint getHardLifetimeSeconds();
-		JObject getInboundTrafficSelectors();
-		JObject getOutboundTrafficSelectors();
-		jint getSoftLifetimeSeconds();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JObject getChildSaProposals() const;
+		jint getHardLifetimeSeconds() const;
+		JObject getInboundTrafficSelectors() const;
+		JObject getOutboundTrafficSelectors() const;
+		jint getSoftLifetimeSeconds() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

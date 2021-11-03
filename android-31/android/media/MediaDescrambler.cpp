@@ -55,14 +55,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaDescrambler::close()
+	void MediaDescrambler::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint MediaDescrambler::descramble(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_CryptoInfo arg2)
+	jint MediaDescrambler::descramble(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_CryptoInfo arg2) const
 	{
 		return callMethod<jint>(
 			"descramble",
@@ -72,7 +72,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	jboolean MediaDescrambler::requiresSecureDecoderComponent(JString arg0)
+	jboolean MediaDescrambler::requiresSecureDecoderComponent(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"requiresSecureDecoderComponent",
@@ -80,7 +80,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaDescrambler::setMediaCasSession(android::media::MediaCas_Session arg0)
+	void MediaDescrambler::setMediaCasSession(android::media::MediaCas_Session arg0) const
 	{
 		callMethod<void>(
 			"setMediaCasSession",

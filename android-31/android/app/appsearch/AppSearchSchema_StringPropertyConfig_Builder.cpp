@@ -18,14 +18,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchSchema_StringPropertyConfig AppSearchSchema_StringPropertyConfig_Builder::build()
+	android::app::appsearch::AppSearchSchema_StringPropertyConfig AppSearchSchema_StringPropertyConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/AppSearchSchema$StringPropertyConfig;"
 		);
 	}
-	android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setCardinality(jint arg0)
+	android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setCardinality(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCardinality",
@@ -33,7 +33,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setIndexingType(jint arg0)
+	android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setIndexingType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setIndexingType",
@@ -41,7 +41,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setTokenizerType(jint arg0)
+	android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setTokenizerType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTokenizerType",

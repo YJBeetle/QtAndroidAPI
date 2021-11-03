@@ -33,8 +33,8 @@ namespace android::service::vr
 		
 		// Methods
 		static jboolean isVrModePackageEnabled(android::content::Context arg0, android::content::ComponentName arg1);
-		JObject onBind(android::content::Intent arg0);
-		void onCurrentVrActivityChanged(android::content::ComponentName arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		void onCurrentVrActivityChanged(android::content::ComponentName arg0) const;
 	};
 } // namespace android::service::vr
 

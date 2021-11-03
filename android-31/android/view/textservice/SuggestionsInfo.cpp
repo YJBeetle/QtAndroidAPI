@@ -78,28 +78,28 @@ namespace android::view::textservice
 		) {}
 	
 	// Methods
-	jint SuggestionsInfo::describeContents()
+	jint SuggestionsInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint SuggestionsInfo::getCookie()
+	jint SuggestionsInfo::getCookie() const
 	{
 		return callMethod<jint>(
 			"getCookie",
 			"()I"
 		);
 	}
-	jint SuggestionsInfo::getSequence()
+	jint SuggestionsInfo::getSequence() const
 	{
 		return callMethod<jint>(
 			"getSequence",
 			"()I"
 		);
 	}
-	JString SuggestionsInfo::getSuggestionAt(jint arg0)
+	JString SuggestionsInfo::getSuggestionAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSuggestionAt",
@@ -107,21 +107,21 @@ namespace android::view::textservice
 			arg0
 		);
 	}
-	jint SuggestionsInfo::getSuggestionsAttributes()
+	jint SuggestionsInfo::getSuggestionsAttributes() const
 	{
 		return callMethod<jint>(
 			"getSuggestionsAttributes",
 			"()I"
 		);
 	}
-	jint SuggestionsInfo::getSuggestionsCount()
+	jint SuggestionsInfo::getSuggestionsCount() const
 	{
 		return callMethod<jint>(
 			"getSuggestionsCount",
 			"()I"
 		);
 	}
-	void SuggestionsInfo::setCookieAndSequence(jint arg0, jint arg1)
+	void SuggestionsInfo::setCookieAndSequence(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setCookieAndSequence",
@@ -130,7 +130,7 @@ namespace android::view::textservice
 			arg1
 		);
 	}
-	void SuggestionsInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SuggestionsInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

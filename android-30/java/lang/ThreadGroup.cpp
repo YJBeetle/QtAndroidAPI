@@ -30,21 +30,21 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	jint ThreadGroup::activeCount()
+	jint ThreadGroup::activeCount() const
 	{
 		return callMethod<jint>(
 			"activeCount",
 			"()I"
 		);
 	}
-	jint ThreadGroup::activeGroupCount()
+	jint ThreadGroup::activeGroupCount() const
 	{
 		return callMethod<jint>(
 			"activeGroupCount",
 			"()I"
 		);
 	}
-	jboolean ThreadGroup::allowThreadSuspension(jboolean arg0)
+	jboolean ThreadGroup::allowThreadSuspension(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"allowThreadSuspension",
@@ -52,21 +52,21 @@ namespace java::lang
 			arg0
 		);
 	}
-	void ThreadGroup::checkAccess()
+	void ThreadGroup::checkAccess() const
 	{
 		callMethod<void>(
 			"checkAccess",
 			"()V"
 		);
 	}
-	void ThreadGroup::destroy()
+	void ThreadGroup::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	jint ThreadGroup::enumerate(JArray arg0)
+	jint ThreadGroup::enumerate(JArray arg0) const
 	{
 		return callMethod<jint>(
 			"enumerate",
@@ -74,7 +74,7 @@ namespace java::lang
 			arg0.object<jarray>()
 		);
 	}
-	jint ThreadGroup::enumerate(JArray arg0, jboolean arg1)
+	jint ThreadGroup::enumerate(JArray arg0, jboolean arg1) const
 	{
 		return callMethod<jint>(
 			"enumerate",
@@ -83,56 +83,56 @@ namespace java::lang
 			arg1
 		);
 	}
-	jint ThreadGroup::getMaxPriority()
+	jint ThreadGroup::getMaxPriority() const
 	{
 		return callMethod<jint>(
 			"getMaxPriority",
 			"()I"
 		);
 	}
-	JString ThreadGroup::getName()
+	JString ThreadGroup::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::lang::ThreadGroup ThreadGroup::getParent()
+	java::lang::ThreadGroup ThreadGroup::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/lang/ThreadGroup;"
 		);
 	}
-	void ThreadGroup::interrupt()
+	void ThreadGroup::interrupt() const
 	{
 		callMethod<void>(
 			"interrupt",
 			"()V"
 		);
 	}
-	jboolean ThreadGroup::isDaemon()
+	jboolean ThreadGroup::isDaemon() const
 	{
 		return callMethod<jboolean>(
 			"isDaemon",
 			"()Z"
 		);
 	}
-	jboolean ThreadGroup::isDestroyed()
+	jboolean ThreadGroup::isDestroyed() const
 	{
 		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
-	void ThreadGroup::list()
+	void ThreadGroup::list() const
 	{
 		callMethod<void>(
 			"list",
 			"()V"
 		);
 	}
-	jboolean ThreadGroup::parentOf(java::lang::ThreadGroup arg0)
+	jboolean ThreadGroup::parentOf(java::lang::ThreadGroup arg0) const
 	{
 		return callMethod<jboolean>(
 			"parentOf",
@@ -140,14 +140,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void ThreadGroup::resume()
+	void ThreadGroup::resume() const
 	{
 		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
-	void ThreadGroup::setDaemon(jboolean arg0)
+	void ThreadGroup::setDaemon(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDaemon",
@@ -155,7 +155,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void ThreadGroup::setMaxPriority(jint arg0)
+	void ThreadGroup::setMaxPriority(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxPriority",
@@ -163,28 +163,28 @@ namespace java::lang
 			arg0
 		);
 	}
-	void ThreadGroup::stop()
+	void ThreadGroup::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	void ThreadGroup::suspend()
+	void ThreadGroup::suspend() const
 	{
 		callMethod<void>(
 			"suspend",
 			"()V"
 		);
 	}
-	JString ThreadGroup::toString()
+	JString ThreadGroup::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ThreadGroup::uncaughtException(java::lang::Thread arg0, JThrowable arg1)
+	void ThreadGroup::uncaughtException(java::lang::Thread arg0, JThrowable arg1) const
 	{
 		callMethod<void>(
 			"uncaughtException",

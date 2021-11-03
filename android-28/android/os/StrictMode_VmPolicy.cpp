@@ -20,7 +20,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	JString StrictMode_VmPolicy::toString()
+	JString StrictMode_VmPolicy::toString() const
 	{
 		return callObjectMethod(
 			"toString",

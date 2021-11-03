@@ -13,28 +13,28 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void Vibrator::cancel()
+	void Vibrator::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jboolean Vibrator::hasAmplitudeControl()
+	jboolean Vibrator::hasAmplitudeControl() const
 	{
 		return callMethod<jboolean>(
 			"hasAmplitudeControl",
 			"()Z"
 		);
 	}
-	jboolean Vibrator::hasVibrator()
+	jboolean Vibrator::hasVibrator() const
 	{
 		return callMethod<jboolean>(
 			"hasVibrator",
 			"()Z"
 		);
 	}
-	void Vibrator::vibrate(android::os::VibrationEffect arg0)
+	void Vibrator::vibrate(android::os::VibrationEffect arg0) const
 	{
 		callMethod<void>(
 			"vibrate",
@@ -42,7 +42,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Vibrator::vibrate(jlong arg0)
+	void Vibrator::vibrate(jlong arg0) const
 	{
 		callMethod<void>(
 			"vibrate",
@@ -50,7 +50,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Vibrator::vibrate(JLongArray arg0, jint arg1)
+	void Vibrator::vibrate(JLongArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"vibrate",
@@ -59,7 +59,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Vibrator::vibrate(android::os::VibrationEffect arg0, android::media::AudioAttributes arg1)
+	void Vibrator::vibrate(android::os::VibrationEffect arg0, android::media::AudioAttributes arg1) const
 	{
 		callMethod<void>(
 			"vibrate",
@@ -68,7 +68,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Vibrator::vibrate(jlong arg0, android::media::AudioAttributes arg1)
+	void Vibrator::vibrate(jlong arg0, android::media::AudioAttributes arg1) const
 	{
 		callMethod<void>(
 			"vibrate",
@@ -77,7 +77,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Vibrator::vibrate(JLongArray arg0, jint arg1, android::media::AudioAttributes arg2)
+	void Vibrator::vibrate(JLongArray arg0, jint arg1, android::media::AudioAttributes arg2) const
 	{
 		callMethod<void>(
 			"vibrate",

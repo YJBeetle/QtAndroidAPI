@@ -25,8 +25,8 @@ namespace android::graphics::drawable
 		PaintDrawable(jint arg0);
 		
 		// Methods
-		void setCornerRadii(JFloatArray arg0);
-		void setCornerRadius(jfloat arg0);
+		void setCornerRadii(JFloatArray arg0) const;
+		void setCornerRadius(jfloat arg0) const;
 	};
 } // namespace android::graphics::drawable
 

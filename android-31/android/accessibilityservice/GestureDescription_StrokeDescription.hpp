@@ -23,11 +23,11 @@ namespace android::accessibilityservice
 		GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
 		
 		// Methods
-		android::accessibilityservice::GestureDescription_StrokeDescription continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
-		jlong getDuration();
-		android::graphics::Path getPath();
-		jlong getStartTime();
-		jboolean willContinue();
+		android::accessibilityservice::GestureDescription_StrokeDescription continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3) const;
+		jlong getDuration() const;
+		android::graphics::Path getPath() const;
+		jlong getStartTime() const;
+		jboolean willContinue() const;
 	};
 } // namespace android::accessibilityservice
 

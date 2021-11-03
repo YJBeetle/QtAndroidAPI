@@ -72,21 +72,21 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	JObject SubscriptionPlan::cycleIterator()
+	JObject SubscriptionPlan::cycleIterator() const
 	{
 		return callObjectMethod(
 			"cycleIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint SubscriptionPlan::describeContents()
+	jint SubscriptionPlan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SubscriptionPlan::equals(JObject arg0)
+	jboolean SubscriptionPlan::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -94,70 +94,70 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint SubscriptionPlan::getDataLimitBehavior()
+	jint SubscriptionPlan::getDataLimitBehavior() const
 	{
 		return callMethod<jint>(
 			"getDataLimitBehavior",
 			"()I"
 		);
 	}
-	jlong SubscriptionPlan::getDataLimitBytes()
+	jlong SubscriptionPlan::getDataLimitBytes() const
 	{
 		return callMethod<jlong>(
 			"getDataLimitBytes",
 			"()J"
 		);
 	}
-	jlong SubscriptionPlan::getDataUsageBytes()
+	jlong SubscriptionPlan::getDataUsageBytes() const
 	{
 		return callMethod<jlong>(
 			"getDataUsageBytes",
 			"()J"
 		);
 	}
-	jlong SubscriptionPlan::getDataUsageTime()
+	jlong SubscriptionPlan::getDataUsageTime() const
 	{
 		return callMethod<jlong>(
 			"getDataUsageTime",
 			"()J"
 		);
 	}
-	JIntArray SubscriptionPlan::getNetworkTypes()
+	JIntArray SubscriptionPlan::getNetworkTypes() const
 	{
 		return callObjectMethod(
 			"getNetworkTypes",
 			"()[I"
 		);
 	}
-	JString SubscriptionPlan::getSummary()
+	JString SubscriptionPlan::getSummary() const
 	{
 		return callObjectMethod(
 			"getSummary",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString SubscriptionPlan::getTitle()
+	JString SubscriptionPlan::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint SubscriptionPlan::hashCode()
+	jint SubscriptionPlan::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SubscriptionPlan::toString()
+	JString SubscriptionPlan::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SubscriptionPlan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SubscriptionPlan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

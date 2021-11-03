@@ -74,49 +74,49 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::MediaRouter_RouteCategory MediaRouter_RouteInfo::getCategory()
+	android::media::MediaRouter_RouteCategory MediaRouter_RouteInfo::getCategory() const
 	{
 		return callObjectMethod(
 			"getCategory",
 			"()Landroid/media/MediaRouter$RouteCategory;"
 		);
 	}
-	JString MediaRouter_RouteInfo::getDescription()
+	JString MediaRouter_RouteInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint MediaRouter_RouteInfo::getDeviceType()
+	jint MediaRouter_RouteInfo::getDeviceType() const
 	{
 		return callMethod<jint>(
 			"getDeviceType",
 			"()I"
 		);
 	}
-	android::media::MediaRouter_RouteGroup MediaRouter_RouteInfo::getGroup()
+	android::media::MediaRouter_RouteGroup MediaRouter_RouteInfo::getGroup() const
 	{
 		return callObjectMethod(
 			"getGroup",
 			"()Landroid/media/MediaRouter$RouteGroup;"
 		);
 	}
-	android::graphics::drawable::Drawable MediaRouter_RouteInfo::getIconDrawable()
+	android::graphics::drawable::Drawable MediaRouter_RouteInfo::getIconDrawable() const
 	{
 		return callObjectMethod(
 			"getIconDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	JString MediaRouter_RouteInfo::getName()
+	JString MediaRouter_RouteInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString MediaRouter_RouteInfo::getName(android::content::Context arg0)
+	JString MediaRouter_RouteInfo::getName(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -124,84 +124,84 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint MediaRouter_RouteInfo::getPlaybackStream()
+	jint MediaRouter_RouteInfo::getPlaybackStream() const
 	{
 		return callMethod<jint>(
 			"getPlaybackStream",
 			"()I"
 		);
 	}
-	jint MediaRouter_RouteInfo::getPlaybackType()
+	jint MediaRouter_RouteInfo::getPlaybackType() const
 	{
 		return callMethod<jint>(
 			"getPlaybackType",
 			"()I"
 		);
 	}
-	android::view::Display MediaRouter_RouteInfo::getPresentationDisplay()
+	android::view::Display MediaRouter_RouteInfo::getPresentationDisplay() const
 	{
 		return callObjectMethod(
 			"getPresentationDisplay",
 			"()Landroid/view/Display;"
 		);
 	}
-	JString MediaRouter_RouteInfo::getStatus()
+	JString MediaRouter_RouteInfo::getStatus() const
 	{
 		return callObjectMethod(
 			"getStatus",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint MediaRouter_RouteInfo::getSupportedTypes()
+	jint MediaRouter_RouteInfo::getSupportedTypes() const
 	{
 		return callMethod<jint>(
 			"getSupportedTypes",
 			"()I"
 		);
 	}
-	JObject MediaRouter_RouteInfo::getTag()
+	JObject MediaRouter_RouteInfo::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint MediaRouter_RouteInfo::getVolume()
+	jint MediaRouter_RouteInfo::getVolume() const
 	{
 		return callMethod<jint>(
 			"getVolume",
 			"()I"
 		);
 	}
-	jint MediaRouter_RouteInfo::getVolumeHandling()
+	jint MediaRouter_RouteInfo::getVolumeHandling() const
 	{
 		return callMethod<jint>(
 			"getVolumeHandling",
 			"()I"
 		);
 	}
-	jint MediaRouter_RouteInfo::getVolumeMax()
+	jint MediaRouter_RouteInfo::getVolumeMax() const
 	{
 		return callMethod<jint>(
 			"getVolumeMax",
 			"()I"
 		);
 	}
-	jboolean MediaRouter_RouteInfo::isConnecting()
+	jboolean MediaRouter_RouteInfo::isConnecting() const
 	{
 		return callMethod<jboolean>(
 			"isConnecting",
 			"()Z"
 		);
 	}
-	jboolean MediaRouter_RouteInfo::isEnabled()
+	jboolean MediaRouter_RouteInfo::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void MediaRouter_RouteInfo::requestSetVolume(jint arg0)
+	void MediaRouter_RouteInfo::requestSetVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"requestSetVolume",
@@ -209,7 +209,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_RouteInfo::requestUpdateVolume(jint arg0)
+	void MediaRouter_RouteInfo::requestUpdateVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"requestUpdateVolume",
@@ -217,7 +217,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_RouteInfo::setTag(JObject arg0)
+	void MediaRouter_RouteInfo::setTag(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTag",
@@ -225,7 +225,7 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	JString MediaRouter_RouteInfo::toString()
+	JString MediaRouter_RouteInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

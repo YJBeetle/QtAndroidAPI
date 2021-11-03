@@ -122,14 +122,14 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jint ConnectivityDiagnosticsManager_ConnectivityReport::describeContents()
+	jint ConnectivityDiagnosticsManager_ConnectivityReport::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ConnectivityDiagnosticsManager_ConnectivityReport::equals(JObject arg0)
+	jboolean ConnectivityDiagnosticsManager_ConnectivityReport::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -137,49 +137,49 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	android::os::PersistableBundle ConnectivityDiagnosticsManager_ConnectivityReport::getAdditionalInfo()
+	android::os::PersistableBundle ConnectivityDiagnosticsManager_ConnectivityReport::getAdditionalInfo() const
 	{
 		return callObjectMethod(
 			"getAdditionalInfo",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	android::net::LinkProperties ConnectivityDiagnosticsManager_ConnectivityReport::getLinkProperties()
+	android::net::LinkProperties ConnectivityDiagnosticsManager_ConnectivityReport::getLinkProperties() const
 	{
 		return callObjectMethod(
 			"getLinkProperties",
 			"()Landroid/net/LinkProperties;"
 		);
 	}
-	android::net::Network ConnectivityDiagnosticsManager_ConnectivityReport::getNetwork()
+	android::net::Network ConnectivityDiagnosticsManager_ConnectivityReport::getNetwork() const
 	{
 		return callObjectMethod(
 			"getNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
-	android::net::NetworkCapabilities ConnectivityDiagnosticsManager_ConnectivityReport::getNetworkCapabilities()
+	android::net::NetworkCapabilities ConnectivityDiagnosticsManager_ConnectivityReport::getNetworkCapabilities() const
 	{
 		return callObjectMethod(
 			"getNetworkCapabilities",
 			"()Landroid/net/NetworkCapabilities;"
 		);
 	}
-	jlong ConnectivityDiagnosticsManager_ConnectivityReport::getReportTimestamp()
+	jlong ConnectivityDiagnosticsManager_ConnectivityReport::getReportTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getReportTimestamp",
 			"()J"
 		);
 	}
-	jint ConnectivityDiagnosticsManager_ConnectivityReport::hashCode()
+	jint ConnectivityDiagnosticsManager_ConnectivityReport::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void ConnectivityDiagnosticsManager_ConnectivityReport::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConnectivityDiagnosticsManager_ConnectivityReport::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

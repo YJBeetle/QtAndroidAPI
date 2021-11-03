@@ -20,14 +20,14 @@ namespace java::util::prefs
 		) {}
 	
 	// Methods
-	java::util::prefs::Preferences NodeChangeEvent::getChild()
+	java::util::prefs::Preferences NodeChangeEvent::getChild() const
 	{
 		return callObjectMethod(
 			"getChild",
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
-	java::util::prefs::Preferences NodeChangeEvent::getParent()
+	java::util::prefs::Preferences NodeChangeEvent::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",

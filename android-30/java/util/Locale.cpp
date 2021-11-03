@@ -371,14 +371,14 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject Locale::clone()
+	JObject Locale::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean Locale::equals(JObject arg0)
+	jboolean Locale::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -386,21 +386,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JString Locale::getCountry()
+	JString Locale::getCountry() const
 	{
 		return callObjectMethod(
 			"getCountry",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getDisplayCountry()
+	JString Locale::getDisplayCountry() const
 	{
 		return callObjectMethod(
 			"getDisplayCountry",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getDisplayCountry(java::util::Locale arg0)
+	JString Locale::getDisplayCountry(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayCountry",
@@ -408,14 +408,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Locale::getDisplayLanguage()
+	JString Locale::getDisplayLanguage() const
 	{
 		return callObjectMethod(
 			"getDisplayLanguage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getDisplayLanguage(java::util::Locale arg0)
+	JString Locale::getDisplayLanguage(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayLanguage",
@@ -423,14 +423,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Locale::getDisplayName()
+	JString Locale::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getDisplayName(java::util::Locale arg0)
+	JString Locale::getDisplayName(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -438,14 +438,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Locale::getDisplayScript()
+	JString Locale::getDisplayScript() const
 	{
 		return callObjectMethod(
 			"getDisplayScript",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getDisplayScript(java::util::Locale arg0)
+	JString Locale::getDisplayScript(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayScript",
@@ -453,14 +453,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Locale::getDisplayVariant()
+	JString Locale::getDisplayVariant() const
 	{
 		return callObjectMethod(
 			"getDisplayVariant",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getDisplayVariant(java::util::Locale arg0)
+	JString Locale::getDisplayVariant(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayVariant",
@@ -468,7 +468,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Locale::getExtension(jchar arg0)
+	JString Locale::getExtension(jchar arg0) const
 	{
 		return callObjectMethod(
 			"getExtension",
@@ -476,56 +476,56 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject Locale::getExtensionKeys()
+	JObject Locale::getExtensionKeys() const
 	{
 		return callObjectMethod(
 			"getExtensionKeys",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString Locale::getISO3Country()
+	JString Locale::getISO3Country() const
 	{
 		return callObjectMethod(
 			"getISO3Country",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getISO3Language()
+	JString Locale::getISO3Language() const
 	{
 		return callObjectMethod(
 			"getISO3Language",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getLanguage()
+	JString Locale::getLanguage() const
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::getScript()
+	JString Locale::getScript() const
 	{
 		return callObjectMethod(
 			"getScript",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Locale::getUnicodeLocaleAttributes()
+	JObject Locale::getUnicodeLocaleAttributes() const
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Locale::getUnicodeLocaleKeys()
+	JObject Locale::getUnicodeLocaleKeys() const
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleKeys",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString Locale::getUnicodeLocaleType(JString arg0)
+	JString Locale::getUnicodeLocaleType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleType",
@@ -533,42 +533,42 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JString Locale::getVariant()
+	JString Locale::getVariant() const
 	{
 		return callObjectMethod(
 			"getVariant",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Locale::hasExtensions()
+	jboolean Locale::hasExtensions() const
 	{
 		return callMethod<jboolean>(
 			"hasExtensions",
 			"()Z"
 		);
 	}
-	jint Locale::hashCode()
+	jint Locale::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::util::Locale Locale::stripExtensions()
+	java::util::Locale Locale::stripExtensions() const
 	{
 		return callObjectMethod(
 			"stripExtensions",
 			"()Ljava/util/Locale;"
 		);
 	}
-	JString Locale::toLanguageTag()
+	JString Locale::toLanguageTag() const
 	{
 		return callObjectMethod(
 			"toLanguageTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Locale::toString()
+	JString Locale::toString() const
 	{
 		return callObjectMethod(
 			"toString",

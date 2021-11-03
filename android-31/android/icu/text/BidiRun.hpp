@@ -18,14 +18,14 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		jbyte getDirection();
-		jbyte getEmbeddingLevel();
-		jint getLength();
-		jint getLimit();
-		jint getStart();
-		jboolean isEvenRun();
-		jboolean isOddRun();
-		JString toString();
+		jbyte getDirection() const;
+		jbyte getEmbeddingLevel() const;
+		jint getLength() const;
+		jint getLimit() const;
+		jint getStart() const;
+		jboolean isEvenRun() const;
+		jboolean isOddRun() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

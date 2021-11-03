@@ -11,7 +11,7 @@ namespace android::os::strictmode
 	// Constructors
 	
 	// Methods
-	jlong InstanceCountViolation::getNumberOfInstances()
+	jlong InstanceCountViolation::getNumberOfInstances() const
 	{
 		return callMethod<jlong>(
 			"getNumberOfInstances",

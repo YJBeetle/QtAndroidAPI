@@ -17,14 +17,14 @@ namespace android::view
 		WindowInsetsAnimation(jint arg0, JObject arg1, jlong arg2);
 		
 		// Methods
-		jfloat getAlpha();
-		jlong getDurationMillis();
-		jfloat getFraction();
-		jfloat getInterpolatedFraction();
-		JObject getInterpolator();
-		jint getTypeMask();
-		void setAlpha(jfloat arg0);
-		void setFraction(jfloat arg0);
+		jfloat getAlpha() const;
+		jlong getDurationMillis() const;
+		jfloat getFraction() const;
+		jfloat getInterpolatedFraction() const;
+		JObject getInterpolator() const;
+		jint getTypeMask() const;
+		void setAlpha(jfloat arg0) const;
+		void setFraction(jfloat arg0) const;
 	};
 } // namespace android::view
 

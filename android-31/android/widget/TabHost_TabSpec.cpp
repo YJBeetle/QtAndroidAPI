@@ -16,14 +16,14 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	JString TabHost_TabSpec::getTag()
+	JString TabHost_TabSpec::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(android::content::Intent arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"setContent",
@@ -31,7 +31,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(JObject arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setContent",
@@ -39,7 +39,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(jint arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(jint arg0) const
 	{
 		return callObjectMethod(
 			"setContent",
@@ -47,7 +47,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(android::view::View arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"setIndicator",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(JString arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(JString arg0) const
 	{
 		return callObjectMethod(
 			"setIndicator",
@@ -63,7 +63,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(JString arg0, android::graphics::drawable::Drawable arg1)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(JString arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		return callObjectMethod(
 			"setIndicator",

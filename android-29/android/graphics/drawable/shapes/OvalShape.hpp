@@ -39,9 +39,9 @@ namespace android::graphics::drawable::shapes
 		OvalShape();
 		
 		// Methods
-		android::graphics::drawable::shapes::OvalShape clone();
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		void getOutline(android::graphics::Outline arg0);
+		android::graphics::drawable::shapes::OvalShape clone() const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
+		void getOutline(android::graphics::Outline arg0) const;
 	};
 } // namespace android::graphics::drawable::shapes
 

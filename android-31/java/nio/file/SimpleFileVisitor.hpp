@@ -26,10 +26,10 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		java::nio::file::FileVisitResult postVisitDirectory(JObject arg0, java::io::IOException arg1);
-		java::nio::file::FileVisitResult preVisitDirectory(JObject arg0, JObject arg1);
-		java::nio::file::FileVisitResult visitFile(JObject arg0, JObject arg1);
-		java::nio::file::FileVisitResult visitFileFailed(JObject arg0, java::io::IOException arg1);
+		java::nio::file::FileVisitResult postVisitDirectory(JObject arg0, java::io::IOException arg1) const;
+		java::nio::file::FileVisitResult preVisitDirectory(JObject arg0, JObject arg1) const;
+		java::nio::file::FileVisitResult visitFile(JObject arg0, JObject arg1) const;
+		java::nio::file::FileVisitResult visitFileFailed(JObject arg0, java::io::IOException arg1) const;
 	};
 } // namespace java::nio::file
 

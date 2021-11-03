@@ -24,9 +24,9 @@ namespace java::security
 		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0, JObject arg1);
 		
 		// Methods
-		JObject getAttributes();
-		java::security::cert::Certificate getTrustedCertificate();
-		JString toString();
+		JObject getAttributes() const;
+		java::security::cert::Certificate getTrustedCertificate() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

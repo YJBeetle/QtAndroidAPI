@@ -29,10 +29,10 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		void close();
-		void postMessage(android::webkit::WebMessage arg0);
-		void setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0);
-		void setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0, android::os::Handler arg1);
+		void close() const;
+		void postMessage(android::webkit::WebMessage arg0) const;
+		void setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0) const;
+		void setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0, android::os::Handler arg1) const;
 	};
 } // namespace android::webkit
 

@@ -24,7 +24,7 @@ namespace android::service::controls::actions
 		) {}
 	
 	// Methods
-	jint CommandAction::getActionType()
+	jint CommandAction::getActionType() const
 	{
 		return callMethod<jint>(
 			"getActionType",

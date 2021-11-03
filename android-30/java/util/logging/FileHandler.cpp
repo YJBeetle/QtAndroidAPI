@@ -59,14 +59,14 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	void FileHandler::close()
+	void FileHandler::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void FileHandler::publish(java::util::logging::LogRecord arg0)
+	void FileHandler::publish(java::util::logging::LogRecord arg0) const
 	{
 		callMethod<void>(
 			"publish",

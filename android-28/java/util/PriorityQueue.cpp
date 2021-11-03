@@ -45,7 +45,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean PriorityQueue::add(JObject arg0)
+	jboolean PriorityQueue::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -53,21 +53,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void PriorityQueue::clear()
+	void PriorityQueue::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject PriorityQueue::comparator()
+	JObject PriorityQueue::comparator() const
 	{
 		return callObjectMethod(
 			"comparator",
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jboolean PriorityQueue::contains(JObject arg0)
+	jboolean PriorityQueue::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -75,7 +75,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void PriorityQueue::forEach(JObject arg0)
+	void PriorityQueue::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -83,14 +83,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject PriorityQueue::iterator()
+	JObject PriorityQueue::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean PriorityQueue::offer(JObject arg0)
+	jboolean PriorityQueue::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -98,21 +98,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject PriorityQueue::peek()
+	JObject PriorityQueue::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject PriorityQueue::poll()
+	JObject PriorityQueue::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean PriorityQueue::remove(JObject arg0)
+	jboolean PriorityQueue::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -120,7 +120,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean PriorityQueue::removeAll(JObject arg0)
+	jboolean PriorityQueue::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -128,7 +128,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean PriorityQueue::removeIf(JObject arg0)
+	jboolean PriorityQueue::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -136,7 +136,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean PriorityQueue::retainAll(JObject arg0)
+	jboolean PriorityQueue::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -144,28 +144,28 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint PriorityQueue::size()
+	jint PriorityQueue::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject PriorityQueue::spliterator()
+	JObject PriorityQueue::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObjectArray PriorityQueue::toArray()
+	JObjectArray PriorityQueue::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray PriorityQueue::toArray(JObjectArray arg0)
+	JObjectArray PriorityQueue::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",

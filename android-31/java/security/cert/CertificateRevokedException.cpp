@@ -25,42 +25,42 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	javax::security::auth::x500::X500Principal CertificateRevokedException::getAuthorityName()
+	javax::security::auth::x500::X500Principal CertificateRevokedException::getAuthorityName() const
 	{
 		return callObjectMethod(
 			"getAuthorityName",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	JObject CertificateRevokedException::getExtensions()
+	JObject CertificateRevokedException::getExtensions() const
 	{
 		return callObjectMethod(
 			"getExtensions",
 			"()Ljava/util/Map;"
 		);
 	}
-	java::util::Date CertificateRevokedException::getInvalidityDate()
+	java::util::Date CertificateRevokedException::getInvalidityDate() const
 	{
 		return callObjectMethod(
 			"getInvalidityDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	JString CertificateRevokedException::getMessage()
+	JString CertificateRevokedException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::Date CertificateRevokedException::getRevocationDate()
+	java::util::Date CertificateRevokedException::getRevocationDate() const
 	{
 		return callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::security::cert::CRLReason CertificateRevokedException::getRevocationReason()
+	java::security::cert::CRLReason CertificateRevokedException::getRevocationReason() const
 	{
 		return callObjectMethod(
 			"getRevocationReason",

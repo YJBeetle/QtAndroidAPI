@@ -56,42 +56,42 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint IccOpenLogicalChannelResponse::describeContents()
+	jint IccOpenLogicalChannelResponse::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint IccOpenLogicalChannelResponse::getChannel()
+	jint IccOpenLogicalChannelResponse::getChannel() const
 	{
 		return callMethod<jint>(
 			"getChannel",
 			"()I"
 		);
 	}
-	JByteArray IccOpenLogicalChannelResponse::getSelectResponse()
+	JByteArray IccOpenLogicalChannelResponse::getSelectResponse() const
 	{
 		return callObjectMethod(
 			"getSelectResponse",
 			"()[B"
 		);
 	}
-	jint IccOpenLogicalChannelResponse::getStatus()
+	jint IccOpenLogicalChannelResponse::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	JString IccOpenLogicalChannelResponse::toString()
+	JString IccOpenLogicalChannelResponse::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void IccOpenLogicalChannelResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void IccOpenLogicalChannelResponse::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

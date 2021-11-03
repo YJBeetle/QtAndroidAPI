@@ -168,70 +168,70 @@ namespace android::graphics
 			arg0.object<jstring>()
 		);
 	}
-	void ImageDecoder::close()
+	void ImageDecoder::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint ImageDecoder::getAllocator()
+	jint ImageDecoder::getAllocator() const
 	{
 		return callMethod<jint>(
 			"getAllocator",
 			"()I"
 		);
 	}
-	android::graphics::Rect ImageDecoder::getCrop()
+	android::graphics::Rect ImageDecoder::getCrop() const
 	{
 		return callObjectMethod(
 			"getCrop",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jint ImageDecoder::getMemorySizePolicy()
+	jint ImageDecoder::getMemorySizePolicy() const
 	{
 		return callMethod<jint>(
 			"getMemorySizePolicy",
 			"()I"
 		);
 	}
-	JObject ImageDecoder::getOnPartialImageListener()
+	JObject ImageDecoder::getOnPartialImageListener() const
 	{
 		return callObjectMethod(
 			"getOnPartialImageListener",
 			"()Landroid/graphics/ImageDecoder$OnPartialImageListener;"
 		);
 	}
-	JObject ImageDecoder::getPostProcessor()
+	JObject ImageDecoder::getPostProcessor() const
 	{
 		return callObjectMethod(
 			"getPostProcessor",
 			"()Landroid/graphics/PostProcessor;"
 		);
 	}
-	jboolean ImageDecoder::isDecodeAsAlphaMaskEnabled()
+	jboolean ImageDecoder::isDecodeAsAlphaMaskEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isDecodeAsAlphaMaskEnabled",
 			"()Z"
 		);
 	}
-	jboolean ImageDecoder::isMutableRequired()
+	jboolean ImageDecoder::isMutableRequired() const
 	{
 		return callMethod<jboolean>(
 			"isMutableRequired",
 			"()Z"
 		);
 	}
-	jboolean ImageDecoder::isUnpremultipliedRequired()
+	jboolean ImageDecoder::isUnpremultipliedRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUnpremultipliedRequired",
 			"()Z"
 		);
 	}
-	void ImageDecoder::setAllocator(jint arg0)
+	void ImageDecoder::setAllocator(jint arg0) const
 	{
 		callMethod<void>(
 			"setAllocator",
@@ -239,7 +239,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void ImageDecoder::setCrop(android::graphics::Rect arg0)
+	void ImageDecoder::setCrop(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setCrop",
@@ -247,7 +247,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ImageDecoder::setDecodeAsAlphaMaskEnabled(jboolean arg0)
+	void ImageDecoder::setDecodeAsAlphaMaskEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDecodeAsAlphaMaskEnabled",
@@ -255,7 +255,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void ImageDecoder::setMemorySizePolicy(jint arg0)
+	void ImageDecoder::setMemorySizePolicy(jint arg0) const
 	{
 		callMethod<void>(
 			"setMemorySizePolicy",
@@ -263,7 +263,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void ImageDecoder::setMutableRequired(jboolean arg0)
+	void ImageDecoder::setMutableRequired(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMutableRequired",
@@ -271,7 +271,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void ImageDecoder::setOnPartialImageListener(JObject arg0)
+	void ImageDecoder::setOnPartialImageListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnPartialImageListener",
@@ -279,7 +279,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ImageDecoder::setPostProcessor(JObject arg0)
+	void ImageDecoder::setPostProcessor(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPostProcessor",
@@ -287,7 +287,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ImageDecoder::setTargetColorSpace(android::graphics::ColorSpace arg0)
+	void ImageDecoder::setTargetColorSpace(android::graphics::ColorSpace arg0) const
 	{
 		callMethod<void>(
 			"setTargetColorSpace",
@@ -295,7 +295,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ImageDecoder::setTargetSampleSize(jint arg0)
+	void ImageDecoder::setTargetSampleSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setTargetSampleSize",
@@ -303,7 +303,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void ImageDecoder::setTargetSize(jint arg0, jint arg1)
+	void ImageDecoder::setTargetSize(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTargetSize",
@@ -312,7 +312,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void ImageDecoder::setUnpremultipliedRequired(jboolean arg0)
+	void ImageDecoder::setUnpremultipliedRequired(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUnpremultipliedRequired",

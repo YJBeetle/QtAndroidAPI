@@ -17,7 +17,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedHdrType(JString arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedHdrType(JString arg0) const
 	{
 		return callObjectMethod(
 			"addSupportedHdrType",
@@ -25,7 +25,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedVideoMimeType(JString arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedVideoMimeType(JString arg0) const
 	{
 		return callObjectMethod(
 			"addSupportedVideoMimeType",
@@ -33,7 +33,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedHdrType(JString arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedHdrType(JString arg0) const
 	{
 		return callObjectMethod(
 			"addUnsupportedHdrType",
@@ -41,7 +41,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedVideoMimeType(JString arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedVideoMimeType(JString arg0) const
 	{
 		return callObjectMethod(
 			"addUnsupportedVideoMimeType",
@@ -49,7 +49,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::ApplicationMediaCapabilities ApplicationMediaCapabilities_Builder::build()
+	android::media::ApplicationMediaCapabilities ApplicationMediaCapabilities_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

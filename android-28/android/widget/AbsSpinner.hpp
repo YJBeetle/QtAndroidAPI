@@ -42,20 +42,20 @@ namespace android::widget
 		AbsSpinner(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void autofill(android::view::autofill::AutofillValue arg0);
-		JString getAccessibilityClassName();
-		JObject getAdapter();
-		jint getAutofillType();
-		android::view::autofill::AutofillValue getAutofillValue();
-		jint getCount();
-		android::view::View getSelectedView();
-		void onRestoreInstanceState(JObject arg0);
-		JObject onSaveInstanceState();
-		jint pointToPosition(jint arg0, jint arg1);
-		void requestLayout();
-		void setAdapter(JObject arg0);
-		void setSelection(jint arg0);
-		void setSelection(jint arg0, jboolean arg1);
+		void autofill(android::view::autofill::AutofillValue arg0) const;
+		JString getAccessibilityClassName() const;
+		JObject getAdapter() const;
+		jint getAutofillType() const;
+		android::view::autofill::AutofillValue getAutofillValue() const;
+		jint getCount() const;
+		android::view::View getSelectedView() const;
+		void onRestoreInstanceState(JObject arg0) const;
+		JObject onSaveInstanceState() const;
+		jint pointToPosition(jint arg0, jint arg1) const;
+		void requestLayout() const;
+		void setAdapter(JObject arg0) const;
+		void setSelection(jint arg0) const;
+		void setSelection(jint arg0, jboolean arg1) const;
 	};
 } // namespace android::widget
 

@@ -23,14 +23,14 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	android::graphics::RecordingCanvas RenderNode::beginRecording()
+	android::graphics::RecordingCanvas RenderNode::beginRecording() const
 	{
 		return callObjectMethod(
 			"beginRecording",
 			"()Landroid/graphics/RecordingCanvas;"
 		);
 	}
-	android::graphics::RecordingCanvas RenderNode::beginRecording(jint arg0, jint arg1)
+	android::graphics::RecordingCanvas RenderNode::beginRecording(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"beginRecording",
@@ -39,84 +39,84 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jlong RenderNode::computeApproximateMemoryUsage()
+	jlong RenderNode::computeApproximateMemoryUsage() const
 	{
 		return callMethod<jlong>(
 			"computeApproximateMemoryUsage",
 			"()J"
 		);
 	}
-	void RenderNode::discardDisplayList()
+	void RenderNode::discardDisplayList() const
 	{
 		callMethod<void>(
 			"discardDisplayList",
 			"()V"
 		);
 	}
-	void RenderNode::endRecording()
+	void RenderNode::endRecording() const
 	{
 		callMethod<void>(
 			"endRecording",
 			"()V"
 		);
 	}
-	jfloat RenderNode::getAlpha()
+	jfloat RenderNode::getAlpha() const
 	{
 		return callMethod<jfloat>(
 			"getAlpha",
 			"()F"
 		);
 	}
-	jint RenderNode::getAmbientShadowColor()
+	jint RenderNode::getAmbientShadowColor() const
 	{
 		return callMethod<jint>(
 			"getAmbientShadowColor",
 			"()I"
 		);
 	}
-	jint RenderNode::getBottom()
+	jint RenderNode::getBottom() const
 	{
 		return callMethod<jint>(
 			"getBottom",
 			"()I"
 		);
 	}
-	jfloat RenderNode::getCameraDistance()
+	jfloat RenderNode::getCameraDistance() const
 	{
 		return callMethod<jfloat>(
 			"getCameraDistance",
 			"()F"
 		);
 	}
-	jboolean RenderNode::getClipToBounds()
+	jboolean RenderNode::getClipToBounds() const
 	{
 		return callMethod<jboolean>(
 			"getClipToBounds",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::getClipToOutline()
+	jboolean RenderNode::getClipToOutline() const
 	{
 		return callMethod<jboolean>(
 			"getClipToOutline",
 			"()Z"
 		);
 	}
-	jfloat RenderNode::getElevation()
+	jfloat RenderNode::getElevation() const
 	{
 		return callMethod<jfloat>(
 			"getElevation",
 			"()F"
 		);
 	}
-	jint RenderNode::getHeight()
+	jint RenderNode::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	void RenderNode::getInverseMatrix(android::graphics::Matrix arg0)
+	void RenderNode::getInverseMatrix(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"getInverseMatrix",
@@ -124,14 +124,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint RenderNode::getLeft()
+	jint RenderNode::getLeft() const
 	{
 		return callMethod<jint>(
 			"getLeft",
 			"()I"
 		);
 	}
-	void RenderNode::getMatrix(android::graphics::Matrix arg0)
+	void RenderNode::getMatrix(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"getMatrix",
@@ -139,161 +139,161 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jfloat RenderNode::getPivotX()
+	jfloat RenderNode::getPivotX() const
 	{
 		return callMethod<jfloat>(
 			"getPivotX",
 			"()F"
 		);
 	}
-	jfloat RenderNode::getPivotY()
+	jfloat RenderNode::getPivotY() const
 	{
 		return callMethod<jfloat>(
 			"getPivotY",
 			"()F"
 		);
 	}
-	jint RenderNode::getRight()
+	jint RenderNode::getRight() const
 	{
 		return callMethod<jint>(
 			"getRight",
 			"()I"
 		);
 	}
-	jfloat RenderNode::getRotationX()
+	jfloat RenderNode::getRotationX() const
 	{
 		return callMethod<jfloat>(
 			"getRotationX",
 			"()F"
 		);
 	}
-	jfloat RenderNode::getRotationY()
+	jfloat RenderNode::getRotationY() const
 	{
 		return callMethod<jfloat>(
 			"getRotationY",
 			"()F"
 		);
 	}
-	jfloat RenderNode::getRotationZ()
+	jfloat RenderNode::getRotationZ() const
 	{
 		return callMethod<jfloat>(
 			"getRotationZ",
 			"()F"
 		);
 	}
-	jfloat RenderNode::getScaleX()
+	jfloat RenderNode::getScaleX() const
 	{
 		return callMethod<jfloat>(
 			"getScaleX",
 			"()F"
 		);
 	}
-	jfloat RenderNode::getScaleY()
+	jfloat RenderNode::getScaleY() const
 	{
 		return callMethod<jfloat>(
 			"getScaleY",
 			"()F"
 		);
 	}
-	jint RenderNode::getSpotShadowColor()
+	jint RenderNode::getSpotShadowColor() const
 	{
 		return callMethod<jint>(
 			"getSpotShadowColor",
 			"()I"
 		);
 	}
-	jint RenderNode::getTop()
+	jint RenderNode::getTop() const
 	{
 		return callMethod<jint>(
 			"getTop",
 			"()I"
 		);
 	}
-	jfloat RenderNode::getTranslationX()
+	jfloat RenderNode::getTranslationX() const
 	{
 		return callMethod<jfloat>(
 			"getTranslationX",
 			"()F"
 		);
 	}
-	jfloat RenderNode::getTranslationY()
+	jfloat RenderNode::getTranslationY() const
 	{
 		return callMethod<jfloat>(
 			"getTranslationY",
 			"()F"
 		);
 	}
-	jfloat RenderNode::getTranslationZ()
+	jfloat RenderNode::getTranslationZ() const
 	{
 		return callMethod<jfloat>(
 			"getTranslationZ",
 			"()F"
 		);
 	}
-	jlong RenderNode::getUniqueId()
+	jlong RenderNode::getUniqueId() const
 	{
 		return callMethod<jlong>(
 			"getUniqueId",
 			"()J"
 		);
 	}
-	jboolean RenderNode::getUseCompositingLayer()
+	jboolean RenderNode::getUseCompositingLayer() const
 	{
 		return callMethod<jboolean>(
 			"getUseCompositingLayer",
 			"()Z"
 		);
 	}
-	jint RenderNode::getWidth()
+	jint RenderNode::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean RenderNode::hasDisplayList()
+	jboolean RenderNode::hasDisplayList() const
 	{
 		return callMethod<jboolean>(
 			"hasDisplayList",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::hasIdentityMatrix()
+	jboolean RenderNode::hasIdentityMatrix() const
 	{
 		return callMethod<jboolean>(
 			"hasIdentityMatrix",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::hasOverlappingRendering()
+	jboolean RenderNode::hasOverlappingRendering() const
 	{
 		return callMethod<jboolean>(
 			"hasOverlappingRendering",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::hasShadow()
+	jboolean RenderNode::hasShadow() const
 	{
 		return callMethod<jboolean>(
 			"hasShadow",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::isForceDarkAllowed()
+	jboolean RenderNode::isForceDarkAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isForceDarkAllowed",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::isPivotExplicitlySet()
+	jboolean RenderNode::isPivotExplicitlySet() const
 	{
 		return callMethod<jboolean>(
 			"isPivotExplicitlySet",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::offsetLeftAndRight(jint arg0)
+	jboolean RenderNode::offsetLeftAndRight(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"offsetLeftAndRight",
@@ -301,7 +301,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::offsetTopAndBottom(jint arg0)
+	jboolean RenderNode::offsetTopAndBottom(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"offsetTopAndBottom",
@@ -309,14 +309,14 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::resetPivot()
+	jboolean RenderNode::resetPivot() const
 	{
 		return callMethod<jboolean>(
 			"resetPivot",
 			"()Z"
 		);
 	}
-	jboolean RenderNode::setAlpha(jfloat arg0)
+	jboolean RenderNode::setAlpha(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setAlpha",
@@ -324,7 +324,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setAmbientShadowColor(jint arg0)
+	jboolean RenderNode::setAmbientShadowColor(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setAmbientShadowColor",
@@ -332,7 +332,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setCameraDistance(jfloat arg0)
+	jboolean RenderNode::setCameraDistance(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setCameraDistance",
@@ -340,7 +340,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setClipRect(android::graphics::Rect arg0)
+	jboolean RenderNode::setClipRect(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"setClipRect",
@@ -348,7 +348,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean RenderNode::setClipToBounds(jboolean arg0)
+	jboolean RenderNode::setClipToBounds(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setClipToBounds",
@@ -356,7 +356,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setClipToOutline(jboolean arg0)
+	jboolean RenderNode::setClipToOutline(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setClipToOutline",
@@ -364,7 +364,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setElevation(jfloat arg0)
+	jboolean RenderNode::setElevation(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setElevation",
@@ -372,7 +372,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setForceDarkAllowed(jboolean arg0)
+	jboolean RenderNode::setForceDarkAllowed(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setForceDarkAllowed",
@@ -380,7 +380,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setHasOverlappingRendering(jboolean arg0)
+	jboolean RenderNode::setHasOverlappingRendering(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setHasOverlappingRendering",
@@ -388,7 +388,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setOutline(android::graphics::Outline arg0)
+	jboolean RenderNode::setOutline(android::graphics::Outline arg0) const
 	{
 		return callMethod<jboolean>(
 			"setOutline",
@@ -396,7 +396,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean RenderNode::setPivotX(jfloat arg0)
+	jboolean RenderNode::setPivotX(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPivotX",
@@ -404,7 +404,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setPivotY(jfloat arg0)
+	jboolean RenderNode::setPivotY(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPivotY",
@@ -412,7 +412,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setPosition(android::graphics::Rect arg0)
+	jboolean RenderNode::setPosition(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPosition",
@@ -420,7 +420,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean RenderNode::setPosition(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean RenderNode::setPosition(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"setPosition",
@@ -431,7 +431,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean RenderNode::setProjectBackwards(jboolean arg0)
+	jboolean RenderNode::setProjectBackwards(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setProjectBackwards",
@@ -439,7 +439,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setProjectionReceiver(jboolean arg0)
+	jboolean RenderNode::setProjectionReceiver(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setProjectionReceiver",
@@ -447,7 +447,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setRenderEffect(android::graphics::RenderEffect arg0)
+	jboolean RenderNode::setRenderEffect(android::graphics::RenderEffect arg0) const
 	{
 		return callMethod<jboolean>(
 			"setRenderEffect",
@@ -455,7 +455,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean RenderNode::setRotationX(jfloat arg0)
+	jboolean RenderNode::setRotationX(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setRotationX",
@@ -463,7 +463,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setRotationY(jfloat arg0)
+	jboolean RenderNode::setRotationY(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setRotationY",
@@ -471,7 +471,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setRotationZ(jfloat arg0)
+	jboolean RenderNode::setRotationZ(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setRotationZ",
@@ -479,7 +479,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setScaleX(jfloat arg0)
+	jboolean RenderNode::setScaleX(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setScaleX",
@@ -487,7 +487,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setScaleY(jfloat arg0)
+	jboolean RenderNode::setScaleY(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setScaleY",
@@ -495,7 +495,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setSpotShadowColor(jint arg0)
+	jboolean RenderNode::setSpotShadowColor(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setSpotShadowColor",
@@ -503,7 +503,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setTranslationX(jfloat arg0)
+	jboolean RenderNode::setTranslationX(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setTranslationX",
@@ -511,7 +511,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setTranslationY(jfloat arg0)
+	jboolean RenderNode::setTranslationY(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setTranslationY",
@@ -519,7 +519,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setTranslationZ(jfloat arg0)
+	jboolean RenderNode::setTranslationZ(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setTranslationZ",
@@ -527,7 +527,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean RenderNode::setUseCompositingLayer(jboolean arg0, android::graphics::Paint arg1)
+	jboolean RenderNode::setUseCompositingLayer(jboolean arg0, android::graphics::Paint arg1) const
 	{
 		return callMethod<jboolean>(
 			"setUseCompositingLayer",

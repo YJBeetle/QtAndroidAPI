@@ -22,8 +22,8 @@ namespace android::hardware
 		SensorManager_DynamicSensorCallback();
 		
 		// Methods
-		void onDynamicSensorConnected(android::hardware::Sensor arg0);
-		void onDynamicSensorDisconnected(android::hardware::Sensor arg0);
+		void onDynamicSensorConnected(android::hardware::Sensor arg0) const;
+		void onDynamicSensorDisconnected(android::hardware::Sensor arg0) const;
 	};
 } // namespace android::hardware
 

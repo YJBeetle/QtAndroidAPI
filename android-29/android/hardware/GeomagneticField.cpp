@@ -19,49 +19,49 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	jfloat GeomagneticField::getDeclination()
+	jfloat GeomagneticField::getDeclination() const
 	{
 		return callMethod<jfloat>(
 			"getDeclination",
 			"()F"
 		);
 	}
-	jfloat GeomagneticField::getFieldStrength()
+	jfloat GeomagneticField::getFieldStrength() const
 	{
 		return callMethod<jfloat>(
 			"getFieldStrength",
 			"()F"
 		);
 	}
-	jfloat GeomagneticField::getHorizontalStrength()
+	jfloat GeomagneticField::getHorizontalStrength() const
 	{
 		return callMethod<jfloat>(
 			"getHorizontalStrength",
 			"()F"
 		);
 	}
-	jfloat GeomagneticField::getInclination()
+	jfloat GeomagneticField::getInclination() const
 	{
 		return callMethod<jfloat>(
 			"getInclination",
 			"()F"
 		);
 	}
-	jfloat GeomagneticField::getX()
+	jfloat GeomagneticField::getX() const
 	{
 		return callMethod<jfloat>(
 			"getX",
 			"()F"
 		);
 	}
-	jfloat GeomagneticField::getY()
+	jfloat GeomagneticField::getY() const
 	{
 		return callMethod<jfloat>(
 			"getY",
 			"()F"
 		);
 	}
-	jfloat GeomagneticField::getZ()
+	jfloat GeomagneticField::getZ() const
 	{
 		return callMethod<jfloat>(
 			"getZ",

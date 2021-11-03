@@ -10,7 +10,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::alpha(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::alpha(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"alpha",
@@ -18,7 +18,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::alphaBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::alphaBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"alphaBy",
@@ -26,35 +26,35 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewPropertyAnimator::cancel()
+	void ViewPropertyAnimator::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jlong ViewPropertyAnimator::getDuration()
+	jlong ViewPropertyAnimator::getDuration() const
 	{
 		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
-	JObject ViewPropertyAnimator::getInterpolator()
+	JObject ViewPropertyAnimator::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	jlong ViewPropertyAnimator::getStartDelay()
+	jlong ViewPropertyAnimator::getStartDelay() const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",
 			"()J"
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotation(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotation(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"rotation",
@@ -62,7 +62,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"rotationBy",
@@ -70,7 +70,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationX(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationX(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"rotationX",
@@ -78,7 +78,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationXBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationXBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"rotationXBy",
@@ -86,7 +86,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationY(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationY(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"rotationY",
@@ -94,7 +94,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationYBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationYBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"rotationYBy",
@@ -102,7 +102,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleX(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleX(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"scaleX",
@@ -110,7 +110,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleXBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleXBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"scaleXBy",
@@ -118,7 +118,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleY(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleY(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"scaleY",
@@ -126,7 +126,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleYBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleYBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"scaleYBy",
@@ -134,7 +134,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setDuration(jlong arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -142,7 +142,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setInterpolator(JObject arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setInterpolator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setInterpolator",
@@ -150,7 +150,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setListener(JObject arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setListener",
@@ -158,7 +158,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setStartDelay(jlong arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setStartDelay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setStartDelay",
@@ -166,7 +166,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setUpdateListener(JObject arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setUpdateListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setUpdateListener",
@@ -174,14 +174,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewPropertyAnimator::start()
+	void ViewPropertyAnimator::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationX(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationX(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"translationX",
@@ -189,7 +189,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationXBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationXBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"translationXBy",
@@ -197,7 +197,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationY(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationY(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"translationY",
@@ -205,7 +205,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationYBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationYBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"translationYBy",
@@ -213,7 +213,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZ(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZ(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"translationZ",
@@ -221,7 +221,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"translationZBy",
@@ -229,7 +229,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::withEndAction(JObject arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withEndAction(JObject arg0) const
 	{
 		return callObjectMethod(
 			"withEndAction",
@@ -237,14 +237,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::withLayer()
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withLayer() const
 	{
 		return callObjectMethod(
 			"withLayer",
 			"()Landroid/view/ViewPropertyAnimator;"
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::withStartAction(JObject arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withStartAction(JObject arg0) const
 	{
 		return callObjectMethod(
 			"withStartAction",
@@ -252,7 +252,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::x(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::x(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"x",
@@ -260,7 +260,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::xBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::xBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"xBy",
@@ -268,7 +268,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::y(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::y(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"y",
@@ -276,7 +276,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::yBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::yBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"yBy",
@@ -284,7 +284,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::z(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::z(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"z",
@@ -292,7 +292,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::zBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::zBy(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"zBy",

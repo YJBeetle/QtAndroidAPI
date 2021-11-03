@@ -23,13 +23,13 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getBreakStrategy();
-		jint getHyphenationFrequency();
-		JObject getTextDirection();
-		android::text::TextPaint getTextPaint();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getBreakStrategy() const;
+		jint getHyphenationFrequency() const;
+		JObject getTextDirection() const;
+		android::text::TextPaint getTextPaint() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::text
 

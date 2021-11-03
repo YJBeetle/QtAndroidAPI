@@ -20,13 +20,13 @@ namespace java::util::concurrent::atomic
 		AtomicMarkableReference(JObject arg0, jboolean arg1);
 		
 		// Methods
-		jboolean attemptMark(JObject arg0, jboolean arg1);
-		jboolean compareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3);
-		JObject get(JBooleanArray arg0);
-		JObject getReference();
-		jboolean isMarked();
-		void set(JObject arg0, jboolean arg1);
-		jboolean weakCompareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3);
+		jboolean attemptMark(JObject arg0, jboolean arg1) const;
+		jboolean compareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3) const;
+		JObject get(JBooleanArray arg0) const;
+		JObject getReference() const;
+		jboolean isMarked() const;
+		void set(JObject arg0, jboolean arg1) const;
+		jboolean weakCompareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3) const;
 	};
 } // namespace java::util::concurrent::atomic
 

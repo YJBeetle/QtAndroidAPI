@@ -12,21 +12,21 @@ namespace android::drm
 	// Constructors
 	
 	// Methods
-	JString ProcessedData::getAccountId()
+	JString ProcessedData::getAccountId() const
 	{
 		return callObjectMethod(
 			"getAccountId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray ProcessedData::getData()
+	JByteArray ProcessedData::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	JString ProcessedData::getSubscriptionId()
+	JString ProcessedData::getSubscriptionId() const
 	{
 		return callObjectMethod(
 			"getSubscriptionId",

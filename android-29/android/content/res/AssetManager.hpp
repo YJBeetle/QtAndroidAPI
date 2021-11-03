@@ -31,16 +31,16 @@ namespace android::content::res
 		// Constructors
 		
 		// Methods
-		void close();
-		JArray getLocales();
-		JArray list(JString arg0);
-		java::io::InputStream open(JString arg0);
-		java::io::InputStream open(JString arg0, jint arg1);
-		android::content::res::AssetFileDescriptor openFd(JString arg0);
-		android::content::res::AssetFileDescriptor openNonAssetFd(JString arg0);
-		android::content::res::AssetFileDescriptor openNonAssetFd(jint arg0, JString arg1);
-		JObject openXmlResourceParser(JString arg0);
-		JObject openXmlResourceParser(jint arg0, JString arg1);
+		void close() const;
+		JArray getLocales() const;
+		JArray list(JString arg0) const;
+		java::io::InputStream open(JString arg0) const;
+		java::io::InputStream open(JString arg0, jint arg1) const;
+		android::content::res::AssetFileDescriptor openFd(JString arg0) const;
+		android::content::res::AssetFileDescriptor openNonAssetFd(JString arg0) const;
+		android::content::res::AssetFileDescriptor openNonAssetFd(jint arg0, JString arg1) const;
+		JObject openXmlResourceParser(JString arg0) const;
+		JObject openXmlResourceParser(jint arg0, JString arg1) const;
 	};
 } // namespace android::content::res
 

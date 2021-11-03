@@ -336,7 +336,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	jint AppOpsManager::checkOp(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::checkOp(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"checkOp",
@@ -346,7 +346,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::checkOpNoThrow(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::checkOpNoThrow(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"checkOpNoThrow",
@@ -356,7 +356,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	void AppOpsManager::checkPackage(jint arg0, JString arg1)
+	void AppOpsManager::checkPackage(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"checkPackage",
@@ -365,7 +365,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void AppOpsManager::finishOp(JString arg0, jint arg1, JString arg2)
+	void AppOpsManager::finishOp(JString arg0, jint arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"finishOp",
@@ -375,7 +375,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	void AppOpsManager::finishOp(JString arg0, jint arg1, JString arg2, JString arg3)
+	void AppOpsManager::finishOp(JString arg0, jint arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"finishOp",
@@ -386,7 +386,7 @@ namespace android::app
 			arg3.object<jstring>()
 		);
 	}
-	void AppOpsManager::finishProxyOp(JString arg0, jint arg1, JString arg2, JString arg3)
+	void AppOpsManager::finishProxyOp(JString arg0, jint arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"finishProxyOp",
@@ -397,7 +397,7 @@ namespace android::app
 			arg3.object<jstring>()
 		);
 	}
-	jboolean AppOpsManager::isOpActive(JString arg0, jint arg1, JString arg2)
+	jboolean AppOpsManager::isOpActive(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jboolean>(
 			"isOpActive",
@@ -407,7 +407,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteOp(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::noteOp(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"noteOp",
@@ -417,7 +417,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteOp(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4)
+	jint AppOpsManager::noteOp(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"noteOp",
@@ -429,7 +429,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteOpNoThrow(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::noteOpNoThrow(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"noteOpNoThrow",
@@ -439,7 +439,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteOpNoThrow(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4)
+	jint AppOpsManager::noteOpNoThrow(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"noteOpNoThrow",
@@ -451,7 +451,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteProxyOp(JString arg0, JString arg1)
+	jint AppOpsManager::noteProxyOp(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"noteProxyOp",
@@ -460,7 +460,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteProxyOp(JString arg0, JString arg1, jint arg2, JString arg3, JString arg4)
+	jint AppOpsManager::noteProxyOp(JString arg0, JString arg1, jint arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"noteProxyOp",
@@ -472,7 +472,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteProxyOpNoThrow(JString arg0, JString arg1)
+	jint AppOpsManager::noteProxyOpNoThrow(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"noteProxyOpNoThrow",
@@ -481,7 +481,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	jint AppOpsManager::noteProxyOpNoThrow(JString arg0, JString arg1, jint arg2)
+	jint AppOpsManager::noteProxyOpNoThrow(JString arg0, JString arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"noteProxyOpNoThrow",
@@ -491,7 +491,7 @@ namespace android::app
 			arg2
 		);
 	}
-	jint AppOpsManager::noteProxyOpNoThrow(JString arg0, JString arg1, jint arg2, JString arg3, JString arg4)
+	jint AppOpsManager::noteProxyOpNoThrow(JString arg0, JString arg1, jint arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"noteProxyOpNoThrow",
@@ -503,7 +503,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	void AppOpsManager::setOnOpNotedCallback(JObject arg0, android::app::AppOpsManager_OnOpNotedCallback arg1)
+	void AppOpsManager::setOnOpNotedCallback(JObject arg0, android::app::AppOpsManager_OnOpNotedCallback arg1) const
 	{
 		callMethod<void>(
 			"setOnOpNotedCallback",
@@ -512,7 +512,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jint AppOpsManager::startOp(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::startOp(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"startOp",
@@ -522,7 +522,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::startOp(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4)
+	jint AppOpsManager::startOp(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"startOp",
@@ -534,7 +534,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	jint AppOpsManager::startOpNoThrow(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::startOpNoThrow(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"startOpNoThrow",
@@ -544,7 +544,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::startOpNoThrow(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4)
+	jint AppOpsManager::startOpNoThrow(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"startOpNoThrow",
@@ -556,7 +556,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	jint AppOpsManager::startProxyOp(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4)
+	jint AppOpsManager::startProxyOp(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"startProxyOp",
@@ -568,7 +568,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	jint AppOpsManager::startProxyOpNoThrow(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4)
+	jint AppOpsManager::startProxyOpNoThrow(JString arg0, jint arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		return callMethod<jint>(
 			"startProxyOpNoThrow",
@@ -580,7 +580,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	void AppOpsManager::startWatchingActive(JArray arg0, JObject arg1, JObject arg2)
+	void AppOpsManager::startWatchingActive(JArray arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"startWatchingActive",
@@ -590,7 +590,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AppOpsManager::startWatchingMode(JString arg0, JString arg1, JObject arg2)
+	void AppOpsManager::startWatchingMode(JString arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"startWatchingMode",
@@ -600,7 +600,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AppOpsManager::startWatchingMode(JString arg0, JString arg1, jint arg2, JObject arg3)
+	void AppOpsManager::startWatchingMode(JString arg0, JString arg1, jint arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"startWatchingMode",
@@ -611,7 +611,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AppOpsManager::stopWatchingActive(JObject arg0)
+	void AppOpsManager::stopWatchingActive(JObject arg0) const
 	{
 		callMethod<void>(
 			"stopWatchingActive",
@@ -619,7 +619,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AppOpsManager::stopWatchingMode(JObject arg0)
+	void AppOpsManager::stopWatchingMode(JObject arg0) const
 	{
 		callMethod<void>(
 			"stopWatchingMode",
@@ -627,7 +627,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint AppOpsManager::unsafeCheckOp(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::unsafeCheckOp(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"unsafeCheckOp",
@@ -637,7 +637,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::unsafeCheckOpNoThrow(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::unsafeCheckOpNoThrow(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"unsafeCheckOpNoThrow",
@@ -647,7 +647,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::unsafeCheckOpRaw(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::unsafeCheckOpRaw(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"unsafeCheckOpRaw",
@@ -657,7 +657,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	jint AppOpsManager::unsafeCheckOpRawNoThrow(JString arg0, jint arg1, JString arg2)
+	jint AppOpsManager::unsafeCheckOpRawNoThrow(JString arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"unsafeCheckOpRawNoThrow",

@@ -98,14 +98,14 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::ComponentName ComponentName::clone()
+	android::content::ComponentName ComponentName::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jint ComponentName::compareTo(android::content::ComponentName arg0)
+	jint ComponentName::compareTo(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -113,7 +113,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint ComponentName::compareTo(JObject arg0)
+	jint ComponentName::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -121,14 +121,14 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	jint ComponentName::describeContents()
+	jint ComponentName::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ComponentName::equals(JObject arg0)
+	jboolean ComponentName::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -136,63 +136,63 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	JString ComponentName::flattenToShortString()
+	JString ComponentName::flattenToShortString() const
 	{
 		return callObjectMethod(
 			"flattenToShortString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ComponentName::flattenToString()
+	JString ComponentName::flattenToString() const
 	{
 		return callObjectMethod(
 			"flattenToString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ComponentName::getClassName()
+	JString ComponentName::getClassName() const
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ComponentName::getPackageName()
+	JString ComponentName::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ComponentName::getShortClassName()
+	JString ComponentName::getShortClassName() const
 	{
 		return callObjectMethod(
 			"getShortClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ComponentName::hashCode()
+	jint ComponentName::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ComponentName::toShortString()
+	JString ComponentName::toShortString() const
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ComponentName::toString()
+	JString ComponentName::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ComponentName::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ComponentName::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -155,14 +155,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JObject DateFormatSymbols::clone()
+	JObject DateFormatSymbols::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DateFormatSymbols::equals(JObject arg0)
+	jboolean DateFormatSymbols::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -170,42 +170,42 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	JArray DateFormatSymbols::getAmPmStrings()
+	JArray DateFormatSymbols::getAmPmStrings() const
 	{
 		return callObjectMethod(
 			"getAmPmStrings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getEraNames()
+	JArray DateFormatSymbols::getEraNames() const
 	{
 		return callObjectMethod(
 			"getEraNames",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getEras()
+	JArray DateFormatSymbols::getEras() const
 	{
 		return callObjectMethod(
 			"getEras",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString DateFormatSymbols::getLocalPatternChars()
+	JString DateFormatSymbols::getLocalPatternChars() const
 	{
 		return callObjectMethod(
 			"getLocalPatternChars",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getMonths()
+	JArray DateFormatSymbols::getMonths() const
 	{
 		return callObjectMethod(
 			"getMonths",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getMonths(jint arg0, jint arg1)
+	JArray DateFormatSymbols::getMonths(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getMonths",
@@ -214,14 +214,14 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JArray DateFormatSymbols::getNarrowEras()
+	JArray DateFormatSymbols::getNarrowEras() const
 	{
 		return callObjectMethod(
 			"getNarrowEras",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getQuarters(jint arg0, jint arg1)
+	JArray DateFormatSymbols::getQuarters(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getQuarters",
@@ -230,28 +230,28 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JArray DateFormatSymbols::getShortMonths()
+	JArray DateFormatSymbols::getShortMonths() const
 	{
 		return callObjectMethod(
 			"getShortMonths",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getShortWeekdays()
+	JArray DateFormatSymbols::getShortWeekdays() const
 	{
 		return callObjectMethod(
 			"getShortWeekdays",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getWeekdays()
+	JArray DateFormatSymbols::getWeekdays() const
 	{
 		return callObjectMethod(
 			"getWeekdays",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray DateFormatSymbols::getWeekdays(jint arg0, jint arg1)
+	JArray DateFormatSymbols::getWeekdays(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getWeekdays",
@@ -260,7 +260,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JArray DateFormatSymbols::getYearNames(jint arg0, jint arg1)
+	JArray DateFormatSymbols::getYearNames(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getYearNames",
@@ -269,7 +269,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JArray DateFormatSymbols::getZodiacNames(jint arg0, jint arg1)
+	JArray DateFormatSymbols::getZodiacNames(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getZodiacNames",
@@ -278,21 +278,21 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JArray DateFormatSymbols::getZoneStrings()
+	JArray DateFormatSymbols::getZoneStrings() const
 	{
 		return callObjectMethod(
 			"getZoneStrings",
 			"()[[Ljava/lang/String;"
 		);
 	}
-	jint DateFormatSymbols::hashCode()
+	jint DateFormatSymbols::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void DateFormatSymbols::setAmPmStrings(JArray arg0)
+	void DateFormatSymbols::setAmPmStrings(JArray arg0) const
 	{
 		callMethod<void>(
 			"setAmPmStrings",
@@ -300,7 +300,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setEraNames(JArray arg0)
+	void DateFormatSymbols::setEraNames(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEraNames",
@@ -308,7 +308,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setEras(JArray arg0)
+	void DateFormatSymbols::setEras(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEras",
@@ -316,7 +316,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setLocalPatternChars(JString arg0)
+	void DateFormatSymbols::setLocalPatternChars(JString arg0) const
 	{
 		callMethod<void>(
 			"setLocalPatternChars",
@@ -324,7 +324,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DateFormatSymbols::setMonths(JArray arg0)
+	void DateFormatSymbols::setMonths(JArray arg0) const
 	{
 		callMethod<void>(
 			"setMonths",
@@ -332,7 +332,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setMonths(JArray arg0, jint arg1, jint arg2)
+	void DateFormatSymbols::setMonths(JArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setMonths",
@@ -342,7 +342,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void DateFormatSymbols::setNarrowEras(JArray arg0)
+	void DateFormatSymbols::setNarrowEras(JArray arg0) const
 	{
 		callMethod<void>(
 			"setNarrowEras",
@@ -350,7 +350,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setQuarters(JArray arg0, jint arg1, jint arg2)
+	void DateFormatSymbols::setQuarters(JArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setQuarters",
@@ -360,7 +360,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void DateFormatSymbols::setShortMonths(JArray arg0)
+	void DateFormatSymbols::setShortMonths(JArray arg0) const
 	{
 		callMethod<void>(
 			"setShortMonths",
@@ -368,7 +368,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setShortWeekdays(JArray arg0)
+	void DateFormatSymbols::setShortWeekdays(JArray arg0) const
 	{
 		callMethod<void>(
 			"setShortWeekdays",
@@ -376,7 +376,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setWeekdays(JArray arg0)
+	void DateFormatSymbols::setWeekdays(JArray arg0) const
 	{
 		callMethod<void>(
 			"setWeekdays",
@@ -384,7 +384,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setWeekdays(JArray arg0, jint arg1, jint arg2)
+	void DateFormatSymbols::setWeekdays(JArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setWeekdays",
@@ -394,7 +394,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void DateFormatSymbols::setYearNames(JArray arg0, jint arg1, jint arg2)
+	void DateFormatSymbols::setYearNames(JArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setYearNames",
@@ -404,7 +404,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void DateFormatSymbols::setZodiacNames(JArray arg0, jint arg1, jint arg2)
+	void DateFormatSymbols::setZodiacNames(JArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setZodiacNames",
@@ -414,7 +414,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void DateFormatSymbols::setZoneStrings(JArray arg0)
+	void DateFormatSymbols::setZoneStrings(JArray arg0) const
 	{
 		callMethod<void>(
 			"setZoneStrings",

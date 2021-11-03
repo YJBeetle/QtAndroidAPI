@@ -22,9 +22,9 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		void onFailure(JString arg0);
-		void onSuccess();
-		void onSuccess(android::content::IntentSender arg0);
+		void onFailure(JString arg0) const;
+		void onSuccess() const;
+		void onSuccess(android::content::IntentSender arg0) const;
 	};
 } // namespace android::service::autofill
 

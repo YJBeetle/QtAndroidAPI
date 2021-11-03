@@ -19,10 +19,10 @@ namespace android::app::backup
 		// Constructors
 		
 		// Methods
-		jlong getQuota();
-		jint getTransportFlags();
-		jint writeEntityData(JByteArray arg0, jint arg1);
-		jint writeEntityHeader(JString arg0, jint arg1);
+		jlong getQuota() const;
+		jint getTransportFlags() const;
+		jint writeEntityData(JByteArray arg0, jint arg1) const;
+		jint writeEntityHeader(JString arg0, jint arg1) const;
 	};
 } // namespace android::app::backup
 

@@ -23,63 +23,63 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint Person::describeContents()
+	jint Person::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Icon Person::getIcon()
+	android::graphics::drawable::Icon Person::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString Person::getKey()
+	JString Person::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Person::getName()
+	JString Person::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Person::getUri()
+	JString Person::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Person::isBot()
+	jboolean Person::isBot() const
 	{
 		return callMethod<jboolean>(
 			"isBot",
 			"()Z"
 		);
 	}
-	jboolean Person::isImportant()
+	jboolean Person::isImportant() const
 	{
 		return callMethod<jboolean>(
 			"isImportant",
 			"()Z"
 		);
 	}
-	android::app::Person_Builder Person::toBuilder()
+	android::app::Person_Builder Person::toBuilder() const
 	{
 		return callObjectMethod(
 			"toBuilder",
 			"()Landroid/app/Person$Builder;"
 		);
 	}
-	void Person::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Person::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

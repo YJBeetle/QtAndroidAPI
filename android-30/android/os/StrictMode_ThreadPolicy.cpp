@@ -19,7 +19,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	JString StrictMode_ThreadPolicy::toString()
+	JString StrictMode_ThreadPolicy::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -27,13 +27,13 @@ namespace android::view::inputmethod
 		CursorAnchorInfo_Builder();
 		
 		// Methods
-		android::view::inputmethod::CursorAnchorInfo_Builder addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5);
-		android::view::inputmethod::CursorAnchorInfo build();
-		void reset();
-		android::view::inputmethod::CursorAnchorInfo_Builder setComposingText(jint arg0, JString arg1);
-		android::view::inputmethod::CursorAnchorInfo_Builder setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4);
-		android::view::inputmethod::CursorAnchorInfo_Builder setMatrix(android::graphics::Matrix arg0);
-		android::view::inputmethod::CursorAnchorInfo_Builder setSelectionRange(jint arg0, jint arg1);
+		android::view::inputmethod::CursorAnchorInfo_Builder addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5) const;
+		android::view::inputmethod::CursorAnchorInfo build() const;
+		void reset() const;
+		android::view::inputmethod::CursorAnchorInfo_Builder setComposingText(jint arg0, JString arg1) const;
+		android::view::inputmethod::CursorAnchorInfo_Builder setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4) const;
+		android::view::inputmethod::CursorAnchorInfo_Builder setMatrix(android::graphics::Matrix arg0) const;
+		android::view::inputmethod::CursorAnchorInfo_Builder setSelectionRange(jint arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

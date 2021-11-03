@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextClassifierEvent_LanguageDetectionEvent TextClassifierEvent_LanguageDetectionEvent_Builder::build()
+	android::view::textclassifier::TextClassifierEvent_LanguageDetectionEvent TextClassifierEvent_LanguageDetectionEvent_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

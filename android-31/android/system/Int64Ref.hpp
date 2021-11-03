@@ -20,7 +20,7 @@ namespace android::system
 		Int64Ref(jlong arg0);
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::system
 

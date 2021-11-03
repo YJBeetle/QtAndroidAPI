@@ -22,7 +22,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	android::graphics::Canvas Picture::beginRecording(jint arg0, jint arg1)
+	android::graphics::Canvas Picture::beginRecording(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"beginRecording",
@@ -31,7 +31,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Picture::draw(android::graphics::Canvas arg0)
+	void Picture::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -39,28 +39,28 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Picture::endRecording()
+	void Picture::endRecording() const
 	{
 		callMethod<void>(
 			"endRecording",
 			"()V"
 		);
 	}
-	jint Picture::getHeight()
+	jint Picture::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint Picture::getWidth()
+	jint Picture::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean Picture::requiresHardwareAcceleration()
+	jboolean Picture::requiresHardwareAcceleration() const
 	{
 		return callMethod<jboolean>(
 			"requiresHardwareAcceleration",

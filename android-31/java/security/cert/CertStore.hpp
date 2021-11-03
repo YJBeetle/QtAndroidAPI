@@ -34,11 +34,11 @@ namespace java::security::cert
 		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1);
 		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1, JString arg2);
 		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
-		JObject getCRLs(JObject arg0);
-		JObject getCertStoreParameters();
-		JObject getCertificates(JObject arg0);
-		java::security::Provider getProvider();
-		JString getType();
+		JObject getCRLs(JObject arg0) const;
+		JObject getCertStoreParameters() const;
+		JObject getCertificates(JObject arg0) const;
+		java::security::Provider getProvider() const;
+		JString getType() const;
 	};
 } // namespace java::security::cert
 

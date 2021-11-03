@@ -46,14 +46,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void NumberPicker::computeScroll()
+	void NumberPicker::computeScroll() const
 	{
 		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
-	jboolean NumberPicker::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean NumberPicker::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -61,7 +61,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean NumberPicker::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean NumberPicker::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -69,7 +69,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean NumberPicker::dispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean NumberPicker::dispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
@@ -77,84 +77,84 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeProvider NumberPicker::getAccessibilityNodeProvider()
+	android::view::accessibility::AccessibilityNodeProvider NumberPicker::getAccessibilityNodeProvider() const
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",
 			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
 		);
 	}
-	JArray NumberPicker::getDisplayedValues()
+	JArray NumberPicker::getDisplayedValues() const
 	{
 		return callObjectMethod(
 			"getDisplayedValues",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint NumberPicker::getMaxValue()
+	jint NumberPicker::getMaxValue() const
 	{
 		return callMethod<jint>(
 			"getMaxValue",
 			"()I"
 		);
 	}
-	jint NumberPicker::getMinValue()
+	jint NumberPicker::getMinValue() const
 	{
 		return callMethod<jint>(
 			"getMinValue",
 			"()I"
 		);
 	}
-	jint NumberPicker::getSelectionDividerHeight()
+	jint NumberPicker::getSelectionDividerHeight() const
 	{
 		return callMethod<jint>(
 			"getSelectionDividerHeight",
 			"()I"
 		);
 	}
-	jint NumberPicker::getSolidColor()
+	jint NumberPicker::getSolidColor() const
 	{
 		return callMethod<jint>(
 			"getSolidColor",
 			"()I"
 		);
 	}
-	jint NumberPicker::getTextColor()
+	jint NumberPicker::getTextColor() const
 	{
 		return callMethod<jint>(
 			"getTextColor",
 			"()I"
 		);
 	}
-	jfloat NumberPicker::getTextSize()
+	jfloat NumberPicker::getTextSize() const
 	{
 		return callMethod<jfloat>(
 			"getTextSize",
 			"()F"
 		);
 	}
-	jint NumberPicker::getValue()
+	jint NumberPicker::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
-	jboolean NumberPicker::getWrapSelectorWheel()
+	jboolean NumberPicker::getWrapSelectorWheel() const
 	{
 		return callMethod<jboolean>(
 			"getWrapSelectorWheel",
 			"()Z"
 		);
 	}
-	void NumberPicker::jumpDrawablesToCurrentState()
+	void NumberPicker::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	jboolean NumberPicker::onInterceptTouchEvent(android::view::MotionEvent arg0)
+	jboolean NumberPicker::onInterceptTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
@@ -162,7 +162,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean NumberPicker::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean NumberPicker::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -170,21 +170,21 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean NumberPicker::performClick()
+	jboolean NumberPicker::performClick() const
 	{
 		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
-	jboolean NumberPicker::performLongClick()
+	jboolean NumberPicker::performLongClick() const
 	{
 		return callMethod<jboolean>(
 			"performLongClick",
 			"()Z"
 		);
 	}
-	void NumberPicker::scrollBy(jint arg0, jint arg1)
+	void NumberPicker::scrollBy(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"scrollBy",
@@ -193,7 +193,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void NumberPicker::setDisplayedValues(JArray arg0)
+	void NumberPicker::setDisplayedValues(JArray arg0) const
 	{
 		callMethod<void>(
 			"setDisplayedValues",
@@ -201,7 +201,7 @@ namespace android::widget
 			arg0.object<jarray>()
 		);
 	}
-	void NumberPicker::setEnabled(jboolean arg0)
+	void NumberPicker::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -209,7 +209,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setFormatter(JObject arg0)
+	void NumberPicker::setFormatter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFormatter",
@@ -217,7 +217,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void NumberPicker::setMaxValue(jint arg0)
+	void NumberPicker::setMaxValue(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxValue",
@@ -225,7 +225,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setMinValue(jint arg0)
+	void NumberPicker::setMinValue(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinValue",
@@ -233,7 +233,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setOnLongPressUpdateInterval(jlong arg0)
+	void NumberPicker::setOnLongPressUpdateInterval(jlong arg0) const
 	{
 		callMethod<void>(
 			"setOnLongPressUpdateInterval",
@@ -241,7 +241,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setOnScrollListener(JObject arg0)
+	void NumberPicker::setOnScrollListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnScrollListener",
@@ -249,7 +249,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void NumberPicker::setOnValueChangedListener(JObject arg0)
+	void NumberPicker::setOnValueChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnValueChangedListener",
@@ -257,7 +257,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void NumberPicker::setSelectionDividerHeight(jint arg0)
+	void NumberPicker::setSelectionDividerHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelectionDividerHeight",
@@ -265,7 +265,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setTextColor(jint arg0)
+	void NumberPicker::setTextColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextColor",
@@ -273,7 +273,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setTextSize(jfloat arg0)
+	void NumberPicker::setTextSize(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setTextSize",
@@ -281,7 +281,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setValue(jint arg0)
+	void NumberPicker::setValue(jint arg0) const
 	{
 		callMethod<void>(
 			"setValue",
@@ -289,7 +289,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setWrapSelectorWheel(jboolean arg0)
+	void NumberPicker::setWrapSelectorWheel(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setWrapSelectorWheel",

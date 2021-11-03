@@ -74,7 +74,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void StreamTokenizer::commentChar(jint arg0)
+	void StreamTokenizer::commentChar(jint arg0) const
 	{
 		callMethod<void>(
 			"commentChar",
@@ -82,7 +82,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void StreamTokenizer::eolIsSignificant(jboolean arg0)
+	void StreamTokenizer::eolIsSignificant(jboolean arg0) const
 	{
 		callMethod<void>(
 			"eolIsSignificant",
@@ -90,14 +90,14 @@ namespace java::io
 			arg0
 		);
 	}
-	jint StreamTokenizer::lineno()
+	jint StreamTokenizer::lineno() const
 	{
 		return callMethod<jint>(
 			"lineno",
 			"()I"
 		);
 	}
-	void StreamTokenizer::lowerCaseMode(jboolean arg0)
+	void StreamTokenizer::lowerCaseMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"lowerCaseMode",
@@ -105,14 +105,14 @@ namespace java::io
 			arg0
 		);
 	}
-	jint StreamTokenizer::nextToken()
+	jint StreamTokenizer::nextToken() const
 	{
 		return callMethod<jint>(
 			"nextToken",
 			"()I"
 		);
 	}
-	void StreamTokenizer::ordinaryChar(jint arg0)
+	void StreamTokenizer::ordinaryChar(jint arg0) const
 	{
 		callMethod<void>(
 			"ordinaryChar",
@@ -120,7 +120,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void StreamTokenizer::ordinaryChars(jint arg0, jint arg1)
+	void StreamTokenizer::ordinaryChars(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"ordinaryChars",
@@ -129,21 +129,21 @@ namespace java::io
 			arg1
 		);
 	}
-	void StreamTokenizer::parseNumbers()
+	void StreamTokenizer::parseNumbers() const
 	{
 		callMethod<void>(
 			"parseNumbers",
 			"()V"
 		);
 	}
-	void StreamTokenizer::pushBack()
+	void StreamTokenizer::pushBack() const
 	{
 		callMethod<void>(
 			"pushBack",
 			"()V"
 		);
 	}
-	void StreamTokenizer::quoteChar(jint arg0)
+	void StreamTokenizer::quoteChar(jint arg0) const
 	{
 		callMethod<void>(
 			"quoteChar",
@@ -151,14 +151,14 @@ namespace java::io
 			arg0
 		);
 	}
-	void StreamTokenizer::resetSyntax()
+	void StreamTokenizer::resetSyntax() const
 	{
 		callMethod<void>(
 			"resetSyntax",
 			"()V"
 		);
 	}
-	void StreamTokenizer::slashSlashComments(jboolean arg0)
+	void StreamTokenizer::slashSlashComments(jboolean arg0) const
 	{
 		callMethod<void>(
 			"slashSlashComments",
@@ -166,7 +166,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void StreamTokenizer::slashStarComments(jboolean arg0)
+	void StreamTokenizer::slashStarComments(jboolean arg0) const
 	{
 		callMethod<void>(
 			"slashStarComments",
@@ -174,14 +174,14 @@ namespace java::io
 			arg0
 		);
 	}
-	JString StreamTokenizer::toString()
+	JString StreamTokenizer::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void StreamTokenizer::whitespaceChars(jint arg0, jint arg1)
+	void StreamTokenizer::whitespaceChars(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"whitespaceChars",
@@ -190,7 +190,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void StreamTokenizer::wordChars(jint arg0, jint arg1)
+	void StreamTokenizer::wordChars(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"wordChars",

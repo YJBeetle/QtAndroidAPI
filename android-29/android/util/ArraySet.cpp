@@ -36,7 +36,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	jboolean ArraySet::add(JObject arg0)
+	jboolean ArraySet::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -44,7 +44,7 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArraySet::addAll(JObject arg0)
+	jboolean ArraySet::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -52,7 +52,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	void ArraySet::addAll(android::util::ArraySet arg0)
+	void ArraySet::addAll(android::util::ArraySet arg0) const
 	{
 		callMethod<void>(
 			"addAll",
@@ -60,14 +60,14 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	void ArraySet::clear()
+	void ArraySet::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean ArraySet::contains(JObject arg0)
+	jboolean ArraySet::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -75,7 +75,7 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArraySet::containsAll(JObject arg0)
+	jboolean ArraySet::containsAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -83,7 +83,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	void ArraySet::ensureCapacity(jint arg0)
+	void ArraySet::ensureCapacity(jint arg0) const
 	{
 		callMethod<void>(
 			"ensureCapacity",
@@ -91,7 +91,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean ArraySet::equals(JObject arg0)
+	jboolean ArraySet::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -99,14 +99,14 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jint ArraySet::hashCode()
+	jint ArraySet::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint ArraySet::indexOf(JObject arg0)
+	jint ArraySet::indexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -114,21 +114,21 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArraySet::isEmpty()
+	jboolean ArraySet::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject ArraySet::iterator()
+	JObject ArraySet::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ArraySet::remove(JObject arg0)
+	jboolean ArraySet::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -136,7 +136,7 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArraySet::removeAll(android::util::ArraySet arg0)
+	jboolean ArraySet::removeAll(android::util::ArraySet arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -144,7 +144,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean ArraySet::removeAll(JObject arg0)
+	jboolean ArraySet::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -152,7 +152,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	JObject ArraySet::removeAt(jint arg0)
+	JObject ArraySet::removeAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"removeAt",
@@ -160,7 +160,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean ArraySet::removeIf(JObject arg0)
+	jboolean ArraySet::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -168,7 +168,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean ArraySet::retainAll(JObject arg0)
+	jboolean ArraySet::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -176,21 +176,21 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jint ArraySet::size()
+	jint ArraySet::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObjectArray ArraySet::toArray()
+	JObjectArray ArraySet::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray ArraySet::toArray(JObjectArray arg0)
+	JObjectArray ArraySet::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -198,14 +198,14 @@ namespace android::util
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString ArraySet::toString()
+	JString ArraySet::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ArraySet::valueAt(jint arg0)
+	JObject ArraySet::valueAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"valueAt",

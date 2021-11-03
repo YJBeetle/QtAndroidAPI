@@ -29,8 +29,8 @@ namespace java::util::zip
 		GZIPInputStream(java::io::InputStream arg0, jint arg1);
 		
 		// Methods
-		void close();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
+		void close() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::util::zip
 

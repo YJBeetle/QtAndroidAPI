@@ -11,14 +11,14 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	JObject FieldClassification::getMatches()
+	JObject FieldClassification::getMatches() const
 	{
 		return callObjectMethod(
 			"getMatches",
 			"()Ljava/util/List;"
 		);
 	}
-	JString FieldClassification::toString()
+	JString FieldClassification::toString() const
 	{
 		return callObjectMethod(
 			"toString",

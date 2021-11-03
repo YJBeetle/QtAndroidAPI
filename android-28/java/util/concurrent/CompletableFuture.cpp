@@ -133,7 +133,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::acceptEither(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::acceptEither(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"acceptEither",
@@ -142,7 +142,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::acceptEitherAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::acceptEitherAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"acceptEitherAsync",
@@ -151,7 +151,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::acceptEitherAsync(JObject arg0, JObject arg1, JObject arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::acceptEitherAsync(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"acceptEitherAsync",
@@ -161,7 +161,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::applyToEither(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::applyToEither(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"applyToEither",
@@ -170,7 +170,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::applyToEitherAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::applyToEitherAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"applyToEitherAsync",
@@ -179,7 +179,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::applyToEitherAsync(JObject arg0, JObject arg1, JObject arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::applyToEitherAsync(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"applyToEitherAsync",
@@ -189,7 +189,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	jboolean CompletableFuture::cancel(jboolean arg0)
+	jboolean CompletableFuture::cancel(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"cancel",
@@ -197,7 +197,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CompletableFuture::complete(JObject arg0)
+	jboolean CompletableFuture::complete(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"complete",
@@ -205,7 +205,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::completeAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::completeAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"completeAsync",
@@ -213,7 +213,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::completeAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::completeAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"completeAsync",
@@ -222,7 +222,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean CompletableFuture::completeExceptionally(JThrowable arg0)
+	jboolean CompletableFuture::completeExceptionally(JThrowable arg0) const
 	{
 		return callMethod<jboolean>(
 			"completeExceptionally",
@@ -230,7 +230,7 @@ namespace java::util::concurrent
 			arg0.object<jthrowable>()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::completeOnTimeout(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::completeOnTimeout(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callObjectMethod(
 			"completeOnTimeout",
@@ -240,21 +240,21 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::copy()
+	java::util::concurrent::CompletableFuture CompletableFuture::copy() const
 	{
 		return callObjectMethod(
 			"copy",
 			"()Ljava/util/concurrent/CompletableFuture;"
 		);
 	}
-	JObject CompletableFuture::defaultExecutor()
+	JObject CompletableFuture::defaultExecutor() const
 	{
 		return callObjectMethod(
 			"defaultExecutor",
 			"()Ljava/util/concurrent/Executor;"
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::exceptionally(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::exceptionally(JObject arg0) const
 	{
 		return callObjectMethod(
 			"exceptionally",
@@ -262,7 +262,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"exceptionallyAsync",
@@ -270,7 +270,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"exceptionallyAsync",
@@ -279,7 +279,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyCompose(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyCompose(JObject arg0) const
 	{
 		return callObjectMethod(
 			"exceptionallyCompose",
@@ -287,7 +287,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyComposeAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyComposeAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"exceptionallyComposeAsync",
@@ -295,7 +295,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyComposeAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::exceptionallyComposeAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"exceptionallyComposeAsync",
@@ -304,14 +304,14 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject CompletableFuture::get()
+	JObject CompletableFuture::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject CompletableFuture::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject CompletableFuture::get(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -320,7 +320,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject CompletableFuture::getNow(JObject arg0)
+	JObject CompletableFuture::getNow(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getNow",
@@ -328,14 +328,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint CompletableFuture::getNumberOfDependents()
+	jint CompletableFuture::getNumberOfDependents() const
 	{
 		return callMethod<jint>(
 			"getNumberOfDependents",
 			"()I"
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::handle(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::handle(JObject arg0) const
 	{
 		return callObjectMethod(
 			"handle",
@@ -343,7 +343,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::handleAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::handleAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"handleAsync",
@@ -351,7 +351,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::handleAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::handleAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"handleAsync",
@@ -360,49 +360,49 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean CompletableFuture::isCancelled()
+	jboolean CompletableFuture::isCancelled() const
 	{
 		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
-	jboolean CompletableFuture::isCompletedExceptionally()
+	jboolean CompletableFuture::isCompletedExceptionally() const
 	{
 		return callMethod<jboolean>(
 			"isCompletedExceptionally",
 			"()Z"
 		);
 	}
-	jboolean CompletableFuture::isDone()
+	jboolean CompletableFuture::isDone() const
 	{
 		return callMethod<jboolean>(
 			"isDone",
 			"()Z"
 		);
 	}
-	JObject CompletableFuture::join()
+	JObject CompletableFuture::join() const
 	{
 		return callObjectMethod(
 			"join",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject CompletableFuture::minimalCompletionStage()
+	JObject CompletableFuture::minimalCompletionStage() const
 	{
 		return callObjectMethod(
 			"minimalCompletionStage",
 			"()Ljava/util/concurrent/CompletionStage;"
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::newIncompleteFuture()
+	java::util::concurrent::CompletableFuture CompletableFuture::newIncompleteFuture() const
 	{
 		return callObjectMethod(
 			"newIncompleteFuture",
 			"()Ljava/util/concurrent/CompletableFuture;"
 		);
 	}
-	void CompletableFuture::obtrudeException(JThrowable arg0)
+	void CompletableFuture::obtrudeException(JThrowable arg0) const
 	{
 		callMethod<void>(
 			"obtrudeException",
@@ -410,7 +410,7 @@ namespace java::util::concurrent
 			arg0.object<jthrowable>()
 		);
 	}
-	void CompletableFuture::obtrudeValue(JObject arg0)
+	void CompletableFuture::obtrudeValue(JObject arg0) const
 	{
 		callMethod<void>(
 			"obtrudeValue",
@@ -418,7 +418,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::orTimeout(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::orTimeout(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"orTimeout",
@@ -427,7 +427,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::runAfterBoth(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::runAfterBoth(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"runAfterBoth",
@@ -436,7 +436,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::runAfterBothAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::runAfterBothAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"runAfterBothAsync",
@@ -445,7 +445,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::runAfterBothAsync(JObject arg0, JObject arg1, JObject arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::runAfterBothAsync(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"runAfterBothAsync",
@@ -455,7 +455,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::runAfterEither(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::runAfterEither(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"runAfterEither",
@@ -464,7 +464,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::runAfterEitherAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::runAfterEitherAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"runAfterEitherAsync",
@@ -473,7 +473,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::runAfterEitherAsync(JObject arg0, JObject arg1, JObject arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::runAfterEitherAsync(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"runAfterEitherAsync",
@@ -483,7 +483,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenAccept(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenAccept(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenAccept",
@@ -491,7 +491,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenAcceptAsync",
@@ -499,7 +499,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenAcceptAsync",
@@ -508,7 +508,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptBoth(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptBoth(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenAcceptBoth",
@@ -517,7 +517,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptBothAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptBothAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenAcceptBothAsync",
@@ -526,7 +526,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptBothAsync(JObject arg0, JObject arg1, JObject arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenAcceptBothAsync(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"thenAcceptBothAsync",
@@ -536,7 +536,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenApply(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenApply(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenApply",
@@ -544,7 +544,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenApplyAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenApplyAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenApplyAsync",
@@ -552,7 +552,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenApplyAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenApplyAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenApplyAsync",
@@ -561,7 +561,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenCombine(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenCombine(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenCombine",
@@ -570,7 +570,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenCombineAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenCombineAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenCombineAsync",
@@ -579,7 +579,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenCombineAsync(JObject arg0, JObject arg1, JObject arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenCombineAsync(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"thenCombineAsync",
@@ -589,7 +589,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenCompose(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenCompose(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenCompose",
@@ -597,7 +597,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenComposeAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenComposeAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenComposeAsync",
@@ -605,7 +605,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenComposeAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenComposeAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenComposeAsync",
@@ -614,7 +614,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenRun(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenRun(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenRun",
@@ -622,7 +622,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenRunAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenRunAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"thenRunAsync",
@@ -630,7 +630,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::thenRunAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::thenRunAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"thenRunAsync",
@@ -639,21 +639,21 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::toCompletableFuture()
+	java::util::concurrent::CompletableFuture CompletableFuture::toCompletableFuture() const
 	{
 		return callObjectMethod(
 			"toCompletableFuture",
 			"()Ljava/util/concurrent/CompletableFuture;"
 		);
 	}
-	JString CompletableFuture::toString()
+	JString CompletableFuture::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::whenComplete(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::whenComplete(JObject arg0) const
 	{
 		return callObjectMethod(
 			"whenComplete",
@@ -661,7 +661,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::whenCompleteAsync(JObject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::whenCompleteAsync(JObject arg0) const
 	{
 		return callObjectMethod(
 			"whenCompleteAsync",
@@ -669,7 +669,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::whenCompleteAsync(JObject arg0, JObject arg1)
+	java::util::concurrent::CompletableFuture CompletableFuture::whenCompleteAsync(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"whenCompleteAsync",

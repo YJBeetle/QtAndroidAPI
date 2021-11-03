@@ -22,14 +22,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jint LinkProperties::describeContents()
+	jint LinkProperties::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean LinkProperties::equals(JObject arg0)
+	jboolean LinkProperties::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,77 +37,77 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	JObject LinkProperties::getDnsServers()
+	JObject LinkProperties::getDnsServers() const
 	{
 		return callObjectMethod(
 			"getDnsServers",
 			"()Ljava/util/List;"
 		);
 	}
-	JString LinkProperties::getDomains()
+	JString LinkProperties::getDomains() const
 	{
 		return callObjectMethod(
 			"getDomains",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::ProxyInfo LinkProperties::getHttpProxy()
+	android::net::ProxyInfo LinkProperties::getHttpProxy() const
 	{
 		return callObjectMethod(
 			"getHttpProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	JString LinkProperties::getInterfaceName()
+	JString LinkProperties::getInterfaceName() const
 	{
 		return callObjectMethod(
 			"getInterfaceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject LinkProperties::getLinkAddresses()
+	JObject LinkProperties::getLinkAddresses() const
 	{
 		return callObjectMethod(
 			"getLinkAddresses",
 			"()Ljava/util/List;"
 		);
 	}
-	JString LinkProperties::getPrivateDnsServerName()
+	JString LinkProperties::getPrivateDnsServerName() const
 	{
 		return callObjectMethod(
 			"getPrivateDnsServerName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject LinkProperties::getRoutes()
+	JObject LinkProperties::getRoutes() const
 	{
 		return callObjectMethod(
 			"getRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	jint LinkProperties::hashCode()
+	jint LinkProperties::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean LinkProperties::isPrivateDnsActive()
+	jboolean LinkProperties::isPrivateDnsActive() const
 	{
 		return callMethod<jboolean>(
 			"isPrivateDnsActive",
 			"()Z"
 		);
 	}
-	JString LinkProperties::toString()
+	JString LinkProperties::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LinkProperties::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LinkProperties::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

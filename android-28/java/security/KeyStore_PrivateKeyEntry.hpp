@@ -25,11 +25,11 @@ namespace java::security
 		KeyStore_PrivateKeyEntry(JObject arg0, JArray arg1, JObject arg2);
 		
 		// Methods
-		JObject getAttributes();
-		java::security::cert::Certificate getCertificate();
-		JArray getCertificateChain();
-		JObject getPrivateKey();
-		JString toString();
+		JObject getAttributes() const;
+		java::security::cert::Certificate getCertificate() const;
+		JArray getCertificateChain() const;
+		JObject getPrivateKey() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

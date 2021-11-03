@@ -121,14 +121,14 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jint PreferenceActivity_Header::describeContents()
+	jint PreferenceActivity_Header::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString PreferenceActivity_Header::getBreadCrumbShortTitle(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getBreadCrumbShortTitle(android::content::res::Resources arg0) const
 	{
 		return callObjectMethod(
 			"getBreadCrumbShortTitle",
@@ -136,7 +136,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	JString PreferenceActivity_Header::getBreadCrumbTitle(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getBreadCrumbTitle(android::content::res::Resources arg0) const
 	{
 		return callObjectMethod(
 			"getBreadCrumbTitle",
@@ -144,7 +144,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	JString PreferenceActivity_Header::getSummary(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getSummary(android::content::res::Resources arg0) const
 	{
 		return callObjectMethod(
 			"getSummary",
@@ -152,7 +152,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	JString PreferenceActivity_Header::getTitle(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getTitle(android::content::res::Resources arg0) const
 	{
 		return callObjectMethod(
 			"getTitle",
@@ -160,7 +160,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity_Header::readFromParcel(android::os::Parcel arg0)
+	void PreferenceActivity_Header::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -168,7 +168,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity_Header::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PreferenceActivity_Header::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

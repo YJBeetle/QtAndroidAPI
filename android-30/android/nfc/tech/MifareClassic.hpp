@@ -35,29 +35,29 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::MifareClassic get(android::nfc::Tag arg0);
-		jboolean authenticateSectorWithKeyA(jint arg0, JByteArray arg1);
-		jboolean authenticateSectorWithKeyB(jint arg0, JByteArray arg1);
-		jint blockToSector(jint arg0);
-		void close();
-		void connect();
-		void decrement(jint arg0, jint arg1);
-		jint getBlockCount();
-		jint getBlockCountInSector(jint arg0);
-		jint getMaxTransceiveLength();
-		jint getSectorCount();
-		jint getSize();
-		android::nfc::Tag getTag();
-		jint getTimeout();
-		jint getType();
-		void increment(jint arg0, jint arg1);
-		jboolean isConnected();
-		JByteArray readBlock(jint arg0);
-		void restore(jint arg0);
-		jint sectorToBlock(jint arg0);
-		void setTimeout(jint arg0);
-		JByteArray transceive(JByteArray arg0);
-		void transfer(jint arg0);
-		void writeBlock(jint arg0, JByteArray arg1);
+		jboolean authenticateSectorWithKeyA(jint arg0, JByteArray arg1) const;
+		jboolean authenticateSectorWithKeyB(jint arg0, JByteArray arg1) const;
+		jint blockToSector(jint arg0) const;
+		void close() const;
+		void connect() const;
+		void decrement(jint arg0, jint arg1) const;
+		jint getBlockCount() const;
+		jint getBlockCountInSector(jint arg0) const;
+		jint getMaxTransceiveLength() const;
+		jint getSectorCount() const;
+		jint getSize() const;
+		android::nfc::Tag getTag() const;
+		jint getTimeout() const;
+		jint getType() const;
+		void increment(jint arg0, jint arg1) const;
+		jboolean isConnected() const;
+		JByteArray readBlock(jint arg0) const;
+		void restore(jint arg0) const;
+		jint sectorToBlock(jint arg0) const;
+		void setTimeout(jint arg0) const;
+		JByteArray transceive(JByteArray arg0) const;
+		void transfer(jint arg0) const;
+		void writeBlock(jint arg0, JByteArray arg1) const;
 	};
 } // namespace android::nfc::tech
 

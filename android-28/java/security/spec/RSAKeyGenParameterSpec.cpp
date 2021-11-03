@@ -42,21 +42,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	JObject RSAKeyGenParameterSpec::getKeyParams()
+	JObject RSAKeyGenParameterSpec::getKeyParams() const
 	{
 		return callObjectMethod(
 			"getKeyParams",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	jint RSAKeyGenParameterSpec::getKeysize()
+	jint RSAKeyGenParameterSpec::getKeysize() const
 	{
 		return callMethod<jint>(
 			"getKeysize",
 			"()I"
 		);
 	}
-	java::math::BigInteger RSAKeyGenParameterSpec::getPublicExponent()
+	java::math::BigInteger RSAKeyGenParameterSpec::getPublicExponent() const
 	{
 		return callObjectMethod(
 			"getPublicExponent",

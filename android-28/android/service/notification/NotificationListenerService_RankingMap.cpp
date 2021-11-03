@@ -22,21 +22,21 @@ namespace android::service::notification
 	// Constructors
 	
 	// Methods
-	jint NotificationListenerService_RankingMap::describeContents()
+	jint NotificationListenerService_RankingMap::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JArray NotificationListenerService_RankingMap::getOrderedKeys()
+	JArray NotificationListenerService_RankingMap::getOrderedKeys() const
 	{
 		return callObjectMethod(
 			"getOrderedKeys",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jboolean NotificationListenerService_RankingMap::getRanking(JString arg0, android::service::notification::NotificationListenerService_Ranking arg1)
+	jboolean NotificationListenerService_RankingMap::getRanking(JString arg0, android::service::notification::NotificationListenerService_Ranking arg1) const
 	{
 		return callMethod<jboolean>(
 			"getRanking",
@@ -45,7 +45,7 @@ namespace android::service::notification
 			arg1.object()
 		);
 	}
-	void NotificationListenerService_RankingMap::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NotificationListenerService_RankingMap::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -26,7 +26,7 @@ namespace android::app::usage
 		) {}
 	
 	// Methods
-	void UsageStats::add(android::app::usage::UsageStats arg0)
+	void UsageStats::add(android::app::usage::UsageStats arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -34,77 +34,77 @@ namespace android::app::usage
 			arg0.object()
 		);
 	}
-	jint UsageStats::describeContents()
+	jint UsageStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong UsageStats::getFirstTimeStamp()
+	jlong UsageStats::getFirstTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getFirstTimeStamp",
 			"()J"
 		);
 	}
-	jlong UsageStats::getLastTimeForegroundServiceUsed()
+	jlong UsageStats::getLastTimeForegroundServiceUsed() const
 	{
 		return callMethod<jlong>(
 			"getLastTimeForegroundServiceUsed",
 			"()J"
 		);
 	}
-	jlong UsageStats::getLastTimeStamp()
+	jlong UsageStats::getLastTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getLastTimeStamp",
 			"()J"
 		);
 	}
-	jlong UsageStats::getLastTimeUsed()
+	jlong UsageStats::getLastTimeUsed() const
 	{
 		return callMethod<jlong>(
 			"getLastTimeUsed",
 			"()J"
 		);
 	}
-	jlong UsageStats::getLastTimeVisible()
+	jlong UsageStats::getLastTimeVisible() const
 	{
 		return callMethod<jlong>(
 			"getLastTimeVisible",
 			"()J"
 		);
 	}
-	JString UsageStats::getPackageName()
+	JString UsageStats::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong UsageStats::getTotalTimeForegroundServiceUsed()
+	jlong UsageStats::getTotalTimeForegroundServiceUsed() const
 	{
 		return callMethod<jlong>(
 			"getTotalTimeForegroundServiceUsed",
 			"()J"
 		);
 	}
-	jlong UsageStats::getTotalTimeInForeground()
+	jlong UsageStats::getTotalTimeInForeground() const
 	{
 		return callMethod<jlong>(
 			"getTotalTimeInForeground",
 			"()J"
 		);
 	}
-	jlong UsageStats::getTotalTimeVisible()
+	jlong UsageStats::getTotalTimeVisible() const
 	{
 		return callMethod<jlong>(
 			"getTotalTimeVisible",
 			"()J"
 		);
 	}
-	void UsageStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UsageStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

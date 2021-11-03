@@ -44,7 +44,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Movie::draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2)
+	void Movie::draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"draw",
@@ -54,7 +54,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Movie::draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
+	void Movie::draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"draw",
@@ -65,28 +65,28 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	jint Movie::duration()
+	jint Movie::duration() const
 	{
 		return callMethod<jint>(
 			"duration",
 			"()I"
 		);
 	}
-	jint Movie::height()
+	jint Movie::height() const
 	{
 		return callMethod<jint>(
 			"height",
 			"()I"
 		);
 	}
-	jboolean Movie::isOpaque()
+	jboolean Movie::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	jboolean Movie::setTime(jint arg0)
+	jboolean Movie::setTime(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setTime",
@@ -94,7 +94,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jint Movie::width()
+	jint Movie::width() const
 	{
 		return callMethod<jint>(
 			"width",

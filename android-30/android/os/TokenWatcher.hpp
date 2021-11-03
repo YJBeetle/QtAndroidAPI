@@ -27,14 +27,14 @@ namespace android::os
 		TokenWatcher(android::os::Handler arg0, JString arg1);
 		
 		// Methods
-		void acquire(JObject arg0, JString arg1);
-		void acquired();
-		void cleanup(JObject arg0, jboolean arg1);
-		void dump();
-		void dump(java::io::PrintWriter arg0);
-		jboolean isAcquired();
-		void release(JObject arg0);
-		void released();
+		void acquire(JObject arg0, JString arg1) const;
+		void acquired() const;
+		void cleanup(JObject arg0, jboolean arg1) const;
+		void dump() const;
+		void dump(java::io::PrintWriter arg0) const;
+		jboolean isAcquired() const;
+		void release(JObject arg0) const;
+		void released() const;
 	};
 } // namespace android::os
 

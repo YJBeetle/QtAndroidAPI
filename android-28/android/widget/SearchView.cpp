@@ -46,105 +46,105 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void SearchView::clearFocus()
+	void SearchView::clearFocus() const
 	{
 		callMethod<void>(
 			"clearFocus",
 			"()V"
 		);
 	}
-	JString SearchView::getAccessibilityClassName()
+	JString SearchView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint SearchView::getImeOptions()
+	jint SearchView::getImeOptions() const
 	{
 		return callMethod<jint>(
 			"getImeOptions",
 			"()I"
 		);
 	}
-	jint SearchView::getInputType()
+	jint SearchView::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
-	jint SearchView::getMaxWidth()
+	jint SearchView::getMaxWidth() const
 	{
 		return callMethod<jint>(
 			"getMaxWidth",
 			"()I"
 		);
 	}
-	JString SearchView::getQuery()
+	JString SearchView::getQuery() const
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString SearchView::getQueryHint()
+	JString SearchView::getQueryHint() const
 	{
 		return callObjectMethod(
 			"getQueryHint",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::widget::CursorAdapter SearchView::getSuggestionsAdapter()
+	android::widget::CursorAdapter SearchView::getSuggestionsAdapter() const
 	{
 		return callObjectMethod(
 			"getSuggestionsAdapter",
 			"()Landroid/widget/CursorAdapter;"
 		);
 	}
-	jboolean SearchView::isIconfiedByDefault()
+	jboolean SearchView::isIconfiedByDefault() const
 	{
 		return callMethod<jboolean>(
 			"isIconfiedByDefault",
 			"()Z"
 		);
 	}
-	jboolean SearchView::isIconified()
+	jboolean SearchView::isIconified() const
 	{
 		return callMethod<jboolean>(
 			"isIconified",
 			"()Z"
 		);
 	}
-	jboolean SearchView::isQueryRefinementEnabled()
+	jboolean SearchView::isQueryRefinementEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isQueryRefinementEnabled",
 			"()Z"
 		);
 	}
-	jboolean SearchView::isSubmitButtonEnabled()
+	jboolean SearchView::isSubmitButtonEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSubmitButtonEnabled",
 			"()Z"
 		);
 	}
-	void SearchView::onActionViewCollapsed()
+	void SearchView::onActionViewCollapsed() const
 	{
 		callMethod<void>(
 			"onActionViewCollapsed",
 			"()V"
 		);
 	}
-	void SearchView::onActionViewExpanded()
+	void SearchView::onActionViewExpanded() const
 	{
 		callMethod<void>(
 			"onActionViewExpanded",
 			"()V"
 		);
 	}
-	jboolean SearchView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean SearchView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -153,7 +153,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void SearchView::onWindowFocusChanged(jboolean arg0)
+	void SearchView::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -161,7 +161,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean SearchView::requestFocus(jint arg0, android::graphics::Rect arg1)
+	jboolean SearchView::requestFocus(jint arg0, android::graphics::Rect arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestFocus",
@@ -170,7 +170,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void SearchView::setIconified(jboolean arg0)
+	void SearchView::setIconified(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIconified",
@@ -178,7 +178,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setIconifiedByDefault(jboolean arg0)
+	void SearchView::setIconifiedByDefault(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIconifiedByDefault",
@@ -186,7 +186,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setImeOptions(jint arg0)
+	void SearchView::setImeOptions(jint arg0) const
 	{
 		callMethod<void>(
 			"setImeOptions",
@@ -194,7 +194,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setInputType(jint arg0)
+	void SearchView::setInputType(jint arg0) const
 	{
 		callMethod<void>(
 			"setInputType",
@@ -202,7 +202,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setMaxWidth(jint arg0)
+	void SearchView::setMaxWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxWidth",
@@ -210,7 +210,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setOnCloseListener(JObject arg0)
+	void SearchView::setOnCloseListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCloseListener",
@@ -218,7 +218,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnQueryTextFocusChangeListener(JObject arg0)
+	void SearchView::setOnQueryTextFocusChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnQueryTextFocusChangeListener",
@@ -226,7 +226,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnQueryTextListener(JObject arg0)
+	void SearchView::setOnQueryTextListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnQueryTextListener",
@@ -234,7 +234,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnSearchClickListener(JObject arg0)
+	void SearchView::setOnSearchClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnSearchClickListener",
@@ -242,7 +242,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnSuggestionListener(JObject arg0)
+	void SearchView::setOnSuggestionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnSuggestionListener",
@@ -250,7 +250,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setQuery(JString arg0, jboolean arg1)
+	void SearchView::setQuery(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setQuery",
@@ -259,7 +259,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void SearchView::setQueryHint(JString arg0)
+	void SearchView::setQueryHint(JString arg0) const
 	{
 		callMethod<void>(
 			"setQueryHint",
@@ -267,7 +267,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void SearchView::setQueryRefinementEnabled(jboolean arg0)
+	void SearchView::setQueryRefinementEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setQueryRefinementEnabled",
@@ -275,7 +275,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setSearchableInfo(android::app::SearchableInfo arg0)
+	void SearchView::setSearchableInfo(android::app::SearchableInfo arg0) const
 	{
 		callMethod<void>(
 			"setSearchableInfo",
@@ -283,7 +283,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setSubmitButtonEnabled(jboolean arg0)
+	void SearchView::setSubmitButtonEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSubmitButtonEnabled",
@@ -291,7 +291,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setSuggestionsAdapter(android::widget::CursorAdapter arg0)
+	void SearchView::setSuggestionsAdapter(android::widget::CursorAdapter arg0) const
 	{
 		callMethod<void>(
 			"setSuggestionsAdapter",

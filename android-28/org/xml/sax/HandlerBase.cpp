@@ -19,7 +19,7 @@ namespace org::xml::sax
 		) {}
 	
 	// Methods
-	void HandlerBase::characters(JCharArray arg0, jint arg1, jint arg2)
+	void HandlerBase::characters(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"characters",
@@ -29,14 +29,14 @@ namespace org::xml::sax
 			arg2
 		);
 	}
-	void HandlerBase::endDocument()
+	void HandlerBase::endDocument() const
 	{
 		callMethod<void>(
 			"endDocument",
 			"()V"
 		);
 	}
-	void HandlerBase::endElement(JString arg0)
+	void HandlerBase::endElement(JString arg0) const
 	{
 		callMethod<void>(
 			"endElement",
@@ -44,7 +44,7 @@ namespace org::xml::sax
 			arg0.object<jstring>()
 		);
 	}
-	void HandlerBase::error(org::xml::sax::SAXParseException arg0)
+	void HandlerBase::error(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"error",
@@ -52,7 +52,7 @@ namespace org::xml::sax
 			arg0.object()
 		);
 	}
-	void HandlerBase::fatalError(org::xml::sax::SAXParseException arg0)
+	void HandlerBase::fatalError(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"fatalError",
@@ -60,7 +60,7 @@ namespace org::xml::sax
 			arg0.object()
 		);
 	}
-	void HandlerBase::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
+	void HandlerBase::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
@@ -70,7 +70,7 @@ namespace org::xml::sax
 			arg2
 		);
 	}
-	void HandlerBase::notationDecl(JString arg0, JString arg1, JString arg2)
+	void HandlerBase::notationDecl(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"notationDecl",
@@ -80,7 +80,7 @@ namespace org::xml::sax
 			arg2.object<jstring>()
 		);
 	}
-	void HandlerBase::processingInstruction(JString arg0, JString arg1)
+	void HandlerBase::processingInstruction(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"processingInstruction",
@@ -89,7 +89,7 @@ namespace org::xml::sax
 			arg1.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource HandlerBase::resolveEntity(JString arg0, JString arg1)
+	org::xml::sax::InputSource HandlerBase::resolveEntity(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"resolveEntity",
@@ -98,7 +98,7 @@ namespace org::xml::sax
 			arg1.object<jstring>()
 		);
 	}
-	void HandlerBase::setDocumentLocator(JObject arg0)
+	void HandlerBase::setDocumentLocator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -106,14 +106,14 @@ namespace org::xml::sax
 			arg0.object()
 		);
 	}
-	void HandlerBase::startDocument()
+	void HandlerBase::startDocument() const
 	{
 		callMethod<void>(
 			"startDocument",
 			"()V"
 		);
 	}
-	void HandlerBase::startElement(JString arg0, JObject arg1)
+	void HandlerBase::startElement(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"startElement",
@@ -122,7 +122,7 @@ namespace org::xml::sax
 			arg1.object()
 		);
 	}
-	void HandlerBase::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3)
+	void HandlerBase::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"unparsedEntityDecl",
@@ -133,7 +133,7 @@ namespace org::xml::sax
 			arg3.object<jstring>()
 		);
 	}
-	void HandlerBase::warning(org::xml::sax::SAXParseException arg0)
+	void HandlerBase::warning(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"warning",

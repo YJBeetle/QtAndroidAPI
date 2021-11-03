@@ -52,10 +52,10 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jlong computeChargeTimeRemaining();
-		jint getIntProperty(jint arg0);
-		jlong getLongProperty(jint arg0);
-		jboolean isCharging();
+		jlong computeChargeTimeRemaining() const;
+		jint getIntProperty(jint arg0) const;
+		jlong getLongProperty(jint arg0) const;
+		jboolean isCharging() const;
 	};
 } // namespace android::os
 

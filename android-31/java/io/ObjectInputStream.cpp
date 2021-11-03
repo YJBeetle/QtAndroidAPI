@@ -28,42 +28,42 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint ObjectInputStream::available()
+	jint ObjectInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void ObjectInputStream::close()
+	void ObjectInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ObjectInputStream::defaultReadObject()
+	void ObjectInputStream::defaultReadObject() const
 	{
 		callMethod<void>(
 			"defaultReadObject",
 			"()V"
 		);
 	}
-	JObject ObjectInputStream::getObjectInputFilter()
+	JObject ObjectInputStream::getObjectInputFilter() const
 	{
 		return callObjectMethod(
 			"getObjectInputFilter",
 			"()Ljava/io/ObjectInputFilter;"
 		);
 	}
-	jint ObjectInputStream::read()
+	jint ObjectInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint ObjectInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint ObjectInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -73,49 +73,49 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean ObjectInputStream::readBoolean()
+	jboolean ObjectInputStream::readBoolean() const
 	{
 		return callMethod<jboolean>(
 			"readBoolean",
 			"()Z"
 		);
 	}
-	jbyte ObjectInputStream::readByte()
+	jbyte ObjectInputStream::readByte() const
 	{
 		return callMethod<jbyte>(
 			"readByte",
 			"()B"
 		);
 	}
-	jchar ObjectInputStream::readChar()
+	jchar ObjectInputStream::readChar() const
 	{
 		return callMethod<jchar>(
 			"readChar",
 			"()C"
 		);
 	}
-	jdouble ObjectInputStream::readDouble()
+	jdouble ObjectInputStream::readDouble() const
 	{
 		return callMethod<jdouble>(
 			"readDouble",
 			"()D"
 		);
 	}
-	java::io::ObjectInputStream_GetField ObjectInputStream::readFields()
+	java::io::ObjectInputStream_GetField ObjectInputStream::readFields() const
 	{
 		return callObjectMethod(
 			"readFields",
 			"()Ljava/io/ObjectInputStream$GetField;"
 		);
 	}
-	jfloat ObjectInputStream::readFloat()
+	jfloat ObjectInputStream::readFloat() const
 	{
 		return callMethod<jfloat>(
 			"readFloat",
 			"()F"
 		);
 	}
-	void ObjectInputStream::readFully(JByteArray arg0)
+	void ObjectInputStream::readFully(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"readFully",
@@ -123,7 +123,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void ObjectInputStream::readFully(JByteArray arg0, jint arg1, jint arg2)
+	void ObjectInputStream::readFully(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"readFully",
@@ -133,70 +133,70 @@ namespace java::io
 			arg2
 		);
 	}
-	jint ObjectInputStream::readInt()
+	jint ObjectInputStream::readInt() const
 	{
 		return callMethod<jint>(
 			"readInt",
 			"()I"
 		);
 	}
-	JString ObjectInputStream::readLine()
+	JString ObjectInputStream::readLine() const
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong ObjectInputStream::readLong()
+	jlong ObjectInputStream::readLong() const
 	{
 		return callMethod<jlong>(
 			"readLong",
 			"()J"
 		);
 	}
-	JObject ObjectInputStream::readObject()
+	JObject ObjectInputStream::readObject() const
 	{
 		return callObjectMethod(
 			"readObject",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jshort ObjectInputStream::readShort()
+	jshort ObjectInputStream::readShort() const
 	{
 		return callMethod<jshort>(
 			"readShort",
 			"()S"
 		);
 	}
-	JString ObjectInputStream::readUTF()
+	JString ObjectInputStream::readUTF() const
 	{
 		return callObjectMethod(
 			"readUTF",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ObjectInputStream::readUnshared()
+	JObject ObjectInputStream::readUnshared() const
 	{
 		return callObjectMethod(
 			"readUnshared",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint ObjectInputStream::readUnsignedByte()
+	jint ObjectInputStream::readUnsignedByte() const
 	{
 		return callMethod<jint>(
 			"readUnsignedByte",
 			"()I"
 		);
 	}
-	jint ObjectInputStream::readUnsignedShort()
+	jint ObjectInputStream::readUnsignedShort() const
 	{
 		return callMethod<jint>(
 			"readUnsignedShort",
 			"()I"
 		);
 	}
-	void ObjectInputStream::registerValidation(JObject arg0, jint arg1)
+	void ObjectInputStream::registerValidation(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"registerValidation",
@@ -205,7 +205,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectInputStream::setObjectInputFilter(JObject arg0)
+	void ObjectInputStream::setObjectInputFilter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setObjectInputFilter",
@@ -213,7 +213,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint ObjectInputStream::skipBytes(jint arg0)
+	jint ObjectInputStream::skipBytes(jint arg0) const
 	{
 		return callMethod<jint>(
 			"skipBytes",

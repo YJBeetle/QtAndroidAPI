@@ -16,14 +16,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject Dictionary::elements()
+	JObject Dictionary::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Dictionary::get(JObject arg0)
+	JObject Dictionary::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -31,21 +31,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Dictionary::isEmpty()
+	jboolean Dictionary::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject Dictionary::keys()
+	JObject Dictionary::keys() const
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Dictionary::put(JObject arg0, JObject arg1)
+	JObject Dictionary::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -54,7 +54,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject Dictionary::remove(JObject arg0)
+	JObject Dictionary::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -62,7 +62,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Dictionary::size()
+	jint Dictionary::size() const
 	{
 		return callMethod<jint>(
 			"size",

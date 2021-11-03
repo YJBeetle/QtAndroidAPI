@@ -21,11 +21,11 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getEncoded();
-		jint getType();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JByteArray getEncoded() const;
+		jint getType() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace javax::net::ssl
 

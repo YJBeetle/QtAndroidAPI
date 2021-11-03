@@ -25,14 +25,14 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getName();
-		JString getPackageName();
-		jint hashCode();
-		jboolean isHidden();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getName() const;
+		JString getPackageName() const;
+		jint hashCode() const;
+		jboolean isHidden() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

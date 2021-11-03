@@ -49,7 +49,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/LoggingMXBean;"
 		);
 	}
-	java::util::logging::LogManager LogManager::addConfigurationListener(JObject arg0)
+	java::util::logging::LogManager LogManager::addConfigurationListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addConfigurationListener",
@@ -57,7 +57,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	jboolean LogManager::addLogger(java::util::logging::Logger arg0)
+	jboolean LogManager::addLogger(java::util::logging::Logger arg0) const
 	{
 		return callMethod<jboolean>(
 			"addLogger",
@@ -65,14 +65,14 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogManager::checkAccess()
+	void LogManager::checkAccess() const
 	{
 		callMethod<void>(
 			"checkAccess",
 			"()V"
 		);
 	}
-	java::util::logging::Logger LogManager::getLogger(JString arg0)
+	java::util::logging::Logger LogManager::getLogger(JString arg0) const
 	{
 		return callObjectMethod(
 			"getLogger",
@@ -80,14 +80,14 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	JObject LogManager::getLoggerNames()
+	JObject LogManager::getLoggerNames() const
 	{
 		return callObjectMethod(
 			"getLoggerNames",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JString LogManager::getProperty(JString arg0)
+	JString LogManager::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -95,14 +95,14 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void LogManager::readConfiguration()
+	void LogManager::readConfiguration() const
 	{
 		callMethod<void>(
 			"readConfiguration",
 			"()V"
 		);
 	}
-	void LogManager::readConfiguration(java::io::InputStream arg0)
+	void LogManager::readConfiguration(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"readConfiguration",
@@ -110,7 +110,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogManager::removeConfigurationListener(JObject arg0)
+	void LogManager::removeConfigurationListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeConfigurationListener",
@@ -118,14 +118,14 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogManager::reset()
+	void LogManager::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void LogManager::updateConfiguration(JObject arg0)
+	void LogManager::updateConfiguration(JObject arg0) const
 	{
 		callMethod<void>(
 			"updateConfiguration",
@@ -133,7 +133,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogManager::updateConfiguration(java::io::InputStream arg0, JObject arg1)
+	void LogManager::updateConfiguration(java::io::InputStream arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"updateConfiguration",

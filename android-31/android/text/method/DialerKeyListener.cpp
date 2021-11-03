@@ -33,7 +33,7 @@ namespace android::text::method
 			"()Landroid/text/method/DialerKeyListener;"
 		);
 	}
-	jint DialerKeyListener::getInputType()
+	jint DialerKeyListener::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",

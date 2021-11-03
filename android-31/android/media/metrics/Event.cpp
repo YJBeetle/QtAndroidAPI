@@ -11,14 +11,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	android::os::Bundle Event::getMetricsBundle()
+	android::os::Bundle Event::getMetricsBundle() const
 	{
 		return callObjectMethod(
 			"getMetricsBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jlong Event::getTimeSinceCreatedMillis()
+	jlong Event::getTimeSinceCreatedMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeSinceCreatedMillis",

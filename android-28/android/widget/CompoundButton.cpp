@@ -49,7 +49,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void CompoundButton::autofill(android::view::autofill::AutofillValue arg0)
+	void CompoundButton::autofill(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -57,7 +57,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CompoundButton::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void CompoundButton::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"drawableHotspotChanged",
@@ -66,77 +66,77 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString CompoundButton::getAccessibilityClassName()
+	JString CompoundButton::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint CompoundButton::getAutofillType()
+	jint CompoundButton::getAutofillType() const
 	{
 		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
-	android::view::autofill::AutofillValue CompoundButton::getAutofillValue()
+	android::view::autofill::AutofillValue CompoundButton::getAutofillValue() const
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	android::graphics::drawable::Drawable CompoundButton::getButtonDrawable()
+	android::graphics::drawable::Drawable CompoundButton::getButtonDrawable() const
 	{
 		return callObjectMethod(
 			"getButtonDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::content::res::ColorStateList CompoundButton::getButtonTintList()
+	android::content::res::ColorStateList CompoundButton::getButtonTintList() const
 	{
 		return callObjectMethod(
 			"getButtonTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode CompoundButton::getButtonTintMode()
+	android::graphics::PorterDuff_Mode CompoundButton::getButtonTintMode() const
 	{
 		return callObjectMethod(
 			"getButtonTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	jint CompoundButton::getCompoundPaddingLeft()
+	jint CompoundButton::getCompoundPaddingLeft() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingLeft",
 			"()I"
 		);
 	}
-	jint CompoundButton::getCompoundPaddingRight()
+	jint CompoundButton::getCompoundPaddingRight() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingRight",
 			"()I"
 		);
 	}
-	jboolean CompoundButton::isChecked()
+	jboolean CompoundButton::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
-	void CompoundButton::jumpDrawablesToCurrentState()
+	void CompoundButton::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	void CompoundButton::onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
+	void CompoundButton::onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProvideAutofillStructure",
@@ -145,7 +145,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void CompoundButton::onRestoreInstanceState(JObject arg0)
+	void CompoundButton::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -153,21 +153,21 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject CompoundButton::onSaveInstanceState()
+	JObject CompoundButton::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	jboolean CompoundButton::performClick()
+	jboolean CompoundButton::performClick() const
 	{
 		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
-	void CompoundButton::setButtonDrawable(android::graphics::drawable::Drawable arg0)
+	void CompoundButton::setButtonDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setButtonDrawable",
@@ -175,7 +175,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CompoundButton::setButtonDrawable(jint arg0)
+	void CompoundButton::setButtonDrawable(jint arg0) const
 	{
 		callMethod<void>(
 			"setButtonDrawable",
@@ -183,7 +183,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CompoundButton::setButtonTintList(android::content::res::ColorStateList arg0)
+	void CompoundButton::setButtonTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setButtonTintList",
@@ -191,7 +191,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CompoundButton::setButtonTintMode(android::graphics::PorterDuff_Mode arg0)
+	void CompoundButton::setButtonTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setButtonTintMode",
@@ -199,7 +199,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CompoundButton::setChecked(jboolean arg0)
+	void CompoundButton::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -207,7 +207,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CompoundButton::setOnCheckedChangeListener(JObject arg0)
+	void CompoundButton::setOnCheckedChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCheckedChangeListener",
@@ -215,7 +215,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CompoundButton::toggle()
+	void CompoundButton::toggle() const
 	{
 		callMethod<void>(
 			"toggle",

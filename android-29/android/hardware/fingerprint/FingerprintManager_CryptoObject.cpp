@@ -31,21 +31,21 @@ namespace android::hardware::fingerprint
 		) {}
 	
 	// Methods
-	javax::crypto::Cipher FingerprintManager_CryptoObject::getCipher()
+	javax::crypto::Cipher FingerprintManager_CryptoObject::getCipher() const
 	{
 		return callObjectMethod(
 			"getCipher",
 			"()Ljavax/crypto/Cipher;"
 		);
 	}
-	javax::crypto::Mac FingerprintManager_CryptoObject::getMac()
+	javax::crypto::Mac FingerprintManager_CryptoObject::getMac() const
 	{
 		return callObjectMethod(
 			"getMac",
 			"()Ljavax/crypto/Mac;"
 		);
 	}
-	java::security::Signature FingerprintManager_CryptoObject::getSignature()
+	java::security::Signature FingerprintManager_CryptoObject::getSignature() const
 	{
 		return callObjectMethod(
 			"getSignature",

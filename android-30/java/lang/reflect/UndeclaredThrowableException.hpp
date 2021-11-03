@@ -30,7 +30,7 @@ namespace java::lang::reflect
 		UndeclaredThrowableException(JThrowable arg0, JString arg1);
 		
 		// Methods
-		JThrowable getUndeclaredThrowable();
+		JThrowable getUndeclaredThrowable() const;
 	};
 } // namespace java::lang::reflect
 

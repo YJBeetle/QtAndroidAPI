@@ -53,19 +53,19 @@ namespace android::service::media
 		MediaBrowserService();
 		
 		// Methods
-		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2);
-		android::os::Bundle getBrowserRootHints();
-		android::media::session::MediaSessionManager_RemoteUserInfo getCurrentBrowserInfo();
-		android::media::session::MediaSession_Token getSessionToken();
-		void notifyChildrenChanged(JString arg0);
-		void notifyChildrenChanged(JString arg0, android::os::Bundle arg1);
-		JObject onBind(android::content::Intent arg0);
-		void onCreate();
-		android::service::media::MediaBrowserService_BrowserRoot onGetRoot(JString arg0, jint arg1, android::os::Bundle arg2);
-		void onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1);
-		void onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2);
-		void onLoadItem(JString arg0, android::service::media::MediaBrowserService_Result arg1);
-		void setSessionToken(android::media::session::MediaSession_Token arg0);
+		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2) const;
+		android::os::Bundle getBrowserRootHints() const;
+		android::media::session::MediaSessionManager_RemoteUserInfo getCurrentBrowserInfo() const;
+		android::media::session::MediaSession_Token getSessionToken() const;
+		void notifyChildrenChanged(JString arg0) const;
+		void notifyChildrenChanged(JString arg0, android::os::Bundle arg1) const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onCreate() const;
+		android::service::media::MediaBrowserService_BrowserRoot onGetRoot(JString arg0, jint arg1, android::os::Bundle arg2) const;
+		void onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1) const;
+		void onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2) const;
+		void onLoadItem(JString arg0, android::service::media::MediaBrowserService_Result arg1) const;
+		void setSessionToken(android::media::session::MediaSession_Token arg0) const;
 	};
 } // namespace android::service::media
 

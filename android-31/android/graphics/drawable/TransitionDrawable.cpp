@@ -18,7 +18,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void TransitionDrawable::draw(android::graphics::Canvas arg0)
+	void TransitionDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -26,21 +26,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean TransitionDrawable::isCrossFadeEnabled()
+	jboolean TransitionDrawable::isCrossFadeEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isCrossFadeEnabled",
 			"()Z"
 		);
 	}
-	void TransitionDrawable::resetTransition()
+	void TransitionDrawable::resetTransition() const
 	{
 		callMethod<void>(
 			"resetTransition",
 			"()V"
 		);
 	}
-	void TransitionDrawable::reverseTransition(jint arg0)
+	void TransitionDrawable::reverseTransition(jint arg0) const
 	{
 		callMethod<void>(
 			"reverseTransition",
@@ -48,7 +48,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void TransitionDrawable::setCrossFadeEnabled(jboolean arg0)
+	void TransitionDrawable::setCrossFadeEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCrossFadeEnabled",
@@ -56,7 +56,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void TransitionDrawable::startTransition(jint arg0)
+	void TransitionDrawable::startTransition(jint arg0) const
 	{
 		callMethod<void>(
 			"startTransition",

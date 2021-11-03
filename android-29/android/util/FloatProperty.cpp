@@ -19,7 +19,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void FloatProperty::set(JObject arg0, java::lang::Float arg1)
+	void FloatProperty::set(JObject arg0, java::lang::Float arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -28,7 +28,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	void FloatProperty::set(JObject arg0, JObject arg1)
+	void FloatProperty::set(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -37,7 +37,7 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	void FloatProperty::setValue(JObject arg0, jfloat arg1)
+	void FloatProperty::setValue(JObject arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setValue",

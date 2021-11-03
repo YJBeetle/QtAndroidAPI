@@ -25,35 +25,35 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jint Annotation::describeContents()
+	jint Annotation::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString Annotation::getKey()
+	JString Annotation::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Annotation::getSpanTypeId()
+	jint Annotation::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	JString Annotation::getValue()
+	JString Annotation::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Annotation::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Annotation::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

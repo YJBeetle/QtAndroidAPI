@@ -31,15 +31,15 @@ namespace android::content::pm::verify::domain
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getHostToStateMap();
-		JString getPackageName();
-		android::os::UserHandle getUser();
-		jint hashCode();
-		jboolean isLinkHandlingAllowed();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getHostToStateMap() const;
+		JString getPackageName() const;
+		android::os::UserHandle getUser() const;
+		jint hashCode() const;
+		jboolean isLinkHandlingAllowed() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm::verify::domain
 

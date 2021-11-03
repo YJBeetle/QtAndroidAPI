@@ -25,23 +25,23 @@ namespace java::util::concurrent
 		CopyOnWriteArraySet(JObject arg0);
 		
 		// Methods
-		jboolean add(JObject arg0);
-		jboolean addAll(JObject arg0);
-		void clear();
-		jboolean contains(JObject arg0);
-		jboolean containsAll(JObject arg0);
-		jboolean equals(JObject arg0);
-		void forEach(JObject arg0);
-		jboolean isEmpty();
-		JObject iterator();
-		jboolean remove(JObject arg0);
-		jboolean removeAll(JObject arg0);
-		jboolean removeIf(JObject arg0);
-		jboolean retainAll(JObject arg0);
-		jint size();
-		JObject spliterator();
-		JObjectArray toArray();
-		JObjectArray toArray(JObjectArray arg0);
+		jboolean add(JObject arg0) const;
+		jboolean addAll(JObject arg0) const;
+		void clear() const;
+		jboolean contains(JObject arg0) const;
+		jboolean containsAll(JObject arg0) const;
+		jboolean equals(JObject arg0) const;
+		void forEach(JObject arg0) const;
+		jboolean isEmpty() const;
+		JObject iterator() const;
+		jboolean remove(JObject arg0) const;
+		jboolean removeAll(JObject arg0) const;
+		jboolean removeIf(JObject arg0) const;
+		jboolean retainAll(JObject arg0) const;
+		jint size() const;
+		JObject spliterator() const;
+		JObjectArray toArray() const;
+		JObjectArray toArray(JObjectArray arg0) const;
 	};
 } // namespace java::util::concurrent
 

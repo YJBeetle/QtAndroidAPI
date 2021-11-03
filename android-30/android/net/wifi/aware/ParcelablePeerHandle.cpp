@@ -26,14 +26,14 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	jint ParcelablePeerHandle::describeContents()
+	jint ParcelablePeerHandle::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ParcelablePeerHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ParcelablePeerHandle::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

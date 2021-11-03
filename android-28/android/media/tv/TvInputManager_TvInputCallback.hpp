@@ -23,11 +23,11 @@ namespace android::media::tv
 		TvInputManager_TvInputCallback();
 		
 		// Methods
-		void onInputAdded(JString arg0);
-		void onInputRemoved(JString arg0);
-		void onInputStateChanged(JString arg0, jint arg1);
-		void onInputUpdated(JString arg0);
-		void onTvInputInfoUpdated(android::media::tv::TvInputInfo arg0);
+		void onInputAdded(JString arg0) const;
+		void onInputRemoved(JString arg0) const;
+		void onInputStateChanged(JString arg0, jint arg1) const;
+		void onInputUpdated(JString arg0) const;
+		void onTvInputInfoUpdated(android::media::tv::TvInputInfo arg0) const;
 	};
 } // namespace android::media::tv
 

@@ -21,7 +21,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jboolean LoginFilter_UsernameFilterGMail::isAllowed(jchar arg0)
+	jboolean LoginFilter_UsernameFilterGMail::isAllowed(jchar arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAllowed",

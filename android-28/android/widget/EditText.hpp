@@ -34,15 +34,15 @@ namespace android::widget
 		EditText(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void extendSelection(jint arg0);
-		JString getAccessibilityClassName();
-		jboolean getFreezesText();
-		JObject getText();
-		void selectAll();
-		void setEllipsize(android::text::TextUtils_TruncateAt arg0);
-		void setSelection(jint arg0);
-		void setSelection(jint arg0, jint arg1);
-		void setText(JString arg0, android::widget::TextView_BufferType arg1);
+		void extendSelection(jint arg0) const;
+		JString getAccessibilityClassName() const;
+		jboolean getFreezesText() const;
+		JObject getText() const;
+		void selectAll() const;
+		void setEllipsize(android::text::TextUtils_TruncateAt arg0) const;
+		void setSelection(jint arg0) const;
+		void setSelection(jint arg0, jint arg1) const;
+		void setText(JString arg0, android::widget::TextView_BufferType arg1) const;
 	};
 } // namespace android::widget
 

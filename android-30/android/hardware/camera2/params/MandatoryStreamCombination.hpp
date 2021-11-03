@@ -19,11 +19,11 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getDescription();
-		JObject getStreamsInformation();
-		jint hashCode();
-		jboolean isReprocessable();
+		jboolean equals(JObject arg0) const;
+		JString getDescription() const;
+		JObject getStreamsInformation() const;
+		jint hashCode() const;
+		jboolean isReprocessable() const;
 	};
 } // namespace android::hardware::camera2::params
 

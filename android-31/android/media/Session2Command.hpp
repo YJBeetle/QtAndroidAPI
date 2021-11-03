@@ -31,13 +31,13 @@ namespace android::media
 		Session2Command(JString arg0, android::os::Bundle arg1);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getCommandCode();
-		JString getCustomAction();
-		android::os::Bundle getCustomExtras();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getCommandCode() const;
+		JString getCustomAction() const;
+		android::os::Bundle getCustomExtras() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

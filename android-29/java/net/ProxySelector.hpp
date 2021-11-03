@@ -37,8 +37,8 @@ namespace java::net
 		static java::net::ProxySelector getDefault();
 		static java::net::ProxySelector of(java::net::InetSocketAddress arg0);
 		static void setDefault(java::net::ProxySelector arg0);
-		void connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2);
-		JObject select(java::net::URI arg0);
+		void connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2) const;
+		JObject select(java::net::URI arg0) const;
 	};
 } // namespace java::net
 

@@ -97,35 +97,35 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jboolean NotificationChannel::canBubble()
+	jboolean NotificationChannel::canBubble() const
 	{
 		return callMethod<jboolean>(
 			"canBubble",
 			"()Z"
 		);
 	}
-	jboolean NotificationChannel::canBypassDnd()
+	jboolean NotificationChannel::canBypassDnd() const
 	{
 		return callMethod<jboolean>(
 			"canBypassDnd",
 			"()Z"
 		);
 	}
-	jboolean NotificationChannel::canShowBadge()
+	jboolean NotificationChannel::canShowBadge() const
 	{
 		return callMethod<jboolean>(
 			"canShowBadge",
 			"()Z"
 		);
 	}
-	jint NotificationChannel::describeContents()
+	jint NotificationChannel::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void NotificationChannel::enableLights(jboolean arg0)
+	void NotificationChannel::enableLights(jboolean arg0) const
 	{
 		callMethod<void>(
 			"enableLights",
@@ -133,7 +133,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::enableVibration(jboolean arg0)
+	void NotificationChannel::enableVibration(jboolean arg0) const
 	{
 		callMethod<void>(
 			"enableVibration",
@@ -141,7 +141,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean NotificationChannel::equals(JObject arg0)
+	jboolean NotificationChannel::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -149,133 +149,133 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	android::media::AudioAttributes NotificationChannel::getAudioAttributes()
+	android::media::AudioAttributes NotificationChannel::getAudioAttributes() const
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	JString NotificationChannel::getConversationId()
+	JString NotificationChannel::getConversationId() const
 	{
 		return callObjectMethod(
 			"getConversationId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NotificationChannel::getDescription()
+	JString NotificationChannel::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NotificationChannel::getGroup()
+	JString NotificationChannel::getGroup() const
 	{
 		return callObjectMethod(
 			"getGroup",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NotificationChannel::getId()
+	JString NotificationChannel::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint NotificationChannel::getImportance()
+	jint NotificationChannel::getImportance() const
 	{
 		return callMethod<jint>(
 			"getImportance",
 			"()I"
 		);
 	}
-	jint NotificationChannel::getLightColor()
+	jint NotificationChannel::getLightColor() const
 	{
 		return callMethod<jint>(
 			"getLightColor",
 			"()I"
 		);
 	}
-	jint NotificationChannel::getLockscreenVisibility()
+	jint NotificationChannel::getLockscreenVisibility() const
 	{
 		return callMethod<jint>(
 			"getLockscreenVisibility",
 			"()I"
 		);
 	}
-	JString NotificationChannel::getName()
+	JString NotificationChannel::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString NotificationChannel::getParentChannelId()
+	JString NotificationChannel::getParentChannelId() const
 	{
 		return callObjectMethod(
 			"getParentChannelId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri NotificationChannel::getSound()
+	android::net::Uri NotificationChannel::getSound() const
 	{
 		return callObjectMethod(
 			"getSound",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JLongArray NotificationChannel::getVibrationPattern()
+	JLongArray NotificationChannel::getVibrationPattern() const
 	{
 		return callObjectMethod(
 			"getVibrationPattern",
 			"()[J"
 		);
 	}
-	jboolean NotificationChannel::hasUserSetImportance()
+	jboolean NotificationChannel::hasUserSetImportance() const
 	{
 		return callMethod<jboolean>(
 			"hasUserSetImportance",
 			"()Z"
 		);
 	}
-	jboolean NotificationChannel::hasUserSetSound()
+	jboolean NotificationChannel::hasUserSetSound() const
 	{
 		return callMethod<jboolean>(
 			"hasUserSetSound",
 			"()Z"
 		);
 	}
-	jint NotificationChannel::hashCode()
+	jint NotificationChannel::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean NotificationChannel::isConversation()
+	jboolean NotificationChannel::isConversation() const
 	{
 		return callMethod<jboolean>(
 			"isConversation",
 			"()Z"
 		);
 	}
-	jboolean NotificationChannel::isDemoted()
+	jboolean NotificationChannel::isDemoted() const
 	{
 		return callMethod<jboolean>(
 			"isDemoted",
 			"()Z"
 		);
 	}
-	jboolean NotificationChannel::isImportantConversation()
+	jboolean NotificationChannel::isImportantConversation() const
 	{
 		return callMethod<jboolean>(
 			"isImportantConversation",
 			"()Z"
 		);
 	}
-	void NotificationChannel::setAllowBubbles(jboolean arg0)
+	void NotificationChannel::setAllowBubbles(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowBubbles",
@@ -283,7 +283,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setBypassDnd(jboolean arg0)
+	void NotificationChannel::setBypassDnd(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setBypassDnd",
@@ -291,7 +291,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setConversationId(JString arg0, JString arg1)
+	void NotificationChannel::setConversationId(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setConversationId",
@@ -300,7 +300,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void NotificationChannel::setDescription(JString arg0)
+	void NotificationChannel::setDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setDescription",
@@ -308,7 +308,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationChannel::setGroup(JString arg0)
+	void NotificationChannel::setGroup(JString arg0) const
 	{
 		callMethod<void>(
 			"setGroup",
@@ -316,7 +316,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationChannel::setImportance(jint arg0)
+	void NotificationChannel::setImportance(jint arg0) const
 	{
 		callMethod<void>(
 			"setImportance",
@@ -324,7 +324,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setLightColor(jint arg0)
+	void NotificationChannel::setLightColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setLightColor",
@@ -332,7 +332,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setLockscreenVisibility(jint arg0)
+	void NotificationChannel::setLockscreenVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setLockscreenVisibility",
@@ -340,7 +340,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setName(JString arg0)
+	void NotificationChannel::setName(JString arg0) const
 	{
 		callMethod<void>(
 			"setName",
@@ -348,7 +348,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationChannel::setShowBadge(jboolean arg0)
+	void NotificationChannel::setShowBadge(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowBadge",
@@ -356,7 +356,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setSound(android::net::Uri arg0, android::media::AudioAttributes arg1)
+	void NotificationChannel::setSound(android::net::Uri arg0, android::media::AudioAttributes arg1) const
 	{
 		callMethod<void>(
 			"setSound",
@@ -365,7 +365,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void NotificationChannel::setVibrationPattern(JLongArray arg0)
+	void NotificationChannel::setVibrationPattern(JLongArray arg0) const
 	{
 		callMethod<void>(
 			"setVibrationPattern",
@@ -373,28 +373,28 @@ namespace android::app
 			arg0.object<jlongArray>()
 		);
 	}
-	jboolean NotificationChannel::shouldShowLights()
+	jboolean NotificationChannel::shouldShowLights() const
 	{
 		return callMethod<jboolean>(
 			"shouldShowLights",
 			"()Z"
 		);
 	}
-	jboolean NotificationChannel::shouldVibrate()
+	jboolean NotificationChannel::shouldVibrate() const
 	{
 		return callMethod<jboolean>(
 			"shouldVibrate",
 			"()Z"
 		);
 	}
-	JString NotificationChannel::toString()
+	JString NotificationChannel::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NotificationChannel::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NotificationChannel::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

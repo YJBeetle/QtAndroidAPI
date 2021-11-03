@@ -17,28 +17,28 @@ namespace org::json
 		) {}
 	
 	// Methods
-	org::json::JSONStringer JSONStringer::array()
+	org::json::JSONStringer JSONStringer::array() const
 	{
 		return callObjectMethod(
 			"array",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	org::json::JSONStringer JSONStringer::endArray()
+	org::json::JSONStringer JSONStringer::endArray() const
 	{
 		return callObjectMethod(
 			"endArray",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	org::json::JSONStringer JSONStringer::endObject()
+	org::json::JSONStringer JSONStringer::endObject() const
 	{
 		return callObjectMethod(
 			"endObject",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	org::json::JSONStringer JSONStringer::key(JString arg0)
+	org::json::JSONStringer JSONStringer::key(JString arg0) const
 	{
 		return callObjectMethod(
 			"key",
@@ -46,21 +46,21 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	org::json::JSONStringer JSONStringer::object()
+	org::json::JSONStringer JSONStringer::object() const
 	{
 		return callObjectMethod(
 			"object",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	JString JSONStringer::toString()
+	JString JSONStringer::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	org::json::JSONStringer JSONStringer::value(jboolean arg0)
+	org::json::JSONStringer JSONStringer::value(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"value",
@@ -68,7 +68,7 @@ namespace org::json
 			arg0
 		);
 	}
-	org::json::JSONStringer JSONStringer::value(jdouble arg0)
+	org::json::JSONStringer JSONStringer::value(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"value",
@@ -76,7 +76,7 @@ namespace org::json
 			arg0
 		);
 	}
-	org::json::JSONStringer JSONStringer::value(JObject arg0)
+	org::json::JSONStringer JSONStringer::value(JObject arg0) const
 	{
 		return callObjectMethod(
 			"value",
@@ -84,7 +84,7 @@ namespace org::json
 			arg0.object<jobject>()
 		);
 	}
-	org::json::JSONStringer JSONStringer::value(jlong arg0)
+	org::json::JSONStringer JSONStringer::value(jlong arg0) const
 	{
 		return callObjectMethod(
 			"value",

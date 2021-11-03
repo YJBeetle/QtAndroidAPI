@@ -35,14 +35,14 @@ namespace android::app
 		
 		// Methods
 		static JObject getMessagesFromBundleArray(JArray arg0);
-		JString getDataMimeType();
-		android::net::Uri getDataUri();
-		android::os::Bundle getExtras();
-		JString getSender();
-		android::app::Person getSenderPerson();
-		JString getText();
-		jlong getTimestamp();
-		android::app::Notification_MessagingStyle_Message setData(JString arg0, android::net::Uri arg1);
+		JString getDataMimeType() const;
+		android::net::Uri getDataUri() const;
+		android::os::Bundle getExtras() const;
+		JString getSender() const;
+		android::app::Person getSenderPerson() const;
+		JString getText() const;
+		jlong getTimestamp() const;
+		android::app::Notification_MessagingStyle_Message setData(JString arg0, android::net::Uri arg1) const;
 	};
 } // namespace android::app
 

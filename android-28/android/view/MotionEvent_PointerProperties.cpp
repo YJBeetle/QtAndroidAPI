@@ -34,14 +34,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void MotionEvent_PointerProperties::clear()
+	void MotionEvent_PointerProperties::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void MotionEvent_PointerProperties::copyFrom(android::view::MotionEvent_PointerProperties arg0)
+	void MotionEvent_PointerProperties::copyFrom(android::view::MotionEvent_PointerProperties arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -49,7 +49,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean MotionEvent_PointerProperties::equals(JObject arg0)
+	jboolean MotionEvent_PointerProperties::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -57,7 +57,7 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	jint MotionEvent_PointerProperties::hashCode()
+	jint MotionEvent_PointerProperties::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

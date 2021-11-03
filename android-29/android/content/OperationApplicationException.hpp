@@ -25,7 +25,7 @@ namespace android::content
 		OperationApplicationException(JString arg0, JThrowable arg1);
 		
 		// Methods
-		jint getNumSuccessfulYieldPoints();
+		jint getNumSuccessfulYieldPoints() const;
 	};
 } // namespace android::content
 

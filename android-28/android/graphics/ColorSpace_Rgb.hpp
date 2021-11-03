@@ -30,29 +30,29 @@ namespace android::graphics
 		ColorSpace_Rgb(JString arg0, JFloatArray arg1, JFloatArray arg2, JObject arg3, JObject arg4, jfloat arg5, jfloat arg6);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JFloatArray fromLinear(JFloatArray arg0);
-		JFloatArray fromLinear(jfloat arg0, jfloat arg1, jfloat arg2);
-		JFloatArray fromXyz(JFloatArray arg0);
-		JObject getEotf();
-		JFloatArray getInverseTransform();
-		JFloatArray getInverseTransform(JFloatArray arg0);
-		jfloat getMaxValue(jint arg0);
-		jfloat getMinValue(jint arg0);
-		JObject getOetf();
-		JFloatArray getPrimaries();
-		JFloatArray getPrimaries(JFloatArray arg0);
-		android::graphics::ColorSpace_Rgb_TransferParameters getTransferParameters();
-		JFloatArray getTransform();
-		JFloatArray getTransform(JFloatArray arg0);
-		JFloatArray getWhitePoint();
-		JFloatArray getWhitePoint(JFloatArray arg0);
-		jint hashCode();
-		jboolean isSrgb();
-		jboolean isWideGamut();
-		JFloatArray toLinear(JFloatArray arg0);
-		JFloatArray toLinear(jfloat arg0, jfloat arg1, jfloat arg2);
-		JFloatArray toXyz(JFloatArray arg0);
+		jboolean equals(JObject arg0) const;
+		JFloatArray fromLinear(JFloatArray arg0) const;
+		JFloatArray fromLinear(jfloat arg0, jfloat arg1, jfloat arg2) const;
+		JFloatArray fromXyz(JFloatArray arg0) const;
+		JObject getEotf() const;
+		JFloatArray getInverseTransform() const;
+		JFloatArray getInverseTransform(JFloatArray arg0) const;
+		jfloat getMaxValue(jint arg0) const;
+		jfloat getMinValue(jint arg0) const;
+		JObject getOetf() const;
+		JFloatArray getPrimaries() const;
+		JFloatArray getPrimaries(JFloatArray arg0) const;
+		android::graphics::ColorSpace_Rgb_TransferParameters getTransferParameters() const;
+		JFloatArray getTransform() const;
+		JFloatArray getTransform(JFloatArray arg0) const;
+		JFloatArray getWhitePoint() const;
+		JFloatArray getWhitePoint(JFloatArray arg0) const;
+		jint hashCode() const;
+		jboolean isSrgb() const;
+		jboolean isWideGamut() const;
+		JFloatArray toLinear(JFloatArray arg0) const;
+		JFloatArray toLinear(jfloat arg0, jfloat arg1, jfloat arg2) const;
+		JFloatArray toXyz(JFloatArray arg0) const;
 	};
 } // namespace android::graphics
 

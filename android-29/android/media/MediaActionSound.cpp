@@ -43,7 +43,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaActionSound::load(jint arg0)
+	void MediaActionSound::load(jint arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -51,7 +51,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaActionSound::play(jint arg0)
+	void MediaActionSound::play(jint arg0) const
 	{
 		callMethod<void>(
 			"play",
@@ -59,7 +59,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaActionSound::release()
+	void MediaActionSound::release() const
 	{
 		callMethod<void>(
 			"release",

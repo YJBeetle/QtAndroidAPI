@@ -147,7 +147,7 @@ namespace java::time
 			"()[Ljava/time/Month;"
 		);
 	}
-	JObject Month::adjustInto(JObject arg0)
+	JObject Month::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -155,7 +155,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Month::firstDayOfYear(jboolean arg0)
+	jint Month::firstDayOfYear(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"firstDayOfYear",
@@ -163,14 +163,14 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Month Month::firstMonthOfQuarter()
+	java::time::Month Month::firstMonthOfQuarter() const
 	{
 		return callObjectMethod(
 			"firstMonthOfQuarter",
 			"()Ljava/time/Month;"
 		);
 	}
-	jint Month::get(JObject arg0)
+	jint Month::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -178,7 +178,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JString Month::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString Month::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -187,7 +187,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	jlong Month::getLong(JObject arg0)
+	jlong Month::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -195,14 +195,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Month::getValue()
+	jint Month::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
-	jboolean Month::isSupported(JObject arg0)
+	jboolean Month::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -210,7 +210,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Month::length(jboolean arg0)
+	jint Month::length(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"length",
@@ -218,21 +218,21 @@ namespace java::time
 			arg0
 		);
 	}
-	jint Month::maxLength()
+	jint Month::maxLength() const
 	{
 		return callMethod<jint>(
 			"maxLength",
 			"()I"
 		);
 	}
-	jint Month::minLength()
+	jint Month::minLength() const
 	{
 		return callMethod<jint>(
 			"minLength",
 			"()I"
 		);
 	}
-	java::time::Month Month::minus(jlong arg0)
+	java::time::Month Month::minus(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -240,7 +240,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Month Month::plus(jlong arg0)
+	java::time::Month Month::plus(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -248,7 +248,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject Month::query(JObject arg0)
+	JObject Month::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -256,7 +256,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange Month::range(JObject arg0)
+	java::time::temporal::ValueRange Month::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",

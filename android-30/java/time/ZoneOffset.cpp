@@ -97,7 +97,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject ZoneOffset::adjustInto(JObject arg0)
+	JObject ZoneOffset::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -105,7 +105,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint ZoneOffset::compareTo(JObject arg0)
+	jint ZoneOffset::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -113,7 +113,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint ZoneOffset::compareTo(java::time::ZoneOffset arg0)
+	jint ZoneOffset::compareTo(java::time::ZoneOffset arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -121,7 +121,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean ZoneOffset::equals(JObject arg0)
+	jboolean ZoneOffset::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -129,7 +129,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint ZoneOffset::get(JObject arg0)
+	jint ZoneOffset::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -137,14 +137,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JString ZoneOffset::getId()
+	JString ZoneOffset::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong ZoneOffset::getLong(JObject arg0)
+	jlong ZoneOffset::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -152,28 +152,28 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::zone::ZoneRules ZoneOffset::getRules()
+	java::time::zone::ZoneRules ZoneOffset::getRules() const
 	{
 		return callObjectMethod(
 			"getRules",
 			"()Ljava/time/zone/ZoneRules;"
 		);
 	}
-	jint ZoneOffset::getTotalSeconds()
+	jint ZoneOffset::getTotalSeconds() const
 	{
 		return callMethod<jint>(
 			"getTotalSeconds",
 			"()I"
 		);
 	}
-	jint ZoneOffset::hashCode()
+	jint ZoneOffset::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ZoneOffset::isSupported(JObject arg0)
+	jboolean ZoneOffset::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -181,7 +181,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JObject ZoneOffset::query(JObject arg0)
+	JObject ZoneOffset::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -189,7 +189,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange ZoneOffset::range(JObject arg0)
+	java::time::temporal::ValueRange ZoneOffset::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -197,7 +197,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JString ZoneOffset::toString()
+	JString ZoneOffset::toString() const
 	{
 		return callObjectMethod(
 			"toString",

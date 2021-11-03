@@ -23,12 +23,12 @@ namespace java::net
 		SecureCacheResponse();
 		
 		// Methods
-		JString getCipherSuite();
-		JObject getLocalCertificateChain();
-		JObject getLocalPrincipal();
-		JObject getPeerPrincipal();
-		java::util::Optional getSSLSession();
-		JObject getServerCertificateChain();
+		JString getCipherSuite() const;
+		JObject getLocalCertificateChain() const;
+		JObject getLocalPrincipal() const;
+		JObject getPeerPrincipal() const;
+		java::util::Optional getSSLSession() const;
+		JObject getServerCertificateChain() const;
 	};
 } // namespace java::net
 

@@ -39,9 +39,9 @@ namespace android::app
 		LauncherActivity();
 		
 		// Methods
-		JObject makeListItems();
-		void setTitle(jint arg0);
-		void setTitle(JString arg0);
+		JObject makeListItems() const;
+		void setTitle(jint arg0) const;
+		void setTitle(JString arg0) const;
 	};
 } // namespace android::app
 

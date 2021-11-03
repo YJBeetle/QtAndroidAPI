@@ -16,13 +16,13 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jfloat getAzimuth();
-		jfloat getElevation();
-		jint getPrn();
-		jfloat getSnr();
-		jboolean hasAlmanac();
-		jboolean hasEphemeris();
-		jboolean usedInFix();
+		jfloat getAzimuth() const;
+		jfloat getElevation() const;
+		jint getPrn() const;
+		jfloat getSnr() const;
+		jboolean hasAlmanac() const;
+		jboolean hasEphemeris() const;
+		jboolean usedInFix() const;
 	};
 } // namespace android::location
 

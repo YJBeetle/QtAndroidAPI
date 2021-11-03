@@ -30,28 +30,28 @@ namespace javax::xml::transform::sax
 		) {}
 	
 	// Methods
-	JObject SAXResult::getHandler()
+	JObject SAXResult::getHandler() const
 	{
 		return callObjectMethod(
 			"getHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	JObject SAXResult::getLexicalHandler()
+	JObject SAXResult::getLexicalHandler() const
 	{
 		return callObjectMethod(
 			"getLexicalHandler",
 			"()Lorg/xml/sax/ext/LexicalHandler;"
 		);
 	}
-	JString SAXResult::getSystemId()
+	JString SAXResult::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SAXResult::setHandler(JObject arg0)
+	void SAXResult::setHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setHandler",
@@ -59,7 +59,7 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	void SAXResult::setLexicalHandler(JObject arg0)
+	void SAXResult::setLexicalHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setLexicalHandler",
@@ -67,7 +67,7 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	void SAXResult::setSystemId(JString arg0)
+	void SAXResult::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",

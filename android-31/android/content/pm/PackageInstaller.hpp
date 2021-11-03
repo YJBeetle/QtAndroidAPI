@@ -70,24 +70,24 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		void abandonSession(jint arg0);
-		jint createSession(android::content::pm::PackageInstaller_SessionParams arg0);
-		android::content::pm::PackageInstaller_SessionInfo getActiveStagedSession();
-		JObject getActiveStagedSessions();
-		JObject getAllSessions();
-		JObject getMySessions();
-		android::content::pm::PackageInstaller_SessionInfo getSessionInfo(jint arg0);
-		JObject getStagedSessions();
-		void installExistingPackage(JString arg0, jint arg1, android::content::IntentSender arg2);
-		android::content::pm::PackageInstaller_Session openSession(jint arg0);
-		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
-		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1);
-		void uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1);
-		void uninstall(JString arg0, android::content::IntentSender arg1);
-		void uninstallExistingPackage(JString arg0, android::content::IntentSender arg1);
-		void unregisterSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
-		void updateSessionAppIcon(jint arg0, android::graphics::Bitmap arg1);
-		void updateSessionAppLabel(jint arg0, JString arg1);
+		void abandonSession(jint arg0) const;
+		jint createSession(android::content::pm::PackageInstaller_SessionParams arg0) const;
+		android::content::pm::PackageInstaller_SessionInfo getActiveStagedSession() const;
+		JObject getActiveStagedSessions() const;
+		JObject getAllSessions() const;
+		JObject getMySessions() const;
+		android::content::pm::PackageInstaller_SessionInfo getSessionInfo(jint arg0) const;
+		JObject getStagedSessions() const;
+		void installExistingPackage(JString arg0, jint arg1, android::content::IntentSender arg2) const;
+		android::content::pm::PackageInstaller_Session openSession(jint arg0) const;
+		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0) const;
+		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1) const;
+		void uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1) const;
+		void uninstall(JString arg0, android::content::IntentSender arg1) const;
+		void uninstallExistingPackage(JString arg0, android::content::IntentSender arg1) const;
+		void unregisterSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0) const;
+		void updateSessionAppIcon(jint arg0, android::graphics::Bitmap arg1) const;
+		void updateSessionAppLabel(jint arg0, JString arg1) const;
 	};
 } // namespace android::content::pm
 

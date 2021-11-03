@@ -63,16 +63,16 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		jboolean connect(android::bluetooth::BluetoothDevice arg0);
-		jboolean disconnect(android::bluetooth::BluetoothDevice arg0);
-		JObject getConnectedDevices();
-		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
-		jboolean registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, JObject arg3, android::bluetooth::BluetoothHidDevice_Callback arg4);
-		jboolean replyReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3);
-		jboolean reportError(android::bluetooth::BluetoothDevice arg0, jbyte arg1);
-		jboolean sendReport(android::bluetooth::BluetoothDevice arg0, jint arg1, JByteArray arg2);
-		jboolean unregisterApp();
+		jboolean connect(android::bluetooth::BluetoothDevice arg0) const;
+		jboolean disconnect(android::bluetooth::BluetoothDevice arg0) const;
+		JObject getConnectedDevices() const;
+		jint getConnectionState(android::bluetooth::BluetoothDevice arg0) const;
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0) const;
+		jboolean registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, JObject arg3, android::bluetooth::BluetoothHidDevice_Callback arg4) const;
+		jboolean replyReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3) const;
+		jboolean reportError(android::bluetooth::BluetoothDevice arg0, jbyte arg1) const;
+		jboolean sendReport(android::bluetooth::BluetoothDevice arg0, jint arg1, JByteArray arg2) const;
+		jboolean unregisterApp() const;
 	};
 } // namespace android::bluetooth
 

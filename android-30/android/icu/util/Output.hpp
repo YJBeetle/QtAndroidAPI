@@ -22,7 +22,7 @@ namespace android::icu::util
 		Output(JObject arg0);
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::icu::util
 

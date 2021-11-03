@@ -29,14 +29,14 @@ namespace android::content::pm
 		Signature(JString arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JByteArray toByteArray();
-		JCharArray toChars();
-		JCharArray toChars(JCharArray arg0, JIntArray arg1);
-		JString toCharsString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JByteArray toByteArray() const;
+		JCharArray toChars() const;
+		JCharArray toChars(JCharArray arg0, JIntArray arg1) const;
+		JString toCharsString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

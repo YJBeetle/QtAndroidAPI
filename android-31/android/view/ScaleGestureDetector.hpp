@@ -31,23 +31,23 @@ namespace android::view
 		ScaleGestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2);
 		
 		// Methods
-		jfloat getCurrentSpan();
-		jfloat getCurrentSpanX();
-		jfloat getCurrentSpanY();
-		jlong getEventTime();
-		jfloat getFocusX();
-		jfloat getFocusY();
-		jfloat getPreviousSpan();
-		jfloat getPreviousSpanX();
-		jfloat getPreviousSpanY();
-		jfloat getScaleFactor();
-		jlong getTimeDelta();
-		jboolean isInProgress();
-		jboolean isQuickScaleEnabled();
-		jboolean isStylusScaleEnabled();
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setQuickScaleEnabled(jboolean arg0);
-		void setStylusScaleEnabled(jboolean arg0);
+		jfloat getCurrentSpan() const;
+		jfloat getCurrentSpanX() const;
+		jfloat getCurrentSpanY() const;
+		jlong getEventTime() const;
+		jfloat getFocusX() const;
+		jfloat getFocusY() const;
+		jfloat getPreviousSpan() const;
+		jfloat getPreviousSpanX() const;
+		jfloat getPreviousSpanY() const;
+		jfloat getScaleFactor() const;
+		jlong getTimeDelta() const;
+		jboolean isInProgress() const;
+		jboolean isQuickScaleEnabled() const;
+		jboolean isStylusScaleEnabled() const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		void setQuickScaleEnabled(jboolean arg0) const;
+		void setStylusScaleEnabled(jboolean arg0) const;
 	};
 } // namespace android::view
 

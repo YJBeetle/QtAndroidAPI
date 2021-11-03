@@ -23,8 +23,8 @@ namespace android::view
 		ViewStructure_HtmlInfo_Builder();
 		
 		// Methods
-		android::view::ViewStructure_HtmlInfo_Builder addAttribute(JString arg0, JString arg1);
-		android::view::ViewStructure_HtmlInfo build();
+		android::view::ViewStructure_HtmlInfo_Builder addAttribute(JString arg0, JString arg1) const;
+		android::view::ViewStructure_HtmlInfo build() const;
 	};
 } // namespace android::view
 

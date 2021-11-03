@@ -11,21 +11,21 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	JString WebStorage_Origin::getOrigin()
+	JString WebStorage_Origin::getOrigin() const
 	{
 		return callObjectMethod(
 			"getOrigin",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong WebStorage_Origin::getQuota()
+	jlong WebStorage_Origin::getQuota() const
 	{
 		return callMethod<jlong>(
 			"getQuota",
 			"()J"
 		);
 	}
-	jlong WebStorage_Origin::getUsage()
+	jlong WebStorage_Origin::getUsage() const
 	{
 		return callMethod<jlong>(
 			"getUsage",

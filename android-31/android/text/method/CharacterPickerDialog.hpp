@@ -35,8 +35,8 @@ namespace android::text::method
 		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, JString arg3, jboolean arg4);
 		
 		// Methods
-		void onClick(android::view::View arg0);
-		void onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3);
+		void onClick(android::view::View arg0) const;
+		void onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const;
 	};
 } // namespace android::text::method
 

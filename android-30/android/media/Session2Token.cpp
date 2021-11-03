@@ -45,14 +45,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint Session2Token::describeContents()
+	jint Session2Token::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Session2Token::equals(JObject arg0)
+	jboolean Session2Token::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -60,56 +60,56 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle Session2Token::getExtras()
+	android::os::Bundle Session2Token::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString Session2Token::getPackageName()
+	JString Session2Token::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Session2Token::getServiceName()
+	JString Session2Token::getServiceName() const
 	{
 		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Session2Token::getType()
+	jint Session2Token::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint Session2Token::getUid()
+	jint Session2Token::getUid() const
 	{
 		return callMethod<jint>(
 			"getUid",
 			"()I"
 		);
 	}
-	jint Session2Token::hashCode()
+	jint Session2Token::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Session2Token::toString()
+	JString Session2Token::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Session2Token::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Session2Token::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

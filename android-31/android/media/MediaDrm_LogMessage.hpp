@@ -18,10 +18,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getMessage();
-		jint getPriority();
-		jlong getTimestampMillis();
-		JString toString();
+		JString getMessage() const;
+		jint getPriority() const;
+		jlong getTimestampMillis() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

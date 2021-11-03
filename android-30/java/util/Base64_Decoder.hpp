@@ -28,11 +28,11 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		JByteArray decode(JByteArray arg0);
-		JByteArray decode(JString arg0);
-		jint decode(JByteArray arg0, JByteArray arg1);
-		java::nio::ByteBuffer decode(java::nio::ByteBuffer arg0);
-		java::io::InputStream wrap(java::io::InputStream arg0);
+		JByteArray decode(JByteArray arg0) const;
+		JByteArray decode(JString arg0) const;
+		jint decode(JByteArray arg0, JByteArray arg1) const;
+		java::nio::ByteBuffer decode(java::nio::ByteBuffer arg0) const;
+		java::io::InputStream wrap(java::io::InputStream arg0) const;
 	};
 } // namespace java::util
 

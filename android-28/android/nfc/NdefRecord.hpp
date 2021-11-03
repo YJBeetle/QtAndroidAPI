@@ -51,18 +51,18 @@ namespace android::nfc
 		static android::nfc::NdefRecord createTextRecord(JString arg0, JString arg1);
 		static android::nfc::NdefRecord createUri(android::net::Uri arg0);
 		static android::nfc::NdefRecord createUri(JString arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JByteArray getId();
-		JByteArray getPayload();
-		jshort getTnf();
-		JByteArray getType();
-		jint hashCode();
-		JByteArray toByteArray();
-		JString toMimeType();
-		JString toString();
-		android::net::Uri toUri();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JByteArray getId() const;
+		JByteArray getPayload() const;
+		jshort getTnf() const;
+		JByteArray getType() const;
+		jint hashCode() const;
+		JByteArray toByteArray() const;
+		JString toMimeType() const;
+		JString toString() const;
+		android::net::Uri toUri() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::nfc
 

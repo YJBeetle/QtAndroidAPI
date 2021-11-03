@@ -38,7 +38,7 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	void BluetoothLeScanner::flushPendingScanResults(android::bluetooth::le::ScanCallback arg0)
+	void BluetoothLeScanner::flushPendingScanResults(android::bluetooth::le::ScanCallback arg0) const
 	{
 		callMethod<void>(
 			"flushPendingScanResults",
@@ -46,7 +46,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	jint BluetoothLeScanner::startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::app::PendingIntent arg2)
+	jint BluetoothLeScanner::startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::app::PendingIntent arg2) const
 	{
 		return callMethod<jint>(
 			"startScan",
@@ -56,7 +56,7 @@ namespace android::bluetooth::le
 			arg2.object()
 		);
 	}
-	void BluetoothLeScanner::startScan(android::bluetooth::le::ScanCallback arg0)
+	void BluetoothLeScanner::startScan(android::bluetooth::le::ScanCallback arg0) const
 	{
 		callMethod<void>(
 			"startScan",
@@ -64,7 +64,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void BluetoothLeScanner::startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::bluetooth::le::ScanCallback arg2)
+	void BluetoothLeScanner::startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::bluetooth::le::ScanCallback arg2) const
 	{
 		callMethod<void>(
 			"startScan",
@@ -74,7 +74,7 @@ namespace android::bluetooth::le
 			arg2.object()
 		);
 	}
-	void BluetoothLeScanner::stopScan(android::app::PendingIntent arg0)
+	void BluetoothLeScanner::stopScan(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"stopScan",
@@ -82,7 +82,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void BluetoothLeScanner::stopScan(android::bluetooth::le::ScanCallback arg0)
+	void BluetoothLeScanner::stopScan(android::bluetooth::le::ScanCallback arg0) const
 	{
 		callMethod<void>(
 			"stopScan",

@@ -58,14 +58,14 @@ namespace android::graphics::fonts
 		) {}
 	
 	// Methods
-	android::graphics::fonts::Font Font_Builder::build()
+	android::graphics::fonts::Font Font_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/graphics/fonts/Font;"
 		);
 	}
-	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(JArray arg0)
+	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setFontVariationSettings",
@@ -73,7 +73,7 @@ namespace android::graphics::fonts
 			arg0.object<jarray>()
 		);
 	}
-	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(JString arg0)
+	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(JString arg0) const
 	{
 		return callObjectMethod(
 			"setFontVariationSettings",
@@ -81,7 +81,7 @@ namespace android::graphics::fonts
 			arg0.object<jstring>()
 		);
 	}
-	android::graphics::fonts::Font_Builder Font_Builder::setSlant(jint arg0)
+	android::graphics::fonts::Font_Builder Font_Builder::setSlant(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSlant",
@@ -89,7 +89,7 @@ namespace android::graphics::fonts
 			arg0
 		);
 	}
-	android::graphics::fonts::Font_Builder Font_Builder::setTtcIndex(jint arg0)
+	android::graphics::fonts::Font_Builder Font_Builder::setTtcIndex(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTtcIndex",
@@ -97,7 +97,7 @@ namespace android::graphics::fonts
 			arg0
 		);
 	}
-	android::graphics::fonts::Font_Builder Font_Builder::setWeight(jint arg0)
+	android::graphics::fonts::Font_Builder Font_Builder::setWeight(jint arg0) const
 	{
 		return callObjectMethod(
 			"setWeight",

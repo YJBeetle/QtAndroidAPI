@@ -48,7 +48,7 @@ namespace android::text::method
 			arg0.object()
 		);
 	}
-	jint DateKeyListener::getInputType()
+	jint DateKeyListener::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",

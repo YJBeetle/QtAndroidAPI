@@ -14,14 +14,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaCas_Session::close()
+	void MediaCas_Session::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean MediaCas_Session::equals(JObject arg0)
+	jboolean MediaCas_Session::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -29,7 +29,7 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	void MediaCas_Session::processEcm(JByteArray arg0)
+	void MediaCas_Session::processEcm(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"processEcm",
@@ -37,7 +37,7 @@ namespace android::media
 			arg0.object<jbyteArray>()
 		);
 	}
-	void MediaCas_Session::processEcm(JByteArray arg0, jint arg1, jint arg2)
+	void MediaCas_Session::processEcm(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"processEcm",
@@ -47,7 +47,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaCas_Session::sendSessionEvent(jint arg0, jint arg1, JByteArray arg2)
+	void MediaCas_Session::sendSessionEvent(jint arg0, jint arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"sendSessionEvent",
@@ -57,7 +57,7 @@ namespace android::media
 			arg2.object<jbyteArray>()
 		);
 	}
-	void MediaCas_Session::setPrivateData(JByteArray arg0)
+	void MediaCas_Session::setPrivateData(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setPrivateData",

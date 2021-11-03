@@ -35,14 +35,14 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		android::content::pm::ApplicationInfo getApplicationInfo();
-		android::graphics::drawable::Drawable getBadgedIcon(jint arg0);
-		android::content::ComponentName getComponentName();
-		jlong getFirstInstallTime();
-		android::graphics::drawable::Drawable getIcon(jint arg0);
-		JString getLabel();
-		JString getName();
-		android::os::UserHandle getUser();
+		android::content::pm::ApplicationInfo getApplicationInfo() const;
+		android::graphics::drawable::Drawable getBadgedIcon(jint arg0) const;
+		android::content::ComponentName getComponentName() const;
+		jlong getFirstInstallTime() const;
+		android::graphics::drawable::Drawable getIcon(jint arg0) const;
+		JString getLabel() const;
+		JString getName() const;
+		android::os::UserHandle getUser() const;
 	};
 } // namespace android::content::pm
 

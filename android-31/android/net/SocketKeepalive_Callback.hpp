@@ -17,10 +17,10 @@ namespace android::net
 		SocketKeepalive_Callback();
 		
 		// Methods
-		void onDataReceived();
-		void onError(jint arg0);
-		void onStarted();
-		void onStopped();
+		void onDataReceived() const;
+		void onError(jint arg0) const;
+		void onStarted() const;
+		void onStopped() const;
 	};
 } // namespace android::net
 

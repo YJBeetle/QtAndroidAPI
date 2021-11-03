@@ -40,14 +40,14 @@ namespace android::appwidget
 		
 		// Methods
 		static void deleteAllHosts();
-		jint allocateAppWidgetId();
-		android::appwidget::AppWidgetHostView createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2);
-		void deleteAppWidgetId(jint arg0);
-		void deleteHost();
-		JIntArray getAppWidgetIds();
-		void startAppWidgetConfigureActivityForResult(android::app::Activity arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4);
-		void startListening();
-		void stopListening();
+		jint allocateAppWidgetId() const;
+		android::appwidget::AppWidgetHostView createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2) const;
+		void deleteAppWidgetId(jint arg0) const;
+		void deleteHost() const;
+		JIntArray getAppWidgetIds() const;
+		void startAppWidgetConfigureActivityForResult(android::app::Activity arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4) const;
+		void startListening() const;
+		void stopListening() const;
 	};
 } // namespace android::appwidget
 

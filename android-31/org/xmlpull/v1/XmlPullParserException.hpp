@@ -21,10 +21,10 @@ namespace org::xmlpull::v1
 		XmlPullParserException(JString arg0, JObject arg1, JThrowable arg2);
 		
 		// Methods
-		jint getColumnNumber();
-		JThrowable getDetail();
-		jint getLineNumber();
-		void printStackTrace();
+		jint getColumnNumber() const;
+		JThrowable getDetail() const;
+		jint getLineNumber() const;
+		void printStackTrace() const;
 	};
 } // namespace org::xmlpull::v1
 

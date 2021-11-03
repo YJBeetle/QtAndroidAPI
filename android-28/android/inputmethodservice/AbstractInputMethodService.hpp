@@ -47,12 +47,12 @@ namespace android::inputmethodservice
 		AbstractInputMethodService();
 		
 		// Methods
-		android::view::KeyEvent_DispatcherState getKeyDispatcherState();
-		JObject onBind(android::content::Intent arg0);
-		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl onCreateInputMethodInterface();
-		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
-		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(android::view::MotionEvent arg0);
+		android::view::KeyEvent_DispatcherState getKeyDispatcherState() const;
+		JObject onBind(android::content::Intent arg0) const;
+		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl onCreateInputMethodInterface() const;
+		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() const;
+		jboolean onGenericMotionEvent(android::view::MotionEvent arg0) const;
+		jboolean onTrackballEvent(android::view::MotionEvent arg0) const;
 	};
 } // namespace android::inputmethodservice
 

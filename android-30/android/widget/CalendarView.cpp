@@ -44,112 +44,112 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString CalendarView::getAccessibilityClassName()
+	JString CalendarView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jlong CalendarView::getDate()
+	jlong CalendarView::getDate() const
 	{
 		return callMethod<jlong>(
 			"getDate",
 			"()J"
 		);
 	}
-	jint CalendarView::getDateTextAppearance()
+	jint CalendarView::getDateTextAppearance() const
 	{
 		return callMethod<jint>(
 			"getDateTextAppearance",
 			"()I"
 		);
 	}
-	jint CalendarView::getFirstDayOfWeek()
+	jint CalendarView::getFirstDayOfWeek() const
 	{
 		return callMethod<jint>(
 			"getFirstDayOfWeek",
 			"()I"
 		);
 	}
-	jint CalendarView::getFocusedMonthDateColor()
+	jint CalendarView::getFocusedMonthDateColor() const
 	{
 		return callMethod<jint>(
 			"getFocusedMonthDateColor",
 			"()I"
 		);
 	}
-	jlong CalendarView::getMaxDate()
+	jlong CalendarView::getMaxDate() const
 	{
 		return callMethod<jlong>(
 			"getMaxDate",
 			"()J"
 		);
 	}
-	jlong CalendarView::getMinDate()
+	jlong CalendarView::getMinDate() const
 	{
 		return callMethod<jlong>(
 			"getMinDate",
 			"()J"
 		);
 	}
-	android::graphics::drawable::Drawable CalendarView::getSelectedDateVerticalBar()
+	android::graphics::drawable::Drawable CalendarView::getSelectedDateVerticalBar() const
 	{
 		return callObjectMethod(
 			"getSelectedDateVerticalBar",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint CalendarView::getSelectedWeekBackgroundColor()
+	jint CalendarView::getSelectedWeekBackgroundColor() const
 	{
 		return callMethod<jint>(
 			"getSelectedWeekBackgroundColor",
 			"()I"
 		);
 	}
-	jboolean CalendarView::getShowWeekNumber()
+	jboolean CalendarView::getShowWeekNumber() const
 	{
 		return callMethod<jboolean>(
 			"getShowWeekNumber",
 			"()Z"
 		);
 	}
-	jint CalendarView::getShownWeekCount()
+	jint CalendarView::getShownWeekCount() const
 	{
 		return callMethod<jint>(
 			"getShownWeekCount",
 			"()I"
 		);
 	}
-	jint CalendarView::getUnfocusedMonthDateColor()
+	jint CalendarView::getUnfocusedMonthDateColor() const
 	{
 		return callMethod<jint>(
 			"getUnfocusedMonthDateColor",
 			"()I"
 		);
 	}
-	jint CalendarView::getWeekDayTextAppearance()
+	jint CalendarView::getWeekDayTextAppearance() const
 	{
 		return callMethod<jint>(
 			"getWeekDayTextAppearance",
 			"()I"
 		);
 	}
-	jint CalendarView::getWeekNumberColor()
+	jint CalendarView::getWeekNumberColor() const
 	{
 		return callMethod<jint>(
 			"getWeekNumberColor",
 			"()I"
 		);
 	}
-	jint CalendarView::getWeekSeparatorLineColor()
+	jint CalendarView::getWeekSeparatorLineColor() const
 	{
 		return callMethod<jint>(
 			"getWeekSeparatorLineColor",
 			"()I"
 		);
 	}
-	void CalendarView::setDate(jlong arg0)
+	void CalendarView::setDate(jlong arg0) const
 	{
 		callMethod<void>(
 			"setDate",
@@ -157,7 +157,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setDate(jlong arg0, jboolean arg1, jboolean arg2)
+	void CalendarView::setDate(jlong arg0, jboolean arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"setDate",
@@ -167,7 +167,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void CalendarView::setDateTextAppearance(jint arg0)
+	void CalendarView::setDateTextAppearance(jint arg0) const
 	{
 		callMethod<void>(
 			"setDateTextAppearance",
@@ -175,7 +175,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setFirstDayOfWeek(jint arg0)
+	void CalendarView::setFirstDayOfWeek(jint arg0) const
 	{
 		callMethod<void>(
 			"setFirstDayOfWeek",
@@ -183,7 +183,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setFocusedMonthDateColor(jint arg0)
+	void CalendarView::setFocusedMonthDateColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setFocusedMonthDateColor",
@@ -191,7 +191,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setMaxDate(jlong arg0)
+	void CalendarView::setMaxDate(jlong arg0) const
 	{
 		callMethod<void>(
 			"setMaxDate",
@@ -199,7 +199,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setMinDate(jlong arg0)
+	void CalendarView::setMinDate(jlong arg0) const
 	{
 		callMethod<void>(
 			"setMinDate",
@@ -207,7 +207,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setOnDateChangeListener(JObject arg0)
+	void CalendarView::setOnDateChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDateChangeListener",
@@ -215,7 +215,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CalendarView::setSelectedDateVerticalBar(android::graphics::drawable::Drawable arg0)
+	void CalendarView::setSelectedDateVerticalBar(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setSelectedDateVerticalBar",
@@ -223,7 +223,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CalendarView::setSelectedDateVerticalBar(jint arg0)
+	void CalendarView::setSelectedDateVerticalBar(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelectedDateVerticalBar",
@@ -231,7 +231,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setSelectedWeekBackgroundColor(jint arg0)
+	void CalendarView::setSelectedWeekBackgroundColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelectedWeekBackgroundColor",
@@ -239,7 +239,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setShowWeekNumber(jboolean arg0)
+	void CalendarView::setShowWeekNumber(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowWeekNumber",
@@ -247,7 +247,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setShownWeekCount(jint arg0)
+	void CalendarView::setShownWeekCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setShownWeekCount",
@@ -255,7 +255,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setUnfocusedMonthDateColor(jint arg0)
+	void CalendarView::setUnfocusedMonthDateColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setUnfocusedMonthDateColor",
@@ -263,7 +263,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setWeekDayTextAppearance(jint arg0)
+	void CalendarView::setWeekDayTextAppearance(jint arg0) const
 	{
 		callMethod<void>(
 			"setWeekDayTextAppearance",
@@ -271,7 +271,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setWeekNumberColor(jint arg0)
+	void CalendarView::setWeekNumberColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setWeekNumberColor",
@@ -279,7 +279,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CalendarView::setWeekSeparatorLineColor(jint arg0)
+	void CalendarView::setWeekSeparatorLineColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setWeekSeparatorLineColor",

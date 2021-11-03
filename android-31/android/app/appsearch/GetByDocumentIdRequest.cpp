@@ -19,21 +19,21 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject GetByDocumentIdRequest::getIds()
+	JObject GetByDocumentIdRequest::getIds() const
 	{
 		return callObjectMethod(
 			"getIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString GetByDocumentIdRequest::getNamespace()
+	JString GetByDocumentIdRequest::getNamespace() const
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject GetByDocumentIdRequest::getProjections()
+	JObject GetByDocumentIdRequest::getProjections() const
 	{
 		return callObjectMethod(
 			"getProjections",

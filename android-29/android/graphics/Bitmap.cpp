@@ -249,7 +249,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean Bitmap::compress(android::graphics::Bitmap_CompressFormat arg0, jint arg1, java::io::OutputStream arg2)
+	jboolean Bitmap::compress(android::graphics::Bitmap_CompressFormat arg0, jint arg1, java::io::OutputStream arg2) const
 	{
 		return callMethod<jboolean>(
 			"compress",
@@ -259,7 +259,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	android::graphics::Bitmap Bitmap::copy(android::graphics::Bitmap_Config arg0, jboolean arg1)
+	android::graphics::Bitmap Bitmap::copy(android::graphics::Bitmap_Config arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"copy",
@@ -268,7 +268,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Bitmap::copyPixelsFromBuffer(java::nio::Buffer arg0)
+	void Bitmap::copyPixelsFromBuffer(java::nio::Buffer arg0) const
 	{
 		callMethod<void>(
 			"copyPixelsFromBuffer",
@@ -276,7 +276,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Bitmap::copyPixelsToBuffer(java::nio::Buffer arg0)
+	void Bitmap::copyPixelsToBuffer(java::nio::Buffer arg0) const
 	{
 		callMethod<void>(
 			"copyPixelsToBuffer",
@@ -284,14 +284,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint Bitmap::describeContents()
+	jint Bitmap::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void Bitmap::eraseColor(jint arg0)
+	void Bitmap::eraseColor(jint arg0) const
 	{
 		callMethod<void>(
 			"eraseColor",
@@ -299,7 +299,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Bitmap::eraseColor(jlong arg0)
+	void Bitmap::eraseColor(jlong arg0) const
 	{
 		callMethod<void>(
 			"eraseColor",
@@ -307,14 +307,14 @@ namespace android::graphics
 			arg0
 		);
 	}
-	android::graphics::Bitmap Bitmap::extractAlpha()
+	android::graphics::Bitmap Bitmap::extractAlpha() const
 	{
 		return callObjectMethod(
 			"extractAlpha",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::graphics::Bitmap Bitmap::extractAlpha(android::graphics::Paint arg0, JIntArray arg1)
+	android::graphics::Bitmap Bitmap::extractAlpha(android::graphics::Paint arg0, JIntArray arg1) const
 	{
 		return callObjectMethod(
 			"extractAlpha",
@@ -323,21 +323,21 @@ namespace android::graphics
 			arg1.object<jintArray>()
 		);
 	}
-	jint Bitmap::getAllocationByteCount()
+	jint Bitmap::getAllocationByteCount() const
 	{
 		return callMethod<jint>(
 			"getAllocationByteCount",
 			"()I"
 		);
 	}
-	jint Bitmap::getByteCount()
+	jint Bitmap::getByteCount() const
 	{
 		return callMethod<jint>(
 			"getByteCount",
 			"()I"
 		);
 	}
-	android::graphics::Color Bitmap::getColor(jint arg0, jint arg1)
+	android::graphics::Color Bitmap::getColor(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getColor",
@@ -346,49 +346,49 @@ namespace android::graphics
 			arg1
 		);
 	}
-	android::graphics::ColorSpace Bitmap::getColorSpace()
+	android::graphics::ColorSpace Bitmap::getColorSpace() const
 	{
 		return callObjectMethod(
 			"getColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	android::graphics::Bitmap_Config Bitmap::getConfig()
+	android::graphics::Bitmap_Config Bitmap::getConfig() const
 	{
 		return callObjectMethod(
 			"getConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	jint Bitmap::getDensity()
+	jint Bitmap::getDensity() const
 	{
 		return callMethod<jint>(
 			"getDensity",
 			"()I"
 		);
 	}
-	jint Bitmap::getGenerationId()
+	jint Bitmap::getGenerationId() const
 	{
 		return callMethod<jint>(
 			"getGenerationId",
 			"()I"
 		);
 	}
-	jint Bitmap::getHeight()
+	jint Bitmap::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	JByteArray Bitmap::getNinePatchChunk()
+	JByteArray Bitmap::getNinePatchChunk() const
 	{
 		return callObjectMethod(
 			"getNinePatchChunk",
 			"()[B"
 		);
 	}
-	jint Bitmap::getPixel(jint arg0, jint arg1)
+	jint Bitmap::getPixel(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getPixel",
@@ -397,7 +397,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Bitmap::getPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
+	void Bitmap::getPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"getPixels",
@@ -411,14 +411,14 @@ namespace android::graphics
 			arg6
 		);
 	}
-	jint Bitmap::getRowBytes()
+	jint Bitmap::getRowBytes() const
 	{
 		return callMethod<jint>(
 			"getRowBytes",
 			"()I"
 		);
 	}
-	jint Bitmap::getScaledHeight(android::graphics::Canvas arg0)
+	jint Bitmap::getScaledHeight(android::graphics::Canvas arg0) const
 	{
 		return callMethod<jint>(
 			"getScaledHeight",
@@ -426,7 +426,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint Bitmap::getScaledHeight(android::util::DisplayMetrics arg0)
+	jint Bitmap::getScaledHeight(android::util::DisplayMetrics arg0) const
 	{
 		return callMethod<jint>(
 			"getScaledHeight",
@@ -434,7 +434,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint Bitmap::getScaledHeight(jint arg0)
+	jint Bitmap::getScaledHeight(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getScaledHeight",
@@ -442,7 +442,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jint Bitmap::getScaledWidth(android::graphics::Canvas arg0)
+	jint Bitmap::getScaledWidth(android::graphics::Canvas arg0) const
 	{
 		return callMethod<jint>(
 			"getScaledWidth",
@@ -450,7 +450,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint Bitmap::getScaledWidth(android::util::DisplayMetrics arg0)
+	jint Bitmap::getScaledWidth(android::util::DisplayMetrics arg0) const
 	{
 		return callMethod<jint>(
 			"getScaledWidth",
@@ -458,7 +458,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint Bitmap::getScaledWidth(jint arg0)
+	jint Bitmap::getScaledWidth(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getScaledWidth",
@@ -466,56 +466,56 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jint Bitmap::getWidth()
+	jint Bitmap::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean Bitmap::hasAlpha()
+	jboolean Bitmap::hasAlpha() const
 	{
 		return callMethod<jboolean>(
 			"hasAlpha",
 			"()Z"
 		);
 	}
-	jboolean Bitmap::hasMipMap()
+	jboolean Bitmap::hasMipMap() const
 	{
 		return callMethod<jboolean>(
 			"hasMipMap",
 			"()Z"
 		);
 	}
-	jboolean Bitmap::isMutable()
+	jboolean Bitmap::isMutable() const
 	{
 		return callMethod<jboolean>(
 			"isMutable",
 			"()Z"
 		);
 	}
-	jboolean Bitmap::isPremultiplied()
+	jboolean Bitmap::isPremultiplied() const
 	{
 		return callMethod<jboolean>(
 			"isPremultiplied",
 			"()Z"
 		);
 	}
-	jboolean Bitmap::isRecycled()
+	jboolean Bitmap::isRecycled() const
 	{
 		return callMethod<jboolean>(
 			"isRecycled",
 			"()Z"
 		);
 	}
-	void Bitmap::prepareToDraw()
+	void Bitmap::prepareToDraw() const
 	{
 		callMethod<void>(
 			"prepareToDraw",
 			"()V"
 		);
 	}
-	void Bitmap::reconfigure(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2)
+	void Bitmap::reconfigure(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2) const
 	{
 		callMethod<void>(
 			"reconfigure",
@@ -525,14 +525,14 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void Bitmap::recycle()
+	void Bitmap::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	jboolean Bitmap::sameAs(android::graphics::Bitmap arg0)
+	jboolean Bitmap::sameAs(android::graphics::Bitmap arg0) const
 	{
 		return callMethod<jboolean>(
 			"sameAs",
@@ -540,7 +540,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Bitmap::setColorSpace(android::graphics::ColorSpace arg0)
+	void Bitmap::setColorSpace(android::graphics::ColorSpace arg0) const
 	{
 		callMethod<void>(
 			"setColorSpace",
@@ -548,7 +548,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Bitmap::setConfig(android::graphics::Bitmap_Config arg0)
+	void Bitmap::setConfig(android::graphics::Bitmap_Config arg0) const
 	{
 		callMethod<void>(
 			"setConfig",
@@ -556,7 +556,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Bitmap::setDensity(jint arg0)
+	void Bitmap::setDensity(jint arg0) const
 	{
 		callMethod<void>(
 			"setDensity",
@@ -564,7 +564,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Bitmap::setHasAlpha(jboolean arg0)
+	void Bitmap::setHasAlpha(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHasAlpha",
@@ -572,7 +572,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Bitmap::setHasMipMap(jboolean arg0)
+	void Bitmap::setHasMipMap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHasMipMap",
@@ -580,7 +580,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Bitmap::setHeight(jint arg0)
+	void Bitmap::setHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setHeight",
@@ -588,7 +588,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Bitmap::setPixel(jint arg0, jint arg1, jint arg2)
+	void Bitmap::setPixel(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setPixel",
@@ -598,7 +598,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Bitmap::setPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
+	void Bitmap::setPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"setPixels",
@@ -612,7 +612,7 @@ namespace android::graphics
 			arg6
 		);
 	}
-	void Bitmap::setPremultiplied(jboolean arg0)
+	void Bitmap::setPremultiplied(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPremultiplied",
@@ -620,7 +620,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Bitmap::setWidth(jint arg0)
+	void Bitmap::setWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setWidth",
@@ -628,7 +628,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Bitmap::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Bitmap::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

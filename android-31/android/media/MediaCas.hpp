@@ -57,16 +57,16 @@ namespace android::media
 		// Methods
 		static JArray enumeratePlugins();
 		static jboolean isSystemIdSupported(jint arg0);
-		void close();
-		android::media::MediaCas_Session openSession();
-		android::media::MediaCas_Session openSession(jint arg0, jint arg1);
-		void processEmm(JByteArray arg0);
-		void processEmm(JByteArray arg0, jint arg1, jint arg2);
-		void provision(JString arg0);
-		void refreshEntitlements(jint arg0, JByteArray arg1);
-		void sendEvent(jint arg0, jint arg1, JByteArray arg2);
-		void setEventListener(JObject arg0, android::os::Handler arg1);
-		void setPrivateData(JByteArray arg0);
+		void close() const;
+		android::media::MediaCas_Session openSession() const;
+		android::media::MediaCas_Session openSession(jint arg0, jint arg1) const;
+		void processEmm(JByteArray arg0) const;
+		void processEmm(JByteArray arg0, jint arg1, jint arg2) const;
+		void provision(JString arg0) const;
+		void refreshEntitlements(jint arg0, JByteArray arg1) const;
+		void sendEvent(jint arg0, jint arg1, JByteArray arg2) const;
+		void setEventListener(JObject arg0, android::os::Handler arg1) const;
+		void setPrivateData(JByteArray arg0) const;
 	};
 } // namespace android::media
 

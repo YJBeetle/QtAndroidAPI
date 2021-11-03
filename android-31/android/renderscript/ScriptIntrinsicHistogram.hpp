@@ -42,14 +42,14 @@ namespace android::renderscript
 		
 		// Methods
 		static android::renderscript::ScriptIntrinsicHistogram create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
-		void forEach(android::renderscript::Allocation arg0);
-		void forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1);
-		void forEach_Dot(android::renderscript::Allocation arg0);
-		void forEach_Dot(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1);
-		android::renderscript::Script_FieldID getFieldID_Input();
-		android::renderscript::Script_KernelID getKernelID_Separate();
-		void setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setOutput(android::renderscript::Allocation arg0);
+		void forEach(android::renderscript::Allocation arg0) const;
+		void forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const;
+		void forEach_Dot(android::renderscript::Allocation arg0) const;
+		void forEach_Dot(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const;
+		android::renderscript::Script_FieldID getFieldID_Input() const;
+		android::renderscript::Script_KernelID getKernelID_Separate() const;
+		void setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void setOutput(android::renderscript::Allocation arg0) const;
 	};
 } // namespace android::renderscript
 

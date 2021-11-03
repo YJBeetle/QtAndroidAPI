@@ -120,14 +120,14 @@ namespace android::app::job
 			"()J"
 		);
 	}
-	jint JobInfo::describeContents()
+	jint JobInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean JobInfo::equals(JObject arg0)
+	jboolean JobInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -135,217 +135,217 @@ namespace android::app::job
 			arg0.object<jobject>()
 		);
 	}
-	jint JobInfo::getBackoffPolicy()
+	jint JobInfo::getBackoffPolicy() const
 	{
 		return callMethod<jint>(
 			"getBackoffPolicy",
 			"()I"
 		);
 	}
-	android::content::ClipData JobInfo::getClipData()
+	android::content::ClipData JobInfo::getClipData() const
 	{
 		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	jint JobInfo::getClipGrantFlags()
+	jint JobInfo::getClipGrantFlags() const
 	{
 		return callMethod<jint>(
 			"getClipGrantFlags",
 			"()I"
 		);
 	}
-	jlong JobInfo::getEstimatedNetworkDownloadBytes()
+	jlong JobInfo::getEstimatedNetworkDownloadBytes() const
 	{
 		return callMethod<jlong>(
 			"getEstimatedNetworkDownloadBytes",
 			"()J"
 		);
 	}
-	jlong JobInfo::getEstimatedNetworkUploadBytes()
+	jlong JobInfo::getEstimatedNetworkUploadBytes() const
 	{
 		return callMethod<jlong>(
 			"getEstimatedNetworkUploadBytes",
 			"()J"
 		);
 	}
-	android::os::PersistableBundle JobInfo::getExtras()
+	android::os::PersistableBundle JobInfo::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jlong JobInfo::getFlexMillis()
+	jlong JobInfo::getFlexMillis() const
 	{
 		return callMethod<jlong>(
 			"getFlexMillis",
 			"()J"
 		);
 	}
-	jint JobInfo::getId()
+	jint JobInfo::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jlong JobInfo::getInitialBackoffMillis()
+	jlong JobInfo::getInitialBackoffMillis() const
 	{
 		return callMethod<jlong>(
 			"getInitialBackoffMillis",
 			"()J"
 		);
 	}
-	jlong JobInfo::getIntervalMillis()
+	jlong JobInfo::getIntervalMillis() const
 	{
 		return callMethod<jlong>(
 			"getIntervalMillis",
 			"()J"
 		);
 	}
-	jlong JobInfo::getMaxExecutionDelayMillis()
+	jlong JobInfo::getMaxExecutionDelayMillis() const
 	{
 		return callMethod<jlong>(
 			"getMaxExecutionDelayMillis",
 			"()J"
 		);
 	}
-	jlong JobInfo::getMinLatencyMillis()
+	jlong JobInfo::getMinLatencyMillis() const
 	{
 		return callMethod<jlong>(
 			"getMinLatencyMillis",
 			"()J"
 		);
 	}
-	jint JobInfo::getNetworkType()
+	jint JobInfo::getNetworkType() const
 	{
 		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
-	android::net::NetworkRequest JobInfo::getRequiredNetwork()
+	android::net::NetworkRequest JobInfo::getRequiredNetwork() const
 	{
 		return callObjectMethod(
 			"getRequiredNetwork",
 			"()Landroid/net/NetworkRequest;"
 		);
 	}
-	android::content::ComponentName JobInfo::getService()
+	android::content::ComponentName JobInfo::getService() const
 	{
 		return callObjectMethod(
 			"getService",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::os::Bundle JobInfo::getTransientExtras()
+	android::os::Bundle JobInfo::getTransientExtras() const
 	{
 		return callObjectMethod(
 			"getTransientExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jlong JobInfo::getTriggerContentMaxDelay()
+	jlong JobInfo::getTriggerContentMaxDelay() const
 	{
 		return callMethod<jlong>(
 			"getTriggerContentMaxDelay",
 			"()J"
 		);
 	}
-	jlong JobInfo::getTriggerContentUpdateDelay()
+	jlong JobInfo::getTriggerContentUpdateDelay() const
 	{
 		return callMethod<jlong>(
 			"getTriggerContentUpdateDelay",
 			"()J"
 		);
 	}
-	JArray JobInfo::getTriggerContentUris()
+	JArray JobInfo::getTriggerContentUris() const
 	{
 		return callObjectMethod(
 			"getTriggerContentUris",
 			"()[Landroid/app/job/JobInfo$TriggerContentUri;"
 		);
 	}
-	jint JobInfo::hashCode()
+	jint JobInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean JobInfo::isExpedited()
+	jboolean JobInfo::isExpedited() const
 	{
 		return callMethod<jboolean>(
 			"isExpedited",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isImportantWhileForeground()
+	jboolean JobInfo::isImportantWhileForeground() const
 	{
 		return callMethod<jboolean>(
 			"isImportantWhileForeground",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isPeriodic()
+	jboolean JobInfo::isPeriodic() const
 	{
 		return callMethod<jboolean>(
 			"isPeriodic",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isPersisted()
+	jboolean JobInfo::isPersisted() const
 	{
 		return callMethod<jboolean>(
 			"isPersisted",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isPrefetch()
+	jboolean JobInfo::isPrefetch() const
 	{
 		return callMethod<jboolean>(
 			"isPrefetch",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isRequireBatteryNotLow()
+	jboolean JobInfo::isRequireBatteryNotLow() const
 	{
 		return callMethod<jboolean>(
 			"isRequireBatteryNotLow",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isRequireCharging()
+	jboolean JobInfo::isRequireCharging() const
 	{
 		return callMethod<jboolean>(
 			"isRequireCharging",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isRequireDeviceIdle()
+	jboolean JobInfo::isRequireDeviceIdle() const
 	{
 		return callMethod<jboolean>(
 			"isRequireDeviceIdle",
 			"()Z"
 		);
 	}
-	jboolean JobInfo::isRequireStorageNotLow()
+	jboolean JobInfo::isRequireStorageNotLow() const
 	{
 		return callMethod<jboolean>(
 			"isRequireStorageNotLow",
 			"()Z"
 		);
 	}
-	JString JobInfo::toString()
+	JString JobInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void JobInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void JobInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

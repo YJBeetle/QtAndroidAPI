@@ -23,7 +23,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition TransitionInflater::inflateTransition(jint arg0)
+	android::transition::Transition TransitionInflater::inflateTransition(jint arg0) const
 	{
 		return callObjectMethod(
 			"inflateTransition",
@@ -31,7 +31,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::TransitionManager TransitionInflater::inflateTransitionManager(jint arg0, android::view::ViewGroup arg1)
+	android::transition::TransitionManager TransitionInflater::inflateTransitionManager(jint arg0, android::view::ViewGroup arg1) const
 	{
 		return callObjectMethod(
 			"inflateTransitionManager",

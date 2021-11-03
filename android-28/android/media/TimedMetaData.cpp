@@ -12,14 +12,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray TimedMetaData::getMetaData()
+	JByteArray TimedMetaData::getMetaData() const
 	{
 		return callObjectMethod(
 			"getMetaData",
 			"()[B"
 		);
 	}
-	jlong TimedMetaData::getTimestamp()
+	jlong TimedMetaData::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",

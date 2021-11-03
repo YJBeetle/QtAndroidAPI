@@ -23,9 +23,9 @@ namespace android::view::textclassifier
 		TextSelection_Builder(jint arg0, jint arg1);
 		
 		// Methods
-		android::view::textclassifier::TextSelection build();
-		android::view::textclassifier::TextSelection_Builder setEntityType(JString arg0, jfloat arg1);
-		android::view::textclassifier::TextSelection_Builder setId(JString arg0);
+		android::view::textclassifier::TextSelection build() const;
+		android::view::textclassifier::TextSelection_Builder setEntityType(JString arg0, jfloat arg1) const;
+		android::view::textclassifier::TextSelection_Builder setId(JString arg0) const;
 	};
 } // namespace android::view::textclassifier
 

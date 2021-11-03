@@ -46,140 +46,140 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	jint WifiInfo::describeContents()
+	jint WifiInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString WifiInfo::getBSSID()
+	JString WifiInfo::getBSSID() const
 	{
 		return callObjectMethod(
 			"getBSSID",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint WifiInfo::getFrequency()
+	jint WifiInfo::getFrequency() const
 	{
 		return callMethod<jint>(
 			"getFrequency",
 			"()I"
 		);
 	}
-	jboolean WifiInfo::getHiddenSSID()
+	jboolean WifiInfo::getHiddenSSID() const
 	{
 		return callMethod<jboolean>(
 			"getHiddenSSID",
 			"()Z"
 		);
 	}
-	jint WifiInfo::getIpAddress()
+	jint WifiInfo::getIpAddress() const
 	{
 		return callMethod<jint>(
 			"getIpAddress",
 			"()I"
 		);
 	}
-	jint WifiInfo::getLinkSpeed()
+	jint WifiInfo::getLinkSpeed() const
 	{
 		return callMethod<jint>(
 			"getLinkSpeed",
 			"()I"
 		);
 	}
-	JString WifiInfo::getMacAddress()
+	JString WifiInfo::getMacAddress() const
 	{
 		return callObjectMethod(
 			"getMacAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint WifiInfo::getMaxSupportedRxLinkSpeedMbps()
+	jint WifiInfo::getMaxSupportedRxLinkSpeedMbps() const
 	{
 		return callMethod<jint>(
 			"getMaxSupportedRxLinkSpeedMbps",
 			"()I"
 		);
 	}
-	jint WifiInfo::getMaxSupportedTxLinkSpeedMbps()
+	jint WifiInfo::getMaxSupportedTxLinkSpeedMbps() const
 	{
 		return callMethod<jint>(
 			"getMaxSupportedTxLinkSpeedMbps",
 			"()I"
 		);
 	}
-	jint WifiInfo::getNetworkId()
+	jint WifiInfo::getNetworkId() const
 	{
 		return callMethod<jint>(
 			"getNetworkId",
 			"()I"
 		);
 	}
-	JString WifiInfo::getPasspointFqdn()
+	JString WifiInfo::getPasspointFqdn() const
 	{
 		return callObjectMethod(
 			"getPasspointFqdn",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WifiInfo::getPasspointProviderFriendlyName()
+	JString WifiInfo::getPasspointProviderFriendlyName() const
 	{
 		return callObjectMethod(
 			"getPasspointProviderFriendlyName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint WifiInfo::getRssi()
+	jint WifiInfo::getRssi() const
 	{
 		return callMethod<jint>(
 			"getRssi",
 			"()I"
 		);
 	}
-	jint WifiInfo::getRxLinkSpeedMbps()
+	jint WifiInfo::getRxLinkSpeedMbps() const
 	{
 		return callMethod<jint>(
 			"getRxLinkSpeedMbps",
 			"()I"
 		);
 	}
-	JString WifiInfo::getSSID()
+	JString WifiInfo::getSSID() const
 	{
 		return callObjectMethod(
 			"getSSID",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::wifi::SupplicantState WifiInfo::getSupplicantState()
+	android::net::wifi::SupplicantState WifiInfo::getSupplicantState() const
 	{
 		return callObjectMethod(
 			"getSupplicantState",
 			"()Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	jint WifiInfo::getTxLinkSpeedMbps()
+	jint WifiInfo::getTxLinkSpeedMbps() const
 	{
 		return callMethod<jint>(
 			"getTxLinkSpeedMbps",
 			"()I"
 		);
 	}
-	jint WifiInfo::getWifiStandard()
+	jint WifiInfo::getWifiStandard() const
 	{
 		return callMethod<jint>(
 			"getWifiStandard",
 			"()I"
 		);
 	}
-	JString WifiInfo::toString()
+	JString WifiInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

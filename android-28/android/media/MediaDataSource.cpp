@@ -16,14 +16,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jlong MediaDataSource::getSize()
+	jlong MediaDataSource::getSize() const
 	{
 		return callMethod<jlong>(
 			"getSize",
 			"()J"
 		);
 	}
-	jint MediaDataSource::readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3)
+	jint MediaDataSource::readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"readAt",

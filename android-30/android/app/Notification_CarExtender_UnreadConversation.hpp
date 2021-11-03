@@ -27,13 +27,13 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		jlong getLatestTimestamp();
-		JArray getMessages();
-		JString getParticipant();
-		JArray getParticipants();
-		android::app::PendingIntent getReadPendingIntent();
-		android::app::RemoteInput getRemoteInput();
-		android::app::PendingIntent getReplyPendingIntent();
+		jlong getLatestTimestamp() const;
+		JArray getMessages() const;
+		JString getParticipant() const;
+		JArray getParticipants() const;
+		android::app::PendingIntent getReadPendingIntent() const;
+		android::app::RemoteInput getRemoteInput() const;
+		android::app::PendingIntent getReplyPendingIntent() const;
 	};
 } // namespace android::app
 

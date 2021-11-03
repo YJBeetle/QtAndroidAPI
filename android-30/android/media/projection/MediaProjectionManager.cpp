@@ -12,14 +12,14 @@ namespace android::media::projection
 	// Constructors
 	
 	// Methods
-	android::content::Intent MediaProjectionManager::createScreenCaptureIntent()
+	android::content::Intent MediaProjectionManager::createScreenCaptureIntent() const
 	{
 		return callObjectMethod(
 			"createScreenCaptureIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::media::projection::MediaProjection MediaProjectionManager::getMediaProjection(jint arg0, android::content::Intent arg1)
+	android::media::projection::MediaProjection MediaProjectionManager::getMediaProjection(jint arg0, android::content::Intent arg1) const
 	{
 		return callObjectMethod(
 			"getMediaProjection",

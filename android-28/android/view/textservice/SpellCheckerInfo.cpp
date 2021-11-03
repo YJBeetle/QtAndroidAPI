@@ -26,49 +26,49 @@ namespace android::view::textservice
 	// Constructors
 	
 	// Methods
-	jint SpellCheckerInfo::describeContents()
+	jint SpellCheckerInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::content::ComponentName SpellCheckerInfo::getComponent()
+	android::content::ComponentName SpellCheckerInfo::getComponent() const
 	{
 		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	JString SpellCheckerInfo::getId()
+	JString SpellCheckerInfo::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SpellCheckerInfo::getPackageName()
+	JString SpellCheckerInfo::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::pm::ServiceInfo SpellCheckerInfo::getServiceInfo()
+	android::content::pm::ServiceInfo SpellCheckerInfo::getServiceInfo() const
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
-	JString SpellCheckerInfo::getSettingsActivity()
+	JString SpellCheckerInfo::getSettingsActivity() const
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::view::textservice::SpellCheckerSubtype SpellCheckerInfo::getSubtypeAt(jint arg0)
+	android::view::textservice::SpellCheckerSubtype SpellCheckerInfo::getSubtypeAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSubtypeAt",
@@ -76,14 +76,14 @@ namespace android::view::textservice
 			arg0
 		);
 	}
-	jint SpellCheckerInfo::getSubtypeCount()
+	jint SpellCheckerInfo::getSubtypeCount() const
 	{
 		return callMethod<jint>(
 			"getSubtypeCount",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable SpellCheckerInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable SpellCheckerInfo::loadIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -91,7 +91,7 @@ namespace android::view::textservice
 			arg0.object()
 		);
 	}
-	JString SpellCheckerInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString SpellCheckerInfo::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -99,7 +99,7 @@ namespace android::view::textservice
 			arg0.object()
 		);
 	}
-	void SpellCheckerInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SpellCheckerInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

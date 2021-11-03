@@ -24,7 +24,7 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		void stopScan();
+		void stopScan() const;
 	};
 } // namespace android::telephony
 

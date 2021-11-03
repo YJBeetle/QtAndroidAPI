@@ -68,14 +68,14 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	java::sql::SQLWarning SQLWarning::getNextWarning()
+	java::sql::SQLWarning SQLWarning::getNextWarning() const
 	{
 		return callObjectMethod(
 			"getNextWarning",
 			"()Ljava/sql/SQLWarning;"
 		);
 	}
-	void SQLWarning::setNextWarning(java::sql::SQLWarning arg0)
+	void SQLWarning::setNextWarning(java::sql::SQLWarning arg0) const
 	{
 		callMethod<void>(
 			"setNextWarning",

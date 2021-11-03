@@ -34,28 +34,28 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	void InflaterOutputStream::close()
+	void InflaterOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void InflaterOutputStream::finish()
+	void InflaterOutputStream::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	void InflaterOutputStream::flush()
+	void InflaterOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void InflaterOutputStream::write(jint arg0)
+	void InflaterOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -63,7 +63,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void InflaterOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void InflaterOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

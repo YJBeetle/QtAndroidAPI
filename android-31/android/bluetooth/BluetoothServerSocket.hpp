@@ -22,11 +22,11 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		android::bluetooth::BluetoothSocket accept();
-		android::bluetooth::BluetoothSocket accept(jint arg0);
-		void close();
-		jint getPsm();
-		JString toString();
+		android::bluetooth::BluetoothSocket accept() const;
+		android::bluetooth::BluetoothSocket accept(jint arg0) const;
+		void close() const;
+		jint getPsm() const;
+		JString toString() const;
 	};
 } // namespace android::bluetooth
 

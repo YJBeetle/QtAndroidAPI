@@ -25,14 +25,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellInfoWcdma::describeContents()
+	jint CellInfoWcdma::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellInfoWcdma::equals(JObject arg0)
+	jboolean CellInfoWcdma::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -40,35 +40,35 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	android::telephony::CellIdentityWcdma CellInfoWcdma::getCellIdentity()
+	android::telephony::CellIdentityWcdma CellInfoWcdma::getCellIdentity() const
 	{
 		return callObjectMethod(
 			"getCellIdentity",
 			"()Landroid/telephony/CellIdentityWcdma;"
 		);
 	}
-	android::telephony::CellSignalStrengthWcdma CellInfoWcdma::getCellSignalStrength()
+	android::telephony::CellSignalStrengthWcdma CellInfoWcdma::getCellSignalStrength() const
 	{
 		return callObjectMethod(
 			"getCellSignalStrength",
 			"()Landroid/telephony/CellSignalStrengthWcdma;"
 		);
 	}
-	jint CellInfoWcdma::hashCode()
+	jint CellInfoWcdma::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellInfoWcdma::toString()
+	JString CellInfoWcdma::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellInfoWcdma::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellInfoWcdma::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

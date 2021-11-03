@@ -43,13 +43,13 @@ namespace android::bluetooth
 		BluetoothGattDescriptor(java::util::UUID arg0, jint arg1);
 		
 		// Methods
-		jint describeContents();
-		android::bluetooth::BluetoothGattCharacteristic getCharacteristic();
-		jint getPermissions();
-		java::util::UUID getUuid();
-		JByteArray getValue();
-		jboolean setValue(JByteArray arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::bluetooth::BluetoothGattCharacteristic getCharacteristic() const;
+		jint getPermissions() const;
+		java::util::UUID getUuid() const;
+		JByteArray getValue() const;
+		jboolean setValue(JByteArray arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

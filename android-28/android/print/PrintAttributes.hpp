@@ -41,16 +41,16 @@ namespace android::print
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getColorMode();
-		jint getDuplexMode();
-		android::print::PrintAttributes_MediaSize getMediaSize();
-		android::print::PrintAttributes_Margins getMinMargins();
-		android::print::PrintAttributes_Resolution getResolution();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getColorMode() const;
+		jint getDuplexMode() const;
+		android::print::PrintAttributes_MediaSize getMediaSize() const;
+		android::print::PrintAttributes_Margins getMinMargins() const;
+		android::print::PrintAttributes_Resolution getResolution() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::print
 

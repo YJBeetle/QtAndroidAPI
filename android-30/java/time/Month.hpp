@@ -48,21 +48,21 @@ namespace java::time
 		static java::time::Month of(jint arg0);
 		static java::time::Month valueOf(JString arg0);
 		static JArray values();
-		JObject adjustInto(JObject arg0);
-		jint firstDayOfYear(jboolean arg0);
-		java::time::Month firstMonthOfQuarter();
-		jint get(JObject arg0);
-		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
-		jlong getLong(JObject arg0);
-		jint getValue();
-		jboolean isSupported(JObject arg0);
-		jint length(jboolean arg0);
-		jint maxLength();
-		jint minLength();
-		java::time::Month minus(jlong arg0);
-		java::time::Month plus(jlong arg0);
-		JObject query(JObject arg0);
-		java::time::temporal::ValueRange range(JObject arg0);
+		JObject adjustInto(JObject arg0) const;
+		jint firstDayOfYear(jboolean arg0) const;
+		java::time::Month firstMonthOfQuarter() const;
+		jint get(JObject arg0) const;
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const;
+		jlong getLong(JObject arg0) const;
+		jint getValue() const;
+		jboolean isSupported(JObject arg0) const;
+		jint length(jboolean arg0) const;
+		jint maxLength() const;
+		jint minLength() const;
+		java::time::Month minus(jlong arg0) const;
+		java::time::Month plus(jlong arg0) const;
+		JObject query(JObject arg0) const;
+		java::time::temporal::ValueRange range(JObject arg0) const;
 	};
 } // namespace java::time
 

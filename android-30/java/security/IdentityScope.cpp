@@ -33,7 +33,7 @@ namespace java::security
 			"()Ljava/security/IdentityScope;"
 		);
 	}
-	void IdentityScope::addIdentity(java::security::Identity arg0)
+	void IdentityScope::addIdentity(java::security::Identity arg0) const
 	{
 		callMethod<void>(
 			"addIdentity",
@@ -41,7 +41,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	java::security::Identity IdentityScope::getIdentity(JString arg0)
+	java::security::Identity IdentityScope::getIdentity(JString arg0) const
 	{
 		return callObjectMethod(
 			"getIdentity",
@@ -49,7 +49,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	java::security::Identity IdentityScope::getIdentity(JObject arg0)
+	java::security::Identity IdentityScope::getIdentity(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getIdentity",
@@ -57,14 +57,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject IdentityScope::identities()
+	JObject IdentityScope::identities() const
 	{
 		return callObjectMethod(
 			"identities",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	void IdentityScope::removeIdentity(java::security::Identity arg0)
+	void IdentityScope::removeIdentity(java::security::Identity arg0) const
 	{
 		callMethod<void>(
 			"removeIdentity",
@@ -72,14 +72,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jint IdentityScope::size()
+	jint IdentityScope::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString IdentityScope::toString()
+	JString IdentityScope::toString() const
 	{
 		return callObjectMethod(
 			"toString",

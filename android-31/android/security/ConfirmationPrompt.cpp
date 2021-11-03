@@ -21,14 +21,14 @@ namespace android::security
 			arg0.object()
 		);
 	}
-	void ConfirmationPrompt::cancelPrompt()
+	void ConfirmationPrompt::cancelPrompt() const
 	{
 		callMethod<void>(
 			"cancelPrompt",
 			"()V"
 		);
 	}
-	void ConfirmationPrompt::presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1)
+	void ConfirmationPrompt::presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1) const
 	{
 		callMethod<void>(
 			"presentPrompt",

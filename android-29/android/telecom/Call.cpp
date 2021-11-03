@@ -122,7 +122,7 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	void Call::answer(jint arg0)
+	void Call::answer(jint arg0) const
 	{
 		callMethod<void>(
 			"answer",
@@ -130,7 +130,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call::conference(android::telecom::Call arg0)
+	void Call::conference(android::telecom::Call arg0) const
 	{
 		callMethod<void>(
 			"conference",
@@ -138,7 +138,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call::deflect(android::net::Uri arg0)
+	void Call::deflect(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"deflect",
@@ -146,77 +146,77 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call::disconnect()
+	void Call::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	JObject Call::getCannedTextResponses()
+	JObject Call::getCannedTextResponses() const
 	{
 		return callObjectMethod(
 			"getCannedTextResponses",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Call::getChildren()
+	JObject Call::getChildren() const
 	{
 		return callObjectMethod(
 			"getChildren",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Call::getConferenceableCalls()
+	JObject Call::getConferenceableCalls() const
 	{
 		return callObjectMethod(
 			"getConferenceableCalls",
 			"()Ljava/util/List;"
 		);
 	}
-	android::telecom::Call_Details Call::getDetails()
+	android::telecom::Call_Details Call::getDetails() const
 	{
 		return callObjectMethod(
 			"getDetails",
 			"()Landroid/telecom/Call$Details;"
 		);
 	}
-	android::telecom::Call Call::getParent()
+	android::telecom::Call Call::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/telecom/Call;"
 		);
 	}
-	JString Call::getRemainingPostDialSequence()
+	JString Call::getRemainingPostDialSequence() const
 	{
 		return callObjectMethod(
 			"getRemainingPostDialSequence",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::telecom::Call_RttCall Call::getRttCall()
+	android::telecom::Call_RttCall Call::getRttCall() const
 	{
 		return callObjectMethod(
 			"getRttCall",
 			"()Landroid/telecom/Call$RttCall;"
 		);
 	}
-	jint Call::getState()
+	jint Call::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	android::telecom::InCallService_VideoCall Call::getVideoCall()
+	android::telecom::InCallService_VideoCall Call::getVideoCall() const
 	{
 		return callObjectMethod(
 			"getVideoCall",
 			"()Landroid/telecom/InCallService$VideoCall;"
 		);
 	}
-	void Call::handoverTo(android::telecom::PhoneAccountHandle arg0, jint arg1, android::os::Bundle arg2)
+	void Call::handoverTo(android::telecom::PhoneAccountHandle arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"handoverTo",
@@ -226,28 +226,28 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void Call::hold()
+	void Call::hold() const
 	{
 		callMethod<void>(
 			"hold",
 			"()V"
 		);
 	}
-	jboolean Call::isRttActive()
+	jboolean Call::isRttActive() const
 	{
 		return callMethod<jboolean>(
 			"isRttActive",
 			"()Z"
 		);
 	}
-	void Call::mergeConference()
+	void Call::mergeConference() const
 	{
 		callMethod<void>(
 			"mergeConference",
 			"()V"
 		);
 	}
-	void Call::phoneAccountSelected(android::telecom::PhoneAccountHandle arg0, jboolean arg1)
+	void Call::phoneAccountSelected(android::telecom::PhoneAccountHandle arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"phoneAccountSelected",
@@ -256,7 +256,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call::playDtmfTone(jchar arg0)
+	void Call::playDtmfTone(jchar arg0) const
 	{
 		callMethod<void>(
 			"playDtmfTone",
@@ -264,7 +264,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call::postDialContinue(jboolean arg0)
+	void Call::postDialContinue(jboolean arg0) const
 	{
 		callMethod<void>(
 			"postDialContinue",
@@ -272,14 +272,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call::pullExternalCall()
+	void Call::pullExternalCall() const
 	{
 		callMethod<void>(
 			"pullExternalCall",
 			"()V"
 		);
 	}
-	void Call::putExtras(android::os::Bundle arg0)
+	void Call::putExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"putExtras",
@@ -287,7 +287,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call::registerCallback(android::telecom::Call_Callback arg0)
+	void Call::registerCallback(android::telecom::Call_Callback arg0) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -295,7 +295,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call::registerCallback(android::telecom::Call_Callback arg0, android::os::Handler arg1)
+	void Call::registerCallback(android::telecom::Call_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -304,7 +304,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call::reject(jboolean arg0, JString arg1)
+	void Call::reject(jboolean arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"reject",
@@ -313,7 +313,7 @@ namespace android::telecom
 			arg1.object<jstring>()
 		);
 	}
-	void Call::removeExtras(JArray arg0)
+	void Call::removeExtras(JArray arg0) const
 	{
 		callMethod<void>(
 			"removeExtras",
@@ -321,7 +321,7 @@ namespace android::telecom
 			arg0.object<jarray>()
 		);
 	}
-	void Call::removeExtras(JObject arg0)
+	void Call::removeExtras(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeExtras",
@@ -329,7 +329,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call::respondToRttRequest(jint arg0, jboolean arg1)
+	void Call::respondToRttRequest(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"respondToRttRequest",
@@ -338,7 +338,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call::sendCallEvent(JString arg0, android::os::Bundle arg1)
+	void Call::sendCallEvent(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendCallEvent",
@@ -347,56 +347,56 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call::sendRttRequest()
+	void Call::sendRttRequest() const
 	{
 		callMethod<void>(
 			"sendRttRequest",
 			"()V"
 		);
 	}
-	void Call::splitFromConference()
+	void Call::splitFromConference() const
 	{
 		callMethod<void>(
 			"splitFromConference",
 			"()V"
 		);
 	}
-	void Call::stopDtmfTone()
+	void Call::stopDtmfTone() const
 	{
 		callMethod<void>(
 			"stopDtmfTone",
 			"()V"
 		);
 	}
-	void Call::stopRtt()
+	void Call::stopRtt() const
 	{
 		callMethod<void>(
 			"stopRtt",
 			"()V"
 		);
 	}
-	void Call::swapConference()
+	void Call::swapConference() const
 	{
 		callMethod<void>(
 			"swapConference",
 			"()V"
 		);
 	}
-	JString Call::toString()
+	JString Call::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Call::unhold()
+	void Call::unhold() const
 	{
 		callMethod<void>(
 			"unhold",
 			"()V"
 		);
 	}
-	void Call::unregisterCallback(android::telecom::Call_Callback arg0)
+	void Call::unregisterCallback(android::telecom::Call_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

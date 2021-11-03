@@ -26,7 +26,7 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::addCustomAction(android::media::session::PlaybackState_CustomAction arg0)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::addCustomAction(android::media::session::PlaybackState_CustomAction arg0) const
 	{
 		return callObjectMethod(
 			"addCustomAction",
@@ -34,7 +34,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::addCustomAction(JString arg0, JString arg1, jint arg2)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::addCustomAction(JString arg0, JString arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"addCustomAction",
@@ -44,14 +44,14 @@ namespace android::media::session
 			arg2
 		);
 	}
-	android::media::session::PlaybackState PlaybackState_Builder::build()
+	android::media::session::PlaybackState PlaybackState_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/session/PlaybackState;"
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setActions(jlong arg0)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setActions(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setActions",
@@ -59,7 +59,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setActiveQueueItemId(jlong arg0)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setActiveQueueItemId(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setActiveQueueItemId",
@@ -67,7 +67,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setBufferedPosition(jlong arg0)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setBufferedPosition(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setBufferedPosition",
@@ -75,7 +75,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setErrorMessage(JString arg0)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setErrorMessage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setErrorMessage",
@@ -83,7 +83,7 @@ namespace android::media::session
 			arg0.object<jstring>()
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setExtras(android::os::Bundle arg0)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -91,7 +91,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setState(jint arg0, jlong arg1, jfloat arg2)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setState(jint arg0, jlong arg1, jfloat arg2) const
 	{
 		return callObjectMethod(
 			"setState",
@@ -101,7 +101,7 @@ namespace android::media::session
 			arg2
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setState(jint arg0, jlong arg1, jfloat arg2, jlong arg3)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setState(jint arg0, jlong arg1, jfloat arg2, jlong arg3) const
 	{
 		return callObjectMethod(
 			"setState",

@@ -33,16 +33,16 @@ namespace android::preference
 		PreferenceGroup(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void addItemFromInflater(android::preference::Preference arg0);
-		jboolean addPreference(android::preference::Preference arg0);
-		android::preference::Preference findPreference(JString arg0);
-		android::preference::Preference getPreference(jint arg0);
-		jint getPreferenceCount();
-		jboolean isOrderingAsAdded();
-		void notifyDependencyChange(jboolean arg0);
-		void removeAll();
-		jboolean removePreference(android::preference::Preference arg0);
-		void setOrderingAsAdded(jboolean arg0);
+		void addItemFromInflater(android::preference::Preference arg0) const;
+		jboolean addPreference(android::preference::Preference arg0) const;
+		android::preference::Preference findPreference(JString arg0) const;
+		android::preference::Preference getPreference(jint arg0) const;
+		jint getPreferenceCount() const;
+		jboolean isOrderingAsAdded() const;
+		void notifyDependencyChange(jboolean arg0) const;
+		void removeAll() const;
+		jboolean removePreference(android::preference::Preference arg0) const;
+		void setOrderingAsAdded(jboolean arg0) const;
 	};
 } // namespace android::preference
 

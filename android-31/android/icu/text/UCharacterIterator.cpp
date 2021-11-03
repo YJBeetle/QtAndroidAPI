@@ -68,49 +68,49 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	JObject UCharacterIterator::clone()
+	JObject UCharacterIterator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint UCharacterIterator::current()
+	jint UCharacterIterator::current() const
 	{
 		return callMethod<jint>(
 			"current",
 			"()I"
 		);
 	}
-	jint UCharacterIterator::currentCodePoint()
+	jint UCharacterIterator::currentCodePoint() const
 	{
 		return callMethod<jint>(
 			"currentCodePoint",
 			"()I"
 		);
 	}
-	JObject UCharacterIterator::getCharacterIterator()
+	JObject UCharacterIterator::getCharacterIterator() const
 	{
 		return callObjectMethod(
 			"getCharacterIterator",
 			"()Ljava/text/CharacterIterator;"
 		);
 	}
-	jint UCharacterIterator::getIndex()
+	jint UCharacterIterator::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	jint UCharacterIterator::getLength()
+	jint UCharacterIterator::getLength() const
 	{
 		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
-	jint UCharacterIterator::getText(JCharArray arg0)
+	jint UCharacterIterator::getText(JCharArray arg0) const
 	{
 		return callMethod<jint>(
 			"getText",
@@ -118,7 +118,7 @@ namespace android::icu::text
 			arg0.object<jcharArray>()
 		);
 	}
-	jint UCharacterIterator::getText(JCharArray arg0, jint arg1)
+	jint UCharacterIterator::getText(JCharArray arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getText",
@@ -127,14 +127,14 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JString UCharacterIterator::getText()
+	JString UCharacterIterator::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UCharacterIterator::moveCodePointIndex(jint arg0)
+	jint UCharacterIterator::moveCodePointIndex(jint arg0) const
 	{
 		return callMethod<jint>(
 			"moveCodePointIndex",
@@ -142,7 +142,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint UCharacterIterator::moveIndex(jint arg0)
+	jint UCharacterIterator::moveIndex(jint arg0) const
 	{
 		return callMethod<jint>(
 			"moveIndex",
@@ -150,35 +150,35 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint UCharacterIterator::next()
+	jint UCharacterIterator::next() const
 	{
 		return callMethod<jint>(
 			"next",
 			"()I"
 		);
 	}
-	jint UCharacterIterator::nextCodePoint()
+	jint UCharacterIterator::nextCodePoint() const
 	{
 		return callMethod<jint>(
 			"nextCodePoint",
 			"()I"
 		);
 	}
-	jint UCharacterIterator::previous()
+	jint UCharacterIterator::previous() const
 	{
 		return callMethod<jint>(
 			"previous",
 			"()I"
 		);
 	}
-	jint UCharacterIterator::previousCodePoint()
+	jint UCharacterIterator::previousCodePoint() const
 	{
 		return callMethod<jint>(
 			"previousCodePoint",
 			"()I"
 		);
 	}
-	void UCharacterIterator::setIndex(jint arg0)
+	void UCharacterIterator::setIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setIndex",
@@ -186,14 +186,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void UCharacterIterator::setToLimit()
+	void UCharacterIterator::setToLimit() const
 	{
 		callMethod<void>(
 			"setToLimit",
 			"()V"
 		);
 	}
-	void UCharacterIterator::setToStart()
+	void UCharacterIterator::setToStart() const
 	{
 		callMethod<void>(
 			"setToStart",

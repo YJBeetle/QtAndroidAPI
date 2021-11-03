@@ -35,10 +35,10 @@ namespace android::icu::text
 		static android::icu::text::NumberingSystem getInstance(jint arg0, jboolean arg1, JString arg2);
 		static android::icu::text::NumberingSystem getInstanceByName(JString arg0);
 		static jboolean isValidDigitString(JString arg0);
-		JString getDescription();
-		JString getName();
-		jint getRadix();
-		jboolean isAlgorithmic();
+		JString getDescription() const;
+		JString getName() const;
+		jint getRadix() const;
+		jboolean isAlgorithmic() const;
 	};
 } // namespace android::icu::text
 

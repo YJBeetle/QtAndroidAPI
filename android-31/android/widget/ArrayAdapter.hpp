@@ -47,27 +47,27 @@ namespace android::widget
 		
 		// Methods
 		static android::widget::ArrayAdapter createFromResource(android::content::Context arg0, jint arg1, jint arg2);
-		void add(JObject arg0);
-		void addAll(JObjectArray arg0);
-		void addAll(JObject arg0);
-		void clear();
-		JArray getAutofillOptions();
-		android::content::Context getContext();
-		jint getCount();
-		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		android::content::res::Resources_Theme getDropDownViewTheme();
-		android::widget::Filter getFilter();
-		JObject getItem(jint arg0);
-		jlong getItemId(jint arg0);
-		jint getPosition(JObject arg0);
-		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		void insert(JObject arg0, jint arg1);
-		void notifyDataSetChanged();
-		void remove(JObject arg0);
-		void setDropDownViewResource(jint arg0);
-		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
-		void setNotifyOnChange(jboolean arg0);
-		void sort(JObject arg0);
+		void add(JObject arg0) const;
+		void addAll(JObjectArray arg0) const;
+		void addAll(JObject arg0) const;
+		void clear() const;
+		JArray getAutofillOptions() const;
+		android::content::Context getContext() const;
+		jint getCount() const;
+		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const;
+		android::content::res::Resources_Theme getDropDownViewTheme() const;
+		android::widget::Filter getFilter() const;
+		JObject getItem(jint arg0) const;
+		jlong getItemId(jint arg0) const;
+		jint getPosition(JObject arg0) const;
+		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const;
+		void insert(JObject arg0, jint arg1) const;
+		void notifyDataSetChanged() const;
+		void remove(JObject arg0) const;
+		void setDropDownViewResource(jint arg0) const;
+		void setDropDownViewTheme(android::content::res::Resources_Theme arg0) const;
+		void setNotifyOnChange(jboolean arg0) const;
+		void sort(JObject arg0) const;
 	};
 } // namespace android::widget
 

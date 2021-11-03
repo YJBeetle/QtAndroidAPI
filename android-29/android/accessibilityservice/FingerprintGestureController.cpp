@@ -40,14 +40,14 @@ namespace android::accessibilityservice
 	// Constructors
 	
 	// Methods
-	jboolean FingerprintGestureController::isGestureDetectionAvailable()
+	jboolean FingerprintGestureController::isGestureDetectionAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isGestureDetectionAvailable",
 			"()Z"
 		);
 	}
-	void FingerprintGestureController::registerFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0, android::os::Handler arg1)
+	void FingerprintGestureController::registerFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerFingerprintGestureCallback",
@@ -56,7 +56,7 @@ namespace android::accessibilityservice
 			arg1.object()
 		);
 	}
-	void FingerprintGestureController::unregisterFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0)
+	void FingerprintGestureController::unregisterFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterFingerprintGestureCallback",

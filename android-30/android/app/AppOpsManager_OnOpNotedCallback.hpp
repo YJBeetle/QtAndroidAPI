@@ -26,9 +26,9 @@ namespace android::app
 		AppOpsManager_OnOpNotedCallback();
 		
 		// Methods
-		void onAsyncNoted(android::app::AsyncNotedAppOp arg0);
-		void onNoted(android::app::SyncNotedAppOp arg0);
-		void onSelfNoted(android::app::SyncNotedAppOp arg0);
+		void onAsyncNoted(android::app::AsyncNotedAppOp arg0) const;
+		void onNoted(android::app::SyncNotedAppOp arg0) const;
+		void onSelfNoted(android::app::SyncNotedAppOp arg0) const;
 	};
 } // namespace android::app
 

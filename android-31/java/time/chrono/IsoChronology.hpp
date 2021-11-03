@@ -72,28 +72,28 @@ namespace java::time::chrono
 		// Constructors
 		
 		// Methods
-		java::time::LocalDate date(JObject arg0);
-		java::time::LocalDate date(jint arg0, jint arg1, jint arg2);
-		java::time::LocalDate date(JObject arg0, jint arg1, jint arg2, jint arg3);
-		java::time::LocalDate dateEpochDay(jlong arg0);
-		java::time::LocalDate dateNow();
-		java::time::LocalDate dateNow(java::time::Clock arg0);
-		java::time::LocalDate dateNow(java::time::ZoneId arg0);
-		java::time::LocalDate dateYearDay(jint arg0, jint arg1);
-		java::time::LocalDate dateYearDay(JObject arg0, jint arg1, jint arg2);
-		jlong epochSecond(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::time::ZoneOffset arg6);
-		java::time::chrono::IsoEra eraOf(jint arg0);
-		JObject eras();
-		JString getCalendarType();
-		JString getId();
-		jboolean isLeapYear(jlong arg0);
-		java::time::LocalDateTime localDateTime(JObject arg0);
-		java::time::Period period(jint arg0, jint arg1, jint arg2);
-		jint prolepticYear(JObject arg0, jint arg1);
-		java::time::temporal::ValueRange range(java::time::temporal::ChronoField arg0);
-		java::time::LocalDate resolveDate(JObject arg0, java::time::format::ResolverStyle arg1);
-		java::time::ZonedDateTime zonedDateTime(JObject arg0);
-		java::time::ZonedDateTime zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1);
+		java::time::LocalDate date(JObject arg0) const;
+		java::time::LocalDate date(jint arg0, jint arg1, jint arg2) const;
+		java::time::LocalDate date(JObject arg0, jint arg1, jint arg2, jint arg3) const;
+		java::time::LocalDate dateEpochDay(jlong arg0) const;
+		java::time::LocalDate dateNow() const;
+		java::time::LocalDate dateNow(java::time::Clock arg0) const;
+		java::time::LocalDate dateNow(java::time::ZoneId arg0) const;
+		java::time::LocalDate dateYearDay(jint arg0, jint arg1) const;
+		java::time::LocalDate dateYearDay(JObject arg0, jint arg1, jint arg2) const;
+		jlong epochSecond(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::time::ZoneOffset arg6) const;
+		java::time::chrono::IsoEra eraOf(jint arg0) const;
+		JObject eras() const;
+		JString getCalendarType() const;
+		JString getId() const;
+		jboolean isLeapYear(jlong arg0) const;
+		java::time::LocalDateTime localDateTime(JObject arg0) const;
+		java::time::Period period(jint arg0, jint arg1, jint arg2) const;
+		jint prolepticYear(JObject arg0, jint arg1) const;
+		java::time::temporal::ValueRange range(java::time::temporal::ChronoField arg0) const;
+		java::time::LocalDate resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const;
+		java::time::ZonedDateTime zonedDateTime(JObject arg0) const;
+		java::time::ZonedDateTime zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1) const;
 	};
 } // namespace java::time::chrono
 

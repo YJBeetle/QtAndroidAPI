@@ -82,14 +82,14 @@ namespace android::app
 		// Methods
 		static java::lang::Long getMaxBytesOverMobile(android::content::Context arg0);
 		static java::lang::Long getRecommendedMaxBytesOverMobile(android::content::Context arg0);
-		jlong addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6);
-		jlong addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8);
-		jlong enqueue(android::app::DownloadManager_Request arg0);
-		JString getMimeTypeForDownloadedFile(jlong arg0);
-		android::net::Uri getUriForDownloadedFile(jlong arg0);
-		android::os::ParcelFileDescriptor openDownloadedFile(jlong arg0);
-		JObject query(android::app::DownloadManager_Query arg0);
-		jint remove(JLongArray arg0);
+		jlong addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6) const;
+		jlong addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8) const;
+		jlong enqueue(android::app::DownloadManager_Request arg0) const;
+		JString getMimeTypeForDownloadedFile(jlong arg0) const;
+		android::net::Uri getUriForDownloadedFile(jlong arg0) const;
+		android::os::ParcelFileDescriptor openDownloadedFile(jlong arg0) const;
+		JObject query(android::app::DownloadManager_Query arg0) const;
+		jint remove(JLongArray arg0) const;
 	};
 } // namespace android::app
 

@@ -44,14 +44,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString Button::getAccessibilityClassName()
+	JString Button::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::PointerIcon Button::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon Button::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",

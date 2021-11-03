@@ -36,7 +36,7 @@ namespace android::text::util
 			arg1.object()
 		);
 	}
-	jint Rfc822Tokenizer::findTokenEnd(JString arg0, jint arg1)
+	jint Rfc822Tokenizer::findTokenEnd(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"findTokenEnd",
@@ -45,7 +45,7 @@ namespace android::text::util
 			arg1
 		);
 	}
-	jint Rfc822Tokenizer::findTokenStart(JString arg0, jint arg1)
+	jint Rfc822Tokenizer::findTokenStart(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"findTokenStart",
@@ -54,7 +54,7 @@ namespace android::text::util
 			arg1
 		);
 	}
-	JString Rfc822Tokenizer::terminateToken(JString arg0)
+	JString Rfc822Tokenizer::terminateToken(JString arg0) const
 	{
 		return callObjectMethod(
 			"terminateToken",

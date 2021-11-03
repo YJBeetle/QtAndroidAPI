@@ -19,14 +19,14 @@ namespace java::beans
 		) {}
 	
 	// Methods
-	JString PropertyChangeListenerProxy::getPropertyName()
+	JString PropertyChangeListenerProxy::getPropertyName() const
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PropertyChangeListenerProxy::propertyChange(java::beans::PropertyChangeEvent arg0)
+	void PropertyChangeListenerProxy::propertyChange(java::beans::PropertyChangeEvent arg0) const
 	{
 		callMethod<void>(
 			"propertyChange",

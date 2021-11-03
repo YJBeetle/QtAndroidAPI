@@ -82,14 +82,14 @@ namespace android::app::usage
 	// Constructors
 	
 	// Methods
-	jint UsageStatsManager::getAppStandbyBucket()
+	jint UsageStatsManager::getAppStandbyBucket() const
 	{
 		return callMethod<jint>(
 			"getAppStandbyBucket",
 			"()I"
 		);
 	}
-	jboolean UsageStatsManager::isAppInactive(JString arg0)
+	jboolean UsageStatsManager::isAppInactive(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAppInactive",
@@ -97,7 +97,7 @@ namespace android::app::usage
 			arg0.object<jstring>()
 		);
 	}
-	JObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
+	JObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"queryAndAggregateUsageStats",
@@ -106,7 +106,7 @@ namespace android::app::usage
 			arg1
 		);
 	}
-	JObject UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2)
+	JObject UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"queryConfigurations",
@@ -116,7 +116,7 @@ namespace android::app::usage
 			arg2
 		);
 	}
-	JObject UsageStatsManager::queryEventStats(jint arg0, jlong arg1, jlong arg2)
+	JObject UsageStatsManager::queryEventStats(jint arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"queryEventStats",
@@ -126,7 +126,7 @@ namespace android::app::usage
 			arg2
 		);
 	}
-	android::app::usage::UsageEvents UsageStatsManager::queryEvents(jlong arg0, jlong arg1)
+	android::app::usage::UsageEvents UsageStatsManager::queryEvents(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"queryEvents",
@@ -135,7 +135,7 @@ namespace android::app::usage
 			arg1
 		);
 	}
-	android::app::usage::UsageEvents UsageStatsManager::queryEventsForSelf(jlong arg0, jlong arg1)
+	android::app::usage::UsageEvents UsageStatsManager::queryEventsForSelf(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"queryEventsForSelf",
@@ -144,7 +144,7 @@ namespace android::app::usage
 			arg1
 		);
 	}
-	JObject UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2)
+	JObject UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"queryUsageStats",

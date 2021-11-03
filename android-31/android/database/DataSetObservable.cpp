@@ -15,14 +15,14 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void DataSetObservable::notifyChanged()
+	void DataSetObservable::notifyChanged() const
 	{
 		callMethod<void>(
 			"notifyChanged",
 			"()V"
 		);
 	}
-	void DataSetObservable::notifyInvalidated()
+	void DataSetObservable::notifyInvalidated() const
 	{
 		callMethod<void>(
 			"notifyInvalidated",

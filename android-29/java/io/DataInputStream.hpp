@@ -26,23 +26,23 @@ namespace java::io
 		
 		// Methods
 		static JString readUTF(JObject arg0);
-		jint read(JByteArray arg0);
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		jboolean readBoolean();
-		jbyte readByte();
-		jchar readChar();
-		jdouble readDouble();
-		jfloat readFloat();
-		void readFully(JByteArray arg0);
-		void readFully(JByteArray arg0, jint arg1, jint arg2);
-		jint readInt();
-		JString readLine();
-		jlong readLong();
-		jshort readShort();
-		JString readUTF();
-		jint readUnsignedByte();
-		jint readUnsignedShort();
-		jint skipBytes(jint arg0);
+		jint read(JByteArray arg0) const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		jboolean readBoolean() const;
+		jbyte readByte() const;
+		jchar readChar() const;
+		jdouble readDouble() const;
+		jfloat readFloat() const;
+		void readFully(JByteArray arg0) const;
+		void readFully(JByteArray arg0, jint arg1, jint arg2) const;
+		jint readInt() const;
+		JString readLine() const;
+		jlong readLong() const;
+		jshort readShort() const;
+		JString readUTF() const;
+		jint readUnsignedByte() const;
+		jint readUnsignedShort() const;
+		jint skipBytes(jint arg0) const;
 	};
 } // namespace java::io
 

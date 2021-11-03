@@ -23,10 +23,10 @@ namespace android::provider
 		ContactsContract_Contacts_AggregationSuggestions_Builder();
 		
 		// Methods
-		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder addNameParameter(JString arg0);
-		android::net::Uri build();
-		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder setContactId(jlong arg0);
-		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder setLimit(jint arg0);
+		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder addNameParameter(JString arg0) const;
+		android::net::Uri build() const;
+		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder setContactId(jlong arg0) const;
+		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder setLimit(jint arg0) const;
 	};
 } // namespace android::provider
 

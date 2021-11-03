@@ -23,7 +23,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	JFloatArray FloatArrayEvaluator::evaluate(jfloat arg0, JFloatArray arg1, JFloatArray arg2)
+	JFloatArray FloatArrayEvaluator::evaluate(jfloat arg0, JFloatArray arg1, JFloatArray arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",
@@ -33,7 +33,7 @@ namespace android::animation
 			arg2.object<jfloatArray>()
 		);
 	}
-	JObject FloatArrayEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
+	JObject FloatArrayEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",

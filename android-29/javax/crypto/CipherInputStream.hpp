@@ -27,13 +27,13 @@ namespace javax::crypto
 		CipherInputStream(java::io::InputStream arg0, javax::crypto::Cipher arg1);
 		
 		// Methods
-		jint available();
-		void close();
-		jboolean markSupported();
-		jint read();
-		jint read(JByteArray arg0);
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		jlong skip(jlong arg0);
+		jint available() const;
+		void close() const;
+		jboolean markSupported() const;
+		jint read() const;
+		jint read(JByteArray arg0) const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		jlong skip(jlong arg0) const;
 	};
 } // namespace javax::crypto
 

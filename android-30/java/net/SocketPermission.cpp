@@ -26,7 +26,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	jboolean SocketPermission::equals(JObject arg0)
+	jboolean SocketPermission::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -34,21 +34,21 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JString SocketPermission::getActions()
+	JString SocketPermission::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SocketPermission::hashCode()
+	jint SocketPermission::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean SocketPermission::implies(java::security::Permission arg0)
+	jboolean SocketPermission::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -56,7 +56,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection SocketPermission::newPermissionCollection()
+	java::security::PermissionCollection SocketPermission::newPermissionCollection() const
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

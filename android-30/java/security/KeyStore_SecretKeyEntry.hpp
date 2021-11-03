@@ -20,9 +20,9 @@ namespace java::security
 		KeyStore_SecretKeyEntry(JObject arg0, JObject arg1);
 		
 		// Methods
-		JObject getAttributes();
-		JObject getSecretKey();
-		JString toString();
+		JObject getAttributes() const;
+		JObject getSecretKey() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

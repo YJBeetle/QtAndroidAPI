@@ -29,14 +29,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	android::print::PrinterInfo PrinterInfo_Builder::build()
+	android::print::PrinterInfo PrinterInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/print/PrinterInfo;"
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setCapabilities(android::print::PrinterCapabilitiesInfo arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setCapabilities(android::print::PrinterCapabilitiesInfo arg0) const
 	{
 		return callObjectMethod(
 			"setCapabilities",
@@ -44,7 +44,7 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setDescription(JString arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -52,7 +52,7 @@ namespace android::print
 			arg0.object<jstring>()
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setHasCustomPrinterIcon(jboolean arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setHasCustomPrinterIcon(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasCustomPrinterIcon",
@@ -60,7 +60,7 @@ namespace android::print
 			arg0
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setIconResourceId(jint arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setIconResourceId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setIconResourceId",
@@ -68,7 +68,7 @@ namespace android::print
 			arg0
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setInfoIntent(android::app::PendingIntent arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setInfoIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setInfoIntent",
@@ -76,7 +76,7 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setName(JString arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setName",
@@ -84,7 +84,7 @@ namespace android::print
 			arg0.object<jstring>()
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setStatus(jint arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setStatus(jint arg0) const
 	{
 		return callObjectMethod(
 			"setStatus",

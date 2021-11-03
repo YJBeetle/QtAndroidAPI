@@ -31,14 +31,14 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	jint ViewTranslationRequest::describeContents()
+	jint ViewTranslationRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ViewTranslationRequest::equals(JObject arg0)
+	jboolean ViewTranslationRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,21 +46,21 @@ namespace android::view::translation
 			arg0.object<jobject>()
 		);
 	}
-	android::view::autofill::AutofillId ViewTranslationRequest::getAutofillId()
+	android::view::autofill::AutofillId ViewTranslationRequest::getAutofillId() const
 	{
 		return callObjectMethod(
 			"getAutofillId",
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
-	JObject ViewTranslationRequest::getKeys()
+	JObject ViewTranslationRequest::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/Set;"
 		);
 	}
-	android::view::translation::TranslationRequestValue ViewTranslationRequest::getValue(JString arg0)
+	android::view::translation::TranslationRequestValue ViewTranslationRequest::getValue(JString arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -68,21 +68,21 @@ namespace android::view::translation
 			arg0.object<jstring>()
 		);
 	}
-	jint ViewTranslationRequest::hashCode()
+	jint ViewTranslationRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ViewTranslationRequest::toString()
+	JString ViewTranslationRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ViewTranslationRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ViewTranslationRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

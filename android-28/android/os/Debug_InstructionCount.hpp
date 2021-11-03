@@ -17,10 +17,10 @@ namespace android::os
 		Debug_InstructionCount();
 		
 		// Methods
-		jboolean collect();
-		jint globalMethodInvocations();
-		jint globalTotal();
-		jboolean resetAndStart();
+		jboolean collect() const;
+		jint globalMethodInvocations() const;
+		jint globalTotal() const;
+		jboolean resetAndStart() const;
 	};
 } // namespace android::os
 

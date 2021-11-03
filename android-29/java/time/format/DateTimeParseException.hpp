@@ -22,8 +22,8 @@ namespace java::time::format
 		DateTimeParseException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
-		jint getErrorIndex();
-		JString getParsedString();
+		jint getErrorIndex() const;
+		JString getParsedString() const;
 	};
 } // namespace java::time::format
 

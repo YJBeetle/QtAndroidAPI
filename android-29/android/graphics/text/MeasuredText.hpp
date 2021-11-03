@@ -22,9 +22,9 @@ namespace android::graphics::text
 		// Constructors
 		
 		// Methods
-		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2);
-		jfloat getCharWidthAt(jint arg0);
-		jfloat getWidth(jint arg0, jint arg1);
+		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2) const;
+		jfloat getCharWidthAt(jint arg0) const;
+		jfloat getWidth(jint arg0, jint arg1) const;
 	};
 } // namespace android::graphics::text
 

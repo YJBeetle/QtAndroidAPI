@@ -26,7 +26,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	JString SmsMessage_SubmitPdu::toString()
+	JString SmsMessage_SubmitPdu::toString() const
 	{
 		return callObjectMethod(
 			"toString",

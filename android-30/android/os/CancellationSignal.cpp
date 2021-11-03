@@ -15,21 +15,21 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void CancellationSignal::cancel()
+	void CancellationSignal::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jboolean CancellationSignal::isCanceled()
+	jboolean CancellationSignal::isCanceled() const
 	{
 		return callMethod<jboolean>(
 			"isCanceled",
 			"()Z"
 		);
 	}
-	void CancellationSignal::setOnCancelListener(JObject arg0)
+	void CancellationSignal::setOnCancelListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCancelListener",
@@ -37,7 +37,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void CancellationSignal::throwIfCanceled()
+	void CancellationSignal::throwIfCanceled() const
 	{
 		callMethod<void>(
 			"throwIfCanceled",

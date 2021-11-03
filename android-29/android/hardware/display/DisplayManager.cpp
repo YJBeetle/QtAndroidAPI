@@ -61,7 +61,7 @@ namespace android::hardware::display
 	// Constructors
 	
 	// Methods
-	android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5)
+	android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5) const
 	{
 		return callObjectMethod(
 			"createVirtualDisplay",
@@ -74,7 +74,7 @@ namespace android::hardware::display
 			arg5
 		);
 	}
-	android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
+	android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7) const
 	{
 		return callObjectMethod(
 			"createVirtualDisplay",
@@ -89,7 +89,7 @@ namespace android::hardware::display
 			arg7.object()
 		);
 	}
-	android::view::Display DisplayManager::getDisplay(jint arg0)
+	android::view::Display DisplayManager::getDisplay(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDisplay",
@@ -97,14 +97,14 @@ namespace android::hardware::display
 			arg0
 		);
 	}
-	JArray DisplayManager::getDisplays()
+	JArray DisplayManager::getDisplays() const
 	{
 		return callObjectMethod(
 			"getDisplays",
 			"()[Landroid/view/Display;"
 		);
 	}
-	JArray DisplayManager::getDisplays(JString arg0)
+	JArray DisplayManager::getDisplays(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDisplays",
@@ -112,7 +112,7 @@ namespace android::hardware::display
 			arg0.object<jstring>()
 		);
 	}
-	void DisplayManager::registerDisplayListener(JObject arg0, android::os::Handler arg1)
+	void DisplayManager::registerDisplayListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerDisplayListener",
@@ -121,7 +121,7 @@ namespace android::hardware::display
 			arg1.object()
 		);
 	}
-	void DisplayManager::unregisterDisplayListener(JObject arg0)
+	void DisplayManager::unregisterDisplayListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterDisplayListener",

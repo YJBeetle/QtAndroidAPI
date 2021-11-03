@@ -28,7 +28,7 @@ namespace android::system
 		StructPollfd();
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::system
 

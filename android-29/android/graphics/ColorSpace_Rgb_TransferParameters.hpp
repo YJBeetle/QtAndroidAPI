@@ -27,8 +27,8 @@ namespace android::graphics
 		ColorSpace_Rgb_TransferParameters(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5, jdouble arg6);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::graphics
 

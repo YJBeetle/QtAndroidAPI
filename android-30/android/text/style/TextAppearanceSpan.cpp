@@ -48,126 +48,126 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint TextAppearanceSpan::describeContents()
+	jint TextAppearanceSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString TextAppearanceSpan::getFamily()
+	JString TextAppearanceSpan::getFamily() const
 	{
 		return callObjectMethod(
 			"getFamily",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TextAppearanceSpan::getFontFeatureSettings()
+	JString TextAppearanceSpan::getFontFeatureSettings() const
 	{
 		return callObjectMethod(
 			"getFontFeatureSettings",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TextAppearanceSpan::getFontVariationSettings()
+	JString TextAppearanceSpan::getFontVariationSettings() const
 	{
 		return callObjectMethod(
 			"getFontVariationSettings",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::res::ColorStateList TextAppearanceSpan::getLinkTextColor()
+	android::content::res::ColorStateList TextAppearanceSpan::getLinkTextColor() const
 	{
 		return callObjectMethod(
 			"getLinkTextColor",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	jint TextAppearanceSpan::getShadowColor()
+	jint TextAppearanceSpan::getShadowColor() const
 	{
 		return callMethod<jint>(
 			"getShadowColor",
 			"()I"
 		);
 	}
-	jfloat TextAppearanceSpan::getShadowDx()
+	jfloat TextAppearanceSpan::getShadowDx() const
 	{
 		return callMethod<jfloat>(
 			"getShadowDx",
 			"()F"
 		);
 	}
-	jfloat TextAppearanceSpan::getShadowDy()
+	jfloat TextAppearanceSpan::getShadowDy() const
 	{
 		return callMethod<jfloat>(
 			"getShadowDy",
 			"()F"
 		);
 	}
-	jfloat TextAppearanceSpan::getShadowRadius()
+	jfloat TextAppearanceSpan::getShadowRadius() const
 	{
 		return callMethod<jfloat>(
 			"getShadowRadius",
 			"()F"
 		);
 	}
-	jint TextAppearanceSpan::getSpanTypeId()
+	jint TextAppearanceSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	android::content::res::ColorStateList TextAppearanceSpan::getTextColor()
+	android::content::res::ColorStateList TextAppearanceSpan::getTextColor() const
 	{
 		return callObjectMethod(
 			"getTextColor",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	jint TextAppearanceSpan::getTextFontWeight()
+	jint TextAppearanceSpan::getTextFontWeight() const
 	{
 		return callMethod<jint>(
 			"getTextFontWeight",
 			"()I"
 		);
 	}
-	android::os::LocaleList TextAppearanceSpan::getTextLocales()
+	android::os::LocaleList TextAppearanceSpan::getTextLocales() const
 	{
 		return callObjectMethod(
 			"getTextLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	jint TextAppearanceSpan::getTextSize()
+	jint TextAppearanceSpan::getTextSize() const
 	{
 		return callMethod<jint>(
 			"getTextSize",
 			"()I"
 		);
 	}
-	jint TextAppearanceSpan::getTextStyle()
+	jint TextAppearanceSpan::getTextStyle() const
 	{
 		return callMethod<jint>(
 			"getTextStyle",
 			"()I"
 		);
 	}
-	android::graphics::Typeface TextAppearanceSpan::getTypeface()
+	android::graphics::Typeface TextAppearanceSpan::getTypeface() const
 	{
 		return callObjectMethod(
 			"getTypeface",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
-	jboolean TextAppearanceSpan::isElegantTextHeight()
+	jboolean TextAppearanceSpan::isElegantTextHeight() const
 	{
 		return callMethod<jboolean>(
 			"isElegantTextHeight",
 			"()Z"
 		);
 	}
-	void TextAppearanceSpan::updateDrawState(android::text::TextPaint arg0)
+	void TextAppearanceSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -175,7 +175,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void TextAppearanceSpan::updateMeasureState(android::text::TextPaint arg0)
+	void TextAppearanceSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -183,7 +183,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void TextAppearanceSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextAppearanceSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

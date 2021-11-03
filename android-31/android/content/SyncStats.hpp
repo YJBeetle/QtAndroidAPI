@@ -34,10 +34,10 @@ namespace android::content
 		SyncStats(android::os::Parcel arg0);
 		
 		// Methods
-		void clear();
-		jint describeContents();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void clear() const;
+		jint describeContents() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

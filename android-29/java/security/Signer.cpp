@@ -26,14 +26,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject Signer::getPrivateKey()
+	JObject Signer::getPrivateKey() const
 	{
 		return callObjectMethod(
 			"getPrivateKey",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	void Signer::setKeyPair(java::security::KeyPair arg0)
+	void Signer::setKeyPair(java::security::KeyPair arg0) const
 	{
 		callMethod<void>(
 			"setKeyPair",
@@ -41,7 +41,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JString Signer::toString()
+	JString Signer::toString() const
 	{
 		return callObjectMethod(
 			"toString",

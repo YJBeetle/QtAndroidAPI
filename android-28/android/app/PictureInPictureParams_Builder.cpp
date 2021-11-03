@@ -18,14 +18,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::PictureInPictureParams PictureInPictureParams_Builder::build()
+	android::app::PictureInPictureParams PictureInPictureParams_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/PictureInPictureParams;"
 		);
 	}
-	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setActions(JObject arg0)
+	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setActions(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setActions",
@@ -33,7 +33,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setAspectRatio(android::util::Rational arg0)
+	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setAspectRatio(android::util::Rational arg0) const
 	{
 		return callObjectMethod(
 			"setAspectRatio",
@@ -41,7 +41,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setSourceRectHint(android::graphics::Rect arg0)
+	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setSourceRectHint(android::graphics::Rect arg0) const
 	{
 		return callObjectMethod(
 			"setSourceRectHint",

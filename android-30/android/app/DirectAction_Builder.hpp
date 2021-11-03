@@ -31,9 +31,9 @@ namespace android::app
 		DirectAction_Builder(JString arg0);
 		
 		// Methods
-		android::app::DirectAction build();
-		android::app::DirectAction_Builder setExtras(android::os::Bundle arg0);
-		android::app::DirectAction_Builder setLocusId(android::content::LocusId arg0);
+		android::app::DirectAction build() const;
+		android::app::DirectAction_Builder setExtras(android::os::Bundle arg0) const;
+		android::app::DirectAction_Builder setLocusId(android::content::LocusId arg0) const;
 	};
 } // namespace android::app
 

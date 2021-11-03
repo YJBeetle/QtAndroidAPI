@@ -14,7 +14,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	JObject FormattedNumber::appendTo(JObject arg0)
+	JObject FormattedNumber::appendTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"appendTo",
@@ -22,7 +22,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	jchar FormattedNumber::charAt(jint arg0)
+	jchar FormattedNumber::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -30,14 +30,14 @@ namespace android::icu::number
 			arg0
 		);
 	}
-	jint FormattedNumber::length()
+	jint FormattedNumber::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jboolean FormattedNumber::nextPosition(android::icu::text::ConstrainedFieldPosition arg0)
+	jboolean FormattedNumber::nextPosition(android::icu::text::ConstrainedFieldPosition arg0) const
 	{
 		return callMethod<jboolean>(
 			"nextPosition",
@@ -45,7 +45,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	JString FormattedNumber::subSequence(jint arg0, jint arg1)
+	JString FormattedNumber::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -54,21 +54,21 @@ namespace android::icu::number
 			arg1
 		);
 	}
-	java::math::BigDecimal FormattedNumber::toBigDecimal()
+	java::math::BigDecimal FormattedNumber::toBigDecimal() const
 	{
 		return callObjectMethod(
 			"toBigDecimal",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	JObject FormattedNumber::toCharacterIterator()
+	JObject FormattedNumber::toCharacterIterator() const
 	{
 		return callObjectMethod(
 			"toCharacterIterator",
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	JString FormattedNumber::toString()
+	JString FormattedNumber::toString() const
 	{
 		return callObjectMethod(
 			"toString",

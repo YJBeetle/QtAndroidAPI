@@ -36,13 +36,13 @@ namespace android::media
 		MediaMuxer(JString arg0, jint arg1);
 		
 		// Methods
-		jint addTrack(android::media::MediaFormat arg0);
-		void release();
-		void setLocation(jfloat arg0, jfloat arg1);
-		void setOrientationHint(jint arg0);
-		void start();
-		void stop();
-		void writeSampleData(jint arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_BufferInfo arg2);
+		jint addTrack(android::media::MediaFormat arg0) const;
+		void release() const;
+		void setLocation(jfloat arg0, jfloat arg1) const;
+		void setOrientationHint(jint arg0) const;
+		void start() const;
+		void stop() const;
+		void writeSampleData(jint arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_BufferInfo arg2) const;
 	};
 } // namespace android::media
 

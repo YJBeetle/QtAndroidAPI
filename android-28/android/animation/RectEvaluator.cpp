@@ -23,7 +23,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	android::graphics::Rect RectEvaluator::evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2)
+	android::graphics::Rect RectEvaluator::evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",
@@ -33,7 +33,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	JObject RectEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
+	JObject RectEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",

@@ -16,7 +16,7 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	void WifiManager_WpsCallback::onFailed(jint arg0)
+	void WifiManager_WpsCallback::onFailed(jint arg0) const
 	{
 		callMethod<void>(
 			"onFailed",
@@ -24,7 +24,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager_WpsCallback::onStarted(JString arg0)
+	void WifiManager_WpsCallback::onStarted(JString arg0) const
 	{
 		callMethod<void>(
 			"onStarted",
@@ -32,7 +32,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	void WifiManager_WpsCallback::onSucceeded()
+	void WifiManager_WpsCallback::onSucceeded() const
 	{
 		callMethod<void>(
 			"onSucceeded",

@@ -37,7 +37,7 @@ namespace android::view::autofill
 		) {}
 	
 	// Methods
-	void AutofillManager_AutofillCallback::onAutofillEvent(android::view::View arg0, jint arg1)
+	void AutofillManager_AutofillCallback::onAutofillEvent(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onAutofillEvent",
@@ -46,7 +46,7 @@ namespace android::view::autofill
 			arg1
 		);
 	}
-	void AutofillManager_AutofillCallback::onAutofillEvent(android::view::View arg0, jint arg1, jint arg2)
+	void AutofillManager_AutofillCallback::onAutofillEvent(android::view::View arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onAutofillEvent",

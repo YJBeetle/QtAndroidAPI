@@ -310,7 +310,7 @@ namespace android::media
 			arg4
 		);
 	}
-	void MediaPlayer::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1)
+	void MediaPlayer::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addOnRoutingChangedListener",
@@ -319,7 +319,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, JString arg1)
+	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addTimedTextSource",
@@ -328,7 +328,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(JString arg0, JString arg1)
+	void MediaPlayer::addTimedTextSource(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addTimedTextSource",
@@ -337,7 +337,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, JString arg2)
+	void MediaPlayer::addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"addTimedTextSource",
@@ -347,7 +347,7 @@ namespace android::media
 			arg2.object<jstring>()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, JString arg3)
+	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"addTimedTextSource",
@@ -358,7 +358,7 @@ namespace android::media
 			arg3.object<jstring>()
 		);
 	}
-	void MediaPlayer::attachAuxEffect(jint arg0)
+	void MediaPlayer::attachAuxEffect(jint arg0) const
 	{
 		callMethod<void>(
 			"attachAuxEffect",
@@ -366,21 +366,21 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::clearOnMediaTimeDiscontinuityListener()
+	void MediaPlayer::clearOnMediaTimeDiscontinuityListener() const
 	{
 		callMethod<void>(
 			"clearOnMediaTimeDiscontinuityListener",
 			"()V"
 		);
 	}
-	void MediaPlayer::clearOnSubtitleDataListener()
+	void MediaPlayer::clearOnSubtitleDataListener() const
 	{
 		callMethod<void>(
 			"clearOnSubtitleDataListener",
 			"()V"
 		);
 	}
-	android::media::VolumeShaper MediaPlayer::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
+	android::media::VolumeShaper MediaPlayer::createVolumeShaper(android::media::VolumeShaper_Configuration arg0) const
 	{
 		return callObjectMethod(
 			"createVolumeShaper",
@@ -388,7 +388,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::deselectTrack(jint arg0)
+	void MediaPlayer::deselectTrack(jint arg0) const
 	{
 		callMethod<void>(
 			"deselectTrack",
@@ -396,28 +396,28 @@ namespace android::media
 			arg0
 		);
 	}
-	jint MediaPlayer::getAudioSessionId()
+	jint MediaPlayer::getAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
-	jint MediaPlayer::getCurrentPosition()
+	jint MediaPlayer::getCurrentPosition() const
 	{
 		return callMethod<jint>(
 			"getCurrentPosition",
 			"()I"
 		);
 	}
-	android::media::MediaPlayer_DrmInfo MediaPlayer::getDrmInfo()
+	android::media::MediaPlayer_DrmInfo MediaPlayer::getDrmInfo() const
 	{
 		return callObjectMethod(
 			"getDrmInfo",
 			"()Landroid/media/MediaPlayer$DrmInfo;"
 		);
 	}
-	JString MediaPlayer::getDrmPropertyString(JString arg0)
+	JString MediaPlayer::getDrmPropertyString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDrmPropertyString",
@@ -425,14 +425,14 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jint MediaPlayer::getDuration()
+	jint MediaPlayer::getDuration() const
 	{
 		return callMethod<jint>(
 			"getDuration",
 			"()I"
 		);
 	}
-	android::media::MediaDrm_KeyRequest MediaPlayer::getKeyRequest(JByteArray arg0, JByteArray arg1, JString arg2, jint arg3, JObject arg4)
+	android::media::MediaDrm_KeyRequest MediaPlayer::getKeyRequest(JByteArray arg0, JByteArray arg1, JString arg2, jint arg3, JObject arg4) const
 	{
 		return callObjectMethod(
 			"getKeyRequest",
@@ -444,35 +444,35 @@ namespace android::media
 			arg4.object()
 		);
 	}
-	android::os::PersistableBundle MediaPlayer::getMetrics()
+	android::os::PersistableBundle MediaPlayer::getMetrics() const
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	android::media::PlaybackParams MediaPlayer::getPlaybackParams()
+	android::media::PlaybackParams MediaPlayer::getPlaybackParams() const
 	{
 		return callObjectMethod(
 			"getPlaybackParams",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
-	android::media::AudioDeviceInfo MediaPlayer::getPreferredDevice()
+	android::media::AudioDeviceInfo MediaPlayer::getPreferredDevice() const
 	{
 		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	android::media::AudioDeviceInfo MediaPlayer::getRoutedDevice()
+	android::media::AudioDeviceInfo MediaPlayer::getRoutedDevice() const
 	{
 		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	jint MediaPlayer::getSelectedTrack(jint arg0)
+	jint MediaPlayer::getSelectedTrack(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getSelectedTrack",
@@ -480,77 +480,77 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::SyncParams MediaPlayer::getSyncParams()
+	android::media::SyncParams MediaPlayer::getSyncParams() const
 	{
 		return callObjectMethod(
 			"getSyncParams",
 			"()Landroid/media/SyncParams;"
 		);
 	}
-	android::media::MediaTimestamp MediaPlayer::getTimestamp()
+	android::media::MediaTimestamp MediaPlayer::getTimestamp() const
 	{
 		return callObjectMethod(
 			"getTimestamp",
 			"()Landroid/media/MediaTimestamp;"
 		);
 	}
-	JArray MediaPlayer::getTrackInfo()
+	JArray MediaPlayer::getTrackInfo() const
 	{
 		return callObjectMethod(
 			"getTrackInfo",
 			"()[Landroid/media/MediaPlayer$TrackInfo;"
 		);
 	}
-	jint MediaPlayer::getVideoHeight()
+	jint MediaPlayer::getVideoHeight() const
 	{
 		return callMethod<jint>(
 			"getVideoHeight",
 			"()I"
 		);
 	}
-	jint MediaPlayer::getVideoWidth()
+	jint MediaPlayer::getVideoWidth() const
 	{
 		return callMethod<jint>(
 			"getVideoWidth",
 			"()I"
 		);
 	}
-	jboolean MediaPlayer::isLooping()
+	jboolean MediaPlayer::isLooping() const
 	{
 		return callMethod<jboolean>(
 			"isLooping",
 			"()Z"
 		);
 	}
-	jboolean MediaPlayer::isPlaying()
+	jboolean MediaPlayer::isPlaying() const
 	{
 		return callMethod<jboolean>(
 			"isPlaying",
 			"()Z"
 		);
 	}
-	void MediaPlayer::pause()
+	void MediaPlayer::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	void MediaPlayer::prepare()
+	void MediaPlayer::prepare() const
 	{
 		callMethod<void>(
 			"prepare",
 			"()V"
 		);
 	}
-	void MediaPlayer::prepareAsync()
+	void MediaPlayer::prepareAsync() const
 	{
 		callMethod<void>(
 			"prepareAsync",
 			"()V"
 		);
 	}
-	void MediaPlayer::prepareDrm(java::util::UUID arg0)
+	void MediaPlayer::prepareDrm(java::util::UUID arg0) const
 	{
 		callMethod<void>(
 			"prepareDrm",
@@ -558,7 +558,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JByteArray MediaPlayer::provideKeyResponse(JByteArray arg0, JByteArray arg1)
+	JByteArray MediaPlayer::provideKeyResponse(JByteArray arg0, JByteArray arg1) const
 	{
 		return callObjectMethod(
 			"provideKeyResponse",
@@ -567,21 +567,21 @@ namespace android::media
 			arg1.object<jbyteArray>()
 		);
 	}
-	void MediaPlayer::release()
+	void MediaPlayer::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaPlayer::releaseDrm()
+	void MediaPlayer::releaseDrm() const
 	{
 		callMethod<void>(
 			"releaseDrm",
 			"()V"
 		);
 	}
-	void MediaPlayer::removeOnRoutingChangedListener(JObject arg0)
+	void MediaPlayer::removeOnRoutingChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnRoutingChangedListener",
@@ -589,14 +589,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::reset()
+	void MediaPlayer::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void MediaPlayer::restoreKeys(JByteArray arg0)
+	void MediaPlayer::restoreKeys(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"restoreKeys",
@@ -604,7 +604,7 @@ namespace android::media
 			arg0.object<jbyteArray>()
 		);
 	}
-	void MediaPlayer::seekTo(jint arg0)
+	void MediaPlayer::seekTo(jint arg0) const
 	{
 		callMethod<void>(
 			"seekTo",
@@ -612,7 +612,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::seekTo(jlong arg0, jint arg1)
+	void MediaPlayer::seekTo(jlong arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"seekTo",
@@ -621,7 +621,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaPlayer::selectTrack(jint arg0)
+	void MediaPlayer::selectTrack(jint arg0) const
 	{
 		callMethod<void>(
 			"selectTrack",
@@ -629,7 +629,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setAudioAttributes(android::media::AudioAttributes arg0)
+	void MediaPlayer::setAudioAttributes(android::media::AudioAttributes arg0) const
 	{
 		callMethod<void>(
 			"setAudioAttributes",
@@ -637,7 +637,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setAudioSessionId(jint arg0)
+	void MediaPlayer::setAudioSessionId(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioSessionId",
@@ -645,7 +645,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setAudioStreamType(jint arg0)
+	void MediaPlayer::setAudioStreamType(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioStreamType",
@@ -653,7 +653,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setAuxEffectSendLevel(jfloat arg0)
+	void MediaPlayer::setAuxEffectSendLevel(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAuxEffectSendLevel",
@@ -661,7 +661,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setDataSource(android::content::res::AssetFileDescriptor arg0)
+	void MediaPlayer::setDataSource(android::content::res::AssetFileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -669,7 +669,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setDataSource(android::media::MediaDataSource arg0)
+	void MediaPlayer::setDataSource(android::media::MediaDataSource arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -677,7 +677,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setDataSource(java::io::FileDescriptor arg0)
+	void MediaPlayer::setDataSource(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -685,7 +685,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setDataSource(JString arg0)
+	void MediaPlayer::setDataSource(JString arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -693,7 +693,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1)
+	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -702,7 +702,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2)
+	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -712,7 +712,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	void MediaPlayer::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
+	void MediaPlayer::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -722,7 +722,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2, JObject arg3)
+	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -733,7 +733,7 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	void MediaPlayer::setDisplay(JObject arg0)
+	void MediaPlayer::setDisplay(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDisplay",
@@ -741,7 +741,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setDrmPropertyString(JString arg0, JString arg1)
+	void MediaPlayer::setDrmPropertyString(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setDrmPropertyString",
@@ -750,7 +750,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	void MediaPlayer::setLooping(jboolean arg0)
+	void MediaPlayer::setLooping(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLooping",
@@ -758,7 +758,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setNextMediaPlayer(android::media::MediaPlayer arg0)
+	void MediaPlayer::setNextMediaPlayer(android::media::MediaPlayer arg0) const
 	{
 		callMethod<void>(
 			"setNextMediaPlayer",
@@ -766,7 +766,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnBufferingUpdateListener(JObject arg0)
+	void MediaPlayer::setOnBufferingUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnBufferingUpdateListener",
@@ -774,7 +774,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnCompletionListener(JObject arg0)
+	void MediaPlayer::setOnCompletionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCompletionListener",
@@ -782,7 +782,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnDrmConfigHelper(JObject arg0)
+	void MediaPlayer::setOnDrmConfigHelper(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDrmConfigHelper",
@@ -790,7 +790,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnDrmInfoListener(JObject arg0)
+	void MediaPlayer::setOnDrmInfoListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDrmInfoListener",
@@ -798,7 +798,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnDrmInfoListener(JObject arg0, android::os::Handler arg1)
+	void MediaPlayer::setOnDrmInfoListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnDrmInfoListener",
@@ -807,7 +807,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaPlayer::setOnDrmPreparedListener(JObject arg0)
+	void MediaPlayer::setOnDrmPreparedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDrmPreparedListener",
@@ -815,7 +815,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnDrmPreparedListener(JObject arg0, android::os::Handler arg1)
+	void MediaPlayer::setOnDrmPreparedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnDrmPreparedListener",
@@ -824,7 +824,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaPlayer::setOnErrorListener(JObject arg0)
+	void MediaPlayer::setOnErrorListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnErrorListener",
@@ -832,7 +832,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnInfoListener(JObject arg0)
+	void MediaPlayer::setOnInfoListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnInfoListener",
@@ -840,7 +840,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnMediaTimeDiscontinuityListener(JObject arg0)
+	void MediaPlayer::setOnMediaTimeDiscontinuityListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnMediaTimeDiscontinuityListener",
@@ -848,7 +848,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnMediaTimeDiscontinuityListener(JObject arg0, android::os::Handler arg1)
+	void MediaPlayer::setOnMediaTimeDiscontinuityListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnMediaTimeDiscontinuityListener",
@@ -857,7 +857,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaPlayer::setOnPreparedListener(JObject arg0)
+	void MediaPlayer::setOnPreparedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnPreparedListener",
@@ -865,7 +865,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnSeekCompleteListener(JObject arg0)
+	void MediaPlayer::setOnSeekCompleteListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnSeekCompleteListener",
@@ -873,7 +873,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnSubtitleDataListener(JObject arg0)
+	void MediaPlayer::setOnSubtitleDataListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnSubtitleDataListener",
@@ -881,7 +881,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnSubtitleDataListener(JObject arg0, android::os::Handler arg1)
+	void MediaPlayer::setOnSubtitleDataListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnSubtitleDataListener",
@@ -890,7 +890,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaPlayer::setOnTimedMetaDataAvailableListener(JObject arg0)
+	void MediaPlayer::setOnTimedMetaDataAvailableListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnTimedMetaDataAvailableListener",
@@ -898,7 +898,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnTimedTextListener(JObject arg0)
+	void MediaPlayer::setOnTimedTextListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnTimedTextListener",
@@ -906,7 +906,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setOnVideoSizeChangedListener(JObject arg0)
+	void MediaPlayer::setOnVideoSizeChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnVideoSizeChangedListener",
@@ -914,7 +914,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setPlaybackParams(android::media::PlaybackParams arg0)
+	void MediaPlayer::setPlaybackParams(android::media::PlaybackParams arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackParams",
@@ -922,7 +922,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaPlayer::setPreferredDevice(android::media::AudioDeviceInfo arg0)
+	jboolean MediaPlayer::setPreferredDevice(android::media::AudioDeviceInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredDevice",
@@ -930,7 +930,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setScreenOnWhilePlaying(jboolean arg0)
+	void MediaPlayer::setScreenOnWhilePlaying(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScreenOnWhilePlaying",
@@ -938,7 +938,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setSurface(android::view::Surface arg0)
+	void MediaPlayer::setSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setSurface",
@@ -946,7 +946,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setSyncParams(android::media::SyncParams arg0)
+	void MediaPlayer::setSyncParams(android::media::SyncParams arg0) const
 	{
 		callMethod<void>(
 			"setSyncParams",
@@ -954,7 +954,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setVideoScalingMode(jint arg0)
+	void MediaPlayer::setVideoScalingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setVideoScalingMode",
@@ -962,7 +962,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setVolume(jfloat arg0, jfloat arg1)
+	void MediaPlayer::setVolume(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setVolume",
@@ -971,7 +971,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaPlayer::setWakeMode(android::content::Context arg0, jint arg1)
+	void MediaPlayer::setWakeMode(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setWakeMode",
@@ -980,14 +980,14 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaPlayer::start()
+	void MediaPlayer::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void MediaPlayer::stop()
+	void MediaPlayer::stop() const
 	{
 		callMethod<void>(
 			"stop",

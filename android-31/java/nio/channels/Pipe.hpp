@@ -26,8 +26,8 @@ namespace java::nio::channels
 		
 		// Methods
 		static java::nio::channels::Pipe open();
-		java::nio::channels::Pipe_SinkChannel sink();
-		java::nio::channels::Pipe_SourceChannel source();
+		java::nio::channels::Pipe_SinkChannel sink() const;
+		java::nio::channels::Pipe_SourceChannel source() const;
 	};
 } // namespace java::nio::channels
 

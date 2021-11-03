@@ -41,25 +41,25 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		void disconnect();
-		JObject getConferenceableConnections();
-		jint getConnectionCapabilities();
-		jint getConnectionProperties();
-		JObject getConnections();
-		android::telecom::DisconnectCause getDisconnectCause();
-		android::os::Bundle getExtras();
-		jint getState();
-		void hold();
-		void merge();
-		void playDtmfTone(jchar arg0);
-		void registerCallback(android::telecom::RemoteConference_Callback arg0);
-		void registerCallback(android::telecom::RemoteConference_Callback arg0, android::os::Handler arg1);
-		void separate(android::telecom::RemoteConnection arg0);
-		void setCallAudioState(android::telecom::CallAudioState arg0);
-		void stopDtmfTone();
-		void swap();
-		void unhold();
-		void unregisterCallback(android::telecom::RemoteConference_Callback arg0);
+		void disconnect() const;
+		JObject getConferenceableConnections() const;
+		jint getConnectionCapabilities() const;
+		jint getConnectionProperties() const;
+		JObject getConnections() const;
+		android::telecom::DisconnectCause getDisconnectCause() const;
+		android::os::Bundle getExtras() const;
+		jint getState() const;
+		void hold() const;
+		void merge() const;
+		void playDtmfTone(jchar arg0) const;
+		void registerCallback(android::telecom::RemoteConference_Callback arg0) const;
+		void registerCallback(android::telecom::RemoteConference_Callback arg0, android::os::Handler arg1) const;
+		void separate(android::telecom::RemoteConnection arg0) const;
+		void setCallAudioState(android::telecom::CallAudioState arg0) const;
+		void stopDtmfTone() const;
+		void swap() const;
+		void unhold() const;
+		void unregisterCallback(android::telecom::RemoteConference_Callback arg0) const;
 	};
 } // namespace android::telecom
 

@@ -32,7 +32,7 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	jboolean Camera_Area::equals(JObject arg0)
+	jboolean Camera_Area::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",

@@ -23,7 +23,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraOfflineSession_CameraOfflineSessionCallback::onClosed(android::hardware::camera2::CameraOfflineSession arg0)
+	void CameraOfflineSession_CameraOfflineSessionCallback::onClosed(android::hardware::camera2::CameraOfflineSession arg0) const
 	{
 		callMethod<void>(
 			"onClosed",
@@ -31,7 +31,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraOfflineSession_CameraOfflineSessionCallback::onError(android::hardware::camera2::CameraOfflineSession arg0, jint arg1)
+	void CameraOfflineSession_CameraOfflineSessionCallback::onError(android::hardware::camera2::CameraOfflineSession arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -40,7 +40,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	void CameraOfflineSession_CameraOfflineSessionCallback::onIdle(android::hardware::camera2::CameraOfflineSession arg0)
+	void CameraOfflineSession_CameraOfflineSessionCallback::onIdle(android::hardware::camera2::CameraOfflineSession arg0) const
 	{
 		callMethod<void>(
 			"onIdle",
@@ -48,7 +48,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraOfflineSession_CameraOfflineSessionCallback::onReady(android::hardware::camera2::CameraOfflineSession arg0)
+	void CameraOfflineSession_CameraOfflineSessionCallback::onReady(android::hardware::camera2::CameraOfflineSession arg0) const
 	{
 		callMethod<void>(
 			"onReady",
@@ -56,7 +56,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraOfflineSession_CameraOfflineSessionCallback::onSwitchFailed(android::hardware::camera2::CameraOfflineSession arg0)
+	void CameraOfflineSession_CameraOfflineSessionCallback::onSwitchFailed(android::hardware::camera2::CameraOfflineSession arg0) const
 	{
 		callMethod<void>(
 			"onSwitchFailed",

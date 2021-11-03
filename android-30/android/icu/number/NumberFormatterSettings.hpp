@@ -66,21 +66,21 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::NumberFormatterSettings decimal(android::icu::number::NumberFormatter_DecimalSeparatorDisplay arg0);
-		jboolean equals(JObject arg0);
-		android::icu::number::NumberFormatterSettings grouping(android::icu::number::NumberFormatter_GroupingStrategy arg0);
-		jint hashCode();
-		android::icu::number::NumberFormatterSettings integerWidth(android::icu::number::IntegerWidth arg0);
-		android::icu::number::NumberFormatterSettings notation(android::icu::number::Notation arg0);
-		android::icu::number::NumberFormatterSettings perUnit(android::icu::util::MeasureUnit arg0);
-		android::icu::number::NumberFormatterSettings precision(android::icu::number::Precision arg0);
-		android::icu::number::NumberFormatterSettings roundingMode(java::math::RoundingMode arg0);
-		android::icu::number::NumberFormatterSettings scale(android::icu::number::Scale arg0);
-		android::icu::number::NumberFormatterSettings sign(android::icu::number::NumberFormatter_SignDisplay arg0);
-		android::icu::number::NumberFormatterSettings symbols(android::icu::text::DecimalFormatSymbols arg0);
-		android::icu::number::NumberFormatterSettings symbols(android::icu::text::NumberingSystem arg0);
-		android::icu::number::NumberFormatterSettings unit(android::icu::util::MeasureUnit arg0);
-		android::icu::number::NumberFormatterSettings unitWidth(android::icu::number::NumberFormatter_UnitWidth arg0);
+		android::icu::number::NumberFormatterSettings decimal(android::icu::number::NumberFormatter_DecimalSeparatorDisplay arg0) const;
+		jboolean equals(JObject arg0) const;
+		android::icu::number::NumberFormatterSettings grouping(android::icu::number::NumberFormatter_GroupingStrategy arg0) const;
+		jint hashCode() const;
+		android::icu::number::NumberFormatterSettings integerWidth(android::icu::number::IntegerWidth arg0) const;
+		android::icu::number::NumberFormatterSettings notation(android::icu::number::Notation arg0) const;
+		android::icu::number::NumberFormatterSettings perUnit(android::icu::util::MeasureUnit arg0) const;
+		android::icu::number::NumberFormatterSettings precision(android::icu::number::Precision arg0) const;
+		android::icu::number::NumberFormatterSettings roundingMode(java::math::RoundingMode arg0) const;
+		android::icu::number::NumberFormatterSettings scale(android::icu::number::Scale arg0) const;
+		android::icu::number::NumberFormatterSettings sign(android::icu::number::NumberFormatter_SignDisplay arg0) const;
+		android::icu::number::NumberFormatterSettings symbols(android::icu::text::DecimalFormatSymbols arg0) const;
+		android::icu::number::NumberFormatterSettings symbols(android::icu::text::NumberingSystem arg0) const;
+		android::icu::number::NumberFormatterSettings unit(android::icu::util::MeasureUnit arg0) const;
+		android::icu::number::NumberFormatterSettings unitWidth(android::icu::number::NumberFormatter_UnitWidth arg0) const;
 	};
 } // namespace android::icu::number
 

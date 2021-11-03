@@ -24,10 +24,10 @@ namespace android::webkit
 		WebHistoryItem();
 		
 		// Methods
-		android::graphics::Bitmap getFavicon();
-		JString getOriginalUrl();
-		JString getTitle();
-		JString getUrl();
+		android::graphics::Bitmap getFavicon() const;
+		JString getOriginalUrl() const;
+		JString getTitle() const;
+		JString getUrl() const;
 	};
 } // namespace android::webkit
 

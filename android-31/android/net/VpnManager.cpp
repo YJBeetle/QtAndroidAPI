@@ -12,14 +12,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	void VpnManager::deleteProvisionedVpnProfile()
+	void VpnManager::deleteProvisionedVpnProfile() const
 	{
 		callMethod<void>(
 			"deleteProvisionedVpnProfile",
 			"()V"
 		);
 	}
-	android::content::Intent VpnManager::provisionVpnProfile(android::net::PlatformVpnProfile arg0)
+	android::content::Intent VpnManager::provisionVpnProfile(android::net::PlatformVpnProfile arg0) const
 	{
 		return callObjectMethod(
 			"provisionVpnProfile",
@@ -27,14 +27,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void VpnManager::startProvisionedVpnProfile()
+	void VpnManager::startProvisionedVpnProfile() const
 	{
 		callMethod<void>(
 			"startProvisionedVpnProfile",
 			"()V"
 		);
 	}
-	void VpnManager::stopProvisionedVpnProfile()
+	void VpnManager::stopProvisionedVpnProfile() const
 	{
 		callMethod<void>(
 			"stopProvisionedVpnProfile",

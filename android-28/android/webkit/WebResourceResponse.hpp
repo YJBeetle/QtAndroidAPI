@@ -24,17 +24,17 @@ namespace android::webkit
 		WebResourceResponse(JString arg0, JString arg1, jint arg2, JString arg3, JObject arg4, java::io::InputStream arg5);
 		
 		// Methods
-		java::io::InputStream getData();
-		JString getEncoding();
-		JString getMimeType();
-		JString getReasonPhrase();
-		JObject getResponseHeaders();
-		jint getStatusCode();
-		void setData(java::io::InputStream arg0);
-		void setEncoding(JString arg0);
-		void setMimeType(JString arg0);
-		void setResponseHeaders(JObject arg0);
-		void setStatusCodeAndReasonPhrase(jint arg0, JString arg1);
+		java::io::InputStream getData() const;
+		JString getEncoding() const;
+		JString getMimeType() const;
+		JString getReasonPhrase() const;
+		JObject getResponseHeaders() const;
+		jint getStatusCode() const;
+		void setData(java::io::InputStream arg0) const;
+		void setEncoding(JString arg0) const;
+		void setMimeType(JString arg0) const;
+		void setResponseHeaders(JObject arg0) const;
+		void setStatusCodeAndReasonPhrase(jint arg0, JString arg1) const;
 	};
 } // namespace android::webkit
 

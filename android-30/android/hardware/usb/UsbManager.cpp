@@ -74,21 +74,21 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	JArray UsbManager::getAccessoryList()
+	JArray UsbManager::getAccessoryList() const
 	{
 		return callObjectMethod(
 			"getAccessoryList",
 			"()[Landroid/hardware/usb/UsbAccessory;"
 		);
 	}
-	java::util::HashMap UsbManager::getDeviceList()
+	java::util::HashMap UsbManager::getDeviceList() const
 	{
 		return callObjectMethod(
 			"getDeviceList",
 			"()Ljava/util/HashMap;"
 		);
 	}
-	jboolean UsbManager::hasPermission(android::hardware::usb::UsbAccessory arg0)
+	jboolean UsbManager::hasPermission(android::hardware::usb::UsbAccessory arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasPermission",
@@ -96,7 +96,7 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	jboolean UsbManager::hasPermission(android::hardware::usb::UsbDevice arg0)
+	jboolean UsbManager::hasPermission(android::hardware::usb::UsbDevice arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasPermission",
@@ -104,7 +104,7 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	android::os::ParcelFileDescriptor UsbManager::openAccessory(android::hardware::usb::UsbAccessory arg0)
+	android::os::ParcelFileDescriptor UsbManager::openAccessory(android::hardware::usb::UsbAccessory arg0) const
 	{
 		return callObjectMethod(
 			"openAccessory",
@@ -112,7 +112,7 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	android::hardware::usb::UsbDeviceConnection UsbManager::openDevice(android::hardware::usb::UsbDevice arg0)
+	android::hardware::usb::UsbDeviceConnection UsbManager::openDevice(android::hardware::usb::UsbDevice arg0) const
 	{
 		return callObjectMethod(
 			"openDevice",
@@ -120,7 +120,7 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	void UsbManager::requestPermission(android::hardware::usb::UsbAccessory arg0, android::app::PendingIntent arg1)
+	void UsbManager::requestPermission(android::hardware::usb::UsbAccessory arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"requestPermission",
@@ -129,7 +129,7 @@ namespace android::hardware::usb
 			arg1.object()
 		);
 	}
-	void UsbManager::requestPermission(android::hardware::usb::UsbDevice arg0, android::app::PendingIntent arg1)
+	void UsbManager::requestPermission(android::hardware::usb::UsbDevice arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"requestPermission",

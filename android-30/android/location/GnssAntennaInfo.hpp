@@ -31,13 +31,13 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jdouble getCarrierFrequencyMHz();
-		android::location::GnssAntennaInfo_PhaseCenterOffset getPhaseCenterOffset();
-		android::location::GnssAntennaInfo_SphericalCorrections getPhaseCenterVariationCorrections();
-		android::location::GnssAntennaInfo_SphericalCorrections getSignalGainCorrections();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jdouble getCarrierFrequencyMHz() const;
+		android::location::GnssAntennaInfo_PhaseCenterOffset getPhaseCenterOffset() const;
+		android::location::GnssAntennaInfo_SphericalCorrections getPhaseCenterVariationCorrections() const;
+		android::location::GnssAntennaInfo_SphericalCorrections getSignalGainCorrections() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

@@ -33,12 +33,12 @@ namespace android::content
 		AsyncTaskLoader(android::content::Context arg0);
 		
 		// Methods
-		void cancelLoadInBackground();
-		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
-		jboolean isLoadInBackgroundCanceled();
-		JObject loadInBackground();
-		void onCanceled(JObject arg0);
-		void setUpdateThrottle(jlong arg0);
+		void cancelLoadInBackground() const;
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const;
+		jboolean isLoadInBackgroundCanceled() const;
+		JObject loadInBackground() const;
+		void onCanceled(JObject arg0) const;
+		void setUpdateThrottle(jlong arg0) const;
 	};
 } // namespace android::content
 

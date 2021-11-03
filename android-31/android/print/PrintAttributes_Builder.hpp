@@ -34,12 +34,12 @@ namespace android::print
 		PrintAttributes_Builder();
 		
 		// Methods
-		android::print::PrintAttributes build();
-		android::print::PrintAttributes_Builder setColorMode(jint arg0);
-		android::print::PrintAttributes_Builder setDuplexMode(jint arg0);
-		android::print::PrintAttributes_Builder setMediaSize(android::print::PrintAttributes_MediaSize arg0);
-		android::print::PrintAttributes_Builder setMinMargins(android::print::PrintAttributes_Margins arg0);
-		android::print::PrintAttributes_Builder setResolution(android::print::PrintAttributes_Resolution arg0);
+		android::print::PrintAttributes build() const;
+		android::print::PrintAttributes_Builder setColorMode(jint arg0) const;
+		android::print::PrintAttributes_Builder setDuplexMode(jint arg0) const;
+		android::print::PrintAttributes_Builder setMediaSize(android::print::PrintAttributes_MediaSize arg0) const;
+		android::print::PrintAttributes_Builder setMinMargins(android::print::PrintAttributes_Margins arg0) const;
+		android::print::PrintAttributes_Builder setResolution(android::print::PrintAttributes_Resolution arg0) const;
 	};
 } // namespace android::print
 

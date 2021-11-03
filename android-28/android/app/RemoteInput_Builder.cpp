@@ -21,7 +21,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::RemoteInput_Builder RemoteInput_Builder::addExtras(android::os::Bundle arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::addExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"addExtras",
@@ -29,21 +29,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::RemoteInput RemoteInput_Builder::build()
+	android::app::RemoteInput RemoteInput_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/RemoteInput;"
 		);
 	}
-	android::os::Bundle RemoteInput_Builder::getExtras()
+	android::os::Bundle RemoteInput_Builder::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowDataType(JString arg0, jboolean arg1)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowDataType(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"setAllowDataType",
@@ -52,7 +52,7 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowFreeFormInput(jboolean arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowFreeFormInput(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAllowFreeFormInput",
@@ -60,7 +60,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::RemoteInput_Builder RemoteInput_Builder::setChoices(JArray arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setChoices(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setChoices",
@@ -68,7 +68,7 @@ namespace android::app
 			arg0.object<jarray>()
 		);
 	}
-	android::app::RemoteInput_Builder RemoteInput_Builder::setLabel(JString arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setLabel(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLabel",

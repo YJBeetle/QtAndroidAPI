@@ -103,14 +103,14 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	jint Voice::describeContents()
+	jint Voice::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Voice::equals(JObject arg0)
+	jboolean Voice::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -118,63 +118,63 @@ namespace android::speech::tts
 			arg0.object<jobject>()
 		);
 	}
-	JObject Voice::getFeatures()
+	JObject Voice::getFeatures() const
 	{
 		return callObjectMethod(
 			"getFeatures",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint Voice::getLatency()
+	jint Voice::getLatency() const
 	{
 		return callMethod<jint>(
 			"getLatency",
 			"()I"
 		);
 	}
-	java::util::Locale Voice::getLocale()
+	java::util::Locale Voice::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	JString Voice::getName()
+	JString Voice::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Voice::getQuality()
+	jint Voice::getQuality() const
 	{
 		return callMethod<jint>(
 			"getQuality",
 			"()I"
 		);
 	}
-	jint Voice::hashCode()
+	jint Voice::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Voice::isNetworkConnectionRequired()
+	jboolean Voice::isNetworkConnectionRequired() const
 	{
 		return callMethod<jboolean>(
 			"isNetworkConnectionRequired",
 			"()Z"
 		);
 	}
-	JString Voice::toString()
+	JString Voice::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Voice::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Voice::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

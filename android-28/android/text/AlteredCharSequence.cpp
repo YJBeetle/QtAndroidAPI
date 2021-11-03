@@ -25,7 +25,7 @@ namespace android::text
 			arg3
 		);
 	}
-	jchar AlteredCharSequence::charAt(jint arg0)
+	jchar AlteredCharSequence::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -33,7 +33,7 @@ namespace android::text
 			arg0
 		);
 	}
-	void AlteredCharSequence::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3)
+	void AlteredCharSequence::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"getChars",
@@ -44,14 +44,14 @@ namespace android::text
 			arg3
 		);
 	}
-	jint AlteredCharSequence::length()
+	jint AlteredCharSequence::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	JString AlteredCharSequence::subSequence(jint arg0, jint arg1)
+	JString AlteredCharSequence::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -60,7 +60,7 @@ namespace android::text
 			arg1
 		);
 	}
-	JString AlteredCharSequence::toString()
+	JString AlteredCharSequence::toString() const
 	{
 		return callObjectMethod(
 			"toString",

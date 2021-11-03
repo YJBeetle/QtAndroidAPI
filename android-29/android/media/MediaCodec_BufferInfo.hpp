@@ -21,7 +21,7 @@ namespace android::media
 		MediaCodec_BufferInfo();
 		
 		// Methods
-		void set(jint arg0, jint arg1, jlong arg2, jint arg3);
+		void set(jint arg0, jint arg1, jlong arg2, jint arg3) const;
 	};
 } // namespace android::media
 

@@ -27,13 +27,13 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		void execute();
-		jlong executeInsert();
-		jint executeUpdateDelete();
-		android::os::ParcelFileDescriptor simpleQueryForBlobFileDescriptor();
-		jlong simpleQueryForLong();
-		JString simpleQueryForString();
-		JString toString();
+		void execute() const;
+		jlong executeInsert() const;
+		jint executeUpdateDelete() const;
+		android::os::ParcelFileDescriptor simpleQueryForBlobFileDescriptor() const;
+		jlong simpleQueryForLong() const;
+		JString simpleQueryForString() const;
+		JString toString() const;
 	};
 } // namespace android::database::sqlite
 

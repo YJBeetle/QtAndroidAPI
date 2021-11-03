@@ -135,14 +135,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ServiceInfo::describeContents()
+	jint ServiceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ServiceInfo::dump(JObject arg0, JString arg1)
+	void ServiceInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -151,21 +151,21 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	jint ServiceInfo::getForegroundServiceType()
+	jint ServiceInfo::getForegroundServiceType() const
 	{
 		return callMethod<jint>(
 			"getForegroundServiceType",
 			"()I"
 		);
 	}
-	JString ServiceInfo::toString()
+	JString ServiceInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

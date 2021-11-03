@@ -24,10 +24,10 @@ namespace java::security::spec
 		ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::math::BigInteger getAffineX();
-		java::math::BigInteger getAffineY();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		java::math::BigInteger getAffineX() const;
+		java::math::BigInteger getAffineY() const;
+		jint hashCode() const;
 	};
 } // namespace java::security::spec
 

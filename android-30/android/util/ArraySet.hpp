@@ -25,29 +25,29 @@ namespace android::util
 		ArraySet(JObject arg0);
 		
 		// Methods
-		jboolean add(JObject arg0);
-		jboolean addAll(JObject arg0);
-		void addAll(android::util::ArraySet arg0);
-		void clear();
-		jboolean contains(JObject arg0);
-		jboolean containsAll(JObject arg0);
-		void ensureCapacity(jint arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jint indexOf(JObject arg0);
-		jboolean isEmpty();
-		JObject iterator();
-		jboolean remove(JObject arg0);
-		jboolean removeAll(android::util::ArraySet arg0);
-		jboolean removeAll(JObject arg0);
-		JObject removeAt(jint arg0);
-		jboolean removeIf(JObject arg0);
-		jboolean retainAll(JObject arg0);
-		jint size();
-		JObjectArray toArray();
-		JObjectArray toArray(JObjectArray arg0);
-		JString toString();
-		JObject valueAt(jint arg0);
+		jboolean add(JObject arg0) const;
+		jboolean addAll(JObject arg0) const;
+		void addAll(android::util::ArraySet arg0) const;
+		void clear() const;
+		jboolean contains(JObject arg0) const;
+		jboolean containsAll(JObject arg0) const;
+		void ensureCapacity(jint arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jint indexOf(JObject arg0) const;
+		jboolean isEmpty() const;
+		JObject iterator() const;
+		jboolean remove(JObject arg0) const;
+		jboolean removeAll(android::util::ArraySet arg0) const;
+		jboolean removeAll(JObject arg0) const;
+		JObject removeAt(jint arg0) const;
+		jboolean removeIf(JObject arg0) const;
+		jboolean retainAll(JObject arg0) const;
+		jint size() const;
+		JObjectArray toArray() const;
+		JObjectArray toArray(JObjectArray arg0) const;
+		JString toString() const;
+		JObject valueAt(jint arg0) const;
 	};
 } // namespace android::util
 

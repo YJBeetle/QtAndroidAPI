@@ -26,8 +26,8 @@ namespace android::view::translation
 		TranslationContext_Builder(android::view::translation::TranslationSpec arg0, android::view::translation::TranslationSpec arg1);
 		
 		// Methods
-		android::view::translation::TranslationContext build();
-		android::view::translation::TranslationContext_Builder setTranslationFlags(jint arg0);
+		android::view::translation::TranslationContext build() const;
+		android::view::translation::TranslationContext_Builder setTranslationFlags(jint arg0) const;
 	};
 } // namespace android::view::translation
 

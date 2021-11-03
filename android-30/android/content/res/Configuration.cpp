@@ -671,7 +671,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint Configuration::compareTo(android::content::res::Configuration arg0)
+	jint Configuration::compareTo(android::content::res::Configuration arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -679,7 +679,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	jint Configuration::compareTo(JObject arg0)
+	jint Configuration::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -687,14 +687,14 @@ namespace android::content::res
 			arg0.object<jobject>()
 		);
 	}
-	jint Configuration::describeContents()
+	jint Configuration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint Configuration::diff(android::content::res::Configuration arg0)
+	jint Configuration::diff(android::content::res::Configuration arg0) const
 	{
 		return callMethod<jint>(
 			"diff",
@@ -702,7 +702,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	jboolean Configuration::equals(android::content::res::Configuration arg0)
+	jboolean Configuration::equals(android::content::res::Configuration arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -710,7 +710,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	jboolean Configuration::equals(JObject arg0)
+	jboolean Configuration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -718,28 +718,28 @@ namespace android::content::res
 			arg0.object<jobject>()
 		);
 	}
-	jint Configuration::getLayoutDirection()
+	jint Configuration::getLayoutDirection() const
 	{
 		return callMethod<jint>(
 			"getLayoutDirection",
 			"()I"
 		);
 	}
-	android::os::LocaleList Configuration::getLocales()
+	android::os::LocaleList Configuration::getLocales() const
 	{
 		return callObjectMethod(
 			"getLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	jint Configuration::hashCode()
+	jint Configuration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Configuration::isLayoutSizeAtLeast(jint arg0)
+	jboolean Configuration::isLayoutSizeAtLeast(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLayoutSizeAtLeast",
@@ -747,35 +747,35 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jboolean Configuration::isNightModeActive()
+	jboolean Configuration::isNightModeActive() const
 	{
 		return callMethod<jboolean>(
 			"isNightModeActive",
 			"()Z"
 		);
 	}
-	jboolean Configuration::isScreenHdr()
+	jboolean Configuration::isScreenHdr() const
 	{
 		return callMethod<jboolean>(
 			"isScreenHdr",
 			"()Z"
 		);
 	}
-	jboolean Configuration::isScreenRound()
+	jboolean Configuration::isScreenRound() const
 	{
 		return callMethod<jboolean>(
 			"isScreenRound",
 			"()Z"
 		);
 	}
-	jboolean Configuration::isScreenWideColorGamut()
+	jboolean Configuration::isScreenWideColorGamut() const
 	{
 		return callMethod<jboolean>(
 			"isScreenWideColorGamut",
 			"()Z"
 		);
 	}
-	void Configuration::readFromParcel(android::os::Parcel arg0)
+	void Configuration::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -783,7 +783,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	void Configuration::setLayoutDirection(java::util::Locale arg0)
+	void Configuration::setLayoutDirection(java::util::Locale arg0) const
 	{
 		callMethod<void>(
 			"setLayoutDirection",
@@ -791,7 +791,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	void Configuration::setLocale(java::util::Locale arg0)
+	void Configuration::setLocale(java::util::Locale arg0) const
 	{
 		callMethod<void>(
 			"setLocale",
@@ -799,7 +799,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	void Configuration::setLocales(android::os::LocaleList arg0)
+	void Configuration::setLocales(android::os::LocaleList arg0) const
 	{
 		callMethod<void>(
 			"setLocales",
@@ -807,7 +807,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	void Configuration::setTo(android::content::res::Configuration arg0)
+	void Configuration::setTo(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"setTo",
@@ -815,21 +815,21 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	void Configuration::setToDefaults()
+	void Configuration::setToDefaults() const
 	{
 		callMethod<void>(
 			"setToDefaults",
 			"()V"
 		);
 	}
-	JString Configuration::toString()
+	JString Configuration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Configuration::updateFrom(android::content::res::Configuration arg0)
+	jint Configuration::updateFrom(android::content::res::Configuration arg0) const
 	{
 		return callMethod<jint>(
 			"updateFrom",
@@ -837,7 +837,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	void Configuration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Configuration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

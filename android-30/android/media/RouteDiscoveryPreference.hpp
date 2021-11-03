@@ -24,13 +24,13 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getPreferredFeatures();
-		jint hashCode();
-		jboolean shouldPerformActiveScan();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getPreferredFeatures() const;
+		jint hashCode() const;
+		jboolean shouldPerformActiveScan() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

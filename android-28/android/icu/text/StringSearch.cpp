@@ -55,42 +55,42 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	android::icu::text::RuleBasedCollator StringSearch::getCollator()
+	android::icu::text::RuleBasedCollator StringSearch::getCollator() const
 	{
 		return callObjectMethod(
 			"getCollator",
 			"()Landroid/icu/text/RuleBasedCollator;"
 		);
 	}
-	jint StringSearch::getIndex()
+	jint StringSearch::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	JString StringSearch::getPattern()
+	JString StringSearch::getPattern() const
 	{
 		return callObjectMethod(
 			"getPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean StringSearch::isCanonical()
+	jboolean StringSearch::isCanonical() const
 	{
 		return callMethod<jboolean>(
 			"isCanonical",
 			"()Z"
 		);
 	}
-	void StringSearch::reset()
+	void StringSearch::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void StringSearch::setCanonical(jboolean arg0)
+	void StringSearch::setCanonical(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCanonical",
@@ -98,7 +98,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void StringSearch::setCollator(android::icu::text::RuleBasedCollator arg0)
+	void StringSearch::setCollator(android::icu::text::RuleBasedCollator arg0) const
 	{
 		callMethod<void>(
 			"setCollator",
@@ -106,7 +106,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void StringSearch::setIndex(jint arg0)
+	void StringSearch::setIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setIndex",
@@ -114,7 +114,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void StringSearch::setPattern(JString arg0)
+	void StringSearch::setPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"setPattern",
@@ -122,7 +122,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void StringSearch::setTarget(JObject arg0)
+	void StringSearch::setTarget(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTarget",

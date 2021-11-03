@@ -26,11 +26,11 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JObject getCommands();
-		jboolean hasCommand(android::media::Session2Command arg0);
-		jboolean hasCommand(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getCommands() const;
+		jboolean hasCommand(android::media::Session2Command arg0) const;
+		jboolean hasCommand(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

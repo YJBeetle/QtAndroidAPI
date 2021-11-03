@@ -44,7 +44,7 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	void ScanCallback::onBatchScanResults(JObject arg0)
+	void ScanCallback::onBatchScanResults(JObject arg0) const
 	{
 		callMethod<void>(
 			"onBatchScanResults",
@@ -52,7 +52,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void ScanCallback::onScanFailed(jint arg0)
+	void ScanCallback::onScanFailed(jint arg0) const
 	{
 		callMethod<void>(
 			"onScanFailed",
@@ -60,7 +60,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	void ScanCallback::onScanResult(jint arg0, android::bluetooth::le::ScanResult arg1)
+	void ScanCallback::onScanResult(jint arg0, android::bluetooth::le::ScanResult arg1) const
 	{
 		callMethod<void>(
 			"onScanResult",

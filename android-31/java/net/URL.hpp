@@ -72,27 +72,27 @@ namespace java::net
 		
 		// Methods
 		static void setURLStreamHandlerFactory(JObject arg0);
-		jboolean equals(JObject arg0);
-		JString getAuthority();
-		JObject getContent();
-		JObject getContent(JArray arg0);
-		jint getDefaultPort();
-		JString getFile();
-		JString getHost();
-		JString getPath();
-		jint getPort();
-		JString getProtocol();
-		JString getQuery();
-		JString getRef();
-		JString getUserInfo();
-		jint hashCode();
-		java::net::URLConnection openConnection();
-		java::net::URLConnection openConnection(java::net::Proxy arg0);
-		java::io::InputStream openStream();
-		jboolean sameFile(java::net::URL arg0);
-		JString toExternalForm();
-		JString toString();
-		java::net::URI toURI();
+		jboolean equals(JObject arg0) const;
+		JString getAuthority() const;
+		JObject getContent() const;
+		JObject getContent(JArray arg0) const;
+		jint getDefaultPort() const;
+		JString getFile() const;
+		JString getHost() const;
+		JString getPath() const;
+		jint getPort() const;
+		JString getProtocol() const;
+		JString getQuery() const;
+		JString getRef() const;
+		JString getUserInfo() const;
+		jint hashCode() const;
+		java::net::URLConnection openConnection() const;
+		java::net::URLConnection openConnection(java::net::Proxy arg0) const;
+		java::io::InputStream openStream() const;
+		jboolean sameFile(java::net::URL arg0) const;
+		JString toExternalForm() const;
+		JString toString() const;
+		java::net::URI toURI() const;
 	};
 } // namespace java::net
 

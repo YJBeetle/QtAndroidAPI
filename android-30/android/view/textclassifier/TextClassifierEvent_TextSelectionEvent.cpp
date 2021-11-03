@@ -19,35 +19,35 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordEndIndex()
+	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordEndIndex() const
 	{
 		return callMethod<jint>(
 			"getRelativeSuggestedWordEndIndex",
 			"()I"
 		);
 	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordStartIndex()
+	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordStartIndex() const
 	{
 		return callMethod<jint>(
 			"getRelativeSuggestedWordStartIndex",
 			"()I"
 		);
 	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordEndIndex()
+	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordEndIndex() const
 	{
 		return callMethod<jint>(
 			"getRelativeWordEndIndex",
 			"()I"
 		);
 	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordStartIndex()
+	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordStartIndex() const
 	{
 		return callMethod<jint>(
 			"getRelativeWordStartIndex",
 			"()I"
 		);
 	}
-	void TextClassifierEvent_TextSelectionEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextClassifierEvent_TextSelectionEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

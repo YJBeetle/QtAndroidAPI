@@ -37,7 +37,7 @@ namespace android::location
 		) {}
 	
 	// Methods
-	void GnssNavigationMessage_Callback::onGnssNavigationMessageReceived(android::location::GnssNavigationMessage arg0)
+	void GnssNavigationMessage_Callback::onGnssNavigationMessageReceived(android::location::GnssNavigationMessage arg0) const
 	{
 		callMethod<void>(
 			"onGnssNavigationMessageReceived",
@@ -45,7 +45,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void GnssNavigationMessage_Callback::onStatusChanged(jint arg0)
+	void GnssNavigationMessage_Callback::onStatusChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onStatusChanged",

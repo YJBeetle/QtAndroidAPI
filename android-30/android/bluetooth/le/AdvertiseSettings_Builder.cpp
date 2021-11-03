@@ -16,14 +16,14 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	android::bluetooth::le::AdvertiseSettings AdvertiseSettings_Builder::build()
+	android::bluetooth::le::AdvertiseSettings AdvertiseSettings_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/AdvertiseSettings;"
 		);
 	}
-	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setAdvertiseMode(jint arg0)
+	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setAdvertiseMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAdvertiseMode",
@@ -31,7 +31,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setConnectable(jboolean arg0)
+	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setConnectable(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setConnectable",
@@ -39,7 +39,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setTimeout(jint arg0)
+	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setTimeout(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTimeout",
@@ -47,7 +47,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setTxPowerLevel(jint arg0)
+	android::bluetooth::le::AdvertiseSettings_Builder AdvertiseSettings_Builder::setTxPowerLevel(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTxPowerLevel",

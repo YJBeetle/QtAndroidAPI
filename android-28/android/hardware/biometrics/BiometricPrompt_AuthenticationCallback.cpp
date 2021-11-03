@@ -17,7 +17,7 @@ namespace android::hardware::biometrics
 		) {}
 	
 	// Methods
-	void BiometricPrompt_AuthenticationCallback::onAuthenticationError(jint arg0, JString arg1)
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationError(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onAuthenticationError",
@@ -26,14 +26,14 @@ namespace android::hardware::biometrics
 			arg1.object<jstring>()
 		);
 	}
-	void BiometricPrompt_AuthenticationCallback::onAuthenticationFailed()
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationFailed() const
 	{
 		callMethod<void>(
 			"onAuthenticationFailed",
 			"()V"
 		);
 	}
-	void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, JString arg1)
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onAuthenticationHelp",
@@ -42,7 +42,7 @@ namespace android::hardware::biometrics
 			arg1.object<jstring>()
 		);
 	}
-	void BiometricPrompt_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0)
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0) const
 	{
 		callMethod<void>(
 			"onAuthenticationSucceeded",

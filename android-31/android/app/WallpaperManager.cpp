@@ -110,7 +110,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::addOnColorsChangedListener(JObject arg0, android::os::Handler arg1)
+	void WallpaperManager::addOnColorsChangedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addOnColorsChangedListener",
@@ -119,14 +119,14 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void WallpaperManager::clear()
+	void WallpaperManager::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void WallpaperManager::clear(jint arg0)
+	void WallpaperManager::clear(jint arg0) const
 	{
 		callMethod<void>(
 			"clear",
@@ -134,14 +134,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void WallpaperManager::clearWallpaper()
+	void WallpaperManager::clearWallpaper() const
 	{
 		callMethod<void>(
 			"clearWallpaper",
 			"()V"
 		);
 	}
-	void WallpaperManager::clearWallpaperOffsets(JObject arg0)
+	void WallpaperManager::clearWallpaperOffsets(JObject arg0) const
 	{
 		callMethod<void>(
 			"clearWallpaperOffsets",
@@ -149,21 +149,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::forgetLoadedWallpaper()
+	void WallpaperManager::forgetLoadedWallpaper() const
 	{
 		callMethod<void>(
 			"forgetLoadedWallpaper",
 			"()V"
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable() const
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0)
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
@@ -171,7 +171,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4)
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4) const
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
@@ -183,7 +183,7 @@ namespace android::app
 			arg4
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5)
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5) const
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
@@ -196,7 +196,7 @@ namespace android::app
 			arg5
 		);
 	}
-	android::content::Intent WallpaperManager::getCropAndSetWallpaperIntent(android::net::Uri arg0)
+	android::content::Intent WallpaperManager::getCropAndSetWallpaperIntent(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getCropAndSetWallpaperIntent",
@@ -204,35 +204,35 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint WallpaperManager::getDesiredMinimumHeight()
+	jint WallpaperManager::getDesiredMinimumHeight() const
 	{
 		return callMethod<jint>(
 			"getDesiredMinimumHeight",
 			"()I"
 		);
 	}
-	jint WallpaperManager::getDesiredMinimumWidth()
+	jint WallpaperManager::getDesiredMinimumWidth() const
 	{
 		return callMethod<jint>(
 			"getDesiredMinimumWidth",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::getDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::getDrawable() const
 	{
 		return callObjectMethod(
 			"getDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::getFastDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::getFastDrawable() const
 	{
 		return callObjectMethod(
 			"getFastDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::app::WallpaperColors WallpaperManager::getWallpaperColors(jint arg0)
+	android::app::WallpaperColors WallpaperManager::getWallpaperColors(jint arg0) const
 	{
 		return callObjectMethod(
 			"getWallpaperColors",
@@ -240,7 +240,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::os::ParcelFileDescriptor WallpaperManager::getWallpaperFile(jint arg0)
+	android::os::ParcelFileDescriptor WallpaperManager::getWallpaperFile(jint arg0) const
 	{
 		return callObjectMethod(
 			"getWallpaperFile",
@@ -248,7 +248,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jint WallpaperManager::getWallpaperId(jint arg0)
+	jint WallpaperManager::getWallpaperId(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getWallpaperId",
@@ -256,14 +256,14 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::WallpaperInfo WallpaperManager::getWallpaperInfo()
+	android::app::WallpaperInfo WallpaperManager::getWallpaperInfo() const
 	{
 		return callObjectMethod(
 			"getWallpaperInfo",
 			"()Landroid/app/WallpaperInfo;"
 		);
 	}
-	jboolean WallpaperManager::hasResourceWallpaper(jint arg0)
+	jboolean WallpaperManager::hasResourceWallpaper(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasResourceWallpaper",
@@ -271,35 +271,35 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean WallpaperManager::isSetWallpaperAllowed()
+	jboolean WallpaperManager::isSetWallpaperAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isSetWallpaperAllowed",
 			"()Z"
 		);
 	}
-	jboolean WallpaperManager::isWallpaperSupported()
+	jboolean WallpaperManager::isWallpaperSupported() const
 	{
 		return callMethod<jboolean>(
 			"isWallpaperSupported",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::peekDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::peekDrawable() const
 	{
 		return callObjectMethod(
 			"peekDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperManager::peekFastDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::peekFastDrawable() const
 	{
 		return callObjectMethod(
 			"peekFastDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void WallpaperManager::removeOnColorsChangedListener(JObject arg0)
+	void WallpaperManager::removeOnColorsChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnColorsChangedListener",
@@ -307,7 +307,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::sendWallpaperCommand(JObject arg0, JString arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
+	void WallpaperManager::sendWallpaperCommand(JObject arg0, JString arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5) const
 	{
 		callMethod<void>(
 			"sendWallpaperCommand",
@@ -320,7 +320,7 @@ namespace android::app
 			arg5.object()
 		);
 	}
-	jint WallpaperManager::setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2)
+	jint WallpaperManager::setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2) const
 	{
 		return callMethod<jint>(
 			"setBitmap",
@@ -330,7 +330,7 @@ namespace android::app
 			arg2
 		);
 	}
-	jint WallpaperManager::setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3)
+	jint WallpaperManager::setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"setBitmap",
@@ -341,7 +341,7 @@ namespace android::app
 			arg3
 		);
 	}
-	void WallpaperManager::setBitmap(android::graphics::Bitmap arg0)
+	void WallpaperManager::setBitmap(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"setBitmap",
@@ -349,7 +349,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::setDisplayPadding(android::graphics::Rect arg0)
+	void WallpaperManager::setDisplayPadding(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setDisplayPadding",
@@ -357,7 +357,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint WallpaperManager::setResource(jint arg0, jint arg1)
+	jint WallpaperManager::setResource(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"setResource",
@@ -366,7 +366,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void WallpaperManager::setResource(jint arg0)
+	void WallpaperManager::setResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setResource",
@@ -374,7 +374,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jint WallpaperManager::setStream(java::io::InputStream arg0, android::graphics::Rect arg1, jboolean arg2)
+	jint WallpaperManager::setStream(java::io::InputStream arg0, android::graphics::Rect arg1, jboolean arg2) const
 	{
 		return callMethod<jint>(
 			"setStream",
@@ -384,7 +384,7 @@ namespace android::app
 			arg2
 		);
 	}
-	jint WallpaperManager::setStream(java::io::InputStream arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3)
+	jint WallpaperManager::setStream(java::io::InputStream arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"setStream",
@@ -395,7 +395,7 @@ namespace android::app
 			arg3
 		);
 	}
-	void WallpaperManager::setStream(java::io::InputStream arg0)
+	void WallpaperManager::setStream(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"setStream",
@@ -403,7 +403,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::setWallpaperOffsetSteps(jfloat arg0, jfloat arg1)
+	void WallpaperManager::setWallpaperOffsetSteps(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setWallpaperOffsetSteps",
@@ -412,7 +412,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void WallpaperManager::setWallpaperOffsets(JObject arg0, jfloat arg1, jfloat arg2)
+	void WallpaperManager::setWallpaperOffsets(JObject arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"setWallpaperOffsets",
@@ -422,7 +422,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void WallpaperManager::suggestDesiredDimensions(jint arg0, jint arg1)
+	void WallpaperManager::suggestDesiredDimensions(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"suggestDesiredDimensions",

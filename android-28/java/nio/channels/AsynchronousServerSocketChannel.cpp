@@ -31,14 +31,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	JObject AsynchronousServerSocketChannel::accept()
+	JObject AsynchronousServerSocketChannel::accept() const
 	{
 		return callObjectMethod(
 			"accept",
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	void AsynchronousServerSocketChannel::accept(JObject arg0, JObject arg1)
+	void AsynchronousServerSocketChannel::accept(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"accept",
@@ -47,7 +47,7 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::bind(java::net::SocketAddress arg0) const
 	{
 		return callObjectMethod(
 			"bind",
@@ -55,7 +55,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1)
+	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"bind",
@@ -64,21 +64,21 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	java::net::SocketAddress AsynchronousServerSocketChannel::getLocalAddress()
+	java::net::SocketAddress AsynchronousServerSocketChannel::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousServerSocketChannel::provider()
+	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousServerSocketChannel::provider() const
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::setOption(JObject arg0, JObject arg1)
+	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::setOption(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setOption",

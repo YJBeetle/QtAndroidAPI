@@ -25,10 +25,10 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		void deleteProvisionedVpnProfile();
-		android::content::Intent provisionVpnProfile(android::net::PlatformVpnProfile arg0);
-		void startProvisionedVpnProfile();
-		void stopProvisionedVpnProfile();
+		void deleteProvisionedVpnProfile() const;
+		android::content::Intent provisionVpnProfile(android::net::PlatformVpnProfile arg0) const;
+		void startProvisionedVpnProfile() const;
+		void stopProvisionedVpnProfile() const;
 	};
 } // namespace android::net
 

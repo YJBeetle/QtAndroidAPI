@@ -19,28 +19,28 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jint CaptivePortal::describeContents()
+	jint CaptivePortal::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void CaptivePortal::ignoreNetwork()
+	void CaptivePortal::ignoreNetwork() const
 	{
 		callMethod<void>(
 			"ignoreNetwork",
 			"()V"
 		);
 	}
-	void CaptivePortal::reportCaptivePortalDismissed()
+	void CaptivePortal::reportCaptivePortalDismissed() const
 	{
 		callMethod<void>(
 			"reportCaptivePortalDismissed",
 			"()V"
 		);
 	}
-	void CaptivePortal::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CaptivePortal::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

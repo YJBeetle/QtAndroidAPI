@@ -31,10 +31,10 @@ namespace android::text::method
 		
 		// Methods
 		static JObject getInstance();
-		jboolean canSelectArbitrarily();
-		void initialize(android::widget::TextView arg0, JObject arg1);
-		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2);
-		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
+		jboolean canSelectArbitrarily() const;
+		void initialize(android::widget::TextView arg0, JObject arg1) const;
+		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const;
+		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const;
 	};
 } // namespace android::text::method
 

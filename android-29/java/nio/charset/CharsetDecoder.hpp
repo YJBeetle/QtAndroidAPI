@@ -39,22 +39,22 @@ namespace java::nio::charset
 		// Constructors
 		
 		// Methods
-		jfloat averageCharsPerByte();
-		java::nio::charset::Charset charset();
-		java::nio::CharBuffer decode(java::nio::ByteBuffer arg0);
-		java::nio::charset::CoderResult decode(java::nio::ByteBuffer arg0, java::nio::CharBuffer arg1, jboolean arg2);
-		java::nio::charset::Charset detectedCharset();
-		java::nio::charset::CoderResult flush(java::nio::CharBuffer arg0);
-		jboolean isAutoDetecting();
-		jboolean isCharsetDetected();
-		java::nio::charset::CodingErrorAction malformedInputAction();
-		jfloat maxCharsPerByte();
-		java::nio::charset::CharsetDecoder onMalformedInput(java::nio::charset::CodingErrorAction arg0);
-		java::nio::charset::CharsetDecoder onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0);
-		java::nio::charset::CharsetDecoder replaceWith(JString arg0);
-		JString replacement();
-		java::nio::charset::CharsetDecoder reset();
-		java::nio::charset::CodingErrorAction unmappableCharacterAction();
+		jfloat averageCharsPerByte() const;
+		java::nio::charset::Charset charset() const;
+		java::nio::CharBuffer decode(java::nio::ByteBuffer arg0) const;
+		java::nio::charset::CoderResult decode(java::nio::ByteBuffer arg0, java::nio::CharBuffer arg1, jboolean arg2) const;
+		java::nio::charset::Charset detectedCharset() const;
+		java::nio::charset::CoderResult flush(java::nio::CharBuffer arg0) const;
+		jboolean isAutoDetecting() const;
+		jboolean isCharsetDetected() const;
+		java::nio::charset::CodingErrorAction malformedInputAction() const;
+		jfloat maxCharsPerByte() const;
+		java::nio::charset::CharsetDecoder onMalformedInput(java::nio::charset::CodingErrorAction arg0) const;
+		java::nio::charset::CharsetDecoder onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0) const;
+		java::nio::charset::CharsetDecoder replaceWith(JString arg0) const;
+		JString replacement() const;
+		java::nio::charset::CharsetDecoder reset() const;
+		java::nio::charset::CodingErrorAction unmappableCharacterAction() const;
 	};
 } // namespace java::nio::charset
 

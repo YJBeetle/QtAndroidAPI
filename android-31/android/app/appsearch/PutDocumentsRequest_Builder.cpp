@@ -17,7 +17,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JArray arg0)
+	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addGenericDocuments",
@@ -25,7 +25,7 @@ namespace android::app::appsearch
 			arg0.object<jarray>()
 		);
 	}
-	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JObject arg0)
+	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addGenericDocuments",
@@ -33,7 +33,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::PutDocumentsRequest PutDocumentsRequest_Builder::build()
+	android::app::appsearch::PutDocumentsRequest PutDocumentsRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

@@ -23,7 +23,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	android::graphics::Bitmap SubscriptionInfo::createIconBitmap(android::content::Context arg0)
+	android::graphics::Bitmap SubscriptionInfo::createIconBitmap(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"createIconBitmap",
@@ -31,105 +31,105 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jint SubscriptionInfo::describeContents()
+	jint SubscriptionInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString SubscriptionInfo::getCarrierName()
+	JString SubscriptionInfo::getCarrierName() const
 	{
 		return callObjectMethod(
 			"getCarrierName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString SubscriptionInfo::getCountryIso()
+	JString SubscriptionInfo::getCountryIso() const
 	{
 		return callObjectMethod(
 			"getCountryIso",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SubscriptionInfo::getDataRoaming()
+	jint SubscriptionInfo::getDataRoaming() const
 	{
 		return callMethod<jint>(
 			"getDataRoaming",
 			"()I"
 		);
 	}
-	JString SubscriptionInfo::getDisplayName()
+	JString SubscriptionInfo::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString SubscriptionInfo::getIccId()
+	JString SubscriptionInfo::getIccId() const
 	{
 		return callObjectMethod(
 			"getIccId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SubscriptionInfo::getIconTint()
+	jint SubscriptionInfo::getIconTint() const
 	{
 		return callMethod<jint>(
 			"getIconTint",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::getMcc()
+	jint SubscriptionInfo::getMcc() const
 	{
 		return callMethod<jint>(
 			"getMcc",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::getMnc()
+	jint SubscriptionInfo::getMnc() const
 	{
 		return callMethod<jint>(
 			"getMnc",
 			"()I"
 		);
 	}
-	JString SubscriptionInfo::getNumber()
+	JString SubscriptionInfo::getNumber() const
 	{
 		return callObjectMethod(
 			"getNumber",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SubscriptionInfo::getSimSlotIndex()
+	jint SubscriptionInfo::getSimSlotIndex() const
 	{
 		return callMethod<jint>(
 			"getSimSlotIndex",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::getSubscriptionId()
+	jint SubscriptionInfo::getSubscriptionId() const
 	{
 		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
-	jboolean SubscriptionInfo::isEmbedded()
+	jboolean SubscriptionInfo::isEmbedded() const
 	{
 		return callMethod<jboolean>(
 			"isEmbedded",
 			"()Z"
 		);
 	}
-	JString SubscriptionInfo::toString()
+	JString SubscriptionInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SubscriptionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SubscriptionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

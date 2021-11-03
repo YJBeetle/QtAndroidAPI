@@ -23,16 +23,16 @@ namespace android::location::provider
 		ProviderProperties_Builder(android::location::provider::ProviderProperties arg0);
 		
 		// Methods
-		android::location::provider::ProviderProperties build();
-		android::location::provider::ProviderProperties_Builder setAccuracy(jint arg0);
-		android::location::provider::ProviderProperties_Builder setHasAltitudeSupport(jboolean arg0);
-		android::location::provider::ProviderProperties_Builder setHasBearingSupport(jboolean arg0);
-		android::location::provider::ProviderProperties_Builder setHasCellRequirement(jboolean arg0);
-		android::location::provider::ProviderProperties_Builder setHasMonetaryCost(jboolean arg0);
-		android::location::provider::ProviderProperties_Builder setHasNetworkRequirement(jboolean arg0);
-		android::location::provider::ProviderProperties_Builder setHasSatelliteRequirement(jboolean arg0);
-		android::location::provider::ProviderProperties_Builder setHasSpeedSupport(jboolean arg0);
-		android::location::provider::ProviderProperties_Builder setPowerUsage(jint arg0);
+		android::location::provider::ProviderProperties build() const;
+		android::location::provider::ProviderProperties_Builder setAccuracy(jint arg0) const;
+		android::location::provider::ProviderProperties_Builder setHasAltitudeSupport(jboolean arg0) const;
+		android::location::provider::ProviderProperties_Builder setHasBearingSupport(jboolean arg0) const;
+		android::location::provider::ProviderProperties_Builder setHasCellRequirement(jboolean arg0) const;
+		android::location::provider::ProviderProperties_Builder setHasMonetaryCost(jboolean arg0) const;
+		android::location::provider::ProviderProperties_Builder setHasNetworkRequirement(jboolean arg0) const;
+		android::location::provider::ProviderProperties_Builder setHasSatelliteRequirement(jboolean arg0) const;
+		android::location::provider::ProviderProperties_Builder setHasSpeedSupport(jboolean arg0) const;
+		android::location::provider::ProviderProperties_Builder setPowerUsage(jint arg0) const;
 	};
 } // namespace android::location::provider
 

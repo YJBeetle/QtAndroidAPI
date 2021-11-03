@@ -33,16 +33,16 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		void disableCarMode(jint arg0);
-		void enableCarMode(jint arg0);
-		jint getCurrentModeType();
-		java::time::LocalTime getCustomNightModeEnd();
-		java::time::LocalTime getCustomNightModeStart();
-		jint getNightMode();
-		void setApplicationNightMode(jint arg0);
-		void setCustomNightModeEnd(java::time::LocalTime arg0);
-		void setCustomNightModeStart(java::time::LocalTime arg0);
-		void setNightMode(jint arg0);
+		void disableCarMode(jint arg0) const;
+		void enableCarMode(jint arg0) const;
+		jint getCurrentModeType() const;
+		java::time::LocalTime getCustomNightModeEnd() const;
+		java::time::LocalTime getCustomNightModeStart() const;
+		jint getNightMode() const;
+		void setApplicationNightMode(jint arg0) const;
+		void setCustomNightModeEnd(java::time::LocalTime arg0) const;
+		void setCustomNightModeStart(java::time::LocalTime arg0) const;
+		void setNightMode(jint arg0) const;
 	};
 } // namespace android::app
 

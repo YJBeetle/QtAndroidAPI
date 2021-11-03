@@ -30,31 +30,31 @@ namespace java::util::concurrent::atomic
 		AtomicReferenceArray(jint arg0);
 		
 		// Methods
-		JObject accumulateAndGet(jint arg0, JObject arg1, JObject arg2);
-		JObject compareAndExchange(jint arg0, JObject arg1, JObject arg2);
-		JObject compareAndExchangeAcquire(jint arg0, JObject arg1, JObject arg2);
-		JObject compareAndExchangeRelease(jint arg0, JObject arg1, JObject arg2);
-		jboolean compareAndSet(jint arg0, JObject arg1, JObject arg2);
-		JObject get(jint arg0);
-		JObject getAcquire(jint arg0);
-		JObject getAndAccumulate(jint arg0, JObject arg1, JObject arg2);
-		JObject getAndSet(jint arg0, JObject arg1);
-		JObject getAndUpdate(jint arg0, JObject arg1);
-		JObject getOpaque(jint arg0);
-		JObject getPlain(jint arg0);
-		void lazySet(jint arg0, JObject arg1);
-		jint length();
-		void set(jint arg0, JObject arg1);
-		void setOpaque(jint arg0, JObject arg1);
-		void setPlain(jint arg0, JObject arg1);
-		void setRelease(jint arg0, JObject arg1);
-		JString toString();
-		JObject updateAndGet(jint arg0, JObject arg1);
-		jboolean weakCompareAndSet(jint arg0, JObject arg1, JObject arg2);
-		jboolean weakCompareAndSetAcquire(jint arg0, JObject arg1, JObject arg2);
-		jboolean weakCompareAndSetPlain(jint arg0, JObject arg1, JObject arg2);
-		jboolean weakCompareAndSetRelease(jint arg0, JObject arg1, JObject arg2);
-		jboolean weakCompareAndSetVolatile(jint arg0, JObject arg1, JObject arg2);
+		JObject accumulateAndGet(jint arg0, JObject arg1, JObject arg2) const;
+		JObject compareAndExchange(jint arg0, JObject arg1, JObject arg2) const;
+		JObject compareAndExchangeAcquire(jint arg0, JObject arg1, JObject arg2) const;
+		JObject compareAndExchangeRelease(jint arg0, JObject arg1, JObject arg2) const;
+		jboolean compareAndSet(jint arg0, JObject arg1, JObject arg2) const;
+		JObject get(jint arg0) const;
+		JObject getAcquire(jint arg0) const;
+		JObject getAndAccumulate(jint arg0, JObject arg1, JObject arg2) const;
+		JObject getAndSet(jint arg0, JObject arg1) const;
+		JObject getAndUpdate(jint arg0, JObject arg1) const;
+		JObject getOpaque(jint arg0) const;
+		JObject getPlain(jint arg0) const;
+		void lazySet(jint arg0, JObject arg1) const;
+		jint length() const;
+		void set(jint arg0, JObject arg1) const;
+		void setOpaque(jint arg0, JObject arg1) const;
+		void setPlain(jint arg0, JObject arg1) const;
+		void setRelease(jint arg0, JObject arg1) const;
+		JString toString() const;
+		JObject updateAndGet(jint arg0, JObject arg1) const;
+		jboolean weakCompareAndSet(jint arg0, JObject arg1, JObject arg2) const;
+		jboolean weakCompareAndSetAcquire(jint arg0, JObject arg1, JObject arg2) const;
+		jboolean weakCompareAndSetPlain(jint arg0, JObject arg1, JObject arg2) const;
+		jboolean weakCompareAndSetRelease(jint arg0, JObject arg1, JObject arg2) const;
+		jboolean weakCompareAndSetVolatile(jint arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace java::util::concurrent::atomic
 

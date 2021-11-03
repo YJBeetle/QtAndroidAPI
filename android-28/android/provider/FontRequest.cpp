@@ -28,35 +28,35 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	JObject FontRequest::getCertificates()
+	JObject FontRequest::getCertificates() const
 	{
 		return callObjectMethod(
 			"getCertificates",
 			"()Ljava/util/List;"
 		);
 	}
-	JString FontRequest::getProviderAuthority()
+	JString FontRequest::getProviderAuthority() const
 	{
 		return callObjectMethod(
 			"getProviderAuthority",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FontRequest::getProviderPackage()
+	JString FontRequest::getProviderPackage() const
 	{
 		return callObjectMethod(
 			"getProviderPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FontRequest::getQuery()
+	JString FontRequest::getQuery() const
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FontRequest::toString()
+	JString FontRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",

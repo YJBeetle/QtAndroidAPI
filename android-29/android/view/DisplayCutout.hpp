@@ -29,18 +29,18 @@ namespace android::view
 		DisplayCutout(android::graphics::Insets arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, android::graphics::Rect arg3, android::graphics::Rect arg4);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::graphics::Rect getBoundingRectBottom();
-		android::graphics::Rect getBoundingRectLeft();
-		android::graphics::Rect getBoundingRectRight();
-		android::graphics::Rect getBoundingRectTop();
-		JObject getBoundingRects();
-		jint getSafeInsetBottom();
-		jint getSafeInsetLeft();
-		jint getSafeInsetRight();
-		jint getSafeInsetTop();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		android::graphics::Rect getBoundingRectBottom() const;
+		android::graphics::Rect getBoundingRectLeft() const;
+		android::graphics::Rect getBoundingRectRight() const;
+		android::graphics::Rect getBoundingRectTop() const;
+		JObject getBoundingRects() const;
+		jint getSafeInsetBottom() const;
+		jint getSafeInsetLeft() const;
+		jint getSafeInsetRight() const;
+		jint getSafeInsetTop() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::view
 

@@ -23,28 +23,28 @@ namespace android::security::keystore
 		// Constructors
 		
 		// Methods
-		JArray getBlockModes();
-		JArray getDigests();
-		JArray getEncryptionPaddings();
-		jint getKeySize();
-		java::util::Date getKeyValidityForConsumptionEnd();
-		java::util::Date getKeyValidityForOriginationEnd();
-		java::util::Date getKeyValidityStart();
-		JString getKeystoreAlias();
-		jint getOrigin();
-		jint getPurposes();
-		jint getRemainingUsageCount();
-		jint getSecurityLevel();
-		JArray getSignaturePaddings();
-		jint getUserAuthenticationType();
-		jint getUserAuthenticationValidityDurationSeconds();
-		jboolean isInsideSecureHardware();
-		jboolean isInvalidatedByBiometricEnrollment();
-		jboolean isTrustedUserPresenceRequired();
-		jboolean isUserAuthenticationRequired();
-		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware();
-		jboolean isUserAuthenticationValidWhileOnBody();
-		jboolean isUserConfirmationRequired();
+		JArray getBlockModes() const;
+		JArray getDigests() const;
+		JArray getEncryptionPaddings() const;
+		jint getKeySize() const;
+		java::util::Date getKeyValidityForConsumptionEnd() const;
+		java::util::Date getKeyValidityForOriginationEnd() const;
+		java::util::Date getKeyValidityStart() const;
+		JString getKeystoreAlias() const;
+		jint getOrigin() const;
+		jint getPurposes() const;
+		jint getRemainingUsageCount() const;
+		jint getSecurityLevel() const;
+		JArray getSignaturePaddings() const;
+		jint getUserAuthenticationType() const;
+		jint getUserAuthenticationValidityDurationSeconds() const;
+		jboolean isInsideSecureHardware() const;
+		jboolean isInvalidatedByBiometricEnrollment() const;
+		jboolean isTrustedUserPresenceRequired() const;
+		jboolean isUserAuthenticationRequired() const;
+		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware() const;
+		jboolean isUserAuthenticationValidWhileOnBody() const;
+		jboolean isUserConfirmationRequired() const;
 	};
 } // namespace android::security::keystore
 

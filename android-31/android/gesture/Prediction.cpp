@@ -24,7 +24,7 @@ namespace android::gesture
 	// Constructors
 	
 	// Methods
-	JString Prediction::toString()
+	JString Prediction::toString() const
 	{
 		return callObjectMethod(
 			"toString",

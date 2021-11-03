@@ -46,7 +46,7 @@ namespace java::net
 			arg1
 		);
 	}
-	jboolean InetSocketAddress::equals(JObject arg0)
+	jboolean InetSocketAddress::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -54,49 +54,49 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	java::net::InetAddress InetSocketAddress::getAddress()
+	java::net::InetAddress InetSocketAddress::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	JString InetSocketAddress::getHostName()
+	JString InetSocketAddress::getHostName() const
 	{
 		return callObjectMethod(
 			"getHostName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InetSocketAddress::getHostString()
+	JString InetSocketAddress::getHostString() const
 	{
 		return callObjectMethod(
 			"getHostString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint InetSocketAddress::getPort()
+	jint InetSocketAddress::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	jint InetSocketAddress::hashCode()
+	jint InetSocketAddress::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean InetSocketAddress::isUnresolved()
+	jboolean InetSocketAddress::isUnresolved() const
 	{
 		return callMethod<jboolean>(
 			"isUnresolved",
 			"()Z"
 		);
 	}
-	JString InetSocketAddress::toString()
+	JString InetSocketAddress::toString() const
 	{
 		return callObjectMethod(
 			"toString",

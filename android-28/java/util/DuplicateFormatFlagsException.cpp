@@ -17,14 +17,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JString DuplicateFormatFlagsException::getFlags()
+	JString DuplicateFormatFlagsException::getFlags() const
 	{
 		return callObjectMethod(
 			"getFlags",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DuplicateFormatFlagsException::getMessage()
+	JString DuplicateFormatFlagsException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

@@ -30,7 +30,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void LoaderManager::destroyLoader(jint arg0)
+	void LoaderManager::destroyLoader(jint arg0) const
 	{
 		callMethod<void>(
 			"destroyLoader",
@@ -38,7 +38,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void LoaderManager::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void LoaderManager::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -49,7 +49,7 @@ namespace android::app
 			arg3.object<jarray>()
 		);
 	}
-	android::content::Loader LoaderManager::getLoader(jint arg0)
+	android::content::Loader LoaderManager::getLoader(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLoader",
@@ -57,7 +57,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::content::Loader LoaderManager::initLoader(jint arg0, android::os::Bundle arg1, JObject arg2)
+	android::content::Loader LoaderManager::initLoader(jint arg0, android::os::Bundle arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"initLoader",
@@ -67,7 +67,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::content::Loader LoaderManager::restartLoader(jint arg0, android::os::Bundle arg1, JObject arg2)
+	android::content::Loader LoaderManager::restartLoader(jint arg0, android::os::Bundle arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"restartLoader",

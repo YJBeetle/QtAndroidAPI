@@ -55,15 +55,15 @@ namespace android::icu::util
 		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1);
 		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1, jint arg2);
 		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1, jint arg2, jint arg3);
-		jint compareTo(android::icu::util::VersionInfo arg0);
-		jint compareTo(JObject arg0);
-		jboolean equals(JObject arg0);
-		jint getMajor();
-		jint getMicro();
-		jint getMilli();
-		jint getMinor();
-		jint hashCode();
-		JString toString();
+		jint compareTo(android::icu::util::VersionInfo arg0) const;
+		jint compareTo(JObject arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint getMajor() const;
+		jint getMicro() const;
+		jint getMilli() const;
+		jint getMinor() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::util
 

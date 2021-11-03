@@ -40,14 +40,14 @@ namespace android::text::style
 		BulletSpan(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint describeContents();
-		void drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11);
-		jint getBulletRadius();
-		jint getColor();
-		jint getGapWidth();
-		jint getLeadingMargin(jboolean arg0);
-		jint getSpanTypeId();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11) const;
+		jint getBulletRadius() const;
+		jint getColor() const;
+		jint getGapWidth() const;
+		jint getLeadingMargin(jboolean arg0) const;
+		jint getSpanTypeId() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

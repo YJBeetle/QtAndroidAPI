@@ -29,14 +29,14 @@ namespace android::view::contentcapture
 		) {}
 	
 	// Methods
-	jint DataShareRequest::describeContents()
+	jint DataShareRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean DataShareRequest::equals(JObject arg0)
+	jboolean DataShareRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,42 +44,42 @@ namespace android::view::contentcapture
 			arg0.object<jobject>()
 		);
 	}
-	android::content::LocusId DataShareRequest::getLocusId()
+	android::content::LocusId DataShareRequest::getLocusId() const
 	{
 		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
-	JString DataShareRequest::getMimeType()
+	JString DataShareRequest::getMimeType() const
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DataShareRequest::getPackageName()
+	JString DataShareRequest::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DataShareRequest::hashCode()
+	jint DataShareRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DataShareRequest::toString()
+	JString DataShareRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DataShareRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DataShareRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

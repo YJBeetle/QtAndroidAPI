@@ -16,7 +16,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean Shader::getLocalMatrix(android::graphics::Matrix arg0)
+	jboolean Shader::getLocalMatrix(android::graphics::Matrix arg0) const
 	{
 		return callMethod<jboolean>(
 			"getLocalMatrix",
@@ -24,7 +24,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Shader::setLocalMatrix(android::graphics::Matrix arg0)
+	void Shader::setLocalMatrix(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"setLocalMatrix",

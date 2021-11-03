@@ -21,14 +21,14 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	jint ContentCaptureSessionId::describeContents()
+	jint ContentCaptureSessionId::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ContentCaptureSessionId::equals(JObject arg0)
+	jboolean ContentCaptureSessionId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,21 +36,21 @@ namespace android::view::contentcapture
 			arg0.object<jobject>()
 		);
 	}
-	jint ContentCaptureSessionId::hashCode()
+	jint ContentCaptureSessionId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ContentCaptureSessionId::toString()
+	JString ContentCaptureSessionId::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ContentCaptureSessionId::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContentCaptureSessionId::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

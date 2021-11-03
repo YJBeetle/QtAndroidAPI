@@ -41,7 +41,7 @@ namespace android::security::identity
 			arg0.object()
 		);
 	}
-	android::security::identity::WritableIdentityCredential IdentityCredentialStore::createCredential(JString arg0, JString arg1)
+	android::security::identity::WritableIdentityCredential IdentityCredentialStore::createCredential(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"createCredential",
@@ -50,7 +50,7 @@ namespace android::security::identity
 			arg1.object<jstring>()
 		);
 	}
-	JByteArray IdentityCredentialStore::deleteCredentialByName(JString arg0)
+	JByteArray IdentityCredentialStore::deleteCredentialByName(JString arg0) const
 	{
 		return callObjectMethod(
 			"deleteCredentialByName",
@@ -58,7 +58,7 @@ namespace android::security::identity
 			arg0.object<jstring>()
 		);
 	}
-	android::security::identity::IdentityCredential IdentityCredentialStore::getCredentialByName(JString arg0, jint arg1)
+	android::security::identity::IdentityCredential IdentityCredentialStore::getCredentialByName(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getCredentialByName",
@@ -67,7 +67,7 @@ namespace android::security::identity
 			arg1
 		);
 	}
-	JArray IdentityCredentialStore::getSupportedDocTypes()
+	JArray IdentityCredentialStore::getSupportedDocTypes() const
 	{
 		return callObjectMethod(
 			"getSupportedDocTypes",

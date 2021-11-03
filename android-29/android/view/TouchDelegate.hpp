@@ -38,9 +38,9 @@ namespace android::view
 		TouchDelegate(android::graphics::Rect arg0, android::view::View arg1);
 		
 		// Methods
-		android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo getTouchDelegateInfo();
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		jboolean onTouchExplorationHoverEvent(android::view::MotionEvent arg0);
+		android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo getTouchDelegateInfo() const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		jboolean onTouchExplorationHoverEvent(android::view::MotionEvent arg0) const;
 	};
 } // namespace android::view
 

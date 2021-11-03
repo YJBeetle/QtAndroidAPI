@@ -150,7 +150,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean Typeface::equals(JObject arg0)
+	jboolean Typeface::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -158,35 +158,35 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jint Typeface::getStyle()
+	jint Typeface::getStyle() const
 	{
 		return callMethod<jint>(
 			"getStyle",
 			"()I"
 		);
 	}
-	jint Typeface::getWeight()
+	jint Typeface::getWeight() const
 	{
 		return callMethod<jint>(
 			"getWeight",
 			"()I"
 		);
 	}
-	jint Typeface::hashCode()
+	jint Typeface::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Typeface::isBold()
+	jboolean Typeface::isBold() const
 	{
 		return callMethod<jboolean>(
 			"isBold",
 			"()Z"
 		);
 	}
-	jboolean Typeface::isItalic()
+	jboolean Typeface::isItalic() const
 	{
 		return callMethod<jboolean>(
 			"isItalic",

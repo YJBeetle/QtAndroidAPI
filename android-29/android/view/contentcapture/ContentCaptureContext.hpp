@@ -36,11 +36,11 @@ namespace android::view::contentcapture
 		
 		// Methods
 		static android::view::contentcapture::ContentCaptureContext forLocusId(JString arg0);
-		jint describeContents();
-		android::os::Bundle getExtras();
-		android::content::LocusId getLocusId();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::os::Bundle getExtras() const;
+		android::content::LocusId getLocusId() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::contentcapture
 

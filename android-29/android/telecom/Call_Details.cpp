@@ -294,7 +294,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jboolean Call_Details::can(jint arg0)
+	jboolean Call_Details::can(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"can",
@@ -302,7 +302,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jboolean Call_Details::equals(JObject arg0)
+	jboolean Call_Details::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -310,119 +310,119 @@ namespace android::telecom
 			arg0.object<jobject>()
 		);
 	}
-	android::telecom::PhoneAccountHandle Call_Details::getAccountHandle()
+	android::telecom::PhoneAccountHandle Call_Details::getAccountHandle() const
 	{
 		return callObjectMethod(
 			"getAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	jint Call_Details::getCallCapabilities()
+	jint Call_Details::getCallCapabilities() const
 	{
 		return callMethod<jint>(
 			"getCallCapabilities",
 			"()I"
 		);
 	}
-	jint Call_Details::getCallDirection()
+	jint Call_Details::getCallDirection() const
 	{
 		return callMethod<jint>(
 			"getCallDirection",
 			"()I"
 		);
 	}
-	jint Call_Details::getCallProperties()
+	jint Call_Details::getCallProperties() const
 	{
 		return callMethod<jint>(
 			"getCallProperties",
 			"()I"
 		);
 	}
-	JString Call_Details::getCallerDisplayName()
+	JString Call_Details::getCallerDisplayName() const
 	{
 		return callObjectMethod(
 			"getCallerDisplayName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Call_Details::getCallerDisplayNamePresentation()
+	jint Call_Details::getCallerDisplayNamePresentation() const
 	{
 		return callMethod<jint>(
 			"getCallerDisplayNamePresentation",
 			"()I"
 		);
 	}
-	jlong Call_Details::getConnectTimeMillis()
+	jlong Call_Details::getConnectTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getConnectTimeMillis",
 			"()J"
 		);
 	}
-	jlong Call_Details::getCreationTimeMillis()
+	jlong Call_Details::getCreationTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getCreationTimeMillis",
 			"()J"
 		);
 	}
-	android::telecom::DisconnectCause Call_Details::getDisconnectCause()
+	android::telecom::DisconnectCause Call_Details::getDisconnectCause() const
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	android::os::Bundle Call_Details::getExtras()
+	android::os::Bundle Call_Details::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::telecom::GatewayInfo Call_Details::getGatewayInfo()
+	android::telecom::GatewayInfo Call_Details::getGatewayInfo() const
 	{
 		return callObjectMethod(
 			"getGatewayInfo",
 			"()Landroid/telecom/GatewayInfo;"
 		);
 	}
-	android::net::Uri Call_Details::getHandle()
+	android::net::Uri Call_Details::getHandle() const
 	{
 		return callObjectMethod(
 			"getHandle",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint Call_Details::getHandlePresentation()
+	jint Call_Details::getHandlePresentation() const
 	{
 		return callMethod<jint>(
 			"getHandlePresentation",
 			"()I"
 		);
 	}
-	android::os::Bundle Call_Details::getIntentExtras()
+	android::os::Bundle Call_Details::getIntentExtras() const
 	{
 		return callObjectMethod(
 			"getIntentExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::telecom::StatusHints Call_Details::getStatusHints()
+	android::telecom::StatusHints Call_Details::getStatusHints() const
 	{
 		return callObjectMethod(
 			"getStatusHints",
 			"()Landroid/telecom/StatusHints;"
 		);
 	}
-	jint Call_Details::getVideoState()
+	jint Call_Details::getVideoState() const
 	{
 		return callMethod<jint>(
 			"getVideoState",
 			"()I"
 		);
 	}
-	jboolean Call_Details::hasProperty(jint arg0)
+	jboolean Call_Details::hasProperty(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasProperty",
@@ -430,14 +430,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jint Call_Details::hashCode()
+	jint Call_Details::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Call_Details::toString()
+	JString Call_Details::toString() const
 	{
 		return callObjectMethod(
 			"toString",

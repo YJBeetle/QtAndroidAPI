@@ -27,12 +27,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JObject getLabels();
-		java::util::Locale getLocale();
-		jint getMasteringIndication();
-		jboolean hasAudioDescription();
-		jboolean hasDialogueEnhancement();
-		jboolean hasSpokenSubtitles();
+		JObject getLabels() const;
+		java::util::Locale getLocale() const;
+		jint getMasteringIndication() const;
+		jboolean hasAudioDescription() const;
+		jboolean hasDialogueEnhancement() const;
+		jboolean hasSpokenSubtitles() const;
 	};
 } // namespace android::media
 

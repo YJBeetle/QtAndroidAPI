@@ -36,7 +36,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_RunningServiceInfo::dump(JObject arg0, JString arg1)
+	void ApplicationErrorReport_RunningServiceInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -45,7 +45,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void ApplicationErrorReport_RunningServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ApplicationErrorReport_RunningServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

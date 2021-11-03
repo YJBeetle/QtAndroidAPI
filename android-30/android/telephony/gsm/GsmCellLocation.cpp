@@ -24,7 +24,7 @@ namespace android::telephony::gsm
 		) {}
 	
 	// Methods
-	jboolean GsmCellLocation::equals(JObject arg0)
+	jboolean GsmCellLocation::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -32,7 +32,7 @@ namespace android::telephony::gsm
 			arg0.object<jobject>()
 		);
 	}
-	void GsmCellLocation::fillInNotifierBundle(android::os::Bundle arg0)
+	void GsmCellLocation::fillInNotifierBundle(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"fillInNotifierBundle",
@@ -40,35 +40,35 @@ namespace android::telephony::gsm
 			arg0.object()
 		);
 	}
-	jint GsmCellLocation::getCid()
+	jint GsmCellLocation::getCid() const
 	{
 		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
-	jint GsmCellLocation::getLac()
+	jint GsmCellLocation::getLac() const
 	{
 		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
-	jint GsmCellLocation::getPsc()
+	jint GsmCellLocation::getPsc() const
 	{
 		return callMethod<jint>(
 			"getPsc",
 			"()I"
 		);
 	}
-	jint GsmCellLocation::hashCode()
+	jint GsmCellLocation::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void GsmCellLocation::setLacAndCid(jint arg0, jint arg1)
+	void GsmCellLocation::setLacAndCid(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLacAndCid",
@@ -77,14 +77,14 @@ namespace android::telephony::gsm
 			arg1
 		);
 	}
-	void GsmCellLocation::setStateInvalid()
+	void GsmCellLocation::setStateInvalid() const
 	{
 		callMethod<void>(
 			"setStateInvalid",
 			"()V"
 		);
 	}
-	JString GsmCellLocation::toString()
+	JString GsmCellLocation::toString() const
 	{
 		return callObjectMethod(
 			"toString",

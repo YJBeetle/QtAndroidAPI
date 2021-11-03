@@ -64,14 +64,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jint PhoneAccountSuggestion::describeContents()
+	jint PhoneAccountSuggestion::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PhoneAccountSuggestion::equals(JObject arg0)
+	jboolean PhoneAccountSuggestion::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -79,35 +79,35 @@ namespace android::telecom
 			arg0.object<jobject>()
 		);
 	}
-	android::telecom::PhoneAccountHandle PhoneAccountSuggestion::getPhoneAccountHandle()
+	android::telecom::PhoneAccountHandle PhoneAccountSuggestion::getPhoneAccountHandle() const
 	{
 		return callObjectMethod(
 			"getPhoneAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	jint PhoneAccountSuggestion::getReason()
+	jint PhoneAccountSuggestion::getReason() const
 	{
 		return callMethod<jint>(
 			"getReason",
 			"()I"
 		);
 	}
-	jint PhoneAccountSuggestion::hashCode()
+	jint PhoneAccountSuggestion::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PhoneAccountSuggestion::shouldAutoSelect()
+	jboolean PhoneAccountSuggestion::shouldAutoSelect() const
 	{
 		return callMethod<jboolean>(
 			"shouldAutoSelect",
 			"()Z"
 		);
 	}
-	void PhoneAccountSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PhoneAccountSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

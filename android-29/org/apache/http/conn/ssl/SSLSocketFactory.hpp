@@ -45,12 +45,12 @@ namespace org::apache::http::conn::ssl
 		
 		// Methods
 		static org::apache::http::conn::ssl::SSLSocketFactory getSocketFactory();
-		java::net::Socket connectSocket(java::net::Socket arg0, JString arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5);
-		java::net::Socket createSocket();
-		java::net::Socket createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3);
-		JObject getHostnameVerifier();
-		jboolean isSecure(java::net::Socket arg0);
-		void setHostnameVerifier(JObject arg0);
+		java::net::Socket connectSocket(java::net::Socket arg0, JString arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5) const;
+		java::net::Socket createSocket() const;
+		java::net::Socket createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3) const;
+		JObject getHostnameVerifier() const;
+		jboolean isSecure(java::net::Socket arg0) const;
+		void setHostnameVerifier(JObject arg0) const;
 	};
 } // namespace org::apache::http::conn::ssl
 

@@ -46,28 +46,28 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jint Date::getHours()
+	jint Date::getHours() const
 	{
 		return callMethod<jint>(
 			"getHours",
 			"()I"
 		);
 	}
-	jint Date::getMinutes()
+	jint Date::getMinutes() const
 	{
 		return callMethod<jint>(
 			"getMinutes",
 			"()I"
 		);
 	}
-	jint Date::getSeconds()
+	jint Date::getSeconds() const
 	{
 		return callMethod<jint>(
 			"getSeconds",
 			"()I"
 		);
 	}
-	void Date::setHours(jint arg0)
+	void Date::setHours(jint arg0) const
 	{
 		callMethod<void>(
 			"setHours",
@@ -75,7 +75,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void Date::setMinutes(jint arg0)
+	void Date::setMinutes(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinutes",
@@ -83,7 +83,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void Date::setSeconds(jint arg0)
+	void Date::setSeconds(jint arg0) const
 	{
 		callMethod<void>(
 			"setSeconds",
@@ -91,7 +91,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void Date::setTime(jlong arg0)
+	void Date::setTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -99,21 +99,21 @@ namespace java::sql
 			arg0
 		);
 	}
-	java::time::Instant Date::toInstant()
+	java::time::Instant Date::toInstant() const
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	java::time::LocalDate Date::toLocalDate()
+	java::time::LocalDate Date::toLocalDate() const
 	{
 		return callObjectMethod(
 			"toLocalDate",
 			"()Ljava/time/LocalDate;"
 		);
 	}
-	JString Date::toString()
+	JString Date::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -17,14 +17,14 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	jint DHGenParameterSpec::getExponentSize()
+	jint DHGenParameterSpec::getExponentSize() const
 	{
 		return callMethod<jint>(
 			"getExponentSize",
 			"()I"
 		);
 	}
-	jint DHGenParameterSpec::getPrimeSize()
+	jint DHGenParameterSpec::getPrimeSize() const
 	{
 		return callMethod<jint>(
 			"getPrimeSize",

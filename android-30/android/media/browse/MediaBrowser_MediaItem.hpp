@@ -30,14 +30,14 @@ namespace android::media::browse
 		MediaBrowser_MediaItem(android::media::MediaDescription arg0, jint arg1);
 		
 		// Methods
-		jint describeContents();
-		android::media::MediaDescription getDescription();
-		jint getFlags();
-		JString getMediaId();
-		jboolean isBrowsable();
-		jboolean isPlayable();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::media::MediaDescription getDescription() const;
+		jint getFlags() const;
+		JString getMediaId() const;
+		jboolean isBrowsable() const;
+		jboolean isPlayable() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::browse
 

@@ -25,11 +25,11 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		android::app::VoiceInteractor_Request getActiveRequest(JString arg0);
-		JArray getActiveRequests();
-		jboolean submitRequest(android::app::VoiceInteractor_Request arg0);
-		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1);
-		JBooleanArray supportsCommands(JArray arg0);
+		android::app::VoiceInteractor_Request getActiveRequest(JString arg0) const;
+		JArray getActiveRequests() const;
+		jboolean submitRequest(android::app::VoiceInteractor_Request arg0) const;
+		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1) const;
+		JBooleanArray supportsCommands(JArray arg0) const;
 	};
 } // namespace android::app
 

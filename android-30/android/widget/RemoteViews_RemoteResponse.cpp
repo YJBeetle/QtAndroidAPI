@@ -36,7 +36,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::addSharedElement(jint arg0, JString arg1)
+	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::addSharedElement(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"addSharedElement",

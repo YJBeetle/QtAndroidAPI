@@ -26,14 +26,14 @@ namespace javax::sql
 		) {}
 	
 	// Methods
-	java::sql::SQLException StatementEvent::getSQLException()
+	java::sql::SQLException StatementEvent::getSQLException() const
 	{
 		return callObjectMethod(
 			"getSQLException",
 			"()Ljava/sql/SQLException;"
 		);
 	}
-	JObject StatementEvent::getStatement()
+	JObject StatementEvent::getStatement() const
 	{
 		return callObjectMethod(
 			"getStatement",

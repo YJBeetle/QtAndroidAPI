@@ -26,42 +26,42 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	jlong CaptureFailure::getFrameNumber()
+	jlong CaptureFailure::getFrameNumber() const
 	{
 		return callMethod<jlong>(
 			"getFrameNumber",
 			"()J"
 		);
 	}
-	JString CaptureFailure::getPhysicalCameraId()
+	JString CaptureFailure::getPhysicalCameraId() const
 	{
 		return callObjectMethod(
 			"getPhysicalCameraId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CaptureFailure::getReason()
+	jint CaptureFailure::getReason() const
 	{
 		return callMethod<jint>(
 			"getReason",
 			"()I"
 		);
 	}
-	android::hardware::camera2::CaptureRequest CaptureFailure::getRequest()
+	android::hardware::camera2::CaptureRequest CaptureFailure::getRequest() const
 	{
 		return callObjectMethod(
 			"getRequest",
 			"()Landroid/hardware/camera2/CaptureRequest;"
 		);
 	}
-	jint CaptureFailure::getSequenceId()
+	jint CaptureFailure::getSequenceId() const
 	{
 		return callMethod<jint>(
 			"getSequenceId",
 			"()I"
 		);
 	}
-	jboolean CaptureFailure::wasImageCaptured()
+	jboolean CaptureFailure::wasImageCaptured() const
 	{
 		return callMethod<jboolean>(
 			"wasImageCaptured",

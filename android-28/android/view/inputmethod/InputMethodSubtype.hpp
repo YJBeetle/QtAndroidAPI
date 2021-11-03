@@ -35,22 +35,22 @@ namespace android::view::inputmethod
 		InputMethodSubtype(jint arg0, jint arg1, JString arg2, JString arg3, JString arg4, jboolean arg5, jboolean arg6, jint arg7);
 		
 		// Methods
-		jboolean containsExtraValueKey(JString arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2);
-		JString getExtraValue();
-		JString getExtraValueOf(JString arg0);
-		jint getIconResId();
-		JString getLanguageTag();
-		JString getLocale();
-		JString getMode();
-		jint getNameResId();
-		jint hashCode();
-		jboolean isAsciiCapable();
-		jboolean isAuxiliary();
-		jboolean overridesImplicitlyEnabledSubtype();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean containsExtraValueKey(JString arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2) const;
+		JString getExtraValue() const;
+		JString getExtraValueOf(JString arg0) const;
+		jint getIconResId() const;
+		JString getLanguageTag() const;
+		JString getLocale() const;
+		JString getMode() const;
+		jint getNameResId() const;
+		jint hashCode() const;
+		jboolean isAsciiCapable() const;
+		jboolean isAuxiliary() const;
+		jboolean overridesImplicitlyEnabledSubtype() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

@@ -23,12 +23,12 @@ namespace android::service::quickaccesswallet
 		GetWalletCardsRequest(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint describeContents();
-		jint getCardHeightPx();
-		jint getCardWidthPx();
-		jint getIconSizePx();
-		jint getMaxCards();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getCardHeightPx() const;
+		jint getCardWidthPx() const;
+		jint getIconSizePx() const;
+		jint getMaxCards() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::quickaccesswallet
 

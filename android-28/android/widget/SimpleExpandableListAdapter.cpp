@@ -61,7 +61,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JObject SimpleExpandableListAdapter::getChild(jint arg0, jint arg1)
+	JObject SimpleExpandableListAdapter::getChild(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getChild",
@@ -70,7 +70,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jlong SimpleExpandableListAdapter::getChildId(jint arg0, jint arg1)
+	jlong SimpleExpandableListAdapter::getChildId(jint arg0, jint arg1) const
 	{
 		return callMethod<jlong>(
 			"getChildId",
@@ -79,7 +79,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	android::view::View SimpleExpandableListAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4)
+	android::view::View SimpleExpandableListAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4) const
 	{
 		return callObjectMethod(
 			"getChildView",
@@ -91,7 +91,7 @@ namespace android::widget
 			arg4.object()
 		);
 	}
-	jint SimpleExpandableListAdapter::getChildrenCount(jint arg0)
+	jint SimpleExpandableListAdapter::getChildrenCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getChildrenCount",
@@ -99,7 +99,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject SimpleExpandableListAdapter::getGroup(jint arg0)
+	JObject SimpleExpandableListAdapter::getGroup(jint arg0) const
 	{
 		return callObjectMethod(
 			"getGroup",
@@ -107,14 +107,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint SimpleExpandableListAdapter::getGroupCount()
+	jint SimpleExpandableListAdapter::getGroupCount() const
 	{
 		return callMethod<jint>(
 			"getGroupCount",
 			"()I"
 		);
 	}
-	jlong SimpleExpandableListAdapter::getGroupId(jint arg0)
+	jlong SimpleExpandableListAdapter::getGroupId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getGroupId",
@@ -122,7 +122,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::view::View SimpleExpandableListAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3)
+	android::view::View SimpleExpandableListAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3) const
 	{
 		return callObjectMethod(
 			"getGroupView",
@@ -133,14 +133,14 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	jboolean SimpleExpandableListAdapter::hasStableIds()
+	jboolean SimpleExpandableListAdapter::hasStableIds() const
 	{
 		return callMethod<jboolean>(
 			"hasStableIds",
 			"()Z"
 		);
 	}
-	jboolean SimpleExpandableListAdapter::isChildSelectable(jint arg0, jint arg1)
+	jboolean SimpleExpandableListAdapter::isChildSelectable(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isChildSelectable",
@@ -149,7 +149,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	android::view::View SimpleExpandableListAdapter::newChildView(jboolean arg0, android::view::ViewGroup arg1)
+	android::view::View SimpleExpandableListAdapter::newChildView(jboolean arg0, android::view::ViewGroup arg1) const
 	{
 		return callObjectMethod(
 			"newChildView",
@@ -158,7 +158,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	android::view::View SimpleExpandableListAdapter::newGroupView(jboolean arg0, android::view::ViewGroup arg1)
+	android::view::View SimpleExpandableListAdapter::newGroupView(jboolean arg0, android::view::ViewGroup arg1) const
 	{
 		return callObjectMethod(
 			"newGroupView",

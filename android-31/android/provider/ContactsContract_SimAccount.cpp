@@ -49,14 +49,14 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jint ContactsContract_SimAccount::describeContents()
+	jint ContactsContract_SimAccount::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ContactsContract_SimAccount::equals(JObject arg0)
+	jboolean ContactsContract_SimAccount::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -64,42 +64,42 @@ namespace android::provider
 			arg0.object<jobject>()
 		);
 	}
-	JString ContactsContract_SimAccount::getAccountName()
+	JString ContactsContract_SimAccount::getAccountName() const
 	{
 		return callObjectMethod(
 			"getAccountName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ContactsContract_SimAccount::getAccountType()
+	JString ContactsContract_SimAccount::getAccountType() const
 	{
 		return callObjectMethod(
 			"getAccountType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ContactsContract_SimAccount::getEfType()
+	jint ContactsContract_SimAccount::getEfType() const
 	{
 		return callMethod<jint>(
 			"getEfType",
 			"()I"
 		);
 	}
-	jint ContactsContract_SimAccount::getSimSlotIndex()
+	jint ContactsContract_SimAccount::getSimSlotIndex() const
 	{
 		return callMethod<jint>(
 			"getSimSlotIndex",
 			"()I"
 		);
 	}
-	jint ContactsContract_SimAccount::hashCode()
+	jint ContactsContract_SimAccount::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void ContactsContract_SimAccount::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContactsContract_SimAccount::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

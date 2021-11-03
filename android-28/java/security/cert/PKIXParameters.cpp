@@ -28,7 +28,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	void PKIXParameters::addCertPathChecker(java::security::cert::PKIXCertPathChecker arg0)
+	void PKIXParameters::addCertPathChecker(java::security::cert::PKIXCertPathChecker arg0) const
 	{
 		callMethod<void>(
 			"addCertPathChecker",
@@ -36,7 +36,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::addCertStore(java::security::cert::CertStore arg0)
+	void PKIXParameters::addCertStore(java::security::cert::CertStore arg0) const
 	{
 		callMethod<void>(
 			"addCertStore",
@@ -44,98 +44,98 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject PKIXParameters::clone()
+	JObject PKIXParameters::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject PKIXParameters::getCertPathCheckers()
+	JObject PKIXParameters::getCertPathCheckers() const
 	{
 		return callObjectMethod(
 			"getCertPathCheckers",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject PKIXParameters::getCertStores()
+	JObject PKIXParameters::getCertStores() const
 	{
 		return callObjectMethod(
 			"getCertStores",
 			"()Ljava/util/List;"
 		);
 	}
-	java::util::Date PKIXParameters::getDate()
+	java::util::Date PKIXParameters::getDate() const
 	{
 		return callObjectMethod(
 			"getDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	JObject PKIXParameters::getInitialPolicies()
+	JObject PKIXParameters::getInitialPolicies() const
 	{
 		return callObjectMethod(
 			"getInitialPolicies",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean PKIXParameters::getPolicyQualifiersRejected()
+	jboolean PKIXParameters::getPolicyQualifiersRejected() const
 	{
 		return callMethod<jboolean>(
 			"getPolicyQualifiersRejected",
 			"()Z"
 		);
 	}
-	JString PKIXParameters::getSigProvider()
+	JString PKIXParameters::getSigProvider() const
 	{
 		return callObjectMethod(
 			"getSigProvider",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject PKIXParameters::getTargetCertConstraints()
+	JObject PKIXParameters::getTargetCertConstraints() const
 	{
 		return callObjectMethod(
 			"getTargetCertConstraints",
 			"()Ljava/security/cert/CertSelector;"
 		);
 	}
-	JObject PKIXParameters::getTrustAnchors()
+	JObject PKIXParameters::getTrustAnchors() const
 	{
 		return callObjectMethod(
 			"getTrustAnchors",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean PKIXParameters::isAnyPolicyInhibited()
+	jboolean PKIXParameters::isAnyPolicyInhibited() const
 	{
 		return callMethod<jboolean>(
 			"isAnyPolicyInhibited",
 			"()Z"
 		);
 	}
-	jboolean PKIXParameters::isExplicitPolicyRequired()
+	jboolean PKIXParameters::isExplicitPolicyRequired() const
 	{
 		return callMethod<jboolean>(
 			"isExplicitPolicyRequired",
 			"()Z"
 		);
 	}
-	jboolean PKIXParameters::isPolicyMappingInhibited()
+	jboolean PKIXParameters::isPolicyMappingInhibited() const
 	{
 		return callMethod<jboolean>(
 			"isPolicyMappingInhibited",
 			"()Z"
 		);
 	}
-	jboolean PKIXParameters::isRevocationEnabled()
+	jboolean PKIXParameters::isRevocationEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isRevocationEnabled",
 			"()Z"
 		);
 	}
-	void PKIXParameters::setAnyPolicyInhibited(jboolean arg0)
+	void PKIXParameters::setAnyPolicyInhibited(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAnyPolicyInhibited",
@@ -143,7 +143,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setCertPathCheckers(JObject arg0)
+	void PKIXParameters::setCertPathCheckers(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCertPathCheckers",
@@ -151,7 +151,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::setCertStores(JObject arg0)
+	void PKIXParameters::setCertStores(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCertStores",
@@ -159,7 +159,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::setDate(java::util::Date arg0)
+	void PKIXParameters::setDate(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"setDate",
@@ -167,7 +167,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::setExplicitPolicyRequired(jboolean arg0)
+	void PKIXParameters::setExplicitPolicyRequired(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setExplicitPolicyRequired",
@@ -175,7 +175,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setInitialPolicies(JObject arg0)
+	void PKIXParameters::setInitialPolicies(JObject arg0) const
 	{
 		callMethod<void>(
 			"setInitialPolicies",
@@ -183,7 +183,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::setPolicyMappingInhibited(jboolean arg0)
+	void PKIXParameters::setPolicyMappingInhibited(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPolicyMappingInhibited",
@@ -191,7 +191,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setPolicyQualifiersRejected(jboolean arg0)
+	void PKIXParameters::setPolicyQualifiersRejected(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPolicyQualifiersRejected",
@@ -199,7 +199,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setRevocationEnabled(jboolean arg0)
+	void PKIXParameters::setRevocationEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRevocationEnabled",
@@ -207,7 +207,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setSigProvider(JString arg0)
+	void PKIXParameters::setSigProvider(JString arg0) const
 	{
 		callMethod<void>(
 			"setSigProvider",
@@ -215,7 +215,7 @@ namespace java::security::cert
 			arg0.object<jstring>()
 		);
 	}
-	void PKIXParameters::setTargetCertConstraints(JObject arg0)
+	void PKIXParameters::setTargetCertConstraints(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTargetCertConstraints",
@@ -223,7 +223,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::setTrustAnchors(JObject arg0)
+	void PKIXParameters::setTrustAnchors(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTrustAnchors",
@@ -231,7 +231,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JString PKIXParameters::toString()
+	JString PKIXParameters::toString() const
 	{
 		return callObjectMethod(
 			"toString",

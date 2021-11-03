@@ -47,15 +47,15 @@ namespace android::service::voice
 		
 		// Methods
 		static jboolean isActiveService(android::content::Context arg0, android::content::ComponentName arg1);
-		jint getDisabledShowContext();
-		JObject onBind(android::content::Intent arg0);
-		JObject onGetSupportedVoiceActions(JObject arg0);
-		void onLaunchVoiceAssistFromKeyguard();
-		void onReady();
-		void onShutdown();
-		void setDisabledShowContext(jint arg0);
-		void setUiHints(android::os::Bundle arg0);
-		void showSession(android::os::Bundle arg0, jint arg1);
+		jint getDisabledShowContext() const;
+		JObject onBind(android::content::Intent arg0) const;
+		JObject onGetSupportedVoiceActions(JObject arg0) const;
+		void onLaunchVoiceAssistFromKeyguard() const;
+		void onReady() const;
+		void onShutdown() const;
+		void setDisabledShowContext(jint arg0) const;
+		void setUiHints(android::os::Bundle arg0) const;
+		void showSession(android::os::Bundle arg0, jint arg1) const;
 	};
 } // namespace android::service::voice
 

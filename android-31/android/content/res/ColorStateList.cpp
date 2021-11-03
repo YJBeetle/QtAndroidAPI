@@ -61,21 +61,21 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint ColorStateList::describeContents()
+	jint ColorStateList::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint ColorStateList::getChangingConfigurations()
+	jint ColorStateList::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	jint ColorStateList::getColorForState(JIntArray arg0, jint arg1)
+	jint ColorStateList::getColorForState(JIntArray arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getColorForState",
@@ -84,35 +84,35 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint ColorStateList::getDefaultColor()
+	jint ColorStateList::getDefaultColor() const
 	{
 		return callMethod<jint>(
 			"getDefaultColor",
 			"()I"
 		);
 	}
-	jboolean ColorStateList::isOpaque()
+	jboolean ColorStateList::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	jboolean ColorStateList::isStateful()
+	jboolean ColorStateList::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	JString ColorStateList::toString()
+	JString ColorStateList::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::res::ColorStateList ColorStateList::withAlpha(jint arg0)
+	android::content::res::ColorStateList ColorStateList::withAlpha(jint arg0) const
 	{
 		return callObjectMethod(
 			"withAlpha",
@@ -120,7 +120,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	android::content::res::ColorStateList ColorStateList::withLStar(jfloat arg0)
+	android::content::res::ColorStateList ColorStateList::withLStar(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"withLStar",
@@ -128,7 +128,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void ColorStateList::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ColorStateList::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

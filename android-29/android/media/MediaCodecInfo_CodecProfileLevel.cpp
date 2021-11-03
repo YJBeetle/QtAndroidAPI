@@ -1428,7 +1428,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jboolean MediaCodecInfo_CodecProfileLevel::equals(JObject arg0)
+	jboolean MediaCodecInfo_CodecProfileLevel::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -1436,7 +1436,7 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint MediaCodecInfo_CodecProfileLevel::hashCode()
+	jint MediaCodecInfo_CodecProfileLevel::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

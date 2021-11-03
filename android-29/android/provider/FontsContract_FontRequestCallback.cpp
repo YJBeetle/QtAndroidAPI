@@ -58,7 +58,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	void FontsContract_FontRequestCallback::onTypefaceRequestFailed(jint arg0)
+	void FontsContract_FontRequestCallback::onTypefaceRequestFailed(jint arg0) const
 	{
 		callMethod<void>(
 			"onTypefaceRequestFailed",
@@ -66,7 +66,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	void FontsContract_FontRequestCallback::onTypefaceRetrieved(android::graphics::Typeface arg0)
+	void FontsContract_FontRequestCallback::onTypefaceRetrieved(android::graphics::Typeface arg0) const
 	{
 		callMethod<void>(
 			"onTypefaceRetrieved",

@@ -23,7 +23,7 @@ namespace android::net::sip
 		) {}
 	
 	// Methods
-	void SipAudioCall::answerCall(jint arg0)
+	void SipAudioCall::answerCall(jint arg0) const
 	{
 		callMethod<void>(
 			"answerCall",
@@ -31,7 +31,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	void SipAudioCall::attachCall(android::net::sip::SipSession arg0, JString arg1)
+	void SipAudioCall::attachCall(android::net::sip::SipSession arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"attachCall",
@@ -40,14 +40,14 @@ namespace android::net::sip
 			arg1.object<jstring>()
 		);
 	}
-	void SipAudioCall::close()
+	void SipAudioCall::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void SipAudioCall::continueCall(jint arg0)
+	void SipAudioCall::continueCall(jint arg0) const
 	{
 		callMethod<void>(
 			"continueCall",
@@ -55,35 +55,35 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	void SipAudioCall::endCall()
+	void SipAudioCall::endCall() const
 	{
 		callMethod<void>(
 			"endCall",
 			"()V"
 		);
 	}
-	android::net::sip::SipProfile SipAudioCall::getLocalProfile()
+	android::net::sip::SipProfile SipAudioCall::getLocalProfile() const
 	{
 		return callObjectMethod(
 			"getLocalProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	android::net::sip::SipProfile SipAudioCall::getPeerProfile()
+	android::net::sip::SipProfile SipAudioCall::getPeerProfile() const
 	{
 		return callObjectMethod(
 			"getPeerProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	jint SipAudioCall::getState()
+	jint SipAudioCall::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	void SipAudioCall::holdCall(jint arg0)
+	void SipAudioCall::holdCall(jint arg0) const
 	{
 		callMethod<void>(
 			"holdCall",
@@ -91,28 +91,28 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	jboolean SipAudioCall::isInCall()
+	jboolean SipAudioCall::isInCall() const
 	{
 		return callMethod<jboolean>(
 			"isInCall",
 			"()Z"
 		);
 	}
-	jboolean SipAudioCall::isMuted()
+	jboolean SipAudioCall::isMuted() const
 	{
 		return callMethod<jboolean>(
 			"isMuted",
 			"()Z"
 		);
 	}
-	jboolean SipAudioCall::isOnHold()
+	jboolean SipAudioCall::isOnHold() const
 	{
 		return callMethod<jboolean>(
 			"isOnHold",
 			"()Z"
 		);
 	}
-	void SipAudioCall::makeCall(android::net::sip::SipProfile arg0, android::net::sip::SipSession arg1, jint arg2)
+	void SipAudioCall::makeCall(android::net::sip::SipProfile arg0, android::net::sip::SipSession arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"makeCall",
@@ -122,7 +122,7 @@ namespace android::net::sip
 			arg2
 		);
 	}
-	void SipAudioCall::sendDtmf(jint arg0)
+	void SipAudioCall::sendDtmf(jint arg0) const
 	{
 		callMethod<void>(
 			"sendDtmf",
@@ -130,7 +130,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	void SipAudioCall::sendDtmf(jint arg0, android::os::Message arg1)
+	void SipAudioCall::sendDtmf(jint arg0, android::os::Message arg1) const
 	{
 		callMethod<void>(
 			"sendDtmf",
@@ -139,7 +139,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	void SipAudioCall::setListener(android::net::sip::SipAudioCall_Listener arg0)
+	void SipAudioCall::setListener(android::net::sip::SipAudioCall_Listener arg0) const
 	{
 		callMethod<void>(
 			"setListener",
@@ -147,7 +147,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall::setListener(android::net::sip::SipAudioCall_Listener arg0, jboolean arg1)
+	void SipAudioCall::setListener(android::net::sip::SipAudioCall_Listener arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setListener",
@@ -156,7 +156,7 @@ namespace android::net::sip
 			arg1
 		);
 	}
-	void SipAudioCall::setSpeakerMode(jboolean arg0)
+	void SipAudioCall::setSpeakerMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSpeakerMode",
@@ -164,14 +164,14 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	void SipAudioCall::startAudio()
+	void SipAudioCall::startAudio() const
 	{
 		callMethod<void>(
 			"startAudio",
 			"()V"
 		);
 	}
-	void SipAudioCall::toggleMute()
+	void SipAudioCall::toggleMute() const
 	{
 		callMethod<void>(
 			"toggleMute",

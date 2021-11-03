@@ -48,28 +48,28 @@ namespace android::telecom
 		ConnectionService();
 		
 		// Methods
-		void addConference(android::telecom::Conference arg0);
-		void addExistingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::Connection arg1);
-		void conferenceRemoteConnections(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection arg1);
-		void connectionServiceFocusReleased();
-		android::telecom::RemoteConnection createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		android::telecom::RemoteConnection createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		JObject getAllConferences();
-		JObject getAllConnections();
-		JObject onBind(android::content::Intent arg0);
-		void onConference(android::telecom::Connection arg0, android::telecom::Connection arg1);
-		void onConnectionServiceFocusGained();
-		void onConnectionServiceFocusLost();
-		android::telecom::Connection onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		void onCreateIncomingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		android::telecom::Connection onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		android::telecom::Connection onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		void onCreateOutgoingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		android::telecom::Connection onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		void onHandoverFailed(android::telecom::ConnectionRequest arg0, jint arg1);
-		void onRemoteConferenceAdded(android::telecom::RemoteConference arg0);
-		void onRemoteExistingConnectionAdded(android::telecom::RemoteConnection arg0);
-		jboolean onUnbind(android::content::Intent arg0);
+		void addConference(android::telecom::Conference arg0) const;
+		void addExistingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::Connection arg1) const;
+		void conferenceRemoteConnections(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection arg1) const;
+		void connectionServiceFocusReleased() const;
+		android::telecom::RemoteConnection createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		android::telecom::RemoteConnection createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		JObject getAllConferences() const;
+		JObject getAllConnections() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onConference(android::telecom::Connection arg0, android::telecom::Connection arg1) const;
+		void onConnectionServiceFocusGained() const;
+		void onConnectionServiceFocusLost() const;
+		android::telecom::Connection onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		void onCreateIncomingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		android::telecom::Connection onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		android::telecom::Connection onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		void onCreateOutgoingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		android::telecom::Connection onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
+		void onHandoverFailed(android::telecom::ConnectionRequest arg0, jint arg1) const;
+		void onRemoteConferenceAdded(android::telecom::RemoteConference arg0) const;
+		void onRemoteExistingConnectionAdded(android::telecom::RemoteConnection arg0) const;
+		jboolean onUnbind(android::content::Intent arg0) const;
 	};
 } // namespace android::telecom
 

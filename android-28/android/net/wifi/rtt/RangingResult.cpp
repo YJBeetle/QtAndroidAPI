@@ -45,14 +45,14 @@ namespace android::net::wifi::rtt
 	// Constructors
 	
 	// Methods
-	jint RangingResult::describeContents()
+	jint RangingResult::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RangingResult::equals(JObject arg0)
+	jboolean RangingResult::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -60,84 +60,84 @@ namespace android::net::wifi::rtt
 			arg0.object<jobject>()
 		);
 	}
-	jint RangingResult::getDistanceMm()
+	jint RangingResult::getDistanceMm() const
 	{
 		return callMethod<jint>(
 			"getDistanceMm",
 			"()I"
 		);
 	}
-	jint RangingResult::getDistanceStdDevMm()
+	jint RangingResult::getDistanceStdDevMm() const
 	{
 		return callMethod<jint>(
 			"getDistanceStdDevMm",
 			"()I"
 		);
 	}
-	android::net::MacAddress RangingResult::getMacAddress()
+	android::net::MacAddress RangingResult::getMacAddress() const
 	{
 		return callObjectMethod(
 			"getMacAddress",
 			"()Landroid/net/MacAddress;"
 		);
 	}
-	jint RangingResult::getNumAttemptedMeasurements()
+	jint RangingResult::getNumAttemptedMeasurements() const
 	{
 		return callMethod<jint>(
 			"getNumAttemptedMeasurements",
 			"()I"
 		);
 	}
-	jint RangingResult::getNumSuccessfulMeasurements()
+	jint RangingResult::getNumSuccessfulMeasurements() const
 	{
 		return callMethod<jint>(
 			"getNumSuccessfulMeasurements",
 			"()I"
 		);
 	}
-	android::net::wifi::aware::PeerHandle RangingResult::getPeerHandle()
+	android::net::wifi::aware::PeerHandle RangingResult::getPeerHandle() const
 	{
 		return callObjectMethod(
 			"getPeerHandle",
 			"()Landroid/net/wifi/aware/PeerHandle;"
 		);
 	}
-	jlong RangingResult::getRangingTimestampMillis()
+	jlong RangingResult::getRangingTimestampMillis() const
 	{
 		return callMethod<jlong>(
 			"getRangingTimestampMillis",
 			"()J"
 		);
 	}
-	jint RangingResult::getRssi()
+	jint RangingResult::getRssi() const
 	{
 		return callMethod<jint>(
 			"getRssi",
 			"()I"
 		);
 	}
-	jint RangingResult::getStatus()
+	jint RangingResult::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	jint RangingResult::hashCode()
+	jint RangingResult::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString RangingResult::toString()
+	JString RangingResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RangingResult::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RangingResult::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

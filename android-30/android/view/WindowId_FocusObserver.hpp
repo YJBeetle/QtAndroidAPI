@@ -22,8 +22,8 @@ namespace android::view
 		WindowId_FocusObserver();
 		
 		// Methods
-		void onFocusGained(android::view::WindowId arg0);
-		void onFocusLost(android::view::WindowId arg0);
+		void onFocusGained(android::view::WindowId arg0) const;
+		void onFocusLost(android::view::WindowId arg0) const;
 	};
 } // namespace android::view
 

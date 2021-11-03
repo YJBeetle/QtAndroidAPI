@@ -35,18 +35,18 @@ namespace android::app
 		LocalActivityManager(android::app::Activity arg0, jboolean arg1);
 		
 		// Methods
-		android::view::Window destroyActivity(JString arg0, jboolean arg1);
-		void dispatchCreate(android::os::Bundle arg0);
-		void dispatchDestroy(jboolean arg0);
-		void dispatchPause(jboolean arg0);
-		void dispatchResume();
-		void dispatchStop();
-		android::app::Activity getActivity(JString arg0);
-		android::app::Activity getCurrentActivity();
-		JString getCurrentId();
-		void removeAllActivities();
-		android::os::Bundle saveInstanceState();
-		android::view::Window startActivity(JString arg0, android::content::Intent arg1);
+		android::view::Window destroyActivity(JString arg0, jboolean arg1) const;
+		void dispatchCreate(android::os::Bundle arg0) const;
+		void dispatchDestroy(jboolean arg0) const;
+		void dispatchPause(jboolean arg0) const;
+		void dispatchResume() const;
+		void dispatchStop() const;
+		android::app::Activity getActivity(JString arg0) const;
+		android::app::Activity getCurrentActivity() const;
+		JString getCurrentId() const;
+		void removeAllActivities() const;
+		android::os::Bundle saveInstanceState() const;
+		android::view::Window startActivity(JString arg0, android::content::Intent arg1) const;
 	};
 } // namespace android::app
 

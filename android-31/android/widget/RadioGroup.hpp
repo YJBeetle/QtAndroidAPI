@@ -48,18 +48,18 @@ namespace android::widget
 		RadioGroup(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		void autofill(android::view::autofill::AutofillValue arg0);
-		void check(jint arg0);
-		void clearCheck();
-		android::widget::RadioGroup_LayoutParams generateLayoutParams(JObject arg0);
-		JString getAccessibilityClassName();
-		jint getAutofillType();
-		android::view::autofill::AutofillValue getAutofillValue();
-		jint getCheckedRadioButtonId();
-		void onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0);
-		void setOnCheckedChangeListener(JObject arg0);
-		void setOnHierarchyChangeListener(JObject arg0);
+		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const;
+		void autofill(android::view::autofill::AutofillValue arg0) const;
+		void check(jint arg0) const;
+		void clearCheck() const;
+		android::widget::RadioGroup_LayoutParams generateLayoutParams(JObject arg0) const;
+		JString getAccessibilityClassName() const;
+		jint getAutofillType() const;
+		android::view::autofill::AutofillValue getAutofillValue() const;
+		jint getCheckedRadioButtonId() const;
+		void onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0) const;
+		void setOnCheckedChangeListener(JObject arg0) const;
+		void setOnHierarchyChangeListener(JObject arg0) const;
 	};
 } // namespace android::widget
 

@@ -22,98 +22,98 @@ namespace android::os
 		) {}
 	
 	// Methods
-	android::os::StrictMode_ThreadPolicy StrictMode_ThreadPolicy_Builder::build()
+	android::os::StrictMode_ThreadPolicy StrictMode_ThreadPolicy_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/os/StrictMode$ThreadPolicy;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectAll()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectAll() const
 	{
 		return callObjectMethod(
 			"detectAll",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectCustomSlowCalls()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectCustomSlowCalls() const
 	{
 		return callObjectMethod(
 			"detectCustomSlowCalls",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectDiskReads()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectDiskReads() const
 	{
 		return callObjectMethod(
 			"detectDiskReads",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectDiskWrites()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectDiskWrites() const
 	{
 		return callObjectMethod(
 			"detectDiskWrites",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectNetwork()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectNetwork() const
 	{
 		return callObjectMethod(
 			"detectNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectResourceMismatches()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectResourceMismatches() const
 	{
 		return callObjectMethod(
 			"detectResourceMismatches",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectUnbufferedIo()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectUnbufferedIo() const
 	{
 		return callObjectMethod(
 			"detectUnbufferedIo",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDeath()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDeath() const
 	{
 		return callObjectMethod(
 			"penaltyDeath",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDeathOnNetwork()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDeathOnNetwork() const
 	{
 		return callObjectMethod(
 			"penaltyDeathOnNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDialog()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDialog() const
 	{
 		return callObjectMethod(
 			"penaltyDialog",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDropBox()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDropBox() const
 	{
 		return callObjectMethod(
 			"penaltyDropBox",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyFlashScreen()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyFlashScreen() const
 	{
 		return callObjectMethod(
 			"penaltyFlashScreen",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyListener(JObject arg0, JObject arg1)
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyListener(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"penaltyListener",
@@ -122,56 +122,56 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyLog()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyLog() const
 	{
 		return callObjectMethod(
 			"penaltyLog",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitAll()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitAll() const
 	{
 		return callObjectMethod(
 			"permitAll",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitCustomSlowCalls()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitCustomSlowCalls() const
 	{
 		return callObjectMethod(
 			"permitCustomSlowCalls",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitDiskReads()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitDiskReads() const
 	{
 		return callObjectMethod(
 			"permitDiskReads",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitDiskWrites()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitDiskWrites() const
 	{
 		return callObjectMethod(
 			"permitDiskWrites",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitNetwork()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitNetwork() const
 	{
 		return callObjectMethod(
 			"permitNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitResourceMismatches()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitResourceMismatches() const
 	{
 		return callObjectMethod(
 			"permitResourceMismatches",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitUnbufferedIo()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitUnbufferedIo() const
 	{
 		return callObjectMethod(
 			"permitUnbufferedIo",

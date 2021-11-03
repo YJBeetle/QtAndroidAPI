@@ -18,14 +18,14 @@ namespace android::content::res
 		) {}
 	
 	// Methods
-	jint AssetFileDescriptor_AutoCloseInputStream::available()
+	jint AssetFileDescriptor_AutoCloseInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void AssetFileDescriptor_AutoCloseInputStream::mark(jint arg0)
+	void AssetFileDescriptor_AutoCloseInputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -33,21 +33,21 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jboolean AssetFileDescriptor_AutoCloseInputStream::markSupported()
+	jboolean AssetFileDescriptor_AutoCloseInputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint AssetFileDescriptor_AutoCloseInputStream::read()
+	jint AssetFileDescriptor_AutoCloseInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0)
+	jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -55,7 +55,7 @@ namespace android::content::res
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -65,14 +65,14 @@ namespace android::content::res
 			arg2
 		);
 	}
-	void AssetFileDescriptor_AutoCloseInputStream::reset()
+	void AssetFileDescriptor_AutoCloseInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong AssetFileDescriptor_AutoCloseInputStream::skip(jlong arg0)
+	jlong AssetFileDescriptor_AutoCloseInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

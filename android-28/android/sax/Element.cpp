@@ -11,7 +11,7 @@ namespace android::sax
 	// Constructors
 	
 	// Methods
-	android::sax::Element Element::getChild(JString arg0)
+	android::sax::Element Element::getChild(JString arg0) const
 	{
 		return callObjectMethod(
 			"getChild",
@@ -19,7 +19,7 @@ namespace android::sax
 			arg0.object<jstring>()
 		);
 	}
-	android::sax::Element Element::getChild(JString arg0, JString arg1)
+	android::sax::Element Element::getChild(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getChild",
@@ -28,7 +28,7 @@ namespace android::sax
 			arg1.object<jstring>()
 		);
 	}
-	android::sax::Element Element::requireChild(JString arg0)
+	android::sax::Element Element::requireChild(JString arg0) const
 	{
 		return callObjectMethod(
 			"requireChild",
@@ -36,7 +36,7 @@ namespace android::sax
 			arg0.object<jstring>()
 		);
 	}
-	android::sax::Element Element::requireChild(JString arg0, JString arg1)
+	android::sax::Element Element::requireChild(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"requireChild",
@@ -45,7 +45,7 @@ namespace android::sax
 			arg1.object<jstring>()
 		);
 	}
-	void Element::setElementListener(JObject arg0)
+	void Element::setElementListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setElementListener",
@@ -53,7 +53,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setEndElementListener(JObject arg0)
+	void Element::setEndElementListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEndElementListener",
@@ -61,7 +61,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setEndTextElementListener(JObject arg0)
+	void Element::setEndTextElementListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEndTextElementListener",
@@ -69,7 +69,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setStartElementListener(JObject arg0)
+	void Element::setStartElementListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setStartElementListener",
@@ -77,7 +77,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setTextElementListener(JObject arg0)
+	void Element::setTextElementListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTextElementListener",
@@ -85,7 +85,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	JString Element::toString()
+	JString Element::toString() const
 	{
 		return callObjectMethod(
 			"toString",

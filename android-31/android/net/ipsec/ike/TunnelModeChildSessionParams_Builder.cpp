@@ -26,7 +26,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addChildSaProposal(android::net::ipsec::ike::ChildSaProposal arg0)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addChildSaProposal(android::net::ipsec::ike::ChildSaProposal arg0) const
 	{
 		return callObjectMethod(
 			"addChildSaProposal",
@@ -34,7 +34,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0) const
 	{
 		return callObjectMethod(
 			"addInboundTrafficSelectors",
@@ -42,7 +42,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalAddressRequest(jint arg0)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalAddressRequest(jint arg0) const
 	{
 		return callObjectMethod(
 			"addInternalAddressRequest",
@@ -50,7 +50,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalAddressRequest(java::net::Inet4Address arg0)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalAddressRequest(java::net::Inet4Address arg0) const
 	{
 		return callObjectMethod(
 			"addInternalAddressRequest",
@@ -58,7 +58,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalAddressRequest(java::net::Inet6Address arg0, jint arg1)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalAddressRequest(java::net::Inet6Address arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addInternalAddressRequest",
@@ -67,7 +67,7 @@ namespace android::net::ipsec::ike
 			arg1
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalDhcpServerRequest(jint arg0)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalDhcpServerRequest(jint arg0) const
 	{
 		return callObjectMethod(
 			"addInternalDhcpServerRequest",
@@ -75,7 +75,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalDnsServerRequest(jint arg0)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addInternalDnsServerRequest(jint arg0) const
 	{
 		return callObjectMethod(
 			"addInternalDnsServerRequest",
@@ -83,7 +83,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addOutboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::addOutboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0) const
 	{
 		return callObjectMethod(
 			"addOutboundTrafficSelectors",
@@ -91,14 +91,14 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams TunnelModeChildSessionParams_Builder::build()
+	android::net::ipsec::ike::TunnelModeChildSessionParams TunnelModeChildSessionParams_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/ipsec/ike/TunnelModeChildSessionParams;"
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::setLifetimeSeconds(jint arg0, jint arg1)
+	android::net::ipsec::ike::TunnelModeChildSessionParams_Builder TunnelModeChildSessionParams_Builder::setLifetimeSeconds(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setLifetimeSeconds",

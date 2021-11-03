@@ -29,8 +29,8 @@ namespace android::widget
 		AbsoluteLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0);
-		jboolean shouldDelayChildPressedState();
+		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0) const;
+		jboolean shouldDelayChildPressedState() const;
 	};
 } // namespace android::widget
 

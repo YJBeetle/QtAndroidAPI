@@ -23,8 +23,8 @@ namespace android::app::appsearch
 		AppSearchSchema_BooleanPropertyConfig_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::AppSearchSchema_BooleanPropertyConfig build();
-		android::app::appsearch::AppSearchSchema_BooleanPropertyConfig_Builder setCardinality(jint arg0);
+		android::app::appsearch::AppSearchSchema_BooleanPropertyConfig build() const;
+		android::app::appsearch::AppSearchSchema_BooleanPropertyConfig_Builder setCardinality(jint arg0) const;
 	};
 } // namespace android::app::appsearch
 

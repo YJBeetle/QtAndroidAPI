@@ -32,11 +32,11 @@ namespace java::security
 		CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::security::cert::CertPath getSignerCertPath();
-		java::security::Timestamp getTimestamp();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		java::security::cert::CertPath getSignerCertPath() const;
+		java::security::Timestamp getTimestamp() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

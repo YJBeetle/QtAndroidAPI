@@ -29,14 +29,14 @@ namespace android::media::session
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::media::AudioAttributes getAudioAttributes();
-		jint getCurrentVolume();
-		jint getMaxVolume();
-		jint getPlaybackType();
-		jint getVolumeControl();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::media::AudioAttributes getAudioAttributes() const;
+		jint getCurrentVolume() const;
+		jint getMaxVolume() const;
+		jint getPlaybackType() const;
+		jint getVolumeControl() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::session
 

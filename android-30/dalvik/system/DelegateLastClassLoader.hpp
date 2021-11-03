@@ -30,8 +30,8 @@ namespace dalvik::system
 		DelegateLastClassLoader(JString arg0, JString arg1, java::lang::ClassLoader arg2, jboolean arg3);
 		
 		// Methods
-		java::net::URL getResource(JString arg0);
-		JObject getResources(JString arg0);
+		java::net::URL getResource(JString arg0) const;
+		JObject getResources(JString arg0) const;
 	};
 } // namespace dalvik::system
 

@@ -29,14 +29,14 @@ namespace android::view::contentcapture
 		DataShareRequest(android::content::LocusId arg0, JString arg1);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::content::LocusId getLocusId();
-		JString getMimeType();
-		JString getPackageName();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::content::LocusId getLocusId() const;
+		JString getMimeType() const;
+		JString getPackageName() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::contentcapture
 

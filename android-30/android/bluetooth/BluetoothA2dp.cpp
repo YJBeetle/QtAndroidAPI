@@ -43,21 +43,21 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	void BluetoothA2dp::finalize()
+	void BluetoothA2dp::finalize() const
 	{
 		callMethod<void>(
 			"finalize",
 			"()V"
 		);
 	}
-	JObject BluetoothA2dp::getConnectedDevices()
+	JObject BluetoothA2dp::getConnectedDevices() const
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint BluetoothA2dp::getConnectionState(android::bluetooth::BluetoothDevice arg0)
+	jint BluetoothA2dp::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
@@ -65,7 +65,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothA2dp::getDevicesMatchingConnectionStates(JIntArray arg0)
+	JObject BluetoothA2dp::getDevicesMatchingConnectionStates(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -73,7 +73,7 @@ namespace android::bluetooth
 			arg0.object<jintArray>()
 		);
 	}
-	jboolean BluetoothA2dp::isA2dpPlaying(android::bluetooth::BluetoothDevice arg0)
+	jboolean BluetoothA2dp::isA2dpPlaying(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jboolean>(
 			"isA2dpPlaying",

@@ -38,16 +38,16 @@ namespace javax::xml::transform::stream
 		StreamSource(java::io::Reader arg0, JString arg1);
 		
 		// Methods
-		java::io::InputStream getInputStream();
-		JString getPublicId();
-		java::io::Reader getReader();
-		JString getSystemId();
-		jboolean isEmpty();
-		void setInputStream(java::io::InputStream arg0);
-		void setPublicId(JString arg0);
-		void setReader(java::io::Reader arg0);
-		void setSystemId(java::io::File arg0);
-		void setSystemId(JString arg0);
+		java::io::InputStream getInputStream() const;
+		JString getPublicId() const;
+		java::io::Reader getReader() const;
+		JString getSystemId() const;
+		jboolean isEmpty() const;
+		void setInputStream(java::io::InputStream arg0) const;
+		void setPublicId(JString arg0) const;
+		void setReader(java::io::Reader arg0) const;
+		void setSystemId(java::io::File arg0) const;
+		void setSystemId(JString arg0) const;
 	};
 } // namespace javax::xml::transform::stream
 

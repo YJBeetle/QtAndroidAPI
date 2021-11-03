@@ -23,7 +23,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Activity AppComponentFactory::instantiateActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2)
+	android::app::Activity AppComponentFactory::instantiateActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const
 	{
 		return callObjectMethod(
 			"instantiateActivity",
@@ -33,7 +33,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::Application AppComponentFactory::instantiateApplication(java::lang::ClassLoader arg0, JString arg1)
+	android::app::Application AppComponentFactory::instantiateApplication(java::lang::ClassLoader arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"instantiateApplication",
@@ -42,7 +42,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::content::ContentProvider AppComponentFactory::instantiateProvider(java::lang::ClassLoader arg0, JString arg1)
+	android::content::ContentProvider AppComponentFactory::instantiateProvider(java::lang::ClassLoader arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"instantiateProvider",
@@ -51,7 +51,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::content::BroadcastReceiver AppComponentFactory::instantiateReceiver(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2)
+	android::content::BroadcastReceiver AppComponentFactory::instantiateReceiver(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const
 	{
 		return callObjectMethod(
 			"instantiateReceiver",
@@ -61,7 +61,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::Service AppComponentFactory::instantiateService(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2)
+	android::app::Service AppComponentFactory::instantiateService(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const
 	{
 		return callObjectMethod(
 			"instantiateService",

@@ -24,7 +24,7 @@ namespace java::util::concurrent::atomic
 			arg2.object<jstring>()
 		);
 	}
-	JObject AtomicReferenceFieldUpdater::accumulateAndGet(JObject arg0, JObject arg1, JObject arg2)
+	JObject AtomicReferenceFieldUpdater::accumulateAndGet(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"accumulateAndGet",
@@ -34,7 +34,7 @@ namespace java::util::concurrent::atomic
 			arg2.object()
 		);
 	}
-	jboolean AtomicReferenceFieldUpdater::compareAndSet(JObject arg0, JObject arg1, JObject arg2)
+	jboolean AtomicReferenceFieldUpdater::compareAndSet(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -44,7 +44,7 @@ namespace java::util::concurrent::atomic
 			arg2.object<jobject>()
 		);
 	}
-	JObject AtomicReferenceFieldUpdater::get(JObject arg0)
+	JObject AtomicReferenceFieldUpdater::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -52,7 +52,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	JObject AtomicReferenceFieldUpdater::getAndAccumulate(JObject arg0, JObject arg1, JObject arg2)
+	JObject AtomicReferenceFieldUpdater::getAndAccumulate(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"getAndAccumulate",
@@ -62,7 +62,7 @@ namespace java::util::concurrent::atomic
 			arg2.object()
 		);
 	}
-	JObject AtomicReferenceFieldUpdater::getAndSet(JObject arg0, JObject arg1)
+	JObject AtomicReferenceFieldUpdater::getAndSet(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getAndSet",
@@ -71,7 +71,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	JObject AtomicReferenceFieldUpdater::getAndUpdate(JObject arg0, JObject arg1)
+	JObject AtomicReferenceFieldUpdater::getAndUpdate(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getAndUpdate",
@@ -80,7 +80,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	void AtomicReferenceFieldUpdater::lazySet(JObject arg0, JObject arg1)
+	void AtomicReferenceFieldUpdater::lazySet(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"lazySet",
@@ -89,7 +89,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	void AtomicReferenceFieldUpdater::set(JObject arg0, JObject arg1)
+	void AtomicReferenceFieldUpdater::set(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -98,7 +98,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	JObject AtomicReferenceFieldUpdater::updateAndGet(JObject arg0, JObject arg1)
+	JObject AtomicReferenceFieldUpdater::updateAndGet(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"updateAndGet",
@@ -107,7 +107,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jboolean AtomicReferenceFieldUpdater::weakCompareAndSet(JObject arg0, JObject arg1, JObject arg2)
+	jboolean AtomicReferenceFieldUpdater::weakCompareAndSet(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",

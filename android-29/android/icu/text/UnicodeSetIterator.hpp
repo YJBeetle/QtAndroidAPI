@@ -28,11 +28,11 @@ namespace android::icu::text
 		UnicodeSetIterator(android::icu::text::UnicodeSet arg0);
 		
 		// Methods
-		JString getString();
-		jboolean next();
-		jboolean nextRange();
-		void reset();
-		void reset(android::icu::text::UnicodeSet arg0);
+		JString getString() const;
+		jboolean next() const;
+		jboolean nextRange() const;
+		void reset() const;
+		void reset(android::icu::text::UnicodeSet arg0) const;
 	};
 } // namespace android::icu::text
 

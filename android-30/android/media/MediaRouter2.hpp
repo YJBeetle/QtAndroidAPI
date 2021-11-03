@@ -46,18 +46,18 @@ namespace android::media
 		
 		// Methods
 		static android::media::MediaRouter2 getInstance(android::content::Context arg0);
-		JObject getControllers();
-		JObject getRoutes();
-		android::media::MediaRouter2_RoutingController getSystemController();
-		void registerControllerCallback(JObject arg0, android::media::MediaRouter2_ControllerCallback arg1);
-		void registerRouteCallback(JObject arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2);
-		void registerTransferCallback(JObject arg0, android::media::MediaRouter2_TransferCallback arg1);
-		void setOnGetControllerHintsListener(JObject arg0);
-		void stop();
-		void transferTo(android::media::MediaRoute2Info arg0);
-		void unregisterControllerCallback(android::media::MediaRouter2_ControllerCallback arg0);
-		void unregisterRouteCallback(android::media::MediaRouter2_RouteCallback arg0);
-		void unregisterTransferCallback(android::media::MediaRouter2_TransferCallback arg0);
+		JObject getControllers() const;
+		JObject getRoutes() const;
+		android::media::MediaRouter2_RoutingController getSystemController() const;
+		void registerControllerCallback(JObject arg0, android::media::MediaRouter2_ControllerCallback arg1) const;
+		void registerRouteCallback(JObject arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2) const;
+		void registerTransferCallback(JObject arg0, android::media::MediaRouter2_TransferCallback arg1) const;
+		void setOnGetControllerHintsListener(JObject arg0) const;
+		void stop() const;
+		void transferTo(android::media::MediaRoute2Info arg0) const;
+		void unregisterControllerCallback(android::media::MediaRouter2_ControllerCallback arg0) const;
+		void unregisterRouteCallback(android::media::MediaRouter2_RouteCallback arg0) const;
+		void unregisterTransferCallback(android::media::MediaRouter2_TransferCallback arg0) const;
 	};
 } // namespace android::media
 

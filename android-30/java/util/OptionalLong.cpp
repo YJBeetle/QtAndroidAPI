@@ -29,7 +29,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean OptionalLong::equals(JObject arg0)
+	jboolean OptionalLong::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,21 +37,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jlong OptionalLong::getAsLong()
+	jlong OptionalLong::getAsLong() const
 	{
 		return callMethod<jlong>(
 			"getAsLong",
 			"()J"
 		);
 	}
-	jint OptionalLong::hashCode()
+	jint OptionalLong::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void OptionalLong::ifPresent(JObject arg0)
+	void OptionalLong::ifPresent(JObject arg0) const
 	{
 		callMethod<void>(
 			"ifPresent",
@@ -59,7 +59,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void OptionalLong::ifPresentOrElse(JObject arg0, JObject arg1)
+	void OptionalLong::ifPresentOrElse(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"ifPresentOrElse",
@@ -68,21 +68,21 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean OptionalLong::isEmpty()
+	jboolean OptionalLong::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jboolean OptionalLong::isPresent()
+	jboolean OptionalLong::isPresent() const
 	{
 		return callMethod<jboolean>(
 			"isPresent",
 			"()Z"
 		);
 	}
-	jlong OptionalLong::orElse(jlong arg0)
+	jlong OptionalLong::orElse(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"orElse",
@@ -90,7 +90,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jlong OptionalLong::orElseGet(JObject arg0)
+	jlong OptionalLong::orElseGet(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"orElseGet",
@@ -98,14 +98,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jlong OptionalLong::orElseThrow()
+	jlong OptionalLong::orElseThrow() const
 	{
 		return callMethod<jlong>(
 			"orElseThrow",
 			"()J"
 		);
 	}
-	jlong OptionalLong::orElseThrow(JObject arg0)
+	jlong OptionalLong::orElseThrow(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"orElseThrow",
@@ -113,14 +113,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject OptionalLong::stream()
+	JObject OptionalLong::stream() const
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	JString OptionalLong::toString()
+	JString OptionalLong::toString() const
 	{
 		return callObjectMethod(
 			"toString",

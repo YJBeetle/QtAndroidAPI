@@ -10,7 +10,7 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	JObject TypeInfoProvider::getAttributeTypeInfo(jint arg0)
+	JObject TypeInfoProvider::getAttributeTypeInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAttributeTypeInfo",
@@ -18,14 +18,14 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	JObject TypeInfoProvider::getElementTypeInfo()
+	JObject TypeInfoProvider::getElementTypeInfo() const
 	{
 		return callObjectMethod(
 			"getElementTypeInfo",
 			"()Lorg/w3c/dom/TypeInfo;"
 		);
 	}
-	jboolean TypeInfoProvider::isIdAttribute(jint arg0)
+	jboolean TypeInfoProvider::isIdAttribute(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isIdAttribute",
@@ -33,7 +33,7 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	jboolean TypeInfoProvider::isSpecified(jint arg0)
+	jboolean TypeInfoProvider::isSpecified(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSpecified",

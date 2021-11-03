@@ -61,7 +61,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void ChoiceFormat::applyPattern(JString arg0)
+	void ChoiceFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -69,14 +69,14 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject ChoiceFormat::clone()
+	JObject ChoiceFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ChoiceFormat::equals(JObject arg0)
+	jboolean ChoiceFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -84,7 +84,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer ChoiceFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer ChoiceFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -94,7 +94,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer ChoiceFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer ChoiceFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -104,28 +104,28 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	JObjectArray ChoiceFormat::getFormats()
+	JObjectArray ChoiceFormat::getFormats() const
 	{
 		return callObjectMethod(
 			"getFormats",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JDoubleArray ChoiceFormat::getLimits()
+	JDoubleArray ChoiceFormat::getLimits() const
 	{
 		return callObjectMethod(
 			"getLimits",
 			"()[D"
 		);
 	}
-	jint ChoiceFormat::hashCode()
+	jint ChoiceFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::lang::Number ChoiceFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::lang::Number ChoiceFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -134,7 +134,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	void ChoiceFormat::setChoices(JDoubleArray arg0, JArray arg1)
+	void ChoiceFormat::setChoices(JDoubleArray arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"setChoices",
@@ -143,7 +143,7 @@ namespace java::text
 			arg1.object<jarray>()
 		);
 	}
-	JString ChoiceFormat::toPattern()
+	JString ChoiceFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",

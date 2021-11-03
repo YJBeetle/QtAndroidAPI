@@ -20,14 +20,14 @@ namespace android::graphics::pdf
 		) {}
 	
 	// Methods
-	android::graphics::pdf::PdfDocument_PageInfo PdfDocument_PageInfo_Builder::create()
+	android::graphics::pdf::PdfDocument_PageInfo PdfDocument_PageInfo_Builder::create() const
 	{
 		return callObjectMethod(
 			"create",
 			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
 		);
 	}
-	android::graphics::pdf::PdfDocument_PageInfo_Builder PdfDocument_PageInfo_Builder::setContentRect(android::graphics::Rect arg0)
+	android::graphics::pdf::PdfDocument_PageInfo_Builder PdfDocument_PageInfo_Builder::setContentRect(android::graphics::Rect arg0) const
 	{
 		return callObjectMethod(
 			"setContentRect",

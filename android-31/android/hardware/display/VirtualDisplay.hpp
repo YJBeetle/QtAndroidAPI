@@ -26,12 +26,12 @@ namespace android::hardware::display
 		// Constructors
 		
 		// Methods
-		android::view::Display getDisplay();
-		android::view::Surface getSurface();
-		void release();
-		void resize(jint arg0, jint arg1, jint arg2);
-		void setSurface(android::view::Surface arg0);
-		JString toString();
+		android::view::Display getDisplay() const;
+		android::view::Surface getSurface() const;
+		void release() const;
+		void resize(jint arg0, jint arg1, jint arg2) const;
+		void setSurface(android::view::Surface arg0) const;
+		JString toString() const;
 	};
 } // namespace android::hardware::display
 

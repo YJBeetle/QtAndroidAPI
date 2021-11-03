@@ -65,21 +65,21 @@ namespace android::graphics
 		static android::graphics::ColorSpace_Connector connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1, android::graphics::ColorSpace_RenderIntent arg2);
 		static android::graphics::ColorSpace get(android::graphics::ColorSpace_Named arg0);
 		static android::graphics::ColorSpace match(JFloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1);
-		jboolean equals(JObject arg0);
-		JFloatArray fromXyz(JFloatArray arg0);
-		JFloatArray fromXyz(jfloat arg0, jfloat arg1, jfloat arg2);
-		jint getComponentCount();
-		jint getId();
-		jfloat getMaxValue(jint arg0);
-		jfloat getMinValue(jint arg0);
-		android::graphics::ColorSpace_Model getModel();
-		JString getName();
-		jint hashCode();
-		jboolean isSrgb();
-		jboolean isWideGamut();
-		JString toString();
-		JFloatArray toXyz(JFloatArray arg0);
-		JFloatArray toXyz(jfloat arg0, jfloat arg1, jfloat arg2);
+		jboolean equals(JObject arg0) const;
+		JFloatArray fromXyz(JFloatArray arg0) const;
+		JFloatArray fromXyz(jfloat arg0, jfloat arg1, jfloat arg2) const;
+		jint getComponentCount() const;
+		jint getId() const;
+		jfloat getMaxValue(jint arg0) const;
+		jfloat getMinValue(jint arg0) const;
+		android::graphics::ColorSpace_Model getModel() const;
+		JString getName() const;
+		jint hashCode() const;
+		jboolean isSrgb() const;
+		jboolean isWideGamut() const;
+		JString toString() const;
+		JFloatArray toXyz(JFloatArray arg0) const;
+		JFloatArray toXyz(jfloat arg0, jfloat arg1, jfloat arg2) const;
 	};
 } // namespace android::graphics
 

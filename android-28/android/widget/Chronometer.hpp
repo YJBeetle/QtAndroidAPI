@@ -31,19 +31,19 @@ namespace android::widget
 		Chronometer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		jlong getBase();
-		JString getContentDescription();
-		JString getFormat();
-		JObject getOnChronometerTickListener();
-		jboolean isCountDown();
-		jboolean isTheFinalCountDown();
-		void setBase(jlong arg0);
-		void setCountDown(jboolean arg0);
-		void setFormat(JString arg0);
-		void setOnChronometerTickListener(JObject arg0);
-		void start();
-		void stop();
+		JString getAccessibilityClassName() const;
+		jlong getBase() const;
+		JString getContentDescription() const;
+		JString getFormat() const;
+		JObject getOnChronometerTickListener() const;
+		jboolean isCountDown() const;
+		jboolean isTheFinalCountDown() const;
+		void setBase(jlong arg0) const;
+		void setCountDown(jboolean arg0) const;
+		void setFormat(JString arg0) const;
+		void setOnChronometerTickListener(JObject arg0) const;
+		void start() const;
+		void stop() const;
 	};
 } // namespace android::widget
 

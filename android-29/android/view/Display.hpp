@@ -62,34 +62,34 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jlong getAppVsyncOffsetNanos();
-		void getCurrentSizeRange(android::graphics::Point arg0, android::graphics::Point arg1);
-		android::view::DisplayCutout getCutout();
-		jint getDisplayId();
-		jint getFlags();
-		android::view::Display_HdrCapabilities getHdrCapabilities();
-		jint getHeight();
-		void getMetrics(android::util::DisplayMetrics arg0);
-		android::view::Display_Mode getMode();
-		JString getName();
-		jint getOrientation();
-		jint getPixelFormat();
-		android::graphics::ColorSpace getPreferredWideGamutColorSpace();
-		jlong getPresentationDeadlineNanos();
-		void getRealMetrics(android::util::DisplayMetrics arg0);
-		void getRealSize(android::graphics::Point arg0);
-		void getRectSize(android::graphics::Rect arg0);
-		jfloat getRefreshRate();
-		jint getRotation();
-		void getSize(android::graphics::Point arg0);
-		jint getState();
-		JArray getSupportedModes();
-		JFloatArray getSupportedRefreshRates();
-		jint getWidth();
-		jboolean isHdr();
-		jboolean isValid();
-		jboolean isWideColorGamut();
-		JString toString();
+		jlong getAppVsyncOffsetNanos() const;
+		void getCurrentSizeRange(android::graphics::Point arg0, android::graphics::Point arg1) const;
+		android::view::DisplayCutout getCutout() const;
+		jint getDisplayId() const;
+		jint getFlags() const;
+		android::view::Display_HdrCapabilities getHdrCapabilities() const;
+		jint getHeight() const;
+		void getMetrics(android::util::DisplayMetrics arg0) const;
+		android::view::Display_Mode getMode() const;
+		JString getName() const;
+		jint getOrientation() const;
+		jint getPixelFormat() const;
+		android::graphics::ColorSpace getPreferredWideGamutColorSpace() const;
+		jlong getPresentationDeadlineNanos() const;
+		void getRealMetrics(android::util::DisplayMetrics arg0) const;
+		void getRealSize(android::graphics::Point arg0) const;
+		void getRectSize(android::graphics::Rect arg0) const;
+		jfloat getRefreshRate() const;
+		jint getRotation() const;
+		void getSize(android::graphics::Point arg0) const;
+		jint getState() const;
+		JArray getSupportedModes() const;
+		JFloatArray getSupportedRefreshRates() const;
+		jint getWidth() const;
+		jboolean isHdr() const;
+		jboolean isValid() const;
+		jboolean isWideColorGamut() const;
+		JString toString() const;
 	};
 } // namespace android::view
 

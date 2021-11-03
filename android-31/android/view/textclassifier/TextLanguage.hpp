@@ -31,14 +31,14 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jfloat getConfidenceScore(android::icu::util::ULocale arg0);
-		android::os::Bundle getExtras();
-		JString getId();
-		android::icu::util::ULocale getLocale(jint arg0);
-		jint getLocaleHypothesisCount();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jfloat getConfidenceScore(android::icu::util::ULocale arg0) const;
+		android::os::Bundle getExtras() const;
+		JString getId() const;
+		android::icu::util::ULocale getLocale(jint arg0) const;
+		jint getLocaleHypothesisCount() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

@@ -25,20 +25,20 @@ namespace org::json
 		
 		// Methods
 		static jint dehexchar(jchar arg0);
-		void back();
-		jboolean more();
-		jchar next();
-		jchar next(jchar arg0);
-		JString next(jint arg0);
-		jchar nextClean();
-		JString nextString(jchar arg0);
-		JString nextTo(jchar arg0);
-		JString nextTo(JString arg0);
-		JObject nextValue();
-		void skipPast(JString arg0);
-		jchar skipTo(jchar arg0);
-		org::json::JSONException syntaxError(JString arg0);
-		JString toString();
+		void back() const;
+		jboolean more() const;
+		jchar next() const;
+		jchar next(jchar arg0) const;
+		JString next(jint arg0) const;
+		jchar nextClean() const;
+		JString nextString(jchar arg0) const;
+		JString nextTo(jchar arg0) const;
+		JString nextTo(JString arg0) const;
+		JObject nextValue() const;
+		void skipPast(JString arg0) const;
+		jchar skipTo(jchar arg0) const;
+		org::json::JSONException syntaxError(JString arg0) const;
+		JString toString() const;
 	};
 } // namespace org::json
 

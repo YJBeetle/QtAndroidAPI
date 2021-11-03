@@ -18,14 +18,14 @@ namespace android::security
 		) {}
 	
 	// Methods
-	android::security::KeyStoreParameter KeyStoreParameter_Builder::build()
+	android::security::KeyStoreParameter KeyStoreParameter_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/KeyStoreParameter;"
 		);
 	}
-	android::security::KeyStoreParameter_Builder KeyStoreParameter_Builder::setEncryptionRequired(jboolean arg0)
+	android::security::KeyStoreParameter_Builder KeyStoreParameter_Builder::setEncryptionRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setEncryptionRequired",

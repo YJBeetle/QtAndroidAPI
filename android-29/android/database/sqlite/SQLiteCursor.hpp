@@ -33,17 +33,17 @@ namespace android::database::sqlite
 		SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, JObject arg1, JString arg2, android::database::sqlite::SQLiteQuery arg3);
 		
 		// Methods
-		void close();
-		void deactivate();
-		jint getColumnIndex(JString arg0);
-		JArray getColumnNames();
-		jint getCount();
-		android::database::sqlite::SQLiteDatabase getDatabase();
-		jboolean onMove(jint arg0, jint arg1);
-		jboolean requery();
-		void setFillWindowForwardOnly(jboolean arg0);
-		void setSelectionArguments(JArray arg0);
-		void setWindow(android::database::CursorWindow arg0);
+		void close() const;
+		void deactivate() const;
+		jint getColumnIndex(JString arg0) const;
+		JArray getColumnNames() const;
+		jint getCount() const;
+		android::database::sqlite::SQLiteDatabase getDatabase() const;
+		jboolean onMove(jint arg0, jint arg1) const;
+		jboolean requery() const;
+		void setFillWindowForwardOnly(jboolean arg0) const;
+		void setSelectionArguments(JArray arg0) const;
+		void setWindow(android::database::CursorWindow arg0) const;
 	};
 } // namespace android::database::sqlite
 

@@ -18,7 +18,7 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	void SensorEventCallback::onAccuracyChanged(android::hardware::Sensor arg0, jint arg1)
+	void SensorEventCallback::onAccuracyChanged(android::hardware::Sensor arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onAccuracyChanged",
@@ -27,7 +27,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void SensorEventCallback::onFlushCompleted(android::hardware::Sensor arg0)
+	void SensorEventCallback::onFlushCompleted(android::hardware::Sensor arg0) const
 	{
 		callMethod<void>(
 			"onFlushCompleted",
@@ -35,7 +35,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorEventCallback::onSensorAdditionalInfo(android::hardware::SensorAdditionalInfo arg0)
+	void SensorEventCallback::onSensorAdditionalInfo(android::hardware::SensorAdditionalInfo arg0) const
 	{
 		callMethod<void>(
 			"onSensorAdditionalInfo",
@@ -43,7 +43,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorEventCallback::onSensorChanged(android::hardware::SensorEvent arg0)
+	void SensorEventCallback::onSensorChanged(android::hardware::SensorEvent arg0) const
 	{
 		callMethod<void>(
 			"onSensorChanged",

@@ -15,70 +15,70 @@ namespace android::security
 	// Constructors
 	
 	// Methods
-	JObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
+	JObject KeyPairGeneratorSpec::getAlgorithmParameterSpec() const
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	android::content::Context KeyPairGeneratorSpec::getContext()
+	android::content::Context KeyPairGeneratorSpec::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	java::util::Date KeyPairGeneratorSpec::getEndDate()
+	java::util::Date KeyPairGeneratorSpec::getEndDate() const
 	{
 		return callObjectMethod(
 			"getEndDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	jint KeyPairGeneratorSpec::getKeySize()
+	jint KeyPairGeneratorSpec::getKeySize() const
 	{
 		return callMethod<jint>(
 			"getKeySize",
 			"()I"
 		);
 	}
-	JString KeyPairGeneratorSpec::getKeyType()
+	JString KeyPairGeneratorSpec::getKeyType() const
 	{
 		return callObjectMethod(
 			"getKeyType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString KeyPairGeneratorSpec::getKeystoreAlias()
+	JString KeyPairGeneratorSpec::getKeystoreAlias() const
 	{
 		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::math::BigInteger KeyPairGeneratorSpec::getSerialNumber()
+	java::math::BigInteger KeyPairGeneratorSpec::getSerialNumber() const
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::util::Date KeyPairGeneratorSpec::getStartDate()
+	java::util::Date KeyPairGeneratorSpec::getStartDate() const
 	{
 		return callObjectMethod(
 			"getStartDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	javax::security::auth::x500::X500Principal KeyPairGeneratorSpec::getSubjectDN()
+	javax::security::auth::x500::X500Principal KeyPairGeneratorSpec::getSubjectDN() const
 	{
 		return callObjectMethod(
 			"getSubjectDN",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	jboolean KeyPairGeneratorSpec::isEncryptionRequired()
+	jboolean KeyPairGeneratorSpec::isEncryptionRequired() const
 	{
 		return callMethod<jboolean>(
 			"isEncryptionRequired",

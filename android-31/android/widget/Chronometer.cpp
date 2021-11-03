@@ -44,56 +44,56 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString Chronometer::getAccessibilityClassName()
+	JString Chronometer::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jlong Chronometer::getBase()
+	jlong Chronometer::getBase() const
 	{
 		return callMethod<jlong>(
 			"getBase",
 			"()J"
 		);
 	}
-	JString Chronometer::getContentDescription()
+	JString Chronometer::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Chronometer::getFormat()
+	JString Chronometer::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Chronometer::getOnChronometerTickListener()
+	JObject Chronometer::getOnChronometerTickListener() const
 	{
 		return callObjectMethod(
 			"getOnChronometerTickListener",
 			"()Landroid/widget/Chronometer$OnChronometerTickListener;"
 		);
 	}
-	jboolean Chronometer::isCountDown()
+	jboolean Chronometer::isCountDown() const
 	{
 		return callMethod<jboolean>(
 			"isCountDown",
 			"()Z"
 		);
 	}
-	jboolean Chronometer::isTheFinalCountDown()
+	jboolean Chronometer::isTheFinalCountDown() const
 	{
 		return callMethod<jboolean>(
 			"isTheFinalCountDown",
 			"()Z"
 		);
 	}
-	void Chronometer::setBase(jlong arg0)
+	void Chronometer::setBase(jlong arg0) const
 	{
 		callMethod<void>(
 			"setBase",
@@ -101,7 +101,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Chronometer::setCountDown(jboolean arg0)
+	void Chronometer::setCountDown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCountDown",
@@ -109,7 +109,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Chronometer::setFormat(JString arg0)
+	void Chronometer::setFormat(JString arg0) const
 	{
 		callMethod<void>(
 			"setFormat",
@@ -117,7 +117,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Chronometer::setOnChronometerTickListener(JObject arg0)
+	void Chronometer::setOnChronometerTickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnChronometerTickListener",
@@ -125,14 +125,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Chronometer::start()
+	void Chronometer::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void Chronometer::stop()
+	void Chronometer::stop() const
 	{
 		callMethod<void>(
 			"stop",

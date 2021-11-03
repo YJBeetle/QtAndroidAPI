@@ -22,7 +22,7 @@ namespace android::media
 		MediaRouter2_ControllerCallback();
 		
 		// Methods
-		void onControllerUpdated(android::media::MediaRouter2_RoutingController arg0);
+		void onControllerUpdated(android::media::MediaRouter2_RoutingController arg0) const;
 	};
 } // namespace android::media
 

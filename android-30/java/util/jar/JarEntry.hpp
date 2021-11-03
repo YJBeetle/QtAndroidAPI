@@ -31,10 +31,10 @@ namespace java::util::jar
 		JarEntry(java::util::zip::ZipEntry arg0);
 		
 		// Methods
-		java::util::jar::Attributes getAttributes();
-		JArray getCertificates();
-		JArray getCodeSigners();
-		JString getRealName();
+		java::util::jar::Attributes getAttributes() const;
+		JArray getCertificates() const;
+		JArray getCodeSigners() const;
+		JString getRealName() const;
 	};
 } // namespace java::util::jar
 

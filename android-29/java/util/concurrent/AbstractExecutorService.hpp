@@ -27,12 +27,12 @@ namespace java::util::concurrent
 		AbstractExecutorService();
 		
 		// Methods
-		JObject invokeAll(JObject arg0);
-		JObject invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		JObject invokeAny(JObject arg0);
-		JObject invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		JObject submit(JObject arg0);
-		JObject submit(JObject arg0, JObject arg1);
+		JObject invokeAll(JObject arg0) const;
+		JObject invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
+		JObject invokeAny(JObject arg0) const;
+		JObject invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
+		JObject submit(JObject arg0) const;
+		JObject submit(JObject arg0, JObject arg1) const;
 	};
 } // namespace java::util::concurrent
 

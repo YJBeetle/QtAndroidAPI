@@ -11,7 +11,7 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	JString LoginFilter::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
+	JString LoginFilter::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const
 	{
 		return callObjectMethod(
 			"filter",
@@ -24,7 +24,7 @@ namespace android::text
 			arg5
 		);
 	}
-	jboolean LoginFilter::isAllowed(jchar arg0)
+	jboolean LoginFilter::isAllowed(jchar arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAllowed",
@@ -32,7 +32,7 @@ namespace android::text
 			arg0
 		);
 	}
-	void LoginFilter::onInvalidCharacter(jchar arg0)
+	void LoginFilter::onInvalidCharacter(jchar arg0) const
 	{
 		callMethod<void>(
 			"onInvalidCharacter",
@@ -40,14 +40,14 @@ namespace android::text
 			arg0
 		);
 	}
-	void LoginFilter::onStart()
+	void LoginFilter::onStart() const
 	{
 		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
-	void LoginFilter::onStop()
+	void LoginFilter::onStop() const
 	{
 		callMethod<void>(
 			"onStop",

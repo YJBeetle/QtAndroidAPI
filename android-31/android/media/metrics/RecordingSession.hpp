@@ -22,10 +22,10 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		void close();
-		jboolean equals(JObject arg0);
-		android::media::metrics::LogSessionId getSessionId();
-		jint hashCode();
+		void close() const;
+		jboolean equals(JObject arg0) const;
+		android::media::metrics::LogSessionId getSessionId() const;
+		jint hashCode() const;
 	};
 } // namespace android::media::metrics
 

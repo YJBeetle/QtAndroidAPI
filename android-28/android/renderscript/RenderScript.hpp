@@ -47,16 +47,16 @@ namespace android::renderscript
 		static android::renderscript::RenderScript createMultiContext(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3);
 		static jlong getMinorVersion();
 		static void releaseAllContexts();
-		void contextDump();
-		void destroy();
-		void finish();
-		android::content::Context getApplicationContext();
-		android::renderscript::RenderScript_RSErrorHandler getErrorHandler();
-		android::renderscript::RenderScript_RSMessageHandler getMessageHandler();
-		void sendMessage(jint arg0, JIntArray arg1);
-		void setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0);
-		void setMessageHandler(android::renderscript::RenderScript_RSMessageHandler arg0);
-		void setPriority(android::renderscript::RenderScript_Priority arg0);
+		void contextDump() const;
+		void destroy() const;
+		void finish() const;
+		android::content::Context getApplicationContext() const;
+		android::renderscript::RenderScript_RSErrorHandler getErrorHandler() const;
+		android::renderscript::RenderScript_RSMessageHandler getMessageHandler() const;
+		void sendMessage(jint arg0, JIntArray arg1) const;
+		void setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0) const;
+		void setMessageHandler(android::renderscript::RenderScript_RSMessageHandler arg0) const;
+		void setPriority(android::renderscript::RenderScript_Priority arg0) const;
 	};
 } // namespace android::renderscript
 

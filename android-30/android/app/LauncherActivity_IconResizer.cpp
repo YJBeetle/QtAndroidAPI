@@ -18,7 +18,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::graphics::drawable::Drawable LauncherActivity_IconResizer::createIconThumbnail(android::graphics::drawable::Drawable arg0)
+	android::graphics::drawable::Drawable LauncherActivity_IconResizer::createIconThumbnail(android::graphics::drawable::Drawable arg0) const
 	{
 		return callObjectMethod(
 			"createIconThumbnail",

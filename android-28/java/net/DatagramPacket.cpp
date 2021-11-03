@@ -64,49 +64,49 @@ namespace java::net
 		) {}
 	
 	// Methods
-	java::net::InetAddress DatagramPacket::getAddress()
+	java::net::InetAddress DatagramPacket::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	JByteArray DatagramPacket::getData()
+	JByteArray DatagramPacket::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	jint DatagramPacket::getLength()
+	jint DatagramPacket::getLength() const
 	{
 		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
-	jint DatagramPacket::getOffset()
+	jint DatagramPacket::getOffset() const
 	{
 		return callMethod<jint>(
 			"getOffset",
 			"()I"
 		);
 	}
-	jint DatagramPacket::getPort()
+	jint DatagramPacket::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	java::net::SocketAddress DatagramPacket::getSocketAddress()
+	java::net::SocketAddress DatagramPacket::getSocketAddress() const
 	{
 		return callObjectMethod(
 			"getSocketAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	void DatagramPacket::setAddress(java::net::InetAddress arg0)
+	void DatagramPacket::setAddress(java::net::InetAddress arg0) const
 	{
 		callMethod<void>(
 			"setAddress",
@@ -114,7 +114,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void DatagramPacket::setData(JByteArray arg0)
+	void DatagramPacket::setData(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setData",
@@ -122,7 +122,7 @@ namespace java::net
 			arg0.object<jbyteArray>()
 		);
 	}
-	void DatagramPacket::setData(JByteArray arg0, jint arg1, jint arg2)
+	void DatagramPacket::setData(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setData",
@@ -132,7 +132,7 @@ namespace java::net
 			arg2
 		);
 	}
-	void DatagramPacket::setLength(jint arg0)
+	void DatagramPacket::setLength(jint arg0) const
 	{
 		callMethod<void>(
 			"setLength",
@@ -140,7 +140,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void DatagramPacket::setPort(jint arg0)
+	void DatagramPacket::setPort(jint arg0) const
 	{
 		callMethod<void>(
 			"setPort",
@@ -148,7 +148,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void DatagramPacket::setSocketAddress(java::net::SocketAddress arg0)
+	void DatagramPacket::setSocketAddress(java::net::SocketAddress arg0) const
 	{
 		callMethod<void>(
 			"setSocketAddress",

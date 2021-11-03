@@ -28,8 +28,8 @@ namespace android::provider
 		FontsContract_FontRequestCallback();
 		
 		// Methods
-		void onTypefaceRequestFailed(jint arg0);
-		void onTypefaceRetrieved(android::graphics::Typeface arg0);
+		void onTypefaceRequestFailed(jint arg0) const;
+		void onTypefaceRetrieved(android::graphics::Typeface arg0) const;
 	};
 } // namespace android::provider
 

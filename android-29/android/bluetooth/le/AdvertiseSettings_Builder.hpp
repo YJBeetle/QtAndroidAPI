@@ -22,11 +22,11 @@ namespace android::bluetooth::le
 		AdvertiseSettings_Builder();
 		
 		// Methods
-		android::bluetooth::le::AdvertiseSettings build();
-		android::bluetooth::le::AdvertiseSettings_Builder setAdvertiseMode(jint arg0);
-		android::bluetooth::le::AdvertiseSettings_Builder setConnectable(jboolean arg0);
-		android::bluetooth::le::AdvertiseSettings_Builder setTimeout(jint arg0);
-		android::bluetooth::le::AdvertiseSettings_Builder setTxPowerLevel(jint arg0);
+		android::bluetooth::le::AdvertiseSettings build() const;
+		android::bluetooth::le::AdvertiseSettings_Builder setAdvertiseMode(jint arg0) const;
+		android::bluetooth::le::AdvertiseSettings_Builder setConnectable(jboolean arg0) const;
+		android::bluetooth::le::AdvertiseSettings_Builder setTimeout(jint arg0) const;
+		android::bluetooth::le::AdvertiseSettings_Builder setTxPowerLevel(jint arg0) const;
 	};
 } // namespace android::bluetooth::le
 

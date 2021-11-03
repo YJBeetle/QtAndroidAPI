@@ -44,21 +44,21 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JString AlgorithmParameters::getAlgorithm()
+	JString AlgorithmParameters::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray AlgorithmParameters::getEncoded()
+	JByteArray AlgorithmParameters::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JByteArray AlgorithmParameters::getEncoded(JString arg0)
+	JByteArray AlgorithmParameters::getEncoded(JString arg0) const
 	{
 		return callObjectMethod(
 			"getEncoded",
@@ -66,7 +66,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	JObject AlgorithmParameters::getParameterSpec(JClass arg0)
+	JObject AlgorithmParameters::getParameterSpec(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getParameterSpec",
@@ -74,14 +74,14 @@ namespace java::security
 			arg0.object<jclass>()
 		);
 	}
-	java::security::Provider AlgorithmParameters::getProvider()
+	java::security::Provider AlgorithmParameters::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void AlgorithmParameters::init(JByteArray arg0)
+	void AlgorithmParameters::init(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -89,7 +89,7 @@ namespace java::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	void AlgorithmParameters::init(JObject arg0)
+	void AlgorithmParameters::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -97,7 +97,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void AlgorithmParameters::init(JByteArray arg0, JString arg1)
+	void AlgorithmParameters::init(JByteArray arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -106,7 +106,7 @@ namespace java::security
 			arg1.object<jstring>()
 		);
 	}
-	JString AlgorithmParameters::toString()
+	JString AlgorithmParameters::toString() const
 	{
 		return callObjectMethod(
 			"toString",

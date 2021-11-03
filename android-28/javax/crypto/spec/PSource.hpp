@@ -18,7 +18,7 @@ namespace javax::crypto::spec
 		// Constructors
 		
 		// Methods
-		JString getAlgorithm();
+		JString getAlgorithm() const;
 	};
 } // namespace javax::crypto::spec
 

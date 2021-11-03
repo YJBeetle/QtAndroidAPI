@@ -28,11 +28,11 @@ namespace android::net::rtp
 		AudioGroup(android::content::Context arg0);
 		
 		// Methods
-		void clear();
-		jint getMode();
-		JArray getStreams();
-		void sendDtmf(jint arg0);
-		void setMode(jint arg0);
+		void clear() const;
+		jint getMode() const;
+		JArray getStreams() const;
+		void sendDtmf(jint arg0) const;
+		void setMode(jint arg0) const;
 	};
 } // namespace android::net::rtp
 

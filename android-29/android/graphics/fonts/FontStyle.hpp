@@ -34,11 +34,11 @@ namespace android::graphics::fonts
 		FontStyle(jint arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getSlant();
-		jint getWeight();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getSlant() const;
+		jint getWeight() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::graphics::fonts
 

@@ -44,25 +44,25 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getEncoded();
-		JObject getIssuerDN();
-		javax::security::auth::x500::X500Principal getIssuerX500Principal();
-		java::util::Date getNextUpdate();
-		java::security::cert::X509CRLEntry getRevokedCertificate(java::math::BigInteger arg0);
-		java::security::cert::X509CRLEntry getRevokedCertificate(java::security::cert::X509Certificate arg0);
-		JObject getRevokedCertificates();
-		JString getSigAlgName();
-		JString getSigAlgOID();
-		JByteArray getSigAlgParams();
-		JByteArray getSignature();
-		JByteArray getTBSCertList();
-		java::util::Date getThisUpdate();
-		jint getVersion();
-		jint hashCode();
-		void verify(JObject arg0);
-		void verify(JObject arg0, JString arg1);
-		void verify(JObject arg0, java::security::Provider arg1);
+		jboolean equals(JObject arg0) const;
+		JByteArray getEncoded() const;
+		JObject getIssuerDN() const;
+		javax::security::auth::x500::X500Principal getIssuerX500Principal() const;
+		java::util::Date getNextUpdate() const;
+		java::security::cert::X509CRLEntry getRevokedCertificate(java::math::BigInteger arg0) const;
+		java::security::cert::X509CRLEntry getRevokedCertificate(java::security::cert::X509Certificate arg0) const;
+		JObject getRevokedCertificates() const;
+		JString getSigAlgName() const;
+		JString getSigAlgOID() const;
+		JByteArray getSigAlgParams() const;
+		JByteArray getSignature() const;
+		JByteArray getTBSCertList() const;
+		java::util::Date getThisUpdate() const;
+		jint getVersion() const;
+		jint hashCode() const;
+		void verify(JObject arg0) const;
+		void verify(JObject arg0, JString arg1) const;
+		void verify(JObject arg0, java::security::Provider arg1) const;
 	};
 } // namespace java::security::cert
 

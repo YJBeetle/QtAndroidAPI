@@ -35,10 +35,10 @@ namespace android::security::identity
 		// Methods
 		static android::security::identity::IdentityCredentialStore getDirectAccessInstance(android::content::Context arg0);
 		static android::security::identity::IdentityCredentialStore getInstance(android::content::Context arg0);
-		android::security::identity::WritableIdentityCredential createCredential(JString arg0, JString arg1);
-		JByteArray deleteCredentialByName(JString arg0);
-		android::security::identity::IdentityCredential getCredentialByName(JString arg0, jint arg1);
-		JArray getSupportedDocTypes();
+		android::security::identity::WritableIdentityCredential createCredential(JString arg0, JString arg1) const;
+		JByteArray deleteCredentialByName(JString arg0) const;
+		android::security::identity::IdentityCredential getCredentialByName(JString arg0, jint arg1) const;
+		JArray getSupportedDocTypes() const;
 	};
 } // namespace android::security::identity
 

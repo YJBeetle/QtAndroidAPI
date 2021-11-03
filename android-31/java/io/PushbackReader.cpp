@@ -25,14 +25,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void PushbackReader::close()
+	void PushbackReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PushbackReader::mark(jint arg0)
+	void PushbackReader::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -40,21 +40,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean PushbackReader::markSupported()
+	jboolean PushbackReader::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint PushbackReader::read()
+	jint PushbackReader::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint PushbackReader::read(JCharArray arg0, jint arg1, jint arg2)
+	jint PushbackReader::read(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -64,21 +64,21 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean PushbackReader::ready()
+	jboolean PushbackReader::ready() const
 	{
 		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
-	void PushbackReader::reset()
+	void PushbackReader::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong PushbackReader::skip(jlong arg0)
+	jlong PushbackReader::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",
@@ -86,7 +86,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PushbackReader::unread(JCharArray arg0)
+	void PushbackReader::unread(JCharArray arg0) const
 	{
 		callMethod<void>(
 			"unread",
@@ -94,7 +94,7 @@ namespace java::io
 			arg0.object<jcharArray>()
 		);
 	}
-	void PushbackReader::unread(jint arg0)
+	void PushbackReader::unread(jint arg0) const
 	{
 		callMethod<void>(
 			"unread",
@@ -102,7 +102,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PushbackReader::unread(JCharArray arg0, jint arg1, jint arg2)
+	void PushbackReader::unread(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"unread",

@@ -20,21 +20,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint Session2CommandGroup::describeContents()
+	jint Session2CommandGroup::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject Session2CommandGroup::getCommands()
+	JObject Session2CommandGroup::getCommands() const
 	{
 		return callObjectMethod(
 			"getCommands",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean Session2CommandGroup::hasCommand(android::media::Session2Command arg0)
+	jboolean Session2CommandGroup::hasCommand(android::media::Session2Command arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCommand",
@@ -42,7 +42,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean Session2CommandGroup::hasCommand(jint arg0)
+	jboolean Session2CommandGroup::hasCommand(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCommand",
@@ -50,7 +50,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void Session2CommandGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Session2CommandGroup::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

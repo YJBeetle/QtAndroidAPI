@@ -18,7 +18,7 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	void BluetoothHealthCallback::onHealthAppConfigurationStatusChange(android::bluetooth::BluetoothHealthAppConfiguration arg0, jint arg1)
+	void BluetoothHealthCallback::onHealthAppConfigurationStatusChange(android::bluetooth::BluetoothHealthAppConfiguration arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onHealthAppConfigurationStatusChange",
@@ -27,7 +27,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothHealthCallback::onHealthChannelStateChange(android::bluetooth::BluetoothHealthAppConfiguration arg0, android::bluetooth::BluetoothDevice arg1, jint arg2, jint arg3, android::os::ParcelFileDescriptor arg4, jint arg5)
+	void BluetoothHealthCallback::onHealthChannelStateChange(android::bluetooth::BluetoothHealthAppConfiguration arg0, android::bluetooth::BluetoothDevice arg1, jint arg2, jint arg3, android::os::ParcelFileDescriptor arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"onHealthChannelStateChange",

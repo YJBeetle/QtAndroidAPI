@@ -28,7 +28,7 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	jboolean SizeF::equals(JObject arg0)
+	jboolean SizeF::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,28 +36,28 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jfloat SizeF::getHeight()
+	jfloat SizeF::getHeight() const
 	{
 		return callMethod<jfloat>(
 			"getHeight",
 			"()F"
 		);
 	}
-	jfloat SizeF::getWidth()
+	jfloat SizeF::getWidth() const
 	{
 		return callMethod<jfloat>(
 			"getWidth",
 			"()F"
 		);
 	}
-	jint SizeF::hashCode()
+	jint SizeF::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SizeF::toString()
+	JString SizeF::toString() const
 	{
 		return callObjectMethod(
 			"toString",

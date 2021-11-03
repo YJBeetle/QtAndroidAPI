@@ -18,28 +18,28 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	JByteArray PolicyQualifierInfo::getEncoded()
+	JByteArray PolicyQualifierInfo::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JByteArray PolicyQualifierInfo::getPolicyQualifier()
+	JByteArray PolicyQualifierInfo::getPolicyQualifier() const
 	{
 		return callObjectMethod(
 			"getPolicyQualifier",
 			"()[B"
 		);
 	}
-	JString PolicyQualifierInfo::getPolicyQualifierId()
+	JString PolicyQualifierInfo::getPolicyQualifierId() const
 	{
 		return callObjectMethod(
 			"getPolicyQualifierId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PolicyQualifierInfo::toString()
+	JString PolicyQualifierInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

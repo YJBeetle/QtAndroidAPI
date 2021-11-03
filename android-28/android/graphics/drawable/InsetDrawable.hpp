@@ -41,13 +41,13 @@ namespace android::graphics::drawable
 		InsetDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		void applyTheme(android::content::res::Resources_Theme arg0);
-		jint getIntrinsicHeight();
-		jint getIntrinsicWidth();
-		jint getOpacity();
-		void getOutline(android::graphics::Outline arg0);
-		jboolean getPadding(android::graphics::Rect arg0);
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
+		void applyTheme(android::content::res::Resources_Theme arg0) const;
+		jint getIntrinsicHeight() const;
+		jint getIntrinsicWidth() const;
+		jint getOpacity() const;
+		void getOutline(android::graphics::Outline arg0) const;
+		jboolean getPadding(android::graphics::Rect arg0) const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
 	};
 } // namespace android::graphics::drawable
 

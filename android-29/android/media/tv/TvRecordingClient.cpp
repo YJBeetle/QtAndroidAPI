@@ -25,14 +25,14 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvRecordingClient::release()
+	void TvRecordingClient::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void TvRecordingClient::sendAppPrivateCommand(JString arg0, android::os::Bundle arg1)
+	void TvRecordingClient::sendAppPrivateCommand(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendAppPrivateCommand",
@@ -41,7 +41,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvRecordingClient::startRecording(android::net::Uri arg0)
+	void TvRecordingClient::startRecording(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"startRecording",
@@ -49,14 +49,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvRecordingClient::stopRecording()
+	void TvRecordingClient::stopRecording() const
 	{
 		callMethod<void>(
 			"stopRecording",
 			"()V"
 		);
 	}
-	void TvRecordingClient::tune(JString arg0, android::net::Uri arg1)
+	void TvRecordingClient::tune(JString arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"tune",
@@ -65,7 +65,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvRecordingClient::tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2)
+	void TvRecordingClient::tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"tune",

@@ -18,7 +18,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jboolean ObjectInputStream_GetField::defaulted(JString arg0)
+	jboolean ObjectInputStream_GetField::defaulted(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"defaulted",
@@ -26,7 +26,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ObjectInputStream_GetField::get(JString arg0, jboolean arg1)
+	jboolean ObjectInputStream_GetField::get(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"get",
@@ -35,7 +35,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jbyte ObjectInputStream_GetField::get(JString arg0, jbyte arg1)
+	jbyte ObjectInputStream_GetField::get(JString arg0, jbyte arg1) const
 	{
 		return callMethod<jbyte>(
 			"get",
@@ -44,7 +44,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jchar ObjectInputStream_GetField::get(JString arg0, jchar arg1)
+	jchar ObjectInputStream_GetField::get(JString arg0, jchar arg1) const
 	{
 		return callMethod<jchar>(
 			"get",
@@ -53,7 +53,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jdouble ObjectInputStream_GetField::get(JString arg0, jdouble arg1)
+	jdouble ObjectInputStream_GetField::get(JString arg0, jdouble arg1) const
 	{
 		return callMethod<jdouble>(
 			"get",
@@ -62,7 +62,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jfloat ObjectInputStream_GetField::get(JString arg0, jfloat arg1)
+	jfloat ObjectInputStream_GetField::get(JString arg0, jfloat arg1) const
 	{
 		return callMethod<jfloat>(
 			"get",
@@ -71,7 +71,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jint ObjectInputStream_GetField::get(JString arg0, jint arg1)
+	jint ObjectInputStream_GetField::get(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -80,7 +80,7 @@ namespace java::io
 			arg1
 		);
 	}
-	JObject ObjectInputStream_GetField::get(JString arg0, JObject arg1)
+	JObject ObjectInputStream_GetField::get(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -89,7 +89,7 @@ namespace java::io
 			arg1.object<jobject>()
 		);
 	}
-	jlong ObjectInputStream_GetField::get(JString arg0, jlong arg1)
+	jlong ObjectInputStream_GetField::get(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"get",
@@ -98,7 +98,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jshort ObjectInputStream_GetField::get(JString arg0, jshort arg1)
+	jshort ObjectInputStream_GetField::get(JString arg0, jshort arg1) const
 	{
 		return callMethod<jshort>(
 			"get",
@@ -107,7 +107,7 @@ namespace java::io
 			arg1
 		);
 	}
-	java::io::ObjectStreamClass ObjectInputStream_GetField::getObjectStreamClass()
+	java::io::ObjectStreamClass ObjectInputStream_GetField::getObjectStreamClass() const
 	{
 		return callObjectMethod(
 			"getObjectStreamClass",

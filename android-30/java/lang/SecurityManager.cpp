@@ -24,7 +24,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	void SecurityManager::checkAccept(JString arg0, jint arg1)
+	void SecurityManager::checkAccept(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"checkAccept",
@@ -33,7 +33,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	void SecurityManager::checkAccess(java::lang::Thread arg0)
+	void SecurityManager::checkAccess(java::lang::Thread arg0) const
 	{
 		callMethod<void>(
 			"checkAccess",
@@ -41,7 +41,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkAccess(java::lang::ThreadGroup arg0)
+	void SecurityManager::checkAccess(java::lang::ThreadGroup arg0) const
 	{
 		callMethod<void>(
 			"checkAccess",
@@ -49,7 +49,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkConnect(JString arg0, jint arg1)
+	void SecurityManager::checkConnect(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"checkConnect",
@@ -58,7 +58,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	void SecurityManager::checkConnect(JString arg0, jint arg1, JObject arg2)
+	void SecurityManager::checkConnect(JString arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"checkConnect",
@@ -68,14 +68,14 @@ namespace java::lang
 			arg2.object<jobject>()
 		);
 	}
-	void SecurityManager::checkCreateClassLoader()
+	void SecurityManager::checkCreateClassLoader() const
 	{
 		callMethod<void>(
 			"checkCreateClassLoader",
 			"()V"
 		);
 	}
-	void SecurityManager::checkDelete(JString arg0)
+	void SecurityManager::checkDelete(JString arg0) const
 	{
 		callMethod<void>(
 			"checkDelete",
@@ -83,7 +83,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkExec(JString arg0)
+	void SecurityManager::checkExec(JString arg0) const
 	{
 		callMethod<void>(
 			"checkExec",
@@ -91,7 +91,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkExit(jint arg0)
+	void SecurityManager::checkExit(jint arg0) const
 	{
 		callMethod<void>(
 			"checkExit",
@@ -99,7 +99,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void SecurityManager::checkLink(JString arg0)
+	void SecurityManager::checkLink(JString arg0) const
 	{
 		callMethod<void>(
 			"checkLink",
@@ -107,7 +107,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkListen(jint arg0)
+	void SecurityManager::checkListen(jint arg0) const
 	{
 		callMethod<void>(
 			"checkListen",
@@ -115,7 +115,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void SecurityManager::checkMulticast(java::net::InetAddress arg0)
+	void SecurityManager::checkMulticast(java::net::InetAddress arg0) const
 	{
 		callMethod<void>(
 			"checkMulticast",
@@ -123,7 +123,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkMulticast(java::net::InetAddress arg0, jbyte arg1)
+	void SecurityManager::checkMulticast(java::net::InetAddress arg0, jbyte arg1) const
 	{
 		callMethod<void>(
 			"checkMulticast",
@@ -132,7 +132,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	void SecurityManager::checkPackageAccess(JString arg0)
+	void SecurityManager::checkPackageAccess(JString arg0) const
 	{
 		callMethod<void>(
 			"checkPackageAccess",
@@ -140,7 +140,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkPackageDefinition(JString arg0)
+	void SecurityManager::checkPackageDefinition(JString arg0) const
 	{
 		callMethod<void>(
 			"checkPackageDefinition",
@@ -148,7 +148,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkPermission(java::security::Permission arg0)
+	void SecurityManager::checkPermission(java::security::Permission arg0) const
 	{
 		callMethod<void>(
 			"checkPermission",
@@ -156,7 +156,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkPermission(java::security::Permission arg0, JObject arg1)
+	void SecurityManager::checkPermission(java::security::Permission arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"checkPermission",
@@ -165,21 +165,21 @@ namespace java::lang
 			arg1.object<jobject>()
 		);
 	}
-	void SecurityManager::checkPrintJobAccess()
+	void SecurityManager::checkPrintJobAccess() const
 	{
 		callMethod<void>(
 			"checkPrintJobAccess",
 			"()V"
 		);
 	}
-	void SecurityManager::checkPropertiesAccess()
+	void SecurityManager::checkPropertiesAccess() const
 	{
 		callMethod<void>(
 			"checkPropertiesAccess",
 			"()V"
 		);
 	}
-	void SecurityManager::checkPropertyAccess(JString arg0)
+	void SecurityManager::checkPropertyAccess(JString arg0) const
 	{
 		callMethod<void>(
 			"checkPropertyAccess",
@@ -187,7 +187,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkRead(java::io::FileDescriptor arg0)
+	void SecurityManager::checkRead(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"checkRead",
@@ -195,7 +195,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkRead(JString arg0)
+	void SecurityManager::checkRead(JString arg0) const
 	{
 		callMethod<void>(
 			"checkRead",
@@ -203,7 +203,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkRead(JString arg0, JObject arg1)
+	void SecurityManager::checkRead(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"checkRead",
@@ -212,7 +212,7 @@ namespace java::lang
 			arg1.object<jobject>()
 		);
 	}
-	void SecurityManager::checkSecurityAccess(JString arg0)
+	void SecurityManager::checkSecurityAccess(JString arg0) const
 	{
 		callMethod<void>(
 			"checkSecurityAccess",
@@ -220,14 +220,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkSetFactory()
+	void SecurityManager::checkSetFactory() const
 	{
 		callMethod<void>(
 			"checkSetFactory",
 			"()V"
 		);
 	}
-	void SecurityManager::checkWrite(java::io::FileDescriptor arg0)
+	void SecurityManager::checkWrite(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"checkWrite",
@@ -235,7 +235,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkWrite(JString arg0)
+	void SecurityManager::checkWrite(JString arg0) const
 	{
 		callMethod<void>(
 			"checkWrite",
@@ -243,14 +243,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	JObject SecurityManager::getSecurityContext()
+	JObject SecurityManager::getSecurityContext() const
 	{
 		return callObjectMethod(
 			"getSecurityContext",
 			"()Ljava/lang/Object;"
 		);
 	}
-	java::lang::ThreadGroup SecurityManager::getThreadGroup()
+	java::lang::ThreadGroup SecurityManager::getThreadGroup() const
 	{
 		return callObjectMethod(
 			"getThreadGroup",

@@ -18,7 +18,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString Filter::convertResultToString(JObject arg0)
+	JString Filter::convertResultToString(JObject arg0) const
 	{
 		return callObjectMethod(
 			"convertResultToString",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg0.object<jobject>()
 		);
 	}
-	void Filter::filter(JString arg0)
+	void Filter::filter(JString arg0) const
 	{
 		callMethod<void>(
 			"filter",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Filter::filter(JString arg0, JObject arg1)
+	void Filter::filter(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"filter",

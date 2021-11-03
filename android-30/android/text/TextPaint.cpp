@@ -72,14 +72,14 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jfloat TextPaint::getUnderlineThickness()
+	jfloat TextPaint::getUnderlineThickness() const
 	{
 		return callMethod<jfloat>(
 			"getUnderlineThickness",
 			"()F"
 		);
 	}
-	void TextPaint::set(android::text::TextPaint arg0)
+	void TextPaint::set(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"set",

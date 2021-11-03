@@ -20,11 +20,11 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jlong getBuildTimeMillis();
-		JString getFingerprint();
-		JString getName();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jlong getBuildTimeMillis() const;
+		JString getFingerprint() const;
+		JString getName() const;
+		jint hashCode() const;
 	};
 } // namespace android::os
 

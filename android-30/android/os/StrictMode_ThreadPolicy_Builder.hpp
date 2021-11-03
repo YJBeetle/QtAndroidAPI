@@ -23,28 +23,28 @@ namespace android::os
 		StrictMode_ThreadPolicy_Builder(android::os::StrictMode_ThreadPolicy arg0);
 		
 		// Methods
-		android::os::StrictMode_ThreadPolicy build();
-		android::os::StrictMode_ThreadPolicy_Builder detectAll();
-		android::os::StrictMode_ThreadPolicy_Builder detectCustomSlowCalls();
-		android::os::StrictMode_ThreadPolicy_Builder detectDiskReads();
-		android::os::StrictMode_ThreadPolicy_Builder detectDiskWrites();
-		android::os::StrictMode_ThreadPolicy_Builder detectNetwork();
-		android::os::StrictMode_ThreadPolicy_Builder detectResourceMismatches();
-		android::os::StrictMode_ThreadPolicy_Builder detectUnbufferedIo();
-		android::os::StrictMode_ThreadPolicy_Builder penaltyDeath();
-		android::os::StrictMode_ThreadPolicy_Builder penaltyDeathOnNetwork();
-		android::os::StrictMode_ThreadPolicy_Builder penaltyDialog();
-		android::os::StrictMode_ThreadPolicy_Builder penaltyDropBox();
-		android::os::StrictMode_ThreadPolicy_Builder penaltyFlashScreen();
-		android::os::StrictMode_ThreadPolicy_Builder penaltyListener(JObject arg0, JObject arg1);
-		android::os::StrictMode_ThreadPolicy_Builder penaltyLog();
-		android::os::StrictMode_ThreadPolicy_Builder permitAll();
-		android::os::StrictMode_ThreadPolicy_Builder permitCustomSlowCalls();
-		android::os::StrictMode_ThreadPolicy_Builder permitDiskReads();
-		android::os::StrictMode_ThreadPolicy_Builder permitDiskWrites();
-		android::os::StrictMode_ThreadPolicy_Builder permitNetwork();
-		android::os::StrictMode_ThreadPolicy_Builder permitResourceMismatches();
-		android::os::StrictMode_ThreadPolicy_Builder permitUnbufferedIo();
+		android::os::StrictMode_ThreadPolicy build() const;
+		android::os::StrictMode_ThreadPolicy_Builder detectAll() const;
+		android::os::StrictMode_ThreadPolicy_Builder detectCustomSlowCalls() const;
+		android::os::StrictMode_ThreadPolicy_Builder detectDiskReads() const;
+		android::os::StrictMode_ThreadPolicy_Builder detectDiskWrites() const;
+		android::os::StrictMode_ThreadPolicy_Builder detectNetwork() const;
+		android::os::StrictMode_ThreadPolicy_Builder detectResourceMismatches() const;
+		android::os::StrictMode_ThreadPolicy_Builder detectUnbufferedIo() const;
+		android::os::StrictMode_ThreadPolicy_Builder penaltyDeath() const;
+		android::os::StrictMode_ThreadPolicy_Builder penaltyDeathOnNetwork() const;
+		android::os::StrictMode_ThreadPolicy_Builder penaltyDialog() const;
+		android::os::StrictMode_ThreadPolicy_Builder penaltyDropBox() const;
+		android::os::StrictMode_ThreadPolicy_Builder penaltyFlashScreen() const;
+		android::os::StrictMode_ThreadPolicy_Builder penaltyListener(JObject arg0, JObject arg1) const;
+		android::os::StrictMode_ThreadPolicy_Builder penaltyLog() const;
+		android::os::StrictMode_ThreadPolicy_Builder permitAll() const;
+		android::os::StrictMode_ThreadPolicy_Builder permitCustomSlowCalls() const;
+		android::os::StrictMode_ThreadPolicy_Builder permitDiskReads() const;
+		android::os::StrictMode_ThreadPolicy_Builder permitDiskWrites() const;
+		android::os::StrictMode_ThreadPolicy_Builder permitNetwork() const;
+		android::os::StrictMode_ThreadPolicy_Builder permitResourceMismatches() const;
+		android::os::StrictMode_ThreadPolicy_Builder permitUnbufferedIo() const;
 	};
 } // namespace android::os
 

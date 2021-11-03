@@ -266,14 +266,14 @@ namespace android::media::tv
 	// Constructors
 	
 	// Methods
-	JObject TvInputManager::getBlockedRatings()
+	JObject TvInputManager::getBlockedRatings() const
 	{
 		return callObjectMethod(
 			"getBlockedRatings",
 			"()Ljava/util/List;"
 		);
 	}
-	jint TvInputManager::getInputState(JString arg0)
+	jint TvInputManager::getInputState(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getInputState",
@@ -281,7 +281,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvInputInfo TvInputManager::getTvInputInfo(JString arg0)
+	android::media::tv::TvInputInfo TvInputManager::getTvInputInfo(JString arg0) const
 	{
 		return callObjectMethod(
 			"getTvInputInfo",
@@ -289,21 +289,21 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	JObject TvInputManager::getTvInputList()
+	JObject TvInputManager::getTvInputList() const
 	{
 		return callObjectMethod(
 			"getTvInputList",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean TvInputManager::isParentalControlsEnabled()
+	jboolean TvInputManager::isParentalControlsEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isParentalControlsEnabled",
 			"()Z"
 		);
 	}
-	jboolean TvInputManager::isRatingBlocked(android::media::tv::TvContentRating arg0)
+	jboolean TvInputManager::isRatingBlocked(android::media::tv::TvContentRating arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRatingBlocked",
@@ -311,7 +311,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputManager::registerCallback(android::media::tv::TvInputManager_TvInputCallback arg0, android::os::Handler arg1)
+	void TvInputManager::registerCallback(android::media::tv::TvInputManager_TvInputCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -320,7 +320,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvInputManager::unregisterCallback(android::media::tv::TvInputManager_TvInputCallback arg0)
+	void TvInputManager::unregisterCallback(android::media::tv::TvInputManager_TvInputCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",
@@ -328,7 +328,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputManager::updateTvInputInfo(android::media::tv::TvInputInfo arg0)
+	void TvInputManager::updateTvInputInfo(android::media::tv::TvInputInfo arg0) const
 	{
 		callMethod<void>(
 			"updateTvInputInfo",

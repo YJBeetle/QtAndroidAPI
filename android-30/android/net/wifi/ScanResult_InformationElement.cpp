@@ -17,21 +17,21 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	java::nio::ByteBuffer ScanResult_InformationElement::getBytes()
+	java::nio::ByteBuffer ScanResult_InformationElement::getBytes() const
 	{
 		return callObjectMethod(
 			"getBytes",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jint ScanResult_InformationElement::getId()
+	jint ScanResult_InformationElement::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint ScanResult_InformationElement::getIdExt()
+	jint ScanResult_InformationElement::getIdExt() const
 	{
 		return callMethod<jint>(
 			"getIdExt",

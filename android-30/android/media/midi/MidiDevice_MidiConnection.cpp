@@ -11,7 +11,7 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	void MidiDevice_MidiConnection::close()
+	void MidiDevice_MidiConnection::close() const
 	{
 		callMethod<void>(
 			"close",

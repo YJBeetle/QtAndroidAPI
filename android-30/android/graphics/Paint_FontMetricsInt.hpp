@@ -24,7 +24,7 @@ namespace android::graphics
 		Paint_FontMetricsInt();
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::graphics
 

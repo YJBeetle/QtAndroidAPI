@@ -33,11 +33,11 @@ namespace android::preference
 		// Constructors
 		
 		// Methods
-		void bind(android::widget::ListView arg0);
-		android::app::Dialog getDialog();
-		JObject getRootAdapter();
-		void onDismiss(JObject arg0);
-		void onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3);
+		void bind(android::widget::ListView arg0) const;
+		android::app::Dialog getDialog() const;
+		JObject getRootAdapter() const;
+		void onDismiss(JObject arg0) const;
+		void onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const;
 	};
 } // namespace android::preference
 

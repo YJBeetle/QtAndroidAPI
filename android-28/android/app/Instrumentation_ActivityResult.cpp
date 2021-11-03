@@ -18,14 +18,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint Instrumentation_ActivityResult::getResultCode()
+	jint Instrumentation_ActivityResult::getResultCode() const
 	{
 		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
-	android::content::Intent Instrumentation_ActivityResult::getResultData()
+	android::content::Intent Instrumentation_ActivityResult::getResultData() const
 	{
 		return callObjectMethod(
 			"getResultData",

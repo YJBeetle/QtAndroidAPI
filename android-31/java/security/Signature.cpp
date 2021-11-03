@@ -48,21 +48,21 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JObject Signature::clone()
+	JObject Signature::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString Signature::getAlgorithm()
+	JString Signature::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Signature::getParameter(JString arg0)
+	JObject Signature::getParameter(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParameter",
@@ -70,21 +70,21 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	java::security::AlgorithmParameters Signature::getParameters()
+	java::security::AlgorithmParameters Signature::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	java::security::Provider Signature::getProvider()
+	java::security::Provider Signature::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void Signature::initSign(JObject arg0)
+	void Signature::initSign(JObject arg0) const
 	{
 		callMethod<void>(
 			"initSign",
@@ -92,7 +92,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::initSign(JObject arg0, java::security::SecureRandom arg1)
+	void Signature::initSign(JObject arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"initSign",
@@ -101,7 +101,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void Signature::initVerify(JObject arg0)
+	void Signature::initVerify(JObject arg0) const
 	{
 		callMethod<void>(
 			"initVerify",
@@ -109,7 +109,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::initVerify(java::security::cert::Certificate arg0)
+	void Signature::initVerify(java::security::cert::Certificate arg0) const
 	{
 		callMethod<void>(
 			"initVerify",
@@ -117,7 +117,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::setParameter(JObject arg0)
+	void Signature::setParameter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParameter",
@@ -125,7 +125,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::setParameter(JString arg0, JObject arg1)
+	void Signature::setParameter(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setParameter",
@@ -134,14 +134,14 @@ namespace java::security
 			arg1.object<jobject>()
 		);
 	}
-	JByteArray Signature::sign()
+	JByteArray Signature::sign() const
 	{
 		return callObjectMethod(
 			"sign",
 			"()[B"
 		);
 	}
-	jint Signature::sign(JByteArray arg0, jint arg1, jint arg2)
+	jint Signature::sign(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"sign",
@@ -151,14 +151,14 @@ namespace java::security
 			arg2
 		);
 	}
-	JString Signature::toString()
+	JString Signature::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Signature::update(JByteArray arg0)
+	void Signature::update(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -166,7 +166,7 @@ namespace java::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Signature::update(jbyte arg0)
+	void Signature::update(jbyte arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -174,7 +174,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void Signature::update(java::nio::ByteBuffer arg0)
+	void Signature::update(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -182,7 +182,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::update(JByteArray arg0, jint arg1, jint arg2)
+	void Signature::update(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"update",
@@ -192,7 +192,7 @@ namespace java::security
 			arg2
 		);
 	}
-	jboolean Signature::verify(JByteArray arg0)
+	jboolean Signature::verify(JByteArray arg0) const
 	{
 		return callMethod<jboolean>(
 			"verify",
@@ -200,7 +200,7 @@ namespace java::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	jboolean Signature::verify(JByteArray arg0, jint arg1, jint arg2)
+	jboolean Signature::verify(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"verify",

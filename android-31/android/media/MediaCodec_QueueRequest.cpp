@@ -16,14 +16,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaCodec_QueueRequest::queue()
+	void MediaCodec_QueueRequest::queue() const
 	{
 		callMethod<void>(
 			"queue",
 			"()V"
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setByteBufferParameter(JString arg0, java::nio::ByteBuffer arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setByteBufferParameter(JString arg0, java::nio::ByteBuffer arg1) const
 	{
 		return callObjectMethod(
 			"setByteBufferParameter",
@@ -32,7 +32,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setEncryptedLinearBlock(android::media::MediaCodec_LinearBlock arg0, jint arg1, jint arg2, android::media::MediaCodec_CryptoInfo arg3)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setEncryptedLinearBlock(android::media::MediaCodec_LinearBlock arg0, jint arg1, jint arg2, android::media::MediaCodec_CryptoInfo arg3) const
 	{
 		return callObjectMethod(
 			"setEncryptedLinearBlock",
@@ -43,7 +43,7 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setFlags(jint arg0)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -51,7 +51,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setFloatParameter(JString arg0, jfloat arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setFloatParameter(JString arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"setFloatParameter",
@@ -60,7 +60,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setHardwareBuffer(android::hardware::HardwareBuffer arg0)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setHardwareBuffer(android::hardware::HardwareBuffer arg0) const
 	{
 		return callObjectMethod(
 			"setHardwareBuffer",
@@ -68,7 +68,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setIntegerParameter(JString arg0, jint arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setIntegerParameter(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setIntegerParameter",
@@ -77,7 +77,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setLinearBlock(android::media::MediaCodec_LinearBlock arg0, jint arg1, jint arg2)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setLinearBlock(android::media::MediaCodec_LinearBlock arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"setLinearBlock",
@@ -87,7 +87,7 @@ namespace android::media
 			arg2
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setLongParameter(JString arg0, jlong arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setLongParameter(JString arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"setLongParameter",
@@ -96,7 +96,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setPresentationTimeUs(jlong arg0)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setPresentationTimeUs(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setPresentationTimeUs",
@@ -104,7 +104,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setStringParameter(JString arg0, JString arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setStringParameter(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setStringParameter",

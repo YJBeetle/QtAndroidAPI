@@ -31,49 +31,49 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	jint BluetoothHidDeviceAppSdpSettings::describeContents()
+	jint BluetoothHidDeviceAppSdpSettings::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString BluetoothHidDeviceAppSdpSettings::getDescription()
+	JString BluetoothHidDeviceAppSdpSettings::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray BluetoothHidDeviceAppSdpSettings::getDescriptors()
+	JByteArray BluetoothHidDeviceAppSdpSettings::getDescriptors() const
 	{
 		return callObjectMethod(
 			"getDescriptors",
 			"()[B"
 		);
 	}
-	JString BluetoothHidDeviceAppSdpSettings::getName()
+	JString BluetoothHidDeviceAppSdpSettings::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString BluetoothHidDeviceAppSdpSettings::getProvider()
+	JString BluetoothHidDeviceAppSdpSettings::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/lang/String;"
 		);
 	}
-	jbyte BluetoothHidDeviceAppSdpSettings::getSubclass()
+	jbyte BluetoothHidDeviceAppSdpSettings::getSubclass() const
 	{
 		return callMethod<jbyte>(
 			"getSubclass",
 			"()B"
 		);
 	}
-	void BluetoothHidDeviceAppSdpSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothHidDeviceAppSdpSettings::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

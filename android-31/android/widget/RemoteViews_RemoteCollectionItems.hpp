@@ -26,13 +26,13 @@ namespace android::widget
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getItemCount();
-		jlong getItemId(jint arg0);
-		android::widget::RemoteViews getItemView(jint arg0);
-		jint getViewTypeCount();
-		jboolean hasStableIds();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getItemCount() const;
+		jlong getItemId(jint arg0) const;
+		android::widget::RemoteViews getItemView(jint arg0) const;
+		jint getViewTypeCount() const;
+		jboolean hasStableIds() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::widget
 

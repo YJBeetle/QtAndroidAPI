@@ -30,7 +30,7 @@ namespace android::content
 		AsyncQueryHandler_WorkerHandler(android::content::AsyncQueryHandler arg0, android::os::Looper arg1);
 		
 		// Methods
-		void handleMessage(android::os::Message arg0);
+		void handleMessage(android::os::Message arg0) const;
 	};
 } // namespace android::content
 

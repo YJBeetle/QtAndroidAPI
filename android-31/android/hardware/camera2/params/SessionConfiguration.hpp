@@ -38,18 +38,18 @@ namespace android::hardware::camera2::params
 		SessionConfiguration(jint arg0, JObject arg1, JObject arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getExecutor();
-		android::hardware::camera2::params::InputConfiguration getInputConfiguration();
-		JObject getOutputConfigurations();
-		android::hardware::camera2::CaptureRequest getSessionParameters();
-		jint getSessionType();
-		android::hardware::camera2::CameraCaptureSession_StateCallback getStateCallback();
-		jint hashCode();
-		void setInputConfiguration(android::hardware::camera2::params::InputConfiguration arg0);
-		void setSessionParameters(android::hardware::camera2::CaptureRequest arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getExecutor() const;
+		android::hardware::camera2::params::InputConfiguration getInputConfiguration() const;
+		JObject getOutputConfigurations() const;
+		android::hardware::camera2::CaptureRequest getSessionParameters() const;
+		jint getSessionType() const;
+		android::hardware::camera2::CameraCaptureSession_StateCallback getStateCallback() const;
+		jint hashCode() const;
+		void setInputConfiguration(android::hardware::camera2::params::InputConfiguration arg0) const;
+		void setSessionParameters(android::hardware::camera2::CaptureRequest arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::camera2::params
 

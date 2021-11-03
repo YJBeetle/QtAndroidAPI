@@ -25,9 +25,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::media::DrmInitData_SchemeInitData get(java::util::UUID arg0);
-		android::media::DrmInitData_SchemeInitData getSchemeInitDataAt(jint arg0);
-		jint getSchemeInitDataCount();
+		android::media::DrmInitData_SchemeInitData get(java::util::UUID arg0) const;
+		android::media::DrmInitData_SchemeInitData getSchemeInitDataAt(jint arg0) const;
+		jint getSchemeInitDataCount() const;
 	};
 } // namespace android::media
 

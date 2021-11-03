@@ -35,17 +35,17 @@ namespace java::util
 		HashSet(jint arg0, jfloat arg1);
 		
 		// Methods
-		jboolean add(JObject arg0);
-		void clear();
-		JObject clone();
-		jboolean contains(JObject arg0);
-		jboolean isEmpty();
-		JObject iterator();
-		jboolean remove(JObject arg0);
-		jint size();
-		JObject spliterator();
-		JObjectArray toArray();
-		JObjectArray toArray(JObjectArray arg0);
+		jboolean add(JObject arg0) const;
+		void clear() const;
+		JObject clone() const;
+		jboolean contains(JObject arg0) const;
+		jboolean isEmpty() const;
+		JObject iterator() const;
+		jboolean remove(JObject arg0) const;
+		jint size() const;
+		JObject spliterator() const;
+		JObjectArray toArray() const;
+		JObjectArray toArray(JObjectArray arg0) const;
 	};
 } // namespace java::util
 

@@ -20,16 +20,16 @@ namespace java::io
 		ObjectOutputStream_PutField();
 		
 		// Methods
-		void put(JString arg0, jboolean arg1);
-		void put(JString arg0, jbyte arg1);
-		void put(JString arg0, jchar arg1);
-		void put(JString arg0, jdouble arg1);
-		void put(JString arg0, jfloat arg1);
-		void put(JString arg0, jint arg1);
-		void put(JString arg0, JObject arg1);
-		void put(JString arg0, jlong arg1);
-		void put(JString arg0, jshort arg1);
-		void write(JObject arg0);
+		void put(JString arg0, jboolean arg1) const;
+		void put(JString arg0, jbyte arg1) const;
+		void put(JString arg0, jchar arg1) const;
+		void put(JString arg0, jdouble arg1) const;
+		void put(JString arg0, jfloat arg1) const;
+		void put(JString arg0, jint arg1) const;
+		void put(JString arg0, JObject arg1) const;
+		void put(JString arg0, jlong arg1) const;
+		void put(JString arg0, jshort arg1) const;
+		void write(JObject arg0) const;
 	};
 } // namespace java::io
 

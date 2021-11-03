@@ -17,7 +17,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::InputDevice SearchEvent::getInputDevice()
+	android::view::InputDevice SearchEvent::getInputDevice() const
 	{
 		return callObjectMethod(
 			"getInputDevice",

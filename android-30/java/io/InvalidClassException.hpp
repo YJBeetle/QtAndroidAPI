@@ -21,7 +21,7 @@ namespace java::io
 		InvalidClassException(JString arg0, JString arg1);
 		
 		// Methods
-		JString getMessage();
+		JString getMessage() const;
 	};
 } // namespace java::io
 

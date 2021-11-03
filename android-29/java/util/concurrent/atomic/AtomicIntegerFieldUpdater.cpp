@@ -23,7 +23,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jstring>()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::accumulateAndGet(JObject arg0, jint arg1, JObject arg2)
+	jint AtomicIntegerFieldUpdater::accumulateAndGet(JObject arg0, jint arg1, JObject arg2) const
 	{
 		return callMethod<jint>(
 			"accumulateAndGet",
@@ -33,7 +33,7 @@ namespace java::util::concurrent::atomic
 			arg2.object()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::addAndGet(JObject arg0, jint arg1)
+	jint AtomicIntegerFieldUpdater::addAndGet(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"addAndGet",
@@ -42,7 +42,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicIntegerFieldUpdater::compareAndSet(JObject arg0, jint arg1, jint arg2)
+	jboolean AtomicIntegerFieldUpdater::compareAndSet(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -52,7 +52,7 @@ namespace java::util::concurrent::atomic
 			arg2
 		);
 	}
-	jint AtomicIntegerFieldUpdater::decrementAndGet(JObject arg0)
+	jint AtomicIntegerFieldUpdater::decrementAndGet(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"decrementAndGet",
@@ -60,7 +60,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::get(JObject arg0)
+	jint AtomicIntegerFieldUpdater::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -68,7 +68,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndAccumulate(JObject arg0, jint arg1, JObject arg2)
+	jint AtomicIntegerFieldUpdater::getAndAccumulate(JObject arg0, jint arg1, JObject arg2) const
 	{
 		return callMethod<jint>(
 			"getAndAccumulate",
@@ -78,7 +78,7 @@ namespace java::util::concurrent::atomic
 			arg2.object()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndAdd(JObject arg0, jint arg1)
+	jint AtomicIntegerFieldUpdater::getAndAdd(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getAndAdd",
@@ -87,7 +87,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndDecrement(JObject arg0)
+	jint AtomicIntegerFieldUpdater::getAndDecrement(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getAndDecrement",
@@ -95,7 +95,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndIncrement(JObject arg0)
+	jint AtomicIntegerFieldUpdater::getAndIncrement(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getAndIncrement",
@@ -103,7 +103,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndSet(JObject arg0, jint arg1)
+	jint AtomicIntegerFieldUpdater::getAndSet(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getAndSet",
@@ -112,7 +112,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndUpdate(JObject arg0, JObject arg1)
+	jint AtomicIntegerFieldUpdater::getAndUpdate(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"getAndUpdate",
@@ -121,7 +121,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jint AtomicIntegerFieldUpdater::incrementAndGet(JObject arg0)
+	jint AtomicIntegerFieldUpdater::incrementAndGet(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"incrementAndGet",
@@ -129,7 +129,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	void AtomicIntegerFieldUpdater::lazySet(JObject arg0, jint arg1)
+	void AtomicIntegerFieldUpdater::lazySet(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"lazySet",
@@ -138,7 +138,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	void AtomicIntegerFieldUpdater::set(JObject arg0, jint arg1)
+	void AtomicIntegerFieldUpdater::set(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -147,7 +147,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicIntegerFieldUpdater::updateAndGet(JObject arg0, JObject arg1)
+	jint AtomicIntegerFieldUpdater::updateAndGet(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"updateAndGet",
@@ -156,7 +156,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jboolean AtomicIntegerFieldUpdater::weakCompareAndSet(JObject arg0, jint arg1, jint arg2)
+	jboolean AtomicIntegerFieldUpdater::weakCompareAndSet(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",

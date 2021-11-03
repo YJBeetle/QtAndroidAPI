@@ -34,12 +34,12 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		jlong getFreeBytes(java::util::UUID arg0);
-		jlong getTotalBytes(java::util::UUID arg0);
-		android::app::usage::ExternalStorageStats queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
-		android::app::usage::StorageStats queryStatsForPackage(java::util::UUID arg0, JString arg1, android::os::UserHandle arg2);
-		android::app::usage::StorageStats queryStatsForUid(java::util::UUID arg0, jint arg1);
-		android::app::usage::StorageStats queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
+		jlong getFreeBytes(java::util::UUID arg0) const;
+		jlong getTotalBytes(java::util::UUID arg0) const;
+		android::app::usage::ExternalStorageStats queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1) const;
+		android::app::usage::StorageStats queryStatsForPackage(java::util::UUID arg0, JString arg1, android::os::UserHandle arg2) const;
+		android::app::usage::StorageStats queryStatsForUid(java::util::UUID arg0, jint arg1) const;
+		android::app::usage::StorageStats queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1) const;
 	};
 } // namespace android::app::usage
 

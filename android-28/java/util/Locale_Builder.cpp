@@ -17,7 +17,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	java::util::Locale_Builder Locale_Builder::addUnicodeLocaleAttribute(JString arg0)
+	java::util::Locale_Builder Locale_Builder::addUnicodeLocaleAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"addUnicodeLocaleAttribute",
@@ -25,28 +25,28 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Locale Locale_Builder::build()
+	java::util::Locale Locale_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Ljava/util/Locale;"
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::clear()
+	java::util::Locale_Builder Locale_Builder::clear() const
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/util/Locale$Builder;"
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::clearExtensions()
+	java::util::Locale_Builder Locale_Builder::clearExtensions() const
 	{
 		return callObjectMethod(
 			"clearExtensions",
 			"()Ljava/util/Locale$Builder;"
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::removeUnicodeLocaleAttribute(JString arg0)
+	java::util::Locale_Builder Locale_Builder::removeUnicodeLocaleAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"removeUnicodeLocaleAttribute",
@@ -54,7 +54,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setExtension(jchar arg0, JString arg1)
+	java::util::Locale_Builder Locale_Builder::setExtension(jchar arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setExtension",
@@ -63,7 +63,7 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setLanguage(JString arg0)
+	java::util::Locale_Builder Locale_Builder::setLanguage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLanguage",
@@ -71,7 +71,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setLanguageTag(JString arg0)
+	java::util::Locale_Builder Locale_Builder::setLanguageTag(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLanguageTag",
@@ -79,7 +79,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setLocale(java::util::Locale arg0)
+	java::util::Locale_Builder Locale_Builder::setLocale(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -87,7 +87,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setRegion(JString arg0)
+	java::util::Locale_Builder Locale_Builder::setRegion(JString arg0) const
 	{
 		return callObjectMethod(
 			"setRegion",
@@ -95,7 +95,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setScript(JString arg0)
+	java::util::Locale_Builder Locale_Builder::setScript(JString arg0) const
 	{
 		return callObjectMethod(
 			"setScript",
@@ -103,7 +103,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setUnicodeLocaleKeyword(JString arg0, JString arg1)
+	java::util::Locale_Builder Locale_Builder::setUnicodeLocaleKeyword(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setUnicodeLocaleKeyword",
@@ -112,7 +112,7 @@ namespace java::util
 			arg1.object<jstring>()
 		);
 	}
-	java::util::Locale_Builder Locale_Builder::setVariant(JString arg0)
+	java::util::Locale_Builder Locale_Builder::setVariant(JString arg0) const
 	{
 		return callObjectMethod(
 			"setVariant",

@@ -42,15 +42,15 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		void close();
-		jboolean equals(JObject arg0);
-		android::media::metrics::LogSessionId getSessionId();
-		jint hashCode();
-		void reportNetworkEvent(android::media::metrics::NetworkEvent arg0);
-		void reportPlaybackErrorEvent(android::media::metrics::PlaybackErrorEvent arg0);
-		void reportPlaybackMetrics(android::media::metrics::PlaybackMetrics arg0);
-		void reportPlaybackStateEvent(android::media::metrics::PlaybackStateEvent arg0);
-		void reportTrackChangeEvent(android::media::metrics::TrackChangeEvent arg0);
+		void close() const;
+		jboolean equals(JObject arg0) const;
+		android::media::metrics::LogSessionId getSessionId() const;
+		jint hashCode() const;
+		void reportNetworkEvent(android::media::metrics::NetworkEvent arg0) const;
+		void reportPlaybackErrorEvent(android::media::metrics::PlaybackErrorEvent arg0) const;
+		void reportPlaybackMetrics(android::media::metrics::PlaybackMetrics arg0) const;
+		void reportPlaybackStateEvent(android::media::metrics::PlaybackStateEvent arg0) const;
+		void reportTrackChangeEvent(android::media::metrics::TrackChangeEvent arg0) const;
 	};
 } // namespace android::media::metrics
 

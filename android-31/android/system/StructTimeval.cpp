@@ -33,7 +33,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jboolean StructTimeval::equals(JObject arg0)
+	jboolean StructTimeval::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -41,21 +41,21 @@ namespace android::system
 			arg0.object<jobject>()
 		);
 	}
-	jint StructTimeval::hashCode()
+	jint StructTimeval::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jlong StructTimeval::toMillis()
+	jlong StructTimeval::toMillis() const
 	{
 		return callMethod<jlong>(
 			"toMillis",
 			"()J"
 		);
 	}
-	JString StructTimeval::toString()
+	JString StructTimeval::toString() const
 	{
 		return callObjectMethod(
 			"toString",

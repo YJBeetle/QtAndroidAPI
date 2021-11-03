@@ -25,17 +25,17 @@ namespace android::location
 		GnssAntennaInfo_PhaseCenterOffset(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jdouble getXOffsetMm();
-		jdouble getXOffsetUncertaintyMm();
-		jdouble getYOffsetMm();
-		jdouble getYOffsetUncertaintyMm();
-		jdouble getZOffsetMm();
-		jdouble getZOffsetUncertaintyMm();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jdouble getXOffsetMm() const;
+		jdouble getXOffsetUncertaintyMm() const;
+		jdouble getYOffsetMm() const;
+		jdouble getYOffsetUncertaintyMm() const;
+		jdouble getZOffsetMm() const;
+		jdouble getZOffsetUncertaintyMm() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

@@ -27,12 +27,12 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::os::LocaleList getDefaultLocales();
-		jint getEndIndex();
-		jint getStartIndex();
-		JString getText();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::os::LocaleList getDefaultLocales() const;
+		jint getEndIndex() const;
+		jint getStartIndex() const;
+		JString getText() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

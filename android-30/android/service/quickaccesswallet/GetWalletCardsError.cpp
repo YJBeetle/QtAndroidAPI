@@ -28,28 +28,28 @@ namespace android::service::quickaccesswallet
 		) {}
 	
 	// Methods
-	jint GetWalletCardsError::describeContents()
+	jint GetWalletCardsError::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Icon GetWalletCardsError::getIcon()
+	android::graphics::drawable::Icon GetWalletCardsError::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString GetWalletCardsError::getMessage()
+	JString GetWalletCardsError::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void GetWalletCardsError::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GetWalletCardsError::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -33,14 +33,14 @@ namespace android::net::wifi::hotspot2::pps
 		) {}
 	
 	// Methods
-	jint HomeSp::describeContents()
+	jint HomeSp::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean HomeSp::equals(JObject arg0)
+	jboolean HomeSp::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -48,56 +48,56 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jobject>()
 		);
 	}
-	JString HomeSp::getFqdn()
+	JString HomeSp::getFqdn() const
 	{
 		return callObjectMethod(
 			"getFqdn",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString HomeSp::getFriendlyName()
+	JString HomeSp::getFriendlyName() const
 	{
 		return callObjectMethod(
 			"getFriendlyName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JLongArray HomeSp::getMatchAllOis()
+	JLongArray HomeSp::getMatchAllOis() const
 	{
 		return callObjectMethod(
 			"getMatchAllOis",
 			"()[J"
 		);
 	}
-	JLongArray HomeSp::getMatchAnyOis()
+	JLongArray HomeSp::getMatchAnyOis() const
 	{
 		return callObjectMethod(
 			"getMatchAnyOis",
 			"()[J"
 		);
 	}
-	JObject HomeSp::getOtherHomePartnersList()
+	JObject HomeSp::getOtherHomePartnersList() const
 	{
 		return callObjectMethod(
 			"getOtherHomePartnersList",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JLongArray HomeSp::getRoamingConsortiumOis()
+	JLongArray HomeSp::getRoamingConsortiumOis() const
 	{
 		return callObjectMethod(
 			"getRoamingConsortiumOis",
 			"()[J"
 		);
 	}
-	jint HomeSp::hashCode()
+	jint HomeSp::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void HomeSp::setFqdn(JString arg0)
+	void HomeSp::setFqdn(JString arg0) const
 	{
 		callMethod<void>(
 			"setFqdn",
@@ -105,7 +105,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jstring>()
 		);
 	}
-	void HomeSp::setFriendlyName(JString arg0)
+	void HomeSp::setFriendlyName(JString arg0) const
 	{
 		callMethod<void>(
 			"setFriendlyName",
@@ -113,7 +113,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jstring>()
 		);
 	}
-	void HomeSp::setMatchAllOis(JLongArray arg0)
+	void HomeSp::setMatchAllOis(JLongArray arg0) const
 	{
 		callMethod<void>(
 			"setMatchAllOis",
@@ -121,7 +121,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jlongArray>()
 		);
 	}
-	void HomeSp::setMatchAnyOis(JLongArray arg0)
+	void HomeSp::setMatchAnyOis(JLongArray arg0) const
 	{
 		callMethod<void>(
 			"setMatchAnyOis",
@@ -129,7 +129,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jlongArray>()
 		);
 	}
-	void HomeSp::setOtherHomePartnersList(JObject arg0)
+	void HomeSp::setOtherHomePartnersList(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOtherHomePartnersList",
@@ -137,7 +137,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object()
 		);
 	}
-	void HomeSp::setRoamingConsortiumOis(JLongArray arg0)
+	void HomeSp::setRoamingConsortiumOis(JLongArray arg0) const
 	{
 		callMethod<void>(
 			"setRoamingConsortiumOis",
@@ -145,14 +145,14 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jlongArray>()
 		);
 	}
-	JString HomeSp::toString()
+	JString HomeSp::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void HomeSp::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void HomeSp::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

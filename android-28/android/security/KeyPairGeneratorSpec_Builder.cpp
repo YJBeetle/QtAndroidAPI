@@ -22,14 +22,14 @@ namespace android::security
 		) {}
 	
 	// Methods
-	android::security::KeyPairGeneratorSpec KeyPairGeneratorSpec_Builder::build()
+	android::security::KeyPairGeneratorSpec KeyPairGeneratorSpec_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/KeyPairGeneratorSpec;"
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlgorithmParameterSpec(JObject arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlgorithmParameterSpec(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setAlgorithmParameterSpec",
@@ -37,7 +37,7 @@ namespace android::security
 			arg0.object()
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlias(JString arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlias(JString arg0) const
 	{
 		return callObjectMethod(
 			"setAlias",
@@ -45,14 +45,14 @@ namespace android::security
 			arg0.object<jstring>()
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setEncryptionRequired()
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setEncryptionRequired() const
 	{
 		return callObjectMethod(
 			"setEncryptionRequired",
 			"()Landroid/security/KeyPairGeneratorSpec$Builder;"
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setEndDate(java::util::Date arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setEndDate(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"setEndDate",
@@ -60,7 +60,7 @@ namespace android::security
 			arg0.object()
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setKeySize(jint arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setKeySize(jint arg0) const
 	{
 		return callObjectMethod(
 			"setKeySize",
@@ -68,7 +68,7 @@ namespace android::security
 			arg0
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setKeyType(JString arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setKeyType(JString arg0) const
 	{
 		return callObjectMethod(
 			"setKeyType",
@@ -76,7 +76,7 @@ namespace android::security
 			arg0.object<jstring>()
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setSerialNumber(java::math::BigInteger arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setSerialNumber(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"setSerialNumber",
@@ -84,7 +84,7 @@ namespace android::security
 			arg0.object()
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setStartDate(java::util::Date arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setStartDate(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"setStartDate",
@@ -92,7 +92,7 @@ namespace android::security
 			arg0.object()
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setSubject(javax::security::auth::x500::X500Principal arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setSubject(javax::security::auth::x500::X500Principal arg0) const
 	{
 		return callObjectMethod(
 			"setSubject",

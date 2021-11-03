@@ -38,70 +38,70 @@ namespace android::media
 			arg4
 		);
 	}
-	android::media::Image ImageReader::acquireLatestImage()
+	android::media::Image ImageReader::acquireLatestImage() const
 	{
 		return callObjectMethod(
 			"acquireLatestImage",
 			"()Landroid/media/Image;"
 		);
 	}
-	android::media::Image ImageReader::acquireNextImage()
+	android::media::Image ImageReader::acquireNextImage() const
 	{
 		return callObjectMethod(
 			"acquireNextImage",
 			"()Landroid/media/Image;"
 		);
 	}
-	void ImageReader::close()
+	void ImageReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ImageReader::discardFreeBuffers()
+	void ImageReader::discardFreeBuffers() const
 	{
 		callMethod<void>(
 			"discardFreeBuffers",
 			"()V"
 		);
 	}
-	jint ImageReader::getHeight()
+	jint ImageReader::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint ImageReader::getImageFormat()
+	jint ImageReader::getImageFormat() const
 	{
 		return callMethod<jint>(
 			"getImageFormat",
 			"()I"
 		);
 	}
-	jint ImageReader::getMaxImages()
+	jint ImageReader::getMaxImages() const
 	{
 		return callMethod<jint>(
 			"getMaxImages",
 			"()I"
 		);
 	}
-	android::view::Surface ImageReader::getSurface()
+	android::view::Surface ImageReader::getSurface() const
 	{
 		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	jint ImageReader::getWidth()
+	jint ImageReader::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	void ImageReader::setOnImageAvailableListener(JObject arg0, android::os::Handler arg1)
+	void ImageReader::setOnImageAvailableListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnImageAvailableListener",

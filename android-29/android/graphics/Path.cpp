@@ -27,7 +27,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	void Path::addArc(android::graphics::RectF arg0, jfloat arg1, jfloat arg2)
+	void Path::addArc(android::graphics::RectF arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"addArc",
@@ -37,7 +37,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Path::addArc(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
+	void Path::addArc(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5) const
 	{
 		callMethod<void>(
 			"addArc",
@@ -50,7 +50,7 @@ namespace android::graphics
 			arg5
 		);
 	}
-	void Path::addCircle(jfloat arg0, jfloat arg1, jfloat arg2, android::graphics::Path_Direction arg3)
+	void Path::addCircle(jfloat arg0, jfloat arg1, jfloat arg2, android::graphics::Path_Direction arg3) const
 	{
 		callMethod<void>(
 			"addCircle",
@@ -61,7 +61,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void Path::addOval(android::graphics::RectF arg0, android::graphics::Path_Direction arg1)
+	void Path::addOval(android::graphics::RectF arg0, android::graphics::Path_Direction arg1) const
 	{
 		callMethod<void>(
 			"addOval",
@@ -70,7 +70,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void Path::addOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Path_Direction arg4)
+	void Path::addOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Path_Direction arg4) const
 	{
 		callMethod<void>(
 			"addOval",
@@ -82,7 +82,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void Path::addPath(android::graphics::Path arg0)
+	void Path::addPath(android::graphics::Path arg0) const
 	{
 		callMethod<void>(
 			"addPath",
@@ -90,7 +90,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Path::addPath(android::graphics::Path arg0, android::graphics::Matrix arg1)
+	void Path::addPath(android::graphics::Path arg0, android::graphics::Matrix arg1) const
 	{
 		callMethod<void>(
 			"addPath",
@@ -99,7 +99,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void Path::addPath(android::graphics::Path arg0, jfloat arg1, jfloat arg2)
+	void Path::addPath(android::graphics::Path arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"addPath",
@@ -109,7 +109,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Path::addRect(android::graphics::RectF arg0, android::graphics::Path_Direction arg1)
+	void Path::addRect(android::graphics::RectF arg0, android::graphics::Path_Direction arg1) const
 	{
 		callMethod<void>(
 			"addRect",
@@ -118,7 +118,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void Path::addRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Path_Direction arg4)
+	void Path::addRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Path_Direction arg4) const
 	{
 		callMethod<void>(
 			"addRect",
@@ -130,7 +130,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void Path::addRoundRect(android::graphics::RectF arg0, JFloatArray arg1, android::graphics::Path_Direction arg2)
+	void Path::addRoundRect(android::graphics::RectF arg0, JFloatArray arg1, android::graphics::Path_Direction arg2) const
 	{
 		callMethod<void>(
 			"addRoundRect",
@@ -140,7 +140,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void Path::addRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::Path_Direction arg3)
+	void Path::addRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::Path_Direction arg3) const
 	{
 		callMethod<void>(
 			"addRoundRect",
@@ -151,7 +151,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, JFloatArray arg4, android::graphics::Path_Direction arg5)
+	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, JFloatArray arg4, android::graphics::Path_Direction arg5) const
 	{
 		callMethod<void>(
 			"addRoundRect",
@@ -164,7 +164,7 @@ namespace android::graphics
 			arg5.object()
 		);
 	}
-	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, android::graphics::Path_Direction arg6)
+	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, android::graphics::Path_Direction arg6) const
 	{
 		callMethod<void>(
 			"addRoundRect",
@@ -178,7 +178,7 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	JFloatArray Path::approximate(jfloat arg0)
+	JFloatArray Path::approximate(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"approximate",
@@ -186,7 +186,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Path::arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2)
+	void Path::arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"arcTo",
@@ -196,7 +196,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Path::arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, jboolean arg3)
+	void Path::arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"arcTo",
@@ -207,7 +207,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Path::arcTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6)
+	void Path::arcTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6) const
 	{
 		callMethod<void>(
 			"arcTo",
@@ -221,14 +221,14 @@ namespace android::graphics
 			arg6
 		);
 	}
-	void Path::close()
+	void Path::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Path::computeBounds(android::graphics::RectF arg0, jboolean arg1)
+	void Path::computeBounds(android::graphics::RectF arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"computeBounds",
@@ -237,7 +237,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Path::cubicTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
+	void Path::cubicTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5) const
 	{
 		callMethod<void>(
 			"cubicTo",
@@ -250,14 +250,14 @@ namespace android::graphics
 			arg5
 		);
 	}
-	android::graphics::Path_FillType Path::getFillType()
+	android::graphics::Path_FillType Path::getFillType() const
 	{
 		return callObjectMethod(
 			"getFillType",
 			"()Landroid/graphics/Path$FillType;"
 		);
 	}
-	void Path::incReserve(jint arg0)
+	void Path::incReserve(jint arg0) const
 	{
 		callMethod<void>(
 			"incReserve",
@@ -265,28 +265,28 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean Path::isConvex()
+	jboolean Path::isConvex() const
 	{
 		return callMethod<jboolean>(
 			"isConvex",
 			"()Z"
 		);
 	}
-	jboolean Path::isEmpty()
+	jboolean Path::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jboolean Path::isInverseFillType()
+	jboolean Path::isInverseFillType() const
 	{
 		return callMethod<jboolean>(
 			"isInverseFillType",
 			"()Z"
 		);
 	}
-	jboolean Path::isRect(android::graphics::RectF arg0)
+	jboolean Path::isRect(android::graphics::RectF arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRect",
@@ -294,7 +294,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Path::lineTo(jfloat arg0, jfloat arg1)
+	void Path::lineTo(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"lineTo",
@@ -303,7 +303,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Path::moveTo(jfloat arg0, jfloat arg1)
+	void Path::moveTo(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"moveTo",
@@ -312,7 +312,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Path::offset(jfloat arg0, jfloat arg1)
+	void Path::offset(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"offset",
@@ -321,7 +321,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Path::offset(jfloat arg0, jfloat arg1, android::graphics::Path arg2)
+	void Path::offset(jfloat arg0, jfloat arg1, android::graphics::Path arg2) const
 	{
 		callMethod<void>(
 			"offset",
@@ -331,7 +331,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	jboolean Path::op(android::graphics::Path arg0, android::graphics::Path_Op arg1)
+	jboolean Path::op(android::graphics::Path arg0, android::graphics::Path_Op arg1) const
 	{
 		return callMethod<jboolean>(
 			"op",
@@ -340,7 +340,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean Path::op(android::graphics::Path arg0, android::graphics::Path arg1, android::graphics::Path_Op arg2)
+	jboolean Path::op(android::graphics::Path arg0, android::graphics::Path arg1, android::graphics::Path_Op arg2) const
 	{
 		return callMethod<jboolean>(
 			"op",
@@ -350,7 +350,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void Path::quadTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Path::quadTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"quadTo",
@@ -361,7 +361,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Path::rCubicTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
+	void Path::rCubicTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5) const
 	{
 		callMethod<void>(
 			"rCubicTo",
@@ -374,7 +374,7 @@ namespace android::graphics
 			arg5
 		);
 	}
-	void Path::rLineTo(jfloat arg0, jfloat arg1)
+	void Path::rLineTo(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"rLineTo",
@@ -383,7 +383,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Path::rMoveTo(jfloat arg0, jfloat arg1)
+	void Path::rMoveTo(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"rMoveTo",
@@ -392,7 +392,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Path::rQuadTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Path::rQuadTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"rQuadTo",
@@ -403,21 +403,21 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Path::reset()
+	void Path::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Path::rewind()
+	void Path::rewind() const
 	{
 		callMethod<void>(
 			"rewind",
 			"()V"
 		);
 	}
-	void Path::set(android::graphics::Path arg0)
+	void Path::set(android::graphics::Path arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -425,7 +425,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Path::setFillType(android::graphics::Path_FillType arg0)
+	void Path::setFillType(android::graphics::Path_FillType arg0) const
 	{
 		callMethod<void>(
 			"setFillType",
@@ -433,7 +433,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Path::setLastPoint(jfloat arg0, jfloat arg1)
+	void Path::setLastPoint(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setLastPoint",
@@ -442,14 +442,14 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Path::toggleInverseFillType()
+	void Path::toggleInverseFillType() const
 	{
 		callMethod<void>(
 			"toggleInverseFillType",
 			"()V"
 		);
 	}
-	void Path::transform(android::graphics::Matrix arg0)
+	void Path::transform(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"transform",
@@ -457,7 +457,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Path::transform(android::graphics::Matrix arg0, android::graphics::Path arg1)
+	void Path::transform(android::graphics::Matrix arg0, android::graphics::Path arg1) const
 	{
 		callMethod<void>(
 			"transform",

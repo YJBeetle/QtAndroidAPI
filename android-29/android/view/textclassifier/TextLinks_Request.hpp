@@ -36,13 +36,13 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JString getCallingPackageName();
-		android::os::LocaleList getDefaultLocales();
-		android::view::textclassifier::TextClassifier_EntityConfig getEntityConfig();
-		android::os::Bundle getExtras();
-		JString getText();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getCallingPackageName() const;
+		android::os::LocaleList getDefaultLocales() const;
+		android::view::textclassifier::TextClassifier_EntityConfig getEntityConfig() const;
+		android::os::Bundle getExtras() const;
+		JString getText() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

@@ -23,10 +23,10 @@ namespace java::util::zip
 		CheckedInputStream(java::io::InputStream arg0, JObject arg1);
 		
 		// Methods
-		JObject getChecksum();
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		jlong skip(jlong arg0);
+		JObject getChecksum() const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		jlong skip(jlong arg0) const;
 	};
 } // namespace java::util::zip
 

@@ -160,7 +160,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	jboolean ZonedDateTime::equals(JObject arg0)
+	jboolean ZonedDateTime::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -168,7 +168,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	JString ZonedDateTime::format(java::time::format::DateTimeFormatter arg0)
+	JString ZonedDateTime::format(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -176,7 +176,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint ZonedDateTime::get(JObject arg0)
+	jint ZonedDateTime::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -184,35 +184,35 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint ZonedDateTime::getDayOfMonth()
+	jint ZonedDateTime::getDayOfMonth() const
 	{
 		return callMethod<jint>(
 			"getDayOfMonth",
 			"()I"
 		);
 	}
-	java::time::DayOfWeek ZonedDateTime::getDayOfWeek()
+	java::time::DayOfWeek ZonedDateTime::getDayOfWeek() const
 	{
 		return callObjectMethod(
 			"getDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
-	jint ZonedDateTime::getDayOfYear()
+	jint ZonedDateTime::getDayOfYear() const
 	{
 		return callMethod<jint>(
 			"getDayOfYear",
 			"()I"
 		);
 	}
-	jint ZonedDateTime::getHour()
+	jint ZonedDateTime::getHour() const
 	{
 		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
-	jlong ZonedDateTime::getLong(JObject arg0)
+	jlong ZonedDateTime::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -220,70 +220,70 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint ZonedDateTime::getMinute()
+	jint ZonedDateTime::getMinute() const
 	{
 		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
-	java::time::Month ZonedDateTime::getMonth()
+	java::time::Month ZonedDateTime::getMonth() const
 	{
 		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
-	jint ZonedDateTime::getMonthValue()
+	jint ZonedDateTime::getMonthValue() const
 	{
 		return callMethod<jint>(
 			"getMonthValue",
 			"()I"
 		);
 	}
-	jint ZonedDateTime::getNano()
+	jint ZonedDateTime::getNano() const
 	{
 		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
-	java::time::ZoneOffset ZonedDateTime::getOffset()
+	java::time::ZoneOffset ZonedDateTime::getOffset() const
 	{
 		return callObjectMethod(
 			"getOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	jint ZonedDateTime::getSecond()
+	jint ZonedDateTime::getSecond() const
 	{
 		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
-	jint ZonedDateTime::getYear()
+	jint ZonedDateTime::getYear() const
 	{
 		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
-	java::time::ZoneId ZonedDateTime::getZone()
+	java::time::ZoneId ZonedDateTime::getZone() const
 	{
 		return callObjectMethod(
 			"getZone",
 			"()Ljava/time/ZoneId;"
 		);
 	}
-	jint ZonedDateTime::hashCode()
+	jint ZonedDateTime::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ZonedDateTime::isSupported(JObject arg0)
+	jboolean ZonedDateTime::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -291,7 +291,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minus(JObject arg0)
+	java::time::ZonedDateTime ZonedDateTime::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -299,7 +299,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minus(jlong arg0, JObject arg1)
+	java::time::ZonedDateTime ZonedDateTime::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -308,7 +308,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusDays(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusDays",
@@ -316,7 +316,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusHours(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusHours",
@@ -324,7 +324,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusMinutes(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMinutes",
@@ -332,7 +332,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusMonths(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusMonths(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMonths",
@@ -340,7 +340,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusNanos(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -348,7 +348,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusSeconds(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -356,7 +356,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusWeeks(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusWeeks(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusWeeks",
@@ -364,7 +364,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minusYears(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::minusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusYears",
@@ -372,7 +372,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plus(JObject arg0)
+	java::time::ZonedDateTime ZonedDateTime::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -380,7 +380,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plus(jlong arg0, JObject arg1)
+	java::time::ZonedDateTime ZonedDateTime::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -389,7 +389,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusDays(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusDays",
@@ -397,7 +397,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusHours(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusHours",
@@ -405,7 +405,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusMinutes(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMinutes",
@@ -413,7 +413,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusMonths(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusMonths(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMonths",
@@ -421,7 +421,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusNanos(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -429,7 +429,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusSeconds(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -437,7 +437,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusWeeks(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusWeeks(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusWeeks",
@@ -445,7 +445,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plusYears(jlong arg0)
+	java::time::ZonedDateTime ZonedDateTime::plusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusYears",
@@ -453,7 +453,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject ZonedDateTime::query(JObject arg0)
+	JObject ZonedDateTime::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -461,7 +461,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange ZonedDateTime::range(JObject arg0)
+	java::time::temporal::ValueRange ZonedDateTime::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -469,42 +469,42 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDate ZonedDateTime::toLocalDate()
+	java::time::LocalDate ZonedDateTime::toLocalDate() const
 	{
 		return callObjectMethod(
 			"toLocalDate",
 			"()Ljava/time/LocalDate;"
 		);
 	}
-	java::time::LocalDateTime ZonedDateTime::toLocalDateTime()
+	java::time::LocalDateTime ZonedDateTime::toLocalDateTime() const
 	{
 		return callObjectMethod(
 			"toLocalDateTime",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	java::time::LocalTime ZonedDateTime::toLocalTime()
+	java::time::LocalTime ZonedDateTime::toLocalTime() const
 	{
 		return callObjectMethod(
 			"toLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	java::time::OffsetDateTime ZonedDateTime::toOffsetDateTime()
+	java::time::OffsetDateTime ZonedDateTime::toOffsetDateTime() const
 	{
 		return callObjectMethod(
 			"toOffsetDateTime",
 			"()Ljava/time/OffsetDateTime;"
 		);
 	}
-	JString ZonedDateTime::toString()
+	JString ZonedDateTime::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::truncatedTo(JObject arg0)
+	java::time::ZonedDateTime ZonedDateTime::truncatedTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -512,7 +512,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong ZonedDateTime::until(JObject arg0, JObject arg1)
+	jlong ZonedDateTime::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -521,7 +521,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::with(JObject arg0)
+	java::time::ZonedDateTime ZonedDateTime::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -529,7 +529,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::with(JObject arg0, jlong arg1)
+	java::time::ZonedDateTime ZonedDateTime::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",
@@ -538,7 +538,7 @@ namespace java::time
 			arg1
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withDayOfMonth(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withDayOfMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"withDayOfMonth",
@@ -546,7 +546,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withDayOfYear(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withDayOfYear(jint arg0) const
 	{
 		return callObjectMethod(
 			"withDayOfYear",
@@ -554,21 +554,21 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withEarlierOffsetAtOverlap()
+	java::time::ZonedDateTime ZonedDateTime::withEarlierOffsetAtOverlap() const
 	{
 		return callObjectMethod(
 			"withEarlierOffsetAtOverlap",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withFixedOffsetZone()
+	java::time::ZonedDateTime ZonedDateTime::withFixedOffsetZone() const
 	{
 		return callObjectMethod(
 			"withFixedOffsetZone",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withHour(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withHour(jint arg0) const
 	{
 		return callObjectMethod(
 			"withHour",
@@ -576,14 +576,14 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withLaterOffsetAtOverlap()
+	java::time::ZonedDateTime ZonedDateTime::withLaterOffsetAtOverlap() const
 	{
 		return callObjectMethod(
 			"withLaterOffsetAtOverlap",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withMinute(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withMinute(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMinute",
@@ -591,7 +591,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withMonth(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMonth",
@@ -599,7 +599,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withNano(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withNano(jint arg0) const
 	{
 		return callObjectMethod(
 			"withNano",
@@ -607,7 +607,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withSecond(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withSecond(jint arg0) const
 	{
 		return callObjectMethod(
 			"withSecond",
@@ -615,7 +615,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withYear(jint arg0)
+	java::time::ZonedDateTime ZonedDateTime::withYear(jint arg0) const
 	{
 		return callObjectMethod(
 			"withYear",
@@ -623,7 +623,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withZoneSameInstant(java::time::ZoneId arg0)
+	java::time::ZonedDateTime ZonedDateTime::withZoneSameInstant(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"withZoneSameInstant",
@@ -631,7 +631,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::withZoneSameLocal(java::time::ZoneId arg0)
+	java::time::ZonedDateTime ZonedDateTime::withZoneSameLocal(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"withZoneSameLocal",

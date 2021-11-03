@@ -27,22 +27,22 @@ namespace android::util
 		JsonWriter(java::io::Writer arg0);
 		
 		// Methods
-		android::util::JsonWriter beginArray();
-		android::util::JsonWriter beginObject();
-		void close();
-		android::util::JsonWriter endArray();
-		android::util::JsonWriter endObject();
-		void flush();
-		jboolean isLenient();
-		android::util::JsonWriter name(JString arg0);
-		android::util::JsonWriter nullValue();
-		void setIndent(JString arg0);
-		void setLenient(jboolean arg0);
-		android::util::JsonWriter value(jboolean arg0);
-		android::util::JsonWriter value(jdouble arg0);
-		android::util::JsonWriter value(java::lang::Number arg0);
-		android::util::JsonWriter value(JString arg0);
-		android::util::JsonWriter value(jlong arg0);
+		android::util::JsonWriter beginArray() const;
+		android::util::JsonWriter beginObject() const;
+		void close() const;
+		android::util::JsonWriter endArray() const;
+		android::util::JsonWriter endObject() const;
+		void flush() const;
+		jboolean isLenient() const;
+		android::util::JsonWriter name(JString arg0) const;
+		android::util::JsonWriter nullValue() const;
+		void setIndent(JString arg0) const;
+		void setLenient(jboolean arg0) const;
+		android::util::JsonWriter value(jboolean arg0) const;
+		android::util::JsonWriter value(jdouble arg0) const;
+		android::util::JsonWriter value(java::lang::Number arg0) const;
+		android::util::JsonWriter value(JString arg0) const;
+		android::util::JsonWriter value(jlong arg0) const;
 	};
 } // namespace android::util
 

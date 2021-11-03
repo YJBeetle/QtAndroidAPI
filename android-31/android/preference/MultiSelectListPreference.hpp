@@ -36,15 +36,15 @@ namespace android::preference
 		MultiSelectListPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint findIndexOfValue(JString arg0);
-		JArray getEntries();
-		JArray getEntryValues();
-		JObject getValues();
-		void setEntries(JArray arg0);
-		void setEntries(jint arg0);
-		void setEntryValues(JArray arg0);
-		void setEntryValues(jint arg0);
-		void setValues(JObject arg0);
+		jint findIndexOfValue(JString arg0) const;
+		JArray getEntries() const;
+		JArray getEntryValues() const;
+		JObject getValues() const;
+		void setEntries(JArray arg0) const;
+		void setEntries(jint arg0) const;
+		void setEntryValues(JArray arg0) const;
+		void setEntryValues(jint arg0) const;
+		void setValues(JObject arg0) const;
 	};
 } // namespace android::preference
 

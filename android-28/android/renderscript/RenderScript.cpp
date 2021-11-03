@@ -95,49 +95,49 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	void RenderScript::contextDump()
+	void RenderScript::contextDump() const
 	{
 		callMethod<void>(
 			"contextDump",
 			"()V"
 		);
 	}
-	void RenderScript::destroy()
+	void RenderScript::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	void RenderScript::finish()
+	void RenderScript::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	android::content::Context RenderScript::getApplicationContext()
+	android::content::Context RenderScript::getApplicationContext() const
 	{
 		return callObjectMethod(
 			"getApplicationContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::renderscript::RenderScript_RSErrorHandler RenderScript::getErrorHandler()
+	android::renderscript::RenderScript_RSErrorHandler RenderScript::getErrorHandler() const
 	{
 		return callObjectMethod(
 			"getErrorHandler",
 			"()Landroid/renderscript/RenderScript$RSErrorHandler;"
 		);
 	}
-	android::renderscript::RenderScript_RSMessageHandler RenderScript::getMessageHandler()
+	android::renderscript::RenderScript_RSMessageHandler RenderScript::getMessageHandler() const
 	{
 		return callObjectMethod(
 			"getMessageHandler",
 			"()Landroid/renderscript/RenderScript$RSMessageHandler;"
 		);
 	}
-	void RenderScript::sendMessage(jint arg0, JIntArray arg1)
+	void RenderScript::sendMessage(jint arg0, JIntArray arg1) const
 	{
 		callMethod<void>(
 			"sendMessage",
@@ -146,7 +146,7 @@ namespace android::renderscript
 			arg1.object<jintArray>()
 		);
 	}
-	void RenderScript::setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0)
+	void RenderScript::setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -154,7 +154,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void RenderScript::setMessageHandler(android::renderscript::RenderScript_RSMessageHandler arg0)
+	void RenderScript::setMessageHandler(android::renderscript::RenderScript_RSMessageHandler arg0) const
 	{
 		callMethod<void>(
 			"setMessageHandler",
@@ -162,7 +162,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void RenderScript::setPriority(android::renderscript::RenderScript_Priority arg0)
+	void RenderScript::setPriority(android::renderscript::RenderScript_Priority arg0) const
 	{
 		callMethod<void>(
 			"setPriority",

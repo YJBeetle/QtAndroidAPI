@@ -32,13 +32,13 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::media::AudioAttributes getAudioAttributes();
-		android::media::AudioDeviceInfo getAudioDeviceInfo();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::media::AudioAttributes getAudioAttributes() const;
+		android::media::AudioDeviceInfo getAudioDeviceInfo() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

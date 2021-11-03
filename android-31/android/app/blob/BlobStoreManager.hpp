@@ -30,17 +30,17 @@ namespace android::app::blob
 		// Constructors
 		
 		// Methods
-		void abandonSession(jlong arg0);
-		void acquireLease(android::app::blob::BlobHandle arg0, jint arg1);
-		void acquireLease(android::app::blob::BlobHandle arg0, JString arg1);
-		void acquireLease(android::app::blob::BlobHandle arg0, jint arg1, jlong arg2);
-		void acquireLease(android::app::blob::BlobHandle arg0, JString arg1, jlong arg2);
-		jlong createSession(android::app::blob::BlobHandle arg0);
-		JObject getLeasedBlobs();
-		jlong getRemainingLeaseQuotaBytes();
-		android::os::ParcelFileDescriptor openBlob(android::app::blob::BlobHandle arg0);
-		android::app::blob::BlobStoreManager_Session openSession(jlong arg0);
-		void releaseLease(android::app::blob::BlobHandle arg0);
+		void abandonSession(jlong arg0) const;
+		void acquireLease(android::app::blob::BlobHandle arg0, jint arg1) const;
+		void acquireLease(android::app::blob::BlobHandle arg0, JString arg1) const;
+		void acquireLease(android::app::blob::BlobHandle arg0, jint arg1, jlong arg2) const;
+		void acquireLease(android::app::blob::BlobHandle arg0, JString arg1, jlong arg2) const;
+		jlong createSession(android::app::blob::BlobHandle arg0) const;
+		JObject getLeasedBlobs() const;
+		jlong getRemainingLeaseQuotaBytes() const;
+		android::os::ParcelFileDescriptor openBlob(android::app::blob::BlobHandle arg0) const;
+		android::app::blob::BlobStoreManager_Session openSession(jlong arg0) const;
+		void releaseLease(android::app::blob::BlobHandle arg0) const;
 	};
 } // namespace android::app::blob
 

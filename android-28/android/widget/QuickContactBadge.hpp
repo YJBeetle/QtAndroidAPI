@@ -48,19 +48,19 @@ namespace android::widget
 		QuickContactBadge(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void assignContactFromEmail(JString arg0, jboolean arg1);
-		void assignContactFromEmail(JString arg0, jboolean arg1, android::os::Bundle arg2);
-		void assignContactFromPhone(JString arg0, jboolean arg1);
-		void assignContactFromPhone(JString arg0, jboolean arg1, android::os::Bundle arg2);
-		void assignContactUri(android::net::Uri arg0);
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		JString getAccessibilityClassName();
-		void onClick(android::view::View arg0);
-		void setExcludeMimes(JArray arg0);
-		void setImageToDefault();
-		void setMode(jint arg0);
-		void setOverlay(android::graphics::drawable::Drawable arg0);
-		void setPrioritizedMimeType(JString arg0);
+		void assignContactFromEmail(JString arg0, jboolean arg1) const;
+		void assignContactFromEmail(JString arg0, jboolean arg1, android::os::Bundle arg2) const;
+		void assignContactFromPhone(JString arg0, jboolean arg1) const;
+		void assignContactFromPhone(JString arg0, jboolean arg1, android::os::Bundle arg2) const;
+		void assignContactUri(android::net::Uri arg0) const;
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1) const;
+		JString getAccessibilityClassName() const;
+		void onClick(android::view::View arg0) const;
+		void setExcludeMimes(JArray arg0) const;
+		void setImageToDefault() const;
+		void setMode(jint arg0) const;
+		void setOverlay(android::graphics::drawable::Drawable arg0) const;
+		void setPrioritizedMimeType(JString arg0) const;
 	};
 } // namespace android::widget
 

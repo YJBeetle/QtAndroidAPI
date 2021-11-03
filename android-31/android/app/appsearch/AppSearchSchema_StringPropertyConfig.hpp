@@ -21,8 +21,8 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jint getIndexingType();
-		jint getTokenizerType();
+		jint getIndexingType() const;
+		jint getTokenizerType() const;
 	};
 } // namespace android::app::appsearch
 

@@ -14,7 +14,7 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	void CaptioningManager::addCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
+	void CaptioningManager::addCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0) const
 	{
 		callMethod<void>(
 			"addCaptioningChangeListener",
@@ -22,35 +22,35 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jfloat CaptioningManager::getFontScale()
+	jfloat CaptioningManager::getFontScale() const
 	{
 		return callMethod<jfloat>(
 			"getFontScale",
 			"()F"
 		);
 	}
-	java::util::Locale CaptioningManager::getLocale()
+	java::util::Locale CaptioningManager::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	android::view::accessibility::CaptioningManager_CaptionStyle CaptioningManager::getUserStyle()
+	android::view::accessibility::CaptioningManager_CaptionStyle CaptioningManager::getUserStyle() const
 	{
 		return callObjectMethod(
 			"getUserStyle",
 			"()Landroid/view/accessibility/CaptioningManager$CaptionStyle;"
 		);
 	}
-	jboolean CaptioningManager::isEnabled()
+	jboolean CaptioningManager::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void CaptioningManager::removeCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
+	void CaptioningManager::removeCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0) const
 	{
 		callMethod<void>(
 			"removeCaptioningChangeListener",

@@ -68,15 +68,15 @@ namespace android::view::inputmethod
 		EditorInfo();
 		
 		// Methods
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		JString getInitialSelectedText(jint arg0);
-		JString getInitialTextAfterCursor(jint arg0, jint arg1);
-		JString getInitialTextBeforeCursor(jint arg0, jint arg1);
-		void makeCompatible(jint arg0);
-		void setInitialSurroundingSubText(JString arg0, jint arg1);
-		void setInitialSurroundingText(JString arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		JString getInitialSelectedText(jint arg0) const;
+		JString getInitialTextAfterCursor(jint arg0, jint arg1) const;
+		JString getInitialTextBeforeCursor(jint arg0, jint arg1) const;
+		void makeCompatible(jint arg0) const;
+		void setInitialSurroundingSubText(JString arg0, jint arg1) const;
+		void setInitialSurroundingText(JString arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

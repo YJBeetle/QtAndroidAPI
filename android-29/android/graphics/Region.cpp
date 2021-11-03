@@ -50,7 +50,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean Region::contains(jint arg0, jint arg1)
+	jboolean Region::contains(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -59,14 +59,14 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jint Region::describeContents()
+	jint Region::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Region::equals(JObject arg0)
+	jboolean Region::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -74,14 +74,14 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::Path Region::getBoundaryPath()
+	android::graphics::Path Region::getBoundaryPath() const
 	{
 		return callObjectMethod(
 			"getBoundaryPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	jboolean Region::getBoundaryPath(android::graphics::Path arg0)
+	jboolean Region::getBoundaryPath(android::graphics::Path arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBoundaryPath",
@@ -89,14 +89,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::Rect Region::getBounds()
+	android::graphics::Rect Region::getBounds() const
 	{
 		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jboolean Region::getBounds(android::graphics::Rect arg0)
+	jboolean Region::getBounds(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBounds",
@@ -104,28 +104,28 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Region::isComplex()
+	jboolean Region::isComplex() const
 	{
 		return callMethod<jboolean>(
 			"isComplex",
 			"()Z"
 		);
 	}
-	jboolean Region::isEmpty()
+	jboolean Region::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jboolean Region::isRect()
+	jboolean Region::isRect() const
 	{
 		return callMethod<jboolean>(
 			"isRect",
 			"()Z"
 		);
 	}
-	jboolean Region::op(android::graphics::Rect arg0, android::graphics::Region_Op arg1)
+	jboolean Region::op(android::graphics::Rect arg0, android::graphics::Region_Op arg1) const
 	{
 		return callMethod<jboolean>(
 			"op",
@@ -134,7 +134,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean Region::op(android::graphics::Region arg0, android::graphics::Region_Op arg1)
+	jboolean Region::op(android::graphics::Region arg0, android::graphics::Region_Op arg1) const
 	{
 		return callMethod<jboolean>(
 			"op",
@@ -143,7 +143,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean Region::op(android::graphics::Rect arg0, android::graphics::Region arg1, android::graphics::Region_Op arg2)
+	jboolean Region::op(android::graphics::Rect arg0, android::graphics::Region arg1, android::graphics::Region_Op arg2) const
 	{
 		return callMethod<jboolean>(
 			"op",
@@ -153,7 +153,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	jboolean Region::op(android::graphics::Region arg0, android::graphics::Region arg1, android::graphics::Region_Op arg2)
+	jboolean Region::op(android::graphics::Region arg0, android::graphics::Region arg1, android::graphics::Region_Op arg2) const
 	{
 		return callMethod<jboolean>(
 			"op",
@@ -163,7 +163,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	jboolean Region::op(jint arg0, jint arg1, jint arg2, jint arg3, android::graphics::Region_Op arg4)
+	jboolean Region::op(jint arg0, jint arg1, jint arg2, jint arg3, android::graphics::Region_Op arg4) const
 	{
 		return callMethod<jboolean>(
 			"op",
@@ -175,7 +175,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	jboolean Region::quickContains(android::graphics::Rect arg0)
+	jboolean Region::quickContains(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"quickContains",
@@ -183,7 +183,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Region::quickContains(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean Region::quickContains(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"quickContains",
@@ -194,7 +194,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Region::quickReject(android::graphics::Rect arg0)
+	jboolean Region::quickReject(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"quickReject",
@@ -202,7 +202,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Region::quickReject(android::graphics::Region arg0)
+	jboolean Region::quickReject(android::graphics::Region arg0) const
 	{
 		return callMethod<jboolean>(
 			"quickReject",
@@ -210,7 +210,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Region::quickReject(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean Region::quickReject(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"quickReject",
@@ -221,7 +221,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Region::set(android::graphics::Rect arg0)
+	jboolean Region::set(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"set",
@@ -229,7 +229,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Region::set(android::graphics::Region arg0)
+	jboolean Region::set(android::graphics::Region arg0) const
 	{
 		return callMethod<jboolean>(
 			"set",
@@ -237,7 +237,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Region::set(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean Region::set(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"set",
@@ -248,14 +248,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Region::setEmpty()
+	void Region::setEmpty() const
 	{
 		callMethod<void>(
 			"setEmpty",
 			"()V"
 		);
 	}
-	jboolean Region::setPath(android::graphics::Path arg0, android::graphics::Region arg1)
+	jboolean Region::setPath(android::graphics::Path arg0, android::graphics::Region arg1) const
 	{
 		return callMethod<jboolean>(
 			"setPath",
@@ -264,14 +264,14 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	JString Region::toString()
+	JString Region::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Region::translate(jint arg0, jint arg1)
+	void Region::translate(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"translate",
@@ -280,7 +280,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Region::translate(jint arg0, jint arg1, android::graphics::Region arg2)
+	void Region::translate(jint arg0, jint arg1, android::graphics::Region arg2) const
 	{
 		callMethod<void>(
 			"translate",
@@ -290,7 +290,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	jboolean Region::_union(android::graphics::Rect arg0)
+	jboolean Region::_union(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"union",
@@ -298,7 +298,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Region::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Region::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

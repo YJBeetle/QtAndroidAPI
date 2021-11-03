@@ -27,7 +27,7 @@ namespace android::app::appsearch
 			"()I"
 		);
 	}
-	jboolean GenericDocument::equals(JObject arg0)
+	jboolean GenericDocument::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,28 +35,28 @@ namespace android::app::appsearch
 			arg0.object<jobject>()
 		);
 	}
-	jlong GenericDocument::getCreationTimestampMillis()
+	jlong GenericDocument::getCreationTimestampMillis() const
 	{
 		return callMethod<jlong>(
 			"getCreationTimestampMillis",
 			"()J"
 		);
 	}
-	JString GenericDocument::getId()
+	JString GenericDocument::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString GenericDocument::getNamespace()
+	JString GenericDocument::getNamespace() const
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject GenericDocument::getProperty(JString arg0)
+	JObject GenericDocument::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -64,7 +64,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	jboolean GenericDocument::getPropertyBoolean(JString arg0)
+	jboolean GenericDocument::getPropertyBoolean(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPropertyBoolean",
@@ -72,7 +72,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JBooleanArray GenericDocument::getPropertyBooleanArray(JString arg0)
+	JBooleanArray GenericDocument::getPropertyBooleanArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyBooleanArray",
@@ -80,7 +80,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray GenericDocument::getPropertyBytes(JString arg0)
+	JByteArray GenericDocument::getPropertyBytes(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyBytes",
@@ -88,7 +88,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JArray GenericDocument::getPropertyBytesArray(JString arg0)
+	JArray GenericDocument::getPropertyBytesArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyBytesArray",
@@ -96,7 +96,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	android::app::appsearch::GenericDocument GenericDocument::getPropertyDocument(JString arg0)
+	android::app::appsearch::GenericDocument GenericDocument::getPropertyDocument(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyDocument",
@@ -104,7 +104,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JArray GenericDocument::getPropertyDocumentArray(JString arg0)
+	JArray GenericDocument::getPropertyDocumentArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyDocumentArray",
@@ -112,7 +112,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	jdouble GenericDocument::getPropertyDouble(JString arg0)
+	jdouble GenericDocument::getPropertyDouble(JString arg0) const
 	{
 		return callMethod<jdouble>(
 			"getPropertyDouble",
@@ -120,7 +120,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JDoubleArray GenericDocument::getPropertyDoubleArray(JString arg0)
+	JDoubleArray GenericDocument::getPropertyDoubleArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyDoubleArray",
@@ -128,7 +128,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	jlong GenericDocument::getPropertyLong(JString arg0)
+	jlong GenericDocument::getPropertyLong(JString arg0) const
 	{
 		return callMethod<jlong>(
 			"getPropertyLong",
@@ -136,7 +136,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JLongArray GenericDocument::getPropertyLongArray(JString arg0)
+	JLongArray GenericDocument::getPropertyLongArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyLongArray",
@@ -144,14 +144,14 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JObject GenericDocument::getPropertyNames()
+	JObject GenericDocument::getPropertyNames() const
 	{
 		return callObjectMethod(
 			"getPropertyNames",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString GenericDocument::getPropertyString(JString arg0)
+	JString GenericDocument::getPropertyString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyString",
@@ -159,7 +159,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JArray GenericDocument::getPropertyStringArray(JString arg0)
+	JArray GenericDocument::getPropertyStringArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyStringArray",
@@ -167,35 +167,35 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	JString GenericDocument::getSchemaType()
+	JString GenericDocument::getSchemaType() const
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint GenericDocument::getScore()
+	jint GenericDocument::getScore() const
 	{
 		return callMethod<jint>(
 			"getScore",
 			"()I"
 		);
 	}
-	jlong GenericDocument::getTtlMillis()
+	jlong GenericDocument::getTtlMillis() const
 	{
 		return callMethod<jlong>(
 			"getTtlMillis",
 			"()J"
 		);
 	}
-	jint GenericDocument::hashCode()
+	jint GenericDocument::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString GenericDocument::toString()
+	JString GenericDocument::toString() const
 	{
 		return callObjectMethod(
 			"toString",

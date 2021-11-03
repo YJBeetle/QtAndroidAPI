@@ -23,7 +23,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void LongSparseArray::append(jlong arg0, JObject arg1)
+	void LongSparseArray::append(jlong arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"append",
@@ -32,21 +32,21 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	void LongSparseArray::clear()
+	void LongSparseArray::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	android::util::LongSparseArray LongSparseArray::clone()
+	android::util::LongSparseArray LongSparseArray::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/util/LongSparseArray;"
 		);
 	}
-	void LongSparseArray::_delete(jlong arg0)
+	void LongSparseArray::_delete(jlong arg0) const
 	{
 		callMethod<void>(
 			"delete",
@@ -54,7 +54,7 @@ namespace android::util
 			arg0
 		);
 	}
-	JObject LongSparseArray::get(jlong arg0)
+	JObject LongSparseArray::get(jlong arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -62,7 +62,7 @@ namespace android::util
 			arg0
 		);
 	}
-	JObject LongSparseArray::get(jlong arg0, JObject arg1)
+	JObject LongSparseArray::get(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -71,7 +71,7 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	jint LongSparseArray::indexOfKey(jlong arg0)
+	jint LongSparseArray::indexOfKey(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"indexOfKey",
@@ -79,7 +79,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jint LongSparseArray::indexOfValue(JObject arg0)
+	jint LongSparseArray::indexOfValue(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"indexOfValue",
@@ -87,7 +87,7 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jlong LongSparseArray::keyAt(jint arg0)
+	jlong LongSparseArray::keyAt(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"keyAt",
@@ -95,7 +95,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void LongSparseArray::put(jlong arg0, JObject arg1)
+	void LongSparseArray::put(jlong arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -104,7 +104,7 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	void LongSparseArray::remove(jlong arg0)
+	void LongSparseArray::remove(jlong arg0) const
 	{
 		callMethod<void>(
 			"remove",
@@ -112,7 +112,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void LongSparseArray::removeAt(jint arg0)
+	void LongSparseArray::removeAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeAt",
@@ -120,7 +120,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void LongSparseArray::setValueAt(jint arg0, JObject arg1)
+	void LongSparseArray::setValueAt(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setValueAt",
@@ -129,21 +129,21 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	jint LongSparseArray::size()
+	jint LongSparseArray::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString LongSparseArray::toString()
+	JString LongSparseArray::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject LongSparseArray::valueAt(jint arg0)
+	JObject LongSparseArray::valueAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"valueAt",

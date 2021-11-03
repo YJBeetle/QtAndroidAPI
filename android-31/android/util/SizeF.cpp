@@ -37,14 +37,14 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	jint SizeF::describeContents()
+	jint SizeF::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SizeF::equals(JObject arg0)
+	jboolean SizeF::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -52,35 +52,35 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jfloat SizeF::getHeight()
+	jfloat SizeF::getHeight() const
 	{
 		return callMethod<jfloat>(
 			"getHeight",
 			"()F"
 		);
 	}
-	jfloat SizeF::getWidth()
+	jfloat SizeF::getWidth() const
 	{
 		return callMethod<jfloat>(
 			"getWidth",
 			"()F"
 		);
 	}
-	jint SizeF::hashCode()
+	jint SizeF::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SizeF::toString()
+	JString SizeF::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SizeF::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SizeF::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

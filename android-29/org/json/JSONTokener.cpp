@@ -28,28 +28,28 @@ namespace org::json
 			arg0
 		);
 	}
-	void JSONTokener::back()
+	void JSONTokener::back() const
 	{
 		callMethod<void>(
 			"back",
 			"()V"
 		);
 	}
-	jboolean JSONTokener::more()
+	jboolean JSONTokener::more() const
 	{
 		return callMethod<jboolean>(
 			"more",
 			"()Z"
 		);
 	}
-	jchar JSONTokener::next()
+	jchar JSONTokener::next() const
 	{
 		return callMethod<jchar>(
 			"next",
 			"()C"
 		);
 	}
-	jchar JSONTokener::next(jchar arg0)
+	jchar JSONTokener::next(jchar arg0) const
 	{
 		return callMethod<jchar>(
 			"next",
@@ -57,7 +57,7 @@ namespace org::json
 			arg0
 		);
 	}
-	JString JSONTokener::next(jint arg0)
+	JString JSONTokener::next(jint arg0) const
 	{
 		return callObjectMethod(
 			"next",
@@ -65,14 +65,14 @@ namespace org::json
 			arg0
 		);
 	}
-	jchar JSONTokener::nextClean()
+	jchar JSONTokener::nextClean() const
 	{
 		return callMethod<jchar>(
 			"nextClean",
 			"()C"
 		);
 	}
-	JString JSONTokener::nextString(jchar arg0)
+	JString JSONTokener::nextString(jchar arg0) const
 	{
 		return callObjectMethod(
 			"nextString",
@@ -80,7 +80,7 @@ namespace org::json
 			arg0
 		);
 	}
-	JString JSONTokener::nextTo(jchar arg0)
+	JString JSONTokener::nextTo(jchar arg0) const
 	{
 		return callObjectMethod(
 			"nextTo",
@@ -88,7 +88,7 @@ namespace org::json
 			arg0
 		);
 	}
-	JString JSONTokener::nextTo(JString arg0)
+	JString JSONTokener::nextTo(JString arg0) const
 	{
 		return callObjectMethod(
 			"nextTo",
@@ -96,14 +96,14 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	JObject JSONTokener::nextValue()
+	JObject JSONTokener::nextValue() const
 	{
 		return callObjectMethod(
 			"nextValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void JSONTokener::skipPast(JString arg0)
+	void JSONTokener::skipPast(JString arg0) const
 	{
 		callMethod<void>(
 			"skipPast",
@@ -111,7 +111,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	jchar JSONTokener::skipTo(jchar arg0)
+	jchar JSONTokener::skipTo(jchar arg0) const
 	{
 		return callMethod<jchar>(
 			"skipTo",
@@ -119,7 +119,7 @@ namespace org::json
 			arg0
 		);
 	}
-	org::json::JSONException JSONTokener::syntaxError(JString arg0)
+	org::json::JSONException JSONTokener::syntaxError(JString arg0) const
 	{
 		return callObjectMethod(
 			"syntaxError",
@@ -127,7 +127,7 @@ namespace org::json
 			arg0.object<jstring>()
 		);
 	}
-	JString JSONTokener::toString()
+	JString JSONTokener::toString() const
 	{
 		return callObjectMethod(
 			"toString",

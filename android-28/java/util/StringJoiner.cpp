@@ -28,7 +28,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	java::util::StringJoiner StringJoiner::add(JString arg0)
+	java::util::StringJoiner StringJoiner::add(JString arg0) const
 	{
 		return callObjectMethod(
 			"add",
@@ -36,14 +36,14 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	jint StringJoiner::length()
+	jint StringJoiner::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	java::util::StringJoiner StringJoiner::merge(java::util::StringJoiner arg0)
+	java::util::StringJoiner StringJoiner::merge(java::util::StringJoiner arg0) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -51,7 +51,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::StringJoiner StringJoiner::setEmptyValue(JString arg0)
+	java::util::StringJoiner StringJoiner::setEmptyValue(JString arg0) const
 	{
 		return callObjectMethod(
 			"setEmptyValue",
@@ -59,7 +59,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JString StringJoiner::toString()
+	JString StringJoiner::toString() const
 	{
 		return callObjectMethod(
 			"toString",

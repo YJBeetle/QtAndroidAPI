@@ -29,10 +29,10 @@ namespace android::service::controls::templates
 		ToggleRangeTemplate(JString arg0, jboolean arg1, JString arg2, android::service::controls::templates::RangeTemplate arg3);
 		
 		// Methods
-		JString getActionDescription();
-		android::service::controls::templates::RangeTemplate getRange();
-		jint getTemplateType();
-		jboolean isChecked();
+		JString getActionDescription() const;
+		android::service::controls::templates::RangeTemplate getRange() const;
+		jint getTemplateType() const;
+		jboolean isChecked() const;
 	};
 } // namespace android::service::controls::templates
 

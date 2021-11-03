@@ -17,14 +17,14 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	void Provider::clear()
+	void Provider::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject Provider::compute(JObject arg0, JObject arg1)
+	JObject Provider::compute(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compute",
@@ -33,7 +33,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JObject Provider::computeIfAbsent(JObject arg0, JObject arg1)
+	JObject Provider::computeIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -42,7 +42,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JObject Provider::computeIfPresent(JObject arg0, JObject arg1)
+	JObject Provider::computeIfPresent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -51,7 +51,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::Provider Provider::configure(JString arg0)
+	java::security::Provider Provider::configure(JString arg0) const
 	{
 		return callObjectMethod(
 			"configure",
@@ -59,21 +59,21 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	JObject Provider::elements()
+	JObject Provider::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Provider::entrySet()
+	JObject Provider::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void Provider::forEach(JObject arg0)
+	void Provider::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -81,7 +81,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject Provider::get(JObject arg0)
+	JObject Provider::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -89,21 +89,21 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JString Provider::getInfo()
+	JString Provider::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Provider::getName()
+	JString Provider::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Provider::getOrDefault(JObject arg0, JObject arg1)
+	JObject Provider::getOrDefault(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getOrDefault",
@@ -112,7 +112,7 @@ namespace java::security
 			arg1.object<jobject>()
 		);
 	}
-	JString Provider::getProperty(JString arg0)
+	JString Provider::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -120,7 +120,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	java::security::Provider_Service Provider::getService(JString arg0, JString arg1)
+	java::security::Provider_Service Provider::getService(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getService",
@@ -129,49 +129,49 @@ namespace java::security
 			arg1.object<jstring>()
 		);
 	}
-	JObject Provider::getServices()
+	JObject Provider::getServices() const
 	{
 		return callObjectMethod(
 			"getServices",
 			"()Ljava/util/Set;"
 		);
 	}
-	jdouble Provider::getVersion()
+	jdouble Provider::getVersion() const
 	{
 		return callMethod<jdouble>(
 			"getVersion",
 			"()D"
 		);
 	}
-	JString Provider::getVersionStr()
+	JString Provider::getVersionStr() const
 	{
 		return callObjectMethod(
 			"getVersionStr",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Provider::isConfigured()
+	jboolean Provider::isConfigured() const
 	{
 		return callMethod<jboolean>(
 			"isConfigured",
 			"()Z"
 		);
 	}
-	JObject Provider::keySet()
+	JObject Provider::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Provider::keys()
+	JObject Provider::keys() const
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	void Provider::load(java::io::InputStream arg0)
+	void Provider::load(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -179,7 +179,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject Provider::merge(JObject arg0, JObject arg1, JObject arg2)
+	JObject Provider::merge(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -189,7 +189,7 @@ namespace java::security
 			arg2.object()
 		);
 	}
-	JObject Provider::put(JObject arg0, JObject arg1)
+	JObject Provider::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -198,7 +198,7 @@ namespace java::security
 			arg1.object<jobject>()
 		);
 	}
-	void Provider::putAll(JObject arg0)
+	void Provider::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -206,7 +206,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject Provider::putIfAbsent(JObject arg0, JObject arg1)
+	JObject Provider::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
@@ -215,7 +215,7 @@ namespace java::security
 			arg1.object<jobject>()
 		);
 	}
-	jboolean Provider::remove(JObject arg0, JObject arg1)
+	jboolean Provider::remove(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -224,7 +224,7 @@ namespace java::security
 			arg1.object<jobject>()
 		);
 	}
-	JObject Provider::remove(JObject arg0)
+	JObject Provider::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -232,7 +232,7 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Provider::replace(JObject arg0, JObject arg1, JObject arg2)
+	jboolean Provider::replace(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"replace",
@@ -242,7 +242,7 @@ namespace java::security
 			arg2.object<jobject>()
 		);
 	}
-	JObject Provider::replace(JObject arg0, JObject arg1)
+	JObject Provider::replace(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -251,7 +251,7 @@ namespace java::security
 			arg1.object<jobject>()
 		);
 	}
-	void Provider::replaceAll(JObject arg0)
+	void Provider::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -259,14 +259,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JString Provider::toString()
+	JString Provider::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Provider::values()
+	JObject Provider::values() const
 	{
 		return callObjectMethod(
 			"values",

@@ -38,14 +38,14 @@ namespace android::telephony
 			arg3.object()
 		);
 	}
-	void MbmsStreamingSession::close()
+	void MbmsStreamingSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void MbmsStreamingSession::requestUpdateStreamingServices(JObject arg0)
+	void MbmsStreamingSession::requestUpdateStreamingServices(JObject arg0) const
 	{
 		callMethod<void>(
 			"requestUpdateStreamingServices",
@@ -53,7 +53,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	android::telephony::mbms::StreamingService MbmsStreamingSession::startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, JObject arg1, android::telephony::mbms::StreamingServiceCallback arg2)
+	android::telephony::mbms::StreamingService MbmsStreamingSession::startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, JObject arg1, android::telephony::mbms::StreamingServiceCallback arg2) const
 	{
 		return callObjectMethod(
 			"startStreaming",

@@ -17,8 +17,8 @@ namespace android::database
 		DataSetObservable();
 		
 		// Methods
-		void notifyChanged();
-		void notifyInvalidated();
+		void notifyChanged() const;
+		void notifyInvalidated() const;
 	};
 } // namespace android::database
 

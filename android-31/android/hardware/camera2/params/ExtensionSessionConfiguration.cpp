@@ -20,28 +20,28 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	JObject ExtensionSessionConfiguration::getExecutor()
+	JObject ExtensionSessionConfiguration::getExecutor() const
 	{
 		return callObjectMethod(
 			"getExecutor",
 			"()Ljava/util/concurrent/Executor;"
 		);
 	}
-	jint ExtensionSessionConfiguration::getExtension()
+	jint ExtensionSessionConfiguration::getExtension() const
 	{
 		return callMethod<jint>(
 			"getExtension",
 			"()I"
 		);
 	}
-	JObject ExtensionSessionConfiguration::getOutputConfigurations()
+	JObject ExtensionSessionConfiguration::getOutputConfigurations() const
 	{
 		return callObjectMethod(
 			"getOutputConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	android::hardware::camera2::CameraExtensionSession_StateCallback ExtensionSessionConfiguration::getStateCallback()
+	android::hardware::camera2::CameraExtensionSession_StateCallback ExtensionSessionConfiguration::getStateCallback() const
 	{
 		return callObjectMethod(
 			"getStateCallback",

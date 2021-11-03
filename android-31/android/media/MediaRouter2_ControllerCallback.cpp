@@ -16,7 +16,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaRouter2_ControllerCallback::onControllerUpdated(android::media::MediaRouter2_RoutingController arg0)
+	void MediaRouter2_ControllerCallback::onControllerUpdated(android::media::MediaRouter2_RoutingController arg0) const
 	{
 		callMethod<void>(
 			"onControllerUpdated",

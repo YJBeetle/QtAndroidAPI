@@ -29,8 +29,8 @@ namespace android::telephony
 		TelephonyManager_CallComposerException(jint arg0, java::io::IOException arg1);
 		
 		// Methods
-		jint getErrorCode();
-		java::io::IOException getIOException();
+		jint getErrorCode() const;
+		java::io::IOException getIOException() const;
 	};
 } // namespace android::telephony
 

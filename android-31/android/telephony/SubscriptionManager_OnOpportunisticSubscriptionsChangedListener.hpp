@@ -17,7 +17,7 @@ namespace android::telephony
 		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener();
 		
 		// Methods
-		void onOpportunisticSubscriptionsChanged();
+		void onOpportunisticSubscriptionsChanged() const;
 	};
 } // namespace android::telephony
 

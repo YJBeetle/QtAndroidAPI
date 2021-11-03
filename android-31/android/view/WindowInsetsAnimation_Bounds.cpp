@@ -19,21 +19,21 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::graphics::Insets WindowInsetsAnimation_Bounds::getLowerBound()
+	android::graphics::Insets WindowInsetsAnimation_Bounds::getLowerBound() const
 	{
 		return callObjectMethod(
 			"getLowerBound",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	android::graphics::Insets WindowInsetsAnimation_Bounds::getUpperBound()
+	android::graphics::Insets WindowInsetsAnimation_Bounds::getUpperBound() const
 	{
 		return callObjectMethod(
 			"getUpperBound",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	android::view::WindowInsetsAnimation_Bounds WindowInsetsAnimation_Bounds::inset(android::graphics::Insets arg0)
+	android::view::WindowInsetsAnimation_Bounds WindowInsetsAnimation_Bounds::inset(android::graphics::Insets arg0) const
 	{
 		return callObjectMethod(
 			"inset",
@@ -41,7 +41,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	JString WindowInsetsAnimation_Bounds::toString()
+	JString WindowInsetsAnimation_Bounds::toString() const
 	{
 		return callObjectMethod(
 			"toString",

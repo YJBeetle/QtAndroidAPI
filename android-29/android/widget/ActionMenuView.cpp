@@ -29,14 +29,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void ActionMenuView::dismissPopupMenus()
+	void ActionMenuView::dismissPopupMenus() const
 	{
 		callMethod<void>(
 			"dismissPopupMenus",
 			"()V"
 		);
 	}
-	android::widget::ActionMenuView_LayoutParams ActionMenuView::generateLayoutParams(JObject arg0)
+	android::widget::ActionMenuView_LayoutParams ActionMenuView::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -44,42 +44,42 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject ActionMenuView::getMenu()
+	JObject ActionMenuView::getMenu() const
 	{
 		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
-	android::graphics::drawable::Drawable ActionMenuView::getOverflowIcon()
+	android::graphics::drawable::Drawable ActionMenuView::getOverflowIcon() const
 	{
 		return callObjectMethod(
 			"getOverflowIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint ActionMenuView::getPopupTheme()
+	jint ActionMenuView::getPopupTheme() const
 	{
 		return callMethod<jint>(
 			"getPopupTheme",
 			"()I"
 		);
 	}
-	jboolean ActionMenuView::hideOverflowMenu()
+	jboolean ActionMenuView::hideOverflowMenu() const
 	{
 		return callMethod<jboolean>(
 			"hideOverflowMenu",
 			"()Z"
 		);
 	}
-	jboolean ActionMenuView::isOverflowMenuShowing()
+	jboolean ActionMenuView::isOverflowMenuShowing() const
 	{
 		return callMethod<jboolean>(
 			"isOverflowMenuShowing",
 			"()Z"
 		);
 	}
-	void ActionMenuView::onConfigurationChanged(android::content::res::Configuration arg0)
+	void ActionMenuView::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -87,14 +87,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ActionMenuView::onDetachedFromWindow()
+	void ActionMenuView::onDetachedFromWindow() const
 	{
 		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
-	void ActionMenuView::setOnMenuItemClickListener(JObject arg0)
+	void ActionMenuView::setOnMenuItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnMenuItemClickListener",
@@ -102,7 +102,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ActionMenuView::setOverflowIcon(android::graphics::drawable::Drawable arg0)
+	void ActionMenuView::setOverflowIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setOverflowIcon",
@@ -110,7 +110,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ActionMenuView::setPopupTheme(jint arg0)
+	void ActionMenuView::setPopupTheme(jint arg0) const
 	{
 		callMethod<void>(
 			"setPopupTheme",
@@ -118,7 +118,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean ActionMenuView::showOverflowMenu()
+	jboolean ActionMenuView::showOverflowMenu() const
 	{
 		return callMethod<jboolean>(
 			"showOverflowMenu",

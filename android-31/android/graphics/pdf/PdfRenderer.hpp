@@ -26,10 +26,10 @@ namespace android::graphics::pdf
 		PdfRenderer(android::os::ParcelFileDescriptor arg0);
 		
 		// Methods
-		void close();
-		jint getPageCount();
-		android::graphics::pdf::PdfRenderer_Page openPage(jint arg0);
-		jboolean shouldScaleForPrinting();
+		void close() const;
+		jint getPageCount() const;
+		android::graphics::pdf::PdfRenderer_Page openPage(jint arg0) const;
+		jboolean shouldScaleForPrinting() const;
 	};
 } // namespace android::graphics::pdf
 

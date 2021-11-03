@@ -15,7 +15,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jboolean WebViewRenderProcess::terminate()
+	jboolean WebViewRenderProcess::terminate() const
 	{
 		return callMethod<jboolean>(
 			"terminate",

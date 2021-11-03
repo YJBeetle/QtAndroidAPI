@@ -42,15 +42,15 @@ namespace java::nio::channels::spi
 		
 		// Methods
 		static java::nio::channels::spi::SelectorProvider provider();
-		JObject inheritedChannel();
-		java::nio::channels::DatagramChannel openDatagramChannel();
-		java::nio::channels::DatagramChannel openDatagramChannel(JObject arg0);
-		java::nio::channels::Pipe openPipe();
-		java::nio::channels::spi::AbstractSelector openSelector();
-		java::nio::channels::ServerSocketChannel openServerSocketChannel();
-		java::nio::channels::ServerSocketChannel openServerSocketChannel(JObject arg0);
-		java::nio::channels::SocketChannel openSocketChannel();
-		java::nio::channels::SocketChannel openSocketChannel(JObject arg0);
+		JObject inheritedChannel() const;
+		java::nio::channels::DatagramChannel openDatagramChannel() const;
+		java::nio::channels::DatagramChannel openDatagramChannel(JObject arg0) const;
+		java::nio::channels::Pipe openPipe() const;
+		java::nio::channels::spi::AbstractSelector openSelector() const;
+		java::nio::channels::ServerSocketChannel openServerSocketChannel() const;
+		java::nio::channels::ServerSocketChannel openServerSocketChannel(JObject arg0) const;
+		java::nio::channels::SocketChannel openSocketChannel() const;
+		java::nio::channels::SocketChannel openSocketChannel(JObject arg0) const;
 	};
 } // namespace java::nio::channels::spi
 

@@ -21,12 +21,12 @@ namespace android::widget
 		AlphabetIndexer(JObject arg0, jint arg1, JString arg2);
 		
 		// Methods
-		jint getPositionForSection(jint arg0);
-		jint getSectionForPosition(jint arg0);
-		JObjectArray getSections();
-		void onChanged();
-		void onInvalidated();
-		void setCursor(JObject arg0);
+		jint getPositionForSection(jint arg0) const;
+		jint getSectionForPosition(jint arg0) const;
+		JObjectArray getSections() const;
+		void onChanged() const;
+		void onInvalidated() const;
+		void setCursor(JObject arg0) const;
 	};
 } // namespace android::widget
 

@@ -38,14 +38,14 @@ namespace android::net::wifi
 	// Constructors
 	
 	// Methods
-	jint WifiNetworkSuggestion::describeContents()
+	jint WifiNetworkSuggestion::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean WifiNetworkSuggestion::equals(JObject arg0)
+	jboolean WifiNetworkSuggestion::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -53,140 +53,140 @@ namespace android::net::wifi
 			arg0.object<jobject>()
 		);
 	}
-	android::net::MacAddress WifiNetworkSuggestion::getBssid()
+	android::net::MacAddress WifiNetworkSuggestion::getBssid() const
 	{
 		return callObjectMethod(
 			"getBssid",
 			"()Landroid/net/MacAddress;"
 		);
 	}
-	android::net::wifi::WifiEnterpriseConfig WifiNetworkSuggestion::getEnterpriseConfig()
+	android::net::wifi::WifiEnterpriseConfig WifiNetworkSuggestion::getEnterpriseConfig() const
 	{
 		return callObjectMethod(
 			"getEnterpriseConfig",
 			"()Landroid/net/wifi/WifiEnterpriseConfig;"
 		);
 	}
-	JString WifiNetworkSuggestion::getPassphrase()
+	JString WifiNetworkSuggestion::getPassphrase() const
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::wifi::hotspot2::PasspointConfiguration WifiNetworkSuggestion::getPasspointConfig()
+	android::net::wifi::hotspot2::PasspointConfiguration WifiNetworkSuggestion::getPasspointConfig() const
 	{
 		return callObjectMethod(
 			"getPasspointConfig",
 			"()Landroid/net/wifi/hotspot2/PasspointConfiguration;"
 		);
 	}
-	jint WifiNetworkSuggestion::getPriority()
+	jint WifiNetworkSuggestion::getPriority() const
 	{
 		return callMethod<jint>(
 			"getPriority",
 			"()I"
 		);
 	}
-	jint WifiNetworkSuggestion::getPriorityGroup()
+	jint WifiNetworkSuggestion::getPriorityGroup() const
 	{
 		return callMethod<jint>(
 			"getPriorityGroup",
 			"()I"
 		);
 	}
-	JString WifiNetworkSuggestion::getSsid()
+	JString WifiNetworkSuggestion::getSsid() const
 	{
 		return callObjectMethod(
 			"getSsid",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint WifiNetworkSuggestion::getSubscriptionId()
+	jint WifiNetworkSuggestion::getSubscriptionId() const
 	{
 		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
-	jint WifiNetworkSuggestion::hashCode()
+	jint WifiNetworkSuggestion::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isAppInteractionRequired()
+	jboolean WifiNetworkSuggestion::isAppInteractionRequired() const
 	{
 		return callMethod<jboolean>(
 			"isAppInteractionRequired",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isCarrierMerged()
+	jboolean WifiNetworkSuggestion::isCarrierMerged() const
 	{
 		return callMethod<jboolean>(
 			"isCarrierMerged",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isCredentialSharedWithUser()
+	jboolean WifiNetworkSuggestion::isCredentialSharedWithUser() const
 	{
 		return callMethod<jboolean>(
 			"isCredentialSharedWithUser",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isEnhancedOpen()
+	jboolean WifiNetworkSuggestion::isEnhancedOpen() const
 	{
 		return callMethod<jboolean>(
 			"isEnhancedOpen",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isHiddenSsid()
+	jboolean WifiNetworkSuggestion::isHiddenSsid() const
 	{
 		return callMethod<jboolean>(
 			"isHiddenSsid",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isInitialAutojoinEnabled()
+	jboolean WifiNetworkSuggestion::isInitialAutojoinEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isInitialAutojoinEnabled",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isMetered()
+	jboolean WifiNetworkSuggestion::isMetered() const
 	{
 		return callMethod<jboolean>(
 			"isMetered",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isUntrusted()
+	jboolean WifiNetworkSuggestion::isUntrusted() const
 	{
 		return callMethod<jboolean>(
 			"isUntrusted",
 			"()Z"
 		);
 	}
-	jboolean WifiNetworkSuggestion::isUserInteractionRequired()
+	jboolean WifiNetworkSuggestion::isUserInteractionRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserInteractionRequired",
 			"()Z"
 		);
 	}
-	JString WifiNetworkSuggestion::toString()
+	JString WifiNetworkSuggestion::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiNetworkSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiNetworkSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

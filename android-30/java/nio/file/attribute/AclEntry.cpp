@@ -31,7 +31,7 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	jboolean AclEntry::equals(JObject arg0)
+	jboolean AclEntry::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -39,42 +39,42 @@ namespace java::nio::file::attribute
 			arg0.object<jobject>()
 		);
 	}
-	JObject AclEntry::flags()
+	JObject AclEntry::flags() const
 	{
 		return callObjectMethod(
 			"flags",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint AclEntry::hashCode()
+	jint AclEntry::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject AclEntry::permissions()
+	JObject AclEntry::permissions() const
 	{
 		return callObjectMethod(
 			"permissions",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject AclEntry::principal()
+	JObject AclEntry::principal() const
 	{
 		return callObjectMethod(
 			"principal",
 			"()Ljava/nio/file/attribute/UserPrincipal;"
 		);
 	}
-	JString AclEntry::toString()
+	JString AclEntry::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::nio::file::attribute::AclEntryType AclEntry::type()
+	java::nio::file::attribute::AclEntryType AclEntry::type() const
 	{
 		return callObjectMethod(
 			"type",

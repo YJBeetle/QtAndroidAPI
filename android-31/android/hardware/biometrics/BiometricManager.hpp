@@ -26,9 +26,9 @@ namespace android::hardware::biometrics
 		// Constructors
 		
 		// Methods
-		jint canAuthenticate();
-		jint canAuthenticate(jint arg0);
-		android::hardware::biometrics::BiometricManager_Strings getStrings(jint arg0);
+		jint canAuthenticate() const;
+		jint canAuthenticate(jint arg0) const;
+		android::hardware::biometrics::BiometricManager_Strings getStrings(jint arg0) const;
 	};
 } // namespace android::hardware::biometrics
 

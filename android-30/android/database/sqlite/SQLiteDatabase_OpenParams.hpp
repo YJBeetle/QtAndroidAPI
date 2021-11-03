@@ -18,14 +18,14 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		JObject getCursorFactory();
-		JObject getErrorHandler();
-		jlong getIdleConnectionTimeout();
-		JString getJournalMode();
-		jint getLookasideSlotCount();
-		jint getLookasideSlotSize();
-		jint getOpenFlags();
-		JString getSynchronousMode();
+		JObject getCursorFactory() const;
+		JObject getErrorHandler() const;
+		jlong getIdleConnectionTimeout() const;
+		JString getJournalMode() const;
+		jint getLookasideSlotCount() const;
+		jint getLookasideSlotSize() const;
+		jint getOpenFlags() const;
+		JString getSynchronousMode() const;
 	};
 } // namespace android::database::sqlite
 

@@ -38,16 +38,16 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		android::content::Intent createEnrollIntent();
-		android::content::Intent createReEnrollIntent();
-		android::content::Intent createUnEnrollIntent();
-		jint getParameter(jint arg0);
-		jint getSupportedAudioCapabilities();
-		jint getSupportedRecognitionModes();
-		android::service::voice::AlwaysOnHotwordDetector_ModelParamRange queryParameter(jint arg0);
-		jint setParameter(jint arg0, jint arg1);
-		jboolean startRecognition(jint arg0);
-		jboolean stopRecognition();
+		android::content::Intent createEnrollIntent() const;
+		android::content::Intent createReEnrollIntent() const;
+		android::content::Intent createUnEnrollIntent() const;
+		jint getParameter(jint arg0) const;
+		jint getSupportedAudioCapabilities() const;
+		jint getSupportedRecognitionModes() const;
+		android::service::voice::AlwaysOnHotwordDetector_ModelParamRange queryParameter(jint arg0) const;
+		jint setParameter(jint arg0, jint arg1) const;
+		jboolean startRecognition(jint arg0) const;
+		jboolean stopRecognition() const;
 	};
 } // namespace android::service::voice
 

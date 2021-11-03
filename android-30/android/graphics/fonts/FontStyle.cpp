@@ -115,7 +115,7 @@ namespace android::graphics::fonts
 		) {}
 	
 	// Methods
-	jboolean FontStyle::equals(JObject arg0)
+	jboolean FontStyle::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -123,28 +123,28 @@ namespace android::graphics::fonts
 			arg0.object<jobject>()
 		);
 	}
-	jint FontStyle::getSlant()
+	jint FontStyle::getSlant() const
 	{
 		return callMethod<jint>(
 			"getSlant",
 			"()I"
 		);
 	}
-	jint FontStyle::getWeight()
+	jint FontStyle::getWeight() const
 	{
 		return callMethod<jint>(
 			"getWeight",
 			"()I"
 		);
 	}
-	jint FontStyle::hashCode()
+	jint FontStyle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString FontStyle::toString()
+	JString FontStyle::toString() const
 	{
 		return callObjectMethod(
 			"toString",

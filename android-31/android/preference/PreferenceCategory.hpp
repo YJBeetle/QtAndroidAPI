@@ -29,8 +29,8 @@ namespace android::preference
 		PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean isEnabled();
-		jboolean shouldDisableDependents();
+		jboolean isEnabled() const;
+		jboolean shouldDisableDependents() const;
 	};
 } // namespace android::preference
 

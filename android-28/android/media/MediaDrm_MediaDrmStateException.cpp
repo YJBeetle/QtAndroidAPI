@@ -11,7 +11,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaDrm_MediaDrmStateException::getDiagnosticInfo()
+	JString MediaDrm_MediaDrmStateException::getDiagnosticInfo() const
 	{
 		return callObjectMethod(
 			"getDiagnosticInfo",

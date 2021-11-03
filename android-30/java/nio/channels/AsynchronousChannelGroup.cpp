@@ -41,7 +41,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jboolean AsynchronousChannelGroup::awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean AsynchronousChannelGroup::awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"awaitTermination",
@@ -50,35 +50,35 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	jboolean AsynchronousChannelGroup::isShutdown()
+	jboolean AsynchronousChannelGroup::isShutdown() const
 	{
 		return callMethod<jboolean>(
 			"isShutdown",
 			"()Z"
 		);
 	}
-	jboolean AsynchronousChannelGroup::isTerminated()
+	jboolean AsynchronousChannelGroup::isTerminated() const
 	{
 		return callMethod<jboolean>(
 			"isTerminated",
 			"()Z"
 		);
 	}
-	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousChannelGroup::provider()
+	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousChannelGroup::provider() const
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	void AsynchronousChannelGroup::shutdown()
+	void AsynchronousChannelGroup::shutdown() const
 	{
 		callMethod<void>(
 			"shutdown",
 			"()V"
 		);
 	}
-	void AsynchronousChannelGroup::shutdownNow()
+	void AsynchronousChannelGroup::shutdownNow() const
 	{
 		callMethod<void>(
 			"shutdownNow",

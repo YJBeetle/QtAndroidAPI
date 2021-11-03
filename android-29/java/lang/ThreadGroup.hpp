@@ -35,28 +35,28 @@ namespace java::lang
 		ThreadGroup(java::lang::ThreadGroup &arg0, JString arg1);
 		
 		// Methods
-		jint activeCount();
-		jint activeGroupCount();
-		jboolean allowThreadSuspension(jboolean arg0);
-		void checkAccess();
-		void destroy();
-		jint enumerate(JArray arg0);
-		jint enumerate(JArray arg0, jboolean arg1);
-		jint getMaxPriority();
-		JString getName();
-		java::lang::ThreadGroup getParent();
-		void interrupt();
-		jboolean isDaemon();
-		jboolean isDestroyed();
-		void list();
-		jboolean parentOf(java::lang::ThreadGroup arg0);
-		void resume();
-		void setDaemon(jboolean arg0);
-		void setMaxPriority(jint arg0);
-		void stop();
-		void suspend();
-		JString toString();
-		void uncaughtException(java::lang::Thread arg0, JThrowable arg1);
+		jint activeCount() const;
+		jint activeGroupCount() const;
+		jboolean allowThreadSuspension(jboolean arg0) const;
+		void checkAccess() const;
+		void destroy() const;
+		jint enumerate(JArray arg0) const;
+		jint enumerate(JArray arg0, jboolean arg1) const;
+		jint getMaxPriority() const;
+		JString getName() const;
+		java::lang::ThreadGroup getParent() const;
+		void interrupt() const;
+		jboolean isDaemon() const;
+		jboolean isDestroyed() const;
+		void list() const;
+		jboolean parentOf(java::lang::ThreadGroup arg0) const;
+		void resume() const;
+		void setDaemon(jboolean arg0) const;
+		void setMaxPriority(jint arg0) const;
+		void stop() const;
+		void suspend() const;
+		JString toString() const;
+		void uncaughtException(java::lang::Thread arg0, JThrowable arg1) const;
 	};
 } // namespace java::lang
 

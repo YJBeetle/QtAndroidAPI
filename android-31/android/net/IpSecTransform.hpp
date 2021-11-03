@@ -19,9 +19,9 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		void close();
-		jboolean equals(JObject arg0);
-		JString toString();
+		void close() const;
+		jboolean equals(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace android::net
 

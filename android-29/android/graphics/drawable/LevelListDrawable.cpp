@@ -19,7 +19,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void LevelListDrawable::addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2)
+	void LevelListDrawable::addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2) const
 	{
 		callMethod<void>(
 			"addLevel",
@@ -29,7 +29,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	void LevelListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void LevelListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -40,7 +40,7 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	android::graphics::drawable::Drawable LevelListDrawable::mutate()
+	android::graphics::drawable::Drawable LevelListDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",

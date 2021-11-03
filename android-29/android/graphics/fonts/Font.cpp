@@ -17,7 +17,7 @@ namespace android::graphics::fonts
 	// Constructors
 	
 	// Methods
-	jboolean Font::equals(JObject arg0)
+	jboolean Font::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -25,56 +25,56 @@ namespace android::graphics::fonts
 			arg0.object<jobject>()
 		);
 	}
-	JArray Font::getAxes()
+	JArray Font::getAxes() const
 	{
 		return callObjectMethod(
 			"getAxes",
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
 		);
 	}
-	java::nio::ByteBuffer Font::getBuffer()
+	java::nio::ByteBuffer Font::getBuffer() const
 	{
 		return callObjectMethod(
 			"getBuffer",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	java::io::File Font::getFile()
+	java::io::File Font::getFile() const
 	{
 		return callObjectMethod(
 			"getFile",
 			"()Ljava/io/File;"
 		);
 	}
-	android::os::LocaleList Font::getLocaleList()
+	android::os::LocaleList Font::getLocaleList() const
 	{
 		return callObjectMethod(
 			"getLocaleList",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	android::graphics::fonts::FontStyle Font::getStyle()
+	android::graphics::fonts::FontStyle Font::getStyle() const
 	{
 		return callObjectMethod(
 			"getStyle",
 			"()Landroid/graphics/fonts/FontStyle;"
 		);
 	}
-	jint Font::getTtcIndex()
+	jint Font::getTtcIndex() const
 	{
 		return callMethod<jint>(
 			"getTtcIndex",
 			"()I"
 		);
 	}
-	jint Font::hashCode()
+	jint Font::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Font::toString()
+	JString Font::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -12,14 +12,14 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	void FilterReader::close()
+	void FilterReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void FilterReader::mark(jint arg0)
+	void FilterReader::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -27,21 +27,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean FilterReader::markSupported()
+	jboolean FilterReader::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint FilterReader::read()
+	jint FilterReader::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint FilterReader::read(JCharArray arg0, jint arg1, jint arg2)
+	jint FilterReader::read(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -51,21 +51,21 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean FilterReader::ready()
+	jboolean FilterReader::ready() const
 	{
 		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
-	void FilterReader::reset()
+	void FilterReader::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong FilterReader::skip(jlong arg0)
+	jlong FilterReader::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

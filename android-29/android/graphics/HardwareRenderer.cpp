@@ -54,42 +54,42 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	void HardwareRenderer::clearContent()
+	void HardwareRenderer::clearContent() const
 	{
 		callMethod<void>(
 			"clearContent",
 			"()V"
 		);
 	}
-	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer::createRenderRequest()
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer::createRenderRequest() const
 	{
 		return callObjectMethod(
 			"createRenderRequest",
 			"()Landroid/graphics/HardwareRenderer$FrameRenderRequest;"
 		);
 	}
-	void HardwareRenderer::destroy()
+	void HardwareRenderer::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	jboolean HardwareRenderer::isOpaque()
+	jboolean HardwareRenderer::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	void HardwareRenderer::notifyFramePending()
+	void HardwareRenderer::notifyFramePending() const
 	{
 		callMethod<void>(
 			"notifyFramePending",
 			"()V"
 		);
 	}
-	void HardwareRenderer::setContentRoot(android::graphics::RenderNode arg0)
+	void HardwareRenderer::setContentRoot(android::graphics::RenderNode arg0) const
 	{
 		callMethod<void>(
 			"setContentRoot",
@@ -97,7 +97,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void HardwareRenderer::setLightSourceAlpha(jfloat arg0, jfloat arg1)
+	void HardwareRenderer::setLightSourceAlpha(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setLightSourceAlpha",
@@ -106,7 +106,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void HardwareRenderer::setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void HardwareRenderer::setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setLightSourceGeometry",
@@ -117,7 +117,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void HardwareRenderer::setName(JString arg0)
+	void HardwareRenderer::setName(JString arg0) const
 	{
 		callMethod<void>(
 			"setName",
@@ -125,7 +125,7 @@ namespace android::graphics
 			arg0.object<jstring>()
 		);
 	}
-	void HardwareRenderer::setOpaque(jboolean arg0)
+	void HardwareRenderer::setOpaque(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOpaque",
@@ -133,7 +133,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void HardwareRenderer::setSurface(android::view::Surface arg0)
+	void HardwareRenderer::setSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setSurface",
@@ -141,14 +141,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void HardwareRenderer::start()
+	void HardwareRenderer::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void HardwareRenderer::stop()
+	void HardwareRenderer::stop() const
 	{
 		callMethod<void>(
 			"stop",

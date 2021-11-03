@@ -26,8 +26,8 @@ namespace android::widget
 		SeekBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		void setOnSeekBarChangeListener(JObject arg0);
+		JString getAccessibilityClassName() const;
+		void setOnSeekBarChangeListener(JObject arg0) const;
 	};
 } // namespace android::widget
 

@@ -22,14 +22,14 @@ namespace android::os
 		) {}
 	
 	// Methods
-	android::os::VibrationAttributes VibrationAttributes_Builder::build()
+	android::os::VibrationAttributes VibrationAttributes_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/os/VibrationAttributes;"
 		);
 	}
-	android::os::VibrationAttributes_Builder VibrationAttributes_Builder::setFlags(jint arg0, jint arg1)
+	android::os::VibrationAttributes_Builder VibrationAttributes_Builder::setFlags(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -38,7 +38,7 @@ namespace android::os
 			arg1
 		);
 	}
-	android::os::VibrationAttributes_Builder VibrationAttributes_Builder::setUsage(jint arg0)
+	android::os::VibrationAttributes_Builder VibrationAttributes_Builder::setUsage(jint arg0) const
 	{
 		return callObjectMethod(
 			"setUsage",

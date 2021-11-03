@@ -24,16 +24,16 @@ namespace android::media
 		
 		// Methods
 		static android::media::ApplicationMediaCapabilities createFromXml(JObject arg0);
-		jint describeContents();
-		JObject getSupportedHdrTypes();
-		JObject getSupportedVideoMimeTypes();
-		JObject getUnsupportedHdrTypes();
-		JObject getUnsupportedVideoMimeTypes();
-		jboolean isFormatSpecified(JString arg0);
-		jboolean isHdrTypeSupported(JString arg0);
-		jboolean isVideoMimeTypeSupported(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getSupportedHdrTypes() const;
+		JObject getSupportedVideoMimeTypes() const;
+		JObject getUnsupportedHdrTypes() const;
+		JObject getUnsupportedVideoMimeTypes() const;
+		jboolean isFormatSpecified(JString arg0) const;
+		jboolean isHdrTypeSupported(JString arg0) const;
+		jboolean isVideoMimeTypeSupported(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

@@ -53,15 +53,15 @@ namespace android::net
 		ConnectivityDiagnosticsManager_ConnectivityReport(android::net::Network arg0, jlong arg1, android::net::LinkProperties arg2, android::net::NetworkCapabilities arg3, android::os::PersistableBundle arg4);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::os::PersistableBundle getAdditionalInfo();
-		android::net::LinkProperties getLinkProperties();
-		android::net::Network getNetwork();
-		android::net::NetworkCapabilities getNetworkCapabilities();
-		jlong getReportTimestamp();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::os::PersistableBundle getAdditionalInfo() const;
+		android::net::LinkProperties getLinkProperties() const;
+		android::net::Network getNetwork() const;
+		android::net::NetworkCapabilities getNetworkCapabilities() const;
+		jlong getReportTimestamp() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

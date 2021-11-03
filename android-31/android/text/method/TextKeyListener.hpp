@@ -36,14 +36,14 @@ namespace android::text::method
 		static android::text::method::TextKeyListener getInstance();
 		static android::text::method::TextKeyListener getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
 		static jboolean shouldCap(android::text::method::TextKeyListener_Capitalize arg0, JString arg1, jint arg2);
-		jint getInputType();
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2);
-		jboolean onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		void onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3);
-		void onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3);
-		void release();
+		jint getInputType() const;
+		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		jboolean onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2) const;
+		jboolean onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		void onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
+		void onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
+		void onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
+		void release() const;
 	};
 } // namespace android::text::method
 

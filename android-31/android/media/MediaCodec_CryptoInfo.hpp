@@ -31,10 +31,10 @@ namespace android::media
 		MediaCodec_CryptoInfo();
 		
 		// Methods
-		android::media::MediaCodec_CryptoInfo_Pattern getPattern();
-		void set(jint arg0, JIntArray arg1, JIntArray arg2, JByteArray arg3, JByteArray arg4, jint arg5);
-		void setPattern(android::media::MediaCodec_CryptoInfo_Pattern arg0);
-		JString toString();
+		android::media::MediaCodec_CryptoInfo_Pattern getPattern() const;
+		void set(jint arg0, JIntArray arg1, JIntArray arg2, JByteArray arg3, JByteArray arg4, jint arg5) const;
+		void setPattern(android::media::MediaCodec_CryptoInfo_Pattern arg0) const;
+		JString toString() const;
 	};
 } // namespace android::media
 

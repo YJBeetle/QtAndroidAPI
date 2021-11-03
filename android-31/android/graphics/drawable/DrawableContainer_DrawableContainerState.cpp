@@ -13,7 +13,7 @@ namespace android::graphics::drawable
 	// Constructors
 	
 	// Methods
-	jint DrawableContainer_DrawableContainerState::addChild(android::graphics::drawable::Drawable arg0)
+	jint DrawableContainer_DrawableContainerState::addChild(android::graphics::drawable::Drawable arg0) const
 	{
 		return callMethod<jint>(
 			"addChild",
@@ -21,28 +21,28 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableContainer_DrawableContainerState::canApplyTheme()
+	jboolean DrawableContainer_DrawableContainerState::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	jboolean DrawableContainer_DrawableContainerState::canConstantState()
+	jboolean DrawableContainer_DrawableContainerState::canConstantState() const
 	{
 		return callMethod<jboolean>(
 			"canConstantState",
 			"()Z"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getChangingConfigurations()
+	jint DrawableContainer_DrawableContainerState::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable DrawableContainer_DrawableContainerState::getChild(jint arg0)
+	android::graphics::drawable::Drawable DrawableContainer_DrawableContainerState::getChild(jint arg0) const
 	{
 		return callObjectMethod(
 			"getChild",
@@ -50,77 +50,77 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getChildCount()
+	jint DrawableContainer_DrawableContainerState::getChildCount() const
 	{
 		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
-	JArray DrawableContainer_DrawableContainerState::getChildren()
+	JArray DrawableContainer_DrawableContainerState::getChildren() const
 	{
 		return callObjectMethod(
 			"getChildren",
 			"()[Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getConstantHeight()
+	jint DrawableContainer_DrawableContainerState::getConstantHeight() const
 	{
 		return callMethod<jint>(
 			"getConstantHeight",
 			"()I"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getConstantMinimumHeight()
+	jint DrawableContainer_DrawableContainerState::getConstantMinimumHeight() const
 	{
 		return callMethod<jint>(
 			"getConstantMinimumHeight",
 			"()I"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getConstantMinimumWidth()
+	jint DrawableContainer_DrawableContainerState::getConstantMinimumWidth() const
 	{
 		return callMethod<jint>(
 			"getConstantMinimumWidth",
 			"()I"
 		);
 	}
-	android::graphics::Rect DrawableContainer_DrawableContainerState::getConstantPadding()
+	android::graphics::Rect DrawableContainer_DrawableContainerState::getConstantPadding() const
 	{
 		return callObjectMethod(
 			"getConstantPadding",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getConstantWidth()
+	jint DrawableContainer_DrawableContainerState::getConstantWidth() const
 	{
 		return callMethod<jint>(
 			"getConstantWidth",
 			"()I"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getEnterFadeDuration()
+	jint DrawableContainer_DrawableContainerState::getEnterFadeDuration() const
 	{
 		return callMethod<jint>(
 			"getEnterFadeDuration",
 			"()I"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getExitFadeDuration()
+	jint DrawableContainer_DrawableContainerState::getExitFadeDuration() const
 	{
 		return callMethod<jint>(
 			"getExitFadeDuration",
 			"()I"
 		);
 	}
-	jint DrawableContainer_DrawableContainerState::getOpacity()
+	jint DrawableContainer_DrawableContainerState::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void DrawableContainer_DrawableContainerState::growArray(jint arg0, jint arg1)
+	void DrawableContainer_DrawableContainerState::growArray(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"growArray",
@@ -129,21 +129,21 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	jboolean DrawableContainer_DrawableContainerState::isConstantSize()
+	jboolean DrawableContainer_DrawableContainerState::isConstantSize() const
 	{
 		return callMethod<jboolean>(
 			"isConstantSize",
 			"()Z"
 		);
 	}
-	jboolean DrawableContainer_DrawableContainerState::isStateful()
+	jboolean DrawableContainer_DrawableContainerState::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	void DrawableContainer_DrawableContainerState::setConstantSize(jboolean arg0)
+	void DrawableContainer_DrawableContainerState::setConstantSize(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setConstantSize",
@@ -151,7 +151,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer_DrawableContainerState::setEnterFadeDuration(jint arg0)
+	void DrawableContainer_DrawableContainerState::setEnterFadeDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setEnterFadeDuration",
@@ -159,7 +159,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer_DrawableContainerState::setExitFadeDuration(jint arg0)
+	void DrawableContainer_DrawableContainerState::setExitFadeDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setExitFadeDuration",
@@ -167,7 +167,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer_DrawableContainerState::setVariablePadding(jboolean arg0)
+	void DrawableContainer_DrawableContainerState::setVariablePadding(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVariablePadding",

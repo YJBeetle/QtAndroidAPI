@@ -18,14 +18,14 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	JString SSLSessionBindingEvent::getName()
+	JString SSLSessionBindingEvent::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SSLSessionBindingEvent::getSession()
+	JObject SSLSessionBindingEvent::getSession() const
 	{
 		return callObjectMethod(
 			"getSession",

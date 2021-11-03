@@ -37,14 +37,14 @@ namespace android::os
 		
 		// Methods
 		static android::os::PersistableBundle readFromStream(java::io::InputStream arg0);
-		JObject clone();
-		android::os::PersistableBundle deepCopy();
-		jint describeContents();
-		android::os::PersistableBundle getPersistableBundle(JString arg0);
-		void putPersistableBundle(JString arg0, android::os::PersistableBundle arg1);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
-		void writeToStream(java::io::OutputStream arg0);
+		JObject clone() const;
+		android::os::PersistableBundle deepCopy() const;
+		jint describeContents() const;
+		android::os::PersistableBundle getPersistableBundle(JString arg0) const;
+		void putPersistableBundle(JString arg0, android::os::PersistableBundle arg1) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
+		void writeToStream(java::io::OutputStream arg0) const;
 	};
 } // namespace android::os
 

@@ -48,7 +48,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean TouchDelegate::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean TouchDelegate::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",

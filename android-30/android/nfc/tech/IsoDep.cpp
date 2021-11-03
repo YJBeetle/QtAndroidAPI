@@ -21,70 +21,70 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	void IsoDep::close()
+	void IsoDep::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void IsoDep::connect()
+	void IsoDep::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	JByteArray IsoDep::getHiLayerResponse()
+	JByteArray IsoDep::getHiLayerResponse() const
 	{
 		return callObjectMethod(
 			"getHiLayerResponse",
 			"()[B"
 		);
 	}
-	JByteArray IsoDep::getHistoricalBytes()
+	JByteArray IsoDep::getHistoricalBytes() const
 	{
 		return callObjectMethod(
 			"getHistoricalBytes",
 			"()[B"
 		);
 	}
-	jint IsoDep::getMaxTransceiveLength()
+	jint IsoDep::getMaxTransceiveLength() const
 	{
 		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
-	android::nfc::Tag IsoDep::getTag()
+	android::nfc::Tag IsoDep::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jint IsoDep::getTimeout()
+	jint IsoDep::getTimeout() const
 	{
 		return callMethod<jint>(
 			"getTimeout",
 			"()I"
 		);
 	}
-	jboolean IsoDep::isConnected()
+	jboolean IsoDep::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	jboolean IsoDep::isExtendedLengthApduSupported()
+	jboolean IsoDep::isExtendedLengthApduSupported() const
 	{
 		return callMethod<jboolean>(
 			"isExtendedLengthApduSupported",
 			"()Z"
 		);
 	}
-	void IsoDep::setTimeout(jint arg0)
+	void IsoDep::setTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setTimeout",
@@ -92,7 +92,7 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	JByteArray IsoDep::transceive(JByteArray arg0)
+	JByteArray IsoDep::transceive(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"transceive",

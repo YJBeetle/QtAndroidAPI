@@ -25,14 +25,14 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jfloat DynamicsProcessing_EqBand::getGain()
+	jfloat DynamicsProcessing_EqBand::getGain() const
 	{
 		return callMethod<jfloat>(
 			"getGain",
 			"()F"
 		);
 	}
-	void DynamicsProcessing_EqBand::setGain(jfloat arg0)
+	void DynamicsProcessing_EqBand::setGain(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setGain",
@@ -40,7 +40,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	JString DynamicsProcessing_EqBand::toString()
+	JString DynamicsProcessing_EqBand::toString() const
 	{
 		return callObjectMethod(
 			"toString",

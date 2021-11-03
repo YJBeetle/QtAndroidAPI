@@ -32,13 +32,13 @@ namespace android::graphics
 		
 		// Methods
 		static android::graphics::Picture createFromStream(java::io::InputStream arg0);
-		android::graphics::Canvas beginRecording(jint arg0, jint arg1);
-		void draw(android::graphics::Canvas arg0);
-		void endRecording();
-		jint getHeight();
-		jint getWidth();
-		jboolean requiresHardwareAcceleration();
-		void writeToStream(java::io::OutputStream arg0);
+		android::graphics::Canvas beginRecording(jint arg0, jint arg1) const;
+		void draw(android::graphics::Canvas arg0) const;
+		void endRecording() const;
+		jint getHeight() const;
+		jint getWidth() const;
+		jboolean requiresHardwareAcceleration() const;
+		void writeToStream(java::io::OutputStream arg0) const;
 	};
 } // namespace android::graphics
 

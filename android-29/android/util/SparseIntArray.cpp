@@ -23,7 +23,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void SparseIntArray::append(jint arg0, jint arg1)
+	void SparseIntArray::append(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"append",
@@ -32,21 +32,21 @@ namespace android::util
 			arg1
 		);
 	}
-	void SparseIntArray::clear()
+	void SparseIntArray::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	android::util::SparseIntArray SparseIntArray::clone()
+	android::util::SparseIntArray SparseIntArray::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/util/SparseIntArray;"
 		);
 	}
-	void SparseIntArray::_delete(jint arg0)
+	void SparseIntArray::_delete(jint arg0) const
 	{
 		callMethod<void>(
 			"delete",
@@ -54,7 +54,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseIntArray::get(jint arg0)
+	jint SparseIntArray::get(jint arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -62,7 +62,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseIntArray::get(jint arg0, jint arg1)
+	jint SparseIntArray::get(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -71,7 +71,7 @@ namespace android::util
 			arg1
 		);
 	}
-	jint SparseIntArray::indexOfKey(jint arg0)
+	jint SparseIntArray::indexOfKey(jint arg0) const
 	{
 		return callMethod<jint>(
 			"indexOfKey",
@@ -79,7 +79,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseIntArray::indexOfValue(jint arg0)
+	jint SparseIntArray::indexOfValue(jint arg0) const
 	{
 		return callMethod<jint>(
 			"indexOfValue",
@@ -87,7 +87,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseIntArray::keyAt(jint arg0)
+	jint SparseIntArray::keyAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"keyAt",
@@ -95,7 +95,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void SparseIntArray::put(jint arg0, jint arg1)
+	void SparseIntArray::put(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -104,7 +104,7 @@ namespace android::util
 			arg1
 		);
 	}
-	void SparseIntArray::removeAt(jint arg0)
+	void SparseIntArray::removeAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeAt",
@@ -112,7 +112,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void SparseIntArray::setValueAt(jint arg0, jint arg1)
+	void SparseIntArray::setValueAt(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setValueAt",
@@ -121,21 +121,21 @@ namespace android::util
 			arg1
 		);
 	}
-	jint SparseIntArray::size()
+	jint SparseIntArray::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString SparseIntArray::toString()
+	JString SparseIntArray::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SparseIntArray::valueAt(jint arg0)
+	jint SparseIntArray::valueAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"valueAt",

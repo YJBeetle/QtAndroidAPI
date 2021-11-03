@@ -36,16 +36,16 @@ namespace java::time::temporal
 		// Methods
 		static java::time::temporal::WeekFields of(java::util::Locale arg0);
 		static java::time::temporal::WeekFields of(java::time::DayOfWeek arg0, jint arg1);
-		JObject dayOfWeek();
-		jboolean equals(JObject arg0);
-		java::time::DayOfWeek getFirstDayOfWeek();
-		jint getMinimalDaysInFirstWeek();
-		jint hashCode();
-		JString toString();
-		JObject weekBasedYear();
-		JObject weekOfMonth();
-		JObject weekOfWeekBasedYear();
-		JObject weekOfYear();
+		JObject dayOfWeek() const;
+		jboolean equals(JObject arg0) const;
+		java::time::DayOfWeek getFirstDayOfWeek() const;
+		jint getMinimalDaysInFirstWeek() const;
+		jint hashCode() const;
+		JString toString() const;
+		JObject weekBasedYear() const;
+		JObject weekOfMonth() const;
+		JObject weekOfWeekBasedYear() const;
+		JObject weekOfYear() const;
 	};
 } // namespace java::time::temporal
 

@@ -28,8 +28,8 @@ namespace android::media::session
 		PlaybackState_CustomAction_Builder(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
-		android::media::session::PlaybackState_CustomAction build();
-		android::media::session::PlaybackState_CustomAction_Builder setExtras(android::os::Bundle arg0);
+		android::media::session::PlaybackState_CustomAction build() const;
+		android::media::session::PlaybackState_CustomAction_Builder setExtras(android::os::Bundle arg0) const;
 	};
 } // namespace android::media::session
 

@@ -33,7 +33,7 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	jboolean RC2ParameterSpec::equals(JObject arg0)
+	jboolean RC2ParameterSpec::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -41,21 +41,21 @@ namespace javax::crypto::spec
 			arg0.object<jobject>()
 		);
 	}
-	jint RC2ParameterSpec::getEffectiveKeyBits()
+	jint RC2ParameterSpec::getEffectiveKeyBits() const
 	{
 		return callMethod<jint>(
 			"getEffectiveKeyBits",
 			"()I"
 		);
 	}
-	JByteArray RC2ParameterSpec::getIV()
+	JByteArray RC2ParameterSpec::getIV() const
 	{
 		return callObjectMethod(
 			"getIV",
 			"()[B"
 		);
 	}
-	jint RC2ParameterSpec::hashCode()
+	jint RC2ParameterSpec::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

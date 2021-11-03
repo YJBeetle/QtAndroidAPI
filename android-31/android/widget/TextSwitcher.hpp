@@ -32,10 +32,10 @@ namespace android::widget
 		TextSwitcher(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		JString getAccessibilityClassName();
-		void setCurrentText(JString arg0);
-		void setText(JString arg0);
+		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const;
+		JString getAccessibilityClassName() const;
+		void setCurrentText(JString arg0) const;
+		void setText(JString arg0) const;
 	};
 } // namespace android::widget
 

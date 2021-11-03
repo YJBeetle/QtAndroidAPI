@@ -27,24 +27,24 @@ namespace android::util
 		JsonReader(java::io::Reader arg0);
 		
 		// Methods
-		void beginArray();
-		void beginObject();
-		void close();
-		void endArray();
-		void endObject();
-		jboolean hasNext();
-		jboolean isLenient();
-		jboolean nextBoolean();
-		jdouble nextDouble();
-		jint nextInt();
-		jlong nextLong();
-		JString nextName();
-		void nextNull();
-		JString nextString();
-		android::util::JsonToken peek();
-		void setLenient(jboolean arg0);
-		void skipValue();
-		JString toString();
+		void beginArray() const;
+		void beginObject() const;
+		void close() const;
+		void endArray() const;
+		void endObject() const;
+		jboolean hasNext() const;
+		jboolean isLenient() const;
+		jboolean nextBoolean() const;
+		jdouble nextDouble() const;
+		jint nextInt() const;
+		jlong nextLong() const;
+		JString nextName() const;
+		void nextNull() const;
+		JString nextString() const;
+		android::util::JsonToken peek() const;
+		void setLenient(jboolean arg0) const;
+		void skipValue() const;
+		JString toString() const;
 	};
 } // namespace android::util
 

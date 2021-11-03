@@ -17,14 +17,14 @@ namespace org::apache::http::conn::ssl
 		) {}
 	
 	// Methods
-	JString AllowAllHostnameVerifier::toString()
+	JString AllowAllHostnameVerifier::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AllowAllHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2)
+	void AllowAllHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"verify",

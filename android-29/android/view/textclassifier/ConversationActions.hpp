@@ -24,10 +24,10 @@ namespace android::view::textclassifier
 		ConversationActions(JObject arg0, JString arg1);
 		
 		// Methods
-		jint describeContents();
-		JObject getConversationActions();
-		JString getId();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getConversationActions() const;
+		JString getId() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

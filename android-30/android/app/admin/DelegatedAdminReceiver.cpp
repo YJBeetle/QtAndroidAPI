@@ -19,7 +19,7 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	JString DelegatedAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4)
+	JString DelegatedAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"onChoosePrivateKeyAlias",
@@ -31,7 +31,7 @@ namespace android::app::admin
 			arg4.object<jstring>()
 		);
 	}
-	void DelegatedAdminReceiver::onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3)
+	void DelegatedAdminReceiver::onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onNetworkLogsAvailable",
@@ -42,7 +42,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	void DelegatedAdminReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1)
+	void DelegatedAdminReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onReceive",

@@ -23,7 +23,7 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(JString arg0, android::os::Bundle arg1)
+	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"appPrivateCommand",
@@ -32,7 +32,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::displayCompletions(JArray arg0)
+	void InputMethodService_InputMethodSessionImpl::displayCompletions(JArray arg0) const
 	{
 		callMethod<void>(
 			"displayCompletions",
@@ -40,14 +40,14 @@ namespace android::inputmethodservice
 			arg0.object<jarray>()
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::finishInput()
+	void InputMethodService_InputMethodSessionImpl::finishInput() const
 	{
 		callMethod<void>(
 			"finishInput",
 			"()V"
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::toggleSoftInput(jint arg0, jint arg1)
+	void InputMethodService_InputMethodSessionImpl::toggleSoftInput(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"toggleSoftInput",
@@ -56,7 +56,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::updateCursor(android::graphics::Rect arg0)
+	void InputMethodService_InputMethodSessionImpl::updateCursor(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"updateCursor",
@@ -64,7 +64,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::updateCursorAnchorInfo(android::view::inputmethod::CursorAnchorInfo arg0)
+	void InputMethodService_InputMethodSessionImpl::updateCursorAnchorInfo(android::view::inputmethod::CursorAnchorInfo arg0) const
 	{
 		callMethod<void>(
 			"updateCursorAnchorInfo",
@@ -72,7 +72,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::updateExtractedText(jint arg0, android::view::inputmethod::ExtractedText arg1)
+	void InputMethodService_InputMethodSessionImpl::updateExtractedText(jint arg0, android::view::inputmethod::ExtractedText arg1) const
 	{
 		callMethod<void>(
 			"updateExtractedText",
@@ -81,7 +81,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::updateSelection(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void InputMethodService_InputMethodSessionImpl::updateSelection(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"updateSelection",
@@ -94,7 +94,7 @@ namespace android::inputmethodservice
 			arg5
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::viewClicked(jboolean arg0)
+	void InputMethodService_InputMethodSessionImpl::viewClicked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"viewClicked",

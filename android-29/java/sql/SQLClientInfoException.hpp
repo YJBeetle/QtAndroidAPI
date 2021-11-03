@@ -28,7 +28,7 @@ namespace java::sql
 		SQLClientInfoException(JString arg0, JString arg1, jint arg2, JObject arg3, JThrowable arg4);
 		
 		// Methods
-		JObject getFailedProperties();
+		JObject getFailedProperties() const;
 	};
 } // namespace java::sql
 

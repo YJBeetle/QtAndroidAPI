@@ -35,7 +35,7 @@ namespace java::nio::charset
 	// Constructors
 	
 	// Methods
-	JString CodingErrorAction::toString()
+	JString CodingErrorAction::toString() const
 	{
 		return callObjectMethod(
 			"toString",

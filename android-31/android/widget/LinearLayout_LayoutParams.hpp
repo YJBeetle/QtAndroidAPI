@@ -38,7 +38,7 @@ namespace android::widget
 		LinearLayout_LayoutParams(jint arg0, jint arg1, jfloat arg2);
 		
 		// Methods
-		JString debug(JString arg0);
+		JString debug(JString arg0) const;
 	};
 } // namespace android::widget
 

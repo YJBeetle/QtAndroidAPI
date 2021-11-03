@@ -37,42 +37,42 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::view::Surface MediaSync::createInputSurface()
+	android::view::Surface MediaSync::createInputSurface() const
 	{
 		return callObjectMethod(
 			"createInputSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	void MediaSync::flush()
+	void MediaSync::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	android::media::PlaybackParams MediaSync::getPlaybackParams()
+	android::media::PlaybackParams MediaSync::getPlaybackParams() const
 	{
 		return callObjectMethod(
 			"getPlaybackParams",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
-	android::media::SyncParams MediaSync::getSyncParams()
+	android::media::SyncParams MediaSync::getSyncParams() const
 	{
 		return callObjectMethod(
 			"getSyncParams",
 			"()Landroid/media/SyncParams;"
 		);
 	}
-	android::media::MediaTimestamp MediaSync::getTimestamp()
+	android::media::MediaTimestamp MediaSync::getTimestamp() const
 	{
 		return callObjectMethod(
 			"getTimestamp",
 			"()Landroid/media/MediaTimestamp;"
 		);
 	}
-	void MediaSync::queueAudio(java::nio::ByteBuffer arg0, jint arg1, jlong arg2)
+	void MediaSync::queueAudio(java::nio::ByteBuffer arg0, jint arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"queueAudio",
@@ -82,14 +82,14 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaSync::release()
+	void MediaSync::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaSync::setAudioTrack(android::media::AudioTrack arg0)
+	void MediaSync::setAudioTrack(android::media::AudioTrack arg0) const
 	{
 		callMethod<void>(
 			"setAudioTrack",
@@ -97,7 +97,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaSync::setCallback(android::media::MediaSync_Callback arg0, android::os::Handler arg1)
+	void MediaSync::setCallback(android::media::MediaSync_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setCallback",
@@ -106,7 +106,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaSync::setOnErrorListener(JObject arg0, android::os::Handler arg1)
+	void MediaSync::setOnErrorListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnErrorListener",
@@ -115,7 +115,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaSync::setPlaybackParams(android::media::PlaybackParams arg0)
+	void MediaSync::setPlaybackParams(android::media::PlaybackParams arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackParams",
@@ -123,7 +123,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaSync::setSurface(android::view::Surface arg0)
+	void MediaSync::setSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setSurface",
@@ -131,7 +131,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaSync::setSyncParams(android::media::SyncParams arg0)
+	void MediaSync::setSyncParams(android::media::SyncParams arg0) const
 	{
 		callMethod<void>(
 			"setSyncParams",

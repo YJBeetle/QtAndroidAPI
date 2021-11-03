@@ -26,10 +26,10 @@ namespace java::util::logging
 		// Constructors
 		
 		// Methods
-		JString format(java::util::logging::LogRecord arg0);
-		JString formatMessage(java::util::logging::LogRecord arg0);
-		JString getHead(java::util::logging::Handler arg0);
-		JString getTail(java::util::logging::Handler arg0);
+		JString format(java::util::logging::LogRecord arg0) const;
+		JString formatMessage(java::util::logging::LogRecord arg0) const;
+		JString getHead(java::util::logging::Handler arg0) const;
+		JString getTail(java::util::logging::Handler arg0) const;
 	};
 } // namespace java::util::logging
 

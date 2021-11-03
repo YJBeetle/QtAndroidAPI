@@ -34,14 +34,14 @@ namespace android::app::appsearch::exceptions
 		) {}
 	
 	// Methods
-	jint AppSearchException::getResultCode()
+	jint AppSearchException::getResultCode() const
 	{
 		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
-	android::app::appsearch::AppSearchResult AppSearchException::toAppSearchResult()
+	android::app::appsearch::AppSearchResult AppSearchException::toAppSearchResult() const
 	{
 		return callObjectMethod(
 			"toAppSearchResult",

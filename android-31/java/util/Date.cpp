@@ -96,7 +96,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Date::after(java::util::Date arg0)
+	jboolean Date::after(java::util::Date arg0) const
 	{
 		return callMethod<jboolean>(
 			"after",
@@ -104,7 +104,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Date::before(java::util::Date arg0)
+	jboolean Date::before(java::util::Date arg0) const
 	{
 		return callMethod<jboolean>(
 			"before",
@@ -112,14 +112,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Date::clone()
+	JObject Date::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Date::compareTo(JObject arg0)
+	jint Date::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -127,7 +127,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Date::compareTo(java::util::Date arg0)
+	jint Date::compareTo(java::util::Date arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -135,7 +135,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Date::equals(JObject arg0)
+	jboolean Date::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -143,77 +143,77 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Date::getDate()
+	jint Date::getDate() const
 	{
 		return callMethod<jint>(
 			"getDate",
 			"()I"
 		);
 	}
-	jint Date::getDay()
+	jint Date::getDay() const
 	{
 		return callMethod<jint>(
 			"getDay",
 			"()I"
 		);
 	}
-	jint Date::getHours()
+	jint Date::getHours() const
 	{
 		return callMethod<jint>(
 			"getHours",
 			"()I"
 		);
 	}
-	jint Date::getMinutes()
+	jint Date::getMinutes() const
 	{
 		return callMethod<jint>(
 			"getMinutes",
 			"()I"
 		);
 	}
-	jint Date::getMonth()
+	jint Date::getMonth() const
 	{
 		return callMethod<jint>(
 			"getMonth",
 			"()I"
 		);
 	}
-	jint Date::getSeconds()
+	jint Date::getSeconds() const
 	{
 		return callMethod<jint>(
 			"getSeconds",
 			"()I"
 		);
 	}
-	jlong Date::getTime()
+	jlong Date::getTime() const
 	{
 		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
-	jint Date::getTimezoneOffset()
+	jint Date::getTimezoneOffset() const
 	{
 		return callMethod<jint>(
 			"getTimezoneOffset",
 			"()I"
 		);
 	}
-	jint Date::getYear()
+	jint Date::getYear() const
 	{
 		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
-	jint Date::hashCode()
+	jint Date::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Date::setDate(jint arg0)
+	void Date::setDate(jint arg0) const
 	{
 		callMethod<void>(
 			"setDate",
@@ -221,7 +221,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Date::setHours(jint arg0)
+	void Date::setHours(jint arg0) const
 	{
 		callMethod<void>(
 			"setHours",
@@ -229,7 +229,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Date::setMinutes(jint arg0)
+	void Date::setMinutes(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinutes",
@@ -237,7 +237,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Date::setMonth(jint arg0)
+	void Date::setMonth(jint arg0) const
 	{
 		callMethod<void>(
 			"setMonth",
@@ -245,7 +245,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Date::setSeconds(jint arg0)
+	void Date::setSeconds(jint arg0) const
 	{
 		callMethod<void>(
 			"setSeconds",
@@ -253,7 +253,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Date::setTime(jlong arg0)
+	void Date::setTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -261,7 +261,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Date::setYear(jint arg0)
+	void Date::setYear(jint arg0) const
 	{
 		callMethod<void>(
 			"setYear",
@@ -269,28 +269,28 @@ namespace java::util
 			arg0
 		);
 	}
-	JString Date::toGMTString()
+	JString Date::toGMTString() const
 	{
 		return callObjectMethod(
 			"toGMTString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::Instant Date::toInstant()
+	java::time::Instant Date::toInstant() const
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	JString Date::toLocaleString()
+	JString Date::toLocaleString() const
 	{
 		return callObjectMethod(
 			"toLocaleString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Date::toString()
+	JString Date::toString() const
 	{
 		return callObjectMethod(
 			"toString",

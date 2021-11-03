@@ -219,7 +219,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioTrack::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1)
+	void AudioTrack::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addOnRoutingChangedListener",
@@ -228,7 +228,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jint AudioTrack::attachAuxEffect(jint arg0)
+	jint AudioTrack::attachAuxEffect(jint arg0) const
 	{
 		return callMethod<jint>(
 			"attachAuxEffect",
@@ -236,7 +236,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::VolumeShaper AudioTrack::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
+	android::media::VolumeShaper AudioTrack::createVolumeShaper(android::media::VolumeShaper_Configuration arg0) const
 	{
 		return callObjectMethod(
 			"createVolumeShaper",
@@ -244,154 +244,154 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioTrack::flush()
+	void AudioTrack::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	jint AudioTrack::getAudioFormat()
+	jint AudioTrack::getAudioFormat() const
 	{
 		return callMethod<jint>(
 			"getAudioFormat",
 			"()I"
 		);
 	}
-	jint AudioTrack::getAudioSessionId()
+	jint AudioTrack::getAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
-	jint AudioTrack::getBufferCapacityInFrames()
+	jint AudioTrack::getBufferCapacityInFrames() const
 	{
 		return callMethod<jint>(
 			"getBufferCapacityInFrames",
 			"()I"
 		);
 	}
-	jint AudioTrack::getBufferSizeInFrames()
+	jint AudioTrack::getBufferSizeInFrames() const
 	{
 		return callMethod<jint>(
 			"getBufferSizeInFrames",
 			"()I"
 		);
 	}
-	jint AudioTrack::getChannelConfiguration()
+	jint AudioTrack::getChannelConfiguration() const
 	{
 		return callMethod<jint>(
 			"getChannelConfiguration",
 			"()I"
 		);
 	}
-	jint AudioTrack::getChannelCount()
+	jint AudioTrack::getChannelCount() const
 	{
 		return callMethod<jint>(
 			"getChannelCount",
 			"()I"
 		);
 	}
-	android::media::AudioFormat AudioTrack::getFormat()
+	android::media::AudioFormat AudioTrack::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	android::os::PersistableBundle AudioTrack::getMetrics()
+	android::os::PersistableBundle AudioTrack::getMetrics() const
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jint AudioTrack::getNotificationMarkerPosition()
+	jint AudioTrack::getNotificationMarkerPosition() const
 	{
 		return callMethod<jint>(
 			"getNotificationMarkerPosition",
 			"()I"
 		);
 	}
-	jint AudioTrack::getPerformanceMode()
+	jint AudioTrack::getPerformanceMode() const
 	{
 		return callMethod<jint>(
 			"getPerformanceMode",
 			"()I"
 		);
 	}
-	jint AudioTrack::getPlayState()
+	jint AudioTrack::getPlayState() const
 	{
 		return callMethod<jint>(
 			"getPlayState",
 			"()I"
 		);
 	}
-	jint AudioTrack::getPlaybackHeadPosition()
+	jint AudioTrack::getPlaybackHeadPosition() const
 	{
 		return callMethod<jint>(
 			"getPlaybackHeadPosition",
 			"()I"
 		);
 	}
-	android::media::PlaybackParams AudioTrack::getPlaybackParams()
+	android::media::PlaybackParams AudioTrack::getPlaybackParams() const
 	{
 		return callObjectMethod(
 			"getPlaybackParams",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
-	jint AudioTrack::getPlaybackRate()
+	jint AudioTrack::getPlaybackRate() const
 	{
 		return callMethod<jint>(
 			"getPlaybackRate",
 			"()I"
 		);
 	}
-	jint AudioTrack::getPositionNotificationPeriod()
+	jint AudioTrack::getPositionNotificationPeriod() const
 	{
 		return callMethod<jint>(
 			"getPositionNotificationPeriod",
 			"()I"
 		);
 	}
-	android::media::AudioDeviceInfo AudioTrack::getPreferredDevice()
+	android::media::AudioDeviceInfo AudioTrack::getPreferredDevice() const
 	{
 		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	android::media::AudioDeviceInfo AudioTrack::getRoutedDevice()
+	android::media::AudioDeviceInfo AudioTrack::getRoutedDevice() const
 	{
 		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	jint AudioTrack::getSampleRate()
+	jint AudioTrack::getSampleRate() const
 	{
 		return callMethod<jint>(
 			"getSampleRate",
 			"()I"
 		);
 	}
-	jint AudioTrack::getState()
+	jint AudioTrack::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jint AudioTrack::getStreamType()
+	jint AudioTrack::getStreamType() const
 	{
 		return callMethod<jint>(
 			"getStreamType",
 			"()I"
 		);
 	}
-	jboolean AudioTrack::getTimestamp(android::media::AudioTimestamp arg0)
+	jboolean AudioTrack::getTimestamp(android::media::AudioTimestamp arg0) const
 	{
 		return callMethod<jboolean>(
 			"getTimestamp",
@@ -399,42 +399,42 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioTrack::getUnderrunCount()
+	jint AudioTrack::getUnderrunCount() const
 	{
 		return callMethod<jint>(
 			"getUnderrunCount",
 			"()I"
 		);
 	}
-	void AudioTrack::pause()
+	void AudioTrack::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	void AudioTrack::play()
+	void AudioTrack::play() const
 	{
 		callMethod<void>(
 			"play",
 			"()V"
 		);
 	}
-	void AudioTrack::release()
+	void AudioTrack::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	jint AudioTrack::reloadStaticData()
+	jint AudioTrack::reloadStaticData() const
 	{
 		return callMethod<jint>(
 			"reloadStaticData",
 			"()I"
 		);
 	}
-	void AudioTrack::removeOnRoutingChangedListener(JObject arg0)
+	void AudioTrack::removeOnRoutingChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnRoutingChangedListener",
@@ -442,7 +442,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioTrack::setAuxEffectSendLevel(jfloat arg0)
+	jint AudioTrack::setAuxEffectSendLevel(jfloat arg0) const
 	{
 		return callMethod<jint>(
 			"setAuxEffectSendLevel",
@@ -450,7 +450,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioTrack::setBufferSizeInFrames(jint arg0)
+	jint AudioTrack::setBufferSizeInFrames(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setBufferSizeInFrames",
@@ -458,7 +458,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioTrack::setLoopPoints(jint arg0, jint arg1, jint arg2)
+	jint AudioTrack::setLoopPoints(jint arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"setLoopPoints",
@@ -468,7 +468,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioTrack::setNotificationMarkerPosition(jint arg0)
+	jint AudioTrack::setNotificationMarkerPosition(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setNotificationMarkerPosition",
@@ -476,7 +476,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioTrack::setPlaybackHeadPosition(jint arg0)
+	jint AudioTrack::setPlaybackHeadPosition(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setPlaybackHeadPosition",
@@ -484,7 +484,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioTrack::setPlaybackParams(android::media::PlaybackParams arg0)
+	void AudioTrack::setPlaybackParams(android::media::PlaybackParams arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackParams",
@@ -492,7 +492,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioTrack::setPlaybackPositionUpdateListener(JObject arg0)
+	void AudioTrack::setPlaybackPositionUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackPositionUpdateListener",
@@ -500,7 +500,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioTrack::setPlaybackPositionUpdateListener(JObject arg0, android::os::Handler arg1)
+	void AudioTrack::setPlaybackPositionUpdateListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setPlaybackPositionUpdateListener",
@@ -509,7 +509,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jint AudioTrack::setPlaybackRate(jint arg0)
+	jint AudioTrack::setPlaybackRate(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setPlaybackRate",
@@ -517,7 +517,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioTrack::setPositionNotificationPeriod(jint arg0)
+	jint AudioTrack::setPositionNotificationPeriod(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setPositionNotificationPeriod",
@@ -525,7 +525,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean AudioTrack::setPreferredDevice(android::media::AudioDeviceInfo arg0)
+	jboolean AudioTrack::setPreferredDevice(android::media::AudioDeviceInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredDevice",
@@ -533,7 +533,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioTrack::setPresentation(android::media::AudioPresentation arg0)
+	jint AudioTrack::setPresentation(android::media::AudioPresentation arg0) const
 	{
 		return callMethod<jint>(
 			"setPresentation",
@@ -541,7 +541,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioTrack::setStereoVolume(jfloat arg0, jfloat arg1)
+	jint AudioTrack::setStereoVolume(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jint>(
 			"setStereoVolume",
@@ -550,7 +550,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jint AudioTrack::setVolume(jfloat arg0)
+	jint AudioTrack::setVolume(jfloat arg0) const
 	{
 		return callMethod<jint>(
 			"setVolume",
@@ -558,14 +558,14 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioTrack::stop()
+	void AudioTrack::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	jint AudioTrack::write(JByteArray arg0, jint arg1, jint arg2)
+	jint AudioTrack::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"write",
@@ -575,7 +575,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioTrack::write(JShortArray arg0, jint arg1, jint arg2)
+	jint AudioTrack::write(JShortArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"write",
@@ -585,7 +585,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioTrack::write(java::nio::ByteBuffer arg0, jint arg1, jint arg2)
+	jint AudioTrack::write(java::nio::ByteBuffer arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"write",
@@ -595,7 +595,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioTrack::write(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioTrack::write(JByteArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"write",
@@ -606,7 +606,7 @@ namespace android::media
 			arg3
 		);
 	}
-	jint AudioTrack::write(JFloatArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioTrack::write(JFloatArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"write",
@@ -617,7 +617,7 @@ namespace android::media
 			arg3
 		);
 	}
-	jint AudioTrack::write(JShortArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioTrack::write(JShortArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"write",
@@ -628,7 +628,7 @@ namespace android::media
 			arg3
 		);
 	}
-	jint AudioTrack::write(java::nio::ByteBuffer arg0, jint arg1, jint arg2, jlong arg3)
+	jint AudioTrack::write(java::nio::ByteBuffer arg0, jint arg1, jint arg2, jlong arg3) const
 	{
 		return callMethod<jint>(
 			"write",

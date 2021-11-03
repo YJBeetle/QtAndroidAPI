@@ -25,8 +25,8 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void cancelBugreport();
-		void startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2);
+		void cancelBugreport() const;
+		void startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2) const;
 	};
 } // namespace android::os
 

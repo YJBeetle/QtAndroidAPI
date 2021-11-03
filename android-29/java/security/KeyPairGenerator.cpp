@@ -43,35 +43,35 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::KeyPair KeyPairGenerator::genKeyPair()
+	java::security::KeyPair KeyPairGenerator::genKeyPair() const
 	{
 		return callObjectMethod(
 			"genKeyPair",
 			"()Ljava/security/KeyPair;"
 		);
 	}
-	java::security::KeyPair KeyPairGenerator::generateKeyPair()
+	java::security::KeyPair KeyPairGenerator::generateKeyPair() const
 	{
 		return callObjectMethod(
 			"generateKeyPair",
 			"()Ljava/security/KeyPair;"
 		);
 	}
-	JString KeyPairGenerator::getAlgorithm()
+	JString KeyPairGenerator::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider KeyPairGenerator::getProvider()
+	java::security::Provider KeyPairGenerator::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void KeyPairGenerator::initialize(jint arg0)
+	void KeyPairGenerator::initialize(jint arg0) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -79,7 +79,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void KeyPairGenerator::initialize(JObject arg0)
+	void KeyPairGenerator::initialize(JObject arg0) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -87,7 +87,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyPairGenerator::initialize(jint arg0, java::security::SecureRandom arg1)
+	void KeyPairGenerator::initialize(jint arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -96,7 +96,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyPairGenerator::initialize(JObject arg0, java::security::SecureRandom arg1)
+	void KeyPairGenerator::initialize(JObject arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"initialize",

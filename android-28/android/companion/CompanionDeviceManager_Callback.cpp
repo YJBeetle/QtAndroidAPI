@@ -17,7 +17,7 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	void CompanionDeviceManager_Callback::onDeviceFound(android::content::IntentSender arg0)
+	void CompanionDeviceManager_Callback::onDeviceFound(android::content::IntentSender arg0) const
 	{
 		callMethod<void>(
 			"onDeviceFound",
@@ -25,7 +25,7 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	void CompanionDeviceManager_Callback::onFailure(JString arg0)
+	void CompanionDeviceManager_Callback::onFailure(JString arg0) const
 	{
 		callMethod<void>(
 			"onFailure",

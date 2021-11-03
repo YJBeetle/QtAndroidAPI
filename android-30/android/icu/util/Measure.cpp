@@ -21,7 +21,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jboolean Measure::equals(JObject arg0)
+	jboolean Measure::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -29,28 +29,28 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::Number Measure::getNumber()
+	java::lang::Number Measure::getNumber() const
 	{
 		return callObjectMethod(
 			"getNumber",
 			"()Ljava/lang/Number;"
 		);
 	}
-	android::icu::util::MeasureUnit Measure::getUnit()
+	android::icu::util::MeasureUnit Measure::getUnit() const
 	{
 		return callObjectMethod(
 			"getUnit",
 			"()Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	jint Measure::hashCode()
+	jint Measure::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Measure::toString()
+	JString Measure::toString() const
 	{
 		return callObjectMethod(
 			"toString",

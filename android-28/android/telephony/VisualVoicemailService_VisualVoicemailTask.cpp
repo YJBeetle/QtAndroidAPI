@@ -12,7 +12,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean VisualVoicemailService_VisualVoicemailTask::equals(JObject arg0)
+	jboolean VisualVoicemailService_VisualVoicemailTask::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,14 +20,14 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	void VisualVoicemailService_VisualVoicemailTask::finish()
+	void VisualVoicemailService_VisualVoicemailTask::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	jint VisualVoicemailService_VisualVoicemailTask::hashCode()
+	jint VisualVoicemailService_VisualVoicemailTask::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -19,8 +19,8 @@ namespace javax::net::ssl
 		SSLSessionBindingEvent(JObject arg0, JString arg1);
 		
 		// Methods
-		JString getName();
-		JObject getSession();
+		JString getName() const;
+		JObject getSession() const;
 	};
 } // namespace javax::net::ssl
 

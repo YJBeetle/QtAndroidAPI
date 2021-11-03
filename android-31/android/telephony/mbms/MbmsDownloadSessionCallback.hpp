@@ -19,9 +19,9 @@ namespace android::telephony::mbms
 		MbmsDownloadSessionCallback();
 		
 		// Methods
-		void onError(jint arg0, JString arg1);
-		void onFileServicesUpdated(JObject arg0);
-		void onMiddlewareReady();
+		void onError(jint arg0, JString arg1) const;
+		void onFileServicesUpdated(JObject arg0) const;
+		void onMiddlewareReady() const;
 	};
 } // namespace android::telephony::mbms
 

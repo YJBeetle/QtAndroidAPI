@@ -36,8 +36,8 @@ namespace android::icu::text
 		// Methods
 		static android::icu::text::DisplayContext valueOf(JString arg0);
 		static JArray values();
-		android::icu::text::DisplayContext_Type type();
-		jint value();
+		android::icu::text::DisplayContext_Type type() const;
+		jint value() const;
 	};
 } // namespace android::icu::text
 

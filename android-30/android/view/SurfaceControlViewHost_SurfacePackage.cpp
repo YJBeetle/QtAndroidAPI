@@ -19,21 +19,21 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint SurfaceControlViewHost_SurfacePackage::describeContents()
+	jint SurfaceControlViewHost_SurfacePackage::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void SurfaceControlViewHost_SurfacePackage::release()
+	void SurfaceControlViewHost_SurfacePackage::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void SurfaceControlViewHost_SurfacePackage::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SurfaceControlViewHost_SurfacePackage::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

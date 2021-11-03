@@ -98,7 +98,7 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	JObject CarrierMessagingService::onBind(android::content::Intent arg0)
+	JObject CarrierMessagingService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -106,7 +106,7 @@ namespace android::service::carrier
 			arg0.object()
 		);
 	}
-	void CarrierMessagingService::onDownloadMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3)
+	void CarrierMessagingService::onDownloadMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"onDownloadMms",
@@ -117,7 +117,7 @@ namespace android::service::carrier
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onFilterSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onFilterSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"onFilterSms",
@@ -129,7 +129,7 @@ namespace android::service::carrier
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onReceiveTextSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onReceiveTextSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"onReceiveTextSms",
@@ -141,7 +141,7 @@ namespace android::service::carrier
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"onSendDataSms",
@@ -153,7 +153,7 @@ namespace android::service::carrier
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, jint arg4, JObject arg5)
+	void CarrierMessagingService::onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, jint arg4, JObject arg5) const
 	{
 		callMethod<void>(
 			"onSendDataSms",
@@ -166,7 +166,7 @@ namespace android::service::carrier
 			arg5.object()
 		);
 	}
-	void CarrierMessagingService::onSendMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3)
+	void CarrierMessagingService::onSendMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"onSendMms",
@@ -177,7 +177,7 @@ namespace android::service::carrier
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, JObject arg3)
+	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"onSendMultipartTextSms",
@@ -188,7 +188,7 @@ namespace android::service::carrier
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, jint arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"onSendMultipartTextSms",
@@ -200,7 +200,7 @@ namespace android::service::carrier
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onSendTextSms(JString arg0, jint arg1, JString arg2, JObject arg3)
+	void CarrierMessagingService::onSendTextSms(JString arg0, jint arg1, JString arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"onSendTextSms",
@@ -211,7 +211,7 @@ namespace android::service::carrier
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onSendTextSms(JString arg0, jint arg1, JString arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onSendTextSms(JString arg0, jint arg1, JString arg2, jint arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"onSendTextSms",

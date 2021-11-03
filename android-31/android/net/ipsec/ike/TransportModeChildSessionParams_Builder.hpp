@@ -31,11 +31,11 @@ namespace android::net::ipsec::ike
 		TransportModeChildSessionParams_Builder(android::net::ipsec::ike::TransportModeChildSessionParams arg0);
 		
 		// Methods
-		android::net::ipsec::ike::TransportModeChildSessionParams_Builder addChildSaProposal(android::net::ipsec::ike::ChildSaProposal arg0);
-		android::net::ipsec::ike::TransportModeChildSessionParams_Builder addInboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0);
-		android::net::ipsec::ike::TransportModeChildSessionParams_Builder addOutboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0);
-		android::net::ipsec::ike::TransportModeChildSessionParams build();
-		android::net::ipsec::ike::TransportModeChildSessionParams_Builder setLifetimeSeconds(jint arg0, jint arg1);
+		android::net::ipsec::ike::TransportModeChildSessionParams_Builder addChildSaProposal(android::net::ipsec::ike::ChildSaProposal arg0) const;
+		android::net::ipsec::ike::TransportModeChildSessionParams_Builder addInboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0) const;
+		android::net::ipsec::ike::TransportModeChildSessionParams_Builder addOutboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0) const;
+		android::net::ipsec::ike::TransportModeChildSessionParams build() const;
+		android::net::ipsec::ike::TransportModeChildSessionParams_Builder setLifetimeSeconds(jint arg0, jint arg1) const;
 	};
 } // namespace android::net::ipsec::ike
 

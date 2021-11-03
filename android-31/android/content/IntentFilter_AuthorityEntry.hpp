@@ -24,10 +24,10 @@ namespace android::content
 		IntentFilter_AuthorityEntry(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getHost();
-		jint getPort();
-		jint match(android::net::Uri arg0);
+		jboolean equals(JObject arg0) const;
+		JString getHost() const;
+		jint getPort() const;
+		jint match(android::net::Uri arg0) const;
 	};
 } // namespace android::content
 

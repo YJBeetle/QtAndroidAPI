@@ -26,10 +26,10 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean getNextEvent(android::app::usage::UsageEvents_Event arg0);
-		jboolean hasNextEvent();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean getNextEvent(android::app::usage::UsageEvents_Event arg0) const;
+		jboolean hasNextEvent() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::usage
 

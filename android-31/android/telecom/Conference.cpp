@@ -42,7 +42,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	jboolean Conference::addConnection(android::telecom::Connection arg0)
+	jboolean Conference::addConnection(android::telecom::Connection arg0) const
 	{
 		return callMethod<jboolean>(
 			"addConnection",
@@ -50,119 +50,119 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::destroy()
+	void Conference::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	android::telecom::CallAudioState Conference::getCallAudioState()
+	android::telecom::CallAudioState Conference::getCallAudioState() const
 	{
 		return callObjectMethod(
 			"getCallAudioState",
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	JObject Conference::getConferenceableConnections()
+	JObject Conference::getConferenceableConnections() const
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",
 			"()Ljava/util/List;"
 		);
 	}
-	jint Conference::getConnectionCapabilities()
+	jint Conference::getConnectionCapabilities() const
 	{
 		return callMethod<jint>(
 			"getConnectionCapabilities",
 			"()I"
 		);
 	}
-	jint Conference::getConnectionProperties()
+	jint Conference::getConnectionProperties() const
 	{
 		return callMethod<jint>(
 			"getConnectionProperties",
 			"()I"
 		);
 	}
-	jlong Conference::getConnectionStartElapsedRealtimeMillis()
+	jlong Conference::getConnectionStartElapsedRealtimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getConnectionStartElapsedRealtimeMillis",
 			"()J"
 		);
 	}
-	jlong Conference::getConnectionTime()
+	jlong Conference::getConnectionTime() const
 	{
 		return callMethod<jlong>(
 			"getConnectionTime",
 			"()J"
 		);
 	}
-	JObject Conference::getConnections()
+	JObject Conference::getConnections() const
 	{
 		return callObjectMethod(
 			"getConnections",
 			"()Ljava/util/List;"
 		);
 	}
-	android::telecom::DisconnectCause Conference::getDisconnectCause()
+	android::telecom::DisconnectCause Conference::getDisconnectCause() const
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	android::os::Bundle Conference::getExtras()
+	android::os::Bundle Conference::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::telecom::PhoneAccountHandle Conference::getPhoneAccountHandle()
+	android::telecom::PhoneAccountHandle Conference::getPhoneAccountHandle() const
 	{
 		return callObjectMethod(
 			"getPhoneAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	jint Conference::getState()
+	jint Conference::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	android::telecom::StatusHints Conference::getStatusHints()
+	android::telecom::StatusHints Conference::getStatusHints() const
 	{
 		return callObjectMethod(
 			"getStatusHints",
 			"()Landroid/telecom/StatusHints;"
 		);
 	}
-	android::telecom::Connection_VideoProvider Conference::getVideoProvider()
+	android::telecom::Connection_VideoProvider Conference::getVideoProvider() const
 	{
 		return callObjectMethod(
 			"getVideoProvider",
 			"()Landroid/telecom/Connection$VideoProvider;"
 		);
 	}
-	jint Conference::getVideoState()
+	jint Conference::getVideoState() const
 	{
 		return callMethod<jint>(
 			"getVideoState",
 			"()I"
 		);
 	}
-	jboolean Conference::isRingbackRequested()
+	jboolean Conference::isRingbackRequested() const
 	{
 		return callMethod<jboolean>(
 			"isRingbackRequested",
 			"()Z"
 		);
 	}
-	void Conference::onAddConferenceParticipants(JObject arg0)
+	void Conference::onAddConferenceParticipants(JObject arg0) const
 	{
 		callMethod<void>(
 			"onAddConferenceParticipants",
@@ -170,7 +170,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::onAnswer(jint arg0)
+	void Conference::onAnswer(jint arg0) const
 	{
 		callMethod<void>(
 			"onAnswer",
@@ -178,7 +178,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::onCallAudioStateChanged(android::telecom::CallAudioState arg0)
+	void Conference::onCallAudioStateChanged(android::telecom::CallAudioState arg0) const
 	{
 		callMethod<void>(
 			"onCallAudioStateChanged",
@@ -186,7 +186,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::onConnectionAdded(android::telecom::Connection arg0)
+	void Conference::onConnectionAdded(android::telecom::Connection arg0) const
 	{
 		callMethod<void>(
 			"onConnectionAdded",
@@ -194,14 +194,14 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::onDisconnect()
+	void Conference::onDisconnect() const
 	{
 		callMethod<void>(
 			"onDisconnect",
 			"()V"
 		);
 	}
-	void Conference::onExtrasChanged(android::os::Bundle arg0)
+	void Conference::onExtrasChanged(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onExtrasChanged",
@@ -209,21 +209,21 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::onHold()
+	void Conference::onHold() const
 	{
 		callMethod<void>(
 			"onHold",
 			"()V"
 		);
 	}
-	void Conference::onMerge()
+	void Conference::onMerge() const
 	{
 		callMethod<void>(
 			"onMerge",
 			"()V"
 		);
 	}
-	void Conference::onMerge(android::telecom::Connection arg0)
+	void Conference::onMerge(android::telecom::Connection arg0) const
 	{
 		callMethod<void>(
 			"onMerge",
@@ -231,7 +231,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::onPlayDtmfTone(jchar arg0)
+	void Conference::onPlayDtmfTone(jchar arg0) const
 	{
 		callMethod<void>(
 			"onPlayDtmfTone",
@@ -239,14 +239,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::onReject()
+	void Conference::onReject() const
 	{
 		callMethod<void>(
 			"onReject",
 			"()V"
 		);
 	}
-	void Conference::onSeparate(android::telecom::Connection arg0)
+	void Conference::onSeparate(android::telecom::Connection arg0) const
 	{
 		callMethod<void>(
 			"onSeparate",
@@ -254,28 +254,28 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::onStopDtmfTone()
+	void Conference::onStopDtmfTone() const
 	{
 		callMethod<void>(
 			"onStopDtmfTone",
 			"()V"
 		);
 	}
-	void Conference::onSwap()
+	void Conference::onSwap() const
 	{
 		callMethod<void>(
 			"onSwap",
 			"()V"
 		);
 	}
-	void Conference::onUnhold()
+	void Conference::onUnhold() const
 	{
 		callMethod<void>(
 			"onUnhold",
 			"()V"
 		);
 	}
-	void Conference::putExtras(android::os::Bundle arg0)
+	void Conference::putExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"putExtras",
@@ -283,7 +283,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::removeConnection(android::telecom::Connection arg0)
+	void Conference::removeConnection(android::telecom::Connection arg0) const
 	{
 		callMethod<void>(
 			"removeConnection",
@@ -291,7 +291,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::removeExtras(JArray arg0)
+	void Conference::removeExtras(JArray arg0) const
 	{
 		callMethod<void>(
 			"removeExtras",
@@ -299,7 +299,7 @@ namespace android::telecom
 			arg0.object<jarray>()
 		);
 	}
-	void Conference::removeExtras(JObject arg0)
+	void Conference::removeExtras(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeExtras",
@@ -307,7 +307,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::sendConferenceEvent(JString arg0, android::os::Bundle arg1)
+	void Conference::sendConferenceEvent(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendConferenceEvent",
@@ -316,14 +316,14 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Conference::setActive()
+	void Conference::setActive() const
 	{
 		callMethod<void>(
 			"setActive",
 			"()V"
 		);
 	}
-	void Conference::setConferenceableConnections(JObject arg0)
+	void Conference::setConferenceableConnections(JObject arg0) const
 	{
 		callMethod<void>(
 			"setConferenceableConnections",
@@ -331,7 +331,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::setConnectionCapabilities(jint arg0)
+	void Conference::setConnectionCapabilities(jint arg0) const
 	{
 		callMethod<void>(
 			"setConnectionCapabilities",
@@ -339,7 +339,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::setConnectionProperties(jint arg0)
+	void Conference::setConnectionProperties(jint arg0) const
 	{
 		callMethod<void>(
 			"setConnectionProperties",
@@ -347,7 +347,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::setConnectionStartElapsedRealTime(jlong arg0)
+	void Conference::setConnectionStartElapsedRealTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setConnectionStartElapsedRealTime",
@@ -355,7 +355,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::setConnectionStartElapsedRealtimeMillis(jlong arg0)
+	void Conference::setConnectionStartElapsedRealtimeMillis(jlong arg0) const
 	{
 		callMethod<void>(
 			"setConnectionStartElapsedRealtimeMillis",
@@ -363,7 +363,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::setConnectionTime(jlong arg0)
+	void Conference::setConnectionTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setConnectionTime",
@@ -371,14 +371,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::setDialing()
+	void Conference::setDialing() const
 	{
 		callMethod<void>(
 			"setDialing",
 			"()V"
 		);
 	}
-	void Conference::setDisconnected(android::telecom::DisconnectCause arg0)
+	void Conference::setDisconnected(android::telecom::DisconnectCause arg0) const
 	{
 		callMethod<void>(
 			"setDisconnected",
@@ -386,7 +386,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::setExtras(android::os::Bundle arg0)
+	void Conference::setExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setExtras",
@@ -394,14 +394,14 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::setOnHold()
+	void Conference::setOnHold() const
 	{
 		callMethod<void>(
 			"setOnHold",
 			"()V"
 		);
 	}
-	void Conference::setRingbackRequested(jboolean arg0)
+	void Conference::setRingbackRequested(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRingbackRequested",
@@ -409,14 +409,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::setRinging()
+	void Conference::setRinging() const
 	{
 		callMethod<void>(
 			"setRinging",
 			"()V"
 		);
 	}
-	void Conference::setStatusHints(android::telecom::StatusHints arg0)
+	void Conference::setStatusHints(android::telecom::StatusHints arg0) const
 	{
 		callMethod<void>(
 			"setStatusHints",
@@ -424,7 +424,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::setVideoProvider(android::telecom::Connection arg0, android::telecom::Connection_VideoProvider arg1)
+	void Conference::setVideoProvider(android::telecom::Connection arg0, android::telecom::Connection_VideoProvider arg1) const
 	{
 		callMethod<void>(
 			"setVideoProvider",
@@ -433,7 +433,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Conference::setVideoState(android::telecom::Connection arg0, jint arg1)
+	void Conference::setVideoState(android::telecom::Connection arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setVideoState",
@@ -442,7 +442,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	JString Conference::toString()
+	JString Conference::toString() const
 	{
 		return callObjectMethod(
 			"toString",

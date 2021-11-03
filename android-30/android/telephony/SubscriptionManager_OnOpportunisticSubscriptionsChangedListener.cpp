@@ -15,7 +15,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::onOpportunisticSubscriptionsChanged()
+	void SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::onOpportunisticSubscriptionsChanged() const
 	{
 		callMethod<void>(
 			"onOpportunisticSubscriptionsChanged",

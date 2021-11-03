@@ -24,10 +24,10 @@ namespace android::database
 		CursorJoiner(JObject arg0, JArray arg1, JObject arg2, JArray arg3);
 		
 		// Methods
-		jboolean hasNext();
-		JObject iterator();
-		android::database::CursorJoiner_Result next();
-		void remove();
+		jboolean hasNext() const;
+		JObject iterator() const;
+		android::database::CursorJoiner_Result next() const;
+		void remove() const;
 	};
 } // namespace android::database
 

@@ -199,12 +199,12 @@ namespace android::telephony::ims
 		ImsReasonInfo(jint arg0, jint arg1, JString arg2);
 		
 		// Methods
-		jint describeContents();
-		jint getCode();
-		jint getExtraCode();
-		JString getExtraMessage();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getCode() const;
+		jint getExtraCode() const;
+		JString getExtraMessage() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::ims
 

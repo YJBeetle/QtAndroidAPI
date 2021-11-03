@@ -55,26 +55,26 @@ namespace android::graphics::drawable
 		VectorDrawable();
 		
 		// Methods
-		void applyTheme(android::content::res::Resources_Theme arg0);
-		jboolean canApplyTheme();
-		void draw(android::graphics::Canvas arg0);
-		jint getAlpha();
-		jint getChangingConfigurations();
-		android::graphics::ColorFilter getColorFilter();
-		android::graphics::drawable::Drawable_ConstantState getConstantState();
-		jint getIntrinsicHeight();
-		jint getIntrinsicWidth();
-		jint getOpacity();
-		android::graphics::Insets getOpticalInsets();
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
-		jboolean isAutoMirrored();
-		jboolean isStateful();
-		android::graphics::drawable::Drawable mutate();
-		void setAlpha(jint arg0);
-		void setAutoMirrored(jboolean arg0);
-		void setColorFilter(android::graphics::ColorFilter arg0);
-		void setTintBlendMode(android::graphics::BlendMode arg0);
-		void setTintList(android::content::res::ColorStateList arg0);
+		void applyTheme(android::content::res::Resources_Theme arg0) const;
+		jboolean canApplyTheme() const;
+		void draw(android::graphics::Canvas arg0) const;
+		jint getAlpha() const;
+		jint getChangingConfigurations() const;
+		android::graphics::ColorFilter getColorFilter() const;
+		android::graphics::drawable::Drawable_ConstantState getConstantState() const;
+		jint getIntrinsicHeight() const;
+		jint getIntrinsicWidth() const;
+		jint getOpacity() const;
+		android::graphics::Insets getOpticalInsets() const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
+		jboolean isAutoMirrored() const;
+		jboolean isStateful() const;
+		android::graphics::drawable::Drawable mutate() const;
+		void setAlpha(jint arg0) const;
+		void setAutoMirrored(jboolean arg0) const;
+		void setColorFilter(android::graphics::ColorFilter arg0) const;
+		void setTintBlendMode(android::graphics::BlendMode arg0) const;
+		void setTintList(android::content::res::ColorStateList arg0) const;
 	};
 } // namespace android::graphics::drawable
 

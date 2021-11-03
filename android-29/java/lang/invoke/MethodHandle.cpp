@@ -16,7 +16,7 @@ namespace java::lang::invoke
 	// Constructors
 	
 	// Methods
-	java::lang::invoke::MethodHandle MethodHandle::asCollector(JClass arg0, jint arg1)
+	java::lang::invoke::MethodHandle MethodHandle::asCollector(JClass arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"asCollector",
@@ -25,7 +25,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asCollector(jint arg0, JClass arg1, jint arg2)
+	java::lang::invoke::MethodHandle MethodHandle::asCollector(jint arg0, JClass arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"asCollector",
@@ -35,14 +35,14 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asFixedArity()
+	java::lang::invoke::MethodHandle MethodHandle::asFixedArity() const
 	{
 		return callObjectMethod(
 			"asFixedArity",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asSpreader(JClass arg0, jint arg1)
+	java::lang::invoke::MethodHandle MethodHandle::asSpreader(JClass arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"asSpreader",
@@ -51,7 +51,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asSpreader(jint arg0, JClass arg1, jint arg2)
+	java::lang::invoke::MethodHandle MethodHandle::asSpreader(jint arg0, JClass arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"asSpreader",
@@ -61,7 +61,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asType(java::lang::invoke::MethodType arg0)
+	java::lang::invoke::MethodHandle MethodHandle::asType(java::lang::invoke::MethodType arg0) const
 	{
 		return callObjectMethod(
 			"asType",
@@ -69,7 +69,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asVarargsCollector(JClass arg0)
+	java::lang::invoke::MethodHandle MethodHandle::asVarargsCollector(JClass arg0) const
 	{
 		return callObjectMethod(
 			"asVarargsCollector",
@@ -77,7 +77,7 @@ namespace java::lang::invoke
 			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::bindTo(JObject arg0)
+	java::lang::invoke::MethodHandle MethodHandle::bindTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"bindTo",
@@ -85,14 +85,14 @@ namespace java::lang::invoke
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional MethodHandle::describeConstable()
+	java::util::Optional MethodHandle::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	JObject MethodHandle::invoke(JObjectArray arg0)
+	JObject MethodHandle::invoke(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"invoke",
@@ -100,7 +100,7 @@ namespace java::lang::invoke
 			arg0.object<jobjectArray>()
 		);
 	}
-	JObject MethodHandle::invokeExact(JObjectArray arg0)
+	JObject MethodHandle::invokeExact(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"invokeExact",
@@ -108,7 +108,7 @@ namespace java::lang::invoke
 			arg0.object<jobjectArray>()
 		);
 	}
-	JObject MethodHandle::invokeWithArguments(JObjectArray arg0)
+	JObject MethodHandle::invokeWithArguments(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"invokeWithArguments",
@@ -116,7 +116,7 @@ namespace java::lang::invoke
 			arg0.object<jobjectArray>()
 		);
 	}
-	JObject MethodHandle::invokeWithArguments(JObject arg0)
+	JObject MethodHandle::invokeWithArguments(JObject arg0) const
 	{
 		return callObjectMethod(
 			"invokeWithArguments",
@@ -124,28 +124,28 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	jboolean MethodHandle::isVarargsCollector()
+	jboolean MethodHandle::isVarargsCollector() const
 	{
 		return callMethod<jboolean>(
 			"isVarargsCollector",
 			"()Z"
 		);
 	}
-	JString MethodHandle::toString()
+	JString MethodHandle::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::lang::invoke::MethodType MethodHandle::type()
+	java::lang::invoke::MethodType MethodHandle::type() const
 	{
 		return callObjectMethod(
 			"type",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::withVarargs(jboolean arg0)
+	java::lang::invoke::MethodHandle MethodHandle::withVarargs(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"withVarargs",

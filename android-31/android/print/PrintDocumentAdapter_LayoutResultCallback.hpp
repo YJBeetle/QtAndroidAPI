@@ -22,9 +22,9 @@ namespace android::print
 		// Constructors
 		
 		// Methods
-		void onLayoutCancelled();
-		void onLayoutFailed(JString arg0);
-		void onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1);
+		void onLayoutCancelled() const;
+		void onLayoutFailed(JString arg0) const;
+		void onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1) const;
 	};
 } // namespace android::print
 

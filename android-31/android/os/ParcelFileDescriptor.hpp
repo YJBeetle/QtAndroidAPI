@@ -66,18 +66,18 @@ namespace android::os
 		static android::os::ParcelFileDescriptor open(java::io::File arg0, jint arg1, android::os::Handler arg2, JObject arg3);
 		static jint parseMode(JString arg0);
 		static android::os::ParcelFileDescriptor wrap(android::os::ParcelFileDescriptor arg0, android::os::Handler arg1, JObject arg2);
-		jboolean canDetectErrors();
-		void checkError();
-		void close();
-		void closeWithError(JString arg0);
-		jint describeContents();
-		jint detachFd();
-		android::os::ParcelFileDescriptor dup();
-		jint getFd();
-		java::io::FileDescriptor getFileDescriptor();
-		jlong getStatSize();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean canDetectErrors() const;
+		void checkError() const;
+		void close() const;
+		void closeWithError(JString arg0) const;
+		jint describeContents() const;
+		jint detachFd() const;
+		android::os::ParcelFileDescriptor dup() const;
+		jint getFd() const;
+		java::io::FileDescriptor getFileDescriptor() const;
+		jlong getStatSize() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

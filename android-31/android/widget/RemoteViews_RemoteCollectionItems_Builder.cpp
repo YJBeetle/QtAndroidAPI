@@ -17,7 +17,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::addItem(jlong arg0, android::widget::RemoteViews arg1)
+	android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::addItem(jlong arg0, android::widget::RemoteViews arg1) const
 	{
 		return callObjectMethod(
 			"addItem",
@@ -26,14 +26,14 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	android::widget::RemoteViews_RemoteCollectionItems RemoteViews_RemoteCollectionItems_Builder::build()
+	android::widget::RemoteViews_RemoteCollectionItems RemoteViews_RemoteCollectionItems_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/widget/RemoteViews$RemoteCollectionItems;"
 		);
 	}
-	android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::setHasStableIds(jboolean arg0)
+	android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::setHasStableIds(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasStableIds",
@@ -41,7 +41,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::setViewTypeCount(jint arg0)
+	android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::setViewTypeCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"setViewTypeCount",

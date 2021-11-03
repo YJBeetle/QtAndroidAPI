@@ -16,8 +16,8 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		JObject getInboundTrafficSelectors();
-		JObject getOutboundTrafficSelectors();
+		JObject getInboundTrafficSelectors() const;
+		JObject getOutboundTrafficSelectors() const;
 	};
 } // namespace android::net::ipsec::ike
 

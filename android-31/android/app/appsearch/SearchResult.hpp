@@ -22,11 +22,11 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JString getDatabaseName();
-		android::app::appsearch::GenericDocument getGenericDocument();
-		JObject getMatchInfos();
-		JString getPackageName();
-		jdouble getRankingSignal();
+		JString getDatabaseName() const;
+		android::app::appsearch::GenericDocument getGenericDocument() const;
+		JObject getMatchInfos() const;
+		JString getPackageName() const;
+		jdouble getRankingSignal() const;
 	};
 } // namespace android::app::appsearch
 

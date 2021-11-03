@@ -24,7 +24,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	android::graphics::Path PathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	android::graphics::Path PathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callObjectMethod(
 			"getPath",

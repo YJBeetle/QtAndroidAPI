@@ -24,13 +24,13 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getSignalThresholdInfos();
-		jint hashCode();
-		jboolean isReportingRequestedWhileIdle();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getSignalThresholdInfos() const;
+		jint hashCode() const;
+		jboolean isReportingRequestedWhileIdle() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

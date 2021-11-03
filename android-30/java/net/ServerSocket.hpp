@@ -48,27 +48,27 @@ namespace java::net
 		
 		// Methods
 		static void setSocketFactory(JObject arg0);
-		java::net::Socket accept();
-		void bind(java::net::SocketAddress arg0);
-		void bind(java::net::SocketAddress arg0, jint arg1);
-		void close();
-		java::nio::channels::ServerSocketChannel getChannel();
-		java::net::InetAddress getInetAddress();
-		jint getLocalPort();
-		java::net::SocketAddress getLocalSocketAddress();
-		JObject getOption(JObject arg0);
-		jint getReceiveBufferSize();
-		jboolean getReuseAddress();
-		jint getSoTimeout();
-		jboolean isBound();
-		jboolean isClosed();
-		java::net::ServerSocket setOption(JObject arg0, JObject arg1);
-		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
-		void setReceiveBufferSize(jint arg0);
-		void setReuseAddress(jboolean arg0);
-		void setSoTimeout(jint arg0);
-		JObject supportedOptions();
-		JString toString();
+		java::net::Socket accept() const;
+		void bind(java::net::SocketAddress arg0) const;
+		void bind(java::net::SocketAddress arg0, jint arg1) const;
+		void close() const;
+		java::nio::channels::ServerSocketChannel getChannel() const;
+		java::net::InetAddress getInetAddress() const;
+		jint getLocalPort() const;
+		java::net::SocketAddress getLocalSocketAddress() const;
+		JObject getOption(JObject arg0) const;
+		jint getReceiveBufferSize() const;
+		jboolean getReuseAddress() const;
+		jint getSoTimeout() const;
+		jboolean isBound() const;
+		jboolean isClosed() const;
+		java::net::ServerSocket setOption(JObject arg0, JObject arg1) const;
+		void setPerformancePreferences(jint arg0, jint arg1, jint arg2) const;
+		void setReceiveBufferSize(jint arg0) const;
+		void setReuseAddress(jboolean arg0) const;
+		void setSoTimeout(jint arg0) const;
+		JObject supportedOptions() const;
+		JString toString() const;
 	};
 } // namespace java::net
 

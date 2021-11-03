@@ -19,21 +19,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void FilterOutputStream::close()
+	void FilterOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void FilterOutputStream::flush()
+	void FilterOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void FilterOutputStream::write(JByteArray arg0)
+	void FilterOutputStream::write(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -41,7 +41,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void FilterOutputStream::write(jint arg0)
+	void FilterOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -49,7 +49,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void FilterOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void FilterOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

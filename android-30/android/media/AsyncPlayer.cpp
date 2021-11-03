@@ -20,7 +20,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void AsyncPlayer::play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, android::media::AudioAttributes arg3)
+	void AsyncPlayer::play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, android::media::AudioAttributes arg3) const
 	{
 		callMethod<void>(
 			"play",
@@ -31,7 +31,7 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	void AsyncPlayer::play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, jint arg3)
+	void AsyncPlayer::play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"play",
@@ -42,7 +42,7 @@ namespace android::media
 			arg3
 		);
 	}
-	void AsyncPlayer::stop()
+	void AsyncPlayer::stop() const
 	{
 		callMethod<void>(
 			"stop",

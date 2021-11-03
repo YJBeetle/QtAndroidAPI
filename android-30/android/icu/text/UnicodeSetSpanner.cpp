@@ -23,7 +23,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jint UnicodeSetSpanner::countIn(JString arg0)
+	jint UnicodeSetSpanner::countIn(JString arg0) const
 	{
 		return callMethod<jint>(
 			"countIn",
@@ -31,7 +31,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jint UnicodeSetSpanner::countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1)
+	jint UnicodeSetSpanner::countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1) const
 	{
 		return callMethod<jint>(
 			"countIn",
@@ -40,7 +40,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	jint UnicodeSetSpanner::countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
+	jint UnicodeSetSpanner::countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1, android::icu::text::UnicodeSet_SpanCondition arg2) const
 	{
 		return callMethod<jint>(
 			"countIn",
@@ -50,7 +50,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JString UnicodeSetSpanner::deleteFrom(JString arg0)
+	JString UnicodeSetSpanner::deleteFrom(JString arg0) const
 	{
 		return callObjectMethod(
 			"deleteFrom",
@@ -58,7 +58,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString UnicodeSetSpanner::deleteFrom(JString arg0, android::icu::text::UnicodeSet_SpanCondition arg1)
+	JString UnicodeSetSpanner::deleteFrom(JString arg0, android::icu::text::UnicodeSet_SpanCondition arg1) const
 	{
 		return callObjectMethod(
 			"deleteFrom",
@@ -67,7 +67,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	jboolean UnicodeSetSpanner::equals(JObject arg0)
+	jboolean UnicodeSetSpanner::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -75,21 +75,21 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSetSpanner::getUnicodeSet()
+	android::icu::text::UnicodeSet UnicodeSetSpanner::getUnicodeSet() const
 	{
 		return callObjectMethod(
 			"getUnicodeSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	jint UnicodeSetSpanner::hashCode()
+	jint UnicodeSetSpanner::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString UnicodeSetSpanner::replaceFrom(JString arg0, JString arg1)
+	JString UnicodeSetSpanner::replaceFrom(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"replaceFrom",
@@ -98,7 +98,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	JString UnicodeSetSpanner::replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2)
+	JString UnicodeSetSpanner::replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2) const
 	{
 		return callObjectMethod(
 			"replaceFrom",
@@ -108,7 +108,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JString UnicodeSetSpanner::replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2, android::icu::text::UnicodeSet_SpanCondition arg3)
+	JString UnicodeSetSpanner::replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2, android::icu::text::UnicodeSet_SpanCondition arg3) const
 	{
 		return callObjectMethod(
 			"replaceFrom",
@@ -119,7 +119,7 @@ namespace android::icu::text
 			arg3.object()
 		);
 	}
-	JString UnicodeSetSpanner::trim(JString arg0)
+	JString UnicodeSetSpanner::trim(JString arg0) const
 	{
 		return callObjectMethod(
 			"trim",
@@ -127,7 +127,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString UnicodeSetSpanner::trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1)
+	JString UnicodeSetSpanner::trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1) const
 	{
 		return callObjectMethod(
 			"trim",
@@ -136,7 +136,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JString UnicodeSetSpanner::trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
+	JString UnicodeSetSpanner::trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1, android::icu::text::UnicodeSet_SpanCondition arg2) const
 	{
 		return callObjectMethod(
 			"trim",

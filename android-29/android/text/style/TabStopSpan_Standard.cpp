@@ -16,7 +16,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint TabStopSpan_Standard::getTabStop()
+	jint TabStopSpan_Standard::getTabStop() const
 	{
 		return callMethod<jint>(
 			"getTabStop",

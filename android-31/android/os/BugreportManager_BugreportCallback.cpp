@@ -50,14 +50,14 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void BugreportManager_BugreportCallback::onEarlyReportFinished()
+	void BugreportManager_BugreportCallback::onEarlyReportFinished() const
 	{
 		callMethod<void>(
 			"onEarlyReportFinished",
 			"()V"
 		);
 	}
-	void BugreportManager_BugreportCallback::onError(jint arg0)
+	void BugreportManager_BugreportCallback::onError(jint arg0) const
 	{
 		callMethod<void>(
 			"onError",
@@ -65,14 +65,14 @@ namespace android::os
 			arg0
 		);
 	}
-	void BugreportManager_BugreportCallback::onFinished()
+	void BugreportManager_BugreportCallback::onFinished() const
 	{
 		callMethod<void>(
 			"onFinished",
 			"()V"
 		);
 	}
-	void BugreportManager_BugreportCallback::onProgress(jfloat arg0)
+	void BugreportManager_BugreportCallback::onProgress(jfloat arg0) const
 	{
 		callMethod<void>(
 			"onProgress",

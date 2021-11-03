@@ -33,7 +33,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean ArrayList::add(JObject arg0)
+	jboolean ArrayList::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -41,7 +41,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayList::add(jint arg0, JObject arg1)
+	void ArrayList::add(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -50,7 +50,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean ArrayList::addAll(JObject arg0)
+	jboolean ArrayList::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -58,7 +58,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean ArrayList::addAll(jint arg0, JObject arg1)
+	jboolean ArrayList::addAll(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -67,21 +67,21 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void ArrayList::clear()
+	void ArrayList::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject ArrayList::clone()
+	JObject ArrayList::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ArrayList::contains(JObject arg0)
+	jboolean ArrayList::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -89,7 +89,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayList::ensureCapacity(jint arg0)
+	void ArrayList::ensureCapacity(jint arg0) const
 	{
 		callMethod<void>(
 			"ensureCapacity",
@@ -97,7 +97,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayList::equals(JObject arg0)
+	jboolean ArrayList::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -105,7 +105,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayList::forEach(JObject arg0)
+	void ArrayList::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -113,7 +113,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ArrayList::get(jint arg0)
+	JObject ArrayList::get(jint arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -121,14 +121,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jint ArrayList::hashCode()
+	jint ArrayList::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint ArrayList::indexOf(JObject arg0)
+	jint ArrayList::indexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -136,21 +136,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayList::isEmpty()
+	jboolean ArrayList::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject ArrayList::iterator()
+	JObject ArrayList::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint ArrayList::lastIndexOf(JObject arg0)
+	jint ArrayList::lastIndexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -158,14 +158,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject ArrayList::listIterator()
+	JObject ArrayList::listIterator() const
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	JObject ArrayList::listIterator(jint arg0)
+	JObject ArrayList::listIterator(jint arg0) const
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -173,7 +173,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayList::remove(JObject arg0)
+	jboolean ArrayList::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -181,7 +181,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject ArrayList::remove(jint arg0)
+	JObject ArrayList::remove(jint arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -189,7 +189,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayList::removeAll(JObject arg0)
+	jboolean ArrayList::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -197,7 +197,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean ArrayList::removeIf(JObject arg0)
+	jboolean ArrayList::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -205,7 +205,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void ArrayList::replaceAll(JObject arg0)
+	void ArrayList::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -213,7 +213,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean ArrayList::retainAll(JObject arg0)
+	jboolean ArrayList::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -221,7 +221,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ArrayList::set(jint arg0, JObject arg1)
+	JObject ArrayList::set(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"set",
@@ -230,14 +230,14 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jint ArrayList::size()
+	jint ArrayList::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	void ArrayList::sort(JObject arg0)
+	void ArrayList::sort(JObject arg0) const
 	{
 		callMethod<void>(
 			"sort",
@@ -245,14 +245,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ArrayList::spliterator()
+	JObject ArrayList::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject ArrayList::subList(jint arg0, jint arg1)
+	JObject ArrayList::subList(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subList",
@@ -261,14 +261,14 @@ namespace java::util
 			arg1
 		);
 	}
-	JObjectArray ArrayList::toArray()
+	JObjectArray ArrayList::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray ArrayList::toArray(JObjectArray arg0)
+	JObjectArray ArrayList::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -276,7 +276,7 @@ namespace java::util
 			arg0.object<jobjectArray>()
 		);
 	}
-	void ArrayList::trimToSize()
+	void ArrayList::trimToSize() const
 	{
 		callMethod<void>(
 			"trimToSize",

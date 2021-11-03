@@ -133,7 +133,7 @@ namespace android::hardware::fingerprint
 	// Constructors
 	
 	// Methods
-	void FingerprintManager::authenticate(android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, android::os::CancellationSignal arg1, jint arg2, android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, android::os::Handler arg4)
+	void FingerprintManager::authenticate(android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, android::os::CancellationSignal arg1, jint arg2, android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, android::os::Handler arg4) const
 	{
 		callMethod<void>(
 			"authenticate",
@@ -145,14 +145,14 @@ namespace android::hardware::fingerprint
 			arg4.object()
 		);
 	}
-	jboolean FingerprintManager::hasEnrolledFingerprints()
+	jboolean FingerprintManager::hasEnrolledFingerprints() const
 	{
 		return callMethod<jboolean>(
 			"hasEnrolledFingerprints",
 			"()Z"
 		);
 	}
-	jboolean FingerprintManager::isHardwareDetected()
+	jboolean FingerprintManager::isHardwareDetected() const
 	{
 		return callMethod<jboolean>(
 			"isHardwareDetected",

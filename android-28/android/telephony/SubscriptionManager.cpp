@@ -116,7 +116,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	void SubscriptionManager::addOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0)
+	void SubscriptionManager::addOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0) const
 	{
 		callMethod<void>(
 			"addOnSubscriptionsChangedListener",
@@ -124,7 +124,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jboolean SubscriptionManager::canManageSubscription(android::telephony::SubscriptionInfo arg0)
+	jboolean SubscriptionManager::canManageSubscription(android::telephony::SubscriptionInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"canManageSubscription",
@@ -132,14 +132,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	JObject SubscriptionManager::getAccessibleSubscriptionInfoList()
+	JObject SubscriptionManager::getAccessibleSubscriptionInfoList() const
 	{
 		return callObjectMethod(
 			"getAccessibleSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfo(jint arg0)
+	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfo",
@@ -147,21 +147,21 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jint SubscriptionManager::getActiveSubscriptionInfoCount()
+	jint SubscriptionManager::getActiveSubscriptionInfoCount() const
 	{
 		return callMethod<jint>(
 			"getActiveSubscriptionInfoCount",
 			"()I"
 		);
 	}
-	jint SubscriptionManager::getActiveSubscriptionInfoCountMax()
+	jint SubscriptionManager::getActiveSubscriptionInfoCountMax() const
 	{
 		return callMethod<jint>(
 			"getActiveSubscriptionInfoCountMax",
 			"()I"
 		);
 	}
-	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfoForSimSlotIndex(jint arg0)
+	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfoForSimSlotIndex(jint arg0) const
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfoForSimSlotIndex",
@@ -169,14 +169,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JObject SubscriptionManager::getActiveSubscriptionInfoList()
+	JObject SubscriptionManager::getActiveSubscriptionInfoList() const
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SubscriptionManager::getSubscriptionPlans(jint arg0)
+	JObject SubscriptionManager::getSubscriptionPlans(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSubscriptionPlans",
@@ -184,7 +184,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jboolean SubscriptionManager::isNetworkRoaming(jint arg0)
+	jboolean SubscriptionManager::isNetworkRoaming(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNetworkRoaming",
@@ -192,7 +192,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void SubscriptionManager::removeOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0)
+	void SubscriptionManager::removeOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0) const
 	{
 		callMethod<void>(
 			"removeOnSubscriptionsChangedListener",
@@ -200,7 +200,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void SubscriptionManager::setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jlong arg2)
+	void SubscriptionManager::setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"setSubscriptionOverrideCongested",
@@ -210,7 +210,7 @@ namespace android::telephony
 			arg2
 		);
 	}
-	void SubscriptionManager::setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jlong arg2)
+	void SubscriptionManager::setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"setSubscriptionOverrideUnmetered",
@@ -220,7 +220,7 @@ namespace android::telephony
 			arg2
 		);
 	}
-	void SubscriptionManager::setSubscriptionPlans(jint arg0, JObject arg1)
+	void SubscriptionManager::setSubscriptionPlans(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setSubscriptionPlans",

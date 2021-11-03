@@ -28,11 +28,11 @@ namespace android::graphics::text
 		MeasuredText_Builder(android::graphics::text::MeasuredText arg0);
 		
 		// Methods
-		android::graphics::text::MeasuredText_Builder appendReplacementRun(android::graphics::Paint arg0, jint arg1, jfloat arg2);
-		android::graphics::text::MeasuredText_Builder appendStyleRun(android::graphics::Paint arg0, jint arg1, jboolean arg2);
-		android::graphics::text::MeasuredText build();
-		android::graphics::text::MeasuredText_Builder setComputeHyphenation(jboolean arg0);
-		android::graphics::text::MeasuredText_Builder setComputeLayout(jboolean arg0);
+		android::graphics::text::MeasuredText_Builder appendReplacementRun(android::graphics::Paint arg0, jint arg1, jfloat arg2) const;
+		android::graphics::text::MeasuredText_Builder appendStyleRun(android::graphics::Paint arg0, jint arg1, jboolean arg2) const;
+		android::graphics::text::MeasuredText build() const;
+		android::graphics::text::MeasuredText_Builder setComputeHyphenation(jboolean arg0) const;
+		android::graphics::text::MeasuredText_Builder setComputeLayout(jboolean arg0) const;
 	};
 } // namespace android::graphics::text
 

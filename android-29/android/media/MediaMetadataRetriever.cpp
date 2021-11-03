@@ -282,14 +282,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaMetadataRetriever::close()
+	void MediaMetadataRetriever::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JString MediaMetadataRetriever::extractMetadata(jint arg0)
+	JString MediaMetadataRetriever::extractMetadata(jint arg0) const
 	{
 		return callObjectMethod(
 			"extractMetadata",
@@ -297,14 +297,14 @@ namespace android::media
 			arg0
 		);
 	}
-	JByteArray MediaMetadataRetriever::getEmbeddedPicture()
+	JByteArray MediaMetadataRetriever::getEmbeddedPicture() const
 	{
 		return callObjectMethod(
 			"getEmbeddedPicture",
 			"()[B"
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtIndex(jint arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtIndex(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFrameAtIndex",
@@ -312,7 +312,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1) const
 	{
 		return callObjectMethod(
 			"getFrameAtIndex",
@@ -321,14 +321,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime()
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime() const
 	{
 		return callObjectMethod(
 			"getFrameAtTime",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime(jlong arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime(jlong arg0) const
 	{
 		return callObjectMethod(
 			"getFrameAtTime",
@@ -336,7 +336,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime(jlong arg0, jint arg1)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime(jlong arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getFrameAtTime",
@@ -345,7 +345,7 @@ namespace android::media
 			arg1
 		);
 	}
-	JObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1)
+	JObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getFramesAtIndex",
@@ -354,7 +354,7 @@ namespace android::media
 			arg1
 		);
 	}
-	JObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2)
+	JObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2) const
 	{
 		return callObjectMethod(
 			"getFramesAtIndex",
@@ -364,7 +364,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getImageAtIndex(jint arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getImageAtIndex(jint arg0) const
 	{
 		return callObjectMethod(
 			"getImageAtIndex",
@@ -372,7 +372,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getImageAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1)
+	android::graphics::Bitmap MediaMetadataRetriever::getImageAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1) const
 	{
 		return callObjectMethod(
 			"getImageAtIndex",
@@ -381,14 +381,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getPrimaryImage()
+	android::graphics::Bitmap MediaMetadataRetriever::getPrimaryImage() const
 	{
 		return callObjectMethod(
 			"getPrimaryImage",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getPrimaryImage(android::media::MediaMetadataRetriever_BitmapParams arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getPrimaryImage(android::media::MediaMetadataRetriever_BitmapParams arg0) const
 	{
 		return callObjectMethod(
 			"getPrimaryImage",
@@ -396,7 +396,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::graphics::Bitmap MediaMetadataRetriever::getScaledFrameAtTime(jlong arg0, jint arg1, jint arg2, jint arg3)
+	android::graphics::Bitmap MediaMetadataRetriever::getScaledFrameAtTime(jlong arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"getScaledFrameAtTime",
@@ -407,14 +407,14 @@ namespace android::media
 			arg3
 		);
 	}
-	void MediaMetadataRetriever::release()
+	void MediaMetadataRetriever::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(android::media::MediaDataSource arg0)
+	void MediaMetadataRetriever::setDataSource(android::media::MediaDataSource arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -422,7 +422,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(java::io::FileDescriptor arg0)
+	void MediaMetadataRetriever::setDataSource(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -430,7 +430,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(JString arg0)
+	void MediaMetadataRetriever::setDataSource(JString arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -438,7 +438,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(android::content::Context arg0, android::net::Uri arg1)
+	void MediaMetadataRetriever::setDataSource(android::content::Context arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -447,7 +447,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(JString arg0, JObject arg1)
+	void MediaMetadataRetriever::setDataSource(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -456,7 +456,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
+	void MediaMetadataRetriever::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"setDataSource",

@@ -27,14 +27,14 @@ namespace android::view::accessibility
 		) {}
 	
 	// Methods
-	jint AccessibilityNodeInfo_TouchDelegateInfo::describeContents()
+	jint AccessibilityNodeInfo_TouchDelegateInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::Region AccessibilityNodeInfo_TouchDelegateInfo::getRegionAt(jint arg0)
+	android::graphics::Region AccessibilityNodeInfo_TouchDelegateInfo::getRegionAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRegionAt",
@@ -42,14 +42,14 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jint AccessibilityNodeInfo_TouchDelegateInfo::getRegionCount()
+	jint AccessibilityNodeInfo_TouchDelegateInfo::getRegionCount() const
 	{
 		return callMethod<jint>(
 			"getRegionCount",
 			"()I"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo_TouchDelegateInfo::getTargetForRegion(android::graphics::Region arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo_TouchDelegateInfo::getTargetForRegion(android::graphics::Region arg0) const
 	{
 		return callObjectMethod(
 			"getTargetForRegion",
@@ -57,7 +57,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo_TouchDelegateInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AccessibilityNodeInfo_TouchDelegateInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

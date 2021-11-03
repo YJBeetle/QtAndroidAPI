@@ -19,8 +19,8 @@ namespace android::media
 		TimedMetaData(jlong arg0, JByteArray arg1);
 		
 		// Methods
-		JByteArray getMetaData();
-		jlong getTimestamp();
+		JByteArray getMetaData() const;
+		jlong getTimestamp() const;
 	};
 } // namespace android::media
 

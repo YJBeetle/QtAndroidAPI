@@ -20,8 +20,8 @@ namespace javax::crypto::spec
 		GCMParameterSpec(jint arg0, JByteArray arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JByteArray getIV();
-		jint getTLen();
+		JByteArray getIV() const;
+		jint getTLen() const;
 	};
 } // namespace javax::crypto::spec
 

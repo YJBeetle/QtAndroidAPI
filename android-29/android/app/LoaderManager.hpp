@@ -37,11 +37,11 @@ namespace android::app
 		
 		// Methods
 		static void enableDebugLogging(jboolean arg0);
-		void destroyLoader(jint arg0);
-		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
-		android::content::Loader getLoader(jint arg0);
-		android::content::Loader initLoader(jint arg0, android::os::Bundle arg1, JObject arg2);
-		android::content::Loader restartLoader(jint arg0, android::os::Bundle arg1, JObject arg2);
+		void destroyLoader(jint arg0) const;
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const;
+		android::content::Loader getLoader(jint arg0) const;
+		android::content::Loader initLoader(jint arg0, android::os::Bundle arg1, JObject arg2) const;
+		android::content::Loader restartLoader(jint arg0, android::os::Bundle arg1, JObject arg2) const;
 	};
 } // namespace android::app
 

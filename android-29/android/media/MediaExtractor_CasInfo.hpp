@@ -22,9 +22,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JByteArray getPrivateData();
-		android::media::MediaCas_Session getSession();
-		jint getSystemId();
+		JByteArray getPrivateData() const;
+		android::media::MediaCas_Session getSession() const;
+		jint getSystemId() const;
 	};
 } // namespace android::media
 

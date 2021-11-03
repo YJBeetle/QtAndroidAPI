@@ -12,14 +12,14 @@ namespace android::net::wifi
 	// Constructors
 	
 	// Methods
-	void WifiManager_LocalOnlyHotspotReservation::close()
+	void WifiManager_LocalOnlyHotspotReservation::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::net::wifi::WifiConfiguration WifiManager_LocalOnlyHotspotReservation::getWifiConfiguration()
+	android::net::wifi::WifiConfiguration WifiManager_LocalOnlyHotspotReservation::getWifiConfiguration() const
 	{
 		return callObjectMethod(
 			"getWifiConfiguration",

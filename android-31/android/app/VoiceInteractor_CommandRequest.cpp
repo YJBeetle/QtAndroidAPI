@@ -19,7 +19,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void VoiceInteractor_CommandRequest::onCommandResult(jboolean arg0, android::os::Bundle arg1)
+	void VoiceInteractor_CommandRequest::onCommandResult(jboolean arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onCommandResult",

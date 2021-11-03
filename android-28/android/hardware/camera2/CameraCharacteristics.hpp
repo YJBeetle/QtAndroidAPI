@@ -108,13 +108,13 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		JObject get(android::hardware::camera2::CameraCharacteristics_Key arg0);
-		JObject getAvailableCaptureRequestKeys();
-		JObject getAvailableCaptureResultKeys();
-		JObject getAvailablePhysicalCameraRequestKeys();
-		JObject getAvailableSessionKeys();
-		JObject getKeys();
-		JObject getPhysicalCameraIds();
+		JObject get(android::hardware::camera2::CameraCharacteristics_Key arg0) const;
+		JObject getAvailableCaptureRequestKeys() const;
+		JObject getAvailableCaptureResultKeys() const;
+		JObject getAvailablePhysicalCameraRequestKeys() const;
+		JObject getAvailableSessionKeys() const;
+		JObject getKeys() const;
+		JObject getPhysicalCameraIds() const;
 	};
 } // namespace android::hardware::camera2
 

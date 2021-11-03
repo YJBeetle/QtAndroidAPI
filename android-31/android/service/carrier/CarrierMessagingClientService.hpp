@@ -22,7 +22,7 @@ namespace android::service::carrier
 		CarrierMessagingClientService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0) const;
 	};
 } // namespace android::service::carrier
 

@@ -28,10 +28,10 @@ namespace javax::net::ssl
 		X509ExtendedTrustManager();
 		
 		// Methods
-		void checkClientTrusted(JArray arg0, JString arg1, java::net::Socket arg2);
-		void checkClientTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2);
-		void checkServerTrusted(JArray arg0, JString arg1, java::net::Socket arg2);
-		void checkServerTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2);
+		void checkClientTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const;
+		void checkClientTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const;
+		void checkServerTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const;
+		void checkServerTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const;
 	};
 } // namespace javax::net::ssl
 

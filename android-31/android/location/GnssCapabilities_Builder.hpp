@@ -23,10 +23,10 @@ namespace android::location
 		GnssCapabilities_Builder(android::location::GnssCapabilities arg0);
 		
 		// Methods
-		android::location::GnssCapabilities build();
-		android::location::GnssCapabilities_Builder setHasAntennaInfo(jboolean arg0);
-		android::location::GnssCapabilities_Builder setHasMeasurements(jboolean arg0);
-		android::location::GnssCapabilities_Builder setHasNavigationMessages(jboolean arg0);
+		android::location::GnssCapabilities build() const;
+		android::location::GnssCapabilities_Builder setHasAntennaInfo(jboolean arg0) const;
+		android::location::GnssCapabilities_Builder setHasMeasurements(jboolean arg0) const;
+		android::location::GnssCapabilities_Builder setHasNavigationMessages(jboolean arg0) const;
 	};
 } // namespace android::location
 

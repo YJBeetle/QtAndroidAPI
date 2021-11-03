@@ -27,16 +27,16 @@ namespace android::hardware::usb
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getId();
-		android::hardware::usb::UsbInterface getInterface(jint arg0);
-		jint getInterfaceCount();
-		jint getMaxPower();
-		JString getName();
-		jboolean isRemoteWakeup();
-		jboolean isSelfPowered();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getId() const;
+		android::hardware::usb::UsbInterface getInterface(jint arg0) const;
+		jint getInterfaceCount() const;
+		jint getMaxPower() const;
+		JString getName() const;
+		jboolean isRemoteWakeup() const;
+		jboolean isSelfPowered() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::usb
 

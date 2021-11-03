@@ -19,14 +19,14 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::security::spec::ECParameterSpec ECPrivateKeySpec::getParams()
+	java::security::spec::ECParameterSpec ECPrivateKeySpec::getParams() const
 	{
 		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/ECParameterSpec;"
 		);
 	}
-	java::math::BigInteger ECPrivateKeySpec::getS()
+	java::math::BigInteger ECPrivateKeySpec::getS() const
 	{
 		return callObjectMethod(
 			"getS",

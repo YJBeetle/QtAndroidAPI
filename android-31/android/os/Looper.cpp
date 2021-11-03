@@ -61,7 +61,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	void Looper::dump(JObject arg0, JString arg1)
+	void Looper::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -70,42 +70,42 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	android::os::MessageQueue Looper::getQueue()
+	android::os::MessageQueue Looper::getQueue() const
 	{
 		return callObjectMethod(
 			"getQueue",
 			"()Landroid/os/MessageQueue;"
 		);
 	}
-	java::lang::Thread Looper::getThread()
+	java::lang::Thread Looper::getThread() const
 	{
 		return callObjectMethod(
 			"getThread",
 			"()Ljava/lang/Thread;"
 		);
 	}
-	jboolean Looper::isCurrentThread()
+	jboolean Looper::isCurrentThread() const
 	{
 		return callMethod<jboolean>(
 			"isCurrentThread",
 			"()Z"
 		);
 	}
-	void Looper::quit()
+	void Looper::quit() const
 	{
 		callMethod<void>(
 			"quit",
 			"()V"
 		);
 	}
-	void Looper::quitSafely()
+	void Looper::quitSafely() const
 	{
 		callMethod<void>(
 			"quitSafely",
 			"()V"
 		);
 	}
-	void Looper::setMessageLogging(JObject arg0)
+	void Looper::setMessageLogging(JObject arg0) const
 	{
 		callMethod<void>(
 			"setMessageLogging",
@@ -113,7 +113,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JString Looper::toString()
+	JString Looper::toString() const
 	{
 		return callObjectMethod(
 			"toString",

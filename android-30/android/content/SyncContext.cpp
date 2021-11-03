@@ -11,14 +11,14 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	JObject SyncContext::getSyncContextBinder()
+	JObject SyncContext::getSyncContextBinder() const
 	{
 		return callObjectMethod(
 			"getSyncContextBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	void SyncContext::onFinished(android::content::SyncResult arg0)
+	void SyncContext::onFinished(android::content::SyncResult arg0) const
 	{
 		callMethod<void>(
 			"onFinished",

@@ -12,119 +12,119 @@ namespace android::security::keystore
 	// Constructors
 	
 	// Methods
-	JArray KeyProtection::getBlockModes()
+	JArray KeyProtection::getBlockModes() const
 	{
 		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray KeyProtection::getDigests()
+	JArray KeyProtection::getDigests() const
 	{
 		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray KeyProtection::getEncryptionPaddings()
+	JArray KeyProtection::getEncryptionPaddings() const
 	{
 		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	java::util::Date KeyProtection::getKeyValidityForConsumptionEnd()
+	java::util::Date KeyProtection::getKeyValidityForConsumptionEnd() const
 	{
 		return callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date KeyProtection::getKeyValidityForOriginationEnd()
+	java::util::Date KeyProtection::getKeyValidityForOriginationEnd() const
 	{
 		return callObjectMethod(
 			"getKeyValidityForOriginationEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date KeyProtection::getKeyValidityStart()
+	java::util::Date KeyProtection::getKeyValidityStart() const
 	{
 		return callObjectMethod(
 			"getKeyValidityStart",
 			"()Ljava/util/Date;"
 		);
 	}
-	jint KeyProtection::getPurposes()
+	jint KeyProtection::getPurposes() const
 	{
 		return callMethod<jint>(
 			"getPurposes",
 			"()I"
 		);
 	}
-	JArray KeyProtection::getSignaturePaddings()
+	JArray KeyProtection::getSignaturePaddings() const
 	{
 		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint KeyProtection::getUserAuthenticationValidityDurationSeconds()
+	jint KeyProtection::getUserAuthenticationValidityDurationSeconds() const
 	{
 		return callMethod<jint>(
 			"getUserAuthenticationValidityDurationSeconds",
 			"()I"
 		);
 	}
-	jboolean KeyProtection::isDigestsSpecified()
+	jboolean KeyProtection::isDigestsSpecified() const
 	{
 		return callMethod<jboolean>(
 			"isDigestsSpecified",
 			"()Z"
 		);
 	}
-	jboolean KeyProtection::isInvalidatedByBiometricEnrollment()
+	jboolean KeyProtection::isInvalidatedByBiometricEnrollment() const
 	{
 		return callMethod<jboolean>(
 			"isInvalidatedByBiometricEnrollment",
 			"()Z"
 		);
 	}
-	jboolean KeyProtection::isRandomizedEncryptionRequired()
+	jboolean KeyProtection::isRandomizedEncryptionRequired() const
 	{
 		return callMethod<jboolean>(
 			"isRandomizedEncryptionRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyProtection::isUnlockedDeviceRequired()
+	jboolean KeyProtection::isUnlockedDeviceRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUnlockedDeviceRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyProtection::isUserAuthenticationRequired()
+	jboolean KeyProtection::isUserAuthenticationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserAuthenticationRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyProtection::isUserAuthenticationValidWhileOnBody()
+	jboolean KeyProtection::isUserAuthenticationValidWhileOnBody() const
 	{
 		return callMethod<jboolean>(
 			"isUserAuthenticationValidWhileOnBody",
 			"()Z"
 		);
 	}
-	jboolean KeyProtection::isUserConfirmationRequired()
+	jboolean KeyProtection::isUserConfirmationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserConfirmationRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyProtection::isUserPresenceRequired()
+	jboolean KeyProtection::isUserPresenceRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserPresenceRequired",

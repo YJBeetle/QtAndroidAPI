@@ -51,7 +51,7 @@ namespace android::media
 			arg0
 		);
 	}
-	JString MediaCodecList::findDecoderForFormat(android::media::MediaFormat arg0)
+	JString MediaCodecList::findDecoderForFormat(android::media::MediaFormat arg0) const
 	{
 		return callObjectMethod(
 			"findDecoderForFormat",
@@ -59,7 +59,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JString MediaCodecList::findEncoderForFormat(android::media::MediaFormat arg0)
+	JString MediaCodecList::findEncoderForFormat(android::media::MediaFormat arg0) const
 	{
 		return callObjectMethod(
 			"findEncoderForFormat",
@@ -67,7 +67,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JArray MediaCodecList::getCodecInfos()
+	JArray MediaCodecList::getCodecInfos() const
 	{
 		return callObjectMethod(
 			"getCodecInfos",

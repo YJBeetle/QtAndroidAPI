@@ -23,11 +23,11 @@ namespace android::hardware::camera2
 		CameraOfflineSession_CameraOfflineSessionCallback();
 		
 		// Methods
-		void onClosed(android::hardware::camera2::CameraOfflineSession arg0);
-		void onError(android::hardware::camera2::CameraOfflineSession arg0, jint arg1);
-		void onIdle(android::hardware::camera2::CameraOfflineSession arg0);
-		void onReady(android::hardware::camera2::CameraOfflineSession arg0);
-		void onSwitchFailed(android::hardware::camera2::CameraOfflineSession arg0);
+		void onClosed(android::hardware::camera2::CameraOfflineSession arg0) const;
+		void onError(android::hardware::camera2::CameraOfflineSession arg0, jint arg1) const;
+		void onIdle(android::hardware::camera2::CameraOfflineSession arg0) const;
+		void onReady(android::hardware::camera2::CameraOfflineSession arg0) const;
+		void onSwitchFailed(android::hardware::camera2::CameraOfflineSession arg0) const;
 	};
 } // namespace android::hardware::camera2
 

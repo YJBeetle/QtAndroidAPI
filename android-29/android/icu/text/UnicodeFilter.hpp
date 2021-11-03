@@ -18,8 +18,8 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		jboolean contains(jint arg0);
-		jint matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3);
+		jboolean contains(jint arg0) const;
+		jint matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3) const;
 	};
 } // namespace android::icu::text
 

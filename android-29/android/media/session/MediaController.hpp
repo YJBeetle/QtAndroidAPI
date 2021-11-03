@@ -68,26 +68,26 @@ namespace android::media::session
 		MediaController(android::content::Context arg0, android::media::session::MediaSession_Token arg1);
 		
 		// Methods
-		void adjustVolume(jint arg0, jint arg1);
-		jboolean dispatchMediaButtonEvent(android::view::KeyEvent arg0);
-		android::os::Bundle getExtras();
-		jlong getFlags();
-		android::media::MediaMetadata getMetadata();
-		JString getPackageName();
-		android::media::session::MediaController_PlaybackInfo getPlaybackInfo();
-		android::media::session::PlaybackState getPlaybackState();
-		JObject getQueue();
-		JString getQueueTitle();
-		jint getRatingType();
-		android::app::PendingIntent getSessionActivity();
-		android::os::Bundle getSessionInfo();
-		android::media::session::MediaSession_Token getSessionToken();
-		android::media::session::MediaController_TransportControls getTransportControls();
-		void registerCallback(android::media::session::MediaController_Callback arg0);
-		void registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1);
-		void sendCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
-		void setVolumeTo(jint arg0, jint arg1);
-		void unregisterCallback(android::media::session::MediaController_Callback arg0);
+		void adjustVolume(jint arg0, jint arg1) const;
+		jboolean dispatchMediaButtonEvent(android::view::KeyEvent arg0) const;
+		android::os::Bundle getExtras() const;
+		jlong getFlags() const;
+		android::media::MediaMetadata getMetadata() const;
+		JString getPackageName() const;
+		android::media::session::MediaController_PlaybackInfo getPlaybackInfo() const;
+		android::media::session::PlaybackState getPlaybackState() const;
+		JObject getQueue() const;
+		JString getQueueTitle() const;
+		jint getRatingType() const;
+		android::app::PendingIntent getSessionActivity() const;
+		android::os::Bundle getSessionInfo() const;
+		android::media::session::MediaSession_Token getSessionToken() const;
+		android::media::session::MediaController_TransportControls getTransportControls() const;
+		void registerCallback(android::media::session::MediaController_Callback arg0) const;
+		void registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1) const;
+		void sendCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2) const;
+		void setVolumeTo(jint arg0, jint arg1) const;
+		void unregisterCallback(android::media::session::MediaController_Callback arg0) const;
 	};
 } // namespace android::media::session
 

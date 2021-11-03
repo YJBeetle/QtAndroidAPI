@@ -46,30 +46,30 @@ namespace android::widget
 		DatePicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void autofill(android::view::autofill::AutofillValue arg0);
-		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
-		JString getAccessibilityClassName();
-		jint getAutofillType();
-		android::view::autofill::AutofillValue getAutofillValue();
-		android::widget::CalendarView getCalendarView();
-		jboolean getCalendarViewShown();
-		jint getDayOfMonth();
-		jint getFirstDayOfWeek();
-		jlong getMaxDate();
-		jlong getMinDate();
-		jint getMonth();
-		jboolean getSpinnersShown();
-		jint getYear();
-		void init(jint arg0, jint arg1, jint arg2, JObject arg3);
-		jboolean isEnabled();
-		void setCalendarViewShown(jboolean arg0);
-		void setEnabled(jboolean arg0);
-		void setFirstDayOfWeek(jint arg0);
-		void setMaxDate(jlong arg0);
-		void setMinDate(jlong arg0);
-		void setOnDateChangedListener(JObject arg0);
-		void setSpinnersShown(jboolean arg0);
-		void updateDate(jint arg0, jint arg1, jint arg2);
+		void autofill(android::view::autofill::AutofillValue arg0) const;
+		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const;
+		JString getAccessibilityClassName() const;
+		jint getAutofillType() const;
+		android::view::autofill::AutofillValue getAutofillValue() const;
+		android::widget::CalendarView getCalendarView() const;
+		jboolean getCalendarViewShown() const;
+		jint getDayOfMonth() const;
+		jint getFirstDayOfWeek() const;
+		jlong getMaxDate() const;
+		jlong getMinDate() const;
+		jint getMonth() const;
+		jboolean getSpinnersShown() const;
+		jint getYear() const;
+		void init(jint arg0, jint arg1, jint arg2, JObject arg3) const;
+		jboolean isEnabled() const;
+		void setCalendarViewShown(jboolean arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setFirstDayOfWeek(jint arg0) const;
+		void setMaxDate(jlong arg0) const;
+		void setMinDate(jlong arg0) const;
+		void setOnDateChangedListener(JObject arg0) const;
+		void setSpinnersShown(jboolean arg0) const;
+		void updateDate(jint arg0, jint arg1, jint arg2) const;
 	};
 } // namespace android::widget
 

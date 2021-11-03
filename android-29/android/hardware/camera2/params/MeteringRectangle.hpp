@@ -37,18 +37,18 @@ namespace android::hardware::camera2::params
 		MeteringRectangle(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jboolean equals(android::hardware::camera2::params::MeteringRectangle arg0);
-		jboolean equals(JObject arg0);
-		jint getHeight();
-		jint getMeteringWeight();
-		android::graphics::Rect getRect();
-		android::util::Size getSize();
-		android::graphics::Point getUpperLeftPoint();
-		jint getWidth();
-		jint getX();
-		jint getY();
-		jint hashCode();
-		JString toString();
+		jboolean equals(android::hardware::camera2::params::MeteringRectangle arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint getHeight() const;
+		jint getMeteringWeight() const;
+		android::graphics::Rect getRect() const;
+		android::util::Size getSize() const;
+		android::graphics::Point getUpperLeftPoint() const;
+		jint getWidth() const;
+		jint getX() const;
+		jint getY() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

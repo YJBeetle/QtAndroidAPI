@@ -30,17 +30,17 @@ namespace java::sql
 		// Methods
 		static java::sql::Time valueOf(JString arg0);
 		static java::sql::Time valueOf(java::time::LocalTime arg0);
-		jint getDate();
-		jint getDay();
-		jint getMonth();
-		jint getYear();
-		void setDate(jint arg0);
-		void setMonth(jint arg0);
-		void setTime(jlong arg0);
-		void setYear(jint arg0);
-		java::time::Instant toInstant();
-		java::time::LocalTime toLocalTime();
-		JString toString();
+		jint getDate() const;
+		jint getDay() const;
+		jint getMonth() const;
+		jint getYear() const;
+		void setDate(jint arg0) const;
+		void setMonth(jint arg0) const;
+		void setTime(jlong arg0) const;
+		void setYear(jint arg0) const;
+		java::time::Instant toInstant() const;
+		java::time::LocalTime toLocalTime() const;
+		JString toString() const;
 	};
 } // namespace java::sql
 

@@ -33,16 +33,16 @@ namespace android::app
 		NativeActivity();
 		
 		// Methods
-		void onConfigurationChanged(android::content::res::Configuration arg0);
-		void onGlobalLayout();
-		void onInputQueueCreated(android::view::InputQueue arg0);
-		void onInputQueueDestroyed(android::view::InputQueue arg0);
-		void onLowMemory();
-		void onWindowFocusChanged(jboolean arg0);
-		void surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3);
-		void surfaceCreated(JObject arg0);
-		void surfaceDestroyed(JObject arg0);
-		void surfaceRedrawNeeded(JObject arg0);
+		void onConfigurationChanged(android::content::res::Configuration arg0) const;
+		void onGlobalLayout() const;
+		void onInputQueueCreated(android::view::InputQueue arg0) const;
+		void onInputQueueDestroyed(android::view::InputQueue arg0) const;
+		void onLowMemory() const;
+		void onWindowFocusChanged(jboolean arg0) const;
+		void surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3) const;
+		void surfaceCreated(JObject arg0) const;
+		void surfaceDestroyed(JObject arg0) const;
+		void surfaceRedrawNeeded(JObject arg0) const;
 	};
 } // namespace android::app
 

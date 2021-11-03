@@ -25,14 +25,14 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	JByteArray PKCS8EncodedKeySpec::getEncoded()
+	JByteArray PKCS8EncodedKeySpec::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JString PKCS8EncodedKeySpec::getFormat()
+	JString PKCS8EncodedKeySpec::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",

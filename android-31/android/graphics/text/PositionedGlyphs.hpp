@@ -23,19 +23,19 @@ namespace android::graphics::text
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jfloat getAdvance();
-		jfloat getAscent();
-		jfloat getDescent();
-		android::graphics::fonts::Font getFont(jint arg0);
-		jint getGlyphId(jint arg0);
-		jfloat getGlyphX(jint arg0);
-		jfloat getGlyphY(jint arg0);
-		jfloat getOffsetX();
-		jfloat getOffsetY();
-		jint glyphCount();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jfloat getAdvance() const;
+		jfloat getAscent() const;
+		jfloat getDescent() const;
+		android::graphics::fonts::Font getFont(jint arg0) const;
+		jint getGlyphId(jint arg0) const;
+		jfloat getGlyphX(jint arg0) const;
+		jfloat getGlyphY(jint arg0) const;
+		jfloat getOffsetX() const;
+		jfloat getOffsetY() const;
+		jint glyphCount() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::graphics::text
 

@@ -25,8 +25,8 @@ namespace android::view::displayhash
 		// Constructors
 		
 		// Methods
-		JObject getSupportedHashAlgorithms();
-		android::view::displayhash::VerifiedDisplayHash verifyDisplayHash(android::view::displayhash::DisplayHash arg0);
+		JObject getSupportedHashAlgorithms() const;
+		android::view::displayhash::VerifiedDisplayHash verifyDisplayHash(android::view::displayhash::DisplayHash arg0) const;
 	};
 } // namespace android::view::displayhash
 

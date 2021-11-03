@@ -35,15 +35,15 @@ namespace android::view::textclassifier
 		TextClassification_Builder();
 		
 		// Methods
-		android::view::textclassifier::TextClassification_Builder addAction(android::app::RemoteAction arg0);
-		android::view::textclassifier::TextClassification build();
-		android::view::textclassifier::TextClassification_Builder setEntityType(JString arg0, jfloat arg1);
-		android::view::textclassifier::TextClassification_Builder setIcon(android::graphics::drawable::Drawable arg0);
-		android::view::textclassifier::TextClassification_Builder setId(JString arg0);
-		android::view::textclassifier::TextClassification_Builder setIntent(android::content::Intent arg0);
-		android::view::textclassifier::TextClassification_Builder setLabel(JString arg0);
-		android::view::textclassifier::TextClassification_Builder setOnClickListener(JObject arg0);
-		android::view::textclassifier::TextClassification_Builder setText(JString arg0);
+		android::view::textclassifier::TextClassification_Builder addAction(android::app::RemoteAction arg0) const;
+		android::view::textclassifier::TextClassification build() const;
+		android::view::textclassifier::TextClassification_Builder setEntityType(JString arg0, jfloat arg1) const;
+		android::view::textclassifier::TextClassification_Builder setIcon(android::graphics::drawable::Drawable arg0) const;
+		android::view::textclassifier::TextClassification_Builder setId(JString arg0) const;
+		android::view::textclassifier::TextClassification_Builder setIntent(android::content::Intent arg0) const;
+		android::view::textclassifier::TextClassification_Builder setLabel(JString arg0) const;
+		android::view::textclassifier::TextClassification_Builder setOnClickListener(JObject arg0) const;
+		android::view::textclassifier::TextClassification_Builder setText(JString arg0) const;
 	};
 } // namespace android::view::textclassifier
 

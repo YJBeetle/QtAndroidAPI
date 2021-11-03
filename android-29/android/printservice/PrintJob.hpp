@@ -32,30 +32,30 @@ namespace android::printservice
 		// Constructors
 		
 		// Methods
-		jboolean block(JString arg0);
-		jboolean cancel();
-		jboolean complete();
-		jboolean equals(JObject arg0);
-		jboolean fail(JString arg0);
-		jint getAdvancedIntOption(JString arg0);
-		JString getAdvancedStringOption(JString arg0);
-		android::printservice::PrintDocument getDocument();
-		android::print::PrintJobId getId();
-		android::print::PrintJobInfo getInfo();
-		JString getTag();
-		jboolean hasAdvancedOption(JString arg0);
-		jint hashCode();
-		jboolean isBlocked();
-		jboolean isCancelled();
-		jboolean isCompleted();
-		jboolean isFailed();
-		jboolean isQueued();
-		jboolean isStarted();
-		void setProgress(jfloat arg0);
-		void setStatus(jint arg0);
-		void setStatus(JString arg0);
-		jboolean setTag(JString arg0);
-		jboolean start();
+		jboolean block(JString arg0) const;
+		jboolean cancel() const;
+		jboolean complete() const;
+		jboolean equals(JObject arg0) const;
+		jboolean fail(JString arg0) const;
+		jint getAdvancedIntOption(JString arg0) const;
+		JString getAdvancedStringOption(JString arg0) const;
+		android::printservice::PrintDocument getDocument() const;
+		android::print::PrintJobId getId() const;
+		android::print::PrintJobInfo getInfo() const;
+		JString getTag() const;
+		jboolean hasAdvancedOption(JString arg0) const;
+		jint hashCode() const;
+		jboolean isBlocked() const;
+		jboolean isCancelled() const;
+		jboolean isCompleted() const;
+		jboolean isFailed() const;
+		jboolean isQueued() const;
+		jboolean isStarted() const;
+		void setProgress(jfloat arg0) const;
+		void setStatus(jint arg0) const;
+		void setStatus(JString arg0) const;
+		jboolean setTag(JString arg0) const;
+		jboolean start() const;
 	};
 } // namespace android::printservice
 

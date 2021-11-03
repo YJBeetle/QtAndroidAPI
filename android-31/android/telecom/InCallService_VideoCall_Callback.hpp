@@ -26,13 +26,13 @@ namespace android::telecom
 		InCallService_VideoCall_Callback();
 		
 		// Methods
-		void onCallDataUsageChanged(jlong arg0);
-		void onCallSessionEvent(jint arg0);
-		void onCameraCapabilitiesChanged(android::telecom::VideoProfile_CameraCapabilities arg0);
-		void onPeerDimensionsChanged(jint arg0, jint arg1);
-		void onSessionModifyRequestReceived(android::telecom::VideoProfile arg0);
-		void onSessionModifyResponseReceived(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2);
-		void onVideoQualityChanged(jint arg0);
+		void onCallDataUsageChanged(jlong arg0) const;
+		void onCallSessionEvent(jint arg0) const;
+		void onCameraCapabilitiesChanged(android::telecom::VideoProfile_CameraCapabilities arg0) const;
+		void onPeerDimensionsChanged(jint arg0, jint arg1) const;
+		void onSessionModifyRequestReceived(android::telecom::VideoProfile arg0) const;
+		void onSessionModifyResponseReceived(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2) const;
+		void onVideoQualityChanged(jint arg0) const;
 	};
 } // namespace android::telecom
 

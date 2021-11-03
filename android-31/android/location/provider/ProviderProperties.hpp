@@ -29,20 +29,20 @@ namespace android::location::provider
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAccuracy();
-		jint getPowerUsage();
-		jboolean hasAltitudeSupport();
-		jboolean hasBearingSupport();
-		jboolean hasCellRequirement();
-		jboolean hasMonetaryCost();
-		jboolean hasNetworkRequirement();
-		jboolean hasSatelliteRequirement();
-		jboolean hasSpeedSupport();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAccuracy() const;
+		jint getPowerUsage() const;
+		jboolean hasAltitudeSupport() const;
+		jboolean hasBearingSupport() const;
+		jboolean hasCellRequirement() const;
+		jboolean hasMonetaryCost() const;
+		jboolean hasNetworkRequirement() const;
+		jboolean hasSatelliteRequirement() const;
+		jboolean hasSpeedSupport() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location::provider
 

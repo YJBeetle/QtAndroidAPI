@@ -22,7 +22,7 @@ namespace java::io
 			"()Ljava/io/Writer;"
 		);
 	}
-	java::io::Writer Writer::append(jchar arg0)
+	java::io::Writer Writer::append(jchar arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -30,7 +30,7 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::Writer Writer::append(JString arg0)
+	java::io::Writer Writer::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -38,7 +38,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	java::io::Writer Writer::append(JString arg0, jint arg1, jint arg2)
+	java::io::Writer Writer::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -48,21 +48,21 @@ namespace java::io
 			arg2
 		);
 	}
-	void Writer::close()
+	void Writer::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Writer::flush()
+	void Writer::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void Writer::write(JCharArray arg0)
+	void Writer::write(JCharArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -70,7 +70,7 @@ namespace java::io
 			arg0.object<jcharArray>()
 		);
 	}
-	void Writer::write(jint arg0)
+	void Writer::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -78,7 +78,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void Writer::write(JString arg0)
+	void Writer::write(JString arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -86,7 +86,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void Writer::write(JCharArray arg0, jint arg1, jint arg2)
+	void Writer::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -96,7 +96,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void Writer::write(JString arg0, jint arg1, jint arg2)
+	void Writer::write(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

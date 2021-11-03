@@ -16,9 +16,9 @@ namespace android::hardware::lights
 		// Constructors
 		
 		// Methods
-		JObject getLightStates();
-		JObject getLights();
-		JObject getLightsAndStates();
+		JObject getLightStates() const;
+		JObject getLights() const;
+		JObject getLightsAndStates() const;
 	};
 } // namespace android::hardware::lights
 

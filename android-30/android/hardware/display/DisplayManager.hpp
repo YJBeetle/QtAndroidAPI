@@ -45,13 +45,13 @@ namespace android::hardware::display
 		// Constructors
 		
 		// Methods
-		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5);
-		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7);
-		android::view::Display getDisplay(jint arg0);
-		JArray getDisplays();
-		JArray getDisplays(JString arg0);
-		void registerDisplayListener(JObject arg0, android::os::Handler arg1);
-		void unregisterDisplayListener(JObject arg0);
+		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5) const;
+		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7) const;
+		android::view::Display getDisplay(jint arg0) const;
+		JArray getDisplays() const;
+		JArray getDisplays(JString arg0) const;
+		void registerDisplayListener(JObject arg0, android::os::Handler arg1) const;
+		void unregisterDisplayListener(JObject arg0) const;
 	};
 } // namespace android::hardware::display
 

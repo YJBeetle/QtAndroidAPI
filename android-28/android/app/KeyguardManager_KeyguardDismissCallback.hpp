@@ -17,9 +17,9 @@ namespace android::app
 		KeyguardManager_KeyguardDismissCallback();
 		
 		// Methods
-		void onDismissCancelled();
-		void onDismissError();
-		void onDismissSucceeded();
+		void onDismissCancelled() const;
+		void onDismissError() const;
+		void onDismissSucceeded() const;
 	};
 } // namespace android::app
 

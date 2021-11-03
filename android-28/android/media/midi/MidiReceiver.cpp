@@ -22,28 +22,28 @@ namespace android::media::midi
 		) {}
 	
 	// Methods
-	void MidiReceiver::flush()
+	void MidiReceiver::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	jint MidiReceiver::getMaxMessageSize()
+	jint MidiReceiver::getMaxMessageSize() const
 	{
 		return callMethod<jint>(
 			"getMaxMessageSize",
 			"()I"
 		);
 	}
-	void MidiReceiver::onFlush()
+	void MidiReceiver::onFlush() const
 	{
 		callMethod<void>(
 			"onFlush",
 			"()V"
 		);
 	}
-	void MidiReceiver::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3)
+	void MidiReceiver::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"onSend",
@@ -54,7 +54,7 @@ namespace android::media::midi
 			arg3
 		);
 	}
-	void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2)
+	void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"send",
@@ -64,7 +64,7 @@ namespace android::media::midi
 			arg2
 		);
 	}
-	void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2, jlong arg3)
+	void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"send",

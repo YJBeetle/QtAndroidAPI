@@ -18,11 +18,11 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jboolean add(JObject arg0);
-		jboolean addAll(JObject arg0);
-		void clear();
-		JObject element();
-		JObject remove();
+		jboolean add(JObject arg0) const;
+		jboolean addAll(JObject arg0) const;
+		void clear() const;
+		JObject element() const;
+		JObject remove() const;
 	};
 } // namespace java::util
 

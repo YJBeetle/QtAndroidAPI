@@ -19,21 +19,21 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	java::time::MonthDay FreezePeriod::getEnd()
+	java::time::MonthDay FreezePeriod::getEnd() const
 	{
 		return callObjectMethod(
 			"getEnd",
 			"()Ljava/time/MonthDay;"
 		);
 	}
-	java::time::MonthDay FreezePeriod::getStart()
+	java::time::MonthDay FreezePeriod::getStart() const
 	{
 		return callObjectMethod(
 			"getStart",
 			"()Ljava/time/MonthDay;"
 		);
 	}
-	JString FreezePeriod::toString()
+	JString FreezePeriod::toString() const
 	{
 		return callObjectMethod(
 			"toString",

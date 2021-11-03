@@ -35,28 +35,28 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getAnnotatedReceiverType();
-		JObject getAnnotatedReturnType();
-		JObject getAnnotation(JClass arg0);
-		JArray getDeclaredAnnotations();
-		JClass getDeclaringClass();
-		JArray getExceptionTypes();
-		JArray getGenericExceptionTypes();
-		JArray getGenericParameterTypes();
-		jint getModifiers();
-		JString getName();
-		JArray getParameterAnnotations();
-		jint getParameterCount();
-		JArray getParameterTypes();
-		JArray getTypeParameters();
-		jint hashCode();
-		jboolean isSynthetic();
-		jboolean isVarArgs();
-		JObject newInstance(JObjectArray arg0);
-		void setAccessible(jboolean arg0);
-		JString toGenericString();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getAnnotatedReceiverType() const;
+		JObject getAnnotatedReturnType() const;
+		JObject getAnnotation(JClass arg0) const;
+		JArray getDeclaredAnnotations() const;
+		JClass getDeclaringClass() const;
+		JArray getExceptionTypes() const;
+		JArray getGenericExceptionTypes() const;
+		JArray getGenericParameterTypes() const;
+		jint getModifiers() const;
+		JString getName() const;
+		JArray getParameterAnnotations() const;
+		jint getParameterCount() const;
+		JArray getParameterTypes() const;
+		JArray getTypeParameters() const;
+		jint hashCode() const;
+		jboolean isSynthetic() const;
+		jboolean isVarArgs() const;
+		JObject newInstance(JObjectArray arg0) const;
+		void setAccessible(jboolean arg0) const;
+		JString toGenericString() const;
+		JString toString() const;
 	};
 } // namespace java::lang::reflect
 

@@ -23,10 +23,10 @@ namespace android::text::style
 		TtsSpan_Builder(JString arg0);
 		
 		// Methods
-		android::text::style::TtsSpan build();
-		android::text::style::TtsSpan_Builder setIntArgument(JString arg0, jint arg1);
-		android::text::style::TtsSpan_Builder setLongArgument(JString arg0, jlong arg1);
-		android::text::style::TtsSpan_Builder setStringArgument(JString arg0, JString arg1);
+		android::text::style::TtsSpan build() const;
+		android::text::style::TtsSpan_Builder setIntArgument(JString arg0, jint arg1) const;
+		android::text::style::TtsSpan_Builder setLongArgument(JString arg0, jlong arg1) const;
+		android::text::style::TtsSpan_Builder setStringArgument(JString arg0, JString arg1) const;
 	};
 } // namespace android::text::style
 

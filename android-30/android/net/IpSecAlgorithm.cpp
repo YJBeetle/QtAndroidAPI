@@ -92,42 +92,42 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jint IpSecAlgorithm::describeContents()
+	jint IpSecAlgorithm::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JByteArray IpSecAlgorithm::getKey()
+	JByteArray IpSecAlgorithm::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()[B"
 		);
 	}
-	JString IpSecAlgorithm::getName()
+	JString IpSecAlgorithm::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint IpSecAlgorithm::getTruncationLengthBits()
+	jint IpSecAlgorithm::getTruncationLengthBits() const
 	{
 		return callMethod<jint>(
 			"getTruncationLengthBits",
 			"()I"
 		);
 	}
-	JString IpSecAlgorithm::toString()
+	JString IpSecAlgorithm::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void IpSecAlgorithm::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void IpSecAlgorithm::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

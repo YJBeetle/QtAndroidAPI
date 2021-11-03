@@ -29,9 +29,9 @@ namespace android::accessibilityservice
 		// Constructors
 		
 		// Methods
-		jboolean isGestureDetectionAvailable();
-		void registerFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0, android::os::Handler arg1);
-		void unregisterFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0);
+		jboolean isGestureDetectionAvailable() const;
+		void registerFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0, android::os::Handler arg1) const;
+		void unregisterFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0) const;
 	};
 } // namespace android::accessibilityservice
 

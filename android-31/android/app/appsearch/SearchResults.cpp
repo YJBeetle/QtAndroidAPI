@@ -10,14 +10,14 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	void SearchResults::close()
+	void SearchResults::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void SearchResults::getNextPage(JObject arg0, JObject arg1)
+	void SearchResults::getNextPage(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getNextPage",

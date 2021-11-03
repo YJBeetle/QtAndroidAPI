@@ -32,11 +32,11 @@ namespace android::nfc::cardemulation
 		HostApduService();
 		
 		// Methods
-		void notifyUnhandled();
-		JObject onBind(android::content::Intent arg0);
-		void onDeactivated(jint arg0);
-		JByteArray processCommandApdu(JByteArray arg0, android::os::Bundle arg1);
-		void sendResponseApdu(JByteArray arg0);
+		void notifyUnhandled() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onDeactivated(jint arg0) const;
+		JByteArray processCommandApdu(JByteArray arg0, android::os::Bundle arg1) const;
+		void sendResponseApdu(JByteArray arg0) const;
 	};
 } // namespace android::nfc::cardemulation
 

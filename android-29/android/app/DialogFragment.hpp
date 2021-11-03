@@ -56,30 +56,30 @@ namespace android::app
 		DialogFragment();
 		
 		// Methods
-		void dismiss();
-		void dismissAllowingStateLoss();
-		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
-		android::app::Dialog getDialog();
-		jboolean getShowsDialog();
-		jint getTheme();
-		jboolean isCancelable();
-		void onActivityCreated(android::os::Bundle arg0);
-		void onAttach(android::content::Context arg0);
-		void onCancel(JObject arg0);
-		void onCreate(android::os::Bundle arg0);
-		android::app::Dialog onCreateDialog(android::os::Bundle arg0);
-		void onDestroyView();
-		void onDetach();
-		void onDismiss(JObject arg0);
-		android::view::LayoutInflater onGetLayoutInflater(android::os::Bundle arg0);
-		void onSaveInstanceState(android::os::Bundle arg0);
-		void onStart();
-		void onStop();
-		void setCancelable(jboolean arg0);
-		void setShowsDialog(jboolean arg0);
-		void setStyle(jint arg0, jint arg1);
-		jint show(android::app::FragmentTransaction arg0, JString arg1);
-		void show(android::app::FragmentManager arg0, JString arg1);
+		void dismiss() const;
+		void dismissAllowingStateLoss() const;
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const;
+		android::app::Dialog getDialog() const;
+		jboolean getShowsDialog() const;
+		jint getTheme() const;
+		jboolean isCancelable() const;
+		void onActivityCreated(android::os::Bundle arg0) const;
+		void onAttach(android::content::Context arg0) const;
+		void onCancel(JObject arg0) const;
+		void onCreate(android::os::Bundle arg0) const;
+		android::app::Dialog onCreateDialog(android::os::Bundle arg0) const;
+		void onDestroyView() const;
+		void onDetach() const;
+		void onDismiss(JObject arg0) const;
+		android::view::LayoutInflater onGetLayoutInflater(android::os::Bundle arg0) const;
+		void onSaveInstanceState(android::os::Bundle arg0) const;
+		void onStart() const;
+		void onStop() const;
+		void setCancelable(jboolean arg0) const;
+		void setShowsDialog(jboolean arg0) const;
+		void setStyle(jint arg0, jint arg1) const;
+		jint show(android::app::FragmentTransaction arg0, JString arg1) const;
+		void show(android::app::FragmentManager arg0, JString arg1) const;
 	};
 } // namespace android::app
 

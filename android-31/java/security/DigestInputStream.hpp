@@ -28,12 +28,12 @@ namespace java::security
 		DigestInputStream(java::io::InputStream arg0, java::security::MessageDigest arg1);
 		
 		// Methods
-		java::security::MessageDigest getMessageDigest();
-		void on(jboolean arg0);
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		void setMessageDigest(java::security::MessageDigest arg0);
-		JString toString();
+		java::security::MessageDigest getMessageDigest() const;
+		void on(jboolean arg0) const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		void setMessageDigest(java::security::MessageDigest arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security
 

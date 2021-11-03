@@ -33,7 +33,7 @@ namespace java::security
 		SignatureSpi();
 		
 		// Methods
-		JObject clone();
+		JObject clone() const;
 	};
 } // namespace java::security
 

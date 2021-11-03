@@ -21,7 +21,7 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		jint validOps();
+		jint validOps() const;
 	};
 } // namespace java::nio::channels
 

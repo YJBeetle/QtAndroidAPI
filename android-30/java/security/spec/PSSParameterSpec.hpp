@@ -22,12 +22,12 @@ namespace java::security::spec
 		PSSParameterSpec(JString arg0, JString arg1, JObject arg2, jint arg3, jint arg4);
 		
 		// Methods
-		JString getDigestAlgorithm();
-		JString getMGFAlgorithm();
-		JObject getMGFParameters();
-		jint getSaltLength();
-		jint getTrailerField();
-		JString toString();
+		JString getDigestAlgorithm() const;
+		JString getMGFAlgorithm() const;
+		JObject getMGFParameters() const;
+		jint getSaltLength() const;
+		jint getTrailerField() const;
+		JString toString() const;
 	};
 } // namespace java::security::spec
 

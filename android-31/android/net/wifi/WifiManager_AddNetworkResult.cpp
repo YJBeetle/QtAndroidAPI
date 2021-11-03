@@ -115,14 +115,14 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	jint WifiManager_AddNetworkResult::describeContents()
+	jint WifiManager_AddNetworkResult::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void WifiManager_AddNetworkResult::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiManager_AddNetworkResult::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

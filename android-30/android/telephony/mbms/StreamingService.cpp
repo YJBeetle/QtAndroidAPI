@@ -96,21 +96,21 @@ namespace android::telephony::mbms
 	// Constructors
 	
 	// Methods
-	void StreamingService::close()
+	void StreamingService::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::telephony::mbms::StreamingServiceInfo StreamingService::getInfo()
+	android::telephony::mbms::StreamingServiceInfo StreamingService::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Landroid/telephony/mbms/StreamingServiceInfo;"
 		);
 	}
-	android::net::Uri StreamingService::getPlaybackUri()
+	android::net::Uri StreamingService::getPlaybackUri() const
 	{
 		return callObjectMethod(
 			"getPlaybackUri",

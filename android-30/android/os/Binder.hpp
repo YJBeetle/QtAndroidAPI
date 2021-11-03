@@ -49,16 +49,16 @@ namespace android::os
 		static void restoreCallingIdentity(jlong arg0);
 		static void restoreCallingWorkSource(jlong arg0);
 		static jlong setCallingWorkSourceUid(jint arg0);
-		void attachInterface(JObject arg0, JString arg1);
-		void dump(java::io::FileDescriptor arg0, JArray arg1);
-		void dumpAsync(java::io::FileDescriptor arg0, JArray arg1);
-		JString getInterfaceDescriptor();
-		jboolean isBinderAlive();
-		void linkToDeath(JObject arg0, jint arg1);
-		jboolean pingBinder();
-		JObject queryLocalInterface(JString arg0);
-		jboolean transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3);
-		jboolean unlinkToDeath(JObject arg0, jint arg1);
+		void attachInterface(JObject arg0, JString arg1) const;
+		void dump(java::io::FileDescriptor arg0, JArray arg1) const;
+		void dumpAsync(java::io::FileDescriptor arg0, JArray arg1) const;
+		JString getInterfaceDescriptor() const;
+		jboolean isBinderAlive() const;
+		void linkToDeath(JObject arg0, jint arg1) const;
+		jboolean pingBinder() const;
+		JObject queryLocalInterface(JString arg0) const;
+		jboolean transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3) const;
+		jboolean unlinkToDeath(JObject arg0, jint arg1) const;
 	};
 } // namespace android::os
 

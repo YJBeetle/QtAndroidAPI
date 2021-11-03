@@ -37,15 +37,15 @@ namespace android::service::autofill
 		SaveInfo_Builder(jint arg0, JArray arg1);
 		
 		// Methods
-		android::service::autofill::SaveInfo_Builder addSanitizer(JObject arg0, JArray arg1);
-		android::service::autofill::SaveInfo build();
-		android::service::autofill::SaveInfo_Builder setCustomDescription(android::service::autofill::CustomDescription arg0);
-		android::service::autofill::SaveInfo_Builder setDescription(JString arg0);
-		android::service::autofill::SaveInfo_Builder setFlags(jint arg0);
-		android::service::autofill::SaveInfo_Builder setNegativeAction(jint arg0, android::content::IntentSender arg1);
-		android::service::autofill::SaveInfo_Builder setOptionalIds(JArray arg0);
-		android::service::autofill::SaveInfo_Builder setTriggerId(android::view::autofill::AutofillId arg0);
-		android::service::autofill::SaveInfo_Builder setValidator(JObject arg0);
+		android::service::autofill::SaveInfo_Builder addSanitizer(JObject arg0, JArray arg1) const;
+		android::service::autofill::SaveInfo build() const;
+		android::service::autofill::SaveInfo_Builder setCustomDescription(android::service::autofill::CustomDescription arg0) const;
+		android::service::autofill::SaveInfo_Builder setDescription(JString arg0) const;
+		android::service::autofill::SaveInfo_Builder setFlags(jint arg0) const;
+		android::service::autofill::SaveInfo_Builder setNegativeAction(jint arg0, android::content::IntentSender arg1) const;
+		android::service::autofill::SaveInfo_Builder setOptionalIds(JArray arg0) const;
+		android::service::autofill::SaveInfo_Builder setTriggerId(android::view::autofill::AutofillId arg0) const;
+		android::service::autofill::SaveInfo_Builder setValidator(JObject arg0) const;
 	};
 } // namespace android::service::autofill
 

@@ -31,7 +31,7 @@ namespace android::icu::text
 		static android::icu::text::ScientificNumberFormatter getMarkupInstance(android::icu::util::ULocale arg0, JString arg1, JString arg2);
 		static android::icu::text::ScientificNumberFormatter getSuperscriptInstance(android::icu::text::DecimalFormat arg0);
 		static android::icu::text::ScientificNumberFormatter getSuperscriptInstance(android::icu::util::ULocale arg0);
-		JString format(JObject arg0);
+		JString format(JObject arg0) const;
 	};
 } // namespace android::icu::text
 

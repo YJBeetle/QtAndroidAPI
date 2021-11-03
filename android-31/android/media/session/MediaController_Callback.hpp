@@ -36,14 +36,14 @@ namespace android::media::session
 		MediaController_Callback();
 		
 		// Methods
-		void onAudioInfoChanged(android::media::session::MediaController_PlaybackInfo arg0);
-		void onExtrasChanged(android::os::Bundle arg0);
-		void onMetadataChanged(android::media::MediaMetadata arg0);
-		void onPlaybackStateChanged(android::media::session::PlaybackState arg0);
-		void onQueueChanged(JObject arg0);
-		void onQueueTitleChanged(JString arg0);
-		void onSessionDestroyed();
-		void onSessionEvent(JString arg0, android::os::Bundle arg1);
+		void onAudioInfoChanged(android::media::session::MediaController_PlaybackInfo arg0) const;
+		void onExtrasChanged(android::os::Bundle arg0) const;
+		void onMetadataChanged(android::media::MediaMetadata arg0) const;
+		void onPlaybackStateChanged(android::media::session::PlaybackState arg0) const;
+		void onQueueChanged(JObject arg0) const;
+		void onQueueTitleChanged(JString arg0) const;
+		void onSessionDestroyed() const;
+		void onSessionEvent(JString arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::media::session
 

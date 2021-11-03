@@ -458,119 +458,119 @@ namespace android::hardware
 	// Constructors
 	
 	// Methods
-	jint Sensor::getFifoMaxEventCount()
+	jint Sensor::getFifoMaxEventCount() const
 	{
 		return callMethod<jint>(
 			"getFifoMaxEventCount",
 			"()I"
 		);
 	}
-	jint Sensor::getFifoReservedEventCount()
+	jint Sensor::getFifoReservedEventCount() const
 	{
 		return callMethod<jint>(
 			"getFifoReservedEventCount",
 			"()I"
 		);
 	}
-	jint Sensor::getHighestDirectReportRateLevel()
+	jint Sensor::getHighestDirectReportRateLevel() const
 	{
 		return callMethod<jint>(
 			"getHighestDirectReportRateLevel",
 			"()I"
 		);
 	}
-	jint Sensor::getId()
+	jint Sensor::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint Sensor::getMaxDelay()
+	jint Sensor::getMaxDelay() const
 	{
 		return callMethod<jint>(
 			"getMaxDelay",
 			"()I"
 		);
 	}
-	jfloat Sensor::getMaximumRange()
+	jfloat Sensor::getMaximumRange() const
 	{
 		return callMethod<jfloat>(
 			"getMaximumRange",
 			"()F"
 		);
 	}
-	jint Sensor::getMinDelay()
+	jint Sensor::getMinDelay() const
 	{
 		return callMethod<jint>(
 			"getMinDelay",
 			"()I"
 		);
 	}
-	JString Sensor::getName()
+	JString Sensor::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jfloat Sensor::getPower()
+	jfloat Sensor::getPower() const
 	{
 		return callMethod<jfloat>(
 			"getPower",
 			"()F"
 		);
 	}
-	jint Sensor::getReportingMode()
+	jint Sensor::getReportingMode() const
 	{
 		return callMethod<jint>(
 			"getReportingMode",
 			"()I"
 		);
 	}
-	jfloat Sensor::getResolution()
+	jfloat Sensor::getResolution() const
 	{
 		return callMethod<jfloat>(
 			"getResolution",
 			"()F"
 		);
 	}
-	JString Sensor::getStringType()
+	JString Sensor::getStringType() const
 	{
 		return callObjectMethod(
 			"getStringType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Sensor::getType()
+	jint Sensor::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JString Sensor::getVendor()
+	JString Sensor::getVendor() const
 	{
 		return callObjectMethod(
 			"getVendor",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Sensor::getVersion()
+	jint Sensor::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
-	jboolean Sensor::isAdditionalInfoSupported()
+	jboolean Sensor::isAdditionalInfoSupported() const
 	{
 		return callMethod<jboolean>(
 			"isAdditionalInfoSupported",
 			"()Z"
 		);
 	}
-	jboolean Sensor::isDirectChannelTypeSupported(jint arg0)
+	jboolean Sensor::isDirectChannelTypeSupported(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isDirectChannelTypeSupported",
@@ -578,21 +578,21 @@ namespace android::hardware
 			arg0
 		);
 	}
-	jboolean Sensor::isDynamicSensor()
+	jboolean Sensor::isDynamicSensor() const
 	{
 		return callMethod<jboolean>(
 			"isDynamicSensor",
 			"()Z"
 		);
 	}
-	jboolean Sensor::isWakeUpSensor()
+	jboolean Sensor::isWakeUpSensor() const
 	{
 		return callMethod<jboolean>(
 			"isWakeUpSensor",
 			"()Z"
 		);
 	}
-	JString Sensor::toString()
+	JString Sensor::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -38,7 +38,7 @@ namespace android::hardware::biometrics
 	// Constructors
 	
 	// Methods
-	jint BiometricManager::canAuthenticate()
+	jint BiometricManager::canAuthenticate() const
 	{
 		return callMethod<jint>(
 			"canAuthenticate",

@@ -48,19 +48,19 @@ namespace java::time::zone
 		
 		// Methods
 		static java::time::zone::ZoneOffsetTransitionRule of(java::time::Month arg0, jint arg1, java::time::DayOfWeek arg2, java::time::LocalTime arg3, jboolean arg4, java::time::zone::ZoneOffsetTransitionRule_TimeDefinition arg5, java::time::ZoneOffset arg6, java::time::ZoneOffset arg7, java::time::ZoneOffset arg8);
-		java::time::zone::ZoneOffsetTransition createTransition(jint arg0);
-		jboolean equals(JObject arg0);
-		jint getDayOfMonthIndicator();
-		java::time::DayOfWeek getDayOfWeek();
-		java::time::LocalTime getLocalTime();
-		java::time::Month getMonth();
-		java::time::ZoneOffset getOffsetAfter();
-		java::time::ZoneOffset getOffsetBefore();
-		java::time::ZoneOffset getStandardOffset();
-		java::time::zone::ZoneOffsetTransitionRule_TimeDefinition getTimeDefinition();
-		jint hashCode();
-		jboolean isMidnightEndOfDay();
-		JString toString();
+		java::time::zone::ZoneOffsetTransition createTransition(jint arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint getDayOfMonthIndicator() const;
+		java::time::DayOfWeek getDayOfWeek() const;
+		java::time::LocalTime getLocalTime() const;
+		java::time::Month getMonth() const;
+		java::time::ZoneOffset getOffsetAfter() const;
+		java::time::ZoneOffset getOffsetBefore() const;
+		java::time::ZoneOffset getStandardOffset() const;
+		java::time::zone::ZoneOffsetTransitionRule_TimeDefinition getTimeDefinition() const;
+		jint hashCode() const;
+		jboolean isMidnightEndOfDay() const;
+		JString toString() const;
 	};
 } // namespace java::time::zone
 

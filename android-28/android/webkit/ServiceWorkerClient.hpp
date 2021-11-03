@@ -22,7 +22,7 @@ namespace android::webkit
 		ServiceWorkerClient();
 		
 		// Methods
-		android::webkit::WebResourceResponse shouldInterceptRequest(JObject arg0);
+		android::webkit::WebResourceResponse shouldInterceptRequest(JObject arg0) const;
 	};
 } // namespace android::webkit
 

@@ -33,7 +33,7 @@ namespace android::telephony::ims
 	// Constructors
 	
 	// Methods
-	void ImsMmTelManager::getRegistrationState(JObject arg0, JObject arg1)
+	void ImsMmTelManager::getRegistrationState(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getRegistrationState",
@@ -42,7 +42,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsMmTelManager::getRegistrationTransportType(JObject arg0, JObject arg1)
+	void ImsMmTelManager::getRegistrationTransportType(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getRegistrationTransportType",
@@ -51,56 +51,56 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	jint ImsMmTelManager::getVoWiFiModeSetting()
+	jint ImsMmTelManager::getVoWiFiModeSetting() const
 	{
 		return callMethod<jint>(
 			"getVoWiFiModeSetting",
 			"()I"
 		);
 	}
-	jboolean ImsMmTelManager::isAdvancedCallingSettingEnabled()
+	jboolean ImsMmTelManager::isAdvancedCallingSettingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isAdvancedCallingSettingEnabled",
 			"()Z"
 		);
 	}
-	jboolean ImsMmTelManager::isCrossSimCallingEnabled()
+	jboolean ImsMmTelManager::isCrossSimCallingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isCrossSimCallingEnabled",
 			"()Z"
 		);
 	}
-	jboolean ImsMmTelManager::isTtyOverVolteEnabled()
+	jboolean ImsMmTelManager::isTtyOverVolteEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isTtyOverVolteEnabled",
 			"()Z"
 		);
 	}
-	jboolean ImsMmTelManager::isVoWiFiRoamingSettingEnabled()
+	jboolean ImsMmTelManager::isVoWiFiRoamingSettingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isVoWiFiRoamingSettingEnabled",
 			"()Z"
 		);
 	}
-	jboolean ImsMmTelManager::isVoWiFiSettingEnabled()
+	jboolean ImsMmTelManager::isVoWiFiSettingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isVoWiFiSettingEnabled",
 			"()Z"
 		);
 	}
-	jboolean ImsMmTelManager::isVtSettingEnabled()
+	jboolean ImsMmTelManager::isVtSettingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isVtSettingEnabled",
 			"()Z"
 		);
 	}
-	void ImsMmTelManager::registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1)
+	void ImsMmTelManager::registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1) const
 	{
 		callMethod<void>(
 			"registerImsRegistrationCallback",
@@ -109,7 +109,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsMmTelManager::registerMmTelCapabilityCallback(JObject arg0, android::telephony::ims::ImsMmTelManager_CapabilityCallback arg1)
+	void ImsMmTelManager::registerMmTelCapabilityCallback(JObject arg0, android::telephony::ims::ImsMmTelManager_CapabilityCallback arg1) const
 	{
 		callMethod<void>(
 			"registerMmTelCapabilityCallback",
@@ -118,7 +118,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsMmTelManager::unregisterImsRegistrationCallback(android::telephony::ims::RegistrationManager_RegistrationCallback arg0)
+	void ImsMmTelManager::unregisterImsRegistrationCallback(android::telephony::ims::RegistrationManager_RegistrationCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterImsRegistrationCallback",
@@ -126,7 +126,7 @@ namespace android::telephony::ims
 			arg0.object()
 		);
 	}
-	void ImsMmTelManager::unregisterMmTelCapabilityCallback(android::telephony::ims::ImsMmTelManager_CapabilityCallback arg0)
+	void ImsMmTelManager::unregisterMmTelCapabilityCallback(android::telephony::ims::ImsMmTelManager_CapabilityCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterMmTelCapabilityCallback",

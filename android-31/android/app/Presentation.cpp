@@ -28,35 +28,35 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::view::Display Presentation::getDisplay()
+	android::view::Display Presentation::getDisplay() const
 	{
 		return callObjectMethod(
 			"getDisplay",
 			"()Landroid/view/Display;"
 		);
 	}
-	android::content::res::Resources Presentation::getResources()
+	android::content::res::Resources Presentation::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	void Presentation::onDisplayChanged()
+	void Presentation::onDisplayChanged() const
 	{
 		callMethod<void>(
 			"onDisplayChanged",
 			"()V"
 		);
 	}
-	void Presentation::onDisplayRemoved()
+	void Presentation::onDisplayRemoved() const
 	{
 		callMethod<void>(
 			"onDisplayRemoved",
 			"()V"
 		);
 	}
-	void Presentation::show()
+	void Presentation::show() const
 	{
 		callMethod<void>(
 			"show",

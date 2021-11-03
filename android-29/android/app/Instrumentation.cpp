@@ -63,7 +63,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::os::TestLooperManager Instrumentation::acquireLooperManager(android::os::Looper arg0)
+	android::os::TestLooperManager Instrumentation::acquireLooperManager(android::os::Looper arg0) const
 	{
 		return callObjectMethod(
 			"acquireLooperManager",
@@ -71,7 +71,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"addMonitor",
@@ -81,7 +81,7 @@ namespace android::app
 			arg2
 		);
 	}
-	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(JString arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(JString arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"addMonitor",
@@ -91,7 +91,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Instrumentation::addMonitor(android::app::Instrumentation_ActivityMonitor arg0)
+	void Instrumentation::addMonitor(android::app::Instrumentation_ActivityMonitor arg0) const
 	{
 		callMethod<void>(
 			"addMonitor",
@@ -99,7 +99,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::addResults(android::os::Bundle arg0)
+	void Instrumentation::addResults(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"addResults",
@@ -107,7 +107,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callActivityOnCreate(android::app::Activity arg0, android::os::Bundle arg1)
+	void Instrumentation::callActivityOnCreate(android::app::Activity arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"callActivityOnCreate",
@@ -116,7 +116,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::callActivityOnCreate(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2)
+	void Instrumentation::callActivityOnCreate(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2) const
 	{
 		callMethod<void>(
 			"callActivityOnCreate",
@@ -126,7 +126,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Instrumentation::callActivityOnDestroy(android::app::Activity arg0)
+	void Instrumentation::callActivityOnDestroy(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"callActivityOnDestroy",
@@ -134,7 +134,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callActivityOnNewIntent(android::app::Activity arg0, android::content::Intent arg1)
+	void Instrumentation::callActivityOnNewIntent(android::app::Activity arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"callActivityOnNewIntent",
@@ -143,7 +143,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::callActivityOnPause(android::app::Activity arg0)
+	void Instrumentation::callActivityOnPause(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"callActivityOnPause",
@@ -151,7 +151,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callActivityOnPostCreate(android::app::Activity arg0, android::os::Bundle arg1)
+	void Instrumentation::callActivityOnPostCreate(android::app::Activity arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"callActivityOnPostCreate",
@@ -160,7 +160,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::callActivityOnPostCreate(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2)
+	void Instrumentation::callActivityOnPostCreate(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2) const
 	{
 		callMethod<void>(
 			"callActivityOnPostCreate",
@@ -170,7 +170,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Instrumentation::callActivityOnRestart(android::app::Activity arg0)
+	void Instrumentation::callActivityOnRestart(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"callActivityOnRestart",
@@ -178,7 +178,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callActivityOnRestoreInstanceState(android::app::Activity arg0, android::os::Bundle arg1)
+	void Instrumentation::callActivityOnRestoreInstanceState(android::app::Activity arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"callActivityOnRestoreInstanceState",
@@ -187,7 +187,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::callActivityOnRestoreInstanceState(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2)
+	void Instrumentation::callActivityOnRestoreInstanceState(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2) const
 	{
 		callMethod<void>(
 			"callActivityOnRestoreInstanceState",
@@ -197,7 +197,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Instrumentation::callActivityOnResume(android::app::Activity arg0)
+	void Instrumentation::callActivityOnResume(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"callActivityOnResume",
@@ -205,7 +205,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callActivityOnSaveInstanceState(android::app::Activity arg0, android::os::Bundle arg1)
+	void Instrumentation::callActivityOnSaveInstanceState(android::app::Activity arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"callActivityOnSaveInstanceState",
@@ -214,7 +214,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::callActivityOnSaveInstanceState(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2)
+	void Instrumentation::callActivityOnSaveInstanceState(android::app::Activity arg0, android::os::Bundle arg1, android::os::PersistableBundle arg2) const
 	{
 		callMethod<void>(
 			"callActivityOnSaveInstanceState",
@@ -224,7 +224,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Instrumentation::callActivityOnStart(android::app::Activity arg0)
+	void Instrumentation::callActivityOnStart(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"callActivityOnStart",
@@ -232,7 +232,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callActivityOnStop(android::app::Activity arg0)
+	void Instrumentation::callActivityOnStop(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"callActivityOnStop",
@@ -240,7 +240,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callActivityOnUserLeaving(android::app::Activity arg0)
+	void Instrumentation::callActivityOnUserLeaving(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"callActivityOnUserLeaving",
@@ -248,7 +248,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::callApplicationOnCreate(android::app::Application arg0)
+	void Instrumentation::callApplicationOnCreate(android::app::Application arg0) const
 	{
 		callMethod<void>(
 			"callApplicationOnCreate",
@@ -256,7 +256,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Instrumentation::checkMonitorHit(android::app::Instrumentation_ActivityMonitor arg0, jint arg1)
+	jboolean Instrumentation::checkMonitorHit(android::app::Instrumentation_ActivityMonitor arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"checkMonitorHit",
@@ -265,14 +265,14 @@ namespace android::app
 			arg1
 		);
 	}
-	void Instrumentation::endPerformanceSnapshot()
+	void Instrumentation::endPerformanceSnapshot() const
 	{
 		callMethod<void>(
 			"endPerformanceSnapshot",
 			"()V"
 		);
 	}
-	void Instrumentation::finish(jint arg0, android::os::Bundle arg1)
+	void Instrumentation::finish(jint arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"finish",
@@ -281,56 +281,56 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::os::Bundle Instrumentation::getAllocCounts()
+	android::os::Bundle Instrumentation::getAllocCounts() const
 	{
 		return callObjectMethod(
 			"getAllocCounts",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::os::Bundle Instrumentation::getBinderCounts()
+	android::os::Bundle Instrumentation::getBinderCounts() const
 	{
 		return callObjectMethod(
 			"getBinderCounts",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::content::ComponentName Instrumentation::getComponentName()
+	android::content::ComponentName Instrumentation::getComponentName() const
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::content::Context Instrumentation::getContext()
+	android::content::Context Instrumentation::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JString Instrumentation::getProcessName()
+	JString Instrumentation::getProcessName() const
 	{
 		return callObjectMethod(
 			"getProcessName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::Context Instrumentation::getTargetContext()
+	android::content::Context Instrumentation::getTargetContext() const
 	{
 		return callObjectMethod(
 			"getTargetContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::app::UiAutomation Instrumentation::getUiAutomation()
+	android::app::UiAutomation Instrumentation::getUiAutomation() const
 	{
 		return callObjectMethod(
 			"getUiAutomation",
 			"()Landroid/app/UiAutomation;"
 		);
 	}
-	android::app::UiAutomation Instrumentation::getUiAutomation(jint arg0)
+	android::app::UiAutomation Instrumentation::getUiAutomation(jint arg0) const
 	{
 		return callObjectMethod(
 			"getUiAutomation",
@@ -338,7 +338,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Instrumentation::invokeContextMenuAction(android::app::Activity arg0, jint arg1, jint arg2)
+	jboolean Instrumentation::invokeContextMenuAction(android::app::Activity arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"invokeContextMenuAction",
@@ -348,7 +348,7 @@ namespace android::app
 			arg2
 		);
 	}
-	jboolean Instrumentation::invokeMenuActionSync(android::app::Activity arg0, jint arg1, jint arg2)
+	jboolean Instrumentation::invokeMenuActionSync(android::app::Activity arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"invokeMenuActionSync",
@@ -358,14 +358,14 @@ namespace android::app
 			arg2
 		);
 	}
-	jboolean Instrumentation::isProfiling()
+	jboolean Instrumentation::isProfiling() const
 	{
 		return callMethod<jboolean>(
 			"isProfiling",
 			"()Z"
 		);
 	}
-	android::app::Activity Instrumentation::newActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2)
+	android::app::Activity Instrumentation::newActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const
 	{
 		return callObjectMethod(
 			"newActivity",
@@ -375,7 +375,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::Activity Instrumentation::newActivity(JClass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, JString arg6, android::app::Activity arg7, JString arg8, JObject arg9)
+	android::app::Activity Instrumentation::newActivity(JClass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, JString arg6, android::app::Activity arg7, JString arg8, JObject arg9) const
 	{
 		return callObjectMethod(
 			"newActivity",
@@ -392,7 +392,7 @@ namespace android::app
 			arg9.object<jobject>()
 		);
 	}
-	android::app::Application Instrumentation::newApplication(java::lang::ClassLoader arg0, JString arg1, android::content::Context arg2)
+	android::app::Application Instrumentation::newApplication(java::lang::ClassLoader arg0, JString arg1, android::content::Context arg2) const
 	{
 		return callObjectMethod(
 			"newApplication",
@@ -402,7 +402,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Instrumentation::onCreate(android::os::Bundle arg0)
+	void Instrumentation::onCreate(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onCreate",
@@ -410,14 +410,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::onDestroy()
+	void Instrumentation::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	jboolean Instrumentation::onException(JObject arg0, JThrowable arg1)
+	jboolean Instrumentation::onException(JObject arg0, JThrowable arg1) const
 	{
 		return callMethod<jboolean>(
 			"onException",
@@ -426,14 +426,14 @@ namespace android::app
 			arg1.object<jthrowable>()
 		);
 	}
-	void Instrumentation::onStart()
+	void Instrumentation::onStart() const
 	{
 		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
-	void Instrumentation::removeMonitor(android::app::Instrumentation_ActivityMonitor arg0)
+	void Instrumentation::removeMonitor(android::app::Instrumentation_ActivityMonitor arg0) const
 	{
 		callMethod<void>(
 			"removeMonitor",
@@ -441,7 +441,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::runOnMainSync(JObject arg0)
+	void Instrumentation::runOnMainSync(JObject arg0) const
 	{
 		callMethod<void>(
 			"runOnMainSync",
@@ -449,7 +449,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::sendCharacterSync(jint arg0)
+	void Instrumentation::sendCharacterSync(jint arg0) const
 	{
 		callMethod<void>(
 			"sendCharacterSync",
@@ -457,7 +457,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Instrumentation::sendKeyDownUpSync(jint arg0)
+	void Instrumentation::sendKeyDownUpSync(jint arg0) const
 	{
 		callMethod<void>(
 			"sendKeyDownUpSync",
@@ -465,7 +465,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Instrumentation::sendKeySync(android::view::KeyEvent arg0)
+	void Instrumentation::sendKeySync(android::view::KeyEvent arg0) const
 	{
 		callMethod<void>(
 			"sendKeySync",
@@ -473,7 +473,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::sendPointerSync(android::view::MotionEvent arg0)
+	void Instrumentation::sendPointerSync(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"sendPointerSync",
@@ -481,7 +481,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::sendStatus(jint arg0, android::os::Bundle arg1)
+	void Instrumentation::sendStatus(jint arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendStatus",
@@ -490,7 +490,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::sendStringSync(JString arg0)
+	void Instrumentation::sendStringSync(JString arg0) const
 	{
 		callMethod<void>(
 			"sendStringSync",
@@ -498,7 +498,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void Instrumentation::sendTrackballEventSync(android::view::MotionEvent arg0)
+	void Instrumentation::sendTrackballEventSync(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"sendTrackballEventSync",
@@ -506,14 +506,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::setAutomaticPerformanceSnapshots()
+	void Instrumentation::setAutomaticPerformanceSnapshots() const
 	{
 		callMethod<void>(
 			"setAutomaticPerformanceSnapshots",
 			"()V"
 		);
 	}
-	void Instrumentation::setInTouchMode(jboolean arg0)
+	void Instrumentation::setInTouchMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setInTouchMode",
@@ -521,14 +521,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Instrumentation::start()
+	void Instrumentation::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	android::app::Activity Instrumentation::startActivitySync(android::content::Intent arg0)
+	android::app::Activity Instrumentation::startActivitySync(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"startActivitySync",
@@ -536,7 +536,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Activity Instrumentation::startActivitySync(android::content::Intent arg0, android::os::Bundle arg1)
+	android::app::Activity Instrumentation::startActivitySync(android::content::Intent arg0, android::os::Bundle arg1) const
 	{
 		return callObjectMethod(
 			"startActivitySync",
@@ -545,42 +545,42 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::startAllocCounting()
+	void Instrumentation::startAllocCounting() const
 	{
 		callMethod<void>(
 			"startAllocCounting",
 			"()V"
 		);
 	}
-	void Instrumentation::startPerformanceSnapshot()
+	void Instrumentation::startPerformanceSnapshot() const
 	{
 		callMethod<void>(
 			"startPerformanceSnapshot",
 			"()V"
 		);
 	}
-	void Instrumentation::startProfiling()
+	void Instrumentation::startProfiling() const
 	{
 		callMethod<void>(
 			"startProfiling",
 			"()V"
 		);
 	}
-	void Instrumentation::stopAllocCounting()
+	void Instrumentation::stopAllocCounting() const
 	{
 		callMethod<void>(
 			"stopAllocCounting",
 			"()V"
 		);
 	}
-	void Instrumentation::stopProfiling()
+	void Instrumentation::stopProfiling() const
 	{
 		callMethod<void>(
 			"stopProfiling",
 			"()V"
 		);
 	}
-	void Instrumentation::waitForIdle(JObject arg0)
+	void Instrumentation::waitForIdle(JObject arg0) const
 	{
 		callMethod<void>(
 			"waitForIdle",
@@ -588,14 +588,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::waitForIdleSync()
+	void Instrumentation::waitForIdleSync() const
 	{
 		callMethod<void>(
 			"waitForIdleSync",
 			"()V"
 		);
 	}
-	android::app::Activity Instrumentation::waitForMonitor(android::app::Instrumentation_ActivityMonitor arg0)
+	android::app::Activity Instrumentation::waitForMonitor(android::app::Instrumentation_ActivityMonitor arg0) const
 	{
 		return callObjectMethod(
 			"waitForMonitor",
@@ -603,7 +603,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Activity Instrumentation::waitForMonitorWithTimeout(android::app::Instrumentation_ActivityMonitor arg0, jlong arg1)
+	android::app::Activity Instrumentation::waitForMonitorWithTimeout(android::app::Instrumentation_ActivityMonitor arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"waitForMonitorWithTimeout",

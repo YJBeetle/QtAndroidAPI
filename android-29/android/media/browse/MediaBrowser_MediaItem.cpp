@@ -42,56 +42,56 @@ namespace android::media::browse
 		) {}
 	
 	// Methods
-	jint MediaBrowser_MediaItem::describeContents()
+	jint MediaBrowser_MediaItem::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::media::MediaDescription MediaBrowser_MediaItem::getDescription()
+	android::media::MediaDescription MediaBrowser_MediaItem::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
-	jint MediaBrowser_MediaItem::getFlags()
+	jint MediaBrowser_MediaItem::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	JString MediaBrowser_MediaItem::getMediaId()
+	JString MediaBrowser_MediaItem::getMediaId() const
 	{
 		return callObjectMethod(
 			"getMediaId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean MediaBrowser_MediaItem::isBrowsable()
+	jboolean MediaBrowser_MediaItem::isBrowsable() const
 	{
 		return callMethod<jboolean>(
 			"isBrowsable",
 			"()Z"
 		);
 	}
-	jboolean MediaBrowser_MediaItem::isPlayable()
+	jboolean MediaBrowser_MediaItem::isPlayable() const
 	{
 		return callMethod<jboolean>(
 			"isPlayable",
 			"()Z"
 		);
 	}
-	JString MediaBrowser_MediaItem::toString()
+	JString MediaBrowser_MediaItem::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MediaBrowser_MediaItem::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaBrowser_MediaItem::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

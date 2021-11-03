@@ -24,7 +24,7 @@ namespace android::text
 			"()Landroid/text/Spannable$Factory;"
 		);
 	}
-	JObject Spannable_Factory::newSpannable(JString arg0)
+	JObject Spannable_Factory::newSpannable(JString arg0) const
 	{
 		return callObjectMethod(
 			"newSpannable",

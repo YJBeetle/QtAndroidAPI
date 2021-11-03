@@ -16,7 +16,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	JObject ArgbEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
+	JObject ArgbEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",

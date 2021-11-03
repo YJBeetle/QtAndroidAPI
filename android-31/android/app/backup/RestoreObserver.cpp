@@ -16,7 +16,7 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void RestoreObserver::onUpdate(jint arg0, JString arg1)
+	void RestoreObserver::onUpdate(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onUpdate",
@@ -25,7 +25,7 @@ namespace android::app::backup
 			arg1.object<jstring>()
 		);
 	}
-	void RestoreObserver::restoreFinished(jint arg0)
+	void RestoreObserver::restoreFinished(jint arg0) const
 	{
 		callMethod<void>(
 			"restoreFinished",
@@ -33,7 +33,7 @@ namespace android::app::backup
 			arg0
 		);
 	}
-	void RestoreObserver::restoreStarting(jint arg0)
+	void RestoreObserver::restoreStarting(jint arg0) const
 	{
 		callMethod<void>(
 			"restoreStarting",

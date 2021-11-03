@@ -19,7 +19,7 @@ namespace android::net::wifi::aware
 		IdentityChangedListener();
 		
 		// Methods
-		void onIdentityChanged(JByteArray arg0);
+		void onIdentityChanged(JByteArray arg0) const;
 	};
 } // namespace android::net::wifi::aware
 

@@ -14,14 +14,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaCodecInfo::getCanonicalName()
+	JString MediaCodecInfo::getCanonicalName() const
 	{
 		return callObjectMethod(
 			"getCanonicalName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo::getCapabilitiesForType(JString arg0)
+	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo::getCapabilitiesForType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCapabilitiesForType",
@@ -29,49 +29,49 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JString MediaCodecInfo::getName()
+	JString MediaCodecInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray MediaCodecInfo::getSupportedTypes()
+	JArray MediaCodecInfo::getSupportedTypes() const
 	{
 		return callObjectMethod(
 			"getSupportedTypes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jboolean MediaCodecInfo::isAlias()
+	jboolean MediaCodecInfo::isAlias() const
 	{
 		return callMethod<jboolean>(
 			"isAlias",
 			"()Z"
 		);
 	}
-	jboolean MediaCodecInfo::isEncoder()
+	jboolean MediaCodecInfo::isEncoder() const
 	{
 		return callMethod<jboolean>(
 			"isEncoder",
 			"()Z"
 		);
 	}
-	jboolean MediaCodecInfo::isHardwareAccelerated()
+	jboolean MediaCodecInfo::isHardwareAccelerated() const
 	{
 		return callMethod<jboolean>(
 			"isHardwareAccelerated",
 			"()Z"
 		);
 	}
-	jboolean MediaCodecInfo::isSoftwareOnly()
+	jboolean MediaCodecInfo::isSoftwareOnly() const
 	{
 		return callMethod<jboolean>(
 			"isSoftwareOnly",
 			"()Z"
 		);
 	}
-	jboolean MediaCodecInfo::isVendor()
+	jboolean MediaCodecInfo::isVendor() const
 	{
 		return callMethod<jboolean>(
 			"isVendor",

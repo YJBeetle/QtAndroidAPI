@@ -32,11 +32,11 @@ namespace java::security
 		Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::security::cert::CertPath getSignerCertPath();
-		java::util::Date getTimestamp();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		java::security::cert::CertPath getSignerCertPath() const;
+		java::util::Date getTimestamp() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

@@ -20,11 +20,11 @@ namespace android::media::effect
 		Effect();
 		
 		// Methods
-		void apply(jint arg0, jint arg1, jint arg2, jint arg3);
-		JString getName();
-		void release();
-		void setParameter(JString arg0, JObject arg1);
-		void setUpdateListener(JObject arg0);
+		void apply(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		JString getName() const;
+		void release() const;
+		void setParameter(JString arg0, JObject arg1) const;
+		void setUpdateListener(JObject arg0) const;
 	};
 } // namespace android::media::effect
 

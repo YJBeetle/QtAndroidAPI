@@ -12,14 +12,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	void IpSecTransform::close()
+	void IpSecTransform::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean IpSecTransform::equals(JObject arg0)
+	jboolean IpSecTransform::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,7 +27,7 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	JString IpSecTransform::toString()
+	JString IpSecTransform::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -40,28 +40,28 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void SharedMemory::close()
+	void SharedMemory::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint SharedMemory::describeContents()
+	jint SharedMemory::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint SharedMemory::getSize()
+	jint SharedMemory::getSize() const
 	{
 		return callMethod<jint>(
 			"getSize",
 			"()I"
 		);
 	}
-	java::nio::ByteBuffer SharedMemory::map(jint arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer SharedMemory::map(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"map",
@@ -71,21 +71,21 @@ namespace android::os
 			arg2
 		);
 	}
-	java::nio::ByteBuffer SharedMemory::mapReadOnly()
+	java::nio::ByteBuffer SharedMemory::mapReadOnly() const
 	{
 		return callObjectMethod(
 			"mapReadOnly",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	java::nio::ByteBuffer SharedMemory::mapReadWrite()
+	java::nio::ByteBuffer SharedMemory::mapReadWrite() const
 	{
 		return callObjectMethod(
 			"mapReadWrite",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jboolean SharedMemory::setProtect(jint arg0)
+	jboolean SharedMemory::setProtect(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setProtect",
@@ -93,7 +93,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void SharedMemory::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SharedMemory::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

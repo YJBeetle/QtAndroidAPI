@@ -122,7 +122,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void Activity::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void Activity::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addContentView",
@@ -131,21 +131,21 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::closeContextMenu()
+	void Activity::closeContextMenu() const
 	{
 		callMethod<void>(
 			"closeContextMenu",
 			"()V"
 		);
 	}
-	void Activity::closeOptionsMenu()
+	void Activity::closeOptionsMenu() const
 	{
 		callMethod<void>(
 			"closeOptionsMenu",
 			"()V"
 		);
 	}
-	android::app::PendingIntent Activity::createPendingResult(jint arg0, android::content::Intent arg1, jint arg2)
+	android::app::PendingIntent Activity::createPendingResult(jint arg0, android::content::Intent arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"createPendingResult",
@@ -155,7 +155,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Activity::dismissDialog(jint arg0)
+	void Activity::dismissDialog(jint arg0) const
 	{
 		callMethod<void>(
 			"dismissDialog",
@@ -163,14 +163,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::dismissKeyboardShortcutsHelper()
+	void Activity::dismissKeyboardShortcutsHelper() const
 	{
 		callMethod<void>(
 			"dismissKeyboardShortcutsHelper",
 			"()V"
 		);
 	}
-	jboolean Activity::dispatchGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean Activity::dispatchGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchGenericMotionEvent",
@@ -178,7 +178,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean Activity::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -186,7 +186,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::dispatchKeyShortcutEvent(android::view::KeyEvent arg0)
+	jboolean Activity::dispatchKeyShortcutEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
@@ -194,7 +194,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	jboolean Activity::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchPopulateAccessibilityEvent",
@@ -202,7 +202,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean Activity::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -210,7 +210,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::dispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean Activity::dispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
@@ -218,7 +218,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void Activity::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -229,7 +229,7 @@ namespace android::app
 			arg3.object<jarray>()
 		);
 	}
-	jboolean Activity::enterPictureInPictureMode(android::app::PictureInPictureParams arg0)
+	jboolean Activity::enterPictureInPictureMode(android::app::PictureInPictureParams arg0) const
 	{
 		return callMethod<jboolean>(
 			"enterPictureInPictureMode",
@@ -237,14 +237,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::enterPictureInPictureMode()
+	void Activity::enterPictureInPictureMode() const
 	{
 		callMethod<void>(
 			"enterPictureInPictureMode",
 			"()V"
 		);
 	}
-	android::view::View Activity::findViewById(jint arg0)
+	android::view::View Activity::findViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -252,14 +252,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::finish()
+	void Activity::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	void Activity::finishActivity(jint arg0)
+	void Activity::finishActivity(jint arg0) const
 	{
 		callMethod<void>(
 			"finishActivity",
@@ -267,7 +267,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::finishActivityFromChild(android::app::Activity arg0, jint arg1)
+	void Activity::finishActivityFromChild(android::app::Activity arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"finishActivityFromChild",
@@ -276,28 +276,28 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::finishAffinity()
+	void Activity::finishAffinity() const
 	{
 		callMethod<void>(
 			"finishAffinity",
 			"()V"
 		);
 	}
-	void Activity::finishAfterTransition()
+	void Activity::finishAfterTransition() const
 	{
 		callMethod<void>(
 			"finishAfterTransition",
 			"()V"
 		);
 	}
-	void Activity::finishAndRemoveTask()
+	void Activity::finishAndRemoveTask() const
 	{
 		callMethod<void>(
 			"finishAndRemoveTask",
 			"()V"
 		);
 	}
-	void Activity::finishFromChild(android::app::Activity arg0)
+	void Activity::finishFromChild(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"finishFromChild",
@@ -305,147 +305,147 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActionBar Activity::getActionBar()
+	android::app::ActionBar Activity::getActionBar() const
 	{
 		return callObjectMethod(
 			"getActionBar",
 			"()Landroid/app/ActionBar;"
 		);
 	}
-	android::app::Application Activity::getApplication()
+	android::app::Application Activity::getApplication() const
 	{
 		return callObjectMethod(
 			"getApplication",
 			"()Landroid/app/Application;"
 		);
 	}
-	android::content::ComponentName Activity::getCallingActivity()
+	android::content::ComponentName Activity::getCallingActivity() const
 	{
 		return callObjectMethod(
 			"getCallingActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	JString Activity::getCallingPackage()
+	JString Activity::getCallingPackage() const
 	{
 		return callObjectMethod(
 			"getCallingPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Activity::getChangingConfigurations()
+	jint Activity::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::content::ComponentName Activity::getComponentName()
+	android::content::ComponentName Activity::getComponentName() const
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::transition::Scene Activity::getContentScene()
+	android::transition::Scene Activity::getContentScene() const
 	{
 		return callObjectMethod(
 			"getContentScene",
 			"()Landroid/transition/Scene;"
 		);
 	}
-	android::transition::TransitionManager Activity::getContentTransitionManager()
+	android::transition::TransitionManager Activity::getContentTransitionManager() const
 	{
 		return callObjectMethod(
 			"getContentTransitionManager",
 			"()Landroid/transition/TransitionManager;"
 		);
 	}
-	android::view::View Activity::getCurrentFocus()
+	android::view::View Activity::getCurrentFocus() const
 	{
 		return callObjectMethod(
 			"getCurrentFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	android::app::FragmentManager Activity::getFragmentManager()
+	android::app::FragmentManager Activity::getFragmentManager() const
 	{
 		return callObjectMethod(
 			"getFragmentManager",
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	android::content::Intent Activity::getIntent()
+	android::content::Intent Activity::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JObject Activity::getLastNonConfigurationInstance()
+	JObject Activity::getLastNonConfigurationInstance() const
 	{
 		return callObjectMethod(
 			"getLastNonConfigurationInstance",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::view::LayoutInflater Activity::getLayoutInflater()
+	android::view::LayoutInflater Activity::getLayoutInflater() const
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	android::app::LoaderManager Activity::getLoaderManager()
+	android::app::LoaderManager Activity::getLoaderManager() const
 	{
 		return callObjectMethod(
 			"getLoaderManager",
 			"()Landroid/app/LoaderManager;"
 		);
 	}
-	JString Activity::getLocalClassName()
+	JString Activity::getLocalClassName() const
 	{
 		return callObjectMethod(
 			"getLocalClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Activity::getMaxNumPictureInPictureActions()
+	jint Activity::getMaxNumPictureInPictureActions() const
 	{
 		return callMethod<jint>(
 			"getMaxNumPictureInPictureActions",
 			"()I"
 		);
 	}
-	android::media::session::MediaController Activity::getMediaController()
+	android::media::session::MediaController Activity::getMediaController() const
 	{
 		return callObjectMethod(
 			"getMediaController",
 			"()Landroid/media/session/MediaController;"
 		);
 	}
-	android::view::MenuInflater Activity::getMenuInflater()
+	android::view::MenuInflater Activity::getMenuInflater() const
 	{
 		return callObjectMethod(
 			"getMenuInflater",
 			"()Landroid/view/MenuInflater;"
 		);
 	}
-	android::app::Activity Activity::getParent()
+	android::app::Activity Activity::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/app/Activity;"
 		);
 	}
-	android::content::Intent Activity::getParentActivityIntent()
+	android::content::Intent Activity::getParentActivityIntent() const
 	{
 		return callObjectMethod(
 			"getParentActivityIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JObject Activity::getPreferences(jint arg0)
+	JObject Activity::getPreferences(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPreferences",
@@ -453,28 +453,28 @@ namespace android::app
 			arg0
 		);
 	}
-	android::net::Uri Activity::getReferrer()
+	android::net::Uri Activity::getReferrer() const
 	{
 		return callObjectMethod(
 			"getReferrer",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint Activity::getRequestedOrientation()
+	jint Activity::getRequestedOrientation() const
 	{
 		return callMethod<jint>(
 			"getRequestedOrientation",
 			"()I"
 		);
 	}
-	android::view::SearchEvent Activity::getSearchEvent()
+	android::view::SearchEvent Activity::getSearchEvent() const
 	{
 		return callObjectMethod(
 			"getSearchEvent",
 			"()Landroid/view/SearchEvent;"
 		);
 	}
-	JObject Activity::getSystemService(JString arg0)
+	JObject Activity::getSystemService(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSystemService",
@@ -482,154 +482,154 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	jint Activity::getTaskId()
+	jint Activity::getTaskId() const
 	{
 		return callMethod<jint>(
 			"getTaskId",
 			"()I"
 		);
 	}
-	JString Activity::getTitle()
+	JString Activity::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint Activity::getTitleColor()
+	jint Activity::getTitleColor() const
 	{
 		return callMethod<jint>(
 			"getTitleColor",
 			"()I"
 		);
 	}
-	android::app::VoiceInteractor Activity::getVoiceInteractor()
+	android::app::VoiceInteractor Activity::getVoiceInteractor() const
 	{
 		return callObjectMethod(
 			"getVoiceInteractor",
 			"()Landroid/app/VoiceInteractor;"
 		);
 	}
-	jint Activity::getVolumeControlStream()
+	jint Activity::getVolumeControlStream() const
 	{
 		return callMethod<jint>(
 			"getVolumeControlStream",
 			"()I"
 		);
 	}
-	android::view::Window Activity::getWindow()
+	android::view::Window Activity::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/view/Window;"
 		);
 	}
-	JObject Activity::getWindowManager()
+	JObject Activity::getWindowManager() const
 	{
 		return callObjectMethod(
 			"getWindowManager",
 			"()Landroid/view/WindowManager;"
 		);
 	}
-	jboolean Activity::hasWindowFocus()
+	jboolean Activity::hasWindowFocus() const
 	{
 		return callMethod<jboolean>(
 			"hasWindowFocus",
 			"()Z"
 		);
 	}
-	void Activity::invalidateOptionsMenu()
+	void Activity::invalidateOptionsMenu() const
 	{
 		callMethod<void>(
 			"invalidateOptionsMenu",
 			"()V"
 		);
 	}
-	jboolean Activity::isActivityTransitionRunning()
+	jboolean Activity::isActivityTransitionRunning() const
 	{
 		return callMethod<jboolean>(
 			"isActivityTransitionRunning",
 			"()Z"
 		);
 	}
-	jboolean Activity::isChangingConfigurations()
+	jboolean Activity::isChangingConfigurations() const
 	{
 		return callMethod<jboolean>(
 			"isChangingConfigurations",
 			"()Z"
 		);
 	}
-	jboolean Activity::isChild()
+	jboolean Activity::isChild() const
 	{
 		return callMethod<jboolean>(
 			"isChild",
 			"()Z"
 		);
 	}
-	jboolean Activity::isDestroyed()
+	jboolean Activity::isDestroyed() const
 	{
 		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
-	jboolean Activity::isFinishing()
+	jboolean Activity::isFinishing() const
 	{
 		return callMethod<jboolean>(
 			"isFinishing",
 			"()Z"
 		);
 	}
-	jboolean Activity::isImmersive()
+	jboolean Activity::isImmersive() const
 	{
 		return callMethod<jboolean>(
 			"isImmersive",
 			"()Z"
 		);
 	}
-	jboolean Activity::isInMultiWindowMode()
+	jboolean Activity::isInMultiWindowMode() const
 	{
 		return callMethod<jboolean>(
 			"isInMultiWindowMode",
 			"()Z"
 		);
 	}
-	jboolean Activity::isInPictureInPictureMode()
+	jboolean Activity::isInPictureInPictureMode() const
 	{
 		return callMethod<jboolean>(
 			"isInPictureInPictureMode",
 			"()Z"
 		);
 	}
-	jboolean Activity::isLocalVoiceInteractionSupported()
+	jboolean Activity::isLocalVoiceInteractionSupported() const
 	{
 		return callMethod<jboolean>(
 			"isLocalVoiceInteractionSupported",
 			"()Z"
 		);
 	}
-	jboolean Activity::isTaskRoot()
+	jboolean Activity::isTaskRoot() const
 	{
 		return callMethod<jboolean>(
 			"isTaskRoot",
 			"()Z"
 		);
 	}
-	jboolean Activity::isVoiceInteraction()
+	jboolean Activity::isVoiceInteraction() const
 	{
 		return callMethod<jboolean>(
 			"isVoiceInteraction",
 			"()Z"
 		);
 	}
-	jboolean Activity::isVoiceInteractionRoot()
+	jboolean Activity::isVoiceInteractionRoot() const
 	{
 		return callMethod<jboolean>(
 			"isVoiceInteractionRoot",
 			"()Z"
 		);
 	}
-	JObject Activity::managedQuery(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
+	JObject Activity::managedQuery(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"managedQuery",
@@ -641,7 +641,7 @@ namespace android::app
 			arg4.object<jstring>()
 		);
 	}
-	jboolean Activity::moveTaskToBack(jboolean arg0)
+	jboolean Activity::moveTaskToBack(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"moveTaskToBack",
@@ -649,7 +649,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Activity::navigateUpTo(android::content::Intent arg0)
+	jboolean Activity::navigateUpTo(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"navigateUpTo",
@@ -657,7 +657,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::navigateUpToFromChild(android::app::Activity arg0, android::content::Intent arg1)
+	jboolean Activity::navigateUpToFromChild(android::app::Activity arg0, android::content::Intent arg1) const
 	{
 		return callMethod<jboolean>(
 			"navigateUpToFromChild",
@@ -666,7 +666,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onActionModeFinished(android::view::ActionMode arg0)
+	void Activity::onActionModeFinished(android::view::ActionMode arg0) const
 	{
 		callMethod<void>(
 			"onActionModeFinished",
@@ -674,7 +674,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onActionModeStarted(android::view::ActionMode arg0)
+	void Activity::onActionModeStarted(android::view::ActionMode arg0) const
 	{
 		callMethod<void>(
 			"onActionModeStarted",
@@ -682,7 +682,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onActivityReenter(jint arg0, android::content::Intent arg1)
+	void Activity::onActivityReenter(jint arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onActivityReenter",
@@ -691,7 +691,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onAttachFragment(android::app::Fragment arg0)
+	void Activity::onAttachFragment(android::app::Fragment arg0) const
 	{
 		callMethod<void>(
 			"onAttachFragment",
@@ -699,21 +699,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onAttachedToWindow()
+	void Activity::onAttachedToWindow() const
 	{
 		callMethod<void>(
 			"onAttachedToWindow",
 			"()V"
 		);
 	}
-	void Activity::onBackPressed()
+	void Activity::onBackPressed() const
 	{
 		callMethod<void>(
 			"onBackPressed",
 			"()V"
 		);
 	}
-	void Activity::onConfigurationChanged(android::content::res::Configuration arg0)
+	void Activity::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -721,14 +721,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onContentChanged()
+	void Activity::onContentChanged() const
 	{
 		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
-	jboolean Activity::onContextItemSelected(JObject arg0)
+	jboolean Activity::onContextItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onContextItemSelected",
@@ -736,7 +736,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onContextMenuClosed(JObject arg0)
+	void Activity::onContextMenuClosed(JObject arg0) const
 	{
 		callMethod<void>(
 			"onContextMenuClosed",
@@ -744,7 +744,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onCreate(android::os::Bundle arg0, android::os::PersistableBundle arg1)
+	void Activity::onCreate(android::os::Bundle arg0, android::os::PersistableBundle arg1) const
 	{
 		callMethod<void>(
 			"onCreate",
@@ -753,7 +753,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2)
+	void Activity::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onCreateContextMenu",
@@ -763,14 +763,14 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	JString Activity::onCreateDescription()
+	JString Activity::onCreateDescription() const
 	{
 		return callObjectMethod(
 			"onCreateDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void Activity::onCreateNavigateUpTaskStack(android::app::TaskStackBuilder arg0)
+	void Activity::onCreateNavigateUpTaskStack(android::app::TaskStackBuilder arg0) const
 	{
 		callMethod<void>(
 			"onCreateNavigateUpTaskStack",
@@ -778,7 +778,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onCreateOptionsMenu(JObject arg0)
+	jboolean Activity::onCreateOptionsMenu(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onCreateOptionsMenu",
@@ -786,7 +786,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onCreatePanelMenu(jint arg0, JObject arg1)
+	jboolean Activity::onCreatePanelMenu(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onCreatePanelMenu",
@@ -795,7 +795,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::view::View Activity::onCreatePanelView(jint arg0)
+	android::view::View Activity::onCreatePanelView(jint arg0) const
 	{
 		return callObjectMethod(
 			"onCreatePanelView",
@@ -803,7 +803,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Activity::onCreateThumbnail(android::graphics::Bitmap arg0, android::graphics::Canvas arg1)
+	jboolean Activity::onCreateThumbnail(android::graphics::Bitmap arg0, android::graphics::Canvas arg1) const
 	{
 		return callMethod<jboolean>(
 			"onCreateThumbnail",
@@ -812,7 +812,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::view::View Activity::onCreateView(JString arg0, android::content::Context arg1, JObject arg2)
+	android::view::View Activity::onCreateView(JString arg0, android::content::Context arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -822,7 +822,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::view::View Activity::onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3)
+	android::view::View Activity::onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -833,21 +833,21 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void Activity::onDetachedFromWindow()
+	void Activity::onDetachedFromWindow() const
 	{
 		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
-	void Activity::onEnterAnimationComplete()
+	void Activity::onEnterAnimationComplete() const
 	{
 		callMethod<void>(
 			"onEnterAnimationComplete",
 			"()V"
 		);
 	}
-	jboolean Activity::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean Activity::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -855,7 +855,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onGetDirectActions(android::os::CancellationSignal arg0, JObject arg1)
+	void Activity::onGetDirectActions(android::os::CancellationSignal arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onGetDirectActions",
@@ -864,7 +864,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean Activity::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -873,7 +873,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onKeyLongPress(jint arg0, android::view::KeyEvent arg1)
+	jboolean Activity::onKeyLongPress(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyLongPress",
@@ -882,7 +882,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean Activity::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -892,7 +892,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	jboolean Activity::onKeyShortcut(jint arg0, android::view::KeyEvent arg1)
+	jboolean Activity::onKeyShortcut(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyShortcut",
@@ -901,7 +901,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean Activity::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -910,28 +910,28 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onLocalVoiceInteractionStarted()
+	void Activity::onLocalVoiceInteractionStarted() const
 	{
 		callMethod<void>(
 			"onLocalVoiceInteractionStarted",
 			"()V"
 		);
 	}
-	void Activity::onLocalVoiceInteractionStopped()
+	void Activity::onLocalVoiceInteractionStopped() const
 	{
 		callMethod<void>(
 			"onLocalVoiceInteractionStopped",
 			"()V"
 		);
 	}
-	void Activity::onLowMemory()
+	void Activity::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	jboolean Activity::onMenuItemSelected(jint arg0, JObject arg1)
+	jboolean Activity::onMenuItemSelected(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMenuItemSelected",
@@ -940,7 +940,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onMenuOpened(jint arg0, JObject arg1)
+	jboolean Activity::onMenuOpened(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMenuOpened",
@@ -949,7 +949,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onMultiWindowModeChanged(jboolean arg0)
+	void Activity::onMultiWindowModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onMultiWindowModeChanged",
@@ -957,7 +957,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::onMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1)
+	void Activity::onMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1) const
 	{
 		callMethod<void>(
 			"onMultiWindowModeChanged",
@@ -966,14 +966,14 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onNavigateUp()
+	jboolean Activity::onNavigateUp() const
 	{
 		return callMethod<jboolean>(
 			"onNavigateUp",
 			"()Z"
 		);
 	}
-	jboolean Activity::onNavigateUpFromChild(android::app::Activity arg0)
+	jboolean Activity::onNavigateUpFromChild(android::app::Activity arg0) const
 	{
 		return callMethod<jboolean>(
 			"onNavigateUpFromChild",
@@ -981,7 +981,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onOptionsItemSelected(JObject arg0)
+	jboolean Activity::onOptionsItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -989,7 +989,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onOptionsMenuClosed(JObject arg0)
+	void Activity::onOptionsMenuClosed(JObject arg0) const
 	{
 		callMethod<void>(
 			"onOptionsMenuClosed",
@@ -997,7 +997,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onPanelClosed(jint arg0, JObject arg1)
+	void Activity::onPanelClosed(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onPanelClosed",
@@ -1006,7 +1006,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onPerformDirectAction(JString arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3)
+	void Activity::onPerformDirectAction(JString arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"onPerformDirectAction",
@@ -1017,7 +1017,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void Activity::onPictureInPictureModeChanged(jboolean arg0)
+	void Activity::onPictureInPictureModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onPictureInPictureModeChanged",
@@ -1025,7 +1025,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1)
+	void Activity::onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1) const
 	{
 		callMethod<void>(
 			"onPictureInPictureModeChanged",
@@ -1034,7 +1034,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onPostCreate(android::os::Bundle arg0, android::os::PersistableBundle arg1)
+	void Activity::onPostCreate(android::os::Bundle arg0, android::os::PersistableBundle arg1) const
 	{
 		callMethod<void>(
 			"onPostCreate",
@@ -1043,7 +1043,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onPrepareNavigateUpTaskStack(android::app::TaskStackBuilder arg0)
+	void Activity::onPrepareNavigateUpTaskStack(android::app::TaskStackBuilder arg0) const
 	{
 		callMethod<void>(
 			"onPrepareNavigateUpTaskStack",
@@ -1051,7 +1051,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onPrepareOptionsMenu(JObject arg0)
+	jboolean Activity::onPrepareOptionsMenu(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onPrepareOptionsMenu",
@@ -1059,7 +1059,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2)
+	jboolean Activity::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"onPreparePanel",
@@ -1069,7 +1069,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Activity::onProvideAssistContent(android::app::assist::AssistContent arg0)
+	void Activity::onProvideAssistContent(android::app::assist::AssistContent arg0) const
 	{
 		callMethod<void>(
 			"onProvideAssistContent",
@@ -1077,7 +1077,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onProvideAssistData(android::os::Bundle arg0)
+	void Activity::onProvideAssistData(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onProvideAssistData",
@@ -1085,7 +1085,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onProvideKeyboardShortcuts(JObject arg0, JObject arg1, jint arg2)
+	void Activity::onProvideKeyboardShortcuts(JObject arg0, JObject arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onProvideKeyboardShortcuts",
@@ -1095,14 +1095,14 @@ namespace android::app
 			arg2
 		);
 	}
-	android::net::Uri Activity::onProvideReferrer()
+	android::net::Uri Activity::onProvideReferrer() const
 	{
 		return callObjectMethod(
 			"onProvideReferrer",
 			"()Landroid/net/Uri;"
 		);
 	}
-	void Activity::onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2)
+	void Activity::onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"onRequestPermissionsResult",
@@ -1112,7 +1112,7 @@ namespace android::app
 			arg2.object<jintArray>()
 		);
 	}
-	void Activity::onRestoreInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1)
+	void Activity::onRestoreInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -1121,14 +1121,14 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	JObject Activity::onRetainNonConfigurationInstance()
+	JObject Activity::onRetainNonConfigurationInstance() const
 	{
 		return callObjectMethod(
 			"onRetainNonConfigurationInstance",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void Activity::onSaveInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1)
+	void Activity::onSaveInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1) const
 	{
 		callMethod<void>(
 			"onSaveInstanceState",
@@ -1137,14 +1137,14 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onSearchRequested()
+	jboolean Activity::onSearchRequested() const
 	{
 		return callMethod<jboolean>(
 			"onSearchRequested",
 			"()Z"
 		);
 	}
-	jboolean Activity::onSearchRequested(android::view::SearchEvent arg0)
+	jboolean Activity::onSearchRequested(android::view::SearchEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSearchRequested",
@@ -1152,14 +1152,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onStateNotSaved()
+	void Activity::onStateNotSaved() const
 	{
 		callMethod<void>(
 			"onStateNotSaved",
 			"()V"
 		);
 	}
-	void Activity::onTopResumedActivityChanged(jboolean arg0)
+	void Activity::onTopResumedActivityChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onTopResumedActivityChanged",
@@ -1167,7 +1167,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Activity::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean Activity::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -1175,7 +1175,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean Activity::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -1183,7 +1183,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onTrimMemory(jint arg0)
+	void Activity::onTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"onTrimMemory",
@@ -1191,21 +1191,21 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::onUserInteraction()
+	void Activity::onUserInteraction() const
 	{
 		callMethod<void>(
 			"onUserInteraction",
 			"()V"
 		);
 	}
-	void Activity::onVisibleBehindCanceled()
+	void Activity::onVisibleBehindCanceled() const
 	{
 		callMethod<void>(
 			"onVisibleBehindCanceled",
 			"()V"
 		);
 	}
-	void Activity::onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0)
+	void Activity::onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0) const
 	{
 		callMethod<void>(
 			"onWindowAttributesChanged",
@@ -1213,7 +1213,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onWindowFocusChanged(jboolean arg0)
+	void Activity::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -1221,7 +1221,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::ActionMode Activity::onWindowStartingActionMode(JObject arg0)
+	android::view::ActionMode Activity::onWindowStartingActionMode(JObject arg0) const
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -1229,7 +1229,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::ActionMode Activity::onWindowStartingActionMode(JObject arg0, jint arg1)
+	android::view::ActionMode Activity::onWindowStartingActionMode(JObject arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -1238,7 +1238,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::openContextMenu(android::view::View arg0)
+	void Activity::openContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"openContextMenu",
@@ -1246,14 +1246,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::openOptionsMenu()
+	void Activity::openOptionsMenu() const
 	{
 		callMethod<void>(
 			"openOptionsMenu",
 			"()V"
 		);
 	}
-	void Activity::overridePendingTransition(jint arg0, jint arg1)
+	void Activity::overridePendingTransition(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"overridePendingTransition",
@@ -1262,21 +1262,21 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::postponeEnterTransition()
+	void Activity::postponeEnterTransition() const
 	{
 		callMethod<void>(
 			"postponeEnterTransition",
 			"()V"
 		);
 	}
-	void Activity::recreate()
+	void Activity::recreate() const
 	{
 		callMethod<void>(
 			"recreate",
 			"()V"
 		);
 	}
-	void Activity::registerActivityLifecycleCallbacks(JObject arg0)
+	void Activity::registerActivityLifecycleCallbacks(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerActivityLifecycleCallbacks",
@@ -1284,7 +1284,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::registerForContextMenu(android::view::View arg0)
+	void Activity::registerForContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"registerForContextMenu",
@@ -1292,14 +1292,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::releaseInstance()
+	jboolean Activity::releaseInstance() const
 	{
 		return callMethod<jboolean>(
 			"releaseInstance",
 			"()Z"
 		);
 	}
-	void Activity::removeDialog(jint arg0)
+	void Activity::removeDialog(jint arg0) const
 	{
 		callMethod<void>(
 			"removeDialog",
@@ -1307,14 +1307,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::reportFullyDrawn()
+	void Activity::reportFullyDrawn() const
 	{
 		callMethod<void>(
 			"reportFullyDrawn",
 			"()V"
 		);
 	}
-	android::view::DragAndDropPermissions Activity::requestDragAndDropPermissions(android::view::DragEvent arg0)
+	android::view::DragAndDropPermissions Activity::requestDragAndDropPermissions(android::view::DragEvent arg0) const
 	{
 		return callObjectMethod(
 			"requestDragAndDropPermissions",
@@ -1322,7 +1322,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::requestPermissions(JArray arg0, jint arg1)
+	void Activity::requestPermissions(JArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"requestPermissions",
@@ -1331,14 +1331,14 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::requestShowKeyboardShortcuts()
+	void Activity::requestShowKeyboardShortcuts() const
 	{
 		callMethod<void>(
 			"requestShowKeyboardShortcuts",
 			"()V"
 		);
 	}
-	jboolean Activity::requestVisibleBehind(jboolean arg0)
+	jboolean Activity::requestVisibleBehind(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestVisibleBehind",
@@ -1346,7 +1346,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Activity::requestWindowFeature(jint arg0)
+	jboolean Activity::requestWindowFeature(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestWindowFeature",
@@ -1354,7 +1354,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::View Activity::requireViewById(jint arg0)
+	android::view::View Activity::requireViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -1362,7 +1362,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::runOnUiThread(JObject arg0)
+	void Activity::runOnUiThread(JObject arg0) const
 	{
 		callMethod<void>(
 			"runOnUiThread",
@@ -1370,7 +1370,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setActionBar(android::widget::Toolbar arg0)
+	void Activity::setActionBar(android::widget::Toolbar arg0) const
 	{
 		callMethod<void>(
 			"setActionBar",
@@ -1378,7 +1378,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setContentTransitionManager(android::transition::TransitionManager arg0)
+	void Activity::setContentTransitionManager(android::transition::TransitionManager arg0) const
 	{
 		callMethod<void>(
 			"setContentTransitionManager",
@@ -1386,7 +1386,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setContentView(android::view::View arg0)
+	void Activity::setContentView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -1394,7 +1394,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setContentView(jint arg0)
+	void Activity::setContentView(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -1402,7 +1402,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void Activity::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -1411,7 +1411,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::setDefaultKeyMode(jint arg0)
+	void Activity::setDefaultKeyMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setDefaultKeyMode",
@@ -1419,7 +1419,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setEnterSharedElementCallback(android::app::SharedElementCallback arg0)
+	void Activity::setEnterSharedElementCallback(android::app::SharedElementCallback arg0) const
 	{
 		callMethod<void>(
 			"setEnterSharedElementCallback",
@@ -1427,7 +1427,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setExitSharedElementCallback(android::app::SharedElementCallback arg0)
+	void Activity::setExitSharedElementCallback(android::app::SharedElementCallback arg0) const
 	{
 		callMethod<void>(
 			"setExitSharedElementCallback",
@@ -1435,7 +1435,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setFeatureDrawable(jint arg0, android::graphics::drawable::Drawable arg1)
+	void Activity::setFeatureDrawable(jint arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawable",
@@ -1444,7 +1444,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::setFeatureDrawableAlpha(jint arg0, jint arg1)
+	void Activity::setFeatureDrawableAlpha(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableAlpha",
@@ -1453,7 +1453,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::setFeatureDrawableResource(jint arg0, jint arg1)
+	void Activity::setFeatureDrawableResource(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableResource",
@@ -1462,7 +1462,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::setFeatureDrawableUri(jint arg0, android::net::Uri arg1)
+	void Activity::setFeatureDrawableUri(jint arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"setFeatureDrawableUri",
@@ -1471,7 +1471,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::setFinishOnTouchOutside(jboolean arg0)
+	void Activity::setFinishOnTouchOutside(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFinishOnTouchOutside",
@@ -1479,7 +1479,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setImmersive(jboolean arg0)
+	void Activity::setImmersive(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setImmersive",
@@ -1487,7 +1487,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setInheritShowWhenLocked(jboolean arg0)
+	void Activity::setInheritShowWhenLocked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setInheritShowWhenLocked",
@@ -1495,7 +1495,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setIntent(android::content::Intent arg0)
+	void Activity::setIntent(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setIntent",
@@ -1503,7 +1503,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setMediaController(android::media::session::MediaController arg0)
+	void Activity::setMediaController(android::media::session::MediaController arg0) const
 	{
 		callMethod<void>(
 			"setMediaController",
@@ -1511,7 +1511,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setPictureInPictureParams(android::app::PictureInPictureParams arg0)
+	void Activity::setPictureInPictureParams(android::app::PictureInPictureParams arg0) const
 	{
 		callMethod<void>(
 			"setPictureInPictureParams",
@@ -1519,7 +1519,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setProgress(jint arg0)
+	void Activity::setProgress(jint arg0) const
 	{
 		callMethod<void>(
 			"setProgress",
@@ -1527,7 +1527,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setProgressBarIndeterminate(jboolean arg0)
+	void Activity::setProgressBarIndeterminate(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setProgressBarIndeterminate",
@@ -1535,7 +1535,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setProgressBarIndeterminateVisibility(jboolean arg0)
+	void Activity::setProgressBarIndeterminateVisibility(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setProgressBarIndeterminateVisibility",
@@ -1543,7 +1543,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setProgressBarVisibility(jboolean arg0)
+	void Activity::setProgressBarVisibility(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setProgressBarVisibility",
@@ -1551,7 +1551,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setRequestedOrientation(jint arg0)
+	void Activity::setRequestedOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"setRequestedOrientation",
@@ -1559,7 +1559,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setResult(jint arg0)
+	void Activity::setResult(jint arg0) const
 	{
 		callMethod<void>(
 			"setResult",
@@ -1567,7 +1567,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setResult(jint arg0, android::content::Intent arg1)
+	void Activity::setResult(jint arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"setResult",
@@ -1576,7 +1576,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::setSecondaryProgress(jint arg0)
+	void Activity::setSecondaryProgress(jint arg0) const
 	{
 		callMethod<void>(
 			"setSecondaryProgress",
@@ -1584,7 +1584,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setShowWhenLocked(jboolean arg0)
+	void Activity::setShowWhenLocked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowWhenLocked",
@@ -1592,7 +1592,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setTaskDescription(android::app::ActivityManager_TaskDescription arg0)
+	void Activity::setTaskDescription(android::app::ActivityManager_TaskDescription arg0) const
 	{
 		callMethod<void>(
 			"setTaskDescription",
@@ -1600,7 +1600,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::setTheme(jint arg0)
+	void Activity::setTheme(jint arg0) const
 	{
 		callMethod<void>(
 			"setTheme",
@@ -1608,7 +1608,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setTitle(jint arg0)
+	void Activity::setTitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -1616,7 +1616,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setTitle(JString arg0)
+	void Activity::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -1624,7 +1624,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void Activity::setTitleColor(jint arg0)
+	void Activity::setTitleColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitleColor",
@@ -1632,7 +1632,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setTurnScreenOn(jboolean arg0)
+	void Activity::setTurnScreenOn(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTurnScreenOn",
@@ -1640,7 +1640,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setVisible(jboolean arg0)
+	void Activity::setVisible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVisible",
@@ -1648,7 +1648,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setVolumeControlStream(jint arg0)
+	void Activity::setVolumeControlStream(jint arg0) const
 	{
 		callMethod<void>(
 			"setVolumeControlStream",
@@ -1656,7 +1656,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setVrModeEnabled(jboolean arg0, android::content::ComponentName arg1)
+	void Activity::setVrModeEnabled(jboolean arg0, android::content::ComponentName arg1) const
 	{
 		callMethod<void>(
 			"setVrModeEnabled",
@@ -1665,7 +1665,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::shouldShowRequestPermissionRationale(JString arg0)
+	jboolean Activity::shouldShowRequestPermissionRationale(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"shouldShowRequestPermissionRationale",
@@ -1673,7 +1673,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Activity::shouldUpRecreateTask(android::content::Intent arg0)
+	jboolean Activity::shouldUpRecreateTask(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"shouldUpRecreateTask",
@@ -1681,7 +1681,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::showAssist(android::os::Bundle arg0)
+	jboolean Activity::showAssist(android::os::Bundle arg0) const
 	{
 		return callMethod<jboolean>(
 			"showAssist",
@@ -1689,7 +1689,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::showDialog(jint arg0, android::os::Bundle arg1)
+	jboolean Activity::showDialog(jint arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"showDialog",
@@ -1698,7 +1698,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::showDialog(jint arg0)
+	void Activity::showDialog(jint arg0) const
 	{
 		callMethod<void>(
 			"showDialog",
@@ -1706,14 +1706,14 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::showLockTaskEscapeMessage()
+	void Activity::showLockTaskEscapeMessage() const
 	{
 		callMethod<void>(
 			"showLockTaskEscapeMessage",
 			"()V"
 		);
 	}
-	android::view::ActionMode Activity::startActionMode(JObject arg0)
+	android::view::ActionMode Activity::startActionMode(JObject arg0) const
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -1721,7 +1721,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::ActionMode Activity::startActionMode(JObject arg0, jint arg1)
+	android::view::ActionMode Activity::startActionMode(JObject arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -1730,7 +1730,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::startActivities(JArray arg0)
+	void Activity::startActivities(JArray arg0) const
 	{
 		callMethod<void>(
 			"startActivities",
@@ -1738,7 +1738,7 @@ namespace android::app
 			arg0.object<jarray>()
 		);
 	}
-	void Activity::startActivities(JArray arg0, android::os::Bundle arg1)
+	void Activity::startActivities(JArray arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"startActivities",
@@ -1747,7 +1747,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::startActivity(android::content::Intent arg0)
+	void Activity::startActivity(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -1755,7 +1755,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::startActivity(android::content::Intent arg0, android::os::Bundle arg1)
+	void Activity::startActivity(android::content::Intent arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -1764,7 +1764,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::startActivityForResult(android::content::Intent arg0, jint arg1)
+	void Activity::startActivityForResult(android::content::Intent arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"startActivityForResult",
@@ -1773,7 +1773,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::startActivityForResult(android::content::Intent arg0, jint arg1, android::os::Bundle arg2)
+	void Activity::startActivityForResult(android::content::Intent arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"startActivityForResult",
@@ -1783,7 +1783,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Activity::startActivityFromChild(android::app::Activity arg0, android::content::Intent arg1, jint arg2)
+	void Activity::startActivityFromChild(android::app::Activity arg0, android::content::Intent arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"startActivityFromChild",
@@ -1793,7 +1793,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Activity::startActivityFromChild(android::app::Activity arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3)
+	void Activity::startActivityFromChild(android::app::Activity arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"startActivityFromChild",
@@ -1804,7 +1804,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void Activity::startActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2)
+	void Activity::startActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"startActivityFromFragment",
@@ -1814,7 +1814,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Activity::startActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3)
+	void Activity::startActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"startActivityFromFragment",
@@ -1825,7 +1825,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	jboolean Activity::startActivityIfNeeded(android::content::Intent arg0, jint arg1)
+	jboolean Activity::startActivityIfNeeded(android::content::Intent arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"startActivityIfNeeded",
@@ -1834,7 +1834,7 @@ namespace android::app
 			arg1
 		);
 	}
-	jboolean Activity::startActivityIfNeeded(android::content::Intent arg0, jint arg1, android::os::Bundle arg2)
+	jboolean Activity::startActivityIfNeeded(android::content::Intent arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"startActivityIfNeeded",
@@ -1844,7 +1844,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Activity::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4)
+	void Activity::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"startIntentSender",
@@ -1856,7 +1856,7 @@ namespace android::app
 			arg4
 		);
 	}
-	void Activity::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
+	void Activity::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5) const
 	{
 		callMethod<void>(
 			"startIntentSender",
@@ -1869,7 +1869,7 @@ namespace android::app
 			arg5.object()
 		);
 	}
-	void Activity::startIntentSenderForResult(android::content::IntentSender arg0, jint arg1, android::content::Intent arg2, jint arg3, jint arg4, jint arg5)
+	void Activity::startIntentSenderForResult(android::content::IntentSender arg0, jint arg1, android::content::Intent arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"startIntentSenderForResult",
@@ -1882,7 +1882,7 @@ namespace android::app
 			arg5
 		);
 	}
-	void Activity::startIntentSenderForResult(android::content::IntentSender arg0, jint arg1, android::content::Intent arg2, jint arg3, jint arg4, jint arg5, android::os::Bundle arg6)
+	void Activity::startIntentSenderForResult(android::content::IntentSender arg0, jint arg1, android::content::Intent arg2, jint arg3, jint arg4, jint arg5, android::os::Bundle arg6) const
 	{
 		callMethod<void>(
 			"startIntentSenderForResult",
@@ -1896,7 +1896,7 @@ namespace android::app
 			arg6.object()
 		);
 	}
-	void Activity::startIntentSenderFromChild(android::app::Activity arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6)
+	void Activity::startIntentSenderFromChild(android::app::Activity arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"startIntentSenderFromChild",
@@ -1910,7 +1910,7 @@ namespace android::app
 			arg6
 		);
 	}
-	void Activity::startIntentSenderFromChild(android::app::Activity arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6, android::os::Bundle arg7)
+	void Activity::startIntentSenderFromChild(android::app::Activity arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6, android::os::Bundle arg7) const
 	{
 		callMethod<void>(
 			"startIntentSenderFromChild",
@@ -1925,7 +1925,7 @@ namespace android::app
 			arg7.object()
 		);
 	}
-	void Activity::startLocalVoiceInteraction(android::os::Bundle arg0)
+	void Activity::startLocalVoiceInteraction(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"startLocalVoiceInteraction",
@@ -1933,14 +1933,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::startLockTask()
+	void Activity::startLockTask() const
 	{
 		callMethod<void>(
 			"startLockTask",
 			"()V"
 		);
 	}
-	void Activity::startManagingCursor(JObject arg0)
+	void Activity::startManagingCursor(JObject arg0) const
 	{
 		callMethod<void>(
 			"startManagingCursor",
@@ -1948,7 +1948,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::startNextMatchingActivity(android::content::Intent arg0)
+	jboolean Activity::startNextMatchingActivity(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"startNextMatchingActivity",
@@ -1956,7 +1956,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::startNextMatchingActivity(android::content::Intent arg0, android::os::Bundle arg1)
+	jboolean Activity::startNextMatchingActivity(android::content::Intent arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"startNextMatchingActivity",
@@ -1965,14 +1965,14 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::startPostponedEnterTransition()
+	void Activity::startPostponedEnterTransition() const
 	{
 		callMethod<void>(
 			"startPostponedEnterTransition",
 			"()V"
 		);
 	}
-	void Activity::startSearch(JString arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3)
+	void Activity::startSearch(JString arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"startSearch",
@@ -1983,21 +1983,21 @@ namespace android::app
 			arg3
 		);
 	}
-	void Activity::stopLocalVoiceInteraction()
+	void Activity::stopLocalVoiceInteraction() const
 	{
 		callMethod<void>(
 			"stopLocalVoiceInteraction",
 			"()V"
 		);
 	}
-	void Activity::stopLockTask()
+	void Activity::stopLockTask() const
 	{
 		callMethod<void>(
 			"stopLockTask",
 			"()V"
 		);
 	}
-	void Activity::stopManagingCursor(JObject arg0)
+	void Activity::stopManagingCursor(JObject arg0) const
 	{
 		callMethod<void>(
 			"stopManagingCursor",
@@ -2005,7 +2005,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::takeKeyEvents(jboolean arg0)
+	void Activity::takeKeyEvents(jboolean arg0) const
 	{
 		callMethod<void>(
 			"takeKeyEvents",
@@ -2013,7 +2013,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::triggerSearch(JString arg0, android::os::Bundle arg1)
+	void Activity::triggerSearch(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"triggerSearch",
@@ -2022,7 +2022,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::unregisterActivityLifecycleCallbacks(JObject arg0)
+	void Activity::unregisterActivityLifecycleCallbacks(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterActivityLifecycleCallbacks",
@@ -2030,7 +2030,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::unregisterForContextMenu(android::view::View arg0)
+	void Activity::unregisterForContextMenu(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"unregisterForContextMenu",

@@ -70,12 +70,12 @@ namespace java::io
 		// Methods
 		static java::io::ObjectStreamClass lookup(JClass arg0);
 		static java::io::ObjectStreamClass lookupAny(JClass arg0);
-		JClass forClass();
-		java::io::ObjectStreamField getField(JString arg0);
-		JArray getFields();
-		JString getName();
-		jlong getSerialVersionUID();
-		JString toString();
+		JClass forClass() const;
+		java::io::ObjectStreamField getField(JString arg0) const;
+		JArray getFields() const;
+		JString getName() const;
+		jlong getSerialVersionUID() const;
+		JString toString() const;
 	};
 } // namespace java::io
 

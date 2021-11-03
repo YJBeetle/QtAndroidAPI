@@ -20,7 +20,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jboolean IntentFilter_AuthorityEntry::equals(JObject arg0)
+	jboolean IntentFilter_AuthorityEntry::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,21 +28,21 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	JString IntentFilter_AuthorityEntry::getHost()
+	JString IntentFilter_AuthorityEntry::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint IntentFilter_AuthorityEntry::getPort()
+	jint IntentFilter_AuthorityEntry::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	jint IntentFilter_AuthorityEntry::match(android::net::Uri arg0)
+	jint IntentFilter_AuthorityEntry::match(android::net::Uri arg0) const
 	{
 		return callMethod<jint>(
 			"match",

@@ -171,7 +171,7 @@ namespace android::speech::tts
 			"()I"
 		);
 	}
-	jint TextToSpeech::addEarcon(JString arg0, java::io::File arg1)
+	jint TextToSpeech::addEarcon(JString arg0, java::io::File arg1) const
 	{
 		return callMethod<jint>(
 			"addEarcon",
@@ -180,7 +180,7 @@ namespace android::speech::tts
 			arg1.object()
 		);
 	}
-	jint TextToSpeech::addEarcon(JString arg0, JString arg1)
+	jint TextToSpeech::addEarcon(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"addEarcon",
@@ -189,7 +189,7 @@ namespace android::speech::tts
 			arg1.object<jstring>()
 		);
 	}
-	jint TextToSpeech::addEarcon(JString arg0, JString arg1, jint arg2)
+	jint TextToSpeech::addEarcon(JString arg0, JString arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"addEarcon",
@@ -199,7 +199,7 @@ namespace android::speech::tts
 			arg2
 		);
 	}
-	jint TextToSpeech::addSpeech(JString arg0, java::io::File arg1)
+	jint TextToSpeech::addSpeech(JString arg0, java::io::File arg1) const
 	{
 		return callMethod<jint>(
 			"addSpeech",
@@ -208,7 +208,7 @@ namespace android::speech::tts
 			arg1.object()
 		);
 	}
-	jint TextToSpeech::addSpeech(JString arg0, JString arg1)
+	jint TextToSpeech::addSpeech(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"addSpeech",
@@ -217,7 +217,7 @@ namespace android::speech::tts
 			arg1.object<jstring>()
 		);
 	}
-	jint TextToSpeech::addSpeech(JString arg0, JString arg1, jint arg2)
+	jint TextToSpeech::addSpeech(JString arg0, JString arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"addSpeech",
@@ -227,49 +227,49 @@ namespace android::speech::tts
 			arg2
 		);
 	}
-	jboolean TextToSpeech::areDefaultsEnforced()
+	jboolean TextToSpeech::areDefaultsEnforced() const
 	{
 		return callMethod<jboolean>(
 			"areDefaultsEnforced",
 			"()Z"
 		);
 	}
-	JObject TextToSpeech::getAvailableLanguages()
+	JObject TextToSpeech::getAvailableLanguages() const
 	{
 		return callObjectMethod(
 			"getAvailableLanguages",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString TextToSpeech::getDefaultEngine()
+	JString TextToSpeech::getDefaultEngine() const
 	{
 		return callObjectMethod(
 			"getDefaultEngine",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::Locale TextToSpeech::getDefaultLanguage()
+	java::util::Locale TextToSpeech::getDefaultLanguage() const
 	{
 		return callObjectMethod(
 			"getDefaultLanguage",
 			"()Ljava/util/Locale;"
 		);
 	}
-	android::speech::tts::Voice TextToSpeech::getDefaultVoice()
+	android::speech::tts::Voice TextToSpeech::getDefaultVoice() const
 	{
 		return callObjectMethod(
 			"getDefaultVoice",
 			"()Landroid/speech/tts/Voice;"
 		);
 	}
-	JObject TextToSpeech::getEngines()
+	JObject TextToSpeech::getEngines() const
 	{
 		return callObjectMethod(
 			"getEngines",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject TextToSpeech::getFeatures(java::util::Locale arg0)
+	JObject TextToSpeech::getFeatures(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getFeatures",
@@ -277,28 +277,28 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	java::util::Locale TextToSpeech::getLanguage()
+	java::util::Locale TextToSpeech::getLanguage() const
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/util/Locale;"
 		);
 	}
-	android::speech::tts::Voice TextToSpeech::getVoice()
+	android::speech::tts::Voice TextToSpeech::getVoice() const
 	{
 		return callObjectMethod(
 			"getVoice",
 			"()Landroid/speech/tts/Voice;"
 		);
 	}
-	JObject TextToSpeech::getVoices()
+	JObject TextToSpeech::getVoices() const
 	{
 		return callObjectMethod(
 			"getVoices",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint TextToSpeech::isLanguageAvailable(java::util::Locale arg0)
+	jint TextToSpeech::isLanguageAvailable(java::util::Locale arg0) const
 	{
 		return callMethod<jint>(
 			"isLanguageAvailable",
@@ -306,14 +306,14 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	jboolean TextToSpeech::isSpeaking()
+	jboolean TextToSpeech::isSpeaking() const
 	{
 		return callMethod<jboolean>(
 			"isSpeaking",
 			"()Z"
 		);
 	}
-	jint TextToSpeech::playEarcon(JString arg0, jint arg1, java::util::HashMap arg2)
+	jint TextToSpeech::playEarcon(JString arg0, jint arg1, java::util::HashMap arg2) const
 	{
 		return callMethod<jint>(
 			"playEarcon",
@@ -323,7 +323,7 @@ namespace android::speech::tts
 			arg2.object()
 		);
 	}
-	jint TextToSpeech::playEarcon(JString arg0, jint arg1, android::os::Bundle arg2, JString arg3)
+	jint TextToSpeech::playEarcon(JString arg0, jint arg1, android::os::Bundle arg2, JString arg3) const
 	{
 		return callMethod<jint>(
 			"playEarcon",
@@ -334,7 +334,7 @@ namespace android::speech::tts
 			arg3.object<jstring>()
 		);
 	}
-	jint TextToSpeech::playSilence(jlong arg0, jint arg1, java::util::HashMap arg2)
+	jint TextToSpeech::playSilence(jlong arg0, jint arg1, java::util::HashMap arg2) const
 	{
 		return callMethod<jint>(
 			"playSilence",
@@ -344,7 +344,7 @@ namespace android::speech::tts
 			arg2.object()
 		);
 	}
-	jint TextToSpeech::playSilentUtterance(jlong arg0, jint arg1, JString arg2)
+	jint TextToSpeech::playSilentUtterance(jlong arg0, jint arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"playSilentUtterance",
@@ -354,7 +354,7 @@ namespace android::speech::tts
 			arg2.object<jstring>()
 		);
 	}
-	jint TextToSpeech::setAudioAttributes(android::media::AudioAttributes arg0)
+	jint TextToSpeech::setAudioAttributes(android::media::AudioAttributes arg0) const
 	{
 		return callMethod<jint>(
 			"setAudioAttributes",
@@ -362,7 +362,7 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	jint TextToSpeech::setEngineByPackageName(JString arg0)
+	jint TextToSpeech::setEngineByPackageName(JString arg0) const
 	{
 		return callMethod<jint>(
 			"setEngineByPackageName",
@@ -370,7 +370,7 @@ namespace android::speech::tts
 			arg0.object<jstring>()
 		);
 	}
-	jint TextToSpeech::setLanguage(java::util::Locale arg0)
+	jint TextToSpeech::setLanguage(java::util::Locale arg0) const
 	{
 		return callMethod<jint>(
 			"setLanguage",
@@ -378,7 +378,7 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	jint TextToSpeech::setOnUtteranceCompletedListener(JObject arg0)
+	jint TextToSpeech::setOnUtteranceCompletedListener(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"setOnUtteranceCompletedListener",
@@ -386,7 +386,7 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	jint TextToSpeech::setOnUtteranceProgressListener(android::speech::tts::UtteranceProgressListener arg0)
+	jint TextToSpeech::setOnUtteranceProgressListener(android::speech::tts::UtteranceProgressListener arg0) const
 	{
 		return callMethod<jint>(
 			"setOnUtteranceProgressListener",
@@ -394,7 +394,7 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	jint TextToSpeech::setPitch(jfloat arg0)
+	jint TextToSpeech::setPitch(jfloat arg0) const
 	{
 		return callMethod<jint>(
 			"setPitch",
@@ -402,7 +402,7 @@ namespace android::speech::tts
 			arg0
 		);
 	}
-	jint TextToSpeech::setSpeechRate(jfloat arg0)
+	jint TextToSpeech::setSpeechRate(jfloat arg0) const
 	{
 		return callMethod<jint>(
 			"setSpeechRate",
@@ -410,7 +410,7 @@ namespace android::speech::tts
 			arg0
 		);
 	}
-	jint TextToSpeech::setVoice(android::speech::tts::Voice arg0)
+	jint TextToSpeech::setVoice(android::speech::tts::Voice arg0) const
 	{
 		return callMethod<jint>(
 			"setVoice",
@@ -418,14 +418,14 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	void TextToSpeech::shutdown()
+	void TextToSpeech::shutdown() const
 	{
 		callMethod<void>(
 			"shutdown",
 			"()V"
 		);
 	}
-	jint TextToSpeech::speak(JString arg0, jint arg1, java::util::HashMap arg2)
+	jint TextToSpeech::speak(JString arg0, jint arg1, java::util::HashMap arg2) const
 	{
 		return callMethod<jint>(
 			"speak",
@@ -435,7 +435,7 @@ namespace android::speech::tts
 			arg2.object()
 		);
 	}
-	jint TextToSpeech::speak(JString arg0, jint arg1, android::os::Bundle arg2, JString arg3)
+	jint TextToSpeech::speak(JString arg0, jint arg1, android::os::Bundle arg2, JString arg3) const
 	{
 		return callMethod<jint>(
 			"speak",
@@ -446,14 +446,14 @@ namespace android::speech::tts
 			arg3.object<jstring>()
 		);
 	}
-	jint TextToSpeech::stop()
+	jint TextToSpeech::stop() const
 	{
 		return callMethod<jint>(
 			"stop",
 			"()I"
 		);
 	}
-	jint TextToSpeech::synthesizeToFile(JString arg0, java::util::HashMap arg1, JString arg2)
+	jint TextToSpeech::synthesizeToFile(JString arg0, java::util::HashMap arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"synthesizeToFile",
@@ -463,7 +463,7 @@ namespace android::speech::tts
 			arg2.object<jstring>()
 		);
 	}
-	jint TextToSpeech::synthesizeToFile(JString arg0, android::os::Bundle arg1, android::os::ParcelFileDescriptor arg2, JString arg3)
+	jint TextToSpeech::synthesizeToFile(JString arg0, android::os::Bundle arg1, android::os::ParcelFileDescriptor arg2, JString arg3) const
 	{
 		return callMethod<jint>(
 			"synthesizeToFile",
@@ -474,7 +474,7 @@ namespace android::speech::tts
 			arg3.object<jstring>()
 		);
 	}
-	jint TextToSpeech::synthesizeToFile(JString arg0, android::os::Bundle arg1, java::io::File arg2, JString arg3)
+	jint TextToSpeech::synthesizeToFile(JString arg0, android::os::Bundle arg1, java::io::File arg2, JString arg3) const
 	{
 		return callMethod<jint>(
 			"synthesizeToFile",

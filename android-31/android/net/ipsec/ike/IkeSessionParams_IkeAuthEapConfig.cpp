@@ -12,7 +12,7 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean IkeSessionParams_IkeAuthEapConfig::equals(JObject arg0)
+	jboolean IkeSessionParams_IkeAuthEapConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,14 +20,14 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	android::net::eap::EapSessionConfig IkeSessionParams_IkeAuthEapConfig::getEapConfig()
+	android::net::eap::EapSessionConfig IkeSessionParams_IkeAuthEapConfig::getEapConfig() const
 	{
 		return callObjectMethod(
 			"getEapConfig",
 			"()Landroid/net/eap/EapSessionConfig;"
 		);
 	}
-	jint IkeSessionParams_IkeAuthEapConfig::hashCode()
+	jint IkeSessionParams_IkeAuthEapConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -32,14 +32,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jint PlatformVpnProfile::getType()
+	jint PlatformVpnProfile::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JString PlatformVpnProfile::getTypeString()
+	JString PlatformVpnProfile::getTypeString() const
 	{
 		return callObjectMethod(
 			"getTypeString",

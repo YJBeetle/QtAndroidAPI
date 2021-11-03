@@ -246,98 +246,98 @@ namespace android::media::session
 	// Constructors
 	
 	// Methods
-	jint PlaybackState::describeContents()
+	jint PlaybackState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong PlaybackState::getActions()
+	jlong PlaybackState::getActions() const
 	{
 		return callMethod<jlong>(
 			"getActions",
 			"()J"
 		);
 	}
-	jlong PlaybackState::getActiveQueueItemId()
+	jlong PlaybackState::getActiveQueueItemId() const
 	{
 		return callMethod<jlong>(
 			"getActiveQueueItemId",
 			"()J"
 		);
 	}
-	jlong PlaybackState::getBufferedPosition()
+	jlong PlaybackState::getBufferedPosition() const
 	{
 		return callMethod<jlong>(
 			"getBufferedPosition",
 			"()J"
 		);
 	}
-	JObject PlaybackState::getCustomActions()
+	JObject PlaybackState::getCustomActions() const
 	{
 		return callObjectMethod(
 			"getCustomActions",
 			"()Ljava/util/List;"
 		);
 	}
-	JString PlaybackState::getErrorMessage()
+	JString PlaybackState::getErrorMessage() const
 	{
 		return callObjectMethod(
 			"getErrorMessage",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::os::Bundle PlaybackState::getExtras()
+	android::os::Bundle PlaybackState::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jlong PlaybackState::getLastPositionUpdateTime()
+	jlong PlaybackState::getLastPositionUpdateTime() const
 	{
 		return callMethod<jlong>(
 			"getLastPositionUpdateTime",
 			"()J"
 		);
 	}
-	jfloat PlaybackState::getPlaybackSpeed()
+	jfloat PlaybackState::getPlaybackSpeed() const
 	{
 		return callMethod<jfloat>(
 			"getPlaybackSpeed",
 			"()F"
 		);
 	}
-	jlong PlaybackState::getPosition()
+	jlong PlaybackState::getPosition() const
 	{
 		return callMethod<jlong>(
 			"getPosition",
 			"()J"
 		);
 	}
-	jint PlaybackState::getState()
+	jint PlaybackState::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jboolean PlaybackState::isActive()
+	jboolean PlaybackState::isActive() const
 	{
 		return callMethod<jboolean>(
 			"isActive",
 			"()Z"
 		);
 	}
-	JString PlaybackState::toString()
+	JString PlaybackState::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PlaybackState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PlaybackState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

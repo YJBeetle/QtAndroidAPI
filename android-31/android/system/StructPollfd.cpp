@@ -44,7 +44,7 @@ namespace android::system
 		) {}
 	
 	// Methods
-	JString StructPollfd::toString()
+	JString StructPollfd::toString() const
 	{
 		return callObjectMethod(
 			"toString",

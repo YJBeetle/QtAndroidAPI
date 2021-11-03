@@ -32,12 +32,12 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		android::graphics::Typeface getTypeface();
-		jboolean hasBackgroundColor();
-		jboolean hasEdgeColor();
-		jboolean hasEdgeType();
-		jboolean hasForegroundColor();
-		jboolean hasWindowColor();
+		android::graphics::Typeface getTypeface() const;
+		jboolean hasBackgroundColor() const;
+		jboolean hasEdgeColor() const;
+		jboolean hasEdgeType() const;
+		jboolean hasForegroundColor() const;
+		jboolean hasWindowColor() const;
 	};
 } // namespace android::view::accessibility
 

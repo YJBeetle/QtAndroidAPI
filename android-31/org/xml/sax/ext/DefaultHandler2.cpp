@@ -18,7 +18,7 @@ namespace org::xml::sax::ext
 		) {}
 	
 	// Methods
-	void DefaultHandler2::attributeDecl(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
+	void DefaultHandler2::attributeDecl(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		callMethod<void>(
 			"attributeDecl",
@@ -30,7 +30,7 @@ namespace org::xml::sax::ext
 			arg4.object<jstring>()
 		);
 	}
-	void DefaultHandler2::comment(JCharArray arg0, jint arg1, jint arg2)
+	void DefaultHandler2::comment(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"comment",
@@ -40,7 +40,7 @@ namespace org::xml::sax::ext
 			arg2
 		);
 	}
-	void DefaultHandler2::elementDecl(JString arg0, JString arg1)
+	void DefaultHandler2::elementDecl(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"elementDecl",
@@ -49,21 +49,21 @@ namespace org::xml::sax::ext
 			arg1.object<jstring>()
 		);
 	}
-	void DefaultHandler2::endCDATA()
+	void DefaultHandler2::endCDATA() const
 	{
 		callMethod<void>(
 			"endCDATA",
 			"()V"
 		);
 	}
-	void DefaultHandler2::endDTD()
+	void DefaultHandler2::endDTD() const
 	{
 		callMethod<void>(
 			"endDTD",
 			"()V"
 		);
 	}
-	void DefaultHandler2::endEntity(JString arg0)
+	void DefaultHandler2::endEntity(JString arg0) const
 	{
 		callMethod<void>(
 			"endEntity",
@@ -71,7 +71,7 @@ namespace org::xml::sax::ext
 			arg0.object<jstring>()
 		);
 	}
-	void DefaultHandler2::externalEntityDecl(JString arg0, JString arg1, JString arg2)
+	void DefaultHandler2::externalEntityDecl(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"externalEntityDecl",
@@ -81,7 +81,7 @@ namespace org::xml::sax::ext
 			arg2.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource DefaultHandler2::getExternalSubset(JString arg0, JString arg1)
+	org::xml::sax::InputSource DefaultHandler2::getExternalSubset(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getExternalSubset",
@@ -90,7 +90,7 @@ namespace org::xml::sax::ext
 			arg1.object<jstring>()
 		);
 	}
-	void DefaultHandler2::internalEntityDecl(JString arg0, JString arg1)
+	void DefaultHandler2::internalEntityDecl(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"internalEntityDecl",
@@ -99,7 +99,7 @@ namespace org::xml::sax::ext
 			arg1.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource DefaultHandler2::resolveEntity(JString arg0, JString arg1)
+	org::xml::sax::InputSource DefaultHandler2::resolveEntity(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"resolveEntity",
@@ -108,7 +108,7 @@ namespace org::xml::sax::ext
 			arg1.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource DefaultHandler2::resolveEntity(JString arg0, JString arg1, JString arg2, JString arg3)
+	org::xml::sax::InputSource DefaultHandler2::resolveEntity(JString arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		return callObjectMethod(
 			"resolveEntity",
@@ -119,14 +119,14 @@ namespace org::xml::sax::ext
 			arg3.object<jstring>()
 		);
 	}
-	void DefaultHandler2::startCDATA()
+	void DefaultHandler2::startCDATA() const
 	{
 		callMethod<void>(
 			"startCDATA",
 			"()V"
 		);
 	}
-	void DefaultHandler2::startDTD(JString arg0, JString arg1, JString arg2)
+	void DefaultHandler2::startDTD(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"startDTD",
@@ -136,7 +136,7 @@ namespace org::xml::sax::ext
 			arg2.object<jstring>()
 		);
 	}
-	void DefaultHandler2::startEntity(JString arg0)
+	void DefaultHandler2::startEntity(JString arg0) const
 	{
 		callMethod<void>(
 			"startEntity",

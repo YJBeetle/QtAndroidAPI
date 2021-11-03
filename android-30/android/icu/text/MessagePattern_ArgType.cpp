@@ -77,7 +77,7 @@ namespace android::icu::text
 			"()[Landroid/icu/text/MessagePattern$ArgType;"
 		);
 	}
-	jboolean MessagePattern_ArgType::hasPluralStyle()
+	jboolean MessagePattern_ArgType::hasPluralStyle() const
 	{
 		return callMethod<jboolean>(
 			"hasPluralStyle",

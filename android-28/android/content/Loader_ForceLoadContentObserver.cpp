@@ -17,14 +17,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jboolean Loader_ForceLoadContentObserver::deliverSelfNotifications()
+	jboolean Loader_ForceLoadContentObserver::deliverSelfNotifications() const
 	{
 		return callMethod<jboolean>(
 			"deliverSelfNotifications",
 			"()Z"
 		);
 	}
-	void Loader_ForceLoadContentObserver::onChange(jboolean arg0)
+	void Loader_ForceLoadContentObserver::onChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onChange",

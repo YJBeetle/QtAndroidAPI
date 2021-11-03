@@ -15,7 +15,7 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	void RemoteConnection_VideoProvider::registerCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0)
+	void RemoteConnection_VideoProvider::registerCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -23,21 +23,21 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection_VideoProvider::requestCallDataUsage()
+	void RemoteConnection_VideoProvider::requestCallDataUsage() const
 	{
 		callMethod<void>(
 			"requestCallDataUsage",
 			"()V"
 		);
 	}
-	void RemoteConnection_VideoProvider::requestCameraCapabilities()
+	void RemoteConnection_VideoProvider::requestCameraCapabilities() const
 	{
 		callMethod<void>(
 			"requestCameraCapabilities",
 			"()V"
 		);
 	}
-	void RemoteConnection_VideoProvider::sendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1)
+	void RemoteConnection_VideoProvider::sendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1) const
 	{
 		callMethod<void>(
 			"sendSessionModifyRequest",
@@ -46,7 +46,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_VideoProvider::sendSessionModifyResponse(android::telecom::VideoProfile arg0)
+	void RemoteConnection_VideoProvider::sendSessionModifyResponse(android::telecom::VideoProfile arg0) const
 	{
 		callMethod<void>(
 			"sendSessionModifyResponse",
@@ -54,7 +54,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection_VideoProvider::setCamera(JString arg0)
+	void RemoteConnection_VideoProvider::setCamera(JString arg0) const
 	{
 		callMethod<void>(
 			"setCamera",
@@ -62,7 +62,7 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	void RemoteConnection_VideoProvider::setDeviceOrientation(jint arg0)
+	void RemoteConnection_VideoProvider::setDeviceOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"setDeviceOrientation",
@@ -70,7 +70,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void RemoteConnection_VideoProvider::setDisplaySurface(android::view::Surface arg0)
+	void RemoteConnection_VideoProvider::setDisplaySurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setDisplaySurface",
@@ -78,7 +78,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection_VideoProvider::setPauseImage(android::net::Uri arg0)
+	void RemoteConnection_VideoProvider::setPauseImage(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setPauseImage",
@@ -86,7 +86,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection_VideoProvider::setPreviewSurface(android::view::Surface arg0)
+	void RemoteConnection_VideoProvider::setPreviewSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setPreviewSurface",
@@ -94,7 +94,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection_VideoProvider::setZoom(jfloat arg0)
+	void RemoteConnection_VideoProvider::setZoom(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setZoom",
@@ -102,7 +102,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void RemoteConnection_VideoProvider::unregisterCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0)
+	void RemoteConnection_VideoProvider::unregisterCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

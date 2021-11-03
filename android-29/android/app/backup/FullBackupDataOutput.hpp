@@ -16,8 +16,8 @@ namespace android::app::backup
 		// Constructors
 		
 		// Methods
-		jlong getQuota();
-		jint getTransportFlags();
+		jlong getQuota() const;
+		jint getTransportFlags() const;
 	};
 } // namespace android::app::backup
 

@@ -19,7 +19,7 @@ namespace java::util::concurrent
 		RecursiveTask();
 		
 		// Methods
-		JObject getRawResult();
+		JObject getRawResult() const;
 	};
 } // namespace java::util::concurrent
 

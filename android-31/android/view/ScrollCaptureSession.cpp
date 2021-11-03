@@ -21,21 +21,21 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::graphics::Point ScrollCaptureSession::getPositionInWindow()
+	android::graphics::Point ScrollCaptureSession::getPositionInWindow() const
 	{
 		return callObjectMethod(
 			"getPositionInWindow",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	android::graphics::Rect ScrollCaptureSession::getScrollBounds()
+	android::graphics::Rect ScrollCaptureSession::getScrollBounds() const
 	{
 		return callObjectMethod(
 			"getScrollBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::view::Surface ScrollCaptureSession::getSurface()
+	android::view::Surface ScrollCaptureSession::getSurface() const
 	{
 		return callObjectMethod(
 			"getSurface",

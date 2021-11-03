@@ -36,14 +36,14 @@ namespace java::net
 		
 		// Methods
 		static java::net::InetSocketAddress createUnresolved(JString arg0, jint arg1);
-		jboolean equals(JObject arg0);
-		java::net::InetAddress getAddress();
-		JString getHostName();
-		JString getHostString();
-		jint getPort();
-		jint hashCode();
-		jboolean isUnresolved();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		java::net::InetAddress getAddress() const;
+		JString getHostName() const;
+		JString getHostString() const;
+		jint getPort() const;
+		jint hashCode() const;
+		jboolean isUnresolved() const;
+		JString toString() const;
 	};
 } // namespace java::net
 

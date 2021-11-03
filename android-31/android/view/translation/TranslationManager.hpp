@@ -25,11 +25,11 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		void addOnDeviceTranslationCapabilityUpdateListener(JObject arg0, JObject arg1);
-		void createOnDeviceTranslator(android::view::translation::TranslationContext arg0, JObject arg1, JObject arg2);
-		JObject getOnDeviceTranslationCapabilities(jint arg0, jint arg1);
-		android::app::PendingIntent getOnDeviceTranslationSettingsActivityIntent();
-		void removeOnDeviceTranslationCapabilityUpdateListener(JObject arg0);
+		void addOnDeviceTranslationCapabilityUpdateListener(JObject arg0, JObject arg1) const;
+		void createOnDeviceTranslator(android::view::translation::TranslationContext arg0, JObject arg1, JObject arg2) const;
+		JObject getOnDeviceTranslationCapabilities(jint arg0, jint arg1) const;
+		android::app::PendingIntent getOnDeviceTranslationSettingsActivityIntent() const;
+		void removeOnDeviceTranslationCapabilityUpdateListener(JObject arg0) const;
 	};
 } // namespace android::view::translation
 

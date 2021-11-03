@@ -10,21 +10,21 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jint Spliterators_AbstractIntSpliterator::characteristics()
+	jint Spliterators_AbstractIntSpliterator::characteristics() const
 	{
 		return callMethod<jint>(
 			"characteristics",
 			"()I"
 		);
 	}
-	jlong Spliterators_AbstractIntSpliterator::estimateSize()
+	jlong Spliterators_AbstractIntSpliterator::estimateSize() const
 	{
 		return callMethod<jlong>(
 			"estimateSize",
 			"()J"
 		);
 	}
-	JObject Spliterators_AbstractIntSpliterator::trySplit()
+	JObject Spliterators_AbstractIntSpliterator::trySplit() const
 	{
 		return callObjectMethod(
 			"trySplit",

@@ -22,7 +22,7 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void AttributeListImpl::addAttribute(JString arg0, JString arg1, JString arg2)
+	void AttributeListImpl::addAttribute(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"addAttribute",
@@ -32,21 +32,21 @@ namespace org::xml::sax::helpers
 			arg2.object<jstring>()
 		);
 	}
-	void AttributeListImpl::clear()
+	void AttributeListImpl::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jint AttributeListImpl::getLength()
+	jint AttributeListImpl::getLength() const
 	{
 		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
-	JString AttributeListImpl::getName(jint arg0)
+	JString AttributeListImpl::getName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -54,7 +54,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributeListImpl::getType(jint arg0)
+	JString AttributeListImpl::getType(jint arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -62,7 +62,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributeListImpl::getType(JString arg0)
+	JString AttributeListImpl::getType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -70,7 +70,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JString AttributeListImpl::getValue(jint arg0)
+	JString AttributeListImpl::getValue(jint arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -78,7 +78,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributeListImpl::getValue(JString arg0)
+	JString AttributeListImpl::getValue(JString arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -86,7 +86,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void AttributeListImpl::removeAttribute(JString arg0)
+	void AttributeListImpl::removeAttribute(JString arg0) const
 	{
 		callMethod<void>(
 			"removeAttribute",
@@ -94,7 +94,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void AttributeListImpl::setAttributeList(JObject arg0)
+	void AttributeListImpl::setAttributeList(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAttributeList",

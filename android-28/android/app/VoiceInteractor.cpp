@@ -15,7 +15,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(JString arg0)
+	android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(JString arg0) const
 	{
 		return callObjectMethod(
 			"getActiveRequest",
@@ -23,14 +23,14 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	JArray VoiceInteractor::getActiveRequests()
+	JArray VoiceInteractor::getActiveRequests() const
 	{
 		return callObjectMethod(
 			"getActiveRequests",
 			"()[Landroid/app/VoiceInteractor$Request;"
 		);
 	}
-	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0)
+	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0) const
 	{
 		return callMethod<jboolean>(
 			"submitRequest",
@@ -38,7 +38,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1)
+	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"submitRequest",
@@ -47,7 +47,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	JBooleanArray VoiceInteractor::supportsCommands(JArray arg0)
+	JBooleanArray VoiceInteractor::supportsCommands(JArray arg0) const
 	{
 		return callObjectMethod(
 			"supportsCommands",

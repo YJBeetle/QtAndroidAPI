@@ -43,20 +43,20 @@ namespace android::print
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getAdvancedIntOption(JString arg0);
-		JString getAdvancedStringOption(JString arg0);
-		android::print::PrintAttributes getAttributes();
-		jint getCopies();
-		jlong getCreationTime();
-		android::print::PrintJobId getId();
-		JString getLabel();
-		JArray getPages();
-		android::print::PrinterId getPrinterId();
-		jint getState();
-		jboolean hasAdvancedOption(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getAdvancedIntOption(JString arg0) const;
+		JString getAdvancedStringOption(JString arg0) const;
+		android::print::PrintAttributes getAttributes() const;
+		jint getCopies() const;
+		jlong getCreationTime() const;
+		android::print::PrintJobId getId() const;
+		JString getLabel() const;
+		JArray getPages() const;
+		android::print::PrinterId getPrinterId() const;
+		jint getState() const;
+		jboolean hasAdvancedOption(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::print
 

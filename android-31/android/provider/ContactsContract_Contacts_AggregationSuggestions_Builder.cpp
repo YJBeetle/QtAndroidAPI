@@ -17,7 +17,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::addNameParameter(JString arg0)
+	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::addNameParameter(JString arg0) const
 	{
 		return callObjectMethod(
 			"addNameParameter",
@@ -25,14 +25,14 @@ namespace android::provider
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri ContactsContract_Contacts_AggregationSuggestions_Builder::build()
+	android::net::Uri ContactsContract_Contacts_AggregationSuggestions_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/Uri;"
 		);
 	}
-	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::setContactId(jlong arg0)
+	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::setContactId(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setContactId",
@@ -40,7 +40,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::setLimit(jint arg0)
+	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::setLimit(jint arg0) const
 	{
 		return callObjectMethod(
 			"setLimit",

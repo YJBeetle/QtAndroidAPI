@@ -28,7 +28,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void MatrixCursor::addRow(JObjectArray arg0)
+	void MatrixCursor::addRow(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"addRow",
@@ -36,7 +36,7 @@ namespace android::database
 			arg0.object<jobjectArray>()
 		);
 	}
-	void MatrixCursor::addRow(JObject arg0)
+	void MatrixCursor::addRow(JObject arg0) const
 	{
 		callMethod<void>(
 			"addRow",
@@ -44,7 +44,7 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	JByteArray MatrixCursor::getBlob(jint arg0)
+	JByteArray MatrixCursor::getBlob(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBlob",
@@ -52,21 +52,21 @@ namespace android::database
 			arg0
 		);
 	}
-	JArray MatrixCursor::getColumnNames()
+	JArray MatrixCursor::getColumnNames() const
 	{
 		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint MatrixCursor::getCount()
+	jint MatrixCursor::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	jdouble MatrixCursor::getDouble(jint arg0)
+	jdouble MatrixCursor::getDouble(jint arg0) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -74,7 +74,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jfloat MatrixCursor::getFloat(jint arg0)
+	jfloat MatrixCursor::getFloat(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -82,7 +82,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jint MatrixCursor::getInt(jint arg0)
+	jint MatrixCursor::getInt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -90,7 +90,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jlong MatrixCursor::getLong(jint arg0)
+	jlong MatrixCursor::getLong(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -98,7 +98,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jshort MatrixCursor::getShort(jint arg0)
+	jshort MatrixCursor::getShort(jint arg0) const
 	{
 		return callMethod<jshort>(
 			"getShort",
@@ -106,7 +106,7 @@ namespace android::database
 			arg0
 		);
 	}
-	JString MatrixCursor::getString(jint arg0)
+	JString MatrixCursor::getString(jint arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -114,7 +114,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jint MatrixCursor::getType(jint arg0)
+	jint MatrixCursor::getType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getType",
@@ -122,7 +122,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jboolean MatrixCursor::isNull(jint arg0)
+	jboolean MatrixCursor::isNull(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNull",
@@ -130,7 +130,7 @@ namespace android::database
 			arg0
 		);
 	}
-	android::database::MatrixCursor_RowBuilder MatrixCursor::newRow()
+	android::database::MatrixCursor_RowBuilder MatrixCursor::newRow() const
 	{
 		return callObjectMethod(
 			"newRow",

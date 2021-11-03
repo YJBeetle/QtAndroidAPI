@@ -35,14 +35,14 @@ namespace android::app::job
 		) {}
 	
 	// Methods
-	jint JobInfo_TriggerContentUri::describeContents()
+	jint JobInfo_TriggerContentUri::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean JobInfo_TriggerContentUri::equals(JObject arg0)
+	jboolean JobInfo_TriggerContentUri::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -50,28 +50,28 @@ namespace android::app::job
 			arg0.object<jobject>()
 		);
 	}
-	jint JobInfo_TriggerContentUri::getFlags()
+	jint JobInfo_TriggerContentUri::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	android::net::Uri JobInfo_TriggerContentUri::getUri()
+	android::net::Uri JobInfo_TriggerContentUri::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint JobInfo_TriggerContentUri::hashCode()
+	jint JobInfo_TriggerContentUri::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void JobInfo_TriggerContentUri::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void JobInfo_TriggerContentUri::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -47,63 +47,63 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	android::app::Dialog DialogPreference::getDialog()
+	android::app::Dialog DialogPreference::getDialog() const
 	{
 		return callObjectMethod(
 			"getDialog",
 			"()Landroid/app/Dialog;"
 		);
 	}
-	android::graphics::drawable::Drawable DialogPreference::getDialogIcon()
+	android::graphics::drawable::Drawable DialogPreference::getDialogIcon() const
 	{
 		return callObjectMethod(
 			"getDialogIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint DialogPreference::getDialogLayoutResource()
+	jint DialogPreference::getDialogLayoutResource() const
 	{
 		return callMethod<jint>(
 			"getDialogLayoutResource",
 			"()I"
 		);
 	}
-	JString DialogPreference::getDialogMessage()
+	JString DialogPreference::getDialogMessage() const
 	{
 		return callObjectMethod(
 			"getDialogMessage",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DialogPreference::getDialogTitle()
+	JString DialogPreference::getDialogTitle() const
 	{
 		return callObjectMethod(
 			"getDialogTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DialogPreference::getNegativeButtonText()
+	JString DialogPreference::getNegativeButtonText() const
 	{
 		return callObjectMethod(
 			"getNegativeButtonText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DialogPreference::getPositiveButtonText()
+	JString DialogPreference::getPositiveButtonText() const
 	{
 		return callObjectMethod(
 			"getPositiveButtonText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void DialogPreference::onActivityDestroy()
+	void DialogPreference::onActivityDestroy() const
 	{
 		callMethod<void>(
 			"onActivityDestroy",
 			"()V"
 		);
 	}
-	void DialogPreference::onClick(JObject arg0, jint arg1)
+	void DialogPreference::onClick(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -112,7 +112,7 @@ namespace android::preference
 			arg1
 		);
 	}
-	void DialogPreference::onDismiss(JObject arg0)
+	void DialogPreference::onDismiss(JObject arg0) const
 	{
 		callMethod<void>(
 			"onDismiss",
@@ -120,7 +120,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void DialogPreference::setDialogIcon(android::graphics::drawable::Drawable arg0)
+	void DialogPreference::setDialogIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setDialogIcon",
@@ -128,7 +128,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void DialogPreference::setDialogIcon(jint arg0)
+	void DialogPreference::setDialogIcon(jint arg0) const
 	{
 		callMethod<void>(
 			"setDialogIcon",
@@ -136,7 +136,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setDialogLayoutResource(jint arg0)
+	void DialogPreference::setDialogLayoutResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setDialogLayoutResource",
@@ -144,7 +144,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setDialogMessage(jint arg0)
+	void DialogPreference::setDialogMessage(jint arg0) const
 	{
 		callMethod<void>(
 			"setDialogMessage",
@@ -152,7 +152,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setDialogMessage(JString arg0)
+	void DialogPreference::setDialogMessage(JString arg0) const
 	{
 		callMethod<void>(
 			"setDialogMessage",
@@ -160,7 +160,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void DialogPreference::setDialogTitle(jint arg0)
+	void DialogPreference::setDialogTitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setDialogTitle",
@@ -168,7 +168,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setDialogTitle(JString arg0)
+	void DialogPreference::setDialogTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setDialogTitle",
@@ -176,7 +176,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void DialogPreference::setNegativeButtonText(jint arg0)
+	void DialogPreference::setNegativeButtonText(jint arg0) const
 	{
 		callMethod<void>(
 			"setNegativeButtonText",
@@ -184,7 +184,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setNegativeButtonText(JString arg0)
+	void DialogPreference::setNegativeButtonText(JString arg0) const
 	{
 		callMethod<void>(
 			"setNegativeButtonText",
@@ -192,7 +192,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void DialogPreference::setPositiveButtonText(jint arg0)
+	void DialogPreference::setPositiveButtonText(jint arg0) const
 	{
 		callMethod<void>(
 			"setPositiveButtonText",
@@ -200,7 +200,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setPositiveButtonText(JString arg0)
+	void DialogPreference::setPositiveButtonText(JString arg0) const
 	{
 		callMethod<void>(
 			"setPositiveButtonText",

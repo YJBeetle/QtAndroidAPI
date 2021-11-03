@@ -16,10 +16,10 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		JObject getAttributeTypeInfo(jint arg0);
-		JObject getElementTypeInfo();
-		jboolean isIdAttribute(jint arg0);
-		jboolean isSpecified(jint arg0);
+		JObject getAttributeTypeInfo(jint arg0) const;
+		JObject getElementTypeInfo() const;
+		jboolean isIdAttribute(jint arg0) const;
+		jboolean isSpecified(jint arg0) const;
 	};
 } // namespace javax::xml::validation
 

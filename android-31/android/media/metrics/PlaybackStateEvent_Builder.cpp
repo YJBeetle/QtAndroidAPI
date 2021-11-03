@@ -17,14 +17,14 @@ namespace android::media::metrics
 		) {}
 	
 	// Methods
-	android::media::metrics::PlaybackStateEvent PlaybackStateEvent_Builder::build()
+	android::media::metrics::PlaybackStateEvent PlaybackStateEvent_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/metrics/PlaybackStateEvent;"
 		);
 	}
-	android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setMetricsBundle(android::os::Bundle arg0)
+	android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setMetricsBundle(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setMetricsBundle",
@@ -32,7 +32,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setState(jint arg0)
+	android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setState(jint arg0) const
 	{
 		return callObjectMethod(
 			"setState",
@@ -40,7 +40,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setTimeSinceCreatedMillis(jlong arg0)
+	android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setTimeSinceCreatedMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTimeSinceCreatedMillis",

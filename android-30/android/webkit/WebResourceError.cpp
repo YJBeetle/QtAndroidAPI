@@ -11,14 +11,14 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	JString WebResourceError::getDescription()
+	JString WebResourceError::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint WebResourceError::getErrorCode()
+	jint WebResourceError::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",

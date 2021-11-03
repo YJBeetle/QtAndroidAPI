@@ -29,12 +29,12 @@ namespace android::media
 		
 		// Methods
 		static void scanFile(android::content::Context arg0, JArray arg1, JArray arg2, JObject arg3);
-		void connect();
-		void disconnect();
-		jboolean isConnected();
-		void onServiceConnected(android::content::ComponentName arg0, JObject arg1);
-		void onServiceDisconnected(android::content::ComponentName arg0);
-		void scanFile(JString arg0, JString arg1);
+		void connect() const;
+		void disconnect() const;
+		jboolean isConnected() const;
+		void onServiceConnected(android::content::ComponentName arg0, JObject arg1) const;
+		void onServiceDisconnected(android::content::ComponentName arg0) const;
+		void scanFile(JString arg0, JString arg1) const;
 	};
 } // namespace android::media
 

@@ -25,7 +25,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	void LineHeightSpan_Standard::chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5)
+	void LineHeightSpan_Standard::chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5) const
 	{
 		callMethod<void>(
 			"chooseHeight",
@@ -38,28 +38,28 @@ namespace android::text::style
 			arg5.object()
 		);
 	}
-	jint LineHeightSpan_Standard::describeContents()
+	jint LineHeightSpan_Standard::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint LineHeightSpan_Standard::getHeight()
+	jint LineHeightSpan_Standard::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint LineHeightSpan_Standard::getSpanTypeId()
+	jint LineHeightSpan_Standard::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void LineHeightSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LineHeightSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

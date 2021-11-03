@@ -45,28 +45,28 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	void ZipOutputStream::close()
+	void ZipOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ZipOutputStream::closeEntry()
+	void ZipOutputStream::closeEntry() const
 	{
 		callMethod<void>(
 			"closeEntry",
 			"()V"
 		);
 	}
-	void ZipOutputStream::finish()
+	void ZipOutputStream::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	void ZipOutputStream::putNextEntry(java::util::zip::ZipEntry arg0)
+	void ZipOutputStream::putNextEntry(java::util::zip::ZipEntry arg0) const
 	{
 		callMethod<void>(
 			"putNextEntry",
@@ -74,7 +74,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void ZipOutputStream::setComment(JString arg0)
+	void ZipOutputStream::setComment(JString arg0) const
 	{
 		callMethod<void>(
 			"setComment",
@@ -82,7 +82,7 @@ namespace java::util::zip
 			arg0.object<jstring>()
 		);
 	}
-	void ZipOutputStream::setLevel(jint arg0)
+	void ZipOutputStream::setLevel(jint arg0) const
 	{
 		callMethod<void>(
 			"setLevel",
@@ -90,7 +90,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void ZipOutputStream::setMethod(jint arg0)
+	void ZipOutputStream::setMethod(jint arg0) const
 	{
 		callMethod<void>(
 			"setMethod",
@@ -98,7 +98,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void ZipOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void ZipOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

@@ -27,7 +27,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsicConvolve3x3::forEach(android::renderscript::Allocation arg0)
+	void ScriptIntrinsicConvolve3x3::forEach(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -35,7 +35,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void ScriptIntrinsicConvolve3x3::forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1)
+	void ScriptIntrinsicConvolve3x3::forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -44,21 +44,21 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	android::renderscript::Script_FieldID ScriptIntrinsicConvolve3x3::getFieldID_Input()
+	android::renderscript::Script_FieldID ScriptIntrinsicConvolve3x3::getFieldID_Input() const
 	{
 		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
-	android::renderscript::Script_KernelID ScriptIntrinsicConvolve3x3::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsicConvolve3x3::getKernelID() const
 	{
 		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsicConvolve3x3::setCoefficients(JFloatArray arg0)
+	void ScriptIntrinsicConvolve3x3::setCoefficients(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"setCoefficients",
@@ -66,7 +66,7 @@ namespace android::renderscript
 			arg0.object<jfloatArray>()
 		);
 	}
-	void ScriptIntrinsicConvolve3x3::setInput(android::renderscript::Allocation arg0)
+	void ScriptIntrinsicConvolve3x3::setInput(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"setInput",

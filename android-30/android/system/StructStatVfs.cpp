@@ -93,7 +93,7 @@ namespace android::system
 		) {}
 	
 	// Methods
-	JString StructStatVfs::toString()
+	JString StructStatVfs::toString() const
 	{
 		return callObjectMethod(
 			"toString",

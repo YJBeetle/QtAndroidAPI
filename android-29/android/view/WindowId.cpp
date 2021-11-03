@@ -22,14 +22,14 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint WindowId::describeContents()
+	jint WindowId::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean WindowId::equals(JObject arg0)
+	jboolean WindowId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,21 +37,21 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	jint WindowId::hashCode()
+	jint WindowId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean WindowId::isFocused()
+	jboolean WindowId::isFocused() const
 	{
 		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
-	void WindowId::registerFocusObserver(android::view::WindowId_FocusObserver arg0)
+	void WindowId::registerFocusObserver(android::view::WindowId_FocusObserver arg0) const
 	{
 		callMethod<void>(
 			"registerFocusObserver",
@@ -59,14 +59,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	JString WindowId::toString()
+	JString WindowId::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WindowId::unregisterFocusObserver(android::view::WindowId_FocusObserver arg0)
+	void WindowId::unregisterFocusObserver(android::view::WindowId_FocusObserver arg0) const
 	{
 		callMethod<void>(
 			"unregisterFocusObserver",
@@ -74,7 +74,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void WindowId::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WindowId::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

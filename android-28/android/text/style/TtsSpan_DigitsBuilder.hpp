@@ -20,7 +20,7 @@ namespace android::text::style
 		TtsSpan_DigitsBuilder(JString arg0);
 		
 		// Methods
-		android::text::style::TtsSpan_DigitsBuilder setDigits(JString arg0);
+		android::text::style::TtsSpan_DigitsBuilder setDigits(JString arg0) const;
 	};
 } // namespace android::text::style
 

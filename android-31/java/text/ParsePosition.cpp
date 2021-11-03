@@ -18,7 +18,7 @@ namespace java::text
 		) {}
 	
 	// Methods
-	jboolean ParsePosition::equals(JObject arg0)
+	jboolean ParsePosition::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -26,28 +26,28 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	jint ParsePosition::getErrorIndex()
+	jint ParsePosition::getErrorIndex() const
 	{
 		return callMethod<jint>(
 			"getErrorIndex",
 			"()I"
 		);
 	}
-	jint ParsePosition::getIndex()
+	jint ParsePosition::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	jint ParsePosition::hashCode()
+	jint ParsePosition::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void ParsePosition::setErrorIndex(jint arg0)
+	void ParsePosition::setErrorIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setErrorIndex",
@@ -55,7 +55,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void ParsePosition::setIndex(jint arg0)
+	void ParsePosition::setIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setIndex",
@@ -63,7 +63,7 @@ namespace java::text
 			arg0
 		);
 	}
-	JString ParsePosition::toString()
+	JString ParsePosition::toString() const
 	{
 		return callObjectMethod(
 			"toString",

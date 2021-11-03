@@ -16,7 +16,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::view::View FragmentContainer::onFindViewById(jint arg0)
+	android::view::View FragmentContainer::onFindViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"onFindViewById",
@@ -24,7 +24,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean FragmentContainer::onHasView()
+	jboolean FragmentContainer::onHasView() const
 	{
 		return callMethod<jboolean>(
 			"onHasView",

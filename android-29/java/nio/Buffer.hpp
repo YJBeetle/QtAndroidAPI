@@ -22,26 +22,26 @@ namespace java::nio
 		// Constructors
 		
 		// Methods
-		JObject array();
-		jint arrayOffset();
-		jint capacity();
-		java::nio::Buffer clear();
-		java::nio::Buffer duplicate();
-		java::nio::Buffer flip();
-		jboolean hasArray();
-		jboolean hasRemaining();
-		jboolean isDirect();
-		jboolean isReadOnly();
-		jint limit();
-		java::nio::Buffer limit(jint arg0);
-		java::nio::Buffer mark();
-		jint position();
-		java::nio::Buffer position(jint arg0);
-		jint remaining();
-		java::nio::Buffer reset();
-		java::nio::Buffer rewind();
-		java::nio::Buffer slice();
-		java::nio::Buffer slice(jint arg0, jint arg1);
+		JObject array() const;
+		jint arrayOffset() const;
+		jint capacity() const;
+		java::nio::Buffer clear() const;
+		java::nio::Buffer duplicate() const;
+		java::nio::Buffer flip() const;
+		jboolean hasArray() const;
+		jboolean hasRemaining() const;
+		jboolean isDirect() const;
+		jboolean isReadOnly() const;
+		jint limit() const;
+		java::nio::Buffer limit(jint arg0) const;
+		java::nio::Buffer mark() const;
+		jint position() const;
+		java::nio::Buffer position(jint arg0) const;
+		jint remaining() const;
+		java::nio::Buffer reset() const;
+		java::nio::Buffer rewind() const;
+		java::nio::Buffer slice() const;
+		java::nio::Buffer slice(jint arg0, jint arg1) const;
 	};
 } // namespace java::nio
 

@@ -19,21 +19,21 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean BaseAdapter::areAllItemsEnabled()
+	jboolean BaseAdapter::areAllItemsEnabled() const
 	{
 		return callMethod<jboolean>(
 			"areAllItemsEnabled",
 			"()Z"
 		);
 	}
-	JArray BaseAdapter::getAutofillOptions()
+	JArray BaseAdapter::getAutofillOptions() const
 	{
 		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View BaseAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View BaseAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getDropDownView",
@@ -43,7 +43,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jint BaseAdapter::getItemViewType(jint arg0)
+	jint BaseAdapter::getItemViewType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getItemViewType",
@@ -51,28 +51,28 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint BaseAdapter::getViewTypeCount()
+	jint BaseAdapter::getViewTypeCount() const
 	{
 		return callMethod<jint>(
 			"getViewTypeCount",
 			"()I"
 		);
 	}
-	jboolean BaseAdapter::hasStableIds()
+	jboolean BaseAdapter::hasStableIds() const
 	{
 		return callMethod<jboolean>(
 			"hasStableIds",
 			"()Z"
 		);
 	}
-	jboolean BaseAdapter::isEmpty()
+	jboolean BaseAdapter::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jboolean BaseAdapter::isEnabled(jint arg0)
+	jboolean BaseAdapter::isEnabled(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
@@ -80,21 +80,21 @@ namespace android::widget
 			arg0
 		);
 	}
-	void BaseAdapter::notifyDataSetChanged()
+	void BaseAdapter::notifyDataSetChanged() const
 	{
 		callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
 		);
 	}
-	void BaseAdapter::notifyDataSetInvalidated()
+	void BaseAdapter::notifyDataSetInvalidated() const
 	{
 		callMethod<void>(
 			"notifyDataSetInvalidated",
 			"()V"
 		);
 	}
-	void BaseAdapter::registerDataSetObserver(android::database::DataSetObserver arg0)
+	void BaseAdapter::registerDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"registerDataSetObserver",
@@ -102,7 +102,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void BaseAdapter::setAutofillOptions(JArray arg0)
+	void BaseAdapter::setAutofillOptions(JArray arg0) const
 	{
 		callMethod<void>(
 			"setAutofillOptions",
@@ -110,7 +110,7 @@ namespace android::widget
 			arg0.object<jarray>()
 		);
 	}
-	void BaseAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0)
+	void BaseAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"unregisterDataSetObserver",

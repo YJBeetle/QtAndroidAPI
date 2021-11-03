@@ -26,10 +26,10 @@ namespace android::app::job
 		JobServiceEngine(android::app::Service arg0);
 		
 		// Methods
-		JObject getBinder();
-		void jobFinished(android::app::job::JobParameters arg0, jboolean arg1);
-		jboolean onStartJob(android::app::job::JobParameters arg0);
-		jboolean onStopJob(android::app::job::JobParameters arg0);
+		JObject getBinder() const;
+		void jobFinished(android::app::job::JobParameters arg0, jboolean arg1) const;
+		jboolean onStartJob(android::app::job::JobParameters arg0) const;
+		jboolean onStopJob(android::app::job::JobParameters arg0) const;
 	};
 } // namespace android::app::job
 

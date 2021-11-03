@@ -35,17 +35,17 @@ namespace android::content::pm
 		PackageInstaller_SessionParams(jint arg0);
 		
 		// Methods
-		jint describeContents();
-		void setAppIcon(android::graphics::Bitmap arg0);
-		void setAppLabel(JString arg0);
-		void setAppPackageName(JString arg0);
-		void setInstallLocation(jint arg0);
-		void setInstallReason(jint arg0);
-		void setOriginatingUid(jint arg0);
-		void setOriginatingUri(android::net::Uri arg0);
-		void setReferrerUri(android::net::Uri arg0);
-		void setSize(jlong arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void setAppIcon(android::graphics::Bitmap arg0) const;
+		void setAppLabel(JString arg0) const;
+		void setAppPackageName(JString arg0) const;
+		void setInstallLocation(jint arg0) const;
+		void setInstallReason(jint arg0) const;
+		void setOriginatingUid(jint arg0) const;
+		void setOriginatingUri(android::net::Uri arg0) const;
+		void setReferrerUri(android::net::Uri arg0) const;
+		void setSize(jlong arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

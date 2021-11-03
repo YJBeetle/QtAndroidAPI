@@ -25,8 +25,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::media::metrics::LogSessionId getLogSessionId();
-		void setLogSessionId(android::media::metrics::LogSessionId arg0);
+		android::media::metrics::LogSessionId getLogSessionId() const;
+		void setLogSessionId(android::media::metrics::LogSessionId arg0) const;
 	};
 } // namespace android::media
 

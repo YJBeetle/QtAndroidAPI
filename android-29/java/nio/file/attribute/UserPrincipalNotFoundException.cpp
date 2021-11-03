@@ -17,7 +17,7 @@ namespace java::nio::file::attribute
 		) {}
 	
 	// Methods
-	JString UserPrincipalNotFoundException::getName()
+	JString UserPrincipalNotFoundException::getName() const
 	{
 		return callObjectMethod(
 			"getName",

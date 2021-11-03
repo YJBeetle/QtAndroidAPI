@@ -28,21 +28,21 @@ namespace android::database
 		DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, JString arg1);
 		
 		// Methods
-		void bind(jint arg0, JByteArray arg1);
-		void bind(jint arg0, jboolean arg1);
-		void bind(jint arg0, jdouble arg1);
-		void bind(jint arg0, jfloat arg1);
-		void bind(jint arg0, jint arg1);
-		void bind(jint arg0, JString arg1);
-		void bind(jint arg0, jlong arg1);
-		void bindNull(jint arg0);
-		void close();
-		jlong execute();
-		jint getColumnIndex(JString arg0);
-		jlong insert(android::content::ContentValues arg0);
-		void prepareForInsert();
-		void prepareForReplace();
-		jlong replace(android::content::ContentValues arg0);
+		void bind(jint arg0, JByteArray arg1) const;
+		void bind(jint arg0, jboolean arg1) const;
+		void bind(jint arg0, jdouble arg1) const;
+		void bind(jint arg0, jfloat arg1) const;
+		void bind(jint arg0, jint arg1) const;
+		void bind(jint arg0, JString arg1) const;
+		void bind(jint arg0, jlong arg1) const;
+		void bindNull(jint arg0) const;
+		void close() const;
+		jlong execute() const;
+		jint getColumnIndex(JString arg0) const;
+		jlong insert(android::content::ContentValues arg0) const;
+		void prepareForInsert() const;
+		void prepareForReplace() const;
+		jlong replace(android::content::ContentValues arg0) const;
 	};
 } // namespace android::database
 

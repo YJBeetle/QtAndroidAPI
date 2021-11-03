@@ -48,14 +48,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint ActivityManager_MemoryInfo::describeContents()
+	jint ActivityManager_MemoryInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ActivityManager_MemoryInfo::readFromParcel(android::os::Parcel arg0)
+	void ActivityManager_MemoryInfo::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -63,7 +63,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActivityManager_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ActivityManager_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

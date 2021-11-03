@@ -31,7 +31,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void ColorDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void ColorDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -39,14 +39,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean ColorDrawable::canApplyTheme()
+	jboolean ColorDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void ColorDrawable::draw(android::graphics::Canvas arg0)
+	void ColorDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -54,49 +54,49 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint ColorDrawable::getAlpha()
+	jint ColorDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint ColorDrawable::getChangingConfigurations()
+	jint ColorDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	jint ColorDrawable::getColor()
+	jint ColorDrawable::getColor() const
 	{
 		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
-	android::graphics::ColorFilter ColorDrawable::getColorFilter()
+	android::graphics::ColorFilter ColorDrawable::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState ColorDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState ColorDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jint ColorDrawable::getOpacity()
+	jint ColorDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void ColorDrawable::getOutline(android::graphics::Outline arg0)
+	void ColorDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -104,7 +104,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ColorDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void ColorDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -115,21 +115,21 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean ColorDrawable::isStateful()
+	jboolean ColorDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable ColorDrawable::mutate()
+	android::graphics::drawable::Drawable ColorDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void ColorDrawable::setAlpha(jint arg0)
+	void ColorDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -137,7 +137,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void ColorDrawable::setColor(jint arg0)
+	void ColorDrawable::setColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setColor",
@@ -145,7 +145,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void ColorDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void ColorDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -153,7 +153,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ColorDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void ColorDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -161,7 +161,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ColorDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void ColorDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",

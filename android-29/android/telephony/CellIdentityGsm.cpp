@@ -21,7 +21,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityGsm::equals(JObject arg0)
+	jboolean CellIdentityGsm::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -29,91 +29,91 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellIdentityGsm::getArfcn()
+	jint CellIdentityGsm::getArfcn() const
 	{
 		return callMethod<jint>(
 			"getArfcn",
 			"()I"
 		);
 	}
-	jint CellIdentityGsm::getBsic()
+	jint CellIdentityGsm::getBsic() const
 	{
 		return callMethod<jint>(
 			"getBsic",
 			"()I"
 		);
 	}
-	jint CellIdentityGsm::getCid()
+	jint CellIdentityGsm::getCid() const
 	{
 		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
-	jint CellIdentityGsm::getLac()
+	jint CellIdentityGsm::getLac() const
 	{
 		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
-	jint CellIdentityGsm::getMcc()
+	jint CellIdentityGsm::getMcc() const
 	{
 		return callMethod<jint>(
 			"getMcc",
 			"()I"
 		);
 	}
-	JString CellIdentityGsm::getMccString()
+	JString CellIdentityGsm::getMccString() const
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityGsm::getMnc()
+	jint CellIdentityGsm::getMnc() const
 	{
 		return callMethod<jint>(
 			"getMnc",
 			"()I"
 		);
 	}
-	JString CellIdentityGsm::getMncString()
+	JString CellIdentityGsm::getMncString() const
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CellIdentityGsm::getMobileNetworkOperator()
+	JString CellIdentityGsm::getMobileNetworkOperator() const
 	{
 		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityGsm::getPsc()
+	jint CellIdentityGsm::getPsc() const
 	{
 		return callMethod<jint>(
 			"getPsc",
 			"()I"
 		);
 	}
-	jint CellIdentityGsm::hashCode()
+	jint CellIdentityGsm::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellIdentityGsm::toString()
+	JString CellIdentityGsm::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellIdentityGsm::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellIdentityGsm::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

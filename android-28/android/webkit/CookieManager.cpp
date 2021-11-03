@@ -43,14 +43,14 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jboolean CookieManager::acceptCookie()
+	jboolean CookieManager::acceptCookie() const
 	{
 		return callMethod<jboolean>(
 			"acceptCookie",
 			"()Z"
 		);
 	}
-	jboolean CookieManager::acceptThirdPartyCookies(android::webkit::WebView arg0)
+	jboolean CookieManager::acceptThirdPartyCookies(android::webkit::WebView arg0) const
 	{
 		return callMethod<jboolean>(
 			"acceptThirdPartyCookies",
@@ -58,14 +58,14 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void CookieManager::flush()
+	void CookieManager::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	JString CookieManager::getCookie(JString arg0)
+	JString CookieManager::getCookie(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCookie",
@@ -73,21 +73,21 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	jboolean CookieManager::hasCookies()
+	jboolean CookieManager::hasCookies() const
 	{
 		return callMethod<jboolean>(
 			"hasCookies",
 			"()Z"
 		);
 	}
-	void CookieManager::removeAllCookie()
+	void CookieManager::removeAllCookie() const
 	{
 		callMethod<void>(
 			"removeAllCookie",
 			"()V"
 		);
 	}
-	void CookieManager::removeAllCookies(JObject arg0)
+	void CookieManager::removeAllCookies(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeAllCookies",
@@ -95,21 +95,21 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void CookieManager::removeExpiredCookie()
+	void CookieManager::removeExpiredCookie() const
 	{
 		callMethod<void>(
 			"removeExpiredCookie",
 			"()V"
 		);
 	}
-	void CookieManager::removeSessionCookie()
+	void CookieManager::removeSessionCookie() const
 	{
 		callMethod<void>(
 			"removeSessionCookie",
 			"()V"
 		);
 	}
-	void CookieManager::removeSessionCookies(JObject arg0)
+	void CookieManager::removeSessionCookies(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeSessionCookies",
@@ -117,7 +117,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void CookieManager::setAcceptCookie(jboolean arg0)
+	void CookieManager::setAcceptCookie(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAcceptCookie",
@@ -125,7 +125,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void CookieManager::setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1)
+	void CookieManager::setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setAcceptThirdPartyCookies",
@@ -134,7 +134,7 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void CookieManager::setCookie(JString arg0, JString arg1)
+	void CookieManager::setCookie(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setCookie",
@@ -143,7 +143,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	void CookieManager::setCookie(JString arg0, JString arg1, JObject arg2)
+	void CookieManager::setCookie(JString arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setCookie",

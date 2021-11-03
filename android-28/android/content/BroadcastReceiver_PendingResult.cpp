@@ -12,49 +12,49 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	void BroadcastReceiver_PendingResult::abortBroadcast()
+	void BroadcastReceiver_PendingResult::abortBroadcast() const
 	{
 		callMethod<void>(
 			"abortBroadcast",
 			"()V"
 		);
 	}
-	void BroadcastReceiver_PendingResult::clearAbortBroadcast()
+	void BroadcastReceiver_PendingResult::clearAbortBroadcast() const
 	{
 		callMethod<void>(
 			"clearAbortBroadcast",
 			"()V"
 		);
 	}
-	void BroadcastReceiver_PendingResult::finish()
+	void BroadcastReceiver_PendingResult::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	jboolean BroadcastReceiver_PendingResult::getAbortBroadcast()
+	jboolean BroadcastReceiver_PendingResult::getAbortBroadcast() const
 	{
 		return callMethod<jboolean>(
 			"getAbortBroadcast",
 			"()Z"
 		);
 	}
-	jint BroadcastReceiver_PendingResult::getResultCode()
+	jint BroadcastReceiver_PendingResult::getResultCode() const
 	{
 		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
-	JString BroadcastReceiver_PendingResult::getResultData()
+	JString BroadcastReceiver_PendingResult::getResultData() const
 	{
 		return callObjectMethod(
 			"getResultData",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle BroadcastReceiver_PendingResult::getResultExtras(jboolean arg0)
+	android::os::Bundle BroadcastReceiver_PendingResult::getResultExtras(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"getResultExtras",
@@ -62,7 +62,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver_PendingResult::setResult(jint arg0, JString arg1, android::os::Bundle arg2)
+	void BroadcastReceiver_PendingResult::setResult(jint arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"setResult",
@@ -72,7 +72,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void BroadcastReceiver_PendingResult::setResultCode(jint arg0)
+	void BroadcastReceiver_PendingResult::setResultCode(jint arg0) const
 	{
 		callMethod<void>(
 			"setResultCode",
@@ -80,7 +80,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver_PendingResult::setResultData(JString arg0)
+	void BroadcastReceiver_PendingResult::setResultData(JString arg0) const
 	{
 		callMethod<void>(
 			"setResultData",
@@ -88,7 +88,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void BroadcastReceiver_PendingResult::setResultExtras(android::os::Bundle arg0)
+	void BroadcastReceiver_PendingResult::setResultExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setResultExtras",

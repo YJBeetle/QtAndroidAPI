@@ -51,7 +51,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	void OutputConfiguration::addSurface(android::view::Surface arg0)
+	void OutputConfiguration::addSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"addSurface",
@@ -59,21 +59,21 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	jint OutputConfiguration::describeContents()
+	jint OutputConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void OutputConfiguration::enableSurfaceSharing()
+	void OutputConfiguration::enableSurfaceSharing() const
 	{
 		callMethod<void>(
 			"enableSurfaceSharing",
 			"()V"
 		);
 	}
-	jboolean OutputConfiguration::equals(JObject arg0)
+	jboolean OutputConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -81,42 +81,42 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jint OutputConfiguration::getMaxSharedSurfaceCount()
+	jint OutputConfiguration::getMaxSharedSurfaceCount() const
 	{
 		return callMethod<jint>(
 			"getMaxSharedSurfaceCount",
 			"()I"
 		);
 	}
-	android::view::Surface OutputConfiguration::getSurface()
+	android::view::Surface OutputConfiguration::getSurface() const
 	{
 		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	jint OutputConfiguration::getSurfaceGroupId()
+	jint OutputConfiguration::getSurfaceGroupId() const
 	{
 		return callMethod<jint>(
 			"getSurfaceGroupId",
 			"()I"
 		);
 	}
-	JObject OutputConfiguration::getSurfaces()
+	JObject OutputConfiguration::getSurfaces() const
 	{
 		return callObjectMethod(
 			"getSurfaces",
 			"()Ljava/util/List;"
 		);
 	}
-	jint OutputConfiguration::hashCode()
+	jint OutputConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void OutputConfiguration::removeSurface(android::view::Surface arg0)
+	void OutputConfiguration::removeSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"removeSurface",
@@ -124,7 +124,7 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	void OutputConfiguration::setPhysicalCameraId(JString arg0)
+	void OutputConfiguration::setPhysicalCameraId(JString arg0) const
 	{
 		callMethod<void>(
 			"setPhysicalCameraId",
@@ -132,7 +132,7 @@ namespace android::hardware::camera2::params
 			arg0.object<jstring>()
 		);
 	}
-	void OutputConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void OutputConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

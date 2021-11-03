@@ -27,7 +27,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jint ViewStructure::addChildCount(jint arg0)
+	jint ViewStructure::addChildCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"addChildCount",
@@ -35,14 +35,14 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::asyncCommit()
+	void ViewStructure::asyncCommit() const
 	{
 		callMethod<void>(
 			"asyncCommit",
 			"()V"
 		);
 	}
-	android::view::ViewStructure ViewStructure::asyncNewChild(jint arg0)
+	android::view::ViewStructure ViewStructure::asyncNewChild(jint arg0) const
 	{
 		return callObjectMethod(
 			"asyncNewChild",
@@ -50,63 +50,63 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::autofill::AutofillId ViewStructure::getAutofillId()
+	android::view::autofill::AutofillId ViewStructure::getAutofillId() const
 	{
 		return callObjectMethod(
 			"getAutofillId",
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
-	jint ViewStructure::getChildCount()
+	jint ViewStructure::getChildCount() const
 	{
 		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
-	android::os::Bundle ViewStructure::getExtras()
+	android::os::Bundle ViewStructure::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString ViewStructure::getHint()
+	JString ViewStructure::getHint() const
 	{
 		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString ViewStructure::getText()
+	JString ViewStructure::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint ViewStructure::getTextSelectionEnd()
+	jint ViewStructure::getTextSelectionEnd() const
 	{
 		return callMethod<jint>(
 			"getTextSelectionEnd",
 			"()I"
 		);
 	}
-	jint ViewStructure::getTextSelectionStart()
+	jint ViewStructure::getTextSelectionStart() const
 	{
 		return callMethod<jint>(
 			"getTextSelectionStart",
 			"()I"
 		);
 	}
-	jboolean ViewStructure::hasExtras()
+	jboolean ViewStructure::hasExtras() const
 	{
 		return callMethod<jboolean>(
 			"hasExtras",
 			"()Z"
 		);
 	}
-	android::view::ViewStructure ViewStructure::newChild(jint arg0)
+	android::view::ViewStructure ViewStructure::newChild(jint arg0) const
 	{
 		return callObjectMethod(
 			"newChild",
@@ -114,7 +114,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewStructure_HtmlInfo_Builder ViewStructure::newHtmlInfoBuilder(JString arg0)
+	android::view::ViewStructure_HtmlInfo_Builder ViewStructure::newHtmlInfoBuilder(JString arg0) const
 	{
 		return callObjectMethod(
 			"newHtmlInfoBuilder",
@@ -122,7 +122,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setAccessibilityFocused(jboolean arg0)
+	void ViewStructure::setAccessibilityFocused(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityFocused",
@@ -130,7 +130,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setActivated(jboolean arg0)
+	void ViewStructure::setActivated(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setActivated",
@@ -138,7 +138,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setAlpha(jfloat arg0)
+	void ViewStructure::setAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -146,7 +146,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setAutofillHints(JArray arg0)
+	void ViewStructure::setAutofillHints(JArray arg0) const
 	{
 		callMethod<void>(
 			"setAutofillHints",
@@ -154,7 +154,7 @@ namespace android::view
 			arg0.object<jarray>()
 		);
 	}
-	void ViewStructure::setAutofillId(android::view::autofill::AutofillId arg0)
+	void ViewStructure::setAutofillId(android::view::autofill::AutofillId arg0) const
 	{
 		callMethod<void>(
 			"setAutofillId",
@@ -162,7 +162,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStructure::setAutofillId(android::view::autofill::AutofillId arg0, jint arg1)
+	void ViewStructure::setAutofillId(android::view::autofill::AutofillId arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setAutofillId",
@@ -171,7 +171,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewStructure::setAutofillOptions(JArray arg0)
+	void ViewStructure::setAutofillOptions(JArray arg0) const
 	{
 		callMethod<void>(
 			"setAutofillOptions",
@@ -179,7 +179,7 @@ namespace android::view
 			arg0.object<jarray>()
 		);
 	}
-	void ViewStructure::setAutofillType(jint arg0)
+	void ViewStructure::setAutofillType(jint arg0) const
 	{
 		callMethod<void>(
 			"setAutofillType",
@@ -187,7 +187,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setAutofillValue(android::view::autofill::AutofillValue arg0)
+	void ViewStructure::setAutofillValue(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"setAutofillValue",
@@ -195,7 +195,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStructure::setCheckable(jboolean arg0)
+	void ViewStructure::setCheckable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCheckable",
@@ -203,7 +203,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setChecked(jboolean arg0)
+	void ViewStructure::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -211,7 +211,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setChildCount(jint arg0)
+	void ViewStructure::setChildCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setChildCount",
@@ -219,7 +219,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setClassName(JString arg0)
+	void ViewStructure::setClassName(JString arg0) const
 	{
 		callMethod<void>(
 			"setClassName",
@@ -227,7 +227,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setClickable(jboolean arg0)
+	void ViewStructure::setClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClickable",
@@ -235,7 +235,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setContentDescription(JString arg0)
+	void ViewStructure::setContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -243,7 +243,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setContextClickable(jboolean arg0)
+	void ViewStructure::setContextClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setContextClickable",
@@ -251,7 +251,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setDataIsSensitive(jboolean arg0)
+	void ViewStructure::setDataIsSensitive(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDataIsSensitive",
@@ -259,7 +259,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setDimens(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void ViewStructure::setDimens(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"setDimens",
@@ -272,7 +272,7 @@ namespace android::view
 			arg5
 		);
 	}
-	void ViewStructure::setElevation(jfloat arg0)
+	void ViewStructure::setElevation(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setElevation",
@@ -280,7 +280,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setEnabled(jboolean arg0)
+	void ViewStructure::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -288,7 +288,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setFocusable(jboolean arg0)
+	void ViewStructure::setFocusable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusable",
@@ -296,7 +296,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setFocused(jboolean arg0)
+	void ViewStructure::setFocused(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocused",
@@ -304,7 +304,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setHint(JString arg0)
+	void ViewStructure::setHint(JString arg0) const
 	{
 		callMethod<void>(
 			"setHint",
@@ -312,7 +312,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setHintIdEntry(JString arg0)
+	void ViewStructure::setHintIdEntry(JString arg0) const
 	{
 		callMethod<void>(
 			"setHintIdEntry",
@@ -320,7 +320,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setHtmlInfo(android::view::ViewStructure_HtmlInfo arg0)
+	void ViewStructure::setHtmlInfo(android::view::ViewStructure_HtmlInfo arg0) const
 	{
 		callMethod<void>(
 			"setHtmlInfo",
@@ -328,7 +328,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStructure::setId(jint arg0, JString arg1, JString arg2, JString arg3)
+	void ViewStructure::setId(jint arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"setId",
@@ -339,7 +339,7 @@ namespace android::view
 			arg3.object<jstring>()
 		);
 	}
-	void ViewStructure::setImportantForAutofill(jint arg0)
+	void ViewStructure::setImportantForAutofill(jint arg0) const
 	{
 		callMethod<void>(
 			"setImportantForAutofill",
@@ -347,7 +347,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setInputType(jint arg0)
+	void ViewStructure::setInputType(jint arg0) const
 	{
 		callMethod<void>(
 			"setInputType",
@@ -355,7 +355,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setLocaleList(android::os::LocaleList arg0)
+	void ViewStructure::setLocaleList(android::os::LocaleList arg0) const
 	{
 		callMethod<void>(
 			"setLocaleList",
@@ -363,7 +363,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStructure::setLongClickable(jboolean arg0)
+	void ViewStructure::setLongClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLongClickable",
@@ -371,7 +371,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setMaxTextEms(jint arg0)
+	void ViewStructure::setMaxTextEms(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxTextEms",
@@ -379,7 +379,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setMaxTextLength(jint arg0)
+	void ViewStructure::setMaxTextLength(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxTextLength",
@@ -387,7 +387,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setMinTextEms(jint arg0)
+	void ViewStructure::setMinTextEms(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinTextEms",
@@ -395,7 +395,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setOpaque(jboolean arg0)
+	void ViewStructure::setOpaque(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOpaque",
@@ -403,7 +403,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setReceiveContentMimeTypes(JArray arg0)
+	void ViewStructure::setReceiveContentMimeTypes(JArray arg0) const
 	{
 		callMethod<void>(
 			"setReceiveContentMimeTypes",
@@ -411,7 +411,7 @@ namespace android::view
 			arg0.object<jarray>()
 		);
 	}
-	void ViewStructure::setSelected(jboolean arg0)
+	void ViewStructure::setSelected(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSelected",
@@ -419,7 +419,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setText(JString arg0)
+	void ViewStructure::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -427,7 +427,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setText(JString arg0, jint arg1, jint arg2)
+	void ViewStructure::setText(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setText",
@@ -437,7 +437,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewStructure::setTextIdEntry(JString arg0)
+	void ViewStructure::setTextIdEntry(JString arg0) const
 	{
 		callMethod<void>(
 			"setTextIdEntry",
@@ -445,7 +445,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setTextLines(JIntArray arg0, JIntArray arg1)
+	void ViewStructure::setTextLines(JIntArray arg0, JIntArray arg1) const
 	{
 		callMethod<void>(
 			"setTextLines",
@@ -454,7 +454,7 @@ namespace android::view
 			arg1.object<jintArray>()
 		);
 	}
-	void ViewStructure::setTextStyle(jfloat arg0, jint arg1, jint arg2, jint arg3)
+	void ViewStructure::setTextStyle(jfloat arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setTextStyle",
@@ -465,7 +465,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void ViewStructure::setTransformation(android::graphics::Matrix arg0)
+	void ViewStructure::setTransformation(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"setTransformation",
@@ -473,7 +473,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStructure::setVisibility(jint arg0)
+	void ViewStructure::setVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setVisibility",
@@ -481,7 +481,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setWebDomain(JString arg0)
+	void ViewStructure::setWebDomain(JString arg0) const
 	{
 		callMethod<void>(
 			"setWebDomain",

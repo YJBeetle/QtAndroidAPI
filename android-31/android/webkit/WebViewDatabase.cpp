@@ -27,28 +27,28 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebViewDatabase::clearFormData()
+	void WebViewDatabase::clearFormData() const
 	{
 		callMethod<void>(
 			"clearFormData",
 			"()V"
 		);
 	}
-	void WebViewDatabase::clearHttpAuthUsernamePassword()
+	void WebViewDatabase::clearHttpAuthUsernamePassword() const
 	{
 		callMethod<void>(
 			"clearHttpAuthUsernamePassword",
 			"()V"
 		);
 	}
-	void WebViewDatabase::clearUsernamePassword()
+	void WebViewDatabase::clearUsernamePassword() const
 	{
 		callMethod<void>(
 			"clearUsernamePassword",
 			"()V"
 		);
 	}
-	JArray WebViewDatabase::getHttpAuthUsernamePassword(JString arg0, JString arg1)
+	JArray WebViewDatabase::getHttpAuthUsernamePassword(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getHttpAuthUsernamePassword",
@@ -57,28 +57,28 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	jboolean WebViewDatabase::hasFormData()
+	jboolean WebViewDatabase::hasFormData() const
 	{
 		return callMethod<jboolean>(
 			"hasFormData",
 			"()Z"
 		);
 	}
-	jboolean WebViewDatabase::hasHttpAuthUsernamePassword()
+	jboolean WebViewDatabase::hasHttpAuthUsernamePassword() const
 	{
 		return callMethod<jboolean>(
 			"hasHttpAuthUsernamePassword",
 			"()Z"
 		);
 	}
-	jboolean WebViewDatabase::hasUsernamePassword()
+	jboolean WebViewDatabase::hasUsernamePassword() const
 	{
 		return callMethod<jboolean>(
 			"hasUsernamePassword",
 			"()Z"
 		);
 	}
-	void WebViewDatabase::setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3)
+	void WebViewDatabase::setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"setHttpAuthUsernamePassword",

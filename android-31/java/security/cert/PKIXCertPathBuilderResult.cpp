@@ -22,14 +22,14 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	java::security::cert::CertPath PKIXCertPathBuilderResult::getCertPath()
+	java::security::cert::CertPath PKIXCertPathBuilderResult::getCertPath() const
 	{
 		return callObjectMethod(
 			"getCertPath",
 			"()Ljava/security/cert/CertPath;"
 		);
 	}
-	JString PKIXCertPathBuilderResult::toString()
+	JString PKIXCertPathBuilderResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -33,7 +33,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	JThrowable ClassNotFoundException::getException()
+	JThrowable ClassNotFoundException::getException() const
 	{
 		return callObjectMethod(
 			"getException",

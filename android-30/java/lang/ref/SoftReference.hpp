@@ -24,7 +24,7 @@ namespace java::lang::ref
 		SoftReference(JObject arg0, java::lang::ref::ReferenceQueue arg1);
 		
 		// Methods
-		JObject get();
+		JObject get() const;
 	};
 } // namespace java::lang::ref
 

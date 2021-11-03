@@ -97,31 +97,31 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2);
-		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3);
-		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4);
-		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5);
-		jboolean createBond();
-		android::bluetooth::BluetoothSocket createInsecureL2capChannel(jint arg0);
-		android::bluetooth::BluetoothSocket createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0);
-		android::bluetooth::BluetoothSocket createL2capChannel(jint arg0);
-		android::bluetooth::BluetoothSocket createRfcommSocketToServiceRecord(java::util::UUID arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jboolean fetchUuidsWithSdp();
-		JString getAddress();
-		JString getAlias();
-		android::bluetooth::BluetoothClass getBluetoothClass();
-		jint getBondState();
-		JString getName();
-		jint getType();
-		JArray getUuids();
-		jint hashCode();
-		jint setAlias(JString arg0);
-		jboolean setPairingConfirmation(jboolean arg0);
-		jboolean setPin(JByteArray arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2) const;
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3) const;
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4) const;
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5) const;
+		jboolean createBond() const;
+		android::bluetooth::BluetoothSocket createInsecureL2capChannel(jint arg0) const;
+		android::bluetooth::BluetoothSocket createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0) const;
+		android::bluetooth::BluetoothSocket createL2capChannel(jint arg0) const;
+		android::bluetooth::BluetoothSocket createRfcommSocketToServiceRecord(java::util::UUID arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jboolean fetchUuidsWithSdp() const;
+		JString getAddress() const;
+		JString getAlias() const;
+		android::bluetooth::BluetoothClass getBluetoothClass() const;
+		jint getBondState() const;
+		JString getName() const;
+		jint getType() const;
+		JArray getUuids() const;
+		jint hashCode() const;
+		jint setAlias(JString arg0) const;
+		jboolean setPairingConfirmation(jboolean arg0) const;
+		jboolean setPin(JByteArray arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

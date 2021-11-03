@@ -20,7 +20,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	jboolean OisSample::equals(JObject arg0)
+	jboolean OisSample::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,35 +28,35 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jlong OisSample::getTimestamp()
+	jlong OisSample::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",
 			"()J"
 		);
 	}
-	jfloat OisSample::getXshift()
+	jfloat OisSample::getXshift() const
 	{
 		return callMethod<jfloat>(
 			"getXshift",
 			"()F"
 		);
 	}
-	jfloat OisSample::getYshift()
+	jfloat OisSample::getYshift() const
 	{
 		return callMethod<jfloat>(
 			"getYshift",
 			"()F"
 		);
 	}
-	jint OisSample::hashCode()
+	jint OisSample::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString OisSample::toString()
+	JString OisSample::toString() const
 	{
 		return callObjectMethod(
 			"toString",

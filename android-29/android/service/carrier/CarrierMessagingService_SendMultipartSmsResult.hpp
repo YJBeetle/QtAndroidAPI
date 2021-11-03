@@ -19,8 +19,8 @@ namespace android::service::carrier
 		CarrierMessagingService_SendMultipartSmsResult(jint arg0, JIntArray arg1);
 		
 		// Methods
-		JIntArray getMessageRefs();
-		jint getSendStatus();
+		JIntArray getMessageRefs() const;
+		jint getSendStatus() const;
 	};
 } // namespace android::service::carrier
 

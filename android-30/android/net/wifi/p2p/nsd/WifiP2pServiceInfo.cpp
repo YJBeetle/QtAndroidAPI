@@ -40,14 +40,14 @@ namespace android::net::wifi::p2p::nsd
 	// Constructors
 	
 	// Methods
-	jint WifiP2pServiceInfo::describeContents()
+	jint WifiP2pServiceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean WifiP2pServiceInfo::equals(JObject arg0)
+	jboolean WifiP2pServiceInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -55,14 +55,14 @@ namespace android::net::wifi::p2p::nsd
 			arg0.object<jobject>()
 		);
 	}
-	jint WifiP2pServiceInfo::hashCode()
+	jint WifiP2pServiceInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void WifiP2pServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiP2pServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

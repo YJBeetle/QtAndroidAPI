@@ -42,13 +42,13 @@ namespace java::security
 		CodeSource(java::net::URL arg0, JArray arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JArray getCertificates();
-		JArray getCodeSigners();
-		java::net::URL getLocation();
-		jint hashCode();
-		jboolean implies(java::security::CodeSource arg0);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JArray getCertificates() const;
+		JArray getCodeSigners() const;
+		java::net::URL getLocation() const;
+		jint hashCode() const;
+		jboolean implies(java::security::CodeSource arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security
 

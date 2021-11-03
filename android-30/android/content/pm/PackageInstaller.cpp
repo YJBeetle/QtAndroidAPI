@@ -163,7 +163,7 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	void PackageInstaller::abandonSession(jint arg0)
+	void PackageInstaller::abandonSession(jint arg0) const
 	{
 		callMethod<void>(
 			"abandonSession",
@@ -171,7 +171,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jint PackageInstaller::createSession(android::content::pm::PackageInstaller_SessionParams arg0)
+	jint PackageInstaller::createSession(android::content::pm::PackageInstaller_SessionParams arg0) const
 	{
 		return callMethod<jint>(
 			"createSession",
@@ -179,35 +179,35 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getActiveStagedSession()
+	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getActiveStagedSession() const
 	{
 		return callObjectMethod(
 			"getActiveStagedSession",
 			"()Landroid/content/pm/PackageInstaller$SessionInfo;"
 		);
 	}
-	JObject PackageInstaller::getActiveStagedSessions()
+	JObject PackageInstaller::getActiveStagedSessions() const
 	{
 		return callObjectMethod(
 			"getActiveStagedSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject PackageInstaller::getAllSessions()
+	JObject PackageInstaller::getAllSessions() const
 	{
 		return callObjectMethod(
 			"getAllSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject PackageInstaller::getMySessions()
+	JObject PackageInstaller::getMySessions() const
 	{
 		return callObjectMethod(
 			"getMySessions",
 			"()Ljava/util/List;"
 		);
 	}
-	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getSessionInfo(jint arg0)
+	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getSessionInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSessionInfo",
@@ -215,14 +215,14 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	JObject PackageInstaller::getStagedSessions()
+	JObject PackageInstaller::getStagedSessions() const
 	{
 		return callObjectMethod(
 			"getStagedSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	void PackageInstaller::installExistingPackage(JString arg0, jint arg1, android::content::IntentSender arg2)
+	void PackageInstaller::installExistingPackage(JString arg0, jint arg1, android::content::IntentSender arg2) const
 	{
 		callMethod<void>(
 			"installExistingPackage",
@@ -232,7 +232,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	android::content::pm::PackageInstaller_Session PackageInstaller::openSession(jint arg0)
+	android::content::pm::PackageInstaller_Session PackageInstaller::openSession(jint arg0) const
 	{
 		return callObjectMethod(
 			"openSession",
@@ -240,7 +240,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller::registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0)
+	void PackageInstaller::registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0) const
 	{
 		callMethod<void>(
 			"registerSessionCallback",
@@ -248,7 +248,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageInstaller::registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1)
+	void PackageInstaller::registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerSessionCallback",
@@ -257,7 +257,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void PackageInstaller::uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1)
+	void PackageInstaller::uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1) const
 	{
 		callMethod<void>(
 			"uninstall",
@@ -266,7 +266,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void PackageInstaller::uninstall(JString arg0, android::content::IntentSender arg1)
+	void PackageInstaller::uninstall(JString arg0, android::content::IntentSender arg1) const
 	{
 		callMethod<void>(
 			"uninstall",
@@ -275,7 +275,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void PackageInstaller::unregisterSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0)
+	void PackageInstaller::unregisterSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterSessionCallback",
@@ -283,7 +283,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageInstaller::updateSessionAppIcon(jint arg0, android::graphics::Bitmap arg1)
+	void PackageInstaller::updateSessionAppIcon(jint arg0, android::graphics::Bitmap arg1) const
 	{
 		callMethod<void>(
 			"updateSessionAppIcon",
@@ -292,7 +292,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void PackageInstaller::updateSessionAppLabel(jint arg0, JString arg1)
+	void PackageInstaller::updateSessionAppLabel(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"updateSessionAppLabel",

@@ -12,14 +12,14 @@ namespace android::graphics::pdf
 	// Constructors
 	
 	// Methods
-	android::graphics::Canvas PdfDocument_Page::getCanvas()
+	android::graphics::Canvas PdfDocument_Page::getCanvas() const
 	{
 		return callObjectMethod(
 			"getCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
-	android::graphics::pdf::PdfDocument_PageInfo PdfDocument_Page::getInfo()
+	android::graphics::pdf::PdfDocument_PageInfo PdfDocument_Page::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",

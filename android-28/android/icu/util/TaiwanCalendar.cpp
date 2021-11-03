@@ -91,7 +91,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	JString TaiwanCalendar::getType()
+	JString TaiwanCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",

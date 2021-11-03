@@ -19,10 +19,10 @@ namespace android::util
 		TimingLogger(JString arg0, JString arg1);
 		
 		// Methods
-		void addSplit(JString arg0);
-		void dumpToLog();
-		void reset();
-		void reset(JString arg0, JString arg1);
+		void addSplit(JString arg0) const;
+		void dumpToLog() const;
+		void reset() const;
+		void reset(JString arg0, JString arg1) const;
 	};
 } // namespace android::util
 

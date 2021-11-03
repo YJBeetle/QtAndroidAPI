@@ -20,7 +20,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvInputService_RecordingSession::notifyError(jint arg0)
+	void TvInputService_RecordingSession::notifyError(jint arg0) const
 	{
 		callMethod<void>(
 			"notifyError",
@@ -28,7 +28,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvInputService_RecordingSession::notifyRecordingStopped(android::net::Uri arg0)
+	void TvInputService_RecordingSession::notifyRecordingStopped(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"notifyRecordingStopped",
@@ -36,7 +36,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_RecordingSession::notifyTuned(android::net::Uri arg0)
+	void TvInputService_RecordingSession::notifyTuned(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"notifyTuned",
@@ -44,7 +44,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_RecordingSession::onAppPrivateCommand(JString arg0, android::os::Bundle arg1)
+	void TvInputService_RecordingSession::onAppPrivateCommand(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onAppPrivateCommand",
@@ -53,14 +53,14 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvInputService_RecordingSession::onRelease()
+	void TvInputService_RecordingSession::onRelease() const
 	{
 		callMethod<void>(
 			"onRelease",
 			"()V"
 		);
 	}
-	void TvInputService_RecordingSession::onStartRecording(android::net::Uri arg0)
+	void TvInputService_RecordingSession::onStartRecording(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onStartRecording",
@@ -68,14 +68,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_RecordingSession::onStopRecording()
+	void TvInputService_RecordingSession::onStopRecording() const
 	{
 		callMethod<void>(
 			"onStopRecording",
 			"()V"
 		);
 	}
-	void TvInputService_RecordingSession::onTune(android::net::Uri arg0)
+	void TvInputService_RecordingSession::onTune(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onTune",
@@ -83,7 +83,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_RecordingSession::onTune(android::net::Uri arg0, android::os::Bundle arg1)
+	void TvInputService_RecordingSession::onTune(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onTune",

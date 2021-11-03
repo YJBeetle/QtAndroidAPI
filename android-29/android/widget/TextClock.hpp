@@ -29,14 +29,14 @@ namespace android::widget
 		TextClock(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getFormat12Hour();
-		JString getFormat24Hour();
-		JString getTimeZone();
-		jboolean is24HourModeEnabled();
-		void onVisibilityAggregated(jboolean arg0);
-		void setFormat12Hour(JString arg0);
-		void setFormat24Hour(JString arg0);
-		void setTimeZone(JString arg0);
+		JString getFormat12Hour() const;
+		JString getFormat24Hour() const;
+		JString getTimeZone() const;
+		jboolean is24HourModeEnabled() const;
+		void onVisibilityAggregated(jboolean arg0) const;
+		void setFormat12Hour(JString arg0) const;
+		void setFormat24Hour(JString arg0) const;
+		void setTimeZone(JString arg0) const;
 	};
 } // namespace android::widget
 

@@ -25,14 +25,14 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	JByteArray X509EncodedKeySpec::getEncoded()
+	JByteArray X509EncodedKeySpec::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JString X509EncodedKeySpec::getFormat()
+	JString X509EncodedKeySpec::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",

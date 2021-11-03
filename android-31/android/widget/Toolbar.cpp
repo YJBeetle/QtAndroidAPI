@@ -46,21 +46,21 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void Toolbar::collapseActionView()
+	void Toolbar::collapseActionView() const
 	{
 		callMethod<void>(
 			"collapseActionView",
 			"()V"
 		);
 	}
-	void Toolbar::dismissPopupMenus()
+	void Toolbar::dismissPopupMenus() const
 	{
 		callMethod<void>(
 			"dismissPopupMenus",
 			"()V"
 		);
 	}
-	android::widget::Toolbar_LayoutParams Toolbar::generateLayoutParams(JObject arg0)
+	android::widget::Toolbar_LayoutParams Toolbar::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -68,196 +68,196 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString Toolbar::getCollapseContentDescription()
+	JString Toolbar::getCollapseContentDescription() const
 	{
 		return callObjectMethod(
 			"getCollapseContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::graphics::drawable::Drawable Toolbar::getCollapseIcon()
+	android::graphics::drawable::Drawable Toolbar::getCollapseIcon() const
 	{
 		return callObjectMethod(
 			"getCollapseIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint Toolbar::getContentInsetEnd()
+	jint Toolbar::getContentInsetEnd() const
 	{
 		return callMethod<jint>(
 			"getContentInsetEnd",
 			"()I"
 		);
 	}
-	jint Toolbar::getContentInsetEndWithActions()
+	jint Toolbar::getContentInsetEndWithActions() const
 	{
 		return callMethod<jint>(
 			"getContentInsetEndWithActions",
 			"()I"
 		);
 	}
-	jint Toolbar::getContentInsetLeft()
+	jint Toolbar::getContentInsetLeft() const
 	{
 		return callMethod<jint>(
 			"getContentInsetLeft",
 			"()I"
 		);
 	}
-	jint Toolbar::getContentInsetRight()
+	jint Toolbar::getContentInsetRight() const
 	{
 		return callMethod<jint>(
 			"getContentInsetRight",
 			"()I"
 		);
 	}
-	jint Toolbar::getContentInsetStart()
+	jint Toolbar::getContentInsetStart() const
 	{
 		return callMethod<jint>(
 			"getContentInsetStart",
 			"()I"
 		);
 	}
-	jint Toolbar::getContentInsetStartWithNavigation()
+	jint Toolbar::getContentInsetStartWithNavigation() const
 	{
 		return callMethod<jint>(
 			"getContentInsetStartWithNavigation",
 			"()I"
 		);
 	}
-	jint Toolbar::getCurrentContentInsetEnd()
+	jint Toolbar::getCurrentContentInsetEnd() const
 	{
 		return callMethod<jint>(
 			"getCurrentContentInsetEnd",
 			"()I"
 		);
 	}
-	jint Toolbar::getCurrentContentInsetLeft()
+	jint Toolbar::getCurrentContentInsetLeft() const
 	{
 		return callMethod<jint>(
 			"getCurrentContentInsetLeft",
 			"()I"
 		);
 	}
-	jint Toolbar::getCurrentContentInsetRight()
+	jint Toolbar::getCurrentContentInsetRight() const
 	{
 		return callMethod<jint>(
 			"getCurrentContentInsetRight",
 			"()I"
 		);
 	}
-	jint Toolbar::getCurrentContentInsetStart()
+	jint Toolbar::getCurrentContentInsetStart() const
 	{
 		return callMethod<jint>(
 			"getCurrentContentInsetStart",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable Toolbar::getLogo()
+	android::graphics::drawable::Drawable Toolbar::getLogo() const
 	{
 		return callObjectMethod(
 			"getLogo",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	JString Toolbar::getLogoDescription()
+	JString Toolbar::getLogoDescription() const
 	{
 		return callObjectMethod(
 			"getLogoDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject Toolbar::getMenu()
+	JObject Toolbar::getMenu() const
 	{
 		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
-	JString Toolbar::getNavigationContentDescription()
+	JString Toolbar::getNavigationContentDescription() const
 	{
 		return callObjectMethod(
 			"getNavigationContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::graphics::drawable::Drawable Toolbar::getNavigationIcon()
+	android::graphics::drawable::Drawable Toolbar::getNavigationIcon() const
 	{
 		return callObjectMethod(
 			"getNavigationIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable Toolbar::getOverflowIcon()
+	android::graphics::drawable::Drawable Toolbar::getOverflowIcon() const
 	{
 		return callObjectMethod(
 			"getOverflowIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint Toolbar::getPopupTheme()
+	jint Toolbar::getPopupTheme() const
 	{
 		return callMethod<jint>(
 			"getPopupTheme",
 			"()I"
 		);
 	}
-	JString Toolbar::getSubtitle()
+	JString Toolbar::getSubtitle() const
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Toolbar::getTitle()
+	JString Toolbar::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint Toolbar::getTitleMarginBottom()
+	jint Toolbar::getTitleMarginBottom() const
 	{
 		return callMethod<jint>(
 			"getTitleMarginBottom",
 			"()I"
 		);
 	}
-	jint Toolbar::getTitleMarginEnd()
+	jint Toolbar::getTitleMarginEnd() const
 	{
 		return callMethod<jint>(
 			"getTitleMarginEnd",
 			"()I"
 		);
 	}
-	jint Toolbar::getTitleMarginStart()
+	jint Toolbar::getTitleMarginStart() const
 	{
 		return callMethod<jint>(
 			"getTitleMarginStart",
 			"()I"
 		);
 	}
-	jint Toolbar::getTitleMarginTop()
+	jint Toolbar::getTitleMarginTop() const
 	{
 		return callMethod<jint>(
 			"getTitleMarginTop",
 			"()I"
 		);
 	}
-	jboolean Toolbar::hasExpandedActionView()
+	jboolean Toolbar::hasExpandedActionView() const
 	{
 		return callMethod<jboolean>(
 			"hasExpandedActionView",
 			"()Z"
 		);
 	}
-	jboolean Toolbar::hideOverflowMenu()
+	jboolean Toolbar::hideOverflowMenu() const
 	{
 		return callMethod<jboolean>(
 			"hideOverflowMenu",
 			"()Z"
 		);
 	}
-	void Toolbar::inflateMenu(jint arg0)
+	void Toolbar::inflateMenu(jint arg0) const
 	{
 		callMethod<void>(
 			"inflateMenu",
@@ -265,14 +265,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean Toolbar::isOverflowMenuShowing()
+	jboolean Toolbar::isOverflowMenuShowing() const
 	{
 		return callMethod<jboolean>(
 			"isOverflowMenuShowing",
 			"()Z"
 		);
 	}
-	void Toolbar::onRtlPropertiesChanged(jint arg0)
+	void Toolbar::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -280,7 +280,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean Toolbar::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean Toolbar::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -288,7 +288,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setCollapseContentDescription(jint arg0)
+	void Toolbar::setCollapseContentDescription(jint arg0) const
 	{
 		callMethod<void>(
 			"setCollapseContentDescription",
@@ -296,7 +296,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setCollapseContentDescription(JString arg0)
+	void Toolbar::setCollapseContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setCollapseContentDescription",
@@ -304,7 +304,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Toolbar::setCollapseIcon(android::graphics::drawable::Drawable arg0)
+	void Toolbar::setCollapseIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setCollapseIcon",
@@ -312,7 +312,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setCollapseIcon(jint arg0)
+	void Toolbar::setCollapseIcon(jint arg0) const
 	{
 		callMethod<void>(
 			"setCollapseIcon",
@@ -320,7 +320,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setContentInsetEndWithActions(jint arg0)
+	void Toolbar::setContentInsetEndWithActions(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentInsetEndWithActions",
@@ -328,7 +328,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setContentInsetStartWithNavigation(jint arg0)
+	void Toolbar::setContentInsetStartWithNavigation(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentInsetStartWithNavigation",
@@ -336,7 +336,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setContentInsetsAbsolute(jint arg0, jint arg1)
+	void Toolbar::setContentInsetsAbsolute(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setContentInsetsAbsolute",
@@ -345,7 +345,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Toolbar::setContentInsetsRelative(jint arg0, jint arg1)
+	void Toolbar::setContentInsetsRelative(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setContentInsetsRelative",
@@ -354,7 +354,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Toolbar::setLogo(android::graphics::drawable::Drawable arg0)
+	void Toolbar::setLogo(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setLogo",
@@ -362,7 +362,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setLogo(jint arg0)
+	void Toolbar::setLogo(jint arg0) const
 	{
 		callMethod<void>(
 			"setLogo",
@@ -370,7 +370,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setLogoDescription(jint arg0)
+	void Toolbar::setLogoDescription(jint arg0) const
 	{
 		callMethod<void>(
 			"setLogoDescription",
@@ -378,7 +378,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setLogoDescription(JString arg0)
+	void Toolbar::setLogoDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setLogoDescription",
@@ -386,7 +386,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Toolbar::setNavigationContentDescription(jint arg0)
+	void Toolbar::setNavigationContentDescription(jint arg0) const
 	{
 		callMethod<void>(
 			"setNavigationContentDescription",
@@ -394,7 +394,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setNavigationContentDescription(JString arg0)
+	void Toolbar::setNavigationContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setNavigationContentDescription",
@@ -402,7 +402,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Toolbar::setNavigationIcon(android::graphics::drawable::Drawable arg0)
+	void Toolbar::setNavigationIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setNavigationIcon",
@@ -410,7 +410,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setNavigationIcon(jint arg0)
+	void Toolbar::setNavigationIcon(jint arg0) const
 	{
 		callMethod<void>(
 			"setNavigationIcon",
@@ -418,7 +418,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setNavigationOnClickListener(JObject arg0)
+	void Toolbar::setNavigationOnClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setNavigationOnClickListener",
@@ -426,7 +426,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setOnMenuItemClickListener(JObject arg0)
+	void Toolbar::setOnMenuItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnMenuItemClickListener",
@@ -434,7 +434,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setOverflowIcon(android::graphics::drawable::Drawable arg0)
+	void Toolbar::setOverflowIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setOverflowIcon",
@@ -442,7 +442,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setPopupTheme(jint arg0)
+	void Toolbar::setPopupTheme(jint arg0) const
 	{
 		callMethod<void>(
 			"setPopupTheme",
@@ -450,7 +450,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setSubtitle(jint arg0)
+	void Toolbar::setSubtitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setSubtitle",
@@ -458,7 +458,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setSubtitle(JString arg0)
+	void Toolbar::setSubtitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubtitle",
@@ -466,7 +466,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Toolbar::setSubtitleTextAppearance(android::content::Context arg0, jint arg1)
+	void Toolbar::setSubtitleTextAppearance(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSubtitleTextAppearance",
@@ -475,7 +475,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Toolbar::setSubtitleTextColor(jint arg0)
+	void Toolbar::setSubtitleTextColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setSubtitleTextColor",
@@ -483,7 +483,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setTitle(jint arg0)
+	void Toolbar::setTitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -491,7 +491,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setTitle(JString arg0)
+	void Toolbar::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -499,7 +499,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Toolbar::setTitleMargin(jint arg0, jint arg1, jint arg2, jint arg3)
+	void Toolbar::setTitleMargin(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setTitleMargin",
@@ -510,7 +510,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void Toolbar::setTitleMarginBottom(jint arg0)
+	void Toolbar::setTitleMarginBottom(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitleMarginBottom",
@@ -518,7 +518,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setTitleMarginEnd(jint arg0)
+	void Toolbar::setTitleMarginEnd(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitleMarginEnd",
@@ -526,7 +526,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setTitleMarginStart(jint arg0)
+	void Toolbar::setTitleMarginStart(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitleMarginStart",
@@ -534,7 +534,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setTitleMarginTop(jint arg0)
+	void Toolbar::setTitleMarginTop(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitleMarginTop",
@@ -542,7 +542,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setTitleTextAppearance(android::content::Context arg0, jint arg1)
+	void Toolbar::setTitleTextAppearance(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTitleTextAppearance",
@@ -551,7 +551,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Toolbar::setTitleTextColor(jint arg0)
+	void Toolbar::setTitleTextColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitleTextColor",
@@ -559,7 +559,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean Toolbar::showOverflowMenu()
+	jboolean Toolbar::showOverflowMenu() const
 	{
 		return callMethod<jboolean>(
 			"showOverflowMenu",

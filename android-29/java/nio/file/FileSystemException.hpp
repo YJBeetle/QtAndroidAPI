@@ -20,10 +20,10 @@ namespace java::nio::file
 		FileSystemException(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		JString getFile();
-		JString getMessage();
-		JString getOtherFile();
-		JString getReason();
+		JString getFile() const;
+		JString getMessage() const;
+		JString getOtherFile() const;
+		JString getReason() const;
 	};
 } // namespace java::nio::file
 

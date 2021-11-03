@@ -34,63 +34,63 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	void BluetoothSocket::close()
+	void BluetoothSocket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void BluetoothSocket::connect()
+	void BluetoothSocket::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	jint BluetoothSocket::getConnectionType()
+	jint BluetoothSocket::getConnectionType() const
 	{
 		return callMethod<jint>(
 			"getConnectionType",
 			"()I"
 		);
 	}
-	java::io::InputStream BluetoothSocket::getInputStream()
+	java::io::InputStream BluetoothSocket::getInputStream() const
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jint BluetoothSocket::getMaxReceivePacketSize()
+	jint BluetoothSocket::getMaxReceivePacketSize() const
 	{
 		return callMethod<jint>(
 			"getMaxReceivePacketSize",
 			"()I"
 		);
 	}
-	jint BluetoothSocket::getMaxTransmitPacketSize()
+	jint BluetoothSocket::getMaxTransmitPacketSize() const
 	{
 		return callMethod<jint>(
 			"getMaxTransmitPacketSize",
 			"()I"
 		);
 	}
-	java::io::OutputStream BluetoothSocket::getOutputStream()
+	java::io::OutputStream BluetoothSocket::getOutputStream() const
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	android::bluetooth::BluetoothDevice BluetoothSocket::getRemoteDevice()
+	android::bluetooth::BluetoothDevice BluetoothSocket::getRemoteDevice() const
 	{
 		return callObjectMethod(
 			"getRemoteDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
-	jboolean BluetoothSocket::isConnected()
+	jboolean BluetoothSocket::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",

@@ -41,7 +41,7 @@ namespace android::net
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0);
 		
 		// Methods
-		JString sanitize(JString arg0);
+		JString sanitize(JString arg0) const;
 	};
 } // namespace android::net
 

@@ -54,7 +54,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void CursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, JObject arg2)
+	void CursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"bindView",
@@ -64,7 +64,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void CursorAdapter::changeCursor(JObject arg0)
+	void CursorAdapter::changeCursor(JObject arg0) const
 	{
 		callMethod<void>(
 			"changeCursor",
@@ -72,7 +72,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString CursorAdapter::convertToString(JObject arg0)
+	JString CursorAdapter::convertToString(JObject arg0) const
 	{
 		return callObjectMethod(
 			"convertToString",
@@ -80,21 +80,21 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jint CursorAdapter::getCount()
+	jint CursorAdapter::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	JObject CursorAdapter::getCursor()
+	JObject CursorAdapter::getCursor() const
 	{
 		return callObjectMethod(
 			"getCursor",
 			"()Landroid/database/Cursor;"
 		);
 	}
-	android::view::View CursorAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getDropDownView",
@@ -104,28 +104,28 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::content::res::Resources_Theme CursorAdapter::getDropDownViewTheme()
+	android::content::res::Resources_Theme CursorAdapter::getDropDownViewTheme() const
 	{
 		return callObjectMethod(
 			"getDropDownViewTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	android::widget::Filter CursorAdapter::getFilter()
+	android::widget::Filter CursorAdapter::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
-	JObject CursorAdapter::getFilterQueryProvider()
+	JObject CursorAdapter::getFilterQueryProvider() const
 	{
 		return callObjectMethod(
 			"getFilterQueryProvider",
 			"()Landroid/widget/FilterQueryProvider;"
 		);
 	}
-	JObject CursorAdapter::getItem(jint arg0)
+	JObject CursorAdapter::getItem(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItem",
@@ -133,7 +133,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jlong CursorAdapter::getItemId(jint arg0)
+	jlong CursorAdapter::getItemId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getItemId",
@@ -141,7 +141,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::view::View CursorAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getView",
@@ -151,14 +151,14 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean CursorAdapter::hasStableIds()
+	jboolean CursorAdapter::hasStableIds() const
 	{
 		return callMethod<jboolean>(
 			"hasStableIds",
 			"()Z"
 		);
 	}
-	android::view::View CursorAdapter::newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"newDropDownView",
@@ -168,7 +168,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::view::View CursorAdapter::newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"newView",
@@ -178,7 +178,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	JObject CursorAdapter::runQueryOnBackgroundThread(JString arg0)
+	JObject CursorAdapter::runQueryOnBackgroundThread(JString arg0) const
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",
@@ -186,7 +186,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void CursorAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0)
+	void CursorAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"setDropDownViewTheme",
@@ -194,7 +194,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CursorAdapter::setFilterQueryProvider(JObject arg0)
+	void CursorAdapter::setFilterQueryProvider(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFilterQueryProvider",
@@ -202,7 +202,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject CursorAdapter::swapCursor(JObject arg0)
+	JObject CursorAdapter::swapCursor(JObject arg0) const
 	{
 		return callObjectMethod(
 			"swapCursor",

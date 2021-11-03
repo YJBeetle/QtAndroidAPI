@@ -96,7 +96,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Clock::equals(JObject arg0)
+	jboolean Clock::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -104,35 +104,35 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	java::time::ZoneId Clock::getZone()
+	java::time::ZoneId Clock::getZone() const
 	{
 		return callObjectMethod(
 			"getZone",
 			"()Ljava/time/ZoneId;"
 		);
 	}
-	jint Clock::hashCode()
+	jint Clock::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::time::Instant Clock::instant()
+	java::time::Instant Clock::instant() const
 	{
 		return callObjectMethod(
 			"instant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	jlong Clock::millis()
+	jlong Clock::millis() const
 	{
 		return callMethod<jlong>(
 			"millis",
 			"()J"
 		);
 	}
-	java::time::Clock Clock::withZone(java::time::ZoneId arg0)
+	java::time::Clock Clock::withZone(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"withZone",

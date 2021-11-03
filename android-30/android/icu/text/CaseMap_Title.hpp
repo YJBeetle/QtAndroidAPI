@@ -35,14 +35,14 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		android::icu::text::CaseMap_Title adjustToCased();
-		JObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4);
-		JString apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2);
-		android::icu::text::CaseMap_Title noBreakAdjustment();
-		android::icu::text::CaseMap_Title noLowercase();
-		android::icu::text::CaseMap_Title omitUnchangedText();
-		android::icu::text::CaseMap_Title sentences();
-		android::icu::text::CaseMap_Title wholeString();
+		android::icu::text::CaseMap_Title adjustToCased() const;
+		JObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4) const;
+		JString apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2) const;
+		android::icu::text::CaseMap_Title noBreakAdjustment() const;
+		android::icu::text::CaseMap_Title noLowercase() const;
+		android::icu::text::CaseMap_Title omitUnchangedText() const;
+		android::icu::text::CaseMap_Title sentences() const;
+		android::icu::text::CaseMap_Title wholeString() const;
 	};
 } // namespace android::icu::text
 

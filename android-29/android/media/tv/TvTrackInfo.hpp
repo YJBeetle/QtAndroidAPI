@@ -32,22 +32,22 @@ namespace android::media::tv
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAudioChannelCount();
-		jint getAudioSampleRate();
-		JString getDescription();
-		android::os::Bundle getExtra();
-		JString getId();
-		JString getLanguage();
-		jint getType();
-		jbyte getVideoActiveFormatDescription();
-		jfloat getVideoFrameRate();
-		jint getVideoHeight();
-		jfloat getVideoPixelAspectRatio();
-		jint getVideoWidth();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAudioChannelCount() const;
+		jint getAudioSampleRate() const;
+		JString getDescription() const;
+		android::os::Bundle getExtra() const;
+		JString getId() const;
+		JString getLanguage() const;
+		jint getType() const;
+		jbyte getVideoActiveFormatDescription() const;
+		jfloat getVideoFrameRate() const;
+		jint getVideoHeight() const;
+		jfloat getVideoPixelAspectRatio() const;
+		jint getVideoWidth() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::tv
 

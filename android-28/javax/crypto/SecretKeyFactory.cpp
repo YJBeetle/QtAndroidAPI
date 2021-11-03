@@ -44,7 +44,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	JObject SecretKeyFactory::generateSecret(JObject arg0)
+	JObject SecretKeyFactory::generateSecret(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateSecret",
@@ -52,14 +52,14 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	JString SecretKeyFactory::getAlgorithm()
+	JString SecretKeyFactory::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SecretKeyFactory::getKeySpec(JObject arg0, JClass arg1)
+	JObject SecretKeyFactory::getKeySpec(JObject arg0, JClass arg1) const
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -68,14 +68,14 @@ namespace javax::crypto
 			arg1.object<jclass>()
 		);
 	}
-	java::security::Provider SecretKeyFactory::getProvider()
+	java::security::Provider SecretKeyFactory::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JObject SecretKeyFactory::translateKey(JObject arg0)
+	JObject SecretKeyFactory::translateKey(JObject arg0) const
 	{
 		return callObjectMethod(
 			"translateKey",

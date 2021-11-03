@@ -68,245 +68,245 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	android::content::Intent PackageInstaller_SessionInfo::createDetailsIntent()
+	android::content::Intent PackageInstaller_SessionInfo::createDetailsIntent() const
 	{
 		return callObjectMethod(
 			"createDetailsIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jint PackageInstaller_SessionInfo::describeContents()
+	jint PackageInstaller_SessionInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::Bitmap PackageInstaller_SessionInfo::getAppIcon()
+	android::graphics::Bitmap PackageInstaller_SessionInfo::getAppIcon() const
 	{
 		return callObjectMethod(
 			"getAppIcon",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	JString PackageInstaller_SessionInfo::getAppLabel()
+	JString PackageInstaller_SessionInfo::getAppLabel() const
 	{
 		return callObjectMethod(
 			"getAppLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString PackageInstaller_SessionInfo::getAppPackageName()
+	JString PackageInstaller_SessionInfo::getAppPackageName() const
 	{
 		return callObjectMethod(
 			"getAppPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JIntArray PackageInstaller_SessionInfo::getChildSessionIds()
+	JIntArray PackageInstaller_SessionInfo::getChildSessionIds() const
 	{
 		return callObjectMethod(
 			"getChildSessionIds",
 			"()[I"
 		);
 	}
-	jlong PackageInstaller_SessionInfo::getCreatedMillis()
+	jlong PackageInstaller_SessionInfo::getCreatedMillis() const
 	{
 		return callMethod<jlong>(
 			"getCreatedMillis",
 			"()J"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getInstallLocation()
+	jint PackageInstaller_SessionInfo::getInstallLocation() const
 	{
 		return callMethod<jint>(
 			"getInstallLocation",
 			"()I"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getInstallReason()
+	jint PackageInstaller_SessionInfo::getInstallReason() const
 	{
 		return callMethod<jint>(
 			"getInstallReason",
 			"()I"
 		);
 	}
-	JString PackageInstaller_SessionInfo::getInstallerAttributionTag()
+	JString PackageInstaller_SessionInfo::getInstallerAttributionTag() const
 	{
 		return callObjectMethod(
 			"getInstallerAttributionTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PackageInstaller_SessionInfo::getInstallerPackageName()
+	JString PackageInstaller_SessionInfo::getInstallerPackageName() const
 	{
 		return callObjectMethod(
 			"getInstallerPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getMode()
+	jint PackageInstaller_SessionInfo::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getOriginatingUid()
+	jint PackageInstaller_SessionInfo::getOriginatingUid() const
 	{
 		return callMethod<jint>(
 			"getOriginatingUid",
 			"()I"
 		);
 	}
-	android::net::Uri PackageInstaller_SessionInfo::getOriginatingUri()
+	android::net::Uri PackageInstaller_SessionInfo::getOriginatingUri() const
 	{
 		return callObjectMethod(
 			"getOriginatingUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getParentSessionId()
+	jint PackageInstaller_SessionInfo::getParentSessionId() const
 	{
 		return callMethod<jint>(
 			"getParentSessionId",
 			"()I"
 		);
 	}
-	jfloat PackageInstaller_SessionInfo::getProgress()
+	jfloat PackageInstaller_SessionInfo::getProgress() const
 	{
 		return callMethod<jfloat>(
 			"getProgress",
 			"()F"
 		);
 	}
-	android::net::Uri PackageInstaller_SessionInfo::getReferrerUri()
+	android::net::Uri PackageInstaller_SessionInfo::getReferrerUri() const
 	{
 		return callObjectMethod(
 			"getReferrerUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getRequireUserAction()
+	jint PackageInstaller_SessionInfo::getRequireUserAction() const
 	{
 		return callMethod<jint>(
 			"getRequireUserAction",
 			"()I"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getSessionId()
+	jint PackageInstaller_SessionInfo::getSessionId() const
 	{
 		return callMethod<jint>(
 			"getSessionId",
 			"()I"
 		);
 	}
-	jlong PackageInstaller_SessionInfo::getSize()
+	jlong PackageInstaller_SessionInfo::getSize() const
 	{
 		return callMethod<jlong>(
 			"getSize",
 			"()J"
 		);
 	}
-	jint PackageInstaller_SessionInfo::getStagedSessionErrorCode()
+	jint PackageInstaller_SessionInfo::getStagedSessionErrorCode() const
 	{
 		return callMethod<jint>(
 			"getStagedSessionErrorCode",
 			"()I"
 		);
 	}
-	JString PackageInstaller_SessionInfo::getStagedSessionErrorMessage()
+	JString PackageInstaller_SessionInfo::getStagedSessionErrorMessage() const
 	{
 		return callObjectMethod(
 			"getStagedSessionErrorMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong PackageInstaller_SessionInfo::getUpdatedMillis()
+	jlong PackageInstaller_SessionInfo::getUpdatedMillis() const
 	{
 		return callMethod<jlong>(
 			"getUpdatedMillis",
 			"()J"
 		);
 	}
-	android::os::UserHandle PackageInstaller_SessionInfo::getUser()
+	android::os::UserHandle PackageInstaller_SessionInfo::getUser() const
 	{
 		return callObjectMethod(
 			"getUser",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::hasParentSessionId()
+	jboolean PackageInstaller_SessionInfo::hasParentSessionId() const
 	{
 		return callMethod<jboolean>(
 			"hasParentSessionId",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isActive()
+	jboolean PackageInstaller_SessionInfo::isActive() const
 	{
 		return callMethod<jboolean>(
 			"isActive",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isCommitted()
+	jboolean PackageInstaller_SessionInfo::isCommitted() const
 	{
 		return callMethod<jboolean>(
 			"isCommitted",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isMultiPackage()
+	jboolean PackageInstaller_SessionInfo::isMultiPackage() const
 	{
 		return callMethod<jboolean>(
 			"isMultiPackage",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isSealed()
+	jboolean PackageInstaller_SessionInfo::isSealed() const
 	{
 		return callMethod<jboolean>(
 			"isSealed",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isStaged()
+	jboolean PackageInstaller_SessionInfo::isStaged() const
 	{
 		return callMethod<jboolean>(
 			"isStaged",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isStagedSessionActive()
+	jboolean PackageInstaller_SessionInfo::isStagedSessionActive() const
 	{
 		return callMethod<jboolean>(
 			"isStagedSessionActive",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isStagedSessionApplied()
+	jboolean PackageInstaller_SessionInfo::isStagedSessionApplied() const
 	{
 		return callMethod<jboolean>(
 			"isStagedSessionApplied",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isStagedSessionFailed()
+	jboolean PackageInstaller_SessionInfo::isStagedSessionFailed() const
 	{
 		return callMethod<jboolean>(
 			"isStagedSessionFailed",
 			"()Z"
 		);
 	}
-	jboolean PackageInstaller_SessionInfo::isStagedSessionReady()
+	jboolean PackageInstaller_SessionInfo::isStagedSessionReady() const
 	{
 		return callMethod<jboolean>(
 			"isStagedSessionReady",
 			"()Z"
 		);
 	}
-	void PackageInstaller_SessionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PackageInstaller_SessionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

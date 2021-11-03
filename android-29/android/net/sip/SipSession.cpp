@@ -13,7 +13,7 @@ namespace android::net::sip
 	// Constructors
 	
 	// Methods
-	void SipSession::answerCall(JString arg0, jint arg1)
+	void SipSession::answerCall(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"answerCall",
@@ -22,7 +22,7 @@ namespace android::net::sip
 			arg1
 		);
 	}
-	void SipSession::changeCall(JString arg0, jint arg1)
+	void SipSession::changeCall(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"changeCall",
@@ -31,56 +31,56 @@ namespace android::net::sip
 			arg1
 		);
 	}
-	void SipSession::endCall()
+	void SipSession::endCall() const
 	{
 		callMethod<void>(
 			"endCall",
 			"()V"
 		);
 	}
-	JString SipSession::getCallId()
+	JString SipSession::getCallId() const
 	{
 		return callObjectMethod(
 			"getCallId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SipSession::getLocalIp()
+	JString SipSession::getLocalIp() const
 	{
 		return callObjectMethod(
 			"getLocalIp",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::sip::SipProfile SipSession::getLocalProfile()
+	android::net::sip::SipProfile SipSession::getLocalProfile() const
 	{
 		return callObjectMethod(
 			"getLocalProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	android::net::sip::SipProfile SipSession::getPeerProfile()
+	android::net::sip::SipProfile SipSession::getPeerProfile() const
 	{
 		return callObjectMethod(
 			"getPeerProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	jint SipSession::getState()
+	jint SipSession::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jboolean SipSession::isInCall()
+	jboolean SipSession::isInCall() const
 	{
 		return callMethod<jboolean>(
 			"isInCall",
 			"()Z"
 		);
 	}
-	void SipSession::makeCall(android::net::sip::SipProfile arg0, JString arg1, jint arg2)
+	void SipSession::makeCall(android::net::sip::SipProfile arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"makeCall",
@@ -90,7 +90,7 @@ namespace android::net::sip
 			arg2
 		);
 	}
-	void SipSession::_register(jint arg0)
+	void SipSession::_register(jint arg0) const
 	{
 		callMethod<void>(
 			"register",
@@ -98,7 +98,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	void SipSession::setListener(android::net::sip::SipSession_Listener arg0)
+	void SipSession::setListener(android::net::sip::SipSession_Listener arg0) const
 	{
 		callMethod<void>(
 			"setListener",
@@ -106,7 +106,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipSession::unregister()
+	void SipSession::unregister() const
 	{
 		callMethod<void>(
 			"unregister",

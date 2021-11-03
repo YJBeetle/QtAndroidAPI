@@ -67,7 +67,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void DropBoxManager::addData(JString arg0, JByteArray arg1, jint arg2)
+	void DropBoxManager::addData(JString arg0, JByteArray arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addData",
@@ -77,7 +77,7 @@ namespace android::os
 			arg2
 		);
 	}
-	void DropBoxManager::addFile(JString arg0, java::io::File arg1, jint arg2)
+	void DropBoxManager::addFile(JString arg0, java::io::File arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addFile",
@@ -87,7 +87,7 @@ namespace android::os
 			arg2
 		);
 	}
-	void DropBoxManager::addText(JString arg0, JString arg1)
+	void DropBoxManager::addText(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addText",
@@ -96,7 +96,7 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	android::os::DropBoxManager_Entry DropBoxManager::getNextEntry(JString arg0, jlong arg1)
+	android::os::DropBoxManager_Entry DropBoxManager::getNextEntry(JString arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"getNextEntry",
@@ -105,7 +105,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean DropBoxManager::isTagEnabled(JString arg0)
+	jboolean DropBoxManager::isTagEnabled(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isTagEnabled",

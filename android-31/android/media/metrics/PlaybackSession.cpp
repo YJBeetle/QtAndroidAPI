@@ -17,14 +17,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	void PlaybackSession::close()
+	void PlaybackSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean PlaybackSession::equals(JObject arg0)
+	jboolean PlaybackSession::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -32,21 +32,21 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	android::media::metrics::LogSessionId PlaybackSession::getSessionId()
+	android::media::metrics::LogSessionId PlaybackSession::getSessionId() const
 	{
 		return callObjectMethod(
 			"getSessionId",
 			"()Landroid/media/metrics/LogSessionId;"
 		);
 	}
-	jint PlaybackSession::hashCode()
+	jint PlaybackSession::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void PlaybackSession::reportNetworkEvent(android::media::metrics::NetworkEvent arg0)
+	void PlaybackSession::reportNetworkEvent(android::media::metrics::NetworkEvent arg0) const
 	{
 		callMethod<void>(
 			"reportNetworkEvent",
@@ -54,7 +54,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	void PlaybackSession::reportPlaybackErrorEvent(android::media::metrics::PlaybackErrorEvent arg0)
+	void PlaybackSession::reportPlaybackErrorEvent(android::media::metrics::PlaybackErrorEvent arg0) const
 	{
 		callMethod<void>(
 			"reportPlaybackErrorEvent",
@@ -62,7 +62,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	void PlaybackSession::reportPlaybackMetrics(android::media::metrics::PlaybackMetrics arg0)
+	void PlaybackSession::reportPlaybackMetrics(android::media::metrics::PlaybackMetrics arg0) const
 	{
 		callMethod<void>(
 			"reportPlaybackMetrics",
@@ -70,7 +70,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	void PlaybackSession::reportPlaybackStateEvent(android::media::metrics::PlaybackStateEvent arg0)
+	void PlaybackSession::reportPlaybackStateEvent(android::media::metrics::PlaybackStateEvent arg0) const
 	{
 		callMethod<void>(
 			"reportPlaybackStateEvent",
@@ -78,7 +78,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	void PlaybackSession::reportTrackChangeEvent(android::media::metrics::TrackChangeEvent arg0)
+	void PlaybackSession::reportTrackChangeEvent(android::media::metrics::TrackChangeEvent arg0) const
 	{
 		callMethod<void>(
 			"reportTrackChangeEvent",

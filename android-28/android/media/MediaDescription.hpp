@@ -45,18 +45,18 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getDescription();
-		android::os::Bundle getExtras();
-		android::graphics::Bitmap getIconBitmap();
-		android::net::Uri getIconUri();
-		JString getMediaId();
-		android::net::Uri getMediaUri();
-		JString getSubtitle();
-		JString getTitle();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getDescription() const;
+		android::os::Bundle getExtras() const;
+		android::graphics::Bitmap getIconBitmap() const;
+		android::net::Uri getIconUri() const;
+		JString getMediaId() const;
+		android::net::Uri getMediaUri() const;
+		JString getSubtitle() const;
+		JString getTitle() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

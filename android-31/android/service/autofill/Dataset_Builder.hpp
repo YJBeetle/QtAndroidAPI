@@ -48,19 +48,19 @@ namespace android::service::autofill
 		Dataset_Builder(android::widget::RemoteViews arg0);
 		
 		// Methods
-		android::service::autofill::Dataset build();
-		android::service::autofill::Dataset_Builder setAuthentication(android::content::IntentSender arg0);
-		android::service::autofill::Dataset_Builder setId(JString arg0);
-		android::service::autofill::Dataset_Builder setInlinePresentation(android::service::autofill::InlinePresentation arg0);
-		android::service::autofill::Dataset_Builder setInlinePresentation(android::service::autofill::InlinePresentation arg0, android::service::autofill::InlinePresentation arg1);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2, android::service::autofill::InlinePresentation arg3);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2, android::service::autofill::InlinePresentation arg3, android::service::autofill::InlinePresentation arg4);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3, android::service::autofill::InlinePresentation arg4);
-		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3, android::service::autofill::InlinePresentation arg4, android::service::autofill::InlinePresentation arg5);
+		android::service::autofill::Dataset build() const;
+		android::service::autofill::Dataset_Builder setAuthentication(android::content::IntentSender arg0) const;
+		android::service::autofill::Dataset_Builder setId(JString arg0) const;
+		android::service::autofill::Dataset_Builder setInlinePresentation(android::service::autofill::InlinePresentation arg0) const;
+		android::service::autofill::Dataset_Builder setInlinePresentation(android::service::autofill::InlinePresentation arg0, android::service::autofill::InlinePresentation arg1) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2, android::service::autofill::InlinePresentation arg3) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2, android::service::autofill::InlinePresentation arg3, android::service::autofill::InlinePresentation arg4) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3, android::service::autofill::InlinePresentation arg4) const;
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3, android::service::autofill::InlinePresentation arg4, android::service::autofill::InlinePresentation arg5) const;
 	};
 } // namespace android::service::autofill
 

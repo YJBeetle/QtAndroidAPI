@@ -33,30 +33,30 @@ namespace android::content
 		Loader(android::content::Context arg0);
 		
 		// Methods
-		void abandon();
-		jboolean cancelLoad();
-		void commitContentChanged();
-		JString dataToString(JObject arg0);
-		void deliverCancellation();
-		void deliverResult(JObject arg0);
-		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
-		void forceLoad();
-		android::content::Context getContext();
-		jint getId();
-		jboolean isAbandoned();
-		jboolean isReset();
-		jboolean isStarted();
-		void onContentChanged();
-		void registerListener(jint arg0, JObject arg1);
-		void registerOnLoadCanceledListener(JObject arg0);
-		void reset();
-		void rollbackContentChanged();
-		void startLoading();
-		void stopLoading();
-		jboolean takeContentChanged();
-		JString toString();
-		void unregisterListener(JObject arg0);
-		void unregisterOnLoadCanceledListener(JObject arg0);
+		void abandon() const;
+		jboolean cancelLoad() const;
+		void commitContentChanged() const;
+		JString dataToString(JObject arg0) const;
+		void deliverCancellation() const;
+		void deliverResult(JObject arg0) const;
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const;
+		void forceLoad() const;
+		android::content::Context getContext() const;
+		jint getId() const;
+		jboolean isAbandoned() const;
+		jboolean isReset() const;
+		jboolean isStarted() const;
+		void onContentChanged() const;
+		void registerListener(jint arg0, JObject arg1) const;
+		void registerOnLoadCanceledListener(JObject arg0) const;
+		void reset() const;
+		void rollbackContentChanged() const;
+		void startLoading() const;
+		void stopLoading() const;
+		jboolean takeContentChanged() const;
+		JString toString() const;
+		void unregisterListener(JObject arg0) const;
+		void unregisterOnLoadCanceledListener(JObject arg0) const;
 	};
 } // namespace android::content
 

@@ -34,16 +34,16 @@ namespace android::mtp
 		// Constructors
 		
 		// Methods
-		jint getDevicePropCode();
-		jint getEventCode();
-		jint getObjectFormatCode();
-		jint getObjectHandle();
-		jint getObjectPropCode();
-		jint getParameter1();
-		jint getParameter2();
-		jint getParameter3();
-		jint getStorageId();
-		jint getTransactionId();
+		jint getDevicePropCode() const;
+		jint getEventCode() const;
+		jint getObjectFormatCode() const;
+		jint getObjectHandle() const;
+		jint getObjectPropCode() const;
+		jint getParameter1() const;
+		jint getParameter2() const;
+		jint getParameter3() const;
+		jint getStorageId() const;
+		jint getTransactionId() const;
 	};
 } // namespace android::mtp
 

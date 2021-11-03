@@ -20,28 +20,28 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jint Attribution::describeContents()
+	jint Attribution::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint Attribution::getLabel()
+	jint Attribution::getLabel() const
 	{
 		return callMethod<jint>(
 			"getLabel",
 			"()I"
 		);
 	}
-	JString Attribution::getTag()
+	JString Attribution::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Attribution::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Attribution::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

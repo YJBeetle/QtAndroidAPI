@@ -50,20 +50,20 @@ namespace android::widget
 		SimpleAdapter(android::content::Context arg0, JObject arg1, jint arg2, JArray arg3, JIntArray arg4);
 		
 		// Methods
-		jint getCount();
-		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		android::content::res::Resources_Theme getDropDownViewTheme();
-		android::widget::Filter getFilter();
-		JObject getItem(jint arg0);
-		jlong getItemId(jint arg0);
-		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		JObject getViewBinder();
-		void setDropDownViewResource(jint arg0);
-		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
-		void setViewBinder(JObject arg0);
-		void setViewImage(android::widget::ImageView arg0, jint arg1);
-		void setViewImage(android::widget::ImageView arg0, JString arg1);
-		void setViewText(android::widget::TextView arg0, JString arg1);
+		jint getCount() const;
+		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const;
+		android::content::res::Resources_Theme getDropDownViewTheme() const;
+		android::widget::Filter getFilter() const;
+		JObject getItem(jint arg0) const;
+		jlong getItemId(jint arg0) const;
+		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const;
+		JObject getViewBinder() const;
+		void setDropDownViewResource(jint arg0) const;
+		void setDropDownViewTheme(android::content::res::Resources_Theme arg0) const;
+		void setViewBinder(JObject arg0) const;
+		void setViewImage(android::widget::ImageView arg0, jint arg1) const;
+		void setViewImage(android::widget::ImageView arg0, JString arg1) const;
+		void setViewText(android::widget::TextView arg0, JString arg1) const;
 	};
 } // namespace android::widget
 

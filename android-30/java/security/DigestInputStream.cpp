@@ -21,14 +21,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	java::security::MessageDigest DigestInputStream::getMessageDigest()
+	java::security::MessageDigest DigestInputStream::getMessageDigest() const
 	{
 		return callObjectMethod(
 			"getMessageDigest",
 			"()Ljava/security/MessageDigest;"
 		);
 	}
-	void DigestInputStream::on(jboolean arg0)
+	void DigestInputStream::on(jboolean arg0) const
 	{
 		callMethod<void>(
 			"on",
@@ -36,14 +36,14 @@ namespace java::security
 			arg0
 		);
 	}
-	jint DigestInputStream::read()
+	jint DigestInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint DigestInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint DigestInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -53,7 +53,7 @@ namespace java::security
 			arg2
 		);
 	}
-	void DigestInputStream::setMessageDigest(java::security::MessageDigest arg0)
+	void DigestInputStream::setMessageDigest(java::security::MessageDigest arg0) const
 	{
 		callMethod<void>(
 			"setMessageDigest",
@@ -61,7 +61,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JString DigestInputStream::toString()
+	JString DigestInputStream::toString() const
 	{
 		return callObjectMethod(
 			"toString",

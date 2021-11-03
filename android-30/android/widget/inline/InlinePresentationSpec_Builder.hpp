@@ -30,8 +30,8 @@ namespace android::widget::inline
 		InlinePresentationSpec_Builder(android::util::Size arg0, android::util::Size arg1);
 		
 		// Methods
-		android::widget::inline::InlinePresentationSpec build();
-		android::widget::inline::InlinePresentationSpec_Builder setStyle(android::os::Bundle arg0);
+		android::widget::inline::InlinePresentationSpec build() const;
+		android::widget::inline::InlinePresentationSpec_Builder setStyle(android::os::Bundle arg0) const;
 	};
 } // namespace android::widget::inline
 

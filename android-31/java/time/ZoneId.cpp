@@ -79,7 +79,7 @@ namespace java::time
 			"()Ljava/time/ZoneId;"
 		);
 	}
-	jboolean ZoneId::equals(JObject arg0)
+	jboolean ZoneId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -87,7 +87,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	JString ZoneId::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString ZoneId::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -96,35 +96,35 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	JString ZoneId::getId()
+	JString ZoneId::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::zone::ZoneRules ZoneId::getRules()
+	java::time::zone::ZoneRules ZoneId::getRules() const
 	{
 		return callObjectMethod(
 			"getRules",
 			"()Ljava/time/zone/ZoneRules;"
 		);
 	}
-	jint ZoneId::hashCode()
+	jint ZoneId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::time::ZoneId ZoneId::normalized()
+	java::time::ZoneId ZoneId::normalized() const
 	{
 		return callObjectMethod(
 			"normalized",
 			"()Ljava/time/ZoneId;"
 		);
 	}
-	JString ZoneId::toString()
+	JString ZoneId::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -66,21 +66,21 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	jboolean SyncAdapterType::allowParallelSyncs()
+	jboolean SyncAdapterType::allowParallelSyncs() const
 	{
 		return callMethod<jboolean>(
 			"allowParallelSyncs",
 			"()Z"
 		);
 	}
-	jint SyncAdapterType::describeContents()
+	jint SyncAdapterType::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SyncAdapterType::equals(JObject arg0)
+	jboolean SyncAdapterType::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -88,49 +88,49 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	JString SyncAdapterType::getSettingsActivity()
+	JString SyncAdapterType::getSettingsActivity() const
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SyncAdapterType::hashCode()
+	jint SyncAdapterType::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean SyncAdapterType::isAlwaysSyncable()
+	jboolean SyncAdapterType::isAlwaysSyncable() const
 	{
 		return callMethod<jboolean>(
 			"isAlwaysSyncable",
 			"()Z"
 		);
 	}
-	jboolean SyncAdapterType::isUserVisible()
+	jboolean SyncAdapterType::isUserVisible() const
 	{
 		return callMethod<jboolean>(
 			"isUserVisible",
 			"()Z"
 		);
 	}
-	jboolean SyncAdapterType::supportsUploading()
+	jboolean SyncAdapterType::supportsUploading() const
 	{
 		return callMethod<jboolean>(
 			"supportsUploading",
 			"()Z"
 		);
 	}
-	JString SyncAdapterType::toString()
+	JString SyncAdapterType::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SyncAdapterType::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SyncAdapterType::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

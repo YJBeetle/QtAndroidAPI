@@ -22,21 +22,21 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void MergeCursor::close()
+	void MergeCursor::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void MergeCursor::deactivate()
+	void MergeCursor::deactivate() const
 	{
 		callMethod<void>(
 			"deactivate",
 			"()V"
 		);
 	}
-	JByteArray MergeCursor::getBlob(jint arg0)
+	JByteArray MergeCursor::getBlob(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBlob",
@@ -44,21 +44,21 @@ namespace android::database
 			arg0
 		);
 	}
-	JArray MergeCursor::getColumnNames()
+	JArray MergeCursor::getColumnNames() const
 	{
 		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint MergeCursor::getCount()
+	jint MergeCursor::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	jdouble MergeCursor::getDouble(jint arg0)
+	jdouble MergeCursor::getDouble(jint arg0) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -66,7 +66,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jfloat MergeCursor::getFloat(jint arg0)
+	jfloat MergeCursor::getFloat(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -74,7 +74,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jint MergeCursor::getInt(jint arg0)
+	jint MergeCursor::getInt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -82,7 +82,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jlong MergeCursor::getLong(jint arg0)
+	jlong MergeCursor::getLong(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -90,7 +90,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jshort MergeCursor::getShort(jint arg0)
+	jshort MergeCursor::getShort(jint arg0) const
 	{
 		return callMethod<jshort>(
 			"getShort",
@@ -98,7 +98,7 @@ namespace android::database
 			arg0
 		);
 	}
-	JString MergeCursor::getString(jint arg0)
+	JString MergeCursor::getString(jint arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -106,7 +106,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jint MergeCursor::getType(jint arg0)
+	jint MergeCursor::getType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getType",
@@ -114,7 +114,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jboolean MergeCursor::isNull(jint arg0)
+	jboolean MergeCursor::isNull(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNull",
@@ -122,7 +122,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jboolean MergeCursor::onMove(jint arg0, jint arg1)
+	jboolean MergeCursor::onMove(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMove",
@@ -131,7 +131,7 @@ namespace android::database
 			arg1
 		);
 	}
-	void MergeCursor::registerContentObserver(android::database::ContentObserver arg0)
+	void MergeCursor::registerContentObserver(android::database::ContentObserver arg0) const
 	{
 		callMethod<void>(
 			"registerContentObserver",
@@ -139,7 +139,7 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	void MergeCursor::registerDataSetObserver(android::database::DataSetObserver arg0)
+	void MergeCursor::registerDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"registerDataSetObserver",
@@ -147,14 +147,14 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	jboolean MergeCursor::requery()
+	jboolean MergeCursor::requery() const
 	{
 		return callMethod<jboolean>(
 			"requery",
 			"()Z"
 		);
 	}
-	void MergeCursor::unregisterContentObserver(android::database::ContentObserver arg0)
+	void MergeCursor::unregisterContentObserver(android::database::ContentObserver arg0) const
 	{
 		callMethod<void>(
 			"unregisterContentObserver",
@@ -162,7 +162,7 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	void MergeCursor::unregisterDataSetObserver(android::database::DataSetObserver arg0)
+	void MergeCursor::unregisterDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"unregisterDataSetObserver",

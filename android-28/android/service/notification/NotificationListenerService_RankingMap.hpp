@@ -28,10 +28,10 @@ namespace android::service::notification
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JArray getOrderedKeys();
-		jboolean getRanking(JString arg0, android::service::notification::NotificationListenerService_Ranking arg1);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JArray getOrderedKeys() const;
+		jboolean getRanking(JString arg0, android::service::notification::NotificationListenerService_Ranking arg1) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::notification
 

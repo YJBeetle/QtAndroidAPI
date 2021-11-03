@@ -27,17 +27,17 @@ namespace android::hardware::usb
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getAlternateSetting();
-		android::hardware::usb::UsbEndpoint getEndpoint(jint arg0);
-		jint getEndpointCount();
-		jint getId();
-		jint getInterfaceClass();
-		jint getInterfaceProtocol();
-		jint getInterfaceSubclass();
-		JString getName();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getAlternateSetting() const;
+		android::hardware::usb::UsbEndpoint getEndpoint(jint arg0) const;
+		jint getEndpointCount() const;
+		jint getId() const;
+		jint getInterfaceClass() const;
+		jint getInterfaceProtocol() const;
+		jint getInterfaceSubclass() const;
+		JString getName() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::usb
 

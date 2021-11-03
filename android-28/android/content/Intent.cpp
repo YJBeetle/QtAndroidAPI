@@ -2390,7 +2390,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::addCategory(JString arg0)
+	android::content::Intent Intent::addCategory(JString arg0) const
 	{
 		return callObjectMethod(
 			"addCategory",
@@ -2398,7 +2398,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::Intent Intent::addFlags(jint arg0)
+	android::content::Intent Intent::addFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"addFlags",
@@ -2406,28 +2406,28 @@ namespace android::content
 			arg0
 		);
 	}
-	JObject Intent::clone()
+	JObject Intent::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::content::Intent Intent::cloneFilter()
+	android::content::Intent Intent::cloneFilter() const
 	{
 		return callObjectMethod(
 			"cloneFilter",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jint Intent::describeContents()
+	jint Intent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint Intent::fillIn(android::content::Intent arg0, jint arg1)
+	jint Intent::fillIn(android::content::Intent arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"fillIn",
@@ -2436,7 +2436,7 @@ namespace android::content
 			arg1
 		);
 	}
-	jboolean Intent::filterEquals(android::content::Intent arg0)
+	jboolean Intent::filterEquals(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"filterEquals",
@@ -2444,21 +2444,21 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint Intent::filterHashCode()
+	jint Intent::filterHashCode() const
 	{
 		return callMethod<jint>(
 			"filterHashCode",
 			"()I"
 		);
 	}
-	JString Intent::getAction()
+	JString Intent::getAction() const
 	{
 		return callObjectMethod(
 			"getAction",
 			"()Ljava/lang/String;"
 		);
 	}
-	JBooleanArray Intent::getBooleanArrayExtra(JString arg0)
+	JBooleanArray Intent::getBooleanArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBooleanArrayExtra",
@@ -2466,7 +2466,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Intent::getBooleanExtra(JString arg0, jboolean arg1)
+	jboolean Intent::getBooleanExtra(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"getBooleanExtra",
@@ -2475,7 +2475,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::os::Bundle Intent::getBundleExtra(JString arg0)
+	android::os::Bundle Intent::getBundleExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBundleExtra",
@@ -2483,7 +2483,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray Intent::getByteArrayExtra(JString arg0)
+	JByteArray Intent::getByteArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getByteArrayExtra",
@@ -2491,7 +2491,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jbyte Intent::getByteExtra(JString arg0, jbyte arg1)
+	jbyte Intent::getByteExtra(JString arg0, jbyte arg1) const
 	{
 		return callMethod<jbyte>(
 			"getByteExtra",
@@ -2500,14 +2500,14 @@ namespace android::content
 			arg1
 		);
 	}
-	JObject Intent::getCategories()
+	JObject Intent::getCategories() const
 	{
 		return callObjectMethod(
 			"getCategories",
 			"()Ljava/util/Set;"
 		);
 	}
-	JCharArray Intent::getCharArrayExtra(JString arg0)
+	JCharArray Intent::getCharArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharArrayExtra",
@@ -2515,7 +2515,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jchar Intent::getCharExtra(JString arg0, jchar arg1)
+	jchar Intent::getCharExtra(JString arg0, jchar arg1) const
 	{
 		return callMethod<jchar>(
 			"getCharExtra",
@@ -2524,7 +2524,7 @@ namespace android::content
 			arg1
 		);
 	}
-	JArray Intent::getCharSequenceArrayExtra(JString arg0)
+	JArray Intent::getCharSequenceArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharSequenceArrayExtra",
@@ -2532,7 +2532,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::util::ArrayList Intent::getCharSequenceArrayListExtra(JString arg0)
+	java::util::ArrayList Intent::getCharSequenceArrayListExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharSequenceArrayListExtra",
@@ -2540,7 +2540,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString Intent::getCharSequenceExtra(JString arg0)
+	JString Intent::getCharSequenceExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharSequenceExtra",
@@ -2548,35 +2548,35 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::ClipData Intent::getClipData()
+	android::content::ClipData Intent::getClipData() const
 	{
 		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	android::content::ComponentName Intent::getComponent()
+	android::content::ComponentName Intent::getComponent() const
 	{
 		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::net::Uri Intent::getData()
+	android::net::Uri Intent::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString Intent::getDataString()
+	JString Intent::getDataString() const
 	{
 		return callObjectMethod(
 			"getDataString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JDoubleArray Intent::getDoubleArrayExtra(JString arg0)
+	JDoubleArray Intent::getDoubleArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDoubleArrayExtra",
@@ -2584,7 +2584,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jdouble Intent::getDoubleExtra(JString arg0, jdouble arg1)
+	jdouble Intent::getDoubleExtra(JString arg0, jdouble arg1) const
 	{
 		return callMethod<jdouble>(
 			"getDoubleExtra",
@@ -2593,21 +2593,21 @@ namespace android::content
 			arg1
 		);
 	}
-	android::os::Bundle Intent::getExtras()
+	android::os::Bundle Intent::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint Intent::getFlags()
+	jint Intent::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	JFloatArray Intent::getFloatArrayExtra(JString arg0)
+	JFloatArray Intent::getFloatArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getFloatArrayExtra",
@@ -2615,7 +2615,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jfloat Intent::getFloatExtra(JString arg0, jfloat arg1)
+	jfloat Intent::getFloatExtra(JString arg0, jfloat arg1) const
 	{
 		return callMethod<jfloat>(
 			"getFloatExtra",
@@ -2624,7 +2624,7 @@ namespace android::content
 			arg1
 		);
 	}
-	JIntArray Intent::getIntArrayExtra(JString arg0)
+	JIntArray Intent::getIntArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getIntArrayExtra",
@@ -2632,7 +2632,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint Intent::getIntExtra(JString arg0, jint arg1)
+	jint Intent::getIntExtra(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getIntExtra",
@@ -2641,7 +2641,7 @@ namespace android::content
 			arg1
 		);
 	}
-	java::util::ArrayList Intent::getIntegerArrayListExtra(JString arg0)
+	java::util::ArrayList Intent::getIntegerArrayListExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getIntegerArrayListExtra",
@@ -2649,7 +2649,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JLongArray Intent::getLongArrayExtra(JString arg0)
+	JLongArray Intent::getLongArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getLongArrayExtra",
@@ -2657,7 +2657,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jlong Intent::getLongExtra(JString arg0, jlong arg1)
+	jlong Intent::getLongExtra(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getLongExtra",
@@ -2666,14 +2666,14 @@ namespace android::content
 			arg1
 		);
 	}
-	JString Intent::getPackage()
+	JString Intent::getPackage() const
 	{
 		return callObjectMethod(
 			"getPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray Intent::getParcelableArrayExtra(JString arg0)
+	JArray Intent::getParcelableArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParcelableArrayExtra",
@@ -2681,7 +2681,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::util::ArrayList Intent::getParcelableArrayListExtra(JString arg0)
+	java::util::ArrayList Intent::getParcelableArrayListExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParcelableArrayListExtra",
@@ -2689,7 +2689,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JObject Intent::getParcelableExtra(JString arg0)
+	JObject Intent::getParcelableExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParcelableExtra",
@@ -2697,21 +2697,21 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString Intent::getScheme()
+	JString Intent::getScheme() const
 	{
 		return callObjectMethod(
 			"getScheme",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::Intent Intent::getSelector()
+	android::content::Intent Intent::getSelector() const
 	{
 		return callObjectMethod(
 			"getSelector",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JObject Intent::getSerializableExtra(JString arg0)
+	JObject Intent::getSerializableExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSerializableExtra",
@@ -2719,7 +2719,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JShortArray Intent::getShortArrayExtra(JString arg0)
+	JShortArray Intent::getShortArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getShortArrayExtra",
@@ -2727,7 +2727,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jshort Intent::getShortExtra(JString arg0, jshort arg1)
+	jshort Intent::getShortExtra(JString arg0, jshort arg1) const
 	{
 		return callMethod<jshort>(
 			"getShortExtra",
@@ -2736,14 +2736,14 @@ namespace android::content
 			arg1
 		);
 	}
-	android::graphics::Rect Intent::getSourceBounds()
+	android::graphics::Rect Intent::getSourceBounds() const
 	{
 		return callObjectMethod(
 			"getSourceBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	JArray Intent::getStringArrayExtra(JString arg0)
+	JArray Intent::getStringArrayExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getStringArrayExtra",
@@ -2751,7 +2751,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::util::ArrayList Intent::getStringArrayListExtra(JString arg0)
+	java::util::ArrayList Intent::getStringArrayListExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getStringArrayListExtra",
@@ -2759,7 +2759,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString Intent::getStringExtra(JString arg0)
+	JString Intent::getStringExtra(JString arg0) const
 	{
 		return callObjectMethod(
 			"getStringExtra",
@@ -2767,14 +2767,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString Intent::getType()
+	JString Intent::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Intent::hasCategory(JString arg0)
+	jboolean Intent::hasCategory(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCategory",
@@ -2782,7 +2782,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Intent::hasExtra(JString arg0)
+	jboolean Intent::hasExtra(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasExtra",
@@ -2790,14 +2790,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Intent::hasFileDescriptors()
+	jboolean Intent::hasFileDescriptors() const
 	{
 		return callMethod<jboolean>(
 			"hasFileDescriptors",
 			"()Z"
 		);
 	}
-	android::content::Intent Intent::putCharSequenceArrayListExtra(JString arg0, java::util::ArrayList arg1)
+	android::content::Intent Intent::putCharSequenceArrayListExtra(JString arg0, java::util::ArrayList arg1) const
 	{
 		return callObjectMethod(
 			"putCharSequenceArrayListExtra",
@@ -2806,7 +2806,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JByteArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JByteArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2815,7 +2815,7 @@ namespace android::content
 			arg1.object<jbyteArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JCharArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JCharArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2824,7 +2824,7 @@ namespace android::content
 			arg1.object<jcharArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JDoubleArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JDoubleArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2833,7 +2833,7 @@ namespace android::content
 			arg1.object<jdoubleArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JFloatArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JFloatArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2842,7 +2842,7 @@ namespace android::content
 			arg1.object<jfloatArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JIntArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JIntArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2851,7 +2851,7 @@ namespace android::content
 			arg1.object<jintArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JLongArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JLongArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2860,7 +2860,7 @@ namespace android::content
 			arg1.object<jlongArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2869,7 +2869,7 @@ namespace android::content
 			arg1.object<jarray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JShortArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JShortArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2878,7 +2878,7 @@ namespace android::content
 			arg1.object<jshortArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JBooleanArray arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JBooleanArray arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2887,7 +2887,7 @@ namespace android::content
 			arg1.object<jbooleanArray>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, android::os::Bundle arg1)
+	android::content::Intent Intent::putExtra(JString arg0, android::os::Bundle arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2896,7 +2896,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JObject arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2905,7 +2905,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jboolean arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2914,7 +2914,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jbyte arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jbyte arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2923,7 +2923,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jchar arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jchar arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2932,7 +2932,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jdouble arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2941,7 +2941,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jfloat arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2950,7 +2950,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jint arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2959,7 +2959,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, JString arg1)
+	android::content::Intent Intent::putExtra(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2968,7 +2968,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jlong arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2977,7 +2977,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtra(JString arg0, jshort arg1)
+	android::content::Intent Intent::putExtra(JString arg0, jshort arg1) const
 	{
 		return callObjectMethod(
 			"putExtra",
@@ -2986,7 +2986,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::Intent Intent::putExtras(android::content::Intent arg0)
+	android::content::Intent Intent::putExtras(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"putExtras",
@@ -2994,7 +2994,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::putExtras(android::os::Bundle arg0)
+	android::content::Intent Intent::putExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"putExtras",
@@ -3002,7 +3002,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::putIntegerArrayListExtra(JString arg0, java::util::ArrayList arg1)
+	android::content::Intent Intent::putIntegerArrayListExtra(JString arg0, java::util::ArrayList arg1) const
 	{
 		return callObjectMethod(
 			"putIntegerArrayListExtra",
@@ -3011,7 +3011,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::Intent Intent::putParcelableArrayListExtra(JString arg0, java::util::ArrayList arg1)
+	android::content::Intent Intent::putParcelableArrayListExtra(JString arg0, java::util::ArrayList arg1) const
 	{
 		return callObjectMethod(
 			"putParcelableArrayListExtra",
@@ -3020,7 +3020,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::Intent Intent::putStringArrayListExtra(JString arg0, java::util::ArrayList arg1)
+	android::content::Intent Intent::putStringArrayListExtra(JString arg0, java::util::ArrayList arg1) const
 	{
 		return callObjectMethod(
 			"putStringArrayListExtra",
@@ -3029,7 +3029,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void Intent::readFromParcel(android::os::Parcel arg0)
+	void Intent::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -3037,7 +3037,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Intent::removeCategory(JString arg0)
+	void Intent::removeCategory(JString arg0) const
 	{
 		callMethod<void>(
 			"removeCategory",
@@ -3045,7 +3045,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void Intent::removeExtra(JString arg0)
+	void Intent::removeExtra(JString arg0) const
 	{
 		callMethod<void>(
 			"removeExtra",
@@ -3053,7 +3053,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void Intent::removeFlags(jint arg0)
+	void Intent::removeFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"removeFlags",
@@ -3061,7 +3061,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::Intent Intent::replaceExtras(android::content::Intent arg0)
+	android::content::Intent Intent::replaceExtras(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"replaceExtras",
@@ -3069,7 +3069,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::replaceExtras(android::os::Bundle arg0)
+	android::content::Intent Intent::replaceExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"replaceExtras",
@@ -3077,7 +3077,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ComponentName Intent::resolveActivity(android::content::pm::PackageManager arg0)
+	android::content::ComponentName Intent::resolveActivity(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"resolveActivity",
@@ -3085,7 +3085,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::pm::ActivityInfo Intent::resolveActivityInfo(android::content::pm::PackageManager arg0, jint arg1)
+	android::content::pm::ActivityInfo Intent::resolveActivityInfo(android::content::pm::PackageManager arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"resolveActivityInfo",
@@ -3094,7 +3094,7 @@ namespace android::content
 			arg1
 		);
 	}
-	JString Intent::resolveType(android::content::ContentResolver arg0)
+	JString Intent::resolveType(android::content::ContentResolver arg0) const
 	{
 		return callObjectMethod(
 			"resolveType",
@@ -3102,7 +3102,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JString Intent::resolveType(android::content::Context arg0)
+	JString Intent::resolveType(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"resolveType",
@@ -3110,7 +3110,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JString Intent::resolveTypeIfNeeded(android::content::ContentResolver arg0)
+	JString Intent::resolveTypeIfNeeded(android::content::ContentResolver arg0) const
 	{
 		return callObjectMethod(
 			"resolveTypeIfNeeded",
@@ -3118,7 +3118,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::setAction(JString arg0)
+	android::content::Intent Intent::setAction(JString arg0) const
 	{
 		return callObjectMethod(
 			"setAction",
@@ -3126,7 +3126,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::Intent Intent::setClass(android::content::Context arg0, JClass arg1)
+	android::content::Intent Intent::setClass(android::content::Context arg0, JClass arg1) const
 	{
 		return callObjectMethod(
 			"setClass",
@@ -3135,7 +3135,7 @@ namespace android::content
 			arg1.object<jclass>()
 		);
 	}
-	android::content::Intent Intent::setClassName(android::content::Context arg0, JString arg1)
+	android::content::Intent Intent::setClassName(android::content::Context arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setClassName",
@@ -3144,7 +3144,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::content::Intent Intent::setClassName(JString arg0, JString arg1)
+	android::content::Intent Intent::setClassName(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setClassName",
@@ -3153,7 +3153,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void Intent::setClipData(android::content::ClipData arg0)
+	void Intent::setClipData(android::content::ClipData arg0) const
 	{
 		callMethod<void>(
 			"setClipData",
@@ -3161,7 +3161,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::setComponent(android::content::ComponentName arg0)
+	android::content::Intent Intent::setComponent(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"setComponent",
@@ -3169,7 +3169,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::setData(android::net::Uri arg0)
+	android::content::Intent Intent::setData(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setData",
@@ -3177,7 +3177,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::setDataAndNormalize(android::net::Uri arg0)
+	android::content::Intent Intent::setDataAndNormalize(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setDataAndNormalize",
@@ -3185,7 +3185,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::setDataAndType(android::net::Uri arg0, JString arg1)
+	android::content::Intent Intent::setDataAndType(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setDataAndType",
@@ -3194,7 +3194,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::content::Intent Intent::setDataAndTypeAndNormalize(android::net::Uri arg0, JString arg1)
+	android::content::Intent Intent::setDataAndTypeAndNormalize(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setDataAndTypeAndNormalize",
@@ -3203,7 +3203,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void Intent::setExtrasClassLoader(java::lang::ClassLoader arg0)
+	void Intent::setExtrasClassLoader(java::lang::ClassLoader arg0) const
 	{
 		callMethod<void>(
 			"setExtrasClassLoader",
@@ -3211,7 +3211,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::setFlags(jint arg0)
+	android::content::Intent Intent::setFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -3219,7 +3219,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::Intent Intent::setPackage(JString arg0)
+	android::content::Intent Intent::setPackage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPackage",
@@ -3227,7 +3227,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void Intent::setSelector(android::content::Intent arg0)
+	void Intent::setSelector(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setSelector",
@@ -3235,7 +3235,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Intent::setSourceBounds(android::graphics::Rect arg0)
+	void Intent::setSourceBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setSourceBounds",
@@ -3243,7 +3243,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent Intent::setType(JString arg0)
+	android::content::Intent Intent::setType(JString arg0) const
 	{
 		return callObjectMethod(
 			"setType",
@@ -3251,7 +3251,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::Intent Intent::setTypeAndNormalize(JString arg0)
+	android::content::Intent Intent::setTypeAndNormalize(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTypeAndNormalize",
@@ -3259,21 +3259,21 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString Intent::toString()
+	JString Intent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Intent::toURI()
+	JString Intent::toURI() const
 	{
 		return callObjectMethod(
 			"toURI",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Intent::toUri(jint arg0)
+	JString Intent::toUri(jint arg0) const
 	{
 		return callObjectMethod(
 			"toUri",
@@ -3281,7 +3281,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void Intent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Intent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

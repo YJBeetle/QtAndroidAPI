@@ -38,29 +38,29 @@ namespace java::util::concurrent
 		SynchronousQueue(jboolean arg0);
 		
 		// Methods
-		void clear();
-		jboolean contains(JObject arg0);
-		jboolean containsAll(JObject arg0);
-		jint drainTo(JObject arg0);
-		jint drainTo(JObject arg0, jint arg1);
-		jboolean isEmpty();
-		JObject iterator();
-		jboolean offer(JObject arg0);
-		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		JObject peek();
-		JObject poll();
-		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void put(JObject arg0);
-		jint remainingCapacity();
-		jboolean remove(JObject arg0);
-		jboolean removeAll(JObject arg0);
-		jboolean retainAll(JObject arg0);
-		jint size();
-		JObject spliterator();
-		JObject take();
-		JObjectArray toArray();
-		JObjectArray toArray(JObjectArray arg0);
-		JString toString();
+		void clear() const;
+		jboolean contains(JObject arg0) const;
+		jboolean containsAll(JObject arg0) const;
+		jint drainTo(JObject arg0) const;
+		jint drainTo(JObject arg0, jint arg1) const;
+		jboolean isEmpty() const;
+		JObject iterator() const;
+		jboolean offer(JObject arg0) const;
+		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
+		JObject peek() const;
+		JObject poll() const;
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void put(JObject arg0) const;
+		jint remainingCapacity() const;
+		jboolean remove(JObject arg0) const;
+		jboolean removeAll(JObject arg0) const;
+		jboolean retainAll(JObject arg0) const;
+		jint size() const;
+		JObject spliterator() const;
+		JObject take() const;
+		JObjectArray toArray() const;
+		JObjectArray toArray(JObjectArray arg0) const;
+		JString toString() const;
 	};
 } // namespace java::util::concurrent
 

@@ -17,14 +17,14 @@ namespace java::nio::charset
 		) {}
 	
 	// Methods
-	jint UnmappableCharacterException::getInputLength()
+	jint UnmappableCharacterException::getInputLength() const
 	{
 		return callMethod<jint>(
 			"getInputLength",
 			"()I"
 		);
 	}
-	JString UnmappableCharacterException::getMessage()
+	JString UnmappableCharacterException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

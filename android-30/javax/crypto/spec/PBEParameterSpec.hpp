@@ -20,9 +20,9 @@ namespace javax::crypto::spec
 		PBEParameterSpec(JByteArray arg0, jint arg1, JObject arg2);
 		
 		// Methods
-		jint getIterationCount();
-		JObject getParameterSpec();
-		JByteArray getSalt();
+		jint getIterationCount() const;
+		JObject getParameterSpec() const;
+		JByteArray getSalt() const;
 	};
 } // namespace javax::crypto::spec
 

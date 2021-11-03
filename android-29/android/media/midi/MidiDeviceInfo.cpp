@@ -101,14 +101,14 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	jint MidiDeviceInfo::describeContents()
+	jint MidiDeviceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MidiDeviceInfo::equals(JObject arg0)
+	jboolean MidiDeviceInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -116,70 +116,70 @@ namespace android::media::midi
 			arg0.object<jobject>()
 		);
 	}
-	jint MidiDeviceInfo::getId()
+	jint MidiDeviceInfo::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint MidiDeviceInfo::getInputPortCount()
+	jint MidiDeviceInfo::getInputPortCount() const
 	{
 		return callMethod<jint>(
 			"getInputPortCount",
 			"()I"
 		);
 	}
-	jint MidiDeviceInfo::getOutputPortCount()
+	jint MidiDeviceInfo::getOutputPortCount() const
 	{
 		return callMethod<jint>(
 			"getOutputPortCount",
 			"()I"
 		);
 	}
-	JArray MidiDeviceInfo::getPorts()
+	JArray MidiDeviceInfo::getPorts() const
 	{
 		return callObjectMethod(
 			"getPorts",
 			"()[Landroid/media/midi/MidiDeviceInfo$PortInfo;"
 		);
 	}
-	android::os::Bundle MidiDeviceInfo::getProperties()
+	android::os::Bundle MidiDeviceInfo::getProperties() const
 	{
 		return callObjectMethod(
 			"getProperties",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint MidiDeviceInfo::getType()
+	jint MidiDeviceInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint MidiDeviceInfo::hashCode()
+	jint MidiDeviceInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean MidiDeviceInfo::isPrivate()
+	jboolean MidiDeviceInfo::isPrivate() const
 	{
 		return callMethod<jboolean>(
 			"isPrivate",
 			"()Z"
 		);
 	}
-	JString MidiDeviceInfo::toString()
+	JString MidiDeviceInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MidiDeviceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MidiDeviceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -42,21 +42,21 @@ namespace android::content::res
 	// Constructors
 	
 	// Methods
-	void AssetManager::close()
+	void AssetManager::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JArray AssetManager::getLocales()
+	JArray AssetManager::getLocales() const
 	{
 		return callObjectMethod(
 			"getLocales",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray AssetManager::list(JString arg0)
+	JArray AssetManager::list(JString arg0) const
 	{
 		return callObjectMethod(
 			"list",
@@ -64,7 +64,7 @@ namespace android::content::res
 			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream AssetManager::open(JString arg0)
+	java::io::InputStream AssetManager::open(JString arg0) const
 	{
 		return callObjectMethod(
 			"open",
@@ -72,7 +72,7 @@ namespace android::content::res
 			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream AssetManager::open(JString arg0, jint arg1)
+	java::io::InputStream AssetManager::open(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"open",
@@ -81,7 +81,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	android::content::res::AssetFileDescriptor AssetManager::openFd(JString arg0)
+	android::content::res::AssetFileDescriptor AssetManager::openFd(JString arg0) const
 	{
 		return callObjectMethod(
 			"openFd",
@@ -89,7 +89,7 @@ namespace android::content::res
 			arg0.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(JString arg0)
+	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(JString arg0) const
 	{
 		return callObjectMethod(
 			"openNonAssetFd",
@@ -97,7 +97,7 @@ namespace android::content::res
 			arg0.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(jint arg0, JString arg1)
+	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openNonAssetFd",
@@ -106,7 +106,7 @@ namespace android::content::res
 			arg1.object<jstring>()
 		);
 	}
-	JObject AssetManager::openXmlResourceParser(JString arg0)
+	JObject AssetManager::openXmlResourceParser(JString arg0) const
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",
@@ -114,7 +114,7 @@ namespace android::content::res
 			arg0.object<jstring>()
 		);
 	}
-	JObject AssetManager::openXmlResourceParser(jint arg0, JString arg1)
+	JObject AssetManager::openXmlResourceParser(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",

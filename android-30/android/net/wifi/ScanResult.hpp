@@ -47,13 +47,13 @@ namespace android::net::wifi
 		ScanResult(android::net::wifi::ScanResult &arg0);
 		
 		// Methods
-		jint describeContents();
-		JObject getInformationElements();
-		jint getWifiStandard();
-		jboolean is80211mcResponder();
-		jboolean isPasspointNetwork();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getInformationElements() const;
+		jint getWifiStandard() const;
+		jboolean is80211mcResponder() const;
+		jboolean isPasspointNetwork() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

@@ -69,14 +69,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void ClassLoader::clearAssertionStatus()
+	void ClassLoader::clearAssertionStatus() const
 	{
 		callMethod<void>(
 			"clearAssertionStatus",
 			"()V"
 		);
 	}
-	java::lang::Package ClassLoader::getDefinedPackage(JString arg0)
+	java::lang::Package ClassLoader::getDefinedPackage(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDefinedPackage",
@@ -84,28 +84,28 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	JArray ClassLoader::getDefinedPackages()
+	JArray ClassLoader::getDefinedPackages() const
 	{
 		return callObjectMethod(
 			"getDefinedPackages",
 			"()[Ljava/lang/Package;"
 		);
 	}
-	JString ClassLoader::getName()
+	JString ClassLoader::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::lang::ClassLoader ClassLoader::getParent()
+	java::lang::ClassLoader ClassLoader::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	java::net::URL ClassLoader::getResource(JString arg0)
+	java::net::URL ClassLoader::getResource(JString arg0) const
 	{
 		return callObjectMethod(
 			"getResource",
@@ -113,7 +113,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream ClassLoader::getResourceAsStream(JString arg0)
+	java::io::InputStream ClassLoader::getResourceAsStream(JString arg0) const
 	{
 		return callObjectMethod(
 			"getResourceAsStream",
@@ -121,7 +121,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	JObject ClassLoader::getResources(JString arg0)
+	JObject ClassLoader::getResources(JString arg0) const
 	{
 		return callObjectMethod(
 			"getResources",
@@ -129,21 +129,21 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	JObject ClassLoader::getUnnamedModule()
+	JObject ClassLoader::getUnnamedModule() const
 	{
 		return callObjectMethod(
 			"getUnnamedModule",
 			"()Ljava/lang/Module;"
 		);
 	}
-	jboolean ClassLoader::isRegisteredAsParallelCapable()
+	jboolean ClassLoader::isRegisteredAsParallelCapable() const
 	{
 		return callMethod<jboolean>(
 			"isRegisteredAsParallelCapable",
 			"()Z"
 		);
 	}
-	JClass ClassLoader::loadClass(JString arg0)
+	JClass ClassLoader::loadClass(JString arg0) const
 	{
 		return callObjectMethod(
 			"loadClass",
@@ -151,7 +151,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	JObject ClassLoader::resources(JString arg0)
+	JObject ClassLoader::resources(JString arg0) const
 	{
 		return callObjectMethod(
 			"resources",
@@ -159,7 +159,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void ClassLoader::setClassAssertionStatus(JString arg0, jboolean arg1)
+	void ClassLoader::setClassAssertionStatus(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setClassAssertionStatus",
@@ -168,7 +168,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	void ClassLoader::setDefaultAssertionStatus(jboolean arg0)
+	void ClassLoader::setDefaultAssertionStatus(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDefaultAssertionStatus",
@@ -176,7 +176,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void ClassLoader::setPackageAssertionStatus(JString arg0, jboolean arg1)
+	void ClassLoader::setPackageAssertionStatus(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setPackageAssertionStatus",

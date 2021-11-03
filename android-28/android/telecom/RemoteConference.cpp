@@ -16,77 +16,77 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	void RemoteConference::disconnect()
+	void RemoteConference::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	JObject RemoteConference::getConferenceableConnections()
+	JObject RemoteConference::getConferenceableConnections() const
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",
 			"()Ljava/util/List;"
 		);
 	}
-	jint RemoteConference::getConnectionCapabilities()
+	jint RemoteConference::getConnectionCapabilities() const
 	{
 		return callMethod<jint>(
 			"getConnectionCapabilities",
 			"()I"
 		);
 	}
-	jint RemoteConference::getConnectionProperties()
+	jint RemoteConference::getConnectionProperties() const
 	{
 		return callMethod<jint>(
 			"getConnectionProperties",
 			"()I"
 		);
 	}
-	JObject RemoteConference::getConnections()
+	JObject RemoteConference::getConnections() const
 	{
 		return callObjectMethod(
 			"getConnections",
 			"()Ljava/util/List;"
 		);
 	}
-	android::telecom::DisconnectCause RemoteConference::getDisconnectCause()
+	android::telecom::DisconnectCause RemoteConference::getDisconnectCause() const
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	android::os::Bundle RemoteConference::getExtras()
+	android::os::Bundle RemoteConference::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint RemoteConference::getState()
+	jint RemoteConference::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	void RemoteConference::hold()
+	void RemoteConference::hold() const
 	{
 		callMethod<void>(
 			"hold",
 			"()V"
 		);
 	}
-	void RemoteConference::merge()
+	void RemoteConference::merge() const
 	{
 		callMethod<void>(
 			"merge",
 			"()V"
 		);
 	}
-	void RemoteConference::playDtmfTone(jchar arg0)
+	void RemoteConference::playDtmfTone(jchar arg0) const
 	{
 		callMethod<void>(
 			"playDtmfTone",
@@ -94,7 +94,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void RemoteConference::registerCallback(android::telecom::RemoteConference_Callback arg0)
+	void RemoteConference::registerCallback(android::telecom::RemoteConference_Callback arg0) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -102,7 +102,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConference::registerCallback(android::telecom::RemoteConference_Callback arg0, android::os::Handler arg1)
+	void RemoteConference::registerCallback(android::telecom::RemoteConference_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -111,7 +111,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConference::separate(android::telecom::RemoteConnection arg0)
+	void RemoteConference::separate(android::telecom::RemoteConnection arg0) const
 	{
 		callMethod<void>(
 			"separate",
@@ -119,7 +119,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConference::setCallAudioState(android::telecom::CallAudioState arg0)
+	void RemoteConference::setCallAudioState(android::telecom::CallAudioState arg0) const
 	{
 		callMethod<void>(
 			"setCallAudioState",
@@ -127,28 +127,28 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConference::stopDtmfTone()
+	void RemoteConference::stopDtmfTone() const
 	{
 		callMethod<void>(
 			"stopDtmfTone",
 			"()V"
 		);
 	}
-	void RemoteConference::swap()
+	void RemoteConference::swap() const
 	{
 		callMethod<void>(
 			"swap",
 			"()V"
 		);
 	}
-	void RemoteConference::unhold()
+	void RemoteConference::unhold() const
 	{
 		callMethod<void>(
 			"unhold",
 			"()V"
 		);
 	}
-	void RemoteConference::unregisterCallback(android::telecom::RemoteConference_Callback arg0)
+	void RemoteConference::unregisterCallback(android::telecom::RemoteConference_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

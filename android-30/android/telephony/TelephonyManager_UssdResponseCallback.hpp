@@ -24,8 +24,8 @@ namespace android::telephony
 		TelephonyManager_UssdResponseCallback();
 		
 		// Methods
-		void onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2);
-		void onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2);
+		void onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2) const;
+		void onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2) const;
 	};
 } // namespace android::telephony
 

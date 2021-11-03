@@ -12,14 +12,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	void PrintDocumentAdapter_WriteResultCallback::onWriteCancelled()
+	void PrintDocumentAdapter_WriteResultCallback::onWriteCancelled() const
 	{
 		callMethod<void>(
 			"onWriteCancelled",
 			"()V"
 		);
 	}
-	void PrintDocumentAdapter_WriteResultCallback::onWriteFailed(JString arg0)
+	void PrintDocumentAdapter_WriteResultCallback::onWriteFailed(JString arg0) const
 	{
 		callMethod<void>(
 			"onWriteFailed",
@@ -27,7 +27,7 @@ namespace android::print
 			arg0.object<jstring>()
 		);
 	}
-	void PrintDocumentAdapter_WriteResultCallback::onWriteFinished(JArray arg0)
+	void PrintDocumentAdapter_WriteResultCallback::onWriteFinished(JArray arg0) const
 	{
 		callMethod<void>(
 			"onWriteFinished",

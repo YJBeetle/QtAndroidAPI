@@ -32,7 +32,7 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	jboolean Camera_Size::equals(JObject arg0)
+	jboolean Camera_Size::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -40,7 +40,7 @@ namespace android::hardware
 			arg0.object<jobject>()
 		);
 	}
-	jint Camera_Size::hashCode()
+	jint Camera_Size::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

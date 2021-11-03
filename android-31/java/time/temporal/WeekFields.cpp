@@ -58,14 +58,14 @@ namespace java::time::temporal
 			arg1
 		);
 	}
-	JObject WeekFields::dayOfWeek()
+	JObject WeekFields::dayOfWeek() const
 	{
 		return callObjectMethod(
 			"dayOfWeek",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	jboolean WeekFields::equals(JObject arg0)
+	jboolean WeekFields::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -73,56 +73,56 @@ namespace java::time::temporal
 			arg0.object<jobject>()
 		);
 	}
-	java::time::DayOfWeek WeekFields::getFirstDayOfWeek()
+	java::time::DayOfWeek WeekFields::getFirstDayOfWeek() const
 	{
 		return callObjectMethod(
 			"getFirstDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
-	jint WeekFields::getMinimalDaysInFirstWeek()
+	jint WeekFields::getMinimalDaysInFirstWeek() const
 	{
 		return callMethod<jint>(
 			"getMinimalDaysInFirstWeek",
 			"()I"
 		);
 	}
-	jint WeekFields::hashCode()
+	jint WeekFields::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString WeekFields::toString()
+	JString WeekFields::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject WeekFields::weekBasedYear()
+	JObject WeekFields::weekBasedYear() const
 	{
 		return callObjectMethod(
 			"weekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	JObject WeekFields::weekOfMonth()
+	JObject WeekFields::weekOfMonth() const
 	{
 		return callObjectMethod(
 			"weekOfMonth",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	JObject WeekFields::weekOfWeekBasedYear()
+	JObject WeekFields::weekOfWeekBasedYear() const
 	{
 		return callObjectMethod(
 			"weekOfWeekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	JObject WeekFields::weekOfYear()
+	JObject WeekFields::weekOfYear() const
 	{
 		return callObjectMethod(
 			"weekOfYear",

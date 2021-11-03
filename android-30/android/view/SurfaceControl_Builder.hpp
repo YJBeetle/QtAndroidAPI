@@ -23,12 +23,12 @@ namespace android::view
 		SurfaceControl_Builder();
 		
 		// Methods
-		android::view::SurfaceControl build();
-		android::view::SurfaceControl_Builder setBufferSize(jint arg0, jint arg1);
-		android::view::SurfaceControl_Builder setFormat(jint arg0);
-		android::view::SurfaceControl_Builder setName(JString arg0);
-		android::view::SurfaceControl_Builder setOpaque(jboolean arg0);
-		android::view::SurfaceControl_Builder setParent(android::view::SurfaceControl arg0);
+		android::view::SurfaceControl build() const;
+		android::view::SurfaceControl_Builder setBufferSize(jint arg0, jint arg1) const;
+		android::view::SurfaceControl_Builder setFormat(jint arg0) const;
+		android::view::SurfaceControl_Builder setName(JString arg0) const;
+		android::view::SurfaceControl_Builder setOpaque(jboolean arg0) const;
+		android::view::SurfaceControl_Builder setParent(android::view::SurfaceControl arg0) const;
 	};
 } // namespace android::view
 

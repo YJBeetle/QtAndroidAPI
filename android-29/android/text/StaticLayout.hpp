@@ -37,19 +37,19 @@ namespace android::text
 		StaticLayout(JString arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, android::text::TextUtils_TruncateAt arg9, jint arg10);
 		
 		// Methods
-		jint getBottomPadding();
-		jint getEllipsisCount(jint arg0);
-		jint getEllipsisStart(jint arg0);
-		jint getEllipsizedWidth();
-		jboolean getLineContainsTab(jint arg0);
-		jint getLineCount();
-		jint getLineDescent(jint arg0);
-		android::text::Layout_Directions getLineDirections(jint arg0);
-		jint getLineForVertical(jint arg0);
-		jint getLineStart(jint arg0);
-		jint getLineTop(jint arg0);
-		jint getParagraphDirection(jint arg0);
-		jint getTopPadding();
+		jint getBottomPadding() const;
+		jint getEllipsisCount(jint arg0) const;
+		jint getEllipsisStart(jint arg0) const;
+		jint getEllipsizedWidth() const;
+		jboolean getLineContainsTab(jint arg0) const;
+		jint getLineCount() const;
+		jint getLineDescent(jint arg0) const;
+		android::text::Layout_Directions getLineDirections(jint arg0) const;
+		jint getLineForVertical(jint arg0) const;
+		jint getLineStart(jint arg0) const;
+		jint getLineTop(jint arg0) const;
+		jint getParagraphDirection(jint arg0) const;
+		jint getTopPadding() const;
 	};
 } // namespace android::text
 

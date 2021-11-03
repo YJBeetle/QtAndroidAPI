@@ -22,8 +22,8 @@ namespace java::net
 		CacheRequest();
 		
 		// Methods
-		void abort();
-		java::io::OutputStream getBody();
+		void abort() const;
+		java::io::OutputStream getBody() const;
 	};
 } // namespace java::net
 

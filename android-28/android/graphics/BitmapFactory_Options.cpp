@@ -159,7 +159,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	void BitmapFactory_Options::requestCancelDecode()
+	void BitmapFactory_Options::requestCancelDecode() const
 	{
 		callMethod<void>(
 			"requestCancelDecode",

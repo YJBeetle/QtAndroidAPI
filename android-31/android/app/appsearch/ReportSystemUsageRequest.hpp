@@ -18,11 +18,11 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JString getDatabaseName();
-		JString getDocumentId();
-		JString getNamespace();
-		JString getPackageName();
-		jlong getUsageTimestampMillis();
+		JString getDatabaseName() const;
+		JString getDocumentId() const;
+		JString getNamespace() const;
+		JString getPackageName() const;
+		jlong getUsageTimestampMillis() const;
 	};
 } // namespace android::app::appsearch
 

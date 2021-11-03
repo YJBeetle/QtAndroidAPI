@@ -41,7 +41,7 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	void TranslateAnimation::initialize(jint arg0, jint arg1, jint arg2, jint arg3)
+	void TranslateAnimation::initialize(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"initialize",

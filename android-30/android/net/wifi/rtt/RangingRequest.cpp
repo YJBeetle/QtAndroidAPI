@@ -29,14 +29,14 @@ namespace android::net::wifi::rtt
 			"()I"
 		);
 	}
-	jint RangingRequest::describeContents()
+	jint RangingRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RangingRequest::equals(JObject arg0)
+	jboolean RangingRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,21 +44,21 @@ namespace android::net::wifi::rtt
 			arg0.object<jobject>()
 		);
 	}
-	jint RangingRequest::hashCode()
+	jint RangingRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString RangingRequest::toString()
+	JString RangingRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RangingRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RangingRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

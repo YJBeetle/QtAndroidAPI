@@ -26,13 +26,13 @@ namespace android::text
 		static android::text::BidiFormatter getInstance();
 		static android::text::BidiFormatter getInstance(jboolean arg0);
 		static android::text::BidiFormatter getInstance(java::util::Locale arg0);
-		jboolean getStereoReset();
-		jboolean isRtl(JString arg0);
-		jboolean isRtlContext();
-		JString unicodeWrap(JString arg0);
-		JString unicodeWrap(JString arg0, JObject arg1);
-		JString unicodeWrap(JString arg0, jboolean arg1);
-		JString unicodeWrap(JString arg0, JObject arg1, jboolean arg2);
+		jboolean getStereoReset() const;
+		jboolean isRtl(JString arg0) const;
+		jboolean isRtlContext() const;
+		JString unicodeWrap(JString arg0) const;
+		JString unicodeWrap(JString arg0, JObject arg1) const;
+		JString unicodeWrap(JString arg0, jboolean arg1) const;
+		JString unicodeWrap(JString arg0, JObject arg1, jboolean arg2) const;
 	};
 } // namespace android::text
 

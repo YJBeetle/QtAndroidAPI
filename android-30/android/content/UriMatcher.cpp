@@ -25,7 +25,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void UriMatcher::addURI(JString arg0, JString arg1, jint arg2)
+	void UriMatcher::addURI(JString arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addURI",
@@ -35,7 +35,7 @@ namespace android::content
 			arg2
 		);
 	}
-	jint UriMatcher::match(android::net::Uri arg0)
+	jint UriMatcher::match(android::net::Uri arg0) const
 	{
 		return callMethod<jint>(
 			"match",

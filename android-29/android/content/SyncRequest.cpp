@@ -19,14 +19,14 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	jint SyncRequest::describeContents()
+	jint SyncRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void SyncRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SyncRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -22,12 +22,12 @@ namespace android::animation
 		AnimatorListenerAdapter();
 		
 		// Methods
-		void onAnimationCancel(android::animation::Animator arg0);
-		void onAnimationEnd(android::animation::Animator arg0);
-		void onAnimationPause(android::animation::Animator arg0);
-		void onAnimationRepeat(android::animation::Animator arg0);
-		void onAnimationResume(android::animation::Animator arg0);
-		void onAnimationStart(android::animation::Animator arg0);
+		void onAnimationCancel(android::animation::Animator arg0) const;
+		void onAnimationEnd(android::animation::Animator arg0) const;
+		void onAnimationPause(android::animation::Animator arg0) const;
+		void onAnimationRepeat(android::animation::Animator arg0) const;
+		void onAnimationResume(android::animation::Animator arg0) const;
+		void onAnimationStart(android::animation::Animator arg0) const;
 	};
 } // namespace android::animation
 

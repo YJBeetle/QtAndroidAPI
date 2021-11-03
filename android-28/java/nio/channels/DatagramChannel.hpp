@@ -37,23 +37,23 @@ namespace java::nio::channels
 		// Methods
 		static java::nio::channels::DatagramChannel open();
 		static java::nio::channels::DatagramChannel open(JObject arg0);
-		java::nio::channels::DatagramChannel bind(java::net::SocketAddress arg0);
-		java::nio::channels::DatagramChannel connect(java::net::SocketAddress arg0);
-		java::nio::channels::DatagramChannel disconnect();
-		java::net::SocketAddress getLocalAddress();
-		java::net::SocketAddress getRemoteAddress();
-		jboolean isConnected();
-		jint read(java::nio::ByteBuffer arg0);
-		jlong read(JArray arg0);
-		jlong read(JArray arg0, jint arg1, jint arg2);
-		java::net::SocketAddress receive(java::nio::ByteBuffer arg0);
-		jint send(java::nio::ByteBuffer arg0, java::net::SocketAddress arg1);
-		java::nio::channels::DatagramChannel setOption(JObject arg0, JObject arg1);
-		java::net::DatagramSocket socket();
-		jint validOps();
-		jint write(java::nio::ByteBuffer arg0);
-		jlong write(JArray arg0);
-		jlong write(JArray arg0, jint arg1, jint arg2);
+		java::nio::channels::DatagramChannel bind(java::net::SocketAddress arg0) const;
+		java::nio::channels::DatagramChannel connect(java::net::SocketAddress arg0) const;
+		java::nio::channels::DatagramChannel disconnect() const;
+		java::net::SocketAddress getLocalAddress() const;
+		java::net::SocketAddress getRemoteAddress() const;
+		jboolean isConnected() const;
+		jint read(java::nio::ByteBuffer arg0) const;
+		jlong read(JArray arg0) const;
+		jlong read(JArray arg0, jint arg1, jint arg2) const;
+		java::net::SocketAddress receive(java::nio::ByteBuffer arg0) const;
+		jint send(java::nio::ByteBuffer arg0, java::net::SocketAddress arg1) const;
+		java::nio::channels::DatagramChannel setOption(JObject arg0, JObject arg1) const;
+		java::net::DatagramSocket socket() const;
+		jint validOps() const;
+		jint write(java::nio::ByteBuffer arg0) const;
+		jlong write(JArray arg0) const;
+		jlong write(JArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::nio::channels
 

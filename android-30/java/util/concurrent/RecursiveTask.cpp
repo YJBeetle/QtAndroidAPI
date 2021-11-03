@@ -16,7 +16,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	JObject RecursiveTask::getRawResult()
+	JObject RecursiveTask::getRawResult() const
 	{
 		return callObjectMethod(
 			"getRawResult",

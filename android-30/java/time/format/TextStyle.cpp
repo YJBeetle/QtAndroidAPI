@@ -77,21 +77,21 @@ namespace java::time::format
 			"()[Ljava/time/format/TextStyle;"
 		);
 	}
-	java::time::format::TextStyle TextStyle::asNormal()
+	java::time::format::TextStyle TextStyle::asNormal() const
 	{
 		return callObjectMethod(
 			"asNormal",
 			"()Ljava/time/format/TextStyle;"
 		);
 	}
-	java::time::format::TextStyle TextStyle::asStandalone()
+	java::time::format::TextStyle TextStyle::asStandalone() const
 	{
 		return callObjectMethod(
 			"asStandalone",
 			"()Ljava/time/format/TextStyle;"
 		);
 	}
-	jboolean TextStyle::isStandalone()
+	jboolean TextStyle::isStandalone() const
 	{
 		return callMethod<jboolean>(
 			"isStandalone",

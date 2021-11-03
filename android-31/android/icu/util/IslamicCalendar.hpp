@@ -59,9 +59,9 @@ namespace android::icu::util
 		IslamicCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		android::icu::util::IslamicCalendar_CalculationType getCalculationType();
-		JString getType();
-		void setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0);
+		android::icu::util::IslamicCalendar_CalculationType getCalculationType() const;
+		JString getType() const;
+		void setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0) const;
 	};
 } // namespace android::icu::util
 

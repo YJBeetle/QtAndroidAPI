@@ -100,7 +100,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jlong FrameMetrics::getMetric(jint arg0)
+	jlong FrameMetrics::getMetric(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getMetric",

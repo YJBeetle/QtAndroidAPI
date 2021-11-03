@@ -45,42 +45,42 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint MediaRouteButton::getRouteTypes()
+	jint MediaRouteButton::getRouteTypes() const
 	{
 		return callMethod<jint>(
 			"getRouteTypes",
 			"()I"
 		);
 	}
-	void MediaRouteButton::jumpDrawablesToCurrentState()
+	void MediaRouteButton::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	void MediaRouteButton::onAttachedToWindow()
+	void MediaRouteButton::onAttachedToWindow() const
 	{
 		callMethod<void>(
 			"onAttachedToWindow",
 			"()V"
 		);
 	}
-	void MediaRouteButton::onDetachedFromWindow()
+	void MediaRouteButton::onDetachedFromWindow() const
 	{
 		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
-	jboolean MediaRouteButton::performClick()
+	jboolean MediaRouteButton::performClick() const
 	{
 		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
-	void MediaRouteButton::setContentDescription(JString arg0)
+	void MediaRouteButton::setContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -88,7 +88,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void MediaRouteButton::setExtendedSettingsClickListener(JObject arg0)
+	void MediaRouteButton::setExtendedSettingsClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setExtendedSettingsClickListener",
@@ -96,7 +96,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void MediaRouteButton::setRouteTypes(jint arg0)
+	void MediaRouteButton::setRouteTypes(jint arg0) const
 	{
 		callMethod<void>(
 			"setRouteTypes",
@@ -104,7 +104,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void MediaRouteButton::setVisibility(jint arg0)
+	void MediaRouteButton::setVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setVisibility",
@@ -112,7 +112,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void MediaRouteButton::showDialog()
+	void MediaRouteButton::showDialog() const
 	{
 		callMethod<void>(
 			"showDialog",

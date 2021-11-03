@@ -13,7 +13,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	JObject RelativeDateTimeFormatter_FormattedRelativeDateTime::appendTo(JObject arg0)
+	JObject RelativeDateTimeFormatter_FormattedRelativeDateTime::appendTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"appendTo",
@@ -21,7 +21,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jchar RelativeDateTimeFormatter_FormattedRelativeDateTime::charAt(jint arg0)
+	jchar RelativeDateTimeFormatter_FormattedRelativeDateTime::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -29,14 +29,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint RelativeDateTimeFormatter_FormattedRelativeDateTime::length()
+	jint RelativeDateTimeFormatter_FormattedRelativeDateTime::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jboolean RelativeDateTimeFormatter_FormattedRelativeDateTime::nextPosition(android::icu::text::ConstrainedFieldPosition arg0)
+	jboolean RelativeDateTimeFormatter_FormattedRelativeDateTime::nextPosition(android::icu::text::ConstrainedFieldPosition arg0) const
 	{
 		return callMethod<jboolean>(
 			"nextPosition",
@@ -44,7 +44,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString RelativeDateTimeFormatter_FormattedRelativeDateTime::subSequence(jint arg0, jint arg1)
+	JString RelativeDateTimeFormatter_FormattedRelativeDateTime::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -53,14 +53,14 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JObject RelativeDateTimeFormatter_FormattedRelativeDateTime::toCharacterIterator()
+	JObject RelativeDateTimeFormatter_FormattedRelativeDateTime::toCharacterIterator() const
 	{
 		return callObjectMethod(
 			"toCharacterIterator",
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	JString RelativeDateTimeFormatter_FormattedRelativeDateTime::toString()
+	JString RelativeDateTimeFormatter_FormattedRelativeDateTime::toString() const
 	{
 		return callObjectMethod(
 			"toString",

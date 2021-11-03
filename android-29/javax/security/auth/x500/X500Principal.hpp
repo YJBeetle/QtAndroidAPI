@@ -39,13 +39,13 @@ namespace javax::security::auth::x500
 		X500Principal(JString arg0, JObject arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getEncoded();
-		JString getName();
-		JString getName(JString arg0);
-		JString getName(JString arg0, JObject arg1);
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JByteArray getEncoded() const;
+		JString getName() const;
+		JString getName(JString arg0) const;
+		JString getName(JString arg0, JObject arg1) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace javax::security::auth::x500
 

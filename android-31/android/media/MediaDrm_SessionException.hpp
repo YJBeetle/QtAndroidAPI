@@ -21,8 +21,8 @@ namespace android::media
 		MediaDrm_SessionException(jint arg0, JString arg1);
 		
 		// Methods
-		jint getErrorCode();
-		jboolean isTransient();
+		jint getErrorCode() const;
+		jboolean isTransient() const;
 	};
 } // namespace android::media
 

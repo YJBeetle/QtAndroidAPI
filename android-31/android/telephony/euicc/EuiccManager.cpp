@@ -321,7 +321,7 @@ namespace android::telephony::euicc
 	// Constructors
 	
 	// Methods
-	android::telephony::euicc::EuiccManager EuiccManager::createForCardId(jint arg0)
+	android::telephony::euicc::EuiccManager EuiccManager::createForCardId(jint arg0) const
 	{
 		return callObjectMethod(
 			"createForCardId",
@@ -329,7 +329,7 @@ namespace android::telephony::euicc
 			arg0
 		);
 	}
-	void EuiccManager::deleteSubscription(jint arg0, android::app::PendingIntent arg1)
+	void EuiccManager::deleteSubscription(jint arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"deleteSubscription",
@@ -338,7 +338,7 @@ namespace android::telephony::euicc
 			arg1.object()
 		);
 	}
-	void EuiccManager::downloadSubscription(android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, android::app::PendingIntent arg2)
+	void EuiccManager::downloadSubscription(android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, android::app::PendingIntent arg2) const
 	{
 		callMethod<void>(
 			"downloadSubscription",
@@ -348,28 +348,28 @@ namespace android::telephony::euicc
 			arg2.object()
 		);
 	}
-	JString EuiccManager::getEid()
+	JString EuiccManager::getEid() const
 	{
 		return callObjectMethod(
 			"getEid",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::telephony::euicc::EuiccInfo EuiccManager::getEuiccInfo()
+	android::telephony::euicc::EuiccInfo EuiccManager::getEuiccInfo() const
 	{
 		return callObjectMethod(
 			"getEuiccInfo",
 			"()Landroid/telephony/euicc/EuiccInfo;"
 		);
 	}
-	jboolean EuiccManager::isEnabled()
+	jboolean EuiccManager::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void EuiccManager::startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3)
+	void EuiccManager::startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3) const
 	{
 		callMethod<void>(
 			"startResolutionActivity",
@@ -380,7 +380,7 @@ namespace android::telephony::euicc
 			arg3.object()
 		);
 	}
-	void EuiccManager::switchToSubscription(jint arg0, android::app::PendingIntent arg1)
+	void EuiccManager::switchToSubscription(jint arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"switchToSubscription",
@@ -389,7 +389,7 @@ namespace android::telephony::euicc
 			arg1.object()
 		);
 	}
-	void EuiccManager::updateSubscriptionNickname(jint arg0, JString arg1, android::app::PendingIntent arg2)
+	void EuiccManager::updateSubscriptionNickname(jint arg0, JString arg1, android::app::PendingIntent arg2) const
 	{
 		callMethod<void>(
 			"updateSubscriptionNickname",

@@ -26,18 +26,18 @@ namespace java::nio::channels
 		
 		// Methods
 		static java::nio::channels::Selector open();
-		void close();
-		jboolean isOpen();
-		JObject keys();
-		java::nio::channels::spi::SelectorProvider provider();
-		jint select();
-		jint select(JObject arg0);
-		jint select(jlong arg0);
-		jint select(JObject arg0, jlong arg1);
-		jint selectNow();
-		jint selectNow(JObject arg0);
-		JObject selectedKeys();
-		java::nio::channels::Selector wakeup();
+		void close() const;
+		jboolean isOpen() const;
+		JObject keys() const;
+		java::nio::channels::spi::SelectorProvider provider() const;
+		jint select() const;
+		jint select(JObject arg0) const;
+		jint select(jlong arg0) const;
+		jint select(JObject arg0, jlong arg1) const;
+		jint selectNow() const;
+		jint selectNow(JObject arg0) const;
+		JObject selectedKeys() const;
+		java::nio::channels::Selector wakeup() const;
 	};
 } // namespace java::nio::channels
 

@@ -27,11 +27,11 @@ namespace javax::crypto
 		CipherOutputStream(java::io::OutputStream arg0, javax::crypto::Cipher arg1);
 		
 		// Methods
-		void close();
-		void flush();
-		void write(JByteArray arg0);
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
+		void close() const;
+		void flush() const;
+		void write(JByteArray arg0) const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace javax::crypto
 

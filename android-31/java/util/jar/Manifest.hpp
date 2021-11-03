@@ -39,15 +39,15 @@ namespace java::util::jar
 		Manifest(java::util::jar::Manifest &arg0);
 		
 		// Methods
-		void clear();
-		JObject clone();
-		jboolean equals(JObject arg0);
-		java::util::jar::Attributes getAttributes(JString arg0);
-		JObject getEntries();
-		java::util::jar::Attributes getMainAttributes();
-		jint hashCode();
-		void read(java::io::InputStream arg0);
-		void write(java::io::OutputStream arg0);
+		void clear() const;
+		JObject clone() const;
+		jboolean equals(JObject arg0) const;
+		java::util::jar::Attributes getAttributes(JString arg0) const;
+		JObject getEntries() const;
+		java::util::jar::Attributes getMainAttributes() const;
+		jint hashCode() const;
+		void read(java::io::InputStream arg0) const;
+		void write(java::io::OutputStream arg0) const;
 	};
 } // namespace java::util::jar
 

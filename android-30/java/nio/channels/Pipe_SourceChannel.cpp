@@ -11,7 +11,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	jint Pipe_SourceChannel::validOps()
+	jint Pipe_SourceChannel::validOps() const
 	{
 		return callMethod<jint>(
 			"validOps",

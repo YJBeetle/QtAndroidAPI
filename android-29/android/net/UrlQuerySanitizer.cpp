@@ -95,14 +95,14 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	jboolean UrlQuerySanitizer::getAllowUnregisteredParamaters()
+	jboolean UrlQuerySanitizer::getAllowUnregisteredParamaters() const
 	{
 		return callMethod<jboolean>(
 			"getAllowUnregisteredParamaters",
 			"()Z"
 		);
 	}
-	JObject UrlQuerySanitizer::getEffectiveValueSanitizer(JString arg0)
+	JObject UrlQuerySanitizer::getEffectiveValueSanitizer(JString arg0) const
 	{
 		return callObjectMethod(
 			"getEffectiveValueSanitizer",
@@ -110,35 +110,35 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	JObject UrlQuerySanitizer::getParameterList()
+	JObject UrlQuerySanitizer::getParameterList() const
 	{
 		return callObjectMethod(
 			"getParameterList",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject UrlQuerySanitizer::getParameterSet()
+	JObject UrlQuerySanitizer::getParameterSet() const
 	{
 		return callObjectMethod(
 			"getParameterSet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean UrlQuerySanitizer::getPreferFirstRepeatedParameter()
+	jboolean UrlQuerySanitizer::getPreferFirstRepeatedParameter() const
 	{
 		return callMethod<jboolean>(
 			"getPreferFirstRepeatedParameter",
 			"()Z"
 		);
 	}
-	JObject UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
+	JObject UrlQuerySanitizer::getUnregisteredParameterValueSanitizer() const
 	{
 		return callObjectMethod(
 			"getUnregisteredParameterValueSanitizer",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	JString UrlQuerySanitizer::getValue(JString arg0)
+	JString UrlQuerySanitizer::getValue(JString arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -146,7 +146,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	JObject UrlQuerySanitizer::getValueSanitizer(JString arg0)
+	JObject UrlQuerySanitizer::getValueSanitizer(JString arg0) const
 	{
 		return callObjectMethod(
 			"getValueSanitizer",
@@ -154,7 +154,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	jboolean UrlQuerySanitizer::hasParameter(JString arg0)
+	jboolean UrlQuerySanitizer::hasParameter(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasParameter",
@@ -162,7 +162,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	void UrlQuerySanitizer::parseQuery(JString arg0)
+	void UrlQuerySanitizer::parseQuery(JString arg0) const
 	{
 		callMethod<void>(
 			"parseQuery",
@@ -170,7 +170,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	void UrlQuerySanitizer::parseUrl(JString arg0)
+	void UrlQuerySanitizer::parseUrl(JString arg0) const
 	{
 		callMethod<void>(
 			"parseUrl",
@@ -178,7 +178,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	void UrlQuerySanitizer::registerParameter(JString arg0, JObject arg1)
+	void UrlQuerySanitizer::registerParameter(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"registerParameter",
@@ -187,7 +187,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void UrlQuerySanitizer::registerParameters(JArray arg0, JObject arg1)
+	void UrlQuerySanitizer::registerParameters(JArray arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"registerParameters",
@@ -196,7 +196,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void UrlQuerySanitizer::setAllowUnregisteredParamaters(jboolean arg0)
+	void UrlQuerySanitizer::setAllowUnregisteredParamaters(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowUnregisteredParamaters",
@@ -204,7 +204,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void UrlQuerySanitizer::setPreferFirstRepeatedParameter(jboolean arg0)
+	void UrlQuerySanitizer::setPreferFirstRepeatedParameter(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPreferFirstRepeatedParameter",
@@ -212,7 +212,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void UrlQuerySanitizer::setUnregisteredParameterValueSanitizer(JObject arg0)
+	void UrlQuerySanitizer::setUnregisteredParameterValueSanitizer(JObject arg0) const
 	{
 		callMethod<void>(
 			"setUnregisteredParameterValueSanitizer",
@@ -220,7 +220,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	JString UrlQuerySanitizer::unescape(JString arg0)
+	JString UrlQuerySanitizer::unescape(JString arg0) const
 	{
 		return callObjectMethod(
 			"unescape",

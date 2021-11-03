@@ -128,14 +128,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ResolveInfo::describeContents()
+	jint ResolveInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ResolveInfo::dump(JObject arg0, JString arg1)
+	void ResolveInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -144,21 +144,21 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	jint ResolveInfo::getIconResource()
+	jint ResolveInfo::getIconResource() const
 	{
 		return callMethod<jint>(
 			"getIconResource",
 			"()I"
 		);
 	}
-	jboolean ResolveInfo::isCrossProfileIntentForwarderActivity()
+	jboolean ResolveInfo::isCrossProfileIntentForwarderActivity() const
 	{
 		return callMethod<jboolean>(
 			"isCrossProfileIntentForwarderActivity",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable ResolveInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable ResolveInfo::loadIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -166,7 +166,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString ResolveInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString ResolveInfo::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -174,14 +174,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString ResolveInfo::toString()
+	JString ResolveInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ResolveInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ResolveInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

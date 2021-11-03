@@ -20,9 +20,9 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		JObject getData();
-		JString getName();
-		JString toString();
+		JObject getData() const;
+		JString getName() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

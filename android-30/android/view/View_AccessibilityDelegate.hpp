@@ -43,16 +43,16 @@ namespace android::view
 		View_AccessibilityDelegate();
 		
 		// Methods
-		void addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3);
-		jboolean dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);
-		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider(android::view::View arg0);
-		void onInitializeAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);
-		void onInitializeAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1);
-		void onPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);
-		jboolean onRequestSendAccessibilityEvent(android::view::ViewGroup arg0, android::view::View arg1, android::view::accessibility::AccessibilityEvent arg2);
-		jboolean performAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2);
-		void sendAccessibilityEvent(android::view::View arg0, jint arg1);
-		void sendAccessibilityEventUnchecked(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);
+		void addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3) const;
+		jboolean dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
+		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider(android::view::View arg0) const;
+		void onInitializeAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
+		void onInitializeAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1) const;
+		void onPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
+		jboolean onRequestSendAccessibilityEvent(android::view::ViewGroup arg0, android::view::View arg1, android::view::accessibility::AccessibilityEvent arg2) const;
+		jboolean performAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2) const;
+		void sendAccessibilityEvent(android::view::View arg0, jint arg1) const;
+		void sendAccessibilityEventUnchecked(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
 	};
 } // namespace android::view
 

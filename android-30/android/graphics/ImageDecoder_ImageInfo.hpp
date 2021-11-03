@@ -26,10 +26,10 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		android::graphics::ColorSpace getColorSpace();
-		JString getMimeType();
-		android::util::Size getSize();
-		jboolean isAnimated();
+		android::graphics::ColorSpace getColorSpace() const;
+		JString getMimeType() const;
+		android::util::Size getSize() const;
+		jboolean isAnimated() const;
 	};
 } // namespace android::graphics
 

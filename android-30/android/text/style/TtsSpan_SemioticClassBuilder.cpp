@@ -17,7 +17,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setAnimacy(JString arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setAnimacy(JString arg0) const
 	{
 		return callObjectMethod(
 			"setAnimacy",
@@ -25,7 +25,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setCase(JString arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setCase(JString arg0) const
 	{
 		return callObjectMethod(
 			"setCase",
@@ -33,7 +33,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setGender(JString arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setGender(JString arg0) const
 	{
 		return callObjectMethod(
 			"setGender",
@@ -41,7 +41,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setMultiplicity(JString arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setMultiplicity(JString arg0) const
 	{
 		return callObjectMethod(
 			"setMultiplicity",

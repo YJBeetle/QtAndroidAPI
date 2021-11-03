@@ -61,14 +61,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint QuoteSpan::describeContents()
+	jint QuoteSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void QuoteSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
+	void QuoteSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11) const
 	{
 		callMethod<void>(
 			"drawLeadingMargin",
@@ -87,21 +87,21 @@ namespace android::text::style
 			arg11.object()
 		);
 	}
-	jint QuoteSpan::getColor()
+	jint QuoteSpan::getColor() const
 	{
 		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
-	jint QuoteSpan::getGapWidth()
+	jint QuoteSpan::getGapWidth() const
 	{
 		return callMethod<jint>(
 			"getGapWidth",
 			"()I"
 		);
 	}
-	jint QuoteSpan::getLeadingMargin(jboolean arg0)
+	jint QuoteSpan::getLeadingMargin(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"getLeadingMargin",
@@ -109,21 +109,21 @@ namespace android::text::style
 			arg0
 		);
 	}
-	jint QuoteSpan::getSpanTypeId()
+	jint QuoteSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	jint QuoteSpan::getStripeWidth()
+	jint QuoteSpan::getStripeWidth() const
 	{
 		return callMethod<jint>(
 			"getStripeWidth",
 			"()I"
 		);
 	}
-	void QuoteSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void QuoteSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

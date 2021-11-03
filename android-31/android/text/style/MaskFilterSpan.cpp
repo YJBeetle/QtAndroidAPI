@@ -18,14 +18,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::graphics::MaskFilter MaskFilterSpan::getMaskFilter()
+	android::graphics::MaskFilter MaskFilterSpan::getMaskFilter() const
 	{
 		return callObjectMethod(
 			"getMaskFilter",
 			"()Landroid/graphics/MaskFilter;"
 		);
 	}
-	void MaskFilterSpan::updateDrawState(android::text::TextPaint arg0)
+	void MaskFilterSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",

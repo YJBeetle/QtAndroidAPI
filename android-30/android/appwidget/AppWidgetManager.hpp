@@ -76,26 +76,26 @@ namespace android::appwidget
 		
 		// Methods
 		static android::appwidget::AppWidgetManager getInstance(android::content::Context arg0);
-		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1);
-		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1, android::os::Bundle arg2);
-		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::os::UserHandle arg1, android::content::ComponentName arg2, android::os::Bundle arg3);
-		JIntArray getAppWidgetIds(android::content::ComponentName arg0);
-		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo(jint arg0);
-		android::os::Bundle getAppWidgetOptions(jint arg0);
-		JObject getInstalledProviders();
-		JObject getInstalledProvidersForPackage(JString arg0, android::os::UserHandle arg1);
-		JObject getInstalledProvidersForProfile(android::os::UserHandle arg0);
-		jboolean isRequestPinAppWidgetSupported();
-		void notifyAppWidgetViewDataChanged(JIntArray arg0, jint arg1);
-		void notifyAppWidgetViewDataChanged(jint arg0, jint arg1);
-		void partiallyUpdateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1);
-		void partiallyUpdateAppWidget(jint arg0, android::widget::RemoteViews arg1);
-		jboolean requestPinAppWidget(android::content::ComponentName arg0, android::os::Bundle arg1, android::app::PendingIntent arg2);
-		void updateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1);
-		void updateAppWidget(android::content::ComponentName arg0, android::widget::RemoteViews arg1);
-		void updateAppWidget(jint arg0, android::widget::RemoteViews arg1);
-		void updateAppWidgetOptions(jint arg0, android::os::Bundle arg1);
-		void updateAppWidgetProviderInfo(android::content::ComponentName arg0, JString arg1);
+		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1) const;
+		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1, android::os::Bundle arg2) const;
+		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::os::UserHandle arg1, android::content::ComponentName arg2, android::os::Bundle arg3) const;
+		JIntArray getAppWidgetIds(android::content::ComponentName arg0) const;
+		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo(jint arg0) const;
+		android::os::Bundle getAppWidgetOptions(jint arg0) const;
+		JObject getInstalledProviders() const;
+		JObject getInstalledProvidersForPackage(JString arg0, android::os::UserHandle arg1) const;
+		JObject getInstalledProvidersForProfile(android::os::UserHandle arg0) const;
+		jboolean isRequestPinAppWidgetSupported() const;
+		void notifyAppWidgetViewDataChanged(JIntArray arg0, jint arg1) const;
+		void notifyAppWidgetViewDataChanged(jint arg0, jint arg1) const;
+		void partiallyUpdateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1) const;
+		void partiallyUpdateAppWidget(jint arg0, android::widget::RemoteViews arg1) const;
+		jboolean requestPinAppWidget(android::content::ComponentName arg0, android::os::Bundle arg1, android::app::PendingIntent arg2) const;
+		void updateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1) const;
+		void updateAppWidget(android::content::ComponentName arg0, android::widget::RemoteViews arg1) const;
+		void updateAppWidget(jint arg0, android::widget::RemoteViews arg1) const;
+		void updateAppWidgetOptions(jint arg0, android::os::Bundle arg1) const;
+		void updateAppWidgetProviderInfo(android::content::ComponentName arg0, JString arg1) const;
 	};
 } // namespace android::appwidget
 

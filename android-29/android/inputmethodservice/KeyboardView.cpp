@@ -40,35 +40,35 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	void KeyboardView::closing()
+	void KeyboardView::closing() const
 	{
 		callMethod<void>(
 			"closing",
 			"()V"
 		);
 	}
-	android::inputmethodservice::Keyboard KeyboardView::getKeyboard()
+	android::inputmethodservice::Keyboard KeyboardView::getKeyboard() const
 	{
 		return callObjectMethod(
 			"getKeyboard",
 			"()Landroid/inputmethodservice/Keyboard;"
 		);
 	}
-	jboolean KeyboardView::handleBack()
+	jboolean KeyboardView::handleBack() const
 	{
 		return callMethod<jboolean>(
 			"handleBack",
 			"()Z"
 		);
 	}
-	void KeyboardView::invalidateAllKeys()
+	void KeyboardView::invalidateAllKeys() const
 	{
 		callMethod<void>(
 			"invalidateAllKeys",
 			"()V"
 		);
 	}
-	void KeyboardView::invalidateKey(jint arg0)
+	void KeyboardView::invalidateKey(jint arg0) const
 	{
 		callMethod<void>(
 			"invalidateKey",
@@ -76,28 +76,28 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean KeyboardView::isPreviewEnabled()
+	jboolean KeyboardView::isPreviewEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isPreviewEnabled",
 			"()Z"
 		);
 	}
-	jboolean KeyboardView::isProximityCorrectionEnabled()
+	jboolean KeyboardView::isProximityCorrectionEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isProximityCorrectionEnabled",
 			"()Z"
 		);
 	}
-	jboolean KeyboardView::isShifted()
+	jboolean KeyboardView::isShifted() const
 	{
 		return callMethod<jboolean>(
 			"isShifted",
 			"()Z"
 		);
 	}
-	void KeyboardView::onClick(android::view::View arg0)
+	void KeyboardView::onClick(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -105,14 +105,14 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void KeyboardView::onDetachedFromWindow()
+	void KeyboardView::onDetachedFromWindow() const
 	{
 		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
-	void KeyboardView::onDraw(android::graphics::Canvas arg0)
+	void KeyboardView::onDraw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"onDraw",
@@ -120,7 +120,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	jboolean KeyboardView::onHoverEvent(android::view::MotionEvent arg0)
+	jboolean KeyboardView::onHoverEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onHoverEvent",
@@ -128,7 +128,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void KeyboardView::onMeasure(jint arg0, jint arg1)
+	void KeyboardView::onMeasure(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onMeasure",
@@ -137,7 +137,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void KeyboardView::onSizeChanged(jint arg0, jint arg1, jint arg2, jint arg3)
+	void KeyboardView::onSizeChanged(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onSizeChanged",
@@ -148,7 +148,7 @@ namespace android::inputmethodservice
 			arg3
 		);
 	}
-	jboolean KeyboardView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean KeyboardView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -156,7 +156,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void KeyboardView::setKeyboard(android::inputmethodservice::Keyboard arg0)
+	void KeyboardView::setKeyboard(android::inputmethodservice::Keyboard arg0) const
 	{
 		callMethod<void>(
 			"setKeyboard",
@@ -164,7 +164,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void KeyboardView::setOnKeyboardActionListener(JObject arg0)
+	void KeyboardView::setOnKeyboardActionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnKeyboardActionListener",
@@ -172,7 +172,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void KeyboardView::setPopupOffset(jint arg0, jint arg1)
+	void KeyboardView::setPopupOffset(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPopupOffset",
@@ -181,7 +181,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void KeyboardView::setPopupParent(android::view::View arg0)
+	void KeyboardView::setPopupParent(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setPopupParent",
@@ -189,7 +189,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void KeyboardView::setPreviewEnabled(jboolean arg0)
+	void KeyboardView::setPreviewEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPreviewEnabled",
@@ -197,7 +197,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void KeyboardView::setProximityCorrectionEnabled(jboolean arg0)
+	void KeyboardView::setProximityCorrectionEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setProximityCorrectionEnabled",
@@ -205,7 +205,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean KeyboardView::setShifted(jboolean arg0)
+	jboolean KeyboardView::setShifted(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setShifted",
@@ -213,7 +213,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void KeyboardView::setVerticalCorrection(jint arg0)
+	void KeyboardView::setVerticalCorrection(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalCorrection",

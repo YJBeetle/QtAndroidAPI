@@ -28,13 +28,13 @@ namespace android::app
 		Person_Builder();
 		
 		// Methods
-		android::app::Person build();
-		android::app::Person_Builder setBot(jboolean arg0);
-		android::app::Person_Builder setIcon(android::graphics::drawable::Icon arg0);
-		android::app::Person_Builder setImportant(jboolean arg0);
-		android::app::Person_Builder setKey(JString arg0);
-		android::app::Person_Builder setName(JString arg0);
-		android::app::Person_Builder setUri(JString arg0);
+		android::app::Person build() const;
+		android::app::Person_Builder setBot(jboolean arg0) const;
+		android::app::Person_Builder setIcon(android::graphics::drawable::Icon arg0) const;
+		android::app::Person_Builder setImportant(jboolean arg0) const;
+		android::app::Person_Builder setKey(JString arg0) const;
+		android::app::Person_Builder setName(JString arg0) const;
+		android::app::Person_Builder setUri(JString arg0) const;
 	};
 } // namespace android::app
 

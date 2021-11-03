@@ -26,56 +26,56 @@ namespace android::service::wallpaper
 		) {}
 	
 	// Methods
-	jint WallpaperService_Engine::getDesiredMinimumHeight()
+	jint WallpaperService_Engine::getDesiredMinimumHeight() const
 	{
 		return callMethod<jint>(
 			"getDesiredMinimumHeight",
 			"()I"
 		);
 	}
-	jint WallpaperService_Engine::getDesiredMinimumWidth()
+	jint WallpaperService_Engine::getDesiredMinimumWidth() const
 	{
 		return callMethod<jint>(
 			"getDesiredMinimumWidth",
 			"()I"
 		);
 	}
-	android::content::Context WallpaperService_Engine::getDisplayContext()
+	android::content::Context WallpaperService_Engine::getDisplayContext() const
 	{
 		return callObjectMethod(
 			"getDisplayContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JObject WallpaperService_Engine::getSurfaceHolder()
+	JObject WallpaperService_Engine::getSurfaceHolder() const
 	{
 		return callObjectMethod(
 			"getSurfaceHolder",
 			"()Landroid/view/SurfaceHolder;"
 		);
 	}
-	jboolean WallpaperService_Engine::isPreview()
+	jboolean WallpaperService_Engine::isPreview() const
 	{
 		return callMethod<jboolean>(
 			"isPreview",
 			"()Z"
 		);
 	}
-	jboolean WallpaperService_Engine::isVisible()
+	jboolean WallpaperService_Engine::isVisible() const
 	{
 		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
-	void WallpaperService_Engine::notifyColorsChanged()
+	void WallpaperService_Engine::notifyColorsChanged() const
 	{
 		callMethod<void>(
 			"notifyColorsChanged",
 			"()V"
 		);
 	}
-	void WallpaperService_Engine::onApplyWindowInsets(android::view::WindowInsets arg0)
+	void WallpaperService_Engine::onApplyWindowInsets(android::view::WindowInsets arg0) const
 	{
 		callMethod<void>(
 			"onApplyWindowInsets",
@@ -83,7 +83,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	android::os::Bundle WallpaperService_Engine::onCommand(JString arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
+	android::os::Bundle WallpaperService_Engine::onCommand(JString arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5) const
 	{
 		return callObjectMethod(
 			"onCommand",
@@ -96,14 +96,14 @@ namespace android::service::wallpaper
 			arg5
 		);
 	}
-	android::app::WallpaperColors WallpaperService_Engine::onComputeColors()
+	android::app::WallpaperColors WallpaperService_Engine::onComputeColors() const
 	{
 		return callObjectMethod(
 			"onComputeColors",
 			"()Landroid/app/WallpaperColors;"
 		);
 	}
-	void WallpaperService_Engine::onCreate(JObject arg0)
+	void WallpaperService_Engine::onCreate(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCreate",
@@ -111,7 +111,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService_Engine::onDesiredSizeChanged(jint arg0, jint arg1)
+	void WallpaperService_Engine::onDesiredSizeChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onDesiredSizeChanged",
@@ -120,14 +120,14 @@ namespace android::service::wallpaper
 			arg1
 		);
 	}
-	void WallpaperService_Engine::onDestroy()
+	void WallpaperService_Engine::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void WallpaperService_Engine::onOffsetsChanged(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5)
+	void WallpaperService_Engine::onOffsetsChanged(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"onOffsetsChanged",
@@ -140,7 +140,7 @@ namespace android::service::wallpaper
 			arg5
 		);
 	}
-	void WallpaperService_Engine::onSurfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3)
+	void WallpaperService_Engine::onSurfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onSurfaceChanged",
@@ -151,7 +151,7 @@ namespace android::service::wallpaper
 			arg3
 		);
 	}
-	void WallpaperService_Engine::onSurfaceCreated(JObject arg0)
+	void WallpaperService_Engine::onSurfaceCreated(JObject arg0) const
 	{
 		callMethod<void>(
 			"onSurfaceCreated",
@@ -159,7 +159,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService_Engine::onSurfaceDestroyed(JObject arg0)
+	void WallpaperService_Engine::onSurfaceDestroyed(JObject arg0) const
 	{
 		callMethod<void>(
 			"onSurfaceDestroyed",
@@ -167,7 +167,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService_Engine::onSurfaceRedrawNeeded(JObject arg0)
+	void WallpaperService_Engine::onSurfaceRedrawNeeded(JObject arg0) const
 	{
 		callMethod<void>(
 			"onSurfaceRedrawNeeded",
@@ -175,7 +175,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService_Engine::onTouchEvent(android::view::MotionEvent arg0)
+	void WallpaperService_Engine::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"onTouchEvent",
@@ -183,7 +183,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService_Engine::onVisibilityChanged(jboolean arg0)
+	void WallpaperService_Engine::onVisibilityChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onVisibilityChanged",
@@ -191,7 +191,7 @@ namespace android::service::wallpaper
 			arg0
 		);
 	}
-	void WallpaperService_Engine::onZoomChanged(jfloat arg0)
+	void WallpaperService_Engine::onZoomChanged(jfloat arg0) const
 	{
 		callMethod<void>(
 			"onZoomChanged",
@@ -199,7 +199,7 @@ namespace android::service::wallpaper
 			arg0
 		);
 	}
-	void WallpaperService_Engine::setOffsetNotificationsEnabled(jboolean arg0)
+	void WallpaperService_Engine::setOffsetNotificationsEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOffsetNotificationsEnabled",
@@ -207,7 +207,7 @@ namespace android::service::wallpaper
 			arg0
 		);
 	}
-	void WallpaperService_Engine::setTouchEventsEnabled(jboolean arg0)
+	void WallpaperService_Engine::setTouchEventsEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTouchEventsEnabled",

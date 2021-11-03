@@ -44,14 +44,14 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jint IntentSender::describeContents()
+	jint IntentSender::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean IntentSender::equals(JObject arg0)
+	jboolean IntentSender::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -59,42 +59,42 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	JString IntentSender::getCreatorPackage()
+	JString IntentSender::getCreatorPackage() const
 	{
 		return callObjectMethod(
 			"getCreatorPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint IntentSender::getCreatorUid()
+	jint IntentSender::getCreatorUid() const
 	{
 		return callMethod<jint>(
 			"getCreatorUid",
 			"()I"
 		);
 	}
-	android::os::UserHandle IntentSender::getCreatorUserHandle()
+	android::os::UserHandle IntentSender::getCreatorUserHandle() const
 	{
 		return callObjectMethod(
 			"getCreatorUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	JString IntentSender::getTargetPackage()
+	JString IntentSender::getTargetPackage() const
 	{
 		return callObjectMethod(
 			"getTargetPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint IntentSender::hashCode()
+	jint IntentSender::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4)
+	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4) const
 	{
 		callMethod<void>(
 			"sendIntent",
@@ -106,7 +106,7 @@ namespace android::content
 			arg4.object()
 		);
 	}
-	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5)
+	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5) const
 	{
 		callMethod<void>(
 			"sendIntent",
@@ -119,14 +119,14 @@ namespace android::content
 			arg5.object<jstring>()
 		);
 	}
-	JString IntentSender::toString()
+	JString IntentSender::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void IntentSender::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void IntentSender::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

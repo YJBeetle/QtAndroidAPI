@@ -74,14 +74,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jint CallAudioState::describeContents()
+	jint CallAudioState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CallAudioState::equals(JObject arg0)
+	jboolean CallAudioState::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -89,49 +89,49 @@ namespace android::telecom
 			arg0.object<jobject>()
 		);
 	}
-	android::bluetooth::BluetoothDevice CallAudioState::getActiveBluetoothDevice()
+	android::bluetooth::BluetoothDevice CallAudioState::getActiveBluetoothDevice() const
 	{
 		return callObjectMethod(
 			"getActiveBluetoothDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
-	jint CallAudioState::getRoute()
+	jint CallAudioState::getRoute() const
 	{
 		return callMethod<jint>(
 			"getRoute",
 			"()I"
 		);
 	}
-	JObject CallAudioState::getSupportedBluetoothDevices()
+	JObject CallAudioState::getSupportedBluetoothDevices() const
 	{
 		return callObjectMethod(
 			"getSupportedBluetoothDevices",
 			"()Ljava/util/Collection;"
 		);
 	}
-	jint CallAudioState::getSupportedRouteMask()
+	jint CallAudioState::getSupportedRouteMask() const
 	{
 		return callMethod<jint>(
 			"getSupportedRouteMask",
 			"()I"
 		);
 	}
-	jboolean CallAudioState::isMuted()
+	jboolean CallAudioState::isMuted() const
 	{
 		return callMethod<jboolean>(
 			"isMuted",
 			"()Z"
 		);
 	}
-	JString CallAudioState::toString()
+	JString CallAudioState::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CallAudioState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CallAudioState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

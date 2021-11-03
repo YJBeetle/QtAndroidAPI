@@ -18,14 +18,14 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void BaseBundle::clear()
+	void BaseBundle::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean BaseBundle::containsKey(JString arg0)
+	jboolean BaseBundle::containsKey(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -33,7 +33,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JObject BaseBundle::get(JString arg0)
+	JObject BaseBundle::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -41,7 +41,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean BaseBundle::getBoolean(JString arg0)
+	jboolean BaseBundle::getBoolean(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
@@ -49,7 +49,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean BaseBundle::getBoolean(JString arg0, jboolean arg1)
+	jboolean BaseBundle::getBoolean(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
@@ -58,7 +58,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JBooleanArray BaseBundle::getBooleanArray(JString arg0)
+	JBooleanArray BaseBundle::getBooleanArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBooleanArray",
@@ -66,7 +66,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jdouble BaseBundle::getDouble(JString arg0)
+	jdouble BaseBundle::getDouble(JString arg0) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -74,7 +74,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jdouble BaseBundle::getDouble(JString arg0, jdouble arg1)
+	jdouble BaseBundle::getDouble(JString arg0, jdouble arg1) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -83,7 +83,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JDoubleArray BaseBundle::getDoubleArray(JString arg0)
+	JDoubleArray BaseBundle::getDoubleArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDoubleArray",
@@ -91,7 +91,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jint BaseBundle::getInt(JString arg0)
+	jint BaseBundle::getInt(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -99,7 +99,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jint BaseBundle::getInt(JString arg0, jint arg1)
+	jint BaseBundle::getInt(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -108,7 +108,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JIntArray BaseBundle::getIntArray(JString arg0)
+	JIntArray BaseBundle::getIntArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getIntArray",
@@ -116,7 +116,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jlong BaseBundle::getLong(JString arg0)
+	jlong BaseBundle::getLong(JString arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -124,7 +124,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jlong BaseBundle::getLong(JString arg0, jlong arg1)
+	jlong BaseBundle::getLong(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -133,7 +133,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JLongArray BaseBundle::getLongArray(JString arg0)
+	JLongArray BaseBundle::getLongArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getLongArray",
@@ -141,7 +141,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JString BaseBundle::getString(JString arg0)
+	JString BaseBundle::getString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -149,7 +149,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JString BaseBundle::getString(JString arg0, JString arg1)
+	JString BaseBundle::getString(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -158,7 +158,7 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	JArray BaseBundle::getStringArray(JString arg0)
+	JArray BaseBundle::getStringArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getStringArray",
@@ -166,21 +166,21 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean BaseBundle::isEmpty()
+	jboolean BaseBundle::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject BaseBundle::keySet()
+	JObject BaseBundle::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void BaseBundle::putAll(android::os::PersistableBundle arg0)
+	void BaseBundle::putAll(android::os::PersistableBundle arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -188,7 +188,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void BaseBundle::putBoolean(JString arg0, jboolean arg1)
+	void BaseBundle::putBoolean(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"putBoolean",
@@ -197,7 +197,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void BaseBundle::putBooleanArray(JString arg0, JBooleanArray arg1)
+	void BaseBundle::putBooleanArray(JString arg0, JBooleanArray arg1) const
 	{
 		callMethod<void>(
 			"putBooleanArray",
@@ -206,7 +206,7 @@ namespace android::os
 			arg1.object<jbooleanArray>()
 		);
 	}
-	void BaseBundle::putDouble(JString arg0, jdouble arg1)
+	void BaseBundle::putDouble(JString arg0, jdouble arg1) const
 	{
 		callMethod<void>(
 			"putDouble",
@@ -215,7 +215,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void BaseBundle::putDoubleArray(JString arg0, JDoubleArray arg1)
+	void BaseBundle::putDoubleArray(JString arg0, JDoubleArray arg1) const
 	{
 		callMethod<void>(
 			"putDoubleArray",
@@ -224,7 +224,7 @@ namespace android::os
 			arg1.object<jdoubleArray>()
 		);
 	}
-	void BaseBundle::putInt(JString arg0, jint arg1)
+	void BaseBundle::putInt(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"putInt",
@@ -233,7 +233,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void BaseBundle::putIntArray(JString arg0, JIntArray arg1)
+	void BaseBundle::putIntArray(JString arg0, JIntArray arg1) const
 	{
 		callMethod<void>(
 			"putIntArray",
@@ -242,7 +242,7 @@ namespace android::os
 			arg1.object<jintArray>()
 		);
 	}
-	void BaseBundle::putLong(JString arg0, jlong arg1)
+	void BaseBundle::putLong(JString arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"putLong",
@@ -251,7 +251,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void BaseBundle::putLongArray(JString arg0, JLongArray arg1)
+	void BaseBundle::putLongArray(JString arg0, JLongArray arg1) const
 	{
 		callMethod<void>(
 			"putLongArray",
@@ -260,7 +260,7 @@ namespace android::os
 			arg1.object<jlongArray>()
 		);
 	}
-	void BaseBundle::putString(JString arg0, JString arg1)
+	void BaseBundle::putString(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"putString",
@@ -269,7 +269,7 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	void BaseBundle::putStringArray(JString arg0, JArray arg1)
+	void BaseBundle::putStringArray(JString arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"putStringArray",
@@ -278,7 +278,7 @@ namespace android::os
 			arg1.object<jarray>()
 		);
 	}
-	void BaseBundle::remove(JString arg0)
+	void BaseBundle::remove(JString arg0) const
 	{
 		callMethod<void>(
 			"remove",
@@ -286,7 +286,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jint BaseBundle::size()
+	jint BaseBundle::size() const
 	{
 		return callMethod<jint>(
 			"size",

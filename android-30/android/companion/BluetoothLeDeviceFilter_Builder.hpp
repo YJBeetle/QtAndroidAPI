@@ -36,12 +36,12 @@ namespace android::companion
 		BluetoothLeDeviceFilter_Builder();
 		
 		// Methods
-		android::companion::BluetoothLeDeviceFilter build();
-		android::companion::BluetoothLeDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0);
-		android::companion::BluetoothLeDeviceFilter_Builder setRawDataFilter(JByteArray arg0, JByteArray arg1);
-		android::companion::BluetoothLeDeviceFilter_Builder setRenameFromBytes(JString arg0, JString arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4);
-		android::companion::BluetoothLeDeviceFilter_Builder setRenameFromName(JString arg0, JString arg1, jint arg2, jint arg3);
-		android::companion::BluetoothLeDeviceFilter_Builder setScanFilter(android::bluetooth::le::ScanFilter arg0);
+		android::companion::BluetoothLeDeviceFilter build() const;
+		android::companion::BluetoothLeDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0) const;
+		android::companion::BluetoothLeDeviceFilter_Builder setRawDataFilter(JByteArray arg0, JByteArray arg1) const;
+		android::companion::BluetoothLeDeviceFilter_Builder setRenameFromBytes(JString arg0, JString arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4) const;
+		android::companion::BluetoothLeDeviceFilter_Builder setRenameFromName(JString arg0, JString arg1, jint arg2, jint arg3) const;
+		android::companion::BluetoothLeDeviceFilter_Builder setScanFilter(android::bluetooth::le::ScanFilter arg0) const;
 	};
 } // namespace android::companion
 

@@ -24,7 +24,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean CopyOnWriteArraySet::add(JObject arg0)
+	jboolean CopyOnWriteArraySet::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -32,7 +32,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean CopyOnWriteArraySet::addAll(JObject arg0)
+	jboolean CopyOnWriteArraySet::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -40,14 +40,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void CopyOnWriteArraySet::clear()
+	void CopyOnWriteArraySet::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean CopyOnWriteArraySet::contains(JObject arg0)
+	jboolean CopyOnWriteArraySet::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -55,7 +55,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean CopyOnWriteArraySet::containsAll(JObject arg0)
+	jboolean CopyOnWriteArraySet::containsAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -63,7 +63,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArraySet::equals(JObject arg0)
+	jboolean CopyOnWriteArraySet::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -71,7 +71,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void CopyOnWriteArraySet::forEach(JObject arg0)
+	void CopyOnWriteArraySet::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -79,21 +79,21 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArraySet::isEmpty()
+	jboolean CopyOnWriteArraySet::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject CopyOnWriteArraySet::iterator()
+	JObject CopyOnWriteArraySet::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean CopyOnWriteArraySet::remove(JObject arg0)
+	jboolean CopyOnWriteArraySet::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -101,7 +101,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean CopyOnWriteArraySet::removeAll(JObject arg0)
+	jboolean CopyOnWriteArraySet::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -109,7 +109,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArraySet::removeIf(JObject arg0)
+	jboolean CopyOnWriteArraySet::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -117,7 +117,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArraySet::retainAll(JObject arg0)
+	jboolean CopyOnWriteArraySet::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -125,28 +125,28 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint CopyOnWriteArraySet::size()
+	jint CopyOnWriteArraySet::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject CopyOnWriteArraySet::spliterator()
+	JObject CopyOnWriteArraySet::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObjectArray CopyOnWriteArraySet::toArray()
+	JObjectArray CopyOnWriteArraySet::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray CopyOnWriteArraySet::toArray(JObjectArray arg0)
+	JObjectArray CopyOnWriteArraySet::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",

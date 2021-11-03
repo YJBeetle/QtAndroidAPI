@@ -46,7 +46,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	JObject VpnService::onBind(android::content::Intent arg0)
+	JObject VpnService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -54,14 +54,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void VpnService::onRevoke()
+	void VpnService::onRevoke() const
 	{
 		callMethod<void>(
 			"onRevoke",
 			"()V"
 		);
 	}
-	jboolean VpnService::protect(jint arg0)
+	jboolean VpnService::protect(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"protect",
@@ -69,7 +69,7 @@ namespace android::net
 			arg0
 		);
 	}
-	jboolean VpnService::protect(java::net::DatagramSocket arg0)
+	jboolean VpnService::protect(java::net::DatagramSocket arg0) const
 	{
 		return callMethod<jboolean>(
 			"protect",
@@ -77,7 +77,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jboolean VpnService::protect(java::net::Socket arg0)
+	jboolean VpnService::protect(java::net::Socket arg0) const
 	{
 		return callMethod<jboolean>(
 			"protect",
@@ -85,7 +85,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jboolean VpnService::setUnderlyingNetworks(JArray arg0)
+	jboolean VpnService::setUnderlyingNetworks(JArray arg0) const
 	{
 		return callMethod<jboolean>(
 			"setUnderlyingNetworks",

@@ -24,7 +24,7 @@ namespace android::widget
 		DigitalClock(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		JString getAccessibilityClassName();
+		JString getAccessibilityClassName() const;
 	};
 } // namespace android::widget
 

@@ -27,14 +27,14 @@ namespace android::os
 		) {}
 	
 	// Methods
-	jint ResultReceiver::describeContents()
+	jint ResultReceiver::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ResultReceiver::send(jint arg0, android::os::Bundle arg1)
+	void ResultReceiver::send(jint arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"send",
@@ -43,7 +43,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void ResultReceiver::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ResultReceiver::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

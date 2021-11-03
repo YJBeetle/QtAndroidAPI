@@ -30,23 +30,23 @@ namespace java::util::concurrent
 		Phaser(java::util::concurrent::Phaser &arg0, jint arg1);
 		
 		// Methods
-		jint arrive();
-		jint arriveAndAwaitAdvance();
-		jint arriveAndDeregister();
-		jint awaitAdvance(jint arg0);
-		jint awaitAdvanceInterruptibly(jint arg0);
-		jint awaitAdvanceInterruptibly(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jint bulkRegister(jint arg0);
-		void forceTermination();
-		jint getArrivedParties();
-		java::util::concurrent::Phaser getParent();
-		jint getPhase();
-		jint getRegisteredParties();
-		java::util::concurrent::Phaser getRoot();
-		jint getUnarrivedParties();
-		jboolean isTerminated();
-		jint _register();
-		JString toString();
+		jint arrive() const;
+		jint arriveAndAwaitAdvance() const;
+		jint arriveAndDeregister() const;
+		jint awaitAdvance(jint arg0) const;
+		jint awaitAdvanceInterruptibly(jint arg0) const;
+		jint awaitAdvanceInterruptibly(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
+		jint bulkRegister(jint arg0) const;
+		void forceTermination() const;
+		jint getArrivedParties() const;
+		java::util::concurrent::Phaser getParent() const;
+		jint getPhase() const;
+		jint getRegisteredParties() const;
+		java::util::concurrent::Phaser getRoot() const;
+		jint getUnarrivedParties() const;
+		jboolean isTerminated() const;
+		jint _register() const;
+		JString toString() const;
 	};
 } // namespace java::util::concurrent
 

@@ -42,7 +42,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void Visibility::captureEndValues(android::transition::TransitionValues arg0)
+	void Visibility::captureEndValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureEndValues",
@@ -50,7 +50,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Visibility::captureStartValues(android::transition::TransitionValues arg0)
+	void Visibility::captureStartValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureStartValues",
@@ -58,7 +58,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::animation::Animator Visibility::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
+	android::animation::Animator Visibility::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const
 	{
 		return callObjectMethod(
 			"createAnimator",
@@ -68,21 +68,21 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	jint Visibility::getMode()
+	jint Visibility::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	JArray Visibility::getTransitionProperties()
+	JArray Visibility::getTransitionProperties() const
 	{
 		return callObjectMethod(
 			"getTransitionProperties",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jboolean Visibility::isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1)
+	jboolean Visibility::isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1) const
 	{
 		return callMethod<jboolean>(
 			"isTransitionRequired",
@@ -91,7 +91,7 @@ namespace android::transition
 			arg1.object()
 		);
 	}
-	jboolean Visibility::isVisible(android::transition::TransitionValues arg0)
+	jboolean Visibility::isVisible(android::transition::TransitionValues arg0) const
 	{
 		return callMethod<jboolean>(
 			"isVisible",
@@ -99,7 +99,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::animation::Animator Visibility::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Visibility::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callObjectMethod(
 			"onAppear",
@@ -110,7 +110,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	android::animation::Animator Visibility::onAppear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4)
+	android::animation::Animator Visibility::onAppear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"onAppear",
@@ -122,7 +122,7 @@ namespace android::transition
 			arg4
 		);
 	}
-	android::animation::Animator Visibility::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Visibility::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callObjectMethod(
 			"onDisappear",
@@ -133,7 +133,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	android::animation::Animator Visibility::onDisappear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4)
+	android::animation::Animator Visibility::onDisappear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"onDisappear",
@@ -145,7 +145,7 @@ namespace android::transition
 			arg4
 		);
 	}
-	void Visibility::setMode(jint arg0)
+	void Visibility::setMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setMode",

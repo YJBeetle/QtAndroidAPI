@@ -23,10 +23,10 @@ namespace android::content::pm
 		ChangedPackages(jint arg0, JObject arg1);
 		
 		// Methods
-		jint describeContents();
-		JObject getPackageNames();
-		jint getSequenceNumber();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getPackageNames() const;
+		jint getSequenceNumber() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

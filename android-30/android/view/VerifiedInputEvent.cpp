@@ -19,42 +19,42 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint VerifiedInputEvent::describeContents()
+	jint VerifiedInputEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint VerifiedInputEvent::getDeviceId()
+	jint VerifiedInputEvent::getDeviceId() const
 	{
 		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
-	jint VerifiedInputEvent::getDisplayId()
+	jint VerifiedInputEvent::getDisplayId() const
 	{
 		return callMethod<jint>(
 			"getDisplayId",
 			"()I"
 		);
 	}
-	jlong VerifiedInputEvent::getEventTimeNanos()
+	jlong VerifiedInputEvent::getEventTimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getEventTimeNanos",
 			"()J"
 		);
 	}
-	jint VerifiedInputEvent::getSource()
+	jint VerifiedInputEvent::getSource() const
 	{
 		return callMethod<jint>(
 			"getSource",
 			"()I"
 		);
 	}
-	void VerifiedInputEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VerifiedInputEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

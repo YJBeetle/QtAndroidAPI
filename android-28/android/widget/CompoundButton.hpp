@@ -51,29 +51,29 @@ namespace android::widget
 		CompoundButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void autofill(android::view::autofill::AutofillValue arg0);
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		JString getAccessibilityClassName();
-		jint getAutofillType();
-		android::view::autofill::AutofillValue getAutofillValue();
-		android::graphics::drawable::Drawable getButtonDrawable();
-		android::content::res::ColorStateList getButtonTintList();
-		android::graphics::PorterDuff_Mode getButtonTintMode();
-		jint getCompoundPaddingLeft();
-		jint getCompoundPaddingRight();
-		jboolean isChecked();
-		void jumpDrawablesToCurrentState();
-		void onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
-		void onRestoreInstanceState(JObject arg0);
-		JObject onSaveInstanceState();
-		jboolean performClick();
-		void setButtonDrawable(android::graphics::drawable::Drawable arg0);
-		void setButtonDrawable(jint arg0);
-		void setButtonTintList(android::content::res::ColorStateList arg0);
-		void setButtonTintMode(android::graphics::PorterDuff_Mode arg0);
-		void setChecked(jboolean arg0);
-		void setOnCheckedChangeListener(JObject arg0);
-		void toggle();
+		void autofill(android::view::autofill::AutofillValue arg0) const;
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1) const;
+		JString getAccessibilityClassName() const;
+		jint getAutofillType() const;
+		android::view::autofill::AutofillValue getAutofillValue() const;
+		android::graphics::drawable::Drawable getButtonDrawable() const;
+		android::content::res::ColorStateList getButtonTintList() const;
+		android::graphics::PorterDuff_Mode getButtonTintMode() const;
+		jint getCompoundPaddingLeft() const;
+		jint getCompoundPaddingRight() const;
+		jboolean isChecked() const;
+		void jumpDrawablesToCurrentState() const;
+		void onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const;
+		void onRestoreInstanceState(JObject arg0) const;
+		JObject onSaveInstanceState() const;
+		jboolean performClick() const;
+		void setButtonDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setButtonDrawable(jint arg0) const;
+		void setButtonTintList(android::content::res::ColorStateList arg0) const;
+		void setButtonTintMode(android::graphics::PorterDuff_Mode arg0) const;
+		void setChecked(jboolean arg0) const;
+		void setOnCheckedChangeListener(JObject arg0) const;
+		void toggle() const;
 	};
 } // namespace android::widget
 

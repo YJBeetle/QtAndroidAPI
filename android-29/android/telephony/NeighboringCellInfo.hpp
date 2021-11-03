@@ -29,16 +29,16 @@ namespace android::telephony
 		NeighboringCellInfo(jint arg0, JString arg1, jint arg2);
 		
 		// Methods
-		jint describeContents();
-		jint getCid();
-		jint getLac();
-		jint getNetworkType();
-		jint getPsc();
-		jint getRssi();
-		void setCid(jint arg0);
-		void setRssi(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getCid() const;
+		jint getLac() const;
+		jint getNetworkType() const;
+		jint getPsc() const;
+		jint getRssi() const;
+		void setCid(jint arg0) const;
+		void setRssi(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

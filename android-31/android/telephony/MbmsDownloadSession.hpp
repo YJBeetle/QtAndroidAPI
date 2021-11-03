@@ -68,20 +68,20 @@ namespace android::telephony
 		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, JObject arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2);
 		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, JObject arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3);
 		static jint getMaximumServiceAnnouncementSize();
-		void addProgressListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadProgressListener arg2);
-		void addServiceAnnouncement(JByteArray arg0);
-		void addStatusListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadStatusListener arg2);
-		void cancelDownload(android::telephony::mbms::DownloadRequest arg0);
-		void close();
-		void download(android::telephony::mbms::DownloadRequest arg0);
-		java::io::File getTempFileRootDirectory();
-		JObject listPendingDownloads();
-		void removeProgressListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadProgressListener arg1);
-		void removeStatusListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadStatusListener arg1);
-		void requestDownloadState(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1);
-		void requestUpdateFileServices(JObject arg0);
-		void resetDownloadKnowledge(android::telephony::mbms::DownloadRequest arg0);
-		void setTempFileRootDirectory(java::io::File arg0);
+		void addProgressListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadProgressListener arg2) const;
+		void addServiceAnnouncement(JByteArray arg0) const;
+		void addStatusListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadStatusListener arg2) const;
+		void cancelDownload(android::telephony::mbms::DownloadRequest arg0) const;
+		void close() const;
+		void download(android::telephony::mbms::DownloadRequest arg0) const;
+		java::io::File getTempFileRootDirectory() const;
+		JObject listPendingDownloads() const;
+		void removeProgressListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadProgressListener arg1) const;
+		void removeStatusListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadStatusListener arg1) const;
+		void requestDownloadState(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1) const;
+		void requestUpdateFileServices(JObject arg0) const;
+		void resetDownloadKnowledge(android::telephony::mbms::DownloadRequest arg0) const;
+		void setTempFileRootDirectory(java::io::File arg0) const;
 	};
 } // namespace android::telephony
 

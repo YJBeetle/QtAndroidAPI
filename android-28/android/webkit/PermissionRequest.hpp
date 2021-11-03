@@ -28,10 +28,10 @@ namespace android::webkit
 		PermissionRequest();
 		
 		// Methods
-		void deny();
-		android::net::Uri getOrigin();
-		JArray getResources();
-		void grant(JArray arg0);
+		void deny() const;
+		android::net::Uri getOrigin() const;
+		JArray getResources() const;
+		void grant(JArray arg0) const;
 	};
 } // namespace android::webkit
 

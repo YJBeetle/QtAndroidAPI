@@ -117,91 +117,91 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject SearchSpec::getFilterNamespaces()
+	JObject SearchSpec::getFilterNamespaces() const
 	{
 		return callObjectMethod(
 			"getFilterNamespaces",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SearchSpec::getFilterPackageNames()
+	JObject SearchSpec::getFilterPackageNames() const
 	{
 		return callObjectMethod(
 			"getFilterPackageNames",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SearchSpec::getFilterSchemas()
+	JObject SearchSpec::getFilterSchemas() const
 	{
 		return callObjectMethod(
 			"getFilterSchemas",
 			"()Ljava/util/List;"
 		);
 	}
-	jint SearchSpec::getMaxSnippetSize()
+	jint SearchSpec::getMaxSnippetSize() const
 	{
 		return callMethod<jint>(
 			"getMaxSnippetSize",
 			"()I"
 		);
 	}
-	jint SearchSpec::getOrder()
+	jint SearchSpec::getOrder() const
 	{
 		return callMethod<jint>(
 			"getOrder",
 			"()I"
 		);
 	}
-	JObject SearchSpec::getProjections()
+	JObject SearchSpec::getProjections() const
 	{
 		return callObjectMethod(
 			"getProjections",
 			"()Ljava/util/Map;"
 		);
 	}
-	jint SearchSpec::getRankingStrategy()
+	jint SearchSpec::getRankingStrategy() const
 	{
 		return callMethod<jint>(
 			"getRankingStrategy",
 			"()I"
 		);
 	}
-	jint SearchSpec::getResultCountPerPage()
+	jint SearchSpec::getResultCountPerPage() const
 	{
 		return callMethod<jint>(
 			"getResultCountPerPage",
 			"()I"
 		);
 	}
-	jint SearchSpec::getResultGroupingLimit()
+	jint SearchSpec::getResultGroupingLimit() const
 	{
 		return callMethod<jint>(
 			"getResultGroupingLimit",
 			"()I"
 		);
 	}
-	jint SearchSpec::getResultGroupingTypeFlags()
+	jint SearchSpec::getResultGroupingTypeFlags() const
 	{
 		return callMethod<jint>(
 			"getResultGroupingTypeFlags",
 			"()I"
 		);
 	}
-	jint SearchSpec::getSnippetCount()
+	jint SearchSpec::getSnippetCount() const
 	{
 		return callMethod<jint>(
 			"getSnippetCount",
 			"()I"
 		);
 	}
-	jint SearchSpec::getSnippetCountPerProperty()
+	jint SearchSpec::getSnippetCountPerProperty() const
 	{
 		return callMethod<jint>(
 			"getSnippetCountPerProperty",
 			"()I"
 		);
 	}
-	jint SearchSpec::getTermMatch()
+	jint SearchSpec::getTermMatch() const
 	{
 		return callMethod<jint>(
 			"getTermMatch",

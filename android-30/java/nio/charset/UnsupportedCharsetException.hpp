@@ -19,7 +19,7 @@ namespace java::nio::charset
 		UnsupportedCharsetException(JString arg0);
 		
 		// Methods
-		JString getCharsetName();
+		JString getCharsetName() const;
 	};
 } // namespace java::nio::charset
 

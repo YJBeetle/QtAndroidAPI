@@ -16,7 +16,7 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	void IdentityChangedListener::onIdentityChanged(JByteArray arg0)
+	void IdentityChangedListener::onIdentityChanged(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"onIdentityChanged",

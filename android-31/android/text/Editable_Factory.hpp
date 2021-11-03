@@ -20,7 +20,7 @@ namespace android::text
 		
 		// Methods
 		static android::text::Editable_Factory getInstance();
-		JObject newEditable(JString arg0);
+		JObject newEditable(JString arg0) const;
 	};
 } // namespace android::text
 

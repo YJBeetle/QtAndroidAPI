@@ -29,11 +29,11 @@ namespace android::view
 		KeyboardShortcutGroup(JString arg0, JObject arg1);
 		
 		// Methods
-		void addItem(android::view::KeyboardShortcutInfo arg0);
-		jint describeContents();
-		JObject getItems();
-		JString getLabel();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void addItem(android::view::KeyboardShortcutInfo arg0) const;
+		jint describeContents() const;
+		JObject getItems() const;
+		JString getLabel() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

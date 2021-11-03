@@ -19,7 +19,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject GuardedObject::getObject()
+	JObject GuardedObject::getObject() const
 	{
 		return callObjectMethod(
 			"getObject",

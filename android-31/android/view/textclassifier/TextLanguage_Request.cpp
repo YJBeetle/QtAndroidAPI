@@ -22,35 +22,35 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextLanguage_Request::describeContents()
+	jint TextLanguage_Request::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString TextLanguage_Request::getCallingPackageName()
+	JString TextLanguage_Request::getCallingPackageName() const
 	{
 		return callObjectMethod(
 			"getCallingPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle TextLanguage_Request::getExtras()
+	android::os::Bundle TextLanguage_Request::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString TextLanguage_Request::getText()
+	JString TextLanguage_Request::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void TextLanguage_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextLanguage_Request::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

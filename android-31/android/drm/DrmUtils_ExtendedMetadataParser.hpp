@@ -18,9 +18,9 @@ namespace android::drm
 		// Constructors
 		
 		// Methods
-		JString get(JString arg0);
-		JObject iterator();
-		JObject keyIterator();
+		JString get(JString arg0) const;
+		JObject iterator() const;
+		JObject keyIterator() const;
 	};
 } // namespace android::drm
 

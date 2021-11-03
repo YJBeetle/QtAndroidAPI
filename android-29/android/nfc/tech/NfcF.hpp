@@ -23,16 +23,16 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::NfcF get(android::nfc::Tag arg0);
-		void close();
-		void connect();
-		JByteArray getManufacturer();
-		jint getMaxTransceiveLength();
-		JByteArray getSystemCode();
-		android::nfc::Tag getTag();
-		jint getTimeout();
-		jboolean isConnected();
-		void setTimeout(jint arg0);
-		JByteArray transceive(JByteArray arg0);
+		void close() const;
+		void connect() const;
+		JByteArray getManufacturer() const;
+		jint getMaxTransceiveLength() const;
+		JByteArray getSystemCode() const;
+		android::nfc::Tag getTag() const;
+		jint getTimeout() const;
+		jboolean isConnected() const;
+		void setTimeout(jint arg0) const;
+		JByteArray transceive(JByteArray arg0) const;
 	};
 } // namespace android::nfc::tech
 

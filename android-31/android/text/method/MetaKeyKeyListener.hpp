@@ -49,10 +49,10 @@ namespace android::text::method
 		static jboolean isSelectingMetaTracker(JString arg0, JObject arg1);
 		static jlong resetLockedMeta(jlong arg0);
 		static void resetMetaState(JObject arg0);
-		jlong clearMetaKeyState(jlong arg0, jint arg1);
-		void clearMetaKeyState(android::view::View arg0, JObject arg1, jint arg2);
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
+		jlong clearMetaKeyState(jlong arg0, jint arg1) const;
+		void clearMetaKeyState(android::view::View arg0, JObject arg1, jint arg2) const;
+		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		jboolean onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
 	};
 } // namespace android::text::method
 

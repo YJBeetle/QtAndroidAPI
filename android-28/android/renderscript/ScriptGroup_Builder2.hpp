@@ -49,10 +49,10 @@ namespace android::renderscript
 		ScriptGroup_Builder2(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		android::renderscript::ScriptGroup_Input addInput();
-		android::renderscript::ScriptGroup_Closure addInvoke(android::renderscript::Script_InvokeID arg0, JObjectArray arg1);
-		android::renderscript::ScriptGroup_Closure addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, JObjectArray arg2);
-		android::renderscript::ScriptGroup create(JString arg0, JArray arg1);
+		android::renderscript::ScriptGroup_Input addInput() const;
+		android::renderscript::ScriptGroup_Closure addInvoke(android::renderscript::Script_InvokeID arg0, JObjectArray arg1) const;
+		android::renderscript::ScriptGroup_Closure addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, JObjectArray arg2) const;
+		android::renderscript::ScriptGroup create(JString arg0, JArray arg1) const;
 	};
 } // namespace android::renderscript
 

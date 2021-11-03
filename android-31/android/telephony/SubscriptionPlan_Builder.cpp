@@ -35,21 +35,21 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	android::telephony::SubscriptionPlan SubscriptionPlan_Builder::build()
+	android::telephony::SubscriptionPlan SubscriptionPlan_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/SubscriptionPlan;"
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::resetNetworkTypes()
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::resetNetworkTypes() const
 	{
 		return callObjectMethod(
 			"resetNetworkTypes",
 			"()Landroid/telephony/SubscriptionPlan$Builder;"
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setDataLimit(jlong arg0, jint arg1)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setDataLimit(jlong arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setDataLimit",
@@ -58,7 +58,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setDataUsage(jlong arg0, jlong arg1)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setDataUsage(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"setDataUsage",
@@ -67,7 +67,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setNetworkTypes(JIntArray arg0)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setNetworkTypes(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"setNetworkTypes",
@@ -75,7 +75,7 @@ namespace android::telephony
 			arg0.object<jintArray>()
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setSummary(JString arg0)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setSummary(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSummary",
@@ -83,7 +83,7 @@ namespace android::telephony
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setTitle(JString arg0)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",

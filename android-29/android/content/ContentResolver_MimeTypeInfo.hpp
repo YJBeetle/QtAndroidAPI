@@ -22,9 +22,9 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		JString getContentDescription();
-		android::graphics::drawable::Icon getIcon();
-		JString getLabel();
+		JString getContentDescription() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getLabel() const;
 	};
 } // namespace android::content
 

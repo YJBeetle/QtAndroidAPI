@@ -31,15 +31,15 @@ namespace android::graphics::drawable::shapes
 		Shape();
 		
 		// Methods
-		android::graphics::drawable::shapes::Shape clone();
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		jboolean equals(JObject arg0);
-		jfloat getHeight();
-		void getOutline(android::graphics::Outline arg0);
-		jfloat getWidth();
-		jboolean hasAlpha();
-		jint hashCode();
-		void resize(jfloat arg0, jfloat arg1);
+		android::graphics::drawable::shapes::Shape clone() const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
+		jboolean equals(JObject arg0) const;
+		jfloat getHeight() const;
+		void getOutline(android::graphics::Outline arg0) const;
+		jfloat getWidth() const;
+		jboolean hasAlpha() const;
+		jint hashCode() const;
+		void resize(jfloat arg0, jfloat arg1) const;
 	};
 } // namespace android::graphics::drawable::shapes
 

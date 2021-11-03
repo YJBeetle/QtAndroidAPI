@@ -10,14 +10,14 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void PerformanceHintManager_Session::close()
+	void PerformanceHintManager_Session::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PerformanceHintManager_Session::reportActualWorkDuration(jlong arg0)
+	void PerformanceHintManager_Session::reportActualWorkDuration(jlong arg0) const
 	{
 		callMethod<void>(
 			"reportActualWorkDuration",
@@ -25,7 +25,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void PerformanceHintManager_Session::updateTargetWorkDuration(jlong arg0)
+	void PerformanceHintManager_Session::updateTargetWorkDuration(jlong arg0) const
 	{
 		callMethod<void>(
 			"updateTargetWorkDuration",

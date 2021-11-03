@@ -20,7 +20,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jboolean Build_Partition::equals(JObject arg0)
+	jboolean Build_Partition::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,28 +28,28 @@ namespace android::os
 			arg0.object<jobject>()
 		);
 	}
-	jlong Build_Partition::getBuildTimeMillis()
+	jlong Build_Partition::getBuildTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getBuildTimeMillis",
 			"()J"
 		);
 	}
-	JString Build_Partition::getFingerprint()
+	JString Build_Partition::getFingerprint() const
 	{
 		return callObjectMethod(
 			"getFingerprint",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Build_Partition::getName()
+	JString Build_Partition::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Build_Partition::hashCode()
+	jint Build_Partition::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

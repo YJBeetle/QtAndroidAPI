@@ -12,7 +12,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	java::nio::channels::MembershipKey MembershipKey::block(java::net::InetAddress arg0)
+	java::nio::channels::MembershipKey MembershipKey::block(java::net::InetAddress arg0) const
 	{
 		return callObjectMethod(
 			"block",
@@ -20,49 +20,49 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	JObject MembershipKey::channel()
+	JObject MembershipKey::channel() const
 	{
 		return callObjectMethod(
 			"channel",
 			"()Ljava/nio/channels/MulticastChannel;"
 		);
 	}
-	void MembershipKey::drop()
+	void MembershipKey::drop() const
 	{
 		callMethod<void>(
 			"drop",
 			"()V"
 		);
 	}
-	java::net::InetAddress MembershipKey::group()
+	java::net::InetAddress MembershipKey::group() const
 	{
 		return callObjectMethod(
 			"group",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jboolean MembershipKey::isValid()
+	jboolean MembershipKey::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	java::net::NetworkInterface MembershipKey::networkInterface()
+	java::net::NetworkInterface MembershipKey::networkInterface() const
 	{
 		return callObjectMethod(
 			"networkInterface",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
-	java::net::InetAddress MembershipKey::sourceAddress()
+	java::net::InetAddress MembershipKey::sourceAddress() const
 	{
 		return callObjectMethod(
 			"sourceAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	java::nio::channels::MembershipKey MembershipKey::unblock(java::net::InetAddress arg0)
+	java::nio::channels::MembershipKey MembershipKey::unblock(java::net::InetAddress arg0) const
 	{
 		return callObjectMethod(
 			"unblock",

@@ -24,20 +24,20 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getBandwidth();
-		jint getCi();
-		jint getEarfcn();
-		jint getMcc();
-		JString getMccString();
-		jint getMnc();
-		JString getMncString();
-		JString getMobileNetworkOperator();
-		jint getPci();
-		jint getTac();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean equals(JObject arg0) const;
+		jint getBandwidth() const;
+		jint getCi() const;
+		jint getEarfcn() const;
+		jint getMcc() const;
+		JString getMccString() const;
+		jint getMnc() const;
+		JString getMncString() const;
+		JString getMobileNetworkOperator() const;
+		jint getPci() const;
+		jint getTac() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

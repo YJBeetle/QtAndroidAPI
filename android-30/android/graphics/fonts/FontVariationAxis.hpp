@@ -23,11 +23,11 @@ namespace android::graphics::fonts
 		// Methods
 		static JArray fromFontVariationSettings(JString arg0);
 		static JString toFontVariationSettings(JArray arg0);
-		jboolean equals(JObject arg0);
-		jfloat getStyleValue();
-		JString getTag();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jfloat getStyleValue() const;
+		JString getTag() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::graphics::fonts
 

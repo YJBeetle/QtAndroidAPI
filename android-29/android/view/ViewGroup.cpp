@@ -140,7 +140,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::addChildrenForAccessibility(java::util::ArrayList arg0)
+	void ViewGroup::addChildrenForAccessibility(java::util::ArrayList arg0) const
 	{
 		callMethod<void>(
 			"addChildrenForAccessibility",
@@ -148,7 +148,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2)
+	void ViewGroup::addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addFocusables",
@@ -158,7 +158,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::addKeyboardNavigationClusters(JObject arg0, jint arg1)
+	void ViewGroup::addKeyboardNavigationClusters(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addKeyboardNavigationClusters",
@@ -167,14 +167,14 @@ namespace android::view
 			arg1
 		);
 	}
-	jboolean ViewGroup::addStatesFromChildren()
+	jboolean ViewGroup::addStatesFromChildren() const
 	{
 		return callMethod<jboolean>(
 			"addStatesFromChildren",
 			"()Z"
 		);
 	}
-	void ViewGroup::addTouchables(java::util::ArrayList arg0)
+	void ViewGroup::addTouchables(java::util::ArrayList arg0) const
 	{
 		callMethod<void>(
 			"addTouchables",
@@ -182,7 +182,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::addView(android::view::View arg0)
+	void ViewGroup::addView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addView",
@@ -190,7 +190,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void ViewGroup::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -199,7 +199,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void ViewGroup::addView(android::view::View arg0, jint arg1)
+	void ViewGroup::addView(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -208,7 +208,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void ViewGroup::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -218,7 +218,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	void ViewGroup::addView(android::view::View arg0, jint arg1, jint arg2)
+	void ViewGroup::addView(android::view::View arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -228,7 +228,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::bringChildToFront(android::view::View arg0)
+	void ViewGroup::bringChildToFront(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"bringChildToFront",
@@ -236,7 +236,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::childDrawableStateChanged(android::view::View arg0)
+	void ViewGroup::childDrawableStateChanged(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"childDrawableStateChanged",
@@ -244,7 +244,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::childHasTransientStateChanged(android::view::View arg0, jboolean arg1)
+	void ViewGroup::childHasTransientStateChanged(android::view::View arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"childHasTransientStateChanged",
@@ -253,7 +253,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::clearChildFocus(android::view::View arg0)
+	void ViewGroup::clearChildFocus(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"clearChildFocus",
@@ -261,21 +261,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::clearDisappearingChildren()
+	void ViewGroup::clearDisappearingChildren() const
 	{
 		callMethod<void>(
 			"clearDisappearingChildren",
 			"()V"
 		);
 	}
-	void ViewGroup::clearFocus()
+	void ViewGroup::clearFocus() const
 	{
 		callMethod<void>(
 			"clearFocus",
 			"()V"
 		);
 	}
-	android::view::WindowInsets ViewGroup::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets ViewGroup::dispatchApplyWindowInsets(android::view::WindowInsets arg0) const
 	{
 		return callObjectMethod(
 			"dispatchApplyWindowInsets",
@@ -283,7 +283,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::dispatchCapturedPointerEvent(android::view::MotionEvent arg0)
+	jboolean ViewGroup::dispatchCapturedPointerEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchCapturedPointerEvent",
@@ -291,7 +291,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::dispatchConfigurationChanged(android::content::res::Configuration arg0)
+	void ViewGroup::dispatchConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"dispatchConfigurationChanged",
@@ -299,7 +299,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::dispatchDisplayHint(jint arg0)
+	void ViewGroup::dispatchDisplayHint(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchDisplayHint",
@@ -307,7 +307,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean ViewGroup::dispatchDragEvent(android::view::DragEvent arg0)
+	jboolean ViewGroup::dispatchDragEvent(android::view::DragEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchDragEvent",
@@ -315,7 +315,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void ViewGroup::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"dispatchDrawableHotspotChanged",
@@ -324,14 +324,14 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::dispatchFinishTemporaryDetach()
+	void ViewGroup::dispatchFinishTemporaryDetach() const
 	{
 		callMethod<void>(
 			"dispatchFinishTemporaryDetach",
 			"()V"
 		);
 	}
-	jboolean ViewGroup::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean ViewGroup::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -339,7 +339,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::dispatchKeyEventPreIme(android::view::KeyEvent arg0)
+	jboolean ViewGroup::dispatchKeyEventPreIme(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEventPreIme",
@@ -347,7 +347,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::dispatchKeyShortcutEvent(android::view::KeyEvent arg0)
+	jboolean ViewGroup::dispatchKeyShortcutEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
@@ -355,7 +355,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::dispatchPointerCaptureChanged(jboolean arg0)
+	void ViewGroup::dispatchPointerCaptureChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchPointerCaptureChanged",
@@ -363,7 +363,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
+	void ViewGroup::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"dispatchProvideAutofillStructure",
@@ -372,7 +372,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::dispatchProvideStructure(android::view::ViewStructure arg0)
+	void ViewGroup::dispatchProvideStructure(android::view::ViewStructure arg0) const
 	{
 		callMethod<void>(
 			"dispatchProvideStructure",
@@ -380,7 +380,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::dispatchSetActivated(jboolean arg0)
+	void ViewGroup::dispatchSetActivated(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchSetActivated",
@@ -388,7 +388,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::dispatchSetSelected(jboolean arg0)
+	void ViewGroup::dispatchSetSelected(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchSetSelected",
@@ -396,14 +396,14 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::dispatchStartTemporaryDetach()
+	void ViewGroup::dispatchStartTemporaryDetach() const
 	{
 		callMethod<void>(
 			"dispatchStartTemporaryDetach",
 			"()V"
 		);
 	}
-	void ViewGroup::dispatchSystemUiVisibilityChanged(jint arg0)
+	void ViewGroup::dispatchSystemUiVisibilityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchSystemUiVisibilityChanged",
@@ -411,7 +411,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean ViewGroup::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean ViewGroup::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -419,7 +419,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::dispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean ViewGroup::dispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
@@ -427,7 +427,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::dispatchUnhandledMove(android::view::View arg0, jint arg1)
+	jboolean ViewGroup::dispatchUnhandledMove(android::view::View arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"dispatchUnhandledMove",
@@ -436,7 +436,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::dispatchWindowFocusChanged(jboolean arg0)
+	void ViewGroup::dispatchWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowFocusChanged",
@@ -444,7 +444,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::dispatchWindowSystemUiVisiblityChanged(jint arg0)
+	void ViewGroup::dispatchWindowSystemUiVisiblityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowSystemUiVisiblityChanged",
@@ -452,7 +452,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::dispatchWindowVisibilityChanged(jint arg0)
+	void ViewGroup::dispatchWindowVisibilityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowVisibilityChanged",
@@ -460,7 +460,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::endViewTransition(android::view::View arg0)
+	void ViewGroup::endViewTransition(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"endViewTransition",
@@ -468,14 +468,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::View ViewGroup::findFocus()
+	android::view::View ViewGroup::findFocus() const
 	{
 		return callObjectMethod(
 			"findFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	void ViewGroup::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2)
+	void ViewGroup::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"findViewsWithText",
@@ -485,7 +485,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::View ViewGroup::focusSearch(android::view::View arg0, jint arg1)
+	android::view::View ViewGroup::focusSearch(android::view::View arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"focusSearch",
@@ -494,7 +494,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::focusableViewAvailable(android::view::View arg0)
+	void ViewGroup::focusableViewAvailable(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"focusableViewAvailable",
@@ -502,7 +502,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::gatherTransparentRegion(android::graphics::Region arg0)
+	jboolean ViewGroup::gatherTransparentRegion(android::graphics::Region arg0) const
 	{
 		return callMethod<jboolean>(
 			"gatherTransparentRegion",
@@ -510,7 +510,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewGroup_LayoutParams ViewGroup::generateLayoutParams(JObject arg0)
+	android::view::ViewGroup_LayoutParams ViewGroup::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -518,14 +518,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	JString ViewGroup::getAccessibilityClassName()
+	JString ViewGroup::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View ViewGroup::getChildAt(jint arg0)
+	android::view::View ViewGroup::getChildAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getChildAt",
@@ -533,14 +533,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jint ViewGroup::getChildCount()
+	jint ViewGroup::getChildCount() const
 	{
 		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
-	jint ViewGroup::getChildDrawingOrder(jint arg0)
+	jint ViewGroup::getChildDrawingOrder(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getChildDrawingOrder",
@@ -548,7 +548,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean ViewGroup::getChildVisibleRect(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2)
+	jboolean ViewGroup::getChildVisibleRect(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2) const
 	{
 		return callMethod<jboolean>(
 			"getChildVisibleRect",
@@ -558,105 +558,105 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	jboolean ViewGroup::getClipChildren()
+	jboolean ViewGroup::getClipChildren() const
 	{
 		return callMethod<jboolean>(
 			"getClipChildren",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::getClipToPadding()
+	jboolean ViewGroup::getClipToPadding() const
 	{
 		return callMethod<jboolean>(
 			"getClipToPadding",
 			"()Z"
 		);
 	}
-	jint ViewGroup::getDescendantFocusability()
+	jint ViewGroup::getDescendantFocusability() const
 	{
 		return callMethod<jint>(
 			"getDescendantFocusability",
 			"()I"
 		);
 	}
-	android::view::View ViewGroup::getFocusedChild()
+	android::view::View ViewGroup::getFocusedChild() const
 	{
 		return callObjectMethod(
 			"getFocusedChild",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::animation::LayoutAnimationController ViewGroup::getLayoutAnimation()
+	android::view::animation::LayoutAnimationController ViewGroup::getLayoutAnimation() const
 	{
 		return callObjectMethod(
 			"getLayoutAnimation",
 			"()Landroid/view/animation/LayoutAnimationController;"
 		);
 	}
-	JObject ViewGroup::getLayoutAnimationListener()
+	JObject ViewGroup::getLayoutAnimationListener() const
 	{
 		return callObjectMethod(
 			"getLayoutAnimationListener",
 			"()Landroid/view/animation/Animation$AnimationListener;"
 		);
 	}
-	jint ViewGroup::getLayoutMode()
+	jint ViewGroup::getLayoutMode() const
 	{
 		return callMethod<jint>(
 			"getLayoutMode",
 			"()I"
 		);
 	}
-	android::animation::LayoutTransition ViewGroup::getLayoutTransition()
+	android::animation::LayoutTransition ViewGroup::getLayoutTransition() const
 	{
 		return callObjectMethod(
 			"getLayoutTransition",
 			"()Landroid/animation/LayoutTransition;"
 		);
 	}
-	jint ViewGroup::getNestedScrollAxes()
+	jint ViewGroup::getNestedScrollAxes() const
 	{
 		return callMethod<jint>(
 			"getNestedScrollAxes",
 			"()I"
 		);
 	}
-	android::view::ViewGroupOverlay ViewGroup::getOverlay()
+	android::view::ViewGroupOverlay ViewGroup::getOverlay() const
 	{
 		return callObjectMethod(
 			"getOverlay",
 			"()Landroid/view/ViewGroupOverlay;"
 		);
 	}
-	jint ViewGroup::getPersistentDrawingCache()
+	jint ViewGroup::getPersistentDrawingCache() const
 	{
 		return callMethod<jint>(
 			"getPersistentDrawingCache",
 			"()I"
 		);
 	}
-	jboolean ViewGroup::getTouchscreenBlocksFocus()
+	jboolean ViewGroup::getTouchscreenBlocksFocus() const
 	{
 		return callMethod<jboolean>(
 			"getTouchscreenBlocksFocus",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::hasFocus()
+	jboolean ViewGroup::hasFocus() const
 	{
 		return callMethod<jboolean>(
 			"hasFocus",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::hasTransientState()
+	jboolean ViewGroup::hasTransientState() const
 	{
 		return callMethod<jboolean>(
 			"hasTransientState",
 			"()Z"
 		);
 	}
-	jint ViewGroup::indexOfChild(android::view::View arg0)
+	jint ViewGroup::indexOfChild(android::view::View arg0) const
 	{
 		return callMethod<jint>(
 			"indexOfChild",
@@ -664,7 +664,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::invalidateChild(android::view::View arg0, android::graphics::Rect arg1)
+	void ViewGroup::invalidateChild(android::view::View arg0, android::graphics::Rect arg1) const
 	{
 		callMethod<void>(
 			"invalidateChild",
@@ -673,7 +673,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	JObject ViewGroup::invalidateChildInParent(JIntArray arg0, android::graphics::Rect arg1)
+	JObject ViewGroup::invalidateChildInParent(JIntArray arg0, android::graphics::Rect arg1) const
 	{
 		return callObjectMethod(
 			"invalidateChildInParent",
@@ -682,49 +682,49 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean ViewGroup::isAlwaysDrawnWithCacheEnabled()
+	jboolean ViewGroup::isAlwaysDrawnWithCacheEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isAlwaysDrawnWithCacheEnabled",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::isAnimationCacheEnabled()
+	jboolean ViewGroup::isAnimationCacheEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isAnimationCacheEnabled",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::isLayoutSuppressed()
+	jboolean ViewGroup::isLayoutSuppressed() const
 	{
 		return callMethod<jboolean>(
 			"isLayoutSuppressed",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::isMotionEventSplittingEnabled()
+	jboolean ViewGroup::isMotionEventSplittingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isMotionEventSplittingEnabled",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::isTransitionGroup()
+	jboolean ViewGroup::isTransitionGroup() const
 	{
 		return callMethod<jboolean>(
 			"isTransitionGroup",
 			"()Z"
 		);
 	}
-	void ViewGroup::jumpDrawablesToCurrentState()
+	void ViewGroup::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	void ViewGroup::layout(jint arg0, jint arg1, jint arg2, jint arg3)
+	void ViewGroup::layout(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"layout",
@@ -735,7 +735,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void ViewGroup::notifySubtreeAccessibilityStateChanged(android::view::View arg0, android::view::View arg1, jint arg2)
+	void ViewGroup::notifySubtreeAccessibilityStateChanged(android::view::View arg0, android::view::View arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"notifySubtreeAccessibilityStateChanged",
@@ -745,7 +745,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::offsetDescendantRectToMyCoords(android::view::View arg0, android::graphics::Rect arg1)
+	void ViewGroup::offsetDescendantRectToMyCoords(android::view::View arg0, android::graphics::Rect arg1) const
 	{
 		callMethod<void>(
 			"offsetDescendantRectToMyCoords",
@@ -754,7 +754,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void ViewGroup::offsetRectIntoDescendantCoords(android::view::View arg0, android::graphics::Rect arg1)
+	void ViewGroup::offsetRectIntoDescendantCoords(android::view::View arg0, android::graphics::Rect arg1) const
 	{
 		callMethod<void>(
 			"offsetRectIntoDescendantCoords",
@@ -763,7 +763,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void ViewGroup::onDescendantInvalidated(android::view::View arg0, android::view::View arg1)
+	void ViewGroup::onDescendantInvalidated(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"onDescendantInvalidated",
@@ -772,7 +772,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean ViewGroup::onInterceptHoverEvent(android::view::MotionEvent arg0)
+	jboolean ViewGroup::onInterceptHoverEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptHoverEvent",
@@ -780,7 +780,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::onInterceptTouchEvent(android::view::MotionEvent arg0)
+	jboolean ViewGroup::onInterceptTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
@@ -788,7 +788,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3)
+	jboolean ViewGroup::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3) const
 	{
 		return callMethod<jboolean>(
 			"onNestedFling",
@@ -799,7 +799,7 @@ namespace android::view
 			arg3
 		);
 	}
-	jboolean ViewGroup::onNestedPreFling(android::view::View arg0, jfloat arg1, jfloat arg2)
+	jboolean ViewGroup::onNestedPreFling(android::view::View arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callMethod<jboolean>(
 			"onNestedPreFling",
@@ -809,7 +809,7 @@ namespace android::view
 			arg2
 		);
 	}
-	jboolean ViewGroup::onNestedPrePerformAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2)
+	jboolean ViewGroup::onNestedPrePerformAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"onNestedPrePerformAccessibilityAction",
@@ -819,7 +819,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	void ViewGroup::onNestedPreScroll(android::view::View arg0, jint arg1, jint arg2, JIntArray arg3)
+	void ViewGroup::onNestedPreScroll(android::view::View arg0, jint arg1, jint arg2, JIntArray arg3) const
 	{
 		callMethod<void>(
 			"onNestedPreScroll",
@@ -830,7 +830,7 @@ namespace android::view
 			arg3.object<jintArray>()
 		);
 	}
-	void ViewGroup::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void ViewGroup::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"onNestedScroll",
@@ -842,7 +842,7 @@ namespace android::view
 			arg4
 		);
 	}
-	void ViewGroup::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2)
+	void ViewGroup::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onNestedScrollAccepted",
@@ -852,7 +852,7 @@ namespace android::view
 			arg2
 		);
 	}
-	jboolean ViewGroup::onRequestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
+	jboolean ViewGroup::onRequestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onRequestSendAccessibilityEvent",
@@ -861,7 +861,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::PointerIcon ViewGroup::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon ViewGroup::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -870,7 +870,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jboolean ViewGroup::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2)
+	jboolean ViewGroup::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"onStartNestedScroll",
@@ -880,7 +880,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::onStopNestedScroll(android::view::View arg0)
+	void ViewGroup::onStopNestedScroll(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onStopNestedScroll",
@@ -888,7 +888,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::onViewAdded(android::view::View arg0)
+	void ViewGroup::onViewAdded(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onViewAdded",
@@ -896,7 +896,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::onViewRemoved(android::view::View arg0)
+	void ViewGroup::onViewRemoved(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onViewRemoved",
@@ -904,7 +904,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::recomputeViewAttributes(android::view::View arg0)
+	void ViewGroup::recomputeViewAttributes(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"recomputeViewAttributes",
@@ -912,21 +912,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::removeAllViews()
+	void ViewGroup::removeAllViews() const
 	{
 		callMethod<void>(
 			"removeAllViews",
 			"()V"
 		);
 	}
-	void ViewGroup::removeAllViewsInLayout()
+	void ViewGroup::removeAllViewsInLayout() const
 	{
 		callMethod<void>(
 			"removeAllViewsInLayout",
 			"()V"
 		);
 	}
-	void ViewGroup::removeView(android::view::View arg0)
+	void ViewGroup::removeView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"removeView",
@@ -934,7 +934,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::removeViewAt(jint arg0)
+	void ViewGroup::removeViewAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeViewAt",
@@ -942,7 +942,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::removeViewInLayout(android::view::View arg0)
+	void ViewGroup::removeViewInLayout(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"removeViewInLayout",
@@ -950,7 +950,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::removeViews(jint arg0, jint arg1)
+	void ViewGroup::removeViews(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"removeViews",
@@ -959,7 +959,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::removeViewsInLayout(jint arg0, jint arg1)
+	void ViewGroup::removeViewsInLayout(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"removeViewsInLayout",
@@ -968,7 +968,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewGroup::requestChildFocus(android::view::View arg0, android::view::View arg1)
+	void ViewGroup::requestChildFocus(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"requestChildFocus",
@@ -977,7 +977,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean ViewGroup::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
+	jboolean ViewGroup::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
@@ -987,7 +987,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::requestDisallowInterceptTouchEvent(jboolean arg0)
+	void ViewGroup::requestDisallowInterceptTouchEvent(jboolean arg0) const
 	{
 		callMethod<void>(
 			"requestDisallowInterceptTouchEvent",
@@ -995,7 +995,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean ViewGroup::requestFocus(jint arg0, android::graphics::Rect arg1)
+	jboolean ViewGroup::requestFocus(jint arg0, android::graphics::Rect arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestFocus",
@@ -1004,7 +1004,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean ViewGroup::requestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
+	jboolean ViewGroup::requestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestSendAccessibilityEvent",
@@ -1013,7 +1013,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void ViewGroup::requestTransparentRegion(android::view::View arg0)
+	void ViewGroup::requestTransparentRegion(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"requestTransparentRegion",
@@ -1021,21 +1021,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::restoreDefaultFocus()
+	jboolean ViewGroup::restoreDefaultFocus() const
 	{
 		return callMethod<jboolean>(
 			"restoreDefaultFocus",
 			"()Z"
 		);
 	}
-	void ViewGroup::scheduleLayoutAnimation()
+	void ViewGroup::scheduleLayoutAnimation() const
 	{
 		callMethod<void>(
 			"scheduleLayoutAnimation",
 			"()V"
 		);
 	}
-	void ViewGroup::setAddStatesFromChildren(jboolean arg0)
+	void ViewGroup::setAddStatesFromChildren(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAddStatesFromChildren",
@@ -1043,7 +1043,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setAlwaysDrawnWithCacheEnabled(jboolean arg0)
+	void ViewGroup::setAlwaysDrawnWithCacheEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAlwaysDrawnWithCacheEnabled",
@@ -1051,7 +1051,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setAnimationCacheEnabled(jboolean arg0)
+	void ViewGroup::setAnimationCacheEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAnimationCacheEnabled",
@@ -1059,7 +1059,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setClipChildren(jboolean arg0)
+	void ViewGroup::setClipChildren(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClipChildren",
@@ -1067,7 +1067,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setClipToPadding(jboolean arg0)
+	void ViewGroup::setClipToPadding(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClipToPadding",
@@ -1075,7 +1075,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setDescendantFocusability(jint arg0)
+	void ViewGroup::setDescendantFocusability(jint arg0) const
 	{
 		callMethod<void>(
 			"setDescendantFocusability",
@@ -1083,7 +1083,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setLayoutAnimation(android::view::animation::LayoutAnimationController arg0)
+	void ViewGroup::setLayoutAnimation(android::view::animation::LayoutAnimationController arg0) const
 	{
 		callMethod<void>(
 			"setLayoutAnimation",
@@ -1091,7 +1091,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::setLayoutAnimationListener(JObject arg0)
+	void ViewGroup::setLayoutAnimationListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setLayoutAnimationListener",
@@ -1099,7 +1099,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::setLayoutMode(jint arg0)
+	void ViewGroup::setLayoutMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setLayoutMode",
@@ -1107,7 +1107,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setLayoutTransition(android::animation::LayoutTransition arg0)
+	void ViewGroup::setLayoutTransition(android::animation::LayoutTransition arg0) const
 	{
 		callMethod<void>(
 			"setLayoutTransition",
@@ -1115,7 +1115,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::setMotionEventSplittingEnabled(jboolean arg0)
+	void ViewGroup::setMotionEventSplittingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMotionEventSplittingEnabled",
@@ -1123,7 +1123,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setOnHierarchyChangeListener(JObject arg0)
+	void ViewGroup::setOnHierarchyChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnHierarchyChangeListener",
@@ -1131,7 +1131,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::setPersistentDrawingCache(jint arg0)
+	void ViewGroup::setPersistentDrawingCache(jint arg0) const
 	{
 		callMethod<void>(
 			"setPersistentDrawingCache",
@@ -1139,7 +1139,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setTouchscreenBlocksFocus(jboolean arg0)
+	void ViewGroup::setTouchscreenBlocksFocus(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTouchscreenBlocksFocus",
@@ -1147,7 +1147,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setTransitionGroup(jboolean arg0)
+	void ViewGroup::setTransitionGroup(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTransitionGroup",
@@ -1155,14 +1155,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean ViewGroup::shouldDelayChildPressedState()
+	jboolean ViewGroup::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);
 	}
-	jboolean ViewGroup::showContextMenuForChild(android::view::View arg0)
+	jboolean ViewGroup::showContextMenuForChild(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenuForChild",
@@ -1170,7 +1170,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ViewGroup::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2)
+	jboolean ViewGroup::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenuForChild",
@@ -1180,7 +1180,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, JObject arg1)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"startActionModeForChild",
@@ -1189,7 +1189,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, JObject arg1, jint arg2)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, JObject arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"startActionModeForChild",
@@ -1199,14 +1199,14 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::startLayoutAnimation()
+	void ViewGroup::startLayoutAnimation() const
 	{
 		callMethod<void>(
 			"startLayoutAnimation",
 			"()V"
 		);
 	}
-	void ViewGroup::startViewTransition(android::view::View arg0)
+	void ViewGroup::startViewTransition(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"startViewTransition",
@@ -1214,7 +1214,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::suppressLayout(jboolean arg0)
+	void ViewGroup::suppressLayout(jboolean arg0) const
 	{
 		callMethod<void>(
 			"suppressLayout",
@@ -1222,7 +1222,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::updateViewLayout(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void ViewGroup::updateViewLayout(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"updateViewLayout",

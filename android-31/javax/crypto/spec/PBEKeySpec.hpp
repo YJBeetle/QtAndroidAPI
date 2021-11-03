@@ -22,11 +22,11 @@ namespace javax::crypto::spec
 		PBEKeySpec(JCharArray arg0, JByteArray arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void clearPassword();
-		jint getIterationCount();
-		jint getKeyLength();
-		JCharArray getPassword();
-		JByteArray getSalt();
+		void clearPassword() const;
+		jint getIterationCount() const;
+		jint getKeyLength() const;
+		JCharArray getPassword() const;
+		JByteArray getSalt() const;
 	};
 } // namespace javax::crypto::spec
 

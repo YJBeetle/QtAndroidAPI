@@ -29,7 +29,7 @@ namespace android::widget
 		Space(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void draw(android::graphics::Canvas arg0);
+		void draw(android::graphics::Canvas arg0) const;
 	};
 } // namespace android::widget
 

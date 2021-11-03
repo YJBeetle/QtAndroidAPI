@@ -21,7 +21,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	void SelectFormat::applyPattern(JString arg0)
+	void SelectFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -29,7 +29,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jboolean SelectFormat::equals(JObject arg0)
+	jboolean SelectFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,7 +37,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	JString SelectFormat::format(JString arg0)
+	JString SelectFormat::format(JString arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -45,7 +45,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::StringBuffer SelectFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer SelectFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -55,14 +55,14 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	jint SelectFormat::hashCode()
+	jint SelectFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject SelectFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject SelectFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -71,14 +71,14 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JString SelectFormat::toPattern()
+	JString SelectFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SelectFormat::toString()
+	JString SelectFormat::toString() const
 	{
 		return callObjectMethod(
 			"toString",

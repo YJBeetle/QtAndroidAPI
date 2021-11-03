@@ -16,7 +16,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setDenominator(JString arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setDenominator(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDenominator",
@@ -24,7 +24,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setDenominator(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setDenominator(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDenominator",
@@ -32,7 +32,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setFractionalPart(JString arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setFractionalPart(JString arg0) const
 	{
 		return callObjectMethod(
 			"setFractionalPart",
@@ -40,7 +40,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setIntegerPart(JString arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setIntegerPart(JString arg0) const
 	{
 		return callObjectMethod(
 			"setIntegerPart",
@@ -48,7 +48,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setIntegerPart(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setIntegerPart(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setIntegerPart",
@@ -56,7 +56,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumber(JString arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumber(JString arg0) const
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -64,7 +64,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumber(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumber(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -72,7 +72,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumerator(JString arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumerator(JString arg0) const
 	{
 		return callObjectMethod(
 			"setNumerator",
@@ -80,7 +80,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumerator(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumerator(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setNumerator",
@@ -88,7 +88,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setUnit(JString arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setUnit(JString arg0) const
 	{
 		return callObjectMethod(
 			"setUnit",

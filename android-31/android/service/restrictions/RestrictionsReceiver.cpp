@@ -19,7 +19,7 @@ namespace android::service::restrictions
 		) {}
 	
 	// Methods
-	void RestrictionsReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1)
+	void RestrictionsReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onReceive",
@@ -28,7 +28,7 @@ namespace android::service::restrictions
 			arg1.object()
 		);
 	}
-	void RestrictionsReceiver::onRequestPermission(android::content::Context arg0, JString arg1, JString arg2, JString arg3, android::os::PersistableBundle arg4)
+	void RestrictionsReceiver::onRequestPermission(android::content::Context arg0, JString arg1, JString arg2, JString arg3, android::os::PersistableBundle arg4) const
 	{
 		callMethod<void>(
 			"onRequestPermission",

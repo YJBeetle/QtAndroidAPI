@@ -16,8 +16,8 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		jint getHeight();
-		jint getWidth();
+		jint getHeight() const;
+		jint getWidth() const;
 	};
 } // namespace android::icu::util
 

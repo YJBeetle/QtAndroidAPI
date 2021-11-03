@@ -26,9 +26,9 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		JObject getCustomIncludedCategories();
-		jint getPredefinedCategories();
-		jint getTracingMode();
+		JObject getCustomIncludedCategories() const;
+		jint getPredefinedCategories() const;
+		jint getTracingMode() const;
 	};
 } // namespace android::webkit
 

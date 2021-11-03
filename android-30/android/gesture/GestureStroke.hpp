@@ -39,11 +39,11 @@ namespace android::gesture
 		GestureStroke(java::util::ArrayList arg0);
 		
 		// Methods
-		void clearPath();
-		JObject clone();
-		android::gesture::OrientedBoundingBox computeOrientedBoundingBox();
-		android::graphics::Path getPath();
-		android::graphics::Path toPath(jfloat arg0, jfloat arg1, jint arg2);
+		void clearPath() const;
+		JObject clone() const;
+		android::gesture::OrientedBoundingBox computeOrientedBoundingBox() const;
+		android::graphics::Path getPath() const;
+		android::graphics::Path toPath(jfloat arg0, jfloat arg1, jint arg2) const;
 	};
 } // namespace android::gesture
 

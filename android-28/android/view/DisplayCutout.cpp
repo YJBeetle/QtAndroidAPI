@@ -20,7 +20,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean DisplayCutout::equals(JObject arg0)
+	jboolean DisplayCutout::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,49 +28,49 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	JObject DisplayCutout::getBoundingRects()
+	JObject DisplayCutout::getBoundingRects() const
 	{
 		return callObjectMethod(
 			"getBoundingRects",
 			"()Ljava/util/List;"
 		);
 	}
-	jint DisplayCutout::getSafeInsetBottom()
+	jint DisplayCutout::getSafeInsetBottom() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetBottom",
 			"()I"
 		);
 	}
-	jint DisplayCutout::getSafeInsetLeft()
+	jint DisplayCutout::getSafeInsetLeft() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetLeft",
 			"()I"
 		);
 	}
-	jint DisplayCutout::getSafeInsetRight()
+	jint DisplayCutout::getSafeInsetRight() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetRight",
 			"()I"
 		);
 	}
-	jint DisplayCutout::getSafeInsetTop()
+	jint DisplayCutout::getSafeInsetTop() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetTop",
 			"()I"
 		);
 	}
-	jint DisplayCutout::hashCode()
+	jint DisplayCutout::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DisplayCutout::toString()
+	JString DisplayCutout::toString() const
 	{
 		return callObjectMethod(
 			"toString",

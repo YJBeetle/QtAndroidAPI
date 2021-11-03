@@ -29,7 +29,7 @@ namespace java::util::logging
 		ErrorManager();
 		
 		// Methods
-		void error(JString arg0, java::lang::Exception arg1, jint arg2);
+		void error(JString arg0, java::lang::Exception arg1, jint arg2) const;
 	};
 } // namespace java::util::logging
 

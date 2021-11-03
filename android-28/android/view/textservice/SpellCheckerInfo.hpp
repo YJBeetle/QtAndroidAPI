@@ -44,17 +44,17 @@ namespace android::view::textservice
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::content::ComponentName getComponent();
-		JString getId();
-		JString getPackageName();
-		android::content::pm::ServiceInfo getServiceInfo();
-		JString getSettingsActivity();
-		android::view::textservice::SpellCheckerSubtype getSubtypeAt(jint arg0);
-		jint getSubtypeCount();
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::content::ComponentName getComponent() const;
+		JString getId() const;
+		JString getPackageName() const;
+		android::content::pm::ServiceInfo getServiceInfo() const;
+		JString getSettingsActivity() const;
+		android::view::textservice::SpellCheckerSubtype getSubtypeAt(jint arg0) const;
+		jint getSubtypeCount() const;
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textservice
 

@@ -87,7 +87,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera::addCallbackBuffer(JByteArray arg0)
+	void Camera::addCallbackBuffer(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"addCallbackBuffer",
@@ -95,7 +95,7 @@ namespace android::hardware
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Camera::autoFocus(JObject arg0)
+	void Camera::autoFocus(JObject arg0) const
 	{
 		callMethod<void>(
 			"autoFocus",
@@ -103,14 +103,14 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::cancelAutoFocus()
+	void Camera::cancelAutoFocus() const
 	{
 		callMethod<void>(
 			"cancelAutoFocus",
 			"()V"
 		);
 	}
-	jboolean Camera::enableShutterSound(jboolean arg0)
+	jboolean Camera::enableShutterSound(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"enableShutterSound",
@@ -118,35 +118,35 @@ namespace android::hardware
 			arg0
 		);
 	}
-	android::hardware::Camera_Parameters Camera::getParameters()
+	android::hardware::Camera_Parameters Camera::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Landroid/hardware/Camera$Parameters;"
 		);
 	}
-	void Camera::lock()
+	void Camera::lock() const
 	{
 		callMethod<void>(
 			"lock",
 			"()V"
 		);
 	}
-	void Camera::reconnect()
+	void Camera::reconnect() const
 	{
 		callMethod<void>(
 			"reconnect",
 			"()V"
 		);
 	}
-	void Camera::release()
+	void Camera::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void Camera::setAutoFocusMoveCallback(JObject arg0)
+	void Camera::setAutoFocusMoveCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAutoFocusMoveCallback",
@@ -154,7 +154,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setDisplayOrientation(jint arg0)
+	void Camera::setDisplayOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"setDisplayOrientation",
@@ -162,7 +162,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera::setErrorCallback(JObject arg0)
+	void Camera::setErrorCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorCallback",
@@ -170,7 +170,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setFaceDetectionListener(JObject arg0)
+	void Camera::setFaceDetectionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFaceDetectionListener",
@@ -178,7 +178,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setOneShotPreviewCallback(JObject arg0)
+	void Camera::setOneShotPreviewCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOneShotPreviewCallback",
@@ -186,7 +186,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setParameters(android::hardware::Camera_Parameters arg0)
+	void Camera::setParameters(android::hardware::Camera_Parameters arg0) const
 	{
 		callMethod<void>(
 			"setParameters",
@@ -194,7 +194,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setPreviewCallback(JObject arg0)
+	void Camera::setPreviewCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPreviewCallback",
@@ -202,7 +202,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setPreviewCallbackWithBuffer(JObject arg0)
+	void Camera::setPreviewCallbackWithBuffer(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPreviewCallbackWithBuffer",
@@ -210,7 +210,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setPreviewDisplay(JObject arg0)
+	void Camera::setPreviewDisplay(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPreviewDisplay",
@@ -218,7 +218,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setPreviewTexture(android::graphics::SurfaceTexture arg0)
+	void Camera::setPreviewTexture(android::graphics::SurfaceTexture arg0) const
 	{
 		callMethod<void>(
 			"setPreviewTexture",
@@ -226,7 +226,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setZoomChangeListener(JObject arg0)
+	void Camera::setZoomChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setZoomChangeListener",
@@ -234,21 +234,21 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::startFaceDetection()
+	void Camera::startFaceDetection() const
 	{
 		callMethod<void>(
 			"startFaceDetection",
 			"()V"
 		);
 	}
-	void Camera::startPreview()
+	void Camera::startPreview() const
 	{
 		callMethod<void>(
 			"startPreview",
 			"()V"
 		);
 	}
-	void Camera::startSmoothZoom(jint arg0)
+	void Camera::startSmoothZoom(jint arg0) const
 	{
 		callMethod<void>(
 			"startSmoothZoom",
@@ -256,28 +256,28 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera::stopFaceDetection()
+	void Camera::stopFaceDetection() const
 	{
 		callMethod<void>(
 			"stopFaceDetection",
 			"()V"
 		);
 	}
-	void Camera::stopPreview()
+	void Camera::stopPreview() const
 	{
 		callMethod<void>(
 			"stopPreview",
 			"()V"
 		);
 	}
-	void Camera::stopSmoothZoom()
+	void Camera::stopSmoothZoom() const
 	{
 		callMethod<void>(
 			"stopSmoothZoom",
 			"()V"
 		);
 	}
-	void Camera::takePicture(JObject arg0, JObject arg1, JObject arg2)
+	void Camera::takePicture(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"takePicture",
@@ -287,7 +287,7 @@ namespace android::hardware
 			arg2.object()
 		);
 	}
-	void Camera::takePicture(JObject arg0, JObject arg1, JObject arg2, JObject arg3)
+	void Camera::takePicture(JObject arg0, JObject arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"takePicture",
@@ -298,7 +298,7 @@ namespace android::hardware
 			arg3.object()
 		);
 	}
-	void Camera::unlock()
+	void Camera::unlock() const
 	{
 		callMethod<void>(
 			"unlock",

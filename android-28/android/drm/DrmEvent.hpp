@@ -27,10 +27,10 @@ namespace android::drm
 		// Constructors
 		
 		// Methods
-		JObject getAttribute(JString arg0);
-		JString getMessage();
-		jint getType();
-		jint getUniqueId();
+		JObject getAttribute(JString arg0) const;
+		JString getMessage() const;
+		jint getType() const;
+		jint getUniqueId() const;
 	};
 } // namespace android::drm
 

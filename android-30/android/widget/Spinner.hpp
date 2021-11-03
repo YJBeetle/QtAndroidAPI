@@ -47,32 +47,32 @@ namespace android::widget
 		Spinner(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4, android::content::res::Resources_Theme arg5);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		jint getBaseline();
-		jint getDropDownHorizontalOffset();
-		jint getDropDownVerticalOffset();
-		jint getDropDownWidth();
-		jint getGravity();
-		android::graphics::drawable::Drawable getPopupBackground();
-		android::content::Context getPopupContext();
-		JString getPrompt();
-		void onClick(JObject arg0, jint arg1);
-		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
-		void onRestoreInstanceState(JObject arg0);
-		JObject onSaveInstanceState();
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		jboolean performClick();
-		void setAdapter(JObject arg0);
-		void setDropDownHorizontalOffset(jint arg0);
-		void setDropDownVerticalOffset(jint arg0);
-		void setDropDownWidth(jint arg0);
-		void setEnabled(jboolean arg0);
-		void setGravity(jint arg0);
-		void setOnItemClickListener(JObject arg0);
-		void setPopupBackgroundDrawable(android::graphics::drawable::Drawable arg0);
-		void setPopupBackgroundResource(jint arg0);
-		void setPrompt(JString arg0);
-		void setPromptId(jint arg0);
+		JString getAccessibilityClassName() const;
+		jint getBaseline() const;
+		jint getDropDownHorizontalOffset() const;
+		jint getDropDownVerticalOffset() const;
+		jint getDropDownWidth() const;
+		jint getGravity() const;
+		android::graphics::drawable::Drawable getPopupBackground() const;
+		android::content::Context getPopupContext() const;
+		JString getPrompt() const;
+		void onClick(JObject arg0, jint arg1) const;
+		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const;
+		void onRestoreInstanceState(JObject arg0) const;
+		JObject onSaveInstanceState() const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		jboolean performClick() const;
+		void setAdapter(JObject arg0) const;
+		void setDropDownHorizontalOffset(jint arg0) const;
+		void setDropDownVerticalOffset(jint arg0) const;
+		void setDropDownWidth(jint arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setGravity(jint arg0) const;
+		void setOnItemClickListener(JObject arg0) const;
+		void setPopupBackgroundDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setPopupBackgroundResource(jint arg0) const;
+		void setPrompt(JString arg0) const;
+		void setPromptId(jint arg0) const;
 	};
 } // namespace android::widget
 

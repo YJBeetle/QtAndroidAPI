@@ -18,21 +18,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jchar FormatFlagsConversionMismatchException::getConversion()
+	jchar FormatFlagsConversionMismatchException::getConversion() const
 	{
 		return callMethod<jchar>(
 			"getConversion",
 			"()C"
 		);
 	}
-	JString FormatFlagsConversionMismatchException::getFlags()
+	JString FormatFlagsConversionMismatchException::getFlags() const
 	{
 		return callObjectMethod(
 			"getFlags",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FormatFlagsConversionMismatchException::getMessage()
+	JString FormatFlagsConversionMismatchException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

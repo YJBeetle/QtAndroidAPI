@@ -53,42 +53,42 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	android::media::session::MediaController MediaSession::getController()
+	android::media::session::MediaController MediaSession::getController() const
 	{
 		return callObjectMethod(
 			"getController",
 			"()Landroid/media/session/MediaController;"
 		);
 	}
-	android::media::session::MediaSessionManager_RemoteUserInfo MediaSession::getCurrentControllerInfo()
+	android::media::session::MediaSessionManager_RemoteUserInfo MediaSession::getCurrentControllerInfo() const
 	{
 		return callObjectMethod(
 			"getCurrentControllerInfo",
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
-	android::media::session::MediaSession_Token MediaSession::getSessionToken()
+	android::media::session::MediaSession_Token MediaSession::getSessionToken() const
 	{
 		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
-	jboolean MediaSession::isActive()
+	jboolean MediaSession::isActive() const
 	{
 		return callMethod<jboolean>(
 			"isActive",
 			"()Z"
 		);
 	}
-	void MediaSession::release()
+	void MediaSession::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaSession::sendSessionEvent(JString arg0, android::os::Bundle arg1)
+	void MediaSession::sendSessionEvent(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendSessionEvent",
@@ -97,7 +97,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession::setActive(jboolean arg0)
+	void MediaSession::setActive(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setActive",
@@ -105,7 +105,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaSession::setCallback(android::media::session::MediaSession_Callback arg0)
+	void MediaSession::setCallback(android::media::session::MediaSession_Callback arg0) const
 	{
 		callMethod<void>(
 			"setCallback",
@@ -113,7 +113,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setCallback(android::media::session::MediaSession_Callback arg0, android::os::Handler arg1)
+	void MediaSession::setCallback(android::media::session::MediaSession_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setCallback",
@@ -122,7 +122,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession::setExtras(android::os::Bundle arg0)
+	void MediaSession::setExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setExtras",
@@ -130,7 +130,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setFlags(jint arg0)
+	void MediaSession::setFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"setFlags",
@@ -138,7 +138,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaSession::setMediaButtonReceiver(android::app::PendingIntent arg0)
+	void MediaSession::setMediaButtonReceiver(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"setMediaButtonReceiver",
@@ -146,7 +146,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setMetadata(android::media::MediaMetadata arg0)
+	void MediaSession::setMetadata(android::media::MediaMetadata arg0) const
 	{
 		callMethod<void>(
 			"setMetadata",
@@ -154,7 +154,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setPlaybackState(android::media::session::PlaybackState arg0)
+	void MediaSession::setPlaybackState(android::media::session::PlaybackState arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackState",
@@ -162,7 +162,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setPlaybackToLocal(android::media::AudioAttributes arg0)
+	void MediaSession::setPlaybackToLocal(android::media::AudioAttributes arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackToLocal",
@@ -170,7 +170,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setPlaybackToRemote(android::media::VolumeProvider arg0)
+	void MediaSession::setPlaybackToRemote(android::media::VolumeProvider arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackToRemote",
@@ -178,7 +178,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setQueue(JObject arg0)
+	void MediaSession::setQueue(JObject arg0) const
 	{
 		callMethod<void>(
 			"setQueue",
@@ -186,7 +186,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setQueueTitle(JString arg0)
+	void MediaSession::setQueueTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setQueueTitle",
@@ -194,7 +194,7 @@ namespace android::media::session
 			arg0.object<jstring>()
 		);
 	}
-	void MediaSession::setRatingType(jint arg0)
+	void MediaSession::setRatingType(jint arg0) const
 	{
 		callMethod<void>(
 			"setRatingType",
@@ -202,7 +202,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaSession::setSessionActivity(android::app::PendingIntent arg0)
+	void MediaSession::setSessionActivity(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"setSessionActivity",

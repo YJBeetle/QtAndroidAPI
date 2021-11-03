@@ -100,15 +100,15 @@ namespace android::media
 		
 		// Methods
 		static android::media::MediaCodecInfo_CodecCapabilities createFromProfileLevel(JString arg0, jint arg1, jint arg2);
-		android::media::MediaCodecInfo_AudioCapabilities getAudioCapabilities();
-		android::media::MediaFormat getDefaultFormat();
-		android::media::MediaCodecInfo_EncoderCapabilities getEncoderCapabilities();
-		jint getMaxSupportedInstances();
-		JString getMimeType();
-		android::media::MediaCodecInfo_VideoCapabilities getVideoCapabilities();
-		jboolean isFeatureRequired(JString arg0);
-		jboolean isFeatureSupported(JString arg0);
-		jboolean isFormatSupported(android::media::MediaFormat arg0);
+		android::media::MediaCodecInfo_AudioCapabilities getAudioCapabilities() const;
+		android::media::MediaFormat getDefaultFormat() const;
+		android::media::MediaCodecInfo_EncoderCapabilities getEncoderCapabilities() const;
+		jint getMaxSupportedInstances() const;
+		JString getMimeType() const;
+		android::media::MediaCodecInfo_VideoCapabilities getVideoCapabilities() const;
+		jboolean isFeatureRequired(JString arg0) const;
+		jboolean isFeatureSupported(JString arg0) const;
+		jboolean isFormatSupported(android::media::MediaFormat arg0) const;
 	};
 } // namespace android::media
 

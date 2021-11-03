@@ -25,7 +25,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_Builder Notification_CarExtender::extend(android::app::Notification_Builder arg0)
+	android::app::Notification_Builder Notification_CarExtender::extend(android::app::Notification_Builder arg0) const
 	{
 		return callObjectMethod(
 			"extend",
@@ -33,28 +33,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint Notification_CarExtender::getColor()
+	jint Notification_CarExtender::getColor() const
 	{
 		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
-	android::graphics::Bitmap Notification_CarExtender::getLargeIcon()
+	android::graphics::Bitmap Notification_CarExtender::getLargeIcon() const
 	{
 		return callObjectMethod(
 			"getLargeIcon",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::app::Notification_CarExtender_UnreadConversation Notification_CarExtender::getUnreadConversation()
+	android::app::Notification_CarExtender_UnreadConversation Notification_CarExtender::getUnreadConversation() const
 	{
 		return callObjectMethod(
 			"getUnreadConversation",
 			"()Landroid/app/Notification$CarExtender$UnreadConversation;"
 		);
 	}
-	android::app::Notification_CarExtender Notification_CarExtender::setColor(jint arg0)
+	android::app::Notification_CarExtender Notification_CarExtender::setColor(jint arg0) const
 	{
 		return callObjectMethod(
 			"setColor",
@@ -62,7 +62,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_CarExtender Notification_CarExtender::setLargeIcon(android::graphics::Bitmap arg0)
+	android::app::Notification_CarExtender Notification_CarExtender::setLargeIcon(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"setLargeIcon",
@@ -70,7 +70,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_CarExtender Notification_CarExtender::setUnreadConversation(android::app::Notification_CarExtender_UnreadConversation arg0)
+	android::app::Notification_CarExtender Notification_CarExtender::setUnreadConversation(android::app::Notification_CarExtender_UnreadConversation arg0) const
 	{
 		return callObjectMethod(
 			"setUnreadConversation",

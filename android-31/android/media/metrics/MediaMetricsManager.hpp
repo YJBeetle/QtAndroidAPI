@@ -26,8 +26,8 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		android::media::metrics::PlaybackSession createPlaybackSession();
-		android::media::metrics::RecordingSession createRecordingSession();
+		android::media::metrics::PlaybackSession createPlaybackSession() const;
+		android::media::metrics::RecordingSession createRecordingSession() const;
 	};
 } // namespace android::media::metrics
 

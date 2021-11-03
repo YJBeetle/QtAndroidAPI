@@ -42,18 +42,18 @@ namespace android::app::people
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getActivity();
-		jint getAvailability();
-		JString getDescription();
-		jlong getEndTimeMillis();
-		android::graphics::drawable::Icon getIcon();
-		JString getId();
-		jlong getStartTimeMillis();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getActivity() const;
+		jint getAvailability() const;
+		JString getDescription() const;
+		jlong getEndTimeMillis() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getId() const;
+		jlong getStartTimeMillis() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::people
 

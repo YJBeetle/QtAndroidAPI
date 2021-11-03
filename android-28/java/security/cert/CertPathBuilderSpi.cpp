@@ -15,7 +15,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	JObject CertPathBuilderSpi::engineBuild(JObject arg0)
+	JObject CertPathBuilderSpi::engineBuild(JObject arg0) const
 	{
 		return callObjectMethod(
 			"engineBuild",
@@ -23,7 +23,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertPathBuilderSpi::engineGetRevocationChecker()
+	JObject CertPathBuilderSpi::engineGetRevocationChecker() const
 	{
 		return callObjectMethod(
 			"engineGetRevocationChecker",

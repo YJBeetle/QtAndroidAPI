@@ -23,7 +23,7 @@ namespace javax::xml::datatype
 		) {}
 	
 	// Methods
-	javax::xml::datatype::Duration Duration::add(javax::xml::datatype::Duration arg0)
+	javax::xml::datatype::Duration Duration::add(javax::xml::datatype::Duration arg0) const
 	{
 		return callObjectMethod(
 			"add",
@@ -31,7 +31,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	void Duration::addTo(java::util::Calendar arg0)
+	void Duration::addTo(java::util::Calendar arg0) const
 	{
 		callMethod<void>(
 			"addTo",
@@ -39,7 +39,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	void Duration::addTo(java::util::Date arg0)
+	void Duration::addTo(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"addTo",
@@ -47,7 +47,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jint Duration::compare(javax::xml::datatype::Duration arg0)
+	jint Duration::compare(javax::xml::datatype::Duration arg0) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -55,7 +55,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jboolean Duration::equals(JObject arg0)
+	jboolean Duration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -63,14 +63,14 @@ namespace javax::xml::datatype
 			arg0.object<jobject>()
 		);
 	}
-	jint Duration::getDays()
+	jint Duration::getDays() const
 	{
 		return callMethod<jint>(
 			"getDays",
 			"()I"
 		);
 	}
-	java::lang::Number Duration::getField(javax::xml::datatype::DatatypeConstants_Field arg0)
+	java::lang::Number Duration::getField(javax::xml::datatype::DatatypeConstants_Field arg0) const
 	{
 		return callObjectMethod(
 			"getField",
@@ -78,42 +78,42 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jint Duration::getHours()
+	jint Duration::getHours() const
 	{
 		return callMethod<jint>(
 			"getHours",
 			"()I"
 		);
 	}
-	jint Duration::getMinutes()
+	jint Duration::getMinutes() const
 	{
 		return callMethod<jint>(
 			"getMinutes",
 			"()I"
 		);
 	}
-	jint Duration::getMonths()
+	jint Duration::getMonths() const
 	{
 		return callMethod<jint>(
 			"getMonths",
 			"()I"
 		);
 	}
-	jint Duration::getSeconds()
+	jint Duration::getSeconds() const
 	{
 		return callMethod<jint>(
 			"getSeconds",
 			"()I"
 		);
 	}
-	jint Duration::getSign()
+	jint Duration::getSign() const
 	{
 		return callMethod<jint>(
 			"getSign",
 			"()I"
 		);
 	}
-	jlong Duration::getTimeInMillis(java::util::Calendar arg0)
+	jlong Duration::getTimeInMillis(java::util::Calendar arg0) const
 	{
 		return callMethod<jlong>(
 			"getTimeInMillis",
@@ -121,7 +121,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jlong Duration::getTimeInMillis(java::util::Date arg0)
+	jlong Duration::getTimeInMillis(java::util::Date arg0) const
 	{
 		return callMethod<jlong>(
 			"getTimeInMillis",
@@ -129,28 +129,28 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	javax::xml::_namespace::QName Duration::getXMLSchemaType()
+	javax::xml::_namespace::QName Duration::getXMLSchemaType() const
 	{
 		return callObjectMethod(
 			"getXMLSchemaType",
 			"()Ljavax/xml/namespace/QName;"
 		);
 	}
-	jint Duration::getYears()
+	jint Duration::getYears() const
 	{
 		return callMethod<jint>(
 			"getYears",
 			"()I"
 		);
 	}
-	jint Duration::hashCode()
+	jint Duration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Duration::isLongerThan(javax::xml::datatype::Duration arg0)
+	jboolean Duration::isLongerThan(javax::xml::datatype::Duration arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLongerThan",
@@ -158,7 +158,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jboolean Duration::isSet(javax::xml::datatype::DatatypeConstants_Field arg0)
+	jboolean Duration::isSet(javax::xml::datatype::DatatypeConstants_Field arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSet",
@@ -166,7 +166,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jboolean Duration::isShorterThan(javax::xml::datatype::Duration arg0)
+	jboolean Duration::isShorterThan(javax::xml::datatype::Duration arg0) const
 	{
 		return callMethod<jboolean>(
 			"isShorterThan",
@@ -174,7 +174,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	javax::xml::datatype::Duration Duration::multiply(jint arg0)
+	javax::xml::datatype::Duration Duration::multiply(jint arg0) const
 	{
 		return callObjectMethod(
 			"multiply",
@@ -182,7 +182,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	javax::xml::datatype::Duration Duration::multiply(java::math::BigDecimal arg0)
+	javax::xml::datatype::Duration Duration::multiply(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"multiply",
@@ -190,14 +190,14 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	javax::xml::datatype::Duration Duration::negate()
+	javax::xml::datatype::Duration Duration::negate() const
 	{
 		return callObjectMethod(
 			"negate",
 			"()Ljavax/xml/datatype/Duration;"
 		);
 	}
-	javax::xml::datatype::Duration Duration::normalizeWith(java::util::Calendar arg0)
+	javax::xml::datatype::Duration Duration::normalizeWith(java::util::Calendar arg0) const
 	{
 		return callObjectMethod(
 			"normalizeWith",
@@ -205,7 +205,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	javax::xml::datatype::Duration Duration::subtract(javax::xml::datatype::Duration arg0)
+	javax::xml::datatype::Duration Duration::subtract(javax::xml::datatype::Duration arg0) const
 	{
 		return callObjectMethod(
 			"subtract",
@@ -213,7 +213,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	JString Duration::toString()
+	JString Duration::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -20,11 +20,11 @@ namespace android::app::appsearch
 		SearchResult_MatchRange(jint arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getEnd();
-		jint getStart();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getEnd() const;
+		jint getStart() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::app::appsearch
 

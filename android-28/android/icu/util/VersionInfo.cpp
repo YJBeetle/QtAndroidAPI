@@ -311,7 +311,7 @@ namespace android::icu::util
 			arg3
 		);
 	}
-	jint VersionInfo::compareTo(android::icu::util::VersionInfo arg0)
+	jint VersionInfo::compareTo(android::icu::util::VersionInfo arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -319,7 +319,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jint VersionInfo::compareTo(JObject arg0)
+	jint VersionInfo::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -327,7 +327,7 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean VersionInfo::equals(JObject arg0)
+	jboolean VersionInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -335,42 +335,42 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	jint VersionInfo::getMajor()
+	jint VersionInfo::getMajor() const
 	{
 		return callMethod<jint>(
 			"getMajor",
 			"()I"
 		);
 	}
-	jint VersionInfo::getMicro()
+	jint VersionInfo::getMicro() const
 	{
 		return callMethod<jint>(
 			"getMicro",
 			"()I"
 		);
 	}
-	jint VersionInfo::getMilli()
+	jint VersionInfo::getMilli() const
 	{
 		return callMethod<jint>(
 			"getMilli",
 			"()I"
 		);
 	}
-	jint VersionInfo::getMinor()
+	jint VersionInfo::getMinor() const
 	{
 		return callMethod<jint>(
 			"getMinor",
 			"()I"
 		);
 	}
-	jint VersionInfo::hashCode()
+	jint VersionInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString VersionInfo::toString()
+	JString VersionInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

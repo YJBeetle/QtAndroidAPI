@@ -57,7 +57,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Handler::dispatchMessage(android::os::Message arg0)
+	void Handler::dispatchMessage(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"dispatchMessage",
@@ -65,7 +65,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Handler::dump(JObject arg0, JString arg1)
+	void Handler::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -74,14 +74,14 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	android::os::Looper Handler::getLooper()
+	android::os::Looper Handler::getLooper() const
 	{
 		return callObjectMethod(
 			"getLooper",
 			"()Landroid/os/Looper;"
 		);
 	}
-	JString Handler::getMessageName(android::os::Message arg0)
+	JString Handler::getMessageName(android::os::Message arg0) const
 	{
 		return callObjectMethod(
 			"getMessageName",
@@ -89,7 +89,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Handler::handleMessage(android::os::Message arg0)
+	void Handler::handleMessage(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"handleMessage",
@@ -97,7 +97,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::hasCallbacks(JObject arg0)
+	jboolean Handler::hasCallbacks(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCallbacks",
@@ -105,7 +105,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::hasMessages(jint arg0)
+	jboolean Handler::hasMessages(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasMessages",
@@ -113,7 +113,7 @@ namespace android::os
 			arg0
 		);
 	}
-	jboolean Handler::hasMessages(jint arg0, JObject arg1)
+	jboolean Handler::hasMessages(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"hasMessages",
@@ -122,14 +122,14 @@ namespace android::os
 			arg1.object<jobject>()
 		);
 	}
-	android::os::Message Handler::obtainMessage()
+	android::os::Message Handler::obtainMessage() const
 	{
 		return callObjectMethod(
 			"obtainMessage",
 			"()Landroid/os/Message;"
 		);
 	}
-	android::os::Message Handler::obtainMessage(jint arg0)
+	android::os::Message Handler::obtainMessage(jint arg0) const
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -137,7 +137,7 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::Message Handler::obtainMessage(jint arg0, JObject arg1)
+	android::os::Message Handler::obtainMessage(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -146,7 +146,7 @@ namespace android::os
 			arg1.object<jobject>()
 		);
 	}
-	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2)
+	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -156,7 +156,7 @@ namespace android::os
 			arg2
 		);
 	}
-	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2, JObject arg3)
+	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -167,7 +167,7 @@ namespace android::os
 			arg3.object<jobject>()
 		);
 	}
-	jboolean Handler::post(JObject arg0)
+	jboolean Handler::post(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"post",
@@ -175,7 +175,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::postAtFrontOfQueue(JObject arg0)
+	jboolean Handler::postAtFrontOfQueue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"postAtFrontOfQueue",
@@ -183,7 +183,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::postAtTime(JObject arg0, jlong arg1)
+	jboolean Handler::postAtTime(JObject arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"postAtTime",
@@ -192,7 +192,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::postAtTime(JObject arg0, JObject arg1, jlong arg2)
+	jboolean Handler::postAtTime(JObject arg0, JObject arg1, jlong arg2) const
 	{
 		return callMethod<jboolean>(
 			"postAtTime",
@@ -202,7 +202,7 @@ namespace android::os
 			arg2
 		);
 	}
-	jboolean Handler::postDelayed(JObject arg0, jlong arg1)
+	jboolean Handler::postDelayed(JObject arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"postDelayed",
@@ -211,7 +211,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::postDelayed(JObject arg0, JObject arg1, jlong arg2)
+	jboolean Handler::postDelayed(JObject arg0, JObject arg1, jlong arg2) const
 	{
 		return callMethod<jboolean>(
 			"postDelayed",
@@ -221,7 +221,7 @@ namespace android::os
 			arg2
 		);
 	}
-	void Handler::removeCallbacks(JObject arg0)
+	void Handler::removeCallbacks(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeCallbacks",
@@ -229,7 +229,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Handler::removeCallbacks(JObject arg0, JObject arg1)
+	void Handler::removeCallbacks(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"removeCallbacks",
@@ -238,7 +238,7 @@ namespace android::os
 			arg1.object<jobject>()
 		);
 	}
-	void Handler::removeCallbacksAndMessages(JObject arg0)
+	void Handler::removeCallbacksAndMessages(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeCallbacksAndMessages",
@@ -246,7 +246,7 @@ namespace android::os
 			arg0.object<jobject>()
 		);
 	}
-	void Handler::removeMessages(jint arg0)
+	void Handler::removeMessages(jint arg0) const
 	{
 		callMethod<void>(
 			"removeMessages",
@@ -254,7 +254,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Handler::removeMessages(jint arg0, JObject arg1)
+	void Handler::removeMessages(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"removeMessages",
@@ -263,7 +263,7 @@ namespace android::os
 			arg1.object<jobject>()
 		);
 	}
-	jboolean Handler::sendEmptyMessage(jint arg0)
+	jboolean Handler::sendEmptyMessage(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"sendEmptyMessage",
@@ -271,7 +271,7 @@ namespace android::os
 			arg0
 		);
 	}
-	jboolean Handler::sendEmptyMessageAtTime(jint arg0, jlong arg1)
+	jboolean Handler::sendEmptyMessageAtTime(jint arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"sendEmptyMessageAtTime",
@@ -280,7 +280,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::sendEmptyMessageDelayed(jint arg0, jlong arg1)
+	jboolean Handler::sendEmptyMessageDelayed(jint arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"sendEmptyMessageDelayed",
@@ -289,7 +289,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::sendMessage(android::os::Message arg0)
+	jboolean Handler::sendMessage(android::os::Message arg0) const
 	{
 		return callMethod<jboolean>(
 			"sendMessage",
@@ -297,7 +297,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::sendMessageAtFrontOfQueue(android::os::Message arg0)
+	jboolean Handler::sendMessageAtFrontOfQueue(android::os::Message arg0) const
 	{
 		return callMethod<jboolean>(
 			"sendMessageAtFrontOfQueue",
@@ -305,7 +305,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::sendMessageAtTime(android::os::Message arg0, jlong arg1)
+	jboolean Handler::sendMessageAtTime(android::os::Message arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"sendMessageAtTime",
@@ -314,7 +314,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::sendMessageDelayed(android::os::Message arg0, jlong arg1)
+	jboolean Handler::sendMessageDelayed(android::os::Message arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"sendMessageDelayed",
@@ -323,7 +323,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JString Handler::toString()
+	JString Handler::toString() const
 	{
 		return callObjectMethod(
 			"toString",

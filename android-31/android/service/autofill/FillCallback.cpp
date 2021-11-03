@@ -12,7 +12,7 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	void FillCallback::onFailure(JString arg0)
+	void FillCallback::onFailure(JString arg0) const
 	{
 		callMethod<void>(
 			"onFailure",
@@ -20,7 +20,7 @@ namespace android::service::autofill
 			arg0.object<jstring>()
 		);
 	}
-	void FillCallback::onSuccess(android::service::autofill::FillResponse arg0)
+	void FillCallback::onSuccess(android::service::autofill::FillResponse arg0) const
 	{
 		callMethod<void>(
 			"onSuccess",

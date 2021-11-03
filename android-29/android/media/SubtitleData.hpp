@@ -19,10 +19,10 @@ namespace android::media
 		SubtitleData(jint arg0, jlong arg1, jlong arg2, JByteArray arg3);
 		
 		// Methods
-		JByteArray getData();
-		jlong getDurationUs();
-		jlong getStartTimeUs();
-		jint getTrackIndex();
+		JByteArray getData() const;
+		jlong getDurationUs() const;
+		jlong getStartTimeUs() const;
+		jint getTrackIndex() const;
 	};
 } // namespace android::media
 

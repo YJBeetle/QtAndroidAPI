@@ -64,7 +64,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	void TonemapCurve::copyColorCurve(jint arg0, JFloatArray arg1, jint arg2)
+	void TonemapCurve::copyColorCurve(jint arg0, JFloatArray arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"copyColorCurve",
@@ -74,7 +74,7 @@ namespace android::hardware::camera2::params
 			arg2
 		);
 	}
-	jboolean TonemapCurve::equals(JObject arg0)
+	jboolean TonemapCurve::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -82,7 +82,7 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::PointF TonemapCurve::getPoint(jint arg0, jint arg1)
+	android::graphics::PointF TonemapCurve::getPoint(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPoint",
@@ -91,7 +91,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jint TonemapCurve::getPointCount(jint arg0)
+	jint TonemapCurve::getPointCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getPointCount",
@@ -99,14 +99,14 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	jint TonemapCurve::hashCode()
+	jint TonemapCurve::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TonemapCurve::toString()
+	JString TonemapCurve::toString() const
 	{
 		return callObjectMethod(
 			"toString",

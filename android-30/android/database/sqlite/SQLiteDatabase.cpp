@@ -218,21 +218,21 @@ namespace android::database::sqlite
 			"()I"
 		);
 	}
-	void SQLiteDatabase::beginTransaction()
+	void SQLiteDatabase::beginTransaction() const
 	{
 		callMethod<void>(
 			"beginTransaction",
 			"()V"
 		);
 	}
-	void SQLiteDatabase::beginTransactionNonExclusive()
+	void SQLiteDatabase::beginTransactionNonExclusive() const
 	{
 		callMethod<void>(
 			"beginTransactionNonExclusive",
 			"()V"
 		);
 	}
-	void SQLiteDatabase::beginTransactionWithListener(JObject arg0)
+	void SQLiteDatabase::beginTransactionWithListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"beginTransactionWithListener",
@@ -240,7 +240,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteDatabase::beginTransactionWithListenerNonExclusive(JObject arg0)
+	void SQLiteDatabase::beginTransactionWithListenerNonExclusive(JObject arg0) const
 	{
 		callMethod<void>(
 			"beginTransactionWithListenerNonExclusive",
@@ -248,7 +248,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	android::database::sqlite::SQLiteStatement SQLiteDatabase::compileStatement(JString arg0)
+	android::database::sqlite::SQLiteStatement SQLiteDatabase::compileStatement(JString arg0) const
 	{
 		return callObjectMethod(
 			"compileStatement",
@@ -256,7 +256,7 @@ namespace android::database::sqlite
 			arg0.object<jstring>()
 		);
 	}
-	jint SQLiteDatabase::_delete(JString arg0, JString arg1, JArray arg2)
+	jint SQLiteDatabase::_delete(JString arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -266,28 +266,28 @@ namespace android::database::sqlite
 			arg2.object<jarray>()
 		);
 	}
-	void SQLiteDatabase::disableWriteAheadLogging()
+	void SQLiteDatabase::disableWriteAheadLogging() const
 	{
 		callMethod<void>(
 			"disableWriteAheadLogging",
 			"()V"
 		);
 	}
-	jboolean SQLiteDatabase::enableWriteAheadLogging()
+	jboolean SQLiteDatabase::enableWriteAheadLogging() const
 	{
 		return callMethod<jboolean>(
 			"enableWriteAheadLogging",
 			"()Z"
 		);
 	}
-	void SQLiteDatabase::endTransaction()
+	void SQLiteDatabase::endTransaction() const
 	{
 		callMethod<void>(
 			"endTransaction",
 			"()V"
 		);
 	}
-	void SQLiteDatabase::execPerConnectionSQL(JString arg0, JObjectArray arg1)
+	void SQLiteDatabase::execPerConnectionSQL(JString arg0, JObjectArray arg1) const
 	{
 		callMethod<void>(
 			"execPerConnectionSQL",
@@ -296,7 +296,7 @@ namespace android::database::sqlite
 			arg1.object<jobjectArray>()
 		);
 	}
-	void SQLiteDatabase::execSQL(JString arg0)
+	void SQLiteDatabase::execSQL(JString arg0) const
 	{
 		callMethod<void>(
 			"execSQL",
@@ -304,7 +304,7 @@ namespace android::database::sqlite
 			arg0.object<jstring>()
 		);
 	}
-	void SQLiteDatabase::execSQL(JString arg0, JObjectArray arg1)
+	void SQLiteDatabase::execSQL(JString arg0, JObjectArray arg1) const
 	{
 		callMethod<void>(
 			"execSQL",
@@ -313,56 +313,56 @@ namespace android::database::sqlite
 			arg1.object<jobjectArray>()
 		);
 	}
-	JObject SQLiteDatabase::getAttachedDbs()
+	JObject SQLiteDatabase::getAttachedDbs() const
 	{
 		return callObjectMethod(
 			"getAttachedDbs",
 			"()Ljava/util/List;"
 		);
 	}
-	jlong SQLiteDatabase::getMaximumSize()
+	jlong SQLiteDatabase::getMaximumSize() const
 	{
 		return callMethod<jlong>(
 			"getMaximumSize",
 			"()J"
 		);
 	}
-	jlong SQLiteDatabase::getPageSize()
+	jlong SQLiteDatabase::getPageSize() const
 	{
 		return callMethod<jlong>(
 			"getPageSize",
 			"()J"
 		);
 	}
-	JString SQLiteDatabase::getPath()
+	JString SQLiteDatabase::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SQLiteDatabase::getSyncedTables()
+	JObject SQLiteDatabase::getSyncedTables() const
 	{
 		return callObjectMethod(
 			"getSyncedTables",
 			"()Ljava/util/Map;"
 		);
 	}
-	jint SQLiteDatabase::getVersion()
+	jint SQLiteDatabase::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
-	jboolean SQLiteDatabase::inTransaction()
+	jboolean SQLiteDatabase::inTransaction() const
 	{
 		return callMethod<jboolean>(
 			"inTransaction",
 			"()Z"
 		);
 	}
-	jlong SQLiteDatabase::insert(JString arg0, JString arg1, android::content::ContentValues arg2)
+	jlong SQLiteDatabase::insert(JString arg0, JString arg1, android::content::ContentValues arg2) const
 	{
 		return callMethod<jlong>(
 			"insert",
@@ -372,7 +372,7 @@ namespace android::database::sqlite
 			arg2.object()
 		);
 	}
-	jlong SQLiteDatabase::insertOrThrow(JString arg0, JString arg1, android::content::ContentValues arg2)
+	jlong SQLiteDatabase::insertOrThrow(JString arg0, JString arg1, android::content::ContentValues arg2) const
 	{
 		return callMethod<jlong>(
 			"insertOrThrow",
@@ -382,7 +382,7 @@ namespace android::database::sqlite
 			arg2.object()
 		);
 	}
-	jlong SQLiteDatabase::insertWithOnConflict(JString arg0, JString arg1, android::content::ContentValues arg2, jint arg3)
+	jlong SQLiteDatabase::insertWithOnConflict(JString arg0, JString arg1, android::content::ContentValues arg2, jint arg3) const
 	{
 		return callMethod<jlong>(
 			"insertWithOnConflict",
@@ -393,49 +393,49 @@ namespace android::database::sqlite
 			arg3
 		);
 	}
-	jboolean SQLiteDatabase::isDatabaseIntegrityOk()
+	jboolean SQLiteDatabase::isDatabaseIntegrityOk() const
 	{
 		return callMethod<jboolean>(
 			"isDatabaseIntegrityOk",
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::isDbLockedByCurrentThread()
+	jboolean SQLiteDatabase::isDbLockedByCurrentThread() const
 	{
 		return callMethod<jboolean>(
 			"isDbLockedByCurrentThread",
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::isDbLockedByOtherThreads()
+	jboolean SQLiteDatabase::isDbLockedByOtherThreads() const
 	{
 		return callMethod<jboolean>(
 			"isDbLockedByOtherThreads",
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::isOpen()
+	jboolean SQLiteDatabase::isOpen() const
 	{
 		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::isReadOnly()
+	jboolean SQLiteDatabase::isReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::isWriteAheadLoggingEnabled()
+	jboolean SQLiteDatabase::isWriteAheadLoggingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isWriteAheadLoggingEnabled",
 			"()Z"
 		);
 	}
-	void SQLiteDatabase::markTableSyncable(JString arg0, JString arg1)
+	void SQLiteDatabase::markTableSyncable(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"markTableSyncable",
@@ -444,7 +444,7 @@ namespace android::database::sqlite
 			arg1.object<jstring>()
 		);
 	}
-	void SQLiteDatabase::markTableSyncable(JString arg0, JString arg1, JString arg2)
+	void SQLiteDatabase::markTableSyncable(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"markTableSyncable",
@@ -454,7 +454,7 @@ namespace android::database::sqlite
 			arg2.object<jstring>()
 		);
 	}
-	jboolean SQLiteDatabase::needUpgrade(jint arg0)
+	jboolean SQLiteDatabase::needUpgrade(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"needUpgrade",
@@ -462,7 +462,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	JObject SQLiteDatabase::query(JString arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6)
+	JObject SQLiteDatabase::query(JString arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6) const
 	{
 		return callObjectMethod(
 			"query",
@@ -476,7 +476,7 @@ namespace android::database::sqlite
 			arg6.object<jstring>()
 		);
 	}
-	JObject SQLiteDatabase::query(JString arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7)
+	JObject SQLiteDatabase::query(JString arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7) const
 	{
 		return callObjectMethod(
 			"query",
@@ -491,7 +491,7 @@ namespace android::database::sqlite
 			arg7.object<jstring>()
 		);
 	}
-	JObject SQLiteDatabase::query(jboolean arg0, JString arg1, JArray arg2, JString arg3, JArray arg4, JString arg5, JString arg6, JString arg7, JString arg8)
+	JObject SQLiteDatabase::query(jboolean arg0, JString arg1, JArray arg2, JString arg3, JArray arg4, JString arg5, JString arg6, JString arg7, JString arg8) const
 	{
 		return callObjectMethod(
 			"query",
@@ -507,7 +507,7 @@ namespace android::database::sqlite
 			arg8.object<jstring>()
 		);
 	}
-	JObject SQLiteDatabase::query(jboolean arg0, JString arg1, JArray arg2, JString arg3, JArray arg4, JString arg5, JString arg6, JString arg7, JString arg8, android::os::CancellationSignal arg9)
+	JObject SQLiteDatabase::query(jboolean arg0, JString arg1, JArray arg2, JString arg3, JArray arg4, JString arg5, JString arg6, JString arg7, JString arg8, android::os::CancellationSignal arg9) const
 	{
 		return callObjectMethod(
 			"query",
@@ -524,7 +524,7 @@ namespace android::database::sqlite
 			arg9.object()
 		);
 	}
-	JObject SQLiteDatabase::queryWithFactory(JObject arg0, jboolean arg1, JString arg2, JArray arg3, JString arg4, JArray arg5, JString arg6, JString arg7, JString arg8, JString arg9)
+	JObject SQLiteDatabase::queryWithFactory(JObject arg0, jboolean arg1, JString arg2, JArray arg3, JString arg4, JArray arg5, JString arg6, JString arg7, JString arg8, JString arg9) const
 	{
 		return callObjectMethod(
 			"queryWithFactory",
@@ -541,7 +541,7 @@ namespace android::database::sqlite
 			arg9.object<jstring>()
 		);
 	}
-	JObject SQLiteDatabase::queryWithFactory(JObject arg0, jboolean arg1, JString arg2, JArray arg3, JString arg4, JArray arg5, JString arg6, JString arg7, JString arg8, JString arg9, android::os::CancellationSignal arg10)
+	JObject SQLiteDatabase::queryWithFactory(JObject arg0, jboolean arg1, JString arg2, JArray arg3, JString arg4, JArray arg5, JString arg6, JString arg7, JString arg8, JString arg9, android::os::CancellationSignal arg10) const
 	{
 		return callObjectMethod(
 			"queryWithFactory",
@@ -559,7 +559,7 @@ namespace android::database::sqlite
 			arg10.object()
 		);
 	}
-	JObject SQLiteDatabase::rawQuery(JString arg0, JArray arg1)
+	JObject SQLiteDatabase::rawQuery(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"rawQuery",
@@ -568,7 +568,7 @@ namespace android::database::sqlite
 			arg1.object<jarray>()
 		);
 	}
-	JObject SQLiteDatabase::rawQuery(JString arg0, JArray arg1, android::os::CancellationSignal arg2)
+	JObject SQLiteDatabase::rawQuery(JString arg0, JArray arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"rawQuery",
@@ -578,7 +578,7 @@ namespace android::database::sqlite
 			arg2.object()
 		);
 	}
-	JObject SQLiteDatabase::rawQueryWithFactory(JObject arg0, JString arg1, JArray arg2, JString arg3)
+	JObject SQLiteDatabase::rawQueryWithFactory(JObject arg0, JString arg1, JArray arg2, JString arg3) const
 	{
 		return callObjectMethod(
 			"rawQueryWithFactory",
@@ -589,7 +589,7 @@ namespace android::database::sqlite
 			arg3.object<jstring>()
 		);
 	}
-	JObject SQLiteDatabase::rawQueryWithFactory(JObject arg0, JString arg1, JArray arg2, JString arg3, android::os::CancellationSignal arg4)
+	JObject SQLiteDatabase::rawQueryWithFactory(JObject arg0, JString arg1, JArray arg2, JString arg3, android::os::CancellationSignal arg4) const
 	{
 		return callObjectMethod(
 			"rawQueryWithFactory",
@@ -601,7 +601,7 @@ namespace android::database::sqlite
 			arg4.object()
 		);
 	}
-	jlong SQLiteDatabase::replace(JString arg0, JString arg1, android::content::ContentValues arg2)
+	jlong SQLiteDatabase::replace(JString arg0, JString arg1, android::content::ContentValues arg2) const
 	{
 		return callMethod<jlong>(
 			"replace",
@@ -611,7 +611,7 @@ namespace android::database::sqlite
 			arg2.object()
 		);
 	}
-	jlong SQLiteDatabase::replaceOrThrow(JString arg0, JString arg1, android::content::ContentValues arg2)
+	jlong SQLiteDatabase::replaceOrThrow(JString arg0, JString arg1, android::content::ContentValues arg2) const
 	{
 		return callMethod<jlong>(
 			"replaceOrThrow",
@@ -621,7 +621,7 @@ namespace android::database::sqlite
 			arg2.object()
 		);
 	}
-	void SQLiteDatabase::setCustomAggregateFunction(JString arg0, JObject arg1)
+	void SQLiteDatabase::setCustomAggregateFunction(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setCustomAggregateFunction",
@@ -630,7 +630,7 @@ namespace android::database::sqlite
 			arg1.object()
 		);
 	}
-	void SQLiteDatabase::setCustomScalarFunction(JString arg0, JObject arg1)
+	void SQLiteDatabase::setCustomScalarFunction(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setCustomScalarFunction",
@@ -639,7 +639,7 @@ namespace android::database::sqlite
 			arg1.object()
 		);
 	}
-	void SQLiteDatabase::setForeignKeyConstraintsEnabled(jboolean arg0)
+	void SQLiteDatabase::setForeignKeyConstraintsEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setForeignKeyConstraintsEnabled",
@@ -647,7 +647,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteDatabase::setLocale(java::util::Locale arg0)
+	void SQLiteDatabase::setLocale(java::util::Locale arg0) const
 	{
 		callMethod<void>(
 			"setLocale",
@@ -655,7 +655,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteDatabase::setLockingEnabled(jboolean arg0)
+	void SQLiteDatabase::setLockingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLockingEnabled",
@@ -663,7 +663,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteDatabase::setMaxSqlCacheSize(jint arg0)
+	void SQLiteDatabase::setMaxSqlCacheSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxSqlCacheSize",
@@ -671,7 +671,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	jlong SQLiteDatabase::setMaximumSize(jlong arg0)
+	jlong SQLiteDatabase::setMaximumSize(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"setMaximumSize",
@@ -679,7 +679,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteDatabase::setPageSize(jlong arg0)
+	void SQLiteDatabase::setPageSize(jlong arg0) const
 	{
 		callMethod<void>(
 			"setPageSize",
@@ -687,14 +687,14 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteDatabase::setTransactionSuccessful()
+	void SQLiteDatabase::setTransactionSuccessful() const
 	{
 		callMethod<void>(
 			"setTransactionSuccessful",
 			"()V"
 		);
 	}
-	void SQLiteDatabase::setVersion(jint arg0)
+	void SQLiteDatabase::setVersion(jint arg0) const
 	{
 		callMethod<void>(
 			"setVersion",
@@ -702,14 +702,14 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	JString SQLiteDatabase::toString()
+	JString SQLiteDatabase::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SQLiteDatabase::update(JString arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
+	jint SQLiteDatabase::update(JString arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const
 	{
 		return callMethod<jint>(
 			"update",
@@ -720,7 +720,7 @@ namespace android::database::sqlite
 			arg3.object<jarray>()
 		);
 	}
-	jint SQLiteDatabase::updateWithOnConflict(JString arg0, android::content::ContentValues arg1, JString arg2, JArray arg3, jint arg4)
+	jint SQLiteDatabase::updateWithOnConflict(JString arg0, android::content::ContentValues arg1, JString arg2, JArray arg3, jint arg4) const
 	{
 		return callMethod<jint>(
 			"updateWithOnConflict",
@@ -732,7 +732,7 @@ namespace android::database::sqlite
 			arg4
 		);
 	}
-	void SQLiteDatabase::validateSql(JString arg0, android::os::CancellationSignal arg1)
+	void SQLiteDatabase::validateSql(JString arg0, android::os::CancellationSignal arg1) const
 	{
 		callMethod<void>(
 			"validateSql",
@@ -741,21 +741,21 @@ namespace android::database::sqlite
 			arg1.object()
 		);
 	}
-	jboolean SQLiteDatabase::yieldIfContended()
+	jboolean SQLiteDatabase::yieldIfContended() const
 	{
 		return callMethod<jboolean>(
 			"yieldIfContended",
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::yieldIfContendedSafely()
+	jboolean SQLiteDatabase::yieldIfContendedSafely() const
 	{
 		return callMethod<jboolean>(
 			"yieldIfContendedSafely",
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::yieldIfContendedSafely(jlong arg0)
+	jboolean SQLiteDatabase::yieldIfContendedSafely(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"yieldIfContendedSafely",

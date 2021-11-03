@@ -55,7 +55,7 @@ namespace java::time::zone
 			"()[Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
 		);
 	}
-	java::time::LocalDateTime ZoneOffsetTransitionRule_TimeDefinition::createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2)
+	java::time::LocalDateTime ZoneOffsetTransitionRule_TimeDefinition::createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2) const
 	{
 		return callObjectMethod(
 			"createDateTime",

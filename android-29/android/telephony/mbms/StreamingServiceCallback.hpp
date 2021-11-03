@@ -20,11 +20,11 @@ namespace android::telephony::mbms
 		StreamingServiceCallback();
 		
 		// Methods
-		void onBroadcastSignalStrengthUpdated(jint arg0);
-		void onError(jint arg0, JString arg1);
-		void onMediaDescriptionUpdated();
-		void onStreamMethodUpdated(jint arg0);
-		void onStreamStateUpdated(jint arg0, jint arg1);
+		void onBroadcastSignalStrengthUpdated(jint arg0) const;
+		void onError(jint arg0, JString arg1) const;
+		void onMediaDescriptionUpdated() const;
+		void onStreamMethodUpdated(jint arg0) const;
+		void onStreamStateUpdated(jint arg0, jint arg1) const;
 	};
 } // namespace android::telephony::mbms
 

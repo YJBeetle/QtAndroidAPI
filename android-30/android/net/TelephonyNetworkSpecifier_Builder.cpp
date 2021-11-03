@@ -16,14 +16,14 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::TelephonyNetworkSpecifier TelephonyNetworkSpecifier_Builder::build()
+	android::net::TelephonyNetworkSpecifier TelephonyNetworkSpecifier_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/TelephonyNetworkSpecifier;"
 		);
 	}
-	android::net::TelephonyNetworkSpecifier_Builder TelephonyNetworkSpecifier_Builder::setSubscriptionId(jint arg0)
+	android::net::TelephonyNetworkSpecifier_Builder TelephonyNetworkSpecifier_Builder::setSubscriptionId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSubscriptionId",

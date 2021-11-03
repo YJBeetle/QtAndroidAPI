@@ -25,13 +25,13 @@ namespace android::telephony
 		RadioAccessSpecifier(jint arg0, JIntArray arg1, JIntArray arg2);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JIntArray getBands();
-		JIntArray getChannels();
-		jint getRadioAccessNetwork();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JIntArray getBands() const;
+		JIntArray getChannels() const;
+		jint getRadioAccessNetwork() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

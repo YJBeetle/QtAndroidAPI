@@ -21,27 +21,27 @@ namespace android::util
 		SparseArray(jint arg0);
 		
 		// Methods
-		void append(jint arg0, JObject arg1);
-		void clear();
-		android::util::SparseArray clone();
-		jboolean contains(jint arg0);
-		jboolean contentEquals(android::util::SparseArray arg0);
-		jint contentHashCode();
-		void _delete(jint arg0);
-		JObject get(jint arg0);
-		JObject get(jint arg0, JObject arg1);
-		jint indexOfKey(jint arg0);
-		jint indexOfValue(JObject arg0);
-		jint keyAt(jint arg0);
-		void put(jint arg0, JObject arg1);
-		void remove(jint arg0);
-		void removeAt(jint arg0);
-		void removeAtRange(jint arg0, jint arg1);
-		void set(jint arg0, JObject arg1);
-		void setValueAt(jint arg0, JObject arg1);
-		jint size();
-		JString toString();
-		JObject valueAt(jint arg0);
+		void append(jint arg0, JObject arg1) const;
+		void clear() const;
+		android::util::SparseArray clone() const;
+		jboolean contains(jint arg0) const;
+		jboolean contentEquals(android::util::SparseArray arg0) const;
+		jint contentHashCode() const;
+		void _delete(jint arg0) const;
+		JObject get(jint arg0) const;
+		JObject get(jint arg0, JObject arg1) const;
+		jint indexOfKey(jint arg0) const;
+		jint indexOfValue(JObject arg0) const;
+		jint keyAt(jint arg0) const;
+		void put(jint arg0, JObject arg1) const;
+		void remove(jint arg0) const;
+		void removeAt(jint arg0) const;
+		void removeAtRange(jint arg0, jint arg1) const;
+		void set(jint arg0, JObject arg1) const;
+		void setValueAt(jint arg0, JObject arg1) const;
+		jint size() const;
+		JString toString() const;
+		JObject valueAt(jint arg0) const;
 	};
 } // namespace android::util
 

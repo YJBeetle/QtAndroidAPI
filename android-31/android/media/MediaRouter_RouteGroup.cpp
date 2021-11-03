@@ -13,7 +13,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaRouter_RouteGroup::addRoute(android::media::MediaRouter_RouteInfo arg0)
+	void MediaRouter_RouteGroup::addRoute(android::media::MediaRouter_RouteInfo arg0) const
 	{
 		callMethod<void>(
 			"addRoute",
@@ -21,7 +21,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter_RouteGroup::addRoute(android::media::MediaRouter_RouteInfo arg0, jint arg1)
+	void MediaRouter_RouteGroup::addRoute(android::media::MediaRouter_RouteInfo arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addRoute",
@@ -30,7 +30,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaRouter_RouteInfo MediaRouter_RouteGroup::getRouteAt(jint arg0)
+	android::media::MediaRouter_RouteInfo MediaRouter_RouteGroup::getRouteAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRouteAt",
@@ -38,14 +38,14 @@ namespace android::media
 			arg0
 		);
 	}
-	jint MediaRouter_RouteGroup::getRouteCount()
+	jint MediaRouter_RouteGroup::getRouteCount() const
 	{
 		return callMethod<jint>(
 			"getRouteCount",
 			"()I"
 		);
 	}
-	void MediaRouter_RouteGroup::removeRoute(android::media::MediaRouter_RouteInfo arg0)
+	void MediaRouter_RouteGroup::removeRoute(android::media::MediaRouter_RouteInfo arg0) const
 	{
 		callMethod<void>(
 			"removeRoute",
@@ -53,7 +53,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter_RouteGroup::removeRoute(jint arg0)
+	void MediaRouter_RouteGroup::removeRoute(jint arg0) const
 	{
 		callMethod<void>(
 			"removeRoute",
@@ -61,7 +61,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_RouteGroup::requestSetVolume(jint arg0)
+	void MediaRouter_RouteGroup::requestSetVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"requestSetVolume",
@@ -69,7 +69,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_RouteGroup::requestUpdateVolume(jint arg0)
+	void MediaRouter_RouteGroup::requestUpdateVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"requestUpdateVolume",
@@ -77,7 +77,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_RouteGroup::setIconDrawable(android::graphics::drawable::Drawable arg0)
+	void MediaRouter_RouteGroup::setIconDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setIconDrawable",
@@ -85,7 +85,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter_RouteGroup::setIconResource(jint arg0)
+	void MediaRouter_RouteGroup::setIconResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setIconResource",
@@ -93,7 +93,7 @@ namespace android::media
 			arg0
 		);
 	}
-	JString MediaRouter_RouteGroup::toString()
+	JString MediaRouter_RouteGroup::toString() const
 	{
 		return callObjectMethod(
 			"toString",

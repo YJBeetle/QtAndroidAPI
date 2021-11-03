@@ -22,10 +22,10 @@ namespace android::service::media
 		CameraPrewarmService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onCooldown(jboolean arg0);
-		void onPrewarm();
-		jboolean onUnbind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		void onCooldown(jboolean arg0) const;
+		void onPrewarm() const;
+		jboolean onUnbind(android::content::Intent arg0) const;
 	};
 } // namespace android::service::media
 

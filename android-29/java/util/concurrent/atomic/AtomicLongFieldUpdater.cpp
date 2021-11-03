@@ -24,7 +24,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jstring>()
 		);
 	}
-	jlong AtomicLongFieldUpdater::accumulateAndGet(JObject arg0, jlong arg1, JObject arg2)
+	jlong AtomicLongFieldUpdater::accumulateAndGet(JObject arg0, jlong arg1, JObject arg2) const
 	{
 		return callMethod<jlong>(
 			"accumulateAndGet",
@@ -34,7 +34,7 @@ namespace java::util::concurrent::atomic
 			arg2.object()
 		);
 	}
-	jlong AtomicLongFieldUpdater::addAndGet(JObject arg0, jlong arg1)
+	jlong AtomicLongFieldUpdater::addAndGet(JObject arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"addAndGet",
@@ -43,7 +43,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicLongFieldUpdater::compareAndSet(JObject arg0, jlong arg1, jlong arg2)
+	jboolean AtomicLongFieldUpdater::compareAndSet(JObject arg0, jlong arg1, jlong arg2) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -53,7 +53,7 @@ namespace java::util::concurrent::atomic
 			arg2
 		);
 	}
-	jlong AtomicLongFieldUpdater::decrementAndGet(JObject arg0)
+	jlong AtomicLongFieldUpdater::decrementAndGet(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"decrementAndGet",
@@ -61,7 +61,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jlong AtomicLongFieldUpdater::get(JObject arg0)
+	jlong AtomicLongFieldUpdater::get(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"get",
@@ -69,7 +69,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndAccumulate(JObject arg0, jlong arg1, JObject arg2)
+	jlong AtomicLongFieldUpdater::getAndAccumulate(JObject arg0, jlong arg1, JObject arg2) const
 	{
 		return callMethod<jlong>(
 			"getAndAccumulate",
@@ -79,7 +79,7 @@ namespace java::util::concurrent::atomic
 			arg2.object()
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndAdd(JObject arg0, jlong arg1)
+	jlong AtomicLongFieldUpdater::getAndAdd(JObject arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getAndAdd",
@@ -88,7 +88,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndDecrement(JObject arg0)
+	jlong AtomicLongFieldUpdater::getAndDecrement(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getAndDecrement",
@@ -96,7 +96,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndIncrement(JObject arg0)
+	jlong AtomicLongFieldUpdater::getAndIncrement(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getAndIncrement",
@@ -104,7 +104,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndSet(JObject arg0, jlong arg1)
+	jlong AtomicLongFieldUpdater::getAndSet(JObject arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getAndSet",
@@ -113,7 +113,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndUpdate(JObject arg0, JObject arg1)
+	jlong AtomicLongFieldUpdater::getAndUpdate(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"getAndUpdate",
@@ -122,7 +122,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jlong AtomicLongFieldUpdater::incrementAndGet(JObject arg0)
+	jlong AtomicLongFieldUpdater::incrementAndGet(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"incrementAndGet",
@@ -130,7 +130,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	void AtomicLongFieldUpdater::lazySet(JObject arg0, jlong arg1)
+	void AtomicLongFieldUpdater::lazySet(JObject arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"lazySet",
@@ -139,7 +139,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	void AtomicLongFieldUpdater::set(JObject arg0, jlong arg1)
+	void AtomicLongFieldUpdater::set(JObject arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -148,7 +148,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLongFieldUpdater::updateAndGet(JObject arg0, JObject arg1)
+	jlong AtomicLongFieldUpdater::updateAndGet(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"updateAndGet",
@@ -157,7 +157,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jboolean AtomicLongFieldUpdater::weakCompareAndSet(JObject arg0, jlong arg1, jlong arg2)
+	jboolean AtomicLongFieldUpdater::weakCompareAndSet(JObject arg0, jlong arg1, jlong arg2) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",

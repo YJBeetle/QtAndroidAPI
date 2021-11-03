@@ -18,21 +18,21 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jboolean DynamicsProcessing_Stage::isEnabled()
+	jboolean DynamicsProcessing_Stage::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean DynamicsProcessing_Stage::isInUse()
+	jboolean DynamicsProcessing_Stage::isInUse() const
 	{
 		return callMethod<jboolean>(
 			"isInUse",
 			"()Z"
 		);
 	}
-	void DynamicsProcessing_Stage::setEnabled(jboolean arg0)
+	void DynamicsProcessing_Stage::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -40,7 +40,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	JString DynamicsProcessing_Stage::toString()
+	JString DynamicsProcessing_Stage::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -35,28 +35,28 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jfloat DynamicsProcessing_Channel::getInputGain()
+	jfloat DynamicsProcessing_Channel::getInputGain() const
 	{
 		return callMethod<jfloat>(
 			"getInputGain",
 			"()F"
 		);
 	}
-	android::media::audiofx::DynamicsProcessing_Limiter DynamicsProcessing_Channel::getLimiter()
+	android::media::audiofx::DynamicsProcessing_Limiter DynamicsProcessing_Channel::getLimiter() const
 	{
 		return callObjectMethod(
 			"getLimiter",
 			"()Landroid/media/audiofx/DynamicsProcessing$Limiter;"
 		);
 	}
-	android::media::audiofx::DynamicsProcessing_Mbc DynamicsProcessing_Channel::getMbc()
+	android::media::audiofx::DynamicsProcessing_Mbc DynamicsProcessing_Channel::getMbc() const
 	{
 		return callObjectMethod(
 			"getMbc",
 			"()Landroid/media/audiofx/DynamicsProcessing$Mbc;"
 		);
 	}
-	android::media::audiofx::DynamicsProcessing_MbcBand DynamicsProcessing_Channel::getMbcBand(jint arg0)
+	android::media::audiofx::DynamicsProcessing_MbcBand DynamicsProcessing_Channel::getMbcBand(jint arg0) const
 	{
 		return callObjectMethod(
 			"getMbcBand",
@@ -64,14 +64,14 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	android::media::audiofx::DynamicsProcessing_Eq DynamicsProcessing_Channel::getPostEq()
+	android::media::audiofx::DynamicsProcessing_Eq DynamicsProcessing_Channel::getPostEq() const
 	{
 		return callObjectMethod(
 			"getPostEq",
 			"()Landroid/media/audiofx/DynamicsProcessing$Eq;"
 		);
 	}
-	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing_Channel::getPostEqBand(jint arg0)
+	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing_Channel::getPostEqBand(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPostEqBand",
@@ -79,14 +79,14 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	android::media::audiofx::DynamicsProcessing_Eq DynamicsProcessing_Channel::getPreEq()
+	android::media::audiofx::DynamicsProcessing_Eq DynamicsProcessing_Channel::getPreEq() const
 	{
 		return callObjectMethod(
 			"getPreEq",
 			"()Landroid/media/audiofx/DynamicsProcessing$Eq;"
 		);
 	}
-	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing_Channel::getPreEqBand(jint arg0)
+	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing_Channel::getPreEqBand(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPreEqBand",
@@ -94,7 +94,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Channel::setInputGain(jfloat arg0)
+	void DynamicsProcessing_Channel::setInputGain(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setInputGain",
@@ -102,7 +102,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Channel::setLimiter(android::media::audiofx::DynamicsProcessing_Limiter arg0)
+	void DynamicsProcessing_Channel::setLimiter(android::media::audiofx::DynamicsProcessing_Limiter arg0) const
 	{
 		callMethod<void>(
 			"setLimiter",
@@ -110,7 +110,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void DynamicsProcessing_Channel::setMbc(android::media::audiofx::DynamicsProcessing_Mbc arg0)
+	void DynamicsProcessing_Channel::setMbc(android::media::audiofx::DynamicsProcessing_Mbc arg0) const
 	{
 		callMethod<void>(
 			"setMbc",
@@ -118,7 +118,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void DynamicsProcessing_Channel::setMbcBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1)
+	void DynamicsProcessing_Channel::setMbcBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1) const
 	{
 		callMethod<void>(
 			"setMbcBand",
@@ -127,7 +127,7 @@ namespace android::media::audiofx
 			arg1.object()
 		);
 	}
-	void DynamicsProcessing_Channel::setPostEq(android::media::audiofx::DynamicsProcessing_Eq arg0)
+	void DynamicsProcessing_Channel::setPostEq(android::media::audiofx::DynamicsProcessing_Eq arg0) const
 	{
 		callMethod<void>(
 			"setPostEq",
@@ -135,7 +135,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void DynamicsProcessing_Channel::setPostEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1)
+	void DynamicsProcessing_Channel::setPostEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1) const
 	{
 		callMethod<void>(
 			"setPostEqBand",
@@ -144,7 +144,7 @@ namespace android::media::audiofx
 			arg1.object()
 		);
 	}
-	void DynamicsProcessing_Channel::setPreEq(android::media::audiofx::DynamicsProcessing_Eq arg0)
+	void DynamicsProcessing_Channel::setPreEq(android::media::audiofx::DynamicsProcessing_Eq arg0) const
 	{
 		callMethod<void>(
 			"setPreEq",
@@ -152,7 +152,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void DynamicsProcessing_Channel::setPreEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1)
+	void DynamicsProcessing_Channel::setPreEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1) const
 	{
 		callMethod<void>(
 			"setPreEqBand",
@@ -161,7 +161,7 @@ namespace android::media::audiofx
 			arg1.object()
 		);
 	}
-	JString DynamicsProcessing_Channel::toString()
+	JString DynamicsProcessing_Channel::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -13,42 +13,42 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JString SearchResult_MatchInfo::getExactMatch()
+	JString SearchResult_MatchInfo::getExactMatch() const
 	{
 		return callObjectMethod(
 			"getExactMatch",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getExactMatchRange()
+	android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getExactMatchRange() const
 	{
 		return callObjectMethod(
 			"getExactMatchRange",
 			"()Landroid/app/appsearch/SearchResult$MatchRange;"
 		);
 	}
-	JString SearchResult_MatchInfo::getFullText()
+	JString SearchResult_MatchInfo::getFullText() const
 	{
 		return callObjectMethod(
 			"getFullText",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SearchResult_MatchInfo::getPropertyPath()
+	JString SearchResult_MatchInfo::getPropertyPath() const
 	{
 		return callObjectMethod(
 			"getPropertyPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SearchResult_MatchInfo::getSnippet()
+	JString SearchResult_MatchInfo::getSnippet() const
 	{
 		return callObjectMethod(
 			"getSnippet",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getSnippetRange()
+	android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getSnippetRange() const
 	{
 		return callObjectMethod(
 			"getSnippetRange",

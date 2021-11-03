@@ -49,14 +49,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	jint PrintDocumentInfo::describeContents()
+	jint PrintDocumentInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PrintDocumentInfo::equals(JObject arg0)
+	jboolean PrintDocumentInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -64,49 +64,49 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PrintDocumentInfo::getContentType()
+	jint PrintDocumentInfo::getContentType() const
 	{
 		return callMethod<jint>(
 			"getContentType",
 			"()I"
 		);
 	}
-	jlong PrintDocumentInfo::getDataSize()
+	jlong PrintDocumentInfo::getDataSize() const
 	{
 		return callMethod<jlong>(
 			"getDataSize",
 			"()J"
 		);
 	}
-	JString PrintDocumentInfo::getName()
+	JString PrintDocumentInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PrintDocumentInfo::getPageCount()
+	jint PrintDocumentInfo::getPageCount() const
 	{
 		return callMethod<jint>(
 			"getPageCount",
 			"()I"
 		);
 	}
-	jint PrintDocumentInfo::hashCode()
+	jint PrintDocumentInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrintDocumentInfo::toString()
+	JString PrintDocumentInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PrintDocumentInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PrintDocumentInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

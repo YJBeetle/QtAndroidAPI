@@ -257,14 +257,14 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jint NetworkCapabilities::describeContents()
+	jint NetworkCapabilities::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NetworkCapabilities::equals(JObject arg0)
+	jboolean NetworkCapabilities::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -272,49 +272,49 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	jint NetworkCapabilities::getLinkDownstreamBandwidthKbps()
+	jint NetworkCapabilities::getLinkDownstreamBandwidthKbps() const
 	{
 		return callMethod<jint>(
 			"getLinkDownstreamBandwidthKbps",
 			"()I"
 		);
 	}
-	jint NetworkCapabilities::getLinkUpstreamBandwidthKbps()
+	jint NetworkCapabilities::getLinkUpstreamBandwidthKbps() const
 	{
 		return callMethod<jint>(
 			"getLinkUpstreamBandwidthKbps",
 			"()I"
 		);
 	}
-	android::net::NetworkSpecifier NetworkCapabilities::getNetworkSpecifier()
+	android::net::NetworkSpecifier NetworkCapabilities::getNetworkSpecifier() const
 	{
 		return callObjectMethod(
 			"getNetworkSpecifier",
 			"()Landroid/net/NetworkSpecifier;"
 		);
 	}
-	jint NetworkCapabilities::getOwnerUid()
+	jint NetworkCapabilities::getOwnerUid() const
 	{
 		return callMethod<jint>(
 			"getOwnerUid",
 			"()I"
 		);
 	}
-	jint NetworkCapabilities::getSignalStrength()
+	jint NetworkCapabilities::getSignalStrength() const
 	{
 		return callMethod<jint>(
 			"getSignalStrength",
 			"()I"
 		);
 	}
-	JObject NetworkCapabilities::getTransportInfo()
+	JObject NetworkCapabilities::getTransportInfo() const
 	{
 		return callObjectMethod(
 			"getTransportInfo",
 			"()Landroid/net/TransportInfo;"
 		);
 	}
-	jboolean NetworkCapabilities::hasCapability(jint arg0)
+	jboolean NetworkCapabilities::hasCapability(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCapability",
@@ -322,7 +322,7 @@ namespace android::net
 			arg0
 		);
 	}
-	jboolean NetworkCapabilities::hasTransport(jint arg0)
+	jboolean NetworkCapabilities::hasTransport(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasTransport",
@@ -330,21 +330,21 @@ namespace android::net
 			arg0
 		);
 	}
-	jint NetworkCapabilities::hashCode()
+	jint NetworkCapabilities::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString NetworkCapabilities::toString()
+	JString NetworkCapabilities::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NetworkCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

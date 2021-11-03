@@ -27,14 +27,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject Random::doubles()
+	JObject Random::doubles() const
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	JObject Random::doubles(jlong arg0)
+	JObject Random::doubles(jlong arg0) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -42,7 +42,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject Random::doubles(jdouble arg0, jdouble arg1)
+	JObject Random::doubles(jdouble arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -51,7 +51,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject Random::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	JObject Random::doubles(jlong arg0, jdouble arg1, jdouble arg2) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -61,14 +61,14 @@ namespace java::util
 			arg2
 		);
 	}
-	JObject Random::ints()
+	JObject Random::ints() const
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	JObject Random::ints(jlong arg0)
+	JObject Random::ints(jlong arg0) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -76,7 +76,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject Random::ints(jint arg0, jint arg1)
+	JObject Random::ints(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -85,7 +85,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject Random::ints(jlong arg0, jint arg1, jint arg2)
+	JObject Random::ints(jlong arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -95,14 +95,14 @@ namespace java::util
 			arg2
 		);
 	}
-	JObject Random::longs()
+	JObject Random::longs() const
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	JObject Random::longs(jlong arg0)
+	JObject Random::longs(jlong arg0) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -110,7 +110,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject Random::longs(jlong arg0, jlong arg1)
+	JObject Random::longs(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -119,7 +119,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject Random::longs(jlong arg0, jlong arg1, jlong arg2)
+	JObject Random::longs(jlong arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -129,14 +129,14 @@ namespace java::util
 			arg2
 		);
 	}
-	jboolean Random::nextBoolean()
+	jboolean Random::nextBoolean() const
 	{
 		return callMethod<jboolean>(
 			"nextBoolean",
 			"()Z"
 		);
 	}
-	void Random::nextBytes(JByteArray arg0)
+	void Random::nextBytes(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"nextBytes",
@@ -144,35 +144,35 @@ namespace java::util
 			arg0.object<jbyteArray>()
 		);
 	}
-	jdouble Random::nextDouble()
+	jdouble Random::nextDouble() const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
 			"()D"
 		);
 	}
-	jfloat Random::nextFloat()
+	jfloat Random::nextFloat() const
 	{
 		return callMethod<jfloat>(
 			"nextFloat",
 			"()F"
 		);
 	}
-	jdouble Random::nextGaussian()
+	jdouble Random::nextGaussian() const
 	{
 		return callMethod<jdouble>(
 			"nextGaussian",
 			"()D"
 		);
 	}
-	jint Random::nextInt()
+	jint Random::nextInt() const
 	{
 		return callMethod<jint>(
 			"nextInt",
 			"()I"
 		);
 	}
-	jint Random::nextInt(jint arg0)
+	jint Random::nextInt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"nextInt",
@@ -180,14 +180,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jlong Random::nextLong()
+	jlong Random::nextLong() const
 	{
 		return callMethod<jlong>(
 			"nextLong",
 			"()J"
 		);
 	}
-	void Random::setSeed(jlong arg0)
+	void Random::setSeed(jlong arg0) const
 	{
 		callMethod<void>(
 			"setSeed",

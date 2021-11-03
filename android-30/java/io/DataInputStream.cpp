@@ -29,7 +29,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint DataInputStream::read(JByteArray arg0)
+	jint DataInputStream::read(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -37,7 +37,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint DataInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint DataInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -47,42 +47,42 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean DataInputStream::readBoolean()
+	jboolean DataInputStream::readBoolean() const
 	{
 		return callMethod<jboolean>(
 			"readBoolean",
 			"()Z"
 		);
 	}
-	jbyte DataInputStream::readByte()
+	jbyte DataInputStream::readByte() const
 	{
 		return callMethod<jbyte>(
 			"readByte",
 			"()B"
 		);
 	}
-	jchar DataInputStream::readChar()
+	jchar DataInputStream::readChar() const
 	{
 		return callMethod<jchar>(
 			"readChar",
 			"()C"
 		);
 	}
-	jdouble DataInputStream::readDouble()
+	jdouble DataInputStream::readDouble() const
 	{
 		return callMethod<jdouble>(
 			"readDouble",
 			"()D"
 		);
 	}
-	jfloat DataInputStream::readFloat()
+	jfloat DataInputStream::readFloat() const
 	{
 		return callMethod<jfloat>(
 			"readFloat",
 			"()F"
 		);
 	}
-	void DataInputStream::readFully(JByteArray arg0)
+	void DataInputStream::readFully(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"readFully",
@@ -90,7 +90,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void DataInputStream::readFully(JByteArray arg0, jint arg1, jint arg2)
+	void DataInputStream::readFully(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"readFully",
@@ -100,56 +100,56 @@ namespace java::io
 			arg2
 		);
 	}
-	jint DataInputStream::readInt()
+	jint DataInputStream::readInt() const
 	{
 		return callMethod<jint>(
 			"readInt",
 			"()I"
 		);
 	}
-	JString DataInputStream::readLine()
+	JString DataInputStream::readLine() const
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong DataInputStream::readLong()
+	jlong DataInputStream::readLong() const
 	{
 		return callMethod<jlong>(
 			"readLong",
 			"()J"
 		);
 	}
-	jshort DataInputStream::readShort()
+	jshort DataInputStream::readShort() const
 	{
 		return callMethod<jshort>(
 			"readShort",
 			"()S"
 		);
 	}
-	JString DataInputStream::readUTF()
+	JString DataInputStream::readUTF() const
 	{
 		return callObjectMethod(
 			"readUTF",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DataInputStream::readUnsignedByte()
+	jint DataInputStream::readUnsignedByte() const
 	{
 		return callMethod<jint>(
 			"readUnsignedByte",
 			"()I"
 		);
 	}
-	jint DataInputStream::readUnsignedShort()
+	jint DataInputStream::readUnsignedShort() const
 	{
 		return callMethod<jint>(
 			"readUnsignedShort",
 			"()I"
 		);
 	}
-	jint DataInputStream::skipBytes(jint arg0)
+	jint DataInputStream::skipBytes(jint arg0) const
 	{
 		return callMethod<jint>(
 			"skipBytes",

@@ -20,8 +20,8 @@ namespace java::net
 		PasswordAuthentication(JString arg0, JCharArray arg1);
 		
 		// Methods
-		JCharArray getPassword();
-		JString getUserName();
+		JCharArray getPassword() const;
+		JString getUserName() const;
 	};
 } // namespace java::net
 

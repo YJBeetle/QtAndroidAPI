@@ -24,12 +24,12 @@ namespace android::net::wifi::aware
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getMaxMatchFilterLength();
-		jint getMaxServiceNameLength();
-		jint getMaxServiceSpecificInfoLength();
-		jint getSupportedCipherSuites();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getMaxMatchFilterLength() const;
+		jint getMaxServiceNameLength() const;
+		jint getMaxServiceSpecificInfoLength() const;
+		jint getSupportedCipherSuites() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::aware
 

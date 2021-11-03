@@ -22,9 +22,9 @@ namespace javax::crypto::spec
 		DHPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		
 		// Methods
-		java::math::BigInteger getG();
-		java::math::BigInteger getP();
-		java::math::BigInteger getY();
+		java::math::BigInteger getG() const;
+		java::math::BigInteger getP() const;
+		java::math::BigInteger getY() const;
 	};
 } // namespace javax::crypto::spec
 

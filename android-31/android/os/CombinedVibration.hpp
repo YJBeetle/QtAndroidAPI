@@ -28,7 +28,7 @@ namespace android::os
 		// Methods
 		static android::os::CombinedVibration createParallel(android::os::VibrationEffect arg0);
 		static android::os::CombinedVibration_ParallelCombination startParallel();
-		jint describeContents();
+		jint describeContents() const;
 	};
 } // namespace android::os
 

@@ -66,7 +66,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void BitSet::_and(java::util::BitSet arg0)
+	void BitSet::_and(java::util::BitSet arg0) const
 	{
 		callMethod<void>(
 			"and",
@@ -74,7 +74,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void BitSet::andNot(java::util::BitSet arg0)
+	void BitSet::andNot(java::util::BitSet arg0) const
 	{
 		callMethod<void>(
 			"andNot",
@@ -82,21 +82,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint BitSet::cardinality()
+	jint BitSet::cardinality() const
 	{
 		return callMethod<jint>(
 			"cardinality",
 			"()I"
 		);
 	}
-	void BitSet::clear()
+	void BitSet::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void BitSet::clear(jint arg0)
+	void BitSet::clear(jint arg0) const
 	{
 		callMethod<void>(
 			"clear",
@@ -104,7 +104,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void BitSet::clear(jint arg0, jint arg1)
+	void BitSet::clear(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"clear",
@@ -113,14 +113,14 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject BitSet::clone()
+	JObject BitSet::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean BitSet::equals(JObject arg0)
+	jboolean BitSet::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -128,7 +128,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void BitSet::flip(jint arg0)
+	void BitSet::flip(jint arg0) const
 	{
 		callMethod<void>(
 			"flip",
@@ -136,7 +136,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void BitSet::flip(jint arg0, jint arg1)
+	void BitSet::flip(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"flip",
@@ -145,7 +145,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean BitSet::get(jint arg0)
+	jboolean BitSet::get(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"get",
@@ -153,7 +153,7 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::BitSet BitSet::get(jint arg0, jint arg1)
+	java::util::BitSet BitSet::get(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -162,14 +162,14 @@ namespace java::util
 			arg1
 		);
 	}
-	jint BitSet::hashCode()
+	jint BitSet::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean BitSet::intersects(java::util::BitSet arg0)
+	jboolean BitSet::intersects(java::util::BitSet arg0) const
 	{
 		return callMethod<jboolean>(
 			"intersects",
@@ -177,21 +177,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean BitSet::isEmpty()
+	jboolean BitSet::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jint BitSet::length()
+	jint BitSet::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jint BitSet::nextClearBit(jint arg0)
+	jint BitSet::nextClearBit(jint arg0) const
 	{
 		return callMethod<jint>(
 			"nextClearBit",
@@ -199,7 +199,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint BitSet::nextSetBit(jint arg0)
+	jint BitSet::nextSetBit(jint arg0) const
 	{
 		return callMethod<jint>(
 			"nextSetBit",
@@ -207,7 +207,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void BitSet::_or(java::util::BitSet arg0)
+	void BitSet::_or(java::util::BitSet arg0) const
 	{
 		callMethod<void>(
 			"or",
@@ -215,7 +215,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint BitSet::previousClearBit(jint arg0)
+	jint BitSet::previousClearBit(jint arg0) const
 	{
 		return callMethod<jint>(
 			"previousClearBit",
@@ -223,7 +223,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint BitSet::previousSetBit(jint arg0)
+	jint BitSet::previousSetBit(jint arg0) const
 	{
 		return callMethod<jint>(
 			"previousSetBit",
@@ -231,7 +231,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void BitSet::set(jint arg0)
+	void BitSet::set(jint arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -239,7 +239,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void BitSet::set(jint arg0, jboolean arg1)
+	void BitSet::set(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -248,7 +248,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void BitSet::set(jint arg0, jint arg1)
+	void BitSet::set(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -257,7 +257,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void BitSet::set(jint arg0, jint arg1, jboolean arg2)
+	void BitSet::set(jint arg0, jint arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"set",
@@ -267,42 +267,42 @@ namespace java::util
 			arg2
 		);
 	}
-	jint BitSet::size()
+	jint BitSet::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject BitSet::stream()
+	JObject BitSet::stream() const
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	JByteArray BitSet::toByteArray()
+	JByteArray BitSet::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	JLongArray BitSet::toLongArray()
+	JLongArray BitSet::toLongArray() const
 	{
 		return callObjectMethod(
 			"toLongArray",
 			"()[J"
 		);
 	}
-	JString BitSet::toString()
+	JString BitSet::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BitSet::_xor(java::util::BitSet arg0)
+	void BitSet::_xor(java::util::BitSet arg0) const
 	{
 		callMethod<void>(
 			"xor",

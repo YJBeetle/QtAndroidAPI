@@ -12,21 +12,21 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	jint FilterInputStream::available()
+	jint FilterInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void FilterInputStream::close()
+	void FilterInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void FilterInputStream::mark(jint arg0)
+	void FilterInputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -34,21 +34,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean FilterInputStream::markSupported()
+	jboolean FilterInputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint FilterInputStream::read()
+	jint FilterInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint FilterInputStream::read(JByteArray arg0)
+	jint FilterInputStream::read(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -56,7 +56,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint FilterInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint FilterInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -66,14 +66,14 @@ namespace java::io
 			arg2
 		);
 	}
-	void FilterInputStream::reset()
+	void FilterInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong FilterInputStream::skip(jlong arg0)
+	jlong FilterInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

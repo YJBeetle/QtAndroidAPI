@@ -39,11 +39,11 @@ namespace android::graphics::drawable::shapes
 		ArcShape(jfloat arg0, jfloat arg1);
 		
 		// Methods
-		android::graphics::drawable::shapes::ArcShape clone();
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		void getOutline(android::graphics::Outline arg0);
-		jfloat getStartAngle();
-		jfloat getSweepAngle();
+		android::graphics::drawable::shapes::ArcShape clone() const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
+		void getOutline(android::graphics::Outline arg0) const;
+		jfloat getStartAngle() const;
+		jfloat getSweepAngle() const;
 	};
 } // namespace android::graphics::drawable::shapes
 

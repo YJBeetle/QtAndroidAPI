@@ -17,10 +17,10 @@ namespace android::database::sqlite
 		SQLiteClosable();
 		
 		// Methods
-		void acquireReference();
-		void close();
-		void releaseReference();
-		void releaseReferenceFromContainer();
+		void acquireReference() const;
+		void close() const;
+		void releaseReference() const;
+		void releaseReferenceFromContainer() const;
 	};
 } // namespace android::database::sqlite
 

@@ -119,35 +119,35 @@ namespace android::net::wifi
 	// Constructors
 	
 	// Methods
-	jint ScanResult::describeContents()
+	jint ScanResult::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ScanResult::is80211mcResponder()
+	jboolean ScanResult::is80211mcResponder() const
 	{
 		return callMethod<jboolean>(
 			"is80211mcResponder",
 			"()Z"
 		);
 	}
-	jboolean ScanResult::isPasspointNetwork()
+	jboolean ScanResult::isPasspointNetwork() const
 	{
 		return callMethod<jboolean>(
 			"isPasspointNetwork",
 			"()Z"
 		);
 	}
-	JString ScanResult::toString()
+	JString ScanResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ScanResult::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ScanResult::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -23,12 +23,12 @@ namespace java::security::spec
 		RSAPrivateCrtKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigInteger arg6, java::math::BigInteger arg7, JObject arg8);
 		
 		// Methods
-		java::math::BigInteger getCrtCoefficient();
-		java::math::BigInteger getPrimeExponentP();
-		java::math::BigInteger getPrimeExponentQ();
-		java::math::BigInteger getPrimeP();
-		java::math::BigInteger getPrimeQ();
-		java::math::BigInteger getPublicExponent();
+		java::math::BigInteger getCrtCoefficient() const;
+		java::math::BigInteger getPrimeExponentP() const;
+		java::math::BigInteger getPrimeExponentQ() const;
+		java::math::BigInteger getPrimeP() const;
+		java::math::BigInteger getPrimeQ() const;
+		java::math::BigInteger getPublicExponent() const;
 	};
 } // namespace java::security::spec
 

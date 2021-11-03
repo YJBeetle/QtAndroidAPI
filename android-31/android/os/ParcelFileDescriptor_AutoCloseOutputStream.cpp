@@ -17,7 +17,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void ParcelFileDescriptor_AutoCloseOutputStream::close()
+	void ParcelFileDescriptor_AutoCloseOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",

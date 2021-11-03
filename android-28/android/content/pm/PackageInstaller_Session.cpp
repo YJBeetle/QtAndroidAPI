@@ -15,21 +15,21 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	void PackageInstaller_Session::abandon()
+	void PackageInstaller_Session::abandon() const
 	{
 		callMethod<void>(
 			"abandon",
 			"()V"
 		);
 	}
-	void PackageInstaller_Session::close()
+	void PackageInstaller_Session::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PackageInstaller_Session::commit(android::content::IntentSender arg0)
+	void PackageInstaller_Session::commit(android::content::IntentSender arg0) const
 	{
 		callMethod<void>(
 			"commit",
@@ -37,7 +37,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageInstaller_Session::fsync(java::io::OutputStream arg0)
+	void PackageInstaller_Session::fsync(java::io::OutputStream arg0) const
 	{
 		callMethod<void>(
 			"fsync",
@@ -45,14 +45,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JArray PackageInstaller_Session::getNames()
+	JArray PackageInstaller_Session::getNames() const
 	{
 		return callObjectMethod(
 			"getNames",
 			"()[Ljava/lang/String;"
 		);
 	}
-	java::io::InputStream PackageInstaller_Session::openRead(JString arg0)
+	java::io::InputStream PackageInstaller_Session::openRead(JString arg0) const
 	{
 		return callObjectMethod(
 			"openRead",
@@ -60,7 +60,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	java::io::OutputStream PackageInstaller_Session::openWrite(JString arg0, jlong arg1, jlong arg2)
+	java::io::OutputStream PackageInstaller_Session::openWrite(JString arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"openWrite",
@@ -70,7 +70,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	void PackageInstaller_Session::removeSplit(JString arg0)
+	void PackageInstaller_Session::removeSplit(JString arg0) const
 	{
 		callMethod<void>(
 			"removeSplit",
@@ -78,7 +78,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	void PackageInstaller_Session::setStagingProgress(jfloat arg0)
+	void PackageInstaller_Session::setStagingProgress(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setStagingProgress",
@@ -86,7 +86,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_Session::transfer(JString arg0)
+	void PackageInstaller_Session::transfer(JString arg0) const
 	{
 		callMethod<void>(
 			"transfer",

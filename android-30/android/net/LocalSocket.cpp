@@ -49,7 +49,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	void LocalSocket::bind(android::net::LocalSocketAddress arg0)
+	void LocalSocket::bind(android::net::LocalSocketAddress arg0) const
 	{
 		callMethod<void>(
 			"bind",
@@ -57,14 +57,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LocalSocket::close()
+	void LocalSocket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void LocalSocket::connect(android::net::LocalSocketAddress arg0)
+	void LocalSocket::connect(android::net::LocalSocketAddress arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -72,7 +72,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LocalSocket::connect(android::net::LocalSocketAddress arg0, jint arg1)
+	void LocalSocket::connect(android::net::LocalSocketAddress arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"connect",
@@ -81,112 +81,112 @@ namespace android::net
 			arg1
 		);
 	}
-	JArray LocalSocket::getAncillaryFileDescriptors()
+	JArray LocalSocket::getAncillaryFileDescriptors() const
 	{
 		return callObjectMethod(
 			"getAncillaryFileDescriptors",
 			"()[Ljava/io/FileDescriptor;"
 		);
 	}
-	java::io::FileDescriptor LocalSocket::getFileDescriptor()
+	java::io::FileDescriptor LocalSocket::getFileDescriptor() const
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	java::io::InputStream LocalSocket::getInputStream()
+	java::io::InputStream LocalSocket::getInputStream() const
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	android::net::LocalSocketAddress LocalSocket::getLocalSocketAddress()
+	android::net::LocalSocketAddress LocalSocket::getLocalSocketAddress() const
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
 			"()Landroid/net/LocalSocketAddress;"
 		);
 	}
-	java::io::OutputStream LocalSocket::getOutputStream()
+	java::io::OutputStream LocalSocket::getOutputStream() const
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	android::net::Credentials LocalSocket::getPeerCredentials()
+	android::net::Credentials LocalSocket::getPeerCredentials() const
 	{
 		return callObjectMethod(
 			"getPeerCredentials",
 			"()Landroid/net/Credentials;"
 		);
 	}
-	jint LocalSocket::getReceiveBufferSize()
+	jint LocalSocket::getReceiveBufferSize() const
 	{
 		return callMethod<jint>(
 			"getReceiveBufferSize",
 			"()I"
 		);
 	}
-	android::net::LocalSocketAddress LocalSocket::getRemoteSocketAddress()
+	android::net::LocalSocketAddress LocalSocket::getRemoteSocketAddress() const
 	{
 		return callObjectMethod(
 			"getRemoteSocketAddress",
 			"()Landroid/net/LocalSocketAddress;"
 		);
 	}
-	jint LocalSocket::getSendBufferSize()
+	jint LocalSocket::getSendBufferSize() const
 	{
 		return callMethod<jint>(
 			"getSendBufferSize",
 			"()I"
 		);
 	}
-	jint LocalSocket::getSoTimeout()
+	jint LocalSocket::getSoTimeout() const
 	{
 		return callMethod<jint>(
 			"getSoTimeout",
 			"()I"
 		);
 	}
-	jboolean LocalSocket::isBound()
+	jboolean LocalSocket::isBound() const
 	{
 		return callMethod<jboolean>(
 			"isBound",
 			"()Z"
 		);
 	}
-	jboolean LocalSocket::isClosed()
+	jboolean LocalSocket::isClosed() const
 	{
 		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
-	jboolean LocalSocket::isConnected()
+	jboolean LocalSocket::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	jboolean LocalSocket::isInputShutdown()
+	jboolean LocalSocket::isInputShutdown() const
 	{
 		return callMethod<jboolean>(
 			"isInputShutdown",
 			"()Z"
 		);
 	}
-	jboolean LocalSocket::isOutputShutdown()
+	jboolean LocalSocket::isOutputShutdown() const
 	{
 		return callMethod<jboolean>(
 			"isOutputShutdown",
 			"()Z"
 		);
 	}
-	void LocalSocket::setFileDescriptorsForSend(JArray arg0)
+	void LocalSocket::setFileDescriptorsForSend(JArray arg0) const
 	{
 		callMethod<void>(
 			"setFileDescriptorsForSend",
@@ -194,7 +194,7 @@ namespace android::net
 			arg0.object<jarray>()
 		);
 	}
-	void LocalSocket::setReceiveBufferSize(jint arg0)
+	void LocalSocket::setReceiveBufferSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setReceiveBufferSize",
@@ -202,7 +202,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void LocalSocket::setSendBufferSize(jint arg0)
+	void LocalSocket::setSendBufferSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setSendBufferSize",
@@ -210,7 +210,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void LocalSocket::setSoTimeout(jint arg0)
+	void LocalSocket::setSoTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setSoTimeout",
@@ -218,21 +218,21 @@ namespace android::net
 			arg0
 		);
 	}
-	void LocalSocket::shutdownInput()
+	void LocalSocket::shutdownInput() const
 	{
 		callMethod<void>(
 			"shutdownInput",
 			"()V"
 		);
 	}
-	void LocalSocket::shutdownOutput()
+	void LocalSocket::shutdownOutput() const
 	{
 		callMethod<void>(
 			"shutdownOutput",
 			"()V"
 		);
 	}
-	JString LocalSocket::toString()
+	JString LocalSocket::toString() const
 	{
 		return callObjectMethod(
 			"toString",

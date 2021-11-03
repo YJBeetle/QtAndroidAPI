@@ -29,9 +29,9 @@ namespace android::net::wifi
 		// Constructors
 		
 		// Methods
-		void close();
-		android::net::wifi::SoftApConfiguration getSoftApConfiguration();
-		android::net::wifi::WifiConfiguration getWifiConfiguration();
+		void close() const;
+		android::net::wifi::SoftApConfiguration getSoftApConfiguration() const;
+		android::net::wifi::WifiConfiguration getWifiConfiguration() const;
 	};
 } // namespace android::net::wifi
 

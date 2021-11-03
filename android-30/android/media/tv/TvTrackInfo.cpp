@@ -44,14 +44,14 @@ namespace android::media::tv
 	// Constructors
 	
 	// Methods
-	jint TvTrackInfo::describeContents()
+	jint TvTrackInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TvTrackInfo::equals(JObject arg0)
+	jboolean TvTrackInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -59,133 +59,133 @@ namespace android::media::tv
 			arg0.object<jobject>()
 		);
 	}
-	jint TvTrackInfo::getAudioChannelCount()
+	jint TvTrackInfo::getAudioChannelCount() const
 	{
 		return callMethod<jint>(
 			"getAudioChannelCount",
 			"()I"
 		);
 	}
-	jint TvTrackInfo::getAudioSampleRate()
+	jint TvTrackInfo::getAudioSampleRate() const
 	{
 		return callMethod<jint>(
 			"getAudioSampleRate",
 			"()I"
 		);
 	}
-	JString TvTrackInfo::getDescription()
+	JString TvTrackInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString TvTrackInfo::getEncoding()
+	JString TvTrackInfo::getEncoding() const
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle TvTrackInfo::getExtra()
+	android::os::Bundle TvTrackInfo::getExtra() const
 	{
 		return callObjectMethod(
 			"getExtra",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString TvTrackInfo::getId()
+	JString TvTrackInfo::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TvTrackInfo::getLanguage()
+	JString TvTrackInfo::getLanguage() const
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TvTrackInfo::getType()
+	jint TvTrackInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jbyte TvTrackInfo::getVideoActiveFormatDescription()
+	jbyte TvTrackInfo::getVideoActiveFormatDescription() const
 	{
 		return callMethod<jbyte>(
 			"getVideoActiveFormatDescription",
 			"()B"
 		);
 	}
-	jfloat TvTrackInfo::getVideoFrameRate()
+	jfloat TvTrackInfo::getVideoFrameRate() const
 	{
 		return callMethod<jfloat>(
 			"getVideoFrameRate",
 			"()F"
 		);
 	}
-	jint TvTrackInfo::getVideoHeight()
+	jint TvTrackInfo::getVideoHeight() const
 	{
 		return callMethod<jint>(
 			"getVideoHeight",
 			"()I"
 		);
 	}
-	jfloat TvTrackInfo::getVideoPixelAspectRatio()
+	jfloat TvTrackInfo::getVideoPixelAspectRatio() const
 	{
 		return callMethod<jfloat>(
 			"getVideoPixelAspectRatio",
 			"()F"
 		);
 	}
-	jint TvTrackInfo::getVideoWidth()
+	jint TvTrackInfo::getVideoWidth() const
 	{
 		return callMethod<jint>(
 			"getVideoWidth",
 			"()I"
 		);
 	}
-	jint TvTrackInfo::hashCode()
+	jint TvTrackInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean TvTrackInfo::isAudioDescription()
+	jboolean TvTrackInfo::isAudioDescription() const
 	{
 		return callMethod<jboolean>(
 			"isAudioDescription",
 			"()Z"
 		);
 	}
-	jboolean TvTrackInfo::isEncrypted()
+	jboolean TvTrackInfo::isEncrypted() const
 	{
 		return callMethod<jboolean>(
 			"isEncrypted",
 			"()Z"
 		);
 	}
-	jboolean TvTrackInfo::isHardOfHearing()
+	jboolean TvTrackInfo::isHardOfHearing() const
 	{
 		return callMethod<jboolean>(
 			"isHardOfHearing",
 			"()Z"
 		);
 	}
-	jboolean TvTrackInfo::isSpokenSubtitle()
+	jboolean TvTrackInfo::isSpokenSubtitle() const
 	{
 		return callMethod<jboolean>(
 			"isSpokenSubtitle",
 			"()Z"
 		);
 	}
-	void TvTrackInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TvTrackInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

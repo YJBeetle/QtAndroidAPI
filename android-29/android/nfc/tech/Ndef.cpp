@@ -62,84 +62,84 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	jboolean Ndef::canMakeReadOnly()
+	jboolean Ndef::canMakeReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"canMakeReadOnly",
 			"()Z"
 		);
 	}
-	void Ndef::close()
+	void Ndef::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Ndef::connect()
+	void Ndef::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	android::nfc::NdefMessage Ndef::getCachedNdefMessage()
+	android::nfc::NdefMessage Ndef::getCachedNdefMessage() const
 	{
 		return callObjectMethod(
 			"getCachedNdefMessage",
 			"()Landroid/nfc/NdefMessage;"
 		);
 	}
-	jint Ndef::getMaxSize()
+	jint Ndef::getMaxSize() const
 	{
 		return callMethod<jint>(
 			"getMaxSize",
 			"()I"
 		);
 	}
-	android::nfc::NdefMessage Ndef::getNdefMessage()
+	android::nfc::NdefMessage Ndef::getNdefMessage() const
 	{
 		return callObjectMethod(
 			"getNdefMessage",
 			"()Landroid/nfc/NdefMessage;"
 		);
 	}
-	android::nfc::Tag Ndef::getTag()
+	android::nfc::Tag Ndef::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	JString Ndef::getType()
+	JString Ndef::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Ndef::isConnected()
+	jboolean Ndef::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	jboolean Ndef::isWritable()
+	jboolean Ndef::isWritable() const
 	{
 		return callMethod<jboolean>(
 			"isWritable",
 			"()Z"
 		);
 	}
-	jboolean Ndef::makeReadOnly()
+	jboolean Ndef::makeReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"makeReadOnly",
 			"()Z"
 		);
 	}
-	void Ndef::writeNdefMessage(android::nfc::NdefMessage arg0)
+	void Ndef::writeNdefMessage(android::nfc::NdefMessage arg0) const
 	{
 		callMethod<void>(
 			"writeNdefMessage",

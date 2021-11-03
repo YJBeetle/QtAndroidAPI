@@ -19,14 +19,14 @@ namespace android::app::slice
 		) {}
 	
 	// Methods
-	void SliceMetrics::logHidden()
+	void SliceMetrics::logHidden() const
 	{
 		callMethod<void>(
 			"logHidden",
 			"()V"
 		);
 	}
-	void SliceMetrics::logTouch(jint arg0, android::net::Uri arg1)
+	void SliceMetrics::logTouch(jint arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"logTouch",
@@ -35,7 +35,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	void SliceMetrics::logVisible()
+	void SliceMetrics::logVisible() const
 	{
 		callMethod<void>(
 			"logVisible",

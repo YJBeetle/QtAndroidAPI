@@ -44,7 +44,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JObject KeyFactory::generatePrivate(JObject arg0)
+	JObject KeyFactory::generatePrivate(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generatePrivate",
@@ -52,7 +52,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject KeyFactory::generatePublic(JObject arg0)
+	JObject KeyFactory::generatePublic(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generatePublic",
@@ -60,14 +60,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JString KeyFactory::getAlgorithm()
+	JString KeyFactory::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject KeyFactory::getKeySpec(JObject arg0, JClass arg1)
+	JObject KeyFactory::getKeySpec(JObject arg0, JClass arg1) const
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -76,14 +76,14 @@ namespace java::security
 			arg1.object<jclass>()
 		);
 	}
-	java::security::Provider KeyFactory::getProvider()
+	java::security::Provider KeyFactory::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JObject KeyFactory::translateKey(JObject arg0)
+	JObject KeyFactory::translateKey(JObject arg0) const
 	{
 		return callObjectMethod(
 			"translateKey",

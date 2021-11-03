@@ -33,8 +33,8 @@ namespace android::text::method
 		static android::text::method::DigitsKeyListener getInstance(java::util::Locale arg0);
 		static android::text::method::DigitsKeyListener getInstance(jboolean arg0, jboolean arg1);
 		static android::text::method::DigitsKeyListener getInstance(java::util::Locale arg0, jboolean arg1, jboolean arg2);
-		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
-		jint getInputType();
+		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const;
+		jint getInputType() const;
 	};
 } // namespace android::text::method
 

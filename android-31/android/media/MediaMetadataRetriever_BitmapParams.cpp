@@ -16,21 +16,21 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::graphics::Bitmap_Config MediaMetadataRetriever_BitmapParams::getActualConfig()
+	android::graphics::Bitmap_Config MediaMetadataRetriever_BitmapParams::getActualConfig() const
 	{
 		return callObjectMethod(
 			"getActualConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	android::graphics::Bitmap_Config MediaMetadataRetriever_BitmapParams::getPreferredConfig()
+	android::graphics::Bitmap_Config MediaMetadataRetriever_BitmapParams::getPreferredConfig() const
 	{
 		return callObjectMethod(
 			"getPreferredConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	void MediaMetadataRetriever_BitmapParams::setPreferredConfig(android::graphics::Bitmap_Config arg0)
+	void MediaMetadataRetriever_BitmapParams::setPreferredConfig(android::graphics::Bitmap_Config arg0) const
 	{
 		callMethod<void>(
 			"setPreferredConfig",

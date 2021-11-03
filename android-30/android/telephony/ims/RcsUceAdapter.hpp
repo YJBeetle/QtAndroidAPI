@@ -16,7 +16,7 @@ namespace android::telephony::ims
 		// Constructors
 		
 		// Methods
-		jboolean isUceSettingEnabled();
+		jboolean isUceSettingEnabled() const;
 	};
 } // namespace android::telephony::ims
 

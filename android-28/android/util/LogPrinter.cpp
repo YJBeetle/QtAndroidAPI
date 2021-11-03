@@ -18,7 +18,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void LogPrinter::println(JString arg0)
+	void LogPrinter::println(JString arg0) const
 	{
 		callMethod<void>(
 			"println",

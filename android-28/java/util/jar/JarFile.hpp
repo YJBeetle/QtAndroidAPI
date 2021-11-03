@@ -65,15 +65,15 @@ namespace java::util::jar
 		// Methods
 		static JObject baseVersion();
 		static JObject runtimeVersion();
-		JObject entries();
-		java::util::zip::ZipEntry getEntry(JString arg0);
-		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
-		java::util::jar::JarEntry getJarEntry(JString arg0);
-		java::util::jar::Manifest getManifest();
-		JObject getVersion();
-		jboolean isMultiRelease();
-		JObject stream();
-		JObject versionedStream();
+		JObject entries() const;
+		java::util::zip::ZipEntry getEntry(JString arg0) const;
+		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0) const;
+		java::util::jar::JarEntry getJarEntry(JString arg0) const;
+		java::util::jar::Manifest getManifest() const;
+		JObject getVersion() const;
+		jboolean isMultiRelease() const;
+		JObject stream() const;
+		JObject versionedStream() const;
 	};
 } // namespace java::util::jar
 

@@ -53,21 +53,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void DialogFragment::dismiss()
+	void DialogFragment::dismiss() const
 	{
 		callMethod<void>(
 			"dismiss",
 			"()V"
 		);
 	}
-	void DialogFragment::dismissAllowingStateLoss()
+	void DialogFragment::dismissAllowingStateLoss() const
 	{
 		callMethod<void>(
 			"dismissAllowingStateLoss",
 			"()V"
 		);
 	}
-	void DialogFragment::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void DialogFragment::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -78,35 +78,35 @@ namespace android::app
 			arg3.object<jarray>()
 		);
 	}
-	android::app::Dialog DialogFragment::getDialog()
+	android::app::Dialog DialogFragment::getDialog() const
 	{
 		return callObjectMethod(
 			"getDialog",
 			"()Landroid/app/Dialog;"
 		);
 	}
-	jboolean DialogFragment::getShowsDialog()
+	jboolean DialogFragment::getShowsDialog() const
 	{
 		return callMethod<jboolean>(
 			"getShowsDialog",
 			"()Z"
 		);
 	}
-	jint DialogFragment::getTheme()
+	jint DialogFragment::getTheme() const
 	{
 		return callMethod<jint>(
 			"getTheme",
 			"()I"
 		);
 	}
-	jboolean DialogFragment::isCancelable()
+	jboolean DialogFragment::isCancelable() const
 	{
 		return callMethod<jboolean>(
 			"isCancelable",
 			"()Z"
 		);
 	}
-	void DialogFragment::onActivityCreated(android::os::Bundle arg0)
+	void DialogFragment::onActivityCreated(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onActivityCreated",
@@ -114,7 +114,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DialogFragment::onAttach(android::content::Context arg0)
+	void DialogFragment::onAttach(android::content::Context arg0) const
 	{
 		callMethod<void>(
 			"onAttach",
@@ -122,7 +122,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DialogFragment::onCancel(JObject arg0)
+	void DialogFragment::onCancel(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCancel",
@@ -130,7 +130,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DialogFragment::onCreate(android::os::Bundle arg0)
+	void DialogFragment::onCreate(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onCreate",
@@ -138,7 +138,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Dialog DialogFragment::onCreateDialog(android::os::Bundle arg0)
+	android::app::Dialog DialogFragment::onCreateDialog(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"onCreateDialog",
@@ -146,21 +146,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DialogFragment::onDestroyView()
+	void DialogFragment::onDestroyView() const
 	{
 		callMethod<void>(
 			"onDestroyView",
 			"()V"
 		);
 	}
-	void DialogFragment::onDetach()
+	void DialogFragment::onDetach() const
 	{
 		callMethod<void>(
 			"onDetach",
 			"()V"
 		);
 	}
-	void DialogFragment::onDismiss(JObject arg0)
+	void DialogFragment::onDismiss(JObject arg0) const
 	{
 		callMethod<void>(
 			"onDismiss",
@@ -168,7 +168,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::LayoutInflater DialogFragment::onGetLayoutInflater(android::os::Bundle arg0)
+	android::view::LayoutInflater DialogFragment::onGetLayoutInflater(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"onGetLayoutInflater",
@@ -176,7 +176,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DialogFragment::onSaveInstanceState(android::os::Bundle arg0)
+	void DialogFragment::onSaveInstanceState(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onSaveInstanceState",
@@ -184,21 +184,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DialogFragment::onStart()
+	void DialogFragment::onStart() const
 	{
 		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
-	void DialogFragment::onStop()
+	void DialogFragment::onStop() const
 	{
 		callMethod<void>(
 			"onStop",
 			"()V"
 		);
 	}
-	void DialogFragment::setCancelable(jboolean arg0)
+	void DialogFragment::setCancelable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCancelable",
@@ -206,7 +206,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void DialogFragment::setShowsDialog(jboolean arg0)
+	void DialogFragment::setShowsDialog(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowsDialog",
@@ -214,7 +214,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void DialogFragment::setStyle(jint arg0, jint arg1)
+	void DialogFragment::setStyle(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setStyle",
@@ -223,7 +223,7 @@ namespace android::app
 			arg1
 		);
 	}
-	jint DialogFragment::show(android::app::FragmentTransaction arg0, JString arg1)
+	jint DialogFragment::show(android::app::FragmentTransaction arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"show",
@@ -232,7 +232,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void DialogFragment::show(android::app::FragmentManager arg0, JString arg1)
+	void DialogFragment::show(android::app::FragmentManager arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"show",

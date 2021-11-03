@@ -26,13 +26,13 @@ namespace android::util
 		
 		// Methods
 		static android::util::SizeF parseSizeF(JString arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jfloat getHeight();
-		jfloat getWidth();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jfloat getHeight() const;
+		jfloat getWidth() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::util
 

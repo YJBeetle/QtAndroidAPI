@@ -22,12 +22,12 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		JArray getAxes();
-		jint getResultCode();
-		jint getTtcIndex();
-		android::net::Uri getUri();
-		jint getWeight();
-		jboolean isItalic();
+		JArray getAxes() const;
+		jint getResultCode() const;
+		jint getTtcIndex() const;
+		android::net::Uri getUri() const;
+		jint getWeight() const;
+		jboolean isItalic() const;
 	};
 } // namespace android::provider
 

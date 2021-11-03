@@ -33,21 +33,21 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getBand();
-		jint getCellBandwidthDownlinkKhz();
-		jint getCellBandwidthUplinkKhz();
-		jint getConnectionStatus();
-		jint getDownlinkChannelNumber();
-		jint getDownlinkFrequencyKhz();
-		jint getNetworkType();
-		jint getPhysicalCellId();
-		jint getUplinkChannelNumber();
-		jint getUplinkFrequencyKhz();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getBand() const;
+		jint getCellBandwidthDownlinkKhz() const;
+		jint getCellBandwidthUplinkKhz() const;
+		jint getConnectionStatus() const;
+		jint getDownlinkChannelNumber() const;
+		jint getDownlinkFrequencyKhz() const;
+		jint getNetworkType() const;
+		jint getPhysicalCellId() const;
+		jint getUplinkChannelNumber() const;
+		jint getUplinkFrequencyKhz() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

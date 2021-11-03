@@ -62,7 +62,7 @@ namespace javax::security::auth
 			arg0.object()
 		);
 	}
-	jboolean Subject::equals(JObject arg0)
+	jboolean Subject::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -70,14 +70,14 @@ namespace javax::security::auth
 			arg0.object<jobject>()
 		);
 	}
-	JObject Subject::getPrincipals()
+	JObject Subject::getPrincipals() const
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Subject::getPrincipals(JClass arg0)
+	JObject Subject::getPrincipals(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getPrincipals",
@@ -85,14 +85,14 @@ namespace javax::security::auth
 			arg0.object<jclass>()
 		);
 	}
-	JObject Subject::getPrivateCredentials()
+	JObject Subject::getPrivateCredentials() const
 	{
 		return callObjectMethod(
 			"getPrivateCredentials",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Subject::getPrivateCredentials(JClass arg0)
+	JObject Subject::getPrivateCredentials(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getPrivateCredentials",
@@ -100,14 +100,14 @@ namespace javax::security::auth
 			arg0.object<jclass>()
 		);
 	}
-	JObject Subject::getPublicCredentials()
+	JObject Subject::getPublicCredentials() const
 	{
 		return callObjectMethod(
 			"getPublicCredentials",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Subject::getPublicCredentials(JClass arg0)
+	JObject Subject::getPublicCredentials(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getPublicCredentials",
@@ -115,28 +115,28 @@ namespace javax::security::auth
 			arg0.object<jclass>()
 		);
 	}
-	jint Subject::hashCode()
+	jint Subject::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Subject::isReadOnly()
+	jboolean Subject::isReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
-	void Subject::setReadOnly()
+	void Subject::setReadOnly() const
 	{
 		callMethod<void>(
 			"setReadOnly",
 			"()V"
 		);
 	}
-	JString Subject::toString()
+	JString Subject::toString() const
 	{
 		return callObjectMethod(
 			"toString",

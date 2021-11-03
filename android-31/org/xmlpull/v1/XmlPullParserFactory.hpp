@@ -30,14 +30,14 @@ namespace org::xmlpull::v1
 		// Methods
 		static org::xmlpull::v1::XmlPullParserFactory newInstance();
 		static org::xmlpull::v1::XmlPullParserFactory newInstance(JString arg0, JClass arg1);
-		jboolean getFeature(JString arg0);
-		jboolean isNamespaceAware();
-		jboolean isValidating();
-		JObject newPullParser();
-		JObject newSerializer();
-		void setFeature(JString arg0, jboolean arg1);
-		void setNamespaceAware(jboolean arg0);
-		void setValidating(jboolean arg0);
+		jboolean getFeature(JString arg0) const;
+		jboolean isNamespaceAware() const;
+		jboolean isValidating() const;
+		JObject newPullParser() const;
+		JObject newSerializer() const;
+		void setFeature(JString arg0, jboolean arg1) const;
+		void setNamespaceAware(jboolean arg0) const;
+		void setValidating(jboolean arg0) const;
 	};
 } // namespace org::xmlpull::v1
 

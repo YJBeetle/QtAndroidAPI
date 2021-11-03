@@ -42,12 +42,12 @@ namespace android::renderscript
 		
 		// Methods
 		static android::renderscript::ScriptIntrinsicBlur create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
-		void forEach(android::renderscript::Allocation arg0);
-		void forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1);
-		android::renderscript::Script_FieldID getFieldID_Input();
-		android::renderscript::Script_KernelID getKernelID();
-		void setInput(android::renderscript::Allocation arg0);
-		void setRadius(jfloat arg0);
+		void forEach(android::renderscript::Allocation arg0) const;
+		void forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const;
+		android::renderscript::Script_FieldID getFieldID_Input() const;
+		android::renderscript::Script_KernelID getKernelID() const;
+		void setInput(android::renderscript::Allocation arg0) const;
+		void setRadius(jfloat arg0) const;
 	};
 } // namespace android::renderscript
 

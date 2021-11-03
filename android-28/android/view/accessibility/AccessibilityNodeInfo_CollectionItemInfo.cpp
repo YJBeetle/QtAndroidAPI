@@ -37,42 +37,42 @@ namespace android::view::accessibility
 			arg5
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnIndex()
+	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnIndex() const
 	{
 		return callMethod<jint>(
 			"getColumnIndex",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnSpan()
+	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnSpan() const
 	{
 		return callMethod<jint>(
 			"getColumnSpan",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex()
+	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex() const
 	{
 		return callMethod<jint>(
 			"getRowIndex",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getRowSpan()
+	jint AccessibilityNodeInfo_CollectionItemInfo::getRowSpan() const
 	{
 		return callMethod<jint>(
 			"getRowSpan",
 			"()I"
 		);
 	}
-	jboolean AccessibilityNodeInfo_CollectionItemInfo::isHeading()
+	jboolean AccessibilityNodeInfo_CollectionItemInfo::isHeading() const
 	{
 		return callMethod<jboolean>(
 			"isHeading",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo_CollectionItemInfo::isSelected()
+	jboolean AccessibilityNodeInfo_CollectionItemInfo::isSelected() const
 	{
 		return callMethod<jboolean>(
 			"isSelected",

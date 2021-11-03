@@ -32,9 +32,9 @@ namespace android::service::autofill
 		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2, JString arg3);
 		
 		// Methods
-		android::service::autofill::ImageTransformation_Builder addOption(java::util::regex::Pattern arg0, jint arg1);
-		android::service::autofill::ImageTransformation_Builder addOption(java::util::regex::Pattern arg0, jint arg1, JString arg2);
-		android::service::autofill::ImageTransformation build();
+		android::service::autofill::ImageTransformation_Builder addOption(java::util::regex::Pattern arg0, jint arg1) const;
+		android::service::autofill::ImageTransformation_Builder addOption(java::util::regex::Pattern arg0, jint arg1, JString arg2) const;
+		android::service::autofill::ImageTransformation build() const;
 	};
 } // namespace android::service::autofill
 

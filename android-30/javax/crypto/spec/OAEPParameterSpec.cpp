@@ -29,28 +29,28 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	JString OAEPParameterSpec::getDigestAlgorithm()
+	JString OAEPParameterSpec::getDigestAlgorithm() const
 	{
 		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString OAEPParameterSpec::getMGFAlgorithm()
+	JString OAEPParameterSpec::getMGFAlgorithm() const
 	{
 		return callObjectMethod(
 			"getMGFAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject OAEPParameterSpec::getMGFParameters()
+	JObject OAEPParameterSpec::getMGFParameters() const
 	{
 		return callObjectMethod(
 			"getMGFParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	javax::crypto::spec::PSource OAEPParameterSpec::getPSource()
+	javax::crypto::spec::PSource OAEPParameterSpec::getPSource() const
 	{
 		return callObjectMethod(
 			"getPSource",

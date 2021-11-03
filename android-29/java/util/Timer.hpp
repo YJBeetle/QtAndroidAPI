@@ -35,14 +35,14 @@ namespace java::util
 		Timer(JString arg0, jboolean arg1);
 		
 		// Methods
-		void cancel();
-		jint purge();
-		void schedule(java::util::TimerTask arg0, java::util::Date arg1);
-		void schedule(java::util::TimerTask arg0, jlong arg1);
-		void schedule(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2);
-		void schedule(java::util::TimerTask arg0, jlong arg1, jlong arg2);
-		void scheduleAtFixedRate(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2);
-		void scheduleAtFixedRate(java::util::TimerTask arg0, jlong arg1, jlong arg2);
+		void cancel() const;
+		jint purge() const;
+		void schedule(java::util::TimerTask arg0, java::util::Date arg1) const;
+		void schedule(java::util::TimerTask arg0, jlong arg1) const;
+		void schedule(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2) const;
+		void schedule(java::util::TimerTask arg0, jlong arg1, jlong arg2) const;
+		void scheduleAtFixedRate(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2) const;
+		void scheduleAtFixedRate(java::util::TimerTask arg0, jlong arg1, jlong arg2) const;
 	};
 } // namespace java::util
 

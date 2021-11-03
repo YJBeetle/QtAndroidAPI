@@ -34,11 +34,11 @@ namespace android::icu::math
 		MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3);
 		
 		// Methods
-		jint getDigits();
-		jint getForm();
-		jboolean getLostDigits();
-		jint getRoundingMode();
-		JString toString();
+		jint getDigits() const;
+		jint getForm() const;
+		jboolean getLostDigits() const;
+		jint getRoundingMode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::math
 

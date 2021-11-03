@@ -18,7 +18,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void ActionMode_Callback2::onGetContentRect(android::view::ActionMode arg0, android::view::View arg1, android::graphics::Rect arg2)
+	void ActionMode_Callback2::onGetContentRect(android::view::ActionMode arg0, android::view::View arg1, android::graphics::Rect arg2) const
 	{
 		callMethod<void>(
 			"onGetContentRect",

@@ -20,35 +20,35 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	jint NetworkEvent::describeContents()
+	jint NetworkEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong NetworkEvent::getId()
+	jlong NetworkEvent::getId() const
 	{
 		return callMethod<jlong>(
 			"getId",
 			"()J"
 		);
 	}
-	JString NetworkEvent::getPackageName()
+	JString NetworkEvent::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong NetworkEvent::getTimestamp()
+	jlong NetworkEvent::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",
 			"()J"
 		);
 	}
-	void NetworkEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

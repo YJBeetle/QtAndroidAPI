@@ -19,8 +19,8 @@ namespace android::net::wifi::rtt
 		RangingResultCallback();
 		
 		// Methods
-		void onRangingFailure(jint arg0);
-		void onRangingResults(JObject arg0);
+		void onRangingFailure(jint arg0) const;
+		void onRangingResults(JObject arg0) const;
 	};
 } // namespace android::net::wifi::rtt
 

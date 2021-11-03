@@ -63,7 +63,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void DialerFilter::append(JString arg0)
+	void DialerFilter::append(JString arg0) const
 	{
 		callMethod<void>(
 			"append",
@@ -71,49 +71,49 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void DialerFilter::clearText()
+	void DialerFilter::clearText() const
 	{
 		callMethod<void>(
 			"clearText",
 			"()V"
 		);
 	}
-	JString DialerFilter::getDigits()
+	JString DialerFilter::getDigits() const
 	{
 		return callObjectMethod(
 			"getDigits",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DialerFilter::getFilterText()
+	JString DialerFilter::getFilterText() const
 	{
 		return callObjectMethod(
 			"getFilterText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DialerFilter::getLetters()
+	JString DialerFilter::getLetters() const
 	{
 		return callObjectMethod(
 			"getLetters",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint DialerFilter::getMode()
+	jint DialerFilter::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	jboolean DialerFilter::isQwertyKeyboard()
+	jboolean DialerFilter::isQwertyKeyboard() const
 	{
 		return callMethod<jboolean>(
 			"isQwertyKeyboard",
 			"()Z"
 		);
 	}
-	jboolean DialerFilter::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean DialerFilter::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -122,7 +122,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean DialerFilter::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean DialerFilter::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -131,7 +131,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void DialerFilter::removeFilterWatcher(JObject arg0)
+	void DialerFilter::removeFilterWatcher(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeFilterWatcher",
@@ -139,7 +139,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DialerFilter::setDigitsWatcher(JObject arg0)
+	void DialerFilter::setDigitsWatcher(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDigitsWatcher",
@@ -147,7 +147,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DialerFilter::setFilterWatcher(JObject arg0)
+	void DialerFilter::setFilterWatcher(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFilterWatcher",
@@ -155,7 +155,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DialerFilter::setLettersWatcher(JObject arg0)
+	void DialerFilter::setLettersWatcher(JObject arg0) const
 	{
 		callMethod<void>(
 			"setLettersWatcher",
@@ -163,7 +163,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DialerFilter::setMode(jint arg0)
+	void DialerFilter::setMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setMode",

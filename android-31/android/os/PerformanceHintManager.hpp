@@ -22,8 +22,8 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		android::os::PerformanceHintManager_Session createHintSession(JIntArray arg0, jlong arg1);
-		jlong getPreferredUpdateRateNanos();
+		android::os::PerformanceHintManager_Session createHintSession(JIntArray arg0, jlong arg1) const;
+		jlong getPreferredUpdateRateNanos() const;
 	};
 } // namespace android::os
 

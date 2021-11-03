@@ -18,12 +18,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint getBitrate();
-		jint getChannels();
-		jint getCodec();
-		JString getMediaType();
-		jint getProfile();
-		jint getSampleRate();
+		jint getBitrate() const;
+		jint getChannels() const;
+		jint getCodec() const;
+		JString getMediaType() const;
+		jint getProfile() const;
+		jint getSampleRate() const;
 	};
 } // namespace android::media
 

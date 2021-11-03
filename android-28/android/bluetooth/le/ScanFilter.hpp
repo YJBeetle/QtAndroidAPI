@@ -33,22 +33,22 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getDeviceAddress();
-		JString getDeviceName();
-		JByteArray getManufacturerData();
-		JByteArray getManufacturerDataMask();
-		jint getManufacturerId();
-		JByteArray getServiceData();
-		JByteArray getServiceDataMask();
-		android::os::ParcelUuid getServiceDataUuid();
-		android::os::ParcelUuid getServiceUuid();
-		android::os::ParcelUuid getServiceUuidMask();
-		jint hashCode();
-		jboolean matches(android::bluetooth::le::ScanResult arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getDeviceAddress() const;
+		JString getDeviceName() const;
+		JByteArray getManufacturerData() const;
+		JByteArray getManufacturerDataMask() const;
+		jint getManufacturerId() const;
+		JByteArray getServiceData() const;
+		JByteArray getServiceDataMask() const;
+		android::os::ParcelUuid getServiceDataUuid() const;
+		android::os::ParcelUuid getServiceUuid() const;
+		android::os::ParcelUuid getServiceUuidMask() const;
+		jint hashCode() const;
+		jboolean matches(android::bluetooth::le::ScanResult arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth::le
 

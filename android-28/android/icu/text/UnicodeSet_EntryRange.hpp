@@ -20,7 +20,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

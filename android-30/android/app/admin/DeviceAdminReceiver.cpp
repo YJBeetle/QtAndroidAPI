@@ -166,7 +166,7 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	android::app::admin::DevicePolicyManager DeviceAdminReceiver::getManager(android::content::Context arg0)
+	android::app::admin::DevicePolicyManager DeviceAdminReceiver::getManager(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"getManager",
@@ -174,7 +174,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	android::content::ComponentName DeviceAdminReceiver::getWho(android::content::Context arg0)
+	android::content::ComponentName DeviceAdminReceiver::getWho(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"getWho",
@@ -182,7 +182,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DeviceAdminReceiver::onBugreportFailed(android::content::Context arg0, android::content::Intent arg1, jint arg2)
+	void DeviceAdminReceiver::onBugreportFailed(android::content::Context arg0, android::content::Intent arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onBugreportFailed",
@@ -192,7 +192,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DeviceAdminReceiver::onBugreportShared(android::content::Context arg0, android::content::Intent arg1, JString arg2)
+	void DeviceAdminReceiver::onBugreportShared(android::content::Context arg0, android::content::Intent arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onBugreportShared",
@@ -202,7 +202,7 @@ namespace android::app::admin
 			arg2.object<jstring>()
 		);
 	}
-	void DeviceAdminReceiver::onBugreportSharingDeclined(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onBugreportSharingDeclined(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onBugreportSharingDeclined",
@@ -211,7 +211,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	JString DeviceAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4)
+	JString DeviceAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"onChoosePrivateKeyAlias",
@@ -223,7 +223,7 @@ namespace android::app::admin
 			arg4.object<jstring>()
 		);
 	}
-	JString DeviceAdminReceiver::onDisableRequested(android::content::Context arg0, android::content::Intent arg1)
+	JString DeviceAdminReceiver::onDisableRequested(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		return callObjectMethod(
 			"onDisableRequested",
@@ -232,7 +232,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onDisabled(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onDisabled(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onDisabled",
@@ -241,7 +241,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onEnabled(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onEnabled(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onEnabled",
@@ -250,7 +250,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, JString arg2)
+	void DeviceAdminReceiver::onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onLockTaskModeEntering",
@@ -260,7 +260,7 @@ namespace android::app::admin
 			arg2.object<jstring>()
 		);
 	}
-	void DeviceAdminReceiver::onLockTaskModeExiting(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onLockTaskModeExiting(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onLockTaskModeExiting",
@@ -269,7 +269,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3)
+	void DeviceAdminReceiver::onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onNetworkLogsAvailable",
@@ -280,7 +280,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	void DeviceAdminReceiver::onPasswordChanged(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onPasswordChanged(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onPasswordChanged",
@@ -289,7 +289,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onPasswordChanged(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onPasswordChanged(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onPasswordChanged",
@@ -299,7 +299,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onPasswordExpiring(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onPasswordExpiring(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onPasswordExpiring",
@@ -308,7 +308,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onPasswordExpiring(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onPasswordExpiring(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onPasswordExpiring",
@@ -318,7 +318,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onPasswordFailed(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onPasswordFailed(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onPasswordFailed",
@@ -327,7 +327,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onPasswordFailed(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onPasswordFailed(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onPasswordFailed",
@@ -337,7 +337,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onPasswordSucceeded(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onPasswordSucceeded(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onPasswordSucceeded",
@@ -346,7 +346,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onPasswordSucceeded(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onPasswordSucceeded(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onPasswordSucceeded",
@@ -356,7 +356,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onProfileProvisioningComplete(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onProfileProvisioningComplete(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onProfileProvisioningComplete",
@@ -365,7 +365,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onReadyForUserInitialization(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onReadyForUserInitialization(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onReadyForUserInitialization",
@@ -374,7 +374,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onReceive",
@@ -383,7 +383,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onSecurityLogsAvailable(android::content::Context arg0, android::content::Intent arg1)
+	void DeviceAdminReceiver::onSecurityLogsAvailable(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onSecurityLogsAvailable",
@@ -392,7 +392,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onSystemUpdatePending(android::content::Context arg0, android::content::Intent arg1, jlong arg2)
+	void DeviceAdminReceiver::onSystemUpdatePending(android::content::Context arg0, android::content::Intent arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"onSystemUpdatePending",
@@ -402,7 +402,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DeviceAdminReceiver::onTransferAffiliatedProfileOwnershipComplete(android::content::Context arg0, android::os::UserHandle arg1)
+	void DeviceAdminReceiver::onTransferAffiliatedProfileOwnershipComplete(android::content::Context arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"onTransferAffiliatedProfileOwnershipComplete",
@@ -411,7 +411,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onTransferOwnershipComplete(android::content::Context arg0, android::os::PersistableBundle arg1)
+	void DeviceAdminReceiver::onTransferOwnershipComplete(android::content::Context arg0, android::os::PersistableBundle arg1) const
 	{
 		callMethod<void>(
 			"onTransferOwnershipComplete",
@@ -420,7 +420,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onUserAdded(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onUserAdded(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onUserAdded",
@@ -430,7 +430,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onUserRemoved(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onUserRemoved(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onUserRemoved",
@@ -440,7 +440,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onUserStarted(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onUserStarted(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onUserStarted",
@@ -450,7 +450,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onUserStopped(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onUserStopped(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onUserStopped",
@@ -460,7 +460,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DeviceAdminReceiver::onUserSwitched(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2)
+	void DeviceAdminReceiver::onUserSwitched(android::content::Context arg0, android::content::Intent arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onUserSwitched",

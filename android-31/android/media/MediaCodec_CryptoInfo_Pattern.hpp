@@ -17,9 +17,9 @@ namespace android::media
 		MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1);
 		
 		// Methods
-		jint getEncryptBlocks();
-		jint getSkipBlocks();
-		void set(jint arg0, jint arg1);
+		jint getEncryptBlocks() const;
+		jint getSkipBlocks() const;
+		void set(jint arg0, jint arg1) const;
 	};
 } // namespace android::media
 

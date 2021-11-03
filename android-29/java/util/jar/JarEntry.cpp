@@ -33,28 +33,28 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	java::util::jar::Attributes JarEntry::getAttributes()
+	java::util::jar::Attributes JarEntry::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	JArray JarEntry::getCertificates()
+	JArray JarEntry::getCertificates() const
 	{
 		return callObjectMethod(
 			"getCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JArray JarEntry::getCodeSigners()
+	JArray JarEntry::getCodeSigners() const
 	{
 		return callObjectMethod(
 			"getCodeSigners",
 			"()[Ljava/security/CodeSigner;"
 		);
 	}
-	JString JarEntry::getRealName()
+	JString JarEntry::getRealName() const
 	{
 		return callObjectMethod(
 			"getRealName",

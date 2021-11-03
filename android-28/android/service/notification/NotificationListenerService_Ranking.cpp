@@ -39,84 +39,84 @@ namespace android::service::notification
 		) {}
 	
 	// Methods
-	jboolean NotificationListenerService_Ranking::canShowBadge()
+	jboolean NotificationListenerService_Ranking::canShowBadge() const
 	{
 		return callMethod<jboolean>(
 			"canShowBadge",
 			"()Z"
 		);
 	}
-	android::app::NotificationChannel NotificationListenerService_Ranking::getChannel()
+	android::app::NotificationChannel NotificationListenerService_Ranking::getChannel() const
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Landroid/app/NotificationChannel;"
 		);
 	}
-	jint NotificationListenerService_Ranking::getImportance()
+	jint NotificationListenerService_Ranking::getImportance() const
 	{
 		return callMethod<jint>(
 			"getImportance",
 			"()I"
 		);
 	}
-	JString NotificationListenerService_Ranking::getImportanceExplanation()
+	JString NotificationListenerService_Ranking::getImportanceExplanation() const
 	{
 		return callObjectMethod(
 			"getImportanceExplanation",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString NotificationListenerService_Ranking::getKey()
+	JString NotificationListenerService_Ranking::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NotificationListenerService_Ranking::getOverrideGroupKey()
+	JString NotificationListenerService_Ranking::getOverrideGroupKey() const
 	{
 		return callObjectMethod(
 			"getOverrideGroupKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint NotificationListenerService_Ranking::getRank()
+	jint NotificationListenerService_Ranking::getRank() const
 	{
 		return callMethod<jint>(
 			"getRank",
 			"()I"
 		);
 	}
-	jint NotificationListenerService_Ranking::getSuppressedVisualEffects()
+	jint NotificationListenerService_Ranking::getSuppressedVisualEffects() const
 	{
 		return callMethod<jint>(
 			"getSuppressedVisualEffects",
 			"()I"
 		);
 	}
-	jint NotificationListenerService_Ranking::getUserSentiment()
+	jint NotificationListenerService_Ranking::getUserSentiment() const
 	{
 		return callMethod<jint>(
 			"getUserSentiment",
 			"()I"
 		);
 	}
-	jboolean NotificationListenerService_Ranking::isAmbient()
+	jboolean NotificationListenerService_Ranking::isAmbient() const
 	{
 		return callMethod<jboolean>(
 			"isAmbient",
 			"()Z"
 		);
 	}
-	jboolean NotificationListenerService_Ranking::isSuspended()
+	jboolean NotificationListenerService_Ranking::isSuspended() const
 	{
 		return callMethod<jboolean>(
 			"isSuspended",
 			"()Z"
 		);
 	}
-	jboolean NotificationListenerService_Ranking::matchesInterruptionFilter()
+	jboolean NotificationListenerService_Ranking::matchesInterruptionFilter() const
 	{
 		return callMethod<jboolean>(
 			"matchesInterruptionFilter",

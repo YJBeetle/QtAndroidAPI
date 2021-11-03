@@ -28,7 +28,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	JObject VisualVoicemailService::onBind(android::content::Intent arg0)
+	JObject VisualVoicemailService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -36,7 +36,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void VisualVoicemailService::onCellServiceConnected(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telecom::PhoneAccountHandle arg1)
+	void VisualVoicemailService::onCellServiceConnected(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telecom::PhoneAccountHandle arg1) const
 	{
 		callMethod<void>(
 			"onCellServiceConnected",
@@ -45,7 +45,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void VisualVoicemailService::onSimRemoved(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telecom::PhoneAccountHandle arg1)
+	void VisualVoicemailService::onSimRemoved(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telecom::PhoneAccountHandle arg1) const
 	{
 		callMethod<void>(
 			"onSimRemoved",
@@ -54,7 +54,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void VisualVoicemailService::onSmsReceived(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telephony::VisualVoicemailSms arg1)
+	void VisualVoicemailService::onSmsReceived(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telephony::VisualVoicemailSms arg1) const
 	{
 		callMethod<void>(
 			"onSmsReceived",
@@ -63,7 +63,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void VisualVoicemailService::onStopped(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0)
+	void VisualVoicemailService::onStopped(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0) const
 	{
 		callMethod<void>(
 			"onStopped",

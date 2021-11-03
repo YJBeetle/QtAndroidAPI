@@ -32,15 +32,15 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::graphics::drawable::Icon getIcon();
-		JString getKey();
-		JString getName();
-		JString getUri();
-		jboolean isBot();
-		jboolean isImportant();
-		android::app::Person_Builder toBuilder();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getKey() const;
+		JString getName() const;
+		JString getUri() const;
+		jboolean isBot() const;
+		jboolean isImportant() const;
+		android::app::Person_Builder toBuilder() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

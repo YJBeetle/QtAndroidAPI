@@ -29,28 +29,28 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	java::util::jar::Manifest JarInputStream::getManifest()
+	java::util::jar::Manifest JarInputStream::getManifest() const
 	{
 		return callObjectMethod(
 			"getManifest",
 			"()Ljava/util/jar/Manifest;"
 		);
 	}
-	java::util::zip::ZipEntry JarInputStream::getNextEntry()
+	java::util::zip::ZipEntry JarInputStream::getNextEntry() const
 	{
 		return callObjectMethod(
 			"getNextEntry",
 			"()Ljava/util/zip/ZipEntry;"
 		);
 	}
-	java::util::jar::JarEntry JarInputStream::getNextJarEntry()
+	java::util::jar::JarEntry JarInputStream::getNextJarEntry() const
 	{
 		return callObjectMethod(
 			"getNextJarEntry",
 			"()Ljava/util/jar/JarEntry;"
 		);
 	}
-	jint JarInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint JarInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",

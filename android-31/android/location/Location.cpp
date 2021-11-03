@@ -88,7 +88,7 @@ namespace android::location
 			arg4.object<jfloatArray>()
 		);
 	}
-	jfloat Location::bearingTo(android::location::Location arg0)
+	jfloat Location::bearingTo(android::location::Location arg0) const
 	{
 		return callMethod<jfloat>(
 			"bearingTo",
@@ -96,14 +96,14 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jint Location::describeContents()
+	jint Location::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jfloat Location::distanceTo(android::location::Location arg0)
+	jfloat Location::distanceTo(android::location::Location arg0) const
 	{
 		return callMethod<jfloat>(
 			"distanceTo",
@@ -111,7 +111,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void Location::dump(JObject arg0, JString arg1)
+	void Location::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -120,7 +120,7 @@ namespace android::location
 			arg1.object<jstring>()
 		);
 	}
-	jboolean Location::equals(JObject arg0)
+	jboolean Location::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -128,217 +128,217 @@ namespace android::location
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Location::getAccuracy()
+	jfloat Location::getAccuracy() const
 	{
 		return callMethod<jfloat>(
 			"getAccuracy",
 			"()F"
 		);
 	}
-	jdouble Location::getAltitude()
+	jdouble Location::getAltitude() const
 	{
 		return callMethod<jdouble>(
 			"getAltitude",
 			"()D"
 		);
 	}
-	jfloat Location::getBearing()
+	jfloat Location::getBearing() const
 	{
 		return callMethod<jfloat>(
 			"getBearing",
 			"()F"
 		);
 	}
-	jfloat Location::getBearingAccuracyDegrees()
+	jfloat Location::getBearingAccuracyDegrees() const
 	{
 		return callMethod<jfloat>(
 			"getBearingAccuracyDegrees",
 			"()F"
 		);
 	}
-	jlong Location::getElapsedRealtimeNanos()
+	jlong Location::getElapsedRealtimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getElapsedRealtimeNanos",
 			"()J"
 		);
 	}
-	jdouble Location::getElapsedRealtimeUncertaintyNanos()
+	jdouble Location::getElapsedRealtimeUncertaintyNanos() const
 	{
 		return callMethod<jdouble>(
 			"getElapsedRealtimeUncertaintyNanos",
 			"()D"
 		);
 	}
-	android::os::Bundle Location::getExtras()
+	android::os::Bundle Location::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jdouble Location::getLatitude()
+	jdouble Location::getLatitude() const
 	{
 		return callMethod<jdouble>(
 			"getLatitude",
 			"()D"
 		);
 	}
-	jdouble Location::getLongitude()
+	jdouble Location::getLongitude() const
 	{
 		return callMethod<jdouble>(
 			"getLongitude",
 			"()D"
 		);
 	}
-	JString Location::getProvider()
+	JString Location::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/lang/String;"
 		);
 	}
-	jfloat Location::getSpeed()
+	jfloat Location::getSpeed() const
 	{
 		return callMethod<jfloat>(
 			"getSpeed",
 			"()F"
 		);
 	}
-	jfloat Location::getSpeedAccuracyMetersPerSecond()
+	jfloat Location::getSpeedAccuracyMetersPerSecond() const
 	{
 		return callMethod<jfloat>(
 			"getSpeedAccuracyMetersPerSecond",
 			"()F"
 		);
 	}
-	jlong Location::getTime()
+	jlong Location::getTime() const
 	{
 		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
-	jfloat Location::getVerticalAccuracyMeters()
+	jfloat Location::getVerticalAccuracyMeters() const
 	{
 		return callMethod<jfloat>(
 			"getVerticalAccuracyMeters",
 			"()F"
 		);
 	}
-	jboolean Location::hasAccuracy()
+	jboolean Location::hasAccuracy() const
 	{
 		return callMethod<jboolean>(
 			"hasAccuracy",
 			"()Z"
 		);
 	}
-	jboolean Location::hasAltitude()
+	jboolean Location::hasAltitude() const
 	{
 		return callMethod<jboolean>(
 			"hasAltitude",
 			"()Z"
 		);
 	}
-	jboolean Location::hasBearing()
+	jboolean Location::hasBearing() const
 	{
 		return callMethod<jboolean>(
 			"hasBearing",
 			"()Z"
 		);
 	}
-	jboolean Location::hasBearingAccuracy()
+	jboolean Location::hasBearingAccuracy() const
 	{
 		return callMethod<jboolean>(
 			"hasBearingAccuracy",
 			"()Z"
 		);
 	}
-	jboolean Location::hasElapsedRealtimeUncertaintyNanos()
+	jboolean Location::hasElapsedRealtimeUncertaintyNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasElapsedRealtimeUncertaintyNanos",
 			"()Z"
 		);
 	}
-	jboolean Location::hasSpeed()
+	jboolean Location::hasSpeed() const
 	{
 		return callMethod<jboolean>(
 			"hasSpeed",
 			"()Z"
 		);
 	}
-	jboolean Location::hasSpeedAccuracy()
+	jboolean Location::hasSpeedAccuracy() const
 	{
 		return callMethod<jboolean>(
 			"hasSpeedAccuracy",
 			"()Z"
 		);
 	}
-	jboolean Location::hasVerticalAccuracy()
+	jboolean Location::hasVerticalAccuracy() const
 	{
 		return callMethod<jboolean>(
 			"hasVerticalAccuracy",
 			"()Z"
 		);
 	}
-	jint Location::hashCode()
+	jint Location::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Location::isFromMockProvider()
+	jboolean Location::isFromMockProvider() const
 	{
 		return callMethod<jboolean>(
 			"isFromMockProvider",
 			"()Z"
 		);
 	}
-	jboolean Location::isMock()
+	jboolean Location::isMock() const
 	{
 		return callMethod<jboolean>(
 			"isMock",
 			"()Z"
 		);
 	}
-	void Location::removeAccuracy()
+	void Location::removeAccuracy() const
 	{
 		callMethod<void>(
 			"removeAccuracy",
 			"()V"
 		);
 	}
-	void Location::removeAltitude()
+	void Location::removeAltitude() const
 	{
 		callMethod<void>(
 			"removeAltitude",
 			"()V"
 		);
 	}
-	void Location::removeBearing()
+	void Location::removeBearing() const
 	{
 		callMethod<void>(
 			"removeBearing",
 			"()V"
 		);
 	}
-	void Location::removeSpeed()
+	void Location::removeSpeed() const
 	{
 		callMethod<void>(
 			"removeSpeed",
 			"()V"
 		);
 	}
-	void Location::reset()
+	void Location::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Location::set(android::location::Location arg0)
+	void Location::set(android::location::Location arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -346,7 +346,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void Location::setAccuracy(jfloat arg0)
+	void Location::setAccuracy(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAccuracy",
@@ -354,7 +354,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setAltitude(jdouble arg0)
+	void Location::setAltitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setAltitude",
@@ -362,7 +362,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setBearing(jfloat arg0)
+	void Location::setBearing(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setBearing",
@@ -370,7 +370,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setBearingAccuracyDegrees(jfloat arg0)
+	void Location::setBearingAccuracyDegrees(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setBearingAccuracyDegrees",
@@ -378,7 +378,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setElapsedRealtimeNanos(jlong arg0)
+	void Location::setElapsedRealtimeNanos(jlong arg0) const
 	{
 		callMethod<void>(
 			"setElapsedRealtimeNanos",
@@ -386,7 +386,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setElapsedRealtimeUncertaintyNanos(jdouble arg0)
+	void Location::setElapsedRealtimeUncertaintyNanos(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setElapsedRealtimeUncertaintyNanos",
@@ -394,7 +394,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setExtras(android::os::Bundle arg0)
+	void Location::setExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setExtras",
@@ -402,7 +402,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void Location::setLatitude(jdouble arg0)
+	void Location::setLatitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setLatitude",
@@ -410,7 +410,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setLongitude(jdouble arg0)
+	void Location::setLongitude(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setLongitude",
@@ -418,7 +418,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setMock(jboolean arg0)
+	void Location::setMock(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMock",
@@ -426,7 +426,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setProvider(JString arg0)
+	void Location::setProvider(JString arg0) const
 	{
 		callMethod<void>(
 			"setProvider",
@@ -434,7 +434,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void Location::setSpeed(jfloat arg0)
+	void Location::setSpeed(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setSpeed",
@@ -442,7 +442,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setSpeedAccuracyMetersPerSecond(jfloat arg0)
+	void Location::setSpeedAccuracyMetersPerSecond(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setSpeedAccuracyMetersPerSecond",
@@ -450,7 +450,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setTime(jlong arg0)
+	void Location::setTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -458,7 +458,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setVerticalAccuracyMeters(jfloat arg0)
+	void Location::setVerticalAccuracyMeters(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setVerticalAccuracyMeters",
@@ -466,14 +466,14 @@ namespace android::location
 			arg0
 		);
 	}
-	JString Location::toString()
+	JString Location::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Location::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Location::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

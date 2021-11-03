@@ -49,35 +49,35 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint VolumeProvider::getCurrentVolume()
+	jint VolumeProvider::getCurrentVolume() const
 	{
 		return callMethod<jint>(
 			"getCurrentVolume",
 			"()I"
 		);
 	}
-	jint VolumeProvider::getMaxVolume()
+	jint VolumeProvider::getMaxVolume() const
 	{
 		return callMethod<jint>(
 			"getMaxVolume",
 			"()I"
 		);
 	}
-	jint VolumeProvider::getVolumeControl()
+	jint VolumeProvider::getVolumeControl() const
 	{
 		return callMethod<jint>(
 			"getVolumeControl",
 			"()I"
 		);
 	}
-	JString VolumeProvider::getVolumeControlId()
+	JString VolumeProvider::getVolumeControlId() const
 	{
 		return callObjectMethod(
 			"getVolumeControlId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VolumeProvider::onAdjustVolume(jint arg0)
+	void VolumeProvider::onAdjustVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"onAdjustVolume",
@@ -85,7 +85,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void VolumeProvider::onSetVolumeTo(jint arg0)
+	void VolumeProvider::onSetVolumeTo(jint arg0) const
 	{
 		callMethod<void>(
 			"onSetVolumeTo",
@@ -93,7 +93,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void VolumeProvider::setCurrentVolume(jint arg0)
+	void VolumeProvider::setCurrentVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"setCurrentVolume",

@@ -21,8 +21,8 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		void createGlobalSearchSession(JObject arg0, JObject arg1);
-		void createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, JObject arg1, JObject arg2);
+		void createGlobalSearchSession(JObject arg0, JObject arg1) const;
+		void createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::app::appsearch
 

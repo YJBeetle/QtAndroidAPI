@@ -36,10 +36,10 @@ namespace android::transition
 		ChangeScroll(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void captureEndValues(android::transition::TransitionValues arg0);
-		void captureStartValues(android::transition::TransitionValues arg0);
-		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
-		JArray getTransitionProperties();
+		void captureEndValues(android::transition::TransitionValues arg0) const;
+		void captureStartValues(android::transition::TransitionValues arg0) const;
+		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const;
+		JArray getTransitionProperties() const;
 	};
 } // namespace android::transition
 

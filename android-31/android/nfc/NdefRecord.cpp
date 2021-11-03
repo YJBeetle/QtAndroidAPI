@@ -201,14 +201,14 @@ namespace android::nfc
 			arg0.object<jstring>()
 		);
 	}
-	jint NdefRecord::describeContents()
+	jint NdefRecord::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NdefRecord::equals(JObject arg0)
+	jboolean NdefRecord::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -216,70 +216,70 @@ namespace android::nfc
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray NdefRecord::getId()
+	JByteArray NdefRecord::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()[B"
 		);
 	}
-	JByteArray NdefRecord::getPayload()
+	JByteArray NdefRecord::getPayload() const
 	{
 		return callObjectMethod(
 			"getPayload",
 			"()[B"
 		);
 	}
-	jshort NdefRecord::getTnf()
+	jshort NdefRecord::getTnf() const
 	{
 		return callMethod<jshort>(
 			"getTnf",
 			"()S"
 		);
 	}
-	JByteArray NdefRecord::getType()
+	JByteArray NdefRecord::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()[B"
 		);
 	}
-	jint NdefRecord::hashCode()
+	jint NdefRecord::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JByteArray NdefRecord::toByteArray()
+	JByteArray NdefRecord::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	JString NdefRecord::toMimeType()
+	JString NdefRecord::toMimeType() const
 	{
 		return callObjectMethod(
 			"toMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NdefRecord::toString()
+	JString NdefRecord::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri NdefRecord::toUri()
+	android::net::Uri NdefRecord::toUri() const
 	{
 		return callObjectMethod(
 			"toUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	void NdefRecord::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NdefRecord::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

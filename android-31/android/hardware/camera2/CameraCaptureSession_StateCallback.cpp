@@ -17,7 +17,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraCaptureSession_StateCallback::onActive(android::hardware::camera2::CameraCaptureSession arg0)
+	void CameraCaptureSession_StateCallback::onActive(android::hardware::camera2::CameraCaptureSession arg0) const
 	{
 		callMethod<void>(
 			"onActive",
@@ -25,7 +25,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraCaptureSession_StateCallback::onCaptureQueueEmpty(android::hardware::camera2::CameraCaptureSession arg0)
+	void CameraCaptureSession_StateCallback::onCaptureQueueEmpty(android::hardware::camera2::CameraCaptureSession arg0) const
 	{
 		callMethod<void>(
 			"onCaptureQueueEmpty",
@@ -33,7 +33,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraCaptureSession_StateCallback::onClosed(android::hardware::camera2::CameraCaptureSession arg0)
+	void CameraCaptureSession_StateCallback::onClosed(android::hardware::camera2::CameraCaptureSession arg0) const
 	{
 		callMethod<void>(
 			"onClosed",
@@ -41,7 +41,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraCaptureSession_StateCallback::onConfigureFailed(android::hardware::camera2::CameraCaptureSession arg0)
+	void CameraCaptureSession_StateCallback::onConfigureFailed(android::hardware::camera2::CameraCaptureSession arg0) const
 	{
 		callMethod<void>(
 			"onConfigureFailed",
@@ -49,7 +49,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraCaptureSession_StateCallback::onConfigured(android::hardware::camera2::CameraCaptureSession arg0)
+	void CameraCaptureSession_StateCallback::onConfigured(android::hardware::camera2::CameraCaptureSession arg0) const
 	{
 		callMethod<void>(
 			"onConfigured",
@@ -57,7 +57,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraCaptureSession_StateCallback::onReady(android::hardware::camera2::CameraCaptureSession arg0)
+	void CameraCaptureSession_StateCallback::onReady(android::hardware::camera2::CameraCaptureSession arg0) const
 	{
 		callMethod<void>(
 			"onReady",
@@ -65,7 +65,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraCaptureSession_StateCallback::onSurfacePrepared(android::hardware::camera2::CameraCaptureSession arg0, android::view::Surface arg1)
+	void CameraCaptureSession_StateCallback::onSurfacePrepared(android::hardware::camera2::CameraCaptureSession arg0, android::view::Surface arg1) const
 	{
 		callMethod<void>(
 			"onSurfacePrepared",

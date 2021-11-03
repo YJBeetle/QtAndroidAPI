@@ -21,19 +21,19 @@ namespace android::util
 		
 		// Methods
 		static android::util::Range create(JObject arg0, JObject arg1);
-		JObject clamp(JObject arg0);
-		jboolean contains(android::util::Range arg0);
-		jboolean contains(JObject arg0);
-		jboolean equals(JObject arg0);
-		android::util::Range extend(android::util::Range arg0);
-		android::util::Range extend(JObject arg0);
-		android::util::Range extend(JObject arg0, JObject arg1);
-		JObject getLower();
-		JObject getUpper();
-		jint hashCode();
-		android::util::Range intersect(android::util::Range arg0);
-		android::util::Range intersect(JObject arg0, JObject arg1);
-		JString toString();
+		JObject clamp(JObject arg0) const;
+		jboolean contains(android::util::Range arg0) const;
+		jboolean contains(JObject arg0) const;
+		jboolean equals(JObject arg0) const;
+		android::util::Range extend(android::util::Range arg0) const;
+		android::util::Range extend(JObject arg0) const;
+		android::util::Range extend(JObject arg0, JObject arg1) const;
+		JObject getLower() const;
+		JObject getUpper() const;
+		jint hashCode() const;
+		android::util::Range intersect(android::util::Range arg0) const;
+		android::util::Range intersect(JObject arg0, JObject arg1) const;
+		JString toString() const;
 	};
 } // namespace android::util
 

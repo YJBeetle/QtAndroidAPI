@@ -26,14 +26,14 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	android::graphics::drawable::shapes::RoundRectShape RoundRectShape::clone()
+	android::graphics::drawable::shapes::RoundRectShape RoundRectShape::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/RoundRectShape;"
 		);
 	}
-	void RoundRectShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
+	void RoundRectShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -42,7 +42,7 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	void RoundRectShape::getOutline(android::graphics::Outline arg0)
+	void RoundRectShape::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",

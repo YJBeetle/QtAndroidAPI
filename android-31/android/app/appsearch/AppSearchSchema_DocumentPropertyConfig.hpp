@@ -18,8 +18,8 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JString getSchemaType();
-		jboolean shouldIndexNestedProperties();
+		JString getSchemaType() const;
+		jboolean shouldIndexNestedProperties() const;
 	};
 } // namespace android::app::appsearch
 

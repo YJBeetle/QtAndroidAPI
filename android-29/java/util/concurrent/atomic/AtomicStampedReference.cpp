@@ -19,7 +19,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	jboolean AtomicStampedReference::attemptStamp(JObject arg0, jint arg1)
+	jboolean AtomicStampedReference::attemptStamp(JObject arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"attemptStamp",
@@ -28,7 +28,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicStampedReference::compareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3)
+	jboolean AtomicStampedReference::compareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -39,7 +39,7 @@ namespace java::util::concurrent::atomic
 			arg3
 		);
 	}
-	JObject AtomicStampedReference::get(JIntArray arg0)
+	JObject AtomicStampedReference::get(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -47,21 +47,21 @@ namespace java::util::concurrent::atomic
 			arg0.object<jintArray>()
 		);
 	}
-	JObject AtomicStampedReference::getReference()
+	JObject AtomicStampedReference::getReference() const
 	{
 		return callObjectMethod(
 			"getReference",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint AtomicStampedReference::getStamp()
+	jint AtomicStampedReference::getStamp() const
 	{
 		return callMethod<jint>(
 			"getStamp",
 			"()I"
 		);
 	}
-	void AtomicStampedReference::set(JObject arg0, jint arg1)
+	void AtomicStampedReference::set(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -70,7 +70,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicStampedReference::weakCompareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3)
+	jboolean AtomicStampedReference::weakCompareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",

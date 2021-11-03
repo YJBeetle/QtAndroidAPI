@@ -29,7 +29,7 @@ namespace android::view::textservice
 		// Constructors
 		
 		// Methods
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3);
+		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3) const;
 	};
 } // namespace android::view::textservice
 

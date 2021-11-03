@@ -21,28 +21,28 @@ namespace android::security::keystore
 		) {}
 	
 	// Methods
-	JObject WrappedKeyEntry::getAlgorithmParameterSpec()
+	JObject WrappedKeyEntry::getAlgorithmParameterSpec() const
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	JString WrappedKeyEntry::getTransformation()
+	JString WrappedKeyEntry::getTransformation() const
 	{
 		return callObjectMethod(
 			"getTransformation",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray WrappedKeyEntry::getWrappedKeyBytes()
+	JByteArray WrappedKeyEntry::getWrappedKeyBytes() const
 	{
 		return callObjectMethod(
 			"getWrappedKeyBytes",
 			"()[B"
 		);
 	}
-	JString WrappedKeyEntry::getWrappingKeyAlias()
+	JString WrappedKeyEntry::getWrappingKeyAlias() const
 	{
 		return callObjectMethod(
 			"getWrappingKeyAlias",

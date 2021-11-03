@@ -23,14 +23,14 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	android::graphics::drawable::shapes::ArcShape ArcShape::clone()
+	android::graphics::drawable::shapes::ArcShape ArcShape::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/ArcShape;"
 		);
 	}
-	void ArcShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
+	void ArcShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -39,7 +39,7 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	jboolean ArcShape::equals(JObject arg0)
+	jboolean ArcShape::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -47,7 +47,7 @@ namespace android::graphics::drawable::shapes
 			arg0.object<jobject>()
 		);
 	}
-	void ArcShape::getOutline(android::graphics::Outline arg0)
+	void ArcShape::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -55,21 +55,21 @@ namespace android::graphics::drawable::shapes
 			arg0.object()
 		);
 	}
-	jfloat ArcShape::getStartAngle()
+	jfloat ArcShape::getStartAngle() const
 	{
 		return callMethod<jfloat>(
 			"getStartAngle",
 			"()F"
 		);
 	}
-	jfloat ArcShape::getSweepAngle()
+	jfloat ArcShape::getSweepAngle() const
 	{
 		return callMethod<jfloat>(
 			"getSweepAngle",
 			"()F"
 		);
 	}
-	jint ArcShape::hashCode()
+	jint ArcShape::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

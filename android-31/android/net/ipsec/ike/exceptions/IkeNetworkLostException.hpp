@@ -22,7 +22,7 @@ namespace android::net::ipsec::ike::exceptions
 		IkeNetworkLostException(android::net::Network arg0);
 		
 		// Methods
-		android::net::Network getNetwork();
+		android::net::Network getNetwork() const;
 	};
 } // namespace android::net::ipsec::ike::exceptions
 

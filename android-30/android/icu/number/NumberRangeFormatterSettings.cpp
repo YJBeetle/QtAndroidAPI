@@ -14,7 +14,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::collapse(android::icu::number::NumberRangeFormatter_RangeCollapse arg0)
+	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::collapse(android::icu::number::NumberRangeFormatter_RangeCollapse arg0) const
 	{
 		return callObjectMethod(
 			"collapse",
@@ -22,7 +22,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	jboolean NumberRangeFormatterSettings::equals(JObject arg0)
+	jboolean NumberRangeFormatterSettings::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -30,14 +30,14 @@ namespace android::icu::number
 			arg0.object<jobject>()
 		);
 	}
-	jint NumberRangeFormatterSettings::hashCode()
+	jint NumberRangeFormatterSettings::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::identityFallback(android::icu::number::NumberRangeFormatter_RangeIdentityFallback arg0)
+	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::identityFallback(android::icu::number::NumberRangeFormatter_RangeIdentityFallback arg0) const
 	{
 		return callObjectMethod(
 			"identityFallback",
@@ -45,7 +45,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterBoth(android::icu::number::UnlocalizedNumberFormatter arg0)
+	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterBoth(android::icu::number::UnlocalizedNumberFormatter arg0) const
 	{
 		return callObjectMethod(
 			"numberFormatterBoth",
@@ -53,7 +53,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterFirst(android::icu::number::UnlocalizedNumberFormatter arg0)
+	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterFirst(android::icu::number::UnlocalizedNumberFormatter arg0) const
 	{
 		return callObjectMethod(
 			"numberFormatterFirst",
@@ -61,7 +61,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterSecond(android::icu::number::UnlocalizedNumberFormatter arg0)
+	android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterSecond(android::icu::number::UnlocalizedNumberFormatter arg0) const
 	{
 		return callObjectMethod(
 			"numberFormatterSecond",

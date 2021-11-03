@@ -19,7 +19,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint PackageItemInfo_DisplayNameComparator::compare(android::content::pm::PackageItemInfo arg0, android::content::pm::PackageItemInfo arg1)
+	jint PackageItemInfo_DisplayNameComparator::compare(android::content::pm::PackageItemInfo arg0, android::content::pm::PackageItemInfo arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -28,7 +28,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jint PackageItemInfo_DisplayNameComparator::compare(JObject arg0, JObject arg1)
+	jint PackageItemInfo_DisplayNameComparator::compare(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"compare",

@@ -20,7 +20,7 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::addAction(android::app::RemoteAction arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::addAction(android::app::RemoteAction arg0) const
 	{
 		return callObjectMethod(
 			"addAction",
@@ -28,14 +28,14 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassification TextClassification_Builder::build()
+	android::view::textclassifier::TextClassification TextClassification_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassification;"
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setEntityType(JString arg0, jfloat arg1)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setEntityType(JString arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"setEntityType",
@@ -44,7 +44,7 @@ namespace android::view::textclassifier
 			arg1
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setIcon(android::graphics::drawable::Drawable arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -52,7 +52,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setId(JString arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setId",
@@ -60,7 +60,7 @@ namespace android::view::textclassifier
 			arg0.object<jstring>()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setIntent(android::content::Intent arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setIntent(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"setIntent",
@@ -68,7 +68,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setLabel(JString arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setLabel(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLabel",
@@ -76,7 +76,7 @@ namespace android::view::textclassifier
 			arg0.object<jstring>()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setOnClickListener(JObject arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setOnClickListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setOnClickListener",
@@ -84,7 +84,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setText(JString arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setText",

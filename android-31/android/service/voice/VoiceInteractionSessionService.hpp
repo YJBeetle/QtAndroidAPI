@@ -43,12 +43,12 @@ namespace android::service::voice
 		VoiceInteractionSessionService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onConfigurationChanged(android::content::res::Configuration arg0);
-		void onCreate();
-		void onLowMemory();
-		android::service::voice::VoiceInteractionSession onNewSession(android::os::Bundle arg0);
-		void onTrimMemory(jint arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		void onConfigurationChanged(android::content::res::Configuration arg0) const;
+		void onCreate() const;
+		void onLowMemory() const;
+		android::service::voice::VoiceInteractionSession onNewSession(android::os::Bundle arg0) const;
+		void onTrimMemory(jint arg0) const;
 	};
 } // namespace android::service::voice
 

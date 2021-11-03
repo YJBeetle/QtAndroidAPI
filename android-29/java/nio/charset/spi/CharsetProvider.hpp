@@ -26,8 +26,8 @@ namespace java::nio::charset::spi
 		// Constructors
 		
 		// Methods
-		java::nio::charset::Charset charsetForName(JString arg0);
-		JObject charsets();
+		java::nio::charset::Charset charsetForName(JString arg0) const;
+		JObject charsets() const;
 	};
 } // namespace java::nio::charset::spi
 

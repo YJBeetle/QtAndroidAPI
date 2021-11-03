@@ -23,17 +23,17 @@ namespace android::view::inputmethod
 		InputMethodSubtype_InputMethodSubtypeBuilder();
 		
 		// Methods
-		android::view::inputmethod::InputMethodSubtype build();
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAsciiCapable(jboolean arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAuxiliary(jboolean arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setLanguageTag(JString arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setOverridesImplicitlyEnabledSubtype(jboolean arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeExtraValue(JString arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeIconResId(jint arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeId(jint arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeLocale(JString arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeMode(JString arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeNameResId(jint arg0);
+		android::view::inputmethod::InputMethodSubtype build() const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAsciiCapable(jboolean arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAuxiliary(jboolean arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setLanguageTag(JString arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setOverridesImplicitlyEnabledSubtype(jboolean arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeExtraValue(JString arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeIconResId(jint arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeId(jint arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeLocale(JString arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeMode(JString arg0) const;
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeNameResId(jint arg0) const;
 	};
 } // namespace android::view::inputmethod
 

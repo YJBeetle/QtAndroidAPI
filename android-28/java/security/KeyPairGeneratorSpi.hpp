@@ -26,9 +26,9 @@ namespace java::security
 		KeyPairGeneratorSpi();
 		
 		// Methods
-		java::security::KeyPair generateKeyPair();
-		void initialize(jint arg0, java::security::SecureRandom arg1);
-		void initialize(JObject arg0, java::security::SecureRandom arg1);
+		java::security::KeyPair generateKeyPair() const;
+		void initialize(jint arg0, java::security::SecureRandom arg1) const;
+		void initialize(JObject arg0, java::security::SecureRandom arg1) const;
 	};
 } // namespace java::security
 

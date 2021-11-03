@@ -22,12 +22,12 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		void check(java::security::cert::Certificate arg0);
-		void check(java::security::cert::Certificate arg0, JObject arg1);
-		JObject clone();
-		JObject getSupportedExtensions();
-		void init(jboolean arg0);
-		jboolean isForwardCheckingSupported();
+		void check(java::security::cert::Certificate arg0) const;
+		void check(java::security::cert::Certificate arg0, JObject arg1) const;
+		JObject clone() const;
+		JObject getSupportedExtensions() const;
+		void init(jboolean arg0) const;
+		jboolean isForwardCheckingSupported() const;
 	};
 } // namespace java::security::cert
 

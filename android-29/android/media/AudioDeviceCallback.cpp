@@ -16,7 +16,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void AudioDeviceCallback::onAudioDevicesAdded(JArray arg0)
+	void AudioDeviceCallback::onAudioDevicesAdded(JArray arg0) const
 	{
 		callMethod<void>(
 			"onAudioDevicesAdded",
@@ -24,7 +24,7 @@ namespace android::media
 			arg0.object<jarray>()
 		);
 	}
-	void AudioDeviceCallback::onAudioDevicesRemoved(JArray arg0)
+	void AudioDeviceCallback::onAudioDevicesRemoved(JArray arg0) const
 	{
 		callMethod<void>(
 			"onAudioDevicesRemoved",

@@ -15,14 +15,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void Toast_Callback::onToastHidden()
+	void Toast_Callback::onToastHidden() const
 	{
 		callMethod<void>(
 			"onToastHidden",
 			"()V"
 		);
 	}
-	void Toast_Callback::onToastShown()
+	void Toast_Callback::onToastShown() const
 	{
 		callMethod<void>(
 			"onToastShown",

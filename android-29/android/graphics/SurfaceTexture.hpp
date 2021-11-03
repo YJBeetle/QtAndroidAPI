@@ -25,17 +25,17 @@ namespace android::graphics
 		SurfaceTexture(jint arg0, jboolean arg1);
 		
 		// Methods
-		void attachToGLContext(jint arg0);
-		void detachFromGLContext();
-		jlong getTimestamp();
-		void getTransformMatrix(JFloatArray arg0);
-		jboolean isReleased();
-		void release();
-		void releaseTexImage();
-		void setDefaultBufferSize(jint arg0, jint arg1);
-		void setOnFrameAvailableListener(JObject arg0);
-		void setOnFrameAvailableListener(JObject arg0, android::os::Handler arg1);
-		void updateTexImage();
+		void attachToGLContext(jint arg0) const;
+		void detachFromGLContext() const;
+		jlong getTimestamp() const;
+		void getTransformMatrix(JFloatArray arg0) const;
+		jboolean isReleased() const;
+		void release() const;
+		void releaseTexImage() const;
+		void setDefaultBufferSize(jint arg0, jint arg1) const;
+		void setOnFrameAvailableListener(JObject arg0) const;
+		void setOnFrameAvailableListener(JObject arg0, android::os::Handler arg1) const;
+		void updateTexImage() const;
 	};
 } // namespace android::graphics
 

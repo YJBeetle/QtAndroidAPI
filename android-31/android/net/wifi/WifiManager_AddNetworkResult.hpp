@@ -36,8 +36,8 @@ namespace android::net::wifi
 		WifiManager_AddNetworkResult(jint arg0, jint arg1);
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

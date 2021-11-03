@@ -37,17 +37,17 @@ namespace android::content
 		
 		// Methods
 		static jboolean compareMimeTypes(JString arg0, JString arg1);
-		jint describeContents();
-		JArray filterMimeTypes(JString arg0);
-		android::os::PersistableBundle getExtras();
-		JString getLabel();
-		JString getMimeType(jint arg0);
-		jint getMimeTypeCount();
-		jlong getTimestamp();
-		jboolean hasMimeType(JString arg0);
-		void setExtras(android::os::PersistableBundle arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JArray filterMimeTypes(JString arg0) const;
+		android::os::PersistableBundle getExtras() const;
+		JString getLabel() const;
+		JString getMimeType(jint arg0) const;
+		jint getMimeTypeCount() const;
+		jlong getTimestamp() const;
+		jboolean hasMimeType(JString arg0) const;
+		void setExtras(android::os::PersistableBundle arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

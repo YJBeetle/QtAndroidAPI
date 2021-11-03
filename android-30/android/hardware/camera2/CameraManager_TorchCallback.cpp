@@ -16,7 +16,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraManager_TorchCallback::onTorchModeChanged(JString arg0, jboolean arg1)
+	void CameraManager_TorchCallback::onTorchModeChanged(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onTorchModeChanged",
@@ -25,7 +25,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	void CameraManager_TorchCallback::onTorchModeUnavailable(JString arg0)
+	void CameraManager_TorchCallback::onTorchModeUnavailable(JString arg0) const
 	{
 		callMethod<void>(
 			"onTorchModeUnavailable",

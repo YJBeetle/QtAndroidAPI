@@ -46,18 +46,18 @@ namespace android::graphics
 		
 		// Methods
 		static jboolean isNinePatchChunk(JByteArray arg0);
-		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1);
-		void draw(android::graphics::Canvas arg0, android::graphics::RectF arg1);
-		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2);
-		android::graphics::Bitmap getBitmap();
-		jint getDensity();
-		jint getHeight();
-		JString getName();
-		android::graphics::Paint getPaint();
-		android::graphics::Region getTransparentRegion(android::graphics::Rect arg0);
-		jint getWidth();
-		jboolean hasAlpha();
-		void setPaint(android::graphics::Paint arg0);
+		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1) const;
+		void draw(android::graphics::Canvas arg0, android::graphics::RectF arg1) const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2) const;
+		android::graphics::Bitmap getBitmap() const;
+		jint getDensity() const;
+		jint getHeight() const;
+		JString getName() const;
+		android::graphics::Paint getPaint() const;
+		android::graphics::Region getTransparentRegion(android::graphics::Rect arg0) const;
+		jint getWidth() const;
+		jboolean hasAlpha() const;
+		void setPaint(android::graphics::Paint arg0) const;
 	};
 } // namespace android::graphics
 

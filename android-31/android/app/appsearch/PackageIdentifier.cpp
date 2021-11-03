@@ -20,7 +20,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	jboolean PackageIdentifier::equals(JObject arg0)
+	jboolean PackageIdentifier::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,21 +28,21 @@ namespace android::app::appsearch
 			arg0.object<jobject>()
 		);
 	}
-	JString PackageIdentifier::getPackageName()
+	JString PackageIdentifier::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray PackageIdentifier::getSha256Certificate()
+	JByteArray PackageIdentifier::getSha256Certificate() const
 	{
 		return callObjectMethod(
 			"getSha256Certificate",
 			"()[B"
 		);
 	}
-	jint PackageIdentifier::hashCode()
+	jint PackageIdentifier::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

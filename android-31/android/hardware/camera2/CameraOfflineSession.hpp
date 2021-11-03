@@ -17,7 +17,7 @@ namespace android::hardware::camera2
 		CameraOfflineSession();
 		
 		// Methods
-		void close();
+		void close() const;
 	};
 } // namespace android::hardware::camera2
 

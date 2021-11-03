@@ -56,26 +56,26 @@ namespace java::time::chrono
 		// Constructors
 		
 		// Methods
-		java::time::chrono::MinguoDate date(JObject arg0);
-		java::time::chrono::MinguoDate date(jint arg0, jint arg1, jint arg2);
-		java::time::chrono::MinguoDate date(JObject arg0, jint arg1, jint arg2, jint arg3);
-		java::time::chrono::MinguoDate dateEpochDay(jlong arg0);
-		java::time::chrono::MinguoDate dateNow();
-		java::time::chrono::MinguoDate dateNow(java::time::Clock arg0);
-		java::time::chrono::MinguoDate dateNow(java::time::ZoneId arg0);
-		java::time::chrono::MinguoDate dateYearDay(jint arg0, jint arg1);
-		java::time::chrono::MinguoDate dateYearDay(JObject arg0, jint arg1, jint arg2);
-		java::time::chrono::MinguoEra eraOf(jint arg0);
-		JObject eras();
-		JString getCalendarType();
-		JString getId();
-		jboolean isLeapYear(jlong arg0);
-		JObject localDateTime(JObject arg0);
-		jint prolepticYear(JObject arg0, jint arg1);
-		java::time::temporal::ValueRange range(java::time::temporal::ChronoField arg0);
-		java::time::chrono::MinguoDate resolveDate(JObject arg0, java::time::format::ResolverStyle arg1);
-		JObject zonedDateTime(JObject arg0);
-		JObject zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1);
+		java::time::chrono::MinguoDate date(JObject arg0) const;
+		java::time::chrono::MinguoDate date(jint arg0, jint arg1, jint arg2) const;
+		java::time::chrono::MinguoDate date(JObject arg0, jint arg1, jint arg2, jint arg3) const;
+		java::time::chrono::MinguoDate dateEpochDay(jlong arg0) const;
+		java::time::chrono::MinguoDate dateNow() const;
+		java::time::chrono::MinguoDate dateNow(java::time::Clock arg0) const;
+		java::time::chrono::MinguoDate dateNow(java::time::ZoneId arg0) const;
+		java::time::chrono::MinguoDate dateYearDay(jint arg0, jint arg1) const;
+		java::time::chrono::MinguoDate dateYearDay(JObject arg0, jint arg1, jint arg2) const;
+		java::time::chrono::MinguoEra eraOf(jint arg0) const;
+		JObject eras() const;
+		JString getCalendarType() const;
+		JString getId() const;
+		jboolean isLeapYear(jlong arg0) const;
+		JObject localDateTime(JObject arg0) const;
+		jint prolepticYear(JObject arg0, jint arg1) const;
+		java::time::temporal::ValueRange range(java::time::temporal::ChronoField arg0) const;
+		java::time::chrono::MinguoDate resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const;
+		JObject zonedDateTime(JObject arg0) const;
+		JObject zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1) const;
 	};
 } // namespace java::time::chrono
 

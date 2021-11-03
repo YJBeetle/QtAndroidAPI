@@ -29,21 +29,21 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	jint DateTransformation::describeContents()
+	jint DateTransformation::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString DateTransformation::toString()
+	JString DateTransformation::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DateTransformation::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DateTransformation::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

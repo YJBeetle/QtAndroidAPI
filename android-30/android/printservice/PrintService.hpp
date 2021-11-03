@@ -46,9 +46,9 @@ namespace android::printservice
 		PrintService();
 		
 		// Methods
-		android::print::PrinterId generatePrinterId(JString arg0);
-		JObject getActivePrintJobs();
-		JObject onBind(android::content::Intent arg0);
+		android::print::PrinterId generatePrinterId(JString arg0) const;
+		JObject getActivePrintJobs() const;
+		JObject onBind(android::content::Intent arg0) const;
 	};
 } // namespace android::printservice
 

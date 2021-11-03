@@ -30,9 +30,9 @@ namespace android::widget
 		TwoLineListItem(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		android::widget::TextView getText1();
-		android::widget::TextView getText2();
+		JString getAccessibilityClassName() const;
+		android::widget::TextView getText1() const;
+		android::widget::TextView getText2() const;
 	};
 } // namespace android::widget
 

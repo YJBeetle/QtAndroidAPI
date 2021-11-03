@@ -21,8 +21,8 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		void add(android::view::View arg0);
-		void remove(android::view::View arg0);
+		void add(android::view::View arg0) const;
+		void remove(android::view::View arg0) const;
 	};
 } // namespace android::view
 

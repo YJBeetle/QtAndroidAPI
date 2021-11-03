@@ -22,11 +22,11 @@ namespace android::util
 		
 		// Methods
 		static android::util::Property of(JClass arg0, JClass arg1, JString arg2);
-		JObject get(JObject arg0);
-		JString getName();
-		JClass getType();
-		jboolean isReadOnly();
-		void set(JObject arg0, JObject arg1);
+		JObject get(JObject arg0) const;
+		JString getName() const;
+		JClass getType() const;
+		jboolean isReadOnly() const;
+		void set(JObject arg0, JObject arg1) const;
 	};
 } // namespace android::util
 

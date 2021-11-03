@@ -46,7 +46,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0)
+	android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0) const
 	{
 		return callObjectMethod(
 			"addPrimitive",
@@ -54,7 +54,7 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0, jfloat arg1)
+	android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"addPrimitive",
@@ -63,7 +63,7 @@ namespace android::os
 			arg1
 		);
 	}
-	android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0, jfloat arg1, jint arg2)
+	android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0, jfloat arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"addPrimitive",
@@ -73,7 +73,7 @@ namespace android::os
 			arg2
 		);
 	}
-	android::os::VibrationEffect VibrationEffect_Composition::compose()
+	android::os::VibrationEffect VibrationEffect_Composition::compose() const
 	{
 		return callObjectMethod(
 			"compose",

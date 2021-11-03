@@ -28,13 +28,13 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		java::security::cert::Certificate getInstallerCertificate();
-		JString getInstallerPackageName();
-		JString getSplitName();
-		jint getType();
-		JByteArray getValue();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		java::security::cert::Certificate getInstallerCertificate() const;
+		JString getInstallerPackageName() const;
+		JString getSplitName() const;
+		jint getType() const;
+		JByteArray getValue() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

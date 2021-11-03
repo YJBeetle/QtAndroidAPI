@@ -28,11 +28,11 @@ namespace android::accounts
 		AccountAuthenticatorResponse(android::os::Parcel arg0);
 		
 		// Methods
-		jint describeContents();
-		void onError(jint arg0, JString arg1);
-		void onRequestContinued();
-		void onResult(android::os::Bundle arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void onError(jint arg0, JString arg1) const;
+		void onRequestContinued() const;
+		void onResult(android::os::Bundle arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::accounts
 

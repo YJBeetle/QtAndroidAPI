@@ -27,10 +27,10 @@ namespace android::text::style
 		AlignmentSpan_Standard(android::text::Layout_Alignment arg0);
 		
 		// Methods
-		jint describeContents();
-		android::text::Layout_Alignment getAlignment();
-		jint getSpanTypeId();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::text::Layout_Alignment getAlignment() const;
+		jint getSpanTypeId() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

@@ -22,12 +22,12 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::view::InputDevice getDevice();
-		jint getDeviceId();
-		jlong getEventTime();
-		jint getSource();
-		jboolean isFromSource(jint arg0);
+		jint describeContents() const;
+		android::view::InputDevice getDevice() const;
+		jint getDeviceId() const;
+		jlong getEventTime() const;
+		jint getSource() const;
+		jboolean isFromSource(jint arg0) const;
 	};
 } // namespace android::view
 

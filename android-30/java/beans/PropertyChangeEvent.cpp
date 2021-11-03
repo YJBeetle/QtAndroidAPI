@@ -22,35 +22,35 @@ namespace java::beans
 		) {}
 	
 	// Methods
-	JObject PropertyChangeEvent::getNewValue()
+	JObject PropertyChangeEvent::getNewValue() const
 	{
 		return callObjectMethod(
 			"getNewValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject PropertyChangeEvent::getOldValue()
+	JObject PropertyChangeEvent::getOldValue() const
 	{
 		return callObjectMethod(
 			"getOldValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject PropertyChangeEvent::getPropagationId()
+	JObject PropertyChangeEvent::getPropagationId() const
 	{
 		return callObjectMethod(
 			"getPropagationId",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString PropertyChangeEvent::getPropertyName()
+	JString PropertyChangeEvent::getPropertyName() const
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PropertyChangeEvent::setPropagationId(JObject arg0)
+	void PropertyChangeEvent::setPropagationId(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPropagationId",
@@ -58,7 +58,7 @@ namespace java::beans
 			arg0.object<jobject>()
 		);
 	}
-	JString PropertyChangeEvent::toString()
+	JString PropertyChangeEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",

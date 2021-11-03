@@ -21,12 +21,12 @@ namespace java::util
 		AbstractMap_SimpleEntry(JObject arg0, JObject arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getKey();
-		JObject getValue();
-		jint hashCode();
-		JObject setValue(JObject arg0);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getKey() const;
+		JObject getValue() const;
+		jint hashCode() const;
+		JObject setValue(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace java::util
 

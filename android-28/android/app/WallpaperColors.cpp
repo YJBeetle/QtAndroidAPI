@@ -56,14 +56,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint WallpaperColors::describeContents()
+	jint WallpaperColors::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean WallpaperColors::equals(JObject arg0)
+	jboolean WallpaperColors::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -71,42 +71,42 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::Color WallpaperColors::getPrimaryColor()
+	android::graphics::Color WallpaperColors::getPrimaryColor() const
 	{
 		return callObjectMethod(
 			"getPrimaryColor",
 			"()Landroid/graphics/Color;"
 		);
 	}
-	android::graphics::Color WallpaperColors::getSecondaryColor()
+	android::graphics::Color WallpaperColors::getSecondaryColor() const
 	{
 		return callObjectMethod(
 			"getSecondaryColor",
 			"()Landroid/graphics/Color;"
 		);
 	}
-	android::graphics::Color WallpaperColors::getTertiaryColor()
+	android::graphics::Color WallpaperColors::getTertiaryColor() const
 	{
 		return callObjectMethod(
 			"getTertiaryColor",
 			"()Landroid/graphics/Color;"
 		);
 	}
-	jint WallpaperColors::hashCode()
+	jint WallpaperColors::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString WallpaperColors::toString()
+	JString WallpaperColors::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WallpaperColors::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WallpaperColors::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

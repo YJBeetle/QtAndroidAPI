@@ -49,56 +49,56 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	jint TranslationCapability::describeContents()
+	jint TranslationCapability::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::view::translation::TranslationSpec TranslationCapability::getSourceSpec()
+	android::view::translation::TranslationSpec TranslationCapability::getSourceSpec() const
 	{
 		return callObjectMethod(
 			"getSourceSpec",
 			"()Landroid/view/translation/TranslationSpec;"
 		);
 	}
-	jint TranslationCapability::getState()
+	jint TranslationCapability::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jint TranslationCapability::getSupportedTranslationFlags()
+	jint TranslationCapability::getSupportedTranslationFlags() const
 	{
 		return callMethod<jint>(
 			"getSupportedTranslationFlags",
 			"()I"
 		);
 	}
-	android::view::translation::TranslationSpec TranslationCapability::getTargetSpec()
+	android::view::translation::TranslationSpec TranslationCapability::getTargetSpec() const
 	{
 		return callObjectMethod(
 			"getTargetSpec",
 			"()Landroid/view/translation/TranslationSpec;"
 		);
 	}
-	jboolean TranslationCapability::isUiTranslationEnabled()
+	jboolean TranslationCapability::isUiTranslationEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isUiTranslationEnabled",
 			"()Z"
 		);
 	}
-	JString TranslationCapability::toString()
+	JString TranslationCapability::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TranslationCapability::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TranslationCapability::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

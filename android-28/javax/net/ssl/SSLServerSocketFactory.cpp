@@ -20,14 +20,14 @@ namespace javax::net::ssl
 			"()Ljavax/net/ServerSocketFactory;"
 		);
 	}
-	JArray SSLServerSocketFactory::getDefaultCipherSuites()
+	JArray SSLServerSocketFactory::getDefaultCipherSuites() const
 	{
 		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray SSLServerSocketFactory::getSupportedCipherSuites()
+	JArray SSLServerSocketFactory::getSupportedCipherSuites() const
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",

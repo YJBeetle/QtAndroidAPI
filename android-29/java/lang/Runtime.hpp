@@ -34,24 +34,24 @@ namespace java::lang
 		// Methods
 		static java::lang::Runtime getRuntime();
 		static JObject version();
-		void addShutdownHook(java::lang::Thread arg0);
-		jint availableProcessors();
-		java::lang::Process exec(JArray arg0);
-		java::lang::Process exec(JString arg0);
-		java::lang::Process exec(JArray arg0, JArray arg1);
-		java::lang::Process exec(JString arg0, JArray arg1);
-		java::lang::Process exec(JArray arg0, JArray arg1, java::io::File arg2);
-		java::lang::Process exec(JString arg0, JArray arg1, java::io::File arg2);
-		void exit(jint arg0);
-		jlong freeMemory();
-		void gc();
-		void halt(jint arg0);
-		void load(JString arg0);
-		void loadLibrary(JString arg0);
-		jlong maxMemory();
-		jboolean removeShutdownHook(java::lang::Thread arg0);
-		void runFinalization();
-		jlong totalMemory();
+		void addShutdownHook(java::lang::Thread arg0) const;
+		jint availableProcessors() const;
+		java::lang::Process exec(JArray arg0) const;
+		java::lang::Process exec(JString arg0) const;
+		java::lang::Process exec(JArray arg0, JArray arg1) const;
+		java::lang::Process exec(JString arg0, JArray arg1) const;
+		java::lang::Process exec(JArray arg0, JArray arg1, java::io::File arg2) const;
+		java::lang::Process exec(JString arg0, JArray arg1, java::io::File arg2) const;
+		void exit(jint arg0) const;
+		jlong freeMemory() const;
+		void gc() const;
+		void halt(jint arg0) const;
+		void load(JString arg0) const;
+		void loadLibrary(JString arg0) const;
+		jlong maxMemory() const;
+		jboolean removeShutdownHook(java::lang::Thread arg0) const;
+		void runFinalization() const;
+		jlong totalMemory() const;
 	};
 } // namespace java::lang
 

@@ -28,12 +28,12 @@ namespace javax::xml::xpath
 		static javax::xml::xpath::XPathFactory newInstance();
 		static javax::xml::xpath::XPathFactory newInstance(JString arg0);
 		static javax::xml::xpath::XPathFactory newInstance(JString arg0, JString arg1, java::lang::ClassLoader arg2);
-		jboolean getFeature(JString arg0);
-		jboolean isObjectModelSupported(JString arg0);
-		JObject newXPath();
-		void setFeature(JString arg0, jboolean arg1);
-		void setXPathFunctionResolver(JObject arg0);
-		void setXPathVariableResolver(JObject arg0);
+		jboolean getFeature(JString arg0) const;
+		jboolean isObjectModelSupported(JString arg0) const;
+		JObject newXPath() const;
+		void setFeature(JString arg0, jboolean arg1) const;
+		void setXPathFunctionResolver(JObject arg0) const;
+		void setXPathVariableResolver(JObject arg0) const;
 	};
 } // namespace javax::xml::xpath
 

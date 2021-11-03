@@ -65,18 +65,18 @@ namespace android::media
 		static jboolean isDefault(android::net::Uri arg0);
 		static android::content::res::AssetFileDescriptor openDefaultRingtoneUri(android::content::Context arg0, android::net::Uri arg1);
 		static void setActualDefaultRingtoneUri(android::content::Context arg0, jint arg1, android::net::Uri arg2);
-		JObject getCursor();
-		jboolean getIncludeDrm();
-		android::media::Ringtone getRingtone(jint arg0);
-		jint getRingtonePosition(android::net::Uri arg0);
-		android::net::Uri getRingtoneUri(jint arg0);
-		jboolean getStopPreviousRingtone();
-		jboolean hasHapticChannels(jint arg0);
-		jint inferStreamType();
-		void setIncludeDrm(jboolean arg0);
-		void setStopPreviousRingtone(jboolean arg0);
-		void setType(jint arg0);
-		void stopPreviousRingtone();
+		JObject getCursor() const;
+		jboolean getIncludeDrm() const;
+		android::media::Ringtone getRingtone(jint arg0) const;
+		jint getRingtonePosition(android::net::Uri arg0) const;
+		android::net::Uri getRingtoneUri(jint arg0) const;
+		jboolean getStopPreviousRingtone() const;
+		jboolean hasHapticChannels(jint arg0) const;
+		jint inferStreamType() const;
+		void setIncludeDrm(jboolean arg0) const;
+		void setStopPreviousRingtone(jboolean arg0) const;
+		void setType(jint arg0) const;
+		void stopPreviousRingtone() const;
 	};
 } // namespace android::media
 

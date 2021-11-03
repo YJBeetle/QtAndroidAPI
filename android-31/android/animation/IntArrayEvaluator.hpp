@@ -21,8 +21,8 @@ namespace android::animation
 		IntArrayEvaluator(JIntArray arg0);
 		
 		// Methods
-		JIntArray evaluate(jfloat arg0, JIntArray arg1, JIntArray arg2);
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
+		JIntArray evaluate(jfloat arg0, JIntArray arg1, JIntArray arg2) const;
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::animation
 

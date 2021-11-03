@@ -202,98 +202,98 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextClassifierEvent::describeContents()
+	jint TextClassifierEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JIntArray TextClassifierEvent::getActionIndices()
+	JIntArray TextClassifierEvent::getActionIndices() const
 	{
 		return callObjectMethod(
 			"getActionIndices",
 			"()[I"
 		);
 	}
-	JArray TextClassifierEvent::getEntityTypes()
+	JArray TextClassifierEvent::getEntityTypes() const
 	{
 		return callObjectMethod(
 			"getEntityTypes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint TextClassifierEvent::getEventCategory()
+	jint TextClassifierEvent::getEventCategory() const
 	{
 		return callMethod<jint>(
 			"getEventCategory",
 			"()I"
 		);
 	}
-	android::view::textclassifier::TextClassificationContext TextClassifierEvent::getEventContext()
+	android::view::textclassifier::TextClassificationContext TextClassifierEvent::getEventContext() const
 	{
 		return callObjectMethod(
 			"getEventContext",
 			"()Landroid/view/textclassifier/TextClassificationContext;"
 		);
 	}
-	jint TextClassifierEvent::getEventIndex()
+	jint TextClassifierEvent::getEventIndex() const
 	{
 		return callMethod<jint>(
 			"getEventIndex",
 			"()I"
 		);
 	}
-	jint TextClassifierEvent::getEventType()
+	jint TextClassifierEvent::getEventType() const
 	{
 		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
-	android::os::Bundle TextClassifierEvent::getExtras()
+	android::os::Bundle TextClassifierEvent::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::icu::util::ULocale TextClassifierEvent::getLocale()
+	android::icu::util::ULocale TextClassifierEvent::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	JString TextClassifierEvent::getModelName()
+	JString TextClassifierEvent::getModelName() const
 	{
 		return callObjectMethod(
 			"getModelName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TextClassifierEvent::getResultId()
+	JString TextClassifierEvent::getResultId() const
 	{
 		return callObjectMethod(
 			"getResultId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JFloatArray TextClassifierEvent::getScores()
+	JFloatArray TextClassifierEvent::getScores() const
 	{
 		return callObjectMethod(
 			"getScores",
 			"()[F"
 		);
 	}
-	JString TextClassifierEvent::toString()
+	JString TextClassifierEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextClassifierEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextClassifierEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

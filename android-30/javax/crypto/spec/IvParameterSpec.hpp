@@ -20,7 +20,7 @@ namespace javax::crypto::spec
 		IvParameterSpec(JByteArray arg0, jint arg1, jint arg2);
 		
 		// Methods
-		JByteArray getIV();
+		JByteArray getIV() const;
 	};
 } // namespace javax::crypto::spec
 

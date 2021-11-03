@@ -31,7 +31,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	android::net::IpSecManager_SecurityParameterIndex IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0)
+	android::net::IpSecManager_SecurityParameterIndex IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0) const
 	{
 		return callObjectMethod(
 			"allocateSecurityParameterIndex",
@@ -39,7 +39,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::IpSecManager_SecurityParameterIndex IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1)
+	android::net::IpSecManager_SecurityParameterIndex IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"allocateSecurityParameterIndex",
@@ -48,7 +48,7 @@ namespace android::net
 			arg1
 		);
 	}
-	void IpSecManager::applyTransportModeTransform(java::io::FileDescriptor arg0, jint arg1, android::net::IpSecTransform arg2)
+	void IpSecManager::applyTransportModeTransform(java::io::FileDescriptor arg0, jint arg1, android::net::IpSecTransform arg2) const
 	{
 		callMethod<void>(
 			"applyTransportModeTransform",
@@ -58,7 +58,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	void IpSecManager::applyTransportModeTransform(java::net::DatagramSocket arg0, jint arg1, android::net::IpSecTransform arg2)
+	void IpSecManager::applyTransportModeTransform(java::net::DatagramSocket arg0, jint arg1, android::net::IpSecTransform arg2) const
 	{
 		callMethod<void>(
 			"applyTransportModeTransform",
@@ -68,7 +68,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	void IpSecManager::applyTransportModeTransform(java::net::Socket arg0, jint arg1, android::net::IpSecTransform arg2)
+	void IpSecManager::applyTransportModeTransform(java::net::Socket arg0, jint arg1, android::net::IpSecTransform arg2) const
 	{
 		callMethod<void>(
 			"applyTransportModeTransform",
@@ -78,14 +78,14 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	android::net::IpSecManager_UdpEncapsulationSocket IpSecManager::openUdpEncapsulationSocket()
+	android::net::IpSecManager_UdpEncapsulationSocket IpSecManager::openUdpEncapsulationSocket() const
 	{
 		return callObjectMethod(
 			"openUdpEncapsulationSocket",
 			"()Landroid/net/IpSecManager$UdpEncapsulationSocket;"
 		);
 	}
-	android::net::IpSecManager_UdpEncapsulationSocket IpSecManager::openUdpEncapsulationSocket(jint arg0)
+	android::net::IpSecManager_UdpEncapsulationSocket IpSecManager::openUdpEncapsulationSocket(jint arg0) const
 	{
 		return callObjectMethod(
 			"openUdpEncapsulationSocket",
@@ -93,7 +93,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void IpSecManager::removeTransportModeTransforms(java::io::FileDescriptor arg0)
+	void IpSecManager::removeTransportModeTransforms(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"removeTransportModeTransforms",
@@ -101,7 +101,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void IpSecManager::removeTransportModeTransforms(java::net::DatagramSocket arg0)
+	void IpSecManager::removeTransportModeTransforms(java::net::DatagramSocket arg0) const
 	{
 		callMethod<void>(
 			"removeTransportModeTransforms",
@@ -109,7 +109,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void IpSecManager::removeTransportModeTransforms(java::net::Socket arg0)
+	void IpSecManager::removeTransportModeTransforms(java::net::Socket arg0) const
 	{
 		callMethod<void>(
 			"removeTransportModeTransforms",

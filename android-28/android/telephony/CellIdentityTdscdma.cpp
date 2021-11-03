@@ -21,7 +21,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityTdscdma::equals(JObject arg0)
+	jboolean CellIdentityTdscdma::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -29,56 +29,56 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellIdentityTdscdma::getCid()
+	jint CellIdentityTdscdma::getCid() const
 	{
 		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
-	jint CellIdentityTdscdma::getCpid()
+	jint CellIdentityTdscdma::getCpid() const
 	{
 		return callMethod<jint>(
 			"getCpid",
 			"()I"
 		);
 	}
-	jint CellIdentityTdscdma::getLac()
+	jint CellIdentityTdscdma::getLac() const
 	{
 		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
-	JString CellIdentityTdscdma::getMccString()
+	JString CellIdentityTdscdma::getMccString() const
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CellIdentityTdscdma::getMncString()
+	JString CellIdentityTdscdma::getMncString() const
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityTdscdma::hashCode()
+	jint CellIdentityTdscdma::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellIdentityTdscdma::toString()
+	JString CellIdentityTdscdma::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellIdentityTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellIdentityTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

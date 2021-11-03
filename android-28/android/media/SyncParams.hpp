@@ -24,15 +24,15 @@ namespace android::media
 		SyncParams();
 		
 		// Methods
-		android::media::SyncParams allowDefaults();
-		jint getAudioAdjustMode();
-		jfloat getFrameRate();
-		jint getSyncSource();
-		jfloat getTolerance();
-		android::media::SyncParams setAudioAdjustMode(jint arg0);
-		android::media::SyncParams setFrameRate(jfloat arg0);
-		android::media::SyncParams setSyncSource(jint arg0);
-		android::media::SyncParams setTolerance(jfloat arg0);
+		android::media::SyncParams allowDefaults() const;
+		jint getAudioAdjustMode() const;
+		jfloat getFrameRate() const;
+		jint getSyncSource() const;
+		jfloat getTolerance() const;
+		android::media::SyncParams setAudioAdjustMode(jint arg0) const;
+		android::media::SyncParams setFrameRate(jfloat arg0) const;
+		android::media::SyncParams setSyncSource(jint arg0) const;
+		android::media::SyncParams setTolerance(jfloat arg0) const;
 	};
 } // namespace android::media
 

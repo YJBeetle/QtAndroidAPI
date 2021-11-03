@@ -89,21 +89,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void Scanner::close()
+	void Scanner::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::util::regex::Pattern Scanner::delimiter()
+	java::util::regex::Pattern Scanner::delimiter() const
 	{
 		return callObjectMethod(
 			"delimiter",
 			"()Ljava/util/regex/Pattern;"
 		);
 	}
-	JObject Scanner::findAll(JString arg0)
+	JObject Scanner::findAll(JString arg0) const
 	{
 		return callObjectMethod(
 			"findAll",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JObject Scanner::findAll(java::util::regex::Pattern arg0)
+	JObject Scanner::findAll(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"findAll",
@@ -119,7 +119,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Scanner::findInLine(JString arg0)
+	JString Scanner::findInLine(JString arg0) const
 	{
 		return callObjectMethod(
 			"findInLine",
@@ -127,7 +127,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JString Scanner::findInLine(java::util::regex::Pattern arg0)
+	JString Scanner::findInLine(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"findInLine",
@@ -135,7 +135,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Scanner::findWithinHorizon(JString arg0, jint arg1)
+	JString Scanner::findWithinHorizon(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"findWithinHorizon",
@@ -144,7 +144,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JString Scanner::findWithinHorizon(java::util::regex::Pattern arg0, jint arg1)
+	JString Scanner::findWithinHorizon(java::util::regex::Pattern arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"findWithinHorizon",
@@ -153,14 +153,14 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean Scanner::hasNext()
+	jboolean Scanner::hasNext() const
 	{
 		return callMethod<jboolean>(
 			"hasNext",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNext(JString arg0)
+	jboolean Scanner::hasNext(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNext",
@@ -168,7 +168,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Scanner::hasNext(java::util::regex::Pattern arg0)
+	jboolean Scanner::hasNext(java::util::regex::Pattern arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNext",
@@ -176,21 +176,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Scanner::hasNextBigDecimal()
+	jboolean Scanner::hasNextBigDecimal() const
 	{
 		return callMethod<jboolean>(
 			"hasNextBigDecimal",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextBigInteger()
+	jboolean Scanner::hasNextBigInteger() const
 	{
 		return callMethod<jboolean>(
 			"hasNextBigInteger",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextBigInteger(jint arg0)
+	jboolean Scanner::hasNextBigInteger(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNextBigInteger",
@@ -198,21 +198,21 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Scanner::hasNextBoolean()
+	jboolean Scanner::hasNextBoolean() const
 	{
 		return callMethod<jboolean>(
 			"hasNextBoolean",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextByte()
+	jboolean Scanner::hasNextByte() const
 	{
 		return callMethod<jboolean>(
 			"hasNextByte",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextByte(jint arg0)
+	jboolean Scanner::hasNextByte(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNextByte",
@@ -220,28 +220,28 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Scanner::hasNextDouble()
+	jboolean Scanner::hasNextDouble() const
 	{
 		return callMethod<jboolean>(
 			"hasNextDouble",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextFloat()
+	jboolean Scanner::hasNextFloat() const
 	{
 		return callMethod<jboolean>(
 			"hasNextFloat",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextInt()
+	jboolean Scanner::hasNextInt() const
 	{
 		return callMethod<jboolean>(
 			"hasNextInt",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextInt(jint arg0)
+	jboolean Scanner::hasNextInt(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNextInt",
@@ -249,21 +249,21 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Scanner::hasNextLine()
+	jboolean Scanner::hasNextLine() const
 	{
 		return callMethod<jboolean>(
 			"hasNextLine",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextLong()
+	jboolean Scanner::hasNextLong() const
 	{
 		return callMethod<jboolean>(
 			"hasNextLong",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextLong(jint arg0)
+	jboolean Scanner::hasNextLong(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNextLong",
@@ -271,14 +271,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Scanner::hasNextShort()
+	jboolean Scanner::hasNextShort() const
 	{
 		return callMethod<jboolean>(
 			"hasNextShort",
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNextShort(jint arg0)
+	jboolean Scanner::hasNextShort(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNextShort",
@@ -286,35 +286,35 @@ namespace java::util
 			arg0
 		);
 	}
-	java::io::IOException Scanner::ioException()
+	java::io::IOException Scanner::ioException() const
 	{
 		return callObjectMethod(
 			"ioException",
 			"()Ljava/io/IOException;"
 		);
 	}
-	java::util::Locale Scanner::locale()
+	java::util::Locale Scanner::locale() const
 	{
 		return callObjectMethod(
 			"locale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	JObject Scanner::match()
+	JObject Scanner::match() const
 	{
 		return callObjectMethod(
 			"match",
 			"()Ljava/util/regex/MatchResult;"
 		);
 	}
-	JString Scanner::next()
+	JString Scanner::next() const
 	{
 		return callObjectMethod(
 			"next",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Scanner::next(JString arg0)
+	JString Scanner::next(JString arg0) const
 	{
 		return callObjectMethod(
 			"next",
@@ -322,7 +322,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	JString Scanner::next(java::util::regex::Pattern arg0)
+	JString Scanner::next(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"next",
@@ -330,21 +330,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal Scanner::nextBigDecimal()
+	java::math::BigDecimal Scanner::nextBigDecimal() const
 	{
 		return callObjectMethod(
 			"nextBigDecimal",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	java::math::BigInteger Scanner::nextBigInteger()
+	java::math::BigInteger Scanner::nextBigInteger() const
 	{
 		return callObjectMethod(
 			"nextBigInteger",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger Scanner::nextBigInteger(jint arg0)
+	java::math::BigInteger Scanner::nextBigInteger(jint arg0) const
 	{
 		return callObjectMethod(
 			"nextBigInteger",
@@ -352,21 +352,21 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Scanner::nextBoolean()
+	jboolean Scanner::nextBoolean() const
 	{
 		return callMethod<jboolean>(
 			"nextBoolean",
 			"()Z"
 		);
 	}
-	jbyte Scanner::nextByte()
+	jbyte Scanner::nextByte() const
 	{
 		return callMethod<jbyte>(
 			"nextByte",
 			"()B"
 		);
 	}
-	jbyte Scanner::nextByte(jint arg0)
+	jbyte Scanner::nextByte(jint arg0) const
 	{
 		return callMethod<jbyte>(
 			"nextByte",
@@ -374,28 +374,28 @@ namespace java::util
 			arg0
 		);
 	}
-	jdouble Scanner::nextDouble()
+	jdouble Scanner::nextDouble() const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
 			"()D"
 		);
 	}
-	jfloat Scanner::nextFloat()
+	jfloat Scanner::nextFloat() const
 	{
 		return callMethod<jfloat>(
 			"nextFloat",
 			"()F"
 		);
 	}
-	jint Scanner::nextInt()
+	jint Scanner::nextInt() const
 	{
 		return callMethod<jint>(
 			"nextInt",
 			"()I"
 		);
 	}
-	jint Scanner::nextInt(jint arg0)
+	jint Scanner::nextInt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"nextInt",
@@ -403,21 +403,21 @@ namespace java::util
 			arg0
 		);
 	}
-	JString Scanner::nextLine()
+	JString Scanner::nextLine() const
 	{
 		return callObjectMethod(
 			"nextLine",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong Scanner::nextLong()
+	jlong Scanner::nextLong() const
 	{
 		return callMethod<jlong>(
 			"nextLong",
 			"()J"
 		);
 	}
-	jlong Scanner::nextLong(jint arg0)
+	jlong Scanner::nextLong(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"nextLong",
@@ -425,14 +425,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jshort Scanner::nextShort()
+	jshort Scanner::nextShort() const
 	{
 		return callMethod<jshort>(
 			"nextShort",
 			"()S"
 		);
 	}
-	jshort Scanner::nextShort(jint arg0)
+	jshort Scanner::nextShort(jint arg0) const
 	{
 		return callMethod<jshort>(
 			"nextShort",
@@ -440,28 +440,28 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Scanner::radix()
+	jint Scanner::radix() const
 	{
 		return callMethod<jint>(
 			"radix",
 			"()I"
 		);
 	}
-	void Scanner::remove()
+	void Scanner::remove() const
 	{
 		callMethod<void>(
 			"remove",
 			"()V"
 		);
 	}
-	java::util::Scanner Scanner::reset()
+	java::util::Scanner Scanner::reset() const
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/util/Scanner;"
 		);
 	}
-	java::util::Scanner Scanner::skip(JString arg0)
+	java::util::Scanner Scanner::skip(JString arg0) const
 	{
 		return callObjectMethod(
 			"skip",
@@ -469,7 +469,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Scanner Scanner::skip(java::util::regex::Pattern arg0)
+	java::util::Scanner Scanner::skip(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"skip",
@@ -477,21 +477,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Scanner::toString()
+	JString Scanner::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Scanner::tokens()
+	JObject Scanner::tokens() const
 	{
 		return callObjectMethod(
 			"tokens",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	java::util::Scanner Scanner::useDelimiter(JString arg0)
+	java::util::Scanner Scanner::useDelimiter(JString arg0) const
 	{
 		return callObjectMethod(
 			"useDelimiter",
@@ -499,7 +499,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Scanner Scanner::useDelimiter(java::util::regex::Pattern arg0)
+	java::util::Scanner Scanner::useDelimiter(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"useDelimiter",
@@ -507,7 +507,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Scanner Scanner::useLocale(java::util::Locale arg0)
+	java::util::Scanner Scanner::useLocale(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"useLocale",
@@ -515,7 +515,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Scanner Scanner::useRadix(jint arg0)
+	java::util::Scanner Scanner::useRadix(jint arg0) const
 	{
 		return callObjectMethod(
 			"useRadix",

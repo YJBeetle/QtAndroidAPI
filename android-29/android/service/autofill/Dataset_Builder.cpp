@@ -28,14 +28,14 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::Dataset Dataset_Builder::build()
+	android::service::autofill::Dataset Dataset_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/Dataset;"
 		);
 	}
-	android::service::autofill::Dataset_Builder Dataset_Builder::setAuthentication(android::content::IntentSender arg0)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setAuthentication(android::content::IntentSender arg0) const
 	{
 		return callObjectMethod(
 			"setAuthentication",
@@ -43,7 +43,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::Dataset_Builder Dataset_Builder::setId(JString arg0)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setId",
@@ -51,7 +51,7 @@ namespace android::service::autofill
 			arg0.object<jstring>()
 		);
 	}
-	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1) const
 	{
 		return callObjectMethod(
 			"setValue",
@@ -60,7 +60,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2) const
 	{
 		return callObjectMethod(
 			"setValue",
@@ -70,7 +70,7 @@ namespace android::service::autofill
 			arg2.object()
 		);
 	}
-	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2) const
 	{
 		return callObjectMethod(
 			"setValue",
@@ -80,7 +80,7 @@ namespace android::service::autofill
 			arg2.object()
 		);
 	}
-	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3) const
 	{
 		return callObjectMethod(
 			"setValue",

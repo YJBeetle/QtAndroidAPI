@@ -53,14 +53,14 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	jint Messenger::describeContents()
+	jint Messenger::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Messenger::equals(JObject arg0)
+	jboolean Messenger::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -68,21 +68,21 @@ namespace android::os
 			arg0.object<jobject>()
 		);
 	}
-	JObject Messenger::getBinder()
+	JObject Messenger::getBinder() const
 	{
 		return callObjectMethod(
 			"getBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	jint Messenger::hashCode()
+	jint Messenger::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Messenger::send(android::os::Message arg0)
+	void Messenger::send(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"send",
@@ -90,7 +90,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Messenger::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Messenger::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

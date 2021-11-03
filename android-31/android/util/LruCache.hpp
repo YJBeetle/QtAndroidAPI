@@ -20,21 +20,21 @@ namespace android::util
 		LruCache(jint arg0);
 		
 		// Methods
-		jint createCount();
-		void evictAll();
-		jint evictionCount();
-		JObject get(JObject arg0);
-		jint hitCount();
-		jint maxSize();
-		jint missCount();
-		JObject put(JObject arg0, JObject arg1);
-		jint putCount();
-		JObject remove(JObject arg0);
-		void resize(jint arg0);
-		jint size();
-		JObject snapshot();
-		JString toString();
-		void trimToSize(jint arg0);
+		jint createCount() const;
+		void evictAll() const;
+		jint evictionCount() const;
+		JObject get(JObject arg0) const;
+		jint hitCount() const;
+		jint maxSize() const;
+		jint missCount() const;
+		JObject put(JObject arg0, JObject arg1) const;
+		jint putCount() const;
+		JObject remove(JObject arg0) const;
+		void resize(jint arg0) const;
+		jint size() const;
+		JObject snapshot() const;
+		JString toString() const;
+		void trimToSize(jint arg0) const;
 	};
 } // namespace android::util
 

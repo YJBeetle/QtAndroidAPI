@@ -32,14 +32,14 @@ namespace android::net::wifi::hotspot2::pps
 		) {}
 	
 	// Methods
-	jint Credential_UserCredential::describeContents()
+	jint Credential_UserCredential::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Credential_UserCredential::equals(JObject arg0)
+	jboolean Credential_UserCredential::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -47,42 +47,42 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jobject>()
 		);
 	}
-	jint Credential_UserCredential::getEapType()
+	jint Credential_UserCredential::getEapType() const
 	{
 		return callMethod<jint>(
 			"getEapType",
 			"()I"
 		);
 	}
-	JString Credential_UserCredential::getNonEapInnerMethod()
+	JString Credential_UserCredential::getNonEapInnerMethod() const
 	{
 		return callObjectMethod(
 			"getNonEapInnerMethod",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Credential_UserCredential::getPassword()
+	JString Credential_UserCredential::getPassword() const
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Credential_UserCredential::getUsername()
+	JString Credential_UserCredential::getUsername() const
 	{
 		return callObjectMethod(
 			"getUsername",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Credential_UserCredential::hashCode()
+	jint Credential_UserCredential::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Credential_UserCredential::setEapType(jint arg0)
+	void Credential_UserCredential::setEapType(jint arg0) const
 	{
 		callMethod<void>(
 			"setEapType",
@@ -90,7 +90,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential_UserCredential::setNonEapInnerMethod(JString arg0)
+	void Credential_UserCredential::setNonEapInnerMethod(JString arg0) const
 	{
 		callMethod<void>(
 			"setNonEapInnerMethod",
@@ -98,7 +98,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jstring>()
 		);
 	}
-	void Credential_UserCredential::setPassword(JString arg0)
+	void Credential_UserCredential::setPassword(JString arg0) const
 	{
 		callMethod<void>(
 			"setPassword",
@@ -106,7 +106,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jstring>()
 		);
 	}
-	void Credential_UserCredential::setUsername(JString arg0)
+	void Credential_UserCredential::setUsername(JString arg0) const
 	{
 		callMethod<void>(
 			"setUsername",
@@ -114,14 +114,14 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jstring>()
 		);
 	}
-	JString Credential_UserCredential::toString()
+	JString Credential_UserCredential::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Credential_UserCredential::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Credential_UserCredential::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

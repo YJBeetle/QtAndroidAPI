@@ -28,8 +28,8 @@ namespace android::util
 		EventLogTags(java::io::BufferedReader arg0);
 		
 		// Methods
-		android::util::EventLogTags_Description get(jint arg0);
-		android::util::EventLogTags_Description get(JString arg0);
+		android::util::EventLogTags_Description get(jint arg0) const;
+		android::util::EventLogTags_Description get(JString arg0) const;
 	};
 } // namespace android::util
 

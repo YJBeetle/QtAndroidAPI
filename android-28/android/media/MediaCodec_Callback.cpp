@@ -19,7 +19,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaCodec_Callback::onError(android::media::MediaCodec arg0, android::media::MediaCodec_CodecException arg1)
+	void MediaCodec_Callback::onError(android::media::MediaCodec arg0, android::media::MediaCodec_CodecException arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -28,7 +28,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaCodec_Callback::onInputBufferAvailable(android::media::MediaCodec arg0, jint arg1)
+	void MediaCodec_Callback::onInputBufferAvailable(android::media::MediaCodec arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onInputBufferAvailable",
@@ -37,7 +37,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaCodec_Callback::onOutputBufferAvailable(android::media::MediaCodec arg0, jint arg1, android::media::MediaCodec_BufferInfo arg2)
+	void MediaCodec_Callback::onOutputBufferAvailable(android::media::MediaCodec arg0, jint arg1, android::media::MediaCodec_BufferInfo arg2) const
 	{
 		callMethod<void>(
 			"onOutputBufferAvailable",
@@ -47,7 +47,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	void MediaCodec_Callback::onOutputFormatChanged(android::media::MediaCodec arg0, android::media::MediaFormat arg1)
+	void MediaCodec_Callback::onOutputFormatChanged(android::media::MediaCodec arg0, android::media::MediaFormat arg1) const
 	{
 		callMethod<void>(
 			"onOutputFormatChanged",

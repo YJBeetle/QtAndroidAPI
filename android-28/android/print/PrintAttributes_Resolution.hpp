@@ -20,13 +20,13 @@ namespace android::print
 		PrintAttributes_Resolution(JString arg0, JString arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getHorizontalDpi();
-		JString getId();
-		JString getLabel();
-		jint getVerticalDpi();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getHorizontalDpi() const;
+		JString getId() const;
+		JString getLabel() const;
+		jint getVerticalDpi() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::print
 

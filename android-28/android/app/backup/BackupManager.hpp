@@ -28,8 +28,8 @@ namespace android::app::backup
 		
 		// Methods
 		static void dataChanged(JString arg0);
-		void dataChanged();
-		jint requestRestore(android::app::backup::RestoreObserver arg0);
+		void dataChanged() const;
+		jint requestRestore(android::app::backup::RestoreObserver arg0) const;
 	};
 } // namespace android::app::backup
 

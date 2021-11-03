@@ -56,7 +56,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void Call_Callback::onCallDestroyed(android::telecom::Call arg0)
+	void Call_Callback::onCallDestroyed(android::telecom::Call arg0) const
 	{
 		callMethod<void>(
 			"onCallDestroyed",
@@ -64,7 +64,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call_Callback::onCannedTextResponsesLoaded(android::telecom::Call arg0, JObject arg1)
+	void Call_Callback::onCannedTextResponsesLoaded(android::telecom::Call arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onCannedTextResponsesLoaded",
@@ -73,7 +73,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onChildrenChanged(android::telecom::Call arg0, JObject arg1)
+	void Call_Callback::onChildrenChanged(android::telecom::Call arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onChildrenChanged",
@@ -82,7 +82,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onConferenceableCallsChanged(android::telecom::Call arg0, JObject arg1)
+	void Call_Callback::onConferenceableCallsChanged(android::telecom::Call arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onConferenceableCallsChanged",
@@ -91,7 +91,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2)
+	void Call_Callback::onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onConnectionEvent",
@@ -101,7 +101,7 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void Call_Callback::onDetailsChanged(android::telecom::Call arg0, android::telecom::Call_Details arg1)
+	void Call_Callback::onDetailsChanged(android::telecom::Call arg0, android::telecom::Call_Details arg1) const
 	{
 		callMethod<void>(
 			"onDetailsChanged",
@@ -110,7 +110,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onHandoverComplete(android::telecom::Call arg0)
+	void Call_Callback::onHandoverComplete(android::telecom::Call arg0) const
 	{
 		callMethod<void>(
 			"onHandoverComplete",
@@ -118,7 +118,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call_Callback::onHandoverFailed(android::telecom::Call arg0, jint arg1)
+	void Call_Callback::onHandoverFailed(android::telecom::Call arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onHandoverFailed",
@@ -127,7 +127,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call_Callback::onParentChanged(android::telecom::Call arg0, android::telecom::Call arg1)
+	void Call_Callback::onParentChanged(android::telecom::Call arg0, android::telecom::Call arg1) const
 	{
 		callMethod<void>(
 			"onParentChanged",
@@ -136,7 +136,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onPostDialWait(android::telecom::Call arg0, JString arg1)
+	void Call_Callback::onPostDialWait(android::telecom::Call arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onPostDialWait",
@@ -145,7 +145,7 @@ namespace android::telecom
 			arg1.object<jstring>()
 		);
 	}
-	void Call_Callback::onRttInitiationFailure(android::telecom::Call arg0, jint arg1)
+	void Call_Callback::onRttInitiationFailure(android::telecom::Call arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onRttInitiationFailure",
@@ -154,7 +154,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call_Callback::onRttModeChanged(android::telecom::Call arg0, jint arg1)
+	void Call_Callback::onRttModeChanged(android::telecom::Call arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onRttModeChanged",
@@ -163,7 +163,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call_Callback::onRttRequest(android::telecom::Call arg0, jint arg1)
+	void Call_Callback::onRttRequest(android::telecom::Call arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onRttRequest",
@@ -172,7 +172,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call_Callback::onRttStatusChanged(android::telecom::Call arg0, jboolean arg1, android::telecom::Call_RttCall arg2)
+	void Call_Callback::onRttStatusChanged(android::telecom::Call arg0, jboolean arg1, android::telecom::Call_RttCall arg2) const
 	{
 		callMethod<void>(
 			"onRttStatusChanged",
@@ -182,7 +182,7 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void Call_Callback::onStateChanged(android::telecom::Call arg0, jint arg1)
+	void Call_Callback::onStateChanged(android::telecom::Call arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onStateChanged",
@@ -191,7 +191,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call_Callback::onVideoCallChanged(android::telecom::Call arg0, android::telecom::InCallService_VideoCall arg1)
+	void Call_Callback::onVideoCallChanged(android::telecom::Call arg0, android::telecom::InCallService_VideoCall arg1) const
 	{
 		callMethod<void>(
 			"onVideoCallChanged",

@@ -19,21 +19,21 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		void clear();
-		jboolean containsKey(JObject arg0);
-		jboolean containsValue(JObject arg0);
-		JObject entrySet();
-		jboolean equals(JObject arg0);
-		JObject get(JObject arg0);
-		jint hashCode();
-		jboolean isEmpty();
-		JObject keySet();
-		JObject put(JObject arg0, JObject arg1);
-		void putAll(JObject arg0);
-		JObject remove(JObject arg0);
-		jint size();
-		JString toString();
-		JObject values();
+		void clear() const;
+		jboolean containsKey(JObject arg0) const;
+		jboolean containsValue(JObject arg0) const;
+		JObject entrySet() const;
+		jboolean equals(JObject arg0) const;
+		JObject get(JObject arg0) const;
+		jint hashCode() const;
+		jboolean isEmpty() const;
+		JObject keySet() const;
+		JObject put(JObject arg0, JObject arg1) const;
+		void putAll(JObject arg0) const;
+		JObject remove(JObject arg0) const;
+		jint size() const;
+		JString toString() const;
+		JObject values() const;
 	};
 } // namespace java::util
 

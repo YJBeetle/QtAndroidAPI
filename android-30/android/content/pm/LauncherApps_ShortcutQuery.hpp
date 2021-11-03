@@ -29,12 +29,12 @@ namespace android::content::pm
 		LauncherApps_ShortcutQuery();
 		
 		// Methods
-		android::content::pm::LauncherApps_ShortcutQuery setActivity(android::content::ComponentName arg0);
-		android::content::pm::LauncherApps_ShortcutQuery setChangedSince(jlong arg0);
-		android::content::pm::LauncherApps_ShortcutQuery setLocusIds(JObject arg0);
-		android::content::pm::LauncherApps_ShortcutQuery setPackage(JString arg0);
-		android::content::pm::LauncherApps_ShortcutQuery setQueryFlags(jint arg0);
-		android::content::pm::LauncherApps_ShortcutQuery setShortcutIds(JObject arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setActivity(android::content::ComponentName arg0) const;
+		android::content::pm::LauncherApps_ShortcutQuery setChangedSince(jlong arg0) const;
+		android::content::pm::LauncherApps_ShortcutQuery setLocusIds(JObject arg0) const;
+		android::content::pm::LauncherApps_ShortcutQuery setPackage(JString arg0) const;
+		android::content::pm::LauncherApps_ShortcutQuery setQueryFlags(jint arg0) const;
+		android::content::pm::LauncherApps_ShortcutQuery setShortcutIds(JObject arg0) const;
 	};
 } // namespace android::content::pm
 

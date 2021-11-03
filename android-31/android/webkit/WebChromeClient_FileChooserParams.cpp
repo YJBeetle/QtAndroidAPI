@@ -51,42 +51,42 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	android::content::Intent WebChromeClient_FileChooserParams::createIntent()
+	android::content::Intent WebChromeClient_FileChooserParams::createIntent() const
 	{
 		return callObjectMethod(
 			"createIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JArray WebChromeClient_FileChooserParams::getAcceptTypes()
+	JArray WebChromeClient_FileChooserParams::getAcceptTypes() const
 	{
 		return callObjectMethod(
 			"getAcceptTypes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString WebChromeClient_FileChooserParams::getFilenameHint()
+	JString WebChromeClient_FileChooserParams::getFilenameHint() const
 	{
 		return callObjectMethod(
 			"getFilenameHint",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint WebChromeClient_FileChooserParams::getMode()
+	jint WebChromeClient_FileChooserParams::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	JString WebChromeClient_FileChooserParams::getTitle()
+	JString WebChromeClient_FileChooserParams::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean WebChromeClient_FileChooserParams::isCaptureEnabled()
+	jboolean WebChromeClient_FileChooserParams::isCaptureEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isCaptureEnabled",

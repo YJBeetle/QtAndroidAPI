@@ -24,20 +24,20 @@ namespace org::xml::sax::ext
 		DefaultHandler2();
 		
 		// Methods
-		void attributeDecl(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
-		void comment(JCharArray arg0, jint arg1, jint arg2);
-		void elementDecl(JString arg0, JString arg1);
-		void endCDATA();
-		void endDTD();
-		void endEntity(JString arg0);
-		void externalEntityDecl(JString arg0, JString arg1, JString arg2);
-		org::xml::sax::InputSource getExternalSubset(JString arg0, JString arg1);
-		void internalEntityDecl(JString arg0, JString arg1);
-		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1);
-		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1, JString arg2, JString arg3);
-		void startCDATA();
-		void startDTD(JString arg0, JString arg1, JString arg2);
-		void startEntity(JString arg0);
+		void attributeDecl(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const;
+		void comment(JCharArray arg0, jint arg1, jint arg2) const;
+		void elementDecl(JString arg0, JString arg1) const;
+		void endCDATA() const;
+		void endDTD() const;
+		void endEntity(JString arg0) const;
+		void externalEntityDecl(JString arg0, JString arg1, JString arg2) const;
+		org::xml::sax::InputSource getExternalSubset(JString arg0, JString arg1) const;
+		void internalEntityDecl(JString arg0, JString arg1) const;
+		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1) const;
+		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1, JString arg2, JString arg3) const;
+		void startCDATA() const;
+		void startDTD(JString arg0, JString arg1, JString arg2) const;
+		void startEntity(JString arg0) const;
 	};
 } // namespace org::xml::sax::ext
 

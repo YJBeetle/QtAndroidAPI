@@ -24,8 +24,8 @@ namespace java::net
 		ContentHandler();
 		
 		// Methods
-		JObject getContent(java::net::URLConnection arg0);
-		JObject getContent(java::net::URLConnection arg0, JArray arg1);
+		JObject getContent(java::net::URLConnection arg0) const;
+		JObject getContent(java::net::URLConnection arg0, JArray arg1) const;
 	};
 } // namespace java::net
 

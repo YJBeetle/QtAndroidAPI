@@ -39,20 +39,20 @@ namespace javax::crypto
 		static javax::crypto::Mac getInstance(JString arg0);
 		static javax::crypto::Mac getInstance(JString arg0, JString arg1);
 		static javax::crypto::Mac getInstance(JString arg0, java::security::Provider arg1);
-		JObject clone();
-		JByteArray doFinal();
-		JByteArray doFinal(JByteArray arg0);
-		void doFinal(JByteArray arg0, jint arg1);
-		JString getAlgorithm();
-		jint getMacLength();
-		java::security::Provider getProvider();
-		void init(JObject arg0);
-		void init(JObject arg0, JObject arg1);
-		void reset();
-		void update(JByteArray arg0);
-		void update(jbyte arg0);
-		void update(java::nio::ByteBuffer arg0);
-		void update(JByteArray arg0, jint arg1, jint arg2);
+		JObject clone() const;
+		JByteArray doFinal() const;
+		JByteArray doFinal(JByteArray arg0) const;
+		void doFinal(JByteArray arg0, jint arg1) const;
+		JString getAlgorithm() const;
+		jint getMacLength() const;
+		java::security::Provider getProvider() const;
+		void init(JObject arg0) const;
+		void init(JObject arg0, JObject arg1) const;
+		void reset() const;
+		void update(JByteArray arg0) const;
+		void update(jbyte arg0) const;
+		void update(java::nio::ByteBuffer arg0) const;
+		void update(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace javax::crypto
 

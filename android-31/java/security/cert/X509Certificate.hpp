@@ -36,29 +36,29 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		void checkValidity();
-		void checkValidity(java::util::Date arg0);
-		jint getBasicConstraints();
-		JObject getExtendedKeyUsage();
-		JObject getIssuerAlternativeNames();
-		JObject getIssuerDN();
-		JBooleanArray getIssuerUniqueID();
-		javax::security::auth::x500::X500Principal getIssuerX500Principal();
-		JBooleanArray getKeyUsage();
-		java::util::Date getNotAfter();
-		java::util::Date getNotBefore();
-		java::math::BigInteger getSerialNumber();
-		JString getSigAlgName();
-		JString getSigAlgOID();
-		JByteArray getSigAlgParams();
-		JByteArray getSignature();
-		JObject getSubjectAlternativeNames();
-		JObject getSubjectDN();
-		JBooleanArray getSubjectUniqueID();
-		javax::security::auth::x500::X500Principal getSubjectX500Principal();
-		JByteArray getTBSCertificate();
-		jint getVersion();
-		void verify(JObject arg0, java::security::Provider arg1);
+		void checkValidity() const;
+		void checkValidity(java::util::Date arg0) const;
+		jint getBasicConstraints() const;
+		JObject getExtendedKeyUsage() const;
+		JObject getIssuerAlternativeNames() const;
+		JObject getIssuerDN() const;
+		JBooleanArray getIssuerUniqueID() const;
+		javax::security::auth::x500::X500Principal getIssuerX500Principal() const;
+		JBooleanArray getKeyUsage() const;
+		java::util::Date getNotAfter() const;
+		java::util::Date getNotBefore() const;
+		java::math::BigInteger getSerialNumber() const;
+		JString getSigAlgName() const;
+		JString getSigAlgOID() const;
+		JByteArray getSigAlgParams() const;
+		JByteArray getSignature() const;
+		JObject getSubjectAlternativeNames() const;
+		JObject getSubjectDN() const;
+		JBooleanArray getSubjectUniqueID() const;
+		javax::security::auth::x500::X500Principal getSubjectX500Principal() const;
+		JByteArray getTBSCertificate() const;
+		jint getVersion() const;
+		void verify(JObject arg0, java::security::Provider arg1) const;
 	};
 } // namespace java::security::cert
 

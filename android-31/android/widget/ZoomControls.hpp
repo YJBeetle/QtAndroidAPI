@@ -28,16 +28,16 @@ namespace android::widget
 		ZoomControls(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		jboolean hasFocus();
-		void hide();
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setIsZoomInEnabled(jboolean arg0);
-		void setIsZoomOutEnabled(jboolean arg0);
-		void setOnZoomInClickListener(JObject arg0);
-		void setOnZoomOutClickListener(JObject arg0);
-		void setZoomSpeed(jlong arg0);
-		void show();
+		JString getAccessibilityClassName() const;
+		jboolean hasFocus() const;
+		void hide() const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		void setIsZoomInEnabled(jboolean arg0) const;
+		void setIsZoomOutEnabled(jboolean arg0) const;
+		void setOnZoomInClickListener(JObject arg0) const;
+		void setOnZoomOutClickListener(JObject arg0) const;
+		void setZoomSpeed(jlong arg0) const;
+		void show() const;
 	};
 } // namespace android::widget
 

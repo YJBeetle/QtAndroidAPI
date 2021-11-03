@@ -27,14 +27,14 @@ namespace android::app::usage
 		ConfigurationStats(android::app::usage::ConfigurationStats &arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getActivationCount();
-		android::content::res::Configuration getConfiguration();
-		jlong getFirstTimeStamp();
-		jlong getLastTimeActive();
-		jlong getLastTimeStamp();
-		jlong getTotalTimeActive();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getActivationCount() const;
+		android::content::res::Configuration getConfiguration() const;
+		jlong getFirstTimeStamp() const;
+		jlong getLastTimeActive() const;
+		jlong getLastTimeStamp() const;
+		jlong getTotalTimeActive() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::usage
 

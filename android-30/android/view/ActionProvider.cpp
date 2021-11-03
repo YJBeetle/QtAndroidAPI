@@ -18,28 +18,28 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean ActionProvider::hasSubMenu()
+	jboolean ActionProvider::hasSubMenu() const
 	{
 		return callMethod<jboolean>(
 			"hasSubMenu",
 			"()Z"
 		);
 	}
-	jboolean ActionProvider::isVisible()
+	jboolean ActionProvider::isVisible() const
 	{
 		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
-	android::view::View ActionProvider::onCreateActionView()
+	android::view::View ActionProvider::onCreateActionView() const
 	{
 		return callObjectMethod(
 			"onCreateActionView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View ActionProvider::onCreateActionView(JObject arg0)
+	android::view::View ActionProvider::onCreateActionView(JObject arg0) const
 	{
 		return callObjectMethod(
 			"onCreateActionView",
@@ -47,14 +47,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ActionProvider::onPerformDefaultAction()
+	jboolean ActionProvider::onPerformDefaultAction() const
 	{
 		return callMethod<jboolean>(
 			"onPerformDefaultAction",
 			"()Z"
 		);
 	}
-	void ActionProvider::onPrepareSubMenu(JObject arg0)
+	void ActionProvider::onPrepareSubMenu(JObject arg0) const
 	{
 		callMethod<void>(
 			"onPrepareSubMenu",
@@ -62,21 +62,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ActionProvider::overridesItemVisibility()
+	jboolean ActionProvider::overridesItemVisibility() const
 	{
 		return callMethod<jboolean>(
 			"overridesItemVisibility",
 			"()Z"
 		);
 	}
-	void ActionProvider::refreshVisibility()
+	void ActionProvider::refreshVisibility() const
 	{
 		callMethod<void>(
 			"refreshVisibility",
 			"()V"
 		);
 	}
-	void ActionProvider::setVisibilityListener(JObject arg0)
+	void ActionProvider::setVisibilityListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setVisibilityListener",

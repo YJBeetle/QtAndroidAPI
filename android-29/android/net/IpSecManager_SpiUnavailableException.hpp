@@ -18,7 +18,7 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jint getSpi();
+		jint getSpi() const;
 	};
 } // namespace android::net
 

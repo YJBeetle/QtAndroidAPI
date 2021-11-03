@@ -56,14 +56,14 @@ namespace android::location::provider
 	// Constructors
 	
 	// Methods
-	jint ProviderProperties::describeContents()
+	jint ProviderProperties::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ProviderProperties::equals(JObject arg0)
+	jboolean ProviderProperties::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -71,84 +71,84 @@ namespace android::location::provider
 			arg0.object<jobject>()
 		);
 	}
-	jint ProviderProperties::getAccuracy()
+	jint ProviderProperties::getAccuracy() const
 	{
 		return callMethod<jint>(
 			"getAccuracy",
 			"()I"
 		);
 	}
-	jint ProviderProperties::getPowerUsage()
+	jint ProviderProperties::getPowerUsage() const
 	{
 		return callMethod<jint>(
 			"getPowerUsage",
 			"()I"
 		);
 	}
-	jboolean ProviderProperties::hasAltitudeSupport()
+	jboolean ProviderProperties::hasAltitudeSupport() const
 	{
 		return callMethod<jboolean>(
 			"hasAltitudeSupport",
 			"()Z"
 		);
 	}
-	jboolean ProviderProperties::hasBearingSupport()
+	jboolean ProviderProperties::hasBearingSupport() const
 	{
 		return callMethod<jboolean>(
 			"hasBearingSupport",
 			"()Z"
 		);
 	}
-	jboolean ProviderProperties::hasCellRequirement()
+	jboolean ProviderProperties::hasCellRequirement() const
 	{
 		return callMethod<jboolean>(
 			"hasCellRequirement",
 			"()Z"
 		);
 	}
-	jboolean ProviderProperties::hasMonetaryCost()
+	jboolean ProviderProperties::hasMonetaryCost() const
 	{
 		return callMethod<jboolean>(
 			"hasMonetaryCost",
 			"()Z"
 		);
 	}
-	jboolean ProviderProperties::hasNetworkRequirement()
+	jboolean ProviderProperties::hasNetworkRequirement() const
 	{
 		return callMethod<jboolean>(
 			"hasNetworkRequirement",
 			"()Z"
 		);
 	}
-	jboolean ProviderProperties::hasSatelliteRequirement()
+	jboolean ProviderProperties::hasSatelliteRequirement() const
 	{
 		return callMethod<jboolean>(
 			"hasSatelliteRequirement",
 			"()Z"
 		);
 	}
-	jboolean ProviderProperties::hasSpeedSupport()
+	jboolean ProviderProperties::hasSpeedSupport() const
 	{
 		return callMethod<jboolean>(
 			"hasSpeedSupport",
 			"()Z"
 		);
 	}
-	jint ProviderProperties::hashCode()
+	jint ProviderProperties::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ProviderProperties::toString()
+	JString ProviderProperties::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ProviderProperties::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ProviderProperties::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

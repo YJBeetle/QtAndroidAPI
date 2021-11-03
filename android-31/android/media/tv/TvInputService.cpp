@@ -70,7 +70,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	JObject TvInputService::onBind(android::content::Intent arg0)
+	JObject TvInputService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -78,7 +78,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	android::media::tv::TvInputService_RecordingSession TvInputService::onCreateRecordingSession(JString arg0)
+	android::media::tv::TvInputService_RecordingSession TvInputService::onCreateRecordingSession(JString arg0) const
 	{
 		return callObjectMethod(
 			"onCreateRecordingSession",
@@ -86,7 +86,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvInputService_RecordingSession TvInputService::onCreateRecordingSession(JString arg0, JString arg1)
+	android::media::tv::TvInputService_RecordingSession TvInputService::onCreateRecordingSession(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"onCreateRecordingSession",
@@ -95,7 +95,7 @@ namespace android::media::tv
 			arg1.object<jstring>()
 		);
 	}
-	android::media::tv::TvInputService_Session TvInputService::onCreateSession(JString arg0)
+	android::media::tv::TvInputService_Session TvInputService::onCreateSession(JString arg0) const
 	{
 		return callObjectMethod(
 			"onCreateSession",
@@ -103,7 +103,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvInputService_Session TvInputService::onCreateSession(JString arg0, JString arg1)
+	android::media::tv::TvInputService_Session TvInputService::onCreateSession(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"onCreateSession",

@@ -25,9 +25,9 @@ namespace java::security::spec
 		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, JObject arg2);
 		
 		// Methods
-		JObject getKeyParams();
-		jint getKeysize();
-		java::math::BigInteger getPublicExponent();
+		JObject getKeyParams() const;
+		jint getKeysize() const;
+		java::math::BigInteger getPublicExponent() const;
 	};
 } // namespace java::security::spec
 

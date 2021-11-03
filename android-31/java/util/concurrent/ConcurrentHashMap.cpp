@@ -68,14 +68,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ConcurrentHashMap::clear()
+	void ConcurrentHashMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject ConcurrentHashMap::compute(JObject arg0, JObject arg1)
+	JObject ConcurrentHashMap::compute(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compute",
@@ -84,7 +84,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ConcurrentHashMap::computeIfAbsent(JObject arg0, JObject arg1)
+	JObject ConcurrentHashMap::computeIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -93,7 +93,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ConcurrentHashMap::computeIfPresent(JObject arg0, JObject arg1)
+	JObject ConcurrentHashMap::computeIfPresent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -102,7 +102,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean ConcurrentHashMap::contains(JObject arg0)
+	jboolean ConcurrentHashMap::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -110,7 +110,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentHashMap::containsKey(JObject arg0)
+	jboolean ConcurrentHashMap::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -118,7 +118,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentHashMap::containsValue(JObject arg0)
+	jboolean ConcurrentHashMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -126,21 +126,21 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentHashMap::elements()
+	JObject ConcurrentHashMap::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject ConcurrentHashMap::entrySet()
+	JObject ConcurrentHashMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean ConcurrentHashMap::equals(JObject arg0)
+	jboolean ConcurrentHashMap::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -148,7 +148,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ConcurrentHashMap::forEach(JObject arg0)
+	void ConcurrentHashMap::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -156,7 +156,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ConcurrentHashMap::forEach(jlong arg0, JObject arg1)
+	void ConcurrentHashMap::forEach(jlong arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -165,7 +165,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEach(jlong arg0, JObject arg1, JObject arg2)
+	void ConcurrentHashMap::forEach(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -175,7 +175,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	void ConcurrentHashMap::forEachEntry(jlong arg0, JObject arg1)
+	void ConcurrentHashMap::forEachEntry(jlong arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"forEachEntry",
@@ -184,7 +184,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEachEntry(jlong arg0, JObject arg1, JObject arg2)
+	void ConcurrentHashMap::forEachEntry(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"forEachEntry",
@@ -194,7 +194,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	void ConcurrentHashMap::forEachKey(jlong arg0, JObject arg1)
+	void ConcurrentHashMap::forEachKey(jlong arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"forEachKey",
@@ -203,7 +203,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEachKey(jlong arg0, JObject arg1, JObject arg2)
+	void ConcurrentHashMap::forEachKey(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"forEachKey",
@@ -213,7 +213,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	void ConcurrentHashMap::forEachValue(jlong arg0, JObject arg1)
+	void ConcurrentHashMap::forEachValue(jlong arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"forEachValue",
@@ -222,7 +222,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEachValue(jlong arg0, JObject arg1, JObject arg2)
+	void ConcurrentHashMap::forEachValue(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"forEachValue",
@@ -232,7 +232,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject ConcurrentHashMap::get(JObject arg0)
+	JObject ConcurrentHashMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -240,7 +240,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentHashMap::getOrDefault(JObject arg0, JObject arg1)
+	JObject ConcurrentHashMap::getOrDefault(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getOrDefault",
@@ -249,28 +249,28 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	jint ConcurrentHashMap::hashCode()
+	jint ConcurrentHashMap::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ConcurrentHashMap::isEmpty()
+	jboolean ConcurrentHashMap::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::keySet()
+	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;"
 		);
 	}
-	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::keySet(JObject arg0)
+	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::keySet(JObject arg0) const
 	{
 		return callObjectMethod(
 			"keySet",
@@ -278,21 +278,21 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentHashMap::keys()
+	JObject ConcurrentHashMap::keys() const
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jlong ConcurrentHashMap::mappingCount()
+	jlong ConcurrentHashMap::mappingCount() const
 	{
 		return callMethod<jlong>(
 			"mappingCount",
 			"()J"
 		);
 	}
-	JObject ConcurrentHashMap::merge(JObject arg0, JObject arg1, JObject arg2)
+	JObject ConcurrentHashMap::merge(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -302,7 +302,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject ConcurrentHashMap::put(JObject arg0, JObject arg1)
+	JObject ConcurrentHashMap::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -311,7 +311,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	void ConcurrentHashMap::putAll(JObject arg0)
+	void ConcurrentHashMap::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -319,7 +319,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ConcurrentHashMap::putIfAbsent(JObject arg0, JObject arg1)
+	JObject ConcurrentHashMap::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
@@ -328,7 +328,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	JObject ConcurrentHashMap::reduce(jlong arg0, JObject arg1, JObject arg2)
+	JObject ConcurrentHashMap::reduce(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"reduce",
@@ -338,7 +338,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject ConcurrentHashMap::reduceEntries(jlong arg0, JObject arg1, JObject arg2)
+	JObject ConcurrentHashMap::reduceEntries(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"reduceEntries",
@@ -348,7 +348,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject ConcurrentHashMap::reduceEntries(jlong arg0, JObject arg1)
+	JObject ConcurrentHashMap::reduceEntries(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"reduceEntries",
@@ -357,7 +357,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jdouble ConcurrentHashMap::reduceEntriesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
+	jdouble ConcurrentHashMap::reduceEntriesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3) const
 	{
 		return callMethod<jdouble>(
 			"reduceEntriesToDouble",
@@ -368,7 +368,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceEntriesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
+	jint ConcurrentHashMap::reduceEntriesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3) const
 	{
 		return callMethod<jint>(
 			"reduceEntriesToInt",
@@ -379,7 +379,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceEntriesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
+	jlong ConcurrentHashMap::reduceEntriesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3) const
 	{
 		return callMethod<jlong>(
 			"reduceEntriesToLong",
@@ -390,7 +390,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	JObject ConcurrentHashMap::reduceKeys(jlong arg0, JObject arg1)
+	JObject ConcurrentHashMap::reduceKeys(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"reduceKeys",
@@ -399,7 +399,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ConcurrentHashMap::reduceKeys(jlong arg0, JObject arg1, JObject arg2)
+	JObject ConcurrentHashMap::reduceKeys(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"reduceKeys",
@@ -409,7 +409,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	jdouble ConcurrentHashMap::reduceKeysToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
+	jdouble ConcurrentHashMap::reduceKeysToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3) const
 	{
 		return callMethod<jdouble>(
 			"reduceKeysToDouble",
@@ -420,7 +420,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceKeysToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
+	jint ConcurrentHashMap::reduceKeysToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3) const
 	{
 		return callMethod<jint>(
 			"reduceKeysToInt",
@@ -431,7 +431,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceKeysToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
+	jlong ConcurrentHashMap::reduceKeysToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3) const
 	{
 		return callMethod<jlong>(
 			"reduceKeysToLong",
@@ -442,7 +442,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jdouble ConcurrentHashMap::reduceToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
+	jdouble ConcurrentHashMap::reduceToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3) const
 	{
 		return callMethod<jdouble>(
 			"reduceToDouble",
@@ -453,7 +453,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
+	jint ConcurrentHashMap::reduceToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3) const
 	{
 		return callMethod<jint>(
 			"reduceToInt",
@@ -464,7 +464,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
+	jlong ConcurrentHashMap::reduceToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3) const
 	{
 		return callMethod<jlong>(
 			"reduceToLong",
@@ -475,7 +475,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	JObject ConcurrentHashMap::reduceValues(jlong arg0, JObject arg1)
+	JObject ConcurrentHashMap::reduceValues(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"reduceValues",
@@ -484,7 +484,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ConcurrentHashMap::reduceValues(jlong arg0, JObject arg1, JObject arg2)
+	JObject ConcurrentHashMap::reduceValues(jlong arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"reduceValues",
@@ -494,7 +494,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	jdouble ConcurrentHashMap::reduceValuesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
+	jdouble ConcurrentHashMap::reduceValuesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3) const
 	{
 		return callMethod<jdouble>(
 			"reduceValuesToDouble",
@@ -505,7 +505,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceValuesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
+	jint ConcurrentHashMap::reduceValuesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3) const
 	{
 		return callMethod<jint>(
 			"reduceValuesToInt",
@@ -516,7 +516,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceValuesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
+	jlong ConcurrentHashMap::reduceValuesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3) const
 	{
 		return callMethod<jlong>(
 			"reduceValuesToLong",
@@ -527,7 +527,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jboolean ConcurrentHashMap::remove(JObject arg0, JObject arg1)
+	jboolean ConcurrentHashMap::remove(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -536,7 +536,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	JObject ConcurrentHashMap::remove(JObject arg0)
+	JObject ConcurrentHashMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -544,7 +544,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentHashMap::replace(JObject arg0, JObject arg1, JObject arg2)
+	jboolean ConcurrentHashMap::replace(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"replace",
@@ -554,7 +554,7 @@ namespace java::util::concurrent
 			arg2.object<jobject>()
 		);
 	}
-	JObject ConcurrentHashMap::replace(JObject arg0, JObject arg1)
+	JObject ConcurrentHashMap::replace(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -563,7 +563,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	void ConcurrentHashMap::replaceAll(JObject arg0)
+	void ConcurrentHashMap::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -571,7 +571,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ConcurrentHashMap::search(jlong arg0, JObject arg1)
+	JObject ConcurrentHashMap::search(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"search",
@@ -580,7 +580,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ConcurrentHashMap::searchEntries(jlong arg0, JObject arg1)
+	JObject ConcurrentHashMap::searchEntries(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"searchEntries",
@@ -589,7 +589,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ConcurrentHashMap::searchKeys(jlong arg0, JObject arg1)
+	JObject ConcurrentHashMap::searchKeys(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"searchKeys",
@@ -598,7 +598,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JObject ConcurrentHashMap::searchValues(jlong arg0, JObject arg1)
+	JObject ConcurrentHashMap::searchValues(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"searchValues",
@@ -607,21 +607,21 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jint ConcurrentHashMap::size()
+	jint ConcurrentHashMap::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString ConcurrentHashMap::toString()
+	JString ConcurrentHashMap::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ConcurrentHashMap::values()
+	JObject ConcurrentHashMap::values() const
 	{
 		return callObjectMethod(
 			"values",

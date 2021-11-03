@@ -20,8 +20,8 @@ namespace org::apache::http::conn::ssl
 		AllowAllHostnameVerifier();
 		
 		// Methods
-		JString toString();
-		void verify(JString arg0, JArray arg1, JArray arg2);
+		JString toString() const;
+		void verify(JString arg0, JArray arg1, JArray arg2) const;
 	};
 } // namespace org::apache::http::conn::ssl
 

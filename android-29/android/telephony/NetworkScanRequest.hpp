@@ -31,17 +31,17 @@ namespace android::telephony
 		NetworkScanRequest(jint arg0, JArray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jboolean getIncrementalResults();
-		jint getIncrementalResultsPeriodicity();
-		jint getMaxSearchTime();
-		java::util::ArrayList getPlmns();
-		jint getScanType();
-		jint getSearchPeriodicity();
-		JArray getSpecifiers();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jboolean getIncrementalResults() const;
+		jint getIncrementalResultsPeriodicity() const;
+		jint getMaxSearchTime() const;
+		java::util::ArrayList getPlmns() const;
+		jint getScanType() const;
+		jint getSearchPeriodicity() const;
+		JArray getSpecifiers() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

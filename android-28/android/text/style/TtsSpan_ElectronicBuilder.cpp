@@ -16,7 +16,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setDomain(JString arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setDomain(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDomain",
@@ -24,7 +24,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setEmailArguments(JString arg0, JString arg1)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setEmailArguments(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setEmailArguments",
@@ -33,7 +33,7 @@ namespace android::text::style
 			arg1.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setFragmentId(JString arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setFragmentId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setFragmentId",
@@ -41,7 +41,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPassword(JString arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPassword(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPassword",
@@ -49,7 +49,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPath(JString arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPath(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPath",
@@ -57,7 +57,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPort(jint arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPort(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPort",
@@ -65,7 +65,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setProtocol(JString arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setProtocol(JString arg0) const
 	{
 		return callObjectMethod(
 			"setProtocol",
@@ -73,7 +73,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setQueryString(JString arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setQueryString(JString arg0) const
 	{
 		return callObjectMethod(
 			"setQueryString",
@@ -81,7 +81,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setUsername(JString arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setUsername(JString arg0) const
 	{
 		return callObjectMethod(
 			"setUsername",

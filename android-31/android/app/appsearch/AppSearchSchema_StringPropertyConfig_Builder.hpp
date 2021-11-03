@@ -23,10 +23,10 @@ namespace android::app::appsearch
 		AppSearchSchema_StringPropertyConfig_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig build();
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setCardinality(jint arg0);
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setIndexingType(jint arg0);
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setTokenizerType(jint arg0);
+		android::app::appsearch::AppSearchSchema_StringPropertyConfig build() const;
+		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setCardinality(jint arg0) const;
+		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setIndexingType(jint arg0) const;
+		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setTokenizerType(jint arg0) const;
 	};
 } // namespace android::app::appsearch
 

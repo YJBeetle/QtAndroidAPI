@@ -63,7 +63,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jboolean AudioEffect_Descriptor::equals(JObject arg0)
+	jboolean AudioEffect_Descriptor::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -71,7 +71,7 @@ namespace android::media::audiofx
 			arg0.object<jobject>()
 		);
 	}
-	jint AudioEffect_Descriptor::hashCode()
+	jint AudioEffect_Descriptor::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

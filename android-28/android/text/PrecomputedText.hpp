@@ -31,23 +31,23 @@ namespace android::text
 		
 		// Methods
 		static android::text::PrecomputedText create(JString arg0, android::text::PrecomputedText_Params arg1);
-		jchar charAt(jint arg0);
-		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2);
-		jint getParagraphCount();
-		jint getParagraphEnd(jint arg0);
-		jint getParagraphStart(jint arg0);
-		android::text::PrecomputedText_Params getParams();
-		jint getSpanEnd(JObject arg0);
-		jint getSpanFlags(JObject arg0);
-		jint getSpanStart(JObject arg0);
-		JObjectArray getSpans(jint arg0, jint arg1, JClass arg2);
-		jfloat getWidth(jint arg0, jint arg1);
-		jint length();
-		jint nextSpanTransition(jint arg0, jint arg1, JClass arg2);
-		void removeSpan(JObject arg0);
-		void setSpan(JObject arg0, jint arg1, jint arg2, jint arg3);
-		JString subSequence(jint arg0, jint arg1);
-		JString toString();
+		jchar charAt(jint arg0) const;
+		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2) const;
+		jint getParagraphCount() const;
+		jint getParagraphEnd(jint arg0) const;
+		jint getParagraphStart(jint arg0) const;
+		android::text::PrecomputedText_Params getParams() const;
+		jint getSpanEnd(JObject arg0) const;
+		jint getSpanFlags(JObject arg0) const;
+		jint getSpanStart(JObject arg0) const;
+		JObjectArray getSpans(jint arg0, jint arg1, JClass arg2) const;
+		jfloat getWidth(jint arg0, jint arg1) const;
+		jint length() const;
+		jint nextSpanTransition(jint arg0, jint arg1, JClass arg2) const;
+		void removeSpan(JObject arg0) const;
+		void setSpan(JObject arg0, jint arg1, jint arg2, jint arg3) const;
+		JString subSequence(jint arg0, jint arg1) const;
+		JString toString() const;
 	};
 } // namespace android::text
 

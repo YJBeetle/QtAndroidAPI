@@ -25,9 +25,9 @@ namespace android::telephony::mbms
 		// Constructors
 		
 		// Methods
-		void close();
-		jlong getTmgi();
-		void updateGroupCall(JObject arg0, JObject arg1);
+		void close() const;
+		jlong getTmgi() const;
+		void updateGroupCall(JObject arg0, JObject arg1) const;
 	};
 } // namespace android::telephony::mbms
 

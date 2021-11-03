@@ -26,13 +26,13 @@ namespace java::util::concurrent::locks
 		// Constructors
 		
 		// Methods
-		void lock();
-		void lockInterruptibly();
-		JObject newCondition();
-		JString toString();
-		jboolean tryLock();
-		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void unlock();
+		void lock() const;
+		void lockInterruptibly() const;
+		JObject newCondition() const;
+		JString toString() const;
+		jboolean tryLock() const;
+		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void unlock() const;
 	};
 } // namespace java::util::concurrent::locks
 

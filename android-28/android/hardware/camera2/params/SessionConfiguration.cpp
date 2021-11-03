@@ -36,49 +36,49 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	JObject SessionConfiguration::getExecutor()
+	JObject SessionConfiguration::getExecutor() const
 	{
 		return callObjectMethod(
 			"getExecutor",
 			"()Ljava/util/concurrent/Executor;"
 		);
 	}
-	android::hardware::camera2::params::InputConfiguration SessionConfiguration::getInputConfiguration()
+	android::hardware::camera2::params::InputConfiguration SessionConfiguration::getInputConfiguration() const
 	{
 		return callObjectMethod(
 			"getInputConfiguration",
 			"()Landroid/hardware/camera2/params/InputConfiguration;"
 		);
 	}
-	JObject SessionConfiguration::getOutputConfigurations()
+	JObject SessionConfiguration::getOutputConfigurations() const
 	{
 		return callObjectMethod(
 			"getOutputConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	android::hardware::camera2::CaptureRequest SessionConfiguration::getSessionParameters()
+	android::hardware::camera2::CaptureRequest SessionConfiguration::getSessionParameters() const
 	{
 		return callObjectMethod(
 			"getSessionParameters",
 			"()Landroid/hardware/camera2/CaptureRequest;"
 		);
 	}
-	jint SessionConfiguration::getSessionType()
+	jint SessionConfiguration::getSessionType() const
 	{
 		return callMethod<jint>(
 			"getSessionType",
 			"()I"
 		);
 	}
-	android::hardware::camera2::CameraCaptureSession_StateCallback SessionConfiguration::getStateCallback()
+	android::hardware::camera2::CameraCaptureSession_StateCallback SessionConfiguration::getStateCallback() const
 	{
 		return callObjectMethod(
 			"getStateCallback",
 			"()Landroid/hardware/camera2/CameraCaptureSession$StateCallback;"
 		);
 	}
-	void SessionConfiguration::setInputConfiguration(android::hardware::camera2::params::InputConfiguration arg0)
+	void SessionConfiguration::setInputConfiguration(android::hardware::camera2::params::InputConfiguration arg0) const
 	{
 		callMethod<void>(
 			"setInputConfiguration",
@@ -86,7 +86,7 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	void SessionConfiguration::setSessionParameters(android::hardware::camera2::CaptureRequest arg0)
+	void SessionConfiguration::setSessionParameters(android::hardware::camera2::CaptureRequest arg0) const
 	{
 		callMethod<void>(
 			"setSessionParameters",

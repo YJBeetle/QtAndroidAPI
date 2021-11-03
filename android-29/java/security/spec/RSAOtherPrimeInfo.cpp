@@ -19,21 +19,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger RSAOtherPrimeInfo::getCrtCoefficient()
+	java::math::BigInteger RSAOtherPrimeInfo::getCrtCoefficient() const
 	{
 		return callObjectMethod(
 			"getCrtCoefficient",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger RSAOtherPrimeInfo::getExponent()
+	java::math::BigInteger RSAOtherPrimeInfo::getExponent() const
 	{
 		return callObjectMethod(
 			"getExponent",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger RSAOtherPrimeInfo::getPrime()
+	java::math::BigInteger RSAOtherPrimeInfo::getPrime() const
 	{
 		return callObjectMethod(
 			"getPrime",

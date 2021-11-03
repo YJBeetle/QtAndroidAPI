@@ -23,12 +23,12 @@ namespace javax::xml::_namespace
 		
 		// Methods
 		static javax::xml::_namespace::QName valueOf(JString arg0);
-		jboolean equals(JObject arg0);
-		JString getLocalPart();
-		JString getNamespaceURI();
-		JString getPrefix();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getLocalPart() const;
+		JString getNamespaceURI() const;
+		JString getPrefix() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace javax::xml::_namespace
 

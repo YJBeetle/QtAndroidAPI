@@ -21,14 +21,14 @@ namespace android::view::inputmethod
 	// Constructors
 	
 	// Methods
-	jint InlineSuggestionsResponse::describeContents()
+	jint InlineSuggestionsResponse::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean InlineSuggestionsResponse::equals(JObject arg0)
+	jboolean InlineSuggestionsResponse::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,28 +36,28 @@ namespace android::view::inputmethod
 			arg0.object<jobject>()
 		);
 	}
-	JObject InlineSuggestionsResponse::getInlineSuggestions()
+	JObject InlineSuggestionsResponse::getInlineSuggestions() const
 	{
 		return callObjectMethod(
 			"getInlineSuggestions",
 			"()Ljava/util/List;"
 		);
 	}
-	jint InlineSuggestionsResponse::hashCode()
+	jint InlineSuggestionsResponse::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString InlineSuggestionsResponse::toString()
+	JString InlineSuggestionsResponse::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InlineSuggestionsResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InlineSuggestionsResponse::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

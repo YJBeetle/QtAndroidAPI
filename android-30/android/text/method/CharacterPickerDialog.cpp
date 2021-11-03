@@ -25,7 +25,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	void CharacterPickerDialog::onClick(android::view::View arg0)
+	void CharacterPickerDialog::onClick(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -33,7 +33,7 @@ namespace android::text::method
 			arg0.object()
 		);
 	}
-	void CharacterPickerDialog::onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3)
+	void CharacterPickerDialog::onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"onItemClick",

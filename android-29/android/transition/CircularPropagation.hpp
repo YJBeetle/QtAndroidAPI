@@ -30,8 +30,8 @@ namespace android::transition
 		CircularPropagation();
 		
 		// Methods
-		jlong getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3);
-		void setPropagationSpeed(jfloat arg0);
+		jlong getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const;
+		void setPropagationSpeed(jfloat arg0) const;
 	};
 } // namespace android::transition
 

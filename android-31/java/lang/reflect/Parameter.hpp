@@ -25,25 +25,25 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getAnnotatedType();
-		JObject getAnnotation(JClass arg0);
-		JArray getAnnotations();
-		JArray getAnnotationsByType(JClass arg0);
-		JObject getDeclaredAnnotation(JClass arg0);
-		JArray getDeclaredAnnotations();
-		JArray getDeclaredAnnotationsByType(JClass arg0);
-		java::lang::reflect::Executable getDeclaringExecutable();
-		jint getModifiers();
-		JString getName();
-		JObject getParameterizedType();
-		JClass getType();
-		jint hashCode();
-		jboolean isImplicit();
-		jboolean isNamePresent();
-		jboolean isSynthetic();
-		jboolean isVarArgs();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getAnnotatedType() const;
+		JObject getAnnotation(JClass arg0) const;
+		JArray getAnnotations() const;
+		JArray getAnnotationsByType(JClass arg0) const;
+		JObject getDeclaredAnnotation(JClass arg0) const;
+		JArray getDeclaredAnnotations() const;
+		JArray getDeclaredAnnotationsByType(JClass arg0) const;
+		java::lang::reflect::Executable getDeclaringExecutable() const;
+		jint getModifiers() const;
+		JString getName() const;
+		JObject getParameterizedType() const;
+		JClass getType() const;
+		jint hashCode() const;
+		jboolean isImplicit() const;
+		jboolean isNamePresent() const;
+		jboolean isSynthetic() const;
+		jboolean isVarArgs() const;
+		JString toString() const;
 	};
 } // namespace java::lang::reflect
 

@@ -20,12 +20,12 @@ namespace android::media::midi
 		MidiReceiver(jint arg0);
 		
 		// Methods
-		void flush();
-		jint getMaxMessageSize();
-		void onFlush();
-		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3);
-		void send(JByteArray arg0, jint arg1, jint arg2);
-		void send(JByteArray arg0, jint arg1, jint arg2, jlong arg3);
+		void flush() const;
+		jint getMaxMessageSize() const;
+		void onFlush() const;
+		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const;
+		void send(JByteArray arg0, jint arg1, jint arg2) const;
+		void send(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const;
 	};
 } // namespace android::media::midi
 

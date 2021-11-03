@@ -20,14 +20,14 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void AtomicFile::_delete()
+	void AtomicFile::_delete() const
 	{
 		callMethod<void>(
 			"delete",
 			"()V"
 		);
 	}
-	void AtomicFile::failWrite(java::io::FileOutputStream arg0)
+	void AtomicFile::failWrite(java::io::FileOutputStream arg0) const
 	{
 		callMethod<void>(
 			"failWrite",
@@ -35,7 +35,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	void AtomicFile::finishWrite(java::io::FileOutputStream arg0)
+	void AtomicFile::finishWrite(java::io::FileOutputStream arg0) const
 	{
 		callMethod<void>(
 			"finishWrite",
@@ -43,35 +43,35 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	java::io::File AtomicFile::getBaseFile()
+	java::io::File AtomicFile::getBaseFile() const
 	{
 		return callObjectMethod(
 			"getBaseFile",
 			"()Ljava/io/File;"
 		);
 	}
-	jlong AtomicFile::getLastModifiedTime()
+	jlong AtomicFile::getLastModifiedTime() const
 	{
 		return callMethod<jlong>(
 			"getLastModifiedTime",
 			"()J"
 		);
 	}
-	java::io::FileInputStream AtomicFile::openRead()
+	java::io::FileInputStream AtomicFile::openRead() const
 	{
 		return callObjectMethod(
 			"openRead",
 			"()Ljava/io/FileInputStream;"
 		);
 	}
-	JByteArray AtomicFile::readFully()
+	JByteArray AtomicFile::readFully() const
 	{
 		return callObjectMethod(
 			"readFully",
 			"()[B"
 		);
 	}
-	java::io::FileOutputStream AtomicFile::startWrite()
+	java::io::FileOutputStream AtomicFile::startWrite() const
 	{
 		return callObjectMethod(
 			"startWrite",

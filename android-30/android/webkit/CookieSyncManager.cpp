@@ -28,35 +28,35 @@ namespace android::webkit
 			"()Landroid/webkit/CookieSyncManager;"
 		);
 	}
-	void CookieSyncManager::resetSync()
+	void CookieSyncManager::resetSync() const
 	{
 		callMethod<void>(
 			"resetSync",
 			"()V"
 		);
 	}
-	void CookieSyncManager::run()
+	void CookieSyncManager::run() const
 	{
 		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
-	void CookieSyncManager::startSync()
+	void CookieSyncManager::startSync() const
 	{
 		callMethod<void>(
 			"startSync",
 			"()V"
 		);
 	}
-	void CookieSyncManager::stopSync()
+	void CookieSyncManager::stopSync() const
 	{
 		callMethod<void>(
 			"stopSync",
 			"()V"
 		);
 	}
-	void CookieSyncManager::sync()
+	void CookieSyncManager::sync() const
 	{
 		callMethod<void>(
 			"sync",

@@ -38,17 +38,17 @@ namespace java::text
 		static JArray getAvailableLocales();
 		static java::text::Collator getInstance();
 		static java::text::Collator getInstance(java::util::Locale arg0);
-		JObject clone();
-		jint compare(JObject arg0, JObject arg1);
-		jint compare(JString arg0, JString arg1);
-		jboolean equals(JObject arg0);
-		jboolean equals(JString arg0, JString arg1);
-		java::text::CollationKey getCollationKey(JString arg0);
-		jint getDecomposition();
-		jint getStrength();
-		jint hashCode();
-		void setDecomposition(jint arg0);
-		void setStrength(jint arg0);
+		JObject clone() const;
+		jint compare(JObject arg0, JObject arg1) const;
+		jint compare(JString arg0, JString arg1) const;
+		jboolean equals(JObject arg0) const;
+		jboolean equals(JString arg0, JString arg1) const;
+		java::text::CollationKey getCollationKey(JString arg0) const;
+		jint getDecomposition() const;
+		jint getStrength() const;
+		jint hashCode() const;
+		void setDecomposition(jint arg0) const;
+		void setStrength(jint arg0) const;
 	};
 } // namespace java::text
 

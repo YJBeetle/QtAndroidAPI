@@ -17,7 +17,7 @@ namespace android::media::browse
 		) {}
 	
 	// Methods
-	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(JString arg0, JObject arg1)
+	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onChildrenLoaded",
@@ -26,7 +26,7 @@ namespace android::media::browse
 			arg1.object()
 		);
 	}
-	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(JString arg0, JObject arg1, android::os::Bundle arg2)
+	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(JString arg0, JObject arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onChildrenLoaded",
@@ -36,7 +36,7 @@ namespace android::media::browse
 			arg2.object()
 		);
 	}
-	void MediaBrowser_SubscriptionCallback::onError(JString arg0)
+	void MediaBrowser_SubscriptionCallback::onError(JString arg0) const
 	{
 		callMethod<void>(
 			"onError",
@@ -44,7 +44,7 @@ namespace android::media::browse
 			arg0.object<jstring>()
 		);
 	}
-	void MediaBrowser_SubscriptionCallback::onError(JString arg0, android::os::Bundle arg1)
+	void MediaBrowser_SubscriptionCallback::onError(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onError",

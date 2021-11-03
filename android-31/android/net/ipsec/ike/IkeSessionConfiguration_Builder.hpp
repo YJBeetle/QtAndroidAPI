@@ -28,13 +28,13 @@ namespace android::net::ipsec::ike
 		IkeSessionConfiguration_Builder(android::net::ipsec::ike::IkeSessionConnectionInfo arg0);
 		
 		// Methods
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder addIkeExtension(jint arg0);
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder addRemoteVendorId(JByteArray arg0);
-		android::net::ipsec::ike::IkeSessionConfiguration build();
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearIkeExtensions();
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearRemoteApplicationVersion();
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearRemoteVendorIds();
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder setRemoteApplicationVersion(JString arg0);
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder addIkeExtension(jint arg0) const;
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder addRemoteVendorId(JByteArray arg0) const;
+		android::net::ipsec::ike::IkeSessionConfiguration build() const;
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearIkeExtensions() const;
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearRemoteApplicationVersion() const;
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearRemoteVendorIds() const;
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder setRemoteApplicationVersion(JString arg0) const;
 	};
 } // namespace android::net::ipsec::ike
 

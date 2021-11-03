@@ -24,9 +24,9 @@ namespace android::service::quickaccesswallet
 		WalletServiceEvent(jint arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getEventType();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getEventType() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::quickaccesswallet
 

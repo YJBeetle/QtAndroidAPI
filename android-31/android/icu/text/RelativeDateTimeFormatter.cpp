@@ -79,7 +79,7 @@ namespace android::icu::text
 			arg3.object()
 		);
 	}
-	JString RelativeDateTimeFormatter::combineDateAndTime(JString arg0, JString arg1)
+	JString RelativeDateTimeFormatter::combineDateAndTime(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"combineDateAndTime",
@@ -88,7 +88,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	JString RelativeDateTimeFormatter::format(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1)
+	JString RelativeDateTimeFormatter::format(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1) const
 	{
 		return callObjectMethod(
 			"format",
@@ -97,7 +97,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JString RelativeDateTimeFormatter::format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1)
+	JString RelativeDateTimeFormatter::format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"format",
@@ -106,7 +106,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JString RelativeDateTimeFormatter::format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_Direction arg1, android::icu::text::RelativeDateTimeFormatter_RelativeUnit arg2)
+	JString RelativeDateTimeFormatter::format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_Direction arg1, android::icu::text::RelativeDateTimeFormatter_RelativeUnit arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -116,7 +116,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JString RelativeDateTimeFormatter::formatNumeric(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1)
+	JString RelativeDateTimeFormatter::formatNumeric(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"formatNumeric",
@@ -125,7 +125,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatNumericToValue(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1)
+	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatNumericToValue(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"formatNumericToValue",
@@ -134,7 +134,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatToValue(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1)
+	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatToValue(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1) const
 	{
 		return callObjectMethod(
 			"formatToValue",
@@ -143,7 +143,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatToValue(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1)
+	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatToValue(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"formatToValue",
@@ -152,7 +152,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatToValue(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_Direction arg1, android::icu::text::RelativeDateTimeFormatter_RelativeUnit arg2)
+	android::icu::text::RelativeDateTimeFormatter_FormattedRelativeDateTime RelativeDateTimeFormatter::formatToValue(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_Direction arg1, android::icu::text::RelativeDateTimeFormatter_RelativeUnit arg2) const
 	{
 		return callObjectMethod(
 			"formatToValue",
@@ -162,21 +162,21 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	android::icu::text::DisplayContext RelativeDateTimeFormatter::getCapitalizationContext()
+	android::icu::text::DisplayContext RelativeDateTimeFormatter::getCapitalizationContext() const
 	{
 		return callObjectMethod(
 			"getCapitalizationContext",
 			"()Landroid/icu/text/DisplayContext;"
 		);
 	}
-	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter::getFormatStyle()
+	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter::getFormatStyle() const
 	{
 		return callObjectMethod(
 			"getFormatStyle",
 			"()Landroid/icu/text/RelativeDateTimeFormatter$Style;"
 		);
 	}
-	android::icu::text::NumberFormat RelativeDateTimeFormatter::getNumberFormat()
+	android::icu::text::NumberFormat RelativeDateTimeFormatter::getNumberFormat() const
 	{
 		return callObjectMethod(
 			"getNumberFormat",

@@ -27,12 +27,12 @@ namespace android::hardware::camera2::params
 		ColorSpaceTransform(JArray arg0);
 		
 		// Methods
-		void copyElements(JIntArray arg0, jint arg1);
-		void copyElements(JArray arg0, jint arg1);
-		jboolean equals(JObject arg0);
-		android::util::Rational getElement(jint arg0, jint arg1);
-		jint hashCode();
-		JString toString();
+		void copyElements(JIntArray arg0, jint arg1) const;
+		void copyElements(JArray arg0, jint arg1) const;
+		jboolean equals(JObject arg0) const;
+		android::util::Rational getElement(jint arg0, jint arg1) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

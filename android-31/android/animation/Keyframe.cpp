@@ -74,49 +74,49 @@ namespace android::animation
 			arg1.object<jobject>()
 		);
 	}
-	android::animation::Keyframe Keyframe::clone()
+	android::animation::Keyframe Keyframe::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/Keyframe;"
 		);
 	}
-	jfloat Keyframe::getFraction()
+	jfloat Keyframe::getFraction() const
 	{
 		return callMethod<jfloat>(
 			"getFraction",
 			"()F"
 		);
 	}
-	JObject Keyframe::getInterpolator()
+	JObject Keyframe::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	JClass Keyframe::getType()
+	JClass Keyframe::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JObject Keyframe::getValue()
+	JObject Keyframe::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean Keyframe::hasValue()
+	jboolean Keyframe::hasValue() const
 	{
 		return callMethod<jboolean>(
 			"hasValue",
 			"()Z"
 		);
 	}
-	void Keyframe::setFraction(jfloat arg0)
+	void Keyframe::setFraction(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setFraction",
@@ -124,7 +124,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void Keyframe::setInterpolator(JObject arg0)
+	void Keyframe::setInterpolator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setInterpolator",
@@ -132,7 +132,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Keyframe::setValue(JObject arg0)
+	void Keyframe::setValue(JObject arg0) const
 	{
 		callMethod<void>(
 			"setValue",

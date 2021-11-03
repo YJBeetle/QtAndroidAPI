@@ -27,12 +27,12 @@ namespace android::app
 		VoiceInteractor_Prompt(JArray arg0, JString arg1);
 		
 		// Methods
-		jint countVoicePrompts();
-		jint describeContents();
-		JString getVisualPrompt();
-		JString getVoicePromptAt(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint countVoicePrompts() const;
+		jint describeContents() const;
+		JString getVisualPrompt() const;
+		JString getVoicePromptAt(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

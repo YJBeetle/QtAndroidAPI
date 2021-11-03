@@ -12,35 +12,35 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JIntArray AudioPlaybackCaptureConfiguration::getExcludeUids()
+	JIntArray AudioPlaybackCaptureConfiguration::getExcludeUids() const
 	{
 		return callObjectMethod(
 			"getExcludeUids",
 			"()[I"
 		);
 	}
-	JIntArray AudioPlaybackCaptureConfiguration::getExcludeUsages()
+	JIntArray AudioPlaybackCaptureConfiguration::getExcludeUsages() const
 	{
 		return callObjectMethod(
 			"getExcludeUsages",
 			"()[I"
 		);
 	}
-	JIntArray AudioPlaybackCaptureConfiguration::getMatchingUids()
+	JIntArray AudioPlaybackCaptureConfiguration::getMatchingUids() const
 	{
 		return callObjectMethod(
 			"getMatchingUids",
 			"()[I"
 		);
 	}
-	JIntArray AudioPlaybackCaptureConfiguration::getMatchingUsages()
+	JIntArray AudioPlaybackCaptureConfiguration::getMatchingUsages() const
 	{
 		return callObjectMethod(
 			"getMatchingUsages",
 			"()[I"
 		);
 	}
-	android::media::projection::MediaProjection AudioPlaybackCaptureConfiguration::getMediaProjection()
+	android::media::projection::MediaProjection AudioPlaybackCaptureConfiguration::getMediaProjection() const
 	{
 		return callObjectMethod(
 			"getMediaProjection",

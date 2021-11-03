@@ -95,14 +95,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	jint ServiceState::describeContents()
+	jint ServiceState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ServiceState::equals(JObject arg0)
+	jboolean ServiceState::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -110,91 +110,91 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint ServiceState::getCdmaNetworkId()
+	jint ServiceState::getCdmaNetworkId() const
 	{
 		return callMethod<jint>(
 			"getCdmaNetworkId",
 			"()I"
 		);
 	}
-	jint ServiceState::getCdmaSystemId()
+	jint ServiceState::getCdmaSystemId() const
 	{
 		return callMethod<jint>(
 			"getCdmaSystemId",
 			"()I"
 		);
 	}
-	JIntArray ServiceState::getCellBandwidths()
+	JIntArray ServiceState::getCellBandwidths() const
 	{
 		return callObjectMethod(
 			"getCellBandwidths",
 			"()[I"
 		);
 	}
-	jint ServiceState::getChannelNumber()
+	jint ServiceState::getChannelNumber() const
 	{
 		return callMethod<jint>(
 			"getChannelNumber",
 			"()I"
 		);
 	}
-	jint ServiceState::getDuplexMode()
+	jint ServiceState::getDuplexMode() const
 	{
 		return callMethod<jint>(
 			"getDuplexMode",
 			"()I"
 		);
 	}
-	jboolean ServiceState::getIsManualSelection()
+	jboolean ServiceState::getIsManualSelection() const
 	{
 		return callMethod<jboolean>(
 			"getIsManualSelection",
 			"()Z"
 		);
 	}
-	JString ServiceState::getOperatorAlphaLong()
+	JString ServiceState::getOperatorAlphaLong() const
 	{
 		return callObjectMethod(
 			"getOperatorAlphaLong",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ServiceState::getOperatorAlphaShort()
+	JString ServiceState::getOperatorAlphaShort() const
 	{
 		return callObjectMethod(
 			"getOperatorAlphaShort",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ServiceState::getOperatorNumeric()
+	JString ServiceState::getOperatorNumeric() const
 	{
 		return callObjectMethod(
 			"getOperatorNumeric",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean ServiceState::getRoaming()
+	jboolean ServiceState::getRoaming() const
 	{
 		return callMethod<jboolean>(
 			"getRoaming",
 			"()Z"
 		);
 	}
-	jint ServiceState::getState()
+	jint ServiceState::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jint ServiceState::hashCode()
+	jint ServiceState::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void ServiceState::setIsManualSelection(jboolean arg0)
+	void ServiceState::setIsManualSelection(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIsManualSelection",
@@ -202,7 +202,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void ServiceState::setOperatorName(JString arg0, JString arg1, JString arg2)
+	void ServiceState::setOperatorName(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setOperatorName",
@@ -212,7 +212,7 @@ namespace android::telephony
 			arg2.object<jstring>()
 		);
 	}
-	void ServiceState::setRoaming(jboolean arg0)
+	void ServiceState::setRoaming(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRoaming",
@@ -220,7 +220,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void ServiceState::setState(jint arg0)
+	void ServiceState::setState(jint arg0) const
 	{
 		callMethod<void>(
 			"setState",
@@ -228,28 +228,28 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void ServiceState::setStateOff()
+	void ServiceState::setStateOff() const
 	{
 		callMethod<void>(
 			"setStateOff",
 			"()V"
 		);
 	}
-	void ServiceState::setStateOutOfService()
+	void ServiceState::setStateOutOfService() const
 	{
 		callMethod<void>(
 			"setStateOutOfService",
 			"()V"
 		);
 	}
-	JString ServiceState::toString()
+	JString ServiceState::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ServiceState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ServiceState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

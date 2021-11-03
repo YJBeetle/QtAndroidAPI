@@ -26,7 +26,7 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void XMLFilterImpl::characters(JCharArray arg0, jint arg1, jint arg2)
+	void XMLFilterImpl::characters(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"characters",
@@ -36,14 +36,14 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void XMLFilterImpl::endDocument()
+	void XMLFilterImpl::endDocument() const
 	{
 		callMethod<void>(
 			"endDocument",
 			"()V"
 		);
 	}
-	void XMLFilterImpl::endElement(JString arg0, JString arg1, JString arg2)
+	void XMLFilterImpl::endElement(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"endElement",
@@ -53,7 +53,7 @@ namespace org::xml::sax::helpers
 			arg2.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::endPrefixMapping(JString arg0)
+	void XMLFilterImpl::endPrefixMapping(JString arg0) const
 	{
 		callMethod<void>(
 			"endPrefixMapping",
@@ -61,7 +61,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::error(org::xml::sax::SAXParseException arg0)
+	void XMLFilterImpl::error(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"error",
@@ -69,7 +69,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::fatalError(org::xml::sax::SAXParseException arg0)
+	void XMLFilterImpl::fatalError(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"fatalError",
@@ -77,35 +77,35 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	JObject XMLFilterImpl::getContentHandler()
+	JObject XMLFilterImpl::getContentHandler() const
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	JObject XMLFilterImpl::getDTDHandler()
+	JObject XMLFilterImpl::getDTDHandler() const
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	JObject XMLFilterImpl::getEntityResolver()
+	JObject XMLFilterImpl::getEntityResolver() const
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	JObject XMLFilterImpl::getErrorHandler()
+	JObject XMLFilterImpl::getErrorHandler() const
 	{
 		return callObjectMethod(
 			"getErrorHandler",
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean XMLFilterImpl::getFeature(JString arg0)
+	jboolean XMLFilterImpl::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -113,14 +113,14 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JObject XMLFilterImpl::getParent()
+	JObject XMLFilterImpl::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Lorg/xml/sax/XMLReader;"
 		);
 	}
-	JObject XMLFilterImpl::getProperty(JString arg0)
+	JObject XMLFilterImpl::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -128,7 +128,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
+	void XMLFilterImpl::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
@@ -138,7 +138,7 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void XMLFilterImpl::notationDecl(JString arg0, JString arg1, JString arg2)
+	void XMLFilterImpl::notationDecl(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"notationDecl",
@@ -148,7 +148,7 @@ namespace org::xml::sax::helpers
 			arg2.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::parse(JString arg0)
+	void XMLFilterImpl::parse(JString arg0) const
 	{
 		callMethod<void>(
 			"parse",
@@ -156,7 +156,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::parse(org::xml::sax::InputSource arg0)
+	void XMLFilterImpl::parse(org::xml::sax::InputSource arg0) const
 	{
 		callMethod<void>(
 			"parse",
@@ -164,7 +164,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::processingInstruction(JString arg0, JString arg1)
+	void XMLFilterImpl::processingInstruction(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"processingInstruction",
@@ -173,7 +173,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource XMLFilterImpl::resolveEntity(JString arg0, JString arg1)
+	org::xml::sax::InputSource XMLFilterImpl::resolveEntity(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"resolveEntity",
@@ -182,7 +182,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::setContentHandler(JObject arg0)
+	void XMLFilterImpl::setContentHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setContentHandler",
@@ -190,7 +190,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setDTDHandler(JObject arg0)
+	void XMLFilterImpl::setDTDHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDTDHandler",
@@ -198,7 +198,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setDocumentLocator(JObject arg0)
+	void XMLFilterImpl::setDocumentLocator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -206,7 +206,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setEntityResolver(JObject arg0)
+	void XMLFilterImpl::setEntityResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -214,7 +214,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setErrorHandler(JObject arg0)
+	void XMLFilterImpl::setErrorHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -222,7 +222,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setFeature(JString arg0, jboolean arg1)
+	void XMLFilterImpl::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -231,7 +231,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void XMLFilterImpl::setParent(JObject arg0)
+	void XMLFilterImpl::setParent(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParent",
@@ -239,7 +239,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setProperty(JString arg0, JObject arg1)
+	void XMLFilterImpl::setProperty(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setProperty",
@@ -248,7 +248,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jobject>()
 		);
 	}
-	void XMLFilterImpl::skippedEntity(JString arg0)
+	void XMLFilterImpl::skippedEntity(JString arg0) const
 	{
 		callMethod<void>(
 			"skippedEntity",
@@ -256,14 +256,14 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::startDocument()
+	void XMLFilterImpl::startDocument() const
 	{
 		callMethod<void>(
 			"startDocument",
 			"()V"
 		);
 	}
-	void XMLFilterImpl::startElement(JString arg0, JString arg1, JString arg2, JObject arg3)
+	void XMLFilterImpl::startElement(JString arg0, JString arg1, JString arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"startElement",
@@ -274,7 +274,7 @@ namespace org::xml::sax::helpers
 			arg3.object()
 		);
 	}
-	void XMLFilterImpl::startPrefixMapping(JString arg0, JString arg1)
+	void XMLFilterImpl::startPrefixMapping(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"startPrefixMapping",
@@ -283,7 +283,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3)
+	void XMLFilterImpl::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"unparsedEntityDecl",
@@ -294,7 +294,7 @@ namespace org::xml::sax::helpers
 			arg3.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::warning(org::xml::sax::SAXParseException arg0)
+	void XMLFilterImpl::warning(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"warning",

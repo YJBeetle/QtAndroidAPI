@@ -38,7 +38,7 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	void PreferenceGroup::addItemFromInflater(android::preference::Preference arg0)
+	void PreferenceGroup::addItemFromInflater(android::preference::Preference arg0) const
 	{
 		callMethod<void>(
 			"addItemFromInflater",
@@ -46,7 +46,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	jboolean PreferenceGroup::addPreference(android::preference::Preference arg0)
+	jboolean PreferenceGroup::addPreference(android::preference::Preference arg0) const
 	{
 		return callMethod<jboolean>(
 			"addPreference",
@@ -54,7 +54,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::preference::Preference PreferenceGroup::findPreference(JString arg0)
+	android::preference::Preference PreferenceGroup::findPreference(JString arg0) const
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -62,7 +62,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	android::preference::Preference PreferenceGroup::getPreference(jint arg0)
+	android::preference::Preference PreferenceGroup::getPreference(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPreference",
@@ -70,21 +70,21 @@ namespace android::preference
 			arg0
 		);
 	}
-	jint PreferenceGroup::getPreferenceCount()
+	jint PreferenceGroup::getPreferenceCount() const
 	{
 		return callMethod<jint>(
 			"getPreferenceCount",
 			"()I"
 		);
 	}
-	jboolean PreferenceGroup::isOrderingAsAdded()
+	jboolean PreferenceGroup::isOrderingAsAdded() const
 	{
 		return callMethod<jboolean>(
 			"isOrderingAsAdded",
 			"()Z"
 		);
 	}
-	void PreferenceGroup::notifyDependencyChange(jboolean arg0)
+	void PreferenceGroup::notifyDependencyChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"notifyDependencyChange",
@@ -92,14 +92,14 @@ namespace android::preference
 			arg0
 		);
 	}
-	void PreferenceGroup::removeAll()
+	void PreferenceGroup::removeAll() const
 	{
 		callMethod<void>(
 			"removeAll",
 			"()V"
 		);
 	}
-	jboolean PreferenceGroup::removePreference(android::preference::Preference arg0)
+	jboolean PreferenceGroup::removePreference(android::preference::Preference arg0) const
 	{
 		return callMethod<jboolean>(
 			"removePreference",
@@ -107,7 +107,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceGroup::setOrderingAsAdded(jboolean arg0)
+	void PreferenceGroup::setOrderingAsAdded(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOrderingAsAdded",

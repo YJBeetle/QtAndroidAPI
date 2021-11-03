@@ -21,14 +21,14 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	android::graphics::drawable::shapes::OvalShape OvalShape::clone()
+	android::graphics::drawable::shapes::OvalShape OvalShape::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/OvalShape;"
 		);
 	}
-	void OvalShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
+	void OvalShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -37,7 +37,7 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	void OvalShape::getOutline(android::graphics::Outline arg0)
+	void OvalShape::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",

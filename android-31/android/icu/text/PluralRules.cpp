@@ -135,7 +135,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PluralRules::equals(android::icu::text::PluralRules arg0)
+	jboolean PluralRules::equals(android::icu::text::PluralRules arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -143,7 +143,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean PluralRules::equals(JObject arg0)
+	jboolean PluralRules::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -151,7 +151,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	JObject PluralRules::getAllKeywordValues(JString arg0)
+	JObject PluralRules::getAllKeywordValues(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAllKeywordValues",
@@ -159,14 +159,14 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject PluralRules::getKeywords()
+	JObject PluralRules::getKeywords() const
 	{
 		return callObjectMethod(
 			"getKeywords",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject PluralRules::getSamples(JString arg0)
+	JObject PluralRules::getSamples(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSamples",
@@ -174,7 +174,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jdouble PluralRules::getUniqueKeywordValue(JString arg0)
+	jdouble PluralRules::getUniqueKeywordValue(JString arg0) const
 	{
 		return callMethod<jdouble>(
 			"getUniqueKeywordValue",
@@ -182,14 +182,14 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jint PluralRules::hashCode()
+	jint PluralRules::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PluralRules::select(android::icu::number::FormattedNumber arg0)
+	JString PluralRules::select(android::icu::number::FormattedNumber arg0) const
 	{
 		return callObjectMethod(
 			"select",
@@ -197,7 +197,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString PluralRules::select(jdouble arg0)
+	JString PluralRules::select(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"select",
@@ -205,7 +205,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString PluralRules::toString()
+	JString PluralRules::toString() const
 	{
 		return callObjectMethod(
 			"toString",

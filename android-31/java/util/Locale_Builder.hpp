@@ -23,19 +23,19 @@ namespace java::util
 		Locale_Builder();
 		
 		// Methods
-		java::util::Locale_Builder addUnicodeLocaleAttribute(JString arg0);
-		java::util::Locale build();
-		java::util::Locale_Builder clear();
-		java::util::Locale_Builder clearExtensions();
-		java::util::Locale_Builder removeUnicodeLocaleAttribute(JString arg0);
-		java::util::Locale_Builder setExtension(jchar arg0, JString arg1);
-		java::util::Locale_Builder setLanguage(JString arg0);
-		java::util::Locale_Builder setLanguageTag(JString arg0);
-		java::util::Locale_Builder setLocale(java::util::Locale arg0);
-		java::util::Locale_Builder setRegion(JString arg0);
-		java::util::Locale_Builder setScript(JString arg0);
-		java::util::Locale_Builder setUnicodeLocaleKeyword(JString arg0, JString arg1);
-		java::util::Locale_Builder setVariant(JString arg0);
+		java::util::Locale_Builder addUnicodeLocaleAttribute(JString arg0) const;
+		java::util::Locale build() const;
+		java::util::Locale_Builder clear() const;
+		java::util::Locale_Builder clearExtensions() const;
+		java::util::Locale_Builder removeUnicodeLocaleAttribute(JString arg0) const;
+		java::util::Locale_Builder setExtension(jchar arg0, JString arg1) const;
+		java::util::Locale_Builder setLanguage(JString arg0) const;
+		java::util::Locale_Builder setLanguageTag(JString arg0) const;
+		java::util::Locale_Builder setLocale(java::util::Locale arg0) const;
+		java::util::Locale_Builder setRegion(JString arg0) const;
+		java::util::Locale_Builder setScript(JString arg0) const;
+		java::util::Locale_Builder setUnicodeLocaleKeyword(JString arg0, JString arg1) const;
+		java::util::Locale_Builder setVariant(JString arg0) const;
 	};
 } // namespace java::util
 

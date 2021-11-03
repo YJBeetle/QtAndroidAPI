@@ -21,12 +21,12 @@ namespace javax::xml::transform::sax
 		SAXResult(JObject arg0);
 		
 		// Methods
-		JObject getHandler();
-		JObject getLexicalHandler();
-		JString getSystemId();
-		void setHandler(JObject arg0);
-		void setLexicalHandler(JObject arg0);
-		void setSystemId(JString arg0);
+		JObject getHandler() const;
+		JObject getLexicalHandler() const;
+		JString getSystemId() const;
+		void setHandler(JObject arg0) const;
+		void setLexicalHandler(JObject arg0) const;
+		void setSystemId(JString arg0) const;
 	};
 } // namespace javax::xml::transform::sax
 

@@ -158,7 +158,7 @@ namespace java::time::temporal
 			"()[Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	JObject ChronoUnit::addTo(JObject arg0, jlong arg1)
+	JObject ChronoUnit::addTo(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"addTo",
@@ -167,7 +167,7 @@ namespace java::time::temporal
 			arg1
 		);
 	}
-	jlong ChronoUnit::between(JObject arg0, JObject arg1)
+	jlong ChronoUnit::between(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"between",
@@ -176,28 +176,28 @@ namespace java::time::temporal
 			arg1.object()
 		);
 	}
-	java::time::Duration ChronoUnit::getDuration()
+	java::time::Duration ChronoUnit::getDuration() const
 	{
 		return callObjectMethod(
 			"getDuration",
 			"()Ljava/time/Duration;"
 		);
 	}
-	jboolean ChronoUnit::isDateBased()
+	jboolean ChronoUnit::isDateBased() const
 	{
 		return callMethod<jboolean>(
 			"isDateBased",
 			"()Z"
 		);
 	}
-	jboolean ChronoUnit::isDurationEstimated()
+	jboolean ChronoUnit::isDurationEstimated() const
 	{
 		return callMethod<jboolean>(
 			"isDurationEstimated",
 			"()Z"
 		);
 	}
-	jboolean ChronoUnit::isSupportedBy(JObject arg0)
+	jboolean ChronoUnit::isSupportedBy(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupportedBy",
@@ -205,14 +205,14 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	jboolean ChronoUnit::isTimeBased()
+	jboolean ChronoUnit::isTimeBased() const
 	{
 		return callMethod<jboolean>(
 			"isTimeBased",
 			"()Z"
 		);
 	}
-	JString ChronoUnit::toString()
+	JString ChronoUnit::toString() const
 	{
 		return callObjectMethod(
 			"toString",

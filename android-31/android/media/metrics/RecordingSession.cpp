@@ -12,14 +12,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	void RecordingSession::close()
+	void RecordingSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean RecordingSession::equals(JObject arg0)
+	jboolean RecordingSession::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,14 +27,14 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	android::media::metrics::LogSessionId RecordingSession::getSessionId()
+	android::media::metrics::LogSessionId RecordingSession::getSessionId() const
 	{
 		return callObjectMethod(
 			"getSessionId",
 			"()Landroid/media/metrics/LogSessionId;"
 		);
 	}
-	jint RecordingSession::hashCode()
+	jint RecordingSession::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -37,42 +37,42 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	JString MailTo::getBody()
+	JString MailTo::getBody() const
 	{
 		return callObjectMethod(
 			"getBody",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MailTo::getCc()
+	JString MailTo::getCc() const
 	{
 		return callObjectMethod(
 			"getCc",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject MailTo::getHeaders()
+	JObject MailTo::getHeaders() const
 	{
 		return callObjectMethod(
 			"getHeaders",
 			"()Ljava/util/Map;"
 		);
 	}
-	JString MailTo::getSubject()
+	JString MailTo::getSubject() const
 	{
 		return callObjectMethod(
 			"getSubject",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MailTo::getTo()
+	JString MailTo::getTo() const
 	{
 		return callObjectMethod(
 			"getTo",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MailTo::toString()
+	JString MailTo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

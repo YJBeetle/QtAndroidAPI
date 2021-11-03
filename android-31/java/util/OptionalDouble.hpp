@@ -21,19 +21,19 @@ namespace java::util
 		// Methods
 		static java::util::OptionalDouble empty();
 		static java::util::OptionalDouble of(jdouble arg0);
-		jboolean equals(JObject arg0);
-		jdouble getAsDouble();
-		jint hashCode();
-		void ifPresent(JObject arg0);
-		void ifPresentOrElse(JObject arg0, JObject arg1);
-		jboolean isEmpty();
-		jboolean isPresent();
-		jdouble orElse(jdouble arg0);
-		jdouble orElseGet(JObject arg0);
-		jdouble orElseThrow();
-		jdouble orElseThrow(JObject arg0);
-		JObject stream();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jdouble getAsDouble() const;
+		jint hashCode() const;
+		void ifPresent(JObject arg0) const;
+		void ifPresentOrElse(JObject arg0, JObject arg1) const;
+		jboolean isEmpty() const;
+		jboolean isPresent() const;
+		jdouble orElse(jdouble arg0) const;
+		jdouble orElseGet(JObject arg0) const;
+		jdouble orElseThrow() const;
+		jdouble orElseThrow(JObject arg0) const;
+		JObject stream() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

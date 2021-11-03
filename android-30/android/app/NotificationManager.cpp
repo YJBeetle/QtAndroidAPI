@@ -259,7 +259,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	JString NotificationManager::addAutomaticZenRule(android::app::AutomaticZenRule arg0)
+	JString NotificationManager::addAutomaticZenRule(android::app::AutomaticZenRule arg0) const
 	{
 		return callObjectMethod(
 			"addAutomaticZenRule",
@@ -267,28 +267,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean NotificationManager::areBubblesAllowed()
+	jboolean NotificationManager::areBubblesAllowed() const
 	{
 		return callMethod<jboolean>(
 			"areBubblesAllowed",
 			"()Z"
 		);
 	}
-	jboolean NotificationManager::areNotificationsEnabled()
+	jboolean NotificationManager::areNotificationsEnabled() const
 	{
 		return callMethod<jboolean>(
 			"areNotificationsEnabled",
 			"()Z"
 		);
 	}
-	jboolean NotificationManager::areNotificationsPaused()
+	jboolean NotificationManager::areNotificationsPaused() const
 	{
 		return callMethod<jboolean>(
 			"areNotificationsPaused",
 			"()Z"
 		);
 	}
-	jboolean NotificationManager::canNotifyAsPackage(JString arg0)
+	jboolean NotificationManager::canNotifyAsPackage(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"canNotifyAsPackage",
@@ -296,7 +296,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationManager::cancel(jint arg0)
+	void NotificationManager::cancel(jint arg0) const
 	{
 		callMethod<void>(
 			"cancel",
@@ -304,7 +304,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationManager::cancel(JString arg0, jint arg1)
+	void NotificationManager::cancel(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"cancel",
@@ -313,14 +313,14 @@ namespace android::app
 			arg1
 		);
 	}
-	void NotificationManager::cancelAll()
+	void NotificationManager::cancelAll() const
 	{
 		callMethod<void>(
 			"cancelAll",
 			"()V"
 		);
 	}
-	void NotificationManager::cancelAsPackage(JString arg0, JString arg1, jint arg2)
+	void NotificationManager::cancelAsPackage(JString arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"cancelAsPackage",
@@ -330,7 +330,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void NotificationManager::createNotificationChannel(android::app::NotificationChannel arg0)
+	void NotificationManager::createNotificationChannel(android::app::NotificationChannel arg0) const
 	{
 		callMethod<void>(
 			"createNotificationChannel",
@@ -338,7 +338,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NotificationManager::createNotificationChannelGroup(android::app::NotificationChannelGroup arg0)
+	void NotificationManager::createNotificationChannelGroup(android::app::NotificationChannelGroup arg0) const
 	{
 		callMethod<void>(
 			"createNotificationChannelGroup",
@@ -346,7 +346,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NotificationManager::createNotificationChannelGroups(JObject arg0)
+	void NotificationManager::createNotificationChannelGroups(JObject arg0) const
 	{
 		callMethod<void>(
 			"createNotificationChannelGroups",
@@ -354,7 +354,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NotificationManager::createNotificationChannels(JObject arg0)
+	void NotificationManager::createNotificationChannels(JObject arg0) const
 	{
 		callMethod<void>(
 			"createNotificationChannels",
@@ -362,7 +362,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NotificationManager::deleteNotificationChannel(JString arg0)
+	void NotificationManager::deleteNotificationChannel(JString arg0) const
 	{
 		callMethod<void>(
 			"deleteNotificationChannel",
@@ -370,7 +370,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationManager::deleteNotificationChannelGroup(JString arg0)
+	void NotificationManager::deleteNotificationChannelGroup(JString arg0) const
 	{
 		callMethod<void>(
 			"deleteNotificationChannelGroup",
@@ -378,14 +378,14 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	JArray NotificationManager::getActiveNotifications()
+	JArray NotificationManager::getActiveNotifications() const
 	{
 		return callObjectMethod(
 			"getActiveNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
 		);
 	}
-	android::app::AutomaticZenRule NotificationManager::getAutomaticZenRule(JString arg0)
+	android::app::AutomaticZenRule NotificationManager::getAutomaticZenRule(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAutomaticZenRule",
@@ -393,35 +393,35 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	JObject NotificationManager::getAutomaticZenRules()
+	JObject NotificationManager::getAutomaticZenRules() const
 	{
 		return callObjectMethod(
 			"getAutomaticZenRules",
 			"()Ljava/util/Map;"
 		);
 	}
-	android::app::NotificationManager_Policy NotificationManager::getConsolidatedNotificationPolicy()
+	android::app::NotificationManager_Policy NotificationManager::getConsolidatedNotificationPolicy() const
 	{
 		return callObjectMethod(
 			"getConsolidatedNotificationPolicy",
 			"()Landroid/app/NotificationManager$Policy;"
 		);
 	}
-	jint NotificationManager::getCurrentInterruptionFilter()
+	jint NotificationManager::getCurrentInterruptionFilter() const
 	{
 		return callMethod<jint>(
 			"getCurrentInterruptionFilter",
 			"()I"
 		);
 	}
-	jint NotificationManager::getImportance()
+	jint NotificationManager::getImportance() const
 	{
 		return callMethod<jint>(
 			"getImportance",
 			"()I"
 		);
 	}
-	android::app::NotificationChannel NotificationManager::getNotificationChannel(JString arg0)
+	android::app::NotificationChannel NotificationManager::getNotificationChannel(JString arg0) const
 	{
 		return callObjectMethod(
 			"getNotificationChannel",
@@ -429,7 +429,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::NotificationChannel NotificationManager::getNotificationChannel(JString arg0, JString arg1)
+	android::app::NotificationChannel NotificationManager::getNotificationChannel(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getNotificationChannel",
@@ -438,7 +438,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::app::NotificationChannelGroup NotificationManager::getNotificationChannelGroup(JString arg0)
+	android::app::NotificationChannelGroup NotificationManager::getNotificationChannelGroup(JString arg0) const
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroup",
@@ -446,35 +446,35 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	JObject NotificationManager::getNotificationChannelGroups()
+	JObject NotificationManager::getNotificationChannelGroups() const
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroups",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject NotificationManager::getNotificationChannels()
+	JObject NotificationManager::getNotificationChannels() const
 	{
 		return callObjectMethod(
 			"getNotificationChannels",
 			"()Ljava/util/List;"
 		);
 	}
-	JString NotificationManager::getNotificationDelegate()
+	JString NotificationManager::getNotificationDelegate() const
 	{
 		return callObjectMethod(
 			"getNotificationDelegate",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::app::NotificationManager_Policy NotificationManager::getNotificationPolicy()
+	android::app::NotificationManager_Policy NotificationManager::getNotificationPolicy() const
 	{
 		return callObjectMethod(
 			"getNotificationPolicy",
 			"()Landroid/app/NotificationManager$Policy;"
 		);
 	}
-	jboolean NotificationManager::isNotificationListenerAccessGranted(android::content::ComponentName arg0)
+	jboolean NotificationManager::isNotificationListenerAccessGranted(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNotificationListenerAccessGranted",
@@ -482,14 +482,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean NotificationManager::isNotificationPolicyAccessGranted()
+	jboolean NotificationManager::isNotificationPolicyAccessGranted() const
 	{
 		return callMethod<jboolean>(
 			"isNotificationPolicyAccessGranted",
 			"()Z"
 		);
 	}
-	void NotificationManager::notify(jint arg0, android::app::Notification arg1)
+	void NotificationManager::notify(jint arg0, android::app::Notification arg1) const
 	{
 		callMethod<void>(
 			"notify",
@@ -498,7 +498,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void NotificationManager::notify(JString arg0, jint arg1, android::app::Notification arg2)
+	void NotificationManager::notify(JString arg0, jint arg1, android::app::Notification arg2) const
 	{
 		callMethod<void>(
 			"notify",
@@ -508,7 +508,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void NotificationManager::notifyAsPackage(JString arg0, JString arg1, jint arg2, android::app::Notification arg3)
+	void NotificationManager::notifyAsPackage(JString arg0, JString arg1, jint arg2, android::app::Notification arg3) const
 	{
 		callMethod<void>(
 			"notifyAsPackage",
@@ -519,7 +519,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	jboolean NotificationManager::removeAutomaticZenRule(JString arg0)
+	jboolean NotificationManager::removeAutomaticZenRule(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAutomaticZenRule",
@@ -527,7 +527,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationManager::setAutomaticZenRuleState(JString arg0, android::service::notification::Condition arg1)
+	void NotificationManager::setAutomaticZenRuleState(JString arg0, android::service::notification::Condition arg1) const
 	{
 		callMethod<void>(
 			"setAutomaticZenRuleState",
@@ -536,7 +536,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void NotificationManager::setInterruptionFilter(jint arg0)
+	void NotificationManager::setInterruptionFilter(jint arg0) const
 	{
 		callMethod<void>(
 			"setInterruptionFilter",
@@ -544,7 +544,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationManager::setNotificationDelegate(JString arg0)
+	void NotificationManager::setNotificationDelegate(JString arg0) const
 	{
 		callMethod<void>(
 			"setNotificationDelegate",
@@ -552,7 +552,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void NotificationManager::setNotificationPolicy(android::app::NotificationManager_Policy arg0)
+	void NotificationManager::setNotificationPolicy(android::app::NotificationManager_Policy arg0) const
 	{
 		callMethod<void>(
 			"setNotificationPolicy",
@@ -560,14 +560,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean NotificationManager::shouldHideSilentStatusBarIcons()
+	jboolean NotificationManager::shouldHideSilentStatusBarIcons() const
 	{
 		return callMethod<jboolean>(
 			"shouldHideSilentStatusBarIcons",
 			"()Z"
 		);
 	}
-	jboolean NotificationManager::updateAutomaticZenRule(JString arg0, android::app::AutomaticZenRule arg1)
+	jboolean NotificationManager::updateAutomaticZenRule(JString arg0, android::app::AutomaticZenRule arg1) const
 	{
 		return callMethod<jboolean>(
 			"updateAutomaticZenRule",

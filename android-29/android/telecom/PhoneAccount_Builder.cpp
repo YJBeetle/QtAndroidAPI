@@ -30,7 +30,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::addSupportedUriScheme(JString arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::addSupportedUriScheme(JString arg0) const
 	{
 		return callObjectMethod(
 			"addSupportedUriScheme",
@@ -38,14 +38,14 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	android::telecom::PhoneAccount PhoneAccount_Builder::build()
+	android::telecom::PhoneAccount PhoneAccount_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telecom/PhoneAccount;"
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setAddress(android::net::Uri arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setAddress(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setAddress",
@@ -53,7 +53,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setCapabilities(jint arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setCapabilities(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCapabilities",
@@ -61,7 +61,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setExtras(android::os::Bundle arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -69,7 +69,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setHighlightColor(jint arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setHighlightColor(jint arg0) const
 	{
 		return callObjectMethod(
 			"setHighlightColor",
@@ -77,7 +77,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -85,7 +85,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setShortDescription(JString arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setShortDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setShortDescription",
@@ -93,7 +93,7 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSubscriptionAddress(android::net::Uri arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSubscriptionAddress(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setSubscriptionAddress",
@@ -101,7 +101,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSupportedUriSchemes(JObject arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSupportedUriSchemes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setSupportedUriSchemes",

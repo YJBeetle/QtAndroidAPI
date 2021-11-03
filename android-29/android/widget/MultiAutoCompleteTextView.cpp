@@ -42,28 +42,28 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean MultiAutoCompleteTextView::enoughToFilter()
+	jboolean MultiAutoCompleteTextView::enoughToFilter() const
 	{
 		return callMethod<jboolean>(
 			"enoughToFilter",
 			"()Z"
 		);
 	}
-	JString MultiAutoCompleteTextView::getAccessibilityClassName()
+	JString MultiAutoCompleteTextView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void MultiAutoCompleteTextView::performValidation()
+	void MultiAutoCompleteTextView::performValidation() const
 	{
 		callMethod<void>(
 			"performValidation",
 			"()V"
 		);
 	}
-	void MultiAutoCompleteTextView::setTokenizer(JObject arg0)
+	void MultiAutoCompleteTextView::setTokenizer(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTokenizer",

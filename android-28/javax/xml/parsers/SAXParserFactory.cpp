@@ -66,7 +66,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	jboolean SAXParserFactory::getFeature(JString arg0)
+	jboolean SAXParserFactory::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -74,42 +74,42 @@ namespace javax::xml::parsers
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::validation::Schema SAXParserFactory::getSchema()
+	javax::xml::validation::Schema SAXParserFactory::getSchema() const
 	{
 		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
-	jboolean SAXParserFactory::isNamespaceAware()
+	jboolean SAXParserFactory::isNamespaceAware() const
 	{
 		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
-	jboolean SAXParserFactory::isValidating()
+	jboolean SAXParserFactory::isValidating() const
 	{
 		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
-	jboolean SAXParserFactory::isXIncludeAware()
+	jboolean SAXParserFactory::isXIncludeAware() const
 	{
 		return callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z"
 		);
 	}
-	javax::xml::parsers::SAXParser SAXParserFactory::newSAXParser()
+	javax::xml::parsers::SAXParser SAXParserFactory::newSAXParser() const
 	{
 		return callObjectMethod(
 			"newSAXParser",
 			"()Ljavax/xml/parsers/SAXParser;"
 		);
 	}
-	void SAXParserFactory::setFeature(JString arg0, jboolean arg1)
+	void SAXParserFactory::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -118,7 +118,7 @@ namespace javax::xml::parsers
 			arg1
 		);
 	}
-	void SAXParserFactory::setNamespaceAware(jboolean arg0)
+	void SAXParserFactory::setNamespaceAware(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNamespaceAware",
@@ -126,7 +126,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void SAXParserFactory::setSchema(javax::xml::validation::Schema arg0)
+	void SAXParserFactory::setSchema(javax::xml::validation::Schema arg0) const
 	{
 		callMethod<void>(
 			"setSchema",
@@ -134,7 +134,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	void SAXParserFactory::setValidating(jboolean arg0)
+	void SAXParserFactory::setValidating(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setValidating",
@@ -142,7 +142,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void SAXParserFactory::setXIncludeAware(jboolean arg0)
+	void SAXParserFactory::setXIncludeAware(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setXIncludeAware",

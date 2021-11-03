@@ -21,35 +21,35 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	JArray Executable::getAnnotatedExceptionTypes()
+	JArray Executable::getAnnotatedExceptionTypes() const
 	{
 		return callObjectMethod(
 			"getAnnotatedExceptionTypes",
 			"()[Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JArray Executable::getAnnotatedParameterTypes()
+	JArray Executable::getAnnotatedParameterTypes() const
 	{
 		return callObjectMethod(
 			"getAnnotatedParameterTypes",
 			"()[Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Executable::getAnnotatedReceiverType()
+	JObject Executable::getAnnotatedReceiverType() const
 	{
 		return callObjectMethod(
 			"getAnnotatedReceiverType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Executable::getAnnotatedReturnType()
+	JObject Executable::getAnnotatedReturnType() const
 	{
 		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Executable::getAnnotation(JClass arg0)
+	JObject Executable::getAnnotation(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -57,7 +57,7 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	JArray Executable::getAnnotationsByType(JClass arg0)
+	JArray Executable::getAnnotationsByType(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
@@ -65,105 +65,105 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	JArray Executable::getDeclaredAnnotations()
+	JArray Executable::getDeclaredAnnotations() const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	JClass Executable::getDeclaringClass()
+	JClass Executable::getDeclaringClass() const
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JArray Executable::getExceptionTypes()
+	JArray Executable::getExceptionTypes() const
 	{
 		return callObjectMethod(
 			"getExceptionTypes",
 			"()[Ljava/lang/Class;"
 		);
 	}
-	JArray Executable::getGenericExceptionTypes()
+	JArray Executable::getGenericExceptionTypes() const
 	{
 		return callObjectMethod(
 			"getGenericExceptionTypes",
 			"()[Ljava/lang/reflect/Type;"
 		);
 	}
-	JArray Executable::getGenericParameterTypes()
+	JArray Executable::getGenericParameterTypes() const
 	{
 		return callObjectMethod(
 			"getGenericParameterTypes",
 			"()[Ljava/lang/reflect/Type;"
 		);
 	}
-	jint Executable::getModifiers()
+	jint Executable::getModifiers() const
 	{
 		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
-	JString Executable::getName()
+	JString Executable::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray Executable::getParameterAnnotations()
+	JArray Executable::getParameterAnnotations() const
 	{
 		return callObjectMethod(
 			"getParameterAnnotations",
 			"()[[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	jint Executable::getParameterCount()
+	jint Executable::getParameterCount() const
 	{
 		return callMethod<jint>(
 			"getParameterCount",
 			"()I"
 		);
 	}
-	JArray Executable::getParameterTypes()
+	JArray Executable::getParameterTypes() const
 	{
 		return callObjectMethod(
 			"getParameterTypes",
 			"()[Ljava/lang/Class;"
 		);
 	}
-	JArray Executable::getParameters()
+	JArray Executable::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()[Ljava/lang/reflect/Parameter;"
 		);
 	}
-	JArray Executable::getTypeParameters()
+	JArray Executable::getTypeParameters() const
 	{
 		return callObjectMethod(
 			"getTypeParameters",
 			"()[Ljava/lang/reflect/TypeVariable;"
 		);
 	}
-	jboolean Executable::isSynthetic()
+	jboolean Executable::isSynthetic() const
 	{
 		return callMethod<jboolean>(
 			"isSynthetic",
 			"()Z"
 		);
 	}
-	jboolean Executable::isVarArgs()
+	jboolean Executable::isVarArgs() const
 	{
 		return callMethod<jboolean>(
 			"isVarArgs",
 			"()Z"
 		);
 	}
-	JString Executable::toGenericString()
+	JString Executable::toGenericString() const
 	{
 		return callObjectMethod(
 			"toGenericString",

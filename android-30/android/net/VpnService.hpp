@@ -39,14 +39,14 @@ namespace android::net
 		
 		// Methods
 		static android::content::Intent prepare(android::content::Context arg0);
-		jboolean isAlwaysOn();
-		jboolean isLockdownEnabled();
-		JObject onBind(android::content::Intent arg0);
-		void onRevoke();
-		jboolean protect(jint arg0);
-		jboolean protect(java::net::DatagramSocket arg0);
-		jboolean protect(java::net::Socket arg0);
-		jboolean setUnderlyingNetworks(JArray arg0);
+		jboolean isAlwaysOn() const;
+		jboolean isLockdownEnabled() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onRevoke() const;
+		jboolean protect(jint arg0) const;
+		jboolean protect(java::net::DatagramSocket arg0) const;
+		jboolean protect(java::net::Socket arg0) const;
+		jboolean setUnderlyingNetworks(JArray arg0) const;
 	};
 } // namespace android::net
 

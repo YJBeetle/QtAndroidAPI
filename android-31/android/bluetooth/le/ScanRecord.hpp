@@ -27,17 +27,17 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		jint getAdvertiseFlags();
-		JByteArray getBytes();
-		JString getDeviceName();
-		JByteArray getManufacturerSpecificData(jint arg0);
-		android::util::SparseArray getManufacturerSpecificData();
-		JByteArray getServiceData(android::os::ParcelUuid arg0);
-		JObject getServiceData();
-		JObject getServiceSolicitationUuids();
-		JObject getServiceUuids();
-		jint getTxPowerLevel();
-		JString toString();
+		jint getAdvertiseFlags() const;
+		JByteArray getBytes() const;
+		JString getDeviceName() const;
+		JByteArray getManufacturerSpecificData(jint arg0) const;
+		android::util::SparseArray getManufacturerSpecificData() const;
+		JByteArray getServiceData(android::os::ParcelUuid arg0) const;
+		JObject getServiceData() const;
+		JObject getServiceSolicitationUuids() const;
+		JObject getServiceUuids() const;
+		jint getTxPowerLevel() const;
+		JString toString() const;
 	};
 } // namespace android::bluetooth::le
 

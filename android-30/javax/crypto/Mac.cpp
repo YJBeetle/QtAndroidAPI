@@ -46,21 +46,21 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	JObject Mac::clone()
+	JObject Mac::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JByteArray Mac::doFinal()
+	JByteArray Mac::doFinal() const
 	{
 		return callObjectMethod(
 			"doFinal",
 			"()[B"
 		);
 	}
-	JByteArray Mac::doFinal(JByteArray arg0)
+	JByteArray Mac::doFinal(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"doFinal",
@@ -68,7 +68,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Mac::doFinal(JByteArray arg0, jint arg1)
+	void Mac::doFinal(JByteArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"doFinal",
@@ -77,28 +77,28 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	JString Mac::getAlgorithm()
+	JString Mac::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Mac::getMacLength()
+	jint Mac::getMacLength() const
 	{
 		return callMethod<jint>(
 			"getMacLength",
 			"()I"
 		);
 	}
-	java::security::Provider Mac::getProvider()
+	java::security::Provider Mac::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void Mac::init(JObject arg0)
+	void Mac::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -106,7 +106,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void Mac::init(JObject arg0, JObject arg1)
+	void Mac::init(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -115,14 +115,14 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void Mac::reset()
+	void Mac::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Mac::update(JByteArray arg0)
+	void Mac::update(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -130,7 +130,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Mac::update(jbyte arg0)
+	void Mac::update(jbyte arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -138,7 +138,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	void Mac::update(java::nio::ByteBuffer arg0)
+	void Mac::update(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -146,7 +146,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void Mac::update(JByteArray arg0, jint arg1, jint arg2)
+	void Mac::update(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"update",

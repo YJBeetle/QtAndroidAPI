@@ -18,7 +18,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onConnectivityReportAvailable(android::net::ConnectivityDiagnosticsManager_ConnectivityReport arg0)
+	void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onConnectivityReportAvailable(android::net::ConnectivityDiagnosticsManager_ConnectivityReport arg0) const
 	{
 		callMethod<void>(
 			"onConnectivityReportAvailable",
@@ -26,7 +26,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onDataStallSuspected(android::net::ConnectivityDiagnosticsManager_DataStallReport arg0)
+	void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onDataStallSuspected(android::net::ConnectivityDiagnosticsManager_DataStallReport arg0) const
 	{
 		callMethod<void>(
 			"onDataStallSuspected",
@@ -34,7 +34,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onNetworkConnectivityReported(android::net::Network arg0, jboolean arg1)
+	void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onNetworkConnectivityReported(android::net::Network arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onNetworkConnectivityReported",

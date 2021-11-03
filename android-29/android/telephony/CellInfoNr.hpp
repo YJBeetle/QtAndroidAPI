@@ -32,12 +32,12 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::telephony::CellIdentity getCellIdentity();
-		android::telephony::CellSignalStrength getCellSignalStrength();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean equals(JObject arg0) const;
+		android::telephony::CellIdentity getCellIdentity() const;
+		android::telephony::CellSignalStrength getCellSignalStrength() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

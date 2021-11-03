@@ -12,14 +12,14 @@ namespace android::view::displayhash
 	// Constructors
 	
 	// Methods
-	JObject DisplayHashManager::getSupportedHashAlgorithms()
+	JObject DisplayHashManager::getSupportedHashAlgorithms() const
 	{
 		return callObjectMethod(
 			"getSupportedHashAlgorithms",
 			"()Ljava/util/Set;"
 		);
 	}
-	android::view::displayhash::VerifiedDisplayHash DisplayHashManager::verifyDisplayHash(android::view::displayhash::DisplayHash arg0)
+	android::view::displayhash::VerifiedDisplayHash DisplayHashManager::verifyDisplayHash(android::view::displayhash::DisplayHash arg0) const
 	{
 		return callObjectMethod(
 			"verifyDisplayHash",

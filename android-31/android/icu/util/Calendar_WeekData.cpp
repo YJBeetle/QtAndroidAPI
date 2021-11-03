@@ -59,7 +59,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jboolean Calendar_WeekData::equals(JObject arg0)
+	jboolean Calendar_WeekData::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -67,14 +67,14 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Calendar_WeekData::hashCode()
+	jint Calendar_WeekData::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Calendar_WeekData::toString()
+	JString Calendar_WeekData::toString() const
 	{
 		return callObjectMethod(
 			"toString",

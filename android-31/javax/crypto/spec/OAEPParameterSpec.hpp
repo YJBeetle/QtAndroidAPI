@@ -24,10 +24,10 @@ namespace javax::crypto::spec
 		OAEPParameterSpec(JString arg0, JString arg1, JObject arg2, javax::crypto::spec::PSource arg3);
 		
 		// Methods
-		JString getDigestAlgorithm();
-		JString getMGFAlgorithm();
-		JObject getMGFParameters();
-		javax::crypto::spec::PSource getPSource();
+		JString getDigestAlgorithm() const;
+		JString getMGFAlgorithm() const;
+		JObject getMGFParameters() const;
+		javax::crypto::spec::PSource getPSource() const;
 	};
 } // namespace javax::crypto::spec
 

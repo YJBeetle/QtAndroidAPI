@@ -17,14 +17,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::MetricAffectingSpan MetricAffectingSpan::getUnderlying()
+	android::text::style::MetricAffectingSpan MetricAffectingSpan::getUnderlying() const
 	{
 		return callObjectMethod(
 			"getUnderlying",
 			"()Landroid/text/style/MetricAffectingSpan;"
 		);
 	}
-	void MetricAffectingSpan::updateMeasureState(android::text::TextPaint arg0)
+	void MetricAffectingSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",

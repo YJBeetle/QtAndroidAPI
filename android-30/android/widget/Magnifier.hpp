@@ -32,24 +32,24 @@ namespace android::widget
 		Magnifier(android::view::View arg0);
 		
 		// Methods
-		void dismiss();
-		jfloat getCornerRadius();
-		jint getDefaultHorizontalSourceToMagnifierOffset();
-		jint getDefaultVerticalSourceToMagnifierOffset();
-		jfloat getElevation();
-		jint getHeight();
-		android::graphics::drawable::Drawable getOverlay();
-		android::graphics::Point getPosition();
-		jint getSourceHeight();
-		android::graphics::Point getSourcePosition();
-		jint getSourceWidth();
-		jint getWidth();
-		jfloat getZoom();
-		jboolean isClippingEnabled();
-		void setZoom(jfloat arg0);
-		void show(jfloat arg0, jfloat arg1);
-		void show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void update();
+		void dismiss() const;
+		jfloat getCornerRadius() const;
+		jint getDefaultHorizontalSourceToMagnifierOffset() const;
+		jint getDefaultVerticalSourceToMagnifierOffset() const;
+		jfloat getElevation() const;
+		jint getHeight() const;
+		android::graphics::drawable::Drawable getOverlay() const;
+		android::graphics::Point getPosition() const;
+		jint getSourceHeight() const;
+		android::graphics::Point getSourcePosition() const;
+		jint getSourceWidth() const;
+		jint getWidth() const;
+		jfloat getZoom() const;
+		jboolean isClippingEnabled() const;
+		void setZoom(jfloat arg0) const;
+		void show(jfloat arg0, jfloat arg1) const;
+		void show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void update() const;
 	};
 } // namespace android::widget
 

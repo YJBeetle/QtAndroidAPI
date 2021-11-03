@@ -17,7 +17,7 @@ namespace android::net::vcn
 		) {}
 	
 	// Methods
-	void VcnManager_VcnStatusCallback::onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2)
+	void VcnManager_VcnStatusCallback::onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2) const
 	{
 		callMethod<void>(
 			"onGatewayConnectionError",
@@ -27,7 +27,7 @@ namespace android::net::vcn
 			arg2.object<jthrowable>()
 		);
 	}
-	void VcnManager_VcnStatusCallback::onStatusChanged(jint arg0)
+	void VcnManager_VcnStatusCallback::onStatusChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onStatusChanged",

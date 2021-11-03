@@ -23,14 +23,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void PipedOutputStream::close()
+	void PipedOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PipedOutputStream::connect(java::io::PipedInputStream arg0)
+	void PipedOutputStream::connect(java::io::PipedInputStream arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -38,14 +38,14 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	void PipedOutputStream::flush()
+	void PipedOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void PipedOutputStream::write(jint arg0)
+	void PipedOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -53,7 +53,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PipedOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void PipedOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

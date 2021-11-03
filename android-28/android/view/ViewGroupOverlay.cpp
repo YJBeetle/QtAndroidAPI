@@ -12,7 +12,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	void ViewGroupOverlay::add(android::view::View arg0)
+	void ViewGroupOverlay::add(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -20,7 +20,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroupOverlay::remove(android::view::View arg0)
+	void ViewGroupOverlay::remove(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"remove",

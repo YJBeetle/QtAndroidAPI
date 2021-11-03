@@ -24,14 +24,14 @@ namespace android::net::wifi
 	// Constructors
 	
 	// Methods
-	jint WifiNetworkSpecifier::describeContents()
+	jint WifiNetworkSpecifier::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean WifiNetworkSpecifier::equals(JObject arg0)
+	jboolean WifiNetworkSpecifier::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -39,21 +39,21 @@ namespace android::net::wifi
 			arg0.object<jobject>()
 		);
 	}
-	jint WifiNetworkSpecifier::hashCode()
+	jint WifiNetworkSpecifier::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString WifiNetworkSpecifier::toString()
+	JString WifiNetworkSpecifier::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiNetworkSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiNetworkSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

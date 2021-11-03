@@ -13,7 +13,7 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jint CollationKey::compareTo(JObject arg0)
+	jint CollationKey::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -21,7 +21,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	jint CollationKey::compareTo(java::text::CollationKey arg0)
+	jint CollationKey::compareTo(java::text::CollationKey arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -29,14 +29,14 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	JString CollationKey::getSourceString()
+	JString CollationKey::getSourceString() const
 	{
 		return callObjectMethod(
 			"getSourceString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray CollationKey::toByteArray()
+	JByteArray CollationKey::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",

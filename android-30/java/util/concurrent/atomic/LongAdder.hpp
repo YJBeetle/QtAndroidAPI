@@ -23,17 +23,17 @@ namespace java::util::concurrent::atomic
 		LongAdder();
 		
 		// Methods
-		void add(jlong arg0);
-		void decrement();
-		jdouble doubleValue();
-		jfloat floatValue();
-		void increment();
-		jint intValue();
-		jlong longValue();
-		void reset();
-		jlong sum();
-		jlong sumThenReset();
-		JString toString();
+		void add(jlong arg0) const;
+		void decrement() const;
+		jdouble doubleValue() const;
+		jfloat floatValue() const;
+		void increment() const;
+		jint intValue() const;
+		jlong longValue() const;
+		void reset() const;
+		jlong sum() const;
+		jlong sumThenReset() const;
+		JString toString() const;
 	};
 } // namespace java::util::concurrent::atomic
 

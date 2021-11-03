@@ -16,7 +16,7 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jboolean hasGnssAntennaInfo();
+		jboolean hasGnssAntennaInfo() const;
 	};
 } // namespace android::location
 

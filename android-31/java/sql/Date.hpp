@@ -31,16 +31,16 @@ namespace java::sql
 		// Methods
 		static java::sql::Date valueOf(JString arg0);
 		static java::sql::Date valueOf(java::time::LocalDate arg0);
-		jint getHours();
-		jint getMinutes();
-		jint getSeconds();
-		void setHours(jint arg0);
-		void setMinutes(jint arg0);
-		void setSeconds(jint arg0);
-		void setTime(jlong arg0);
-		java::time::Instant toInstant();
-		java::time::LocalDate toLocalDate();
-		JString toString();
+		jint getHours() const;
+		jint getMinutes() const;
+		jint getSeconds() const;
+		void setHours(jint arg0) const;
+		void setMinutes(jint arg0) const;
+		void setSeconds(jint arg0) const;
+		void setTime(jlong arg0) const;
+		java::time::Instant toInstant() const;
+		java::time::LocalDate toLocalDate() const;
+		JString toString() const;
 	};
 } // namespace java::sql
 

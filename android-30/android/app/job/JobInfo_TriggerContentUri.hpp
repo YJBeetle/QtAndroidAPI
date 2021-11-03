@@ -29,12 +29,12 @@ namespace android::app::job
 		JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getFlags();
-		android::net::Uri getUri();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getFlags() const;
+		android::net::Uri getUri() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::job
 

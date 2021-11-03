@@ -29,28 +29,28 @@ namespace android::telephony::euicc
 			arg0.object<jstring>()
 		);
 	}
-	jint DownloadableSubscription::describeContents()
+	jint DownloadableSubscription::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString DownloadableSubscription::getConfirmationCode()
+	JString DownloadableSubscription::getConfirmationCode() const
 	{
 		return callObjectMethod(
 			"getConfirmationCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DownloadableSubscription::getEncodedActivationCode()
+	JString DownloadableSubscription::getEncodedActivationCode() const
 	{
 		return callObjectMethod(
 			"getEncodedActivationCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DownloadableSubscription::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DownloadableSubscription::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

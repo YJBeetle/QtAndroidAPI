@@ -23,11 +23,11 @@ namespace android::graphics::text
 		LineBreaker_Builder();
 		
 		// Methods
-		android::graphics::text::LineBreaker build();
-		android::graphics::text::LineBreaker_Builder setBreakStrategy(jint arg0);
-		android::graphics::text::LineBreaker_Builder setHyphenationFrequency(jint arg0);
-		android::graphics::text::LineBreaker_Builder setIndents(JIntArray arg0);
-		android::graphics::text::LineBreaker_Builder setJustificationMode(jint arg0);
+		android::graphics::text::LineBreaker build() const;
+		android::graphics::text::LineBreaker_Builder setBreakStrategy(jint arg0) const;
+		android::graphics::text::LineBreaker_Builder setHyphenationFrequency(jint arg0) const;
+		android::graphics::text::LineBreaker_Builder setIndents(JIntArray arg0) const;
+		android::graphics::text::LineBreaker_Builder setJustificationMode(jint arg0) const;
 	};
 } // namespace android::graphics::text
 

@@ -32,21 +32,21 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void Scroller::abortAnimation()
+	void Scroller::abortAnimation() const
 	{
 		callMethod<void>(
 			"abortAnimation",
 			"()V"
 		);
 	}
-	jboolean Scroller::computeScrollOffset()
+	jboolean Scroller::computeScrollOffset() const
 	{
 		return callMethod<jboolean>(
 			"computeScrollOffset",
 			"()Z"
 		);
 	}
-	void Scroller::extendDuration(jint arg0)
+	void Scroller::extendDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"extendDuration",
@@ -54,7 +54,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Scroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	void Scroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"fling",
@@ -69,7 +69,7 @@ namespace android::widget
 			arg7
 		);
 	}
-	void Scroller::forceFinished(jboolean arg0)
+	void Scroller::forceFinished(jboolean arg0) const
 	{
 		callMethod<void>(
 			"forceFinished",
@@ -77,70 +77,70 @@ namespace android::widget
 			arg0
 		);
 	}
-	jfloat Scroller::getCurrVelocity()
+	jfloat Scroller::getCurrVelocity() const
 	{
 		return callMethod<jfloat>(
 			"getCurrVelocity",
 			"()F"
 		);
 	}
-	jint Scroller::getCurrX()
+	jint Scroller::getCurrX() const
 	{
 		return callMethod<jint>(
 			"getCurrX",
 			"()I"
 		);
 	}
-	jint Scroller::getCurrY()
+	jint Scroller::getCurrY() const
 	{
 		return callMethod<jint>(
 			"getCurrY",
 			"()I"
 		);
 	}
-	jint Scroller::getDuration()
+	jint Scroller::getDuration() const
 	{
 		return callMethod<jint>(
 			"getDuration",
 			"()I"
 		);
 	}
-	jint Scroller::getFinalX()
+	jint Scroller::getFinalX() const
 	{
 		return callMethod<jint>(
 			"getFinalX",
 			"()I"
 		);
 	}
-	jint Scroller::getFinalY()
+	jint Scroller::getFinalY() const
 	{
 		return callMethod<jint>(
 			"getFinalY",
 			"()I"
 		);
 	}
-	jint Scroller::getStartX()
+	jint Scroller::getStartX() const
 	{
 		return callMethod<jint>(
 			"getStartX",
 			"()I"
 		);
 	}
-	jint Scroller::getStartY()
+	jint Scroller::getStartY() const
 	{
 		return callMethod<jint>(
 			"getStartY",
 			"()I"
 		);
 	}
-	jboolean Scroller::isFinished()
+	jboolean Scroller::isFinished() const
 	{
 		return callMethod<jboolean>(
 			"isFinished",
 			"()Z"
 		);
 	}
-	void Scroller::setFinalX(jint arg0)
+	void Scroller::setFinalX(jint arg0) const
 	{
 		callMethod<void>(
 			"setFinalX",
@@ -148,7 +148,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Scroller::setFinalY(jint arg0)
+	void Scroller::setFinalY(jint arg0) const
 	{
 		callMethod<void>(
 			"setFinalY",
@@ -156,7 +156,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Scroller::setFriction(jfloat arg0)
+	void Scroller::setFriction(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setFriction",
@@ -164,7 +164,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3)
+	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"startScroll",
@@ -175,7 +175,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"startScroll",
@@ -187,7 +187,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	jint Scroller::timePassed()
+	jint Scroller::timePassed() const
 	{
 		return callMethod<jint>(
 			"timePassed",

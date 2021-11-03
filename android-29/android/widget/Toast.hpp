@@ -31,21 +31,21 @@ namespace android::widget
 		// Methods
 		static android::widget::Toast makeText(android::content::Context arg0, jint arg1, jint arg2);
 		static android::widget::Toast makeText(android::content::Context arg0, JString arg1, jint arg2);
-		void cancel();
-		jint getDuration();
-		jint getGravity();
-		jfloat getHorizontalMargin();
-		jfloat getVerticalMargin();
-		android::view::View getView();
-		jint getXOffset();
-		jint getYOffset();
-		void setDuration(jint arg0);
-		void setGravity(jint arg0, jint arg1, jint arg2);
-		void setMargin(jfloat arg0, jfloat arg1);
-		void setText(jint arg0);
-		void setText(JString arg0);
-		void setView(android::view::View arg0);
-		void show();
+		void cancel() const;
+		jint getDuration() const;
+		jint getGravity() const;
+		jfloat getHorizontalMargin() const;
+		jfloat getVerticalMargin() const;
+		android::view::View getView() const;
+		jint getXOffset() const;
+		jint getYOffset() const;
+		void setDuration(jint arg0) const;
+		void setGravity(jint arg0, jint arg1, jint arg2) const;
+		void setMargin(jfloat arg0, jfloat arg1) const;
+		void setText(jint arg0) const;
+		void setText(JString arg0) const;
+		void setView(android::view::View arg0) const;
+		void show() const;
 	};
 } // namespace android::widget
 

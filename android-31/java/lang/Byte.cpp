@@ -174,14 +174,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	jbyte Byte::byteValue()
+	jbyte Byte::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jint Byte::compareTo(java::lang::Byte arg0)
+	jint Byte::compareTo(java::lang::Byte arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -189,7 +189,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Byte::compareTo(JObject arg0)
+	jint Byte::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -197,21 +197,21 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Byte::describeConstable()
+	java::util::Optional Byte::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jdouble Byte::doubleValue()
+	jdouble Byte::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Byte::equals(JObject arg0)
+	jboolean Byte::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -219,42 +219,42 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Byte::floatValue()
+	jfloat Byte::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Byte::hashCode()
+	jint Byte::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Byte::intValue()
+	jint Byte::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong Byte::longValue()
+	jlong Byte::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	jshort Byte::shortValue()
+	jshort Byte::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Byte::toString()
+	JString Byte::toString() const
 	{
 		return callObjectMethod(
 			"toString",

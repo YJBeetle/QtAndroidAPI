@@ -45,24 +45,24 @@ namespace java::security::cert
 		X509CRLSelector();
 		
 		// Methods
-		void addIssuer(javax::security::auth::x500::X500Principal arg0);
-		void addIssuerName(JByteArray arg0);
-		void addIssuerName(JString arg0);
-		JObject clone();
-		java::security::cert::X509Certificate getCertificateChecking();
-		java::util::Date getDateAndTime();
-		JObject getIssuerNames();
-		JObject getIssuers();
-		java::math::BigInteger getMaxCRL();
-		java::math::BigInteger getMinCRL();
-		jboolean match(java::security::cert::CRL arg0);
-		void setCertificateChecking(java::security::cert::X509Certificate arg0);
-		void setDateAndTime(java::util::Date arg0);
-		void setIssuerNames(JObject arg0);
-		void setIssuers(JObject arg0);
-		void setMaxCRLNumber(java::math::BigInteger arg0);
-		void setMinCRLNumber(java::math::BigInteger arg0);
-		JString toString();
+		void addIssuer(javax::security::auth::x500::X500Principal arg0) const;
+		void addIssuerName(JByteArray arg0) const;
+		void addIssuerName(JString arg0) const;
+		JObject clone() const;
+		java::security::cert::X509Certificate getCertificateChecking() const;
+		java::util::Date getDateAndTime() const;
+		JObject getIssuerNames() const;
+		JObject getIssuers() const;
+		java::math::BigInteger getMaxCRL() const;
+		java::math::BigInteger getMinCRL() const;
+		jboolean match(java::security::cert::CRL arg0) const;
+		void setCertificateChecking(java::security::cert::X509Certificate arg0) const;
+		void setDateAndTime(java::util::Date arg0) const;
+		void setIssuerNames(JObject arg0) const;
+		void setIssuers(JObject arg0) const;
+		void setMaxCRLNumber(java::math::BigInteger arg0) const;
+		void setMinCRLNumber(java::math::BigInteger arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

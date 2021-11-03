@@ -28,49 +28,49 @@ namespace android::location
 		) {}
 	
 	// Methods
-	jint GnssAntennaInfo_SphericalCorrections::describeContents()
+	jint GnssAntennaInfo_SphericalCorrections::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JArray GnssAntennaInfo_SphericalCorrections::getCorrectionUncertaintiesArray()
+	JArray GnssAntennaInfo_SphericalCorrections::getCorrectionUncertaintiesArray() const
 	{
 		return callObjectMethod(
 			"getCorrectionUncertaintiesArray",
 			"()[[D"
 		);
 	}
-	JArray GnssAntennaInfo_SphericalCorrections::getCorrectionsArray()
+	JArray GnssAntennaInfo_SphericalCorrections::getCorrectionsArray() const
 	{
 		return callObjectMethod(
 			"getCorrectionsArray",
 			"()[[D"
 		);
 	}
-	jdouble GnssAntennaInfo_SphericalCorrections::getDeltaPhi()
+	jdouble GnssAntennaInfo_SphericalCorrections::getDeltaPhi() const
 	{
 		return callMethod<jdouble>(
 			"getDeltaPhi",
 			"()D"
 		);
 	}
-	jdouble GnssAntennaInfo_SphericalCorrections::getDeltaTheta()
+	jdouble GnssAntennaInfo_SphericalCorrections::getDeltaTheta() const
 	{
 		return callMethod<jdouble>(
 			"getDeltaTheta",
 			"()D"
 		);
 	}
-	JString GnssAntennaInfo_SphericalCorrections::toString()
+	JString GnssAntennaInfo_SphericalCorrections::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssAntennaInfo_SphericalCorrections::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssAntennaInfo_SphericalCorrections::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -24,7 +24,7 @@ namespace javax::crypto
 		MacSpi();
 		
 		// Methods
-		JObject clone();
+		JObject clone() const;
 	};
 } // namespace javax::crypto
 

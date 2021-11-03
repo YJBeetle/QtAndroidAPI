@@ -24,18 +24,18 @@ namespace android::app::usage
 		UsageStats(android::app::usage::UsageStats &arg0);
 		
 		// Methods
-		void add(android::app::usage::UsageStats arg0);
-		jint describeContents();
-		jlong getFirstTimeStamp();
-		jlong getLastTimeForegroundServiceUsed();
-		jlong getLastTimeStamp();
-		jlong getLastTimeUsed();
-		jlong getLastTimeVisible();
-		JString getPackageName();
-		jlong getTotalTimeForegroundServiceUsed();
-		jlong getTotalTimeInForeground();
-		jlong getTotalTimeVisible();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void add(android::app::usage::UsageStats arg0) const;
+		jint describeContents() const;
+		jlong getFirstTimeStamp() const;
+		jlong getLastTimeForegroundServiceUsed() const;
+		jlong getLastTimeStamp() const;
+		jlong getLastTimeUsed() const;
+		jlong getLastTimeVisible() const;
+		JString getPackageName() const;
+		jlong getTotalTimeForegroundServiceUsed() const;
+		jlong getTotalTimeInForeground() const;
+		jlong getTotalTimeVisible() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::usage
 

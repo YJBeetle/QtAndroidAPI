@@ -80,14 +80,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject Policy::getParameters()
+	JObject Policy::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/Policy$Parameters;"
 		);
 	}
-	java::security::PermissionCollection Policy::getPermissions(java::security::CodeSource arg0)
+	java::security::PermissionCollection Policy::getPermissions(java::security::CodeSource arg0) const
 	{
 		return callObjectMethod(
 			"getPermissions",
@@ -95,7 +95,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection Policy::getPermissions(java::security::ProtectionDomain arg0)
+	java::security::PermissionCollection Policy::getPermissions(java::security::ProtectionDomain arg0) const
 	{
 		return callObjectMethod(
 			"getPermissions",
@@ -103,21 +103,21 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	java::security::Provider Policy::getProvider()
+	java::security::Provider Policy::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JString Policy::getType()
+	JString Policy::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Policy::implies(java::security::ProtectionDomain arg0, java::security::Permission arg1)
+	jboolean Policy::implies(java::security::ProtectionDomain arg0, java::security::Permission arg1) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -126,7 +126,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void Policy::refresh()
+	void Policy::refresh() const
 	{
 		callMethod<void>(
 			"refresh",

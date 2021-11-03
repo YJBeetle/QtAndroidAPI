@@ -53,29 +53,29 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		JArray applyBatch(java::util::ArrayList arg0);
-		jint bulkInsert(android::net::Uri arg0, JArray arg1);
-		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2);
-		android::net::Uri canonicalize(android::net::Uri arg0);
-		void close();
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2);
-		android::content::ContentProvider getLocalContentProvider();
-		JArray getStreamTypes(android::net::Uri arg0, JString arg1);
-		JString getType(android::net::Uri arg0);
-		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
-		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1);
-		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2);
-		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1);
-		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2);
-		android::content::res::AssetFileDescriptor openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2);
-		android::content::res::AssetFileDescriptor openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4);
-		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5);
-		jboolean refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2);
-		jboolean release();
-		android::net::Uri uncanonicalize(android::net::Uri arg0);
-		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3);
+		JArray applyBatch(java::util::ArrayList arg0) const;
+		jint bulkInsert(android::net::Uri arg0, JArray arg1) const;
+		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2) const;
+		android::net::Uri canonicalize(android::net::Uri arg0) const;
+		void close() const;
+		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		android::content::ContentProvider getLocalContentProvider() const;
+		JArray getStreamTypes(android::net::Uri arg0, JString arg1) const;
+		JString getType(android::net::Uri arg0) const;
+		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1) const;
+		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1) const;
+		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const;
+		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1) const;
+		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const;
+		android::content::res::AssetFileDescriptor openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2) const;
+		android::content::res::AssetFileDescriptor openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const;
+		JObject query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const;
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const;
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5) const;
+		jboolean refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2) const;
+		jboolean release() const;
+		android::net::Uri uncanonicalize(android::net::Uri arg0) const;
+		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const;
 	};
 } // namespace android::content
 

@@ -430,14 +430,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	jbyte Long::byteValue()
+	jbyte Long::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jint Long::compareTo(java::lang::Long arg0)
+	jint Long::compareTo(java::lang::Long arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -445,7 +445,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Long::compareTo(JObject arg0)
+	jint Long::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -453,21 +453,21 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Long::describeConstable()
+	java::util::Optional Long::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jdouble Long::doubleValue()
+	jdouble Long::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Long::equals(JObject arg0)
+	jboolean Long::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -475,35 +475,35 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Long::floatValue()
+	jfloat Long::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Long::hashCode()
+	jint Long::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Long::intValue()
+	jint Long::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong Long::longValue()
+	jlong Long::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	java::lang::Long Long::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Long Long::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0) const
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",
@@ -511,14 +511,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jshort Long::shortValue()
+	jshort Long::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Long::toString()
+	JString Long::toString() const
 	{
 		return callObjectMethod(
 			"toString",

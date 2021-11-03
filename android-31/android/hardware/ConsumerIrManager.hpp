@@ -19,9 +19,9 @@ namespace android::hardware
 		// Constructors
 		
 		// Methods
-		JArray getCarrierFrequencies();
-		jboolean hasIrEmitter();
-		void transmit(jint arg0, JIntArray arg1);
+		JArray getCarrierFrequencies() const;
+		jboolean hasIrEmitter() const;
+		void transmit(jint arg0, JIntArray arg1) const;
 	};
 } // namespace android::hardware
 

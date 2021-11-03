@@ -42,42 +42,42 @@ namespace android::service::quicksettings
 	// Constructors
 	
 	// Methods
-	jint Tile::describeContents()
+	jint Tile::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString Tile::getContentDescription()
+	JString Tile::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::graphics::drawable::Icon Tile::getIcon()
+	android::graphics::drawable::Icon Tile::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString Tile::getLabel()
+	JString Tile::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint Tile::getState()
+	jint Tile::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	void Tile::setContentDescription(JString arg0)
+	void Tile::setContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -85,7 +85,7 @@ namespace android::service::quicksettings
 			arg0.object<jstring>()
 		);
 	}
-	void Tile::setIcon(android::graphics::drawable::Icon arg0)
+	void Tile::setIcon(android::graphics::drawable::Icon arg0) const
 	{
 		callMethod<void>(
 			"setIcon",
@@ -93,7 +93,7 @@ namespace android::service::quicksettings
 			arg0.object()
 		);
 	}
-	void Tile::setLabel(JString arg0)
+	void Tile::setLabel(JString arg0) const
 	{
 		callMethod<void>(
 			"setLabel",
@@ -101,7 +101,7 @@ namespace android::service::quicksettings
 			arg0.object<jstring>()
 		);
 	}
-	void Tile::setState(jint arg0)
+	void Tile::setState(jint arg0) const
 	{
 		callMethod<void>(
 			"setState",
@@ -109,14 +109,14 @@ namespace android::service::quicksettings
 			arg0
 		);
 	}
-	void Tile::updateTile()
+	void Tile::updateTile() const
 	{
 		callMethod<void>(
 			"updateTile",
 			"()V"
 		);
 	}
-	void Tile::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Tile::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

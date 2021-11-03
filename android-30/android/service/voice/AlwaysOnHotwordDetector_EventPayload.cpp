@@ -12,14 +12,14 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	android::media::AudioFormat AlwaysOnHotwordDetector_EventPayload::getCaptureAudioFormat()
+	android::media::AudioFormat AlwaysOnHotwordDetector_EventPayload::getCaptureAudioFormat() const
 	{
 		return callObjectMethod(
 			"getCaptureAudioFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	JByteArray AlwaysOnHotwordDetector_EventPayload::getTriggerAudio()
+	JByteArray AlwaysOnHotwordDetector_EventPayload::getTriggerAudio() const
 	{
 		return callObjectMethod(
 			"getTriggerAudio",

@@ -103,7 +103,7 @@ namespace org::apache::http::conn::ssl
 			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;"
 		);
 	}
-	java::net::Socket SSLSocketFactory::connectSocket(java::net::Socket arg0, JString arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5)
+	java::net::Socket SSLSocketFactory::connectSocket(java::net::Socket arg0, JString arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5) const
 	{
 		return callObjectMethod(
 			"connectSocket",
@@ -116,14 +116,14 @@ namespace org::apache::http::conn::ssl
 			arg5.object()
 		);
 	}
-	java::net::Socket SSLSocketFactory::createSocket()
+	java::net::Socket SSLSocketFactory::createSocket() const
 	{
 		return callObjectMethod(
 			"createSocket",
 			"()Ljava/net/Socket;"
 		);
 	}
-	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -134,14 +134,14 @@ namespace org::apache::http::conn::ssl
 			arg3
 		);
 	}
-	JObject SSLSocketFactory::getHostnameVerifier()
+	JObject SSLSocketFactory::getHostnameVerifier() const
 	{
 		return callObjectMethod(
 			"getHostnameVerifier",
 			"()Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
 		);
 	}
-	jboolean SSLSocketFactory::isSecure(java::net::Socket arg0)
+	jboolean SSLSocketFactory::isSecure(java::net::Socket arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSecure",
@@ -149,7 +149,7 @@ namespace org::apache::http::conn::ssl
 			arg0.object()
 		);
 	}
-	void SSLSocketFactory::setHostnameVerifier(JObject arg0)
+	void SSLSocketFactory::setHostnameVerifier(JObject arg0) const
 	{
 		callMethod<void>(
 			"setHostnameVerifier",

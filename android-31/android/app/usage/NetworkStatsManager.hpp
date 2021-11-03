@@ -34,16 +34,16 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		android::app::usage::NetworkStats queryDetails(jint arg0, JString arg1, jlong arg2, jlong arg3);
-		android::app::usage::NetworkStats queryDetailsForUid(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4);
-		android::app::usage::NetworkStats queryDetailsForUidTag(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5);
-		android::app::usage::NetworkStats queryDetailsForUidTagState(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6);
-		android::app::usage::NetworkStats querySummary(jint arg0, JString arg1, jlong arg2, jlong arg3);
-		android::app::usage::NetworkStats_Bucket querySummaryForDevice(jint arg0, JString arg1, jlong arg2, jlong arg3);
-		android::app::usage::NetworkStats_Bucket querySummaryForUser(jint arg0, JString arg1, jlong arg2, jlong arg3);
-		void registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3);
-		void registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3, android::os::Handler arg4);
-		void unregisterUsageCallback(android::app::usage::NetworkStatsManager_UsageCallback arg0);
+		android::app::usage::NetworkStats queryDetails(jint arg0, JString arg1, jlong arg2, jlong arg3) const;
+		android::app::usage::NetworkStats queryDetailsForUid(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4) const;
+		android::app::usage::NetworkStats queryDetailsForUidTag(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5) const;
+		android::app::usage::NetworkStats queryDetailsForUidTagState(jint arg0, JString arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6) const;
+		android::app::usage::NetworkStats querySummary(jint arg0, JString arg1, jlong arg2, jlong arg3) const;
+		android::app::usage::NetworkStats_Bucket querySummaryForDevice(jint arg0, JString arg1, jlong arg2, jlong arg3) const;
+		android::app::usage::NetworkStats_Bucket querySummaryForUser(jint arg0, JString arg1, jlong arg2, jlong arg3) const;
+		void registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3) const;
+		void registerUsageCallback(jint arg0, JString arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3, android::os::Handler arg4) const;
+		void unregisterUsageCallback(android::app::usage::NetworkStatsManager_UsageCallback arg0) const;
 	};
 } // namespace android::app::usage
 

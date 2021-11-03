@@ -28,7 +28,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaSession2Service::addSession(android::media::MediaSession2 arg0)
+	void MediaSession2Service::addSession(android::media::MediaSession2 arg0) const
 	{
 		callMethod<void>(
 			"addSession",
@@ -36,14 +36,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JObject MediaSession2Service::getSessions()
+	JObject MediaSession2Service::getSessions() const
 	{
 		return callObjectMethod(
 			"getSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject MediaSession2Service::onBind(android::content::Intent arg0)
+	JObject MediaSession2Service::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -51,21 +51,21 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaSession2Service::onCreate()
+	void MediaSession2Service::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void MediaSession2Service::onDestroy()
+	void MediaSession2Service::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	android::media::MediaSession2 MediaSession2Service::onGetSession(android::media::MediaSession2_ControllerInfo arg0)
+	android::media::MediaSession2 MediaSession2Service::onGetSession(android::media::MediaSession2_ControllerInfo arg0) const
 	{
 		return callObjectMethod(
 			"onGetSession",
@@ -73,7 +73,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaSession2Service_MediaNotification MediaSession2Service::onUpdateNotification(android::media::MediaSession2 arg0)
+	android::media::MediaSession2Service_MediaNotification MediaSession2Service::onUpdateNotification(android::media::MediaSession2 arg0) const
 	{
 		return callObjectMethod(
 			"onUpdateNotification",
@@ -81,7 +81,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaSession2Service::removeSession(android::media::MediaSession2 arg0)
+	void MediaSession2Service::removeSession(android::media::MediaSession2 arg0) const
 	{
 		callMethod<void>(
 			"removeSession",

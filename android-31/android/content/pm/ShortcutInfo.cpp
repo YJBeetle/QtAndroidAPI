@@ -91,175 +91,175 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jint ShortcutInfo::describeContents()
+	jint ShortcutInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::content::ComponentName ShortcutInfo::getActivity()
+	android::content::ComponentName ShortcutInfo::getActivity() const
 	{
 		return callObjectMethod(
 			"getActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	JObject ShortcutInfo::getCategories()
+	JObject ShortcutInfo::getCategories() const
 	{
 		return callObjectMethod(
 			"getCategories",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString ShortcutInfo::getDisabledMessage()
+	JString ShortcutInfo::getDisabledMessage() const
 	{
 		return callObjectMethod(
 			"getDisabledMessage",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint ShortcutInfo::getDisabledReason()
+	jint ShortcutInfo::getDisabledReason() const
 	{
 		return callMethod<jint>(
 			"getDisabledReason",
 			"()I"
 		);
 	}
-	android::os::PersistableBundle ShortcutInfo::getExtras()
+	android::os::PersistableBundle ShortcutInfo::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	JString ShortcutInfo::getId()
+	JString ShortcutInfo::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::Intent ShortcutInfo::getIntent()
+	android::content::Intent ShortcutInfo::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JArray ShortcutInfo::getIntents()
+	JArray ShortcutInfo::getIntents() const
 	{
 		return callObjectMethod(
 			"getIntents",
 			"()[Landroid/content/Intent;"
 		);
 	}
-	jlong ShortcutInfo::getLastChangedTimestamp()
+	jlong ShortcutInfo::getLastChangedTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getLastChangedTimestamp",
 			"()J"
 		);
 	}
-	android::content::LocusId ShortcutInfo::getLocusId()
+	android::content::LocusId ShortcutInfo::getLocusId() const
 	{
 		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
-	JString ShortcutInfo::getLongLabel()
+	JString ShortcutInfo::getLongLabel() const
 	{
 		return callObjectMethod(
 			"getLongLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString ShortcutInfo::getPackage()
+	JString ShortcutInfo::getPackage() const
 	{
 		return callObjectMethod(
 			"getPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ShortcutInfo::getRank()
+	jint ShortcutInfo::getRank() const
 	{
 		return callMethod<jint>(
 			"getRank",
 			"()I"
 		);
 	}
-	JString ShortcutInfo::getShortLabel()
+	JString ShortcutInfo::getShortLabel() const
 	{
 		return callObjectMethod(
 			"getShortLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::os::UserHandle ShortcutInfo::getUserHandle()
+	android::os::UserHandle ShortcutInfo::getUserHandle() const
 	{
 		return callObjectMethod(
 			"getUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jboolean ShortcutInfo::hasKeyFieldsOnly()
+	jboolean ShortcutInfo::hasKeyFieldsOnly() const
 	{
 		return callMethod<jboolean>(
 			"hasKeyFieldsOnly",
 			"()Z"
 		);
 	}
-	jboolean ShortcutInfo::isCached()
+	jboolean ShortcutInfo::isCached() const
 	{
 		return callMethod<jboolean>(
 			"isCached",
 			"()Z"
 		);
 	}
-	jboolean ShortcutInfo::isDeclaredInManifest()
+	jboolean ShortcutInfo::isDeclaredInManifest() const
 	{
 		return callMethod<jboolean>(
 			"isDeclaredInManifest",
 			"()Z"
 		);
 	}
-	jboolean ShortcutInfo::isDynamic()
+	jboolean ShortcutInfo::isDynamic() const
 	{
 		return callMethod<jboolean>(
 			"isDynamic",
 			"()Z"
 		);
 	}
-	jboolean ShortcutInfo::isEnabled()
+	jboolean ShortcutInfo::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean ShortcutInfo::isImmutable()
+	jboolean ShortcutInfo::isImmutable() const
 	{
 		return callMethod<jboolean>(
 			"isImmutable",
 			"()Z"
 		);
 	}
-	jboolean ShortcutInfo::isPinned()
+	jboolean ShortcutInfo::isPinned() const
 	{
 		return callMethod<jboolean>(
 			"isPinned",
 			"()Z"
 		);
 	}
-	JString ShortcutInfo::toString()
+	JString ShortcutInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

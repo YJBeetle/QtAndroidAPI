@@ -37,10 +37,10 @@ namespace java::util::jar
 		JarInputStream(java::io::InputStream arg0, jboolean arg1);
 		
 		// Methods
-		java::util::jar::Manifest getManifest();
-		java::util::zip::ZipEntry getNextEntry();
-		java::util::jar::JarEntry getNextJarEntry();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
+		java::util::jar::Manifest getManifest() const;
+		java::util::zip::ZipEntry getNextEntry() const;
+		java::util::jar::JarEntry getNextJarEntry() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::util::jar
 

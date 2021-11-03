@@ -22,21 +22,21 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void ContentQueryMap::close()
+	void ContentQueryMap::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject ContentQueryMap::getRows()
+	JObject ContentQueryMap::getRows() const
 	{
 		return callObjectMethod(
 			"getRows",
 			"()Ljava/util/Map;"
 		);
 	}
-	android::content::ContentValues ContentQueryMap::getValues(JString arg0)
+	android::content::ContentValues ContentQueryMap::getValues(JString arg0) const
 	{
 		return callObjectMethod(
 			"getValues",
@@ -44,14 +44,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void ContentQueryMap::requery()
+	void ContentQueryMap::requery() const
 	{
 		callMethod<void>(
 			"requery",
 			"()V"
 		);
 	}
-	void ContentQueryMap::setKeepUpdated(jboolean arg0)
+	void ContentQueryMap::setKeepUpdated(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setKeepUpdated",

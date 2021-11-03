@@ -24,9 +24,9 @@ namespace android::telephony::euicc
 		EuiccInfo(JString arg0);
 		
 		// Methods
-		jint describeContents();
-		JString getOsVersion();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getOsVersion() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::euicc
 

@@ -15,7 +15,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jboolean Ikev2VpnProfile::equals(JObject arg0)
+	jboolean Ikev2VpnProfile::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -23,98 +23,98 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	JObject Ikev2VpnProfile::getAllowedAlgorithms()
+	JObject Ikev2VpnProfile::getAllowedAlgorithms() const
 	{
 		return callObjectMethod(
 			"getAllowedAlgorithms",
 			"()Ljava/util/List;"
 		);
 	}
-	jint Ikev2VpnProfile::getMaxMtu()
+	jint Ikev2VpnProfile::getMaxMtu() const
 	{
 		return callMethod<jint>(
 			"getMaxMtu",
 			"()I"
 		);
 	}
-	JString Ikev2VpnProfile::getPassword()
+	JString Ikev2VpnProfile::getPassword() const
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray Ikev2VpnProfile::getPresharedKey()
+	JByteArray Ikev2VpnProfile::getPresharedKey() const
 	{
 		return callObjectMethod(
 			"getPresharedKey",
 			"()[B"
 		);
 	}
-	android::net::ProxyInfo Ikev2VpnProfile::getProxyInfo()
+	android::net::ProxyInfo Ikev2VpnProfile::getProxyInfo() const
 	{
 		return callObjectMethod(
 			"getProxyInfo",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	JObject Ikev2VpnProfile::getRsaPrivateKey()
+	JObject Ikev2VpnProfile::getRsaPrivateKey() const
 	{
 		return callObjectMethod(
 			"getRsaPrivateKey",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	JString Ikev2VpnProfile::getServerAddr()
+	JString Ikev2VpnProfile::getServerAddr() const
 	{
 		return callObjectMethod(
 			"getServerAddr",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::cert::X509Certificate Ikev2VpnProfile::getServerRootCaCert()
+	java::security::cert::X509Certificate Ikev2VpnProfile::getServerRootCaCert() const
 	{
 		return callObjectMethod(
 			"getServerRootCaCert",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	java::security::cert::X509Certificate Ikev2VpnProfile::getUserCert()
+	java::security::cert::X509Certificate Ikev2VpnProfile::getUserCert() const
 	{
 		return callObjectMethod(
 			"getUserCert",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	JString Ikev2VpnProfile::getUserIdentity()
+	JString Ikev2VpnProfile::getUserIdentity() const
 	{
 		return callObjectMethod(
 			"getUserIdentity",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Ikev2VpnProfile::getUsername()
+	JString Ikev2VpnProfile::getUsername() const
 	{
 		return callObjectMethod(
 			"getUsername",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Ikev2VpnProfile::hashCode()
+	jint Ikev2VpnProfile::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Ikev2VpnProfile::isBypassable()
+	jboolean Ikev2VpnProfile::isBypassable() const
 	{
 		return callMethod<jboolean>(
 			"isBypassable",
 			"()Z"
 		);
 	}
-	jboolean Ikev2VpnProfile::isMetered()
+	jboolean Ikev2VpnProfile::isMetered() const
 	{
 		return callMethod<jboolean>(
 			"isMetered",

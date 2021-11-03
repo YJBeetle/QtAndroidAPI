@@ -35,7 +35,7 @@ namespace javax::net::ssl
 			arg0.object<jstring>()
 		);
 	}
-	jboolean SNIHostName::equals(JObject arg0)
+	jboolean SNIHostName::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -43,21 +43,21 @@ namespace javax::net::ssl
 			arg0.object<jobject>()
 		);
 	}
-	JString SNIHostName::getAsciiName()
+	JString SNIHostName::getAsciiName() const
 	{
 		return callObjectMethod(
 			"getAsciiName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SNIHostName::hashCode()
+	jint SNIHostName::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SNIHostName::toString()
+	JString SNIHostName::toString() const
 	{
 		return callObjectMethod(
 			"toString",

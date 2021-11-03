@@ -21,42 +21,42 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextSelection_Request::describeContents()
+	jint TextSelection_Request::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::LocaleList TextSelection_Request::getDefaultLocales()
+	android::os::LocaleList TextSelection_Request::getDefaultLocales() const
 	{
 		return callObjectMethod(
 			"getDefaultLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	jint TextSelection_Request::getEndIndex()
+	jint TextSelection_Request::getEndIndex() const
 	{
 		return callMethod<jint>(
 			"getEndIndex",
 			"()I"
 		);
 	}
-	jint TextSelection_Request::getStartIndex()
+	jint TextSelection_Request::getStartIndex() const
 	{
 		return callMethod<jint>(
 			"getStartIndex",
 			"()I"
 		);
 	}
-	JString TextSelection_Request::getText()
+	JString TextSelection_Request::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void TextSelection_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextSelection_Request::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

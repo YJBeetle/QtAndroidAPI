@@ -17,7 +17,7 @@ namespace android::view::accessibility
 		) {}
 	
 	// Methods
-	void CaptioningManager_CaptioningChangeListener::onEnabledChanged(jboolean arg0)
+	void CaptioningManager_CaptioningChangeListener::onEnabledChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onEnabledChanged",
@@ -25,7 +25,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void CaptioningManager_CaptioningChangeListener::onFontScaleChanged(jfloat arg0)
+	void CaptioningManager_CaptioningChangeListener::onFontScaleChanged(jfloat arg0) const
 	{
 		callMethod<void>(
 			"onFontScaleChanged",
@@ -33,7 +33,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void CaptioningManager_CaptioningChangeListener::onLocaleChanged(java::util::Locale arg0)
+	void CaptioningManager_CaptioningChangeListener::onLocaleChanged(java::util::Locale arg0) const
 	{
 		callMethod<void>(
 			"onLocaleChanged",
@@ -41,7 +41,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void CaptioningManager_CaptioningChangeListener::onUserStyleChanged(android::view::accessibility::CaptioningManager_CaptionStyle arg0)
+	void CaptioningManager_CaptioningChangeListener::onUserStyleChanged(android::view::accessibility::CaptioningManager_CaptionStyle arg0) const
 	{
 		callMethod<void>(
 			"onUserStyleChanged",

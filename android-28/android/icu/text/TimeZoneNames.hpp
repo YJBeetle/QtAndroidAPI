@@ -33,14 +33,14 @@ namespace android::icu::text
 		static android::icu::text::TimeZoneNames getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::TimeZoneNames getInstance(java::util::Locale arg0);
 		static android::icu::text::TimeZoneNames getTZDBInstance(android::icu::util::ULocale arg0);
-		JObject getAvailableMetaZoneIDs();
-		JObject getAvailableMetaZoneIDs(JString arg0);
-		JString getDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
-		JString getExemplarLocationName(JString arg0);
-		JString getMetaZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1);
-		JString getMetaZoneID(JString arg0, jlong arg1);
-		JString getReferenceZoneID(JString arg0, JString arg1);
-		JString getTimeZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1);
+		JObject getAvailableMetaZoneIDs() const;
+		JObject getAvailableMetaZoneIDs(JString arg0) const;
+		JString getDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2) const;
+		JString getExemplarLocationName(JString arg0) const;
+		JString getMetaZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1) const;
+		JString getMetaZoneID(JString arg0, jlong arg1) const;
+		JString getReferenceZoneID(JString arg0, JString arg1) const;
+		JString getTimeZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1) const;
 	};
 } // namespace android::icu::text
 

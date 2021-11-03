@@ -39,19 +39,19 @@ namespace android::app
 		ListFragment();
 		
 		// Methods
-		JObject getListAdapter();
-		android::widget::ListView getListView();
-		jlong getSelectedItemId();
-		jint getSelectedItemPosition();
-		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
-		void onDestroyView();
-		void onListItemClick(android::widget::ListView arg0, android::view::View arg1, jint arg2, jlong arg3);
-		void onViewCreated(android::view::View arg0, android::os::Bundle arg1);
-		void setEmptyText(JString arg0);
-		void setListAdapter(JObject arg0);
-		void setListShown(jboolean arg0);
-		void setListShownNoAnimation(jboolean arg0);
-		void setSelection(jint arg0);
+		JObject getListAdapter() const;
+		android::widget::ListView getListView() const;
+		jlong getSelectedItemId() const;
+		jint getSelectedItemPosition() const;
+		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const;
+		void onDestroyView() const;
+		void onListItemClick(android::widget::ListView arg0, android::view::View arg1, jint arg2, jlong arg3) const;
+		void onViewCreated(android::view::View arg0, android::os::Bundle arg1) const;
+		void setEmptyText(JString arg0) const;
+		void setListAdapter(JObject arg0) const;
+		void setListShown(jboolean arg0) const;
+		void setListShownNoAnimation(jboolean arg0) const;
+		void setSelection(jint arg0) const;
 	};
 } // namespace android::app
 

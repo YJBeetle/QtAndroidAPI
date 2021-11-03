@@ -26,8 +26,8 @@ namespace android::view::textclassifier
 		TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0);
 		
 		// Methods
-		android::view::textclassifier::TextLinks_TextLink getTextLink();
-		void onClick(android::view::View arg0);
+		android::view::textclassifier::TextLinks_TextLink getTextLink() const;
+		void onClick(android::view::View arg0) const;
 	};
 } // namespace android::view::textclassifier
 

@@ -23,8 +23,8 @@ namespace android::app::appsearch
 		ReportSystemUsageRequest_Builder(JString arg0, JString arg1, JString arg2, JString arg3);
 		
 		// Methods
-		android::app::appsearch::ReportSystemUsageRequest build();
-		android::app::appsearch::ReportSystemUsageRequest_Builder setUsageTimestampMillis(jlong arg0);
+		android::app::appsearch::ReportSystemUsageRequest build() const;
+		android::app::appsearch::ReportSystemUsageRequest_Builder setUsageTimestampMillis(jlong arg0) const;
 	};
 } // namespace android::app::appsearch
 

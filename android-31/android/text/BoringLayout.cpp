@@ -102,7 +102,7 @@ namespace android::text
 			arg9
 		);
 	}
-	void BoringLayout::draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3)
+	void BoringLayout::draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"draw",
@@ -113,7 +113,7 @@ namespace android::text
 			arg3
 		);
 	}
-	void BoringLayout::ellipsized(jint arg0, jint arg1)
+	void BoringLayout::ellipsized(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"ellipsized",
@@ -122,14 +122,14 @@ namespace android::text
 			arg1
 		);
 	}
-	jint BoringLayout::getBottomPadding()
+	jint BoringLayout::getBottomPadding() const
 	{
 		return callMethod<jint>(
 			"getBottomPadding",
 			"()I"
 		);
 	}
-	jint BoringLayout::getEllipsisCount(jint arg0)
+	jint BoringLayout::getEllipsisCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getEllipsisCount",
@@ -137,7 +137,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint BoringLayout::getEllipsisStart(jint arg0)
+	jint BoringLayout::getEllipsisStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getEllipsisStart",
@@ -145,21 +145,21 @@ namespace android::text
 			arg0
 		);
 	}
-	jint BoringLayout::getEllipsizedWidth()
+	jint BoringLayout::getEllipsizedWidth() const
 	{
 		return callMethod<jint>(
 			"getEllipsizedWidth",
 			"()I"
 		);
 	}
-	jint BoringLayout::getHeight()
+	jint BoringLayout::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jboolean BoringLayout::getLineContainsTab(jint arg0)
+	jboolean BoringLayout::getLineContainsTab(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"getLineContainsTab",
@@ -167,14 +167,14 @@ namespace android::text
 			arg0
 		);
 	}
-	jint BoringLayout::getLineCount()
+	jint BoringLayout::getLineCount() const
 	{
 		return callMethod<jint>(
 			"getLineCount",
 			"()I"
 		);
 	}
-	jint BoringLayout::getLineDescent(jint arg0)
+	jint BoringLayout::getLineDescent(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineDescent",
@@ -182,7 +182,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::Layout_Directions BoringLayout::getLineDirections(jint arg0)
+	android::text::Layout_Directions BoringLayout::getLineDirections(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLineDirections",
@@ -190,7 +190,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat BoringLayout::getLineMax(jint arg0)
+	jfloat BoringLayout::getLineMax(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineMax",
@@ -198,7 +198,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint BoringLayout::getLineStart(jint arg0)
+	jint BoringLayout::getLineStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineStart",
@@ -206,7 +206,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint BoringLayout::getLineTop(jint arg0)
+	jint BoringLayout::getLineTop(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineTop",
@@ -214,7 +214,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat BoringLayout::getLineWidth(jint arg0)
+	jfloat BoringLayout::getLineWidth(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineWidth",
@@ -222,7 +222,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint BoringLayout::getParagraphDirection(jint arg0)
+	jint BoringLayout::getParagraphDirection(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getParagraphDirection",
@@ -230,14 +230,14 @@ namespace android::text
 			arg0
 		);
 	}
-	jint BoringLayout::getTopPadding()
+	jint BoringLayout::getTopPadding() const
 	{
 		return callMethod<jint>(
 			"getTopPadding",
 			"()I"
 		);
 	}
-	android::text::BoringLayout BoringLayout::replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	android::text::BoringLayout BoringLayout::replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7) const
 	{
 		return callObjectMethod(
 			"replaceOrMake",
@@ -252,7 +252,7 @@ namespace android::text
 			arg7
 		);
 	}
-	android::text::BoringLayout BoringLayout::replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
+	android::text::BoringLayout BoringLayout::replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9) const
 	{
 		return callObjectMethod(
 			"replaceOrMake",

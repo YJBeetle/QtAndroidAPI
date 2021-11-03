@@ -32,42 +32,42 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	jint SSLEngineResult::bytesConsumed()
+	jint SSLEngineResult::bytesConsumed() const
 	{
 		return callMethod<jint>(
 			"bytesConsumed",
 			"()I"
 		);
 	}
-	jint SSLEngineResult::bytesProduced()
+	jint SSLEngineResult::bytesProduced() const
 	{
 		return callMethod<jint>(
 			"bytesProduced",
 			"()I"
 		);
 	}
-	javax::net::ssl::SSLEngineResult_HandshakeStatus SSLEngineResult::getHandshakeStatus()
+	javax::net::ssl::SSLEngineResult_HandshakeStatus SSLEngineResult::getHandshakeStatus() const
 	{
 		return callObjectMethod(
 			"getHandshakeStatus",
 			"()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
 		);
 	}
-	javax::net::ssl::SSLEngineResult_Status SSLEngineResult::getStatus()
+	javax::net::ssl::SSLEngineResult_Status SSLEngineResult::getStatus() const
 	{
 		return callObjectMethod(
 			"getStatus",
 			"()Ljavax/net/ssl/SSLEngineResult$Status;"
 		);
 	}
-	jlong SSLEngineResult::sequenceNumber()
+	jlong SSLEngineResult::sequenceNumber() const
 	{
 		return callMethod<jlong>(
 			"sequenceNumber",
 			"()J"
 		);
 	}
-	JString SSLEngineResult::toString()
+	JString SSLEngineResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",

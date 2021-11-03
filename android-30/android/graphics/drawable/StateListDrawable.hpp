@@ -35,15 +35,15 @@ namespace android::graphics::drawable
 		StateListDrawable();
 		
 		// Methods
-		void addState(JIntArray arg0, android::graphics::drawable::Drawable arg1);
-		void applyTheme(android::content::res::Resources_Theme arg0);
-		jint findStateDrawableIndex(JIntArray arg0);
-		jint getStateCount();
-		android::graphics::drawable::Drawable getStateDrawable(jint arg0);
-		JIntArray getStateSet(jint arg0);
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
-		jboolean isStateful();
-		android::graphics::drawable::Drawable mutate();
+		void addState(JIntArray arg0, android::graphics::drawable::Drawable arg1) const;
+		void applyTheme(android::content::res::Resources_Theme arg0) const;
+		jint findStateDrawableIndex(JIntArray arg0) const;
+		jint getStateCount() const;
+		android::graphics::drawable::Drawable getStateDrawable(jint arg0) const;
+		JIntArray getStateSet(jint arg0) const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
+		jboolean isStateful() const;
+		android::graphics::drawable::Drawable mutate() const;
 	};
 } // namespace android::graphics::drawable
 

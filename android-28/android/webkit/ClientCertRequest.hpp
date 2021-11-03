@@ -22,13 +22,13 @@ namespace android::webkit
 		ClientCertRequest();
 		
 		// Methods
-		void cancel();
-		JString getHost();
-		JArray getKeyTypes();
-		jint getPort();
-		JArray getPrincipals();
-		void ignore();
-		void proceed(JObject arg0, JArray arg1);
+		void cancel() const;
+		JString getHost() const;
+		JArray getKeyTypes() const;
+		jint getPort() const;
+		JArray getPrincipals() const;
+		void ignore() const;
+		void proceed(JObject arg0, JArray arg1) const;
 	};
 } // namespace android::webkit
 

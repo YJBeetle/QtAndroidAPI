@@ -16,7 +16,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1)
+	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"onTimeShiftCurrentPositionChanged",
@@ -25,7 +25,7 @@ namespace android::media::tv
 			arg1
 		);
 	}
-	void TvView_TimeShiftPositionCallback::onTimeShiftStartPositionChanged(JString arg0, jlong arg1)
+	void TvView_TimeShiftPositionCallback::onTimeShiftStartPositionChanged(JString arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"onTimeShiftStartPositionChanged",

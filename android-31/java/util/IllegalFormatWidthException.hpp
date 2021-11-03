@@ -19,8 +19,8 @@ namespace java::util
 		IllegalFormatWidthException(jint arg0);
 		
 		// Methods
-		JString getMessage();
-		jint getWidth();
+		JString getMessage() const;
+		jint getWidth() const;
 	};
 } // namespace java::util
 

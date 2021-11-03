@@ -40,28 +40,28 @@ namespace org::xml::sax
 		) {}
 	
 	// Methods
-	JThrowable SAXException::getCause()
+	JThrowable SAXException::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	java::lang::Exception SAXException::getException()
+	java::lang::Exception SAXException::getException() const
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
 	}
-	JString SAXException::getMessage()
+	JString SAXException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SAXException::toString()
+	JString SAXException::toString() const
 	{
 		return callObjectMethod(
 			"toString",

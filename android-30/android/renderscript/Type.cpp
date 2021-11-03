@@ -48,56 +48,56 @@ namespace android::renderscript
 			arg4
 		);
 	}
-	jint Type::getCount()
+	jint Type::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	android::renderscript::Element Type::getElement()
+	android::renderscript::Element Type::getElement() const
 	{
 		return callObjectMethod(
 			"getElement",
 			"()Landroid/renderscript/Element;"
 		);
 	}
-	jint Type::getX()
+	jint Type::getX() const
 	{
 		return callMethod<jint>(
 			"getX",
 			"()I"
 		);
 	}
-	jint Type::getY()
+	jint Type::getY() const
 	{
 		return callMethod<jint>(
 			"getY",
 			"()I"
 		);
 	}
-	jint Type::getYuv()
+	jint Type::getYuv() const
 	{
 		return callMethod<jint>(
 			"getYuv",
 			"()I"
 		);
 	}
-	jint Type::getZ()
+	jint Type::getZ() const
 	{
 		return callMethod<jint>(
 			"getZ",
 			"()I"
 		);
 	}
-	jboolean Type::hasFaces()
+	jboolean Type::hasFaces() const
 	{
 		return callMethod<jboolean>(
 			"hasFaces",
 			"()Z"
 		);
 	}
-	jboolean Type::hasMipmaps()
+	jboolean Type::hasMipmaps() const
 	{
 		return callMethod<jboolean>(
 			"hasMipmaps",

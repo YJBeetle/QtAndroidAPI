@@ -31,12 +31,12 @@ namespace java::security
 		static java::security::KeyFactory getInstance(JString arg0);
 		static java::security::KeyFactory getInstance(JString arg0, JString arg1);
 		static java::security::KeyFactory getInstance(JString arg0, java::security::Provider arg1);
-		JObject generatePrivate(JObject arg0);
-		JObject generatePublic(JObject arg0);
-		JString getAlgorithm();
-		JObject getKeySpec(JObject arg0, JClass arg1);
-		java::security::Provider getProvider();
-		JObject translateKey(JObject arg0);
+		JObject generatePrivate(JObject arg0) const;
+		JObject generatePublic(JObject arg0) const;
+		JString getAlgorithm() const;
+		JObject getKeySpec(JObject arg0, JClass arg1) const;
+		java::security::Provider getProvider() const;
+		JObject translateKey(JObject arg0) const;
 	};
 } // namespace java::security
 

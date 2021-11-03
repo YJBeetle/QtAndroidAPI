@@ -94,7 +94,7 @@ namespace android::app::appsearch
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AppSearchResult::equals(JObject arg0)
+	jboolean AppSearchResult::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -102,42 +102,42 @@ namespace android::app::appsearch
 			arg0.object<jobject>()
 		);
 	}
-	JString AppSearchResult::getErrorMessage()
+	JString AppSearchResult::getErrorMessage() const
 	{
 		return callObjectMethod(
 			"getErrorMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint AppSearchResult::getResultCode()
+	jint AppSearchResult::getResultCode() const
 	{
 		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
-	JObject AppSearchResult::getResultValue()
+	JObject AppSearchResult::getResultValue() const
 	{
 		return callObjectMethod(
 			"getResultValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint AppSearchResult::hashCode()
+	jint AppSearchResult::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AppSearchResult::isSuccess()
+	jboolean AppSearchResult::isSuccess() const
 	{
 		return callMethod<jboolean>(
 			"isSuccess",
 			"()Z"
 		);
 	}
-	JString AppSearchResult::toString()
+	JString AppSearchResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",

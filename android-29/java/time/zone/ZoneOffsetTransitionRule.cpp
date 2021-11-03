@@ -36,7 +36,7 @@ namespace java::time::zone
 			arg8.object()
 		);
 	}
-	java::time::zone::ZoneOffsetTransition ZoneOffsetTransitionRule::createTransition(jint arg0)
+	java::time::zone::ZoneOffsetTransition ZoneOffsetTransitionRule::createTransition(jint arg0) const
 	{
 		return callObjectMethod(
 			"createTransition",
@@ -44,7 +44,7 @@ namespace java::time::zone
 			arg0
 		);
 	}
-	jboolean ZoneOffsetTransitionRule::equals(JObject arg0)
+	jboolean ZoneOffsetTransitionRule::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -52,77 +52,77 @@ namespace java::time::zone
 			arg0.object<jobject>()
 		);
 	}
-	jint ZoneOffsetTransitionRule::getDayOfMonthIndicator()
+	jint ZoneOffsetTransitionRule::getDayOfMonthIndicator() const
 	{
 		return callMethod<jint>(
 			"getDayOfMonthIndicator",
 			"()I"
 		);
 	}
-	java::time::DayOfWeek ZoneOffsetTransitionRule::getDayOfWeek()
+	java::time::DayOfWeek ZoneOffsetTransitionRule::getDayOfWeek() const
 	{
 		return callObjectMethod(
 			"getDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
-	java::time::LocalTime ZoneOffsetTransitionRule::getLocalTime()
+	java::time::LocalTime ZoneOffsetTransitionRule::getLocalTime() const
 	{
 		return callObjectMethod(
 			"getLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	java::time::Month ZoneOffsetTransitionRule::getMonth()
+	java::time::Month ZoneOffsetTransitionRule::getMonth() const
 	{
 		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
-	java::time::ZoneOffset ZoneOffsetTransitionRule::getOffsetAfter()
+	java::time::ZoneOffset ZoneOffsetTransitionRule::getOffsetAfter() const
 	{
 		return callObjectMethod(
 			"getOffsetAfter",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	java::time::ZoneOffset ZoneOffsetTransitionRule::getOffsetBefore()
+	java::time::ZoneOffset ZoneOffsetTransitionRule::getOffsetBefore() const
 	{
 		return callObjectMethod(
 			"getOffsetBefore",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	java::time::ZoneOffset ZoneOffsetTransitionRule::getStandardOffset()
+	java::time::ZoneOffset ZoneOffsetTransitionRule::getStandardOffset() const
 	{
 		return callObjectMethod(
 			"getStandardOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule::getTimeDefinition()
+	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule::getTimeDefinition() const
 	{
 		return callObjectMethod(
 			"getTimeDefinition",
 			"()Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
 		);
 	}
-	jint ZoneOffsetTransitionRule::hashCode()
+	jint ZoneOffsetTransitionRule::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ZoneOffsetTransitionRule::isMidnightEndOfDay()
+	jboolean ZoneOffsetTransitionRule::isMidnightEndOfDay() const
 	{
 		return callMethod<jboolean>(
 			"isMidnightEndOfDay",
 			"()Z"
 		);
 	}
-	JString ZoneOffsetTransitionRule::toString()
+	JString ZoneOffsetTransitionRule::toString() const
 	{
 		return callObjectMethod(
 			"toString",

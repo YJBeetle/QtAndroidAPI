@@ -26,7 +26,7 @@ namespace android::app::job
 		) {}
 	
 	// Methods
-	void JobService::jobFinished(android::app::job::JobParameters arg0, jboolean arg1)
+	void JobService::jobFinished(android::app::job::JobParameters arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"jobFinished",
@@ -35,7 +35,7 @@ namespace android::app::job
 			arg1
 		);
 	}
-	JObject JobService::onBind(android::content::Intent arg0)
+	JObject JobService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -43,7 +43,7 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	jboolean JobService::onStartJob(android::app::job::JobParameters arg0)
+	jboolean JobService::onStartJob(android::app::job::JobParameters arg0) const
 	{
 		return callMethod<jboolean>(
 			"onStartJob",
@@ -51,7 +51,7 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	jboolean JobService::onStopJob(android::app::job::JobParameters arg0)
+	jboolean JobService::onStopJob(android::app::job::JobParameters arg0) const
 	{
 		return callMethod<jboolean>(
 			"onStopJob",

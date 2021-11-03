@@ -62,7 +62,7 @@ namespace android::net::vcn
 	// Constructors
 	
 	// Methods
-	void VcnManager::clearVcnConfig(android::os::ParcelUuid arg0)
+	void VcnManager::clearVcnConfig(android::os::ParcelUuid arg0) const
 	{
 		callMethod<void>(
 			"clearVcnConfig",
@@ -70,14 +70,14 @@ namespace android::net::vcn
 			arg0.object()
 		);
 	}
-	JObject VcnManager::getConfiguredSubscriptionGroups()
+	JObject VcnManager::getConfiguredSubscriptionGroups() const
 	{
 		return callObjectMethod(
 			"getConfiguredSubscriptionGroups",
 			"()Ljava/util/List;"
 		);
 	}
-	void VcnManager::registerVcnStatusCallback(android::os::ParcelUuid arg0, JObject arg1, android::net::vcn::VcnManager_VcnStatusCallback arg2)
+	void VcnManager::registerVcnStatusCallback(android::os::ParcelUuid arg0, JObject arg1, android::net::vcn::VcnManager_VcnStatusCallback arg2) const
 	{
 		callMethod<void>(
 			"registerVcnStatusCallback",
@@ -87,7 +87,7 @@ namespace android::net::vcn
 			arg2.object()
 		);
 	}
-	void VcnManager::setVcnConfig(android::os::ParcelUuid arg0, android::net::vcn::VcnConfig arg1)
+	void VcnManager::setVcnConfig(android::os::ParcelUuid arg0, android::net::vcn::VcnConfig arg1) const
 	{
 		callMethod<void>(
 			"setVcnConfig",
@@ -96,7 +96,7 @@ namespace android::net::vcn
 			arg1.object()
 		);
 	}
-	void VcnManager::unregisterVcnStatusCallback(android::net::vcn::VcnManager_VcnStatusCallback arg0)
+	void VcnManager::unregisterVcnStatusCallback(android::net::vcn::VcnManager_VcnStatusCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterVcnStatusCallback",

@@ -24,21 +24,21 @@ namespace java::lang::invoke
 		) {}
 	
 	// Methods
-	java::lang::invoke::MethodHandle VolatileCallSite::dynamicInvoker()
+	java::lang::invoke::MethodHandle VolatileCallSite::dynamicInvoker() const
 	{
 		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	java::lang::invoke::MethodHandle VolatileCallSite::getTarget()
+	java::lang::invoke::MethodHandle VolatileCallSite::getTarget() const
 	{
 		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	void VolatileCallSite::setTarget(java::lang::invoke::MethodHandle arg0)
+	void VolatileCallSite::setTarget(java::lang::invoke::MethodHandle arg0) const
 	{
 		callMethod<void>(
 			"setTarget",

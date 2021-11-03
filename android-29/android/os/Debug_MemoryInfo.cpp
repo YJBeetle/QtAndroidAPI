@@ -79,14 +79,14 @@ namespace android::os
 		) {}
 	
 	// Methods
-	jint Debug_MemoryInfo::describeContents()
+	jint Debug_MemoryInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString Debug_MemoryInfo::getMemoryStat(JString arg0)
+	JString Debug_MemoryInfo::getMemoryStat(JString arg0) const
 	{
 		return callObjectMethod(
 			"getMemoryStat",
@@ -94,56 +94,56 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JObject Debug_MemoryInfo::getMemoryStats()
+	JObject Debug_MemoryInfo::getMemoryStats() const
 	{
 		return callObjectMethod(
 			"getMemoryStats",
 			"()Ljava/util/Map;"
 		);
 	}
-	jint Debug_MemoryInfo::getTotalPrivateClean()
+	jint Debug_MemoryInfo::getTotalPrivateClean() const
 	{
 		return callMethod<jint>(
 			"getTotalPrivateClean",
 			"()I"
 		);
 	}
-	jint Debug_MemoryInfo::getTotalPrivateDirty()
+	jint Debug_MemoryInfo::getTotalPrivateDirty() const
 	{
 		return callMethod<jint>(
 			"getTotalPrivateDirty",
 			"()I"
 		);
 	}
-	jint Debug_MemoryInfo::getTotalPss()
+	jint Debug_MemoryInfo::getTotalPss() const
 	{
 		return callMethod<jint>(
 			"getTotalPss",
 			"()I"
 		);
 	}
-	jint Debug_MemoryInfo::getTotalSharedClean()
+	jint Debug_MemoryInfo::getTotalSharedClean() const
 	{
 		return callMethod<jint>(
 			"getTotalSharedClean",
 			"()I"
 		);
 	}
-	jint Debug_MemoryInfo::getTotalSharedDirty()
+	jint Debug_MemoryInfo::getTotalSharedDirty() const
 	{
 		return callMethod<jint>(
 			"getTotalSharedDirty",
 			"()I"
 		);
 	}
-	jint Debug_MemoryInfo::getTotalSwappablePss()
+	jint Debug_MemoryInfo::getTotalSwappablePss() const
 	{
 		return callMethod<jint>(
 			"getTotalSwappablePss",
 			"()I"
 		);
 	}
-	void Debug_MemoryInfo::readFromParcel(android::os::Parcel arg0)
+	void Debug_MemoryInfo::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -151,7 +151,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Debug_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Debug_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

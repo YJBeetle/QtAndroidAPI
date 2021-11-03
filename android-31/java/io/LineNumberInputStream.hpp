@@ -23,14 +23,14 @@ namespace java::io
 		LineNumberInputStream(java::io::InputStream arg0);
 		
 		// Methods
-		jint available();
-		jint getLineNumber();
-		void mark(jint arg0);
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		void reset();
-		void setLineNumber(jint arg0);
-		jlong skip(jlong arg0);
+		jint available() const;
+		jint getLineNumber() const;
+		void mark(jint arg0) const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		void reset() const;
+		void setLineNumber(jint arg0) const;
+		jlong skip(jlong arg0) const;
 	};
 } // namespace java::io
 

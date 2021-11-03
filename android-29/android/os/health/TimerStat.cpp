@@ -37,28 +37,28 @@ namespace android::os::health
 		) {}
 	
 	// Methods
-	jint TimerStat::describeContents()
+	jint TimerStat::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint TimerStat::getCount()
+	jint TimerStat::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	jlong TimerStat::getTime()
+	jlong TimerStat::getTime() const
 	{
 		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
-	void TimerStat::setCount(jint arg0)
+	void TimerStat::setCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setCount",
@@ -66,7 +66,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	void TimerStat::setTime(jlong arg0)
+	void TimerStat::setTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -74,7 +74,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	void TimerStat::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TimerStat::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

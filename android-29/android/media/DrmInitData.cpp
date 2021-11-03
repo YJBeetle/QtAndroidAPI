@@ -12,7 +12,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::DrmInitData_SchemeInitData DrmInitData::get(java::util::UUID arg0)
+	android::media::DrmInitData_SchemeInitData DrmInitData::get(java::util::UUID arg0) const
 	{
 		return callObjectMethod(
 			"get",

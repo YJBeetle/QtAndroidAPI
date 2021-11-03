@@ -48,15 +48,15 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getContentType();
-		jint getFlags();
-		jint getUsage();
-		jint getVolumeControlStream();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getContentType() const;
+		jint getFlags() const;
+		jint getUsage() const;
+		jint getVolumeControlStream() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

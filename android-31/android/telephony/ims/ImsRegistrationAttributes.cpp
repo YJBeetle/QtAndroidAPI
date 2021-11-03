@@ -28,14 +28,14 @@ namespace android::telephony::ims
 	// Constructors
 	
 	// Methods
-	jint ImsRegistrationAttributes::describeContents()
+	jint ImsRegistrationAttributes::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ImsRegistrationAttributes::equals(JObject arg0)
+	jboolean ImsRegistrationAttributes::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -43,42 +43,42 @@ namespace android::telephony::ims
 			arg0.object<jobject>()
 		);
 	}
-	jint ImsRegistrationAttributes::getAttributeFlags()
+	jint ImsRegistrationAttributes::getAttributeFlags() const
 	{
 		return callMethod<jint>(
 			"getAttributeFlags",
 			"()I"
 		);
 	}
-	JObject ImsRegistrationAttributes::getFeatureTags()
+	JObject ImsRegistrationAttributes::getFeatureTags() const
 	{
 		return callObjectMethod(
 			"getFeatureTags",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint ImsRegistrationAttributes::getTransportType()
+	jint ImsRegistrationAttributes::getTransportType() const
 	{
 		return callMethod<jint>(
 			"getTransportType",
 			"()I"
 		);
 	}
-	jint ImsRegistrationAttributes::hashCode()
+	jint ImsRegistrationAttributes::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ImsRegistrationAttributes::toString()
+	JString ImsRegistrationAttributes::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ImsRegistrationAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ImsRegistrationAttributes::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

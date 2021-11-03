@@ -19,10 +19,10 @@ namespace javax::net::ssl
 		ExtendedSSLSession();
 		
 		// Methods
-		JArray getLocalSupportedSignatureAlgorithms();
-		JArray getPeerSupportedSignatureAlgorithms();
-		JObject getRequestedServerNames();
-		JObject getStatusResponses();
+		JArray getLocalSupportedSignatureAlgorithms() const;
+		JArray getPeerSupportedSignatureAlgorithms() const;
+		JObject getRequestedServerNames() const;
+		JObject getStatusResponses() const;
 	};
 } // namespace javax::net::ssl
 

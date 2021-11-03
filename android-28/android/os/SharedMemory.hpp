@@ -33,14 +33,14 @@ namespace android::os
 		// Methods
 		static android::os::SharedMemory create(JString arg0, jint arg1);
 		static void unmap(java::nio::ByteBuffer arg0);
-		void close();
-		jint describeContents();
-		jint getSize();
-		java::nio::ByteBuffer map(jint arg0, jint arg1, jint arg2);
-		java::nio::ByteBuffer mapReadOnly();
-		java::nio::ByteBuffer mapReadWrite();
-		jboolean setProtect(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void close() const;
+		jint describeContents() const;
+		jint getSize() const;
+		java::nio::ByteBuffer map(jint arg0, jint arg1, jint arg2) const;
+		java::nio::ByteBuffer mapReadOnly() const;
+		java::nio::ByteBuffer mapReadWrite() const;
+		jboolean setProtect(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

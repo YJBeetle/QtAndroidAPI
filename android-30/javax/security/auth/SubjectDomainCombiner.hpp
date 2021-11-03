@@ -29,8 +29,8 @@ namespace javax::security::auth
 		SubjectDomainCombiner(javax::security::auth::Subject arg0);
 		
 		// Methods
-		JArray combine(JArray arg0, JArray arg1);
-		javax::security::auth::Subject getSubject();
+		JArray combine(JArray arg0, JArray arg1) const;
+		javax::security::auth::Subject getSubject() const;
 	};
 } // namespace javax::security::auth
 

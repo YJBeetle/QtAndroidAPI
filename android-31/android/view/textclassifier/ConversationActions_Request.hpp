@@ -33,14 +33,14 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JString getCallingPackageName();
-		JObject getConversation();
-		android::os::Bundle getExtras();
-		JObject getHints();
-		jint getMaxSuggestions();
-		android::view::textclassifier::TextClassifier_EntityConfig getTypeConfig();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getCallingPackageName() const;
+		JObject getConversation() const;
+		android::os::Bundle getExtras() const;
+		JObject getHints() const;
+		jint getMaxSuggestions() const;
+		android::view::textclassifier::TextClassifier_EntityConfig getTypeConfig() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

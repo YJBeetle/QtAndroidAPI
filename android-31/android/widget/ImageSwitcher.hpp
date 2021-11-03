@@ -32,10 +32,10 @@ namespace android::widget
 		ImageSwitcher(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		void setImageDrawable(android::graphics::drawable::Drawable arg0);
-		void setImageResource(jint arg0);
-		void setImageURI(android::net::Uri arg0);
+		JString getAccessibilityClassName() const;
+		void setImageDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setImageResource(jint arg0) const;
+		void setImageURI(android::net::Uri arg0) const;
 	};
 } // namespace android::widget
 

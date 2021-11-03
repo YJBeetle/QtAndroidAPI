@@ -21,7 +21,7 @@ namespace javax::security::auth
 		) {}
 	
 	// Methods
-	JArray SubjectDomainCombiner::combine(JArray arg0, JArray arg1)
+	JArray SubjectDomainCombiner::combine(JArray arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"combine",
@@ -30,7 +30,7 @@ namespace javax::security::auth
 			arg1.object<jarray>()
 		);
 	}
-	javax::security::auth::Subject SubjectDomainCombiner::getSubject()
+	javax::security::auth::Subject SubjectDomainCombiner::getSubject() const
 	{
 		return callObjectMethod(
 			"getSubject",

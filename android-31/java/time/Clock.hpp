@@ -39,12 +39,12 @@ namespace java::time
 		static java::time::Clock tickMillis(java::time::ZoneId arg0);
 		static java::time::Clock tickMinutes(java::time::ZoneId arg0);
 		static java::time::Clock tickSeconds(java::time::ZoneId arg0);
-		jboolean equals(JObject arg0);
-		java::time::ZoneId getZone();
-		jint hashCode();
-		java::time::Instant instant();
-		jlong millis();
-		java::time::Clock withZone(java::time::ZoneId arg0);
+		jboolean equals(JObject arg0) const;
+		java::time::ZoneId getZone() const;
+		jint hashCode() const;
+		java::time::Instant instant() const;
+		jlong millis() const;
+		java::time::Clock withZone(java::time::ZoneId arg0) const;
 	};
 } // namespace java::time
 

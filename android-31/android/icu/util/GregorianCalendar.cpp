@@ -96,7 +96,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jint GregorianCalendar::getActualMaximum(jint arg0)
+	jint GregorianCalendar::getActualMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMaximum",
@@ -104,7 +104,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint GregorianCalendar::getActualMinimum(jint arg0)
+	jint GregorianCalendar::getActualMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMinimum",
@@ -112,28 +112,28 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	java::util::Date GregorianCalendar::getGregorianChange()
+	java::util::Date GregorianCalendar::getGregorianChange() const
 	{
 		return callObjectMethod(
 			"getGregorianChange",
 			"()Ljava/util/Date;"
 		);
 	}
-	JString GregorianCalendar::getType()
+	JString GregorianCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint GregorianCalendar::hashCode()
+	jint GregorianCalendar::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean GregorianCalendar::isEquivalentTo(android::icu::util::Calendar arg0)
+	jboolean GregorianCalendar::isEquivalentTo(android::icu::util::Calendar arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEquivalentTo",
@@ -141,7 +141,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jboolean GregorianCalendar::isLeapYear(jint arg0)
+	jboolean GregorianCalendar::isLeapYear(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLeapYear",
@@ -149,7 +149,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	void GregorianCalendar::roll(jint arg0, jint arg1)
+	void GregorianCalendar::roll(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"roll",
@@ -158,7 +158,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	void GregorianCalendar::setGregorianChange(java::util::Date arg0)
+	void GregorianCalendar::setGregorianChange(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"setGregorianChange",

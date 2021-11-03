@@ -55,23 +55,23 @@ namespace android::view::inputmethod
 		InputMethodInfo(JString arg0, JString arg1, JString arg2, JString arg3);
 		
 		// Methods
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		jboolean equals(JObject arg0);
-		android::content::ComponentName getComponent();
-		JString getId();
-		jint getIsDefaultResourceId();
-		JString getPackageName();
-		android::content::pm::ServiceInfo getServiceInfo();
-		JString getServiceName();
-		JString getSettingsActivity();
-		android::view::inputmethod::InputMethodSubtype getSubtypeAt(jint arg0);
-		jint getSubtypeCount();
-		jint hashCode();
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		jboolean equals(JObject arg0) const;
+		android::content::ComponentName getComponent() const;
+		JString getId() const;
+		jint getIsDefaultResourceId() const;
+		JString getPackageName() const;
+		android::content::pm::ServiceInfo getServiceInfo() const;
+		JString getServiceName() const;
+		JString getSettingsActivity() const;
+		android::view::inputmethod::InputMethodSubtype getSubtypeAt(jint arg0) const;
+		jint getSubtypeCount() const;
+		jint hashCode() const;
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

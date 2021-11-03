@@ -21,21 +21,21 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	jint UsbConfiguration::describeContents()
+	jint UsbConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint UsbConfiguration::getId()
+	jint UsbConfiguration::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	android::hardware::usb::UsbInterface UsbConfiguration::getInterface(jint arg0)
+	android::hardware::usb::UsbInterface UsbConfiguration::getInterface(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInterface",
@@ -43,49 +43,49 @@ namespace android::hardware::usb
 			arg0
 		);
 	}
-	jint UsbConfiguration::getInterfaceCount()
+	jint UsbConfiguration::getInterfaceCount() const
 	{
 		return callMethod<jint>(
 			"getInterfaceCount",
 			"()I"
 		);
 	}
-	jint UsbConfiguration::getMaxPower()
+	jint UsbConfiguration::getMaxPower() const
 	{
 		return callMethod<jint>(
 			"getMaxPower",
 			"()I"
 		);
 	}
-	JString UsbConfiguration::getName()
+	JString UsbConfiguration::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean UsbConfiguration::isRemoteWakeup()
+	jboolean UsbConfiguration::isRemoteWakeup() const
 	{
 		return callMethod<jboolean>(
 			"isRemoteWakeup",
 			"()Z"
 		);
 	}
-	jboolean UsbConfiguration::isSelfPowered()
+	jboolean UsbConfiguration::isSelfPowered() const
 	{
 		return callMethod<jboolean>(
 			"isSelfPowered",
 			"()Z"
 		);
 	}
-	JString UsbConfiguration::toString()
+	JString UsbConfiguration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UsbConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UsbConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

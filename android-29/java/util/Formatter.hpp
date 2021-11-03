@@ -64,14 +64,14 @@ namespace java::util
 		Formatter(JString arg0, java::nio::charset::Charset arg1, java::util::Locale arg2);
 		
 		// Methods
-		void close();
-		void flush();
-		java::util::Formatter format(JString arg0, JObjectArray arg1);
-		java::util::Formatter format(java::util::Locale arg0, JString arg1, JObjectArray arg2);
-		java::io::IOException ioException();
-		java::util::Locale locale();
-		JObject out();
-		JString toString();
+		void close() const;
+		void flush() const;
+		java::util::Formatter format(JString arg0, JObjectArray arg1) const;
+		java::util::Formatter format(java::util::Locale arg0, JString arg1, JObjectArray arg2) const;
+		java::io::IOException ioException() const;
+		java::util::Locale locale() const;
+		JObject out() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

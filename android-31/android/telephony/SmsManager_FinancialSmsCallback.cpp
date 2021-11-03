@@ -16,7 +16,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void SmsManager_FinancialSmsCallback::onFinancialSmsMessages(android::database::CursorWindow arg0)
+	void SmsManager_FinancialSmsCallback::onFinancialSmsMessages(android::database::CursorWindow arg0) const
 	{
 		callMethod<void>(
 			"onFinancialSmsMessages",

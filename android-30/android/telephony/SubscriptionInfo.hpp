@@ -37,31 +37,31 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		android::graphics::Bitmap createIconBitmap(android::content::Context arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getCardId();
-		jint getCarrierId();
-		JString getCarrierName();
-		JString getCountryIso();
-		jint getDataRoaming();
-		JString getDisplayName();
-		android::os::ParcelUuid getGroupUuid();
-		JString getIccId();
-		jint getIconTint();
-		jint getMcc();
-		JString getMccString();
-		jint getMnc();
-		JString getMncString();
-		JString getNumber();
-		jint getSimSlotIndex();
-		jint getSubscriptionId();
-		jint getSubscriptionType();
-		jint hashCode();
-		jboolean isEmbedded();
-		jboolean isOpportunistic();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::graphics::Bitmap createIconBitmap(android::content::Context arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getCardId() const;
+		jint getCarrierId() const;
+		JString getCarrierName() const;
+		JString getCountryIso() const;
+		jint getDataRoaming() const;
+		JString getDisplayName() const;
+		android::os::ParcelUuid getGroupUuid() const;
+		JString getIccId() const;
+		jint getIconTint() const;
+		jint getMcc() const;
+		JString getMccString() const;
+		jint getMnc() const;
+		JString getMncString() const;
+		JString getNumber() const;
+		jint getSimSlotIndex() const;
+		jint getSubscriptionId() const;
+		jint getSubscriptionType() const;
+		jint hashCode() const;
+		jboolean isEmbedded() const;
+		jboolean isOpportunistic() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

@@ -29,7 +29,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::addSanitizer(JObject arg0, JArray arg1)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::addSanitizer(JObject arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"addSanitizer",
@@ -38,14 +38,14 @@ namespace android::service::autofill
 			arg1.object<jarray>()
 		);
 	}
-	android::service::autofill::SaveInfo SaveInfo_Builder::build()
+	android::service::autofill::SaveInfo SaveInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/SaveInfo;"
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setCustomDescription(android::service::autofill::CustomDescription arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setCustomDescription(android::service::autofill::CustomDescription arg0) const
 	{
 		return callObjectMethod(
 			"setCustomDescription",
@@ -53,7 +53,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setDescription(JString arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -61,7 +61,7 @@ namespace android::service::autofill
 			arg0.object<jstring>()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setFlags(jint arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -69,7 +69,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setNegativeAction(jint arg0, android::content::IntentSender arg1)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setNegativeAction(jint arg0, android::content::IntentSender arg1) const
 	{
 		return callObjectMethod(
 			"setNegativeAction",
@@ -78,7 +78,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setOptionalIds(JArray arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setOptionalIds(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setOptionalIds",
@@ -86,7 +86,7 @@ namespace android::service::autofill
 			arg0.object<jarray>()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setTriggerId(android::view::autofill::AutofillId arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setTriggerId(android::view::autofill::AutofillId arg0) const
 	{
 		return callObjectMethod(
 			"setTriggerId",
@@ -94,7 +94,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setValidator(JObject arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setValidator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setValidator",

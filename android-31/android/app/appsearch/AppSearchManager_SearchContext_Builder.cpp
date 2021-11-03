@@ -18,7 +18,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchManager_SearchContext AppSearchManager_SearchContext_Builder::build()
+	android::app::appsearch::AppSearchManager_SearchContext AppSearchManager_SearchContext_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

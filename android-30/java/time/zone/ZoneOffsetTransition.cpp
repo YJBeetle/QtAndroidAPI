@@ -28,7 +28,7 @@ namespace java::time::zone
 			arg2.object()
 		);
 	}
-	jint ZoneOffsetTransition::compareTo(JObject arg0)
+	jint ZoneOffsetTransition::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -36,7 +36,7 @@ namespace java::time::zone
 			arg0.object<jobject>()
 		);
 	}
-	jint ZoneOffsetTransition::compareTo(java::time::zone::ZoneOffsetTransition arg0)
+	jint ZoneOffsetTransition::compareTo(java::time::zone::ZoneOffsetTransition arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -44,7 +44,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	jboolean ZoneOffsetTransition::equals(JObject arg0)
+	jboolean ZoneOffsetTransition::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -52,70 +52,70 @@ namespace java::time::zone
 			arg0.object<jobject>()
 		);
 	}
-	java::time::LocalDateTime ZoneOffsetTransition::getDateTimeAfter()
+	java::time::LocalDateTime ZoneOffsetTransition::getDateTimeAfter() const
 	{
 		return callObjectMethod(
 			"getDateTimeAfter",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	java::time::LocalDateTime ZoneOffsetTransition::getDateTimeBefore()
+	java::time::LocalDateTime ZoneOffsetTransition::getDateTimeBefore() const
 	{
 		return callObjectMethod(
 			"getDateTimeBefore",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	java::time::Duration ZoneOffsetTransition::getDuration()
+	java::time::Duration ZoneOffsetTransition::getDuration() const
 	{
 		return callObjectMethod(
 			"getDuration",
 			"()Ljava/time/Duration;"
 		);
 	}
-	java::time::Instant ZoneOffsetTransition::getInstant()
+	java::time::Instant ZoneOffsetTransition::getInstant() const
 	{
 		return callObjectMethod(
 			"getInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	java::time::ZoneOffset ZoneOffsetTransition::getOffsetAfter()
+	java::time::ZoneOffset ZoneOffsetTransition::getOffsetAfter() const
 	{
 		return callObjectMethod(
 			"getOffsetAfter",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	java::time::ZoneOffset ZoneOffsetTransition::getOffsetBefore()
+	java::time::ZoneOffset ZoneOffsetTransition::getOffsetBefore() const
 	{
 		return callObjectMethod(
 			"getOffsetBefore",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	jint ZoneOffsetTransition::hashCode()
+	jint ZoneOffsetTransition::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ZoneOffsetTransition::isGap()
+	jboolean ZoneOffsetTransition::isGap() const
 	{
 		return callMethod<jboolean>(
 			"isGap",
 			"()Z"
 		);
 	}
-	jboolean ZoneOffsetTransition::isOverlap()
+	jboolean ZoneOffsetTransition::isOverlap() const
 	{
 		return callMethod<jboolean>(
 			"isOverlap",
 			"()Z"
 		);
 	}
-	jboolean ZoneOffsetTransition::isValidOffset(java::time::ZoneOffset arg0)
+	jboolean ZoneOffsetTransition::isValidOffset(java::time::ZoneOffset arg0) const
 	{
 		return callMethod<jboolean>(
 			"isValidOffset",
@@ -123,14 +123,14 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	jlong ZoneOffsetTransition::toEpochSecond()
+	jlong ZoneOffsetTransition::toEpochSecond() const
 	{
 		return callMethod<jlong>(
 			"toEpochSecond",
 			"()J"
 		);
 	}
-	JString ZoneOffsetTransition::toString()
+	JString ZoneOffsetTransition::toString() const
 	{
 		return callObjectMethod(
 			"toString",

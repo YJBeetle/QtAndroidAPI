@@ -29,14 +29,14 @@ namespace android::app::admin
 		static android::app::admin::SystemUpdatePolicy createAutomaticInstallPolicy();
 		static android::app::admin::SystemUpdatePolicy createPostponeInstallPolicy();
 		static android::app::admin::SystemUpdatePolicy createWindowedInstallPolicy(jint arg0, jint arg1);
-		jint describeContents();
-		JObject getFreezePeriods();
-		jint getInstallWindowEnd();
-		jint getInstallWindowStart();
-		jint getPolicyType();
-		android::app::admin::SystemUpdatePolicy setFreezePeriods(JObject arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getFreezePeriods() const;
+		jint getInstallWindowEnd() const;
+		jint getInstallWindowStart() const;
+		jint getPolicyType() const;
+		android::app::admin::SystemUpdatePolicy setFreezePeriods(JObject arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::admin
 

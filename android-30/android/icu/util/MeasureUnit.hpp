@@ -165,11 +165,11 @@ namespace android::icu::util
 		static JObject getAvailable();
 		static JObject getAvailable(JString arg0);
 		static JObject getAvailableTypes();
-		jboolean equals(JObject arg0);
-		JString getSubtype();
-		JString getType();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getSubtype() const;
+		JString getType() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::util
 

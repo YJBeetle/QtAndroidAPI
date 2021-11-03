@@ -16,7 +16,7 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	void MbmsDownloadSessionCallback::onError(jint arg0, JString arg1)
+	void MbmsDownloadSessionCallback::onError(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -25,7 +25,7 @@ namespace android::telephony::mbms
 			arg1.object<jstring>()
 		);
 	}
-	void MbmsDownloadSessionCallback::onFileServicesUpdated(JObject arg0)
+	void MbmsDownloadSessionCallback::onFileServicesUpdated(JObject arg0) const
 	{
 		callMethod<void>(
 			"onFileServicesUpdated",
@@ -33,7 +33,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		);
 	}
-	void MbmsDownloadSessionCallback::onMiddlewareReady()
+	void MbmsDownloadSessionCallback::onMiddlewareReady() const
 	{
 		callMethod<void>(
 			"onMiddlewareReady",

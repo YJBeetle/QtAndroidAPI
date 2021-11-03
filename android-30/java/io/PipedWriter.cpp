@@ -23,14 +23,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void PipedWriter::close()
+	void PipedWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PipedWriter::connect(java::io::PipedReader arg0)
+	void PipedWriter::connect(java::io::PipedReader arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -38,14 +38,14 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	void PipedWriter::flush()
+	void PipedWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void PipedWriter::write(jint arg0)
+	void PipedWriter::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -53,7 +53,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PipedWriter::write(JCharArray arg0, jint arg1, jint arg2)
+	void PipedWriter::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

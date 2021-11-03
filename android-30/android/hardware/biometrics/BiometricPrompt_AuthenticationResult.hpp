@@ -21,8 +21,8 @@ namespace android::hardware::biometrics
 		// Constructors
 		
 		// Methods
-		jint getAuthenticationType();
-		android::hardware::biometrics::BiometricPrompt_CryptoObject getCryptoObject();
+		jint getAuthenticationType() const;
+		android::hardware::biometrics::BiometricPrompt_CryptoObject getCryptoObject() const;
 	};
 } // namespace android::hardware::biometrics
 

@@ -13,7 +13,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	jint CameraExtensionSession::capture(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2)
+	jint CameraExtensionSession::capture(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2) const
 	{
 		return callMethod<jint>(
 			"capture",
@@ -23,21 +23,21 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraExtensionSession::close()
+	void CameraExtensionSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::hardware::camera2::CameraDevice CameraExtensionSession::getDevice()
+	android::hardware::camera2::CameraDevice CameraExtensionSession::getDevice() const
 	{
 		return callObjectMethod(
 			"getDevice",
 			"()Landroid/hardware/camera2/CameraDevice;"
 		);
 	}
-	jint CameraExtensionSession::setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2)
+	jint CameraExtensionSession::setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2) const
 	{
 		return callMethod<jint>(
 			"setRepeatingRequest",
@@ -47,7 +47,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraExtensionSession::stopRepeating()
+	void CameraExtensionSession::stopRepeating() const
 	{
 		callMethod<void>(
 			"stopRepeating",

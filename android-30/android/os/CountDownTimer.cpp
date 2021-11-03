@@ -17,21 +17,21 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void CountDownTimer::cancel()
+	void CountDownTimer::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	void CountDownTimer::onFinish()
+	void CountDownTimer::onFinish() const
 	{
 		callMethod<void>(
 			"onFinish",
 			"()V"
 		);
 	}
-	void CountDownTimer::onTick(jlong arg0)
+	void CountDownTimer::onTick(jlong arg0) const
 	{
 		callMethod<void>(
 			"onTick",
@@ -39,7 +39,7 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::CountDownTimer CountDownTimer::start()
+	android::os::CountDownTimer CountDownTimer::start() const
 	{
 		return callObjectMethod(
 			"start",

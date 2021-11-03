@@ -14,14 +14,14 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	void ScriptGroup::destroy()
+	void ScriptGroup::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	JObjectArray ScriptGroup::execute(JObjectArray arg0)
+	JObjectArray ScriptGroup::execute(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"execute",
@@ -29,14 +29,14 @@ namespace android::renderscript
 			arg0.object<jobjectArray>()
 		);
 	}
-	void ScriptGroup::execute()
+	void ScriptGroup::execute() const
 	{
 		callMethod<void>(
 			"execute",
 			"()V"
 		);
 	}
-	void ScriptGroup::setInput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1)
+	void ScriptGroup::setInput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const
 	{
 		callMethod<void>(
 			"setInput",
@@ -45,7 +45,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptGroup::setOutput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1)
+	void ScriptGroup::setOutput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const
 	{
 		callMethod<void>(
 			"setOutput",

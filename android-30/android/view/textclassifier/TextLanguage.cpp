@@ -22,14 +22,14 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextLanguage::describeContents()
+	jint TextLanguage::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jfloat TextLanguage::getConfidenceScore(android::icu::util::ULocale arg0)
+	jfloat TextLanguage::getConfidenceScore(android::icu::util::ULocale arg0) const
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
@@ -37,21 +37,21 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::os::Bundle TextLanguage::getExtras()
+	android::os::Bundle TextLanguage::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString TextLanguage::getId()
+	JString TextLanguage::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::icu::util::ULocale TextLanguage::getLocale(jint arg0)
+	android::icu::util::ULocale TextLanguage::getLocale(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLocale",
@@ -59,21 +59,21 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	jint TextLanguage::getLocaleHypothesisCount()
+	jint TextLanguage::getLocaleHypothesisCount() const
 	{
 		return callMethod<jint>(
 			"getLocaleHypothesisCount",
 			"()I"
 		);
 	}
-	JString TextLanguage::toString()
+	JString TextLanguage::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextLanguage::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextLanguage::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

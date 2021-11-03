@@ -46,7 +46,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellSignalStrength::equals(JObject arg0)
+	jboolean CellSignalStrength::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -54,28 +54,28 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellSignalStrength::getAsuLevel()
+	jint CellSignalStrength::getAsuLevel() const
 	{
 		return callMethod<jint>(
 			"getAsuLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrength::getDbm()
+	jint CellSignalStrength::getDbm() const
 	{
 		return callMethod<jint>(
 			"getDbm",
 			"()I"
 		);
 	}
-	jint CellSignalStrength::getLevel()
+	jint CellSignalStrength::getLevel() const
 	{
 		return callMethod<jint>(
 			"getLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrength::hashCode()
+	jint CellSignalStrength::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

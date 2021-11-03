@@ -18,7 +18,7 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	jboolean ECFieldFp::equals(JObject arg0)
+	jboolean ECFieldFp::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -26,21 +26,21 @@ namespace java::security::spec
 			arg0.object<jobject>()
 		);
 	}
-	jint ECFieldFp::getFieldSize()
+	jint ECFieldFp::getFieldSize() const
 	{
 		return callMethod<jint>(
 			"getFieldSize",
 			"()I"
 		);
 	}
-	java::math::BigInteger ECFieldFp::getP()
+	java::math::BigInteger ECFieldFp::getP() const
 	{
 		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jint ECFieldFp::hashCode()
+	jint ECFieldFp::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

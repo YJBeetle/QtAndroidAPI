@@ -22,7 +22,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	jlong AtomicLong::accumulateAndGet(jlong arg0, JObject arg1)
+	jlong AtomicLong::accumulateAndGet(jlong arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"accumulateAndGet",
@@ -31,7 +31,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jlong AtomicLong::addAndGet(jlong arg0)
+	jlong AtomicLong::addAndGet(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"addAndGet",
@@ -39,7 +39,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jlong AtomicLong::compareAndExchange(jlong arg0, jlong arg1)
+	jlong AtomicLong::compareAndExchange(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"compareAndExchange",
@@ -48,7 +48,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLong::compareAndExchangeAcquire(jlong arg0, jlong arg1)
+	jlong AtomicLong::compareAndExchangeAcquire(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"compareAndExchangeAcquire",
@@ -57,7 +57,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLong::compareAndExchangeRelease(jlong arg0, jlong arg1)
+	jlong AtomicLong::compareAndExchangeRelease(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"compareAndExchangeRelease",
@@ -66,7 +66,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicLong::compareAndSet(jlong arg0, jlong arg1)
+	jboolean AtomicLong::compareAndSet(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -75,42 +75,42 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLong::decrementAndGet()
+	jlong AtomicLong::decrementAndGet() const
 	{
 		return callMethod<jlong>(
 			"decrementAndGet",
 			"()J"
 		);
 	}
-	jdouble AtomicLong::doubleValue()
+	jdouble AtomicLong::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jfloat AtomicLong::floatValue()
+	jfloat AtomicLong::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jlong AtomicLong::get()
+	jlong AtomicLong::get() const
 	{
 		return callMethod<jlong>(
 			"get",
 			"()J"
 		);
 	}
-	jlong AtomicLong::getAcquire()
+	jlong AtomicLong::getAcquire() const
 	{
 		return callMethod<jlong>(
 			"getAcquire",
 			"()J"
 		);
 	}
-	jlong AtomicLong::getAndAccumulate(jlong arg0, JObject arg1)
+	jlong AtomicLong::getAndAccumulate(jlong arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"getAndAccumulate",
@@ -119,7 +119,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jlong AtomicLong::getAndAdd(jlong arg0)
+	jlong AtomicLong::getAndAdd(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"getAndAdd",
@@ -127,21 +127,21 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jlong AtomicLong::getAndDecrement()
+	jlong AtomicLong::getAndDecrement() const
 	{
 		return callMethod<jlong>(
 			"getAndDecrement",
 			"()J"
 		);
 	}
-	jlong AtomicLong::getAndIncrement()
+	jlong AtomicLong::getAndIncrement() const
 	{
 		return callMethod<jlong>(
 			"getAndIncrement",
 			"()J"
 		);
 	}
-	jlong AtomicLong::getAndSet(jlong arg0)
+	jlong AtomicLong::getAndSet(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"getAndSet",
@@ -149,7 +149,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jlong AtomicLong::getAndUpdate(JObject arg0)
+	jlong AtomicLong::getAndUpdate(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getAndUpdate",
@@ -157,35 +157,35 @@ namespace java::util::concurrent::atomic
 			arg0.object()
 		);
 	}
-	jlong AtomicLong::getOpaque()
+	jlong AtomicLong::getOpaque() const
 	{
 		return callMethod<jlong>(
 			"getOpaque",
 			"()J"
 		);
 	}
-	jlong AtomicLong::getPlain()
+	jlong AtomicLong::getPlain() const
 	{
 		return callMethod<jlong>(
 			"getPlain",
 			"()J"
 		);
 	}
-	jlong AtomicLong::incrementAndGet()
+	jlong AtomicLong::incrementAndGet() const
 	{
 		return callMethod<jlong>(
 			"incrementAndGet",
 			"()J"
 		);
 	}
-	jint AtomicLong::intValue()
+	jint AtomicLong::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	void AtomicLong::lazySet(jlong arg0)
+	void AtomicLong::lazySet(jlong arg0) const
 	{
 		callMethod<void>(
 			"lazySet",
@@ -193,14 +193,14 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jlong AtomicLong::longValue()
+	jlong AtomicLong::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	void AtomicLong::set(jlong arg0)
+	void AtomicLong::set(jlong arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -208,7 +208,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicLong::setOpaque(jlong arg0)
+	void AtomicLong::setOpaque(jlong arg0) const
 	{
 		callMethod<void>(
 			"setOpaque",
@@ -216,7 +216,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicLong::setPlain(jlong arg0)
+	void AtomicLong::setPlain(jlong arg0) const
 	{
 		callMethod<void>(
 			"setPlain",
@@ -224,7 +224,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicLong::setRelease(jlong arg0)
+	void AtomicLong::setRelease(jlong arg0) const
 	{
 		callMethod<void>(
 			"setRelease",
@@ -232,14 +232,14 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	JString AtomicLong::toString()
+	JString AtomicLong::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong AtomicLong::updateAndGet(JObject arg0)
+	jlong AtomicLong::updateAndGet(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"updateAndGet",
@@ -247,7 +247,7 @@ namespace java::util::concurrent::atomic
 			arg0.object()
 		);
 	}
-	jboolean AtomicLong::weakCompareAndSet(jlong arg0, jlong arg1)
+	jboolean AtomicLong::weakCompareAndSet(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",
@@ -256,7 +256,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicLong::weakCompareAndSetAcquire(jlong arg0, jlong arg1)
+	jboolean AtomicLong::weakCompareAndSetAcquire(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetAcquire",
@@ -265,7 +265,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicLong::weakCompareAndSetPlain(jlong arg0, jlong arg1)
+	jboolean AtomicLong::weakCompareAndSetPlain(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetPlain",
@@ -274,7 +274,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicLong::weakCompareAndSetRelease(jlong arg0, jlong arg1)
+	jboolean AtomicLong::weakCompareAndSetRelease(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetRelease",
@@ -283,7 +283,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicLong::weakCompareAndSetVolatile(jlong arg0, jlong arg1)
+	jboolean AtomicLong::weakCompareAndSetVolatile(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetVolatile",

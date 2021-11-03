@@ -24,14 +24,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject SplittableRandom::doubles()
+	JObject SplittableRandom::doubles() const
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	JObject SplittableRandom::doubles(jlong arg0)
+	JObject SplittableRandom::doubles(jlong arg0) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -39,7 +39,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject SplittableRandom::doubles(jdouble arg0, jdouble arg1)
+	JObject SplittableRandom::doubles(jdouble arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -48,7 +48,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject SplittableRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	JObject SplittableRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -58,14 +58,14 @@ namespace java::util
 			arg2
 		);
 	}
-	JObject SplittableRandom::ints()
+	JObject SplittableRandom::ints() const
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	JObject SplittableRandom::ints(jlong arg0)
+	JObject SplittableRandom::ints(jlong arg0) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -73,7 +73,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject SplittableRandom::ints(jint arg0, jint arg1)
+	JObject SplittableRandom::ints(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -82,7 +82,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject SplittableRandom::ints(jlong arg0, jint arg1, jint arg2)
+	JObject SplittableRandom::ints(jlong arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -92,14 +92,14 @@ namespace java::util
 			arg2
 		);
 	}
-	JObject SplittableRandom::longs()
+	JObject SplittableRandom::longs() const
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	JObject SplittableRandom::longs(jlong arg0)
+	JObject SplittableRandom::longs(jlong arg0) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -107,7 +107,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject SplittableRandom::longs(jlong arg0, jlong arg1)
+	JObject SplittableRandom::longs(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -116,7 +116,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject SplittableRandom::longs(jlong arg0, jlong arg1, jlong arg2)
+	JObject SplittableRandom::longs(jlong arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -126,14 +126,14 @@ namespace java::util
 			arg2
 		);
 	}
-	jboolean SplittableRandom::nextBoolean()
+	jboolean SplittableRandom::nextBoolean() const
 	{
 		return callMethod<jboolean>(
 			"nextBoolean",
 			"()Z"
 		);
 	}
-	void SplittableRandom::nextBytes(JByteArray arg0)
+	void SplittableRandom::nextBytes(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"nextBytes",
@@ -141,14 +141,14 @@ namespace java::util
 			arg0.object<jbyteArray>()
 		);
 	}
-	jdouble SplittableRandom::nextDouble()
+	jdouble SplittableRandom::nextDouble() const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
 			"()D"
 		);
 	}
-	jdouble SplittableRandom::nextDouble(jdouble arg0)
+	jdouble SplittableRandom::nextDouble(jdouble arg0) const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
@@ -156,7 +156,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jdouble SplittableRandom::nextDouble(jdouble arg0, jdouble arg1)
+	jdouble SplittableRandom::nextDouble(jdouble arg0, jdouble arg1) const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
@@ -165,14 +165,14 @@ namespace java::util
 			arg1
 		);
 	}
-	jint SplittableRandom::nextInt()
+	jint SplittableRandom::nextInt() const
 	{
 		return callMethod<jint>(
 			"nextInt",
 			"()I"
 		);
 	}
-	jint SplittableRandom::nextInt(jint arg0)
+	jint SplittableRandom::nextInt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"nextInt",
@@ -180,7 +180,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint SplittableRandom::nextInt(jint arg0, jint arg1)
+	jint SplittableRandom::nextInt(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"nextInt",
@@ -189,14 +189,14 @@ namespace java::util
 			arg1
 		);
 	}
-	jlong SplittableRandom::nextLong()
+	jlong SplittableRandom::nextLong() const
 	{
 		return callMethod<jlong>(
 			"nextLong",
 			"()J"
 		);
 	}
-	jlong SplittableRandom::nextLong(jlong arg0)
+	jlong SplittableRandom::nextLong(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"nextLong",
@@ -204,7 +204,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jlong SplittableRandom::nextLong(jlong arg0, jlong arg1)
+	jlong SplittableRandom::nextLong(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"nextLong",
@@ -213,7 +213,7 @@ namespace java::util
 			arg1
 		);
 	}
-	java::util::SplittableRandom SplittableRandom::split()
+	java::util::SplittableRandom SplittableRandom::split() const
 	{
 		return callObjectMethod(
 			"split",

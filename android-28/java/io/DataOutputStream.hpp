@@ -24,21 +24,21 @@ namespace java::io
 		DataOutputStream(java::io::OutputStream arg0);
 		
 		// Methods
-		void flush();
-		jint size();
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
-		void writeBoolean(jboolean arg0);
-		void writeByte(jint arg0);
-		void writeBytes(JString arg0);
-		void writeChar(jint arg0);
-		void writeChars(JString arg0);
-		void writeDouble(jdouble arg0);
-		void writeFloat(jfloat arg0);
-		void writeInt(jint arg0);
-		void writeLong(jlong arg0);
-		void writeShort(jint arg0);
-		void writeUTF(JString arg0);
+		void flush() const;
+		jint size() const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
+		void writeBoolean(jboolean arg0) const;
+		void writeByte(jint arg0) const;
+		void writeBytes(JString arg0) const;
+		void writeChar(jint arg0) const;
+		void writeChars(JString arg0) const;
+		void writeDouble(jdouble arg0) const;
+		void writeFloat(jfloat arg0) const;
+		void writeInt(jint arg0) const;
+		void writeLong(jlong arg0) const;
+		void writeShort(jint arg0) const;
+		void writeUTF(JString arg0) const;
 	};
 } // namespace java::io
 

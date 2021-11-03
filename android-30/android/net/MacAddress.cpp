@@ -70,14 +70,14 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	jint MacAddress::describeContents()
+	jint MacAddress::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MacAddress::equals(JObject arg0)
+	jboolean MacAddress::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -85,35 +85,35 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	jint MacAddress::getAddressType()
+	jint MacAddress::getAddressType() const
 	{
 		return callMethod<jint>(
 			"getAddressType",
 			"()I"
 		);
 	}
-	java::net::Inet6Address MacAddress::getLinkLocalIpv6FromEui48Mac()
+	java::net::Inet6Address MacAddress::getLinkLocalIpv6FromEui48Mac() const
 	{
 		return callObjectMethod(
 			"getLinkLocalIpv6FromEui48Mac",
 			"()Ljava/net/Inet6Address;"
 		);
 	}
-	jint MacAddress::hashCode()
+	jint MacAddress::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean MacAddress::isLocallyAssigned()
+	jboolean MacAddress::isLocallyAssigned() const
 	{
 		return callMethod<jboolean>(
 			"isLocallyAssigned",
 			"()Z"
 		);
 	}
-	jboolean MacAddress::matches(android::net::MacAddress arg0, android::net::MacAddress arg1)
+	jboolean MacAddress::matches(android::net::MacAddress arg0, android::net::MacAddress arg1) const
 	{
 		return callMethod<jboolean>(
 			"matches",
@@ -122,28 +122,28 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	JByteArray MacAddress::toByteArray()
+	JByteArray MacAddress::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	JString MacAddress::toOuiString()
+	JString MacAddress::toOuiString() const
 	{
 		return callObjectMethod(
 			"toOuiString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MacAddress::toString()
+	JString MacAddress::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MacAddress::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MacAddress::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

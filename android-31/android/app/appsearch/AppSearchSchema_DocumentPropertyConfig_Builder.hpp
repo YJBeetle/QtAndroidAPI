@@ -23,9 +23,9 @@ namespace android::app::appsearch
 		AppSearchSchema_DocumentPropertyConfig_Builder(JString arg0, JString arg1);
 		
 		// Methods
-		android::app::appsearch::AppSearchSchema_DocumentPropertyConfig build();
-		android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder setCardinality(jint arg0);
-		android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder setShouldIndexNestedProperties(jboolean arg0);
+		android::app::appsearch::AppSearchSchema_DocumentPropertyConfig build() const;
+		android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder setCardinality(jint arg0) const;
+		android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder setShouldIndexNestedProperties(jboolean arg0) const;
 	};
 } // namespace android::app::appsearch
 

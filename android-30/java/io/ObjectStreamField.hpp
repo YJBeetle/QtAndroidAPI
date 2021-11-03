@@ -30,15 +30,15 @@ namespace java::io
 		ObjectStreamField(JString arg0, JClass arg1, jboolean arg2);
 		
 		// Methods
-		jint compareTo(JObject arg0);
-		JString getName();
-		jint getOffset();
-		JClass getType();
-		jchar getTypeCode();
-		JString getTypeString();
-		jboolean isPrimitive();
-		jboolean isUnshared();
-		JString toString();
+		jint compareTo(JObject arg0) const;
+		JString getName() const;
+		jint getOffset() const;
+		JClass getType() const;
+		jchar getTypeCode() const;
+		JString getTypeString() const;
+		jboolean isPrimitive() const;
+		jboolean isUnshared() const;
+		JString toString() const;
 	};
 } // namespace java::io
 

@@ -19,9 +19,9 @@ namespace android::print
 		// Constructors
 		
 		// Methods
-		void onWriteCancelled();
-		void onWriteFailed(JString arg0);
-		void onWriteFinished(JArray arg0);
+		void onWriteCancelled() const;
+		void onWriteFailed(JString arg0) const;
+		void onWriteFinished(JArray arg0) const;
 	};
 } // namespace android::print
 

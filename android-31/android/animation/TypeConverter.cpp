@@ -19,7 +19,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	JObject TypeConverter::convert(JObject arg0)
+	JObject TypeConverter::convert(JObject arg0) const
 	{
 		return callObjectMethod(
 			"convert",

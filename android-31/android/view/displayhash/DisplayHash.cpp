@@ -20,21 +20,21 @@ namespace android::view::displayhash
 	// Constructors
 	
 	// Methods
-	jint DisplayHash::describeContents()
+	jint DisplayHash::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString DisplayHash::toString()
+	JString DisplayHash::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DisplayHash::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DisplayHash::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

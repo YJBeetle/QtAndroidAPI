@@ -25,7 +25,7 @@ namespace android::hardware
 		Camera_Area(android::graphics::Rect arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
+		jboolean equals(JObject arg0) const;
 	};
 } // namespace android::hardware
 

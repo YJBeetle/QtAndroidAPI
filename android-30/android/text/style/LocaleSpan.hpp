@@ -36,13 +36,13 @@ namespace android::text::style
 		LocaleSpan(java::util::Locale arg0);
 		
 		// Methods
-		jint describeContents();
-		java::util::Locale getLocale();
-		android::os::LocaleList getLocales();
-		jint getSpanTypeId();
-		void updateDrawState(android::text::TextPaint arg0);
-		void updateMeasureState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		java::util::Locale getLocale() const;
+		android::os::LocaleList getLocales() const;
+		jint getSpanTypeId() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void updateMeasureState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

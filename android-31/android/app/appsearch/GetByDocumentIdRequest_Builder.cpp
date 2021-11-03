@@ -19,7 +19,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(JArray arg0)
+	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addIds",
@@ -27,7 +27,7 @@ namespace android::app::appsearch
 			arg0.object<jarray>()
 		);
 	}
-	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(JObject arg0)
+	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addIds",
@@ -35,7 +35,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addProjection(JString arg0, JObject arg1)
+	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addProjection(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"addProjection",
@@ -44,7 +44,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	android::app::appsearch::GetByDocumentIdRequest GetByDocumentIdRequest_Builder::build()
+	android::app::appsearch::GetByDocumentIdRequest GetByDocumentIdRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

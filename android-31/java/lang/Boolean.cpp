@@ -144,14 +144,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Boolean::booleanValue()
+	jboolean Boolean::booleanValue() const
 	{
 		return callMethod<jboolean>(
 			"booleanValue",
 			"()Z"
 		);
 	}
-	jint Boolean::compareTo(java::lang::Boolean arg0)
+	jint Boolean::compareTo(java::lang::Boolean arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -159,7 +159,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Boolean::compareTo(JObject arg0)
+	jint Boolean::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -167,14 +167,14 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Boolean::describeConstable()
+	java::util::Optional Boolean::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jboolean Boolean::equals(JObject arg0)
+	jboolean Boolean::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -182,14 +182,14 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jint Boolean::hashCode()
+	jint Boolean::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Boolean::toString()
+	JString Boolean::toString() const
 	{
 		return callObjectMethod(
 			"toString",

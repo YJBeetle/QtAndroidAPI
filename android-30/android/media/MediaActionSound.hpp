@@ -21,9 +21,9 @@ namespace android::media
 		MediaActionSound();
 		
 		// Methods
-		void load(jint arg0);
-		void play(jint arg0);
-		void release();
+		void load(jint arg0) const;
+		void play(jint arg0) const;
+		void release() const;
 	};
 } // namespace android::media
 

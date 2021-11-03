@@ -29,9 +29,9 @@ namespace android::app::admin
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getErrorCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getErrorCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::admin
 

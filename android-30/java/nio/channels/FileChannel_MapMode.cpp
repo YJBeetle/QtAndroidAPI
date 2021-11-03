@@ -35,7 +35,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	JString FileChannel_MapMode::toString()
+	JString FileChannel_MapMode::toString() const
 	{
 		return callObjectMethod(
 			"toString",

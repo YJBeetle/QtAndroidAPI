@@ -27,23 +27,23 @@ namespace android::net::wifi::hotspot2::pps
 		HomeSp(android::net::wifi::hotspot2::pps::HomeSp &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getFqdn();
-		JString getFriendlyName();
-		JLongArray getMatchAllOis();
-		JLongArray getMatchAnyOis();
-		JObject getOtherHomePartnersList();
-		JLongArray getRoamingConsortiumOis();
-		jint hashCode();
-		void setFqdn(JString arg0);
-		void setFriendlyName(JString arg0);
-		void setMatchAllOis(JLongArray arg0);
-		void setMatchAnyOis(JLongArray arg0);
-		void setOtherHomePartnersList(JObject arg0);
-		void setRoamingConsortiumOis(JLongArray arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getFqdn() const;
+		JString getFriendlyName() const;
+		JLongArray getMatchAllOis() const;
+		JLongArray getMatchAnyOis() const;
+		JObject getOtherHomePartnersList() const;
+		JLongArray getRoamingConsortiumOis() const;
+		jint hashCode() const;
+		void setFqdn(JString arg0) const;
+		void setFriendlyName(JString arg0) const;
+		void setMatchAllOis(JLongArray arg0) const;
+		void setMatchAnyOis(JLongArray arg0) const;
+		void setOtherHomePartnersList(JObject arg0) const;
+		void setRoamingConsortiumOis(JLongArray arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::hotspot2::pps
 

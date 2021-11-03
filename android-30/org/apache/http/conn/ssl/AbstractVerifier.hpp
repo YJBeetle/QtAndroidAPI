@@ -32,10 +32,10 @@ namespace org::apache::http::conn::ssl
 		static jint countDots(JString arg0);
 		static JArray getCNs(java::security::cert::X509Certificate arg0);
 		static JArray getDNSSubjectAlts(java::security::cert::X509Certificate arg0);
-		jboolean verify(JString arg0, JObject arg1);
-		void verify(JString arg0, java::security::cert::X509Certificate arg1);
-		void verify(JString arg0, javax::net::ssl::SSLSocket arg1);
-		void verify(JString arg0, JArray arg1, JArray arg2, jboolean arg3);
+		jboolean verify(JString arg0, JObject arg1) const;
+		void verify(JString arg0, java::security::cert::X509Certificate arg1) const;
+		void verify(JString arg0, javax::net::ssl::SSLSocket arg1) const;
+		void verify(JString arg0, JArray arg1, JArray arg2, jboolean arg3) const;
 	};
 } // namespace org::apache::http::conn::ssl
 

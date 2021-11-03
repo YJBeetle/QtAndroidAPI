@@ -16,8 +16,8 @@ namespace java::nio::channels::spi
 		// Constructors
 		
 		// Methods
-		void cancel();
-		jboolean isValid();
+		void cancel() const;
+		jboolean isValid() const;
 	};
 } // namespace java::nio::channels::spi
 

@@ -27,7 +27,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean DelayQueue::add(JObject arg0)
+	jboolean DelayQueue::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -35,14 +35,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void DelayQueue::clear()
+	void DelayQueue::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jint DelayQueue::drainTo(JObject arg0)
+	jint DelayQueue::drainTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -50,7 +50,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint DelayQueue::drainTo(JObject arg0, jint arg1)
+	jint DelayQueue::drainTo(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -59,14 +59,14 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	JObject DelayQueue::iterator()
+	JObject DelayQueue::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean DelayQueue::offer(JObject arg0)
+	jboolean DelayQueue::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -74,7 +74,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean DelayQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean DelayQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -84,21 +84,21 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject DelayQueue::peek()
+	JObject DelayQueue::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	JObject DelayQueue::poll()
+	JObject DelayQueue::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	JObject DelayQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject DelayQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"poll",
@@ -107,7 +107,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void DelayQueue::put(JObject arg0)
+	void DelayQueue::put(JObject arg0) const
 	{
 		callMethod<void>(
 			"put",
@@ -115,14 +115,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint DelayQueue::remainingCapacity()
+	jint DelayQueue::remainingCapacity() const
 	{
 		return callMethod<jint>(
 			"remainingCapacity",
 			"()I"
 		);
 	}
-	jboolean DelayQueue::remove(JObject arg0)
+	jboolean DelayQueue::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -130,28 +130,28 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint DelayQueue::size()
+	jint DelayQueue::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject DelayQueue::take()
+	JObject DelayQueue::take() const
 	{
 		return callObjectMethod(
 			"take",
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	JObjectArray DelayQueue::toArray()
+	JObjectArray DelayQueue::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray DelayQueue::toArray(JObjectArray arg0)
+	JObjectArray DelayQueue::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",

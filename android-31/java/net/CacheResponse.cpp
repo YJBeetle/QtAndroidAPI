@@ -16,14 +16,14 @@ namespace java::net
 		) {}
 	
 	// Methods
-	java::io::InputStream CacheResponse::getBody()
+	java::io::InputStream CacheResponse::getBody() const
 	{
 		return callObjectMethod(
 			"getBody",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	JObject CacheResponse::getHeaders()
+	JObject CacheResponse::getHeaders() const
 	{
 		return callObjectMethod(
 			"getHeaders",

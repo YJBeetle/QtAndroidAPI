@@ -31,23 +31,23 @@ namespace android::media
 		SoundPool(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		void autoPause();
-		void autoResume();
-		jint load(android::content::res::AssetFileDescriptor arg0, jint arg1);
-		jint load(JString arg0, jint arg1);
-		jint load(android::content::Context arg0, jint arg1, jint arg2);
-		jint load(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jint arg3);
-		void pause(jint arg0);
-		jint play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5);
-		void release();
-		void resume(jint arg0);
-		void setLoop(jint arg0, jint arg1);
-		void setOnLoadCompleteListener(JObject arg0);
-		void setPriority(jint arg0, jint arg1);
-		void setRate(jint arg0, jfloat arg1);
-		void setVolume(jint arg0, jfloat arg1, jfloat arg2);
-		void stop(jint arg0);
-		jboolean unload(jint arg0);
+		void autoPause() const;
+		void autoResume() const;
+		jint load(android::content::res::AssetFileDescriptor arg0, jint arg1) const;
+		jint load(JString arg0, jint arg1) const;
+		jint load(android::content::Context arg0, jint arg1, jint arg2) const;
+		jint load(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jint arg3) const;
+		void pause(jint arg0) const;
+		jint play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5) const;
+		void release() const;
+		void resume(jint arg0) const;
+		void setLoop(jint arg0, jint arg1) const;
+		void setOnLoadCompleteListener(JObject arg0) const;
+		void setPriority(jint arg0, jint arg1) const;
+		void setRate(jint arg0, jfloat arg1) const;
+		void setVolume(jint arg0, jfloat arg1, jfloat arg2) const;
+		void stop(jint arg0) const;
+		jboolean unload(jint arg0) const;
 	};
 } // namespace android::media
 

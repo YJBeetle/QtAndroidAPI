@@ -51,23 +51,23 @@ namespace android::preference
 		PreferenceFragment();
 		
 		// Methods
-		void addPreferencesFromIntent(android::content::Intent arg0);
-		void addPreferencesFromResource(jint arg0);
-		android::preference::Preference findPreference(JString arg0);
-		android::preference::PreferenceManager getPreferenceManager();
-		android::preference::PreferenceScreen getPreferenceScreen();
-		void onActivityCreated(android::os::Bundle arg0);
-		void onActivityResult(jint arg0, jint arg1, android::content::Intent arg2);
-		void onCreate(android::os::Bundle arg0);
-		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
-		void onDestroy();
-		void onDestroyView();
-		jboolean onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1);
-		void onSaveInstanceState(android::os::Bundle arg0);
-		void onStart();
-		void onStop();
-		void onViewCreated(android::view::View arg0, android::os::Bundle arg1);
-		void setPreferenceScreen(android::preference::PreferenceScreen arg0);
+		void addPreferencesFromIntent(android::content::Intent arg0) const;
+		void addPreferencesFromResource(jint arg0) const;
+		android::preference::Preference findPreference(JString arg0) const;
+		android::preference::PreferenceManager getPreferenceManager() const;
+		android::preference::PreferenceScreen getPreferenceScreen() const;
+		void onActivityCreated(android::os::Bundle arg0) const;
+		void onActivityResult(jint arg0, jint arg1, android::content::Intent arg2) const;
+		void onCreate(android::os::Bundle arg0) const;
+		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const;
+		void onDestroy() const;
+		void onDestroyView() const;
+		jboolean onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1) const;
+		void onSaveInstanceState(android::os::Bundle arg0) const;
+		void onStart() const;
+		void onStop() const;
+		void onViewCreated(android::view::View arg0, android::os::Bundle arg1) const;
+		void setPreferenceScreen(android::preference::PreferenceScreen arg0) const;
 	};
 } // namespace android::preference
 

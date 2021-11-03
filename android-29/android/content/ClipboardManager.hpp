@@ -26,16 +26,16 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		void addPrimaryClipChangedListener(JObject arg0);
-		void clearPrimaryClip();
-		android::content::ClipData getPrimaryClip();
-		android::content::ClipDescription getPrimaryClipDescription();
-		JString getText();
-		jboolean hasPrimaryClip();
-		jboolean hasText();
-		void removePrimaryClipChangedListener(JObject arg0);
-		void setPrimaryClip(android::content::ClipData arg0);
-		void setText(JString arg0);
+		void addPrimaryClipChangedListener(JObject arg0) const;
+		void clearPrimaryClip() const;
+		android::content::ClipData getPrimaryClip() const;
+		android::content::ClipDescription getPrimaryClipDescription() const;
+		JString getText() const;
+		jboolean hasPrimaryClip() const;
+		jboolean hasText() const;
+		void removePrimaryClipChangedListener(JObject arg0) const;
+		void setPrimaryClip(android::content::ClipData arg0) const;
+		void setText(JString arg0) const;
 	};
 } // namespace android::content
 

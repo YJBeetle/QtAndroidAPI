@@ -25,9 +25,9 @@ namespace android::accessibilityservice
 		// Constructors
 		
 		// Methods
-		android::graphics::ColorSpace getColorSpace();
-		android::hardware::HardwareBuffer getHardwareBuffer();
-		jlong getTimestamp();
+		android::graphics::ColorSpace getColorSpace() const;
+		android::hardware::HardwareBuffer getHardwareBuffer() const;
+		jlong getTimestamp() const;
 	};
 } // namespace android::accessibilityservice
 

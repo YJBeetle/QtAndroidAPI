@@ -32,14 +32,14 @@ namespace android::os
 		static android::os::MessageQueue myQueue();
 		static void prepare();
 		static void prepareMainLooper();
-		void dump(JObject arg0, JString arg1);
-		android::os::MessageQueue getQueue();
-		java::lang::Thread getThread();
-		jboolean isCurrentThread();
-		void quit();
-		void quitSafely();
-		void setMessageLogging(JObject arg0);
-		JString toString();
+		void dump(JObject arg0, JString arg1) const;
+		android::os::MessageQueue getQueue() const;
+		java::lang::Thread getThread() const;
+		jboolean isCurrentThread() const;
+		void quit() const;
+		void quitSafely() const;
+		void setMessageLogging(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace android::os
 

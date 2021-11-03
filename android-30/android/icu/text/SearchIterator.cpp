@@ -20,14 +20,14 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jint SearchIterator::first()
+	jint SearchIterator::first() const
 	{
 		return callMethod<jint>(
 			"first",
 			"()I"
 		);
 	}
-	jint SearchIterator::following(jint arg0)
+	jint SearchIterator::following(jint arg0) const
 	{
 		return callMethod<jint>(
 			"following",
@@ -35,77 +35,77 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::BreakIterator SearchIterator::getBreakIterator()
+	android::icu::text::BreakIterator SearchIterator::getBreakIterator() const
 	{
 		return callObjectMethod(
 			"getBreakIterator",
 			"()Landroid/icu/text/BreakIterator;"
 		);
 	}
-	android::icu::text::SearchIterator_ElementComparisonType SearchIterator::getElementComparisonType()
+	android::icu::text::SearchIterator_ElementComparisonType SearchIterator::getElementComparisonType() const
 	{
 		return callObjectMethod(
 			"getElementComparisonType",
 			"()Landroid/icu/text/SearchIterator$ElementComparisonType;"
 		);
 	}
-	jint SearchIterator::getIndex()
+	jint SearchIterator::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	jint SearchIterator::getMatchLength()
+	jint SearchIterator::getMatchLength() const
 	{
 		return callMethod<jint>(
 			"getMatchLength",
 			"()I"
 		);
 	}
-	jint SearchIterator::getMatchStart()
+	jint SearchIterator::getMatchStart() const
 	{
 		return callMethod<jint>(
 			"getMatchStart",
 			"()I"
 		);
 	}
-	JString SearchIterator::getMatchedText()
+	JString SearchIterator::getMatchedText() const
 	{
 		return callObjectMethod(
 			"getMatchedText",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SearchIterator::getTarget()
+	JObject SearchIterator::getTarget() const
 	{
 		return callObjectMethod(
 			"getTarget",
 			"()Ljava/text/CharacterIterator;"
 		);
 	}
-	jboolean SearchIterator::isOverlapping()
+	jboolean SearchIterator::isOverlapping() const
 	{
 		return callMethod<jboolean>(
 			"isOverlapping",
 			"()Z"
 		);
 	}
-	jint SearchIterator::last()
+	jint SearchIterator::last() const
 	{
 		return callMethod<jint>(
 			"last",
 			"()I"
 		);
 	}
-	jint SearchIterator::next()
+	jint SearchIterator::next() const
 	{
 		return callMethod<jint>(
 			"next",
 			"()I"
 		);
 	}
-	jint SearchIterator::preceding(jint arg0)
+	jint SearchIterator::preceding(jint arg0) const
 	{
 		return callMethod<jint>(
 			"preceding",
@@ -113,21 +113,21 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint SearchIterator::previous()
+	jint SearchIterator::previous() const
 	{
 		return callMethod<jint>(
 			"previous",
 			"()I"
 		);
 	}
-	void SearchIterator::reset()
+	void SearchIterator::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void SearchIterator::setBreakIterator(android::icu::text::BreakIterator arg0)
+	void SearchIterator::setBreakIterator(android::icu::text::BreakIterator arg0) const
 	{
 		callMethod<void>(
 			"setBreakIterator",
@@ -135,7 +135,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void SearchIterator::setElementComparisonType(android::icu::text::SearchIterator_ElementComparisonType arg0)
+	void SearchIterator::setElementComparisonType(android::icu::text::SearchIterator_ElementComparisonType arg0) const
 	{
 		callMethod<void>(
 			"setElementComparisonType",
@@ -143,7 +143,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void SearchIterator::setIndex(jint arg0)
+	void SearchIterator::setIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setIndex",
@@ -151,7 +151,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void SearchIterator::setOverlapping(jboolean arg0)
+	void SearchIterator::setOverlapping(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOverlapping",
@@ -159,7 +159,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void SearchIterator::setTarget(JObject arg0)
+	void SearchIterator::setTarget(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTarget",

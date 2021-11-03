@@ -26,56 +26,56 @@ namespace android::app
 		) {}
 	
 	// Methods
-	JString ActionBar_Tab::getContentDescription()
+	JString ActionBar_Tab::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View ActionBar_Tab::getCustomView()
+	android::view::View ActionBar_Tab::getCustomView() const
 	{
 		return callObjectMethod(
 			"getCustomView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::graphics::drawable::Drawable ActionBar_Tab::getIcon()
+	android::graphics::drawable::Drawable ActionBar_Tab::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint ActionBar_Tab::getPosition()
+	jint ActionBar_Tab::getPosition() const
 	{
 		return callMethod<jint>(
 			"getPosition",
 			"()I"
 		);
 	}
-	JObject ActionBar_Tab::getTag()
+	JObject ActionBar_Tab::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString ActionBar_Tab::getText()
+	JString ActionBar_Tab::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void ActionBar_Tab::select()
+	void ActionBar_Tab::select() const
 	{
 		callMethod<void>(
 			"select",
 			"()V"
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(jint arg0) const
 	{
 		return callObjectMethod(
 			"setContentDescription",
@@ -83,7 +83,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(JString arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setContentDescription",
@@ -91,7 +91,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setCustomView(android::view::View arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setCustomView(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"setCustomView",
@@ -99,7 +99,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setCustomView(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setCustomView(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCustomView",
@@ -107,7 +107,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setIcon(android::graphics::drawable::Drawable arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -115,7 +115,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setIcon(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setIcon(jint arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -123,7 +123,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setTabListener(JObject arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setTabListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setTabListener",
@@ -131,7 +131,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setTag(JObject arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setTag(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setTag",
@@ -139,7 +139,7 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setText(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setText(jint arg0) const
 	{
 		return callObjectMethod(
 			"setText",
@@ -147,7 +147,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setText(JString arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setText",

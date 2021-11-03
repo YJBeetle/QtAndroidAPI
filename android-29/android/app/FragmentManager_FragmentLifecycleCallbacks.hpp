@@ -38,20 +38,20 @@ namespace android::app
 		FragmentManager_FragmentLifecycleCallbacks();
 		
 		// Methods
-		void onFragmentActivityCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2);
-		void onFragmentAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2);
-		void onFragmentCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2);
-		void onFragmentDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1);
-		void onFragmentDetached(android::app::FragmentManager arg0, android::app::Fragment arg1);
-		void onFragmentPaused(android::app::FragmentManager arg0, android::app::Fragment arg1);
-		void onFragmentPreAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2);
-		void onFragmentPreCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2);
-		void onFragmentResumed(android::app::FragmentManager arg0, android::app::Fragment arg1);
-		void onFragmentSaveInstanceState(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2);
-		void onFragmentStarted(android::app::FragmentManager arg0, android::app::Fragment arg1);
-		void onFragmentStopped(android::app::FragmentManager arg0, android::app::Fragment arg1);
-		void onFragmentViewCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::view::View arg2, android::os::Bundle arg3);
-		void onFragmentViewDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1);
+		void onFragmentActivityCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const;
+		void onFragmentAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2) const;
+		void onFragmentCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const;
+		void onFragmentDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1) const;
+		void onFragmentDetached(android::app::FragmentManager arg0, android::app::Fragment arg1) const;
+		void onFragmentPaused(android::app::FragmentManager arg0, android::app::Fragment arg1) const;
+		void onFragmentPreAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2) const;
+		void onFragmentPreCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const;
+		void onFragmentResumed(android::app::FragmentManager arg0, android::app::Fragment arg1) const;
+		void onFragmentSaveInstanceState(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const;
+		void onFragmentStarted(android::app::FragmentManager arg0, android::app::Fragment arg1) const;
+		void onFragmentStopped(android::app::FragmentManager arg0, android::app::Fragment arg1) const;
+		void onFragmentViewCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::view::View arg2, android::os::Bundle arg3) const;
+		void onFragmentViewDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1) const;
 	};
 } // namespace android::app
 

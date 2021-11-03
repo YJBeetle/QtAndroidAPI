@@ -38,7 +38,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	jboolean TransitionValues::equals(JObject arg0)
+	jboolean TransitionValues::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,14 +46,14 @@ namespace android::transition
 			arg0.object<jobject>()
 		);
 	}
-	jint TransitionValues::hashCode()
+	jint TransitionValues::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TransitionValues::toString()
+	JString TransitionValues::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -35,24 +35,24 @@ namespace android::content
 		BroadcastReceiver();
 		
 		// Methods
-		void abortBroadcast();
-		void clearAbortBroadcast();
-		jboolean getAbortBroadcast();
-		jboolean getDebugUnregister();
-		jint getResultCode();
-		JString getResultData();
-		android::os::Bundle getResultExtras(jboolean arg0);
-		android::content::BroadcastReceiver_PendingResult goAsync();
-		jboolean isInitialStickyBroadcast();
-		jboolean isOrderedBroadcast();
-		void onReceive(android::content::Context arg0, android::content::Intent arg1);
-		JObject peekService(android::content::Context arg0, android::content::Intent arg1);
-		void setDebugUnregister(jboolean arg0);
-		void setOrderedHint(jboolean arg0);
-		void setResult(jint arg0, JString arg1, android::os::Bundle arg2);
-		void setResultCode(jint arg0);
-		void setResultData(JString arg0);
-		void setResultExtras(android::os::Bundle arg0);
+		void abortBroadcast() const;
+		void clearAbortBroadcast() const;
+		jboolean getAbortBroadcast() const;
+		jboolean getDebugUnregister() const;
+		jint getResultCode() const;
+		JString getResultData() const;
+		android::os::Bundle getResultExtras(jboolean arg0) const;
+		android::content::BroadcastReceiver_PendingResult goAsync() const;
+		jboolean isInitialStickyBroadcast() const;
+		jboolean isOrderedBroadcast() const;
+		void onReceive(android::content::Context arg0, android::content::Intent arg1) const;
+		JObject peekService(android::content::Context arg0, android::content::Intent arg1) const;
+		void setDebugUnregister(jboolean arg0) const;
+		void setOrderedHint(jboolean arg0) const;
+		void setResult(jint arg0, JString arg1, android::os::Bundle arg2) const;
+		void setResultCode(jint arg0) const;
+		void setResultData(JString arg0) const;
+		void setResultExtras(android::os::Bundle arg0) const;
 	};
 } // namespace android::content
 

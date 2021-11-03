@@ -95,7 +95,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Level::equals(JObject arg0)
+	jboolean Level::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -103,42 +103,42 @@ namespace java::util::logging
 			arg0.object<jobject>()
 		);
 	}
-	JString Level::getLocalizedName()
+	JString Level::getLocalizedName() const
 	{
 		return callObjectMethod(
 			"getLocalizedName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Level::getName()
+	JString Level::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Level::getResourceBundleName()
+	JString Level::getResourceBundleName() const
 	{
 		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Level::hashCode()
+	jint Level::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Level::intValue()
+	jint Level::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	JString Level::toString()
+	JString Level::toString() const
 	{
 		return callObjectMethod(
 			"toString",

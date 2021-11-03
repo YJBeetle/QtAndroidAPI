@@ -262,7 +262,7 @@ namespace android::renderscript
 			arg3
 		);
 	}
-	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JByteArray arg2)
+	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFrom",
@@ -272,7 +272,7 @@ namespace android::renderscript
 			arg2.object<jbyteArray>()
 		);
 	}
-	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JFloatArray arg2)
+	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JFloatArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFrom",
@@ -282,7 +282,7 @@ namespace android::renderscript
 			arg2.object<jfloatArray>()
 		);
 	}
-	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JIntArray arg2)
+	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFrom",
@@ -292,7 +292,7 @@ namespace android::renderscript
 			arg2.object<jintArray>()
 		);
 	}
-	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JShortArray arg2)
+	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JShortArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFrom",
@@ -302,7 +302,7 @@ namespace android::renderscript
 			arg2.object<jshortArray>()
 		);
 	}
-	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JObject arg2)
+	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFrom",
@@ -312,7 +312,7 @@ namespace android::renderscript
 			arg2.object<jobject>()
 		);
 	}
-	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3)
+	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"copy1DRangeFrom",
@@ -323,7 +323,7 @@ namespace android::renderscript
 			arg3
 		);
 	}
-	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JByteArray arg2)
+	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFromUnchecked",
@@ -333,7 +333,7 @@ namespace android::renderscript
 			arg2.object<jbyteArray>()
 		);
 	}
-	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JFloatArray arg2)
+	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JFloatArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFromUnchecked",
@@ -343,7 +343,7 @@ namespace android::renderscript
 			arg2.object<jfloatArray>()
 		);
 	}
-	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JIntArray arg2)
+	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFromUnchecked",
@@ -353,7 +353,7 @@ namespace android::renderscript
 			arg2.object<jintArray>()
 		);
 	}
-	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JShortArray arg2)
+	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JShortArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFromUnchecked",
@@ -363,7 +363,7 @@ namespace android::renderscript
 			arg2.object<jshortArray>()
 		);
 	}
-	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JObject arg2)
+	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeFromUnchecked",
@@ -373,7 +373,7 @@ namespace android::renderscript
 			arg2.object<jobject>()
 		);
 	}
-	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JByteArray arg2)
+	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeTo",
@@ -383,7 +383,7 @@ namespace android::renderscript
 			arg2.object<jbyteArray>()
 		);
 	}
-	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JFloatArray arg2)
+	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JFloatArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeTo",
@@ -393,7 +393,7 @@ namespace android::renderscript
 			arg2.object<jfloatArray>()
 		);
 	}
-	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JIntArray arg2)
+	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeTo",
@@ -403,7 +403,7 @@ namespace android::renderscript
 			arg2.object<jintArray>()
 		);
 	}
-	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JShortArray arg2)
+	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JShortArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeTo",
@@ -413,7 +413,7 @@ namespace android::renderscript
 			arg2.object<jshortArray>()
 		);
 	}
-	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JObject arg2)
+	void Allocation::copy1DRangeTo(jint arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeTo",
@@ -423,7 +423,7 @@ namespace android::renderscript
 			arg2.object<jobject>()
 		);
 	}
-	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JByteArray arg2)
+	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeToUnchecked",
@@ -433,7 +433,7 @@ namespace android::renderscript
 			arg2.object<jbyteArray>()
 		);
 	}
-	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JFloatArray arg2)
+	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JFloatArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeToUnchecked",
@@ -443,7 +443,7 @@ namespace android::renderscript
 			arg2.object<jfloatArray>()
 		);
 	}
-	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JIntArray arg2)
+	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeToUnchecked",
@@ -453,7 +453,7 @@ namespace android::renderscript
 			arg2.object<jintArray>()
 		);
 	}
-	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JShortArray arg2)
+	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JShortArray arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeToUnchecked",
@@ -463,7 +463,7 @@ namespace android::renderscript
 			arg2.object<jshortArray>()
 		);
 	}
-	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JObject arg2)
+	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"copy1DRangeToUnchecked",
@@ -473,7 +473,7 @@ namespace android::renderscript
 			arg2.object<jobject>()
 		);
 	}
-	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, android::graphics::Bitmap arg2)
+	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, android::graphics::Bitmap arg2) const
 	{
 		callMethod<void>(
 			"copy2DRangeFrom",
@@ -483,7 +483,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4)
+	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeFrom",
@@ -495,7 +495,7 @@ namespace android::renderscript
 			arg4.object<jbyteArray>()
 		);
 	}
-	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4)
+	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeFrom",
@@ -507,7 +507,7 @@ namespace android::renderscript
 			arg4.object<jfloatArray>()
 		);
 	}
-	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4)
+	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeFrom",
@@ -519,7 +519,7 @@ namespace android::renderscript
 			arg4.object<jintArray>()
 		);
 	}
-	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4)
+	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeFrom",
@@ -531,7 +531,7 @@ namespace android::renderscript
 			arg4.object<jshortArray>()
 		);
 	}
-	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4)
+	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeFrom",
@@ -543,7 +543,7 @@ namespace android::renderscript
 			arg4.object<jobject>()
 		);
 	}
-	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6)
+	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"copy2DRangeFrom",
@@ -557,7 +557,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4)
+	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeTo",
@@ -569,7 +569,7 @@ namespace android::renderscript
 			arg4.object<jbyteArray>()
 		);
 	}
-	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4)
+	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeTo",
@@ -581,7 +581,7 @@ namespace android::renderscript
 			arg4.object<jfloatArray>()
 		);
 	}
-	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4)
+	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeTo",
@@ -593,7 +593,7 @@ namespace android::renderscript
 			arg4.object<jintArray>()
 		);
 	}
-	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4)
+	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeTo",
@@ -605,7 +605,7 @@ namespace android::renderscript
 			arg4.object<jshortArray>()
 		);
 	}
-	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4)
+	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"copy2DRangeTo",
@@ -617,7 +617,7 @@ namespace android::renderscript
 			arg4.object<jobject>()
 		);
 	}
-	void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6)
+	void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6) const
 	{
 		callMethod<void>(
 			"copy3DRangeFrom",
@@ -631,7 +631,7 @@ namespace android::renderscript
 			arg6.object<jobject>()
 		);
 	}
-	void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::renderscript::Allocation arg6, jint arg7, jint arg8, jint arg9)
+	void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::renderscript::Allocation arg6, jint arg7, jint arg8, jint arg9) const
 	{
 		callMethod<void>(
 			"copy3DRangeFrom",
@@ -648,7 +648,7 @@ namespace android::renderscript
 			arg9
 		);
 	}
-	void Allocation::copy3DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6)
+	void Allocation::copy3DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6) const
 	{
 		callMethod<void>(
 			"copy3DRangeTo",
@@ -662,7 +662,7 @@ namespace android::renderscript
 			arg6.object<jobject>()
 		);
 	}
-	void Allocation::copyFrom(JByteArray arg0)
+	void Allocation::copyFrom(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -670,7 +670,7 @@ namespace android::renderscript
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Allocation::copyFrom(JFloatArray arg0)
+	void Allocation::copyFrom(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -678,7 +678,7 @@ namespace android::renderscript
 			arg0.object<jfloatArray>()
 		);
 	}
-	void Allocation::copyFrom(JIntArray arg0)
+	void Allocation::copyFrom(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -686,7 +686,7 @@ namespace android::renderscript
 			arg0.object<jintArray>()
 		);
 	}
-	void Allocation::copyFrom(JArray arg0)
+	void Allocation::copyFrom(JArray arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -694,7 +694,7 @@ namespace android::renderscript
 			arg0.object<jarray>()
 		);
 	}
-	void Allocation::copyFrom(JShortArray arg0)
+	void Allocation::copyFrom(JShortArray arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -702,7 +702,7 @@ namespace android::renderscript
 			arg0.object<jshortArray>()
 		);
 	}
-	void Allocation::copyFrom(android::graphics::Bitmap arg0)
+	void Allocation::copyFrom(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -710,7 +710,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Allocation::copyFrom(android::renderscript::Allocation arg0)
+	void Allocation::copyFrom(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -718,7 +718,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Allocation::copyFrom(JObject arg0)
+	void Allocation::copyFrom(JObject arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -726,7 +726,7 @@ namespace android::renderscript
 			arg0.object<jobject>()
 		);
 	}
-	void Allocation::copyFromUnchecked(JByteArray arg0)
+	void Allocation::copyFromUnchecked(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"copyFromUnchecked",
@@ -734,7 +734,7 @@ namespace android::renderscript
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Allocation::copyFromUnchecked(JFloatArray arg0)
+	void Allocation::copyFromUnchecked(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"copyFromUnchecked",
@@ -742,7 +742,7 @@ namespace android::renderscript
 			arg0.object<jfloatArray>()
 		);
 	}
-	void Allocation::copyFromUnchecked(JIntArray arg0)
+	void Allocation::copyFromUnchecked(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"copyFromUnchecked",
@@ -750,7 +750,7 @@ namespace android::renderscript
 			arg0.object<jintArray>()
 		);
 	}
-	void Allocation::copyFromUnchecked(JShortArray arg0)
+	void Allocation::copyFromUnchecked(JShortArray arg0) const
 	{
 		callMethod<void>(
 			"copyFromUnchecked",
@@ -758,7 +758,7 @@ namespace android::renderscript
 			arg0.object<jshortArray>()
 		);
 	}
-	void Allocation::copyFromUnchecked(JObject arg0)
+	void Allocation::copyFromUnchecked(JObject arg0) const
 	{
 		callMethod<void>(
 			"copyFromUnchecked",
@@ -766,7 +766,7 @@ namespace android::renderscript
 			arg0.object<jobject>()
 		);
 	}
-	void Allocation::copyTo(JByteArray arg0)
+	void Allocation::copyTo(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -774,7 +774,7 @@ namespace android::renderscript
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Allocation::copyTo(JFloatArray arg0)
+	void Allocation::copyTo(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -782,7 +782,7 @@ namespace android::renderscript
 			arg0.object<jfloatArray>()
 		);
 	}
-	void Allocation::copyTo(JIntArray arg0)
+	void Allocation::copyTo(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -790,7 +790,7 @@ namespace android::renderscript
 			arg0.object<jintArray>()
 		);
 	}
-	void Allocation::copyTo(JShortArray arg0)
+	void Allocation::copyTo(JShortArray arg0) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -798,7 +798,7 @@ namespace android::renderscript
 			arg0.object<jshortArray>()
 		);
 	}
-	void Allocation::copyTo(android::graphics::Bitmap arg0)
+	void Allocation::copyTo(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -806,7 +806,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Allocation::copyTo(JObject arg0)
+	void Allocation::copyTo(JObject arg0) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -814,91 +814,91 @@ namespace android::renderscript
 			arg0.object<jobject>()
 		);
 	}
-	void Allocation::destroy()
+	void Allocation::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	void Allocation::generateMipmaps()
+	void Allocation::generateMipmaps() const
 	{
 		callMethod<void>(
 			"generateMipmaps",
 			"()V"
 		);
 	}
-	java::nio::ByteBuffer Allocation::getByteBuffer()
+	java::nio::ByteBuffer Allocation::getByteBuffer() const
 	{
 		return callObjectMethod(
 			"getByteBuffer",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jint Allocation::getBytesSize()
+	jint Allocation::getBytesSize() const
 	{
 		return callMethod<jint>(
 			"getBytesSize",
 			"()I"
 		);
 	}
-	android::renderscript::Element Allocation::getElement()
+	android::renderscript::Element Allocation::getElement() const
 	{
 		return callObjectMethod(
 			"getElement",
 			"()Landroid/renderscript/Element;"
 		);
 	}
-	jlong Allocation::getStride()
+	jlong Allocation::getStride() const
 	{
 		return callMethod<jlong>(
 			"getStride",
 			"()J"
 		);
 	}
-	android::view::Surface Allocation::getSurface()
+	android::view::Surface Allocation::getSurface() const
 	{
 		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	jlong Allocation::getTimeStamp()
+	jlong Allocation::getTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getTimeStamp",
 			"()J"
 		);
 	}
-	android::renderscript::Type Allocation::getType()
+	android::renderscript::Type Allocation::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Landroid/renderscript/Type;"
 		);
 	}
-	jint Allocation::getUsage()
+	jint Allocation::getUsage() const
 	{
 		return callMethod<jint>(
 			"getUsage",
 			"()I"
 		);
 	}
-	void Allocation::ioReceive()
+	void Allocation::ioReceive() const
 	{
 		callMethod<void>(
 			"ioReceive",
 			"()V"
 		);
 	}
-	void Allocation::ioSend()
+	void Allocation::ioSend() const
 	{
 		callMethod<void>(
 			"ioSend",
 			"()V"
 		);
 	}
-	void Allocation::resize(jint arg0)
+	void Allocation::resize(jint arg0) const
 	{
 		callMethod<void>(
 			"resize",
@@ -906,7 +906,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Allocation::setAutoPadding(jboolean arg0)
+	void Allocation::setAutoPadding(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoPadding",
@@ -914,7 +914,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Allocation::setFromFieldPacker(jint arg0, android::renderscript::FieldPacker arg1)
+	void Allocation::setFromFieldPacker(jint arg0, android::renderscript::FieldPacker arg1) const
 	{
 		callMethod<void>(
 			"setFromFieldPacker",
@@ -923,7 +923,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void Allocation::setFromFieldPacker(jint arg0, jint arg1, android::renderscript::FieldPacker arg2)
+	void Allocation::setFromFieldPacker(jint arg0, jint arg1, android::renderscript::FieldPacker arg2) const
 	{
 		callMethod<void>(
 			"setFromFieldPacker",
@@ -933,7 +933,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	void Allocation::setFromFieldPacker(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::FieldPacker arg4)
+	void Allocation::setFromFieldPacker(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::FieldPacker arg4) const
 	{
 		callMethod<void>(
 			"setFromFieldPacker",
@@ -945,7 +945,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void Allocation::setOnBufferAvailableListener(JObject arg0)
+	void Allocation::setOnBufferAvailableListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnBufferAvailableListener",
@@ -953,7 +953,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Allocation::setSurface(android::view::Surface arg0)
+	void Allocation::setSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setSurface",
@@ -961,7 +961,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Allocation::syncAll(jint arg0)
+	void Allocation::syncAll(jint arg0) const
 	{
 		callMethod<void>(
 			"syncAll",

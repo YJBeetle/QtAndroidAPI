@@ -20,7 +20,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeTunnelConnectionParams::equals(JObject arg0)
+	jboolean IkeTunnelConnectionParams::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,21 +28,21 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams IkeTunnelConnectionParams::getIkeSessionParams()
+	android::net::ipsec::ike::IkeSessionParams IkeTunnelConnectionParams::getIkeSessionParams() const
 	{
 		return callObjectMethod(
 			"getIkeSessionParams",
 			"()Landroid/net/ipsec/ike/IkeSessionParams;"
 		);
 	}
-	android::net::ipsec::ike::TunnelModeChildSessionParams IkeTunnelConnectionParams::getTunnelModeChildSessionParams()
+	android::net::ipsec::ike::TunnelModeChildSessionParams IkeTunnelConnectionParams::getTunnelModeChildSessionParams() const
 	{
 		return callObjectMethod(
 			"getTunnelModeChildSessionParams",
 			"()Landroid/net/ipsec/ike/TunnelModeChildSessionParams;"
 		);
 	}
-	jint IkeTunnelConnectionParams::hashCode()
+	jint IkeTunnelConnectionParams::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

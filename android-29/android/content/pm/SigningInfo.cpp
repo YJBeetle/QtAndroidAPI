@@ -31,42 +31,42 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint SigningInfo::describeContents()
+	jint SigningInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JArray SigningInfo::getApkContentsSigners()
+	JArray SigningInfo::getApkContentsSigners() const
 	{
 		return callObjectMethod(
 			"getApkContentsSigners",
 			"()[Landroid/content/pm/Signature;"
 		);
 	}
-	JArray SigningInfo::getSigningCertificateHistory()
+	JArray SigningInfo::getSigningCertificateHistory() const
 	{
 		return callObjectMethod(
 			"getSigningCertificateHistory",
 			"()[Landroid/content/pm/Signature;"
 		);
 	}
-	jboolean SigningInfo::hasMultipleSigners()
+	jboolean SigningInfo::hasMultipleSigners() const
 	{
 		return callMethod<jboolean>(
 			"hasMultipleSigners",
 			"()Z"
 		);
 	}
-	jboolean SigningInfo::hasPastSigningCertificates()
+	jboolean SigningInfo::hasPastSigningCertificates() const
 	{
 		return callMethod<jboolean>(
 			"hasPastSigningCertificates",
 			"()Z"
 		);
 	}
-	void SigningInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SigningInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

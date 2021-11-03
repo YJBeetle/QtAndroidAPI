@@ -20,7 +20,7 @@ namespace android::service::controls::actions
 		CommandAction(JString arg0, JString arg1);
 		
 		// Methods
-		jint getActionType();
+		jint getActionType() const;
 	};
 } // namespace android::service::controls::actions
 

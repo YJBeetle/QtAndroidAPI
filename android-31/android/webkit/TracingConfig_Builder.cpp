@@ -18,7 +18,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(JIntArray arg0)
+	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"addCategories",
@@ -26,7 +26,7 @@ namespace android::webkit
 			arg0.object<jintArray>()
 		);
 	}
-	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(JArray arg0)
+	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addCategories",
@@ -34,7 +34,7 @@ namespace android::webkit
 			arg0.object<jarray>()
 		);
 	}
-	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(JObject arg0)
+	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addCategories",
@@ -42,14 +42,14 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	android::webkit::TracingConfig TracingConfig_Builder::build()
+	android::webkit::TracingConfig TracingConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/webkit/TracingConfig;"
 		);
 	}
-	android::webkit::TracingConfig_Builder TracingConfig_Builder::setTracingMode(jint arg0)
+	android::webkit::TracingConfig_Builder TracingConfig_Builder::setTracingMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTracingMode",

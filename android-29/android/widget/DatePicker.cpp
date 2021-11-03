@@ -47,7 +47,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void DatePicker::autofill(android::view::autofill::AutofillValue arg0)
+	void DatePicker::autofill(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DatePicker::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
+	void DatePicker::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"dispatchProvideAutofillStructure",
@@ -64,91 +64,91 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString DatePicker::getAccessibilityClassName()
+	JString DatePicker::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint DatePicker::getAutofillType()
+	jint DatePicker::getAutofillType() const
 	{
 		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
-	android::view::autofill::AutofillValue DatePicker::getAutofillValue()
+	android::view::autofill::AutofillValue DatePicker::getAutofillValue() const
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	android::widget::CalendarView DatePicker::getCalendarView()
+	android::widget::CalendarView DatePicker::getCalendarView() const
 	{
 		return callObjectMethod(
 			"getCalendarView",
 			"()Landroid/widget/CalendarView;"
 		);
 	}
-	jboolean DatePicker::getCalendarViewShown()
+	jboolean DatePicker::getCalendarViewShown() const
 	{
 		return callMethod<jboolean>(
 			"getCalendarViewShown",
 			"()Z"
 		);
 	}
-	jint DatePicker::getDayOfMonth()
+	jint DatePicker::getDayOfMonth() const
 	{
 		return callMethod<jint>(
 			"getDayOfMonth",
 			"()I"
 		);
 	}
-	jint DatePicker::getFirstDayOfWeek()
+	jint DatePicker::getFirstDayOfWeek() const
 	{
 		return callMethod<jint>(
 			"getFirstDayOfWeek",
 			"()I"
 		);
 	}
-	jlong DatePicker::getMaxDate()
+	jlong DatePicker::getMaxDate() const
 	{
 		return callMethod<jlong>(
 			"getMaxDate",
 			"()J"
 		);
 	}
-	jlong DatePicker::getMinDate()
+	jlong DatePicker::getMinDate() const
 	{
 		return callMethod<jlong>(
 			"getMinDate",
 			"()J"
 		);
 	}
-	jint DatePicker::getMonth()
+	jint DatePicker::getMonth() const
 	{
 		return callMethod<jint>(
 			"getMonth",
 			"()I"
 		);
 	}
-	jboolean DatePicker::getSpinnersShown()
+	jboolean DatePicker::getSpinnersShown() const
 	{
 		return callMethod<jboolean>(
 			"getSpinnersShown",
 			"()Z"
 		);
 	}
-	jint DatePicker::getYear()
+	jint DatePicker::getYear() const
 	{
 		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
-	void DatePicker::init(jint arg0, jint arg1, jint arg2, JObject arg3)
+	void DatePicker::init(jint arg0, jint arg1, jint arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"init",
@@ -159,14 +159,14 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	jboolean DatePicker::isEnabled()
+	jboolean DatePicker::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void DatePicker::setCalendarViewShown(jboolean arg0)
+	void DatePicker::setCalendarViewShown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCalendarViewShown",
@@ -174,7 +174,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void DatePicker::setEnabled(jboolean arg0)
+	void DatePicker::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -182,7 +182,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void DatePicker::setFirstDayOfWeek(jint arg0)
+	void DatePicker::setFirstDayOfWeek(jint arg0) const
 	{
 		callMethod<void>(
 			"setFirstDayOfWeek",
@@ -190,7 +190,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void DatePicker::setMaxDate(jlong arg0)
+	void DatePicker::setMaxDate(jlong arg0) const
 	{
 		callMethod<void>(
 			"setMaxDate",
@@ -198,7 +198,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void DatePicker::setMinDate(jlong arg0)
+	void DatePicker::setMinDate(jlong arg0) const
 	{
 		callMethod<void>(
 			"setMinDate",
@@ -206,7 +206,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void DatePicker::setOnDateChangedListener(JObject arg0)
+	void DatePicker::setOnDateChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDateChangedListener",
@@ -214,7 +214,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DatePicker::setSpinnersShown(jboolean arg0)
+	void DatePicker::setSpinnersShown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSpinnersShown",
@@ -222,7 +222,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void DatePicker::updateDate(jint arg0, jint arg1, jint arg2)
+	void DatePicker::updateDate(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"updateDate",

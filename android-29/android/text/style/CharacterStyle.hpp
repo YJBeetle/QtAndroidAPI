@@ -23,8 +23,8 @@ namespace android::text::style
 		
 		// Methods
 		static android::text::style::CharacterStyle wrap(android::text::style::CharacterStyle arg0);
-		android::text::style::CharacterStyle getUnderlying();
-		void updateDrawState(android::text::TextPaint arg0);
+		android::text::style::CharacterStyle getUnderlying() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
 	};
 } // namespace android::text::style
 

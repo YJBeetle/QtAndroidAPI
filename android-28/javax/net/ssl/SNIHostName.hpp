@@ -27,10 +27,10 @@ namespace javax::net::ssl
 		
 		// Methods
 		static javax::net::ssl::SNIMatcher createSNIMatcher(JString arg0);
-		jboolean equals(JObject arg0);
-		JString getAsciiName();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getAsciiName() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace javax::net::ssl
 

@@ -27,7 +27,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	void ColorSpaceTransform::copyElements(JIntArray arg0, jint arg1)
+	void ColorSpaceTransform::copyElements(JIntArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"copyElements",
@@ -36,7 +36,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	void ColorSpaceTransform::copyElements(JArray arg0, jint arg1)
+	void ColorSpaceTransform::copyElements(JArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"copyElements",
@@ -45,7 +45,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jboolean ColorSpaceTransform::equals(JObject arg0)
+	jboolean ColorSpaceTransform::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -53,7 +53,7 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	android::util::Rational ColorSpaceTransform::getElement(jint arg0, jint arg1)
+	android::util::Rational ColorSpaceTransform::getElement(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getElement",
@@ -62,14 +62,14 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jint ColorSpaceTransform::hashCode()
+	jint ColorSpaceTransform::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ColorSpaceTransform::toString()
+	JString ColorSpaceTransform::toString() const
 	{
 		return callObjectMethod(
 			"toString",

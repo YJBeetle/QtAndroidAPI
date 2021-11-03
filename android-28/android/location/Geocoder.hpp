@@ -29,9 +29,9 @@ namespace android::location
 		
 		// Methods
 		static jboolean isPresent();
-		JObject getFromLocation(jdouble arg0, jdouble arg1, jint arg2);
-		JObject getFromLocationName(JString arg0, jint arg1);
-		JObject getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
+		JObject getFromLocation(jdouble arg0, jdouble arg1, jint arg2) const;
+		JObject getFromLocationName(JString arg0, jint arg1) const;
+		JObject getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5) const;
 	};
 } // namespace android::location
 

@@ -17,7 +17,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvInputManager_TvInputCallback::onInputAdded(JString arg0)
+	void TvInputManager_TvInputCallback::onInputAdded(JString arg0) const
 	{
 		callMethod<void>(
 			"onInputAdded",
@@ -25,7 +25,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvInputManager_TvInputCallback::onInputRemoved(JString arg0)
+	void TvInputManager_TvInputCallback::onInputRemoved(JString arg0) const
 	{
 		callMethod<void>(
 			"onInputRemoved",
@@ -33,7 +33,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvInputManager_TvInputCallback::onInputStateChanged(JString arg0, jint arg1)
+	void TvInputManager_TvInputCallback::onInputStateChanged(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onInputStateChanged",
@@ -42,7 +42,7 @@ namespace android::media::tv
 			arg1
 		);
 	}
-	void TvInputManager_TvInputCallback::onInputUpdated(JString arg0)
+	void TvInputManager_TvInputCallback::onInputUpdated(JString arg0) const
 	{
 		callMethod<void>(
 			"onInputUpdated",
@@ -50,7 +50,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvInputManager_TvInputCallback::onTvInputInfoUpdated(android::media::tv::TvInputInfo arg0)
+	void TvInputManager_TvInputCallback::onTvInputInfoUpdated(android::media::tv::TvInputInfo arg0) const
 	{
 		callMethod<void>(
 			"onTvInputInfoUpdated",

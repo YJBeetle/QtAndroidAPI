@@ -16,7 +16,7 @@ namespace android::os::strictmode
 		// Constructors
 		
 		// Methods
-		jlong getNumberOfInstances();
+		jlong getNumberOfInstances() const;
 	};
 } // namespace android::os::strictmode
 

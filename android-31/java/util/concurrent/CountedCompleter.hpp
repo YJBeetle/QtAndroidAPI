@@ -19,24 +19,24 @@ namespace java::util::concurrent
 		// Constructors
 		
 		// Methods
-		void addToPendingCount(jint arg0);
-		jboolean compareAndSetPendingCount(jint arg0, jint arg1);
-		void complete(JObject arg0);
-		void compute();
-		jint decrementPendingCountUnlessZero();
-		java::util::concurrent::CountedCompleter firstComplete();
-		java::util::concurrent::CountedCompleter getCompleter();
-		jint getPendingCount();
-		JObject getRawResult();
-		java::util::concurrent::CountedCompleter getRoot();
-		void helpComplete(jint arg0);
-		java::util::concurrent::CountedCompleter nextComplete();
-		void onCompletion(java::util::concurrent::CountedCompleter arg0);
-		jboolean onExceptionalCompletion(JThrowable arg0, java::util::concurrent::CountedCompleter arg1);
-		void propagateCompletion();
-		void quietlyCompleteRoot();
-		void setPendingCount(jint arg0);
-		void tryComplete();
+		void addToPendingCount(jint arg0) const;
+		jboolean compareAndSetPendingCount(jint arg0, jint arg1) const;
+		void complete(JObject arg0) const;
+		void compute() const;
+		jint decrementPendingCountUnlessZero() const;
+		java::util::concurrent::CountedCompleter firstComplete() const;
+		java::util::concurrent::CountedCompleter getCompleter() const;
+		jint getPendingCount() const;
+		JObject getRawResult() const;
+		java::util::concurrent::CountedCompleter getRoot() const;
+		void helpComplete(jint arg0) const;
+		java::util::concurrent::CountedCompleter nextComplete() const;
+		void onCompletion(java::util::concurrent::CountedCompleter arg0) const;
+		jboolean onExceptionalCompletion(JThrowable arg0, java::util::concurrent::CountedCompleter arg1) const;
+		void propagateCompletion() const;
+		void quietlyCompleteRoot() const;
+		void setPendingCount(jint arg0) const;
+		void tryComplete() const;
 	};
 } // namespace java::util::concurrent
 

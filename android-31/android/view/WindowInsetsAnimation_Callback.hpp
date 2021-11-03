@@ -32,11 +32,11 @@ namespace android::view
 		WindowInsetsAnimation_Callback(jint arg0);
 		
 		// Methods
-		jint getDispatchMode();
-		void onEnd(android::view::WindowInsetsAnimation arg0);
-		void onPrepare(android::view::WindowInsetsAnimation arg0);
-		android::view::WindowInsets onProgress(android::view::WindowInsets arg0, JObject arg1);
-		android::view::WindowInsetsAnimation_Bounds onStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1);
+		jint getDispatchMode() const;
+		void onEnd(android::view::WindowInsetsAnimation arg0) const;
+		void onPrepare(android::view::WindowInsetsAnimation arg0) const;
+		android::view::WindowInsets onProgress(android::view::WindowInsets arg0, JObject arg1) const;
+		android::view::WindowInsetsAnimation_Bounds onStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1) const;
 	};
 } // namespace android::view
 

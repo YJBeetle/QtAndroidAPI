@@ -38,10 +38,10 @@ namespace android::graphics::drawable
 		ScaleDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jfloat arg2, jfloat arg3);
 		
 		// Methods
-		void applyTheme(android::content::res::Resources_Theme arg0);
-		void draw(android::graphics::Canvas arg0);
-		jint getOpacity();
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
+		void applyTheme(android::content::res::Resources_Theme arg0) const;
+		void draw(android::graphics::Canvas arg0) const;
+		jint getOpacity() const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
 	};
 } // namespace android::graphics::drawable
 

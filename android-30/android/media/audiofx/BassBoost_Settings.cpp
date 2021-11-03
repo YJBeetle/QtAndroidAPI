@@ -28,7 +28,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	JString BassBoost_Settings::toString()
+	JString BassBoost_Settings::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -37,15 +37,15 @@ namespace java::security::cert
 		X509CRLEntry();
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		javax::security::auth::x500::X500Principal getCertificateIssuer();
-		JByteArray getEncoded();
-		java::util::Date getRevocationDate();
-		java::security::cert::CRLReason getRevocationReason();
-		java::math::BigInteger getSerialNumber();
-		jboolean hasExtensions();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		javax::security::auth::x500::X500Principal getCertificateIssuer() const;
+		JByteArray getEncoded() const;
+		java::util::Date getRevocationDate() const;
+		java::security::cert::CRLReason getRevocationReason() const;
+		java::math::BigInteger getSerialNumber() const;
+		jboolean hasExtensions() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

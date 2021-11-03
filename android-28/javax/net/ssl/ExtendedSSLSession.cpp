@@ -16,28 +16,28 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	JArray ExtendedSSLSession::getLocalSupportedSignatureAlgorithms()
+	JArray ExtendedSSLSession::getLocalSupportedSignatureAlgorithms() const
 	{
 		return callObjectMethod(
 			"getLocalSupportedSignatureAlgorithms",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray ExtendedSSLSession::getPeerSupportedSignatureAlgorithms()
+	JArray ExtendedSSLSession::getPeerSupportedSignatureAlgorithms() const
 	{
 		return callObjectMethod(
 			"getPeerSupportedSignatureAlgorithms",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JObject ExtendedSSLSession::getRequestedServerNames()
+	JObject ExtendedSSLSession::getRequestedServerNames() const
 	{
 		return callObjectMethod(
 			"getRequestedServerNames",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ExtendedSSLSession::getStatusResponses()
+	JObject ExtendedSSLSession::getStatusResponses() const
 	{
 		return callObjectMethod(
 			"getStatusResponses",

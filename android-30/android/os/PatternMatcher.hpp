@@ -29,12 +29,12 @@ namespace android::os
 		PatternMatcher(JString arg0, jint arg1);
 		
 		// Methods
-		jint describeContents();
-		JString getPath();
-		jint getType();
-		jboolean match(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getPath() const;
+		jint getType() const;
+		jboolean match(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

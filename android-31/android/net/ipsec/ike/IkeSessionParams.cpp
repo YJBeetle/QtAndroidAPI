@@ -44,7 +44,7 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean IkeSessionParams::equals(JObject arg0)
+	jboolean IkeSessionParams::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -52,91 +52,91 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	jint IkeSessionParams::getDpdDelaySeconds()
+	jint IkeSessionParams::getDpdDelaySeconds() const
 	{
 		return callMethod<jint>(
 			"getDpdDelaySeconds",
 			"()I"
 		);
 	}
-	jint IkeSessionParams::getHardLifetimeSeconds()
+	jint IkeSessionParams::getHardLifetimeSeconds() const
 	{
 		return callMethod<jint>(
 			"getHardLifetimeSeconds",
 			"()I"
 		);
 	}
-	JObject IkeSessionParams::getIkeSaProposals()
+	JObject IkeSessionParams::getIkeSaProposals() const
 	{
 		return callObjectMethod(
 			"getIkeSaProposals",
 			"()Ljava/util/List;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig IkeSessionParams::getLocalAuthConfig()
+	android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig IkeSessionParams::getLocalAuthConfig() const
 	{
 		return callObjectMethod(
 			"getLocalAuthConfig",
 			"()Landroid/net/ipsec/ike/IkeSessionParams$IkeAuthConfig;"
 		);
 	}
-	android::net::ipsec::ike::IkeIdentification IkeSessionParams::getLocalIdentification()
+	android::net::ipsec::ike::IkeIdentification IkeSessionParams::getLocalIdentification() const
 	{
 		return callObjectMethod(
 			"getLocalIdentification",
 			"()Landroid/net/ipsec/ike/IkeIdentification;"
 		);
 	}
-	jint IkeSessionParams::getNattKeepAliveDelaySeconds()
+	jint IkeSessionParams::getNattKeepAliveDelaySeconds() const
 	{
 		return callMethod<jint>(
 			"getNattKeepAliveDelaySeconds",
 			"()I"
 		);
 	}
-	android::net::Network IkeSessionParams::getNetwork()
+	android::net::Network IkeSessionParams::getNetwork() const
 	{
 		return callObjectMethod(
 			"getNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig IkeSessionParams::getRemoteAuthConfig()
+	android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig IkeSessionParams::getRemoteAuthConfig() const
 	{
 		return callObjectMethod(
 			"getRemoteAuthConfig",
 			"()Landroid/net/ipsec/ike/IkeSessionParams$IkeAuthConfig;"
 		);
 	}
-	android::net::ipsec::ike::IkeIdentification IkeSessionParams::getRemoteIdentification()
+	android::net::ipsec::ike::IkeIdentification IkeSessionParams::getRemoteIdentification() const
 	{
 		return callObjectMethod(
 			"getRemoteIdentification",
 			"()Landroid/net/ipsec/ike/IkeIdentification;"
 		);
 	}
-	JIntArray IkeSessionParams::getRetransmissionTimeoutsMillis()
+	JIntArray IkeSessionParams::getRetransmissionTimeoutsMillis() const
 	{
 		return callObjectMethod(
 			"getRetransmissionTimeoutsMillis",
 			"()[I"
 		);
 	}
-	JString IkeSessionParams::getServerHostname()
+	JString IkeSessionParams::getServerHostname() const
 	{
 		return callObjectMethod(
 			"getServerHostname",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint IkeSessionParams::getSoftLifetimeSeconds()
+	jint IkeSessionParams::getSoftLifetimeSeconds() const
 	{
 		return callMethod<jint>(
 			"getSoftLifetimeSeconds",
 			"()I"
 		);
 	}
-	jboolean IkeSessionParams::hasIkeOption(jint arg0)
+	jboolean IkeSessionParams::hasIkeOption(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasIkeOption",
@@ -144,7 +144,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	jint IkeSessionParams::hashCode()
+	jint IkeSessionParams::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -32,28 +32,28 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	jint Call_RttCall::getRttAudioMode()
+	jint Call_RttCall::getRttAudioMode() const
 	{
 		return callMethod<jint>(
 			"getRttAudioMode",
 			"()I"
 		);
 	}
-	JString Call_RttCall::read()
+	JString Call_RttCall::read() const
 	{
 		return callObjectMethod(
 			"read",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Call_RttCall::readImmediately()
+	JString Call_RttCall::readImmediately() const
 	{
 		return callObjectMethod(
 			"readImmediately",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Call_RttCall::setRttMode(jint arg0)
+	void Call_RttCall::setRttMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setRttMode",
@@ -61,7 +61,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call_RttCall::write(JString arg0)
+	void Call_RttCall::write(JString arg0) const
 	{
 		callMethod<void>(
 			"write",

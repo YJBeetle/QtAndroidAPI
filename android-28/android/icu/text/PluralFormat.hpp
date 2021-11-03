@@ -68,17 +68,17 @@ namespace android::icu::text
 		PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1, JString arg2);
 		
 		// Methods
-		void applyPattern(JString arg0);
-		jboolean equals(android::icu::text::PluralFormat arg0);
-		jboolean equals(JObject arg0);
-		JString format(jdouble arg0);
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		jint hashCode();
-		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
-		void setNumberFormat(android::icu::text::NumberFormat arg0);
-		JString toPattern();
-		JString toString();
+		void applyPattern(JString arg0) const;
+		jboolean equals(android::icu::text::PluralFormat arg0) const;
+		jboolean equals(JObject arg0) const;
+		JString format(jdouble arg0) const;
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		jint hashCode() const;
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1) const;
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
+		void setNumberFormat(android::icu::text::NumberFormat arg0) const;
+		JString toPattern() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

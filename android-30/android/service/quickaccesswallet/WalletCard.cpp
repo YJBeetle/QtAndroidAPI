@@ -23,56 +23,56 @@ namespace android::service::quickaccesswallet
 	// Constructors
 	
 	// Methods
-	jint WalletCard::describeContents()
+	jint WalletCard::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Icon WalletCard::getCardIcon()
+	android::graphics::drawable::Icon WalletCard::getCardIcon() const
 	{
 		return callObjectMethod(
 			"getCardIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString WalletCard::getCardId()
+	JString WalletCard::getCardId() const
 	{
 		return callObjectMethod(
 			"getCardId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::graphics::drawable::Icon WalletCard::getCardImage()
+	android::graphics::drawable::Icon WalletCard::getCardImage() const
 	{
 		return callObjectMethod(
 			"getCardImage",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString WalletCard::getCardLabel()
+	JString WalletCard::getCardLabel() const
 	{
 		return callObjectMethod(
 			"getCardLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString WalletCard::getContentDescription()
+	JString WalletCard::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::app::PendingIntent WalletCard::getPendingIntent()
+	android::app::PendingIntent WalletCard::getPendingIntent() const
 	{
 		return callObjectMethod(
 			"getPendingIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	void WalletCard::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WalletCard::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

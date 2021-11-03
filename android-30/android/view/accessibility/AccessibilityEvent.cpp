@@ -403,7 +403,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::appendRecord(android::view::accessibility::AccessibilityRecord arg0)
+	void AccessibilityEvent::appendRecord(android::view::accessibility::AccessibilityRecord arg0) const
 	{
 		callMethod<void>(
 			"appendRecord",
@@ -411,56 +411,56 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jint AccessibilityEvent::describeContents()
+	jint AccessibilityEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint AccessibilityEvent::getAction()
+	jint AccessibilityEvent::getAction() const
 	{
 		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
-	jint AccessibilityEvent::getContentChangeTypes()
+	jint AccessibilityEvent::getContentChangeTypes() const
 	{
 		return callMethod<jint>(
 			"getContentChangeTypes",
 			"()I"
 		);
 	}
-	jlong AccessibilityEvent::getEventTime()
+	jlong AccessibilityEvent::getEventTime() const
 	{
 		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
-	jint AccessibilityEvent::getEventType()
+	jint AccessibilityEvent::getEventType() const
 	{
 		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
-	jint AccessibilityEvent::getMovementGranularity()
+	jint AccessibilityEvent::getMovementGranularity() const
 	{
 		return callMethod<jint>(
 			"getMovementGranularity",
 			"()I"
 		);
 	}
-	JString AccessibilityEvent::getPackageName()
+	JString AccessibilityEvent::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::accessibility::AccessibilityRecord AccessibilityEvent::getRecord(jint arg0)
+	android::view::accessibility::AccessibilityRecord AccessibilityEvent::getRecord(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRecord",
@@ -468,21 +468,21 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jint AccessibilityEvent::getRecordCount()
+	jint AccessibilityEvent::getRecordCount() const
 	{
 		return callMethod<jint>(
 			"getRecordCount",
 			"()I"
 		);
 	}
-	jint AccessibilityEvent::getWindowChanges()
+	jint AccessibilityEvent::getWindowChanges() const
 	{
 		return callMethod<jint>(
 			"getWindowChanges",
 			"()I"
 		);
 	}
-	void AccessibilityEvent::initFromParcel(android::os::Parcel arg0)
+	void AccessibilityEvent::initFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"initFromParcel",
@@ -490,14 +490,14 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityEvent::recycle()
+	void AccessibilityEvent::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	void AccessibilityEvent::setAction(jint arg0)
+	void AccessibilityEvent::setAction(jint arg0) const
 	{
 		callMethod<void>(
 			"setAction",
@@ -505,7 +505,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::setContentChangeTypes(jint arg0)
+	void AccessibilityEvent::setContentChangeTypes(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentChangeTypes",
@@ -513,7 +513,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::setEventTime(jlong arg0)
+	void AccessibilityEvent::setEventTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setEventTime",
@@ -521,7 +521,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::setEventType(jint arg0)
+	void AccessibilityEvent::setEventType(jint arg0) const
 	{
 		callMethod<void>(
 			"setEventType",
@@ -529,7 +529,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::setMovementGranularity(jint arg0)
+	void AccessibilityEvent::setMovementGranularity(jint arg0) const
 	{
 		callMethod<void>(
 			"setMovementGranularity",
@@ -537,7 +537,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::setPackageName(JString arg0)
+	void AccessibilityEvent::setPackageName(JString arg0) const
 	{
 		callMethod<void>(
 			"setPackageName",
@@ -545,14 +545,14 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	JString AccessibilityEvent::toString()
+	JString AccessibilityEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AccessibilityEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AccessibilityEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

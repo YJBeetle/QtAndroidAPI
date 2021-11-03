@@ -122,7 +122,7 @@ namespace android::net::ipsec::ike::exceptions
 	// Constructors
 	
 	// Methods
-	jint IkeProtocolException::getErrorType()
+	jint IkeProtocolException::getErrorType() const
 	{
 		return callMethod<jint>(
 			"getErrorType",

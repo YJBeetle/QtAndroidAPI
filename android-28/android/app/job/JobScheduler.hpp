@@ -28,12 +28,12 @@ namespace android::app::job
 		JobScheduler();
 		
 		// Methods
-		void cancel(jint arg0);
-		void cancelAll();
-		jint enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1);
-		JObject getAllPendingJobs();
-		android::app::job::JobInfo getPendingJob(jint arg0);
-		jint schedule(android::app::job::JobInfo arg0);
+		void cancel(jint arg0) const;
+		void cancelAll() const;
+		jint enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1) const;
+		JObject getAllPendingJobs() const;
+		android::app::job::JobInfo getPendingJob(jint arg0) const;
+		jint schedule(android::app::job::JobInfo arg0) const;
 	};
 } // namespace android::app::job
 

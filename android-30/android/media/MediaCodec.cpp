@@ -234,7 +234,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::configure(android::media::MediaFormat arg0, android::view::Surface arg1, android::media::MediaCrypto arg2, jint arg3)
+	void MediaCodec::configure(android::media::MediaFormat arg0, android::view::Surface arg1, android::media::MediaCrypto arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"configure",
@@ -245,7 +245,7 @@ namespace android::media
 			arg3
 		);
 	}
-	void MediaCodec::configure(android::media::MediaFormat arg0, android::view::Surface arg1, jint arg2, android::media::MediaDescrambler arg3)
+	void MediaCodec::configure(android::media::MediaFormat arg0, android::view::Surface arg1, jint arg2, android::media::MediaDescrambler arg3) const
 	{
 		callMethod<void>(
 			"configure",
@@ -256,14 +256,14 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	android::view::Surface MediaCodec::createInputSurface()
+	android::view::Surface MediaCodec::createInputSurface() const
 	{
 		return callObjectMethod(
 			"createInputSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	jint MediaCodec::dequeueInputBuffer(jlong arg0)
+	jint MediaCodec::dequeueInputBuffer(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"dequeueInputBuffer",
@@ -271,7 +271,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint MediaCodec::dequeueOutputBuffer(android::media::MediaCodec_BufferInfo arg0, jlong arg1)
+	jint MediaCodec::dequeueOutputBuffer(android::media::MediaCodec_BufferInfo arg0, jlong arg1) const
 	{
 		return callMethod<jint>(
 			"dequeueOutputBuffer",
@@ -280,28 +280,28 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaCodec::flush()
+	void MediaCodec::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	JString MediaCodec::getCanonicalName()
+	JString MediaCodec::getCanonicalName() const
 	{
 		return callObjectMethod(
 			"getCanonicalName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::media::MediaCodecInfo MediaCodec::getCodecInfo()
+	android::media::MediaCodecInfo MediaCodec::getCodecInfo() const
 	{
 		return callObjectMethod(
 			"getCodecInfo",
 			"()Landroid/media/MediaCodecInfo;"
 		);
 	}
-	java::nio::ByteBuffer MediaCodec::getInputBuffer(jint arg0)
+	java::nio::ByteBuffer MediaCodec::getInputBuffer(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInputBuffer",
@@ -309,21 +309,21 @@ namespace android::media
 			arg0
 		);
 	}
-	JArray MediaCodec::getInputBuffers()
+	JArray MediaCodec::getInputBuffers() const
 	{
 		return callObjectMethod(
 			"getInputBuffers",
 			"()[Ljava/nio/ByteBuffer;"
 		);
 	}
-	android::media::MediaFormat MediaCodec::getInputFormat()
+	android::media::MediaFormat MediaCodec::getInputFormat() const
 	{
 		return callObjectMethod(
 			"getInputFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	android::media::Image MediaCodec::getInputImage(jint arg0)
+	android::media::Image MediaCodec::getInputImage(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInputImage",
@@ -331,21 +331,21 @@ namespace android::media
 			arg0
 		);
 	}
-	android::os::PersistableBundle MediaCodec::getMetrics()
+	android::os::PersistableBundle MediaCodec::getMetrics() const
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	JString MediaCodec::getName()
+	JString MediaCodec::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::nio::ByteBuffer MediaCodec::getOutputBuffer(jint arg0)
+	java::nio::ByteBuffer MediaCodec::getOutputBuffer(jint arg0) const
 	{
 		return callObjectMethod(
 			"getOutputBuffer",
@@ -353,21 +353,21 @@ namespace android::media
 			arg0
 		);
 	}
-	JArray MediaCodec::getOutputBuffers()
+	JArray MediaCodec::getOutputBuffers() const
 	{
 		return callObjectMethod(
 			"getOutputBuffers",
 			"()[Ljava/nio/ByteBuffer;"
 		);
 	}
-	android::media::MediaFormat MediaCodec::getOutputFormat()
+	android::media::MediaFormat MediaCodec::getOutputFormat() const
 	{
 		return callObjectMethod(
 			"getOutputFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	android::media::MediaFormat MediaCodec::getOutputFormat(jint arg0)
+	android::media::MediaFormat MediaCodec::getOutputFormat(jint arg0) const
 	{
 		return callObjectMethod(
 			"getOutputFormat",
@@ -375,7 +375,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaCodec_OutputFrame MediaCodec::getOutputFrame(jint arg0)
+	android::media::MediaCodec_OutputFrame MediaCodec::getOutputFrame(jint arg0) const
 	{
 		return callObjectMethod(
 			"getOutputFrame",
@@ -383,7 +383,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::Image MediaCodec::getOutputImage(jint arg0)
+	android::media::Image MediaCodec::getOutputImage(jint arg0) const
 	{
 		return callObjectMethod(
 			"getOutputImage",
@@ -391,7 +391,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec::getQueueRequest(jint arg0)
+	android::media::MediaCodec_QueueRequest MediaCodec::getQueueRequest(jint arg0) const
 	{
 		return callObjectMethod(
 			"getQueueRequest",
@@ -399,7 +399,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaCodec::queueInputBuffer(jint arg0, jint arg1, jint arg2, jlong arg3, jint arg4)
+	void MediaCodec::queueInputBuffer(jint arg0, jint arg1, jint arg2, jlong arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"queueInputBuffer",
@@ -411,7 +411,7 @@ namespace android::media
 			arg4
 		);
 	}
-	void MediaCodec::queueSecureInputBuffer(jint arg0, jint arg1, android::media::MediaCodec_CryptoInfo arg2, jlong arg3, jint arg4)
+	void MediaCodec::queueSecureInputBuffer(jint arg0, jint arg1, android::media::MediaCodec_CryptoInfo arg2, jlong arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"queueSecureInputBuffer",
@@ -423,14 +423,14 @@ namespace android::media
 			arg4
 		);
 	}
-	void MediaCodec::release()
+	void MediaCodec::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaCodec::releaseOutputBuffer(jint arg0, jboolean arg1)
+	void MediaCodec::releaseOutputBuffer(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"releaseOutputBuffer",
@@ -439,7 +439,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaCodec::releaseOutputBuffer(jint arg0, jlong arg1)
+	void MediaCodec::releaseOutputBuffer(jint arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"releaseOutputBuffer",
@@ -448,14 +448,14 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaCodec::reset()
+	void MediaCodec::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void MediaCodec::setAudioPresentation(android::media::AudioPresentation arg0)
+	void MediaCodec::setAudioPresentation(android::media::AudioPresentation arg0) const
 	{
 		callMethod<void>(
 			"setAudioPresentation",
@@ -463,7 +463,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::setCallback(android::media::MediaCodec_Callback arg0)
+	void MediaCodec::setCallback(android::media::MediaCodec_Callback arg0) const
 	{
 		callMethod<void>(
 			"setCallback",
@@ -471,7 +471,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::setCallback(android::media::MediaCodec_Callback arg0, android::os::Handler arg1)
+	void MediaCodec::setCallback(android::media::MediaCodec_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setCallback",
@@ -480,7 +480,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaCodec::setInputSurface(android::view::Surface arg0)
+	void MediaCodec::setInputSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setInputSurface",
@@ -488,7 +488,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::setOnFrameRenderedListener(JObject arg0, android::os::Handler arg1)
+	void MediaCodec::setOnFrameRenderedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnFrameRenderedListener",
@@ -497,7 +497,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaCodec::setOutputSurface(android::view::Surface arg0)
+	void MediaCodec::setOutputSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setOutputSurface",
@@ -505,7 +505,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::setParameters(android::os::Bundle arg0)
+	void MediaCodec::setParameters(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setParameters",
@@ -513,7 +513,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::setVideoScalingMode(jint arg0)
+	void MediaCodec::setVideoScalingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setVideoScalingMode",
@@ -521,21 +521,21 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaCodec::signalEndOfInputStream()
+	void MediaCodec::signalEndOfInputStream() const
 	{
 		callMethod<void>(
 			"signalEndOfInputStream",
 			"()V"
 		);
 	}
-	void MediaCodec::start()
+	void MediaCodec::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void MediaCodec::stop()
+	void MediaCodec::stop() const
 	{
 		callMethod<void>(
 			"stop",

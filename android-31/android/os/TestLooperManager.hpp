@@ -30,13 +30,13 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void execute(android::os::Message arg0);
-		android::os::MessageQueue getMessageQueue();
-		jboolean hasMessages(android::os::Handler arg0, JObject arg1, jint arg2);
-		jboolean hasMessages(android::os::Handler arg0, JObject arg1, JObject arg2);
-		android::os::Message next();
-		void recycle(android::os::Message arg0);
-		void release();
+		void execute(android::os::Message arg0) const;
+		android::os::MessageQueue getMessageQueue() const;
+		jboolean hasMessages(android::os::Handler arg0, JObject arg1, jint arg2) const;
+		jboolean hasMessages(android::os::Handler arg0, JObject arg1, JObject arg2) const;
+		android::os::Message next() const;
+		void recycle(android::os::Message arg0) const;
+		void release() const;
 	};
 } // namespace android::os
 

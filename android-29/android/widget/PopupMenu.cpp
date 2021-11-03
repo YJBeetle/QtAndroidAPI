@@ -38,42 +38,42 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void PopupMenu::dismiss()
+	void PopupMenu::dismiss() const
 	{
 		callMethod<void>(
 			"dismiss",
 			"()V"
 		);
 	}
-	JObject PopupMenu::getDragToOpenListener()
+	JObject PopupMenu::getDragToOpenListener() const
 	{
 		return callObjectMethod(
 			"getDragToOpenListener",
 			"()Landroid/view/View$OnTouchListener;"
 		);
 	}
-	jint PopupMenu::getGravity()
+	jint PopupMenu::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	JObject PopupMenu::getMenu()
+	JObject PopupMenu::getMenu() const
 	{
 		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
-	android::view::MenuInflater PopupMenu::getMenuInflater()
+	android::view::MenuInflater PopupMenu::getMenuInflater() const
 	{
 		return callObjectMethod(
 			"getMenuInflater",
 			"()Landroid/view/MenuInflater;"
 		);
 	}
-	void PopupMenu::inflate(jint arg0)
+	void PopupMenu::inflate(jint arg0) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -81,7 +81,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupMenu::setForceShowIcon(jboolean arg0)
+	void PopupMenu::setForceShowIcon(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setForceShowIcon",
@@ -89,7 +89,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupMenu::setGravity(jint arg0)
+	void PopupMenu::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -97,7 +97,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupMenu::setOnDismissListener(JObject arg0)
+	void PopupMenu::setOnDismissListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -105,7 +105,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupMenu::setOnMenuItemClickListener(JObject arg0)
+	void PopupMenu::setOnMenuItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnMenuItemClickListener",
@@ -113,7 +113,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupMenu::show()
+	void PopupMenu::show() const
 	{
 		callMethod<void>(
 			"show",

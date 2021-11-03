@@ -21,7 +21,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void VoiceInteractor_PickOptionRequest::onPickOptionResult(jboolean arg0, JArray arg1, android::os::Bundle arg2)
+	void VoiceInteractor_PickOptionRequest::onPickOptionResult(jboolean arg0, JArray arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onPickOptionResult",

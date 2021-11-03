@@ -28,13 +28,13 @@ namespace android::text::style
 		AbsoluteSizeSpan(jint arg0, jboolean arg1);
 		
 		// Methods
-		jint describeContents();
-		jboolean getDip();
-		jint getSize();
-		jint getSpanTypeId();
-		void updateDrawState(android::text::TextPaint arg0);
-		void updateMeasureState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean getDip() const;
+		jint getSize() const;
+		jint getSpanTypeId() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void updateMeasureState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

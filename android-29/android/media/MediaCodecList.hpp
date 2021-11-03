@@ -32,9 +32,9 @@ namespace android::media
 		// Methods
 		static jint getCodecCount();
 		static android::media::MediaCodecInfo getCodecInfoAt(jint arg0);
-		JString findDecoderForFormat(android::media::MediaFormat arg0);
-		JString findEncoderForFormat(android::media::MediaFormat arg0);
-		JArray getCodecInfos();
+		JString findDecoderForFormat(android::media::MediaFormat arg0) const;
+		JString findEncoderForFormat(android::media::MediaFormat arg0) const;
+		JArray getCodecInfos() const;
 	};
 } // namespace android::media
 

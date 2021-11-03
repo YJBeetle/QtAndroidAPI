@@ -20,14 +20,14 @@ namespace android::app::usage
 	// Constructors
 	
 	// Methods
-	jint UsageEvents::describeContents()
+	jint UsageEvents::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean UsageEvents::getNextEvent(android::app::usage::UsageEvents_Event arg0)
+	jboolean UsageEvents::getNextEvent(android::app::usage::UsageEvents_Event arg0) const
 	{
 		return callMethod<jboolean>(
 			"getNextEvent",
@@ -35,14 +35,14 @@ namespace android::app::usage
 			arg0.object()
 		);
 	}
-	jboolean UsageEvents::hasNextEvent()
+	jboolean UsageEvents::hasNextEvent() const
 	{
 		return callMethod<jboolean>(
 			"hasNextEvent",
 			"()Z"
 		);
 	}
-	void UsageEvents::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UsageEvents::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

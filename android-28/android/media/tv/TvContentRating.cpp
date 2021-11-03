@@ -42,7 +42,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	jboolean TvContentRating::contains(android::media::tv::TvContentRating arg0)
+	jboolean TvContentRating::contains(android::media::tv::TvContentRating arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -50,7 +50,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvContentRating::equals(JObject arg0)
+	jboolean TvContentRating::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -58,42 +58,42 @@ namespace android::media::tv
 			arg0.object<jobject>()
 		);
 	}
-	JString TvContentRating::flattenToString()
+	JString TvContentRating::flattenToString() const
 	{
 		return callObjectMethod(
 			"flattenToString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TvContentRating::getDomain()
+	JString TvContentRating::getDomain() const
 	{
 		return callObjectMethod(
 			"getDomain",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TvContentRating::getMainRating()
+	JString TvContentRating::getMainRating() const
 	{
 		return callObjectMethod(
 			"getMainRating",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TvContentRating::getRatingSystem()
+	JString TvContentRating::getRatingSystem() const
 	{
 		return callObjectMethod(
 			"getRatingSystem",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject TvContentRating::getSubRatings()
+	JObject TvContentRating::getSubRatings() const
 	{
 		return callObjectMethod(
 			"getSubRatings",
 			"()Ljava/util/List;"
 		);
 	}
-	jint TvContentRating::hashCode()
+	jint TvContentRating::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

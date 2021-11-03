@@ -14,21 +14,21 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void VibratorManager::cancel()
+	void VibratorManager::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	android::os::Vibrator VibratorManager::getDefaultVibrator()
+	android::os::Vibrator VibratorManager::getDefaultVibrator() const
 	{
 		return callObjectMethod(
 			"getDefaultVibrator",
 			"()Landroid/os/Vibrator;"
 		);
 	}
-	android::os::Vibrator VibratorManager::getVibrator(jint arg0)
+	android::os::Vibrator VibratorManager::getVibrator(jint arg0) const
 	{
 		return callObjectMethod(
 			"getVibrator",
@@ -36,14 +36,14 @@ namespace android::os
 			arg0
 		);
 	}
-	JIntArray VibratorManager::getVibratorIds()
+	JIntArray VibratorManager::getVibratorIds() const
 	{
 		return callObjectMethod(
 			"getVibratorIds",
 			"()[I"
 		);
 	}
-	void VibratorManager::vibrate(android::os::CombinedVibration arg0)
+	void VibratorManager::vibrate(android::os::CombinedVibration arg0) const
 	{
 		callMethod<void>(
 			"vibrate",
@@ -51,7 +51,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void VibratorManager::vibrate(android::os::CombinedVibration arg0, android::os::VibrationAttributes arg1)
+	void VibratorManager::vibrate(android::os::CombinedVibration arg0, android::os::VibrationAttributes arg1) const
 	{
 		callMethod<void>(
 			"vibrate",

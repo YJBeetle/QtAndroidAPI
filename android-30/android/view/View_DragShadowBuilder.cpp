@@ -24,14 +24,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::View View_DragShadowBuilder::getView()
+	android::view::View View_DragShadowBuilder::getView() const
 	{
 		return callObjectMethod(
 			"getView",
 			"()Landroid/view/View;"
 		);
 	}
-	void View_DragShadowBuilder::onDrawShadow(android::graphics::Canvas arg0)
+	void View_DragShadowBuilder::onDrawShadow(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"onDrawShadow",
@@ -39,7 +39,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View_DragShadowBuilder::onProvideShadowMetrics(android::graphics::Point arg0, android::graphics::Point arg1)
+	void View_DragShadowBuilder::onProvideShadowMetrics(android::graphics::Point arg0, android::graphics::Point arg1) const
 	{
 		callMethod<void>(
 			"onProvideShadowMetrics",

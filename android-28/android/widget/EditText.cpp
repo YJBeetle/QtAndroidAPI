@@ -44,7 +44,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void EditText::extendSelection(jint arg0)
+	void EditText::extendSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"extendSelection",
@@ -52,35 +52,35 @@ namespace android::widget
 			arg0
 		);
 	}
-	JString EditText::getAccessibilityClassName()
+	JString EditText::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean EditText::getFreezesText()
+	jboolean EditText::getFreezesText() const
 	{
 		return callMethod<jboolean>(
 			"getFreezesText",
 			"()Z"
 		);
 	}
-	JObject EditText::getText()
+	JObject EditText::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Landroid/text/Editable;"
 		);
 	}
-	void EditText::selectAll()
+	void EditText::selectAll() const
 	{
 		callMethod<void>(
 			"selectAll",
 			"()V"
 		);
 	}
-	void EditText::setEllipsize(android::text::TextUtils_TruncateAt arg0)
+	void EditText::setEllipsize(android::text::TextUtils_TruncateAt arg0) const
 	{
 		callMethod<void>(
 			"setEllipsize",
@@ -88,7 +88,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void EditText::setSelection(jint arg0)
+	void EditText::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -96,7 +96,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void EditText::setSelection(jint arg0, jint arg1)
+	void EditText::setSelection(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -105,7 +105,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void EditText::setText(JString arg0, android::widget::TextView_BufferType arg1)
+	void EditText::setText(JString arg0, android::widget::TextView_BufferType arg1) const
 	{
 		callMethod<void>(
 			"setText",

@@ -26,15 +26,15 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void cancel();
-		jboolean hasAmplitudeControl();
-		jboolean hasVibrator();
-		void vibrate(android::os::VibrationEffect arg0);
-		void vibrate(jlong arg0);
-		void vibrate(JLongArray arg0, jint arg1);
-		void vibrate(android::os::VibrationEffect arg0, android::media::AudioAttributes arg1);
-		void vibrate(jlong arg0, android::media::AudioAttributes arg1);
-		void vibrate(JLongArray arg0, jint arg1, android::media::AudioAttributes arg2);
+		void cancel() const;
+		jboolean hasAmplitudeControl() const;
+		jboolean hasVibrator() const;
+		void vibrate(android::os::VibrationEffect arg0) const;
+		void vibrate(jlong arg0) const;
+		void vibrate(JLongArray arg0, jint arg1) const;
+		void vibrate(android::os::VibrationEffect arg0, android::media::AudioAttributes arg1) const;
+		void vibrate(jlong arg0, android::media::AudioAttributes arg1) const;
+		void vibrate(JLongArray arg0, jint arg1, android::media::AudioAttributes arg2) const;
 	};
 } // namespace android::os
 

@@ -19,7 +19,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void VoiceInteractor_AbortVoiceRequest::onAbortResult(android::os::Bundle arg0)
+	void VoiceInteractor_AbortVoiceRequest::onAbortResult(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onAbortResult",

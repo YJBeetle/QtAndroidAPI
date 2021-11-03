@@ -19,14 +19,14 @@ namespace android::media::metrics
 		) {}
 	
 	// Methods
-	android::media::metrics::TrackChangeEvent TrackChangeEvent_Builder::build()
+	android::media::metrics::TrackChangeEvent TrackChangeEvent_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/metrics/TrackChangeEvent;"
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setAudioSampleRate(jint arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setAudioSampleRate(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioSampleRate",
@@ -34,7 +34,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setBitrate(jint arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setBitrate(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBitrate",
@@ -42,7 +42,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setChannelCount(jint arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setChannelCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"setChannelCount",
@@ -50,7 +50,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setCodecName(JString arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setCodecName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setCodecName",
@@ -58,7 +58,7 @@ namespace android::media::metrics
 			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setContainerMimeType(JString arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setContainerMimeType(JString arg0) const
 	{
 		return callObjectMethod(
 			"setContainerMimeType",
@@ -66,7 +66,7 @@ namespace android::media::metrics
 			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setHeight(jint arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setHeight(jint arg0) const
 	{
 		return callObjectMethod(
 			"setHeight",
@@ -74,7 +74,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguage(JString arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLanguage",
@@ -82,7 +82,7 @@ namespace android::media::metrics
 			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguageRegion(JString arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguageRegion(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLanguageRegion",
@@ -90,7 +90,7 @@ namespace android::media::metrics
 			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setMetricsBundle(android::os::Bundle arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setMetricsBundle(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setMetricsBundle",
@@ -98,7 +98,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setSampleMimeType(JString arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setSampleMimeType(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSampleMimeType",
@@ -106,7 +106,7 @@ namespace android::media::metrics
 			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setTimeSinceCreatedMillis(jlong arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setTimeSinceCreatedMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTimeSinceCreatedMillis",
@@ -114,7 +114,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setTrackChangeReason(jint arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setTrackChangeReason(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTrackChangeReason",
@@ -122,7 +122,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setTrackState(jint arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setTrackState(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTrackState",
@@ -130,7 +130,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setVideoFrameRate(jfloat arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setVideoFrameRate(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setVideoFrameRate",
@@ -138,7 +138,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setWidth(jint arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setWidth(jint arg0) const
 	{
 		return callObjectMethod(
 			"setWidth",

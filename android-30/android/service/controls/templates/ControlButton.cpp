@@ -27,28 +27,28 @@ namespace android::service::controls::templates
 		) {}
 	
 	// Methods
-	jint ControlButton::describeContents()
+	jint ControlButton::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString ControlButton::getActionDescription()
+	JString ControlButton::getActionDescription() const
 	{
 		return callObjectMethod(
 			"getActionDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ControlButton::isChecked()
+	jboolean ControlButton::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
-	void ControlButton::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ControlButton::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

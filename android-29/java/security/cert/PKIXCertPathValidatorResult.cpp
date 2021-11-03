@@ -21,35 +21,35 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	JObject PKIXCertPathValidatorResult::clone()
+	JObject PKIXCertPathValidatorResult::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject PKIXCertPathValidatorResult::getPolicyTree()
+	JObject PKIXCertPathValidatorResult::getPolicyTree() const
 	{
 		return callObjectMethod(
 			"getPolicyTree",
 			"()Ljava/security/cert/PolicyNode;"
 		);
 	}
-	JObject PKIXCertPathValidatorResult::getPublicKey()
+	JObject PKIXCertPathValidatorResult::getPublicKey() const
 	{
 		return callObjectMethod(
 			"getPublicKey",
 			"()Ljava/security/PublicKey;"
 		);
 	}
-	java::security::cert::TrustAnchor PKIXCertPathValidatorResult::getTrustAnchor()
+	java::security::cert::TrustAnchor PKIXCertPathValidatorResult::getTrustAnchor() const
 	{
 		return callObjectMethod(
 			"getTrustAnchor",
 			"()Ljava/security/cert/TrustAnchor;"
 		);
 	}
-	JString PKIXCertPathValidatorResult::toString()
+	JString PKIXCertPathValidatorResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",

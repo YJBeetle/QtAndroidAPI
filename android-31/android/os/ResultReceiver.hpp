@@ -31,9 +31,9 @@ namespace android::os
 		ResultReceiver(android::os::Handler arg0);
 		
 		// Methods
-		jint describeContents();
-		void send(jint arg0, android::os::Bundle arg1);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void send(jint arg0, android::os::Bundle arg1) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

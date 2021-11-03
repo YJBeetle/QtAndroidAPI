@@ -31,7 +31,7 @@ namespace android::util
 			arg2.object<jstring>()
 		);
 	}
-	JObject Property::get(JObject arg0)
+	JObject Property::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -39,28 +39,28 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	JString Property::getName()
+	JString Property::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JClass Property::getType()
+	JClass Property::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	jboolean Property::isReadOnly()
+	jboolean Property::isReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
-	void Property::set(JObject arg0, JObject arg1)
+	void Property::set(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"set",

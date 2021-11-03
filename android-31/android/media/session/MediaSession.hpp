@@ -75,27 +75,27 @@ namespace android::media::session
 		MediaSession(android::content::Context arg0, JString arg1, android::os::Bundle arg2);
 		
 		// Methods
-		android::media::session::MediaController getController();
-		android::media::session::MediaSessionManager_RemoteUserInfo getCurrentControllerInfo();
-		android::media::session::MediaSession_Token getSessionToken();
-		jboolean isActive();
-		void release();
-		void sendSessionEvent(JString arg0, android::os::Bundle arg1);
-		void setActive(jboolean arg0);
-		void setCallback(android::media::session::MediaSession_Callback arg0);
-		void setCallback(android::media::session::MediaSession_Callback arg0, android::os::Handler arg1);
-		void setExtras(android::os::Bundle arg0);
-		void setFlags(jint arg0);
-		void setMediaButtonBroadcastReceiver(android::content::ComponentName arg0);
-		void setMediaButtonReceiver(android::app::PendingIntent arg0);
-		void setMetadata(android::media::MediaMetadata arg0);
-		void setPlaybackState(android::media::session::PlaybackState arg0);
-		void setPlaybackToLocal(android::media::AudioAttributes arg0);
-		void setPlaybackToRemote(android::media::VolumeProvider arg0);
-		void setQueue(JObject arg0);
-		void setQueueTitle(JString arg0);
-		void setRatingType(jint arg0);
-		void setSessionActivity(android::app::PendingIntent arg0);
+		android::media::session::MediaController getController() const;
+		android::media::session::MediaSessionManager_RemoteUserInfo getCurrentControllerInfo() const;
+		android::media::session::MediaSession_Token getSessionToken() const;
+		jboolean isActive() const;
+		void release() const;
+		void sendSessionEvent(JString arg0, android::os::Bundle arg1) const;
+		void setActive(jboolean arg0) const;
+		void setCallback(android::media::session::MediaSession_Callback arg0) const;
+		void setCallback(android::media::session::MediaSession_Callback arg0, android::os::Handler arg1) const;
+		void setExtras(android::os::Bundle arg0) const;
+		void setFlags(jint arg0) const;
+		void setMediaButtonBroadcastReceiver(android::content::ComponentName arg0) const;
+		void setMediaButtonReceiver(android::app::PendingIntent arg0) const;
+		void setMetadata(android::media::MediaMetadata arg0) const;
+		void setPlaybackState(android::media::session::PlaybackState arg0) const;
+		void setPlaybackToLocal(android::media::AudioAttributes arg0) const;
+		void setPlaybackToRemote(android::media::VolumeProvider arg0) const;
+		void setQueue(JObject arg0) const;
+		void setQueueTitle(JString arg0) const;
+		void setRatingType(jint arg0) const;
+		void setSessionActivity(android::app::PendingIntent arg0) const;
 	};
 } // namespace android::media::session
 

@@ -23,14 +23,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint AudioPlaybackConfiguration::describeContents()
+	jint AudioPlaybackConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AudioPlaybackConfiguration::equals(JObject arg0)
+	jboolean AudioPlaybackConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -38,35 +38,35 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	android::media::AudioAttributes AudioPlaybackConfiguration::getAudioAttributes()
+	android::media::AudioAttributes AudioPlaybackConfiguration::getAudioAttributes() const
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	android::media::AudioDeviceInfo AudioPlaybackConfiguration::getAudioDeviceInfo()
+	android::media::AudioDeviceInfo AudioPlaybackConfiguration::getAudioDeviceInfo() const
 	{
 		return callObjectMethod(
 			"getAudioDeviceInfo",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	jint AudioPlaybackConfiguration::hashCode()
+	jint AudioPlaybackConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AudioPlaybackConfiguration::toString()
+	JString AudioPlaybackConfiguration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AudioPlaybackConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AudioPlaybackConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

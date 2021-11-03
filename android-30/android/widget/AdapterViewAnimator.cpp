@@ -46,98 +46,98 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void AdapterViewAnimator::advance()
+	void AdapterViewAnimator::advance() const
 	{
 		callMethod<void>(
 			"advance",
 			"()V"
 		);
 	}
-	void AdapterViewAnimator::deferNotifyDataSetChanged()
+	void AdapterViewAnimator::deferNotifyDataSetChanged() const
 	{
 		callMethod<void>(
 			"deferNotifyDataSetChanged",
 			"()V"
 		);
 	}
-	void AdapterViewAnimator::fyiWillBeAdvancedByHostKThx()
+	void AdapterViewAnimator::fyiWillBeAdvancedByHostKThx() const
 	{
 		callMethod<void>(
 			"fyiWillBeAdvancedByHostKThx",
 			"()V"
 		);
 	}
-	JString AdapterViewAnimator::getAccessibilityClassName()
+	JString AdapterViewAnimator::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject AdapterViewAnimator::getAdapter()
+	JObject AdapterViewAnimator::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/Adapter;"
 		);
 	}
-	jint AdapterViewAnimator::getBaseline()
+	jint AdapterViewAnimator::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	android::view::View AdapterViewAnimator::getCurrentView()
+	android::view::View AdapterViewAnimator::getCurrentView() const
 	{
 		return callObjectMethod(
 			"getCurrentView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint AdapterViewAnimator::getDisplayedChild()
+	jint AdapterViewAnimator::getDisplayedChild() const
 	{
 		return callMethod<jint>(
 			"getDisplayedChild",
 			"()I"
 		);
 	}
-	android::animation::ObjectAnimator AdapterViewAnimator::getInAnimation()
+	android::animation::ObjectAnimator AdapterViewAnimator::getInAnimation() const
 	{
 		return callObjectMethod(
 			"getInAnimation",
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
-	android::animation::ObjectAnimator AdapterViewAnimator::getOutAnimation()
+	android::animation::ObjectAnimator AdapterViewAnimator::getOutAnimation() const
 	{
 		return callObjectMethod(
 			"getOutAnimation",
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
-	android::view::View AdapterViewAnimator::getSelectedView()
+	android::view::View AdapterViewAnimator::getSelectedView() const
 	{
 		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
-	jboolean AdapterViewAnimator::onRemoteAdapterConnected()
+	jboolean AdapterViewAnimator::onRemoteAdapterConnected() const
 	{
 		return callMethod<jboolean>(
 			"onRemoteAdapterConnected",
 			"()Z"
 		);
 	}
-	void AdapterViewAnimator::onRemoteAdapterDisconnected()
+	void AdapterViewAnimator::onRemoteAdapterDisconnected() const
 	{
 		callMethod<void>(
 			"onRemoteAdapterDisconnected",
 			"()V"
 		);
 	}
-	void AdapterViewAnimator::onRestoreInstanceState(JObject arg0)
+	void AdapterViewAnimator::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -145,14 +145,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject AdapterViewAnimator::onSaveInstanceState()
+	JObject AdapterViewAnimator::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	jboolean AdapterViewAnimator::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean AdapterViewAnimator::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -160,7 +160,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterViewAnimator::setAdapter(JObject arg0)
+	void AdapterViewAnimator::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -168,7 +168,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterViewAnimator::setAnimateFirstView(jboolean arg0)
+	void AdapterViewAnimator::setAnimateFirstView(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAnimateFirstView",
@@ -176,7 +176,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterViewAnimator::setDisplayedChild(jint arg0)
+	void AdapterViewAnimator::setDisplayedChild(jint arg0) const
 	{
 		callMethod<void>(
 			"setDisplayedChild",
@@ -184,7 +184,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterViewAnimator::setInAnimation(android::animation::ObjectAnimator arg0)
+	void AdapterViewAnimator::setInAnimation(android::animation::ObjectAnimator arg0) const
 	{
 		callMethod<void>(
 			"setInAnimation",
@@ -192,7 +192,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterViewAnimator::setInAnimation(android::content::Context arg0, jint arg1)
+	void AdapterViewAnimator::setInAnimation(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setInAnimation",
@@ -201,7 +201,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AdapterViewAnimator::setOutAnimation(android::animation::ObjectAnimator arg0)
+	void AdapterViewAnimator::setOutAnimation(android::animation::ObjectAnimator arg0) const
 	{
 		callMethod<void>(
 			"setOutAnimation",
@@ -209,7 +209,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterViewAnimator::setOutAnimation(android::content::Context arg0, jint arg1)
+	void AdapterViewAnimator::setOutAnimation(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setOutAnimation",
@@ -218,7 +218,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AdapterViewAnimator::setRemoteViewsAdapter(android::content::Intent arg0)
+	void AdapterViewAnimator::setRemoteViewsAdapter(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setRemoteViewsAdapter",
@@ -226,7 +226,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterViewAnimator::setSelection(jint arg0)
+	void AdapterViewAnimator::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -234,14 +234,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterViewAnimator::showNext()
+	void AdapterViewAnimator::showNext() const
 	{
 		callMethod<void>(
 			"showNext",
 			"()V"
 		);
 	}
-	void AdapterViewAnimator::showPrevious()
+	void AdapterViewAnimator::showPrevious() const
 	{
 		callMethod<void>(
 			"showPrevious",

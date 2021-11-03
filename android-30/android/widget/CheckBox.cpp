@@ -42,7 +42,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString CheckBox::getAccessibilityClassName()
+	JString CheckBox::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",

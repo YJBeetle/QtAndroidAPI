@@ -14,28 +14,28 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace ImageDecoder_ImageInfo::getColorSpace()
+	android::graphics::ColorSpace ImageDecoder_ImageInfo::getColorSpace() const
 	{
 		return callObjectMethod(
 			"getColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	JString ImageDecoder_ImageInfo::getMimeType()
+	JString ImageDecoder_ImageInfo::getMimeType() const
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::util::Size ImageDecoder_ImageInfo::getSize()
+	android::util::Size ImageDecoder_ImageInfo::getSize() const
 	{
 		return callObjectMethod(
 			"getSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	jboolean ImageDecoder_ImageInfo::isAnimated()
+	jboolean ImageDecoder_ImageInfo::isAnimated() const
 	{
 		return callMethod<jboolean>(
 			"isAnimated",

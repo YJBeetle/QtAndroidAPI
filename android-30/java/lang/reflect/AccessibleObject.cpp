@@ -25,7 +25,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	jboolean AccessibleObject::canAccess(JObject arg0)
+	jboolean AccessibleObject::canAccess(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"canAccess",
@@ -33,7 +33,7 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	JObject AccessibleObject::getAnnotation(JClass arg0)
+	JObject AccessibleObject::getAnnotation(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -41,14 +41,14 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	JArray AccessibleObject::getAnnotations()
+	JArray AccessibleObject::getAnnotations() const
 	{
 		return callObjectMethod(
 			"getAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	JArray AccessibleObject::getAnnotationsByType(JClass arg0)
+	JArray AccessibleObject::getAnnotationsByType(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
@@ -56,7 +56,7 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	JObject AccessibleObject::getDeclaredAnnotation(JClass arg0)
+	JObject AccessibleObject::getDeclaredAnnotation(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",
@@ -64,14 +64,14 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	JArray AccessibleObject::getDeclaredAnnotations()
+	JArray AccessibleObject::getDeclaredAnnotations() const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	JArray AccessibleObject::getDeclaredAnnotationsByType(JClass arg0)
+	JArray AccessibleObject::getDeclaredAnnotationsByType(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotationsByType",
@@ -79,14 +79,14 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	jboolean AccessibleObject::isAccessible()
+	jboolean AccessibleObject::isAccessible() const
 	{
 		return callMethod<jboolean>(
 			"isAccessible",
 			"()Z"
 		);
 	}
-	jboolean AccessibleObject::isAnnotationPresent(JClass arg0)
+	jboolean AccessibleObject::isAnnotationPresent(JClass arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAnnotationPresent",
@@ -94,7 +94,7 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	void AccessibleObject::setAccessible(jboolean arg0)
+	void AccessibleObject::setAccessible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAccessible",
@@ -102,7 +102,7 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	jboolean AccessibleObject::trySetAccessible()
+	jboolean AccessibleObject::trySetAccessible() const
 	{
 		return callMethod<jboolean>(
 			"trySetAccessible",

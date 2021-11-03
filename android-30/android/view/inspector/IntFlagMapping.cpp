@@ -16,7 +16,7 @@ namespace android::view::inspector
 		) {}
 	
 	// Methods
-	void IntFlagMapping::add(jint arg0, jint arg1, JString arg2)
+	void IntFlagMapping::add(jint arg0, jint arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"add",
@@ -26,7 +26,7 @@ namespace android::view::inspector
 			arg2.object<jstring>()
 		);
 	}
-	JObject IntFlagMapping::get(jint arg0)
+	JObject IntFlagMapping::get(jint arg0) const
 	{
 		return callObjectMethod(
 			"get",

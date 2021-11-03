@@ -115,63 +115,63 @@ namespace android::app
 			arg1
 		);
 	}
-	jint RemoteInput::describeContents()
+	jint RemoteInput::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RemoteInput::getAllowFreeFormInput()
+	jboolean RemoteInput::getAllowFreeFormInput() const
 	{
 		return callMethod<jboolean>(
 			"getAllowFreeFormInput",
 			"()Z"
 		);
 	}
-	JObject RemoteInput::getAllowedDataTypes()
+	JObject RemoteInput::getAllowedDataTypes() const
 	{
 		return callObjectMethod(
 			"getAllowedDataTypes",
 			"()Ljava/util/Set;"
 		);
 	}
-	JArray RemoteInput::getChoices()
+	JArray RemoteInput::getChoices() const
 	{
 		return callObjectMethod(
 			"getChoices",
 			"()[Ljava/lang/CharSequence;"
 		);
 	}
-	android::os::Bundle RemoteInput::getExtras()
+	android::os::Bundle RemoteInput::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString RemoteInput::getLabel()
+	JString RemoteInput::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString RemoteInput::getResultKey()
+	JString RemoteInput::getResultKey() const
 	{
 		return callObjectMethod(
 			"getResultKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean RemoteInput::isDataOnly()
+	jboolean RemoteInput::isDataOnly() const
 	{
 		return callMethod<jboolean>(
 			"isDataOnly",
 			"()Z"
 		);
 	}
-	void RemoteInput::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RemoteInput::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

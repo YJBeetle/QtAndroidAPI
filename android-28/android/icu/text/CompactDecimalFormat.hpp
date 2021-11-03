@@ -45,8 +45,8 @@ namespace android::icu::text
 		// Methods
 		static android::icu::text::CompactDecimalFormat getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
 		static android::icu::text::CompactDecimalFormat getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
-		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
-		android::icu::util::CurrencyAmount parseCurrency(JString arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1) const;
+		android::icu::util::CurrencyAmount parseCurrency(JString arg0, java::text::ParsePosition arg1) const;
 	};
 } // namespace android::icu::text
 

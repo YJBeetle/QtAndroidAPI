@@ -27,14 +27,14 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	JByteArray GCMParameterSpec::getIV()
+	JByteArray GCMParameterSpec::getIV() const
 	{
 		return callObjectMethod(
 			"getIV",
 			"()[B"
 		);
 	}
-	jint GCMParameterSpec::getTLen()
+	jint GCMParameterSpec::getTLen() const
 	{
 		return callMethod<jint>(
 			"getTLen",

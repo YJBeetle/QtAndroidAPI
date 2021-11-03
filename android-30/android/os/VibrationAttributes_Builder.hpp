@@ -23,9 +23,9 @@ namespace android::os
 		VibrationAttributes_Builder(android::os::VibrationAttributes arg0);
 		
 		// Methods
-		android::os::VibrationAttributes build();
-		android::os::VibrationAttributes_Builder setFlags(jint arg0, jint arg1);
-		android::os::VibrationAttributes_Builder setUsage(jint arg0);
+		android::os::VibrationAttributes build() const;
+		android::os::VibrationAttributes_Builder setFlags(jint arg0, jint arg1) const;
+		android::os::VibrationAttributes_Builder setUsage(jint arg0) const;
 	};
 } // namespace android::os
 

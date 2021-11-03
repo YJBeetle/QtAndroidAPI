@@ -24,8 +24,8 @@ namespace android::net::ipsec::ike
 		IkeIpv4AddrIdentification(java::net::Inet4Address arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

@@ -18,7 +18,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void RemoteViews_RemoteViewOutlineProvider::getOutline(android::view::View arg0, android::graphics::Outline arg1)
+	void RemoteViews_RemoteViewOutlineProvider::getOutline(android::view::View arg0, android::graphics::Outline arg1) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -27,7 +27,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jfloat RemoteViews_RemoteViewOutlineProvider::getRadius()
+	jfloat RemoteViews_RemoteViewOutlineProvider::getRadius() const
 	{
 		return callMethod<jfloat>(
 			"getRadius",

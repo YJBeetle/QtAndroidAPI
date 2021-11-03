@@ -39,14 +39,14 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jfloat PathMeasure::getLength()
+	jfloat PathMeasure::getLength() const
 	{
 		return callMethod<jfloat>(
 			"getLength",
 			"()F"
 		);
 	}
-	jboolean PathMeasure::getMatrix(jfloat arg0, android::graphics::Matrix arg1, jint arg2)
+	jboolean PathMeasure::getMatrix(jfloat arg0, android::graphics::Matrix arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"getMatrix",
@@ -56,7 +56,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	jboolean PathMeasure::getPosTan(jfloat arg0, JFloatArray arg1, JFloatArray arg2)
+	jboolean PathMeasure::getPosTan(jfloat arg0, JFloatArray arg1, JFloatArray arg2) const
 	{
 		return callMethod<jboolean>(
 			"getPosTan",
@@ -66,7 +66,7 @@ namespace android::graphics
 			arg2.object<jfloatArray>()
 		);
 	}
-	jboolean PathMeasure::getSegment(jfloat arg0, jfloat arg1, android::graphics::Path arg2, jboolean arg3)
+	jboolean PathMeasure::getSegment(jfloat arg0, jfloat arg1, android::graphics::Path arg2, jboolean arg3) const
 	{
 		return callMethod<jboolean>(
 			"getSegment",
@@ -77,21 +77,21 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean PathMeasure::isClosed()
+	jboolean PathMeasure::isClosed() const
 	{
 		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
-	jboolean PathMeasure::nextContour()
+	jboolean PathMeasure::nextContour() const
 	{
 		return callMethod<jboolean>(
 			"nextContour",
 			"()Z"
 		);
 	}
-	void PathMeasure::setPath(android::graphics::Path arg0, jboolean arg1)
+	void PathMeasure::setPath(android::graphics::Path arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setPath",

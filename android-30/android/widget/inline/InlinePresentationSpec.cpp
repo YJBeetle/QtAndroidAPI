@@ -23,14 +23,14 @@ namespace android::widget::inline
 	// Constructors
 	
 	// Methods
-	jint InlinePresentationSpec::describeContents()
+	jint InlinePresentationSpec::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean InlinePresentationSpec::equals(JObject arg0)
+	jboolean InlinePresentationSpec::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -38,42 +38,42 @@ namespace android::widget::inline
 			arg0.object<jobject>()
 		);
 	}
-	android::util::Size InlinePresentationSpec::getMaxSize()
+	android::util::Size InlinePresentationSpec::getMaxSize() const
 	{
 		return callObjectMethod(
 			"getMaxSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	android::util::Size InlinePresentationSpec::getMinSize()
+	android::util::Size InlinePresentationSpec::getMinSize() const
 	{
 		return callObjectMethod(
 			"getMinSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	android::os::Bundle InlinePresentationSpec::getStyle()
+	android::os::Bundle InlinePresentationSpec::getStyle() const
 	{
 		return callObjectMethod(
 			"getStyle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint InlinePresentationSpec::hashCode()
+	jint InlinePresentationSpec::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString InlinePresentationSpec::toString()
+	JString InlinePresentationSpec::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InlinePresentationSpec::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InlinePresentationSpec::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

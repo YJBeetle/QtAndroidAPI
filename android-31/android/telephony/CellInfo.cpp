@@ -65,14 +65,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellInfo::describeContents()
+	jint CellInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellInfo::equals(JObject arg0)
+	jboolean CellInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -80,63 +80,63 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellInfo::getCellConnectionStatus()
+	jint CellInfo::getCellConnectionStatus() const
 	{
 		return callMethod<jint>(
 			"getCellConnectionStatus",
 			"()I"
 		);
 	}
-	android::telephony::CellIdentity CellInfo::getCellIdentity()
+	android::telephony::CellIdentity CellInfo::getCellIdentity() const
 	{
 		return callObjectMethod(
 			"getCellIdentity",
 			"()Landroid/telephony/CellIdentity;"
 		);
 	}
-	android::telephony::CellSignalStrength CellInfo::getCellSignalStrength()
+	android::telephony::CellSignalStrength CellInfo::getCellSignalStrength() const
 	{
 		return callObjectMethod(
 			"getCellSignalStrength",
 			"()Landroid/telephony/CellSignalStrength;"
 		);
 	}
-	jlong CellInfo::getTimeStamp()
+	jlong CellInfo::getTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getTimeStamp",
 			"()J"
 		);
 	}
-	jlong CellInfo::getTimestampMillis()
+	jlong CellInfo::getTimestampMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimestampMillis",
 			"()J"
 		);
 	}
-	jint CellInfo::hashCode()
+	jint CellInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean CellInfo::isRegistered()
+	jboolean CellInfo::isRegistered() const
 	{
 		return callMethod<jboolean>(
 			"isRegistered",
 			"()Z"
 		);
 	}
-	JString CellInfo::toString()
+	JString CellInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -22,14 +22,14 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextSelection::describeContents()
+	jint TextSelection::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jfloat TextSelection::getConfidenceScore(JString arg0)
+	jfloat TextSelection::getConfidenceScore(JString arg0) const
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
@@ -37,7 +37,7 @@ namespace android::view::textclassifier
 			arg0.object<jstring>()
 		);
 	}
-	JString TextSelection::getEntity(jint arg0)
+	JString TextSelection::getEntity(jint arg0) const
 	{
 		return callObjectMethod(
 			"getEntity",
@@ -45,56 +45,56 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	jint TextSelection::getEntityCount()
+	jint TextSelection::getEntityCount() const
 	{
 		return callMethod<jint>(
 			"getEntityCount",
 			"()I"
 		);
 	}
-	android::os::Bundle TextSelection::getExtras()
+	android::os::Bundle TextSelection::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString TextSelection::getId()
+	JString TextSelection::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TextSelection::getSelectionEndIndex()
+	jint TextSelection::getSelectionEndIndex() const
 	{
 		return callMethod<jint>(
 			"getSelectionEndIndex",
 			"()I"
 		);
 	}
-	jint TextSelection::getSelectionStartIndex()
+	jint TextSelection::getSelectionStartIndex() const
 	{
 		return callMethod<jint>(
 			"getSelectionStartIndex",
 			"()I"
 		);
 	}
-	android::view::textclassifier::TextClassification TextSelection::getTextClassification()
+	android::view::textclassifier::TextClassification TextSelection::getTextClassification() const
 	{
 		return callObjectMethod(
 			"getTextClassification",
 			"()Landroid/view/textclassifier/TextClassification;"
 		);
 	}
-	JString TextSelection::toString()
+	JString TextSelection::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextSelection::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextSelection::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

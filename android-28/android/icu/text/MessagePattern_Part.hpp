@@ -27,15 +27,15 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::icu::text::MessagePattern_ArgType getArgType();
-		jint getIndex();
-		jint getLength();
-		jint getLimit();
-		android::icu::text::MessagePattern_Part_Type getType();
-		jint getValue();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		android::icu::text::MessagePattern_ArgType getArgType() const;
+		jint getIndex() const;
+		jint getLength() const;
+		jint getLimit() const;
+		android::icu::text::MessagePattern_Part_Type getType() const;
+		jint getValue() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

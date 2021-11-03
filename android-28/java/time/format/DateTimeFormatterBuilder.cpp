@@ -35,7 +35,7 @@ namespace java::time::format
 			arg3.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::append(java::time::format::DateTimeFormatter arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::append(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -43,14 +43,14 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendChronologyId()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendChronologyId() const
 	{
 		return callObjectMethod(
 			"appendChronologyId",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendChronologyText(java::time::format::TextStyle arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendChronologyText(java::time::format::TextStyle arg0) const
 	{
 		return callObjectMethod(
 			"appendChronologyText",
@@ -58,7 +58,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendDayPeriodText(java::time::format::TextStyle arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendDayPeriodText(java::time::format::TextStyle arg0) const
 	{
 		return callObjectMethod(
 			"appendDayPeriodText",
@@ -66,7 +66,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendFraction(JObject arg0, jint arg1, jint arg2, jboolean arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendFraction(JObject arg0, jint arg1, jint arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"appendFraction",
@@ -77,7 +77,7 @@ namespace java::time::format
 			arg3
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendGenericZoneText(java::time::format::TextStyle arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendGenericZoneText(java::time::format::TextStyle arg0) const
 	{
 		return callObjectMethod(
 			"appendGenericZoneText",
@@ -85,7 +85,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendGenericZoneText(java::time::format::TextStyle arg0, JObject arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendGenericZoneText(java::time::format::TextStyle arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"appendGenericZoneText",
@@ -94,14 +94,14 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendInstant()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendInstant() const
 	{
 		return callObjectMethod(
 			"appendInstant",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendInstant(jint arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendInstant(jint arg0) const
 	{
 		return callObjectMethod(
 			"appendInstant",
@@ -109,7 +109,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLiteral(jchar arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLiteral(jchar arg0) const
 	{
 		return callObjectMethod(
 			"appendLiteral",
@@ -117,7 +117,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLiteral(JString arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLiteral(JString arg0) const
 	{
 		return callObjectMethod(
 			"appendLiteral",
@@ -125,7 +125,7 @@ namespace java::time::format
 			arg0.object<jstring>()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLocalized(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLocalized(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1) const
 	{
 		return callObjectMethod(
 			"appendLocalized",
@@ -134,7 +134,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLocalizedOffset(java::time::format::TextStyle arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLocalizedOffset(java::time::format::TextStyle arg0) const
 	{
 		return callObjectMethod(
 			"appendLocalizedOffset",
@@ -142,7 +142,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOffset(JString arg0, JString arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOffset(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"appendOffset",
@@ -151,14 +151,14 @@ namespace java::time::format
 			arg1.object<jstring>()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOffsetId()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOffsetId() const
 	{
 		return callObjectMethod(
 			"appendOffsetId",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOptional(java::time::format::DateTimeFormatter arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOptional(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"appendOptional",
@@ -166,7 +166,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendPattern(JString arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendPattern(JString arg0) const
 	{
 		return callObjectMethod(
 			"appendPattern",
@@ -174,7 +174,7 @@ namespace java::time::format
 			arg0.object<jstring>()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0) const
 	{
 		return callObjectMethod(
 			"appendText",
@@ -182,7 +182,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0, java::time::format::TextStyle arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0, java::time::format::TextStyle arg1) const
 	{
 		return callObjectMethod(
 			"appendText",
@@ -191,7 +191,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0, JObject arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"appendText",
@@ -200,7 +200,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0) const
 	{
 		return callObjectMethod(
 			"appendValue",
@@ -208,7 +208,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0, jint arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"appendValue",
@@ -217,7 +217,7 @@ namespace java::time::format
 			arg1
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0, jint arg1, jint arg2, java::time::format::SignStyle arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0, jint arg1, jint arg2, java::time::format::SignStyle arg3) const
 	{
 		return callObjectMethod(
 			"appendValue",
@@ -228,7 +228,7 @@ namespace java::time::format
 			arg3.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(JObject arg0, jint arg1, jint arg2, jint arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"appendValueReduced",
@@ -239,7 +239,7 @@ namespace java::time::format
 			arg3
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(JObject arg0, jint arg1, jint arg2, JObject arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(JObject arg0, jint arg1, jint arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"appendValueReduced",
@@ -250,28 +250,28 @@ namespace java::time::format
 			arg3.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneId()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneId() const
 	{
 		return callObjectMethod(
 			"appendZoneId",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneOrOffsetId()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneOrOffsetId() const
 	{
 		return callObjectMethod(
 			"appendZoneOrOffsetId",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneRegionId()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneRegionId() const
 	{
 		return callObjectMethod(
 			"appendZoneRegionId",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneText(java::time::format::TextStyle arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneText(java::time::format::TextStyle arg0) const
 	{
 		return callObjectMethod(
 			"appendZoneText",
@@ -279,7 +279,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneText(java::time::format::TextStyle arg0, JObject arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneText(java::time::format::TextStyle arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"appendZoneText",
@@ -288,21 +288,21 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::optionalEnd()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::optionalEnd() const
 	{
 		return callObjectMethod(
 			"optionalEnd",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::optionalStart()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::optionalStart() const
 	{
 		return callObjectMethod(
 			"optionalStart",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::padNext(jint arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::padNext(jint arg0) const
 	{
 		return callObjectMethod(
 			"padNext",
@@ -310,7 +310,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::padNext(jint arg0, jchar arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::padNext(jint arg0, jchar arg1) const
 	{
 		return callObjectMethod(
 			"padNext",
@@ -319,21 +319,21 @@ namespace java::time::format
 			arg1
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseCaseInsensitive()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseCaseInsensitive() const
 	{
 		return callObjectMethod(
 			"parseCaseInsensitive",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseCaseSensitive()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseCaseSensitive() const
 	{
 		return callObjectMethod(
 			"parseCaseSensitive",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseDefaulting(JObject arg0, jlong arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseDefaulting(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"parseDefaulting",
@@ -342,28 +342,28 @@ namespace java::time::format
 			arg1
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseLenient()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseLenient() const
 	{
 		return callObjectMethod(
 			"parseLenient",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseStrict()
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseStrict() const
 	{
 		return callObjectMethod(
 			"parseStrict",
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatterBuilder::toFormatter()
+	java::time::format::DateTimeFormatter DateTimeFormatterBuilder::toFormatter() const
 	{
 		return callObjectMethod(
 			"toFormatter",
 			"()Ljava/time/format/DateTimeFormatter;"
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatterBuilder::toFormatter(java::util::Locale arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatterBuilder::toFormatter(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"toFormatter",

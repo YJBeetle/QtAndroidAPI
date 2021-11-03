@@ -110,12 +110,12 @@ namespace android::content::pm
 		
 		// Methods
 		static JString getCategoryTitle(android::content::Context arg0, jint arg1);
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		jboolean isVirtualPreload();
-		JString loadDescription(android::content::pm::PackageManager arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		jboolean isVirtualPreload() const;
+		JString loadDescription(android::content::pm::PackageManager arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

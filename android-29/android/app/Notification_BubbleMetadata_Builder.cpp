@@ -18,14 +18,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_BubbleMetadata Notification_BubbleMetadata_Builder::build()
+	android::app::Notification_BubbleMetadata Notification_BubbleMetadata_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification$BubbleMetadata;"
 		);
 	}
-	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setAutoExpandBubble(jboolean arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setAutoExpandBubble(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAutoExpandBubble",
@@ -33,7 +33,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDeleteIntent(android::app::PendingIntent arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDeleteIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setDeleteIntent",
@@ -41,7 +41,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeight(jint arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeight(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDesiredHeight",
@@ -49,7 +49,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeightResId(jint arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeightResId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDesiredHeightResId",
@@ -57,7 +57,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -65,7 +65,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIntent(android::app::PendingIntent arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setIntent",
@@ -73,7 +73,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setSuppressNotification(jboolean arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setSuppressNotification(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setSuppressNotification",

@@ -23,10 +23,10 @@ namespace android::graphics
 		BlendModeColorFilter(jint arg0, android::graphics::BlendMode arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getColor();
-		android::graphics::BlendMode getMode();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getColor() const;
+		android::graphics::BlendMode getMode() const;
+		jint hashCode() const;
 	};
 } // namespace android::graphics
 

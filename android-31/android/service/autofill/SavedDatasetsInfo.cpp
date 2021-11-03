@@ -35,7 +35,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	jboolean SavedDatasetsInfo::equals(JObject arg0)
+	jboolean SavedDatasetsInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -43,28 +43,28 @@ namespace android::service::autofill
 			arg0.object<jobject>()
 		);
 	}
-	jint SavedDatasetsInfo::getCount()
+	jint SavedDatasetsInfo::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	JString SavedDatasetsInfo::getType()
+	JString SavedDatasetsInfo::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SavedDatasetsInfo::hashCode()
+	jint SavedDatasetsInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SavedDatasetsInfo::toString()
+	JString SavedDatasetsInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

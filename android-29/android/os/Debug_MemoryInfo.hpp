@@ -33,17 +33,17 @@ namespace android::os
 		Debug_MemoryInfo();
 		
 		// Methods
-		jint describeContents();
-		JString getMemoryStat(JString arg0);
-		JObject getMemoryStats();
-		jint getTotalPrivateClean();
-		jint getTotalPrivateDirty();
-		jint getTotalPss();
-		jint getTotalSharedClean();
-		jint getTotalSharedDirty();
-		jint getTotalSwappablePss();
-		void readFromParcel(android::os::Parcel arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getMemoryStat(JString arg0) const;
+		JObject getMemoryStats() const;
+		jint getTotalPrivateClean() const;
+		jint getTotalPrivateDirty() const;
+		jint getTotalPss() const;
+		jint getTotalSharedClean() const;
+		jint getTotalSharedDirty() const;
+		jint getTotalSwappablePss() const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

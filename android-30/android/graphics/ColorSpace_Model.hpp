@@ -25,7 +25,7 @@ namespace android::graphics
 		// Methods
 		static android::graphics::ColorSpace_Model valueOf(JString arg0);
 		static JArray values();
-		jint getComponentCount();
+		jint getComponentCount() const;
 	};
 } // namespace android::graphics
 

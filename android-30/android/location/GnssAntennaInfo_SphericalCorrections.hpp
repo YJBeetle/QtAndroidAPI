@@ -25,13 +25,13 @@ namespace android::location
 		GnssAntennaInfo_SphericalCorrections(JArray arg0, JArray arg1);
 		
 		// Methods
-		jint describeContents();
-		JArray getCorrectionUncertaintiesArray();
-		JArray getCorrectionsArray();
-		jdouble getDeltaPhi();
-		jdouble getDeltaTheta();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JArray getCorrectionUncertaintiesArray() const;
+		JArray getCorrectionsArray() const;
+		jdouble getDeltaPhi() const;
+		jdouble getDeltaTheta() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

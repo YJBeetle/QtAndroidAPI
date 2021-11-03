@@ -16,14 +16,14 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::CaseMap_Title CaseMap_Title::adjustToCased()
+	android::icu::text::CaseMap_Title CaseMap_Title::adjustToCased() const
 	{
 		return callObjectMethod(
 			"adjustToCased",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	JObject CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4)
+	JObject CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			arg4.object()
 		);
 	}
-	JString CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2)
+	JString CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -45,35 +45,35 @@ namespace android::icu::text
 			arg2.object<jstring>()
 		);
 	}
-	android::icu::text::CaseMap_Title CaseMap_Title::noBreakAdjustment()
+	android::icu::text::CaseMap_Title CaseMap_Title::noBreakAdjustment() const
 	{
 		return callObjectMethod(
 			"noBreakAdjustment",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	android::icu::text::CaseMap_Title CaseMap_Title::noLowercase()
+	android::icu::text::CaseMap_Title CaseMap_Title::noLowercase() const
 	{
 		return callObjectMethod(
 			"noLowercase",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	android::icu::text::CaseMap_Title CaseMap_Title::omitUnchangedText()
+	android::icu::text::CaseMap_Title CaseMap_Title::omitUnchangedText() const
 	{
 		return callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	android::icu::text::CaseMap_Title CaseMap_Title::sentences()
+	android::icu::text::CaseMap_Title CaseMap_Title::sentences() const
 	{
 		return callObjectMethod(
 			"sentences",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	android::icu::text::CaseMap_Title CaseMap_Title::wholeString()
+	android::icu::text::CaseMap_Title CaseMap_Title::wholeString() const
 	{
 		return callObjectMethod(
 			"wholeString",

@@ -26,18 +26,18 @@ namespace android::widget
 		RatingBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		jint getNumStars();
-		JObject getOnRatingBarChangeListener();
-		jfloat getRating();
-		jfloat getStepSize();
-		jboolean isIndicator();
-		void setIsIndicator(jboolean arg0);
-		void setMax(jint arg0);
-		void setNumStars(jint arg0);
-		void setOnRatingBarChangeListener(JObject arg0);
-		void setRating(jfloat arg0);
-		void setStepSize(jfloat arg0);
+		JString getAccessibilityClassName() const;
+		jint getNumStars() const;
+		JObject getOnRatingBarChangeListener() const;
+		jfloat getRating() const;
+		jfloat getStepSize() const;
+		jboolean isIndicator() const;
+		void setIsIndicator(jboolean arg0) const;
+		void setMax(jint arg0) const;
+		void setNumStars(jint arg0) const;
+		void setOnRatingBarChangeListener(JObject arg0) const;
+		void setRating(jfloat arg0) const;
+		void setStepSize(jfloat arg0) const;
 	};
 } // namespace android::widget
 

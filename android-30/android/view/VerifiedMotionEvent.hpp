@@ -27,17 +27,17 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getActionMasked();
-		jint getButtonState();
-		jlong getDownTimeNanos();
-		java::lang::Boolean getFlag(jint arg0);
-		jint getMetaState();
-		jfloat getRawX();
-		jfloat getRawY();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getActionMasked() const;
+		jint getButtonState() const;
+		jlong getDownTimeNanos() const;
+		java::lang::Boolean getFlag(jint arg0) const;
+		jint getMetaState() const;
+		jfloat getRawX() const;
+		jfloat getRawY() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

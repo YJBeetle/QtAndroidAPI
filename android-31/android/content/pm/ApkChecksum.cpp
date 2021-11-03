@@ -22,49 +22,49 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jint ApkChecksum::describeContents()
+	jint ApkChecksum::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	java::security::cert::Certificate ApkChecksum::getInstallerCertificate()
+	java::security::cert::Certificate ApkChecksum::getInstallerCertificate() const
 	{
 		return callObjectMethod(
 			"getInstallerCertificate",
 			"()Ljava/security/cert/Certificate;"
 		);
 	}
-	JString ApkChecksum::getInstallerPackageName()
+	JString ApkChecksum::getInstallerPackageName() const
 	{
 		return callObjectMethod(
 			"getInstallerPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ApkChecksum::getSplitName()
+	JString ApkChecksum::getSplitName() const
 	{
 		return callObjectMethod(
 			"getSplitName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ApkChecksum::getType()
+	jint ApkChecksum::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JByteArray ApkChecksum::getValue()
+	JByteArray ApkChecksum::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
 		);
 	}
-	void ApkChecksum::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ApkChecksum::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

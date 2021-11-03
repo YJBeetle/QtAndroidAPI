@@ -21,7 +21,7 @@ namespace android::nfc
 		// Constructors
 		
 		// Methods
-		android::nfc::NfcAdapter getDefaultAdapter();
+		android::nfc::NfcAdapter getDefaultAdapter() const;
 	};
 } // namespace android::nfc
 

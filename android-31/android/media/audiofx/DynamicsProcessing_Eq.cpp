@@ -26,7 +26,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing_Eq::getBand(jint arg0)
+	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing_Eq::getBand(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBand",
@@ -34,7 +34,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Eq::setBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1)
+	void DynamicsProcessing_Eq::setBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1) const
 	{
 		callMethod<void>(
 			"setBand",
@@ -43,7 +43,7 @@ namespace android::media::audiofx
 			arg1.object()
 		);
 	}
-	JString DynamicsProcessing_Eq::toString()
+	JString DynamicsProcessing_Eq::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -22,9 +22,9 @@ namespace android::app::admin
 		FactoryResetProtectionPolicy_Builder();
 		
 		// Methods
-		android::app::admin::FactoryResetProtectionPolicy build();
-		android::app::admin::FactoryResetProtectionPolicy_Builder setFactoryResetProtectionAccounts(JObject arg0);
-		android::app::admin::FactoryResetProtectionPolicy_Builder setFactoryResetProtectionEnabled(jboolean arg0);
+		android::app::admin::FactoryResetProtectionPolicy build() const;
+		android::app::admin::FactoryResetProtectionPolicy_Builder setFactoryResetProtectionAccounts(JObject arg0) const;
+		android::app::admin::FactoryResetProtectionPolicy_Builder setFactoryResetProtectionEnabled(jboolean arg0) const;
 	};
 } // namespace android::app::admin
 

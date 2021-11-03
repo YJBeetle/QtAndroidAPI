@@ -39,14 +39,14 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	JArray FontsContract_FontFamilyResult::getFonts()
+	JArray FontsContract_FontFamilyResult::getFonts() const
 	{
 		return callObjectMethod(
 			"getFonts",
 			"()[Landroid/provider/FontsContract$FontInfo;"
 		);
 	}
-	jint FontsContract_FontFamilyResult::getStatusCode()
+	jint FontsContract_FontFamilyResult::getStatusCode() const
 	{
 		return callMethod<jint>(
 			"getStatusCode",

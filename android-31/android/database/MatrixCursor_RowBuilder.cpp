@@ -13,7 +13,7 @@ namespace android::database
 	// Constructors
 	
 	// Methods
-	android::database::MatrixCursor_RowBuilder MatrixCursor_RowBuilder::add(JObject arg0)
+	android::database::MatrixCursor_RowBuilder MatrixCursor_RowBuilder::add(JObject arg0) const
 	{
 		return callObjectMethod(
 			"add",
@@ -21,7 +21,7 @@ namespace android::database
 			arg0.object<jobject>()
 		);
 	}
-	android::database::MatrixCursor_RowBuilder MatrixCursor_RowBuilder::add(JString arg0, JObject arg1)
+	android::database::MatrixCursor_RowBuilder MatrixCursor_RowBuilder::add(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"add",

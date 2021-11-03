@@ -22,11 +22,11 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getCardinality();
-		JString getName();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getCardinality() const;
+		JString getName() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::app::appsearch
 

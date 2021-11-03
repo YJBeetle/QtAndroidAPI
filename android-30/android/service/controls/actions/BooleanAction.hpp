@@ -20,8 +20,8 @@ namespace android::service::controls::actions
 		BooleanAction(JString arg0, jboolean arg1, JString arg2);
 		
 		// Methods
-		jint getActionType();
-		jboolean getNewState();
+		jint getActionType() const;
+		jboolean getNewState() const;
 	};
 } // namespace android::service::controls::actions
 

@@ -26,10 +26,10 @@ namespace android::media::metrics
 		NetworkEvent_Builder();
 		
 		// Methods
-		android::media::metrics::NetworkEvent build();
-		android::media::metrics::NetworkEvent_Builder setMetricsBundle(android::os::Bundle arg0);
-		android::media::metrics::NetworkEvent_Builder setNetworkType(jint arg0);
-		android::media::metrics::NetworkEvent_Builder setTimeSinceCreatedMillis(jlong arg0);
+		android::media::metrics::NetworkEvent build() const;
+		android::media::metrics::NetworkEvent_Builder setMetricsBundle(android::os::Bundle arg0) const;
+		android::media::metrics::NetworkEvent_Builder setNetworkType(jint arg0) const;
+		android::media::metrics::NetworkEvent_Builder setTimeSinceCreatedMillis(jlong arg0) const;
 	};
 } // namespace android::media::metrics
 

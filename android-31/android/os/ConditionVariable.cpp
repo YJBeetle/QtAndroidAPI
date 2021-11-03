@@ -21,7 +21,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	jboolean ConditionVariable::block(jlong arg0)
+	jboolean ConditionVariable::block(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"block",
@@ -29,21 +29,21 @@ namespace android::os
 			arg0
 		);
 	}
-	void ConditionVariable::block()
+	void ConditionVariable::block() const
 	{
 		callMethod<void>(
 			"block",
 			"()V"
 		);
 	}
-	void ConditionVariable::close()
+	void ConditionVariable::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ConditionVariable::open()
+	void ConditionVariable::open() const
 	{
 		callMethod<void>(
 			"open",

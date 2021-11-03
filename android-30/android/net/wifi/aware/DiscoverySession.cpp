@@ -14,14 +14,14 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	void DiscoverySession::close()
+	void DiscoverySession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0)
+	android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0) const
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierOpen",
@@ -29,7 +29,7 @@ namespace android::net::wifi::aware
 			arg0.object()
 		);
 	}
-	android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, JString arg1)
+	android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierPassphrase",
@@ -38,7 +38,7 @@ namespace android::net::wifi::aware
 			arg1.object<jstring>()
 		);
 	}
-	void DiscoverySession::sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, JByteArray arg2)
+	void DiscoverySession::sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"sendMessage",

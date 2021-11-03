@@ -23,11 +23,11 @@ namespace android::net::wifi::aware
 		AwareResources(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint describeContents();
-		jint getAvailableDataPathsCount();
-		jint getAvailablePublishSessionsCount();
-		jint getAvailableSubscribeSessionsCount();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getAvailableDataPathsCount() const;
+		jint getAvailablePublishSessionsCount() const;
+		jint getAvailableSubscribeSessionsCount() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::aware
 

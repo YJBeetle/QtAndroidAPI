@@ -13,28 +13,28 @@ namespace javax::xml::transform
 	// Constructors
 	
 	// Methods
-	void Transformer::clearParameters()
+	void Transformer::clearParameters() const
 	{
 		callMethod<void>(
 			"clearParameters",
 			"()V"
 		);
 	}
-	JObject Transformer::getErrorListener()
+	JObject Transformer::getErrorListener() const
 	{
 		return callObjectMethod(
 			"getErrorListener",
 			"()Ljavax/xml/transform/ErrorListener;"
 		);
 	}
-	java::util::Properties Transformer::getOutputProperties()
+	java::util::Properties Transformer::getOutputProperties() const
 	{
 		return callObjectMethod(
 			"getOutputProperties",
 			"()Ljava/util/Properties;"
 		);
 	}
-	JString Transformer::getOutputProperty(JString arg0)
+	JString Transformer::getOutputProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getOutputProperty",
@@ -42,7 +42,7 @@ namespace javax::xml::transform
 			arg0.object<jstring>()
 		);
 	}
-	JObject Transformer::getParameter(JString arg0)
+	JObject Transformer::getParameter(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParameter",
@@ -50,21 +50,21 @@ namespace javax::xml::transform
 			arg0.object<jstring>()
 		);
 	}
-	JObject Transformer::getURIResolver()
+	JObject Transformer::getURIResolver() const
 	{
 		return callObjectMethod(
 			"getURIResolver",
 			"()Ljavax/xml/transform/URIResolver;"
 		);
 	}
-	void Transformer::reset()
+	void Transformer::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Transformer::setErrorListener(JObject arg0)
+	void Transformer::setErrorListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorListener",
@@ -72,7 +72,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void Transformer::setOutputProperties(java::util::Properties arg0)
+	void Transformer::setOutputProperties(java::util::Properties arg0) const
 	{
 		callMethod<void>(
 			"setOutputProperties",
@@ -80,7 +80,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void Transformer::setOutputProperty(JString arg0, JString arg1)
+	void Transformer::setOutputProperty(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setOutputProperty",
@@ -89,7 +89,7 @@ namespace javax::xml::transform
 			arg1.object<jstring>()
 		);
 	}
-	void Transformer::setParameter(JString arg0, JObject arg1)
+	void Transformer::setParameter(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setParameter",
@@ -98,7 +98,7 @@ namespace javax::xml::transform
 			arg1.object<jobject>()
 		);
 	}
-	void Transformer::setURIResolver(JObject arg0)
+	void Transformer::setURIResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setURIResolver",
@@ -106,7 +106,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void Transformer::transform(JObject arg0, JObject arg1)
+	void Transformer::transform(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"transform",

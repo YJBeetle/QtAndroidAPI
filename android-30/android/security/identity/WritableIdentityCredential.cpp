@@ -12,7 +12,7 @@ namespace android::security::identity
 	// Constructors
 	
 	// Methods
-	JObject WritableIdentityCredential::getCredentialKeyCertificateChain(JByteArray arg0)
+	JObject WritableIdentityCredential::getCredentialKeyCertificateChain(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"getCredentialKeyCertificateChain",
@@ -20,7 +20,7 @@ namespace android::security::identity
 			arg0.object<jbyteArray>()
 		);
 	}
-	JByteArray WritableIdentityCredential::personalize(android::security::identity::PersonalizationData arg0)
+	JByteArray WritableIdentityCredential::personalize(android::security::identity::PersonalizationData arg0) const
 	{
 		return callObjectMethod(
 			"personalize",

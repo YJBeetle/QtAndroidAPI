@@ -40,7 +40,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::view::View ResourceCursorAdapter::newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
+	android::view::View ResourceCursorAdapter::newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"newDropDownView",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::view::View ResourceCursorAdapter::newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
+	android::view::View ResourceCursorAdapter::newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"newView",
@@ -60,7 +60,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void ResourceCursorAdapter::setDropDownViewResource(jint arg0)
+	void ResourceCursorAdapter::setDropDownViewResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownViewResource",
@@ -68,7 +68,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ResourceCursorAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0)
+	void ResourceCursorAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"setDropDownViewTheme",
@@ -76,7 +76,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ResourceCursorAdapter::setViewResource(jint arg0)
+	void ResourceCursorAdapter::setViewResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setViewResource",

@@ -18,9 +18,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getName();
-		jint getSystemId();
-		JString toString();
+		JString getName() const;
+		jint getSystemId() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

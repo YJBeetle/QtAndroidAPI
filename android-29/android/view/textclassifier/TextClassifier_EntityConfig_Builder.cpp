@@ -16,14 +16,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig_Builder::build()
+	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::includeTypesFromTextClassifier(jboolean arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::includeTypesFromTextClassifier(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"includeTypesFromTextClassifier",
@@ -31,7 +31,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setExcludedTypes(JObject arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setExcludedTypes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setExcludedTypes",
@@ -39,7 +39,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setHints(JObject arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setHints(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setHints",
@@ -47,7 +47,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setIncludedTypes(JObject arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setIncludedTypes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setIncludedTypes",

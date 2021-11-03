@@ -33,19 +33,19 @@ namespace android::database::sqlite
 		SQLiteOpenHelper(android::content::Context arg0, JString arg1, JObject arg2, jint arg3, JObject arg4);
 		
 		// Methods
-		void close();
-		JString getDatabaseName();
-		android::database::sqlite::SQLiteDatabase getReadableDatabase();
-		android::database::sqlite::SQLiteDatabase getWritableDatabase();
-		void onConfigure(android::database::sqlite::SQLiteDatabase arg0);
-		void onCreate(android::database::sqlite::SQLiteDatabase arg0);
-		void onDowngrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2);
-		void onOpen(android::database::sqlite::SQLiteDatabase arg0);
-		void onUpgrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2);
-		void setIdleConnectionTimeout(jlong arg0);
-		void setLookasideConfig(jint arg0, jint arg1);
-		void setOpenParams(android::database::sqlite::SQLiteDatabase_OpenParams arg0);
-		void setWriteAheadLoggingEnabled(jboolean arg0);
+		void close() const;
+		JString getDatabaseName() const;
+		android::database::sqlite::SQLiteDatabase getReadableDatabase() const;
+		android::database::sqlite::SQLiteDatabase getWritableDatabase() const;
+		void onConfigure(android::database::sqlite::SQLiteDatabase arg0) const;
+		void onCreate(android::database::sqlite::SQLiteDatabase arg0) const;
+		void onDowngrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2) const;
+		void onOpen(android::database::sqlite::SQLiteDatabase arg0) const;
+		void onUpgrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2) const;
+		void setIdleConnectionTimeout(jlong arg0) const;
+		void setLookasideConfig(jint arg0, jint arg1) const;
+		void setOpenParams(android::database::sqlite::SQLiteDatabase_OpenParams arg0) const;
+		void setWriteAheadLoggingEnabled(jboolean arg0) const;
 	};
 } // namespace android::database::sqlite
 

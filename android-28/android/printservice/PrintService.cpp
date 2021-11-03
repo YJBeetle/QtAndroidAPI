@@ -77,7 +77,7 @@ namespace android::printservice
 		) {}
 	
 	// Methods
-	android::print::PrinterId PrintService::generatePrinterId(JString arg0)
+	android::print::PrinterId PrintService::generatePrinterId(JString arg0) const
 	{
 		return callObjectMethod(
 			"generatePrinterId",
@@ -85,14 +85,14 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	JObject PrintService::getActivePrintJobs()
+	JObject PrintService::getActivePrintJobs() const
 	{
 		return callObjectMethod(
 			"getActivePrintJobs",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject PrintService::onBind(android::content::Intent arg0)
+	JObject PrintService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",

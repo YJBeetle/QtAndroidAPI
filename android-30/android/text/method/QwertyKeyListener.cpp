@@ -51,14 +51,14 @@ namespace android::text::method
 			arg3.object<jstring>()
 		);
 	}
-	jint QwertyKeyListener::getInputType()
+	jint QwertyKeyListener::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
-	jboolean QwertyKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean QwertyKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",

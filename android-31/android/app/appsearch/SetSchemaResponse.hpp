@@ -16,10 +16,10 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JObject getDeletedTypes();
-		JObject getIncompatibleTypes();
-		JObject getMigratedTypes();
-		JObject getMigrationFailures();
+		JObject getDeletedTypes() const;
+		JObject getIncompatibleTypes() const;
+		JObject getMigratedTypes() const;
+		JObject getMigrationFailures() const;
 	};
 } // namespace android::app::appsearch
 

@@ -27,12 +27,12 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getFlags();
-		JObject getTranslationRequestValues();
-		JObject getViewTranslationRequests();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getFlags() const;
+		JObject getTranslationRequestValues() const;
+		JObject getViewTranslationRequests() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::translation
 

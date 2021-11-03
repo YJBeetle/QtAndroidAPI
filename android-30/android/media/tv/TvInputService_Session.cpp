@@ -26,7 +26,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvInputService_Session::layoutSurface(jint arg0, jint arg1, jint arg2, jint arg3)
+	void TvInputService_Session::layoutSurface(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"layoutSurface",
@@ -37,7 +37,7 @@ namespace android::media::tv
 			arg3
 		);
 	}
-	void TvInputService_Session::notifyChannelRetuned(android::net::Uri arg0)
+	void TvInputService_Session::notifyChannelRetuned(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"notifyChannelRetuned",
@@ -45,14 +45,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_Session::notifyContentAllowed()
+	void TvInputService_Session::notifyContentAllowed() const
 	{
 		callMethod<void>(
 			"notifyContentAllowed",
 			"()V"
 		);
 	}
-	void TvInputService_Session::notifyContentBlocked(android::media::tv::TvContentRating arg0)
+	void TvInputService_Session::notifyContentBlocked(android::media::tv::TvContentRating arg0) const
 	{
 		callMethod<void>(
 			"notifyContentBlocked",
@@ -60,7 +60,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_Session::notifyTimeShiftStatusChanged(jint arg0)
+	void TvInputService_Session::notifyTimeShiftStatusChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"notifyTimeShiftStatusChanged",
@@ -68,7 +68,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvInputService_Session::notifyTrackSelected(jint arg0, JString arg1)
+	void TvInputService_Session::notifyTrackSelected(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"notifyTrackSelected",
@@ -77,7 +77,7 @@ namespace android::media::tv
 			arg1.object<jstring>()
 		);
 	}
-	void TvInputService_Session::notifyTracksChanged(JObject arg0)
+	void TvInputService_Session::notifyTracksChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"notifyTracksChanged",
@@ -85,14 +85,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_Session::notifyVideoAvailable()
+	void TvInputService_Session::notifyVideoAvailable() const
 	{
 		callMethod<void>(
 			"notifyVideoAvailable",
 			"()V"
 		);
 	}
-	void TvInputService_Session::notifyVideoUnavailable(jint arg0)
+	void TvInputService_Session::notifyVideoUnavailable(jint arg0) const
 	{
 		callMethod<void>(
 			"notifyVideoUnavailable",
@@ -100,7 +100,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvInputService_Session::onAppPrivateCommand(JString arg0, android::os::Bundle arg1)
+	void TvInputService_Session::onAppPrivateCommand(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onAppPrivateCommand",
@@ -109,14 +109,14 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	android::view::View TvInputService_Session::onCreateOverlayView()
+	android::view::View TvInputService_Session::onCreateOverlayView() const
 	{
 		return callObjectMethod(
 			"onCreateOverlayView",
 			"()Landroid/view/View;"
 		);
 	}
-	jboolean TvInputService_Session::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean TvInputService_Session::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -124,7 +124,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvInputService_Session::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean TvInputService_Session::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -133,7 +133,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	jboolean TvInputService_Session::onKeyLongPress(jint arg0, android::view::KeyEvent arg1)
+	jboolean TvInputService_Session::onKeyLongPress(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyLongPress",
@@ -142,7 +142,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	jboolean TvInputService_Session::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean TvInputService_Session::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -152,7 +152,7 @@ namespace android::media::tv
 			arg2.object()
 		);
 	}
-	jboolean TvInputService_Session::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean TvInputService_Session::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -161,7 +161,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvInputService_Session::onOverlayViewSizeChanged(jint arg0, jint arg1)
+	void TvInputService_Session::onOverlayViewSizeChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onOverlayViewSizeChanged",
@@ -170,14 +170,14 @@ namespace android::media::tv
 			arg1
 		);
 	}
-	void TvInputService_Session::onRelease()
+	void TvInputService_Session::onRelease() const
 	{
 		callMethod<void>(
 			"onRelease",
 			"()V"
 		);
 	}
-	jboolean TvInputService_Session::onSelectTrack(jint arg0, JString arg1)
+	jboolean TvInputService_Session::onSelectTrack(jint arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"onSelectTrack",
@@ -186,7 +186,7 @@ namespace android::media::tv
 			arg1.object<jstring>()
 		);
 	}
-	void TvInputService_Session::onSetCaptionEnabled(jboolean arg0)
+	void TvInputService_Session::onSetCaptionEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onSetCaptionEnabled",
@@ -194,7 +194,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvInputService_Session::onSetStreamVolume(jfloat arg0)
+	void TvInputService_Session::onSetStreamVolume(jfloat arg0) const
 	{
 		callMethod<void>(
 			"onSetStreamVolume",
@@ -202,7 +202,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	jboolean TvInputService_Session::onSetSurface(android::view::Surface arg0)
+	jboolean TvInputService_Session::onSetSurface(android::view::Surface arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSetSurface",
@@ -210,7 +210,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_Session::onSurfaceChanged(jint arg0, jint arg1, jint arg2)
+	void TvInputService_Session::onSurfaceChanged(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onSurfaceChanged",
@@ -220,28 +220,28 @@ namespace android::media::tv
 			arg2
 		);
 	}
-	jlong TvInputService_Session::onTimeShiftGetCurrentPosition()
+	jlong TvInputService_Session::onTimeShiftGetCurrentPosition() const
 	{
 		return callMethod<jlong>(
 			"onTimeShiftGetCurrentPosition",
 			"()J"
 		);
 	}
-	jlong TvInputService_Session::onTimeShiftGetStartPosition()
+	jlong TvInputService_Session::onTimeShiftGetStartPosition() const
 	{
 		return callMethod<jlong>(
 			"onTimeShiftGetStartPosition",
 			"()J"
 		);
 	}
-	void TvInputService_Session::onTimeShiftPause()
+	void TvInputService_Session::onTimeShiftPause() const
 	{
 		callMethod<void>(
 			"onTimeShiftPause",
 			"()V"
 		);
 	}
-	void TvInputService_Session::onTimeShiftPlay(android::net::Uri arg0)
+	void TvInputService_Session::onTimeShiftPlay(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onTimeShiftPlay",
@@ -249,14 +249,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_Session::onTimeShiftResume()
+	void TvInputService_Session::onTimeShiftResume() const
 	{
 		callMethod<void>(
 			"onTimeShiftResume",
 			"()V"
 		);
 	}
-	void TvInputService_Session::onTimeShiftSeekTo(jlong arg0)
+	void TvInputService_Session::onTimeShiftSeekTo(jlong arg0) const
 	{
 		callMethod<void>(
 			"onTimeShiftSeekTo",
@@ -264,7 +264,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvInputService_Session::onTimeShiftSetPlaybackParams(android::media::PlaybackParams arg0)
+	void TvInputService_Session::onTimeShiftSetPlaybackParams(android::media::PlaybackParams arg0) const
 	{
 		callMethod<void>(
 			"onTimeShiftSetPlaybackParams",
@@ -272,7 +272,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvInputService_Session::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean TvInputService_Session::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -280,7 +280,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvInputService_Session::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean TvInputService_Session::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -288,7 +288,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvInputService_Session::onTune(android::net::Uri arg0)
+	jboolean TvInputService_Session::onTune(android::net::Uri arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTune",
@@ -296,7 +296,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvInputService_Session::onTune(android::net::Uri arg0, android::os::Bundle arg1)
+	jboolean TvInputService_Session::onTune(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"onTune",
@@ -305,7 +305,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvInputService_Session::onUnblockContent(android::media::tv::TvContentRating arg0)
+	void TvInputService_Session::onUnblockContent(android::media::tv::TvContentRating arg0) const
 	{
 		callMethod<void>(
 			"onUnblockContent",
@@ -313,7 +313,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_Session::setOverlayViewEnabled(jboolean arg0)
+	void TvInputService_Session::setOverlayViewEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOverlayViewEnabled",

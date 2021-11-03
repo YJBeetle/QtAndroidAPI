@@ -44,32 +44,32 @@ namespace android::net
 		LocalSocket(jint arg0);
 		
 		// Methods
-		void bind(android::net::LocalSocketAddress arg0);
-		void close();
-		void connect(android::net::LocalSocketAddress arg0);
-		void connect(android::net::LocalSocketAddress arg0, jint arg1);
-		JArray getAncillaryFileDescriptors();
-		java::io::FileDescriptor getFileDescriptor();
-		java::io::InputStream getInputStream();
-		android::net::LocalSocketAddress getLocalSocketAddress();
-		java::io::OutputStream getOutputStream();
-		android::net::Credentials getPeerCredentials();
-		jint getReceiveBufferSize();
-		android::net::LocalSocketAddress getRemoteSocketAddress();
-		jint getSendBufferSize();
-		jint getSoTimeout();
-		jboolean isBound();
-		jboolean isClosed();
-		jboolean isConnected();
-		jboolean isInputShutdown();
-		jboolean isOutputShutdown();
-		void setFileDescriptorsForSend(JArray arg0);
-		void setReceiveBufferSize(jint arg0);
-		void setSendBufferSize(jint arg0);
-		void setSoTimeout(jint arg0);
-		void shutdownInput();
-		void shutdownOutput();
-		JString toString();
+		void bind(android::net::LocalSocketAddress arg0) const;
+		void close() const;
+		void connect(android::net::LocalSocketAddress arg0) const;
+		void connect(android::net::LocalSocketAddress arg0, jint arg1) const;
+		JArray getAncillaryFileDescriptors() const;
+		java::io::FileDescriptor getFileDescriptor() const;
+		java::io::InputStream getInputStream() const;
+		android::net::LocalSocketAddress getLocalSocketAddress() const;
+		java::io::OutputStream getOutputStream() const;
+		android::net::Credentials getPeerCredentials() const;
+		jint getReceiveBufferSize() const;
+		android::net::LocalSocketAddress getRemoteSocketAddress() const;
+		jint getSendBufferSize() const;
+		jint getSoTimeout() const;
+		jboolean isBound() const;
+		jboolean isClosed() const;
+		jboolean isConnected() const;
+		jboolean isInputShutdown() const;
+		jboolean isOutputShutdown() const;
+		void setFileDescriptorsForSend(JArray arg0) const;
+		void setReceiveBufferSize(jint arg0) const;
+		void setSendBufferSize(jint arg0) const;
+		void setSoTimeout(jint arg0) const;
+		void shutdownInput() const;
+		void shutdownOutput() const;
+		JString toString() const;
 	};
 } // namespace android::net
 

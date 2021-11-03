@@ -45,14 +45,14 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint InputMethodInfo::describeContents()
+	jint InputMethodInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void InputMethodInfo::dump(JObject arg0, JString arg1)
+	void InputMethodInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -61,7 +61,7 @@ namespace android::view::inputmethod
 			arg1.object<jstring>()
 		);
 	}
-	jboolean InputMethodInfo::equals(JObject arg0)
+	jboolean InputMethodInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -69,63 +69,63 @@ namespace android::view::inputmethod
 			arg0.object<jobject>()
 		);
 	}
-	android::content::ComponentName InputMethodInfo::getComponent()
+	android::content::ComponentName InputMethodInfo::getComponent() const
 	{
 		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jint InputMethodInfo::getConfigChanges()
+	jint InputMethodInfo::getConfigChanges() const
 	{
 		return callMethod<jint>(
 			"getConfigChanges",
 			"()I"
 		);
 	}
-	JString InputMethodInfo::getId()
+	JString InputMethodInfo::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint InputMethodInfo::getIsDefaultResourceId()
+	jint InputMethodInfo::getIsDefaultResourceId() const
 	{
 		return callMethod<jint>(
 			"getIsDefaultResourceId",
 			"()I"
 		);
 	}
-	JString InputMethodInfo::getPackageName()
+	JString InputMethodInfo::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::pm::ServiceInfo InputMethodInfo::getServiceInfo()
+	android::content::pm::ServiceInfo InputMethodInfo::getServiceInfo() const
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
-	JString InputMethodInfo::getServiceName()
+	JString InputMethodInfo::getServiceName() const
 	{
 		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InputMethodInfo::getSettingsActivity()
+	JString InputMethodInfo::getSettingsActivity() const
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::view::inputmethod::InputMethodSubtype InputMethodInfo::getSubtypeAt(jint arg0)
+	android::view::inputmethod::InputMethodSubtype InputMethodInfo::getSubtypeAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSubtypeAt",
@@ -133,21 +133,21 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	jint InputMethodInfo::getSubtypeCount()
+	jint InputMethodInfo::getSubtypeCount() const
 	{
 		return callMethod<jint>(
 			"getSubtypeCount",
 			"()I"
 		);
 	}
-	jint InputMethodInfo::hashCode()
+	jint InputMethodInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable InputMethodInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable InputMethodInfo::loadIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -155,7 +155,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	JString InputMethodInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString InputMethodInfo::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -163,28 +163,28 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jboolean InputMethodInfo::shouldShowInInputMethodPicker()
+	jboolean InputMethodInfo::shouldShowInInputMethodPicker() const
 	{
 		return callMethod<jboolean>(
 			"shouldShowInInputMethodPicker",
 			"()Z"
 		);
 	}
-	jboolean InputMethodInfo::suppressesSpellChecker()
+	jboolean InputMethodInfo::suppressesSpellChecker() const
 	{
 		return callMethod<jboolean>(
 			"suppressesSpellChecker",
 			"()Z"
 		);
 	}
-	JString InputMethodInfo::toString()
+	JString InputMethodInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InputMethodInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InputMethodInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

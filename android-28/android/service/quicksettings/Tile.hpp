@@ -30,17 +30,17 @@ namespace android::service::quicksettings
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JString getContentDescription();
-		android::graphics::drawable::Icon getIcon();
-		JString getLabel();
-		jint getState();
-		void setContentDescription(JString arg0);
-		void setIcon(android::graphics::drawable::Icon arg0);
-		void setLabel(JString arg0);
-		void setState(jint arg0);
-		void updateTile();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getContentDescription() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getLabel() const;
+		jint getState() const;
+		void setContentDescription(JString arg0) const;
+		void setIcon(android::graphics::drawable::Icon arg0) const;
+		void setLabel(JString arg0) const;
+		void setState(jint arg0) const;
+		void updateTile() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::quicksettings
 

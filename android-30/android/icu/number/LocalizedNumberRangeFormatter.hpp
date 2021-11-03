@@ -25,9 +25,9 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::FormattedNumberRange formatRange(jdouble arg0, jdouble arg1);
-		android::icu::number::FormattedNumberRange formatRange(jint arg0, jint arg1);
-		android::icu::number::FormattedNumberRange formatRange(java::lang::Number arg0, java::lang::Number arg1);
+		android::icu::number::FormattedNumberRange formatRange(jdouble arg0, jdouble arg1) const;
+		android::icu::number::FormattedNumberRange formatRange(jint arg0, jint arg1) const;
+		android::icu::number::FormattedNumberRange formatRange(java::lang::Number arg0, java::lang::Number arg1) const;
 	};
 } // namespace android::icu::number
 

@@ -25,7 +25,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeFqdnIdentification::equals(JObject arg0)
+	jboolean IkeFqdnIdentification::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -33,7 +33,7 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	jint IkeFqdnIdentification::hashCode()
+	jint IkeFqdnIdentification::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

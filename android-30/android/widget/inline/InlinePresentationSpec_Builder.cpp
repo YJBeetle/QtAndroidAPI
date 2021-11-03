@@ -20,14 +20,14 @@ namespace android::widget::inline
 		) {}
 	
 	// Methods
-	android::widget::inline::InlinePresentationSpec InlinePresentationSpec_Builder::build()
+	android::widget::inline::InlinePresentationSpec InlinePresentationSpec_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/widget/inline/InlinePresentationSpec;"
 		);
 	}
-	android::widget::inline::InlinePresentationSpec_Builder InlinePresentationSpec_Builder::setStyle(android::os::Bundle arg0)
+	android::widget::inline::InlinePresentationSpec_Builder InlinePresentationSpec_Builder::setStyle(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setStyle",

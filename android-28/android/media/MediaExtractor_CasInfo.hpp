@@ -21,8 +21,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::media::MediaCas_Session getSession();
-		jint getSystemId();
+		android::media::MediaCas_Session getSession() const;
+		jint getSystemId() const;
 	};
 } // namespace android::media
 

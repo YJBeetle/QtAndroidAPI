@@ -20,14 +20,14 @@ namespace javax::net
 			"()Ljavax/net/ServerSocketFactory;"
 		);
 	}
-	java::net::ServerSocket ServerSocketFactory::createServerSocket()
+	java::net::ServerSocket ServerSocketFactory::createServerSocket() const
 	{
 		return callObjectMethod(
 			"createServerSocket",
 			"()Ljava/net/ServerSocket;"
 		);
 	}
-	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0)
+	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0) const
 	{
 		return callObjectMethod(
 			"createServerSocket",
@@ -35,7 +35,7 @@ namespace javax::net
 			arg0
 		);
 	}
-	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0, jint arg1)
+	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createServerSocket",
@@ -44,7 +44,7 @@ namespace javax::net
 			arg1
 		);
 	}
-	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2)
+	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2) const
 	{
 		return callObjectMethod(
 			"createServerSocket",

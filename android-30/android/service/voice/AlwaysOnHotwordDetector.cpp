@@ -103,28 +103,28 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	android::content::Intent AlwaysOnHotwordDetector::createEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createEnrollIntent() const
 	{
 		return callObjectMethod(
 			"createEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::content::Intent AlwaysOnHotwordDetector::createReEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createReEnrollIntent() const
 	{
 		return callObjectMethod(
 			"createReEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::content::Intent AlwaysOnHotwordDetector::createUnEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createUnEnrollIntent() const
 	{
 		return callObjectMethod(
 			"createUnEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jint AlwaysOnHotwordDetector::getParameter(jint arg0)
+	jint AlwaysOnHotwordDetector::getParameter(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getParameter",
@@ -132,21 +132,21 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	jint AlwaysOnHotwordDetector::getSupportedAudioCapabilities()
+	jint AlwaysOnHotwordDetector::getSupportedAudioCapabilities() const
 	{
 		return callMethod<jint>(
 			"getSupportedAudioCapabilities",
 			"()I"
 		);
 	}
-	jint AlwaysOnHotwordDetector::getSupportedRecognitionModes()
+	jint AlwaysOnHotwordDetector::getSupportedRecognitionModes() const
 	{
 		return callMethod<jint>(
 			"getSupportedRecognitionModes",
 			"()I"
 		);
 	}
-	android::service::voice::AlwaysOnHotwordDetector_ModelParamRange AlwaysOnHotwordDetector::queryParameter(jint arg0)
+	android::service::voice::AlwaysOnHotwordDetector_ModelParamRange AlwaysOnHotwordDetector::queryParameter(jint arg0) const
 	{
 		return callObjectMethod(
 			"queryParameter",
@@ -154,7 +154,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	jint AlwaysOnHotwordDetector::setParameter(jint arg0, jint arg1)
+	jint AlwaysOnHotwordDetector::setParameter(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"setParameter",
@@ -163,7 +163,7 @@ namespace android::service::voice
 			arg1
 		);
 	}
-	jboolean AlwaysOnHotwordDetector::startRecognition(jint arg0)
+	jboolean AlwaysOnHotwordDetector::startRecognition(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"startRecognition",
@@ -171,7 +171,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	jboolean AlwaysOnHotwordDetector::stopRecognition()
+	jboolean AlwaysOnHotwordDetector::stopRecognition() const
 	{
 		return callMethod<jboolean>(
 			"stopRecognition",

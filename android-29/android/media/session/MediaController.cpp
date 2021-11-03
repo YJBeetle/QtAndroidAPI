@@ -31,7 +31,7 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	void MediaController::adjustVolume(jint arg0, jint arg1)
+	void MediaController::adjustVolume(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"adjustVolume",
@@ -40,7 +40,7 @@ namespace android::media::session
 			arg1
 		);
 	}
-	jboolean MediaController::dispatchMediaButtonEvent(android::view::KeyEvent arg0)
+	jboolean MediaController::dispatchMediaButtonEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchMediaButtonEvent",
@@ -48,98 +48,98 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	android::os::Bundle MediaController::getExtras()
+	android::os::Bundle MediaController::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jlong MediaController::getFlags()
+	jlong MediaController::getFlags() const
 	{
 		return callMethod<jlong>(
 			"getFlags",
 			"()J"
 		);
 	}
-	android::media::MediaMetadata MediaController::getMetadata()
+	android::media::MediaMetadata MediaController::getMetadata() const
 	{
 		return callObjectMethod(
 			"getMetadata",
 			"()Landroid/media/MediaMetadata;"
 		);
 	}
-	JString MediaController::getPackageName()
+	JString MediaController::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::media::session::MediaController_PlaybackInfo MediaController::getPlaybackInfo()
+	android::media::session::MediaController_PlaybackInfo MediaController::getPlaybackInfo() const
 	{
 		return callObjectMethod(
 			"getPlaybackInfo",
 			"()Landroid/media/session/MediaController$PlaybackInfo;"
 		);
 	}
-	android::media::session::PlaybackState MediaController::getPlaybackState()
+	android::media::session::PlaybackState MediaController::getPlaybackState() const
 	{
 		return callObjectMethod(
 			"getPlaybackState",
 			"()Landroid/media/session/PlaybackState;"
 		);
 	}
-	JObject MediaController::getQueue()
+	JObject MediaController::getQueue() const
 	{
 		return callObjectMethod(
 			"getQueue",
 			"()Ljava/util/List;"
 		);
 	}
-	JString MediaController::getQueueTitle()
+	JString MediaController::getQueueTitle() const
 	{
 		return callObjectMethod(
 			"getQueueTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint MediaController::getRatingType()
+	jint MediaController::getRatingType() const
 	{
 		return callMethod<jint>(
 			"getRatingType",
 			"()I"
 		);
 	}
-	android::app::PendingIntent MediaController::getSessionActivity()
+	android::app::PendingIntent MediaController::getSessionActivity() const
 	{
 		return callObjectMethod(
 			"getSessionActivity",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	android::os::Bundle MediaController::getSessionInfo()
+	android::os::Bundle MediaController::getSessionInfo() const
 	{
 		return callObjectMethod(
 			"getSessionInfo",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::media::session::MediaSession_Token MediaController::getSessionToken()
+	android::media::session::MediaSession_Token MediaController::getSessionToken() const
 	{
 		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
-	android::media::session::MediaController_TransportControls MediaController::getTransportControls()
+	android::media::session::MediaController_TransportControls MediaController::getTransportControls() const
 	{
 		return callObjectMethod(
 			"getTransportControls",
 			"()Landroid/media/session/MediaController$TransportControls;"
 		);
 	}
-	void MediaController::registerCallback(android::media::session::MediaController_Callback arg0)
+	void MediaController::registerCallback(android::media::session::MediaController_Callback arg0) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -147,7 +147,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController::registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1)
+	void MediaController::registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -156,7 +156,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController::sendCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
+	void MediaController::sendCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2) const
 	{
 		callMethod<void>(
 			"sendCommand",
@@ -166,7 +166,7 @@ namespace android::media::session
 			arg2.object()
 		);
 	}
-	void MediaController::setVolumeTo(jint arg0, jint arg1)
+	void MediaController::setVolumeTo(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setVolumeTo",
@@ -175,7 +175,7 @@ namespace android::media::session
 			arg1
 		);
 	}
-	void MediaController::unregisterCallback(android::media::session::MediaController_Callback arg0)
+	void MediaController::unregisterCallback(android::media::session::MediaController_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

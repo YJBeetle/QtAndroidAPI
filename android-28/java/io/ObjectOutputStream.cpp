@@ -26,42 +26,42 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void ObjectOutputStream::close()
+	void ObjectOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ObjectOutputStream::defaultWriteObject()
+	void ObjectOutputStream::defaultWriteObject() const
 	{
 		callMethod<void>(
 			"defaultWriteObject",
 			"()V"
 		);
 	}
-	void ObjectOutputStream::flush()
+	void ObjectOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	java::io::ObjectOutputStream_PutField ObjectOutputStream::putFields()
+	java::io::ObjectOutputStream_PutField ObjectOutputStream::putFields() const
 	{
 		return callObjectMethod(
 			"putFields",
 			"()Ljava/io/ObjectOutputStream$PutField;"
 		);
 	}
-	void ObjectOutputStream::reset()
+	void ObjectOutputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void ObjectOutputStream::useProtocolVersion(jint arg0)
+	void ObjectOutputStream::useProtocolVersion(jint arg0) const
 	{
 		callMethod<void>(
 			"useProtocolVersion",
@@ -69,7 +69,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::write(JByteArray arg0)
+	void ObjectOutputStream::write(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -77,7 +77,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void ObjectOutputStream::write(jint arg0)
+	void ObjectOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -85,7 +85,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void ObjectOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -95,7 +95,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void ObjectOutputStream::writeBoolean(jboolean arg0)
+	void ObjectOutputStream::writeBoolean(jboolean arg0) const
 	{
 		callMethod<void>(
 			"writeBoolean",
@@ -103,7 +103,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeByte(jint arg0)
+	void ObjectOutputStream::writeByte(jint arg0) const
 	{
 		callMethod<void>(
 			"writeByte",
@@ -111,7 +111,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeBytes(JString arg0)
+	void ObjectOutputStream::writeBytes(JString arg0) const
 	{
 		callMethod<void>(
 			"writeBytes",
@@ -119,7 +119,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void ObjectOutputStream::writeChar(jint arg0)
+	void ObjectOutputStream::writeChar(jint arg0) const
 	{
 		callMethod<void>(
 			"writeChar",
@@ -127,7 +127,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeChars(JString arg0)
+	void ObjectOutputStream::writeChars(JString arg0) const
 	{
 		callMethod<void>(
 			"writeChars",
@@ -135,7 +135,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void ObjectOutputStream::writeDouble(jdouble arg0)
+	void ObjectOutputStream::writeDouble(jdouble arg0) const
 	{
 		callMethod<void>(
 			"writeDouble",
@@ -143,14 +143,14 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeFields()
+	void ObjectOutputStream::writeFields() const
 	{
 		callMethod<void>(
 			"writeFields",
 			"()V"
 		);
 	}
-	void ObjectOutputStream::writeFloat(jfloat arg0)
+	void ObjectOutputStream::writeFloat(jfloat arg0) const
 	{
 		callMethod<void>(
 			"writeFloat",
@@ -158,7 +158,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeInt(jint arg0)
+	void ObjectOutputStream::writeInt(jint arg0) const
 	{
 		callMethod<void>(
 			"writeInt",
@@ -166,7 +166,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeLong(jlong arg0)
+	void ObjectOutputStream::writeLong(jlong arg0) const
 	{
 		callMethod<void>(
 			"writeLong",
@@ -174,7 +174,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeObject(JObject arg0)
+	void ObjectOutputStream::writeObject(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeObject",
@@ -182,7 +182,7 @@ namespace java::io
 			arg0.object<jobject>()
 		);
 	}
-	void ObjectOutputStream::writeShort(jint arg0)
+	void ObjectOutputStream::writeShort(jint arg0) const
 	{
 		callMethod<void>(
 			"writeShort",
@@ -190,7 +190,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeUTF(JString arg0)
+	void ObjectOutputStream::writeUTF(JString arg0) const
 	{
 		callMethod<void>(
 			"writeUTF",
@@ -198,7 +198,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void ObjectOutputStream::writeUnshared(JObject arg0)
+	void ObjectOutputStream::writeUnshared(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeUnshared",

@@ -12,14 +12,14 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	jint DataRemovalRequest_LocusIdRequest::getFlags()
+	jint DataRemovalRequest_LocusIdRequest::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	android::content::LocusId DataRemovalRequest_LocusIdRequest::getLocusId()
+	android::content::LocusId DataRemovalRequest_LocusIdRequest::getLocusId() const
 	{
 		return callObjectMethod(
 			"getLocusId",

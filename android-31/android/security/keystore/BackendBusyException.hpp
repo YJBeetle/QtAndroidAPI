@@ -22,7 +22,7 @@ namespace android::security::keystore
 		BackendBusyException(jlong arg0, JString arg1, JThrowable arg2);
 		
 		// Methods
-		jlong getBackOffHintMillis();
+		jlong getBackOffHintMillis() const;
 	};
 } // namespace android::security::keystore
 

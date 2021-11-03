@@ -32,15 +32,15 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		void close();
-		void connect();
-		jint getConnectionType();
-		java::io::InputStream getInputStream();
-		jint getMaxReceivePacketSize();
-		jint getMaxTransmitPacketSize();
-		java::io::OutputStream getOutputStream();
-		android::bluetooth::BluetoothDevice getRemoteDevice();
-		jboolean isConnected();
+		void close() const;
+		void connect() const;
+		jint getConnectionType() const;
+		java::io::InputStream getInputStream() const;
+		jint getMaxReceivePacketSize() const;
+		jint getMaxTransmitPacketSize() const;
+		java::io::OutputStream getOutputStream() const;
+		android::bluetooth::BluetoothDevice getRemoteDevice() const;
+		jboolean isConnected() const;
 	};
 } // namespace android::bluetooth
 

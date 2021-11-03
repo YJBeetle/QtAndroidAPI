@@ -21,10 +21,10 @@ namespace android::graphics::pdf
 		// Constructors
 		
 		// Methods
-		android::graphics::Rect getContentRect();
-		jint getPageHeight();
-		jint getPageNumber();
-		jint getPageWidth();
+		android::graphics::Rect getContentRect() const;
+		jint getPageHeight() const;
+		jint getPageNumber() const;
+		jint getPageWidth() const;
 	};
 } // namespace android::graphics::pdf
 

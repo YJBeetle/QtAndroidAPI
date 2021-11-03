@@ -35,19 +35,19 @@ namespace java::text
 		static java::text::BreakIterator getSentenceInstance(java::util::Locale arg0);
 		static java::text::BreakIterator getWordInstance();
 		static java::text::BreakIterator getWordInstance(java::util::Locale arg0);
-		JObject clone();
-		jint current();
-		jint first();
-		jint following(jint arg0);
-		JObject getText();
-		jboolean isBoundary(jint arg0);
-		jint last();
-		jint next();
-		jint next(jint arg0);
-		jint preceding(jint arg0);
-		jint previous();
-		void setText(JString arg0);
-		void setText(JObject arg0);
+		JObject clone() const;
+		jint current() const;
+		jint first() const;
+		jint following(jint arg0) const;
+		JObject getText() const;
+		jboolean isBoundary(jint arg0) const;
+		jint last() const;
+		jint next() const;
+		jint next(jint arg0) const;
+		jint preceding(jint arg0) const;
+		jint previous() const;
+		void setText(JString arg0) const;
+		void setText(JObject arg0) const;
 	};
 } // namespace java::text
 

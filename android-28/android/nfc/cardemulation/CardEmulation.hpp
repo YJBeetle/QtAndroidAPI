@@ -39,16 +39,16 @@ namespace android::nfc::cardemulation
 		
 		// Methods
 		static android::nfc::cardemulation::CardEmulation getInstance(android::nfc::NfcAdapter arg0);
-		jboolean categoryAllowsForegroundPreference(JString arg0);
-		JObject getAidsForService(android::content::ComponentName arg0, JString arg1);
-		jint getSelectionModeForCategory(JString arg0);
-		jboolean isDefaultServiceForAid(android::content::ComponentName arg0, JString arg1);
-		jboolean isDefaultServiceForCategory(android::content::ComponentName arg0, JString arg1);
-		jboolean registerAidsForService(android::content::ComponentName arg0, JString arg1, JObject arg2);
-		jboolean removeAidsForService(android::content::ComponentName arg0, JString arg1);
-		jboolean setPreferredService(android::app::Activity arg0, android::content::ComponentName arg1);
-		jboolean supportsAidPrefixRegistration();
-		jboolean unsetPreferredService(android::app::Activity arg0);
+		jboolean categoryAllowsForegroundPreference(JString arg0) const;
+		JObject getAidsForService(android::content::ComponentName arg0, JString arg1) const;
+		jint getSelectionModeForCategory(JString arg0) const;
+		jboolean isDefaultServiceForAid(android::content::ComponentName arg0, JString arg1) const;
+		jboolean isDefaultServiceForCategory(android::content::ComponentName arg0, JString arg1) const;
+		jboolean registerAidsForService(android::content::ComponentName arg0, JString arg1, JObject arg2) const;
+		jboolean removeAidsForService(android::content::ComponentName arg0, JString arg1) const;
+		jboolean setPreferredService(android::app::Activity arg0, android::content::ComponentName arg1) const;
+		jboolean supportsAidPrefixRegistration() const;
+		jboolean unsetPreferredService(android::app::Activity arg0) const;
 	};
 } // namespace android::nfc::cardemulation
 

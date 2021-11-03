@@ -23,15 +23,15 @@ namespace java::util::concurrent::atomic
 		DoubleAccumulator(JObject arg0, jdouble arg1);
 		
 		// Methods
-		void accumulate(jdouble arg0);
-		jdouble doubleValue();
-		jfloat floatValue();
-		jdouble get();
-		jdouble getThenReset();
-		jint intValue();
-		jlong longValue();
-		void reset();
-		JString toString();
+		void accumulate(jdouble arg0) const;
+		jdouble doubleValue() const;
+		jfloat floatValue() const;
+		jdouble get() const;
+		jdouble getThenReset() const;
+		jint intValue() const;
+		jlong longValue() const;
+		void reset() const;
+		JString toString() const;
 	};
 } // namespace java::util::concurrent::atomic
 

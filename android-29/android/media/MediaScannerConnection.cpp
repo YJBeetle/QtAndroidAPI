@@ -33,28 +33,28 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	void MediaScannerConnection::connect()
+	void MediaScannerConnection::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	void MediaScannerConnection::disconnect()
+	void MediaScannerConnection::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	jboolean MediaScannerConnection::isConnected()
+	jboolean MediaScannerConnection::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	void MediaScannerConnection::onServiceConnected(android::content::ComponentName arg0, JObject arg1)
+	void MediaScannerConnection::onServiceConnected(android::content::ComponentName arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onServiceConnected",
@@ -63,7 +63,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaScannerConnection::onServiceDisconnected(android::content::ComponentName arg0)
+	void MediaScannerConnection::onServiceDisconnected(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"onServiceDisconnected",
@@ -71,7 +71,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaScannerConnection::scanFile(JString arg0, JString arg1)
+	void MediaScannerConnection::scanFile(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"scanFile",

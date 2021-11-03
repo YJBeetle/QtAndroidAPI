@@ -18,7 +18,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean CountDownLatch::await(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean CountDownLatch::await(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"await",
@@ -27,28 +27,28 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void CountDownLatch::await()
+	void CountDownLatch::await() const
 	{
 		callMethod<void>(
 			"await",
 			"()V"
 		);
 	}
-	void CountDownLatch::countDown()
+	void CountDownLatch::countDown() const
 	{
 		callMethod<void>(
 			"countDown",
 			"()V"
 		);
 	}
-	jlong CountDownLatch::getCount()
+	jlong CountDownLatch::getCount() const
 	{
 		return callMethod<jlong>(
 			"getCount",
 			"()J"
 		);
 	}
-	JString CountDownLatch::toString()
+	JString CountDownLatch::toString() const
 	{
 		return callObjectMethod(
 			"toString",

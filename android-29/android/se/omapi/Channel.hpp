@@ -22,13 +22,13 @@ namespace android::se::omapi
 		// Constructors
 		
 		// Methods
-		void close();
-		JByteArray getSelectResponse();
-		android::se::omapi::Session getSession();
-		jboolean isBasicChannel();
-		jboolean isOpen();
-		jboolean selectNext();
-		JByteArray transmit(JByteArray arg0);
+		void close() const;
+		JByteArray getSelectResponse() const;
+		android::se::omapi::Session getSession() const;
+		jboolean isBasicChannel() const;
+		jboolean isOpen() const;
+		jboolean selectNext() const;
+		JByteArray transmit(JByteArray arg0) const;
 	};
 } // namespace android::se::omapi
 

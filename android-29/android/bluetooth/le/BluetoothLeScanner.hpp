@@ -33,12 +33,12 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		void flushPendingScanResults(android::bluetooth::le::ScanCallback arg0);
-		jint startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::app::PendingIntent arg2);
-		void startScan(android::bluetooth::le::ScanCallback arg0);
-		void startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::bluetooth::le::ScanCallback arg2);
-		void stopScan(android::app::PendingIntent arg0);
-		void stopScan(android::bluetooth::le::ScanCallback arg0);
+		void flushPendingScanResults(android::bluetooth::le::ScanCallback arg0) const;
+		jint startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::app::PendingIntent arg2) const;
+		void startScan(android::bluetooth::le::ScanCallback arg0) const;
+		void startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::bluetooth::le::ScanCallback arg2) const;
+		void stopScan(android::app::PendingIntent arg0) const;
+		void stopScan(android::bluetooth::le::ScanCallback arg0) const;
 	};
 } // namespace android::bluetooth::le
 

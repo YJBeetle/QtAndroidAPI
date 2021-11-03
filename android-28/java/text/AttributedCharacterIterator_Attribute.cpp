@@ -36,7 +36,7 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jboolean AttributedCharacterIterator_Attribute::equals(JObject arg0)
+	jboolean AttributedCharacterIterator_Attribute::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,14 +44,14 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	jint AttributedCharacterIterator_Attribute::hashCode()
+	jint AttributedCharacterIterator_Attribute::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AttributedCharacterIterator_Attribute::toString()
+	JString AttributedCharacterIterator_Attribute::toString() const
 	{
 		return callObjectMethod(
 			"toString",

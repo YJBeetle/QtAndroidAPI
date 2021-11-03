@@ -21,7 +21,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	jboolean MemoryFile::allowPurging(jboolean arg0)
+	jboolean MemoryFile::allowPurging(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"allowPurging",
@@ -29,42 +29,42 @@ namespace android::os
 			arg0
 		);
 	}
-	void MemoryFile::close()
+	void MemoryFile::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::io::InputStream MemoryFile::getInputStream()
+	java::io::InputStream MemoryFile::getInputStream() const
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	java::io::OutputStream MemoryFile::getOutputStream()
+	java::io::OutputStream MemoryFile::getOutputStream() const
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	jboolean MemoryFile::isPurgingAllowed()
+	jboolean MemoryFile::isPurgingAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isPurgingAllowed",
 			"()Z"
 		);
 	}
-	jint MemoryFile::length()
+	jint MemoryFile::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jint MemoryFile::readBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint MemoryFile::readBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"readBytes",
@@ -75,7 +75,7 @@ namespace android::os
 			arg3
 		);
 	}
-	void MemoryFile::writeBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	void MemoryFile::writeBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"writeBytes",

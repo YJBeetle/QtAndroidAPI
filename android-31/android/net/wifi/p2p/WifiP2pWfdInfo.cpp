@@ -157,98 +157,98 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	jint WifiP2pWfdInfo::describeContents()
+	jint WifiP2pWfdInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint WifiP2pWfdInfo::getControlPort()
+	jint WifiP2pWfdInfo::getControlPort() const
 	{
 		return callMethod<jint>(
 			"getControlPort",
 			"()I"
 		);
 	}
-	jint WifiP2pWfdInfo::getDeviceInfo()
+	jint WifiP2pWfdInfo::getDeviceInfo() const
 	{
 		return callMethod<jint>(
 			"getDeviceInfo",
 			"()I"
 		);
 	}
-	jint WifiP2pWfdInfo::getDeviceType()
+	jint WifiP2pWfdInfo::getDeviceType() const
 	{
 		return callMethod<jint>(
 			"getDeviceType",
 			"()I"
 		);
 	}
-	jint WifiP2pWfdInfo::getMaxThroughput()
+	jint WifiP2pWfdInfo::getMaxThroughput() const
 	{
 		return callMethod<jint>(
 			"getMaxThroughput",
 			"()I"
 		);
 	}
-	jint WifiP2pWfdInfo::getR2DeviceInfo()
+	jint WifiP2pWfdInfo::getR2DeviceInfo() const
 	{
 		return callMethod<jint>(
 			"getR2DeviceInfo",
 			"()I"
 		);
 	}
-	jint WifiP2pWfdInfo::getR2DeviceType()
+	jint WifiP2pWfdInfo::getR2DeviceType() const
 	{
 		return callMethod<jint>(
 			"getR2DeviceType",
 			"()I"
 		);
 	}
-	jboolean WifiP2pWfdInfo::isContentProtectionSupported()
+	jboolean WifiP2pWfdInfo::isContentProtectionSupported() const
 	{
 		return callMethod<jboolean>(
 			"isContentProtectionSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pWfdInfo::isCoupledSinkSupportedAtSink()
+	jboolean WifiP2pWfdInfo::isCoupledSinkSupportedAtSink() const
 	{
 		return callMethod<jboolean>(
 			"isCoupledSinkSupportedAtSink",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pWfdInfo::isCoupledSinkSupportedAtSource()
+	jboolean WifiP2pWfdInfo::isCoupledSinkSupportedAtSource() const
 	{
 		return callMethod<jboolean>(
 			"isCoupledSinkSupportedAtSource",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pWfdInfo::isEnabled()
+	jboolean WifiP2pWfdInfo::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pWfdInfo::isR2Supported()
+	jboolean WifiP2pWfdInfo::isR2Supported() const
 	{
 		return callMethod<jboolean>(
 			"isR2Supported",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pWfdInfo::isSessionAvailable()
+	jboolean WifiP2pWfdInfo::isSessionAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isSessionAvailable",
 			"()Z"
 		);
 	}
-	void WifiP2pWfdInfo::setContentProtectionSupported(jboolean arg0)
+	void WifiP2pWfdInfo::setContentProtectionSupported(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setContentProtectionSupported",
@@ -256,7 +256,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	void WifiP2pWfdInfo::setControlPort(jint arg0)
+	void WifiP2pWfdInfo::setControlPort(jint arg0) const
 	{
 		callMethod<void>(
 			"setControlPort",
@@ -264,7 +264,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	void WifiP2pWfdInfo::setCoupledSinkSupportAtSink(jboolean arg0)
+	void WifiP2pWfdInfo::setCoupledSinkSupportAtSink(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCoupledSinkSupportAtSink",
@@ -272,7 +272,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	void WifiP2pWfdInfo::setCoupledSinkSupportAtSource(jboolean arg0)
+	void WifiP2pWfdInfo::setCoupledSinkSupportAtSource(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCoupledSinkSupportAtSource",
@@ -280,7 +280,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	jboolean WifiP2pWfdInfo::setDeviceType(jint arg0)
+	jboolean WifiP2pWfdInfo::setDeviceType(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setDeviceType",
@@ -288,7 +288,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	void WifiP2pWfdInfo::setEnabled(jboolean arg0)
+	void WifiP2pWfdInfo::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -296,7 +296,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	void WifiP2pWfdInfo::setMaxThroughput(jint arg0)
+	void WifiP2pWfdInfo::setMaxThroughput(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxThroughput",
@@ -304,7 +304,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	jboolean WifiP2pWfdInfo::setR2DeviceType(jint arg0)
+	jboolean WifiP2pWfdInfo::setR2DeviceType(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setR2DeviceType",
@@ -312,7 +312,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	void WifiP2pWfdInfo::setSessionAvailable(jboolean arg0)
+	void WifiP2pWfdInfo::setSessionAvailable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSessionAvailable",
@@ -320,14 +320,14 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	JString WifiP2pWfdInfo::toString()
+	JString WifiP2pWfdInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiP2pWfdInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiP2pWfdInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

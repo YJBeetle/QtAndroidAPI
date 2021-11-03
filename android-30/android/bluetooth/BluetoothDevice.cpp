@@ -336,7 +336,7 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2) const
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -346,7 +346,7 @@ namespace android::bluetooth
 			arg2.object()
 		);
 	}
-	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -357,7 +357,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -369,7 +369,7 @@ namespace android::bluetooth
 			arg4
 		);
 	}
-	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5) const
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -382,14 +382,14 @@ namespace android::bluetooth
 			arg5.object()
 		);
 	}
-	jboolean BluetoothDevice::createBond()
+	jboolean BluetoothDevice::createBond() const
 	{
 		return callMethod<jboolean>(
 			"createBond",
 			"()Z"
 		);
 	}
-	android::bluetooth::BluetoothSocket BluetoothDevice::createInsecureL2capChannel(jint arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createInsecureL2capChannel(jint arg0) const
 	{
 		return callObjectMethod(
 			"createInsecureL2capChannel",
@@ -397,7 +397,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	android::bluetooth::BluetoothSocket BluetoothDevice::createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0) const
 	{
 		return callObjectMethod(
 			"createInsecureRfcommSocketToServiceRecord",
@@ -405,7 +405,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	android::bluetooth::BluetoothSocket BluetoothDevice::createL2capChannel(jint arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createL2capChannel(jint arg0) const
 	{
 		return callObjectMethod(
 			"createL2capChannel",
@@ -413,7 +413,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	android::bluetooth::BluetoothSocket BluetoothDevice::createRfcommSocketToServiceRecord(java::util::UUID arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createRfcommSocketToServiceRecord(java::util::UUID arg0) const
 	{
 		return callObjectMethod(
 			"createRfcommSocketToServiceRecord",
@@ -421,14 +421,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jint BluetoothDevice::describeContents()
+	jint BluetoothDevice::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean BluetoothDevice::equals(JObject arg0)
+	jboolean BluetoothDevice::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -436,70 +436,70 @@ namespace android::bluetooth
 			arg0.object<jobject>()
 		);
 	}
-	jboolean BluetoothDevice::fetchUuidsWithSdp()
+	jboolean BluetoothDevice::fetchUuidsWithSdp() const
 	{
 		return callMethod<jboolean>(
 			"fetchUuidsWithSdp",
 			"()Z"
 		);
 	}
-	JString BluetoothDevice::getAddress()
+	JString BluetoothDevice::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString BluetoothDevice::getAlias()
+	JString BluetoothDevice::getAlias() const
 	{
 		return callObjectMethod(
 			"getAlias",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::bluetooth::BluetoothClass BluetoothDevice::getBluetoothClass()
+	android::bluetooth::BluetoothClass BluetoothDevice::getBluetoothClass() const
 	{
 		return callObjectMethod(
 			"getBluetoothClass",
 			"()Landroid/bluetooth/BluetoothClass;"
 		);
 	}
-	jint BluetoothDevice::getBondState()
+	jint BluetoothDevice::getBondState() const
 	{
 		return callMethod<jint>(
 			"getBondState",
 			"()I"
 		);
 	}
-	JString BluetoothDevice::getName()
+	JString BluetoothDevice::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint BluetoothDevice::getType()
+	jint BluetoothDevice::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JArray BluetoothDevice::getUuids()
+	JArray BluetoothDevice::getUuids() const
 	{
 		return callObjectMethod(
 			"getUuids",
 			"()[Landroid/os/ParcelUuid;"
 		);
 	}
-	jint BluetoothDevice::hashCode()
+	jint BluetoothDevice::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean BluetoothDevice::setPairingConfirmation(jboolean arg0)
+	jboolean BluetoothDevice::setPairingConfirmation(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPairingConfirmation",
@@ -507,7 +507,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothDevice::setPin(JByteArray arg0)
+	jboolean BluetoothDevice::setPin(JByteArray arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPin",
@@ -515,14 +515,14 @@ namespace android::bluetooth
 			arg0.object<jbyteArray>()
 		);
 	}
-	JString BluetoothDevice::toString()
+	JString BluetoothDevice::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BluetoothDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothDevice::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -30,16 +30,16 @@ namespace android::content
 		
 		// Methods
 		static android::content::SyncAdapterType newKey(JString arg0, JString arg1);
-		jboolean allowParallelSyncs();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getSettingsActivity();
-		jint hashCode();
-		jboolean isAlwaysSyncable();
-		jboolean isUserVisible();
-		jboolean supportsUploading();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean allowParallelSyncs() const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getSettingsActivity() const;
+		jint hashCode() const;
+		jboolean isAlwaysSyncable() const;
+		jboolean isUserVisible() const;
+		jboolean supportsUploading() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

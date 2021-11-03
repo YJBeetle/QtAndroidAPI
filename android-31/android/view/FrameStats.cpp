@@ -22,21 +22,21 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jlong FrameStats::getEndTimeNano()
+	jlong FrameStats::getEndTimeNano() const
 	{
 		return callMethod<jlong>(
 			"getEndTimeNano",
 			"()J"
 		);
 	}
-	jint FrameStats::getFrameCount()
+	jint FrameStats::getFrameCount() const
 	{
 		return callMethod<jint>(
 			"getFrameCount",
 			"()I"
 		);
 	}
-	jlong FrameStats::getFramePresentedTimeNano(jint arg0)
+	jlong FrameStats::getFramePresentedTimeNano(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getFramePresentedTimeNano",
@@ -44,14 +44,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jlong FrameStats::getRefreshPeriodNano()
+	jlong FrameStats::getRefreshPeriodNano() const
 	{
 		return callMethod<jlong>(
 			"getRefreshPeriodNano",
 			"()J"
 		);
 	}
-	jlong FrameStats::getStartTimeNano()
+	jlong FrameStats::getStartTimeNano() const
 	{
 		return callMethod<jlong>(
 			"getStartTimeNano",

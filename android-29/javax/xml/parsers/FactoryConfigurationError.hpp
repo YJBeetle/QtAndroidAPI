@@ -27,9 +27,9 @@ namespace javax::xml::parsers
 		FactoryConfigurationError(java::lang::Exception arg0, JString arg1);
 		
 		// Methods
-		JThrowable getCause();
-		java::lang::Exception getException();
-		JString getMessage();
+		JThrowable getCause() const;
+		java::lang::Exception getException() const;
+		JString getMessage() const;
 	};
 } // namespace javax::xml::parsers
 

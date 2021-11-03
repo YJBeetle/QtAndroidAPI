@@ -58,21 +58,21 @@ namespace android::app::admin
 		DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
 		
 		// Methods
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		android::content::pm::ActivityInfo getActivityInfo();
-		android::content::ComponentName getComponent();
-		JString getPackageName();
-		JString getReceiverName();
-		JString getTagForPolicy(jint arg0);
-		jboolean isVisible();
-		JString loadDescription(android::content::pm::PackageManager arg0);
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		jboolean supportsTransferOwnership();
-		JString toString();
-		jboolean usesPolicy(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		android::content::pm::ActivityInfo getActivityInfo() const;
+		android::content::ComponentName getComponent() const;
+		JString getPackageName() const;
+		JString getReceiverName() const;
+		JString getTagForPolicy(jint arg0) const;
+		jboolean isVisible() const;
+		JString loadDescription(android::content::pm::PackageManager arg0) const;
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		jboolean supportsTransferOwnership() const;
+		JString toString() const;
+		jboolean usesPolicy(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::admin
 

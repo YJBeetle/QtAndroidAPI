@@ -19,21 +19,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void DataOutputStream::flush()
+	void DataOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	jint DataOutputStream::size()
+	jint DataOutputStream::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	void DataOutputStream::write(jint arg0)
+	void DataOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -41,7 +41,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void DataOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -51,7 +51,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void DataOutputStream::writeBoolean(jboolean arg0)
+	void DataOutputStream::writeBoolean(jboolean arg0) const
 	{
 		callMethod<void>(
 			"writeBoolean",
@@ -59,7 +59,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeByte(jint arg0)
+	void DataOutputStream::writeByte(jint arg0) const
 	{
 		callMethod<void>(
 			"writeByte",
@@ -67,7 +67,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeBytes(JString arg0)
+	void DataOutputStream::writeBytes(JString arg0) const
 	{
 		callMethod<void>(
 			"writeBytes",
@@ -75,7 +75,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void DataOutputStream::writeChar(jint arg0)
+	void DataOutputStream::writeChar(jint arg0) const
 	{
 		callMethod<void>(
 			"writeChar",
@@ -83,7 +83,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeChars(JString arg0)
+	void DataOutputStream::writeChars(JString arg0) const
 	{
 		callMethod<void>(
 			"writeChars",
@@ -91,7 +91,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	void DataOutputStream::writeDouble(jdouble arg0)
+	void DataOutputStream::writeDouble(jdouble arg0) const
 	{
 		callMethod<void>(
 			"writeDouble",
@@ -99,7 +99,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeFloat(jfloat arg0)
+	void DataOutputStream::writeFloat(jfloat arg0) const
 	{
 		callMethod<void>(
 			"writeFloat",
@@ -107,7 +107,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeInt(jint arg0)
+	void DataOutputStream::writeInt(jint arg0) const
 	{
 		callMethod<void>(
 			"writeInt",
@@ -115,7 +115,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeLong(jlong arg0)
+	void DataOutputStream::writeLong(jlong arg0) const
 	{
 		callMethod<void>(
 			"writeLong",
@@ -123,7 +123,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeShort(jint arg0)
+	void DataOutputStream::writeShort(jint arg0) const
 	{
 		callMethod<void>(
 			"writeShort",
@@ -131,7 +131,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeUTF(JString arg0)
+	void DataOutputStream::writeUTF(JString arg0) const
 	{
 		callMethod<void>(
 			"writeUTF",

@@ -31,15 +31,15 @@ namespace android::media::tv
 		TvInputService_RecordingSession(android::content::Context arg0);
 		
 		// Methods
-		void notifyError(jint arg0);
-		void notifyRecordingStopped(android::net::Uri arg0);
-		void notifyTuned(android::net::Uri arg0);
-		void onAppPrivateCommand(JString arg0, android::os::Bundle arg1);
-		void onRelease();
-		void onStartRecording(android::net::Uri arg0);
-		void onStopRecording();
-		void onTune(android::net::Uri arg0);
-		void onTune(android::net::Uri arg0, android::os::Bundle arg1);
+		void notifyError(jint arg0) const;
+		void notifyRecordingStopped(android::net::Uri arg0) const;
+		void notifyTuned(android::net::Uri arg0) const;
+		void onAppPrivateCommand(JString arg0, android::os::Bundle arg1) const;
+		void onRelease() const;
+		void onStartRecording(android::net::Uri arg0) const;
+		void onStopRecording() const;
+		void onTune(android::net::Uri arg0) const;
+		void onTune(android::net::Uri arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::media::tv
 

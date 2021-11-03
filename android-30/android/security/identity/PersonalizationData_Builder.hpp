@@ -28,9 +28,9 @@ namespace android::security::identity
 		PersonalizationData_Builder();
 		
 		// Methods
-		android::security::identity::PersonalizationData_Builder addAccessControlProfile(android::security::identity::AccessControlProfile arg0);
-		android::security::identity::PersonalizationData build();
-		android::security::identity::PersonalizationData_Builder putEntry(JString arg0, JString arg1, JObject arg2, JByteArray arg3);
+		android::security::identity::PersonalizationData_Builder addAccessControlProfile(android::security::identity::AccessControlProfile arg0) const;
+		android::security::identity::PersonalizationData build() const;
+		android::security::identity::PersonalizationData_Builder putEntry(JString arg0, JString arg1, JObject arg2, JByteArray arg3) const;
 	};
 } // namespace android::security::identity
 

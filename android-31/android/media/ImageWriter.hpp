@@ -31,12 +31,12 @@ namespace android::media
 		// Methods
 		static android::media::ImageWriter newInstance(android::view::Surface arg0, jint arg1);
 		static android::media::ImageWriter newInstance(android::view::Surface arg0, jint arg1, jint arg2);
-		void close();
-		android::media::Image dequeueInputImage();
-		jint getFormat();
-		jint getMaxImages();
-		void queueInputImage(android::media::Image arg0);
-		void setOnImageReleasedListener(JObject arg0, android::os::Handler arg1);
+		void close() const;
+		android::media::Image dequeueInputImage() const;
+		jint getFormat() const;
+		jint getMaxImages() const;
+		void queueInputImage(android::media::Image arg0) const;
+		void setOnImageReleasedListener(JObject arg0, android::os::Handler arg1) const;
 	};
 } // namespace android::media
 

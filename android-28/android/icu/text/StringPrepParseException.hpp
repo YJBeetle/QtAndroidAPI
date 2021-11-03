@@ -34,10 +34,10 @@ namespace android::icu::text
 		StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getError();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getError() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

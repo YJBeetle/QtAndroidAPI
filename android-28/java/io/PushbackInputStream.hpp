@@ -24,17 +24,17 @@ namespace java::io
 		PushbackInputStream(java::io::InputStream arg0, jint arg1);
 		
 		// Methods
-		jint available();
-		void close();
-		void mark(jint arg0);
-		jboolean markSupported();
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		void reset();
-		jlong skip(jlong arg0);
-		void unread(JByteArray arg0);
-		void unread(jint arg0);
-		void unread(JByteArray arg0, jint arg1, jint arg2);
+		jint available() const;
+		void close() const;
+		void mark(jint arg0) const;
+		jboolean markSupported() const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		void reset() const;
+		jlong skip(jlong arg0) const;
+		void unread(JByteArray arg0) const;
+		void unread(jint arg0) const;
+		void unread(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

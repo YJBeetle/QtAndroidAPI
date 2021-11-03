@@ -24,14 +24,14 @@ namespace android::telephony::euicc
 		) {}
 	
 	// Methods
-	android::telephony::euicc::DownloadableSubscription DownloadableSubscription_Builder::build()
+	android::telephony::euicc::DownloadableSubscription DownloadableSubscription_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/euicc/DownloadableSubscription;"
 		);
 	}
-	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setConfirmationCode(JString arg0)
+	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setConfirmationCode(JString arg0) const
 	{
 		return callObjectMethod(
 			"setConfirmationCode",
@@ -39,7 +39,7 @@ namespace android::telephony::euicc
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setEncodedActivationCode(JString arg0)
+	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setEncodedActivationCode(JString arg0) const
 	{
 		return callObjectMethod(
 			"setEncodedActivationCode",

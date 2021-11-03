@@ -101,14 +101,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::graphics::drawable::Drawable ImageSpan::getDrawable()
+	android::graphics::drawable::Drawable ImageSpan::getDrawable() const
 	{
 		return callObjectMethod(
 			"getDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	JString ImageSpan::getSource()
+	JString ImageSpan::getSource() const
 	{
 		return callObjectMethod(
 			"getSource",

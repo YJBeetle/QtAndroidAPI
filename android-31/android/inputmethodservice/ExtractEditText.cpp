@@ -42,49 +42,49 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	void ExtractEditText::finishInternalChanges()
+	void ExtractEditText::finishInternalChanges() const
 	{
 		callMethod<void>(
 			"finishInternalChanges",
 			"()V"
 		);
 	}
-	jboolean ExtractEditText::hasFocus()
+	jboolean ExtractEditText::hasFocus() const
 	{
 		return callMethod<jboolean>(
 			"hasFocus",
 			"()Z"
 		);
 	}
-	jboolean ExtractEditText::hasVerticalScrollBar()
+	jboolean ExtractEditText::hasVerticalScrollBar() const
 	{
 		return callMethod<jboolean>(
 			"hasVerticalScrollBar",
 			"()Z"
 		);
 	}
-	jboolean ExtractEditText::hasWindowFocus()
+	jboolean ExtractEditText::hasWindowFocus() const
 	{
 		return callMethod<jboolean>(
 			"hasWindowFocus",
 			"()Z"
 		);
 	}
-	jboolean ExtractEditText::isFocused()
+	jboolean ExtractEditText::isFocused() const
 	{
 		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
-	jboolean ExtractEditText::isInputMethodTarget()
+	jboolean ExtractEditText::isInputMethodTarget() const
 	{
 		return callMethod<jboolean>(
 			"isInputMethodTarget",
 			"()Z"
 		);
 	}
-	jboolean ExtractEditText::onTextContextMenuItem(jint arg0)
+	jboolean ExtractEditText::onTextContextMenuItem(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTextContextMenuItem",
@@ -92,14 +92,14 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean ExtractEditText::performClick()
+	jboolean ExtractEditText::performClick() const
 	{
 		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
-	void ExtractEditText::setExtractedText(android::view::inputmethod::ExtractedText arg0)
+	void ExtractEditText::setExtractedText(android::view::inputmethod::ExtractedText arg0) const
 	{
 		callMethod<void>(
 			"setExtractedText",
@@ -107,7 +107,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void ExtractEditText::startInternalChanges()
+	void ExtractEditText::startInternalChanges() const
 	{
 		callMethod<void>(
 			"startInternalChanges",

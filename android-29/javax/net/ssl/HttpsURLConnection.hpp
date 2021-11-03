@@ -35,16 +35,16 @@ namespace javax::net::ssl
 		static javax::net::ssl::SSLSocketFactory getDefaultSSLSocketFactory();
 		static void setDefaultHostnameVerifier(JObject arg0);
 		static void setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
-		JString getCipherSuite();
-		JObject getHostnameVerifier();
-		JArray getLocalCertificates();
-		JObject getLocalPrincipal();
-		JObject getPeerPrincipal();
-		java::util::Optional getSSLSession();
-		javax::net::ssl::SSLSocketFactory getSSLSocketFactory();
-		JArray getServerCertificates();
-		void setHostnameVerifier(JObject arg0);
-		void setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
+		JString getCipherSuite() const;
+		JObject getHostnameVerifier() const;
+		JArray getLocalCertificates() const;
+		JObject getLocalPrincipal() const;
+		JObject getPeerPrincipal() const;
+		java::util::Optional getSSLSession() const;
+		javax::net::ssl::SSLSocketFactory getSSLSocketFactory() const;
+		JArray getServerCertificates() const;
+		void setHostnameVerifier(JObject arg0) const;
+		void setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0) const;
 	};
 } // namespace javax::net::ssl
 

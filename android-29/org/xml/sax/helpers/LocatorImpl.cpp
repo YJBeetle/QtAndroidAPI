@@ -22,35 +22,35 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	jint LocatorImpl::getColumnNumber()
+	jint LocatorImpl::getColumnNumber() const
 	{
 		return callMethod<jint>(
 			"getColumnNumber",
 			"()I"
 		);
 	}
-	jint LocatorImpl::getLineNumber()
+	jint LocatorImpl::getLineNumber() const
 	{
 		return callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
 	}
-	JString LocatorImpl::getPublicId()
+	JString LocatorImpl::getPublicId() const
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString LocatorImpl::getSystemId()
+	JString LocatorImpl::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LocatorImpl::setColumnNumber(jint arg0)
+	void LocatorImpl::setColumnNumber(jint arg0) const
 	{
 		callMethod<void>(
 			"setColumnNumber",
@@ -58,7 +58,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	void LocatorImpl::setLineNumber(jint arg0)
+	void LocatorImpl::setLineNumber(jint arg0) const
 	{
 		callMethod<void>(
 			"setLineNumber",
@@ -66,7 +66,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	void LocatorImpl::setPublicId(JString arg0)
+	void LocatorImpl::setPublicId(JString arg0) const
 	{
 		callMethod<void>(
 			"setPublicId",
@@ -74,7 +74,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void LocatorImpl::setSystemId(JString arg0)
+	void LocatorImpl::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",

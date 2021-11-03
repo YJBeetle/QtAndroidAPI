@@ -20,7 +20,7 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::addInlinePresentationSpecs(android::widget::inline::InlinePresentationSpec arg0)
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::addInlinePresentationSpecs(android::widget::inline::InlinePresentationSpec arg0) const
 	{
 		return callObjectMethod(
 			"addInlinePresentationSpecs",
@@ -28,14 +28,14 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	android::view::inputmethod::InlineSuggestionsRequest InlineSuggestionsRequest_Builder::build()
+	android::view::inputmethod::InlineSuggestionsRequest InlineSuggestionsRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/inputmethod/InlineSuggestionsRequest;"
 		);
 	}
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setExtras(android::os::Bundle arg0)
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -43,7 +43,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setInlinePresentationSpecs(JObject arg0)
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setInlinePresentationSpecs(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setInlinePresentationSpecs",
@@ -51,7 +51,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setMaxSuggestionCount(jint arg0)
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setMaxSuggestionCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxSuggestionCount",
@@ -59,7 +59,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setSupportedLocales(android::os::LocaleList arg0)
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setSupportedLocales(android::os::LocaleList arg0) const
 	{
 		return callObjectMethod(
 			"setSupportedLocales",

@@ -36,14 +36,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	jint PageRange::describeContents()
+	jint PageRange::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PageRange::equals(JObject arg0)
+	jboolean PageRange::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,35 +51,35 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PageRange::getEnd()
+	jint PageRange::getEnd() const
 	{
 		return callMethod<jint>(
 			"getEnd",
 			"()I"
 		);
 	}
-	jint PageRange::getStart()
+	jint PageRange::getStart() const
 	{
 		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
-	jint PageRange::hashCode()
+	jint PageRange::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PageRange::toString()
+	JString PageRange::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PageRange::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PageRange::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

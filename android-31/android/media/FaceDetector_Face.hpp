@@ -29,10 +29,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jfloat confidence();
-		jfloat eyesDistance();
-		void getMidPoint(android::graphics::PointF arg0);
-		jfloat pose(jint arg0);
+		jfloat confidence() const;
+		jfloat eyesDistance() const;
+		void getMidPoint(android::graphics::PointF arg0) const;
+		jfloat pose(jint arg0) const;
 	};
 } // namespace android::media
 

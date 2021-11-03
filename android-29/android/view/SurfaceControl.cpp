@@ -20,21 +20,21 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint SurfaceControl::describeContents()
+	jint SurfaceControl::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SurfaceControl::isValid()
+	jboolean SurfaceControl::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	void SurfaceControl::readFromParcel(android::os::Parcel arg0)
+	void SurfaceControl::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -42,21 +42,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void SurfaceControl::release()
+	void SurfaceControl::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	JString SurfaceControl::toString()
+	JString SurfaceControl::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SurfaceControl::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SurfaceControl::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

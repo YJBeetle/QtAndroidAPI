@@ -34,11 +34,11 @@ namespace android::service::controls::templates
 		TemperatureControlTemplate(JString arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jint getCurrentActiveMode();
-		jint getCurrentMode();
-		jint getModes();
-		android::service::controls::templates::ControlTemplate getTemplate();
-		jint getTemplateType();
+		jint getCurrentActiveMode() const;
+		jint getCurrentMode() const;
+		jint getModes() const;
+		android::service::controls::templates::ControlTemplate getTemplate() const;
+		jint getTemplateType() const;
 	};
 } // namespace android::service::controls::templates
 

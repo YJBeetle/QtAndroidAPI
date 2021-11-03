@@ -32,14 +32,14 @@ namespace android::app
 		Notification_BigPictureStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
-		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::Bitmap arg0);
-		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::drawable::Icon arg0);
-		android::app::Notification_BigPictureStyle bigPicture(android::graphics::Bitmap arg0);
-		android::app::Notification_BigPictureStyle bigPicture(android::graphics::drawable::Icon arg0);
-		android::app::Notification_BigPictureStyle setBigContentTitle(JString arg0);
-		android::app::Notification_BigPictureStyle setContentDescription(JString arg0);
-		android::app::Notification_BigPictureStyle setSummaryText(JString arg0);
-		android::app::Notification_BigPictureStyle showBigPictureWhenCollapsed(jboolean arg0);
+		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::Bitmap arg0) const;
+		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::drawable::Icon arg0) const;
+		android::app::Notification_BigPictureStyle bigPicture(android::graphics::Bitmap arg0) const;
+		android::app::Notification_BigPictureStyle bigPicture(android::graphics::drawable::Icon arg0) const;
+		android::app::Notification_BigPictureStyle setBigContentTitle(JString arg0) const;
+		android::app::Notification_BigPictureStyle setContentDescription(JString arg0) const;
+		android::app::Notification_BigPictureStyle setSummaryText(JString arg0) const;
+		android::app::Notification_BigPictureStyle showBigPictureWhenCollapsed(jboolean arg0) const;
 	};
 } // namespace android::app
 

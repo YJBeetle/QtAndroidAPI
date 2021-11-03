@@ -31,35 +31,35 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint AbsoluteSizeSpan::describeContents()
+	jint AbsoluteSizeSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AbsoluteSizeSpan::getDip()
+	jboolean AbsoluteSizeSpan::getDip() const
 	{
 		return callMethod<jboolean>(
 			"getDip",
 			"()Z"
 		);
 	}
-	jint AbsoluteSizeSpan::getSize()
+	jint AbsoluteSizeSpan::getSize() const
 	{
 		return callMethod<jint>(
 			"getSize",
 			"()I"
 		);
 	}
-	jint AbsoluteSizeSpan::getSpanTypeId()
+	jint AbsoluteSizeSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void AbsoluteSizeSpan::updateDrawState(android::text::TextPaint arg0)
+	void AbsoluteSizeSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -67,7 +67,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void AbsoluteSizeSpan::updateMeasureState(android::text::TextPaint arg0)
+	void AbsoluteSizeSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -75,7 +75,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void AbsoluteSizeSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AbsoluteSizeSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

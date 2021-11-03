@@ -22,12 +22,12 @@ namespace android::widget
 		Magnifier(android::view::View arg0);
 		
 		// Methods
-		void dismiss();
-		jint getHeight();
-		jint getWidth();
-		jfloat getZoom();
-		void show(jfloat arg0, jfloat arg1);
-		void update();
+		void dismiss() const;
+		jint getHeight() const;
+		jint getWidth() const;
+		jfloat getZoom() const;
+		void show(jfloat arg0, jfloat arg1) const;
+		void update() const;
 	};
 } // namespace android::widget
 

@@ -18,9 +18,9 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		void close();
-		jint getSpi();
-		JString toString();
+		void close() const;
+		jint getSpi() const;
+		JString toString() const;
 	};
 } // namespace android::net
 

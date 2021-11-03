@@ -19,8 +19,8 @@ namespace java::util
 		DuplicateFormatFlagsException(JString arg0);
 		
 		// Methods
-		JString getFlags();
-		JString getMessage();
+		JString getFlags() const;
+		JString getMessage() const;
 	};
 } // namespace java::util
 

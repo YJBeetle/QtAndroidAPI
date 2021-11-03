@@ -40,24 +40,24 @@ namespace android::widget
 		TableLayout(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void addView(android::view::View arg0);
-		void addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1);
-		void addView(android::view::View arg0, jint arg1);
-		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		android::widget::TableLayout_LayoutParams generateLayoutParams(JObject arg0);
-		JString getAccessibilityClassName();
-		jboolean isColumnCollapsed(jint arg0);
-		jboolean isColumnShrinkable(jint arg0);
-		jboolean isColumnStretchable(jint arg0);
-		jboolean isShrinkAllColumns();
-		jboolean isStretchAllColumns();
-		void requestLayout();
-		void setColumnCollapsed(jint arg0, jboolean arg1);
-		void setColumnShrinkable(jint arg0, jboolean arg1);
-		void setColumnStretchable(jint arg0, jboolean arg1);
-		void setOnHierarchyChangeListener(JObject arg0);
-		void setShrinkAllColumns(jboolean arg0);
-		void setStretchAllColumns(jboolean arg0);
+		void addView(android::view::View arg0) const;
+		void addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const;
+		void addView(android::view::View arg0, jint arg1) const;
+		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const;
+		android::widget::TableLayout_LayoutParams generateLayoutParams(JObject arg0) const;
+		JString getAccessibilityClassName() const;
+		jboolean isColumnCollapsed(jint arg0) const;
+		jboolean isColumnShrinkable(jint arg0) const;
+		jboolean isColumnStretchable(jint arg0) const;
+		jboolean isShrinkAllColumns() const;
+		jboolean isStretchAllColumns() const;
+		void requestLayout() const;
+		void setColumnCollapsed(jint arg0, jboolean arg1) const;
+		void setColumnShrinkable(jint arg0, jboolean arg1) const;
+		void setColumnStretchable(jint arg0, jboolean arg1) const;
+		void setOnHierarchyChangeListener(JObject arg0) const;
+		void setShrinkAllColumns(jboolean arg0) const;
+		void setStretchAllColumns(jboolean arg0) const;
 	};
 } // namespace android::widget
 

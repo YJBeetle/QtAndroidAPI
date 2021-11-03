@@ -19,10 +19,10 @@ namespace android::os::strictmode
 		// Constructors
 		
 		// Methods
-		JThrowable fillInStackTrace();
-		jint hashCode();
-		JThrowable initCause(JThrowable arg0);
-		void setStackTrace(JArray arg0);
+		JThrowable fillInStackTrace() const;
+		jint hashCode() const;
+		JThrowable initCause(JThrowable arg0) const;
+		void setStackTrace(JArray arg0) const;
 	};
 } // namespace android::os::strictmode
 

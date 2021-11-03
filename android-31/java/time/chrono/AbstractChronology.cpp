@@ -17,7 +17,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	jint AbstractChronology::compareTo(JObject arg0)
+	jint AbstractChronology::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -25,7 +25,7 @@ namespace java::time::chrono
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractChronology::equals(JObject arg0)
+	jboolean AbstractChronology::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -33,14 +33,14 @@ namespace java::time::chrono
 			arg0.object<jobject>()
 		);
 	}
-	jint AbstractChronology::hashCode()
+	jint AbstractChronology::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject AbstractChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
+	JObject AbstractChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -49,7 +49,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	JString AbstractChronology::toString()
+	JString AbstractChronology::toString() const
 	{
 		return callObjectMethod(
 			"toString",

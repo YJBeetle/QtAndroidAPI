@@ -12,7 +12,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	android::os::CombinedVibration_ParallelCombination CombinedVibration_ParallelCombination::addVibrator(jint arg0, android::os::VibrationEffect arg1)
+	android::os::CombinedVibration_ParallelCombination CombinedVibration_ParallelCombination::addVibrator(jint arg0, android::os::VibrationEffect arg1) const
 	{
 		return callObjectMethod(
 			"addVibrator",
@@ -21,7 +21,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	android::os::CombinedVibration CombinedVibration_ParallelCombination::combine()
+	android::os::CombinedVibration CombinedVibration_ParallelCombination::combine() const
 	{
 		return callObjectMethod(
 			"combine",

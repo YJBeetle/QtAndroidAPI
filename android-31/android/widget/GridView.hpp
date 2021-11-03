@@ -55,31 +55,31 @@ namespace android::widget
 		GridView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		JObject getAdapter();
-		jint getColumnWidth();
-		jint getGravity();
-		jint getHorizontalSpacing();
-		jint getNumColumns();
-		jint getRequestedColumnWidth();
-		jint getRequestedHorizontalSpacing();
-		jint getStretchMode();
-		jint getVerticalSpacing();
-		void onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2);
-		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2);
-		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		void setAdapter(JObject arg0);
-		void setColumnWidth(jint arg0);
-		void setGravity(jint arg0);
-		void setHorizontalSpacing(jint arg0);
-		void setNumColumns(jint arg0);
-		void setRemoteViewsAdapter(android::content::Intent arg0);
-		void setSelection(jint arg0);
-		void setStretchMode(jint arg0);
-		void setVerticalSpacing(jint arg0);
-		void smoothScrollByOffset(jint arg0);
-		void smoothScrollToPosition(jint arg0);
+		JString getAccessibilityClassName() const;
+		JObject getAdapter() const;
+		jint getColumnWidth() const;
+		jint getGravity() const;
+		jint getHorizontalSpacing() const;
+		jint getNumColumns() const;
+		jint getRequestedColumnWidth() const;
+		jint getRequestedHorizontalSpacing() const;
+		jint getStretchMode() const;
+		jint getVerticalSpacing() const;
+		void onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2) const;
+		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1) const;
+		jboolean onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const;
+		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1) const;
+		void setAdapter(JObject arg0) const;
+		void setColumnWidth(jint arg0) const;
+		void setGravity(jint arg0) const;
+		void setHorizontalSpacing(jint arg0) const;
+		void setNumColumns(jint arg0) const;
+		void setRemoteViewsAdapter(android::content::Intent arg0) const;
+		void setSelection(jint arg0) const;
+		void setStretchMode(jint arg0) const;
+		void setVerticalSpacing(jint arg0) const;
+		void smoothScrollByOffset(jint arg0) const;
+		void smoothScrollToPosition(jint arg0) const;
 	};
 } // namespace android::widget
 

@@ -11,14 +11,14 @@ namespace android::security
 	// Constructors
 	
 	// Methods
-	jboolean FileIntegrityManager::isApkVeritySupported()
+	jboolean FileIntegrityManager::isApkVeritySupported() const
 	{
 		return callMethod<jboolean>(
 			"isApkVeritySupported",
 			"()Z"
 		);
 	}
-	jboolean FileIntegrityManager::isAppSourceCertificateTrusted(java::security::cert::X509Certificate arg0)
+	jboolean FileIntegrityManager::isAppSourceCertificateTrusted(java::security::cert::X509Certificate arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAppSourceCertificateTrusted",

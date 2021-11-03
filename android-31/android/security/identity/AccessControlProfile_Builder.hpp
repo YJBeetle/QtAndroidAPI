@@ -30,10 +30,10 @@ namespace android::security::identity
 		AccessControlProfile_Builder(android::security::identity::AccessControlProfileId arg0);
 		
 		// Methods
-		android::security::identity::AccessControlProfile build();
-		android::security::identity::AccessControlProfile_Builder setReaderCertificate(java::security::cert::X509Certificate arg0);
-		android::security::identity::AccessControlProfile_Builder setUserAuthenticationRequired(jboolean arg0);
-		android::security::identity::AccessControlProfile_Builder setUserAuthenticationTimeout(jlong arg0);
+		android::security::identity::AccessControlProfile build() const;
+		android::security::identity::AccessControlProfile_Builder setReaderCertificate(java::security::cert::X509Certificate arg0) const;
+		android::security::identity::AccessControlProfile_Builder setUserAuthenticationRequired(jboolean arg0) const;
+		android::security::identity::AccessControlProfile_Builder setUserAuthenticationTimeout(jlong arg0) const;
 	};
 } // namespace android::security::identity
 

@@ -38,20 +38,20 @@ namespace android::app
 		RemoteAction(android::graphics::drawable::Icon arg0, JString arg1, JString arg2, android::app::PendingIntent arg3);
 		
 		// Methods
-		android::app::RemoteAction clone();
-		jint describeContents();
-		void dump(JString arg0, java::io::PrintWriter arg1);
-		jboolean equals(JObject arg0);
-		android::app::PendingIntent getActionIntent();
-		JString getContentDescription();
-		android::graphics::drawable::Icon getIcon();
-		JString getTitle();
-		jint hashCode();
-		jboolean isEnabled();
-		void setEnabled(jboolean arg0);
-		void setShouldShowIcon(jboolean arg0);
-		jboolean shouldShowIcon();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::app::RemoteAction clone() const;
+		jint describeContents() const;
+		void dump(JString arg0, java::io::PrintWriter arg1) const;
+		jboolean equals(JObject arg0) const;
+		android::app::PendingIntent getActionIntent() const;
+		JString getContentDescription() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getTitle() const;
+		jint hashCode() const;
+		jboolean isEnabled() const;
+		void setEnabled(jboolean arg0) const;
+		void setShouldShowIcon(jboolean arg0) const;
+		jboolean shouldShowIcon() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

@@ -38,16 +38,16 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getAction();
-		android::content::ClipData getClipData();
-		android::content::ClipDescription getClipDescription();
-		JObject getLocalState();
-		jboolean getResult();
-		jfloat getX();
-		jfloat getY();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getAction() const;
+		android::content::ClipData getClipData() const;
+		android::content::ClipDescription getClipDescription() const;
+		JObject getLocalState() const;
+		jboolean getResult() const;
+		jfloat getX() const;
+		jfloat getY() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

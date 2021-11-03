@@ -51,7 +51,7 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	void DevicePolicyManager_InstallSystemUpdateCallback::onInstallUpdateError(jint arg0, JString arg1)
+	void DevicePolicyManager_InstallSystemUpdateCallback::onInstallUpdateError(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onInstallUpdateError",

@@ -30,19 +30,19 @@ namespace android::bluetooth
 		BluetoothGattCallback();
 		
 		// Methods
-		void onCharacteristicChanged(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1);
-		void onCharacteristicRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2);
-		void onCharacteristicWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2);
-		void onConnectionStateChange(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
-		void onDescriptorRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2);
-		void onDescriptorWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2);
-		void onMtuChanged(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
-		void onPhyRead(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3);
-		void onPhyUpdate(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3);
-		void onReadRemoteRssi(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
-		void onReliableWriteCompleted(android::bluetooth::BluetoothGatt arg0, jint arg1);
-		void onServiceChanged(android::bluetooth::BluetoothGatt arg0);
-		void onServicesDiscovered(android::bluetooth::BluetoothGatt arg0, jint arg1);
+		void onCharacteristicChanged(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1) const;
+		void onCharacteristicRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2) const;
+		void onCharacteristicWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2) const;
+		void onConnectionStateChange(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2) const;
+		void onDescriptorRead(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2) const;
+		void onDescriptorWrite(android::bluetooth::BluetoothGatt arg0, android::bluetooth::BluetoothGattDescriptor arg1, jint arg2) const;
+		void onMtuChanged(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2) const;
+		void onPhyRead(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3) const;
+		void onPhyUpdate(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3) const;
+		void onReadRemoteRssi(android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2) const;
+		void onReliableWriteCompleted(android::bluetooth::BluetoothGatt arg0, jint arg1) const;
+		void onServiceChanged(android::bluetooth::BluetoothGatt arg0) const;
+		void onServicesDiscovered(android::bluetooth::BluetoothGatt arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

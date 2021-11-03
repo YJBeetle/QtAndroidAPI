@@ -21,7 +21,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	void Permissions::add(java::security::Permission arg0)
+	void Permissions::add(java::security::Permission arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -29,14 +29,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject Permissions::elements()
+	JObject Permissions::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jboolean Permissions::implies(java::security::Permission arg0)
+	jboolean Permissions::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",

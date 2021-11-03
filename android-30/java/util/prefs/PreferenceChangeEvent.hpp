@@ -31,9 +31,9 @@ namespace java::util::prefs
 		PreferenceChangeEvent(java::util::prefs::Preferences arg0, JString arg1, JString arg2);
 		
 		// Methods
-		JString getKey();
-		JString getNewValue();
-		java::util::prefs::Preferences getNode();
+		JString getKey() const;
+		JString getNewValue() const;
+		java::util::prefs::Preferences getNode() const;
 	};
 } // namespace java::util::prefs
 

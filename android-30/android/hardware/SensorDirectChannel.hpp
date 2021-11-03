@@ -27,9 +27,9 @@ namespace android::hardware
 		// Constructors
 		
 		// Methods
-		void close();
-		jint configure(android::hardware::Sensor arg0, jint arg1);
-		jboolean isOpen();
+		void close() const;
+		jint configure(android::hardware::Sensor arg0, jint arg1) const;
+		jboolean isOpen() const;
 	};
 } // namespace android::hardware
 

@@ -21,9 +21,9 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		void add(android::graphics::drawable::Drawable arg0);
-		void clear();
-		void remove(android::graphics::drawable::Drawable arg0);
+		void add(android::graphics::drawable::Drawable arg0) const;
+		void clear() const;
+		void remove(android::graphics::drawable::Drawable arg0) const;
 	};
 } // namespace android::view
 

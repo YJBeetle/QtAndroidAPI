@@ -13,7 +13,7 @@ namespace java::nio::charset::spi
 	// Constructors
 	
 	// Methods
-	java::nio::charset::Charset CharsetProvider::charsetForName(JString arg0)
+	java::nio::charset::Charset CharsetProvider::charsetForName(JString arg0) const
 	{
 		return callObjectMethod(
 			"charsetForName",
@@ -21,7 +21,7 @@ namespace java::nio::charset::spi
 			arg0.object<jstring>()
 		);
 	}
-	JObject CharsetProvider::charsets()
+	JObject CharsetProvider::charsets() const
 	{
 		return callObjectMethod(
 			"charsets",

@@ -21,7 +21,7 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	void MediaController_Callback::onAudioInfoChanged(android::media::session::MediaController_PlaybackInfo arg0)
+	void MediaController_Callback::onAudioInfoChanged(android::media::session::MediaController_PlaybackInfo arg0) const
 	{
 		callMethod<void>(
 			"onAudioInfoChanged",
@@ -29,7 +29,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_Callback::onExtrasChanged(android::os::Bundle arg0)
+	void MediaController_Callback::onExtrasChanged(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onExtrasChanged",
@@ -37,7 +37,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_Callback::onMetadataChanged(android::media::MediaMetadata arg0)
+	void MediaController_Callback::onMetadataChanged(android::media::MediaMetadata arg0) const
 	{
 		callMethod<void>(
 			"onMetadataChanged",
@@ -45,7 +45,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_Callback::onPlaybackStateChanged(android::media::session::PlaybackState arg0)
+	void MediaController_Callback::onPlaybackStateChanged(android::media::session::PlaybackState arg0) const
 	{
 		callMethod<void>(
 			"onPlaybackStateChanged",
@@ -53,7 +53,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_Callback::onQueueChanged(JObject arg0)
+	void MediaController_Callback::onQueueChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"onQueueChanged",
@@ -61,7 +61,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_Callback::onQueueTitleChanged(JString arg0)
+	void MediaController_Callback::onQueueTitleChanged(JString arg0) const
 	{
 		callMethod<void>(
 			"onQueueTitleChanged",
@@ -69,14 +69,14 @@ namespace android::media::session
 			arg0.object<jstring>()
 		);
 	}
-	void MediaController_Callback::onSessionDestroyed()
+	void MediaController_Callback::onSessionDestroyed() const
 	{
 		callMethod<void>(
 			"onSessionDestroyed",
 			"()V"
 		);
 	}
-	void MediaController_Callback::onSessionEvent(JString arg0, android::os::Bundle arg1)
+	void MediaController_Callback::onSessionEvent(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onSessionEvent",

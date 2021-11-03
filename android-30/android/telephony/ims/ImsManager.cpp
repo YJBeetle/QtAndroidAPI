@@ -37,7 +37,7 @@ namespace android::telephony::ims
 	// Constructors
 	
 	// Methods
-	android::telephony::ims::ImsMmTelManager ImsManager::getImsMmTelManager(jint arg0)
+	android::telephony::ims::ImsMmTelManager ImsManager::getImsMmTelManager(jint arg0) const
 	{
 		return callObjectMethod(
 			"getImsMmTelManager",
@@ -45,7 +45,7 @@ namespace android::telephony::ims
 			arg0
 		);
 	}
-	android::telephony::ims::ImsRcsManager ImsManager::getImsRcsManager(jint arg0)
+	android::telephony::ims::ImsRcsManager ImsManager::getImsRcsManager(jint arg0) const
 	{
 		return callObjectMethod(
 			"getImsRcsManager",

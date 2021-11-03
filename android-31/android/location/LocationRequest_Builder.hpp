@@ -23,15 +23,15 @@ namespace android::location
 		LocationRequest_Builder(jlong arg0);
 		
 		// Methods
-		android::location::LocationRequest build();
-		android::location::LocationRequest_Builder clearMinUpdateIntervalMillis();
-		android::location::LocationRequest_Builder setDurationMillis(jlong arg0);
-		android::location::LocationRequest_Builder setIntervalMillis(jlong arg0);
-		android::location::LocationRequest_Builder setMaxUpdateDelayMillis(jlong arg0);
-		android::location::LocationRequest_Builder setMaxUpdates(jint arg0);
-		android::location::LocationRequest_Builder setMinUpdateDistanceMeters(jfloat arg0);
-		android::location::LocationRequest_Builder setMinUpdateIntervalMillis(jlong arg0);
-		android::location::LocationRequest_Builder setQuality(jint arg0);
+		android::location::LocationRequest build() const;
+		android::location::LocationRequest_Builder clearMinUpdateIntervalMillis() const;
+		android::location::LocationRequest_Builder setDurationMillis(jlong arg0) const;
+		android::location::LocationRequest_Builder setIntervalMillis(jlong arg0) const;
+		android::location::LocationRequest_Builder setMaxUpdateDelayMillis(jlong arg0) const;
+		android::location::LocationRequest_Builder setMaxUpdates(jint arg0) const;
+		android::location::LocationRequest_Builder setMinUpdateDistanceMeters(jfloat arg0) const;
+		android::location::LocationRequest_Builder setMinUpdateIntervalMillis(jlong arg0) const;
+		android::location::LocationRequest_Builder setQuality(jint arg0) const;
 	};
 } // namespace android::location
 

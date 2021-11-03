@@ -46,28 +46,28 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jint RingtonePreference::getRingtoneType()
+	jint RingtonePreference::getRingtoneType() const
 	{
 		return callMethod<jint>(
 			"getRingtoneType",
 			"()I"
 		);
 	}
-	jboolean RingtonePreference::getShowDefault()
+	jboolean RingtonePreference::getShowDefault() const
 	{
 		return callMethod<jboolean>(
 			"getShowDefault",
 			"()Z"
 		);
 	}
-	jboolean RingtonePreference::getShowSilent()
+	jboolean RingtonePreference::getShowSilent() const
 	{
 		return callMethod<jboolean>(
 			"getShowSilent",
 			"()Z"
 		);
 	}
-	jboolean RingtonePreference::onActivityResult(jint arg0, jint arg1, android::content::Intent arg2)
+	jboolean RingtonePreference::onActivityResult(jint arg0, jint arg1, android::content::Intent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onActivityResult",
@@ -77,7 +77,7 @@ namespace android::preference
 			arg2.object()
 		);
 	}
-	void RingtonePreference::setRingtoneType(jint arg0)
+	void RingtonePreference::setRingtoneType(jint arg0) const
 	{
 		callMethod<void>(
 			"setRingtoneType",
@@ -85,7 +85,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void RingtonePreference::setShowDefault(jboolean arg0)
+	void RingtonePreference::setShowDefault(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowDefault",
@@ -93,7 +93,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void RingtonePreference::setShowSilent(jboolean arg0)
+	void RingtonePreference::setShowSilent(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowSilent",

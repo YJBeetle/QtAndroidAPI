@@ -46,29 +46,29 @@ namespace java::io
 		ObjectOutputStream(java::io::OutputStream arg0);
 		
 		// Methods
-		void close();
-		void defaultWriteObject();
-		void flush();
-		java::io::ObjectOutputStream_PutField putFields();
-		void reset();
-		void useProtocolVersion(jint arg0);
-		void write(JByteArray arg0);
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
-		void writeBoolean(jboolean arg0);
-		void writeByte(jint arg0);
-		void writeBytes(JString arg0);
-		void writeChar(jint arg0);
-		void writeChars(JString arg0);
-		void writeDouble(jdouble arg0);
-		void writeFields();
-		void writeFloat(jfloat arg0);
-		void writeInt(jint arg0);
-		void writeLong(jlong arg0);
-		void writeObject(JObject arg0);
-		void writeShort(jint arg0);
-		void writeUTF(JString arg0);
-		void writeUnshared(JObject arg0);
+		void close() const;
+		void defaultWriteObject() const;
+		void flush() const;
+		java::io::ObjectOutputStream_PutField putFields() const;
+		void reset() const;
+		void useProtocolVersion(jint arg0) const;
+		void write(JByteArray arg0) const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
+		void writeBoolean(jboolean arg0) const;
+		void writeByte(jint arg0) const;
+		void writeBytes(JString arg0) const;
+		void writeChar(jint arg0) const;
+		void writeChars(JString arg0) const;
+		void writeDouble(jdouble arg0) const;
+		void writeFields() const;
+		void writeFloat(jfloat arg0) const;
+		void writeInt(jint arg0) const;
+		void writeLong(jlong arg0) const;
+		void writeObject(JObject arg0) const;
+		void writeShort(jint arg0) const;
+		void writeUTF(JString arg0) const;
+		void writeUnshared(JObject arg0) const;
 	};
 } // namespace java::io
 

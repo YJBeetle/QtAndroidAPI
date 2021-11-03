@@ -22,14 +22,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextLinks_Request TextLinks_Request_Builder::build()
+	android::view::textclassifier::TextLinks_Request TextLinks_Request_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLinks$Request;"
 		);
 	}
-	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setDefaultLocales(android::os::LocaleList arg0)
+	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setDefaultLocales(android::os::LocaleList arg0) const
 	{
 		return callObjectMethod(
 			"setDefaultLocales",
@@ -37,7 +37,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setEntityConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0)
+	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setEntityConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0) const
 	{
 		return callObjectMethod(
 			"setEntityConfig",
@@ -45,7 +45,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -53,7 +53,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setReferenceTime(java::time::ZonedDateTime arg0)
+	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setReferenceTime(java::time::ZonedDateTime arg0) const
 	{
 		return callObjectMethod(
 			"setReferenceTime",

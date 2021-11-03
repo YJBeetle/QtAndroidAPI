@@ -30,11 +30,11 @@ namespace android::net::ipsec::ike
 		IkeSession(android::content::Context arg0, android::net::ipsec::ike::IkeSessionParams arg1, android::net::ipsec::ike::ChildSessionParams arg2, JObject arg3, JObject arg4, JObject arg5);
 		
 		// Methods
-		void close();
-		void closeChildSession(JObject arg0);
-		void finalize();
-		void kill();
-		void openChildSession(android::net::ipsec::ike::ChildSessionParams arg0, JObject arg1);
+		void close() const;
+		void closeChildSession(JObject arg0) const;
+		void finalize() const;
+		void kill() const;
+		void openChildSession(android::net::ipsec::ike::ChildSessionParams arg0, JObject arg1) const;
 	};
 } // namespace android::net::ipsec::ike
 

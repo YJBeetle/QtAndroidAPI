@@ -25,28 +25,28 @@ namespace java::util::concurrent::locks
 		) {}
 	
 	// Methods
-	jint ReentrantReadWriteLock::getQueueLength()
+	jint ReentrantReadWriteLock::getQueueLength() const
 	{
 		return callMethod<jint>(
 			"getQueueLength",
 			"()I"
 		);
 	}
-	jint ReentrantReadWriteLock::getReadHoldCount()
+	jint ReentrantReadWriteLock::getReadHoldCount() const
 	{
 		return callMethod<jint>(
 			"getReadHoldCount",
 			"()I"
 		);
 	}
-	jint ReentrantReadWriteLock::getReadLockCount()
+	jint ReentrantReadWriteLock::getReadLockCount() const
 	{
 		return callMethod<jint>(
 			"getReadLockCount",
 			"()I"
 		);
 	}
-	jint ReentrantReadWriteLock::getWaitQueueLength(JObject arg0)
+	jint ReentrantReadWriteLock::getWaitQueueLength(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getWaitQueueLength",
@@ -54,14 +54,14 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jint ReentrantReadWriteLock::getWriteHoldCount()
+	jint ReentrantReadWriteLock::getWriteHoldCount() const
 	{
 		return callMethod<jint>(
 			"getWriteHoldCount",
 			"()I"
 		);
 	}
-	jboolean ReentrantReadWriteLock::hasQueuedThread(java::lang::Thread arg0)
+	jboolean ReentrantReadWriteLock::hasQueuedThread(java::lang::Thread arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedThread",
@@ -69,14 +69,14 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean ReentrantReadWriteLock::hasQueuedThreads()
+	jboolean ReentrantReadWriteLock::hasQueuedThreads() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedThreads",
 			"()Z"
 		);
 	}
-	jboolean ReentrantReadWriteLock::hasWaiters(JObject arg0)
+	jboolean ReentrantReadWriteLock::hasWaiters(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasWaiters",
@@ -84,42 +84,42 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean ReentrantReadWriteLock::isFair()
+	jboolean ReentrantReadWriteLock::isFair() const
 	{
 		return callMethod<jboolean>(
 			"isFair",
 			"()Z"
 		);
 	}
-	jboolean ReentrantReadWriteLock::isWriteLocked()
+	jboolean ReentrantReadWriteLock::isWriteLocked() const
 	{
 		return callMethod<jboolean>(
 			"isWriteLocked",
 			"()Z"
 		);
 	}
-	jboolean ReentrantReadWriteLock::isWriteLockedByCurrentThread()
+	jboolean ReentrantReadWriteLock::isWriteLockedByCurrentThread() const
 	{
 		return callMethod<jboolean>(
 			"isWriteLockedByCurrentThread",
 			"()Z"
 		);
 	}
-	java::util::concurrent::locks::ReentrantReadWriteLock_ReadLock ReentrantReadWriteLock::readLock()
+	java::util::concurrent::locks::ReentrantReadWriteLock_ReadLock ReentrantReadWriteLock::readLock() const
 	{
 		return callObjectMethod(
 			"readLock",
 			"()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;"
 		);
 	}
-	JString ReentrantReadWriteLock::toString()
+	JString ReentrantReadWriteLock::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock ReentrantReadWriteLock::writeLock()
+	java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock ReentrantReadWriteLock::writeLock() const
 	{
 		return callObjectMethod(
 			"writeLock",

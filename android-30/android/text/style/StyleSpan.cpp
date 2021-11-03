@@ -24,28 +24,28 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint StyleSpan::describeContents()
+	jint StyleSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint StyleSpan::getSpanTypeId()
+	jint StyleSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	jint StyleSpan::getStyle()
+	jint StyleSpan::getStyle() const
 	{
 		return callMethod<jint>(
 			"getStyle",
 			"()I"
 		);
 	}
-	void StyleSpan::updateDrawState(android::text::TextPaint arg0)
+	void StyleSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -53,7 +53,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void StyleSpan::updateMeasureState(android::text::TextPaint arg0)
+	void StyleSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -61,7 +61,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void StyleSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void StyleSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

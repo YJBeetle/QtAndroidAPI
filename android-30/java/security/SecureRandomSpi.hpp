@@ -20,7 +20,7 @@ namespace java::security
 		SecureRandomSpi();
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace java::security
 

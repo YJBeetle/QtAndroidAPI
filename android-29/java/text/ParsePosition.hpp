@@ -20,13 +20,13 @@ namespace java::text
 		ParsePosition(jint arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getErrorIndex();
-		jint getIndex();
-		jint hashCode();
-		void setErrorIndex(jint arg0);
-		void setIndex(jint arg0);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getErrorIndex() const;
+		jint getIndex() const;
+		jint hashCode() const;
+		void setErrorIndex(jint arg0) const;
+		void setIndex(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace java::text
 

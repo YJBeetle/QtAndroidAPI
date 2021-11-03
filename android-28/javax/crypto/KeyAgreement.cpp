@@ -46,7 +46,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	JObject KeyAgreement::doPhase(JObject arg0, jboolean arg1)
+	JObject KeyAgreement::doPhase(JObject arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"doPhase",
@@ -55,14 +55,14 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	JByteArray KeyAgreement::generateSecret()
+	JByteArray KeyAgreement::generateSecret() const
 	{
 		return callObjectMethod(
 			"generateSecret",
 			"()[B"
 		);
 	}
-	jint KeyAgreement::generateSecret(JByteArray arg0, jint arg1)
+	jint KeyAgreement::generateSecret(JByteArray arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"generateSecret",
@@ -71,7 +71,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	JObject KeyAgreement::generateSecret(JString arg0)
+	JObject KeyAgreement::generateSecret(JString arg0) const
 	{
 		return callObjectMethod(
 			"generateSecret",
@@ -79,21 +79,21 @@ namespace javax::crypto
 			arg0.object<jstring>()
 		);
 	}
-	JString KeyAgreement::getAlgorithm()
+	JString KeyAgreement::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider KeyAgreement::getProvider()
+	java::security::Provider KeyAgreement::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void KeyAgreement::init(JObject arg0)
+	void KeyAgreement::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -101,7 +101,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void KeyAgreement::init(JObject arg0, java::security::SecureRandom arg1)
+	void KeyAgreement::init(JObject arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -110,7 +110,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void KeyAgreement::init(JObject arg0, JObject arg1)
+	void KeyAgreement::init(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -119,7 +119,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void KeyAgreement::init(JObject arg0, JObject arg1, java::security::SecureRandom arg2)
+	void KeyAgreement::init(JObject arg0, JObject arg1, java::security::SecureRandom arg2) const
 	{
 		callMethod<void>(
 			"init",

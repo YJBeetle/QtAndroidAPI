@@ -21,7 +21,7 @@ namespace android::view::accessibility
 			"()Z"
 		);
 	}
-	void AccessibilityManager::addAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0)
+	void AccessibilityManager::addAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0) const
 	{
 		callMethod<void>(
 			"addAccessibilityRequestPreparer",
@@ -29,7 +29,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityManager::addAccessibilityStateChangeListener(JObject arg0)
+	jboolean AccessibilityManager::addAccessibilityStateChangeListener(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAccessibilityStateChangeListener",
@@ -37,7 +37,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityManager::addAccessibilityStateChangeListener(JObject arg0, android::os::Handler arg1)
+	void AccessibilityManager::addAccessibilityStateChangeListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addAccessibilityStateChangeListener",
@@ -46,7 +46,7 @@ namespace android::view::accessibility
 			arg1.object()
 		);
 	}
-	jboolean AccessibilityManager::addTouchExplorationStateChangeListener(JObject arg0)
+	jboolean AccessibilityManager::addTouchExplorationStateChangeListener(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addTouchExplorationStateChangeListener",
@@ -54,7 +54,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityManager::addTouchExplorationStateChangeListener(JObject arg0, android::os::Handler arg1)
+	void AccessibilityManager::addTouchExplorationStateChangeListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addTouchExplorationStateChangeListener",
@@ -63,14 +63,14 @@ namespace android::view::accessibility
 			arg1.object()
 		);
 	}
-	JObject AccessibilityManager::getAccessibilityServiceList()
+	JObject AccessibilityManager::getAccessibilityServiceList() const
 	{
 		return callObjectMethod(
 			"getAccessibilityServiceList",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject AccessibilityManager::getEnabledAccessibilityServiceList(jint arg0)
+	JObject AccessibilityManager::getEnabledAccessibilityServiceList(jint arg0) const
 	{
 		return callObjectMethod(
 			"getEnabledAccessibilityServiceList",
@@ -78,35 +78,35 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	JObject AccessibilityManager::getInstalledAccessibilityServiceList()
+	JObject AccessibilityManager::getInstalledAccessibilityServiceList() const
 	{
 		return callObjectMethod(
 			"getInstalledAccessibilityServiceList",
 			"()Ljava/util/List;"
 		);
 	}
-	void AccessibilityManager::interrupt()
+	void AccessibilityManager::interrupt() const
 	{
 		callMethod<void>(
 			"interrupt",
 			"()V"
 		);
 	}
-	jboolean AccessibilityManager::isEnabled()
+	jboolean AccessibilityManager::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityManager::isTouchExplorationEnabled()
+	jboolean AccessibilityManager::isTouchExplorationEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isTouchExplorationEnabled",
 			"()Z"
 		);
 	}
-	void AccessibilityManager::removeAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0)
+	void AccessibilityManager::removeAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0) const
 	{
 		callMethod<void>(
 			"removeAccessibilityRequestPreparer",
@@ -114,7 +114,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityManager::removeAccessibilityStateChangeListener(JObject arg0)
+	jboolean AccessibilityManager::removeAccessibilityStateChangeListener(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAccessibilityStateChangeListener",
@@ -122,7 +122,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityManager::removeTouchExplorationStateChangeListener(JObject arg0)
+	jboolean AccessibilityManager::removeTouchExplorationStateChangeListener(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeTouchExplorationStateChangeListener",
@@ -130,7 +130,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityManager::sendAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	void AccessibilityManager::sendAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		callMethod<void>(
 			"sendAccessibilityEvent",

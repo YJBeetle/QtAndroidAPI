@@ -20,9 +20,9 @@ namespace android::text::style
 		TtsSpan_TelephoneBuilder(JString arg0);
 		
 		// Methods
-		android::text::style::TtsSpan_TelephoneBuilder setCountryCode(JString arg0);
-		android::text::style::TtsSpan_TelephoneBuilder setExtension(JString arg0);
-		android::text::style::TtsSpan_TelephoneBuilder setNumberParts(JString arg0);
+		android::text::style::TtsSpan_TelephoneBuilder setCountryCode(JString arg0) const;
+		android::text::style::TtsSpan_TelephoneBuilder setExtension(JString arg0) const;
+		android::text::style::TtsSpan_TelephoneBuilder setNumberParts(JString arg0) const;
 	};
 } // namespace android::text::style
 

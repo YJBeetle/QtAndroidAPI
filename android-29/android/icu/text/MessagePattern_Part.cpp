@@ -14,7 +14,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jboolean MessagePattern_Part::equals(JObject arg0)
+	jboolean MessagePattern_Part::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -22,56 +22,56 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::text::MessagePattern_ArgType MessagePattern_Part::getArgType()
+	android::icu::text::MessagePattern_ArgType MessagePattern_Part::getArgType() const
 	{
 		return callObjectMethod(
 			"getArgType",
 			"()Landroid/icu/text/MessagePattern$ArgType;"
 		);
 	}
-	jint MessagePattern_Part::getIndex()
+	jint MessagePattern_Part::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	jint MessagePattern_Part::getLength()
+	jint MessagePattern_Part::getLength() const
 	{
 		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
-	jint MessagePattern_Part::getLimit()
+	jint MessagePattern_Part::getLimit() const
 	{
 		return callMethod<jint>(
 			"getLimit",
 			"()I"
 		);
 	}
-	android::icu::text::MessagePattern_Part_Type MessagePattern_Part::getType()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	jint MessagePattern_Part::getValue()
+	jint MessagePattern_Part::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
-	jint MessagePattern_Part::hashCode()
+	jint MessagePattern_Part::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString MessagePattern_Part::toString()
+	JString MessagePattern_Part::toString() const
 	{
 		return callObjectMethod(
 			"toString",

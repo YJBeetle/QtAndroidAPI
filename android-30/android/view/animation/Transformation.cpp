@@ -45,14 +45,14 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	void Transformation::clear()
+	void Transformation::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void Transformation::compose(android::view::animation::Transformation arg0)
+	void Transformation::compose(android::view::animation::Transformation arg0) const
 	{
 		callMethod<void>(
 			"compose",
@@ -60,28 +60,28 @@ namespace android::view::animation
 			arg0.object()
 		);
 	}
-	jfloat Transformation::getAlpha()
+	jfloat Transformation::getAlpha() const
 	{
 		return callMethod<jfloat>(
 			"getAlpha",
 			"()F"
 		);
 	}
-	android::graphics::Matrix Transformation::getMatrix()
+	android::graphics::Matrix Transformation::getMatrix() const
 	{
 		return callObjectMethod(
 			"getMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
-	jint Transformation::getTransformationType()
+	jint Transformation::getTransformationType() const
 	{
 		return callMethod<jint>(
 			"getTransformationType",
 			"()I"
 		);
 	}
-	void Transformation::set(android::view::animation::Transformation arg0)
+	void Transformation::set(android::view::animation::Transformation arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -89,7 +89,7 @@ namespace android::view::animation
 			arg0.object()
 		);
 	}
-	void Transformation::setAlpha(jfloat arg0)
+	void Transformation::setAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -97,7 +97,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void Transformation::setTransformationType(jint arg0)
+	void Transformation::setTransformationType(jint arg0) const
 	{
 		callMethod<void>(
 			"setTransformationType",
@@ -105,14 +105,14 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	JString Transformation::toShortString()
+	JString Transformation::toShortString() const
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Transformation::toString()
+	JString Transformation::toString() const
 	{
 		return callObjectMethod(
 			"toString",

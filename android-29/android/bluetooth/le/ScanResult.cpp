@@ -89,14 +89,14 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	jint ScanResult::describeContents()
+	jint ScanResult::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ScanResult::equals(JObject arg0)
+	jboolean ScanResult::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -104,105 +104,105 @@ namespace android::bluetooth::le
 			arg0.object<jobject>()
 		);
 	}
-	jint ScanResult::getAdvertisingSid()
+	jint ScanResult::getAdvertisingSid() const
 	{
 		return callMethod<jint>(
 			"getAdvertisingSid",
 			"()I"
 		);
 	}
-	jint ScanResult::getDataStatus()
+	jint ScanResult::getDataStatus() const
 	{
 		return callMethod<jint>(
 			"getDataStatus",
 			"()I"
 		);
 	}
-	android::bluetooth::BluetoothDevice ScanResult::getDevice()
+	android::bluetooth::BluetoothDevice ScanResult::getDevice() const
 	{
 		return callObjectMethod(
 			"getDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
-	jint ScanResult::getPeriodicAdvertisingInterval()
+	jint ScanResult::getPeriodicAdvertisingInterval() const
 	{
 		return callMethod<jint>(
 			"getPeriodicAdvertisingInterval",
 			"()I"
 		);
 	}
-	jint ScanResult::getPrimaryPhy()
+	jint ScanResult::getPrimaryPhy() const
 	{
 		return callMethod<jint>(
 			"getPrimaryPhy",
 			"()I"
 		);
 	}
-	jint ScanResult::getRssi()
+	jint ScanResult::getRssi() const
 	{
 		return callMethod<jint>(
 			"getRssi",
 			"()I"
 		);
 	}
-	android::bluetooth::le::ScanRecord ScanResult::getScanRecord()
+	android::bluetooth::le::ScanRecord ScanResult::getScanRecord() const
 	{
 		return callObjectMethod(
 			"getScanRecord",
 			"()Landroid/bluetooth/le/ScanRecord;"
 		);
 	}
-	jint ScanResult::getSecondaryPhy()
+	jint ScanResult::getSecondaryPhy() const
 	{
 		return callMethod<jint>(
 			"getSecondaryPhy",
 			"()I"
 		);
 	}
-	jlong ScanResult::getTimestampNanos()
+	jlong ScanResult::getTimestampNanos() const
 	{
 		return callMethod<jlong>(
 			"getTimestampNanos",
 			"()J"
 		);
 	}
-	jint ScanResult::getTxPower()
+	jint ScanResult::getTxPower() const
 	{
 		return callMethod<jint>(
 			"getTxPower",
 			"()I"
 		);
 	}
-	jint ScanResult::hashCode()
+	jint ScanResult::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ScanResult::isConnectable()
+	jboolean ScanResult::isConnectable() const
 	{
 		return callMethod<jboolean>(
 			"isConnectable",
 			"()Z"
 		);
 	}
-	jboolean ScanResult::isLegacy()
+	jboolean ScanResult::isLegacy() const
 	{
 		return callMethod<jboolean>(
 			"isLegacy",
 			"()Z"
 		);
 	}
-	JString ScanResult::toString()
+	JString ScanResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ScanResult::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ScanResult::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

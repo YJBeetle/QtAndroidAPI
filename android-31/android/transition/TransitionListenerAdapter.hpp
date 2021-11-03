@@ -22,11 +22,11 @@ namespace android::transition
 		TransitionListenerAdapter();
 		
 		// Methods
-		void onTransitionCancel(android::transition::Transition arg0);
-		void onTransitionEnd(android::transition::Transition arg0);
-		void onTransitionPause(android::transition::Transition arg0);
-		void onTransitionResume(android::transition::Transition arg0);
-		void onTransitionStart(android::transition::Transition arg0);
+		void onTransitionCancel(android::transition::Transition arg0) const;
+		void onTransitionEnd(android::transition::Transition arg0) const;
+		void onTransitionPause(android::transition::Transition arg0) const;
+		void onTransitionResume(android::transition::Transition arg0) const;
+		void onTransitionStart(android::transition::Transition arg0) const;
 	};
 } // namespace android::transition
 

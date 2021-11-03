@@ -26,16 +26,16 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		JObject acquiredBy();
-		java::nio::channels::FileChannel channel();
-		void close();
-		jboolean isShared();
-		jboolean isValid();
-		jboolean overlaps(jlong arg0, jlong arg1);
-		jlong position();
-		void release();
-		jlong size();
-		JString toString();
+		JObject acquiredBy() const;
+		java::nio::channels::FileChannel channel() const;
+		void close() const;
+		jboolean isShared() const;
+		jboolean isValid() const;
+		jboolean overlaps(jlong arg0, jlong arg1) const;
+		jlong position() const;
+		void release() const;
+		jlong size() const;
+		JString toString() const;
 	};
 } // namespace java::nio::channels
 

@@ -94,14 +94,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint PackageStats::describeContents()
+	jint PackageStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PackageStats::equals(JObject arg0)
+	jboolean PackageStats::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -109,21 +109,21 @@ namespace android::content::pm
 			arg0.object<jobject>()
 		);
 	}
-	jint PackageStats::hashCode()
+	jint PackageStats::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PackageStats::toString()
+	JString PackageStats::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PackageStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PackageStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

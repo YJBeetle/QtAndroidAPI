@@ -69,15 +69,15 @@ namespace android::media::tv
 		// Constructors
 		
 		// Methods
-		JObject getBlockedRatings();
-		jint getInputState(JString arg0);
-		android::media::tv::TvInputInfo getTvInputInfo(JString arg0);
-		JObject getTvInputList();
-		jboolean isParentalControlsEnabled();
-		jboolean isRatingBlocked(android::media::tv::TvContentRating arg0);
-		void registerCallback(android::media::tv::TvInputManager_TvInputCallback arg0, android::os::Handler arg1);
-		void unregisterCallback(android::media::tv::TvInputManager_TvInputCallback arg0);
-		void updateTvInputInfo(android::media::tv::TvInputInfo arg0);
+		JObject getBlockedRatings() const;
+		jint getInputState(JString arg0) const;
+		android::media::tv::TvInputInfo getTvInputInfo(JString arg0) const;
+		JObject getTvInputList() const;
+		jboolean isParentalControlsEnabled() const;
+		jboolean isRatingBlocked(android::media::tv::TvContentRating arg0) const;
+		void registerCallback(android::media::tv::TvInputManager_TvInputCallback arg0, android::os::Handler arg1) const;
+		void unregisterCallback(android::media::tv::TvInputManager_TvInputCallback arg0) const;
+		void updateTvInputInfo(android::media::tv::TvInputInfo arg0) const;
 	};
 } // namespace android::media::tv
 

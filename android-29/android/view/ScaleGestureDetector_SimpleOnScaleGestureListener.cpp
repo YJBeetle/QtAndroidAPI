@@ -16,7 +16,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScale(android::view::ScaleGestureDetector arg0)
+	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScale(android::view::ScaleGestureDetector arg0) const
 	{
 		return callMethod<jboolean>(
 			"onScale",
@@ -24,7 +24,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScaleBegin(android::view::ScaleGestureDetector arg0)
+	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScaleBegin(android::view::ScaleGestureDetector arg0) const
 	{
 		return callMethod<jboolean>(
 			"onScaleBegin",
@@ -32,7 +32,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ScaleGestureDetector_SimpleOnScaleGestureListener::onScaleEnd(android::view::ScaleGestureDetector arg0)
+	void ScaleGestureDetector_SimpleOnScaleGestureListener::onScaleEnd(android::view::ScaleGestureDetector arg0) const
 	{
 		callMethod<void>(
 			"onScaleEnd",

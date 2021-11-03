@@ -105,35 +105,35 @@ namespace android::media::tv
 	// Constructors
 	
 	// Methods
-	jboolean TvInputInfo::canRecord()
+	jboolean TvInputInfo::canRecord() const
 	{
 		return callMethod<jboolean>(
 			"canRecord",
 			"()Z"
 		);
 	}
-	android::content::Intent TvInputInfo::createSettingsIntent()
+	android::content::Intent TvInputInfo::createSettingsIntent() const
 	{
 		return callObjectMethod(
 			"createSettingsIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::content::Intent TvInputInfo::createSetupIntent()
+	android::content::Intent TvInputInfo::createSetupIntent() const
 	{
 		return callObjectMethod(
 			"createSetupIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jint TvInputInfo::describeContents()
+	jint TvInputInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TvInputInfo::equals(JObject arg0)
+	jboolean TvInputInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -141,56 +141,56 @@ namespace android::media::tv
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle TvInputInfo::getExtras()
+	android::os::Bundle TvInputInfo::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString TvInputInfo::getId()
+	JString TvInputInfo::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TvInputInfo::getParentId()
+	JString TvInputInfo::getParentId() const
 	{
 		return callObjectMethod(
 			"getParentId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::pm::ServiceInfo TvInputInfo::getServiceInfo()
+	android::content::pm::ServiceInfo TvInputInfo::getServiceInfo() const
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
-	jint TvInputInfo::getTunerCount()
+	jint TvInputInfo::getTunerCount() const
 	{
 		return callMethod<jint>(
 			"getTunerCount",
 			"()I"
 		);
 	}
-	jint TvInputInfo::getType()
+	jint TvInputInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint TvInputInfo::hashCode()
+	jint TvInputInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean TvInputInfo::isHidden(android::content::Context arg0)
+	jboolean TvInputInfo::isHidden(android::content::Context arg0) const
 	{
 		return callMethod<jboolean>(
 			"isHidden",
@@ -198,14 +198,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jboolean TvInputInfo::isPassthroughInput()
+	jboolean TvInputInfo::isPassthroughInput() const
 	{
 		return callMethod<jboolean>(
 			"isPassthroughInput",
 			"()Z"
 		);
 	}
-	JString TvInputInfo::loadCustomLabel(android::content::Context arg0)
+	JString TvInputInfo::loadCustomLabel(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"loadCustomLabel",
@@ -213,7 +213,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable TvInputInfo::loadIcon(android::content::Context arg0)
+	android::graphics::drawable::Drawable TvInputInfo::loadIcon(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -221,7 +221,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	JString TvInputInfo::loadLabel(android::content::Context arg0)
+	JString TvInputInfo::loadLabel(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -229,14 +229,14 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	JString TvInputInfo::toString()
+	JString TvInputInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TvInputInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TvInputInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

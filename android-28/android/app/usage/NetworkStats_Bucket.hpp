@@ -33,18 +33,18 @@ namespace android::app::usage
 		NetworkStats_Bucket();
 		
 		// Methods
-		jint getDefaultNetworkStatus();
-		jlong getEndTimeStamp();
-		jint getMetered();
-		jint getRoaming();
-		jlong getRxBytes();
-		jlong getRxPackets();
-		jlong getStartTimeStamp();
-		jint getState();
-		jint getTag();
-		jlong getTxBytes();
-		jlong getTxPackets();
-		jint getUid();
+		jint getDefaultNetworkStatus() const;
+		jlong getEndTimeStamp() const;
+		jint getMetered() const;
+		jint getRoaming() const;
+		jlong getRxBytes() const;
+		jlong getRxPackets() const;
+		jlong getStartTimeStamp() const;
+		jint getState() const;
+		jint getTag() const;
+		jlong getTxBytes() const;
+		jlong getTxPackets() const;
+		jint getUid() const;
 	};
 } // namespace android::app::usage
 

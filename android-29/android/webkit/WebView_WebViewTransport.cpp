@@ -17,14 +17,14 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	android::webkit::WebView WebView_WebViewTransport::getWebView()
+	android::webkit::WebView WebView_WebViewTransport::getWebView() const
 	{
 		return callObjectMethod(
 			"getWebView",
 			"()Landroid/webkit/WebView;"
 		);
 	}
-	void WebView_WebViewTransport::setWebView(android::webkit::WebView arg0)
+	void WebView_WebViewTransport::setWebView(android::webkit::WebView arg0) const
 	{
 		callMethod<void>(
 			"setWebView",

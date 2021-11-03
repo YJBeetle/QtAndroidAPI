@@ -23,10 +23,10 @@ namespace android::net::http
 		SslCertificate_DName(android::net::http::SslCertificate arg0, JString arg1);
 		
 		// Methods
-		JString getCName();
-		JString getDName();
-		JString getOName();
-		JString getUName();
+		JString getCName() const;
+		JString getDName() const;
+		JString getOName() const;
+		JString getUName() const;
 	};
 } // namespace android::net::http
 

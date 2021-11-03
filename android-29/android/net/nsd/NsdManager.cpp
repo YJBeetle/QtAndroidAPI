@@ -70,7 +70,7 @@ namespace android::net::nsd
 	// Constructors
 	
 	// Methods
-	void NsdManager::discoverServices(JString arg0, jint arg1, JObject arg2)
+	void NsdManager::discoverServices(JString arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"discoverServices",
@@ -80,7 +80,7 @@ namespace android::net::nsd
 			arg2.object()
 		);
 	}
-	void NsdManager::registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, JObject arg2)
+	void NsdManager::registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"registerService",
@@ -90,7 +90,7 @@ namespace android::net::nsd
 			arg2.object()
 		);
 	}
-	void NsdManager::resolveService(android::net::nsd::NsdServiceInfo arg0, JObject arg1)
+	void NsdManager::resolveService(android::net::nsd::NsdServiceInfo arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"resolveService",
@@ -99,7 +99,7 @@ namespace android::net::nsd
 			arg1.object()
 		);
 	}
-	void NsdManager::stopServiceDiscovery(JObject arg0)
+	void NsdManager::stopServiceDiscovery(JObject arg0) const
 	{
 		callMethod<void>(
 			"stopServiceDiscovery",
@@ -107,7 +107,7 @@ namespace android::net::nsd
 			arg0.object()
 		);
 	}
-	void NsdManager::unregisterService(JObject arg0)
+	void NsdManager::unregisterService(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterService",

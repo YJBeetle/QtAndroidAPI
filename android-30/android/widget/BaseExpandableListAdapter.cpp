@@ -16,14 +16,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean BaseExpandableListAdapter::areAllItemsEnabled()
+	jboolean BaseExpandableListAdapter::areAllItemsEnabled() const
 	{
 		return callMethod<jboolean>(
 			"areAllItemsEnabled",
 			"()Z"
 		);
 	}
-	jint BaseExpandableListAdapter::getChildType(jint arg0, jint arg1)
+	jint BaseExpandableListAdapter::getChildType(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getChildType",
@@ -32,14 +32,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	jint BaseExpandableListAdapter::getChildTypeCount()
+	jint BaseExpandableListAdapter::getChildTypeCount() const
 	{
 		return callMethod<jint>(
 			"getChildTypeCount",
 			"()I"
 		);
 	}
-	jlong BaseExpandableListAdapter::getCombinedChildId(jlong arg0, jlong arg1)
+	jlong BaseExpandableListAdapter::getCombinedChildId(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getCombinedChildId",
@@ -48,7 +48,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jlong BaseExpandableListAdapter::getCombinedGroupId(jlong arg0)
+	jlong BaseExpandableListAdapter::getCombinedGroupId(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"getCombinedGroupId",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint BaseExpandableListAdapter::getGroupType(jint arg0)
+	jint BaseExpandableListAdapter::getGroupType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getGroupType",
@@ -64,35 +64,35 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint BaseExpandableListAdapter::getGroupTypeCount()
+	jint BaseExpandableListAdapter::getGroupTypeCount() const
 	{
 		return callMethod<jint>(
 			"getGroupTypeCount",
 			"()I"
 		);
 	}
-	jboolean BaseExpandableListAdapter::isEmpty()
+	jboolean BaseExpandableListAdapter::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void BaseExpandableListAdapter::notifyDataSetChanged()
+	void BaseExpandableListAdapter::notifyDataSetChanged() const
 	{
 		callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
 		);
 	}
-	void BaseExpandableListAdapter::notifyDataSetInvalidated()
+	void BaseExpandableListAdapter::notifyDataSetInvalidated() const
 	{
 		callMethod<void>(
 			"notifyDataSetInvalidated",
 			"()V"
 		);
 	}
-	void BaseExpandableListAdapter::onGroupCollapsed(jint arg0)
+	void BaseExpandableListAdapter::onGroupCollapsed(jint arg0) const
 	{
 		callMethod<void>(
 			"onGroupCollapsed",
@@ -100,7 +100,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void BaseExpandableListAdapter::onGroupExpanded(jint arg0)
+	void BaseExpandableListAdapter::onGroupExpanded(jint arg0) const
 	{
 		callMethod<void>(
 			"onGroupExpanded",
@@ -108,7 +108,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void BaseExpandableListAdapter::registerDataSetObserver(android::database::DataSetObserver arg0)
+	void BaseExpandableListAdapter::registerDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"registerDataSetObserver",
@@ -116,7 +116,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void BaseExpandableListAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0)
+	void BaseExpandableListAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"unregisterDataSetObserver",

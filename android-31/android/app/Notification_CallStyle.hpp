@@ -33,11 +33,11 @@ namespace android::app
 		static android::app::Notification_CallStyle forIncomingCall(android::app::Person arg0, android::app::PendingIntent arg1, android::app::PendingIntent arg2);
 		static android::app::Notification_CallStyle forOngoingCall(android::app::Person arg0, android::app::PendingIntent arg1);
 		static android::app::Notification_CallStyle forScreeningCall(android::app::Person arg0, android::app::PendingIntent arg1, android::app::PendingIntent arg2);
-		android::app::Notification_CallStyle setAnswerButtonColorHint(jint arg0);
-		android::app::Notification_CallStyle setDeclineButtonColorHint(jint arg0);
-		android::app::Notification_CallStyle setIsVideo(jboolean arg0);
-		android::app::Notification_CallStyle setVerificationIcon(android::graphics::drawable::Icon arg0);
-		android::app::Notification_CallStyle setVerificationText(JString arg0);
+		android::app::Notification_CallStyle setAnswerButtonColorHint(jint arg0) const;
+		android::app::Notification_CallStyle setDeclineButtonColorHint(jint arg0) const;
+		android::app::Notification_CallStyle setIsVideo(jboolean arg0) const;
+		android::app::Notification_CallStyle setVerificationIcon(android::graphics::drawable::Icon arg0) const;
+		android::app::Notification_CallStyle setVerificationText(JString arg0) const;
 	};
 } // namespace android::app
 

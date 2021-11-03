@@ -19,7 +19,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	JObject BidirectionalTypeConverter::convertBack(JObject arg0)
+	JObject BidirectionalTypeConverter::convertBack(JObject arg0) const
 	{
 		return callObjectMethod(
 			"convertBack",
@@ -27,7 +27,7 @@ namespace android::animation
 			arg0.object<jobject>()
 		);
 	}
-	android::animation::BidirectionalTypeConverter BidirectionalTypeConverter::invert()
+	android::animation::BidirectionalTypeConverter BidirectionalTypeConverter::invert() const
 	{
 		return callObjectMethod(
 			"invert",

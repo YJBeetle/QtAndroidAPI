@@ -33,13 +33,13 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		android::service::voice::VoiceInteractionSession_ActivityId getActivityId();
-		android::app::assist::AssistContent getAssistContent();
-		android::os::Bundle getAssistData();
-		android::app::assist::AssistStructure getAssistStructure();
-		jint getCount();
-		jint getIndex();
-		jboolean isFocused();
+		android::service::voice::VoiceInteractionSession_ActivityId getActivityId() const;
+		android::app::assist::AssistContent getAssistContent() const;
+		android::os::Bundle getAssistData() const;
+		android::app::assist::AssistStructure getAssistStructure() const;
+		jint getCount() const;
+		jint getIndex() const;
+		jboolean isFocused() const;
 	};
 } // namespace android::service::voice
 

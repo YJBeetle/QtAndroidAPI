@@ -16,7 +16,7 @@ namespace android::security::identity
 		) {}
 	
 	// Methods
-	jint AccessControlProfileId::getId()
+	jint AccessControlProfileId::getId() const
 	{
 		return callMethod<jint>(
 			"getId",

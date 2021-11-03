@@ -30,10 +30,10 @@ namespace java::security::cert
 		static java::security::cert::CertPathBuilder getInstance(JString arg0);
 		static java::security::cert::CertPathBuilder getInstance(JString arg0, JString arg1);
 		static java::security::cert::CertPathBuilder getInstance(JString arg0, java::security::Provider arg1);
-		JObject build(JObject arg0);
-		JString getAlgorithm();
-		java::security::Provider getProvider();
-		JObject getRevocationChecker();
+		JObject build(JObject arg0) const;
+		JString getAlgorithm() const;
+		java::security::Provider getProvider() const;
+		JObject getRevocationChecker() const;
 	};
 } // namespace java::security::cert
 

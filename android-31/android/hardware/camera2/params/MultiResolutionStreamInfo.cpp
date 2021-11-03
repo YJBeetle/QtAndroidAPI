@@ -20,7 +20,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	jboolean MultiResolutionStreamInfo::equals(JObject arg0)
+	jboolean MultiResolutionStreamInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,28 +28,28 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jint MultiResolutionStreamInfo::getHeight()
+	jint MultiResolutionStreamInfo::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	JString MultiResolutionStreamInfo::getPhysicalCameraId()
+	JString MultiResolutionStreamInfo::getPhysicalCameraId() const
 	{
 		return callObjectMethod(
 			"getPhysicalCameraId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MultiResolutionStreamInfo::getWidth()
+	jint MultiResolutionStreamInfo::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jint MultiResolutionStreamInfo::hashCode()
+	jint MultiResolutionStreamInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

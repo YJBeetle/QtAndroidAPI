@@ -29,13 +29,13 @@ namespace android::app::job
 		JobWorkItem(android::content::Intent arg0, jlong arg1, jlong arg2);
 		
 		// Methods
-		jint describeContents();
-		jint getDeliveryCount();
-		jlong getEstimatedNetworkDownloadBytes();
-		jlong getEstimatedNetworkUploadBytes();
-		android::content::Intent getIntent();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getDeliveryCount() const;
+		jlong getEstimatedNetworkDownloadBytes() const;
+		jlong getEstimatedNetworkUploadBytes() const;
+		android::content::Intent getIntent() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::job
 

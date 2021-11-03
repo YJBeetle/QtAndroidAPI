@@ -25,7 +25,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void VectorDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void VectorDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -33,14 +33,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean VectorDrawable::canApplyTheme()
+	jboolean VectorDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void VectorDrawable::draw(android::graphics::Canvas arg0)
+	void VectorDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -48,70 +48,70 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint VectorDrawable::getAlpha()
+	jint VectorDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint VectorDrawable::getChangingConfigurations()
+	jint VectorDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::ColorFilter VectorDrawable::getColorFilter()
+	android::graphics::ColorFilter VectorDrawable::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState VectorDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState VectorDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jint VectorDrawable::getIntrinsicHeight()
+	jint VectorDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint VectorDrawable::getIntrinsicWidth()
+	jint VectorDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint VectorDrawable::getOpacity()
+	jint VectorDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Insets VectorDrawable::getOpticalInsets()
+	android::graphics::Insets VectorDrawable::getOpticalInsets() const
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	jboolean VectorDrawable::hasFocusStateSpecified()
+	jboolean VectorDrawable::hasFocusStateSpecified() const
 	{
 		return callMethod<jboolean>(
 			"hasFocusStateSpecified",
 			"()Z"
 		);
 	}
-	void VectorDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void VectorDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -122,28 +122,28 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean VectorDrawable::isAutoMirrored()
+	jboolean VectorDrawable::isAutoMirrored() const
 	{
 		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
-	jboolean VectorDrawable::isStateful()
+	jboolean VectorDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable VectorDrawable::mutate()
+	android::graphics::drawable::Drawable VectorDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void VectorDrawable::setAlpha(jint arg0)
+	void VectorDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -151,7 +151,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void VectorDrawable::setAutoMirrored(jboolean arg0)
+	void VectorDrawable::setAutoMirrored(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoMirrored",
@@ -159,7 +159,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void VectorDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void VectorDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -167,7 +167,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void VectorDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void VectorDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -175,7 +175,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void VectorDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void VectorDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",

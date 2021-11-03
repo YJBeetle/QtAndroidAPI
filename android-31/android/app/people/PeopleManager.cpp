@@ -12,7 +12,7 @@ namespace android::app::people
 	// Constructors
 	
 	// Methods
-	void PeopleManager::addOrUpdateStatus(JString arg0, android::app::people::ConversationStatus arg1)
+	void PeopleManager::addOrUpdateStatus(JString arg0, android::app::people::ConversationStatus arg1) const
 	{
 		callMethod<void>(
 			"addOrUpdateStatus",
@@ -21,7 +21,7 @@ namespace android::app::people
 			arg1.object()
 		);
 	}
-	void PeopleManager::clearStatus(JString arg0, JString arg1)
+	void PeopleManager::clearStatus(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"clearStatus",
@@ -30,7 +30,7 @@ namespace android::app::people
 			arg1.object<jstring>()
 		);
 	}
-	void PeopleManager::clearStatuses(JString arg0)
+	void PeopleManager::clearStatuses(JString arg0) const
 	{
 		callMethod<void>(
 			"clearStatuses",
@@ -38,7 +38,7 @@ namespace android::app::people
 			arg0.object<jstring>()
 		);
 	}
-	JObject PeopleManager::getStatuses(JString arg0)
+	JObject PeopleManager::getStatuses(JString arg0) const
 	{
 		return callObjectMethod(
 			"getStatuses",

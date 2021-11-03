@@ -42,20 +42,20 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAccessNetworkTechnology();
-		JObject getAvailableServices();
-		android::telephony::CellIdentity getCellIdentity();
-		jint getDomain();
-		JString getRegisteredPlmn();
-		jint getTransportType();
-		jint hashCode();
-		jboolean isRegistered();
-		jboolean isRoaming();
-		jboolean isSearching();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAccessNetworkTechnology() const;
+		JObject getAvailableServices() const;
+		android::telephony::CellIdentity getCellIdentity() const;
+		jint getDomain() const;
+		JString getRegisteredPlmn() const;
+		jint getTransportType() const;
+		jint hashCode() const;
+		jboolean isRegistered() const;
+		jboolean isRoaming() const;
+		jboolean isSearching() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

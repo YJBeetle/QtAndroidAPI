@@ -17,7 +17,7 @@ namespace android::net::ipsec::ike::exceptions
 		) {}
 	
 	// Methods
-	android::net::Network IkeNetworkLostException::getNetwork()
+	android::net::Network IkeNetworkLostException::getNetwork() const
 	{
 		return callObjectMethod(
 			"getNetwork",

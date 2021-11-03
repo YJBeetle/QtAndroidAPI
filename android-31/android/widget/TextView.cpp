@@ -97,7 +97,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void TextView::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2)
+	void TextView::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
@@ -107,7 +107,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void TextView::addTextChangedListener(JObject arg0)
+	void TextView::addTextChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addTextChangedListener",
@@ -115,7 +115,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::append(JString arg0)
+	void TextView::append(JString arg0) const
 	{
 		callMethod<void>(
 			"append",
@@ -123,7 +123,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextView::append(JString arg0, jint arg1, jint arg2)
+	void TextView::append(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"append",
@@ -133,7 +133,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void TextView::autofill(android::view::autofill::AutofillValue arg0)
+	void TextView::autofill(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -141,14 +141,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::beginBatchEdit()
+	void TextView::beginBatchEdit() const
 	{
 		callMethod<void>(
 			"beginBatchEdit",
 			"()V"
 		);
 	}
-	jboolean TextView::bringPointIntoView(jint arg0)
+	jboolean TextView::bringPointIntoView(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"bringPointIntoView",
@@ -156,28 +156,28 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::cancelLongPress()
+	void TextView::cancelLongPress() const
 	{
 		callMethod<void>(
 			"cancelLongPress",
 			"()V"
 		);
 	}
-	void TextView::clearComposingText()
+	void TextView::clearComposingText() const
 	{
 		callMethod<void>(
 			"clearComposingText",
 			"()V"
 		);
 	}
-	void TextView::computeScroll()
+	void TextView::computeScroll() const
 	{
 		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
-	void TextView::debug(jint arg0)
+	void TextView::debug(jint arg0) const
 	{
 		callMethod<void>(
 			"debug",
@@ -185,14 +185,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TextView::didTouchFocusSelect()
+	jboolean TextView::didTouchFocusSelect() const
 	{
 		return callMethod<jboolean>(
 			"didTouchFocusSelect",
 			"()Z"
 		);
 	}
-	void TextView::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void TextView::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"drawableHotspotChanged",
@@ -201,14 +201,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::endBatchEdit()
+	void TextView::endBatchEdit() const
 	{
 		callMethod<void>(
 			"endBatchEdit",
 			"()V"
 		);
 	}
-	jboolean TextView::extractText(android::view::inputmethod::ExtractedTextRequest arg0, android::view::inputmethod::ExtractedText arg1)
+	jboolean TextView::extractText(android::view::inputmethod::ExtractedTextRequest arg0, android::view::inputmethod::ExtractedText arg1) const
 	{
 		return callMethod<jboolean>(
 			"extractText",
@@ -217,7 +217,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TextView::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2)
+	void TextView::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"findViewsWithText",
@@ -227,245 +227,245 @@ namespace android::widget
 			arg2
 		);
 	}
-	JString TextView::getAccessibilityClassName()
+	JString TextView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TextView::getAutoLinkMask()
+	jint TextView::getAutoLinkMask() const
 	{
 		return callMethod<jint>(
 			"getAutoLinkMask",
 			"()I"
 		);
 	}
-	jint TextView::getAutoSizeMaxTextSize()
+	jint TextView::getAutoSizeMaxTextSize() const
 	{
 		return callMethod<jint>(
 			"getAutoSizeMaxTextSize",
 			"()I"
 		);
 	}
-	jint TextView::getAutoSizeMinTextSize()
+	jint TextView::getAutoSizeMinTextSize() const
 	{
 		return callMethod<jint>(
 			"getAutoSizeMinTextSize",
 			"()I"
 		);
 	}
-	jint TextView::getAutoSizeStepGranularity()
+	jint TextView::getAutoSizeStepGranularity() const
 	{
 		return callMethod<jint>(
 			"getAutoSizeStepGranularity",
 			"()I"
 		);
 	}
-	JIntArray TextView::getAutoSizeTextAvailableSizes()
+	JIntArray TextView::getAutoSizeTextAvailableSizes() const
 	{
 		return callObjectMethod(
 			"getAutoSizeTextAvailableSizes",
 			"()[I"
 		);
 	}
-	jint TextView::getAutoSizeTextType()
+	jint TextView::getAutoSizeTextType() const
 	{
 		return callMethod<jint>(
 			"getAutoSizeTextType",
 			"()I"
 		);
 	}
-	jint TextView::getAutofillType()
+	jint TextView::getAutofillType() const
 	{
 		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
-	android::view::autofill::AutofillValue TextView::getAutofillValue()
+	android::view::autofill::AutofillValue TextView::getAutofillValue() const
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	jint TextView::getBaseline()
+	jint TextView::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	jint TextView::getBreakStrategy()
+	jint TextView::getBreakStrategy() const
 	{
 		return callMethod<jint>(
 			"getBreakStrategy",
 			"()I"
 		);
 	}
-	jint TextView::getCompoundDrawablePadding()
+	jint TextView::getCompoundDrawablePadding() const
 	{
 		return callMethod<jint>(
 			"getCompoundDrawablePadding",
 			"()I"
 		);
 	}
-	android::graphics::BlendMode TextView::getCompoundDrawableTintBlendMode()
+	android::graphics::BlendMode TextView::getCompoundDrawableTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getCompoundDrawableTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList TextView::getCompoundDrawableTintList()
+	android::content::res::ColorStateList TextView::getCompoundDrawableTintList() const
 	{
 		return callObjectMethod(
 			"getCompoundDrawableTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode TextView::getCompoundDrawableTintMode()
+	android::graphics::PorterDuff_Mode TextView::getCompoundDrawableTintMode() const
 	{
 		return callObjectMethod(
 			"getCompoundDrawableTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	JArray TextView::getCompoundDrawables()
+	JArray TextView::getCompoundDrawables() const
 	{
 		return callObjectMethod(
 			"getCompoundDrawables",
 			"()[Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	JArray TextView::getCompoundDrawablesRelative()
+	JArray TextView::getCompoundDrawablesRelative() const
 	{
 		return callObjectMethod(
 			"getCompoundDrawablesRelative",
 			"()[Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint TextView::getCompoundPaddingBottom()
+	jint TextView::getCompoundPaddingBottom() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingBottom",
 			"()I"
 		);
 	}
-	jint TextView::getCompoundPaddingEnd()
+	jint TextView::getCompoundPaddingEnd() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingEnd",
 			"()I"
 		);
 	}
-	jint TextView::getCompoundPaddingLeft()
+	jint TextView::getCompoundPaddingLeft() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingLeft",
 			"()I"
 		);
 	}
-	jint TextView::getCompoundPaddingRight()
+	jint TextView::getCompoundPaddingRight() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingRight",
 			"()I"
 		);
 	}
-	jint TextView::getCompoundPaddingStart()
+	jint TextView::getCompoundPaddingStart() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingStart",
 			"()I"
 		);
 	}
-	jint TextView::getCompoundPaddingTop()
+	jint TextView::getCompoundPaddingTop() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingTop",
 			"()I"
 		);
 	}
-	jint TextView::getCurrentHintTextColor()
+	jint TextView::getCurrentHintTextColor() const
 	{
 		return callMethod<jint>(
 			"getCurrentHintTextColor",
 			"()I"
 		);
 	}
-	jint TextView::getCurrentTextColor()
+	jint TextView::getCurrentTextColor() const
 	{
 		return callMethod<jint>(
 			"getCurrentTextColor",
 			"()I"
 		);
 	}
-	JObject TextView::getCustomInsertionActionModeCallback()
+	JObject TextView::getCustomInsertionActionModeCallback() const
 	{
 		return callObjectMethod(
 			"getCustomInsertionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
-	JObject TextView::getCustomSelectionActionModeCallback()
+	JObject TextView::getCustomSelectionActionModeCallback() const
 	{
 		return callObjectMethod(
 			"getCustomSelectionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
-	JObject TextView::getEditableText()
+	JObject TextView::getEditableText() const
 	{
 		return callObjectMethod(
 			"getEditableText",
 			"()Landroid/text/Editable;"
 		);
 	}
-	android::text::TextUtils_TruncateAt TextView::getEllipsize()
+	android::text::TextUtils_TruncateAt TextView::getEllipsize() const
 	{
 		return callObjectMethod(
 			"getEllipsize",
 			"()Landroid/text/TextUtils$TruncateAt;"
 		);
 	}
-	JString TextView::getError()
+	JString TextView::getError() const
 	{
 		return callObjectMethod(
 			"getError",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TextView::getExtendedPaddingBottom()
+	jint TextView::getExtendedPaddingBottom() const
 	{
 		return callMethod<jint>(
 			"getExtendedPaddingBottom",
 			"()I"
 		);
 	}
-	jint TextView::getExtendedPaddingTop()
+	jint TextView::getExtendedPaddingTop() const
 	{
 		return callMethod<jint>(
 			"getExtendedPaddingTop",
 			"()I"
 		);
 	}
-	JArray TextView::getFilters()
+	JArray TextView::getFilters() const
 	{
 		return callObjectMethod(
 			"getFilters",
 			"()[Landroid/text/InputFilter;"
 		);
 	}
-	jint TextView::getFirstBaselineToTopHeight()
+	jint TextView::getFirstBaselineToTopHeight() const
 	{
 		return callMethod<jint>(
 			"getFirstBaselineToTopHeight",
 			"()I"
 		);
 	}
-	void TextView::getFocusedRect(android::graphics::Rect arg0)
+	void TextView::getFocusedRect(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getFocusedRect",
@@ -473,98 +473,98 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString TextView::getFontFeatureSettings()
+	JString TextView::getFontFeatureSettings() const
 	{
 		return callObjectMethod(
 			"getFontFeatureSettings",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TextView::getFontVariationSettings()
+	JString TextView::getFontVariationSettings() const
 	{
 		return callObjectMethod(
 			"getFontVariationSettings",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean TextView::getFreezesText()
+	jboolean TextView::getFreezesText() const
 	{
 		return callMethod<jboolean>(
 			"getFreezesText",
 			"()Z"
 		);
 	}
-	jint TextView::getGravity()
+	jint TextView::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	jint TextView::getHighlightColor()
+	jint TextView::getHighlightColor() const
 	{
 		return callMethod<jint>(
 			"getHighlightColor",
 			"()I"
 		);
 	}
-	JString TextView::getHint()
+	JString TextView::getHint() const
 	{
 		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::content::res::ColorStateList TextView::getHintTextColors()
+	android::content::res::ColorStateList TextView::getHintTextColors() const
 	{
 		return callObjectMethod(
 			"getHintTextColors",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	jint TextView::getHyphenationFrequency()
+	jint TextView::getHyphenationFrequency() const
 	{
 		return callMethod<jint>(
 			"getHyphenationFrequency",
 			"()I"
 		);
 	}
-	jint TextView::getImeActionId()
+	jint TextView::getImeActionId() const
 	{
 		return callMethod<jint>(
 			"getImeActionId",
 			"()I"
 		);
 	}
-	JString TextView::getImeActionLabel()
+	JString TextView::getImeActionLabel() const
 	{
 		return callObjectMethod(
 			"getImeActionLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::os::LocaleList TextView::getImeHintLocales()
+	android::os::LocaleList TextView::getImeHintLocales() const
 	{
 		return callObjectMethod(
 			"getImeHintLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	jint TextView::getImeOptions()
+	jint TextView::getImeOptions() const
 	{
 		return callMethod<jint>(
 			"getImeOptions",
 			"()I"
 		);
 	}
-	jboolean TextView::getIncludeFontPadding()
+	jboolean TextView::getIncludeFontPadding() const
 	{
 		return callMethod<jboolean>(
 			"getIncludeFontPadding",
 			"()Z"
 		);
 	}
-	android::os::Bundle TextView::getInputExtras(jboolean arg0)
+	android::os::Bundle TextView::getInputExtras(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"getInputExtras",
@@ -572,49 +572,49 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint TextView::getInputType()
+	jint TextView::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
-	jint TextView::getJustificationMode()
+	jint TextView::getJustificationMode() const
 	{
 		return callMethod<jint>(
 			"getJustificationMode",
 			"()I"
 		);
 	}
-	JObject TextView::getKeyListener()
+	JObject TextView::getKeyListener() const
 	{
 		return callObjectMethod(
 			"getKeyListener",
 			"()Landroid/text/method/KeyListener;"
 		);
 	}
-	jint TextView::getLastBaselineToBottomHeight()
+	jint TextView::getLastBaselineToBottomHeight() const
 	{
 		return callMethod<jint>(
 			"getLastBaselineToBottomHeight",
 			"()I"
 		);
 	}
-	android::text::Layout TextView::getLayout()
+	android::text::Layout TextView::getLayout() const
 	{
 		return callObjectMethod(
 			"getLayout",
 			"()Landroid/text/Layout;"
 		);
 	}
-	jfloat TextView::getLetterSpacing()
+	jfloat TextView::getLetterSpacing() const
 	{
 		return callMethod<jfloat>(
 			"getLetterSpacing",
 			"()F"
 		);
 	}
-	jint TextView::getLineBounds(jint arg0, android::graphics::Rect arg1)
+	jint TextView::getLineBounds(jint arg0, android::graphics::Rect arg1) const
 	{
 		return callMethod<jint>(
 			"getLineBounds",
@@ -623,119 +623,119 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jint TextView::getLineCount()
+	jint TextView::getLineCount() const
 	{
 		return callMethod<jint>(
 			"getLineCount",
 			"()I"
 		);
 	}
-	jint TextView::getLineHeight()
+	jint TextView::getLineHeight() const
 	{
 		return callMethod<jint>(
 			"getLineHeight",
 			"()I"
 		);
 	}
-	jfloat TextView::getLineSpacingExtra()
+	jfloat TextView::getLineSpacingExtra() const
 	{
 		return callMethod<jfloat>(
 			"getLineSpacingExtra",
 			"()F"
 		);
 	}
-	jfloat TextView::getLineSpacingMultiplier()
+	jfloat TextView::getLineSpacingMultiplier() const
 	{
 		return callMethod<jfloat>(
 			"getLineSpacingMultiplier",
 			"()F"
 		);
 	}
-	android::content::res::ColorStateList TextView::getLinkTextColors()
+	android::content::res::ColorStateList TextView::getLinkTextColors() const
 	{
 		return callObjectMethod(
 			"getLinkTextColors",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	jboolean TextView::getLinksClickable()
+	jboolean TextView::getLinksClickable() const
 	{
 		return callMethod<jboolean>(
 			"getLinksClickable",
 			"()Z"
 		);
 	}
-	jint TextView::getMarqueeRepeatLimit()
+	jint TextView::getMarqueeRepeatLimit() const
 	{
 		return callMethod<jint>(
 			"getMarqueeRepeatLimit",
 			"()I"
 		);
 	}
-	jint TextView::getMaxEms()
+	jint TextView::getMaxEms() const
 	{
 		return callMethod<jint>(
 			"getMaxEms",
 			"()I"
 		);
 	}
-	jint TextView::getMaxHeight()
+	jint TextView::getMaxHeight() const
 	{
 		return callMethod<jint>(
 			"getMaxHeight",
 			"()I"
 		);
 	}
-	jint TextView::getMaxLines()
+	jint TextView::getMaxLines() const
 	{
 		return callMethod<jint>(
 			"getMaxLines",
 			"()I"
 		);
 	}
-	jint TextView::getMaxWidth()
+	jint TextView::getMaxWidth() const
 	{
 		return callMethod<jint>(
 			"getMaxWidth",
 			"()I"
 		);
 	}
-	jint TextView::getMinEms()
+	jint TextView::getMinEms() const
 	{
 		return callMethod<jint>(
 			"getMinEms",
 			"()I"
 		);
 	}
-	jint TextView::getMinHeight()
+	jint TextView::getMinHeight() const
 	{
 		return callMethod<jint>(
 			"getMinHeight",
 			"()I"
 		);
 	}
-	jint TextView::getMinLines()
+	jint TextView::getMinLines() const
 	{
 		return callMethod<jint>(
 			"getMinLines",
 			"()I"
 		);
 	}
-	jint TextView::getMinWidth()
+	jint TextView::getMinWidth() const
 	{
 		return callMethod<jint>(
 			"getMinWidth",
 			"()I"
 		);
 	}
-	JObject TextView::getMovementMethod()
+	JObject TextView::getMovementMethod() const
 	{
 		return callObjectMethod(
 			"getMovementMethod",
 			"()Landroid/text/method/MovementMethod;"
 		);
 	}
-	jint TextView::getOffsetForPosition(jfloat arg0, jfloat arg1)
+	jint TextView::getOffsetForPosition(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jint>(
 			"getOffsetForPosition",
@@ -744,252 +744,252 @@ namespace android::widget
 			arg1
 		);
 	}
-	android::text::TextPaint TextView::getPaint()
+	android::text::TextPaint TextView::getPaint() const
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/text/TextPaint;"
 		);
 	}
-	jint TextView::getPaintFlags()
+	jint TextView::getPaintFlags() const
 	{
 		return callMethod<jint>(
 			"getPaintFlags",
 			"()I"
 		);
 	}
-	JString TextView::getPrivateImeOptions()
+	JString TextView::getPrivateImeOptions() const
 	{
 		return callObjectMethod(
 			"getPrivateImeOptions",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TextView::getSelectionEnd()
+	jint TextView::getSelectionEnd() const
 	{
 		return callMethod<jint>(
 			"getSelectionEnd",
 			"()I"
 		);
 	}
-	jint TextView::getSelectionStart()
+	jint TextView::getSelectionStart() const
 	{
 		return callMethod<jint>(
 			"getSelectionStart",
 			"()I"
 		);
 	}
-	jint TextView::getShadowColor()
+	jint TextView::getShadowColor() const
 	{
 		return callMethod<jint>(
 			"getShadowColor",
 			"()I"
 		);
 	}
-	jfloat TextView::getShadowDx()
+	jfloat TextView::getShadowDx() const
 	{
 		return callMethod<jfloat>(
 			"getShadowDx",
 			"()F"
 		);
 	}
-	jfloat TextView::getShadowDy()
+	jfloat TextView::getShadowDy() const
 	{
 		return callMethod<jfloat>(
 			"getShadowDy",
 			"()F"
 		);
 	}
-	jfloat TextView::getShadowRadius()
+	jfloat TextView::getShadowRadius() const
 	{
 		return callMethod<jfloat>(
 			"getShadowRadius",
 			"()F"
 		);
 	}
-	jboolean TextView::getShowSoftInputOnFocus()
+	jboolean TextView::getShowSoftInputOnFocus() const
 	{
 		return callMethod<jboolean>(
 			"getShowSoftInputOnFocus",
 			"()Z"
 		);
 	}
-	JString TextView::getText()
+	JString TextView::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject TextView::getTextClassifier()
+	JObject TextView::getTextClassifier() const
 	{
 		return callObjectMethod(
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;"
 		);
 	}
-	android::content::res::ColorStateList TextView::getTextColors()
+	android::content::res::ColorStateList TextView::getTextColors() const
 	{
 		return callObjectMethod(
 			"getTextColors",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::drawable::Drawable TextView::getTextCursorDrawable()
+	android::graphics::drawable::Drawable TextView::getTextCursorDrawable() const
 	{
 		return callObjectMethod(
 			"getTextCursorDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	JObject TextView::getTextDirectionHeuristic()
+	JObject TextView::getTextDirectionHeuristic() const
 	{
 		return callObjectMethod(
 			"getTextDirectionHeuristic",
 			"()Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	java::util::Locale TextView::getTextLocale()
+	java::util::Locale TextView::getTextLocale() const
 	{
 		return callObjectMethod(
 			"getTextLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	android::os::LocaleList TextView::getTextLocales()
+	android::os::LocaleList TextView::getTextLocales() const
 	{
 		return callObjectMethod(
 			"getTextLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	android::text::PrecomputedText_Params TextView::getTextMetricsParams()
+	android::text::PrecomputedText_Params TextView::getTextMetricsParams() const
 	{
 		return callObjectMethod(
 			"getTextMetricsParams",
 			"()Landroid/text/PrecomputedText$Params;"
 		);
 	}
-	jfloat TextView::getTextScaleX()
+	jfloat TextView::getTextScaleX() const
 	{
 		return callMethod<jfloat>(
 			"getTextScaleX",
 			"()F"
 		);
 	}
-	android::graphics::drawable::Drawable TextView::getTextSelectHandle()
+	android::graphics::drawable::Drawable TextView::getTextSelectHandle() const
 	{
 		return callObjectMethod(
 			"getTextSelectHandle",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable TextView::getTextSelectHandleLeft()
+	android::graphics::drawable::Drawable TextView::getTextSelectHandleLeft() const
 	{
 		return callObjectMethod(
 			"getTextSelectHandleLeft",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable TextView::getTextSelectHandleRight()
+	android::graphics::drawable::Drawable TextView::getTextSelectHandleRight() const
 	{
 		return callObjectMethod(
 			"getTextSelectHandleRight",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jfloat TextView::getTextSize()
+	jfloat TextView::getTextSize() const
 	{
 		return callMethod<jfloat>(
 			"getTextSize",
 			"()F"
 		);
 	}
-	jint TextView::getTextSizeUnit()
+	jint TextView::getTextSizeUnit() const
 	{
 		return callMethod<jint>(
 			"getTextSizeUnit",
 			"()I"
 		);
 	}
-	jint TextView::getTotalPaddingBottom()
+	jint TextView::getTotalPaddingBottom() const
 	{
 		return callMethod<jint>(
 			"getTotalPaddingBottom",
 			"()I"
 		);
 	}
-	jint TextView::getTotalPaddingEnd()
+	jint TextView::getTotalPaddingEnd() const
 	{
 		return callMethod<jint>(
 			"getTotalPaddingEnd",
 			"()I"
 		);
 	}
-	jint TextView::getTotalPaddingLeft()
+	jint TextView::getTotalPaddingLeft() const
 	{
 		return callMethod<jint>(
 			"getTotalPaddingLeft",
 			"()I"
 		);
 	}
-	jint TextView::getTotalPaddingRight()
+	jint TextView::getTotalPaddingRight() const
 	{
 		return callMethod<jint>(
 			"getTotalPaddingRight",
 			"()I"
 		);
 	}
-	jint TextView::getTotalPaddingStart()
+	jint TextView::getTotalPaddingStart() const
 	{
 		return callMethod<jint>(
 			"getTotalPaddingStart",
 			"()I"
 		);
 	}
-	jint TextView::getTotalPaddingTop()
+	jint TextView::getTotalPaddingTop() const
 	{
 		return callMethod<jint>(
 			"getTotalPaddingTop",
 			"()I"
 		);
 	}
-	JObject TextView::getTransformationMethod()
+	JObject TextView::getTransformationMethod() const
 	{
 		return callObjectMethod(
 			"getTransformationMethod",
 			"()Landroid/text/method/TransformationMethod;"
 		);
 	}
-	android::graphics::Typeface TextView::getTypeface()
+	android::graphics::Typeface TextView::getTypeface() const
 	{
 		return callObjectMethod(
 			"getTypeface",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
-	JArray TextView::getUrls()
+	JArray TextView::getUrls() const
 	{
 		return callObjectMethod(
 			"getUrls",
 			"()[Landroid/text/style/URLSpan;"
 		);
 	}
-	jboolean TextView::hasOverlappingRendering()
+	jboolean TextView::hasOverlappingRendering() const
 	{
 		return callMethod<jboolean>(
 			"hasOverlappingRendering",
 			"()Z"
 		);
 	}
-	jboolean TextView::hasSelection()
+	jboolean TextView::hasSelection() const
 	{
 		return callMethod<jboolean>(
 			"hasSelection",
 			"()Z"
 		);
 	}
-	void TextView::invalidateDrawable(android::graphics::drawable::Drawable arg0)
+	void TextView::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"invalidateDrawable",
@@ -997,105 +997,105 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean TextView::isAllCaps()
+	jboolean TextView::isAllCaps() const
 	{
 		return callMethod<jboolean>(
 			"isAllCaps",
 			"()Z"
 		);
 	}
-	jboolean TextView::isCursorVisible()
+	jboolean TextView::isCursorVisible() const
 	{
 		return callMethod<jboolean>(
 			"isCursorVisible",
 			"()Z"
 		);
 	}
-	jboolean TextView::isElegantTextHeight()
+	jboolean TextView::isElegantTextHeight() const
 	{
 		return callMethod<jboolean>(
 			"isElegantTextHeight",
 			"()Z"
 		);
 	}
-	jboolean TextView::isFallbackLineSpacing()
+	jboolean TextView::isFallbackLineSpacing() const
 	{
 		return callMethod<jboolean>(
 			"isFallbackLineSpacing",
 			"()Z"
 		);
 	}
-	jboolean TextView::isHorizontallyScrollable()
+	jboolean TextView::isHorizontallyScrollable() const
 	{
 		return callMethod<jboolean>(
 			"isHorizontallyScrollable",
 			"()Z"
 		);
 	}
-	jboolean TextView::isInputMethodTarget()
+	jboolean TextView::isInputMethodTarget() const
 	{
 		return callMethod<jboolean>(
 			"isInputMethodTarget",
 			"()Z"
 		);
 	}
-	jboolean TextView::isSingleLine()
+	jboolean TextView::isSingleLine() const
 	{
 		return callMethod<jboolean>(
 			"isSingleLine",
 			"()Z"
 		);
 	}
-	jboolean TextView::isSuggestionsEnabled()
+	jboolean TextView::isSuggestionsEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSuggestionsEnabled",
 			"()Z"
 		);
 	}
-	jboolean TextView::isTextSelectable()
+	jboolean TextView::isTextSelectable() const
 	{
 		return callMethod<jboolean>(
 			"isTextSelectable",
 			"()Z"
 		);
 	}
-	void TextView::jumpDrawablesToCurrentState()
+	void TextView::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	jint TextView::length()
+	jint TextView::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jboolean TextView::moveCursorToVisibleOffset()
+	jboolean TextView::moveCursorToVisibleOffset() const
 	{
 		return callMethod<jboolean>(
 			"moveCursorToVisibleOffset",
 			"()Z"
 		);
 	}
-	void TextView::onBeginBatchEdit()
+	void TextView::onBeginBatchEdit() const
 	{
 		callMethod<void>(
 			"onBeginBatchEdit",
 			"()V"
 		);
 	}
-	jboolean TextView::onCheckIsTextEditor()
+	jboolean TextView::onCheckIsTextEditor() const
 	{
 		return callMethod<jboolean>(
 			"onCheckIsTextEditor",
 			"()Z"
 		);
 	}
-	void TextView::onCommitCompletion(android::view::inputmethod::CompletionInfo arg0)
+	void TextView::onCommitCompletion(android::view::inputmethod::CompletionInfo arg0) const
 	{
 		callMethod<void>(
 			"onCommitCompletion",
@@ -1103,7 +1103,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::onCommitCorrection(android::view::inputmethod::CorrectionInfo arg0)
+	void TextView::onCommitCorrection(android::view::inputmethod::CorrectionInfo arg0) const
 	{
 		callMethod<void>(
 			"onCommitCorrection",
@@ -1111,7 +1111,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject TextView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject TextView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0) const
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -1119,7 +1119,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::onCreateViewTranslationRequest(JIntArray arg0, JObject arg1)
+	void TextView::onCreateViewTranslationRequest(JIntArray arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onCreateViewTranslationRequest",
@@ -1128,7 +1128,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean TextView::onDragEvent(android::view::DragEvent arg0)
+	jboolean TextView::onDragEvent(android::view::DragEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onDragEvent",
@@ -1136,7 +1136,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::onEditorAction(jint arg0)
+	void TextView::onEditorAction(jint arg0) const
 	{
 		callMethod<void>(
 			"onEditorAction",
@@ -1144,14 +1144,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::onEndBatchEdit()
+	void TextView::onEndBatchEdit() const
 	{
 		callMethod<void>(
 			"onEndBatchEdit",
 			"()V"
 		);
 	}
-	jboolean TextView::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean TextView::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -1159,7 +1159,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean TextView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean TextView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -1168,7 +1168,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean TextView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean TextView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -1178,7 +1178,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean TextView::onKeyPreIme(jint arg0, android::view::KeyEvent arg1)
+	jboolean TextView::onKeyPreIme(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyPreIme",
@@ -1187,7 +1187,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean TextView::onKeyShortcut(jint arg0, android::view::KeyEvent arg1)
+	jboolean TextView::onKeyShortcut(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyShortcut",
@@ -1196,7 +1196,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean TextView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean TextView::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -1205,14 +1205,14 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean TextView::onPreDraw()
+	jboolean TextView::onPreDraw() const
 	{
 		return callMethod<jboolean>(
 			"onPreDraw",
 			"()Z"
 		);
 	}
-	jboolean TextView::onPrivateIMECommand(JString arg0, android::os::Bundle arg1)
+	jboolean TextView::onPrivateIMECommand(JString arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"onPrivateIMECommand",
@@ -1221,7 +1221,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	android::view::ContentInfo TextView::onReceiveContent(android::view::ContentInfo arg0)
+	android::view::ContentInfo TextView::onReceiveContent(android::view::ContentInfo arg0) const
 	{
 		return callObjectMethod(
 			"onReceiveContent",
@@ -1229,7 +1229,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::view::PointerIcon TextView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon TextView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -1238,7 +1238,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::onRestoreInstanceState(JObject arg0)
+	void TextView::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -1246,7 +1246,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::onRtlPropertiesChanged(jint arg0)
+	void TextView::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -1254,14 +1254,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject TextView::onSaveInstanceState()
+	JObject TextView::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	void TextView::onScreenStateChanged(jint arg0)
+	void TextView::onScreenStateChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onScreenStateChanged",
@@ -1269,7 +1269,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TextView::onTextContextMenuItem(jint arg0)
+	jboolean TextView::onTextContextMenuItem(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTextContextMenuItem",
@@ -1277,7 +1277,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TextView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean TextView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -1285,7 +1285,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean TextView::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean TextView::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -1293,7 +1293,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::onViewTranslationResponse(android::view::translation::ViewTranslationResponse arg0)
+	void TextView::onViewTranslationResponse(android::view::translation::ViewTranslationResponse arg0) const
 	{
 		callMethod<void>(
 			"onViewTranslationResponse",
@@ -1301,7 +1301,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::onWindowFocusChanged(jboolean arg0)
+	void TextView::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -1309,14 +1309,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TextView::performLongClick()
+	jboolean TextView::performLongClick() const
 	{
 		return callMethod<jboolean>(
 			"performLongClick",
 			"()Z"
 		);
 	}
-	void TextView::removeTextChangedListener(JObject arg0)
+	void TextView::removeTextChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeTextChangedListener",
@@ -1324,7 +1324,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0)
+	void TextView::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		callMethod<void>(
 			"sendAccessibilityEventUnchecked",
@@ -1332,7 +1332,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setAllCaps(jboolean arg0)
+	void TextView::setAllCaps(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllCaps",
@@ -1340,7 +1340,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setAutoLinkMask(jint arg0)
+	void TextView::setAutoLinkMask(jint arg0) const
 	{
 		callMethod<void>(
 			"setAutoLinkMask",
@@ -1348,7 +1348,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setAutoSizeTextTypeUniformWithConfiguration(jint arg0, jint arg1, jint arg2, jint arg3)
+	void TextView::setAutoSizeTextTypeUniformWithConfiguration(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setAutoSizeTextTypeUniformWithConfiguration",
@@ -1359,7 +1359,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void TextView::setAutoSizeTextTypeUniformWithPresetSizes(JIntArray arg0, jint arg1)
+	void TextView::setAutoSizeTextTypeUniformWithPresetSizes(JIntArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setAutoSizeTextTypeUniformWithPresetSizes",
@@ -1368,7 +1368,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setAutoSizeTextTypeWithDefaults(jint arg0)
+	void TextView::setAutoSizeTextTypeWithDefaults(jint arg0) const
 	{
 		callMethod<void>(
 			"setAutoSizeTextTypeWithDefaults",
@@ -1376,7 +1376,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setBreakStrategy(jint arg0)
+	void TextView::setBreakStrategy(jint arg0) const
 	{
 		callMethod<void>(
 			"setBreakStrategy",
@@ -1384,7 +1384,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setCompoundDrawablePadding(jint arg0)
+	void TextView::setCompoundDrawablePadding(jint arg0) const
 	{
 		callMethod<void>(
 			"setCompoundDrawablePadding",
@@ -1392,7 +1392,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setCompoundDrawableTintBlendMode(android::graphics::BlendMode arg0)
+	void TextView::setCompoundDrawableTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setCompoundDrawableTintBlendMode",
@@ -1400,7 +1400,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setCompoundDrawableTintList(android::content::res::ColorStateList arg0)
+	void TextView::setCompoundDrawableTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setCompoundDrawableTintList",
@@ -1408,7 +1408,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setCompoundDrawableTintMode(android::graphics::PorterDuff_Mode arg0)
+	void TextView::setCompoundDrawableTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setCompoundDrawableTintMode",
@@ -1416,7 +1416,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setCompoundDrawables(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
+	void TextView::setCompoundDrawables(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3) const
 	{
 		callMethod<void>(
 			"setCompoundDrawables",
@@ -1427,7 +1427,7 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	void TextView::setCompoundDrawablesRelative(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
+	void TextView::setCompoundDrawablesRelative(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3) const
 	{
 		callMethod<void>(
 			"setCompoundDrawablesRelative",
@@ -1438,7 +1438,7 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	void TextView::setCompoundDrawablesRelativeWithIntrinsicBounds(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
+	void TextView::setCompoundDrawablesRelativeWithIntrinsicBounds(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3) const
 	{
 		callMethod<void>(
 			"setCompoundDrawablesRelativeWithIntrinsicBounds",
@@ -1449,7 +1449,7 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	void TextView::setCompoundDrawablesRelativeWithIntrinsicBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void TextView::setCompoundDrawablesRelativeWithIntrinsicBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setCompoundDrawablesRelativeWithIntrinsicBounds",
@@ -1460,7 +1460,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void TextView::setCompoundDrawablesWithIntrinsicBounds(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
+	void TextView::setCompoundDrawablesWithIntrinsicBounds(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3) const
 	{
 		callMethod<void>(
 			"setCompoundDrawablesWithIntrinsicBounds",
@@ -1471,7 +1471,7 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	void TextView::setCompoundDrawablesWithIntrinsicBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void TextView::setCompoundDrawablesWithIntrinsicBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setCompoundDrawablesWithIntrinsicBounds",
@@ -1482,7 +1482,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void TextView::setCursorVisible(jboolean arg0)
+	void TextView::setCursorVisible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCursorVisible",
@@ -1490,7 +1490,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setCustomInsertionActionModeCallback(JObject arg0)
+	void TextView::setCustomInsertionActionModeCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCustomInsertionActionModeCallback",
@@ -1498,7 +1498,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setCustomSelectionActionModeCallback(JObject arg0)
+	void TextView::setCustomSelectionActionModeCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCustomSelectionActionModeCallback",
@@ -1506,7 +1506,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setEditableFactory(android::text::Editable_Factory arg0)
+	void TextView::setEditableFactory(android::text::Editable_Factory arg0) const
 	{
 		callMethod<void>(
 			"setEditableFactory",
@@ -1514,7 +1514,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setElegantTextHeight(jboolean arg0)
+	void TextView::setElegantTextHeight(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setElegantTextHeight",
@@ -1522,7 +1522,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setEllipsize(android::text::TextUtils_TruncateAt arg0)
+	void TextView::setEllipsize(android::text::TextUtils_TruncateAt arg0) const
 	{
 		callMethod<void>(
 			"setEllipsize",
@@ -1530,7 +1530,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setEms(jint arg0)
+	void TextView::setEms(jint arg0) const
 	{
 		callMethod<void>(
 			"setEms",
@@ -1538,7 +1538,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setEnabled(jboolean arg0)
+	void TextView::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -1546,7 +1546,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setError(JString arg0)
+	void TextView::setError(JString arg0) const
 	{
 		callMethod<void>(
 			"setError",
@@ -1554,7 +1554,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextView::setError(JString arg0, android::graphics::drawable::Drawable arg1)
+	void TextView::setError(JString arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		callMethod<void>(
 			"setError",
@@ -1563,7 +1563,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TextView::setExtractedText(android::view::inputmethod::ExtractedText arg0)
+	void TextView::setExtractedText(android::view::inputmethod::ExtractedText arg0) const
 	{
 		callMethod<void>(
 			"setExtractedText",
@@ -1571,7 +1571,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setFallbackLineSpacing(jboolean arg0)
+	void TextView::setFallbackLineSpacing(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFallbackLineSpacing",
@@ -1579,7 +1579,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setFilters(JArray arg0)
+	void TextView::setFilters(JArray arg0) const
 	{
 		callMethod<void>(
 			"setFilters",
@@ -1587,7 +1587,7 @@ namespace android::widget
 			arg0.object<jarray>()
 		);
 	}
-	void TextView::setFirstBaselineToTopHeight(jint arg0)
+	void TextView::setFirstBaselineToTopHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setFirstBaselineToTopHeight",
@@ -1595,7 +1595,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setFontFeatureSettings(JString arg0)
+	void TextView::setFontFeatureSettings(JString arg0) const
 	{
 		callMethod<void>(
 			"setFontFeatureSettings",
@@ -1603,7 +1603,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	jboolean TextView::setFontVariationSettings(JString arg0)
+	jboolean TextView::setFontVariationSettings(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"setFontVariationSettings",
@@ -1611,7 +1611,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextView::setFreezesText(jboolean arg0)
+	void TextView::setFreezesText(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFreezesText",
@@ -1619,7 +1619,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setGravity(jint arg0)
+	void TextView::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -1627,7 +1627,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHeight(jint arg0)
+	void TextView::setHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setHeight",
@@ -1635,7 +1635,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHighlightColor(jint arg0)
+	void TextView::setHighlightColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setHighlightColor",
@@ -1643,7 +1643,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHint(jint arg0)
+	void TextView::setHint(jint arg0) const
 	{
 		callMethod<void>(
 			"setHint",
@@ -1651,7 +1651,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHint(JString arg0)
+	void TextView::setHint(JString arg0) const
 	{
 		callMethod<void>(
 			"setHint",
@@ -1659,7 +1659,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextView::setHintTextColor(android::content::res::ColorStateList arg0)
+	void TextView::setHintTextColor(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setHintTextColor",
@@ -1667,7 +1667,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setHintTextColor(jint arg0)
+	void TextView::setHintTextColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setHintTextColor",
@@ -1675,7 +1675,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHorizontallyScrolling(jboolean arg0)
+	void TextView::setHorizontallyScrolling(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHorizontallyScrolling",
@@ -1683,7 +1683,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHyphenationFrequency(jint arg0)
+	void TextView::setHyphenationFrequency(jint arg0) const
 	{
 		callMethod<void>(
 			"setHyphenationFrequency",
@@ -1691,7 +1691,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setImeActionLabel(JString arg0, jint arg1)
+	void TextView::setImeActionLabel(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setImeActionLabel",
@@ -1700,7 +1700,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setImeHintLocales(android::os::LocaleList arg0)
+	void TextView::setImeHintLocales(android::os::LocaleList arg0) const
 	{
 		callMethod<void>(
 			"setImeHintLocales",
@@ -1708,7 +1708,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setImeOptions(jint arg0)
+	void TextView::setImeOptions(jint arg0) const
 	{
 		callMethod<void>(
 			"setImeOptions",
@@ -1716,7 +1716,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setIncludeFontPadding(jboolean arg0)
+	void TextView::setIncludeFontPadding(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIncludeFontPadding",
@@ -1724,7 +1724,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setInputExtras(jint arg0)
+	void TextView::setInputExtras(jint arg0) const
 	{
 		callMethod<void>(
 			"setInputExtras",
@@ -1732,7 +1732,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setInputType(jint arg0)
+	void TextView::setInputType(jint arg0) const
 	{
 		callMethod<void>(
 			"setInputType",
@@ -1740,7 +1740,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setJustificationMode(jint arg0)
+	void TextView::setJustificationMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setJustificationMode",
@@ -1748,7 +1748,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setKeyListener(JObject arg0)
+	void TextView::setKeyListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setKeyListener",
@@ -1756,7 +1756,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setLastBaselineToBottomHeight(jint arg0)
+	void TextView::setLastBaselineToBottomHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setLastBaselineToBottomHeight",
@@ -1764,7 +1764,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setLetterSpacing(jfloat arg0)
+	void TextView::setLetterSpacing(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setLetterSpacing",
@@ -1772,7 +1772,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setLineHeight(jint arg0)
+	void TextView::setLineHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setLineHeight",
@@ -1780,7 +1780,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setLineSpacing(jfloat arg0, jfloat arg1)
+	void TextView::setLineSpacing(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setLineSpacing",
@@ -1789,7 +1789,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setLines(jint arg0)
+	void TextView::setLines(jint arg0) const
 	{
 		callMethod<void>(
 			"setLines",
@@ -1797,7 +1797,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setLinkTextColor(android::content::res::ColorStateList arg0)
+	void TextView::setLinkTextColor(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setLinkTextColor",
@@ -1805,7 +1805,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setLinkTextColor(jint arg0)
+	void TextView::setLinkTextColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setLinkTextColor",
@@ -1813,7 +1813,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setLinksClickable(jboolean arg0)
+	void TextView::setLinksClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLinksClickable",
@@ -1821,7 +1821,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMarqueeRepeatLimit(jint arg0)
+	void TextView::setMarqueeRepeatLimit(jint arg0) const
 	{
 		callMethod<void>(
 			"setMarqueeRepeatLimit",
@@ -1829,7 +1829,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMaxEms(jint arg0)
+	void TextView::setMaxEms(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxEms",
@@ -1837,7 +1837,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMaxHeight(jint arg0)
+	void TextView::setMaxHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxHeight",
@@ -1845,7 +1845,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMaxLines(jint arg0)
+	void TextView::setMaxLines(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxLines",
@@ -1853,7 +1853,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMaxWidth(jint arg0)
+	void TextView::setMaxWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxWidth",
@@ -1861,7 +1861,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMinEms(jint arg0)
+	void TextView::setMinEms(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinEms",
@@ -1869,7 +1869,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMinHeight(jint arg0)
+	void TextView::setMinHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinHeight",
@@ -1877,7 +1877,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMinLines(jint arg0)
+	void TextView::setMinLines(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinLines",
@@ -1885,7 +1885,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMinWidth(jint arg0)
+	void TextView::setMinWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinWidth",
@@ -1893,7 +1893,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMovementMethod(JObject arg0)
+	void TextView::setMovementMethod(JObject arg0) const
 	{
 		callMethod<void>(
 			"setMovementMethod",
@@ -1901,7 +1901,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setOnEditorActionListener(JObject arg0)
+	void TextView::setOnEditorActionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnEditorActionListener",
@@ -1909,7 +1909,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
+	void TextView::setPadding(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPadding",
@@ -1920,7 +1920,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void TextView::setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3)
+	void TextView::setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPaddingRelative",
@@ -1931,7 +1931,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void TextView::setPaintFlags(jint arg0)
+	void TextView::setPaintFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"setPaintFlags",
@@ -1939,7 +1939,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setPrivateImeOptions(JString arg0)
+	void TextView::setPrivateImeOptions(JString arg0) const
 	{
 		callMethod<void>(
 			"setPrivateImeOptions",
@@ -1947,7 +1947,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextView::setRawInputType(jint arg0)
+	void TextView::setRawInputType(jint arg0) const
 	{
 		callMethod<void>(
 			"setRawInputType",
@@ -1955,7 +1955,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setScroller(android::widget::Scroller arg0)
+	void TextView::setScroller(android::widget::Scroller arg0) const
 	{
 		callMethod<void>(
 			"setScroller",
@@ -1963,7 +1963,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setSelectAllOnFocus(jboolean arg0)
+	void TextView::setSelectAllOnFocus(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSelectAllOnFocus",
@@ -1971,7 +1971,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setSelected(jboolean arg0)
+	void TextView::setSelected(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSelected",
@@ -1979,7 +1979,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3)
+	void TextView::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setShadowLayer",
@@ -1990,7 +1990,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void TextView::setShowSoftInputOnFocus(jboolean arg0)
+	void TextView::setShowSoftInputOnFocus(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowSoftInputOnFocus",
@@ -1998,14 +1998,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setSingleLine()
+	void TextView::setSingleLine() const
 	{
 		callMethod<void>(
 			"setSingleLine",
 			"()V"
 		);
 	}
-	void TextView::setSingleLine(jboolean arg0)
+	void TextView::setSingleLine(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSingleLine",
@@ -2013,7 +2013,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setSpannableFactory(android::text::Spannable_Factory arg0)
+	void TextView::setSpannableFactory(android::text::Spannable_Factory arg0) const
 	{
 		callMethod<void>(
 			"setSpannableFactory",
@@ -2021,7 +2021,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setText(jint arg0)
+	void TextView::setText(jint arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -2029,7 +2029,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setText(JString arg0)
+	void TextView::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -2037,7 +2037,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextView::setText(jint arg0, android::widget::TextView_BufferType arg1)
+	void TextView::setText(jint arg0, android::widget::TextView_BufferType arg1) const
 	{
 		callMethod<void>(
 			"setText",
@@ -2046,7 +2046,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TextView::setText(JString arg0, android::widget::TextView_BufferType arg1)
+	void TextView::setText(JString arg0, android::widget::TextView_BufferType arg1) const
 	{
 		callMethod<void>(
 			"setText",
@@ -2055,7 +2055,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TextView::setText(JCharArray arg0, jint arg1, jint arg2)
+	void TextView::setText(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setText",
@@ -2065,7 +2065,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void TextView::setTextAppearance(jint arg0)
+	void TextView::setTextAppearance(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextAppearance",
@@ -2073,7 +2073,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextAppearance(android::content::Context arg0, jint arg1)
+	void TextView::setTextAppearance(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTextAppearance",
@@ -2082,7 +2082,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setTextClassifier(JObject arg0)
+	void TextView::setTextClassifier(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTextClassifier",
@@ -2090,7 +2090,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextColor(android::content::res::ColorStateList arg0)
+	void TextView::setTextColor(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTextColor",
@@ -2098,7 +2098,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextColor(jint arg0)
+	void TextView::setTextColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextColor",
@@ -2106,7 +2106,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextCursorDrawable(android::graphics::drawable::Drawable arg0)
+	void TextView::setTextCursorDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setTextCursorDrawable",
@@ -2114,7 +2114,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextCursorDrawable(jint arg0)
+	void TextView::setTextCursorDrawable(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextCursorDrawable",
@@ -2122,7 +2122,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextIsSelectable(jboolean arg0)
+	void TextView::setTextIsSelectable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTextIsSelectable",
@@ -2130,7 +2130,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextKeepState(JString arg0)
+	void TextView::setTextKeepState(JString arg0) const
 	{
 		callMethod<void>(
 			"setTextKeepState",
@@ -2138,7 +2138,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextView::setTextKeepState(JString arg0, android::widget::TextView_BufferType arg1)
+	void TextView::setTextKeepState(JString arg0, android::widget::TextView_BufferType arg1) const
 	{
 		callMethod<void>(
 			"setTextKeepState",
@@ -2147,7 +2147,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TextView::setTextLocale(java::util::Locale arg0)
+	void TextView::setTextLocale(java::util::Locale arg0) const
 	{
 		callMethod<void>(
 			"setTextLocale",
@@ -2155,7 +2155,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextLocales(android::os::LocaleList arg0)
+	void TextView::setTextLocales(android::os::LocaleList arg0) const
 	{
 		callMethod<void>(
 			"setTextLocales",
@@ -2163,7 +2163,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextMetricsParams(android::text::PrecomputedText_Params arg0)
+	void TextView::setTextMetricsParams(android::text::PrecomputedText_Params arg0) const
 	{
 		callMethod<void>(
 			"setTextMetricsParams",
@@ -2171,7 +2171,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextScaleX(jfloat arg0)
+	void TextView::setTextScaleX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setTextScaleX",
@@ -2179,7 +2179,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextSelectHandle(android::graphics::drawable::Drawable arg0)
+	void TextView::setTextSelectHandle(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setTextSelectHandle",
@@ -2187,7 +2187,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextSelectHandle(jint arg0)
+	void TextView::setTextSelectHandle(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextSelectHandle",
@@ -2195,7 +2195,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextSelectHandleLeft(android::graphics::drawable::Drawable arg0)
+	void TextView::setTextSelectHandleLeft(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setTextSelectHandleLeft",
@@ -2203,7 +2203,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextSelectHandleLeft(jint arg0)
+	void TextView::setTextSelectHandleLeft(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextSelectHandleLeft",
@@ -2211,7 +2211,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextSelectHandleRight(android::graphics::drawable::Drawable arg0)
+	void TextView::setTextSelectHandleRight(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setTextSelectHandleRight",
@@ -2219,7 +2219,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTextSelectHandleRight(jint arg0)
+	void TextView::setTextSelectHandleRight(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextSelectHandleRight",
@@ -2227,7 +2227,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextSize(jfloat arg0)
+	void TextView::setTextSize(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setTextSize",
@@ -2235,7 +2235,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextSize(jint arg0, jfloat arg1)
+	void TextView::setTextSize(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setTextSize",
@@ -2244,7 +2244,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setTransformationMethod(JObject arg0)
+	void TextView::setTransformationMethod(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTransformationMethod",
@@ -2252,7 +2252,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTypeface(android::graphics::Typeface arg0)
+	void TextView::setTypeface(android::graphics::Typeface arg0) const
 	{
 		callMethod<void>(
 			"setTypeface",
@@ -2260,7 +2260,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setTypeface(android::graphics::Typeface arg0, jint arg1)
+	void TextView::setTypeface(android::graphics::Typeface arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTypeface",
@@ -2269,7 +2269,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setWidth(jint arg0)
+	void TextView::setWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setWidth",
@@ -2277,14 +2277,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TextView::showContextMenu()
+	jboolean TextView::showContextMenu() const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",
 			"()Z"
 		);
 	}
-	jboolean TextView::showContextMenu(jfloat arg0, jfloat arg1)
+	jboolean TextView::showContextMenu(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",

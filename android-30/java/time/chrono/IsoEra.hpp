@@ -24,7 +24,7 @@ namespace java::time::chrono
 		static java::time::chrono::IsoEra of(jint arg0);
 		static java::time::chrono::IsoEra valueOf(JString arg0);
 		static JArray values();
-		jint getValue();
+		jint getValue() const;
 	};
 } // namespace java::time::chrono
 

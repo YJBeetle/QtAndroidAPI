@@ -28,28 +28,28 @@ namespace android::view
 		WindowInsets(android::view::WindowInsets &arg0);
 		
 		// Methods
-		android::view::WindowInsets consumeDisplayCutout();
-		android::view::WindowInsets consumeStableInsets();
-		android::view::WindowInsets consumeSystemWindowInsets();
-		jboolean equals(JObject arg0);
-		android::view::DisplayCutout getDisplayCutout();
-		jint getStableInsetBottom();
-		jint getStableInsetLeft();
-		jint getStableInsetRight();
-		jint getStableInsetTop();
-		jint getSystemWindowInsetBottom();
-		jint getSystemWindowInsetLeft();
-		jint getSystemWindowInsetRight();
-		jint getSystemWindowInsetTop();
-		jboolean hasInsets();
-		jboolean hasStableInsets();
-		jboolean hasSystemWindowInsets();
-		jint hashCode();
-		jboolean isConsumed();
-		jboolean isRound();
-		android::view::WindowInsets replaceSystemWindowInsets(android::graphics::Rect arg0);
-		android::view::WindowInsets replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3);
-		JString toString();
+		android::view::WindowInsets consumeDisplayCutout() const;
+		android::view::WindowInsets consumeStableInsets() const;
+		android::view::WindowInsets consumeSystemWindowInsets() const;
+		jboolean equals(JObject arg0) const;
+		android::view::DisplayCutout getDisplayCutout() const;
+		jint getStableInsetBottom() const;
+		jint getStableInsetLeft() const;
+		jint getStableInsetRight() const;
+		jint getStableInsetTop() const;
+		jint getSystemWindowInsetBottom() const;
+		jint getSystemWindowInsetLeft() const;
+		jint getSystemWindowInsetRight() const;
+		jint getSystemWindowInsetTop() const;
+		jboolean hasInsets() const;
+		jboolean hasStableInsets() const;
+		jboolean hasSystemWindowInsets() const;
+		jint hashCode() const;
+		jboolean isConsumed() const;
+		jboolean isRound() const;
+		android::view::WindowInsets replaceSystemWindowInsets(android::graphics::Rect arg0) const;
+		android::view::WindowInsets replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		JString toString() const;
 	};
 } // namespace android::view
 

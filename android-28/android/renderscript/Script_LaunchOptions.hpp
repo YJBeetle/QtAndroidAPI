@@ -17,15 +17,15 @@ namespace android::renderscript
 		Script_LaunchOptions();
 		
 		// Methods
-		jint getXEnd();
-		jint getXStart();
-		jint getYEnd();
-		jint getYStart();
-		jint getZEnd();
-		jint getZStart();
-		android::renderscript::Script_LaunchOptions setX(jint arg0, jint arg1);
-		android::renderscript::Script_LaunchOptions setY(jint arg0, jint arg1);
-		android::renderscript::Script_LaunchOptions setZ(jint arg0, jint arg1);
+		jint getXEnd() const;
+		jint getXStart() const;
+		jint getYEnd() const;
+		jint getYStart() const;
+		jint getZEnd() const;
+		jint getZStart() const;
+		android::renderscript::Script_LaunchOptions setX(jint arg0, jint arg1) const;
+		android::renderscript::Script_LaunchOptions setY(jint arg0, jint arg1) const;
+		android::renderscript::Script_LaunchOptions setZ(jint arg0, jint arg1) const;
 	};
 } // namespace android::renderscript
 

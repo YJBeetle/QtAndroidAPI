@@ -22,8 +22,8 @@ namespace android::security::identity
 		// Constructors
 		
 		// Methods
-		JObject getCredentialKeyCertificateChain(JByteArray arg0);
-		JByteArray personalize(android::security::identity::PersonalizationData arg0);
+		JObject getCredentialKeyCertificateChain(JByteArray arg0) const;
+		JByteArray personalize(android::security::identity::PersonalizationData arg0) const;
 	};
 } // namespace android::security::identity
 

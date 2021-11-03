@@ -68,35 +68,35 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint ActivityManager_TaskDescription::describeContents()
+	jint ActivityManager_TaskDescription::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::Bitmap ActivityManager_TaskDescription::getIcon()
+	android::graphics::Bitmap ActivityManager_TaskDescription::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	JString ActivityManager_TaskDescription::getLabel()
+	JString ActivityManager_TaskDescription::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ActivityManager_TaskDescription::getPrimaryColor()
+	jint ActivityManager_TaskDescription::getPrimaryColor() const
 	{
 		return callMethod<jint>(
 			"getPrimaryColor",
 			"()I"
 		);
 	}
-	void ActivityManager_TaskDescription::readFromParcel(android::os::Parcel arg0)
+	void ActivityManager_TaskDescription::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -104,14 +104,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JString ActivityManager_TaskDescription::toString()
+	JString ActivityManager_TaskDescription::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ActivityManager_TaskDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ActivityManager_TaskDescription::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

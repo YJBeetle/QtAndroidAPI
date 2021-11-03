@@ -121,21 +121,21 @@ namespace android::speech
 			arg0.object()
 		);
 	}
-	void SpeechRecognizer::cancel()
+	void SpeechRecognizer::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	void SpeechRecognizer::destroy()
+	void SpeechRecognizer::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	void SpeechRecognizer::setRecognitionListener(JObject arg0)
+	void SpeechRecognizer::setRecognitionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setRecognitionListener",
@@ -143,7 +143,7 @@ namespace android::speech
 			arg0.object()
 		);
 	}
-	void SpeechRecognizer::startListening(android::content::Intent arg0)
+	void SpeechRecognizer::startListening(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"startListening",
@@ -151,7 +151,7 @@ namespace android::speech
 			arg0.object()
 		);
 	}
-	void SpeechRecognizer::stopListening()
+	void SpeechRecognizer::stopListening() const
 	{
 		callMethod<void>(
 			"stopListening",

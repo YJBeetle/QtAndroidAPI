@@ -12,7 +12,7 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	javax::xml::validation::SchemaFactory SchemaFactoryLoader::newFactory(JString arg0)
+	javax::xml::validation::SchemaFactory SchemaFactoryLoader::newFactory(JString arg0) const
 	{
 		return callObjectMethod(
 			"newFactory",

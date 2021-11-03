@@ -13,7 +13,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	JObject DateIntervalFormat_FormattedDateInterval::appendTo(JObject arg0)
+	JObject DateIntervalFormat_FormattedDateInterval::appendTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"appendTo",
@@ -21,7 +21,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jchar DateIntervalFormat_FormattedDateInterval::charAt(jint arg0)
+	jchar DateIntervalFormat_FormattedDateInterval::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -29,14 +29,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint DateIntervalFormat_FormattedDateInterval::length()
+	jint DateIntervalFormat_FormattedDateInterval::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jboolean DateIntervalFormat_FormattedDateInterval::nextPosition(android::icu::text::ConstrainedFieldPosition arg0)
+	jboolean DateIntervalFormat_FormattedDateInterval::nextPosition(android::icu::text::ConstrainedFieldPosition arg0) const
 	{
 		return callMethod<jboolean>(
 			"nextPosition",
@@ -44,7 +44,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString DateIntervalFormat_FormattedDateInterval::subSequence(jint arg0, jint arg1)
+	JString DateIntervalFormat_FormattedDateInterval::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -53,14 +53,14 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JObject DateIntervalFormat_FormattedDateInterval::toCharacterIterator()
+	JObject DateIntervalFormat_FormattedDateInterval::toCharacterIterator() const
 	{
 		return callObjectMethod(
 			"toCharacterIterator",
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	JString DateIntervalFormat_FormattedDateInterval::toString()
+	JString DateIntervalFormat_FormattedDateInterval::toString() const
 	{
 		return callObjectMethod(
 			"toString",

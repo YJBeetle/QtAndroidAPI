@@ -94,49 +94,49 @@ namespace android::app::usage
 		) {}
 	
 	// Methods
-	jint UsageEvents_Event::getAppStandbyBucket()
+	jint UsageEvents_Event::getAppStandbyBucket() const
 	{
 		return callMethod<jint>(
 			"getAppStandbyBucket",
 			"()I"
 		);
 	}
-	JString UsageEvents_Event::getClassName()
+	JString UsageEvents_Event::getClassName() const
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::res::Configuration UsageEvents_Event::getConfiguration()
+	android::content::res::Configuration UsageEvents_Event::getConfiguration() const
 	{
 		return callObjectMethod(
 			"getConfiguration",
 			"()Landroid/content/res/Configuration;"
 		);
 	}
-	jint UsageEvents_Event::getEventType()
+	jint UsageEvents_Event::getEventType() const
 	{
 		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
-	JString UsageEvents_Event::getPackageName()
+	JString UsageEvents_Event::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsageEvents_Event::getShortcutId()
+	JString UsageEvents_Event::getShortcutId() const
 	{
 		return callObjectMethod(
 			"getShortcutId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong UsageEvents_Event::getTimeStamp()
+	jlong UsageEvents_Event::getTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getTimeStamp",

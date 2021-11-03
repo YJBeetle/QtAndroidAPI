@@ -53,77 +53,77 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void SlidingDrawer::animateClose()
+	void SlidingDrawer::animateClose() const
 	{
 		callMethod<void>(
 			"animateClose",
 			"()V"
 		);
 	}
-	void SlidingDrawer::animateOpen()
+	void SlidingDrawer::animateOpen() const
 	{
 		callMethod<void>(
 			"animateOpen",
 			"()V"
 		);
 	}
-	void SlidingDrawer::animateToggle()
+	void SlidingDrawer::animateToggle() const
 	{
 		callMethod<void>(
 			"animateToggle",
 			"()V"
 		);
 	}
-	void SlidingDrawer::close()
+	void SlidingDrawer::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JString SlidingDrawer::getAccessibilityClassName()
+	JString SlidingDrawer::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View SlidingDrawer::getContent()
+	android::view::View SlidingDrawer::getContent() const
 	{
 		return callObjectMethod(
 			"getContent",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View SlidingDrawer::getHandle()
+	android::view::View SlidingDrawer::getHandle() const
 	{
 		return callObjectMethod(
 			"getHandle",
 			"()Landroid/view/View;"
 		);
 	}
-	jboolean SlidingDrawer::isMoving()
+	jboolean SlidingDrawer::isMoving() const
 	{
 		return callMethod<jboolean>(
 			"isMoving",
 			"()Z"
 		);
 	}
-	jboolean SlidingDrawer::isOpened()
+	jboolean SlidingDrawer::isOpened() const
 	{
 		return callMethod<jboolean>(
 			"isOpened",
 			"()Z"
 		);
 	}
-	void SlidingDrawer::lock()
+	void SlidingDrawer::lock() const
 	{
 		callMethod<void>(
 			"lock",
 			"()V"
 		);
 	}
-	jboolean SlidingDrawer::onInterceptTouchEvent(android::view::MotionEvent arg0)
+	jboolean SlidingDrawer::onInterceptTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
@@ -131,7 +131,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean SlidingDrawer::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean SlidingDrawer::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -139,14 +139,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SlidingDrawer::open()
+	void SlidingDrawer::open() const
 	{
 		callMethod<void>(
 			"open",
 			"()V"
 		);
 	}
-	void SlidingDrawer::setOnDrawerCloseListener(JObject arg0)
+	void SlidingDrawer::setOnDrawerCloseListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDrawerCloseListener",
@@ -154,7 +154,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SlidingDrawer::setOnDrawerOpenListener(JObject arg0)
+	void SlidingDrawer::setOnDrawerOpenListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDrawerOpenListener",
@@ -162,7 +162,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SlidingDrawer::setOnDrawerScrollListener(JObject arg0)
+	void SlidingDrawer::setOnDrawerScrollListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDrawerScrollListener",
@@ -170,14 +170,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SlidingDrawer::toggle()
+	void SlidingDrawer::toggle() const
 	{
 		callMethod<void>(
 			"toggle",
 			"()V"
 		);
 	}
-	void SlidingDrawer::unlock()
+	void SlidingDrawer::unlock() const
 	{
 		callMethod<void>(
 			"unlock",

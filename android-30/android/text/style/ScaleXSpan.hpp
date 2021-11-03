@@ -27,12 +27,12 @@ namespace android::text::style
 		ScaleXSpan(jfloat arg0);
 		
 		// Methods
-		jint describeContents();
-		jfloat getScaleX();
-		jint getSpanTypeId();
-		void updateDrawState(android::text::TextPaint arg0);
-		void updateMeasureState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jfloat getScaleX() const;
+		jint getSpanTypeId() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void updateMeasureState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

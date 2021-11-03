@@ -111,14 +111,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ProviderInfo::describeContents()
+	jint ProviderInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ProviderInfo::dump(JObject arg0, JString arg1)
+	void ProviderInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -127,14 +127,14 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	JString ProviderInfo::toString()
+	JString ProviderInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ProviderInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ProviderInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

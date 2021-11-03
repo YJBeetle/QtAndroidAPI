@@ -16,7 +16,7 @@ namespace android::database::sqlite
 	// Constructors
 	
 	// Methods
-	void SQLiteProgram::bindAllArgsAsStrings(JArray arg0)
+	void SQLiteProgram::bindAllArgsAsStrings(JArray arg0) const
 	{
 		callMethod<void>(
 			"bindAllArgsAsStrings",
@@ -24,7 +24,7 @@ namespace android::database::sqlite
 			arg0.object<jarray>()
 		);
 	}
-	void SQLiteProgram::bindBlob(jint arg0, JByteArray arg1)
+	void SQLiteProgram::bindBlob(jint arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"bindBlob",
@@ -33,7 +33,7 @@ namespace android::database::sqlite
 			arg1.object<jbyteArray>()
 		);
 	}
-	void SQLiteProgram::bindDouble(jint arg0, jdouble arg1)
+	void SQLiteProgram::bindDouble(jint arg0, jdouble arg1) const
 	{
 		callMethod<void>(
 			"bindDouble",
@@ -42,7 +42,7 @@ namespace android::database::sqlite
 			arg1
 		);
 	}
-	void SQLiteProgram::bindLong(jint arg0, jlong arg1)
+	void SQLiteProgram::bindLong(jint arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"bindLong",
@@ -51,7 +51,7 @@ namespace android::database::sqlite
 			arg1
 		);
 	}
-	void SQLiteProgram::bindNull(jint arg0)
+	void SQLiteProgram::bindNull(jint arg0) const
 	{
 		callMethod<void>(
 			"bindNull",
@@ -59,7 +59,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteProgram::bindString(jint arg0, JString arg1)
+	void SQLiteProgram::bindString(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"bindString",
@@ -68,14 +68,14 @@ namespace android::database::sqlite
 			arg1.object<jstring>()
 		);
 	}
-	void SQLiteProgram::clearBindings()
+	void SQLiteProgram::clearBindings() const
 	{
 		callMethod<void>(
 			"clearBindings",
 			"()V"
 		);
 	}
-	jint SQLiteProgram::getUniqueId()
+	jint SQLiteProgram::getUniqueId() const
 	{
 		return callMethod<jint>(
 			"getUniqueId",

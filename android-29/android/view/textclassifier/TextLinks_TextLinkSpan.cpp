@@ -18,14 +18,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextLinks_TextLink TextLinks_TextLinkSpan::getTextLink()
+	android::view::textclassifier::TextLinks_TextLink TextLinks_TextLinkSpan::getTextLink() const
 	{
 		return callObjectMethod(
 			"getTextLink",
 			"()Landroid/view/textclassifier/TextLinks$TextLink;"
 		);
 	}
-	void TextLinks_TextLinkSpan::onClick(android::view::View arg0)
+	void TextLinks_TextLinkSpan::onClick(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onClick",

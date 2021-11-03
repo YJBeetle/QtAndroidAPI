@@ -29,18 +29,18 @@ namespace android::app
 		Notification_MessagingStyle(JString arg0);
 		
 		// Methods
-		android::app::Notification_MessagingStyle addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0);
-		android::app::Notification_MessagingStyle addMessage(android::app::Notification_MessagingStyle_Message arg0);
-		android::app::Notification_MessagingStyle addMessage(JString arg0, jlong arg1, android::app::Person arg2);
-		android::app::Notification_MessagingStyle addMessage(JString arg0, jlong arg1, JString arg2);
-		JString getConversationTitle();
-		JObject getHistoricMessages();
-		JObject getMessages();
-		android::app::Person getUser();
-		JString getUserDisplayName();
-		jboolean isGroupConversation();
-		android::app::Notification_MessagingStyle setConversationTitle(JString arg0);
-		android::app::Notification_MessagingStyle setGroupConversation(jboolean arg0);
+		android::app::Notification_MessagingStyle addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0) const;
+		android::app::Notification_MessagingStyle addMessage(android::app::Notification_MessagingStyle_Message arg0) const;
+		android::app::Notification_MessagingStyle addMessage(JString arg0, jlong arg1, android::app::Person arg2) const;
+		android::app::Notification_MessagingStyle addMessage(JString arg0, jlong arg1, JString arg2) const;
+		JString getConversationTitle() const;
+		JObject getHistoricMessages() const;
+		JObject getMessages() const;
+		android::app::Person getUser() const;
+		JString getUserDisplayName() const;
+		jboolean isGroupConversation() const;
+		android::app::Notification_MessagingStyle setConversationTitle(JString arg0) const;
+		android::app::Notification_MessagingStyle setGroupConversation(jboolean arg0) const;
 	};
 } // namespace android::app
 

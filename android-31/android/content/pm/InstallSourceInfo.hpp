@@ -27,12 +27,12 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JString getInitiatingPackageName();
-		android::content::pm::SigningInfo getInitiatingPackageSigningInfo();
-		JString getInstallingPackageName();
-		JString getOriginatingPackageName();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getInitiatingPackageName() const;
+		android::content::pm::SigningInfo getInitiatingPackageSigningInfo() const;
+		JString getInstallingPackageName() const;
+		JString getOriginatingPackageName() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

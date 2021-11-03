@@ -58,35 +58,35 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint LabeledIntent::getIconResource()
+	jint LabeledIntent::getIconResource() const
 	{
 		return callMethod<jint>(
 			"getIconResource",
 			"()I"
 		);
 	}
-	jint LabeledIntent::getLabelResource()
+	jint LabeledIntent::getLabelResource() const
 	{
 		return callMethod<jint>(
 			"getLabelResource",
 			"()I"
 		);
 	}
-	JString LabeledIntent::getNonLocalizedLabel()
+	JString LabeledIntent::getNonLocalizedLabel() const
 	{
 		return callObjectMethod(
 			"getNonLocalizedLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString LabeledIntent::getSourcePackage()
+	JString LabeledIntent::getSourcePackage() const
 	{
 		return callObjectMethod(
 			"getSourcePackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::graphics::drawable::Drawable LabeledIntent::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable LabeledIntent::loadIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -94,7 +94,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString LabeledIntent::loadLabel(android::content::pm::PackageManager arg0)
+	JString LabeledIntent::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -102,7 +102,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void LabeledIntent::readFromParcel(android::os::Parcel arg0)
+	void LabeledIntent::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -110,7 +110,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void LabeledIntent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LabeledIntent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

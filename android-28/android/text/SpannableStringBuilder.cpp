@@ -46,7 +46,7 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::append(jchar arg0)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(jchar arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -54,7 +54,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -62,7 +62,7 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0, jint arg1, jint arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -72,7 +72,7 @@ namespace android::text
 			arg2
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0, JObject arg1, jint arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0, JObject arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -82,7 +82,7 @@ namespace android::text
 			arg2
 		);
 	}
-	jchar SpannableStringBuilder::charAt(jint arg0)
+	jchar SpannableStringBuilder::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -90,21 +90,21 @@ namespace android::text
 			arg0
 		);
 	}
-	void SpannableStringBuilder::clear()
+	void SpannableStringBuilder::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void SpannableStringBuilder::clearSpans()
+	void SpannableStringBuilder::clearSpans() const
 	{
 		callMethod<void>(
 			"clearSpans",
 			"()V"
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::_delete(jint arg0, jint arg1)
+	android::text::SpannableStringBuilder SpannableStringBuilder::_delete(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"delete",
@@ -113,7 +113,7 @@ namespace android::text
 			arg1
 		);
 	}
-	jboolean SpannableStringBuilder::equals(JObject arg0)
+	jboolean SpannableStringBuilder::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -121,7 +121,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	void SpannableStringBuilder::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3)
+	void SpannableStringBuilder::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"getChars",
@@ -132,14 +132,14 @@ namespace android::text
 			arg3
 		);
 	}
-	JArray SpannableStringBuilder::getFilters()
+	JArray SpannableStringBuilder::getFilters() const
 	{
 		return callObjectMethod(
 			"getFilters",
 			"()[Landroid/text/InputFilter;"
 		);
 	}
-	jint SpannableStringBuilder::getSpanEnd(JObject arg0)
+	jint SpannableStringBuilder::getSpanEnd(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanEnd",
@@ -147,7 +147,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	jint SpannableStringBuilder::getSpanFlags(JObject arg0)
+	jint SpannableStringBuilder::getSpanFlags(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanFlags",
@@ -155,7 +155,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	jint SpannableStringBuilder::getSpanStart(JObject arg0)
+	jint SpannableStringBuilder::getSpanStart(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanStart",
@@ -163,7 +163,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	JObjectArray SpannableStringBuilder::getSpans(jint arg0, jint arg1, JClass arg2)
+	JObjectArray SpannableStringBuilder::getSpans(jint arg0, jint arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"getSpans",
@@ -173,7 +173,7 @@ namespace android::text
 			arg2.object<jclass>()
 		);
 	}
-	jint SpannableStringBuilder::getTextRunCursor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint arg5)
+	jint SpannableStringBuilder::getTextRunCursor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint arg5) const
 	{
 		return callMethod<jint>(
 			"getTextRunCursor",
@@ -186,21 +186,21 @@ namespace android::text
 			arg5.object()
 		);
 	}
-	jint SpannableStringBuilder::getTextWatcherDepth()
+	jint SpannableStringBuilder::getTextWatcherDepth() const
 	{
 		return callMethod<jint>(
 			"getTextWatcherDepth",
 			"()I"
 		);
 	}
-	jint SpannableStringBuilder::hashCode()
+	jint SpannableStringBuilder::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, JString arg1)
+	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -209,7 +209,7 @@ namespace android::text
 			arg1.object<jstring>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, JString arg1, jint arg2, jint arg3)
+	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, JString arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -220,14 +220,14 @@ namespace android::text
 			arg3
 		);
 	}
-	jint SpannableStringBuilder::length()
+	jint SpannableStringBuilder::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jint SpannableStringBuilder::nextSpanTransition(jint arg0, jint arg1, JClass arg2)
+	jint SpannableStringBuilder::nextSpanTransition(jint arg0, jint arg1, JClass arg2) const
 	{
 		return callMethod<jint>(
 			"nextSpanTransition",
@@ -237,7 +237,7 @@ namespace android::text
 			arg2.object<jclass>()
 		);
 	}
-	void SpannableStringBuilder::removeSpan(JObject arg0)
+	void SpannableStringBuilder::removeSpan(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeSpan",
@@ -245,7 +245,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, JString arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -255,7 +255,7 @@ namespace android::text
 			arg2.object<jstring>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, JString arg2, jint arg3, jint arg4)
+	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, JString arg2, jint arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -267,7 +267,7 @@ namespace android::text
 			arg4
 		);
 	}
-	void SpannableStringBuilder::setFilters(JArray arg0)
+	void SpannableStringBuilder::setFilters(JArray arg0) const
 	{
 		callMethod<void>(
 			"setFilters",
@@ -275,7 +275,7 @@ namespace android::text
 			arg0.object<jarray>()
 		);
 	}
-	void SpannableStringBuilder::setSpan(JObject arg0, jint arg1, jint arg2, jint arg3)
+	void SpannableStringBuilder::setSpan(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setSpan",
@@ -286,7 +286,7 @@ namespace android::text
 			arg3
 		);
 	}
-	JString SpannableStringBuilder::subSequence(jint arg0, jint arg1)
+	JString SpannableStringBuilder::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -295,7 +295,7 @@ namespace android::text
 			arg1
 		);
 	}
-	JString SpannableStringBuilder::toString()
+	JString SpannableStringBuilder::toString() const
 	{
 		return callObjectMethod(
 			"toString",

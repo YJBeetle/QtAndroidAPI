@@ -79,14 +79,14 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	void URLClassLoader::close()
+	void URLClassLoader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::net::URL URLClassLoader::findResource(JString arg0)
+	java::net::URL URLClassLoader::findResource(JString arg0) const
 	{
 		return callObjectMethod(
 			"findResource",
@@ -94,7 +94,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	JObject URLClassLoader::findResources(JString arg0)
+	JObject URLClassLoader::findResources(JString arg0) const
 	{
 		return callObjectMethod(
 			"findResources",
@@ -102,7 +102,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream URLClassLoader::getResourceAsStream(JString arg0)
+	java::io::InputStream URLClassLoader::getResourceAsStream(JString arg0) const
 	{
 		return callObjectMethod(
 			"getResourceAsStream",
@@ -110,7 +110,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	JArray URLClassLoader::getURLs()
+	JArray URLClassLoader::getURLs() const
 	{
 		return callObjectMethod(
 			"getURLs",

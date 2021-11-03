@@ -22,11 +22,11 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		JString getLabel();
-		android::icu::text::AlphabeticIndex_Bucket_LabelType getLabelType();
-		JObject iterator();
-		jint size();
-		JString toString();
+		JString getLabel() const;
+		android::icu::text::AlphabeticIndex_Bucket_LabelType getLabelType() const;
+		JObject iterator() const;
+		jint size() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

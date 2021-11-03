@@ -26,9 +26,9 @@ namespace android::location
 		
 		// Methods
 		static android::location::GpsStatus create(android::location::GnssStatus arg0, jint arg1);
-		jint getMaxSatellites();
-		JObject getSatellites();
-		jint getTimeToFirstFix();
+		jint getMaxSatellites() const;
+		JObject getSatellites() const;
+		jint getTimeToFirstFix() const;
 	};
 } // namespace android::location
 

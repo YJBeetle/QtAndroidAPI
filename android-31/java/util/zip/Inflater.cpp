@@ -23,63 +23,63 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	void Inflater::end()
+	void Inflater::end() const
 	{
 		callMethod<void>(
 			"end",
 			"()V"
 		);
 	}
-	jboolean Inflater::finished()
+	jboolean Inflater::finished() const
 	{
 		return callMethod<jboolean>(
 			"finished",
 			"()Z"
 		);
 	}
-	jint Inflater::getAdler()
+	jint Inflater::getAdler() const
 	{
 		return callMethod<jint>(
 			"getAdler",
 			"()I"
 		);
 	}
-	jlong Inflater::getBytesRead()
+	jlong Inflater::getBytesRead() const
 	{
 		return callMethod<jlong>(
 			"getBytesRead",
 			"()J"
 		);
 	}
-	jlong Inflater::getBytesWritten()
+	jlong Inflater::getBytesWritten() const
 	{
 		return callMethod<jlong>(
 			"getBytesWritten",
 			"()J"
 		);
 	}
-	jint Inflater::getRemaining()
+	jint Inflater::getRemaining() const
 	{
 		return callMethod<jint>(
 			"getRemaining",
 			"()I"
 		);
 	}
-	jint Inflater::getTotalIn()
+	jint Inflater::getTotalIn() const
 	{
 		return callMethod<jint>(
 			"getTotalIn",
 			"()I"
 		);
 	}
-	jint Inflater::getTotalOut()
+	jint Inflater::getTotalOut() const
 	{
 		return callMethod<jint>(
 			"getTotalOut",
 			"()I"
 		);
 	}
-	jint Inflater::inflate(JByteArray arg0)
+	jint Inflater::inflate(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"inflate",
@@ -87,7 +87,7 @@ namespace java::util::zip
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint Inflater::inflate(java::nio::ByteBuffer arg0)
+	jint Inflater::inflate(java::nio::ByteBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"inflate",
@@ -95,7 +95,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	jint Inflater::inflate(JByteArray arg0, jint arg1, jint arg2)
+	jint Inflater::inflate(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"inflate",
@@ -105,28 +105,28 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	jboolean Inflater::needsDictionary()
+	jboolean Inflater::needsDictionary() const
 	{
 		return callMethod<jboolean>(
 			"needsDictionary",
 			"()Z"
 		);
 	}
-	jboolean Inflater::needsInput()
+	jboolean Inflater::needsInput() const
 	{
 		return callMethod<jboolean>(
 			"needsInput",
 			"()Z"
 		);
 	}
-	void Inflater::reset()
+	void Inflater::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Inflater::setDictionary(JByteArray arg0)
+	void Inflater::setDictionary(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setDictionary",
@@ -134,7 +134,7 @@ namespace java::util::zip
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Inflater::setDictionary(java::nio::ByteBuffer arg0)
+	void Inflater::setDictionary(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"setDictionary",
@@ -142,7 +142,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Inflater::setDictionary(JByteArray arg0, jint arg1, jint arg2)
+	void Inflater::setDictionary(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setDictionary",
@@ -152,7 +152,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	void Inflater::setInput(JByteArray arg0)
+	void Inflater::setInput(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setInput",
@@ -160,7 +160,7 @@ namespace java::util::zip
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Inflater::setInput(java::nio::ByteBuffer arg0)
+	void Inflater::setInput(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"setInput",
@@ -168,7 +168,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Inflater::setInput(JByteArray arg0, jint arg1, jint arg2)
+	void Inflater::setInput(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setInput",

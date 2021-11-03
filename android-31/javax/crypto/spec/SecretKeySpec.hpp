@@ -22,11 +22,11 @@ namespace javax::crypto::spec
 		SecretKeySpec(JByteArray arg0, jint arg1, jint arg2, JString arg3);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getAlgorithm();
-		JByteArray getEncoded();
-		JString getFormat();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JString getAlgorithm() const;
+		JByteArray getEncoded() const;
+		JString getFormat() const;
+		jint hashCode() const;
 	};
 } // namespace javax::crypto::spec
 

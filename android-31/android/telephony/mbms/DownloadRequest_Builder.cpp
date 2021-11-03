@@ -40,14 +40,14 @@ namespace android::telephony::mbms
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::telephony::mbms::DownloadRequest DownloadRequest_Builder::build()
+	android::telephony::mbms::DownloadRequest DownloadRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/mbms/DownloadRequest;"
 		);
 	}
-	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setAppIntent(android::content::Intent arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setAppIntent(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"setAppIntent",
@@ -55,7 +55,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		);
 	}
-	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setServiceInfo(android::telephony::mbms::FileServiceInfo arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setServiceInfo(android::telephony::mbms::FileServiceInfo arg0) const
 	{
 		return callObjectMethod(
 			"setServiceInfo",
@@ -63,7 +63,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		);
 	}
-	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setSubscriptionId(jint arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setSubscriptionId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSubscriptionId",

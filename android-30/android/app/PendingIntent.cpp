@@ -168,21 +168,21 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void PendingIntent::cancel()
+	void PendingIntent::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jint PendingIntent::describeContents()
+	jint PendingIntent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PendingIntent::equals(JObject arg0)
+	jboolean PendingIntent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -190,56 +190,56 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	JString PendingIntent::getCreatorPackage()
+	JString PendingIntent::getCreatorPackage() const
 	{
 		return callObjectMethod(
 			"getCreatorPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PendingIntent::getCreatorUid()
+	jint PendingIntent::getCreatorUid() const
 	{
 		return callMethod<jint>(
 			"getCreatorUid",
 			"()I"
 		);
 	}
-	android::os::UserHandle PendingIntent::getCreatorUserHandle()
+	android::os::UserHandle PendingIntent::getCreatorUserHandle() const
 	{
 		return callObjectMethod(
 			"getCreatorUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	android::content::IntentSender PendingIntent::getIntentSender()
+	android::content::IntentSender PendingIntent::getIntentSender() const
 	{
 		return callObjectMethod(
 			"getIntentSender",
 			"()Landroid/content/IntentSender;"
 		);
 	}
-	JString PendingIntent::getTargetPackage()
+	JString PendingIntent::getTargetPackage() const
 	{
 		return callObjectMethod(
 			"getTargetPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PendingIntent::hashCode()
+	jint PendingIntent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void PendingIntent::send()
+	void PendingIntent::send() const
 	{
 		callMethod<void>(
 			"send",
 			"()V"
 		);
 	}
-	void PendingIntent::send(jint arg0)
+	void PendingIntent::send(jint arg0) const
 	{
 		callMethod<void>(
 			"send",
@@ -247,7 +247,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2) const
 	{
 		callMethod<void>(
 			"send",
@@ -257,7 +257,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void PendingIntent::send(jint arg0, JObject arg1, android::os::Handler arg2)
+	void PendingIntent::send(jint arg0, JObject arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"send",
@@ -267,7 +267,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4) const
 	{
 		callMethod<void>(
 			"send",
@@ -279,7 +279,7 @@ namespace android::app
 			arg4.object()
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5) const
 	{
 		callMethod<void>(
 			"send",
@@ -292,7 +292,7 @@ namespace android::app
 			arg5.object<jstring>()
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5, android::os::Bundle arg6)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5, android::os::Bundle arg6) const
 	{
 		callMethod<void>(
 			"send",
@@ -306,14 +306,14 @@ namespace android::app
 			arg6.object()
 		);
 	}
-	JString PendingIntent::toString()
+	JString PendingIntent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PendingIntent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PendingIntent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

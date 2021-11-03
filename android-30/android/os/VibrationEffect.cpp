@@ -104,7 +104,7 @@ namespace android::os
 			"()Landroid/os/VibrationEffect$Composition;"
 		);
 	}
-	jint VibrationEffect::describeContents()
+	jint VibrationEffect::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",

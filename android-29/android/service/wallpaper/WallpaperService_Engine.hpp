@@ -52,28 +52,28 @@ namespace android::service::wallpaper
 		WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0);
 		
 		// Methods
-		jint getDesiredMinimumHeight();
-		jint getDesiredMinimumWidth();
-		android::content::Context getDisplayContext();
-		JObject getSurfaceHolder();
-		jboolean isPreview();
-		jboolean isVisible();
-		void notifyColorsChanged();
-		void onApplyWindowInsets(android::view::WindowInsets arg0);
-		android::os::Bundle onCommand(JString arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
-		android::app::WallpaperColors onComputeColors();
-		void onCreate(JObject arg0);
-		void onDesiredSizeChanged(jint arg0, jint arg1);
-		void onDestroy();
-		void onOffsetsChanged(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5);
-		void onSurfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3);
-		void onSurfaceCreated(JObject arg0);
-		void onSurfaceDestroyed(JObject arg0);
-		void onSurfaceRedrawNeeded(JObject arg0);
-		void onTouchEvent(android::view::MotionEvent arg0);
-		void onVisibilityChanged(jboolean arg0);
-		void setOffsetNotificationsEnabled(jboolean arg0);
-		void setTouchEventsEnabled(jboolean arg0);
+		jint getDesiredMinimumHeight() const;
+		jint getDesiredMinimumWidth() const;
+		android::content::Context getDisplayContext() const;
+		JObject getSurfaceHolder() const;
+		jboolean isPreview() const;
+		jboolean isVisible() const;
+		void notifyColorsChanged() const;
+		void onApplyWindowInsets(android::view::WindowInsets arg0) const;
+		android::os::Bundle onCommand(JString arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5) const;
+		android::app::WallpaperColors onComputeColors() const;
+		void onCreate(JObject arg0) const;
+		void onDesiredSizeChanged(jint arg0, jint arg1) const;
+		void onDestroy() const;
+		void onOffsetsChanged(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5) const;
+		void onSurfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3) const;
+		void onSurfaceCreated(JObject arg0) const;
+		void onSurfaceDestroyed(JObject arg0) const;
+		void onSurfaceRedrawNeeded(JObject arg0) const;
+		void onTouchEvent(android::view::MotionEvent arg0) const;
+		void onVisibilityChanged(jboolean arg0) const;
+		void setOffsetNotificationsEnabled(jboolean arg0) const;
+		void setTouchEventsEnabled(jboolean arg0) const;
 	};
 } // namespace android::service::wallpaper
 

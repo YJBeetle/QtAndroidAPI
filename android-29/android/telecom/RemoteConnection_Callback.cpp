@@ -23,7 +23,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void RemoteConnection_Callback::onAddressChanged(android::telecom::RemoteConnection arg0, android::net::Uri arg1, jint arg2)
+	void RemoteConnection_Callback::onAddressChanged(android::telecom::RemoteConnection arg0, android::net::Uri arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onAddressChanged",
@@ -33,7 +33,7 @@ namespace android::telecom
 			arg2
 		);
 	}
-	void RemoteConnection_Callback::onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, JString arg1, jint arg2)
+	void RemoteConnection_Callback::onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onCallerDisplayNameChanged",
@@ -43,7 +43,7 @@ namespace android::telecom
 			arg2
 		);
 	}
-	void RemoteConnection_Callback::onConferenceChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConference arg1)
+	void RemoteConnection_Callback::onConferenceChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConference arg1) const
 	{
 		callMethod<void>(
 			"onConferenceChanged",
@@ -52,7 +52,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, JObject arg1)
+	void RemoteConnection_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onConferenceableConnectionsChanged",
@@ -61,7 +61,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_Callback::onConnectionCapabilitiesChanged(android::telecom::RemoteConnection arg0, jint arg1)
+	void RemoteConnection_Callback::onConnectionCapabilitiesChanged(android::telecom::RemoteConnection arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onConnectionCapabilitiesChanged",
@@ -70,7 +70,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onConnectionEvent(android::telecom::RemoteConnection arg0, JString arg1, android::os::Bundle arg2)
+	void RemoteConnection_Callback::onConnectionEvent(android::telecom::RemoteConnection arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onConnectionEvent",
@@ -80,7 +80,7 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void RemoteConnection_Callback::onConnectionPropertiesChanged(android::telecom::RemoteConnection arg0, jint arg1)
+	void RemoteConnection_Callback::onConnectionPropertiesChanged(android::telecom::RemoteConnection arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onConnectionPropertiesChanged",
@@ -89,7 +89,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onDestroyed(android::telecom::RemoteConnection arg0)
+	void RemoteConnection_Callback::onDestroyed(android::telecom::RemoteConnection arg0) const
 	{
 		callMethod<void>(
 			"onDestroyed",
@@ -97,7 +97,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection_Callback::onDisconnected(android::telecom::RemoteConnection arg0, android::telecom::DisconnectCause arg1)
+	void RemoteConnection_Callback::onDisconnected(android::telecom::RemoteConnection arg0, android::telecom::DisconnectCause arg1) const
 	{
 		callMethod<void>(
 			"onDisconnected",
@@ -106,7 +106,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_Callback::onExtrasChanged(android::telecom::RemoteConnection arg0, android::os::Bundle arg1)
+	void RemoteConnection_Callback::onExtrasChanged(android::telecom::RemoteConnection arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onExtrasChanged",
@@ -115,7 +115,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_Callback::onPostDialChar(android::telecom::RemoteConnection arg0, jchar arg1)
+	void RemoteConnection_Callback::onPostDialChar(android::telecom::RemoteConnection arg0, jchar arg1) const
 	{
 		callMethod<void>(
 			"onPostDialChar",
@@ -124,7 +124,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onPostDialWait(android::telecom::RemoteConnection arg0, JString arg1)
+	void RemoteConnection_Callback::onPostDialWait(android::telecom::RemoteConnection arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onPostDialWait",
@@ -133,7 +133,7 @@ namespace android::telecom
 			arg1.object<jstring>()
 		);
 	}
-	void RemoteConnection_Callback::onRingbackRequested(android::telecom::RemoteConnection arg0, jboolean arg1)
+	void RemoteConnection_Callback::onRingbackRequested(android::telecom::RemoteConnection arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onRingbackRequested",
@@ -142,7 +142,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onStateChanged(android::telecom::RemoteConnection arg0, jint arg1)
+	void RemoteConnection_Callback::onStateChanged(android::telecom::RemoteConnection arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onStateChanged",
@@ -151,7 +151,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onStatusHintsChanged(android::telecom::RemoteConnection arg0, android::telecom::StatusHints arg1)
+	void RemoteConnection_Callback::onStatusHintsChanged(android::telecom::RemoteConnection arg0, android::telecom::StatusHints arg1) const
 	{
 		callMethod<void>(
 			"onStatusHintsChanged",
@@ -160,7 +160,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_Callback::onVideoProviderChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection_VideoProvider arg1)
+	void RemoteConnection_Callback::onVideoProviderChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection_VideoProvider arg1) const
 	{
 		callMethod<void>(
 			"onVideoProviderChanged",
@@ -169,7 +169,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_Callback::onVideoStateChanged(android::telecom::RemoteConnection arg0, jint arg1)
+	void RemoteConnection_Callback::onVideoStateChanged(android::telecom::RemoteConnection arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onVideoStateChanged",
@@ -178,7 +178,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onVoipAudioChanged(android::telecom::RemoteConnection arg0, jboolean arg1)
+	void RemoteConnection_Callback::onVoipAudioChanged(android::telecom::RemoteConnection arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onVoipAudioChanged",

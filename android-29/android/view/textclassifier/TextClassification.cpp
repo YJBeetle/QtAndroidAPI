@@ -24,21 +24,21 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextClassification::describeContents()
+	jint TextClassification::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject TextClassification::getActions()
+	JObject TextClassification::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/util/List;"
 		);
 	}
-	jfloat TextClassification::getConfidenceScore(JString arg0)
+	jfloat TextClassification::getConfidenceScore(JString arg0) const
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
@@ -46,7 +46,7 @@ namespace android::view::textclassifier
 			arg0.object<jstring>()
 		);
 	}
-	JString TextClassification::getEntity(jint arg0)
+	JString TextClassification::getEntity(jint arg0) const
 	{
 		return callObjectMethod(
 			"getEntity",
@@ -54,70 +54,70 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	jint TextClassification::getEntityCount()
+	jint TextClassification::getEntityCount() const
 	{
 		return callMethod<jint>(
 			"getEntityCount",
 			"()I"
 		);
 	}
-	android::os::Bundle TextClassification::getExtras()
+	android::os::Bundle TextClassification::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::graphics::drawable::Drawable TextClassification::getIcon()
+	android::graphics::drawable::Drawable TextClassification::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	JString TextClassification::getId()
+	JString TextClassification::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::Intent TextClassification::getIntent()
+	android::content::Intent TextClassification::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JString TextClassification::getLabel()
+	JString TextClassification::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject TextClassification::getOnClickListener()
+	JObject TextClassification::getOnClickListener() const
 	{
 		return callObjectMethod(
 			"getOnClickListener",
 			"()Landroid/view/View$OnClickListener;"
 		);
 	}
-	JString TextClassification::getText()
+	JString TextClassification::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TextClassification::toString()
+	JString TextClassification::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextClassification::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextClassification::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

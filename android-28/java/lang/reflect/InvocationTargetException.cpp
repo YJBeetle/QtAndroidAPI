@@ -25,14 +25,14 @@ namespace java::lang::reflect
 		) {}
 	
 	// Methods
-	JThrowable InvocationTargetException::getCause()
+	JThrowable InvocationTargetException::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	JThrowable InvocationTargetException::getTargetException()
+	JThrowable InvocationTargetException::getTargetException() const
 	{
 		return callObjectMethod(
 			"getTargetException",

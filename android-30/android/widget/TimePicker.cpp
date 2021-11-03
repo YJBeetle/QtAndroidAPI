@@ -46,7 +46,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void TimePicker::autofill(android::view::autofill::AutofillValue arg0)
+	void TimePicker::autofill(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -54,7 +54,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TimePicker::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
+	void TimePicker::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"dispatchProvideAutofillStructure",
@@ -63,77 +63,77 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString TimePicker::getAccessibilityClassName()
+	JString TimePicker::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TimePicker::getAutofillType()
+	jint TimePicker::getAutofillType() const
 	{
 		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
-	android::view::autofill::AutofillValue TimePicker::getAutofillValue()
+	android::view::autofill::AutofillValue TimePicker::getAutofillValue() const
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	jint TimePicker::getBaseline()
+	jint TimePicker::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	java::lang::Integer TimePicker::getCurrentHour()
+	java::lang::Integer TimePicker::getCurrentHour() const
 	{
 		return callObjectMethod(
 			"getCurrentHour",
 			"()Ljava/lang/Integer;"
 		);
 	}
-	java::lang::Integer TimePicker::getCurrentMinute()
+	java::lang::Integer TimePicker::getCurrentMinute() const
 	{
 		return callObjectMethod(
 			"getCurrentMinute",
 			"()Ljava/lang/Integer;"
 		);
 	}
-	jint TimePicker::getHour()
+	jint TimePicker::getHour() const
 	{
 		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
-	jint TimePicker::getMinute()
+	jint TimePicker::getMinute() const
 	{
 		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
-	jboolean TimePicker::is24HourView()
+	jboolean TimePicker::is24HourView() const
 	{
 		return callMethod<jboolean>(
 			"is24HourView",
 			"()Z"
 		);
 	}
-	jboolean TimePicker::isEnabled()
+	jboolean TimePicker::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void TimePicker::setCurrentHour(java::lang::Integer arg0)
+	void TimePicker::setCurrentHour(java::lang::Integer arg0) const
 	{
 		callMethod<void>(
 			"setCurrentHour",
@@ -141,7 +141,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TimePicker::setCurrentMinute(java::lang::Integer arg0)
+	void TimePicker::setCurrentMinute(java::lang::Integer arg0) const
 	{
 		callMethod<void>(
 			"setCurrentMinute",
@@ -149,7 +149,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TimePicker::setEnabled(jboolean arg0)
+	void TimePicker::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -157,7 +157,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TimePicker::setHour(jint arg0)
+	void TimePicker::setHour(jint arg0) const
 	{
 		callMethod<void>(
 			"setHour",
@@ -165,7 +165,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TimePicker::setIs24HourView(java::lang::Boolean arg0)
+	void TimePicker::setIs24HourView(java::lang::Boolean arg0) const
 	{
 		callMethod<void>(
 			"setIs24HourView",
@@ -173,7 +173,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TimePicker::setMinute(jint arg0)
+	void TimePicker::setMinute(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinute",
@@ -181,7 +181,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TimePicker::setOnTimeChangedListener(JObject arg0)
+	void TimePicker::setOnTimeChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnTimeChangedListener",
@@ -189,7 +189,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean TimePicker::validateInput()
+	jboolean TimePicker::validateInput() const
 	{
 		return callMethod<jboolean>(
 			"validateInput",

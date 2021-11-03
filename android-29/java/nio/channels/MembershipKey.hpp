@@ -25,14 +25,14 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		java::nio::channels::MembershipKey block(java::net::InetAddress arg0);
-		JObject channel();
-		void drop();
-		java::net::InetAddress group();
-		jboolean isValid();
-		java::net::NetworkInterface networkInterface();
-		java::net::InetAddress sourceAddress();
-		java::nio::channels::MembershipKey unblock(java::net::InetAddress arg0);
+		java::nio::channels::MembershipKey block(java::net::InetAddress arg0) const;
+		JObject channel() const;
+		void drop() const;
+		java::net::InetAddress group() const;
+		jboolean isValid() const;
+		java::net::NetworkInterface networkInterface() const;
+		java::net::InetAddress sourceAddress() const;
+		java::nio::channels::MembershipKey unblock(java::net::InetAddress arg0) const;
 	};
 } // namespace java::nio::channels
 

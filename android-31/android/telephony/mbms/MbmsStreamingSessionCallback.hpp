@@ -19,9 +19,9 @@ namespace android::telephony::mbms
 		MbmsStreamingSessionCallback();
 		
 		// Methods
-		void onError(jint arg0, JString arg1);
-		void onMiddlewareReady();
-		void onStreamingServicesUpdated(JObject arg0);
+		void onError(jint arg0, JString arg1) const;
+		void onMiddlewareReady() const;
+		void onStreamingServicesUpdated(JObject arg0) const;
 	};
 } // namespace android::telephony::mbms
 

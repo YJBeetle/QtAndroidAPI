@@ -26,8 +26,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::graphics::Rect getBounds();
-		JString getText();
+		android::graphics::Rect getBounds() const;
+		JString getText() const;
 	};
 } // namespace android::media
 

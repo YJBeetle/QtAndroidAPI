@@ -36,11 +36,11 @@ namespace android::app
 		TabActivity();
 		
 		// Methods
-		android::widget::TabHost getTabHost();
-		android::widget::TabWidget getTabWidget();
-		void onContentChanged();
-		void setDefaultTab(jint arg0);
-		void setDefaultTab(JString arg0);
+		android::widget::TabHost getTabHost() const;
+		android::widget::TabWidget getTabWidget() const;
+		void onContentChanged() const;
+		void setDefaultTab(jint arg0) const;
+		void setDefaultTab(JString arg0) const;
 	};
 } // namespace android::app
 

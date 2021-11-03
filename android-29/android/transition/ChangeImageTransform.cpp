@@ -27,7 +27,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void ChangeImageTransform::captureEndValues(android::transition::TransitionValues arg0)
+	void ChangeImageTransform::captureEndValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureEndValues",
@@ -35,7 +35,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void ChangeImageTransform::captureStartValues(android::transition::TransitionValues arg0)
+	void ChangeImageTransform::captureStartValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureStartValues",
@@ -43,7 +43,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::animation::Animator ChangeImageTransform::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
+	android::animation::Animator ChangeImageTransform::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const
 	{
 		return callObjectMethod(
 			"createAnimator",
@@ -53,7 +53,7 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	JArray ChangeImageTransform::getTransitionProperties()
+	JArray ChangeImageTransform::getTransitionProperties() const
 	{
 		return callObjectMethod(
 			"getTransitionProperties",

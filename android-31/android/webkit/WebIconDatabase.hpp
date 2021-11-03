@@ -20,12 +20,12 @@ namespace android::webkit
 		
 		// Methods
 		static android::webkit::WebIconDatabase getInstance();
-		void close();
-		void open(JString arg0);
-		void releaseIconForPageUrl(JString arg0);
-		void removeAllIcons();
-		void requestIconForPageUrl(JString arg0, JObject arg1);
-		void retainIconForPageUrl(JString arg0);
+		void close() const;
+		void open(JString arg0) const;
+		void releaseIconForPageUrl(JString arg0) const;
+		void removeAllIcons() const;
+		void requestIconForPageUrl(JString arg0, JObject arg1) const;
+		void retainIconForPageUrl(JString arg0) const;
 	};
 } // namespace android::webkit
 

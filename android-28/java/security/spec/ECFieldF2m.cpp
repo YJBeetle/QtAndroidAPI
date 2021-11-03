@@ -33,7 +33,7 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	jboolean ECFieldF2m::equals(JObject arg0)
+	jboolean ECFieldF2m::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -41,35 +41,35 @@ namespace java::security::spec
 			arg0.object<jobject>()
 		);
 	}
-	jint ECFieldF2m::getFieldSize()
+	jint ECFieldF2m::getFieldSize() const
 	{
 		return callMethod<jint>(
 			"getFieldSize",
 			"()I"
 		);
 	}
-	jint ECFieldF2m::getM()
+	jint ECFieldF2m::getM() const
 	{
 		return callMethod<jint>(
 			"getM",
 			"()I"
 		);
 	}
-	JIntArray ECFieldF2m::getMidTermsOfReductionPolynomial()
+	JIntArray ECFieldF2m::getMidTermsOfReductionPolynomial() const
 	{
 		return callObjectMethod(
 			"getMidTermsOfReductionPolynomial",
 			"()[I"
 		);
 	}
-	java::math::BigInteger ECFieldF2m::getReductionPolynomial()
+	java::math::BigInteger ECFieldF2m::getReductionPolynomial() const
 	{
 		return callObjectMethod(
 			"getReductionPolynomial",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jint ECFieldF2m::hashCode()
+	jint ECFieldF2m::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

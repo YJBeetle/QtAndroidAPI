@@ -21,7 +21,7 @@ namespace android::icu::util
 		IllformedLocaleException(JString arg0, jint arg1);
 		
 		// Methods
-		jint getErrorIndex();
+		jint getErrorIndex() const;
 	};
 } // namespace android::icu::util
 

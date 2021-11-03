@@ -18,7 +18,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::NetworkRequest_Builder NetworkRequest_Builder::addCapability(jint arg0)
+	android::net::NetworkRequest_Builder NetworkRequest_Builder::addCapability(jint arg0) const
 	{
 		return callObjectMethod(
 			"addCapability",
@@ -26,7 +26,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::NetworkRequest_Builder NetworkRequest_Builder::addTransportType(jint arg0)
+	android::net::NetworkRequest_Builder NetworkRequest_Builder::addTransportType(jint arg0) const
 	{
 		return callObjectMethod(
 			"addTransportType",
@@ -34,14 +34,14 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::NetworkRequest NetworkRequest_Builder::build()
+	android::net::NetworkRequest NetworkRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/NetworkRequest;"
 		);
 	}
-	android::net::NetworkRequest_Builder NetworkRequest_Builder::removeCapability(jint arg0)
+	android::net::NetworkRequest_Builder NetworkRequest_Builder::removeCapability(jint arg0) const
 	{
 		return callObjectMethod(
 			"removeCapability",
@@ -49,7 +49,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::NetworkRequest_Builder NetworkRequest_Builder::removeTransportType(jint arg0)
+	android::net::NetworkRequest_Builder NetworkRequest_Builder::removeTransportType(jint arg0) const
 	{
 		return callObjectMethod(
 			"removeTransportType",
@@ -57,7 +57,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::NetworkRequest_Builder NetworkRequest_Builder::setNetworkSpecifier(android::net::NetworkSpecifier arg0)
+	android::net::NetworkRequest_Builder NetworkRequest_Builder::setNetworkSpecifier(android::net::NetworkSpecifier arg0) const
 	{
 		return callObjectMethod(
 			"setNetworkSpecifier",
@@ -65,7 +65,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::NetworkRequest_Builder NetworkRequest_Builder::setNetworkSpecifier(JString arg0)
+	android::net::NetworkRequest_Builder NetworkRequest_Builder::setNetworkSpecifier(JString arg0) const
 	{
 		return callObjectMethod(
 			"setNetworkSpecifier",

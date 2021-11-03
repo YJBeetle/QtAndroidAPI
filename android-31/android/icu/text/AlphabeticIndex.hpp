@@ -45,25 +45,25 @@ namespace android::icu::text
 		AlphabeticIndex(java::util::Locale arg0);
 		
 		// Methods
-		android::icu::text::AlphabeticIndex addLabels(JArray arg0);
-		android::icu::text::AlphabeticIndex addLabels(android::icu::text::UnicodeSet arg0);
-		android::icu::text::AlphabeticIndex addRecord(JString arg0, JObject arg1);
-		android::icu::text::AlphabeticIndex_ImmutableIndex buildImmutableIndex();
-		android::icu::text::AlphabeticIndex clearRecords();
-		jint getBucketCount();
-		jint getBucketIndex(JString arg0);
-		JObject getBucketLabels();
-		android::icu::text::RuleBasedCollator getCollator();
-		JString getInflowLabel();
-		jint getMaxLabelCount();
-		JString getOverflowLabel();
-		jint getRecordCount();
-		JString getUnderflowLabel();
-		JObject iterator();
-		android::icu::text::AlphabeticIndex setInflowLabel(JString arg0);
-		android::icu::text::AlphabeticIndex setMaxLabelCount(jint arg0);
-		android::icu::text::AlphabeticIndex setOverflowLabel(JString arg0);
-		android::icu::text::AlphabeticIndex setUnderflowLabel(JString arg0);
+		android::icu::text::AlphabeticIndex addLabels(JArray arg0) const;
+		android::icu::text::AlphabeticIndex addLabels(android::icu::text::UnicodeSet arg0) const;
+		android::icu::text::AlphabeticIndex addRecord(JString arg0, JObject arg1) const;
+		android::icu::text::AlphabeticIndex_ImmutableIndex buildImmutableIndex() const;
+		android::icu::text::AlphabeticIndex clearRecords() const;
+		jint getBucketCount() const;
+		jint getBucketIndex(JString arg0) const;
+		JObject getBucketLabels() const;
+		android::icu::text::RuleBasedCollator getCollator() const;
+		JString getInflowLabel() const;
+		jint getMaxLabelCount() const;
+		JString getOverflowLabel() const;
+		jint getRecordCount() const;
+		JString getUnderflowLabel() const;
+		JObject iterator() const;
+		android::icu::text::AlphabeticIndex setInflowLabel(JString arg0) const;
+		android::icu::text::AlphabeticIndex setMaxLabelCount(jint arg0) const;
+		android::icu::text::AlphabeticIndex setOverflowLabel(JString arg0) const;
+		android::icu::text::AlphabeticIndex setUnderflowLabel(JString arg0) const;
 	};
 } // namespace android::icu::text
 

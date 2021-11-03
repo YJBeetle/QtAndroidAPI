@@ -16,7 +16,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	android::content::Intent KeyguardManager::createConfirmDeviceCredentialIntent(JString arg0, JString arg1)
+	android::content::Intent KeyguardManager::createConfirmDeviceCredentialIntent(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"createConfirmDeviceCredentialIntent",
@@ -25,7 +25,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void KeyguardManager::exitKeyguardSecurely(JObject arg0)
+	void KeyguardManager::exitKeyguardSecurely(JObject arg0) const
 	{
 		callMethod<void>(
 			"exitKeyguardSecurely",
@@ -33,42 +33,42 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean KeyguardManager::inKeyguardRestrictedInputMode()
+	jboolean KeyguardManager::inKeyguardRestrictedInputMode() const
 	{
 		return callMethod<jboolean>(
 			"inKeyguardRestrictedInputMode",
 			"()Z"
 		);
 	}
-	jboolean KeyguardManager::isDeviceLocked()
+	jboolean KeyguardManager::isDeviceLocked() const
 	{
 		return callMethod<jboolean>(
 			"isDeviceLocked",
 			"()Z"
 		);
 	}
-	jboolean KeyguardManager::isDeviceSecure()
+	jboolean KeyguardManager::isDeviceSecure() const
 	{
 		return callMethod<jboolean>(
 			"isDeviceSecure",
 			"()Z"
 		);
 	}
-	jboolean KeyguardManager::isKeyguardLocked()
+	jboolean KeyguardManager::isKeyguardLocked() const
 	{
 		return callMethod<jboolean>(
 			"isKeyguardLocked",
 			"()Z"
 		);
 	}
-	jboolean KeyguardManager::isKeyguardSecure()
+	jboolean KeyguardManager::isKeyguardSecure() const
 	{
 		return callMethod<jboolean>(
 			"isKeyguardSecure",
 			"()Z"
 		);
 	}
-	android::app::KeyguardManager_KeyguardLock KeyguardManager::newKeyguardLock(JString arg0)
+	android::app::KeyguardManager_KeyguardLock KeyguardManager::newKeyguardLock(JString arg0) const
 	{
 		return callObjectMethod(
 			"newKeyguardLock",
@@ -76,7 +76,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void KeyguardManager::requestDismissKeyguard(android::app::Activity arg0, android::app::KeyguardManager_KeyguardDismissCallback arg1)
+	void KeyguardManager::requestDismissKeyguard(android::app::Activity arg0, android::app::KeyguardManager_KeyguardDismissCallback arg1) const
 	{
 		callMethod<void>(
 			"requestDismissKeyguard",

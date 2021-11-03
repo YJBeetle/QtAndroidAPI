@@ -639,28 +639,28 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	jint Element::getBytesSize()
+	jint Element::getBytesSize() const
 	{
 		return callMethod<jint>(
 			"getBytesSize",
 			"()I"
 		);
 	}
-	android::renderscript::Element_DataKind Element::getDataKind()
+	android::renderscript::Element_DataKind Element::getDataKind() const
 	{
 		return callObjectMethod(
 			"getDataKind",
 			"()Landroid/renderscript/Element$DataKind;"
 		);
 	}
-	android::renderscript::Element_DataType Element::getDataType()
+	android::renderscript::Element_DataType Element::getDataType() const
 	{
 		return callObjectMethod(
 			"getDataType",
 			"()Landroid/renderscript/Element$DataType;"
 		);
 	}
-	android::renderscript::Element Element::getSubElement(jint arg0)
+	android::renderscript::Element Element::getSubElement(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSubElement",
@@ -668,7 +668,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jint Element::getSubElementArraySize(jint arg0)
+	jint Element::getSubElementArraySize(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getSubElementArraySize",
@@ -676,14 +676,14 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jint Element::getSubElementCount()
+	jint Element::getSubElementCount() const
 	{
 		return callMethod<jint>(
 			"getSubElementCount",
 			"()I"
 		);
 	}
-	JString Element::getSubElementName(jint arg0)
+	JString Element::getSubElementName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSubElementName",
@@ -691,7 +691,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jint Element::getSubElementOffsetBytes(jint arg0)
+	jint Element::getSubElementOffsetBytes(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getSubElementOffsetBytes",
@@ -699,14 +699,14 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jint Element::getVectorSize()
+	jint Element::getVectorSize() const
 	{
 		return callMethod<jint>(
 			"getVectorSize",
 			"()I"
 		);
 	}
-	jboolean Element::isCompatible(android::renderscript::Element arg0)
+	jboolean Element::isCompatible(android::renderscript::Element arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCompatible",
@@ -714,7 +714,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	jboolean Element::isComplex()
+	jboolean Element::isComplex() const
 	{
 		return callMethod<jboolean>(
 			"isComplex",

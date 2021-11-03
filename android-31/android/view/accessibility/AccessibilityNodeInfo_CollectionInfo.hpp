@@ -23,10 +23,10 @@ namespace android::view::accessibility
 		// Methods
 		static android::view::accessibility::AccessibilityNodeInfo_CollectionInfo obtain(jint arg0, jint arg1, jboolean arg2);
 		static android::view::accessibility::AccessibilityNodeInfo_CollectionInfo obtain(jint arg0, jint arg1, jboolean arg2, jint arg3);
-		jint getColumnCount();
-		jint getRowCount();
-		jint getSelectionMode();
-		jboolean isHierarchical();
+		jint getColumnCount() const;
+		jint getRowCount() const;
+		jint getSelectionMode() const;
+		jboolean isHierarchical() const;
 	};
 } // namespace android::view::accessibility
 

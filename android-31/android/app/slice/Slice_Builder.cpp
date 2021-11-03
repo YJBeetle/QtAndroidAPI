@@ -32,7 +32,7 @@ namespace android::app::slice
 		) {}
 	
 	// Methods
-	android::app::slice::Slice_Builder Slice_Builder::addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, JString arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"addAction",
@@ -42,7 +42,7 @@ namespace android::app::slice
 			arg2.object<jstring>()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addBundle(android::os::Bundle arg0, JString arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addBundle(android::os::Bundle arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"addBundle",
@@ -52,7 +52,7 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addHints(JObject arg0)
+	android::app::slice::Slice_Builder Slice_Builder::addHints(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addHints",
@@ -60,7 +60,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addIcon(android::graphics::drawable::Icon arg0, JString arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addIcon(android::graphics::drawable::Icon arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"addIcon",
@@ -70,7 +70,7 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addInt(jint arg0, JString arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addInt(jint arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"addInt",
@@ -80,7 +80,7 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addLong(jlong arg0, JString arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addLong(jlong arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"addLong",
@@ -90,7 +90,7 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addRemoteInput(android::app::RemoteInput arg0, JString arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addRemoteInput(android::app::RemoteInput arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"addRemoteInput",
@@ -100,7 +100,7 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addSubSlice(android::app::slice::Slice arg0, JString arg1)
+	android::app::slice::Slice_Builder Slice_Builder::addSubSlice(android::app::slice::Slice arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"addSubSlice",
@@ -109,7 +109,7 @@ namespace android::app::slice
 			arg1.object<jstring>()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addText(JString arg0, JString arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addText(JString arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"addText",
@@ -119,14 +119,14 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice Slice_Builder::build()
+	android::app::slice::Slice Slice_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/slice/Slice;"
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::setCallerNeeded(jboolean arg0)
+	android::app::slice::Slice_Builder Slice_Builder::setCallerNeeded(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setCallerNeeded",

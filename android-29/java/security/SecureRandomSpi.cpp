@@ -17,7 +17,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JString SecureRandomSpi::toString()
+	JString SecureRandomSpi::toString() const
 	{
 		return callObjectMethod(
 			"toString",

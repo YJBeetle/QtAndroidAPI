@@ -19,14 +19,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification Notification_Style::build()
+	android::app::Notification Notification_Style::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification;"
 		);
 	}
-	void Notification_Style::setBuilder(android::app::Notification_Builder arg0)
+	void Notification_Style::setBuilder(android::app::Notification_Builder arg0) const
 	{
 		callMethod<void>(
 			"setBuilder",

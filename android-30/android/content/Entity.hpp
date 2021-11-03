@@ -31,10 +31,10 @@ namespace android::content
 		Entity(android::content::ContentValues arg0);
 		
 		// Methods
-		void addSubValue(android::net::Uri arg0, android::content::ContentValues arg1);
-		android::content::ContentValues getEntityValues();
-		java::util::ArrayList getSubValues();
-		JString toString();
+		void addSubValue(android::net::Uri arg0, android::content::ContentValues arg1) const;
+		android::content::ContentValues getEntityValues() const;
+		java::util::ArrayList getSubValues() const;
+		JString toString() const;
 	};
 } // namespace android::content
 

@@ -32,35 +32,35 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint TypefaceSpan::describeContents()
+	jint TypefaceSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString TypefaceSpan::getFamily()
+	JString TypefaceSpan::getFamily() const
 	{
 		return callObjectMethod(
 			"getFamily",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TypefaceSpan::getSpanTypeId()
+	jint TypefaceSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	android::graphics::Typeface TypefaceSpan::getTypeface()
+	android::graphics::Typeface TypefaceSpan::getTypeface() const
 	{
 		return callObjectMethod(
 			"getTypeface",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
-	void TypefaceSpan::updateDrawState(android::text::TextPaint arg0)
+	void TypefaceSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -68,7 +68,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void TypefaceSpan::updateMeasureState(android::text::TextPaint arg0)
+	void TypefaceSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -76,7 +76,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void TypefaceSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TypefaceSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

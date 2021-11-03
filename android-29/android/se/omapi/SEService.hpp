@@ -24,10 +24,10 @@ namespace android::se::omapi
 		SEService(android::content::Context arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		JArray getReaders();
-		JString getVersion();
-		jboolean isConnected();
-		void shutdown();
+		JArray getReaders() const;
+		JString getVersion() const;
+		jboolean isConnected() const;
+		void shutdown() const;
 	};
 } // namespace android::se::omapi
 

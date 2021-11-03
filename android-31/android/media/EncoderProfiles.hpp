@@ -16,10 +16,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JObject getAudioProfiles();
-		jint getDefaultDurationSeconds();
-		jint getRecommendedFileFormat();
-		JObject getVideoProfiles();
+		JObject getAudioProfiles() const;
+		jint getDefaultDurationSeconds() const;
+		jint getRecommendedFileFormat() const;
+		JObject getVideoProfiles() const;
 	};
 } // namespace android::media
 

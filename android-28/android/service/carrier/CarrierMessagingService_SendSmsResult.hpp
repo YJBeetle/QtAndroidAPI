@@ -17,8 +17,8 @@ namespace android::service::carrier
 		CarrierMessagingService_SendSmsResult(jint arg0, jint arg1);
 		
 		// Methods
-		jint getMessageRef();
-		jint getSendStatus();
+		jint getMessageRef() const;
+		jint getSendStatus() const;
 	};
 } // namespace android::service::carrier
 

@@ -28,23 +28,23 @@ namespace android::database
 		AbstractWindowedCursor();
 		
 		// Methods
-		void copyStringToBuffer(jint arg0, android::database::CharArrayBuffer arg1);
-		JByteArray getBlob(jint arg0);
-		jdouble getDouble(jint arg0);
-		jfloat getFloat(jint arg0);
-		jint getInt(jint arg0);
-		jlong getLong(jint arg0);
-		jshort getShort(jint arg0);
-		JString getString(jint arg0);
-		jint getType(jint arg0);
-		android::database::CursorWindow getWindow();
-		jboolean hasWindow();
-		jboolean isBlob(jint arg0);
-		jboolean isFloat(jint arg0);
-		jboolean isLong(jint arg0);
-		jboolean isNull(jint arg0);
-		jboolean isString(jint arg0);
-		void setWindow(android::database::CursorWindow arg0);
+		void copyStringToBuffer(jint arg0, android::database::CharArrayBuffer arg1) const;
+		JByteArray getBlob(jint arg0) const;
+		jdouble getDouble(jint arg0) const;
+		jfloat getFloat(jint arg0) const;
+		jint getInt(jint arg0) const;
+		jlong getLong(jint arg0) const;
+		jshort getShort(jint arg0) const;
+		JString getString(jint arg0) const;
+		jint getType(jint arg0) const;
+		android::database::CursorWindow getWindow() const;
+		jboolean hasWindow() const;
+		jboolean isBlob(jint arg0) const;
+		jboolean isFloat(jint arg0) const;
+		jboolean isLong(jint arg0) const;
+		jboolean isNull(jint arg0) const;
+		jboolean isString(jint arg0) const;
+		void setWindow(android::database::CursorWindow arg0) const;
 	};
 } // namespace android::database
 

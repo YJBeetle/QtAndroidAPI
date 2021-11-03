@@ -19,14 +19,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::graphics::Rect WindowMetrics::getBounds()
+	android::graphics::Rect WindowMetrics::getBounds() const
 	{
 		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::view::WindowInsets WindowMetrics::getWindowInsets()
+	android::view::WindowInsets WindowMetrics::getWindowInsets() const
 	{
 		return callObjectMethod(
 			"getWindowInsets",

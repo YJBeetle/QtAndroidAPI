@@ -35,13 +35,13 @@ namespace android::app
 		Notification_CarExtender(android::app::Notification arg0);
 		
 		// Methods
-		android::app::Notification_Builder extend(android::app::Notification_Builder arg0);
-		jint getColor();
-		android::graphics::Bitmap getLargeIcon();
-		android::app::Notification_CarExtender_UnreadConversation getUnreadConversation();
-		android::app::Notification_CarExtender setColor(jint arg0);
-		android::app::Notification_CarExtender setLargeIcon(android::graphics::Bitmap arg0);
-		android::app::Notification_CarExtender setUnreadConversation(android::app::Notification_CarExtender_UnreadConversation arg0);
+		android::app::Notification_Builder extend(android::app::Notification_Builder arg0) const;
+		jint getColor() const;
+		android::graphics::Bitmap getLargeIcon() const;
+		android::app::Notification_CarExtender_UnreadConversation getUnreadConversation() const;
+		android::app::Notification_CarExtender setColor(jint arg0) const;
+		android::app::Notification_CarExtender setLargeIcon(android::graphics::Bitmap arg0) const;
+		android::app::Notification_CarExtender setUnreadConversation(android::app::Notification_CarExtender_UnreadConversation arg0) const;
 	};
 } // namespace android::app
 

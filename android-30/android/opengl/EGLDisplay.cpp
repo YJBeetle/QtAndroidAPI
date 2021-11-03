@@ -11,7 +11,7 @@ namespace android::opengl
 	// Constructors
 	
 	// Methods
-	jboolean EGLDisplay::equals(JObject arg0)
+	jboolean EGLDisplay::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",

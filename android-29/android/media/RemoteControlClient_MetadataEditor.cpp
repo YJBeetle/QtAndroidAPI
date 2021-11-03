@@ -22,28 +22,28 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void RemoteControlClient_MetadataEditor::apply()
+	void RemoteControlClient_MetadataEditor::apply() const
 	{
 		callMethod<void>(
 			"apply",
 			"()V"
 		);
 	}
-	void RemoteControlClient_MetadataEditor::clear()
+	void RemoteControlClient_MetadataEditor::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject RemoteControlClient_MetadataEditor::clone()
+	JObject RemoteControlClient_MetadataEditor::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1) const
 	{
 		return callObjectMethod(
 			"putBitmap",
@@ -52,7 +52,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putLong(jint arg0, jlong arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putLong(jint arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"putLong",
@@ -61,7 +61,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putObject(jint arg0, JObject arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putObject(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putObject",
@@ -70,7 +70,7 @@ namespace android::media
 			arg1.object<jobject>()
 		);
 	}
-	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putString(jint arg0, JString arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putString(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"putString",

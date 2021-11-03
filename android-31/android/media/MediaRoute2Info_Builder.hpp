@@ -33,18 +33,18 @@ namespace android::media
 		MediaRoute2Info_Builder(JString arg0, JString arg1);
 		
 		// Methods
-		android::media::MediaRoute2Info_Builder addFeature(JString arg0);
-		android::media::MediaRoute2Info_Builder addFeatures(JObject arg0);
-		android::media::MediaRoute2Info build();
-		android::media::MediaRoute2Info_Builder clearFeatures();
-		android::media::MediaRoute2Info_Builder setClientPackageName(JString arg0);
-		android::media::MediaRoute2Info_Builder setConnectionState(jint arg0);
-		android::media::MediaRoute2Info_Builder setDescription(JString arg0);
-		android::media::MediaRoute2Info_Builder setExtras(android::os::Bundle arg0);
-		android::media::MediaRoute2Info_Builder setIconUri(android::net::Uri arg0);
-		android::media::MediaRoute2Info_Builder setVolume(jint arg0);
-		android::media::MediaRoute2Info_Builder setVolumeHandling(jint arg0);
-		android::media::MediaRoute2Info_Builder setVolumeMax(jint arg0);
+		android::media::MediaRoute2Info_Builder addFeature(JString arg0) const;
+		android::media::MediaRoute2Info_Builder addFeatures(JObject arg0) const;
+		android::media::MediaRoute2Info build() const;
+		android::media::MediaRoute2Info_Builder clearFeatures() const;
+		android::media::MediaRoute2Info_Builder setClientPackageName(JString arg0) const;
+		android::media::MediaRoute2Info_Builder setConnectionState(jint arg0) const;
+		android::media::MediaRoute2Info_Builder setDescription(JString arg0) const;
+		android::media::MediaRoute2Info_Builder setExtras(android::os::Bundle arg0) const;
+		android::media::MediaRoute2Info_Builder setIconUri(android::net::Uri arg0) const;
+		android::media::MediaRoute2Info_Builder setVolume(jint arg0) const;
+		android::media::MediaRoute2Info_Builder setVolumeHandling(jint arg0) const;
+		android::media::MediaRoute2Info_Builder setVolumeMax(jint arg0) const;
 	};
 } // namespace android::media
 

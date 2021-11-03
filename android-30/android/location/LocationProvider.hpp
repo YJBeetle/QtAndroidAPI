@@ -25,17 +25,17 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint getAccuracy();
-		JString getName();
-		jint getPowerRequirement();
-		jboolean hasMonetaryCost();
-		jboolean meetsCriteria(android::location::Criteria arg0);
-		jboolean requiresCell();
-		jboolean requiresNetwork();
-		jboolean requiresSatellite();
-		jboolean supportsAltitude();
-		jboolean supportsBearing();
-		jboolean supportsSpeed();
+		jint getAccuracy() const;
+		JString getName() const;
+		jint getPowerRequirement() const;
+		jboolean hasMonetaryCost() const;
+		jboolean meetsCriteria(android::location::Criteria arg0) const;
+		jboolean requiresCell() const;
+		jboolean requiresNetwork() const;
+		jboolean requiresSatellite() const;
+		jboolean supportsAltitude() const;
+		jboolean supportsBearing() const;
+		jboolean supportsSpeed() const;
 	};
 } // namespace android::location
 

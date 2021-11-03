@@ -34,8 +34,8 @@ namespace android::widget
 		ImageButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
+		JString getAccessibilityClassName() const;
+		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const;
 	};
 } // namespace android::widget
 

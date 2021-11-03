@@ -29,12 +29,12 @@ namespace android::app
 		FragmentBreadCrumbs(android::content::Context arg0, JObject arg1, jint arg2);
 		
 		// Methods
-		void onBackStackChanged();
-		void setActivity(android::app::Activity arg0);
-		void setMaxVisible(jint arg0);
-		void setOnBreadCrumbClickListener(JObject arg0);
-		void setParentTitle(JString arg0, JString arg1, JObject arg2);
-		void setTitle(JString arg0, JString arg1);
+		void onBackStackChanged() const;
+		void setActivity(android::app::Activity arg0) const;
+		void setMaxVisible(jint arg0) const;
+		void setOnBreadCrumbClickListener(JObject arg0) const;
+		void setParentTitle(JString arg0, JString arg1, JObject arg2) const;
+		void setTitle(JString arg0, JString arg1) const;
 	};
 } // namespace android::app
 

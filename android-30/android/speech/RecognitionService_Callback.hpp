@@ -26,15 +26,15 @@ namespace android::speech
 		// Constructors
 		
 		// Methods
-		void beginningOfSpeech();
-		void bufferReceived(JByteArray arg0);
-		void endOfSpeech();
-		void error(jint arg0);
-		jint getCallingUid();
-		void partialResults(android::os::Bundle arg0);
-		void readyForSpeech(android::os::Bundle arg0);
-		void results(android::os::Bundle arg0);
-		void rmsChanged(jfloat arg0);
+		void beginningOfSpeech() const;
+		void bufferReceived(JByteArray arg0) const;
+		void endOfSpeech() const;
+		void error(jint arg0) const;
+		jint getCallingUid() const;
+		void partialResults(android::os::Bundle arg0) const;
+		void readyForSpeech(android::os::Bundle arg0) const;
+		void results(android::os::Bundle arg0) const;
+		void rmsChanged(jfloat arg0) const;
 	};
 } // namespace android::speech
 

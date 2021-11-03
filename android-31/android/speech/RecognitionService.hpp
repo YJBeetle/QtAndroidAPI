@@ -37,9 +37,9 @@ namespace android::speech
 		RecognitionService();
 		
 		// Methods
-		android::content::Context createContext(android::content::ContextParams arg0);
-		JObject onBind(android::content::Intent arg0);
-		void onDestroy();
+		android::content::Context createContext(android::content::ContextParams arg0) const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onDestroy() const;
 	};
 } // namespace android::speech
 

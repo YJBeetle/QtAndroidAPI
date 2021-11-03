@@ -16,7 +16,7 @@ namespace android::os::storage
 		) {}
 	
 	// Methods
-	void StorageManager_StorageVolumeCallback::onStateChanged(android::os::storage::StorageVolume arg0)
+	void StorageManager_StorageVolumeCallback::onStateChanged(android::os::storage::StorageVolume arg0) const
 	{
 		callMethod<void>(
 			"onStateChanged",

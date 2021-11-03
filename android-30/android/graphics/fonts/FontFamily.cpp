@@ -11,7 +11,7 @@ namespace android::graphics::fonts
 	// Constructors
 	
 	// Methods
-	android::graphics::fonts::Font FontFamily::getFont(jint arg0)
+	android::graphics::fonts::Font FontFamily::getFont(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFont",
@@ -19,7 +19,7 @@ namespace android::graphics::fonts
 			arg0
 		);
 	}
-	jint FontFamily::getSize()
+	jint FontFamily::getSize() const
 	{
 		return callMethod<jint>(
 			"getSize",

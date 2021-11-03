@@ -35,7 +35,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void NativeActivity::onConfigurationChanged(android::content::res::Configuration arg0)
+	void NativeActivity::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -43,14 +43,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NativeActivity::onGlobalLayout()
+	void NativeActivity::onGlobalLayout() const
 	{
 		callMethod<void>(
 			"onGlobalLayout",
 			"()V"
 		);
 	}
-	void NativeActivity::onInputQueueCreated(android::view::InputQueue arg0)
+	void NativeActivity::onInputQueueCreated(android::view::InputQueue arg0) const
 	{
 		callMethod<void>(
 			"onInputQueueCreated",
@@ -58,7 +58,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NativeActivity::onInputQueueDestroyed(android::view::InputQueue arg0)
+	void NativeActivity::onInputQueueDestroyed(android::view::InputQueue arg0) const
 	{
 		callMethod<void>(
 			"onInputQueueDestroyed",
@@ -66,14 +66,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NativeActivity::onLowMemory()
+	void NativeActivity::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	void NativeActivity::onWindowFocusChanged(jboolean arg0)
+	void NativeActivity::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -81,7 +81,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NativeActivity::surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3)
+	void NativeActivity::surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"surfaceChanged",
@@ -92,7 +92,7 @@ namespace android::app
 			arg3
 		);
 	}
-	void NativeActivity::surfaceCreated(JObject arg0)
+	void NativeActivity::surfaceCreated(JObject arg0) const
 	{
 		callMethod<void>(
 			"surfaceCreated",
@@ -100,7 +100,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NativeActivity::surfaceDestroyed(JObject arg0)
+	void NativeActivity::surfaceDestroyed(JObject arg0) const
 	{
 		callMethod<void>(
 			"surfaceDestroyed",
@@ -108,7 +108,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NativeActivity::surfaceRedrawNeeded(JObject arg0)
+	void NativeActivity::surfaceRedrawNeeded(JObject arg0) const
 	{
 		callMethod<void>(
 			"surfaceRedrawNeeded",

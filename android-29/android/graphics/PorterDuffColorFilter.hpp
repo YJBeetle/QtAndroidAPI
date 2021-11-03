@@ -23,8 +23,8 @@ namespace android::graphics
 		PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::graphics
 

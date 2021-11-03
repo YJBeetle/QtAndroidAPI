@@ -28,9 +28,9 @@ namespace java::security
 		Signer(JString arg0, java::security::IdentityScope arg1);
 		
 		// Methods
-		JObject getPrivateKey();
-		void setKeyPair(java::security::KeyPair arg0);
-		JString toString();
+		JObject getPrivateKey() const;
+		void setKeyPair(java::security::KeyPair arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security
 

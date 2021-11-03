@@ -22,14 +22,14 @@ namespace android::telephony::data
 	// Constructors
 	
 	// Methods
-	jint TrafficDescriptor::describeContents()
+	jint TrafficDescriptor::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TrafficDescriptor::equals(JObject arg0)
+	jboolean TrafficDescriptor::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,35 +37,35 @@ namespace android::telephony::data
 			arg0.object<jobject>()
 		);
 	}
-	JString TrafficDescriptor::getDataNetworkName()
+	JString TrafficDescriptor::getDataNetworkName() const
 	{
 		return callObjectMethod(
 			"getDataNetworkName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray TrafficDescriptor::getOsAppId()
+	JByteArray TrafficDescriptor::getOsAppId() const
 	{
 		return callObjectMethod(
 			"getOsAppId",
 			"()[B"
 		);
 	}
-	jint TrafficDescriptor::hashCode()
+	jint TrafficDescriptor::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TrafficDescriptor::toString()
+	JString TrafficDescriptor::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TrafficDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TrafficDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

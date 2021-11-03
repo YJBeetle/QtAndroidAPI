@@ -43,30 +43,30 @@ namespace android::net::wifi::p2p
 		WifiP2pWfdInfo(android::net::wifi::p2p::WifiP2pWfdInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getControlPort();
-		jint getDeviceInfo();
-		jint getDeviceType();
-		jint getMaxThroughput();
-		jint getR2DeviceInfo();
-		jint getR2DeviceType();
-		jboolean isContentProtectionSupported();
-		jboolean isCoupledSinkSupportedAtSink();
-		jboolean isCoupledSinkSupportedAtSource();
-		jboolean isEnabled();
-		jboolean isR2Supported();
-		jboolean isSessionAvailable();
-		void setContentProtectionSupported(jboolean arg0);
-		void setControlPort(jint arg0);
-		void setCoupledSinkSupportAtSink(jboolean arg0);
-		void setCoupledSinkSupportAtSource(jboolean arg0);
-		jboolean setDeviceType(jint arg0);
-		void setEnabled(jboolean arg0);
-		void setMaxThroughput(jint arg0);
-		jboolean setR2DeviceType(jint arg0);
-		void setSessionAvailable(jboolean arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getControlPort() const;
+		jint getDeviceInfo() const;
+		jint getDeviceType() const;
+		jint getMaxThroughput() const;
+		jint getR2DeviceInfo() const;
+		jint getR2DeviceType() const;
+		jboolean isContentProtectionSupported() const;
+		jboolean isCoupledSinkSupportedAtSink() const;
+		jboolean isCoupledSinkSupportedAtSource() const;
+		jboolean isEnabled() const;
+		jboolean isR2Supported() const;
+		jboolean isSessionAvailable() const;
+		void setContentProtectionSupported(jboolean arg0) const;
+		void setControlPort(jint arg0) const;
+		void setCoupledSinkSupportAtSink(jboolean arg0) const;
+		void setCoupledSinkSupportAtSource(jboolean arg0) const;
+		jboolean setDeviceType(jint arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setMaxThroughput(jint arg0) const;
+		jboolean setR2DeviceType(jint arg0) const;
+		void setSessionAvailable(jboolean arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::p2p
 

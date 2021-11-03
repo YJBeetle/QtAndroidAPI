@@ -99,14 +99,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint MediaRoute2Info::describeContents()
+	jint MediaRoute2Info::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MediaRoute2Info::equals(JObject arg0)
+	jboolean MediaRoute2Info::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -114,105 +114,105 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	JString MediaRoute2Info::getClientPackageName()
+	JString MediaRoute2Info::getClientPackageName() const
 	{
 		return callObjectMethod(
 			"getClientPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaRoute2Info::getConnectionState()
+	jint MediaRoute2Info::getConnectionState() const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
 			"()I"
 		);
 	}
-	JString MediaRoute2Info::getDescription()
+	JString MediaRoute2Info::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::os::Bundle MediaRoute2Info::getExtras()
+	android::os::Bundle MediaRoute2Info::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject MediaRoute2Info::getFeatures()
+	JObject MediaRoute2Info::getFeatures() const
 	{
 		return callObjectMethod(
 			"getFeatures",
 			"()Ljava/util/List;"
 		);
 	}
-	android::net::Uri MediaRoute2Info::getIconUri()
+	android::net::Uri MediaRoute2Info::getIconUri() const
 	{
 		return callObjectMethod(
 			"getIconUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString MediaRoute2Info::getId()
+	JString MediaRoute2Info::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MediaRoute2Info::getName()
+	JString MediaRoute2Info::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint MediaRoute2Info::getVolume()
+	jint MediaRoute2Info::getVolume() const
 	{
 		return callMethod<jint>(
 			"getVolume",
 			"()I"
 		);
 	}
-	jint MediaRoute2Info::getVolumeHandling()
+	jint MediaRoute2Info::getVolumeHandling() const
 	{
 		return callMethod<jint>(
 			"getVolumeHandling",
 			"()I"
 		);
 	}
-	jint MediaRoute2Info::getVolumeMax()
+	jint MediaRoute2Info::getVolumeMax() const
 	{
 		return callMethod<jint>(
 			"getVolumeMax",
 			"()I"
 		);
 	}
-	jint MediaRoute2Info::hashCode()
+	jint MediaRoute2Info::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean MediaRoute2Info::isSystemRoute()
+	jboolean MediaRoute2Info::isSystemRoute() const
 	{
 		return callMethod<jboolean>(
 			"isSystemRoute",
 			"()Z"
 		);
 	}
-	JString MediaRoute2Info::toString()
+	JString MediaRoute2Info::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MediaRoute2Info::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaRoute2Info::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

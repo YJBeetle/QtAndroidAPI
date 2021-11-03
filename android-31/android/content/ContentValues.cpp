@@ -54,14 +54,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void ContentValues::clear()
+	void ContentValues::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean ContentValues::containsKey(JString arg0)
+	jboolean ContentValues::containsKey(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -69,14 +69,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint ContentValues::describeContents()
+	jint ContentValues::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ContentValues::equals(JObject arg0)
+	jboolean ContentValues::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -84,7 +84,7 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	JObject ContentValues::get(JString arg0)
+	JObject ContentValues::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -92,7 +92,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Boolean ContentValues::getAsBoolean(JString arg0)
+	java::lang::Boolean ContentValues::getAsBoolean(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsBoolean",
@@ -100,7 +100,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Byte ContentValues::getAsByte(JString arg0)
+	java::lang::Byte ContentValues::getAsByte(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsByte",
@@ -108,7 +108,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray ContentValues::getAsByteArray(JString arg0)
+	JByteArray ContentValues::getAsByteArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsByteArray",
@@ -116,7 +116,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Double ContentValues::getAsDouble(JString arg0)
+	java::lang::Double ContentValues::getAsDouble(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsDouble",
@@ -124,7 +124,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Float ContentValues::getAsFloat(JString arg0)
+	java::lang::Float ContentValues::getAsFloat(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsFloat",
@@ -132,7 +132,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Integer ContentValues::getAsInteger(JString arg0)
+	java::lang::Integer ContentValues::getAsInteger(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsInteger",
@@ -140,7 +140,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Long ContentValues::getAsLong(JString arg0)
+	java::lang::Long ContentValues::getAsLong(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsLong",
@@ -148,7 +148,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Short ContentValues::getAsShort(JString arg0)
+	java::lang::Short ContentValues::getAsShort(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsShort",
@@ -156,7 +156,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString ContentValues::getAsString(JString arg0)
+	JString ContentValues::getAsString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAsString",
@@ -164,28 +164,28 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint ContentValues::hashCode()
+	jint ContentValues::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ContentValues::isEmpty()
+	jboolean ContentValues::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject ContentValues::keySet()
+	JObject ContentValues::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void ContentValues::put(JString arg0, JByteArray arg1)
+	void ContentValues::put(JString arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -194,7 +194,7 @@ namespace android::content
 			arg1.object<jbyteArray>()
 		);
 	}
-	void ContentValues::put(JString arg0, java::lang::Boolean arg1)
+	void ContentValues::put(JString arg0, java::lang::Boolean arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -203,7 +203,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentValues::put(JString arg0, java::lang::Byte arg1)
+	void ContentValues::put(JString arg0, java::lang::Byte arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -212,7 +212,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentValues::put(JString arg0, java::lang::Double arg1)
+	void ContentValues::put(JString arg0, java::lang::Double arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -221,7 +221,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentValues::put(JString arg0, java::lang::Float arg1)
+	void ContentValues::put(JString arg0, java::lang::Float arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -230,7 +230,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentValues::put(JString arg0, java::lang::Integer arg1)
+	void ContentValues::put(JString arg0, java::lang::Integer arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -239,7 +239,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentValues::put(JString arg0, java::lang::Long arg1)
+	void ContentValues::put(JString arg0, java::lang::Long arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -248,7 +248,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentValues::put(JString arg0, java::lang::Short arg1)
+	void ContentValues::put(JString arg0, java::lang::Short arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -257,7 +257,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentValues::put(JString arg0, JString arg1)
+	void ContentValues::put(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -266,7 +266,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void ContentValues::putAll(android::content::ContentValues arg0)
+	void ContentValues::putAll(android::content::ContentValues arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -274,7 +274,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContentValues::putNull(JString arg0)
+	void ContentValues::putNull(JString arg0) const
 	{
 		callMethod<void>(
 			"putNull",
@@ -282,7 +282,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void ContentValues::remove(JString arg0)
+	void ContentValues::remove(JString arg0) const
 	{
 		callMethod<void>(
 			"remove",
@@ -290,28 +290,28 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint ContentValues::size()
+	jint ContentValues::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString ContentValues::toString()
+	JString ContentValues::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ContentValues::valueSet()
+	JObject ContentValues::valueSet() const
 	{
 		return callObjectMethod(
 			"valueSet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void ContentValues::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContentValues::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

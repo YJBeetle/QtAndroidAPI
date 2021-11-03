@@ -29,7 +29,7 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	jboolean SecretKeySpec::equals(JObject arg0)
+	jboolean SecretKeySpec::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,28 +37,28 @@ namespace javax::crypto::spec
 			arg0.object<jobject>()
 		);
 	}
-	JString SecretKeySpec::getAlgorithm()
+	JString SecretKeySpec::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray SecretKeySpec::getEncoded()
+	JByteArray SecretKeySpec::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JString SecretKeySpec::getFormat()
+	JString SecretKeySpec::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SecretKeySpec::hashCode()
+	jint SecretKeySpec::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

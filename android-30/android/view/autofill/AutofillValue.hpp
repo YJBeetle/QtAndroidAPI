@@ -29,19 +29,19 @@ namespace android::view::autofill
 		static android::view::autofill::AutofillValue forList(jint arg0);
 		static android::view::autofill::AutofillValue forText(JString arg0);
 		static android::view::autofill::AutofillValue forToggle(jboolean arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jlong getDateValue();
-		jint getListValue();
-		JString getTextValue();
-		jboolean getToggleValue();
-		jint hashCode();
-		jboolean isDate();
-		jboolean isList();
-		jboolean isText();
-		jboolean isToggle();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jlong getDateValue() const;
+		jint getListValue() const;
+		JString getTextValue() const;
+		jboolean getToggleValue() const;
+		jint hashCode() const;
+		jboolean isDate() const;
+		jboolean isList() const;
+		jboolean isText() const;
+		jboolean isToggle() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::autofill
 

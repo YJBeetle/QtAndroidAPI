@@ -25,7 +25,7 @@ namespace android::text::method
 			"()Landroid/text/method/MovementMethod;"
 		);
 	}
-	void ScrollingMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2)
+	void ScrollingMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onTakeFocus",
@@ -35,7 +35,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean ScrollingMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
+	jboolean ScrollingMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",

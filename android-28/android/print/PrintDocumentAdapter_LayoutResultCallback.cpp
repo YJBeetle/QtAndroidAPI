@@ -12,14 +12,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	void PrintDocumentAdapter_LayoutResultCallback::onLayoutCancelled()
+	void PrintDocumentAdapter_LayoutResultCallback::onLayoutCancelled() const
 	{
 		callMethod<void>(
 			"onLayoutCancelled",
 			"()V"
 		);
 	}
-	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(JString arg0)
+	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(JString arg0) const
 	{
 		callMethod<void>(
 			"onLayoutFailed",
@@ -27,7 +27,7 @@ namespace android::print
 			arg0.object<jstring>()
 		);
 	}
-	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1)
+	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onLayoutFinished",

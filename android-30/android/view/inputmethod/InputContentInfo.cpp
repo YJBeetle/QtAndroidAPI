@@ -36,49 +36,49 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint InputContentInfo::describeContents()
+	jint InputContentInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::net::Uri InputContentInfo::getContentUri()
+	android::net::Uri InputContentInfo::getContentUri() const
 	{
 		return callObjectMethod(
 			"getContentUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	android::content::ClipDescription InputContentInfo::getDescription()
+	android::content::ClipDescription InputContentInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	android::net::Uri InputContentInfo::getLinkUri()
+	android::net::Uri InputContentInfo::getLinkUri() const
 	{
 		return callObjectMethod(
 			"getLinkUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	void InputContentInfo::releasePermission()
+	void InputContentInfo::releasePermission() const
 	{
 		callMethod<void>(
 			"releasePermission",
 			"()V"
 		);
 	}
-	void InputContentInfo::requestPermission()
+	void InputContentInfo::requestPermission() const
 	{
 		callMethod<void>(
 			"requestPermission",
 			"()V"
 		);
 	}
-	void InputContentInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InputContentInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -25,21 +25,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray AudioDescriptor::getDescriptor()
+	JByteArray AudioDescriptor::getDescriptor() const
 	{
 		return callObjectMethod(
 			"getDescriptor",
 			"()[B"
 		);
 	}
-	jint AudioDescriptor::getEncapsulationType()
+	jint AudioDescriptor::getEncapsulationType() const
 	{
 		return callMethod<jint>(
 			"getEncapsulationType",
 			"()I"
 		);
 	}
-	jint AudioDescriptor::getStandard()
+	jint AudioDescriptor::getStandard() const
 	{
 		return callMethod<jint>(
 			"getStandard",

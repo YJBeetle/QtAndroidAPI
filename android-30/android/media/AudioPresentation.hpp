@@ -28,17 +28,17 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getLabels();
-		java::util::Locale getLocale();
-		jint getMasteringIndication();
-		jint getPresentationId();
-		jint getProgramId();
-		jboolean hasAudioDescription();
-		jboolean hasDialogueEnhancement();
-		jboolean hasSpokenSubtitles();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getLabels() const;
+		java::util::Locale getLocale() const;
+		jint getMasteringIndication() const;
+		jint getPresentationId() const;
+		jint getProgramId() const;
+		jboolean hasAudioDescription() const;
+		jboolean hasDialogueEnhancement() const;
+		jboolean hasSpokenSubtitles() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

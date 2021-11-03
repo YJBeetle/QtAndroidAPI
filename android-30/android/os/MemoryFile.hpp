@@ -28,14 +28,14 @@ namespace android::os
 		MemoryFile(JString arg0, jint arg1);
 		
 		// Methods
-		jboolean allowPurging(jboolean arg0);
-		void close();
-		java::io::InputStream getInputStream();
-		java::io::OutputStream getOutputStream();
-		jboolean isPurgingAllowed();
-		jint length();
-		jint readBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3);
-		void writeBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		jboolean allowPurging(jboolean arg0) const;
+		void close() const;
+		java::io::InputStream getInputStream() const;
+		java::io::OutputStream getOutputStream() const;
+		jboolean isPurgingAllowed() const;
+		jint length() const;
+		jint readBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3) const;
+		void writeBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3) const;
 	};
 } // namespace android::os
 

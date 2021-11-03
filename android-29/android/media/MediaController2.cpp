@@ -16,7 +16,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaController2::cancelSessionCommand(JObject arg0)
+	void MediaController2::cancelSessionCommand(JObject arg0) const
 	{
 		callMethod<void>(
 			"cancelSessionCommand",
@@ -24,28 +24,28 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	void MediaController2::close()
+	void MediaController2::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::media::Session2Token MediaController2::getConnectedToken()
+	android::media::Session2Token MediaController2::getConnectedToken() const
 	{
 		return callObjectMethod(
 			"getConnectedToken",
 			"()Landroid/media/Session2Token;"
 		);
 	}
-	jboolean MediaController2::isPlaybackActive()
+	jboolean MediaController2::isPlaybackActive() const
 	{
 		return callMethod<jboolean>(
 			"isPlaybackActive",
 			"()Z"
 		);
 	}
-	JObject MediaController2::sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1)
+	JObject MediaController2::sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1) const
 	{
 		return callObjectMethod(
 			"sendSessionCommand",

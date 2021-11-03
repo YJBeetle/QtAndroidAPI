@@ -30,12 +30,12 @@ namespace android::preference
 		SwitchPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getSwitchTextOff();
-		JString getSwitchTextOn();
-		void setSwitchTextOff(jint arg0);
-		void setSwitchTextOff(JString arg0);
-		void setSwitchTextOn(jint arg0);
-		void setSwitchTextOn(JString arg0);
+		JString getSwitchTextOff() const;
+		JString getSwitchTextOn() const;
+		void setSwitchTextOff(jint arg0) const;
+		void setSwitchTextOff(JString arg0) const;
+		void setSwitchTextOn(jint arg0) const;
+		void setSwitchTextOn(JString arg0) const;
 	};
 } // namespace android::preference
 

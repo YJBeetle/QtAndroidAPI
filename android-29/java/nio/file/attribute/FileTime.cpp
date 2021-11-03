@@ -43,7 +43,7 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	jint FileTime::compareTo(JObject arg0)
+	jint FileTime::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -51,7 +51,7 @@ namespace java::nio::file::attribute
 			arg0.object<jobject>()
 		);
 	}
-	jint FileTime::compareTo(java::nio::file::attribute::FileTime arg0)
+	jint FileTime::compareTo(java::nio::file::attribute::FileTime arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -59,7 +59,7 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	jboolean FileTime::equals(JObject arg0)
+	jboolean FileTime::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -67,14 +67,14 @@ namespace java::nio::file::attribute
 			arg0.object<jobject>()
 		);
 	}
-	jint FileTime::hashCode()
+	jint FileTime::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jlong FileTime::to(java::util::concurrent::TimeUnit arg0)
+	jlong FileTime::to(java::util::concurrent::TimeUnit arg0) const
 	{
 		return callMethod<jlong>(
 			"to",
@@ -82,21 +82,21 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	java::time::Instant FileTime::toInstant()
+	java::time::Instant FileTime::toInstant() const
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	jlong FileTime::toMillis()
+	jlong FileTime::toMillis() const
 	{
 		return callMethod<jlong>(
 			"toMillis",
 			"()J"
 		);
 	}
-	JString FileTime::toString()
+	JString FileTime::toString() const
 	{
 		return callObjectMethod(
 			"toString",

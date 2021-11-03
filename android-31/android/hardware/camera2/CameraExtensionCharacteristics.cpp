@@ -48,7 +48,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	android::util::Range CameraExtensionCharacteristics::getEstimatedCaptureLatencyRangeMillis(jint arg0, android::util::Size arg1, jint arg2)
+	android::util::Range CameraExtensionCharacteristics::getEstimatedCaptureLatencyRangeMillis(jint arg0, android::util::Size arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"getEstimatedCaptureLatencyRangeMillis",
@@ -58,7 +58,7 @@ namespace android::hardware::camera2
 			arg2
 		);
 	}
-	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, jint arg1)
+	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getExtensionSupportedSizes",
@@ -67,7 +67,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, JClass arg1)
+	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, JClass arg1) const
 	{
 		return callObjectMethod(
 			"getExtensionSupportedSizes",
@@ -76,7 +76,7 @@ namespace android::hardware::camera2
 			arg1.object<jclass>()
 		);
 	}
-	JObject CameraExtensionCharacteristics::getSupportedExtensions()
+	JObject CameraExtensionCharacteristics::getSupportedExtensions() const
 	{
 		return callObjectMethod(
 			"getSupportedExtensions",

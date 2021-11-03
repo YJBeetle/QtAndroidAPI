@@ -24,9 +24,9 @@ namespace android::service::quickaccesswallet
 		SelectWalletCardRequest(JString arg0);
 		
 		// Methods
-		jint describeContents();
-		JString getCardId();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getCardId() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::quickaccesswallet
 

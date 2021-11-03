@@ -52,7 +52,7 @@ namespace android::provider
 		static JString encodeCustomImProtocol(JString arg0);
 		static JString encodePredefinedImProtocol(jint arg0);
 		static JString getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, JString arg3);
-		void addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3);
+		void addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3) const;
 	};
 } // namespace android::provider
 

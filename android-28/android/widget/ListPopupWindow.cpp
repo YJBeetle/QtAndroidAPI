@@ -95,14 +95,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void ListPopupWindow::clearListSelection()
+	void ListPopupWindow::clearListSelection() const
 	{
 		callMethod<void>(
 			"clearListSelection",
 			"()V"
 		);
 	}
-	JObject ListPopupWindow::createDragToOpenListener(android::view::View arg0)
+	JObject ListPopupWindow::createDragToOpenListener(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"createDragToOpenListener",
@@ -110,140 +110,140 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::dismiss()
+	void ListPopupWindow::dismiss() const
 	{
 		callMethod<void>(
 			"dismiss",
 			"()V"
 		);
 	}
-	android::view::View ListPopupWindow::getAnchorView()
+	android::view::View ListPopupWindow::getAnchorView() const
 	{
 		return callObjectMethod(
 			"getAnchorView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint ListPopupWindow::getAnimationStyle()
+	jint ListPopupWindow::getAnimationStyle() const
 	{
 		return callMethod<jint>(
 			"getAnimationStyle",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable ListPopupWindow::getBackground()
+	android::graphics::drawable::Drawable ListPopupWindow::getBackground() const
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint ListPopupWindow::getHeight()
+	jint ListPopupWindow::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint ListPopupWindow::getHorizontalOffset()
+	jint ListPopupWindow::getHorizontalOffset() const
 	{
 		return callMethod<jint>(
 			"getHorizontalOffset",
 			"()I"
 		);
 	}
-	jint ListPopupWindow::getInputMethodMode()
+	jint ListPopupWindow::getInputMethodMode() const
 	{
 		return callMethod<jint>(
 			"getInputMethodMode",
 			"()I"
 		);
 	}
-	android::widget::ListView ListPopupWindow::getListView()
+	android::widget::ListView ListPopupWindow::getListView() const
 	{
 		return callObjectMethod(
 			"getListView",
 			"()Landroid/widget/ListView;"
 		);
 	}
-	jint ListPopupWindow::getPromptPosition()
+	jint ListPopupWindow::getPromptPosition() const
 	{
 		return callMethod<jint>(
 			"getPromptPosition",
 			"()I"
 		);
 	}
-	JObject ListPopupWindow::getSelectedItem()
+	JObject ListPopupWindow::getSelectedItem() const
 	{
 		return callObjectMethod(
 			"getSelectedItem",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jlong ListPopupWindow::getSelectedItemId()
+	jlong ListPopupWindow::getSelectedItemId() const
 	{
 		return callMethod<jlong>(
 			"getSelectedItemId",
 			"()J"
 		);
 	}
-	jint ListPopupWindow::getSelectedItemPosition()
+	jint ListPopupWindow::getSelectedItemPosition() const
 	{
 		return callMethod<jint>(
 			"getSelectedItemPosition",
 			"()I"
 		);
 	}
-	android::view::View ListPopupWindow::getSelectedView()
+	android::view::View ListPopupWindow::getSelectedView() const
 	{
 		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint ListPopupWindow::getSoftInputMode()
+	jint ListPopupWindow::getSoftInputMode() const
 	{
 		return callMethod<jint>(
 			"getSoftInputMode",
 			"()I"
 		);
 	}
-	jint ListPopupWindow::getVerticalOffset()
+	jint ListPopupWindow::getVerticalOffset() const
 	{
 		return callMethod<jint>(
 			"getVerticalOffset",
 			"()I"
 		);
 	}
-	jint ListPopupWindow::getWidth()
+	jint ListPopupWindow::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean ListPopupWindow::isInputMethodNotNeeded()
+	jboolean ListPopupWindow::isInputMethodNotNeeded() const
 	{
 		return callMethod<jboolean>(
 			"isInputMethodNotNeeded",
 			"()Z"
 		);
 	}
-	jboolean ListPopupWindow::isModal()
+	jboolean ListPopupWindow::isModal() const
 	{
 		return callMethod<jboolean>(
 			"isModal",
 			"()Z"
 		);
 	}
-	jboolean ListPopupWindow::isShowing()
+	jboolean ListPopupWindow::isShowing() const
 	{
 		return callMethod<jboolean>(
 			"isShowing",
 			"()Z"
 		);
 	}
-	jboolean ListPopupWindow::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean ListPopupWindow::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -252,7 +252,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean ListPopupWindow::onKeyPreIme(jint arg0, android::view::KeyEvent arg1)
+	jboolean ListPopupWindow::onKeyPreIme(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyPreIme",
@@ -261,7 +261,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean ListPopupWindow::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean ListPopupWindow::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -270,7 +270,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean ListPopupWindow::performItemClick(jint arg0)
+	jboolean ListPopupWindow::performItemClick(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"performItemClick",
@@ -278,14 +278,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::postShow()
+	void ListPopupWindow::postShow() const
 	{
 		callMethod<void>(
 			"postShow",
 			"()V"
 		);
 	}
-	void ListPopupWindow::setAdapter(JObject arg0)
+	void ListPopupWindow::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -293,7 +293,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setAnchorView(android::view::View arg0)
+	void ListPopupWindow::setAnchorView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setAnchorView",
@@ -301,7 +301,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setAnimationStyle(jint arg0)
+	void ListPopupWindow::setAnimationStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setAnimationStyle",
@@ -309,7 +309,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void ListPopupWindow::setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawable",
@@ -317,7 +317,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setContentWidth(jint arg0)
+	void ListPopupWindow::setContentWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentWidth",
@@ -325,7 +325,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setDropDownGravity(jint arg0)
+	void ListPopupWindow::setDropDownGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownGravity",
@@ -333,7 +333,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setHeight(jint arg0)
+	void ListPopupWindow::setHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setHeight",
@@ -341,7 +341,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setHorizontalOffset(jint arg0)
+	void ListPopupWindow::setHorizontalOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalOffset",
@@ -349,7 +349,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setInputMethodMode(jint arg0)
+	void ListPopupWindow::setInputMethodMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setInputMethodMode",
@@ -357,7 +357,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setListSelector(android::graphics::drawable::Drawable arg0)
+	void ListPopupWindow::setListSelector(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setListSelector",
@@ -365,7 +365,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setModal(jboolean arg0)
+	void ListPopupWindow::setModal(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setModal",
@@ -373,7 +373,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setOnDismissListener(JObject arg0)
+	void ListPopupWindow::setOnDismissListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -381,7 +381,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setOnItemClickListener(JObject arg0)
+	void ListPopupWindow::setOnItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -389,7 +389,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setOnItemSelectedListener(JObject arg0)
+	void ListPopupWindow::setOnItemSelectedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemSelectedListener",
@@ -397,7 +397,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setPromptPosition(jint arg0)
+	void ListPopupWindow::setPromptPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"setPromptPosition",
@@ -405,7 +405,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setPromptView(android::view::View arg0)
+	void ListPopupWindow::setPromptView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setPromptView",
@@ -413,7 +413,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setSelection(jint arg0)
+	void ListPopupWindow::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -421,7 +421,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setSoftInputMode(jint arg0)
+	void ListPopupWindow::setSoftInputMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setSoftInputMode",
@@ -429,7 +429,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setVerticalOffset(jint arg0)
+	void ListPopupWindow::setVerticalOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalOffset",
@@ -437,7 +437,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setWidth(jint arg0)
+	void ListPopupWindow::setWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setWidth",
@@ -445,7 +445,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setWindowLayoutType(jint arg0)
+	void ListPopupWindow::setWindowLayoutType(jint arg0) const
 	{
 		callMethod<void>(
 			"setWindowLayoutType",
@@ -453,7 +453,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::show()
+	void ListPopupWindow::show() const
 	{
 		callMethod<void>(
 			"show",

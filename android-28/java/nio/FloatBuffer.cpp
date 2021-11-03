@@ -44,42 +44,42 @@ namespace java::nio
 			arg2
 		);
 	}
-	JFloatArray FloatBuffer::array()
+	JFloatArray FloatBuffer::array() const
 	{
 		return callObjectMethod(
 			"array",
 			"()[F"
 		);
 	}
-	jint FloatBuffer::arrayOffset()
+	jint FloatBuffer::arrayOffset() const
 	{
 		return callMethod<jint>(
 			"arrayOffset",
 			"()I"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::asReadOnlyBuffer()
+	java::nio::FloatBuffer FloatBuffer::asReadOnlyBuffer() const
 	{
 		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::clear()
+	java::nio::FloatBuffer FloatBuffer::clear() const
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::compact()
+	java::nio::FloatBuffer FloatBuffer::compact() const
 	{
 		return callObjectMethod(
 			"compact",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	jint FloatBuffer::compareTo(JObject arg0)
+	jint FloatBuffer::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -87,7 +87,7 @@ namespace java::nio
 			arg0.object<jobject>()
 		);
 	}
-	jint FloatBuffer::compareTo(java::nio::FloatBuffer arg0)
+	jint FloatBuffer::compareTo(java::nio::FloatBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -95,14 +95,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::duplicate()
+	java::nio::FloatBuffer FloatBuffer::duplicate() const
 	{
 		return callObjectMethod(
 			"duplicate",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	jboolean FloatBuffer::equals(JObject arg0)
+	jboolean FloatBuffer::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -110,21 +110,21 @@ namespace java::nio
 			arg0.object<jobject>()
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::flip()
+	java::nio::FloatBuffer FloatBuffer::flip() const
 	{
 		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	jfloat FloatBuffer::get()
+	jfloat FloatBuffer::get() const
 	{
 		return callMethod<jfloat>(
 			"get",
 			"()F"
 		);
 	}
-	jfloat FloatBuffer::get(jint arg0)
+	jfloat FloatBuffer::get(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"get",
@@ -132,7 +132,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::get(JFloatArray arg0)
+	java::nio::FloatBuffer FloatBuffer::get(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -140,7 +140,7 @@ namespace java::nio
 			arg0.object<jfloatArray>()
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::get(jint arg0, JFloatArray arg1)
+	java::nio::FloatBuffer FloatBuffer::get(jint arg0, JFloatArray arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -149,7 +149,7 @@ namespace java::nio
 			arg1.object<jfloatArray>()
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::get(JFloatArray arg0, jint arg1, jint arg2)
+	java::nio::FloatBuffer FloatBuffer::get(JFloatArray arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"get",
@@ -159,7 +159,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::get(jint arg0, JFloatArray arg1, jint arg2, jint arg3)
+	java::nio::FloatBuffer FloatBuffer::get(jint arg0, JFloatArray arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"get",
@@ -170,28 +170,28 @@ namespace java::nio
 			arg3
 		);
 	}
-	jboolean FloatBuffer::hasArray()
+	jboolean FloatBuffer::hasArray() const
 	{
 		return callMethod<jboolean>(
 			"hasArray",
 			"()Z"
 		);
 	}
-	jint FloatBuffer::hashCode()
+	jint FloatBuffer::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean FloatBuffer::isDirect()
+	jboolean FloatBuffer::isDirect() const
 	{
 		return callMethod<jboolean>(
 			"isDirect",
 			"()Z"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::limit(jint arg0)
+	java::nio::FloatBuffer FloatBuffer::limit(jint arg0) const
 	{
 		return callObjectMethod(
 			"limit",
@@ -199,14 +199,14 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::mark()
+	java::nio::FloatBuffer FloatBuffer::mark() const
 	{
 		return callObjectMethod(
 			"mark",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	jint FloatBuffer::mismatch(java::nio::FloatBuffer arg0)
+	jint FloatBuffer::mismatch(java::nio::FloatBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"mismatch",
@@ -214,14 +214,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	java::nio::ByteOrder FloatBuffer::order()
+	java::nio::ByteOrder FloatBuffer::order() const
 	{
 		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::position(jint arg0)
+	java::nio::FloatBuffer FloatBuffer::position(jint arg0) const
 	{
 		return callObjectMethod(
 			"position",
@@ -229,7 +229,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(JFloatArray arg0)
+	java::nio::FloatBuffer FloatBuffer::put(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"put",
@@ -237,7 +237,7 @@ namespace java::nio
 			arg0.object<jfloatArray>()
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(jfloat arg0)
+	java::nio::FloatBuffer FloatBuffer::put(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"put",
@@ -245,7 +245,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(java::nio::FloatBuffer arg0)
+	java::nio::FloatBuffer FloatBuffer::put(java::nio::FloatBuffer arg0) const
 	{
 		return callObjectMethod(
 			"put",
@@ -253,7 +253,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(jint arg0, JFloatArray arg1)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, JFloatArray arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -262,7 +262,7 @@ namespace java::nio
 			arg1.object<jfloatArray>()
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(jint arg0, jfloat arg1)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -271,7 +271,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(JFloatArray arg0, jint arg1, jint arg2)
+	java::nio::FloatBuffer FloatBuffer::put(JFloatArray arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"put",
@@ -281,7 +281,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(jint arg0, JFloatArray arg1, jint arg2, jint arg3)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, JFloatArray arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"put",
@@ -292,7 +292,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::put(jint arg0, java::nio::FloatBuffer arg1, jint arg2, jint arg3)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, java::nio::FloatBuffer arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"put",
@@ -303,28 +303,28 @@ namespace java::nio
 			arg3
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::reset()
+	java::nio::FloatBuffer FloatBuffer::reset() const
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::rewind()
+	java::nio::FloatBuffer FloatBuffer::rewind() const
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::slice()
+	java::nio::FloatBuffer FloatBuffer::slice() const
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	java::nio::FloatBuffer FloatBuffer::slice(jint arg0, jint arg1)
+	java::nio::FloatBuffer FloatBuffer::slice(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"slice",
@@ -333,7 +333,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	JString FloatBuffer::toString()
+	JString FloatBuffer::toString() const
 	{
 		return callObjectMethod(
 			"toString",

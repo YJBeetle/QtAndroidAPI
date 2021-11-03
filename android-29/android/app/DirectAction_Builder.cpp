@@ -20,14 +20,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::DirectAction DirectAction_Builder::build()
+	android::app::DirectAction DirectAction_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/DirectAction;"
 		);
 	}
-	android::app::DirectAction_Builder DirectAction_Builder::setExtras(android::os::Bundle arg0)
+	android::app::DirectAction_Builder DirectAction_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -35,7 +35,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::DirectAction_Builder DirectAction_Builder::setLocusId(android::content::LocusId arg0)
+	android::app::DirectAction_Builder DirectAction_Builder::setLocusId(android::content::LocusId arg0) const
 	{
 		return callObjectMethod(
 			"setLocusId",

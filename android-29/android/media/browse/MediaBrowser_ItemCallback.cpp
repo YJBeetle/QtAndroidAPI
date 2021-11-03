@@ -17,7 +17,7 @@ namespace android::media::browse
 		) {}
 	
 	// Methods
-	void MediaBrowser_ItemCallback::onError(JString arg0)
+	void MediaBrowser_ItemCallback::onError(JString arg0) const
 	{
 		callMethod<void>(
 			"onError",
@@ -25,7 +25,7 @@ namespace android::media::browse
 			arg0.object<jstring>()
 		);
 	}
-	void MediaBrowser_ItemCallback::onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0)
+	void MediaBrowser_ItemCallback::onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0) const
 	{
 		callMethod<void>(
 			"onItemLoaded",

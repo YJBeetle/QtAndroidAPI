@@ -49,8 +49,8 @@ namespace android::icu::util
 		JapaneseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jint getActualMaximum(jint arg0);
-		JString getType();
+		jint getActualMaximum(jint arg0) const;
+		JString getType() const;
 	};
 } // namespace android::icu::util
 

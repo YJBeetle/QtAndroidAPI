@@ -42,17 +42,17 @@ namespace android::content
 		// Methods
 		static android::content::IntentSender readIntentSenderOrNullFromParcel(android::os::Parcel arg0);
 		static void writeIntentSenderOrNullToParcel(android::content::IntentSender arg0, android::os::Parcel arg1);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getCreatorPackage();
-		jint getCreatorUid();
-		android::os::UserHandle getCreatorUserHandle();
-		JString getTargetPackage();
-		jint hashCode();
-		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4);
-		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getCreatorPackage() const;
+		jint getCreatorUid() const;
+		android::os::UserHandle getCreatorUserHandle() const;
+		JString getTargetPackage() const;
+		jint hashCode() const;
+		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4) const;
+		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

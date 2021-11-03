@@ -22,7 +22,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::view::Window LocalActivityManager::destroyActivity(JString arg0, jboolean arg1)
+	android::view::Window LocalActivityManager::destroyActivity(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"destroyActivity",
@@ -31,7 +31,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void LocalActivityManager::dispatchCreate(android::os::Bundle arg0)
+	void LocalActivityManager::dispatchCreate(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"dispatchCreate",
@@ -39,7 +39,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void LocalActivityManager::dispatchDestroy(jboolean arg0)
+	void LocalActivityManager::dispatchDestroy(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchDestroy",
@@ -47,7 +47,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void LocalActivityManager::dispatchPause(jboolean arg0)
+	void LocalActivityManager::dispatchPause(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchPause",
@@ -55,21 +55,21 @@ namespace android::app
 			arg0
 		);
 	}
-	void LocalActivityManager::dispatchResume()
+	void LocalActivityManager::dispatchResume() const
 	{
 		callMethod<void>(
 			"dispatchResume",
 			"()V"
 		);
 	}
-	void LocalActivityManager::dispatchStop()
+	void LocalActivityManager::dispatchStop() const
 	{
 		callMethod<void>(
 			"dispatchStop",
 			"()V"
 		);
 	}
-	android::app::Activity LocalActivityManager::getActivity(JString arg0)
+	android::app::Activity LocalActivityManager::getActivity(JString arg0) const
 	{
 		return callObjectMethod(
 			"getActivity",
@@ -77,35 +77,35 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Activity LocalActivityManager::getCurrentActivity()
+	android::app::Activity LocalActivityManager::getCurrentActivity() const
 	{
 		return callObjectMethod(
 			"getCurrentActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	JString LocalActivityManager::getCurrentId()
+	JString LocalActivityManager::getCurrentId() const
 	{
 		return callObjectMethod(
 			"getCurrentId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LocalActivityManager::removeAllActivities()
+	void LocalActivityManager::removeAllActivities() const
 	{
 		callMethod<void>(
 			"removeAllActivities",
 			"()V"
 		);
 	}
-	android::os::Bundle LocalActivityManager::saveInstanceState()
+	android::os::Bundle LocalActivityManager::saveInstanceState() const
 	{
 		return callObjectMethod(
 			"saveInstanceState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::view::Window LocalActivityManager::startActivity(JString arg0, android::content::Intent arg1)
+	android::view::Window LocalActivityManager::startActivity(JString arg0, android::content::Intent arg1) const
 	{
 		return callObjectMethod(
 			"startActivity",

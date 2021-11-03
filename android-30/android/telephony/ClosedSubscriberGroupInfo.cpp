@@ -21,14 +21,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint ClosedSubscriberGroupInfo::describeContents()
+	jint ClosedSubscriberGroupInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ClosedSubscriberGroupInfo::equals(JObject arg0)
+	jboolean ClosedSubscriberGroupInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,42 +36,42 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint ClosedSubscriberGroupInfo::getCsgIdentity()
+	jint ClosedSubscriberGroupInfo::getCsgIdentity() const
 	{
 		return callMethod<jint>(
 			"getCsgIdentity",
 			"()I"
 		);
 	}
-	jboolean ClosedSubscriberGroupInfo::getCsgIndicator()
+	jboolean ClosedSubscriberGroupInfo::getCsgIndicator() const
 	{
 		return callMethod<jboolean>(
 			"getCsgIndicator",
 			"()Z"
 		);
 	}
-	JString ClosedSubscriberGroupInfo::getHomeNodebName()
+	JString ClosedSubscriberGroupInfo::getHomeNodebName() const
 	{
 		return callObjectMethod(
 			"getHomeNodebName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ClosedSubscriberGroupInfo::hashCode()
+	jint ClosedSubscriberGroupInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ClosedSubscriberGroupInfo::toString()
+	JString ClosedSubscriberGroupInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ClosedSubscriberGroupInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ClosedSubscriberGroupInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

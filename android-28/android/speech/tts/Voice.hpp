@@ -39,17 +39,17 @@ namespace android::speech::tts
 		Voice(JString arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getFeatures();
-		jint getLatency();
-		java::util::Locale getLocale();
-		JString getName();
-		jint getQuality();
-		jint hashCode();
-		jboolean isNetworkConnectionRequired();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getFeatures() const;
+		jint getLatency() const;
+		java::util::Locale getLocale() const;
+		JString getName() const;
+		jint getQuality() const;
+		jint hashCode() const;
+		jboolean isNetworkConnectionRequired() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::speech::tts
 

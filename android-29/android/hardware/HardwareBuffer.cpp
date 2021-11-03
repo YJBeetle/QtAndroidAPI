@@ -220,63 +220,63 @@ namespace android::hardware
 			arg4
 		);
 	}
-	void HardwareBuffer::close()
+	void HardwareBuffer::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint HardwareBuffer::describeContents()
+	jint HardwareBuffer::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint HardwareBuffer::getFormat()
+	jint HardwareBuffer::getFormat() const
 	{
 		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
-	jint HardwareBuffer::getHeight()
+	jint HardwareBuffer::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint HardwareBuffer::getLayers()
+	jint HardwareBuffer::getLayers() const
 	{
 		return callMethod<jint>(
 			"getLayers",
 			"()I"
 		);
 	}
-	jlong HardwareBuffer::getUsage()
+	jlong HardwareBuffer::getUsage() const
 	{
 		return callMethod<jlong>(
 			"getUsage",
 			"()J"
 		);
 	}
-	jint HardwareBuffer::getWidth()
+	jint HardwareBuffer::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean HardwareBuffer::isClosed()
+	jboolean HardwareBuffer::isClosed() const
 	{
 		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
-	void HardwareBuffer::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void HardwareBuffer::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

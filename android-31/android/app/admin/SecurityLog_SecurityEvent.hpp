@@ -23,15 +23,15 @@ namespace android::app::admin
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getData();
-		jlong getId();
-		jint getLogLevel();
-		jint getTag();
-		jlong getTimeNanos();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getData() const;
+		jlong getId() const;
+		jint getLogLevel() const;
+		jint getTag() const;
+		jlong getTimeNanos() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::admin
 

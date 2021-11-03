@@ -15,7 +15,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void AudioManager_AudioPlaybackCallback::onPlaybackConfigChanged(JObject arg0)
+	void AudioManager_AudioPlaybackCallback::onPlaybackConfigChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"onPlaybackConfigChanged",

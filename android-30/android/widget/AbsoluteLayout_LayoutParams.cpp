@@ -47,7 +47,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString AbsoluteLayout_LayoutParams::debug(JString arg0)
+	JString AbsoluteLayout_LayoutParams::debug(JString arg0) const
 	{
 		return callObjectMethod(
 			"debug",

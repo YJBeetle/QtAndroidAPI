@@ -39,11 +39,11 @@ namespace java::time::chrono
 		// Constructors
 		
 		// Methods
-		jint compareTo(JObject arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JObject resolveDate(JObject arg0, java::time::format::ResolverStyle arg1);
-		JString toString();
+		jint compareTo(JObject arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JObject resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const;
+		JString toString() const;
 	};
 } // namespace java::time::chrono
 

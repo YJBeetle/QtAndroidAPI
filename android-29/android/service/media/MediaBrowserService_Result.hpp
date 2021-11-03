@@ -22,8 +22,8 @@ namespace android::service::media
 		// Constructors
 		
 		// Methods
-		void detach();
-		void sendResult(JObject arg0);
+		void detach() const;
+		void sendResult(JObject arg0) const;
 	};
 } // namespace android::service::media
 

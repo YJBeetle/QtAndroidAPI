@@ -75,14 +75,14 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	JArray HardwarePropertiesManager::getCpuUsages()
+	JArray HardwarePropertiesManager::getCpuUsages() const
 	{
 		return callObjectMethod(
 			"getCpuUsages",
 			"()[Landroid/os/CpuUsageInfo;"
 		);
 	}
-	JFloatArray HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1)
+	JFloatArray HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getDeviceTemperatures",
@@ -91,7 +91,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JFloatArray HardwarePropertiesManager::getFanSpeeds()
+	JFloatArray HardwarePropertiesManager::getFanSpeeds() const
 	{
 		return callObjectMethod(
 			"getFanSpeeds",

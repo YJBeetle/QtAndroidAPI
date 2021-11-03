@@ -28,7 +28,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	void DocumentsProvider::attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1)
+	void DocumentsProvider::attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1) const
 	{
 		callMethod<void>(
 			"attachInfo",
@@ -37,7 +37,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	android::os::Bundle DocumentsProvider::call(JString arg0, JString arg1, android::os::Bundle arg2)
+	android::os::Bundle DocumentsProvider::call(JString arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"call",
@@ -47,7 +47,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	android::net::Uri DocumentsProvider::canonicalize(android::net::Uri arg0)
+	android::net::Uri DocumentsProvider::canonicalize(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"canonicalize",
@@ -55,7 +55,7 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	JString DocumentsProvider::copyDocument(JString arg0, JString arg1)
+	JString DocumentsProvider::copyDocument(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"copyDocument",
@@ -64,7 +64,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	JString DocumentsProvider::createDocument(JString arg0, JString arg1, JString arg2)
+	JString DocumentsProvider::createDocument(JString arg0, JString arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"createDocument",
@@ -74,7 +74,7 @@ namespace android::provider
 			arg2.object<jstring>()
 		);
 	}
-	android::content::IntentSender DocumentsProvider::createWebLinkIntent(JString arg0, android::os::Bundle arg1)
+	android::content::IntentSender DocumentsProvider::createWebLinkIntent(JString arg0, android::os::Bundle arg1) const
 	{
 		return callObjectMethod(
 			"createWebLinkIntent",
@@ -83,7 +83,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	jint DocumentsProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
+	jint DocumentsProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -93,7 +93,7 @@ namespace android::provider
 			arg2.object<jarray>()
 		);
 	}
-	void DocumentsProvider::deleteDocument(JString arg0)
+	void DocumentsProvider::deleteDocument(JString arg0) const
 	{
 		callMethod<void>(
 			"deleteDocument",
@@ -101,7 +101,7 @@ namespace android::provider
 			arg0.object<jstring>()
 		);
 	}
-	void DocumentsProvider::ejectRoot(JString arg0)
+	void DocumentsProvider::ejectRoot(JString arg0) const
 	{
 		callMethod<void>(
 			"ejectRoot",
@@ -109,7 +109,7 @@ namespace android::provider
 			arg0.object<jstring>()
 		);
 	}
-	android::provider::DocumentsContract_Path DocumentsProvider::findDocumentPath(JString arg0, JString arg1)
+	android::provider::DocumentsContract_Path DocumentsProvider::findDocumentPath(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"findDocumentPath",
@@ -118,7 +118,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	JArray DocumentsProvider::getDocumentStreamTypes(JString arg0, JString arg1)
+	JArray DocumentsProvider::getDocumentStreamTypes(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getDocumentStreamTypes",
@@ -127,7 +127,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	JString DocumentsProvider::getDocumentType(JString arg0)
+	JString DocumentsProvider::getDocumentType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDocumentType",
@@ -135,7 +135,7 @@ namespace android::provider
 			arg0.object<jstring>()
 		);
 	}
-	JArray DocumentsProvider::getStreamTypes(android::net::Uri arg0, JString arg1)
+	JArray DocumentsProvider::getStreamTypes(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getStreamTypes",
@@ -144,7 +144,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	JString DocumentsProvider::getType(android::net::Uri arg0)
+	JString DocumentsProvider::getType(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -152,7 +152,7 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	android::net::Uri DocumentsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri DocumentsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -161,7 +161,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	jboolean DocumentsProvider::isChildDocument(JString arg0, JString arg1)
+	jboolean DocumentsProvider::isChildDocument(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isChildDocument",
@@ -170,7 +170,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	JString DocumentsProvider::moveDocument(JString arg0, JString arg1, JString arg2)
+	JString DocumentsProvider::moveDocument(JString arg0, JString arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"moveDocument",
@@ -180,7 +180,7 @@ namespace android::provider
 			arg2.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, JString arg1)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -189,7 +189,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -199,7 +199,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor DocumentsProvider::openDocument(JString arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor DocumentsProvider::openDocument(JString arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openDocument",
@@ -209,7 +209,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openDocumentThumbnail(JString arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openDocumentThumbnail(JString arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openDocumentThumbnail",
@@ -219,7 +219,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, JString arg1)
+	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openFile",
@@ -228,7 +228,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openFile",
@@ -238,7 +238,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -248,7 +248,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -259,7 +259,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedDocument(JString arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedDocument(JString arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"openTypedDocument",
@@ -270,7 +270,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"query",
@@ -281,7 +281,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
+	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"query",
@@ -293,7 +293,7 @@ namespace android::provider
 			arg4.object<jstring>()
 		);
 	}
-	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5)
+	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5) const
 	{
 		return callObjectMethod(
 			"query",
@@ -306,7 +306,7 @@ namespace android::provider
 			arg5.object()
 		);
 	}
-	JObject DocumentsProvider::queryChildDocuments(JString arg0, JArray arg1, android::os::Bundle arg2)
+	JObject DocumentsProvider::queryChildDocuments(JString arg0, JArray arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
@@ -316,7 +316,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	JObject DocumentsProvider::queryChildDocuments(JString arg0, JArray arg1, JString arg2)
+	JObject DocumentsProvider::queryChildDocuments(JString arg0, JArray arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
@@ -326,7 +326,7 @@ namespace android::provider
 			arg2.object<jstring>()
 		);
 	}
-	JObject DocumentsProvider::queryDocument(JString arg0, JArray arg1)
+	JObject DocumentsProvider::queryDocument(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"queryDocument",
@@ -335,7 +335,7 @@ namespace android::provider
 			arg1.object<jarray>()
 		);
 	}
-	JObject DocumentsProvider::queryRecentDocuments(JString arg0, JArray arg1)
+	JObject DocumentsProvider::queryRecentDocuments(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"queryRecentDocuments",
@@ -344,7 +344,7 @@ namespace android::provider
 			arg1.object<jarray>()
 		);
 	}
-	JObject DocumentsProvider::queryRoots(JArray arg0)
+	JObject DocumentsProvider::queryRoots(JArray arg0) const
 	{
 		return callObjectMethod(
 			"queryRoots",
@@ -352,7 +352,7 @@ namespace android::provider
 			arg0.object<jarray>()
 		);
 	}
-	JObject DocumentsProvider::querySearchDocuments(JString arg0, JString arg1, JArray arg2)
+	JObject DocumentsProvider::querySearchDocuments(JString arg0, JString arg1, JArray arg2) const
 	{
 		return callObjectMethod(
 			"querySearchDocuments",
@@ -362,7 +362,7 @@ namespace android::provider
 			arg2.object<jarray>()
 		);
 	}
-	void DocumentsProvider::removeDocument(JString arg0, JString arg1)
+	void DocumentsProvider::removeDocument(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"removeDocument",
@@ -371,7 +371,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	JString DocumentsProvider::renameDocument(JString arg0, JString arg1)
+	JString DocumentsProvider::renameDocument(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"renameDocument",
@@ -380,7 +380,7 @@ namespace android::provider
 			arg1.object<jstring>()
 		);
 	}
-	void DocumentsProvider::revokeDocumentPermission(JString arg0)
+	void DocumentsProvider::revokeDocumentPermission(JString arg0) const
 	{
 		callMethod<void>(
 			"revokeDocumentPermission",
@@ -388,7 +388,7 @@ namespace android::provider
 			arg0.object<jstring>()
 		);
 	}
-	jint DocumentsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
+	jint DocumentsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const
 	{
 		return callMethod<jint>(
 			"update",

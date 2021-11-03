@@ -17,7 +17,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	void Camera::applyToCanvas(android::graphics::Canvas arg0)
+	void Camera::applyToCanvas(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"applyToCanvas",
@@ -25,7 +25,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jfloat Camera::dotWithNormal(jfloat arg0, jfloat arg1, jfloat arg2)
+	jfloat Camera::dotWithNormal(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callMethod<jfloat>(
 			"dotWithNormal",
@@ -35,28 +35,28 @@ namespace android::graphics
 			arg2
 		);
 	}
-	jfloat Camera::getLocationX()
+	jfloat Camera::getLocationX() const
 	{
 		return callMethod<jfloat>(
 			"getLocationX",
 			"()F"
 		);
 	}
-	jfloat Camera::getLocationY()
+	jfloat Camera::getLocationY() const
 	{
 		return callMethod<jfloat>(
 			"getLocationY",
 			"()F"
 		);
 	}
-	jfloat Camera::getLocationZ()
+	jfloat Camera::getLocationZ() const
 	{
 		return callMethod<jfloat>(
 			"getLocationZ",
 			"()F"
 		);
 	}
-	void Camera::getMatrix(android::graphics::Matrix arg0)
+	void Camera::getMatrix(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"getMatrix",
@@ -64,14 +64,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Camera::restore()
+	void Camera::restore() const
 	{
 		callMethod<void>(
 			"restore",
 			"()V"
 		);
 	}
-	void Camera::rotate(jfloat arg0, jfloat arg1, jfloat arg2)
+	void Camera::rotate(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"rotate",
@@ -81,7 +81,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Camera::rotateX(jfloat arg0)
+	void Camera::rotateX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"rotateX",
@@ -89,7 +89,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Camera::rotateY(jfloat arg0)
+	void Camera::rotateY(jfloat arg0) const
 	{
 		callMethod<void>(
 			"rotateY",
@@ -97,7 +97,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Camera::rotateZ(jfloat arg0)
+	void Camera::rotateZ(jfloat arg0) const
 	{
 		callMethod<void>(
 			"rotateZ",
@@ -105,14 +105,14 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Camera::save()
+	void Camera::save() const
 	{
 		callMethod<void>(
 			"save",
 			"()V"
 		);
 	}
-	void Camera::setLocation(jfloat arg0, jfloat arg1, jfloat arg2)
+	void Camera::setLocation(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"setLocation",
@@ -122,7 +122,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Camera::translate(jfloat arg0, jfloat arg1, jfloat arg2)
+	void Camera::translate(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"translate",

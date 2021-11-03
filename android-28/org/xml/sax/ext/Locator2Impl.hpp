@@ -20,10 +20,10 @@ namespace org::xml::sax::ext
 		Locator2Impl(JObject arg0);
 		
 		// Methods
-		JString getEncoding();
-		JString getXMLVersion();
-		void setEncoding(JString arg0);
-		void setXMLVersion(JString arg0);
+		JString getEncoding() const;
+		JString getXMLVersion() const;
+		void setEncoding(JString arg0) const;
+		void setXMLVersion(JString arg0) const;
 	};
 } // namespace org::xml::sax::ext
 

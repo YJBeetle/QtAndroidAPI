@@ -31,13 +31,13 @@ namespace android::util
 		AtomicFile(java::io::File arg0);
 		
 		// Methods
-		void _delete();
-		void failWrite(java::io::FileOutputStream arg0);
-		void finishWrite(java::io::FileOutputStream arg0);
-		java::io::File getBaseFile();
-		java::io::FileInputStream openRead();
-		JByteArray readFully();
-		java::io::FileOutputStream startWrite();
+		void _delete() const;
+		void failWrite(java::io::FileOutputStream arg0) const;
+		void finishWrite(java::io::FileOutputStream arg0) const;
+		java::io::File getBaseFile() const;
+		java::io::FileInputStream openRead() const;
+		JByteArray readFully() const;
+		java::io::FileOutputStream startWrite() const;
 	};
 } // namespace android::util
 

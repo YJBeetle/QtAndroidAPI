@@ -18,13 +18,13 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		void add(jint arg0, JObject arg1);
-		jboolean addAll(jint arg0, JObject arg1);
-		JObject get(jint arg0);
-		JObject iterator();
-		JObject listIterator(jint arg0);
-		JObject remove(jint arg0);
-		JObject set(jint arg0, JObject arg1);
+		void add(jint arg0, JObject arg1) const;
+		jboolean addAll(jint arg0, JObject arg1) const;
+		JObject get(jint arg0) const;
+		JObject iterator() const;
+		JObject listIterator(jint arg0) const;
+		JObject remove(jint arg0) const;
+		JObject set(jint arg0, JObject arg1) const;
 	};
 } // namespace java::util
 

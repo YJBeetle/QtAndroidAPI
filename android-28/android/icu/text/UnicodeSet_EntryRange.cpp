@@ -23,7 +23,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	JString UnicodeSet_EntryRange::toString()
+	JString UnicodeSet_EntryRange::toString() const
 	{
 		return callObjectMethod(
 			"toString",

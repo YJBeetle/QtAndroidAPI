@@ -58,7 +58,7 @@ namespace android::os
 			arg2
 		);
 	}
-	jint VibrationEffect::describeContents()
+	jint VibrationEffect::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",

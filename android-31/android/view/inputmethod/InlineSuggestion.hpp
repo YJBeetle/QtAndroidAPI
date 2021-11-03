@@ -36,13 +36,13 @@ namespace android::view::inputmethod
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::view::inputmethod::InlineSuggestionInfo getInfo();
-		jint hashCode();
-		void inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::view::inputmethod::InlineSuggestionInfo getInfo() const;
+		jint hashCode() const;
+		void inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

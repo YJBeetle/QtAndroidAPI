@@ -21,14 +21,14 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint VerifiedKeyEvent::describeContents()
+	jint VerifiedKeyEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean VerifiedKeyEvent::equals(JObject arg0)
+	jboolean VerifiedKeyEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,21 +36,21 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	jint VerifiedKeyEvent::getAction()
+	jint VerifiedKeyEvent::getAction() const
 	{
 		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
-	jlong VerifiedKeyEvent::getDownTimeNanos()
+	jlong VerifiedKeyEvent::getDownTimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getDownTimeNanos",
 			"()J"
 		);
 	}
-	java::lang::Boolean VerifiedKeyEvent::getFlag(jint arg0)
+	java::lang::Boolean VerifiedKeyEvent::getFlag(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFlag",
@@ -58,42 +58,42 @@ namespace android::view
 			arg0
 		);
 	}
-	jint VerifiedKeyEvent::getKeyCode()
+	jint VerifiedKeyEvent::getKeyCode() const
 	{
 		return callMethod<jint>(
 			"getKeyCode",
 			"()I"
 		);
 	}
-	jint VerifiedKeyEvent::getMetaState()
+	jint VerifiedKeyEvent::getMetaState() const
 	{
 		return callMethod<jint>(
 			"getMetaState",
 			"()I"
 		);
 	}
-	jint VerifiedKeyEvent::getRepeatCount()
+	jint VerifiedKeyEvent::getRepeatCount() const
 	{
 		return callMethod<jint>(
 			"getRepeatCount",
 			"()I"
 		);
 	}
-	jint VerifiedKeyEvent::getScanCode()
+	jint VerifiedKeyEvent::getScanCode() const
 	{
 		return callMethod<jint>(
 			"getScanCode",
 			"()I"
 		);
 	}
-	jint VerifiedKeyEvent::hashCode()
+	jint VerifiedKeyEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void VerifiedKeyEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VerifiedKeyEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

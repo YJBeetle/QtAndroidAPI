@@ -17,14 +17,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JString IllegalFormatPrecisionException::getMessage()
+	JString IllegalFormatPrecisionException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint IllegalFormatPrecisionException::getPrecision()
+	jint IllegalFormatPrecisionException::getPrecision() const
 	{
 		return callMethod<jint>(
 			"getPrecision",

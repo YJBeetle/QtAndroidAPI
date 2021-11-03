@@ -43,13 +43,13 @@ namespace android::net::wifi::aware
 		// Constructors
 		
 		// Methods
-		void attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1);
-		void attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2);
-		android::net::wifi::aware::AwareResources getAvailableAwareResources();
-		android::net::wifi::aware::Characteristics getCharacteristics();
-		jboolean isAvailable();
-		jboolean isDeviceAttached();
-		jboolean isInstantCommunicationModeEnabled();
+		void attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1) const;
+		void attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2) const;
+		android::net::wifi::aware::AwareResources getAvailableAwareResources() const;
+		android::net::wifi::aware::Characteristics getCharacteristics() const;
+		jboolean isAvailable() const;
+		jboolean isDeviceAttached() const;
+		jboolean isInstantCommunicationModeEnabled() const;
 	};
 } // namespace android::net::wifi::aware
 

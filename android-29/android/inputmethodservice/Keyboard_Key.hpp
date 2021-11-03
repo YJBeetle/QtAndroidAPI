@@ -51,11 +51,11 @@ namespace android::inputmethodservice
 		Keyboard_Key(android::content::res::Resources arg0, android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, JObject arg4);
 		
 		// Methods
-		JIntArray getCurrentDrawableState();
-		jboolean isInside(jint arg0, jint arg1);
-		void onPressed();
-		void onReleased(jboolean arg0);
-		jint squaredDistanceFrom(jint arg0, jint arg1);
+		JIntArray getCurrentDrawableState() const;
+		jboolean isInside(jint arg0, jint arg1) const;
+		void onPressed() const;
+		void onReleased(jboolean arg0) const;
+		jint squaredDistanceFrom(jint arg0, jint arg1) const;
 	};
 } // namespace android::inputmethodservice
 

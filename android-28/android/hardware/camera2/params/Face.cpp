@@ -34,49 +34,49 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	android::graphics::Rect Face::getBounds()
+	android::graphics::Rect Face::getBounds() const
 	{
 		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jint Face::getId()
+	jint Face::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	android::graphics::Point Face::getLeftEyePosition()
+	android::graphics::Point Face::getLeftEyePosition() const
 	{
 		return callObjectMethod(
 			"getLeftEyePosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	android::graphics::Point Face::getMouthPosition()
+	android::graphics::Point Face::getMouthPosition() const
 	{
 		return callObjectMethod(
 			"getMouthPosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	android::graphics::Point Face::getRightEyePosition()
+	android::graphics::Point Face::getRightEyePosition() const
 	{
 		return callObjectMethod(
 			"getRightEyePosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	jint Face::getScore()
+	jint Face::getScore() const
 	{
 		return callMethod<jint>(
 			"getScore",
 			"()I"
 		);
 	}
-	JString Face::toString()
+	JString Face::toString() const
 	{
 		return callObjectMethod(
 			"toString",

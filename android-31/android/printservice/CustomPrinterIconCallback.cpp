@@ -11,7 +11,7 @@ namespace android::printservice
 	// Constructors
 	
 	// Methods
-	jboolean CustomPrinterIconCallback::onCustomPrinterIconLoaded(android::graphics::drawable::Icon arg0)
+	jboolean CustomPrinterIconCallback::onCustomPrinterIconLoaded(android::graphics::drawable::Icon arg0) const
 	{
 		return callMethod<jboolean>(
 			"onCustomPrinterIconLoaded",

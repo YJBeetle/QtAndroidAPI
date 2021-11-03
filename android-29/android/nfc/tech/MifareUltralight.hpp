@@ -27,17 +27,17 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::MifareUltralight get(android::nfc::Tag arg0);
-		void close();
-		void connect();
-		jint getMaxTransceiveLength();
-		android::nfc::Tag getTag();
-		jint getTimeout();
-		jint getType();
-		jboolean isConnected();
-		JByteArray readPages(jint arg0);
-		void setTimeout(jint arg0);
-		JByteArray transceive(JByteArray arg0);
-		void writePage(jint arg0, JByteArray arg1);
+		void close() const;
+		void connect() const;
+		jint getMaxTransceiveLength() const;
+		android::nfc::Tag getTag() const;
+		jint getTimeout() const;
+		jint getType() const;
+		jboolean isConnected() const;
+		JByteArray readPages(jint arg0) const;
+		void setTimeout(jint arg0) const;
+		JByteArray transceive(JByteArray arg0) const;
+		void writePage(jint arg0, JByteArray arg1) const;
 	};
 } // namespace android::nfc::tech
 

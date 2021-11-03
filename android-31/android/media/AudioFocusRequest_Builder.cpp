@@ -25,14 +25,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::AudioFocusRequest AudioFocusRequest_Builder::build()
+	android::media::AudioFocusRequest AudioFocusRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioFocusRequest;"
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setAcceptsDelayedFocusGain(jboolean arg0)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setAcceptsDelayedFocusGain(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAcceptsDelayedFocusGain",
@@ -40,7 +40,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setAudioAttributes(android::media::AudioAttributes arg0)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setAudioAttributes(android::media::AudioAttributes arg0) const
 	{
 		return callObjectMethod(
 			"setAudioAttributes",
@@ -48,7 +48,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setFocusGain(jint arg0)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setFocusGain(jint arg0) const
 	{
 		return callObjectMethod(
 			"setFocusGain",
@@ -56,7 +56,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setForceDucking(jboolean arg0)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setForceDucking(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setForceDucking",
@@ -64,7 +64,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(JObject arg0)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setOnAudioFocusChangeListener",
@@ -72,7 +72,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(JObject arg0, android::os::Handler arg1)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(JObject arg0, android::os::Handler arg1) const
 	{
 		return callObjectMethod(
 			"setOnAudioFocusChangeListener",
@@ -81,7 +81,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setWillPauseWhenDucked(jboolean arg0)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setWillPauseWhenDucked(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setWillPauseWhenDucked",

@@ -49,14 +49,14 @@ namespace android::service::autofill
 		AutofillService();
 		
 		// Methods
-		android::service::autofill::FillEventHistory getFillEventHistory();
-		JObject onBind(android::content::Intent arg0);
-		void onConnected();
-		void onCreate();
-		void onDisconnected();
-		void onFillRequest(android::service::autofill::FillRequest arg0, android::os::CancellationSignal arg1, android::service::autofill::FillCallback arg2);
-		void onSaveRequest(android::service::autofill::SaveRequest arg0, android::service::autofill::SaveCallback arg1);
-		void onSavedDatasetsInfoRequest(JObject arg0);
+		android::service::autofill::FillEventHistory getFillEventHistory() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onConnected() const;
+		void onCreate() const;
+		void onDisconnected() const;
+		void onFillRequest(android::service::autofill::FillRequest arg0, android::os::CancellationSignal arg1, android::service::autofill::FillCallback arg2) const;
+		void onSaveRequest(android::service::autofill::SaveRequest arg0, android::service::autofill::SaveCallback arg1) const;
+		void onSavedDatasetsInfoRequest(JObject arg0) const;
 	};
 } // namespace android::service::autofill
 

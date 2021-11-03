@@ -49,42 +49,42 @@ namespace javax::xml::transform
 		) {}
 	
 	// Methods
-	JThrowable TransformerException::getCause()
+	JThrowable TransformerException::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	JThrowable TransformerException::getException()
+	JThrowable TransformerException::getException() const
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	JString TransformerException::getLocationAsString()
+	JString TransformerException::getLocationAsString() const
 	{
 		return callObjectMethod(
 			"getLocationAsString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject TransformerException::getLocator()
+	JObject TransformerException::getLocator() const
 	{
 		return callObjectMethod(
 			"getLocator",
 			"()Ljavax/xml/transform/SourceLocator;"
 		);
 	}
-	JString TransformerException::getMessageAndLocation()
+	JString TransformerException::getMessageAndLocation() const
 	{
 		return callObjectMethod(
 			"getMessageAndLocation",
 			"()Ljava/lang/String;"
 		);
 	}
-	JThrowable TransformerException::initCause(JThrowable arg0)
+	JThrowable TransformerException::initCause(JThrowable arg0) const
 	{
 		return callObjectMethod(
 			"initCause",
@@ -92,14 +92,14 @@ namespace javax::xml::transform
 			arg0.object<jthrowable>()
 		);
 	}
-	void TransformerException::printStackTrace()
+	void TransformerException::printStackTrace() const
 	{
 		callMethod<void>(
 			"printStackTrace",
 			"()V"
 		);
 	}
-	void TransformerException::printStackTrace(java::io::PrintStream arg0)
+	void TransformerException::printStackTrace(java::io::PrintStream arg0) const
 	{
 		callMethod<void>(
 			"printStackTrace",
@@ -107,7 +107,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void TransformerException::printStackTrace(java::io::PrintWriter arg0)
+	void TransformerException::printStackTrace(java::io::PrintWriter arg0) const
 	{
 		callMethod<void>(
 			"printStackTrace",
@@ -115,7 +115,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void TransformerException::setLocator(JObject arg0)
+	void TransformerException::setLocator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setLocator",

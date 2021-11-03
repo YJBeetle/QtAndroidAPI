@@ -26,19 +26,19 @@ namespace android::net::wifi::hotspot2::pps
 		Credential_UserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getEapType();
-		JString getNonEapInnerMethod();
-		JString getPassword();
-		JString getUsername();
-		jint hashCode();
-		void setEapType(jint arg0);
-		void setNonEapInnerMethod(JString arg0);
-		void setPassword(JString arg0);
-		void setUsername(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getEapType() const;
+		JString getNonEapInnerMethod() const;
+		JString getPassword() const;
+		JString getUsername() const;
+		jint hashCode() const;
+		void setEapType(jint arg0) const;
+		void setNonEapInnerMethod(JString arg0) const;
+		void setPassword(JString arg0) const;
+		void setUsername(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::hotspot2::pps
 

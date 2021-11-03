@@ -36,14 +36,14 @@ namespace android::print
 		PrinterInfo_Builder(android::print::PrinterId arg0, JString arg1, jint arg2);
 		
 		// Methods
-		android::print::PrinterInfo build();
-		android::print::PrinterInfo_Builder setCapabilities(android::print::PrinterCapabilitiesInfo arg0);
-		android::print::PrinterInfo_Builder setDescription(JString arg0);
-		android::print::PrinterInfo_Builder setHasCustomPrinterIcon(jboolean arg0);
-		android::print::PrinterInfo_Builder setIconResourceId(jint arg0);
-		android::print::PrinterInfo_Builder setInfoIntent(android::app::PendingIntent arg0);
-		android::print::PrinterInfo_Builder setName(JString arg0);
-		android::print::PrinterInfo_Builder setStatus(jint arg0);
+		android::print::PrinterInfo build() const;
+		android::print::PrinterInfo_Builder setCapabilities(android::print::PrinterCapabilitiesInfo arg0) const;
+		android::print::PrinterInfo_Builder setDescription(JString arg0) const;
+		android::print::PrinterInfo_Builder setHasCustomPrinterIcon(jboolean arg0) const;
+		android::print::PrinterInfo_Builder setIconResourceId(jint arg0) const;
+		android::print::PrinterInfo_Builder setInfoIntent(android::app::PendingIntent arg0) const;
+		android::print::PrinterInfo_Builder setName(JString arg0) const;
+		android::print::PrinterInfo_Builder setStatus(jint arg0) const;
 	};
 } // namespace android::print
 

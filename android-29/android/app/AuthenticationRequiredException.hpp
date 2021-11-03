@@ -28,9 +28,9 @@ namespace android::app
 		AuthenticationRequiredException(JThrowable arg0, android::app::PendingIntent arg1);
 		
 		// Methods
-		jint describeContents();
-		android::app::PendingIntent getUserAction();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::app::PendingIntent getUserAction() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

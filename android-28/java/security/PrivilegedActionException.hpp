@@ -32,8 +32,8 @@ namespace java::security
 		PrivilegedActionException(java::lang::Exception arg0);
 		
 		// Methods
-		java::lang::Exception getException();
-		JString toString();
+		java::lang::Exception getException() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

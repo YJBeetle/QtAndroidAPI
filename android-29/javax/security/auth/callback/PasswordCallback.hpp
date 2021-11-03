@@ -20,11 +20,11 @@ namespace javax::security::auth::callback
 		PasswordCallback(JString arg0, jboolean arg1);
 		
 		// Methods
-		void clearPassword();
-		JCharArray getPassword();
-		JString getPrompt();
-		jboolean isEchoOn();
-		void setPassword(JCharArray arg0);
+		void clearPassword() const;
+		JCharArray getPassword() const;
+		JString getPrompt() const;
+		jboolean isEchoOn() const;
+		void setPassword(JCharArray arg0) const;
 	};
 } // namespace javax::security::auth::callback
 

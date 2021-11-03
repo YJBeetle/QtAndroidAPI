@@ -22,10 +22,10 @@ namespace javax::crypto::spec
 		RC2ParameterSpec(jint arg0, JByteArray arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getEffectiveKeyBits();
-		JByteArray getIV();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getEffectiveKeyBits() const;
+		JByteArray getIV() const;
+		jint hashCode() const;
 	};
 } // namespace javax::crypto::spec
 

@@ -18,7 +18,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::addMatchingUid(jint arg0)
+	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::addMatchingUid(jint arg0) const
 	{
 		return callObjectMethod(
 			"addMatchingUid",
@@ -26,7 +26,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::addMatchingUsage(jint arg0)
+	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::addMatchingUsage(jint arg0) const
 	{
 		return callObjectMethod(
 			"addMatchingUsage",
@@ -34,14 +34,14 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPlaybackCaptureConfiguration AudioPlaybackCaptureConfiguration_Builder::build()
+	android::media::AudioPlaybackCaptureConfiguration AudioPlaybackCaptureConfiguration_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioPlaybackCaptureConfiguration;"
 		);
 	}
-	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::excludeUid(jint arg0)
+	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::excludeUid(jint arg0) const
 	{
 		return callObjectMethod(
 			"excludeUid",
@@ -49,7 +49,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::excludeUsage(jint arg0)
+	android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::excludeUsage(jint arg0) const
 	{
 		return callObjectMethod(
 			"excludeUsage",

@@ -21,8 +21,8 @@ namespace java::util
 		ListResourceBundle();
 		
 		// Methods
-		JObject getKeys();
-		JObject handleGetObject(JString arg0);
+		JObject getKeys() const;
+		JObject handleGetObject(JString arg0) const;
 	};
 } // namespace java::util
 

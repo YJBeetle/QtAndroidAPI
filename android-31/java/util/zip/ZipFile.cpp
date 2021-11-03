@@ -72,28 +72,28 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	void ZipFile::close()
+	void ZipFile::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject ZipFile::entries()
+	JObject ZipFile::entries() const
 	{
 		return callObjectMethod(
 			"entries",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JString ZipFile::getComment()
+	JString ZipFile::getComment() const
 	{
 		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::zip::ZipEntry ZipFile::getEntry(JString arg0)
+	java::util::zip::ZipEntry ZipFile::getEntry(JString arg0) const
 	{
 		return callObjectMethod(
 			"getEntry",
@@ -101,7 +101,7 @@ namespace java::util::zip
 			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream ZipFile::getInputStream(java::util::zip::ZipEntry arg0)
+	java::io::InputStream ZipFile::getInputStream(java::util::zip::ZipEntry arg0) const
 	{
 		return callObjectMethod(
 			"getInputStream",
@@ -109,21 +109,21 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	JString ZipFile::getName()
+	JString ZipFile::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ZipFile::size()
+	jint ZipFile::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject ZipFile::stream()
+	JObject ZipFile::stream() const
 	{
 		return callObjectMethod(
 			"stream",

@@ -50,28 +50,28 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void PermissionRequest::deny()
+	void PermissionRequest::deny() const
 	{
 		callMethod<void>(
 			"deny",
 			"()V"
 		);
 	}
-	android::net::Uri PermissionRequest::getOrigin()
+	android::net::Uri PermissionRequest::getOrigin() const
 	{
 		return callObjectMethod(
 			"getOrigin",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JArray PermissionRequest::getResources()
+	JArray PermissionRequest::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()[Ljava/lang/String;"
 		);
 	}
-	void PermissionRequest::grant(JArray arg0)
+	void PermissionRequest::grant(JArray arg0) const
 	{
 		callMethod<void>(
 			"grant",

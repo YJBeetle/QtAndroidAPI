@@ -31,16 +31,16 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		void abandon();
-		void close();
-		void commit(android::content::IntentSender arg0);
-		void fsync(java::io::OutputStream arg0);
-		JArray getNames();
-		java::io::InputStream openRead(JString arg0);
-		java::io::OutputStream openWrite(JString arg0, jlong arg1, jlong arg2);
-		void removeSplit(JString arg0);
-		void setStagingProgress(jfloat arg0);
-		void transfer(JString arg0);
+		void abandon() const;
+		void close() const;
+		void commit(android::content::IntentSender arg0) const;
+		void fsync(java::io::OutputStream arg0) const;
+		JArray getNames() const;
+		java::io::InputStream openRead(JString arg0) const;
+		java::io::OutputStream openWrite(JString arg0, jlong arg1, jlong arg2) const;
+		void removeSplit(JString arg0) const;
+		void setStagingProgress(jfloat arg0) const;
+		void transfer(JString arg0) const;
 	};
 } // namespace android::content::pm
 

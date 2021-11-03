@@ -25,12 +25,12 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::NfcBarcode get(android::nfc::Tag arg0);
-		void close();
-		void connect();
-		JByteArray getBarcode();
-		android::nfc::Tag getTag();
-		jint getType();
-		jboolean isConnected();
+		void close() const;
+		void connect() const;
+		JByteArray getBarcode() const;
+		android::nfc::Tag getTag() const;
+		jint getType() const;
+		jboolean isConnected() const;
 	};
 } // namespace android::nfc::tech
 

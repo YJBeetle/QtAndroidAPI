@@ -20,14 +20,14 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint WindowContentFrameStats::describeContents()
+	jint WindowContentFrameStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong WindowContentFrameStats::getFramePostedTimeNano(jint arg0)
+	jlong WindowContentFrameStats::getFramePostedTimeNano(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getFramePostedTimeNano",
@@ -35,7 +35,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jlong WindowContentFrameStats::getFrameReadyTimeNano(jint arg0)
+	jlong WindowContentFrameStats::getFrameReadyTimeNano(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getFrameReadyTimeNano",
@@ -43,14 +43,14 @@ namespace android::view
 			arg0
 		);
 	}
-	JString WindowContentFrameStats::toString()
+	JString WindowContentFrameStats::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WindowContentFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WindowContentFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

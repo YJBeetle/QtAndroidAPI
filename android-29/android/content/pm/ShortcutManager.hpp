@@ -35,25 +35,25 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jboolean addDynamicShortcuts(JObject arg0);
-		android::content::Intent createShortcutResultIntent(android::content::pm::ShortcutInfo arg0);
-		void disableShortcuts(JObject arg0);
-		void disableShortcuts(JObject arg0, JString arg1);
-		void enableShortcuts(JObject arg0);
-		JObject getDynamicShortcuts();
-		jint getIconMaxHeight();
-		jint getIconMaxWidth();
-		JObject getManifestShortcuts();
-		jint getMaxShortcutCountPerActivity();
-		JObject getPinnedShortcuts();
-		jboolean isRateLimitingActive();
-		jboolean isRequestPinShortcutSupported();
-		void removeAllDynamicShortcuts();
-		void removeDynamicShortcuts(JObject arg0);
-		void reportShortcutUsed(JString arg0);
-		jboolean requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1);
-		jboolean setDynamicShortcuts(JObject arg0);
-		jboolean updateShortcuts(JObject arg0);
+		jboolean addDynamicShortcuts(JObject arg0) const;
+		android::content::Intent createShortcutResultIntent(android::content::pm::ShortcutInfo arg0) const;
+		void disableShortcuts(JObject arg0) const;
+		void disableShortcuts(JObject arg0, JString arg1) const;
+		void enableShortcuts(JObject arg0) const;
+		JObject getDynamicShortcuts() const;
+		jint getIconMaxHeight() const;
+		jint getIconMaxWidth() const;
+		JObject getManifestShortcuts() const;
+		jint getMaxShortcutCountPerActivity() const;
+		JObject getPinnedShortcuts() const;
+		jboolean isRateLimitingActive() const;
+		jboolean isRequestPinShortcutSupported() const;
+		void removeAllDynamicShortcuts() const;
+		void removeDynamicShortcuts(JObject arg0) const;
+		void reportShortcutUsed(JString arg0) const;
+		jboolean requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1) const;
+		jboolean setDynamicShortcuts(JObject arg0) const;
+		jboolean updateShortcuts(JObject arg0) const;
 	};
 } // namespace android::content::pm
 

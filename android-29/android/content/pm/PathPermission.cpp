@@ -35,21 +35,21 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	JString PathPermission::getReadPermission()
+	JString PathPermission::getReadPermission() const
 	{
 		return callObjectMethod(
 			"getReadPermission",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PathPermission::getWritePermission()
+	JString PathPermission::getWritePermission() const
 	{
 		return callObjectMethod(
 			"getWritePermission",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PathPermission::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PathPermission::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

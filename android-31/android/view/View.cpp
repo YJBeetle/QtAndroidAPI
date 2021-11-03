@@ -1182,7 +1182,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void View::addChildrenForAccessibility(java::util::ArrayList arg0)
+	void View::addChildrenForAccessibility(java::util::ArrayList arg0) const
 	{
 		callMethod<void>(
 			"addChildrenForAccessibility",
@@ -1190,7 +1190,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2)
+	void View::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
@@ -1200,7 +1200,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	void View::addFocusables(java::util::ArrayList arg0, jint arg1)
+	void View::addFocusables(java::util::ArrayList arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addFocusables",
@@ -1209,7 +1209,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2)
+	void View::addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addFocusables",
@@ -1219,7 +1219,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void View::addKeyboardNavigationClusters(JObject arg0, jint arg1)
+	void View::addKeyboardNavigationClusters(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addKeyboardNavigationClusters",
@@ -1228,7 +1228,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::addOnAttachStateChangeListener(JObject arg0)
+	void View::addOnAttachStateChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnAttachStateChangeListener",
@@ -1236,7 +1236,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::addOnLayoutChangeListener(JObject arg0)
+	void View::addOnLayoutChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnLayoutChangeListener",
@@ -1244,7 +1244,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::addOnUnhandledKeyEventListener(JObject arg0)
+	void View::addOnUnhandledKeyEventListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnUnhandledKeyEventListener",
@@ -1252,7 +1252,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::addTouchables(java::util::ArrayList arg0)
+	void View::addTouchables(java::util::ArrayList arg0) const
 	{
 		callMethod<void>(
 			"addTouchables",
@@ -1260,14 +1260,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewPropertyAnimator View::animate()
+	android::view::ViewPropertyAnimator View::animate() const
 	{
 		return callObjectMethod(
 			"animate",
 			"()Landroid/view/ViewPropertyAnimator;"
 		);
 	}
-	void View::announceForAccessibility(JString arg0)
+	void View::announceForAccessibility(JString arg0) const
 	{
 		callMethod<void>(
 			"announceForAccessibility",
@@ -1275,7 +1275,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void View::autofill(android::util::SparseArray arg0)
+	void View::autofill(android::util::SparseArray arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -1283,7 +1283,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::autofill(android::view::autofill::AutofillValue arg0)
+	void View::autofill(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -1291,21 +1291,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::bringToFront()
+	void View::bringToFront() const
 	{
 		callMethod<void>(
 			"bringToFront",
 			"()V"
 		);
 	}
-	void View::buildDrawingCache()
+	void View::buildDrawingCache() const
 	{
 		callMethod<void>(
 			"buildDrawingCache",
 			"()V"
 		);
 	}
-	void View::buildDrawingCache(jboolean arg0)
+	void View::buildDrawingCache(jboolean arg0) const
 	{
 		callMethod<void>(
 			"buildDrawingCache",
@@ -1313,42 +1313,42 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::buildLayer()
+	void View::buildLayer() const
 	{
 		callMethod<void>(
 			"buildLayer",
 			"()V"
 		);
 	}
-	jboolean View::callOnClick()
+	jboolean View::callOnClick() const
 	{
 		return callMethod<jboolean>(
 			"callOnClick",
 			"()Z"
 		);
 	}
-	jboolean View::canResolveLayoutDirection()
+	jboolean View::canResolveLayoutDirection() const
 	{
 		return callMethod<jboolean>(
 			"canResolveLayoutDirection",
 			"()Z"
 		);
 	}
-	jboolean View::canResolveTextAlignment()
+	jboolean View::canResolveTextAlignment() const
 	{
 		return callMethod<jboolean>(
 			"canResolveTextAlignment",
 			"()Z"
 		);
 	}
-	jboolean View::canResolveTextDirection()
+	jboolean View::canResolveTextDirection() const
 	{
 		return callMethod<jboolean>(
 			"canResolveTextDirection",
 			"()Z"
 		);
 	}
-	jboolean View::canScrollHorizontally(jint arg0)
+	jboolean View::canScrollHorizontally(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"canScrollHorizontally",
@@ -1356,7 +1356,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::canScrollVertically(jint arg0)
+	jboolean View::canScrollVertically(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"canScrollVertically",
@@ -1364,28 +1364,28 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::cancelDragAndDrop()
+	void View::cancelDragAndDrop() const
 	{
 		callMethod<void>(
 			"cancelDragAndDrop",
 			"()V"
 		);
 	}
-	void View::cancelLongPress()
+	void View::cancelLongPress() const
 	{
 		callMethod<void>(
 			"cancelLongPress",
 			"()V"
 		);
 	}
-	void View::cancelPendingInputEvents()
+	void View::cancelPendingInputEvents() const
 	{
 		callMethod<void>(
 			"cancelPendingInputEvents",
 			"()V"
 		);
 	}
-	jboolean View::checkInputConnectionProxy(android::view::View arg0)
+	jboolean View::checkInputConnectionProxy(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"checkInputConnectionProxy",
@@ -1393,35 +1393,35 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::clearAnimation()
+	void View::clearAnimation() const
 	{
 		callMethod<void>(
 			"clearAnimation",
 			"()V"
 		);
 	}
-	void View::clearFocus()
+	void View::clearFocus() const
 	{
 		callMethod<void>(
 			"clearFocus",
 			"()V"
 		);
 	}
-	void View::clearViewTranslationCallback()
+	void View::clearViewTranslationCallback() const
 	{
 		callMethod<void>(
 			"clearViewTranslationCallback",
 			"()V"
 		);
 	}
-	void View::computeScroll()
+	void View::computeScroll() const
 	{
 		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
-	android::view::WindowInsets View::computeSystemWindowInsets(android::view::WindowInsets arg0, android::graphics::Rect arg1)
+	android::view::WindowInsets View::computeSystemWindowInsets(android::view::WindowInsets arg0, android::graphics::Rect arg1) const
 	{
 		return callObjectMethod(
 			"computeSystemWindowInsets",
@@ -1430,14 +1430,14 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo View::createAccessibilityNodeInfo()
+	android::view::accessibility::AccessibilityNodeInfo View::createAccessibilityNodeInfo() const
 	{
 		return callObjectMethod(
 			"createAccessibilityNodeInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	void View::createContextMenu(JObject arg0)
+	void View::createContextMenu(JObject arg0) const
 	{
 		callMethod<void>(
 			"createContextMenu",
@@ -1445,14 +1445,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::destroyDrawingCache()
+	void View::destroyDrawingCache() const
 	{
 		callMethod<void>(
 			"destroyDrawingCache",
 			"()V"
 		);
 	}
-	android::view::WindowInsets View::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets View::dispatchApplyWindowInsets(android::view::WindowInsets arg0) const
 	{
 		return callObjectMethod(
 			"dispatchApplyWindowInsets",
@@ -1460,7 +1460,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::dispatchCapturedPointerEvent(android::view::MotionEvent arg0)
+	jboolean View::dispatchCapturedPointerEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchCapturedPointerEvent",
@@ -1468,7 +1468,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::dispatchConfigurationChanged(android::content::res::Configuration arg0)
+	void View::dispatchConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"dispatchConfigurationChanged",
@@ -1476,7 +1476,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::dispatchCreateViewTranslationRequest(JObject arg0, JIntArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3)
+	void View::dispatchCreateViewTranslationRequest(JObject arg0, JIntArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"dispatchCreateViewTranslationRequest",
@@ -1487,7 +1487,7 @@ namespace android::view
 			arg3.object()
 		);
 	}
-	void View::dispatchDisplayHint(jint arg0)
+	void View::dispatchDisplayHint(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchDisplayHint",
@@ -1495,7 +1495,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::dispatchDragEvent(android::view::DragEvent arg0)
+	jboolean View::dispatchDragEvent(android::view::DragEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchDragEvent",
@@ -1503,7 +1503,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void View::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"dispatchDrawableHotspotChanged",
@@ -1512,14 +1512,14 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::dispatchFinishTemporaryDetach()
+	void View::dispatchFinishTemporaryDetach() const
 	{
 		callMethod<void>(
 			"dispatchFinishTemporaryDetach",
 			"()V"
 		);
 	}
-	jboolean View::dispatchGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean View::dispatchGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchGenericMotionEvent",
@@ -1527,7 +1527,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean View::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -1535,7 +1535,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::dispatchKeyEventPreIme(android::view::KeyEvent arg0)
+	jboolean View::dispatchKeyEventPreIme(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEventPreIme",
@@ -1543,7 +1543,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::dispatchKeyShortcutEvent(android::view::KeyEvent arg0)
+	jboolean View::dispatchKeyShortcutEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
@@ -1551,7 +1551,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::dispatchNestedFling(jfloat arg0, jfloat arg1, jboolean arg2)
+	jboolean View::dispatchNestedFling(jfloat arg0, jfloat arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"dispatchNestedFling",
@@ -1561,7 +1561,7 @@ namespace android::view
 			arg2
 		);
 	}
-	jboolean View::dispatchNestedPreFling(jfloat arg0, jfloat arg1)
+	jboolean View::dispatchNestedPreFling(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"dispatchNestedPreFling",
@@ -1570,7 +1570,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jboolean View::dispatchNestedPrePerformAccessibilityAction(jint arg0, android::os::Bundle arg1)
+	jboolean View::dispatchNestedPrePerformAccessibilityAction(jint arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"dispatchNestedPrePerformAccessibilityAction",
@@ -1579,7 +1579,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::dispatchNestedPreScroll(jint arg0, jint arg1, JIntArray arg2, JIntArray arg3)
+	jboolean View::dispatchNestedPreScroll(jint arg0, jint arg1, JIntArray arg2, JIntArray arg3) const
 	{
 		return callMethod<jboolean>(
 			"dispatchNestedPreScroll",
@@ -1590,7 +1590,7 @@ namespace android::view
 			arg3.object<jintArray>()
 		);
 	}
-	jboolean View::dispatchNestedScroll(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4)
+	jboolean View::dispatchNestedScroll(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4) const
 	{
 		return callMethod<jboolean>(
 			"dispatchNestedScroll",
@@ -1602,7 +1602,7 @@ namespace android::view
 			arg4.object<jintArray>()
 		);
 	}
-	void View::dispatchPointerCaptureChanged(jboolean arg0)
+	void View::dispatchPointerCaptureChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchPointerCaptureChanged",
@@ -1610,7 +1610,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	jboolean View::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchPopulateAccessibilityEvent",
@@ -1618,7 +1618,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
+	void View::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"dispatchProvideAutofillStructure",
@@ -1627,7 +1627,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::dispatchProvideStructure(android::view::ViewStructure arg0)
+	void View::dispatchProvideStructure(android::view::ViewStructure arg0) const
 	{
 		callMethod<void>(
 			"dispatchProvideStructure",
@@ -1635,7 +1635,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::dispatchScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, JObject arg2)
+	void View::dispatchScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"dispatchScrollCaptureSearch",
@@ -1645,14 +1645,14 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	void View::dispatchStartTemporaryDetach()
+	void View::dispatchStartTemporaryDetach() const
 	{
 		callMethod<void>(
 			"dispatchStartTemporaryDetach",
 			"()V"
 		);
 	}
-	void View::dispatchSystemUiVisibilityChanged(jint arg0)
+	void View::dispatchSystemUiVisibilityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchSystemUiVisibilityChanged",
@@ -1660,7 +1660,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean View::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -1668,7 +1668,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::dispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean View::dispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
@@ -1676,7 +1676,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::dispatchUnhandledMove(android::view::View arg0, jint arg1)
+	jboolean View::dispatchUnhandledMove(android::view::View arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"dispatchUnhandledMove",
@@ -1685,7 +1685,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::dispatchWindowFocusChanged(jboolean arg0)
+	void View::dispatchWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowFocusChanged",
@@ -1693,7 +1693,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::dispatchWindowInsetsAnimationEnd(android::view::WindowInsetsAnimation arg0)
+	void View::dispatchWindowInsetsAnimationEnd(android::view::WindowInsetsAnimation arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowInsetsAnimationEnd",
@@ -1701,7 +1701,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::dispatchWindowInsetsAnimationPrepare(android::view::WindowInsetsAnimation arg0)
+	void View::dispatchWindowInsetsAnimationPrepare(android::view::WindowInsetsAnimation arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowInsetsAnimationPrepare",
@@ -1709,7 +1709,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets View::dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, JObject arg1)
+	android::view::WindowInsets View::dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"dispatchWindowInsetsAnimationProgress",
@@ -1718,7 +1718,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::WindowInsetsAnimation_Bounds View::dispatchWindowInsetsAnimationStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1)
+	android::view::WindowInsetsAnimation_Bounds View::dispatchWindowInsetsAnimationStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1) const
 	{
 		return callObjectMethod(
 			"dispatchWindowInsetsAnimationStart",
@@ -1727,7 +1727,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View::dispatchWindowSystemUiVisiblityChanged(jint arg0)
+	void View::dispatchWindowSystemUiVisiblityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowSystemUiVisiblityChanged",
@@ -1735,7 +1735,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::dispatchWindowVisibilityChanged(jint arg0)
+	void View::dispatchWindowVisibilityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowVisibilityChanged",
@@ -1743,7 +1743,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::draw(android::graphics::Canvas arg0)
+	void View::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -1751,7 +1751,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void View::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"drawableHotspotChanged",
@@ -1760,14 +1760,14 @@ namespace android::view
 			arg1
 		);
 	}
-	android::view::View View::findFocus()
+	android::view::View View::findFocus() const
 	{
 		return callObjectMethod(
 			"findFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View View::findViewById(jint arg0)
+	android::view::View View::findViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -1775,7 +1775,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::View View::findViewWithTag(JObject arg0)
+	android::view::View View::findViewWithTag(JObject arg0) const
 	{
 		return callObjectMethod(
 			"findViewWithTag",
@@ -1783,7 +1783,7 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	void View::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2)
+	void View::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"findViewsWithText",
@@ -1793,7 +1793,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::View View::focusSearch(jint arg0)
+	android::view::View View::focusSearch(jint arg0) const
 	{
 		return callObjectMethod(
 			"focusSearch",
@@ -1801,7 +1801,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::forceHasOverlappingRendering(jboolean arg0)
+	void View::forceHasOverlappingRendering(jboolean arg0) const
 	{
 		callMethod<void>(
 			"forceHasOverlappingRendering",
@@ -1809,14 +1809,14 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::forceLayout()
+	void View::forceLayout() const
 	{
 		callMethod<void>(
 			"forceLayout",
 			"()V"
 		);
 	}
-	jboolean View::gatherTransparentRegion(android::graphics::Region arg0)
+	jboolean View::gatherTransparentRegion(android::graphics::Region arg0) const
 	{
 		return callMethod<jboolean>(
 			"gatherTransparentRegion",
@@ -1824,7 +1824,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::generateDisplayHash(JString arg0, android::graphics::Rect arg1, JObject arg2, JObject arg3)
+	void View::generateDisplayHash(JString arg0, android::graphics::Rect arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"generateDisplayHash",
@@ -1835,84 +1835,84 @@ namespace android::view
 			arg3.object()
 		);
 	}
-	JString View::getAccessibilityClassName()
+	JString View::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View_AccessibilityDelegate View::getAccessibilityDelegate()
+	android::view::View_AccessibilityDelegate View::getAccessibilityDelegate() const
 	{
 		return callObjectMethod(
 			"getAccessibilityDelegate",
 			"()Landroid/view/View$AccessibilityDelegate;"
 		);
 	}
-	jint View::getAccessibilityLiveRegion()
+	jint View::getAccessibilityLiveRegion() const
 	{
 		return callMethod<jint>(
 			"getAccessibilityLiveRegion",
 			"()I"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeProvider View::getAccessibilityNodeProvider()
+	android::view::accessibility::AccessibilityNodeProvider View::getAccessibilityNodeProvider() const
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",
 			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
 		);
 	}
-	JString View::getAccessibilityPaneTitle()
+	JString View::getAccessibilityPaneTitle() const
 	{
 		return callObjectMethod(
 			"getAccessibilityPaneTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint View::getAccessibilityTraversalAfter()
+	jint View::getAccessibilityTraversalAfter() const
 	{
 		return callMethod<jint>(
 			"getAccessibilityTraversalAfter",
 			"()I"
 		);
 	}
-	jint View::getAccessibilityTraversalBefore()
+	jint View::getAccessibilityTraversalBefore() const
 	{
 		return callMethod<jint>(
 			"getAccessibilityTraversalBefore",
 			"()I"
 		);
 	}
-	jfloat View::getAlpha()
+	jfloat View::getAlpha() const
 	{
 		return callMethod<jfloat>(
 			"getAlpha",
 			"()F"
 		);
 	}
-	android::view::animation::Animation View::getAnimation()
+	android::view::animation::Animation View::getAnimation() const
 	{
 		return callObjectMethod(
 			"getAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	android::graphics::Matrix View::getAnimationMatrix()
+	android::graphics::Matrix View::getAnimationMatrix() const
 	{
 		return callObjectMethod(
 			"getAnimationMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
-	JObject View::getApplicationWindowToken()
+	JObject View::getApplicationWindowToken() const
 	{
 		return callObjectMethod(
 			"getApplicationWindowToken",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	JIntArray View::getAttributeResolutionStack(jint arg0)
+	JIntArray View::getAttributeResolutionStack(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAttributeResolutionStack",
@@ -1920,98 +1920,98 @@ namespace android::view
 			arg0
 		);
 	}
-	JObject View::getAttributeSourceResourceMap()
+	JObject View::getAttributeSourceResourceMap() const
 	{
 		return callObjectMethod(
 			"getAttributeSourceResourceMap",
 			"()Ljava/util/Map;"
 		);
 	}
-	JArray View::getAutofillHints()
+	JArray View::getAutofillHints() const
 	{
 		return callObjectMethod(
 			"getAutofillHints",
 			"()[Ljava/lang/String;"
 		);
 	}
-	android::view::autofill::AutofillId View::getAutofillId()
+	android::view::autofill::AutofillId View::getAutofillId() const
 	{
 		return callObjectMethod(
 			"getAutofillId",
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
-	jint View::getAutofillType()
+	jint View::getAutofillType() const
 	{
 		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
-	android::view::autofill::AutofillValue View::getAutofillValue()
+	android::view::autofill::AutofillValue View::getAutofillValue() const
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	android::graphics::drawable::Drawable View::getBackground()
+	android::graphics::drawable::Drawable View::getBackground() const
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::BlendMode View::getBackgroundTintBlendMode()
+	android::graphics::BlendMode View::getBackgroundTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getBackgroundTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList View::getBackgroundTintList()
+	android::content::res::ColorStateList View::getBackgroundTintList() const
 	{
 		return callObjectMethod(
 			"getBackgroundTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode View::getBackgroundTintMode()
+	android::graphics::PorterDuff_Mode View::getBackgroundTintMode() const
 	{
 		return callObjectMethod(
 			"getBackgroundTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	jint View::getBaseline()
+	jint View::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	jint View::getBottom()
+	jint View::getBottom() const
 	{
 		return callMethod<jint>(
 			"getBottom",
 			"()I"
 		);
 	}
-	jfloat View::getCameraDistance()
+	jfloat View::getCameraDistance() const
 	{
 		return callMethod<jfloat>(
 			"getCameraDistance",
 			"()F"
 		);
 	}
-	android::graphics::Rect View::getClipBounds()
+	android::graphics::Rect View::getClipBounds() const
 	{
 		return callObjectMethod(
 			"getClipBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jboolean View::getClipBounds(android::graphics::Rect arg0)
+	jboolean View::getClipBounds(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getClipBounds",
@@ -2019,63 +2019,63 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::getClipToOutline()
+	jboolean View::getClipToOutline() const
 	{
 		return callMethod<jboolean>(
 			"getClipToOutline",
 			"()Z"
 		);
 	}
-	android::view::contentcapture::ContentCaptureSession View::getContentCaptureSession()
+	android::view::contentcapture::ContentCaptureSession View::getContentCaptureSession() const
 	{
 		return callObjectMethod(
 			"getContentCaptureSession",
 			"()Landroid/view/contentcapture/ContentCaptureSession;"
 		);
 	}
-	JString View::getContentDescription()
+	JString View::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::content::Context View::getContext()
+	android::content::Context View::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	jboolean View::getDefaultFocusHighlightEnabled()
+	jboolean View::getDefaultFocusHighlightEnabled() const
 	{
 		return callMethod<jboolean>(
 			"getDefaultFocusHighlightEnabled",
 			"()Z"
 		);
 	}
-	android::view::Display View::getDisplay()
+	android::view::Display View::getDisplay() const
 	{
 		return callObjectMethod(
 			"getDisplay",
 			"()Landroid/view/Display;"
 		);
 	}
-	JIntArray View::getDrawableState()
+	JIntArray View::getDrawableState() const
 	{
 		return callObjectMethod(
 			"getDrawableState",
 			"()[I"
 		);
 	}
-	android::graphics::Bitmap View::getDrawingCache()
+	android::graphics::Bitmap View::getDrawingCache() const
 	{
 		return callObjectMethod(
 			"getDrawingCache",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::graphics::Bitmap View::getDrawingCache(jboolean arg0)
+	android::graphics::Bitmap View::getDrawingCache(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"getDrawingCache",
@@ -2083,21 +2083,21 @@ namespace android::view
 			arg0
 		);
 	}
-	jint View::getDrawingCacheBackgroundColor()
+	jint View::getDrawingCacheBackgroundColor() const
 	{
 		return callMethod<jint>(
 			"getDrawingCacheBackgroundColor",
 			"()I"
 		);
 	}
-	jint View::getDrawingCacheQuality()
+	jint View::getDrawingCacheQuality() const
 	{
 		return callMethod<jint>(
 			"getDrawingCacheQuality",
 			"()I"
 		);
 	}
-	void View::getDrawingRect(android::graphics::Rect arg0)
+	void View::getDrawingRect(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getDrawingRect",
@@ -2105,49 +2105,49 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jlong View::getDrawingTime()
+	jlong View::getDrawingTime() const
 	{
 		return callMethod<jlong>(
 			"getDrawingTime",
 			"()J"
 		);
 	}
-	jfloat View::getElevation()
+	jfloat View::getElevation() const
 	{
 		return callMethod<jfloat>(
 			"getElevation",
 			"()F"
 		);
 	}
-	jint View::getExplicitStyle()
+	jint View::getExplicitStyle() const
 	{
 		return callMethod<jint>(
 			"getExplicitStyle",
 			"()I"
 		);
 	}
-	jboolean View::getFilterTouchesWhenObscured()
+	jboolean View::getFilterTouchesWhenObscured() const
 	{
 		return callMethod<jboolean>(
 			"getFilterTouchesWhenObscured",
 			"()Z"
 		);
 	}
-	jboolean View::getFitsSystemWindows()
+	jboolean View::getFitsSystemWindows() const
 	{
 		return callMethod<jboolean>(
 			"getFitsSystemWindows",
 			"()Z"
 		);
 	}
-	jint View::getFocusable()
+	jint View::getFocusable() const
 	{
 		return callMethod<jint>(
 			"getFocusable",
 			"()I"
 		);
 	}
-	java::util::ArrayList View::getFocusables(jint arg0)
+	java::util::ArrayList View::getFocusables(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFocusables",
@@ -2155,7 +2155,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::getFocusedRect(android::graphics::Rect arg0)
+	void View::getFocusedRect(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getFocusedRect",
@@ -2163,42 +2163,42 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable View::getForeground()
+	android::graphics::drawable::Drawable View::getForeground() const
 	{
 		return callObjectMethod(
 			"getForeground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint View::getForegroundGravity()
+	jint View::getForegroundGravity() const
 	{
 		return callMethod<jint>(
 			"getForegroundGravity",
 			"()I"
 		);
 	}
-	android::graphics::BlendMode View::getForegroundTintBlendMode()
+	android::graphics::BlendMode View::getForegroundTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getForegroundTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList View::getForegroundTintList()
+	android::content::res::ColorStateList View::getForegroundTintList() const
 	{
 		return callObjectMethod(
 			"getForegroundTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode View::getForegroundTintMode()
+	android::graphics::PorterDuff_Mode View::getForegroundTintMode() const
 	{
 		return callObjectMethod(
 			"getForegroundTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	jboolean View::getGlobalVisibleRect(android::graphics::Rect arg0)
+	jboolean View::getGlobalVisibleRect(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getGlobalVisibleRect",
@@ -2206,7 +2206,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::getGlobalVisibleRect(android::graphics::Rect arg0, android::graphics::Point arg1)
+	jboolean View::getGlobalVisibleRect(android::graphics::Rect arg0, android::graphics::Point arg1) const
 	{
 		return callMethod<jboolean>(
 			"getGlobalVisibleRect",
@@ -2215,28 +2215,28 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::os::Handler View::getHandler()
+	android::os::Handler View::getHandler() const
 	{
 		return callObjectMethod(
 			"getHandler",
 			"()Landroid/os/Handler;"
 		);
 	}
-	jboolean View::getHasOverlappingRendering()
+	jboolean View::getHasOverlappingRendering() const
 	{
 		return callMethod<jboolean>(
 			"getHasOverlappingRendering",
 			"()Z"
 		);
 	}
-	jint View::getHeight()
+	jint View::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	void View::getHitRect(android::graphics::Rect arg0)
+	void View::getHitRect(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getHitRect",
@@ -2244,105 +2244,105 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jint View::getHorizontalFadingEdgeLength()
+	jint View::getHorizontalFadingEdgeLength() const
 	{
 		return callMethod<jint>(
 			"getHorizontalFadingEdgeLength",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable View::getHorizontalScrollbarThumbDrawable()
+	android::graphics::drawable::Drawable View::getHorizontalScrollbarThumbDrawable() const
 	{
 		return callObjectMethod(
 			"getHorizontalScrollbarThumbDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable View::getHorizontalScrollbarTrackDrawable()
+	android::graphics::drawable::Drawable View::getHorizontalScrollbarTrackDrawable() const
 	{
 		return callObjectMethod(
 			"getHorizontalScrollbarTrackDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint View::getId()
+	jint View::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint View::getImportantForAccessibility()
+	jint View::getImportantForAccessibility() const
 	{
 		return callMethod<jint>(
 			"getImportantForAccessibility",
 			"()I"
 		);
 	}
-	jint View::getImportantForAutofill()
+	jint View::getImportantForAutofill() const
 	{
 		return callMethod<jint>(
 			"getImportantForAutofill",
 			"()I"
 		);
 	}
-	jint View::getImportantForContentCapture()
+	jint View::getImportantForContentCapture() const
 	{
 		return callMethod<jint>(
 			"getImportantForContentCapture",
 			"()I"
 		);
 	}
-	jboolean View::getKeepScreenOn()
+	jboolean View::getKeepScreenOn() const
 	{
 		return callMethod<jboolean>(
 			"getKeepScreenOn",
 			"()Z"
 		);
 	}
-	android::view::KeyEvent_DispatcherState View::getKeyDispatcherState()
+	android::view::KeyEvent_DispatcherState View::getKeyDispatcherState() const
 	{
 		return callObjectMethod(
 			"getKeyDispatcherState",
 			"()Landroid/view/KeyEvent$DispatcherState;"
 		);
 	}
-	jint View::getLabelFor()
+	jint View::getLabelFor() const
 	{
 		return callMethod<jint>(
 			"getLabelFor",
 			"()I"
 		);
 	}
-	jint View::getLayerType()
+	jint View::getLayerType() const
 	{
 		return callMethod<jint>(
 			"getLayerType",
 			"()I"
 		);
 	}
-	jint View::getLayoutDirection()
+	jint View::getLayoutDirection() const
 	{
 		return callMethod<jint>(
 			"getLayoutDirection",
 			"()I"
 		);
 	}
-	android::view::ViewGroup_LayoutParams View::getLayoutParams()
+	android::view::ViewGroup_LayoutParams View::getLayoutParams() const
 	{
 		return callObjectMethod(
 			"getLayoutParams",
 			"()Landroid/view/ViewGroup$LayoutParams;"
 		);
 	}
-	jint View::getLeft()
+	jint View::getLeft() const
 	{
 		return callMethod<jint>(
 			"getLeft",
 			"()I"
 		);
 	}
-	jboolean View::getLocalVisibleRect(android::graphics::Rect arg0)
+	jboolean View::getLocalVisibleRect(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getLocalVisibleRect",
@@ -2350,7 +2350,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::getLocationInSurface(JIntArray arg0)
+	void View::getLocationInSurface(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"getLocationInSurface",
@@ -2358,7 +2358,7 @@ namespace android::view
 			arg0.object<jintArray>()
 		);
 	}
-	void View::getLocationInWindow(JIntArray arg0)
+	void View::getLocationInWindow(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"getLocationInWindow",
@@ -2366,7 +2366,7 @@ namespace android::view
 			arg0.object<jintArray>()
 		);
 	}
-	void View::getLocationOnScreen(JIntArray arg0)
+	void View::getLocationOnScreen(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"getLocationOnScreen",
@@ -2374,413 +2374,413 @@ namespace android::view
 			arg0.object<jintArray>()
 		);
 	}
-	android::graphics::Matrix View::getMatrix()
+	android::graphics::Matrix View::getMatrix() const
 	{
 		return callObjectMethod(
 			"getMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
-	jint View::getMeasuredHeight()
+	jint View::getMeasuredHeight() const
 	{
 		return callMethod<jint>(
 			"getMeasuredHeight",
 			"()I"
 		);
 	}
-	jint View::getMeasuredHeightAndState()
+	jint View::getMeasuredHeightAndState() const
 	{
 		return callMethod<jint>(
 			"getMeasuredHeightAndState",
 			"()I"
 		);
 	}
-	jint View::getMeasuredState()
+	jint View::getMeasuredState() const
 	{
 		return callMethod<jint>(
 			"getMeasuredState",
 			"()I"
 		);
 	}
-	jint View::getMeasuredWidth()
+	jint View::getMeasuredWidth() const
 	{
 		return callMethod<jint>(
 			"getMeasuredWidth",
 			"()I"
 		);
 	}
-	jint View::getMeasuredWidthAndState()
+	jint View::getMeasuredWidthAndState() const
 	{
 		return callMethod<jint>(
 			"getMeasuredWidthAndState",
 			"()I"
 		);
 	}
-	jint View::getMinimumHeight()
+	jint View::getMinimumHeight() const
 	{
 		return callMethod<jint>(
 			"getMinimumHeight",
 			"()I"
 		);
 	}
-	jint View::getMinimumWidth()
+	jint View::getMinimumWidth() const
 	{
 		return callMethod<jint>(
 			"getMinimumWidth",
 			"()I"
 		);
 	}
-	jint View::getNextClusterForwardId()
+	jint View::getNextClusterForwardId() const
 	{
 		return callMethod<jint>(
 			"getNextClusterForwardId",
 			"()I"
 		);
 	}
-	jint View::getNextFocusDownId()
+	jint View::getNextFocusDownId() const
 	{
 		return callMethod<jint>(
 			"getNextFocusDownId",
 			"()I"
 		);
 	}
-	jint View::getNextFocusForwardId()
+	jint View::getNextFocusForwardId() const
 	{
 		return callMethod<jint>(
 			"getNextFocusForwardId",
 			"()I"
 		);
 	}
-	jint View::getNextFocusLeftId()
+	jint View::getNextFocusLeftId() const
 	{
 		return callMethod<jint>(
 			"getNextFocusLeftId",
 			"()I"
 		);
 	}
-	jint View::getNextFocusRightId()
+	jint View::getNextFocusRightId() const
 	{
 		return callMethod<jint>(
 			"getNextFocusRightId",
 			"()I"
 		);
 	}
-	jint View::getNextFocusUpId()
+	jint View::getNextFocusUpId() const
 	{
 		return callMethod<jint>(
 			"getNextFocusUpId",
 			"()I"
 		);
 	}
-	JObject View::getOnFocusChangeListener()
+	JObject View::getOnFocusChangeListener() const
 	{
 		return callObjectMethod(
 			"getOnFocusChangeListener",
 			"()Landroid/view/View$OnFocusChangeListener;"
 		);
 	}
-	jint View::getOutlineAmbientShadowColor()
+	jint View::getOutlineAmbientShadowColor() const
 	{
 		return callMethod<jint>(
 			"getOutlineAmbientShadowColor",
 			"()I"
 		);
 	}
-	android::view::ViewOutlineProvider View::getOutlineProvider()
+	android::view::ViewOutlineProvider View::getOutlineProvider() const
 	{
 		return callObjectMethod(
 			"getOutlineProvider",
 			"()Landroid/view/ViewOutlineProvider;"
 		);
 	}
-	jint View::getOutlineSpotShadowColor()
+	jint View::getOutlineSpotShadowColor() const
 	{
 		return callMethod<jint>(
 			"getOutlineSpotShadowColor",
 			"()I"
 		);
 	}
-	jint View::getOverScrollMode()
+	jint View::getOverScrollMode() const
 	{
 		return callMethod<jint>(
 			"getOverScrollMode",
 			"()I"
 		);
 	}
-	android::view::ViewOverlay View::getOverlay()
+	android::view::ViewOverlay View::getOverlay() const
 	{
 		return callObjectMethod(
 			"getOverlay",
 			"()Landroid/view/ViewOverlay;"
 		);
 	}
-	jint View::getPaddingBottom()
+	jint View::getPaddingBottom() const
 	{
 		return callMethod<jint>(
 			"getPaddingBottom",
 			"()I"
 		);
 	}
-	jint View::getPaddingEnd()
+	jint View::getPaddingEnd() const
 	{
 		return callMethod<jint>(
 			"getPaddingEnd",
 			"()I"
 		);
 	}
-	jint View::getPaddingLeft()
+	jint View::getPaddingLeft() const
 	{
 		return callMethod<jint>(
 			"getPaddingLeft",
 			"()I"
 		);
 	}
-	jint View::getPaddingRight()
+	jint View::getPaddingRight() const
 	{
 		return callMethod<jint>(
 			"getPaddingRight",
 			"()I"
 		);
 	}
-	jint View::getPaddingStart()
+	jint View::getPaddingStart() const
 	{
 		return callMethod<jint>(
 			"getPaddingStart",
 			"()I"
 		);
 	}
-	jint View::getPaddingTop()
+	jint View::getPaddingTop() const
 	{
 		return callMethod<jint>(
 			"getPaddingTop",
 			"()I"
 		);
 	}
-	JObject View::getParent()
+	JObject View::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/ViewParent;"
 		);
 	}
-	JObject View::getParentForAccessibility()
+	JObject View::getParentForAccessibility() const
 	{
 		return callObjectMethod(
 			"getParentForAccessibility",
 			"()Landroid/view/ViewParent;"
 		);
 	}
-	jfloat View::getPivotX()
+	jfloat View::getPivotX() const
 	{
 		return callMethod<jfloat>(
 			"getPivotX",
 			"()F"
 		);
 	}
-	jfloat View::getPivotY()
+	jfloat View::getPivotY() const
 	{
 		return callMethod<jfloat>(
 			"getPivotY",
 			"()F"
 		);
 	}
-	android::view::PointerIcon View::getPointerIcon()
+	android::view::PointerIcon View::getPointerIcon() const
 	{
 		return callObjectMethod(
 			"getPointerIcon",
 			"()Landroid/view/PointerIcon;"
 		);
 	}
-	JArray View::getReceiveContentMimeTypes()
+	JArray View::getReceiveContentMimeTypes() const
 	{
 		return callObjectMethod(
 			"getReceiveContentMimeTypes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	android::content::res::Resources View::getResources()
+	android::content::res::Resources View::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	jboolean View::getRevealOnFocusHint()
+	jboolean View::getRevealOnFocusHint() const
 	{
 		return callMethod<jboolean>(
 			"getRevealOnFocusHint",
 			"()Z"
 		);
 	}
-	jint View::getRight()
+	jint View::getRight() const
 	{
 		return callMethod<jint>(
 			"getRight",
 			"()I"
 		);
 	}
-	JObject View::getRootSurfaceControl()
+	JObject View::getRootSurfaceControl() const
 	{
 		return callObjectMethod(
 			"getRootSurfaceControl",
 			"()Landroid/view/AttachedSurfaceControl;"
 		);
 	}
-	android::view::View View::getRootView()
+	android::view::View View::getRootView() const
 	{
 		return callObjectMethod(
 			"getRootView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::WindowInsets View::getRootWindowInsets()
+	android::view::WindowInsets View::getRootWindowInsets() const
 	{
 		return callObjectMethod(
 			"getRootWindowInsets",
 			"()Landroid/view/WindowInsets;"
 		);
 	}
-	jfloat View::getRotation()
+	jfloat View::getRotation() const
 	{
 		return callMethod<jfloat>(
 			"getRotation",
 			"()F"
 		);
 	}
-	jfloat View::getRotationX()
+	jfloat View::getRotationX() const
 	{
 		return callMethod<jfloat>(
 			"getRotationX",
 			"()F"
 		);
 	}
-	jfloat View::getRotationY()
+	jfloat View::getRotationY() const
 	{
 		return callMethod<jfloat>(
 			"getRotationY",
 			"()F"
 		);
 	}
-	jfloat View::getScaleX()
+	jfloat View::getScaleX() const
 	{
 		return callMethod<jfloat>(
 			"getScaleX",
 			"()F"
 		);
 	}
-	jfloat View::getScaleY()
+	jfloat View::getScaleY() const
 	{
 		return callMethod<jfloat>(
 			"getScaleY",
 			"()F"
 		);
 	}
-	jint View::getScrollBarDefaultDelayBeforeFade()
+	jint View::getScrollBarDefaultDelayBeforeFade() const
 	{
 		return callMethod<jint>(
 			"getScrollBarDefaultDelayBeforeFade",
 			"()I"
 		);
 	}
-	jint View::getScrollBarFadeDuration()
+	jint View::getScrollBarFadeDuration() const
 	{
 		return callMethod<jint>(
 			"getScrollBarFadeDuration",
 			"()I"
 		);
 	}
-	jint View::getScrollBarSize()
+	jint View::getScrollBarSize() const
 	{
 		return callMethod<jint>(
 			"getScrollBarSize",
 			"()I"
 		);
 	}
-	jint View::getScrollBarStyle()
+	jint View::getScrollBarStyle() const
 	{
 		return callMethod<jint>(
 			"getScrollBarStyle",
 			"()I"
 		);
 	}
-	jint View::getScrollCaptureHint()
+	jint View::getScrollCaptureHint() const
 	{
 		return callMethod<jint>(
 			"getScrollCaptureHint",
 			"()I"
 		);
 	}
-	jint View::getScrollIndicators()
+	jint View::getScrollIndicators() const
 	{
 		return callMethod<jint>(
 			"getScrollIndicators",
 			"()I"
 		);
 	}
-	jint View::getScrollX()
+	jint View::getScrollX() const
 	{
 		return callMethod<jint>(
 			"getScrollX",
 			"()I"
 		);
 	}
-	jint View::getScrollY()
+	jint View::getScrollY() const
 	{
 		return callMethod<jint>(
 			"getScrollY",
 			"()I"
 		);
 	}
-	jint View::getSolidColor()
+	jint View::getSolidColor() const
 	{
 		return callMethod<jint>(
 			"getSolidColor",
 			"()I"
 		);
 	}
-	jint View::getSourceLayoutResId()
+	jint View::getSourceLayoutResId() const
 	{
 		return callMethod<jint>(
 			"getSourceLayoutResId",
 			"()I"
 		);
 	}
-	JString View::getStateDescription()
+	JString View::getStateDescription() const
 	{
 		return callObjectMethod(
 			"getStateDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::animation::StateListAnimator View::getStateListAnimator()
+	android::animation::StateListAnimator View::getStateListAnimator() const
 	{
 		return callObjectMethod(
 			"getStateListAnimator",
 			"()Landroid/animation/StateListAnimator;"
 		);
 	}
-	JObject View::getSystemGestureExclusionRects()
+	JObject View::getSystemGestureExclusionRects() const
 	{
 		return callObjectMethod(
 			"getSystemGestureExclusionRects",
 			"()Ljava/util/List;"
 		);
 	}
-	jint View::getSystemUiVisibility()
+	jint View::getSystemUiVisibility() const
 	{
 		return callMethod<jint>(
 			"getSystemUiVisibility",
 			"()I"
 		);
 	}
-	JObject View::getTag()
+	JObject View::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject View::getTag(jint arg0)
+	JObject View::getTag(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTag",
@@ -2788,189 +2788,189 @@ namespace android::view
 			arg0
 		);
 	}
-	jint View::getTextAlignment()
+	jint View::getTextAlignment() const
 	{
 		return callMethod<jint>(
 			"getTextAlignment",
 			"()I"
 		);
 	}
-	jint View::getTextDirection()
+	jint View::getTextDirection() const
 	{
 		return callMethod<jint>(
 			"getTextDirection",
 			"()I"
 		);
 	}
-	JString View::getTooltipText()
+	JString View::getTooltipText() const
 	{
 		return callObjectMethod(
 			"getTooltipText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint View::getTop()
+	jint View::getTop() const
 	{
 		return callMethod<jint>(
 			"getTop",
 			"()I"
 		);
 	}
-	android::view::TouchDelegate View::getTouchDelegate()
+	android::view::TouchDelegate View::getTouchDelegate() const
 	{
 		return callObjectMethod(
 			"getTouchDelegate",
 			"()Landroid/view/TouchDelegate;"
 		);
 	}
-	java::util::ArrayList View::getTouchables()
+	java::util::ArrayList View::getTouchables() const
 	{
 		return callObjectMethod(
 			"getTouchables",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jfloat View::getTransitionAlpha()
+	jfloat View::getTransitionAlpha() const
 	{
 		return callMethod<jfloat>(
 			"getTransitionAlpha",
 			"()F"
 		);
 	}
-	JString View::getTransitionName()
+	JString View::getTransitionName() const
 	{
 		return callObjectMethod(
 			"getTransitionName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jfloat View::getTranslationX()
+	jfloat View::getTranslationX() const
 	{
 		return callMethod<jfloat>(
 			"getTranslationX",
 			"()F"
 		);
 	}
-	jfloat View::getTranslationY()
+	jfloat View::getTranslationY() const
 	{
 		return callMethod<jfloat>(
 			"getTranslationY",
 			"()F"
 		);
 	}
-	jfloat View::getTranslationZ()
+	jfloat View::getTranslationZ() const
 	{
 		return callMethod<jfloat>(
 			"getTranslationZ",
 			"()F"
 		);
 	}
-	jlong View::getUniqueDrawingId()
+	jlong View::getUniqueDrawingId() const
 	{
 		return callMethod<jlong>(
 			"getUniqueDrawingId",
 			"()J"
 		);
 	}
-	jint View::getVerticalFadingEdgeLength()
+	jint View::getVerticalFadingEdgeLength() const
 	{
 		return callMethod<jint>(
 			"getVerticalFadingEdgeLength",
 			"()I"
 		);
 	}
-	jint View::getVerticalScrollbarPosition()
+	jint View::getVerticalScrollbarPosition() const
 	{
 		return callMethod<jint>(
 			"getVerticalScrollbarPosition",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable View::getVerticalScrollbarThumbDrawable()
+	android::graphics::drawable::Drawable View::getVerticalScrollbarThumbDrawable() const
 	{
 		return callObjectMethod(
 			"getVerticalScrollbarThumbDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable View::getVerticalScrollbarTrackDrawable()
+	android::graphics::drawable::Drawable View::getVerticalScrollbarTrackDrawable() const
 	{
 		return callObjectMethod(
 			"getVerticalScrollbarTrackDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint View::getVerticalScrollbarWidth()
+	jint View::getVerticalScrollbarWidth() const
 	{
 		return callMethod<jint>(
 			"getVerticalScrollbarWidth",
 			"()I"
 		);
 	}
-	android::view::translation::ViewTranslationResponse View::getViewTranslationResponse()
+	android::view::translation::ViewTranslationResponse View::getViewTranslationResponse() const
 	{
 		return callObjectMethod(
 			"getViewTranslationResponse",
 			"()Landroid/view/translation/ViewTranslationResponse;"
 		);
 	}
-	android::view::ViewTreeObserver View::getViewTreeObserver()
+	android::view::ViewTreeObserver View::getViewTreeObserver() const
 	{
 		return callObjectMethod(
 			"getViewTreeObserver",
 			"()Landroid/view/ViewTreeObserver;"
 		);
 	}
-	jint View::getVisibility()
+	jint View::getVisibility() const
 	{
 		return callMethod<jint>(
 			"getVisibility",
 			"()I"
 		);
 	}
-	jint View::getWidth()
+	jint View::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	android::view::WindowId View::getWindowId()
+	android::view::WindowId View::getWindowId() const
 	{
 		return callObjectMethod(
 			"getWindowId",
 			"()Landroid/view/WindowId;"
 		);
 	}
-	JObject View::getWindowInsetsController()
+	JObject View::getWindowInsetsController() const
 	{
 		return callObjectMethod(
 			"getWindowInsetsController",
 			"()Landroid/view/WindowInsetsController;"
 		);
 	}
-	jint View::getWindowSystemUiVisibility()
+	jint View::getWindowSystemUiVisibility() const
 	{
 		return callMethod<jint>(
 			"getWindowSystemUiVisibility",
 			"()I"
 		);
 	}
-	JObject View::getWindowToken()
+	JObject View::getWindowToken() const
 	{
 		return callObjectMethod(
 			"getWindowToken",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	jint View::getWindowVisibility()
+	jint View::getWindowVisibility() const
 	{
 		return callMethod<jint>(
 			"getWindowVisibility",
 			"()I"
 		);
 	}
-	void View::getWindowVisibleDisplayFrame(android::graphics::Rect arg0)
+	void View::getWindowVisibleDisplayFrame(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getWindowVisibleDisplayFrame",
@@ -2978,105 +2978,105 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jfloat View::getX()
+	jfloat View::getX() const
 	{
 		return callMethod<jfloat>(
 			"getX",
 			"()F"
 		);
 	}
-	jfloat View::getY()
+	jfloat View::getY() const
 	{
 		return callMethod<jfloat>(
 			"getY",
 			"()F"
 		);
 	}
-	jfloat View::getZ()
+	jfloat View::getZ() const
 	{
 		return callMethod<jfloat>(
 			"getZ",
 			"()F"
 		);
 	}
-	jboolean View::hasExplicitFocusable()
+	jboolean View::hasExplicitFocusable() const
 	{
 		return callMethod<jboolean>(
 			"hasExplicitFocusable",
 			"()Z"
 		);
 	}
-	jboolean View::hasFocus()
+	jboolean View::hasFocus() const
 	{
 		return callMethod<jboolean>(
 			"hasFocus",
 			"()Z"
 		);
 	}
-	jboolean View::hasFocusable()
+	jboolean View::hasFocusable() const
 	{
 		return callMethod<jboolean>(
 			"hasFocusable",
 			"()Z"
 		);
 	}
-	jboolean View::hasNestedScrollingParent()
+	jboolean View::hasNestedScrollingParent() const
 	{
 		return callMethod<jboolean>(
 			"hasNestedScrollingParent",
 			"()Z"
 		);
 	}
-	jboolean View::hasOnClickListeners()
+	jboolean View::hasOnClickListeners() const
 	{
 		return callMethod<jboolean>(
 			"hasOnClickListeners",
 			"()Z"
 		);
 	}
-	jboolean View::hasOnLongClickListeners()
+	jboolean View::hasOnLongClickListeners() const
 	{
 		return callMethod<jboolean>(
 			"hasOnLongClickListeners",
 			"()Z"
 		);
 	}
-	jboolean View::hasOverlappingRendering()
+	jboolean View::hasOverlappingRendering() const
 	{
 		return callMethod<jboolean>(
 			"hasOverlappingRendering",
 			"()Z"
 		);
 	}
-	jboolean View::hasPointerCapture()
+	jboolean View::hasPointerCapture() const
 	{
 		return callMethod<jboolean>(
 			"hasPointerCapture",
 			"()Z"
 		);
 	}
-	jboolean View::hasTransientState()
+	jboolean View::hasTransientState() const
 	{
 		return callMethod<jboolean>(
 			"hasTransientState",
 			"()Z"
 		);
 	}
-	jboolean View::hasWindowFocus()
+	jboolean View::hasWindowFocus() const
 	{
 		return callMethod<jboolean>(
 			"hasWindowFocus",
 			"()Z"
 		);
 	}
-	void View::invalidate()
+	void View::invalidate() const
 	{
 		callMethod<void>(
 			"invalidate",
 			"()V"
 		);
 	}
-	void View::invalidate(android::graphics::Rect arg0)
+	void View::invalidate(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"invalidate",
@@ -3084,7 +3084,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::invalidate(jint arg0, jint arg1, jint arg2, jint arg3)
+	void View::invalidate(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"invalidate",
@@ -3095,7 +3095,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::invalidateDrawable(android::graphics::drawable::Drawable arg0)
+	void View::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"invalidateDrawable",
@@ -3103,364 +3103,364 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::invalidateOutline()
+	void View::invalidateOutline() const
 	{
 		callMethod<void>(
 			"invalidateOutline",
 			"()V"
 		);
 	}
-	jboolean View::isAccessibilityFocused()
+	jboolean View::isAccessibilityFocused() const
 	{
 		return callMethod<jboolean>(
 			"isAccessibilityFocused",
 			"()Z"
 		);
 	}
-	jboolean View::isAccessibilityHeading()
+	jboolean View::isAccessibilityHeading() const
 	{
 		return callMethod<jboolean>(
 			"isAccessibilityHeading",
 			"()Z"
 		);
 	}
-	jboolean View::isActivated()
+	jboolean View::isActivated() const
 	{
 		return callMethod<jboolean>(
 			"isActivated",
 			"()Z"
 		);
 	}
-	jboolean View::isAttachedToWindow()
+	jboolean View::isAttachedToWindow() const
 	{
 		return callMethod<jboolean>(
 			"isAttachedToWindow",
 			"()Z"
 		);
 	}
-	jboolean View::isClickable()
+	jboolean View::isClickable() const
 	{
 		return callMethod<jboolean>(
 			"isClickable",
 			"()Z"
 		);
 	}
-	jboolean View::isContextClickable()
+	jboolean View::isContextClickable() const
 	{
 		return callMethod<jboolean>(
 			"isContextClickable",
 			"()Z"
 		);
 	}
-	jboolean View::isDirty()
+	jboolean View::isDirty() const
 	{
 		return callMethod<jboolean>(
 			"isDirty",
 			"()Z"
 		);
 	}
-	jboolean View::isDrawingCacheEnabled()
+	jboolean View::isDrawingCacheEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isDrawingCacheEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isDuplicateParentStateEnabled()
+	jboolean View::isDuplicateParentStateEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isDuplicateParentStateEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isEnabled()
+	jboolean View::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isFocusable()
+	jboolean View::isFocusable() const
 	{
 		return callMethod<jboolean>(
 			"isFocusable",
 			"()Z"
 		);
 	}
-	jboolean View::isFocusableInTouchMode()
+	jboolean View::isFocusableInTouchMode() const
 	{
 		return callMethod<jboolean>(
 			"isFocusableInTouchMode",
 			"()Z"
 		);
 	}
-	jboolean View::isFocused()
+	jboolean View::isFocused() const
 	{
 		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
-	jboolean View::isFocusedByDefault()
+	jboolean View::isFocusedByDefault() const
 	{
 		return callMethod<jboolean>(
 			"isFocusedByDefault",
 			"()Z"
 		);
 	}
-	jboolean View::isForceDarkAllowed()
+	jboolean View::isForceDarkAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isForceDarkAllowed",
 			"()Z"
 		);
 	}
-	jboolean View::isHapticFeedbackEnabled()
+	jboolean View::isHapticFeedbackEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isHapticFeedbackEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isHardwareAccelerated()
+	jboolean View::isHardwareAccelerated() const
 	{
 		return callMethod<jboolean>(
 			"isHardwareAccelerated",
 			"()Z"
 		);
 	}
-	jboolean View::isHorizontalFadingEdgeEnabled()
+	jboolean View::isHorizontalFadingEdgeEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isHorizontalFadingEdgeEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isHorizontalScrollBarEnabled()
+	jboolean View::isHorizontalScrollBarEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isHorizontalScrollBarEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isHovered()
+	jboolean View::isHovered() const
 	{
 		return callMethod<jboolean>(
 			"isHovered",
 			"()Z"
 		);
 	}
-	jboolean View::isImportantForAccessibility()
+	jboolean View::isImportantForAccessibility() const
 	{
 		return callMethod<jboolean>(
 			"isImportantForAccessibility",
 			"()Z"
 		);
 	}
-	jboolean View::isImportantForAutofill()
+	jboolean View::isImportantForAutofill() const
 	{
 		return callMethod<jboolean>(
 			"isImportantForAutofill",
 			"()Z"
 		);
 	}
-	jboolean View::isImportantForContentCapture()
+	jboolean View::isImportantForContentCapture() const
 	{
 		return callMethod<jboolean>(
 			"isImportantForContentCapture",
 			"()Z"
 		);
 	}
-	jboolean View::isInEditMode()
+	jboolean View::isInEditMode() const
 	{
 		return callMethod<jboolean>(
 			"isInEditMode",
 			"()Z"
 		);
 	}
-	jboolean View::isInLayout()
+	jboolean View::isInLayout() const
 	{
 		return callMethod<jboolean>(
 			"isInLayout",
 			"()Z"
 		);
 	}
-	jboolean View::isInTouchMode()
+	jboolean View::isInTouchMode() const
 	{
 		return callMethod<jboolean>(
 			"isInTouchMode",
 			"()Z"
 		);
 	}
-	jboolean View::isKeyboardNavigationCluster()
+	jboolean View::isKeyboardNavigationCluster() const
 	{
 		return callMethod<jboolean>(
 			"isKeyboardNavigationCluster",
 			"()Z"
 		);
 	}
-	jboolean View::isLaidOut()
+	jboolean View::isLaidOut() const
 	{
 		return callMethod<jboolean>(
 			"isLaidOut",
 			"()Z"
 		);
 	}
-	jboolean View::isLayoutDirectionResolved()
+	jboolean View::isLayoutDirectionResolved() const
 	{
 		return callMethod<jboolean>(
 			"isLayoutDirectionResolved",
 			"()Z"
 		);
 	}
-	jboolean View::isLayoutRequested()
+	jboolean View::isLayoutRequested() const
 	{
 		return callMethod<jboolean>(
 			"isLayoutRequested",
 			"()Z"
 		);
 	}
-	jboolean View::isLongClickable()
+	jboolean View::isLongClickable() const
 	{
 		return callMethod<jboolean>(
 			"isLongClickable",
 			"()Z"
 		);
 	}
-	jboolean View::isNestedScrollingEnabled()
+	jboolean View::isNestedScrollingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isNestedScrollingEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isOpaque()
+	jboolean View::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	jboolean View::isPaddingRelative()
+	jboolean View::isPaddingRelative() const
 	{
 		return callMethod<jboolean>(
 			"isPaddingRelative",
 			"()Z"
 		);
 	}
-	jboolean View::isPivotSet()
+	jboolean View::isPivotSet() const
 	{
 		return callMethod<jboolean>(
 			"isPivotSet",
 			"()Z"
 		);
 	}
-	jboolean View::isPressed()
+	jboolean View::isPressed() const
 	{
 		return callMethod<jboolean>(
 			"isPressed",
 			"()Z"
 		);
 	}
-	jboolean View::isSaveEnabled()
+	jboolean View::isSaveEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSaveEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isSaveFromParentEnabled()
+	jboolean View::isSaveFromParentEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSaveFromParentEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isScreenReaderFocusable()
+	jboolean View::isScreenReaderFocusable() const
 	{
 		return callMethod<jboolean>(
 			"isScreenReaderFocusable",
 			"()Z"
 		);
 	}
-	jboolean View::isScrollContainer()
+	jboolean View::isScrollContainer() const
 	{
 		return callMethod<jboolean>(
 			"isScrollContainer",
 			"()Z"
 		);
 	}
-	jboolean View::isScrollbarFadingEnabled()
+	jboolean View::isScrollbarFadingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isScrollbarFadingEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isSelected()
+	jboolean View::isSelected() const
 	{
 		return callMethod<jboolean>(
 			"isSelected",
 			"()Z"
 		);
 	}
-	jboolean View::isShowingLayoutBounds()
+	jboolean View::isShowingLayoutBounds() const
 	{
 		return callMethod<jboolean>(
 			"isShowingLayoutBounds",
 			"()Z"
 		);
 	}
-	jboolean View::isShown()
+	jboolean View::isShown() const
 	{
 		return callMethod<jboolean>(
 			"isShown",
 			"()Z"
 		);
 	}
-	jboolean View::isSoundEffectsEnabled()
+	jboolean View::isSoundEffectsEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSoundEffectsEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isTemporarilyDetached()
+	jboolean View::isTemporarilyDetached() const
 	{
 		return callMethod<jboolean>(
 			"isTemporarilyDetached",
 			"()Z"
 		);
 	}
-	jboolean View::isTextAlignmentResolved()
+	jboolean View::isTextAlignmentResolved() const
 	{
 		return callMethod<jboolean>(
 			"isTextAlignmentResolved",
 			"()Z"
 		);
 	}
-	jboolean View::isTextDirectionResolved()
+	jboolean View::isTextDirectionResolved() const
 	{
 		return callMethod<jboolean>(
 			"isTextDirectionResolved",
 			"()Z"
 		);
 	}
-	jboolean View::isVerticalFadingEdgeEnabled()
+	jboolean View::isVerticalFadingEdgeEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isVerticalFadingEdgeEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isVerticalScrollBarEnabled()
+	jboolean View::isVerticalScrollBarEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isVerticalScrollBarEnabled",
 			"()Z"
 		);
 	}
-	jboolean View::isVisibleToUserForAutofill(jint arg0)
+	jboolean View::isVisibleToUserForAutofill(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isVisibleToUserForAutofill",
@@ -3468,14 +3468,14 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::jumpDrawablesToCurrentState()
+	void View::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	android::view::View View::keyboardNavigationClusterSearch(android::view::View arg0, jint arg1)
+	android::view::View View::keyboardNavigationClusterSearch(android::view::View arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"keyboardNavigationClusterSearch",
@@ -3484,7 +3484,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::layout(jint arg0, jint arg1, jint arg2, jint arg3)
+	void View::layout(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"layout",
@@ -3495,7 +3495,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::measure(jint arg0, jint arg1)
+	void View::measure(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"measure",
@@ -3504,7 +3504,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::offsetLeftAndRight(jint arg0)
+	void View::offsetLeftAndRight(jint arg0) const
 	{
 		callMethod<void>(
 			"offsetLeftAndRight",
@@ -3512,7 +3512,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::offsetTopAndBottom(jint arg0)
+	void View::offsetTopAndBottom(jint arg0) const
 	{
 		callMethod<void>(
 			"offsetTopAndBottom",
@@ -3520,7 +3520,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::WindowInsets View::onApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets View::onApplyWindowInsets(android::view::WindowInsets arg0) const
 	{
 		return callObjectMethod(
 			"onApplyWindowInsets",
@@ -3528,14 +3528,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onCancelPendingInputEvents()
+	void View::onCancelPendingInputEvents() const
 	{
 		callMethod<void>(
 			"onCancelPendingInputEvents",
 			"()V"
 		);
 	}
-	jboolean View::onCapturedPointerEvent(android::view::MotionEvent arg0)
+	jboolean View::onCapturedPointerEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onCapturedPointerEvent",
@@ -3543,14 +3543,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::onCheckIsTextEditor()
+	jboolean View::onCheckIsTextEditor() const
 	{
 		return callMethod<jboolean>(
 			"onCheckIsTextEditor",
 			"()Z"
 		);
 	}
-	JObject View::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject View::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0) const
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -3558,7 +3558,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onCreateViewTranslationRequest(JIntArray arg0, JObject arg1)
+	void View::onCreateViewTranslationRequest(JIntArray arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onCreateViewTranslationRequest",
@@ -3567,7 +3567,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View::onCreateVirtualViewTranslationRequests(JLongArray arg0, JIntArray arg1, JObject arg2)
+	void View::onCreateVirtualViewTranslationRequests(JLongArray arg0, JIntArray arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onCreateVirtualViewTranslationRequests",
@@ -3577,7 +3577,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	jboolean View::onDragEvent(android::view::DragEvent arg0)
+	jboolean View::onDragEvent(android::view::DragEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onDragEvent",
@@ -3585,7 +3585,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onDrawForeground(android::graphics::Canvas arg0)
+	void View::onDrawForeground(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"onDrawForeground",
@@ -3593,7 +3593,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::onFilterTouchEventForSecurity(android::view::MotionEvent arg0)
+	jboolean View::onFilterTouchEventForSecurity(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onFilterTouchEventForSecurity",
@@ -3601,14 +3601,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onFinishTemporaryDetach()
+	void View::onFinishTemporaryDetach() const
 	{
 		callMethod<void>(
 			"onFinishTemporaryDetach",
 			"()V"
 		);
 	}
-	jboolean View::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean View::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -3616,7 +3616,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onHoverChanged(jboolean arg0)
+	void View::onHoverChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onHoverChanged",
@@ -3624,7 +3624,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::onHoverEvent(android::view::MotionEvent arg0)
+	jboolean View::onHoverEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onHoverEvent",
@@ -3632,7 +3632,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onInitializeAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	void View::onInitializeAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityEvent",
@@ -3640,7 +3640,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0)
+	void View::onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityNodeInfo",
@@ -3648,7 +3648,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean View::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -3657,7 +3657,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::onKeyLongPress(jint arg0, android::view::KeyEvent arg1)
+	jboolean View::onKeyLongPress(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyLongPress",
@@ -3666,7 +3666,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean View::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -3676,7 +3676,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	jboolean View::onKeyPreIme(jint arg0, android::view::KeyEvent arg1)
+	jboolean View::onKeyPreIme(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyPreIme",
@@ -3685,7 +3685,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::onKeyShortcut(jint arg0, android::view::KeyEvent arg1)
+	jboolean View::onKeyShortcut(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyShortcut",
@@ -3694,7 +3694,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean View::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -3703,7 +3703,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View::onPointerCaptureChange(jboolean arg0)
+	void View::onPointerCaptureChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onPointerCaptureChange",
@@ -3711,7 +3711,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::onPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	void View::onPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		callMethod<void>(
 			"onPopulateAccessibilityEvent",
@@ -3719,7 +3719,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
+	void View::onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProvideAutofillStructure",
@@ -3728,7 +3728,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::onProvideAutofillVirtualStructure(android::view::ViewStructure arg0, jint arg1)
+	void View::onProvideAutofillVirtualStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProvideAutofillVirtualStructure",
@@ -3737,7 +3737,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::onProvideContentCaptureStructure(android::view::ViewStructure arg0, jint arg1)
+	void View::onProvideContentCaptureStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProvideContentCaptureStructure",
@@ -3746,7 +3746,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::onProvideStructure(android::view::ViewStructure arg0)
+	void View::onProvideStructure(android::view::ViewStructure arg0) const
 	{
 		callMethod<void>(
 			"onProvideStructure",
@@ -3754,7 +3754,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onProvideVirtualStructure(android::view::ViewStructure arg0)
+	void View::onProvideVirtualStructure(android::view::ViewStructure arg0) const
 	{
 		callMethod<void>(
 			"onProvideVirtualStructure",
@@ -3762,7 +3762,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ContentInfo View::onReceiveContent(android::view::ContentInfo arg0)
+	android::view::ContentInfo View::onReceiveContent(android::view::ContentInfo arg0) const
 	{
 		return callObjectMethod(
 			"onReceiveContent",
@@ -3770,7 +3770,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::PointerIcon View::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon View::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -3779,7 +3779,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::onRtlPropertiesChanged(jint arg0)
+	void View::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -3787,7 +3787,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::onScreenStateChanged(jint arg0)
+	void View::onScreenStateChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onScreenStateChanged",
@@ -3795,7 +3795,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::onScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, JObject arg2)
+	void View::onScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onScrollCaptureSearch",
@@ -3805,14 +3805,14 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	void View::onStartTemporaryDetach()
+	void View::onStartTemporaryDetach() const
 	{
 		callMethod<void>(
 			"onStartTemporaryDetach",
 			"()V"
 		);
 	}
-	jboolean View::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean View::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -3820,7 +3820,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean View::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -3828,7 +3828,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onViewTranslationResponse(android::view::translation::ViewTranslationResponse arg0)
+	void View::onViewTranslationResponse(android::view::translation::ViewTranslationResponse arg0) const
 	{
 		callMethod<void>(
 			"onViewTranslationResponse",
@@ -3836,7 +3836,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onVirtualViewTranslationResponses(android::util::LongSparseArray arg0)
+	void View::onVirtualViewTranslationResponses(android::util::LongSparseArray arg0) const
 	{
 		callMethod<void>(
 			"onVirtualViewTranslationResponses",
@@ -3844,7 +3844,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::onVisibilityAggregated(jboolean arg0)
+	void View::onVisibilityAggregated(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onVisibilityAggregated",
@@ -3852,7 +3852,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::onWindowFocusChanged(jboolean arg0)
+	void View::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -3860,7 +3860,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::onWindowSystemUiVisibilityChanged(jint arg0)
+	void View::onWindowSystemUiVisibilityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onWindowSystemUiVisibilityChanged",
@@ -3868,7 +3868,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::performAccessibilityAction(jint arg0, android::os::Bundle arg1)
+	jboolean View::performAccessibilityAction(jint arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"performAccessibilityAction",
@@ -3877,21 +3877,21 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::performClick()
+	jboolean View::performClick() const
 	{
 		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
-	jboolean View::performContextClick()
+	jboolean View::performContextClick() const
 	{
 		return callMethod<jboolean>(
 			"performContextClick",
 			"()Z"
 		);
 	}
-	jboolean View::performContextClick(jfloat arg0, jfloat arg1)
+	jboolean View::performContextClick(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"performContextClick",
@@ -3900,7 +3900,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jboolean View::performHapticFeedback(jint arg0)
+	jboolean View::performHapticFeedback(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"performHapticFeedback",
@@ -3908,7 +3908,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::performHapticFeedback(jint arg0, jint arg1)
+	jboolean View::performHapticFeedback(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"performHapticFeedback",
@@ -3917,14 +3917,14 @@ namespace android::view
 			arg1
 		);
 	}
-	jboolean View::performLongClick()
+	jboolean View::performLongClick() const
 	{
 		return callMethod<jboolean>(
 			"performLongClick",
 			"()Z"
 		);
 	}
-	jboolean View::performLongClick(jfloat arg0, jfloat arg1)
+	jboolean View::performLongClick(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"performLongClick",
@@ -3933,7 +3933,7 @@ namespace android::view
 			arg1
 		);
 	}
-	android::view::ContentInfo View::performReceiveContent(android::view::ContentInfo arg0)
+	android::view::ContentInfo View::performReceiveContent(android::view::ContentInfo arg0) const
 	{
 		return callObjectMethod(
 			"performReceiveContent",
@@ -3941,7 +3941,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::playSoundEffect(jint arg0)
+	void View::playSoundEffect(jint arg0) const
 	{
 		callMethod<void>(
 			"playSoundEffect",
@@ -3949,7 +3949,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::post(JObject arg0)
+	jboolean View::post(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"post",
@@ -3957,7 +3957,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::postDelayed(JObject arg0, jlong arg1)
+	jboolean View::postDelayed(JObject arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"postDelayed",
@@ -3966,14 +3966,14 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::postInvalidate()
+	void View::postInvalidate() const
 	{
 		callMethod<void>(
 			"postInvalidate",
 			"()V"
 		);
 	}
-	void View::postInvalidate(jint arg0, jint arg1, jint arg2, jint arg3)
+	void View::postInvalidate(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"postInvalidate",
@@ -3984,7 +3984,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::postInvalidateDelayed(jlong arg0)
+	void View::postInvalidateDelayed(jlong arg0) const
 	{
 		callMethod<void>(
 			"postInvalidateDelayed",
@@ -3992,7 +3992,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::postInvalidateDelayed(jlong arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void View::postInvalidateDelayed(jlong arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"postInvalidateDelayed",
@@ -4004,14 +4004,14 @@ namespace android::view
 			arg4
 		);
 	}
-	void View::postInvalidateOnAnimation()
+	void View::postInvalidateOnAnimation() const
 	{
 		callMethod<void>(
 			"postInvalidateOnAnimation",
 			"()V"
 		);
 	}
-	void View::postInvalidateOnAnimation(jint arg0, jint arg1, jint arg2, jint arg3)
+	void View::postInvalidateOnAnimation(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"postInvalidateOnAnimation",
@@ -4022,7 +4022,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::postOnAnimation(JObject arg0)
+	void View::postOnAnimation(JObject arg0) const
 	{
 		callMethod<void>(
 			"postOnAnimation",
@@ -4030,7 +4030,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::postOnAnimationDelayed(JObject arg0, jlong arg1)
+	void View::postOnAnimationDelayed(JObject arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"postOnAnimationDelayed",
@@ -4039,21 +4039,21 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::refreshDrawableState()
+	void View::refreshDrawableState() const
 	{
 		callMethod<void>(
 			"refreshDrawableState",
 			"()V"
 		);
 	}
-	void View::releasePointerCapture()
+	void View::releasePointerCapture() const
 	{
 		callMethod<void>(
 			"releasePointerCapture",
 			"()V"
 		);
 	}
-	jboolean View::removeCallbacks(JObject arg0)
+	jboolean View::removeCallbacks(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeCallbacks",
@@ -4061,7 +4061,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::removeOnAttachStateChangeListener(JObject arg0)
+	void View::removeOnAttachStateChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnAttachStateChangeListener",
@@ -4069,7 +4069,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::removeOnLayoutChangeListener(JObject arg0)
+	void View::removeOnLayoutChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnLayoutChangeListener",
@@ -4077,7 +4077,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::removeOnUnhandledKeyEventListener(JObject arg0)
+	void View::removeOnUnhandledKeyEventListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnUnhandledKeyEventListener",
@@ -4085,28 +4085,28 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::requestApplyInsets()
+	void View::requestApplyInsets() const
 	{
 		callMethod<void>(
 			"requestApplyInsets",
 			"()V"
 		);
 	}
-	void View::requestFitSystemWindows()
+	void View::requestFitSystemWindows() const
 	{
 		callMethod<void>(
 			"requestFitSystemWindows",
 			"()V"
 		);
 	}
-	jboolean View::requestFocus()
+	jboolean View::requestFocus() const
 	{
 		return callMethod<jboolean>(
 			"requestFocus",
 			"()Z"
 		);
 	}
-	jboolean View::requestFocus(jint arg0)
+	jboolean View::requestFocus(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestFocus",
@@ -4114,7 +4114,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::requestFocus(jint arg0, android::graphics::Rect arg1)
+	jboolean View::requestFocus(jint arg0, android::graphics::Rect arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestFocus",
@@ -4123,28 +4123,28 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::requestFocusFromTouch()
+	jboolean View::requestFocusFromTouch() const
 	{
 		return callMethod<jboolean>(
 			"requestFocusFromTouch",
 			"()Z"
 		);
 	}
-	void View::requestLayout()
+	void View::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void View::requestPointerCapture()
+	void View::requestPointerCapture() const
 	{
 		callMethod<void>(
 			"requestPointerCapture",
 			"()V"
 		);
 	}
-	jboolean View::requestRectangleOnScreen(android::graphics::Rect arg0)
+	jboolean View::requestRectangleOnScreen(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestRectangleOnScreen",
@@ -4152,7 +4152,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::requestRectangleOnScreen(android::graphics::Rect arg0, jboolean arg1)
+	jboolean View::requestRectangleOnScreen(android::graphics::Rect arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestRectangleOnScreen",
@@ -4161,7 +4161,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::requestUnbufferedDispatch(android::view::MotionEvent arg0)
+	void View::requestUnbufferedDispatch(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"requestUnbufferedDispatch",
@@ -4169,7 +4169,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::requestUnbufferedDispatch(jint arg0)
+	void View::requestUnbufferedDispatch(jint arg0) const
 	{
 		callMethod<void>(
 			"requestUnbufferedDispatch",
@@ -4177,7 +4177,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::View View::requireViewById(jint arg0)
+	android::view::View View::requireViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -4185,21 +4185,21 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::resetPivot()
+	void View::resetPivot() const
 	{
 		callMethod<void>(
 			"resetPivot",
 			"()V"
 		);
 	}
-	jboolean View::restoreDefaultFocus()
+	jboolean View::restoreDefaultFocus() const
 	{
 		return callMethod<jboolean>(
 			"restoreDefaultFocus",
 			"()Z"
 		);
 	}
-	void View::restoreHierarchyState(android::util::SparseArray arg0)
+	void View::restoreHierarchyState(android::util::SparseArray arg0) const
 	{
 		callMethod<void>(
 			"restoreHierarchyState",
@@ -4207,7 +4207,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::saveAttributeDataForStyleable(android::content::Context arg0, JIntArray arg1, JObject arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5)
+	void View::saveAttributeDataForStyleable(android::content::Context arg0, JIntArray arg1, JObject arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"saveAttributeDataForStyleable",
@@ -4220,7 +4220,7 @@ namespace android::view
 			arg5
 		);
 	}
-	void View::saveHierarchyState(android::util::SparseArray arg0)
+	void View::saveHierarchyState(android::util::SparseArray arg0) const
 	{
 		callMethod<void>(
 			"saveHierarchyState",
@@ -4228,7 +4228,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
+	void View::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -4238,7 +4238,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void View::scrollBy(jint arg0, jint arg1)
+	void View::scrollBy(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"scrollBy",
@@ -4247,7 +4247,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::scrollTo(jint arg0, jint arg1)
+	void View::scrollTo(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"scrollTo",
@@ -4256,7 +4256,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::sendAccessibilityEvent(jint arg0)
+	void View::sendAccessibilityEvent(jint arg0) const
 	{
 		callMethod<void>(
 			"sendAccessibilityEvent",
@@ -4264,7 +4264,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0)
+	void View::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		callMethod<void>(
 			"sendAccessibilityEventUnchecked",
@@ -4272,7 +4272,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setAccessibilityDelegate(android::view::View_AccessibilityDelegate arg0)
+	void View::setAccessibilityDelegate(android::view::View_AccessibilityDelegate arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityDelegate",
@@ -4280,7 +4280,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setAccessibilityHeading(jboolean arg0)
+	void View::setAccessibilityHeading(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityHeading",
@@ -4288,7 +4288,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAccessibilityLiveRegion(jint arg0)
+	void View::setAccessibilityLiveRegion(jint arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityLiveRegion",
@@ -4296,7 +4296,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAccessibilityPaneTitle(JString arg0)
+	void View::setAccessibilityPaneTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityPaneTitle",
@@ -4304,7 +4304,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void View::setAccessibilityTraversalAfter(jint arg0)
+	void View::setAccessibilityTraversalAfter(jint arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityTraversalAfter",
@@ -4312,7 +4312,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAccessibilityTraversalBefore(jint arg0)
+	void View::setAccessibilityTraversalBefore(jint arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityTraversalBefore",
@@ -4320,7 +4320,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setActivated(jboolean arg0)
+	void View::setActivated(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setActivated",
@@ -4328,7 +4328,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAllowClickWhenDisabled(jboolean arg0)
+	void View::setAllowClickWhenDisabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowClickWhenDisabled",
@@ -4336,7 +4336,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAlpha(jfloat arg0)
+	void View::setAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -4344,7 +4344,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAnimation(android::view::animation::Animation arg0)
+	void View::setAnimation(android::view::animation::Animation arg0) const
 	{
 		callMethod<void>(
 			"setAnimation",
@@ -4352,7 +4352,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setAnimationMatrix(android::graphics::Matrix arg0)
+	void View::setAnimationMatrix(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"setAnimationMatrix",
@@ -4360,7 +4360,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setAutofillHints(JArray arg0)
+	void View::setAutofillHints(JArray arg0) const
 	{
 		callMethod<void>(
 			"setAutofillHints",
@@ -4368,7 +4368,7 @@ namespace android::view
 			arg0.object<jarray>()
 		);
 	}
-	void View::setAutofillId(android::view::autofill::AutofillId arg0)
+	void View::setAutofillId(android::view::autofill::AutofillId arg0) const
 	{
 		callMethod<void>(
 			"setAutofillId",
@@ -4376,7 +4376,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setBackground(android::graphics::drawable::Drawable arg0)
+	void View::setBackground(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackground",
@@ -4384,7 +4384,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setBackgroundColor(jint arg0)
+	void View::setBackgroundColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundColor",
@@ -4392,7 +4392,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void View::setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawable",
@@ -4400,7 +4400,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setBackgroundResource(jint arg0)
+	void View::setBackgroundResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundResource",
@@ -4408,7 +4408,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setBackgroundTintBlendMode(android::graphics::BlendMode arg0)
+	void View::setBackgroundTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundTintBlendMode",
@@ -4416,7 +4416,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setBackgroundTintList(android::content::res::ColorStateList arg0)
+	void View::setBackgroundTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundTintList",
@@ -4424,7 +4424,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setBackgroundTintMode(android::graphics::PorterDuff_Mode arg0)
+	void View::setBackgroundTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundTintMode",
@@ -4432,7 +4432,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setBottom(jint arg0)
+	void View::setBottom(jint arg0) const
 	{
 		callMethod<void>(
 			"setBottom",
@@ -4440,7 +4440,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setCameraDistance(jfloat arg0)
+	void View::setCameraDistance(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setCameraDistance",
@@ -4448,7 +4448,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setClickable(jboolean arg0)
+	void View::setClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClickable",
@@ -4456,7 +4456,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setClipBounds(android::graphics::Rect arg0)
+	void View::setClipBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setClipBounds",
@@ -4464,7 +4464,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setClipToOutline(jboolean arg0)
+	void View::setClipToOutline(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClipToOutline",
@@ -4472,7 +4472,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setContentCaptureSession(android::view::contentcapture::ContentCaptureSession arg0)
+	void View::setContentCaptureSession(android::view::contentcapture::ContentCaptureSession arg0) const
 	{
 		callMethod<void>(
 			"setContentCaptureSession",
@@ -4480,7 +4480,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setContentDescription(JString arg0)
+	void View::setContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -4488,7 +4488,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void View::setContextClickable(jboolean arg0)
+	void View::setContextClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setContextClickable",
@@ -4496,7 +4496,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setDefaultFocusHighlightEnabled(jboolean arg0)
+	void View::setDefaultFocusHighlightEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDefaultFocusHighlightEnabled",
@@ -4504,7 +4504,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setDrawingCacheBackgroundColor(jint arg0)
+	void View::setDrawingCacheBackgroundColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setDrawingCacheBackgroundColor",
@@ -4512,7 +4512,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setDrawingCacheEnabled(jboolean arg0)
+	void View::setDrawingCacheEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDrawingCacheEnabled",
@@ -4520,7 +4520,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setDrawingCacheQuality(jint arg0)
+	void View::setDrawingCacheQuality(jint arg0) const
 	{
 		callMethod<void>(
 			"setDrawingCacheQuality",
@@ -4528,7 +4528,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setDuplicateParentStateEnabled(jboolean arg0)
+	void View::setDuplicateParentStateEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDuplicateParentStateEnabled",
@@ -4536,7 +4536,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setElevation(jfloat arg0)
+	void View::setElevation(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setElevation",
@@ -4544,7 +4544,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setEnabled(jboolean arg0)
+	void View::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -4552,7 +4552,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setFadingEdgeLength(jint arg0)
+	void View::setFadingEdgeLength(jint arg0) const
 	{
 		callMethod<void>(
 			"setFadingEdgeLength",
@@ -4560,7 +4560,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setFilterTouchesWhenObscured(jboolean arg0)
+	void View::setFilterTouchesWhenObscured(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFilterTouchesWhenObscured",
@@ -4568,7 +4568,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setFitsSystemWindows(jboolean arg0)
+	void View::setFitsSystemWindows(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFitsSystemWindows",
@@ -4576,7 +4576,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setFocusable(jboolean arg0)
+	void View::setFocusable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusable",
@@ -4584,7 +4584,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setFocusable(jint arg0)
+	void View::setFocusable(jint arg0) const
 	{
 		callMethod<void>(
 			"setFocusable",
@@ -4592,7 +4592,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setFocusableInTouchMode(jboolean arg0)
+	void View::setFocusableInTouchMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusableInTouchMode",
@@ -4600,7 +4600,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setFocusedByDefault(jboolean arg0)
+	void View::setFocusedByDefault(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusedByDefault",
@@ -4608,7 +4608,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setForceDarkAllowed(jboolean arg0)
+	void View::setForceDarkAllowed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setForceDarkAllowed",
@@ -4616,7 +4616,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setForeground(android::graphics::drawable::Drawable arg0)
+	void View::setForeground(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setForeground",
@@ -4624,7 +4624,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setForegroundGravity(jint arg0)
+	void View::setForegroundGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setForegroundGravity",
@@ -4632,7 +4632,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setForegroundTintBlendMode(android::graphics::BlendMode arg0)
+	void View::setForegroundTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setForegroundTintBlendMode",
@@ -4640,7 +4640,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setForegroundTintList(android::content::res::ColorStateList arg0)
+	void View::setForegroundTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setForegroundTintList",
@@ -4648,7 +4648,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setForegroundTintMode(android::graphics::PorterDuff_Mode arg0)
+	void View::setForegroundTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setForegroundTintMode",
@@ -4656,7 +4656,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setHapticFeedbackEnabled(jboolean arg0)
+	void View::setHapticFeedbackEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHapticFeedbackEnabled",
@@ -4664,7 +4664,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setHasTransientState(jboolean arg0)
+	void View::setHasTransientState(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHasTransientState",
@@ -4672,7 +4672,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setHorizontalFadingEdgeEnabled(jboolean arg0)
+	void View::setHorizontalFadingEdgeEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalFadingEdgeEnabled",
@@ -4680,7 +4680,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setHorizontalScrollBarEnabled(jboolean arg0)
+	void View::setHorizontalScrollBarEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalScrollBarEnabled",
@@ -4688,7 +4688,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setHorizontalScrollbarThumbDrawable(android::graphics::drawable::Drawable arg0)
+	void View::setHorizontalScrollbarThumbDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalScrollbarThumbDrawable",
@@ -4696,7 +4696,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setHorizontalScrollbarTrackDrawable(android::graphics::drawable::Drawable arg0)
+	void View::setHorizontalScrollbarTrackDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalScrollbarTrackDrawable",
@@ -4704,7 +4704,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setHovered(jboolean arg0)
+	void View::setHovered(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHovered",
@@ -4712,7 +4712,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setId(jint arg0)
+	void View::setId(jint arg0) const
 	{
 		callMethod<void>(
 			"setId",
@@ -4720,7 +4720,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setImportantForAccessibility(jint arg0)
+	void View::setImportantForAccessibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setImportantForAccessibility",
@@ -4728,7 +4728,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setImportantForAutofill(jint arg0)
+	void View::setImportantForAutofill(jint arg0) const
 	{
 		callMethod<void>(
 			"setImportantForAutofill",
@@ -4736,7 +4736,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setImportantForContentCapture(jint arg0)
+	void View::setImportantForContentCapture(jint arg0) const
 	{
 		callMethod<void>(
 			"setImportantForContentCapture",
@@ -4744,7 +4744,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setKeepScreenOn(jboolean arg0)
+	void View::setKeepScreenOn(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setKeepScreenOn",
@@ -4752,7 +4752,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setKeyboardNavigationCluster(jboolean arg0)
+	void View::setKeyboardNavigationCluster(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setKeyboardNavigationCluster",
@@ -4760,7 +4760,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setLabelFor(jint arg0)
+	void View::setLabelFor(jint arg0) const
 	{
 		callMethod<void>(
 			"setLabelFor",
@@ -4768,7 +4768,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setLayerPaint(android::graphics::Paint arg0)
+	void View::setLayerPaint(android::graphics::Paint arg0) const
 	{
 		callMethod<void>(
 			"setLayerPaint",
@@ -4776,7 +4776,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setLayerType(jint arg0, android::graphics::Paint arg1)
+	void View::setLayerType(jint arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"setLayerType",
@@ -4785,7 +4785,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View::setLayoutDirection(jint arg0)
+	void View::setLayoutDirection(jint arg0) const
 	{
 		callMethod<void>(
 			"setLayoutDirection",
@@ -4793,7 +4793,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setLayoutParams(android::view::ViewGroup_LayoutParams arg0)
+	void View::setLayoutParams(android::view::ViewGroup_LayoutParams arg0) const
 	{
 		callMethod<void>(
 			"setLayoutParams",
@@ -4801,7 +4801,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setLeft(jint arg0)
+	void View::setLeft(jint arg0) const
 	{
 		callMethod<void>(
 			"setLeft",
@@ -4809,7 +4809,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setLeftTopRightBottom(jint arg0, jint arg1, jint arg2, jint arg3)
+	void View::setLeftTopRightBottom(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setLeftTopRightBottom",
@@ -4820,7 +4820,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::setLongClickable(jboolean arg0)
+	void View::setLongClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLongClickable",
@@ -4828,7 +4828,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setMinimumHeight(jint arg0)
+	void View::setMinimumHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumHeight",
@@ -4836,7 +4836,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setMinimumWidth(jint arg0)
+	void View::setMinimumWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumWidth",
@@ -4844,7 +4844,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setNestedScrollingEnabled(jboolean arg0)
+	void View::setNestedScrollingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNestedScrollingEnabled",
@@ -4852,7 +4852,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setNextClusterForwardId(jint arg0)
+	void View::setNextClusterForwardId(jint arg0) const
 	{
 		callMethod<void>(
 			"setNextClusterForwardId",
@@ -4860,7 +4860,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setNextFocusDownId(jint arg0)
+	void View::setNextFocusDownId(jint arg0) const
 	{
 		callMethod<void>(
 			"setNextFocusDownId",
@@ -4868,7 +4868,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setNextFocusForwardId(jint arg0)
+	void View::setNextFocusForwardId(jint arg0) const
 	{
 		callMethod<void>(
 			"setNextFocusForwardId",
@@ -4876,7 +4876,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setNextFocusLeftId(jint arg0)
+	void View::setNextFocusLeftId(jint arg0) const
 	{
 		callMethod<void>(
 			"setNextFocusLeftId",
@@ -4884,7 +4884,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setNextFocusRightId(jint arg0)
+	void View::setNextFocusRightId(jint arg0) const
 	{
 		callMethod<void>(
 			"setNextFocusRightId",
@@ -4892,7 +4892,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setNextFocusUpId(jint arg0)
+	void View::setNextFocusUpId(jint arg0) const
 	{
 		callMethod<void>(
 			"setNextFocusUpId",
@@ -4900,7 +4900,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setOnApplyWindowInsetsListener(JObject arg0)
+	void View::setOnApplyWindowInsetsListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnApplyWindowInsetsListener",
@@ -4908,7 +4908,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnCapturedPointerListener(JObject arg0)
+	void View::setOnCapturedPointerListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCapturedPointerListener",
@@ -4916,7 +4916,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnClickListener(JObject arg0)
+	void View::setOnClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnClickListener",
@@ -4924,7 +4924,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnContextClickListener(JObject arg0)
+	void View::setOnContextClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnContextClickListener",
@@ -4932,7 +4932,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnCreateContextMenuListener(JObject arg0)
+	void View::setOnCreateContextMenuListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCreateContextMenuListener",
@@ -4940,7 +4940,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnDragListener(JObject arg0)
+	void View::setOnDragListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDragListener",
@@ -4948,7 +4948,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnFocusChangeListener(JObject arg0)
+	void View::setOnFocusChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnFocusChangeListener",
@@ -4956,7 +4956,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnGenericMotionListener(JObject arg0)
+	void View::setOnGenericMotionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnGenericMotionListener",
@@ -4964,7 +4964,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnHoverListener(JObject arg0)
+	void View::setOnHoverListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnHoverListener",
@@ -4972,7 +4972,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnKeyListener(JObject arg0)
+	void View::setOnKeyListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnKeyListener",
@@ -4980,7 +4980,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnLongClickListener(JObject arg0)
+	void View::setOnLongClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnLongClickListener",
@@ -4988,7 +4988,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnReceiveContentListener(JArray arg0, JObject arg1)
+	void View::setOnReceiveContentListener(JArray arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setOnReceiveContentListener",
@@ -4997,7 +4997,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View::setOnScrollChangeListener(JObject arg0)
+	void View::setOnScrollChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnScrollChangeListener",
@@ -5005,7 +5005,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnSystemUiVisibilityChangeListener(JObject arg0)
+	void View::setOnSystemUiVisibilityChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnSystemUiVisibilityChangeListener",
@@ -5013,7 +5013,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnTouchListener(JObject arg0)
+	void View::setOnTouchListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnTouchListener",
@@ -5021,7 +5021,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOutlineAmbientShadowColor(jint arg0)
+	void View::setOutlineAmbientShadowColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setOutlineAmbientShadowColor",
@@ -5029,7 +5029,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setOutlineProvider(android::view::ViewOutlineProvider arg0)
+	void View::setOutlineProvider(android::view::ViewOutlineProvider arg0) const
 	{
 		callMethod<void>(
 			"setOutlineProvider",
@@ -5037,7 +5037,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOutlineSpotShadowColor(jint arg0)
+	void View::setOutlineSpotShadowColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setOutlineSpotShadowColor",
@@ -5045,7 +5045,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setOverScrollMode(jint arg0)
+	void View::setOverScrollMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setOverScrollMode",
@@ -5053,7 +5053,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
+	void View::setPadding(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPadding",
@@ -5064,7 +5064,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3)
+	void View::setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPaddingRelative",
@@ -5075,7 +5075,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::setPivotX(jfloat arg0)
+	void View::setPivotX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPivotX",
@@ -5083,7 +5083,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setPivotY(jfloat arg0)
+	void View::setPivotY(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPivotY",
@@ -5091,7 +5091,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setPointerIcon(android::view::PointerIcon arg0)
+	void View::setPointerIcon(android::view::PointerIcon arg0) const
 	{
 		callMethod<void>(
 			"setPointerIcon",
@@ -5099,7 +5099,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setPressed(jboolean arg0)
+	void View::setPressed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPressed",
@@ -5107,7 +5107,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setRenderEffect(android::graphics::RenderEffect arg0)
+	void View::setRenderEffect(android::graphics::RenderEffect arg0) const
 	{
 		callMethod<void>(
 			"setRenderEffect",
@@ -5115,7 +5115,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setRevealOnFocusHint(jboolean arg0)
+	void View::setRevealOnFocusHint(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRevealOnFocusHint",
@@ -5123,7 +5123,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setRight(jint arg0)
+	void View::setRight(jint arg0) const
 	{
 		callMethod<void>(
 			"setRight",
@@ -5131,7 +5131,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setRotation(jfloat arg0)
+	void View::setRotation(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRotation",
@@ -5139,7 +5139,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setRotationX(jfloat arg0)
+	void View::setRotationX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRotationX",
@@ -5147,7 +5147,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setRotationY(jfloat arg0)
+	void View::setRotationY(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRotationY",
@@ -5155,7 +5155,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setSaveEnabled(jboolean arg0)
+	void View::setSaveEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSaveEnabled",
@@ -5163,7 +5163,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setSaveFromParentEnabled(jboolean arg0)
+	void View::setSaveFromParentEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSaveFromParentEnabled",
@@ -5171,7 +5171,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScaleX(jfloat arg0)
+	void View::setScaleX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setScaleX",
@@ -5179,7 +5179,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScaleY(jfloat arg0)
+	void View::setScaleY(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setScaleY",
@@ -5187,7 +5187,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScreenReaderFocusable(jboolean arg0)
+	void View::setScreenReaderFocusable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScreenReaderFocusable",
@@ -5195,7 +5195,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollBarDefaultDelayBeforeFade(jint arg0)
+	void View::setScrollBarDefaultDelayBeforeFade(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollBarDefaultDelayBeforeFade",
@@ -5203,7 +5203,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollBarFadeDuration(jint arg0)
+	void View::setScrollBarFadeDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollBarFadeDuration",
@@ -5211,7 +5211,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollBarSize(jint arg0)
+	void View::setScrollBarSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollBarSize",
@@ -5219,7 +5219,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollBarStyle(jint arg0)
+	void View::setScrollBarStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollBarStyle",
@@ -5227,7 +5227,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollCaptureCallback(JObject arg0)
+	void View::setScrollCaptureCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setScrollCaptureCallback",
@@ -5235,7 +5235,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setScrollCaptureHint(jint arg0)
+	void View::setScrollCaptureHint(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollCaptureHint",
@@ -5243,7 +5243,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollContainer(jboolean arg0)
+	void View::setScrollContainer(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScrollContainer",
@@ -5251,7 +5251,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollIndicators(jint arg0)
+	void View::setScrollIndicators(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollIndicators",
@@ -5259,7 +5259,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollIndicators(jint arg0, jint arg1)
+	void View::setScrollIndicators(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setScrollIndicators",
@@ -5268,7 +5268,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::setScrollX(jint arg0)
+	void View::setScrollX(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollX",
@@ -5276,7 +5276,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollY(jint arg0)
+	void View::setScrollY(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollY",
@@ -5284,7 +5284,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setScrollbarFadingEnabled(jboolean arg0)
+	void View::setScrollbarFadingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScrollbarFadingEnabled",
@@ -5292,7 +5292,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setSelected(jboolean arg0)
+	void View::setSelected(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSelected",
@@ -5300,7 +5300,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setSoundEffectsEnabled(jboolean arg0)
+	void View::setSoundEffectsEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSoundEffectsEnabled",
@@ -5308,7 +5308,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setStateDescription(JString arg0)
+	void View::setStateDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setStateDescription",
@@ -5316,7 +5316,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void View::setStateListAnimator(android::animation::StateListAnimator arg0)
+	void View::setStateListAnimator(android::animation::StateListAnimator arg0) const
 	{
 		callMethod<void>(
 			"setStateListAnimator",
@@ -5324,7 +5324,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setSystemGestureExclusionRects(JObject arg0)
+	void View::setSystemGestureExclusionRects(JObject arg0) const
 	{
 		callMethod<void>(
 			"setSystemGestureExclusionRects",
@@ -5332,7 +5332,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setSystemUiVisibility(jint arg0)
+	void View::setSystemUiVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setSystemUiVisibility",
@@ -5340,7 +5340,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTag(JObject arg0)
+	void View::setTag(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTag",
@@ -5348,7 +5348,7 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	void View::setTag(jint arg0, JObject arg1)
+	void View::setTag(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setTag",
@@ -5357,7 +5357,7 @@ namespace android::view
 			arg1.object<jobject>()
 		);
 	}
-	void View::setTextAlignment(jint arg0)
+	void View::setTextAlignment(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextAlignment",
@@ -5365,7 +5365,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTextDirection(jint arg0)
+	void View::setTextDirection(jint arg0) const
 	{
 		callMethod<void>(
 			"setTextDirection",
@@ -5373,7 +5373,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTooltipText(JString arg0)
+	void View::setTooltipText(JString arg0) const
 	{
 		callMethod<void>(
 			"setTooltipText",
@@ -5381,7 +5381,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void View::setTop(jint arg0)
+	void View::setTop(jint arg0) const
 	{
 		callMethod<void>(
 			"setTop",
@@ -5389,7 +5389,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTouchDelegate(android::view::TouchDelegate arg0)
+	void View::setTouchDelegate(android::view::TouchDelegate arg0) const
 	{
 		callMethod<void>(
 			"setTouchDelegate",
@@ -5397,7 +5397,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setTransitionAlpha(jfloat arg0)
+	void View::setTransitionAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setTransitionAlpha",
@@ -5405,7 +5405,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTransitionName(JString arg0)
+	void View::setTransitionName(JString arg0) const
 	{
 		callMethod<void>(
 			"setTransitionName",
@@ -5413,7 +5413,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void View::setTransitionVisibility(jint arg0)
+	void View::setTransitionVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setTransitionVisibility",
@@ -5421,7 +5421,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTranslationX(jfloat arg0)
+	void View::setTranslationX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setTranslationX",
@@ -5429,7 +5429,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTranslationY(jfloat arg0)
+	void View::setTranslationY(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setTranslationY",
@@ -5437,7 +5437,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTranslationZ(jfloat arg0)
+	void View::setTranslationZ(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setTranslationZ",
@@ -5445,7 +5445,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setVerticalFadingEdgeEnabled(jboolean arg0)
+	void View::setVerticalFadingEdgeEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVerticalFadingEdgeEnabled",
@@ -5453,7 +5453,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setVerticalScrollBarEnabled(jboolean arg0)
+	void View::setVerticalScrollBarEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVerticalScrollBarEnabled",
@@ -5461,7 +5461,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setVerticalScrollbarPosition(jint arg0)
+	void View::setVerticalScrollbarPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalScrollbarPosition",
@@ -5469,7 +5469,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setVerticalScrollbarThumbDrawable(android::graphics::drawable::Drawable arg0)
+	void View::setVerticalScrollbarThumbDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setVerticalScrollbarThumbDrawable",
@@ -5477,7 +5477,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setVerticalScrollbarTrackDrawable(android::graphics::drawable::Drawable arg0)
+	void View::setVerticalScrollbarTrackDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setVerticalScrollbarTrackDrawable",
@@ -5485,7 +5485,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setViewTranslationCallback(JObject arg0)
+	void View::setViewTranslationCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setViewTranslationCallback",
@@ -5493,7 +5493,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setVisibility(jint arg0)
+	void View::setVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setVisibility",
@@ -5501,7 +5501,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setWillNotCacheDrawing(jboolean arg0)
+	void View::setWillNotCacheDrawing(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setWillNotCacheDrawing",
@@ -5509,7 +5509,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setWillNotDraw(jboolean arg0)
+	void View::setWillNotDraw(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setWillNotDraw",
@@ -5517,7 +5517,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setWindowInsetsAnimationCallback(android::view::WindowInsetsAnimation_Callback arg0)
+	void View::setWindowInsetsAnimationCallback(android::view::WindowInsetsAnimation_Callback arg0) const
 	{
 		callMethod<void>(
 			"setWindowInsetsAnimationCallback",
@@ -5525,7 +5525,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setX(jfloat arg0)
+	void View::setX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setX",
@@ -5533,7 +5533,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setY(jfloat arg0)
+	void View::setY(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setY",
@@ -5541,7 +5541,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setZ(jfloat arg0)
+	void View::setZ(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setZ",
@@ -5549,14 +5549,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::showContextMenu()
+	jboolean View::showContextMenu() const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",
 			"()Z"
 		);
 	}
-	jboolean View::showContextMenu(jfloat arg0, jfloat arg1)
+	jboolean View::showContextMenu(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",
@@ -5565,7 +5565,7 @@ namespace android::view
 			arg1
 		);
 	}
-	android::view::ActionMode View::startActionMode(JObject arg0)
+	android::view::ActionMode View::startActionMode(JObject arg0) const
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -5573,7 +5573,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ActionMode View::startActionMode(JObject arg0, jint arg1)
+	android::view::ActionMode View::startActionMode(JObject arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -5582,7 +5582,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::startAnimation(android::view::animation::Animation arg0)
+	void View::startAnimation(android::view::animation::Animation arg0) const
 	{
 		callMethod<void>(
 			"startAnimation",
@@ -5590,7 +5590,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::startDrag(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3)
+	jboolean View::startDrag(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"startDrag",
@@ -5601,7 +5601,7 @@ namespace android::view
 			arg3
 		);
 	}
-	jboolean View::startDragAndDrop(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3)
+	jboolean View::startDragAndDrop(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"startDragAndDrop",
@@ -5612,7 +5612,7 @@ namespace android::view
 			arg3
 		);
 	}
-	jboolean View::startNestedScroll(jint arg0)
+	jboolean View::startNestedScroll(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"startNestedScroll",
@@ -5620,21 +5620,21 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::stopNestedScroll()
+	void View::stopNestedScroll() const
 	{
 		callMethod<void>(
 			"stopNestedScroll",
 			"()V"
 		);
 	}
-	JString View::toString()
+	JString View::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void View::transformMatrixToGlobal(android::graphics::Matrix arg0)
+	void View::transformMatrixToGlobal(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"transformMatrixToGlobal",
@@ -5642,7 +5642,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::transformMatrixToLocal(android::graphics::Matrix arg0)
+	void View::transformMatrixToLocal(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"transformMatrixToLocal",
@@ -5650,7 +5650,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::unscheduleDrawable(android::graphics::drawable::Drawable arg0)
+	void View::unscheduleDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"unscheduleDrawable",
@@ -5658,7 +5658,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
+	void View::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"unscheduleDrawable",
@@ -5667,7 +5667,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void View::updateDragShadow(android::view::View_DragShadowBuilder arg0)
+	void View::updateDragShadow(android::view::View_DragShadowBuilder arg0) const
 	{
 		callMethod<void>(
 			"updateDragShadow",
@@ -5675,14 +5675,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::willNotCacheDrawing()
+	jboolean View::willNotCacheDrawing() const
 	{
 		return callMethod<jboolean>(
 			"willNotCacheDrawing",
 			"()Z"
 		);
 	}
-	jboolean View::willNotDraw()
+	jboolean View::willNotDraw() const
 	{
 		return callMethod<jboolean>(
 			"willNotDraw",

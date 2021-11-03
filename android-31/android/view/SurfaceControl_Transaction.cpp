@@ -26,28 +26,28 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void SurfaceControl_Transaction::apply()
+	void SurfaceControl_Transaction::apply() const
 	{
 		callMethod<void>(
 			"apply",
 			"()V"
 		);
 	}
-	void SurfaceControl_Transaction::close()
+	void SurfaceControl_Transaction::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint SurfaceControl_Transaction::describeContents()
+	jint SurfaceControl_Transaction::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::merge(android::view::SurfaceControl_Transaction arg0)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::merge(android::view::SurfaceControl_Transaction arg0) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -55,7 +55,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::reparent(android::view::SurfaceControl arg0, android::view::SurfaceControl arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::reparent(android::view::SurfaceControl arg0, android::view::SurfaceControl arg1) const
 	{
 		return callObjectMethod(
 			"reparent",
@@ -64,7 +64,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setAlpha(android::view::SurfaceControl arg0, jfloat arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setAlpha(android::view::SurfaceControl arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"setAlpha",
@@ -73,7 +73,7 @@ namespace android::view
 			arg1
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setBufferSize(android::view::SurfaceControl arg0, jint arg1, jint arg2)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setBufferSize(android::view::SurfaceControl arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"setBufferSize",
@@ -83,7 +83,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setFrameRate(android::view::SurfaceControl arg0, jfloat arg1, jint arg2)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setFrameRate(android::view::SurfaceControl arg0, jfloat arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"setFrameRate",
@@ -93,7 +93,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setFrameRate(android::view::SurfaceControl arg0, jfloat arg1, jint arg2, jint arg3)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setFrameRate(android::view::SurfaceControl arg0, jfloat arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"setFrameRate",
@@ -104,7 +104,7 @@ namespace android::view
 			arg3
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setGeometry(android::view::SurfaceControl arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, jint arg3)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setGeometry(android::view::SurfaceControl arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"setGeometry",
@@ -115,7 +115,7 @@ namespace android::view
 			arg3
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setLayer(android::view::SurfaceControl arg0, jint arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setLayer(android::view::SurfaceControl arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setLayer",
@@ -124,7 +124,7 @@ namespace android::view
 			arg1
 		);
 	}
-	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setVisibility(android::view::SurfaceControl arg0, jboolean arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setVisibility(android::view::SurfaceControl arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"setVisibility",
@@ -133,7 +133,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void SurfaceControl_Transaction::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SurfaceControl_Transaction::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

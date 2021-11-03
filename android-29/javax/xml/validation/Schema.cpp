@@ -12,14 +12,14 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	javax::xml::validation::Validator Schema::newValidator()
+	javax::xml::validation::Validator Schema::newValidator() const
 	{
 		return callObjectMethod(
 			"newValidator",
 			"()Ljavax/xml/validation/Validator;"
 		);
 	}
-	javax::xml::validation::ValidatorHandler Schema::newValidatorHandler()
+	javax::xml::validation::ValidatorHandler Schema::newValidatorHandler() const
 	{
 		return callObjectMethod(
 			"newValidatorHandler",

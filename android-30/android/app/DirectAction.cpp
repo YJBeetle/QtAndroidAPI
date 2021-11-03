@@ -23,14 +23,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint DirectAction::describeContents()
+	jint DirectAction::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean DirectAction::equals(JObject arg0)
+	jboolean DirectAction::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -38,35 +38,35 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle DirectAction::getExtras()
+	android::os::Bundle DirectAction::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString DirectAction::getId()
+	JString DirectAction::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::LocusId DirectAction::getLocusId()
+	android::content::LocusId DirectAction::getLocusId() const
 	{
 		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jint DirectAction::hashCode()
+	jint DirectAction::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void DirectAction::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DirectAction::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

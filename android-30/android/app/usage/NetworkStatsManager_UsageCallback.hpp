@@ -19,7 +19,7 @@ namespace android::app::usage
 		NetworkStatsManager_UsageCallback();
 		
 		// Methods
-		void onThresholdReached(jint arg0, JString arg1);
+		void onThresholdReached(jint arg0, JString arg1) const;
 	};
 } // namespace android::app::usage
 

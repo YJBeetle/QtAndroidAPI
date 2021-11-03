@@ -23,11 +23,11 @@ namespace java::util::concurrent
 		CountDownLatch(jint arg0);
 		
 		// Methods
-		jboolean await(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void await();
-		void countDown();
-		jlong getCount();
-		JString toString();
+		jboolean await(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void await() const;
+		void countDown() const;
+		jlong getCount() const;
+		JString toString() const;
 	};
 } // namespace java::util::concurrent
 

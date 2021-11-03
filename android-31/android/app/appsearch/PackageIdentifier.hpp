@@ -21,10 +21,10 @@ namespace android::app::appsearch
 		PackageIdentifier(JString arg0, JByteArray arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getPackageName();
-		JByteArray getSha256Certificate();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JString getPackageName() const;
+		JByteArray getSha256Certificate() const;
+		jint hashCode() const;
 	};
 } // namespace android::app::appsearch
 

@@ -169,7 +169,7 @@ namespace android::net::wifi::p2p
 	// Constructors
 	
 	// Methods
-	void WifiP2pManager::addLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, JObject arg2)
+	void WifiP2pManager::addLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"addLocalService",
@@ -179,7 +179,7 @@ namespace android::net::wifi::p2p
 			arg2.object()
 		);
 	}
-	void WifiP2pManager::addServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, JObject arg2)
+	void WifiP2pManager::addServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"addServiceRequest",
@@ -189,7 +189,7 @@ namespace android::net::wifi::p2p
 			arg2.object()
 		);
 	}
-	void WifiP2pManager::cancelConnect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::cancelConnect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"cancelConnect",
@@ -198,7 +198,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::clearLocalServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::clearLocalServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"clearLocalServices",
@@ -207,7 +207,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::clearServiceRequests(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::clearServiceRequests(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"clearServiceRequests",
@@ -216,7 +216,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::connect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::WifiP2pConfig arg1, JObject arg2)
+	void WifiP2pManager::connect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::WifiP2pConfig arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"connect",
@@ -226,7 +226,7 @@ namespace android::net::wifi::p2p
 			arg2.object()
 		);
 	}
-	void WifiP2pManager::createGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::createGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"createGroup",
@@ -235,7 +235,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::discoverPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::discoverPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"discoverPeers",
@@ -244,7 +244,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::discoverServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::discoverServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"discoverServices",
@@ -253,7 +253,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	android::net::wifi::p2p::WifiP2pManager_Channel WifiP2pManager::initialize(android::content::Context arg0, android::os::Looper arg1, JObject arg2)
+	android::net::wifi::p2p::WifiP2pManager_Channel WifiP2pManager::initialize(android::content::Context arg0, android::os::Looper arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"initialize",
@@ -263,7 +263,7 @@ namespace android::net::wifi::p2p
 			arg2.object()
 		);
 	}
-	void WifiP2pManager::removeGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::removeGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"removeGroup",
@@ -272,7 +272,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::removeLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, JObject arg2)
+	void WifiP2pManager::removeLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"removeLocalService",
@@ -282,7 +282,7 @@ namespace android::net::wifi::p2p
 			arg2.object()
 		);
 	}
-	void WifiP2pManager::removeServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, JObject arg2)
+	void WifiP2pManager::removeServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"removeServiceRequest",
@@ -292,7 +292,7 @@ namespace android::net::wifi::p2p
 			arg2.object()
 		);
 	}
-	void WifiP2pManager::requestConnectionInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::requestConnectionInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"requestConnectionInfo",
@@ -301,7 +301,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::requestGroupInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::requestGroupInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"requestGroupInfo",
@@ -310,7 +310,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::requestPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::requestPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"requestPeers",
@@ -319,7 +319,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::setDnsSdResponseListeners(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1, JObject arg2)
+	void WifiP2pManager::setDnsSdResponseListeners(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setDnsSdResponseListeners",
@@ -329,7 +329,7 @@ namespace android::net::wifi::p2p
 			arg2.object()
 		);
 	}
-	void WifiP2pManager::setServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::setServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setServiceResponseListener",
@@ -338,7 +338,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::setUpnpServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::setUpnpServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setUpnpServiceResponseListener",
@@ -347,7 +347,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	void WifiP2pManager::stopPeerDiscovery(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1)
+	void WifiP2pManager::stopPeerDiscovery(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"stopPeerDiscovery",

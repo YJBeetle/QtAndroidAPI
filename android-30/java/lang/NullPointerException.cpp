@@ -23,14 +23,14 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	JThrowable NullPointerException::fillInStackTrace()
+	JThrowable NullPointerException::fillInStackTrace() const
 	{
 		return callObjectMethod(
 			"fillInStackTrace",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	JString NullPointerException::getMessage()
+	JString NullPointerException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

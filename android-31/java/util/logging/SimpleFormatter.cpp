@@ -17,7 +17,7 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	JString SimpleFormatter::format(java::util::logging::LogRecord arg0)
+	JString SimpleFormatter::format(java::util::logging::LogRecord arg0) const
 	{
 		return callObjectMethod(
 			"format",

@@ -43,16 +43,16 @@ namespace java::time
 		static java::time::DayOfWeek of(jint arg0);
 		static java::time::DayOfWeek valueOf(JString arg0);
 		static JArray values();
-		JObject adjustInto(JObject arg0);
-		jint get(JObject arg0);
-		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
-		jlong getLong(JObject arg0);
-		jint getValue();
-		jboolean isSupported(JObject arg0);
-		java::time::DayOfWeek minus(jlong arg0);
-		java::time::DayOfWeek plus(jlong arg0);
-		JObject query(JObject arg0);
-		java::time::temporal::ValueRange range(JObject arg0);
+		JObject adjustInto(JObject arg0) const;
+		jint get(JObject arg0) const;
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const;
+		jlong getLong(JObject arg0) const;
+		jint getValue() const;
+		jboolean isSupported(JObject arg0) const;
+		java::time::DayOfWeek minus(jlong arg0) const;
+		java::time::DayOfWeek plus(jlong arg0) const;
+		JObject query(JObject arg0) const;
+		java::time::temporal::ValueRange range(JObject arg0) const;
 	};
 } // namespace java::time
 

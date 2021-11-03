@@ -22,12 +22,12 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jlong getAppBytes();
-		jlong getCacheBytes();
-		jlong getDataBytes();
-		jlong getExternalCacheBytes();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jlong getAppBytes() const;
+		jlong getCacheBytes() const;
+		jlong getDataBytes() const;
+		jlong getExternalCacheBytes() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::usage
 

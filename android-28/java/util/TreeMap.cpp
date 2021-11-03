@@ -24,7 +24,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject TreeMap::ceilingEntry(JObject arg0)
+	JObject TreeMap::ceilingEntry(JObject arg0) const
 	{
 		return callObjectMethod(
 			"ceilingEntry",
@@ -32,7 +32,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::ceilingKey(JObject arg0)
+	JObject TreeMap::ceilingKey(JObject arg0) const
 	{
 		return callObjectMethod(
 			"ceilingKey",
@@ -40,28 +40,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void TreeMap::clear()
+	void TreeMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject TreeMap::clone()
+	JObject TreeMap::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject TreeMap::comparator()
+	JObject TreeMap::comparator() const
 	{
 		return callObjectMethod(
 			"comparator",
 			"()Ljava/util/Comparator;"
 		);
 	}
-	JObject TreeMap::compute(JObject arg0, JObject arg1)
+	JObject TreeMap::compute(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compute",
@@ -70,7 +70,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject TreeMap::computeIfAbsent(JObject arg0, JObject arg1)
+	JObject TreeMap::computeIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -79,7 +79,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject TreeMap::computeIfPresent(JObject arg0, JObject arg1)
+	JObject TreeMap::computeIfPresent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -88,7 +88,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean TreeMap::containsKey(JObject arg0)
+	jboolean TreeMap::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -96,7 +96,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean TreeMap::containsValue(JObject arg0)
+	jboolean TreeMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -104,42 +104,42 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::descendingKeySet()
+	JObject TreeMap::descendingKeySet() const
 	{
 		return callObjectMethod(
 			"descendingKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	JObject TreeMap::descendingMap()
+	JObject TreeMap::descendingMap() const
 	{
 		return callObjectMethod(
 			"descendingMap",
 			"()Ljava/util/NavigableMap;"
 		);
 	}
-	JObject TreeMap::entrySet()
+	JObject TreeMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject TreeMap::firstEntry()
+	JObject TreeMap::firstEntry() const
 	{
 		return callObjectMethod(
 			"firstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	JObject TreeMap::firstKey()
+	JObject TreeMap::firstKey() const
 	{
 		return callObjectMethod(
 			"firstKey",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject TreeMap::floorEntry(JObject arg0)
+	JObject TreeMap::floorEntry(JObject arg0) const
 	{
 		return callObjectMethod(
 			"floorEntry",
@@ -147,7 +147,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::floorKey(JObject arg0)
+	JObject TreeMap::floorKey(JObject arg0) const
 	{
 		return callObjectMethod(
 			"floorKey",
@@ -155,7 +155,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void TreeMap::forEach(JObject arg0)
+	void TreeMap::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -163,7 +163,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject TreeMap::get(JObject arg0)
+	JObject TreeMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -171,7 +171,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::headMap(JObject arg0, jboolean arg1)
+	JObject TreeMap::headMap(JObject arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"headMap",
@@ -180,7 +180,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject TreeMap::headMap(JObject arg0)
+	JObject TreeMap::headMap(JObject arg0) const
 	{
 		return callObjectMethod(
 			"headMap",
@@ -188,7 +188,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::higherEntry(JObject arg0)
+	JObject TreeMap::higherEntry(JObject arg0) const
 	{
 		return callObjectMethod(
 			"higherEntry",
@@ -196,7 +196,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::higherKey(JObject arg0)
+	JObject TreeMap::higherKey(JObject arg0) const
 	{
 		return callObjectMethod(
 			"higherKey",
@@ -204,28 +204,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::keySet()
+	JObject TreeMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject TreeMap::lastEntry()
+	JObject TreeMap::lastEntry() const
 	{
 		return callObjectMethod(
 			"lastEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	JObject TreeMap::lastKey()
+	JObject TreeMap::lastKey() const
 	{
 		return callObjectMethod(
 			"lastKey",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject TreeMap::lowerEntry(JObject arg0)
+	JObject TreeMap::lowerEntry(JObject arg0) const
 	{
 		return callObjectMethod(
 			"lowerEntry",
@@ -233,7 +233,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::lowerKey(JObject arg0)
+	JObject TreeMap::lowerKey(JObject arg0) const
 	{
 		return callObjectMethod(
 			"lowerKey",
@@ -241,7 +241,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::merge(JObject arg0, JObject arg1, JObject arg2)
+	JObject TreeMap::merge(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -251,28 +251,28 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	JObject TreeMap::navigableKeySet()
+	JObject TreeMap::navigableKeySet() const
 	{
 		return callObjectMethod(
 			"navigableKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	JObject TreeMap::pollFirstEntry()
+	JObject TreeMap::pollFirstEntry() const
 	{
 		return callObjectMethod(
 			"pollFirstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	JObject TreeMap::pollLastEntry()
+	JObject TreeMap::pollLastEntry() const
 	{
 		return callObjectMethod(
 			"pollLastEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	JObject TreeMap::put(JObject arg0, JObject arg1)
+	JObject TreeMap::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -281,7 +281,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void TreeMap::putAll(JObject arg0)
+	void TreeMap::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -289,7 +289,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject TreeMap::putIfAbsent(JObject arg0, JObject arg1)
+	JObject TreeMap::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
@@ -298,7 +298,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject TreeMap::remove(JObject arg0)
+	JObject TreeMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -306,7 +306,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean TreeMap::replace(JObject arg0, JObject arg1, JObject arg2)
+	jboolean TreeMap::replace(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"replace",
@@ -316,7 +316,7 @@ namespace java::util
 			arg2.object<jobject>()
 		);
 	}
-	JObject TreeMap::replace(JObject arg0, JObject arg1)
+	JObject TreeMap::replace(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -325,7 +325,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void TreeMap::replaceAll(JObject arg0)
+	void TreeMap::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -333,14 +333,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint TreeMap::size()
+	jint TreeMap::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject TreeMap::subMap(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3)
+	JObject TreeMap::subMap(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"subMap",
@@ -351,7 +351,7 @@ namespace java::util
 			arg3
 		);
 	}
-	JObject TreeMap::subMap(JObject arg0, JObject arg1)
+	JObject TreeMap::subMap(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"subMap",
@@ -360,7 +360,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject TreeMap::tailMap(JObject arg0, jboolean arg1)
+	JObject TreeMap::tailMap(JObject arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -369,7 +369,7 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject TreeMap::tailMap(JObject arg0)
+	JObject TreeMap::tailMap(JObject arg0) const
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -377,7 +377,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::values()
+	JObject TreeMap::values() const
 	{
 		return callObjectMethod(
 			"values",

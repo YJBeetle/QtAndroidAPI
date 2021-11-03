@@ -22,12 +22,12 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		void cancel();
-		JString getCallingPackage();
-		jint getCallingUid();
-		android::os::Bundle getExtras();
-		jboolean isActive();
-		JString toString();
+		void cancel() const;
+		JString getCallingPackage() const;
+		jint getCallingUid() const;
+		android::os::Bundle getExtras() const;
+		jboolean isActive() const;
+		JString toString() const;
 	};
 } // namespace android::service::voice
 

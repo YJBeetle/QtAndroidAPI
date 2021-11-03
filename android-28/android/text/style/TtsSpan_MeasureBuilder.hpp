@@ -19,16 +19,16 @@ namespace android::text::style
 		TtsSpan_MeasureBuilder();
 		
 		// Methods
-		android::text::style::TtsSpan_MeasureBuilder setDenominator(JString arg0);
-		android::text::style::TtsSpan_MeasureBuilder setDenominator(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setFractionalPart(JString arg0);
-		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(JString arg0);
-		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setNumber(JString arg0);
-		android::text::style::TtsSpan_MeasureBuilder setNumber(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setNumerator(JString arg0);
-		android::text::style::TtsSpan_MeasureBuilder setNumerator(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setUnit(JString arg0);
+		android::text::style::TtsSpan_MeasureBuilder setDenominator(JString arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setDenominator(jlong arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setFractionalPart(JString arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(JString arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(jlong arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setNumber(JString arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setNumber(jlong arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setNumerator(JString arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setNumerator(jlong arg0) const;
+		android::text::style::TtsSpan_MeasureBuilder setUnit(JString arg0) const;
 	};
 } // namespace android::text::style
 

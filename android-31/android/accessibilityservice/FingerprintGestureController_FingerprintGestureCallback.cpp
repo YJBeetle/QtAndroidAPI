@@ -15,7 +15,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	void FingerprintGestureController_FingerprintGestureCallback::onGestureDetected(jint arg0)
+	void FingerprintGestureController_FingerprintGestureCallback::onGestureDetected(jint arg0) const
 	{
 		callMethod<void>(
 			"onGestureDetected",
@@ -23,7 +23,7 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	void FingerprintGestureController_FingerprintGestureCallback::onGestureDetectionAvailabilityChanged(jboolean arg0)
+	void FingerprintGestureController_FingerprintGestureCallback::onGestureDetectionAvailabilityChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onGestureDetectionAvailabilityChanged",

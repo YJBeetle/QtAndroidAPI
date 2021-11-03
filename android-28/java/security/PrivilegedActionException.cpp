@@ -21,14 +21,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	java::lang::Exception PrivilegedActionException::getException()
+	java::lang::Exception PrivilegedActionException::getException() const
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
 	}
-	JString PrivilegedActionException::toString()
+	JString PrivilegedActionException::toString() const
 	{
 		return callObjectMethod(
 			"toString",

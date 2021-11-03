@@ -40,15 +40,15 @@ namespace android::inputmethodservice
 		InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService arg0);
 		
 		// Methods
-		void appPrivateCommand(JString arg0, android::os::Bundle arg1);
-		void displayCompletions(JArray arg0);
-		void finishInput();
-		void toggleSoftInput(jint arg0, jint arg1);
-		void updateCursor(android::graphics::Rect arg0);
-		void updateCursorAnchorInfo(android::view::inputmethod::CursorAnchorInfo arg0);
-		void updateExtractedText(jint arg0, android::view::inputmethod::ExtractedText arg1);
-		void updateSelection(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void viewClicked(jboolean arg0);
+		void appPrivateCommand(JString arg0, android::os::Bundle arg1) const;
+		void displayCompletions(JArray arg0) const;
+		void finishInput() const;
+		void toggleSoftInput(jint arg0, jint arg1) const;
+		void updateCursor(android::graphics::Rect arg0) const;
+		void updateCursorAnchorInfo(android::view::inputmethod::CursorAnchorInfo arg0) const;
+		void updateExtractedText(jint arg0, android::view::inputmethod::ExtractedText arg1) const;
+		void updateSelection(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
+		void viewClicked(jboolean arg0) const;
 	};
 } // namespace android::inputmethodservice
 

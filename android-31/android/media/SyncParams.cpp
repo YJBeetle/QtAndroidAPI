@@ -64,42 +64,42 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::SyncParams SyncParams::allowDefaults()
+	android::media::SyncParams SyncParams::allowDefaults() const
 	{
 		return callObjectMethod(
 			"allowDefaults",
 			"()Landroid/media/SyncParams;"
 		);
 	}
-	jint SyncParams::getAudioAdjustMode()
+	jint SyncParams::getAudioAdjustMode() const
 	{
 		return callMethod<jint>(
 			"getAudioAdjustMode",
 			"()I"
 		);
 	}
-	jfloat SyncParams::getFrameRate()
+	jfloat SyncParams::getFrameRate() const
 	{
 		return callMethod<jfloat>(
 			"getFrameRate",
 			"()F"
 		);
 	}
-	jint SyncParams::getSyncSource()
+	jint SyncParams::getSyncSource() const
 	{
 		return callMethod<jint>(
 			"getSyncSource",
 			"()I"
 		);
 	}
-	jfloat SyncParams::getTolerance()
+	jfloat SyncParams::getTolerance() const
 	{
 		return callMethod<jfloat>(
 			"getTolerance",
 			"()F"
 		);
 	}
-	android::media::SyncParams SyncParams::setAudioAdjustMode(jint arg0)
+	android::media::SyncParams SyncParams::setAudioAdjustMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioAdjustMode",
@@ -107,7 +107,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::SyncParams SyncParams::setFrameRate(jfloat arg0)
+	android::media::SyncParams SyncParams::setFrameRate(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setFrameRate",
@@ -115,7 +115,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::SyncParams SyncParams::setSyncSource(jint arg0)
+	android::media::SyncParams SyncParams::setSyncSource(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSyncSource",
@@ -123,7 +123,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::SyncParams SyncParams::setTolerance(jfloat arg0)
+	android::media::SyncParams SyncParams::setTolerance(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setTolerance",

@@ -16,7 +16,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	void ThreadPoolExecutor_CallerRunsPolicy::rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1)
+	void ThreadPoolExecutor_CallerRunsPolicy::rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1) const
 	{
 		callMethod<void>(
 			"rejectedExecution",

@@ -22,35 +22,35 @@ namespace android::nfc
 	// Constructors
 	
 	// Methods
-	jint Tag::describeContents()
+	jint Tag::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JByteArray Tag::getId()
+	JByteArray Tag::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()[B"
 		);
 	}
-	JArray Tag::getTechList()
+	JArray Tag::getTechList() const
 	{
 		return callObjectMethod(
 			"getTechList",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString Tag::toString()
+	JString Tag::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Tag::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Tag::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -27,12 +27,12 @@ namespace java::security
 		PKCS12Attribute(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getEncoded();
-		JString getName();
-		JString getValue();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JByteArray getEncoded() const;
+		JString getName() const;
+		JString getValue() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

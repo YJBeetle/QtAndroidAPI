@@ -24,11 +24,11 @@ namespace java::io
 		FilterOutputStream(java::io::OutputStream arg0);
 		
 		// Methods
-		void close();
-		void flush();
-		void write(JByteArray arg0);
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
+		void close() const;
+		void flush() const;
+		void write(JByteArray arg0) const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

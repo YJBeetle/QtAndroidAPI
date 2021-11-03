@@ -30,14 +30,14 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	void RecordingCanvas::disableZ()
+	void RecordingCanvas::disableZ() const
 	{
 		callMethod<void>(
 			"disableZ",
 			"()V"
 		);
 	}
-	void RecordingCanvas::drawARGB(jint arg0, jint arg1, jint arg2, jint arg3)
+	void RecordingCanvas::drawARGB(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"drawARGB",
@@ -48,7 +48,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void RecordingCanvas::drawArc(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, jboolean arg3, android::graphics::Paint arg4)
+	void RecordingCanvas::drawArc(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, jboolean arg3, android::graphics::Paint arg4) const
 	{
 		callMethod<void>(
 			"drawArc",
@@ -60,7 +60,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void RecordingCanvas::drawArc(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6, android::graphics::Paint arg7)
+	void RecordingCanvas::drawArc(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6, android::graphics::Paint arg7) const
 	{
 		callMethod<void>(
 			"drawArc",
@@ -75,7 +75,7 @@ namespace android::graphics
 			arg7.object()
 		);
 	}
-	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, android::graphics::Matrix arg1, android::graphics::Paint arg2)
+	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, android::graphics::Matrix arg1, android::graphics::Paint arg2) const
 	{
 		callMethod<void>(
 			"drawBitmap",
@@ -85,7 +85,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawBitmap",
@@ -96,7 +96,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::RectF arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::RectF arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawBitmap",
@@ -107,7 +107,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawBitmap(android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawBitmap",
@@ -118,7 +118,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawBitmap(JIntArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8)
+	void RecordingCanvas::drawBitmap(JIntArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8) const
 	{
 		callMethod<void>(
 			"drawBitmap",
@@ -134,7 +134,7 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void RecordingCanvas::drawBitmap(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8)
+	void RecordingCanvas::drawBitmap(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8) const
 	{
 		callMethod<void>(
 			"drawBitmap",
@@ -150,7 +150,7 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void RecordingCanvas::drawBitmapMesh(android::graphics::Bitmap arg0, jint arg1, jint arg2, JFloatArray arg3, jint arg4, JIntArray arg5, jint arg6, android::graphics::Paint arg7)
+	void RecordingCanvas::drawBitmapMesh(android::graphics::Bitmap arg0, jint arg1, jint arg2, JFloatArray arg3, jint arg4, JIntArray arg5, jint arg6, android::graphics::Paint arg7) const
 	{
 		callMethod<void>(
 			"drawBitmapMesh",
@@ -165,7 +165,7 @@ namespace android::graphics
 			arg7.object()
 		);
 	}
-	void RecordingCanvas::drawCircle(jfloat arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawCircle(jfloat arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawCircle",
@@ -176,7 +176,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawColor(jint arg0)
+	void RecordingCanvas::drawColor(jint arg0) const
 	{
 		callMethod<void>(
 			"drawColor",
@@ -184,7 +184,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void RecordingCanvas::drawColor(jint arg0, android::graphics::BlendMode arg1)
+	void RecordingCanvas::drawColor(jint arg0, android::graphics::BlendMode arg1) const
 	{
 		callMethod<void>(
 			"drawColor",
@@ -193,7 +193,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawColor(jint arg0, android::graphics::PorterDuff_Mode arg1)
+	void RecordingCanvas::drawColor(jint arg0, android::graphics::PorterDuff_Mode arg1) const
 	{
 		callMethod<void>(
 			"drawColor",
@@ -202,7 +202,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawColor(jlong arg0, android::graphics::BlendMode arg1)
+	void RecordingCanvas::drawColor(jlong arg0, android::graphics::BlendMode arg1) const
 	{
 		callMethod<void>(
 			"drawColor",
@@ -211,7 +211,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawDoubleRoundRect(android::graphics::RectF arg0, JFloatArray arg1, android::graphics::RectF arg2, JFloatArray arg3, android::graphics::Paint arg4)
+	void RecordingCanvas::drawDoubleRoundRect(android::graphics::RectF arg0, JFloatArray arg1, android::graphics::RectF arg2, JFloatArray arg3, android::graphics::Paint arg4) const
 	{
 		callMethod<void>(
 			"drawDoubleRoundRect",
@@ -223,7 +223,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void RecordingCanvas::drawDoubleRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::RectF arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6)
+	void RecordingCanvas::drawDoubleRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::RectF arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6) const
 	{
 		callMethod<void>(
 			"drawDoubleRoundRect",
@@ -237,7 +237,7 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	void RecordingCanvas::drawGlyphs(JIntArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4, android::graphics::fonts::Font arg5, android::graphics::Paint arg6)
+	void RecordingCanvas::drawGlyphs(JIntArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4, android::graphics::fonts::Font arg5, android::graphics::Paint arg6) const
 	{
 		callMethod<void>(
 			"drawGlyphs",
@@ -251,7 +251,7 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	void RecordingCanvas::drawLine(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
+	void RecordingCanvas::drawLine(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4) const
 	{
 		callMethod<void>(
 			"drawLine",
@@ -263,7 +263,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void RecordingCanvas::drawLines(JFloatArray arg0, android::graphics::Paint arg1)
+	void RecordingCanvas::drawLines(JFloatArray arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"drawLines",
@@ -272,7 +272,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawLines(JFloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawLines(JFloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawLines",
@@ -283,7 +283,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawOval(android::graphics::RectF arg0, android::graphics::Paint arg1)
+	void RecordingCanvas::drawOval(android::graphics::RectF arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"drawOval",
@@ -292,7 +292,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
+	void RecordingCanvas::drawOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4) const
 	{
 		callMethod<void>(
 			"drawOval",
@@ -304,7 +304,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void RecordingCanvas::drawPaint(android::graphics::Paint arg0)
+	void RecordingCanvas::drawPaint(android::graphics::Paint arg0) const
 	{
 		callMethod<void>(
 			"drawPaint",
@@ -312,7 +312,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RecordingCanvas::drawPatch(android::graphics::NinePatch arg0, android::graphics::Rect arg1, android::graphics::Paint arg2)
+	void RecordingCanvas::drawPatch(android::graphics::NinePatch arg0, android::graphics::Rect arg1, android::graphics::Paint arg2) const
 	{
 		callMethod<void>(
 			"drawPatch",
@@ -322,7 +322,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void RecordingCanvas::drawPatch(android::graphics::NinePatch arg0, android::graphics::RectF arg1, android::graphics::Paint arg2)
+	void RecordingCanvas::drawPatch(android::graphics::NinePatch arg0, android::graphics::RectF arg1, android::graphics::Paint arg2) const
 	{
 		callMethod<void>(
 			"drawPatch",
@@ -332,7 +332,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void RecordingCanvas::drawPath(android::graphics::Path arg0, android::graphics::Paint arg1)
+	void RecordingCanvas::drawPath(android::graphics::Path arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"drawPath",
@@ -341,7 +341,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawPicture(android::graphics::Picture arg0)
+	void RecordingCanvas::drawPicture(android::graphics::Picture arg0) const
 	{
 		callMethod<void>(
 			"drawPicture",
@@ -349,7 +349,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RecordingCanvas::drawPicture(android::graphics::Picture arg0, android::graphics::Rect arg1)
+	void RecordingCanvas::drawPicture(android::graphics::Picture arg0, android::graphics::Rect arg1) const
 	{
 		callMethod<void>(
 			"drawPicture",
@@ -358,7 +358,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawPicture(android::graphics::Picture arg0, android::graphics::RectF arg1)
+	void RecordingCanvas::drawPicture(android::graphics::Picture arg0, android::graphics::RectF arg1) const
 	{
 		callMethod<void>(
 			"drawPicture",
@@ -367,7 +367,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawPoint(jfloat arg0, jfloat arg1, android::graphics::Paint arg2)
+	void RecordingCanvas::drawPoint(jfloat arg0, jfloat arg1, android::graphics::Paint arg2) const
 	{
 		callMethod<void>(
 			"drawPoint",
@@ -377,7 +377,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void RecordingCanvas::drawPoints(JFloatArray arg0, android::graphics::Paint arg1)
+	void RecordingCanvas::drawPoints(JFloatArray arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"drawPoints",
@@ -386,7 +386,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawPoints(JFloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawPoints(JFloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawPoints",
@@ -397,7 +397,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawPosText(JString arg0, JFloatArray arg1, android::graphics::Paint arg2)
+	void RecordingCanvas::drawPosText(JString arg0, JFloatArray arg1, android::graphics::Paint arg2) const
 	{
 		callMethod<void>(
 			"drawPosText",
@@ -407,7 +407,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void RecordingCanvas::drawPosText(JCharArray arg0, jint arg1, jint arg2, JFloatArray arg3, android::graphics::Paint arg4)
+	void RecordingCanvas::drawPosText(JCharArray arg0, jint arg1, jint arg2, JFloatArray arg3, android::graphics::Paint arg4) const
 	{
 		callMethod<void>(
 			"drawPosText",
@@ -419,7 +419,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void RecordingCanvas::drawRGB(jint arg0, jint arg1, jint arg2)
+	void RecordingCanvas::drawRGB(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"drawRGB",
@@ -429,7 +429,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void RecordingCanvas::drawRect(android::graphics::Rect arg0, android::graphics::Paint arg1)
+	void RecordingCanvas::drawRect(android::graphics::Rect arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"drawRect",
@@ -438,7 +438,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawRect(android::graphics::RectF arg0, android::graphics::Paint arg1)
+	void RecordingCanvas::drawRect(android::graphics::RectF arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"drawRect",
@@ -447,7 +447,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void RecordingCanvas::drawRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
+	void RecordingCanvas::drawRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4) const
 	{
 		callMethod<void>(
 			"drawRect",
@@ -459,7 +459,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void RecordingCanvas::drawRenderNode(android::graphics::RenderNode arg0)
+	void RecordingCanvas::drawRenderNode(android::graphics::RenderNode arg0) const
 	{
 		callMethod<void>(
 			"drawRenderNode",
@@ -467,7 +467,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RecordingCanvas::drawRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawRoundRect",
@@ -478,7 +478,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6)
+	void RecordingCanvas::drawRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6) const
 	{
 		callMethod<void>(
 			"drawRoundRect",
@@ -492,7 +492,7 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	void RecordingCanvas::drawText(JString arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
+	void RecordingCanvas::drawText(JString arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3) const
 	{
 		callMethod<void>(
 			"drawText",
@@ -503,7 +503,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void RecordingCanvas::drawText(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
+	void RecordingCanvas::drawText(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5) const
 	{
 		callMethod<void>(
 			"drawText",
@@ -516,7 +516,7 @@ namespace android::graphics
 			arg5.object()
 		);
 	}
-	void RecordingCanvas::drawText(JString arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
+	void RecordingCanvas::drawText(JString arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5) const
 	{
 		callMethod<void>(
 			"drawText",
@@ -529,7 +529,7 @@ namespace android::graphics
 			arg5.object()
 		);
 	}
-	void RecordingCanvas::drawTextOnPath(JString arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
+	void RecordingCanvas::drawTextOnPath(JString arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4) const
 	{
 		callMethod<void>(
 			"drawTextOnPath",
@@ -541,7 +541,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void RecordingCanvas::drawTextOnPath(JCharArray arg0, jint arg1, jint arg2, android::graphics::Path arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6)
+	void RecordingCanvas::drawTextOnPath(JCharArray arg0, jint arg1, jint arg2, android::graphics::Path arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6) const
 	{
 		callMethod<void>(
 			"drawTextOnPath",
@@ -555,7 +555,7 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	void RecordingCanvas::drawTextRun(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
+	void RecordingCanvas::drawTextRun(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8) const
 	{
 		callMethod<void>(
 			"drawTextRun",
@@ -571,7 +571,7 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void RecordingCanvas::drawTextRun(android::graphics::text::MeasuredText arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
+	void RecordingCanvas::drawTextRun(android::graphics::text::MeasuredText arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8) const
 	{
 		callMethod<void>(
 			"drawTextRun",
@@ -587,7 +587,7 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void RecordingCanvas::drawTextRun(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
+	void RecordingCanvas::drawTextRun(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8) const
 	{
 		callMethod<void>(
 			"drawTextRun",
@@ -603,7 +603,7 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void RecordingCanvas::drawVertices(android::graphics::Canvas_VertexMode arg0, jint arg1, JFloatArray arg2, jint arg3, JFloatArray arg4, jint arg5, JIntArray arg6, jint arg7, JShortArray arg8, jint arg9, jint arg10, android::graphics::Paint arg11)
+	void RecordingCanvas::drawVertices(android::graphics::Canvas_VertexMode arg0, jint arg1, JFloatArray arg2, jint arg3, JFloatArray arg4, jint arg5, JIntArray arg6, jint arg7, JShortArray arg8, jint arg9, jint arg10, android::graphics::Paint arg11) const
 	{
 		callMethod<void>(
 			"drawVertices",
@@ -622,56 +622,56 @@ namespace android::graphics
 			arg11.object()
 		);
 	}
-	void RecordingCanvas::enableZ()
+	void RecordingCanvas::enableZ() const
 	{
 		callMethod<void>(
 			"enableZ",
 			"()V"
 		);
 	}
-	jint RecordingCanvas::getHeight()
+	jint RecordingCanvas::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint RecordingCanvas::getMaximumBitmapHeight()
+	jint RecordingCanvas::getMaximumBitmapHeight() const
 	{
 		return callMethod<jint>(
 			"getMaximumBitmapHeight",
 			"()I"
 		);
 	}
-	jint RecordingCanvas::getMaximumBitmapWidth()
+	jint RecordingCanvas::getMaximumBitmapWidth() const
 	{
 		return callMethod<jint>(
 			"getMaximumBitmapWidth",
 			"()I"
 		);
 	}
-	jint RecordingCanvas::getWidth()
+	jint RecordingCanvas::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean RecordingCanvas::isHardwareAccelerated()
+	jboolean RecordingCanvas::isHardwareAccelerated() const
 	{
 		return callMethod<jboolean>(
 			"isHardwareAccelerated",
 			"()Z"
 		);
 	}
-	jboolean RecordingCanvas::isOpaque()
+	jboolean RecordingCanvas::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	void RecordingCanvas::setBitmap(android::graphics::Bitmap arg0)
+	void RecordingCanvas::setBitmap(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"setBitmap",
@@ -679,7 +679,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RecordingCanvas::setDensity(jint arg0)
+	void RecordingCanvas::setDensity(jint arg0) const
 	{
 		callMethod<void>(
 			"setDensity",

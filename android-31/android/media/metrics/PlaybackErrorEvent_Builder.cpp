@@ -18,14 +18,14 @@ namespace android::media::metrics
 		) {}
 	
 	// Methods
-	android::media::metrics::PlaybackErrorEvent PlaybackErrorEvent_Builder::build()
+	android::media::metrics::PlaybackErrorEvent PlaybackErrorEvent_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/metrics/PlaybackErrorEvent;"
 		);
 	}
-	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setErrorCode(jint arg0)
+	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setErrorCode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setErrorCode",
@@ -33,7 +33,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setException(java::lang::Exception arg0)
+	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setException(java::lang::Exception arg0) const
 	{
 		return callObjectMethod(
 			"setException",
@@ -41,7 +41,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setMetricsBundle(android::os::Bundle arg0)
+	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setMetricsBundle(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setMetricsBundle",
@@ -49,7 +49,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setSubErrorCode(jint arg0)
+	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setSubErrorCode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSubErrorCode",
@@ -57,7 +57,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setTimeSinceCreatedMillis(jlong arg0)
+	android::media::metrics::PlaybackErrorEvent_Builder PlaybackErrorEvent_Builder::setTimeSinceCreatedMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTimeSinceCreatedMillis",

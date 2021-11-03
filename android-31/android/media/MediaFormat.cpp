@@ -1152,7 +1152,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jboolean MediaFormat::containsFeature(JString arg0)
+	jboolean MediaFormat::containsFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsFeature",
@@ -1160,7 +1160,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jboolean MediaFormat::containsKey(JString arg0)
+	jboolean MediaFormat::containsKey(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -1168,7 +1168,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	java::nio::ByteBuffer MediaFormat::getByteBuffer(JString arg0)
+	java::nio::ByteBuffer MediaFormat::getByteBuffer(JString arg0) const
 	{
 		return callObjectMethod(
 			"getByteBuffer",
@@ -1176,7 +1176,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	java::nio::ByteBuffer MediaFormat::getByteBuffer(JString arg0, java::nio::ByteBuffer arg1)
+	java::nio::ByteBuffer MediaFormat::getByteBuffer(JString arg0, java::nio::ByteBuffer arg1) const
 	{
 		return callObjectMethod(
 			"getByteBuffer",
@@ -1185,7 +1185,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jboolean MediaFormat::getFeatureEnabled(JString arg0)
+	jboolean MediaFormat::getFeatureEnabled(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeatureEnabled",
@@ -1193,14 +1193,14 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JObject MediaFormat::getFeatures()
+	JObject MediaFormat::getFeatures() const
 	{
 		return callObjectMethod(
 			"getFeatures",
 			"()Ljava/util/Set;"
 		);
 	}
-	jfloat MediaFormat::getFloat(JString arg0)
+	jfloat MediaFormat::getFloat(JString arg0) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -1208,7 +1208,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jfloat MediaFormat::getFloat(JString arg0, jfloat arg1)
+	jfloat MediaFormat::getFloat(JString arg0, jfloat arg1) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -1217,7 +1217,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jint MediaFormat::getInteger(JString arg0)
+	jint MediaFormat::getInteger(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getInteger",
@@ -1225,7 +1225,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jint MediaFormat::getInteger(JString arg0, jint arg1)
+	jint MediaFormat::getInteger(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getInteger",
@@ -1234,14 +1234,14 @@ namespace android::media
 			arg1
 		);
 	}
-	JObject MediaFormat::getKeys()
+	JObject MediaFormat::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/Set;"
 		);
 	}
-	jlong MediaFormat::getLong(JString arg0)
+	jlong MediaFormat::getLong(JString arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -1249,7 +1249,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jlong MediaFormat::getLong(JString arg0, jlong arg1)
+	jlong MediaFormat::getLong(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -1258,7 +1258,7 @@ namespace android::media
 			arg1
 		);
 	}
-	java::lang::Number MediaFormat::getNumber(JString arg0)
+	java::lang::Number MediaFormat::getNumber(JString arg0) const
 	{
 		return callObjectMethod(
 			"getNumber",
@@ -1266,7 +1266,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Number MediaFormat::getNumber(JString arg0, java::lang::Number arg1)
+	java::lang::Number MediaFormat::getNumber(JString arg0, java::lang::Number arg1) const
 	{
 		return callObjectMethod(
 			"getNumber",
@@ -1275,7 +1275,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	JString MediaFormat::getString(JString arg0)
+	JString MediaFormat::getString(JString arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -1283,7 +1283,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JString MediaFormat::getString(JString arg0, JString arg1)
+	JString MediaFormat::getString(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -1292,7 +1292,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	jint MediaFormat::getValueTypeForKey(JString arg0)
+	jint MediaFormat::getValueTypeForKey(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getValueTypeForKey",
@@ -1300,7 +1300,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaFormat::removeFeature(JString arg0)
+	void MediaFormat::removeFeature(JString arg0) const
 	{
 		callMethod<void>(
 			"removeFeature",
@@ -1308,7 +1308,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaFormat::removeKey(JString arg0)
+	void MediaFormat::removeKey(JString arg0) const
 	{
 		callMethod<void>(
 			"removeKey",
@@ -1316,7 +1316,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaFormat::setByteBuffer(JString arg0, java::nio::ByteBuffer arg1)
+	void MediaFormat::setByteBuffer(JString arg0, java::nio::ByteBuffer arg1) const
 	{
 		callMethod<void>(
 			"setByteBuffer",
@@ -1325,7 +1325,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaFormat::setFeatureEnabled(JString arg0, jboolean arg1)
+	void MediaFormat::setFeatureEnabled(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeatureEnabled",
@@ -1334,7 +1334,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaFormat::setFloat(JString arg0, jfloat arg1)
+	void MediaFormat::setFloat(JString arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setFloat",
@@ -1343,7 +1343,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaFormat::setInteger(JString arg0, jint arg1)
+	void MediaFormat::setInteger(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setInteger",
@@ -1352,7 +1352,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaFormat::setLong(JString arg0, jlong arg1)
+	void MediaFormat::setLong(JString arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setLong",
@@ -1361,7 +1361,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaFormat::setString(JString arg0, JString arg1)
+	void MediaFormat::setString(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setString",
@@ -1370,7 +1370,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	JString MediaFormat::toString()
+	JString MediaFormat::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -32,14 +32,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	java::nio::channels::SocketChannel ServerSocketChannel::accept()
+	java::nio::channels::SocketChannel ServerSocketChannel::accept() const
 	{
 		return callObjectMethod(
 			"accept",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0) const
 	{
 		return callObjectMethod(
 			"bind",
@@ -47,7 +47,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"bind",
@@ -56,14 +56,14 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	java::net::SocketAddress ServerSocketChannel::getLocalAddress()
+	java::net::SocketAddress ServerSocketChannel::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(JObject arg0, JObject arg1)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setOption",
@@ -72,14 +72,14 @@ namespace java::nio::channels
 			arg1.object<jobject>()
 		);
 	}
-	java::net::ServerSocket ServerSocketChannel::socket()
+	java::net::ServerSocket ServerSocketChannel::socket() const
 	{
 		return callObjectMethod(
 			"socket",
 			"()Ljava/net/ServerSocket;"
 		);
 	}
-	jint ServerSocketChannel::validOps()
+	jint ServerSocketChannel::validOps() const
 	{
 		return callMethod<jint>(
 			"validOps",

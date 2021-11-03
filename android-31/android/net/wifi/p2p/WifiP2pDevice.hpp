@@ -40,18 +40,18 @@ namespace android::net::wifi::p2p
 		WifiP2pDevice(android::net::wifi::p2p::WifiP2pDevice &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::net::wifi::p2p::WifiP2pWfdInfo getWfdInfo();
-		jint hashCode();
-		jboolean isGroupOwner();
-		jboolean isServiceDiscoveryCapable();
-		JString toString();
-		void update(android::net::wifi::p2p::WifiP2pDevice arg0);
-		jboolean wpsDisplaySupported();
-		jboolean wpsKeypadSupported();
-		jboolean wpsPbcSupported();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::net::wifi::p2p::WifiP2pWfdInfo getWfdInfo() const;
+		jint hashCode() const;
+		jboolean isGroupOwner() const;
+		jboolean isServiceDiscoveryCapable() const;
+		JString toString() const;
+		void update(android::net::wifi::p2p::WifiP2pDevice arg0) const;
+		jboolean wpsDisplaySupported() const;
+		jboolean wpsKeypadSupported() const;
+		jboolean wpsPbcSupported() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::p2p
 

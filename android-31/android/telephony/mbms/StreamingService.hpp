@@ -37,9 +37,9 @@ namespace android::telephony::mbms
 		// Constructors
 		
 		// Methods
-		void close();
-		android::telephony::mbms::StreamingServiceInfo getInfo();
-		android::net::Uri getPlaybackUri();
+		void close() const;
+		android::telephony::mbms::StreamingServiceInfo getInfo() const;
+		android::net::Uri getPlaybackUri() const;
 	};
 } // namespace android::telephony::mbms
 

@@ -62,7 +62,7 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextLinks::apply(JObject arg0, jint arg1, JObject arg2)
+	jint TextLinks::apply(JObject arg0, jint arg1, JObject arg2) const
 	{
 		return callMethod<jint>(
 			"apply",
@@ -72,28 +72,28 @@ namespace android::view::textclassifier
 			arg2.object()
 		);
 	}
-	jint TextLinks::describeContents()
+	jint TextLinks::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject TextLinks::getLinks()
+	JObject TextLinks::getLinks() const
 	{
 		return callObjectMethod(
 			"getLinks",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JString TextLinks::toString()
+	JString TextLinks::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextLinks::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextLinks::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -28,9 +28,9 @@ namespace java::lang
 		
 		// Methods
 		static java::lang::ThreadLocal withInitial(JObject arg0);
-		JObject get();
-		void remove();
-		void set(JObject arg0);
+		JObject get() const;
+		void remove() const;
+		void set(JObject arg0) const;
 	};
 } // namespace java::lang
 

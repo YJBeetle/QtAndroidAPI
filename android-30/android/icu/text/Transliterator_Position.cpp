@@ -64,7 +64,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jboolean Transliterator_Position::equals(JObject arg0)
+	jboolean Transliterator_Position::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -72,14 +72,14 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	jint Transliterator_Position::hashCode()
+	jint Transliterator_Position::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Transliterator_Position::set(android::icu::text::Transliterator_Position arg0)
+	void Transliterator_Position::set(android::icu::text::Transliterator_Position arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -87,14 +87,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString Transliterator_Position::toString()
+	JString Transliterator_Position::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Transliterator_Position::validate(jint arg0)
+	void Transliterator_Position::validate(jint arg0) const
 	{
 		callMethod<void>(
 			"validate",

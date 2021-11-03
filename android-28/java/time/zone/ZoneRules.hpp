@@ -50,22 +50,22 @@ namespace java::time::zone
 		// Methods
 		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0);
 		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, JObject arg2, JObject arg3, JObject arg4);
-		jboolean equals(JObject arg0);
-		java::time::Duration getDaylightSavings(java::time::Instant arg0);
-		java::time::ZoneOffset getOffset(java::time::Instant arg0);
-		java::time::ZoneOffset getOffset(java::time::LocalDateTime arg0);
-		java::time::ZoneOffset getStandardOffset(java::time::Instant arg0);
-		java::time::zone::ZoneOffsetTransition getTransition(java::time::LocalDateTime arg0);
-		JObject getTransitionRules();
-		JObject getTransitions();
-		JObject getValidOffsets(java::time::LocalDateTime arg0);
-		jint hashCode();
-		jboolean isDaylightSavings(java::time::Instant arg0);
-		jboolean isFixedOffset();
-		jboolean isValidOffset(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1);
-		java::time::zone::ZoneOffsetTransition nextTransition(java::time::Instant arg0);
-		java::time::zone::ZoneOffsetTransition previousTransition(java::time::Instant arg0);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		java::time::Duration getDaylightSavings(java::time::Instant arg0) const;
+		java::time::ZoneOffset getOffset(java::time::Instant arg0) const;
+		java::time::ZoneOffset getOffset(java::time::LocalDateTime arg0) const;
+		java::time::ZoneOffset getStandardOffset(java::time::Instant arg0) const;
+		java::time::zone::ZoneOffsetTransition getTransition(java::time::LocalDateTime arg0) const;
+		JObject getTransitionRules() const;
+		JObject getTransitions() const;
+		JObject getValidOffsets(java::time::LocalDateTime arg0) const;
+		jint hashCode() const;
+		jboolean isDaylightSavings(java::time::Instant arg0) const;
+		jboolean isFixedOffset() const;
+		jboolean isValidOffset(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1) const;
+		java::time::zone::ZoneOffsetTransition nextTransition(java::time::Instant arg0) const;
+		java::time::zone::ZoneOffsetTransition previousTransition(java::time::Instant arg0) const;
+		JString toString() const;
 	};
 } // namespace java::time::zone
 

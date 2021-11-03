@@ -43,14 +43,14 @@ namespace android::nfc
 		) {}
 	
 	// Methods
-	jint NdefMessage::describeContents()
+	jint NdefMessage::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NdefMessage::equals(JObject arg0)
+	jboolean NdefMessage::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -58,42 +58,42 @@ namespace android::nfc
 			arg0.object<jobject>()
 		);
 	}
-	jint NdefMessage::getByteArrayLength()
+	jint NdefMessage::getByteArrayLength() const
 	{
 		return callMethod<jint>(
 			"getByteArrayLength",
 			"()I"
 		);
 	}
-	JArray NdefMessage::getRecords()
+	JArray NdefMessage::getRecords() const
 	{
 		return callObjectMethod(
 			"getRecords",
 			"()[Landroid/nfc/NdefRecord;"
 		);
 	}
-	jint NdefMessage::hashCode()
+	jint NdefMessage::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JByteArray NdefMessage::toByteArray()
+	JByteArray NdefMessage::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	JString NdefMessage::toString()
+	JString NdefMessage::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NdefMessage::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NdefMessage::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

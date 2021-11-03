@@ -16,7 +16,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	void Edits::addReplace(jint arg0, jint arg1)
+	void Edits::addReplace(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addReplace",
@@ -25,7 +25,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	void Edits::addUnchanged(jint arg0)
+	void Edits::addUnchanged(jint arg0) const
 	{
 		callMethod<void>(
 			"addUnchanged",
@@ -33,49 +33,49 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::Edits_Iterator Edits::getCoarseChangesIterator()
+	android::icu::text::Edits_Iterator Edits::getCoarseChangesIterator() const
 	{
 		return callObjectMethod(
 			"getCoarseChangesIterator",
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
-	android::icu::text::Edits_Iterator Edits::getCoarseIterator()
+	android::icu::text::Edits_Iterator Edits::getCoarseIterator() const
 	{
 		return callObjectMethod(
 			"getCoarseIterator",
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
-	android::icu::text::Edits_Iterator Edits::getFineChangesIterator()
+	android::icu::text::Edits_Iterator Edits::getFineChangesIterator() const
 	{
 		return callObjectMethod(
 			"getFineChangesIterator",
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
-	android::icu::text::Edits_Iterator Edits::getFineIterator()
+	android::icu::text::Edits_Iterator Edits::getFineIterator() const
 	{
 		return callObjectMethod(
 			"getFineIterator",
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
-	jboolean Edits::hasChanges()
+	jboolean Edits::hasChanges() const
 	{
 		return callMethod<jboolean>(
 			"hasChanges",
 			"()Z"
 		);
 	}
-	jint Edits::lengthDelta()
+	jint Edits::lengthDelta() const
 	{
 		return callMethod<jint>(
 			"lengthDelta",
 			"()I"
 		);
 	}
-	android::icu::text::Edits Edits::mergeAndAppend(android::icu::text::Edits arg0, android::icu::text::Edits arg1)
+	android::icu::text::Edits Edits::mergeAndAppend(android::icu::text::Edits arg0, android::icu::text::Edits arg1) const
 	{
 		return callObjectMethod(
 			"mergeAndAppend",
@@ -84,14 +84,14 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	jint Edits::numberOfChanges()
+	jint Edits::numberOfChanges() const
 	{
 		return callMethod<jint>(
 			"numberOfChanges",
 			"()I"
 		);
 	}
-	void Edits::reset()
+	void Edits::reset() const
 	{
 		callMethod<void>(
 			"reset",

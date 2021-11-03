@@ -47,35 +47,35 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	org::xml::sax::InputSource SAXSource::getInputSource()
+	org::xml::sax::InputSource SAXSource::getInputSource() const
 	{
 		return callObjectMethod(
 			"getInputSource",
 			"()Lorg/xml/sax/InputSource;"
 		);
 	}
-	JString SAXSource::getSystemId()
+	JString SAXSource::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SAXSource::getXMLReader()
+	JObject SAXSource::getXMLReader() const
 	{
 		return callObjectMethod(
 			"getXMLReader",
 			"()Lorg/xml/sax/XMLReader;"
 		);
 	}
-	jboolean SAXSource::isEmpty()
+	jboolean SAXSource::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void SAXSource::setInputSource(org::xml::sax::InputSource arg0)
+	void SAXSource::setInputSource(org::xml::sax::InputSource arg0) const
 	{
 		callMethod<void>(
 			"setInputSource",
@@ -83,7 +83,7 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	void SAXSource::setSystemId(JString arg0)
+	void SAXSource::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",
@@ -91,7 +91,7 @@ namespace javax::xml::transform::sax
 			arg0.object<jstring>()
 		);
 	}
-	void SAXSource::setXMLReader(JObject arg0)
+	void SAXSource::setXMLReader(JObject arg0) const
 	{
 		callMethod<void>(
 			"setXMLReader",

@@ -42,16 +42,16 @@ namespace android::app::backup
 		BackupAgent();
 		
 		// Methods
-		void fullBackupFile(java::io::File arg0, android::app::backup::FullBackupDataOutput arg1);
-		void onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2);
-		void onCreate();
-		void onDestroy();
-		void onFullBackup(android::app::backup::FullBackupDataOutput arg0);
-		void onQuotaExceeded(jlong arg0, jlong arg1);
-		void onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2);
-		void onRestore(android::app::backup::BackupDataInput arg0, jlong arg1, android::os::ParcelFileDescriptor arg2);
-		void onRestoreFile(android::os::ParcelFileDescriptor arg0, jlong arg1, java::io::File arg2, jint arg3, jlong arg4, jlong arg5);
-		void onRestoreFinished();
+		void fullBackupFile(java::io::File arg0, android::app::backup::FullBackupDataOutput arg1) const;
+		void onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2) const;
+		void onCreate() const;
+		void onDestroy() const;
+		void onFullBackup(android::app::backup::FullBackupDataOutput arg0) const;
+		void onQuotaExceeded(jlong arg0, jlong arg1) const;
+		void onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2) const;
+		void onRestore(android::app::backup::BackupDataInput arg0, jlong arg1, android::os::ParcelFileDescriptor arg2) const;
+		void onRestoreFile(android::os::ParcelFileDescriptor arg0, jlong arg1, java::io::File arg2, jint arg3, jlong arg4, jlong arg5) const;
+		void onRestoreFinished() const;
 	};
 } // namespace android::app::backup
 

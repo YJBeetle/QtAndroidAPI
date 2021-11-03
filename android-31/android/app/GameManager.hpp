@@ -20,7 +20,7 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		jint getGameMode();
+		jint getGameMode() const;
 	};
 } // namespace android::app
 

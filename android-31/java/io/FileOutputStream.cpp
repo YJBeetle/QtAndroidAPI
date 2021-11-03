@@ -48,28 +48,28 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void FileOutputStream::close()
+	void FileOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::nio::channels::FileChannel FileOutputStream::getChannel()
+	java::nio::channels::FileChannel FileOutputStream::getChannel() const
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/FileChannel;"
 		);
 	}
-	java::io::FileDescriptor FileOutputStream::getFD()
+	java::io::FileDescriptor FileOutputStream::getFD() const
 	{
 		return callObjectMethod(
 			"getFD",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	void FileOutputStream::write(JByteArray arg0)
+	void FileOutputStream::write(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -77,7 +77,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void FileOutputStream::write(jint arg0)
+	void FileOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -85,7 +85,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void FileOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void FileOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

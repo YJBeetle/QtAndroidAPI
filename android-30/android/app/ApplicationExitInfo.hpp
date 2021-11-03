@@ -47,26 +47,26 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getDefiningUid();
-		JString getDescription();
-		jint getImportance();
-		jint getPackageUid();
-		jint getPid();
-		JString getProcessName();
-		JByteArray getProcessStateSummary();
-		jlong getPss();
-		jint getRealUid();
-		jint getReason();
-		jlong getRss();
-		jint getStatus();
-		jlong getTimestamp();
-		java::io::InputStream getTraceInputStream();
-		android::os::UserHandle getUserHandle();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getDefiningUid() const;
+		JString getDescription() const;
+		jint getImportance() const;
+		jint getPackageUid() const;
+		jint getPid() const;
+		JString getProcessName() const;
+		JByteArray getProcessStateSummary() const;
+		jlong getPss() const;
+		jint getRealUid() const;
+		jint getReason() const;
+		jlong getRss() const;
+		jint getStatus() const;
+		jlong getTimestamp() const;
+		java::io::InputStream getTraceInputStream() const;
+		android::os::UserHandle getUserHandle() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

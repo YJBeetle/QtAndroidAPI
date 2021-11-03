@@ -22,7 +22,7 @@ namespace android::speech::tts
 		TextToSpeech_EngineInfo();
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::speech::tts
 

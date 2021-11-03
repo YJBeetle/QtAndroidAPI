@@ -91,7 +91,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jshort Equalizer::getBand(jint arg0)
+	jshort Equalizer::getBand(jint arg0) const
 	{
 		return callMethod<jshort>(
 			"getBand",
@@ -99,7 +99,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	JIntArray Equalizer::getBandFreqRange(jshort arg0)
+	JIntArray Equalizer::getBandFreqRange(jshort arg0) const
 	{
 		return callObjectMethod(
 			"getBandFreqRange",
@@ -107,7 +107,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jshort Equalizer::getBandLevel(jshort arg0)
+	jshort Equalizer::getBandLevel(jshort arg0) const
 	{
 		return callMethod<jshort>(
 			"getBandLevel",
@@ -115,14 +115,14 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	JShortArray Equalizer::getBandLevelRange()
+	JShortArray Equalizer::getBandLevelRange() const
 	{
 		return callObjectMethod(
 			"getBandLevelRange",
 			"()[S"
 		);
 	}
-	jint Equalizer::getCenterFreq(jshort arg0)
+	jint Equalizer::getCenterFreq(jshort arg0) const
 	{
 		return callMethod<jint>(
 			"getCenterFreq",
@@ -130,28 +130,28 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jshort Equalizer::getCurrentPreset()
+	jshort Equalizer::getCurrentPreset() const
 	{
 		return callMethod<jshort>(
 			"getCurrentPreset",
 			"()S"
 		);
 	}
-	jshort Equalizer::getNumberOfBands()
+	jshort Equalizer::getNumberOfBands() const
 	{
 		return callMethod<jshort>(
 			"getNumberOfBands",
 			"()S"
 		);
 	}
-	jshort Equalizer::getNumberOfPresets()
+	jshort Equalizer::getNumberOfPresets() const
 	{
 		return callMethod<jshort>(
 			"getNumberOfPresets",
 			"()S"
 		);
 	}
-	JString Equalizer::getPresetName(jshort arg0)
+	JString Equalizer::getPresetName(jshort arg0) const
 	{
 		return callObjectMethod(
 			"getPresetName",
@@ -159,14 +159,14 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	android::media::audiofx::Equalizer_Settings Equalizer::getProperties()
+	android::media::audiofx::Equalizer_Settings Equalizer::getProperties() const
 	{
 		return callObjectMethod(
 			"getProperties",
 			"()Landroid/media/audiofx/Equalizer$Settings;"
 		);
 	}
-	void Equalizer::setBandLevel(jshort arg0, jshort arg1)
+	void Equalizer::setBandLevel(jshort arg0, jshort arg1) const
 	{
 		callMethod<void>(
 			"setBandLevel",
@@ -175,7 +175,7 @@ namespace android::media::audiofx
 			arg1
 		);
 	}
-	void Equalizer::setParameterListener(JObject arg0)
+	void Equalizer::setParameterListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParameterListener",
@@ -183,7 +183,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void Equalizer::setProperties(android::media::audiofx::Equalizer_Settings arg0)
+	void Equalizer::setProperties(android::media::audiofx::Equalizer_Settings arg0) const
 	{
 		callMethod<void>(
 			"setProperties",
@@ -191,7 +191,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void Equalizer::usePreset(jshort arg0)
+	void Equalizer::usePreset(jshort arg0) const
 	{
 		callMethod<void>(
 			"usePreset",

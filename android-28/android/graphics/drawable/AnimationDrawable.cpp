@@ -19,7 +19,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void AnimationDrawable::addFrame(android::graphics::drawable::Drawable arg0, jint arg1)
+	void AnimationDrawable::addFrame(android::graphics::drawable::Drawable arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addFrame",
@@ -28,7 +28,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	jint AnimationDrawable::getDuration(jint arg0)
+	jint AnimationDrawable::getDuration(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getDuration",
@@ -36,7 +36,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	android::graphics::drawable::Drawable AnimationDrawable::getFrame(jint arg0)
+	android::graphics::drawable::Drawable AnimationDrawable::getFrame(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFrame",
@@ -44,14 +44,14 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jint AnimationDrawable::getNumberOfFrames()
+	jint AnimationDrawable::getNumberOfFrames() const
 	{
 		return callMethod<jint>(
 			"getNumberOfFrames",
 			"()I"
 		);
 	}
-	void AnimationDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void AnimationDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -62,35 +62,35 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean AnimationDrawable::isOneShot()
+	jboolean AnimationDrawable::isOneShot() const
 	{
 		return callMethod<jboolean>(
 			"isOneShot",
 			"()Z"
 		);
 	}
-	jboolean AnimationDrawable::isRunning()
+	jboolean AnimationDrawable::isRunning() const
 	{
 		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable AnimationDrawable::mutate()
+	android::graphics::drawable::Drawable AnimationDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void AnimationDrawable::run()
+	void AnimationDrawable::run() const
 	{
 		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
-	void AnimationDrawable::setOneShot(jboolean arg0)
+	void AnimationDrawable::setOneShot(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOneShot",
@@ -98,7 +98,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jboolean AnimationDrawable::setVisible(jboolean arg0, jboolean arg1)
+	jboolean AnimationDrawable::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",
@@ -107,21 +107,21 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void AnimationDrawable::start()
+	void AnimationDrawable::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void AnimationDrawable::stop()
+	void AnimationDrawable::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	void AnimationDrawable::unscheduleSelf(JObject arg0)
+	void AnimationDrawable::unscheduleSelf(JObject arg0) const
 	{
 		callMethod<void>(
 			"unscheduleSelf",

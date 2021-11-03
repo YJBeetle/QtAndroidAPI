@@ -16,14 +16,14 @@ namespace java::net
 		) {}
 	
 	// Methods
-	void CacheRequest::abort()
+	void CacheRequest::abort() const
 	{
 		callMethod<void>(
 			"abort",
 			"()V"
 		);
 	}
-	java::io::OutputStream CacheRequest::getBody()
+	java::io::OutputStream CacheRequest::getBody() const
 	{
 		return callObjectMethod(
 			"getBody",

@@ -29,7 +29,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void TableLayout::addView(android::view::View arg0)
+	void TableLayout::addView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addView",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TableLayout::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void TableLayout::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -46,7 +46,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TableLayout::addView(android::view::View arg0, jint arg1)
+	void TableLayout::addView(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TableLayout::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void TableLayout::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -65,7 +65,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::widget::TableLayout_LayoutParams TableLayout::generateLayoutParams(JObject arg0)
+	android::widget::TableLayout_LayoutParams TableLayout::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -73,14 +73,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString TableLayout::getAccessibilityClassName()
+	JString TableLayout::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean TableLayout::isColumnCollapsed(jint arg0)
+	jboolean TableLayout::isColumnCollapsed(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isColumnCollapsed",
@@ -88,7 +88,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TableLayout::isColumnShrinkable(jint arg0)
+	jboolean TableLayout::isColumnShrinkable(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isColumnShrinkable",
@@ -96,7 +96,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TableLayout::isColumnStretchable(jint arg0)
+	jboolean TableLayout::isColumnStretchable(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isColumnStretchable",
@@ -104,28 +104,28 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean TableLayout::isShrinkAllColumns()
+	jboolean TableLayout::isShrinkAllColumns() const
 	{
 		return callMethod<jboolean>(
 			"isShrinkAllColumns",
 			"()Z"
 		);
 	}
-	jboolean TableLayout::isStretchAllColumns()
+	jboolean TableLayout::isStretchAllColumns() const
 	{
 		return callMethod<jboolean>(
 			"isStretchAllColumns",
 			"()Z"
 		);
 	}
-	void TableLayout::requestLayout()
+	void TableLayout::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void TableLayout::setColumnCollapsed(jint arg0, jboolean arg1)
+	void TableLayout::setColumnCollapsed(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setColumnCollapsed",
@@ -134,7 +134,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TableLayout::setColumnShrinkable(jint arg0, jboolean arg1)
+	void TableLayout::setColumnShrinkable(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setColumnShrinkable",
@@ -143,7 +143,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TableLayout::setColumnStretchable(jint arg0, jboolean arg1)
+	void TableLayout::setColumnStretchable(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setColumnStretchable",
@@ -152,7 +152,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TableLayout::setOnHierarchyChangeListener(JObject arg0)
+	void TableLayout::setOnHierarchyChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnHierarchyChangeListener",
@@ -160,7 +160,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TableLayout::setShrinkAllColumns(jboolean arg0)
+	void TableLayout::setShrinkAllColumns(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShrinkAllColumns",
@@ -168,7 +168,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TableLayout::setStretchAllColumns(jboolean arg0)
+	void TableLayout::setStretchAllColumns(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setStretchAllColumns",

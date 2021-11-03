@@ -16,28 +16,28 @@ namespace android::media::session
 	// Constructors
 	
 	// Methods
-	void MediaController_TransportControls::fastForward()
+	void MediaController_TransportControls::fastForward() const
 	{
 		callMethod<void>(
 			"fastForward",
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::pause()
+	void MediaController_TransportControls::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::play()
+	void MediaController_TransportControls::play() const
 	{
 		callMethod<void>(
 			"play",
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::playFromMediaId(JString arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::playFromMediaId(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"playFromMediaId",
@@ -46,7 +46,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::playFromSearch(JString arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::playFromSearch(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"playFromSearch",
@@ -55,7 +55,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::playFromUri(android::net::Uri arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::playFromUri(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"playFromUri",
@@ -64,14 +64,14 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::prepare()
+	void MediaController_TransportControls::prepare() const
 	{
 		callMethod<void>(
 			"prepare",
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::prepareFromMediaId(JString arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::prepareFromMediaId(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"prepareFromMediaId",
@@ -80,7 +80,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::prepareFromSearch(JString arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::prepareFromSearch(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"prepareFromSearch",
@@ -89,7 +89,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::prepareFromUri(android::net::Uri arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::prepareFromUri(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"prepareFromUri",
@@ -98,14 +98,14 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::rewind()
+	void MediaController_TransportControls::rewind() const
 	{
 		callMethod<void>(
 			"rewind",
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::seekTo(jlong arg0)
+	void MediaController_TransportControls::seekTo(jlong arg0) const
 	{
 		callMethod<void>(
 			"seekTo",
@@ -113,7 +113,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaController_TransportControls::sendCustomAction(android::media::session::PlaybackState_CustomAction arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::sendCustomAction(android::media::session::PlaybackState_CustomAction arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendCustomAction",
@@ -122,7 +122,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::sendCustomAction(JString arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::sendCustomAction(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendCustomAction",
@@ -131,7 +131,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::setRating(android::media::Rating arg0)
+	void MediaController_TransportControls::setRating(android::media::Rating arg0) const
 	{
 		callMethod<void>(
 			"setRating",
@@ -139,21 +139,21 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_TransportControls::skipToNext()
+	void MediaController_TransportControls::skipToNext() const
 	{
 		callMethod<void>(
 			"skipToNext",
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::skipToPrevious()
+	void MediaController_TransportControls::skipToPrevious() const
 	{
 		callMethod<void>(
 			"skipToPrevious",
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::skipToQueueItem(jlong arg0)
+	void MediaController_TransportControls::skipToQueueItem(jlong arg0) const
 	{
 		callMethod<void>(
 			"skipToQueueItem",
@@ -161,7 +161,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaController_TransportControls::stop()
+	void MediaController_TransportControls::stop() const
 	{
 		callMethod<void>(
 			"stop",

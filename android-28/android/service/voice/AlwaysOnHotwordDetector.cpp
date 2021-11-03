@@ -67,35 +67,35 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	android::content::Intent AlwaysOnHotwordDetector::createEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createEnrollIntent() const
 	{
 		return callObjectMethod(
 			"createEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::content::Intent AlwaysOnHotwordDetector::createReEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createReEnrollIntent() const
 	{
 		return callObjectMethod(
 			"createReEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::content::Intent AlwaysOnHotwordDetector::createUnEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createUnEnrollIntent() const
 	{
 		return callObjectMethod(
 			"createUnEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jint AlwaysOnHotwordDetector::getSupportedRecognitionModes()
+	jint AlwaysOnHotwordDetector::getSupportedRecognitionModes() const
 	{
 		return callMethod<jint>(
 			"getSupportedRecognitionModes",
 			"()I"
 		);
 	}
-	jboolean AlwaysOnHotwordDetector::startRecognition(jint arg0)
+	jboolean AlwaysOnHotwordDetector::startRecognition(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"startRecognition",
@@ -103,7 +103,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	jboolean AlwaysOnHotwordDetector::stopRecognition()
+	jboolean AlwaysOnHotwordDetector::stopRecognition() const
 	{
 		return callMethod<jboolean>(
 			"stopRecognition",

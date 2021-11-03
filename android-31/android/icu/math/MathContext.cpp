@@ -126,35 +126,35 @@ namespace android::icu::math
 		) {}
 	
 	// Methods
-	jint MathContext::getDigits()
+	jint MathContext::getDigits() const
 	{
 		return callMethod<jint>(
 			"getDigits",
 			"()I"
 		);
 	}
-	jint MathContext::getForm()
+	jint MathContext::getForm() const
 	{
 		return callMethod<jint>(
 			"getForm",
 			"()I"
 		);
 	}
-	jboolean MathContext::getLostDigits()
+	jboolean MathContext::getLostDigits() const
 	{
 		return callMethod<jboolean>(
 			"getLostDigits",
 			"()Z"
 		);
 	}
-	jint MathContext::getRoundingMode()
+	jint MathContext::getRoundingMode() const
 	{
 		return callMethod<jint>(
 			"getRoundingMode",
 			"()I"
 		);
 	}
-	JString MathContext::toString()
+	JString MathContext::toString() const
 	{
 		return callObjectMethod(
 			"toString",

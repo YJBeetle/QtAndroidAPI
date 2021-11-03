@@ -18,42 +18,42 @@ namespace android::app
 		) {}
 	
 	// Methods
-	JObject ListActivity::getListAdapter()
+	JObject ListActivity::getListAdapter() const
 	{
 		return callObjectMethod(
 			"getListAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	android::widget::ListView ListActivity::getListView()
+	android::widget::ListView ListActivity::getListView() const
 	{
 		return callObjectMethod(
 			"getListView",
 			"()Landroid/widget/ListView;"
 		);
 	}
-	jlong ListActivity::getSelectedItemId()
+	jlong ListActivity::getSelectedItemId() const
 	{
 		return callMethod<jlong>(
 			"getSelectedItemId",
 			"()J"
 		);
 	}
-	jint ListActivity::getSelectedItemPosition()
+	jint ListActivity::getSelectedItemPosition() const
 	{
 		return callMethod<jint>(
 			"getSelectedItemPosition",
 			"()I"
 		);
 	}
-	void ListActivity::onContentChanged()
+	void ListActivity::onContentChanged() const
 	{
 		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
-	void ListActivity::setListAdapter(JObject arg0)
+	void ListActivity::setListAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setListAdapter",
@@ -61,7 +61,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ListActivity::setSelection(jint arg0)
+	void ListActivity::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",

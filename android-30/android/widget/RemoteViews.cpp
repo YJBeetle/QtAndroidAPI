@@ -67,7 +67,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void RemoteViews::addView(jint arg0, android::widget::RemoteViews arg1)
+	void RemoteViews::addView(jint arg0, android::widget::RemoteViews arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -76,7 +76,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	android::view::View RemoteViews::apply(android::content::Context arg0, android::view::ViewGroup arg1)
+	android::view::View RemoteViews::apply(android::content::Context arg0, android::view::ViewGroup arg1) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -85,35 +85,35 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	android::widget::RemoteViews RemoteViews::clone()
+	android::widget::RemoteViews RemoteViews::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	jint RemoteViews::describeContents()
+	jint RemoteViews::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint RemoteViews::getLayoutId()
+	jint RemoteViews::getLayoutId() const
 	{
 		return callMethod<jint>(
 			"getLayoutId",
 			"()I"
 		);
 	}
-	JString RemoteViews::getPackage()
+	JString RemoteViews::getPackage() const
 	{
 		return callObjectMethod(
 			"getPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean RemoteViews::onLoadClass(JClass arg0)
+	jboolean RemoteViews::onLoadClass(JClass arg0) const
 	{
 		return callMethod<jboolean>(
 			"onLoadClass",
@@ -121,7 +121,7 @@ namespace android::widget
 			arg0.object<jclass>()
 		);
 	}
-	void RemoteViews::reapply(android::content::Context arg0, android::view::View arg1)
+	void RemoteViews::reapply(android::content::Context arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"reapply",
@@ -130,7 +130,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::removeAllViews(jint arg0)
+	void RemoteViews::removeAllViews(jint arg0) const
 	{
 		callMethod<void>(
 			"removeAllViews",
@@ -138,7 +138,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RemoteViews::setAccessibilityTraversalAfter(jint arg0, jint arg1)
+	void RemoteViews::setAccessibilityTraversalAfter(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setAccessibilityTraversalAfter",
@@ -147,7 +147,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setAccessibilityTraversalBefore(jint arg0, jint arg1)
+	void RemoteViews::setAccessibilityTraversalBefore(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setAccessibilityTraversalBefore",
@@ -156,7 +156,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setBitmap(jint arg0, JString arg1, android::graphics::Bitmap arg2)
+	void RemoteViews::setBitmap(jint arg0, JString arg1, android::graphics::Bitmap arg2) const
 	{
 		callMethod<void>(
 			"setBitmap",
@@ -166,7 +166,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void RemoteViews::setBoolean(jint arg0, JString arg1, jboolean arg2)
+	void RemoteViews::setBoolean(jint arg0, JString arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"setBoolean",
@@ -176,7 +176,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setBundle(jint arg0, JString arg1, android::os::Bundle arg2)
+	void RemoteViews::setBundle(jint arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"setBundle",
@@ -186,7 +186,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void RemoteViews::setByte(jint arg0, JString arg1, jbyte arg2)
+	void RemoteViews::setByte(jint arg0, JString arg1, jbyte arg2) const
 	{
 		callMethod<void>(
 			"setByte",
@@ -196,7 +196,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setChar(jint arg0, JString arg1, jchar arg2)
+	void RemoteViews::setChar(jint arg0, JString arg1, jchar arg2) const
 	{
 		callMethod<void>(
 			"setChar",
@@ -206,7 +206,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setCharSequence(jint arg0, JString arg1, JString arg2)
+	void RemoteViews::setCharSequence(jint arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setCharSequence",
@@ -216,7 +216,7 @@ namespace android::widget
 			arg2.object<jstring>()
 		);
 	}
-	void RemoteViews::setChronometer(jint arg0, jlong arg1, JString arg2, jboolean arg3)
+	void RemoteViews::setChronometer(jint arg0, jlong arg1, JString arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"setChronometer",
@@ -227,7 +227,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void RemoteViews::setChronometerCountDown(jint arg0, jboolean arg1)
+	void RemoteViews::setChronometerCountDown(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setChronometerCountDown",
@@ -236,7 +236,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setContentDescription(jint arg0, JString arg1)
+	void RemoteViews::setContentDescription(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -245,7 +245,7 @@ namespace android::widget
 			arg1.object<jstring>()
 		);
 	}
-	void RemoteViews::setDisplayedChild(jint arg0, jint arg1)
+	void RemoteViews::setDisplayedChild(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setDisplayedChild",
@@ -254,7 +254,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setDouble(jint arg0, JString arg1, jdouble arg2)
+	void RemoteViews::setDouble(jint arg0, JString arg1, jdouble arg2) const
 	{
 		callMethod<void>(
 			"setDouble",
@@ -264,7 +264,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setEmptyView(jint arg0, jint arg1)
+	void RemoteViews::setEmptyView(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setEmptyView",
@@ -273,7 +273,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setFloat(jint arg0, JString arg1, jfloat arg2)
+	void RemoteViews::setFloat(jint arg0, JString arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"setFloat",
@@ -283,7 +283,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setIcon(jint arg0, JString arg1, android::graphics::drawable::Icon arg2)
+	void RemoteViews::setIcon(jint arg0, JString arg1, android::graphics::drawable::Icon arg2) const
 	{
 		callMethod<void>(
 			"setIcon",
@@ -293,7 +293,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void RemoteViews::setImageViewBitmap(jint arg0, android::graphics::Bitmap arg1)
+	void RemoteViews::setImageViewBitmap(jint arg0, android::graphics::Bitmap arg1) const
 	{
 		callMethod<void>(
 			"setImageViewBitmap",
@@ -302,7 +302,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setImageViewIcon(jint arg0, android::graphics::drawable::Icon arg1)
+	void RemoteViews::setImageViewIcon(jint arg0, android::graphics::drawable::Icon arg1) const
 	{
 		callMethod<void>(
 			"setImageViewIcon",
@@ -311,7 +311,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setImageViewResource(jint arg0, jint arg1)
+	void RemoteViews::setImageViewResource(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setImageViewResource",
@@ -320,7 +320,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setImageViewUri(jint arg0, android::net::Uri arg1)
+	void RemoteViews::setImageViewUri(jint arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"setImageViewUri",
@@ -329,7 +329,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setInt(jint arg0, JString arg1, jint arg2)
+	void RemoteViews::setInt(jint arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setInt",
@@ -339,7 +339,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setIntent(jint arg0, JString arg1, android::content::Intent arg2)
+	void RemoteViews::setIntent(jint arg0, JString arg1, android::content::Intent arg2) const
 	{
 		callMethod<void>(
 			"setIntent",
@@ -349,7 +349,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void RemoteViews::setLabelFor(jint arg0, jint arg1)
+	void RemoteViews::setLabelFor(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLabelFor",
@@ -358,7 +358,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setLightBackgroundLayoutId(jint arg0)
+	void RemoteViews::setLightBackgroundLayoutId(jint arg0) const
 	{
 		callMethod<void>(
 			"setLightBackgroundLayoutId",
@@ -366,7 +366,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RemoteViews::setLong(jint arg0, JString arg1, jlong arg2)
+	void RemoteViews::setLong(jint arg0, JString arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"setLong",
@@ -376,7 +376,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setOnClickFillInIntent(jint arg0, android::content::Intent arg1)
+	void RemoteViews::setOnClickFillInIntent(jint arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"setOnClickFillInIntent",
@@ -385,7 +385,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setOnClickPendingIntent(jint arg0, android::app::PendingIntent arg1)
+	void RemoteViews::setOnClickPendingIntent(jint arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"setOnClickPendingIntent",
@@ -394,7 +394,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setOnClickResponse(jint arg0, android::widget::RemoteViews_RemoteResponse arg1)
+	void RemoteViews::setOnClickResponse(jint arg0, android::widget::RemoteViews_RemoteResponse arg1) const
 	{
 		callMethod<void>(
 			"setOnClickResponse",
@@ -403,7 +403,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setPendingIntentTemplate(jint arg0, android::app::PendingIntent arg1)
+	void RemoteViews::setPendingIntentTemplate(jint arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"setPendingIntentTemplate",
@@ -412,7 +412,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setProgressBar(jint arg0, jint arg1, jint arg2, jboolean arg3)
+	void RemoteViews::setProgressBar(jint arg0, jint arg1, jint arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"setProgressBar",
@@ -423,7 +423,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void RemoteViews::setRelativeScrollPosition(jint arg0, jint arg1)
+	void RemoteViews::setRelativeScrollPosition(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setRelativeScrollPosition",
@@ -432,7 +432,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setRemoteAdapter(jint arg0, android::content::Intent arg1)
+	void RemoteViews::setRemoteAdapter(jint arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"setRemoteAdapter",
@@ -441,7 +441,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setRemoteAdapter(jint arg0, jint arg1, android::content::Intent arg2)
+	void RemoteViews::setRemoteAdapter(jint arg0, jint arg1, android::content::Intent arg2) const
 	{
 		callMethod<void>(
 			"setRemoteAdapter",
@@ -451,7 +451,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void RemoteViews::setScrollPosition(jint arg0, jint arg1)
+	void RemoteViews::setScrollPosition(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setScrollPosition",
@@ -460,7 +460,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setShort(jint arg0, JString arg1, jshort arg2)
+	void RemoteViews::setShort(jint arg0, JString arg1, jshort arg2) const
 	{
 		callMethod<void>(
 			"setShort",
@@ -470,7 +470,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setString(jint arg0, JString arg1, JString arg2)
+	void RemoteViews::setString(jint arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setString",
@@ -480,7 +480,7 @@ namespace android::widget
 			arg2.object<jstring>()
 		);
 	}
-	void RemoteViews::setTextColor(jint arg0, jint arg1)
+	void RemoteViews::setTextColor(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTextColor",
@@ -489,7 +489,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setTextViewCompoundDrawables(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void RemoteViews::setTextViewCompoundDrawables(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"setTextViewCompoundDrawables",
@@ -501,7 +501,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	void RemoteViews::setTextViewCompoundDrawablesRelative(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void RemoteViews::setTextViewCompoundDrawablesRelative(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"setTextViewCompoundDrawablesRelative",
@@ -513,7 +513,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	void RemoteViews::setTextViewText(jint arg0, JString arg1)
+	void RemoteViews::setTextViewText(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setTextViewText",
@@ -522,7 +522,7 @@ namespace android::widget
 			arg1.object<jstring>()
 		);
 	}
-	void RemoteViews::setTextViewTextSize(jint arg0, jint arg1, jfloat arg2)
+	void RemoteViews::setTextViewTextSize(jint arg0, jint arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"setTextViewTextSize",
@@ -532,7 +532,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setUri(jint arg0, JString arg1, android::net::Uri arg2)
+	void RemoteViews::setUri(jint arg0, JString arg1, android::net::Uri arg2) const
 	{
 		callMethod<void>(
 			"setUri",
@@ -542,7 +542,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void RemoteViews::setViewPadding(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void RemoteViews::setViewPadding(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"setViewPadding",
@@ -554,7 +554,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	void RemoteViews::setViewVisibility(jint arg0, jint arg1)
+	void RemoteViews::setViewVisibility(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setViewVisibility",
@@ -563,7 +563,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::showNext(jint arg0)
+	void RemoteViews::showNext(jint arg0) const
 	{
 		callMethod<void>(
 			"showNext",
@@ -571,7 +571,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RemoteViews::showPrevious(jint arg0)
+	void RemoteViews::showPrevious(jint arg0) const
 	{
 		callMethod<void>(
 			"showPrevious",
@@ -579,7 +579,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RemoteViews::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RemoteViews::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

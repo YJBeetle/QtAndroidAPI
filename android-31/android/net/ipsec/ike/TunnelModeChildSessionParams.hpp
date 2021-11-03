@@ -18,9 +18,9 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getConfigurationRequests();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JObject getConfigurationRequests() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

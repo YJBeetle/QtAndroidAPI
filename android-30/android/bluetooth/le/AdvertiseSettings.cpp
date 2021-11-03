@@ -69,49 +69,49 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	jint AdvertiseSettings::describeContents()
+	jint AdvertiseSettings::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint AdvertiseSettings::getMode()
+	jint AdvertiseSettings::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	jint AdvertiseSettings::getTimeout()
+	jint AdvertiseSettings::getTimeout() const
 	{
 		return callMethod<jint>(
 			"getTimeout",
 			"()I"
 		);
 	}
-	jint AdvertiseSettings::getTxPowerLevel()
+	jint AdvertiseSettings::getTxPowerLevel() const
 	{
 		return callMethod<jint>(
 			"getTxPowerLevel",
 			"()I"
 		);
 	}
-	jboolean AdvertiseSettings::isConnectable()
+	jboolean AdvertiseSettings::isConnectable() const
 	{
 		return callMethod<jboolean>(
 			"isConnectable",
 			"()Z"
 		);
 	}
-	JString AdvertiseSettings::toString()
+	JString AdvertiseSettings::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AdvertiseSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AdvertiseSettings::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -37,14 +37,14 @@ namespace android::app
 		Instrumentation_ActivityMonitor(JString arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		
 		// Methods
-		android::content::IntentFilter getFilter();
-		jint getHits();
-		android::app::Activity getLastActivity();
-		android::app::Instrumentation_ActivityResult getResult();
-		jboolean isBlocking();
-		android::app::Instrumentation_ActivityResult onStartActivity(android::content::Intent arg0);
-		android::app::Activity waitForActivity();
-		android::app::Activity waitForActivityWithTimeout(jlong arg0);
+		android::content::IntentFilter getFilter() const;
+		jint getHits() const;
+		android::app::Activity getLastActivity() const;
+		android::app::Instrumentation_ActivityResult getResult() const;
+		jboolean isBlocking() const;
+		android::app::Instrumentation_ActivityResult onStartActivity(android::content::Intent arg0) const;
+		android::app::Activity waitForActivity() const;
+		android::app::Activity waitForActivityWithTimeout(jlong arg0) const;
 	};
 } // namespace android::app
 

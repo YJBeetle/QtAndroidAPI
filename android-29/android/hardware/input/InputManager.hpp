@@ -29,10 +29,10 @@ namespace android::hardware::input
 		// Constructors
 		
 		// Methods
-		android::view::InputDevice getInputDevice(jint arg0);
-		JIntArray getInputDeviceIds();
-		void registerInputDeviceListener(JObject arg0, android::os::Handler arg1);
-		void unregisterInputDeviceListener(JObject arg0);
+		android::view::InputDevice getInputDevice(jint arg0) const;
+		JIntArray getInputDeviceIds() const;
+		void registerInputDeviceListener(JObject arg0, android::os::Handler arg1) const;
+		void unregisterInputDeviceListener(JObject arg0) const;
 	};
 } // namespace android::hardware::input
 

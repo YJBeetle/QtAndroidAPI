@@ -27,7 +27,7 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	void JarOutputStream::putNextEntry(java::util::zip::ZipEntry arg0)
+	void JarOutputStream::putNextEntry(java::util::zip::ZipEntry arg0) const
 	{
 		callMethod<void>(
 			"putNextEntry",

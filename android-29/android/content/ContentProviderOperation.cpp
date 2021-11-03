@@ -63,7 +63,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, JArray arg1, jint arg2)
+	android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, JArray arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -73,70 +73,70 @@ namespace android::content
 			arg2
 		);
 	}
-	jint ContentProviderOperation::describeContents()
+	jint ContentProviderOperation::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::net::Uri ContentProviderOperation::getUri()
+	android::net::Uri ContentProviderOperation::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jboolean ContentProviderOperation::isAssertQuery()
+	jboolean ContentProviderOperation::isAssertQuery() const
 	{
 		return callMethod<jboolean>(
 			"isAssertQuery",
 			"()Z"
 		);
 	}
-	jboolean ContentProviderOperation::isDelete()
+	jboolean ContentProviderOperation::isDelete() const
 	{
 		return callMethod<jboolean>(
 			"isDelete",
 			"()Z"
 		);
 	}
-	jboolean ContentProviderOperation::isInsert()
+	jboolean ContentProviderOperation::isInsert() const
 	{
 		return callMethod<jboolean>(
 			"isInsert",
 			"()Z"
 		);
 	}
-	jboolean ContentProviderOperation::isReadOperation()
+	jboolean ContentProviderOperation::isReadOperation() const
 	{
 		return callMethod<jboolean>(
 			"isReadOperation",
 			"()Z"
 		);
 	}
-	jboolean ContentProviderOperation::isUpdate()
+	jboolean ContentProviderOperation::isUpdate() const
 	{
 		return callMethod<jboolean>(
 			"isUpdate",
 			"()Z"
 		);
 	}
-	jboolean ContentProviderOperation::isWriteOperation()
+	jboolean ContentProviderOperation::isWriteOperation() const
 	{
 		return callMethod<jboolean>(
 			"isWriteOperation",
 			"()Z"
 		);
 	}
-	jboolean ContentProviderOperation::isYieldAllowed()
+	jboolean ContentProviderOperation::isYieldAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isYieldAllowed",
 			"()Z"
 		);
 	}
-	JArray ContentProviderOperation::resolveSelectionArgsBackReferences(JArray arg0, jint arg1)
+	JArray ContentProviderOperation::resolveSelectionArgsBackReferences(JArray arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"resolveSelectionArgsBackReferences",
@@ -145,7 +145,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(JArray arg0, jint arg1)
+	android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(JArray arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"resolveValueBackReferences",
@@ -154,14 +154,14 @@ namespace android::content
 			arg1
 		);
 	}
-	JString ContentProviderOperation::toString()
+	JString ContentProviderOperation::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ContentProviderOperation::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContentProviderOperation::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -100,7 +100,7 @@ namespace java::time
 			arg0.object<jstring>()
 		);
 	}
-	JObject Period::addTo(JObject arg0)
+	JObject Period::addTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addTo",
@@ -108,7 +108,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Period::equals(JObject arg0)
+	jboolean Period::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -116,7 +116,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jlong Period::get(JObject arg0)
+	jlong Period::get(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"get",
@@ -124,63 +124,63 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::chrono::IsoChronology Period::getChronology()
+	java::time::chrono::IsoChronology Period::getChronology() const
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/IsoChronology;"
 		);
 	}
-	jint Period::getDays()
+	jint Period::getDays() const
 	{
 		return callMethod<jint>(
 			"getDays",
 			"()I"
 		);
 	}
-	jint Period::getMonths()
+	jint Period::getMonths() const
 	{
 		return callMethod<jint>(
 			"getMonths",
 			"()I"
 		);
 	}
-	JObject Period::getUnits()
+	JObject Period::getUnits() const
 	{
 		return callObjectMethod(
 			"getUnits",
 			"()Ljava/util/List;"
 		);
 	}
-	jint Period::getYears()
+	jint Period::getYears() const
 	{
 		return callMethod<jint>(
 			"getYears",
 			"()I"
 		);
 	}
-	jint Period::hashCode()
+	jint Period::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Period::isNegative()
+	jboolean Period::isNegative() const
 	{
 		return callMethod<jboolean>(
 			"isNegative",
 			"()Z"
 		);
 	}
-	jboolean Period::isZero()
+	jboolean Period::isZero() const
 	{
 		return callMethod<jboolean>(
 			"isZero",
 			"()Z"
 		);
 	}
-	java::time::Period Period::minus(JObject arg0)
+	java::time::Period Period::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -188,7 +188,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Period Period::minusDays(jlong arg0)
+	java::time::Period Period::minusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusDays",
@@ -196,7 +196,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::minusMonths(jlong arg0)
+	java::time::Period Period::minusMonths(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMonths",
@@ -204,7 +204,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::minusYears(jlong arg0)
+	java::time::Period Period::minusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusYears",
@@ -212,7 +212,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::multipliedBy(jint arg0)
+	java::time::Period Period::multipliedBy(jint arg0) const
 	{
 		return callObjectMethod(
 			"multipliedBy",
@@ -220,21 +220,21 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::negated()
+	java::time::Period Period::negated() const
 	{
 		return callObjectMethod(
 			"negated",
 			"()Ljava/time/Period;"
 		);
 	}
-	java::time::Period Period::normalized()
+	java::time::Period Period::normalized() const
 	{
 		return callObjectMethod(
 			"normalized",
 			"()Ljava/time/Period;"
 		);
 	}
-	java::time::Period Period::plus(JObject arg0)
+	java::time::Period Period::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -242,7 +242,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Period Period::plusDays(jlong arg0)
+	java::time::Period Period::plusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusDays",
@@ -250,7 +250,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::plusMonths(jlong arg0)
+	java::time::Period Period::plusMonths(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMonths",
@@ -258,7 +258,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::plusYears(jlong arg0)
+	java::time::Period Period::plusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusYears",
@@ -266,7 +266,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject Period::subtractFrom(JObject arg0)
+	JObject Period::subtractFrom(JObject arg0) const
 	{
 		return callObjectMethod(
 			"subtractFrom",
@@ -274,21 +274,21 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JString Period::toString()
+	JString Period::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong Period::toTotalMonths()
+	jlong Period::toTotalMonths() const
 	{
 		return callMethod<jlong>(
 			"toTotalMonths",
 			"()J"
 		);
 	}
-	java::time::Period Period::withDays(jint arg0)
+	java::time::Period Period::withDays(jint arg0) const
 	{
 		return callObjectMethod(
 			"withDays",
@@ -296,7 +296,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::withMonths(jint arg0)
+	java::time::Period Period::withMonths(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMonths",
@@ -304,7 +304,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::withYears(jint arg0)
+	java::time::Period Period::withYears(jint arg0) const
 	{
 		return callObjectMethod(
 			"withYears",

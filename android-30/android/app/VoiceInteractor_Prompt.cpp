@@ -35,28 +35,28 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint VoiceInteractor_Prompt::countVoicePrompts()
+	jint VoiceInteractor_Prompt::countVoicePrompts() const
 	{
 		return callMethod<jint>(
 			"countVoicePrompts",
 			"()I"
 		);
 	}
-	jint VoiceInteractor_Prompt::describeContents()
+	jint VoiceInteractor_Prompt::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString VoiceInteractor_Prompt::getVisualPrompt()
+	JString VoiceInteractor_Prompt::getVisualPrompt() const
 	{
 		return callObjectMethod(
 			"getVisualPrompt",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString VoiceInteractor_Prompt::getVoicePromptAt(jint arg0)
+	JString VoiceInteractor_Prompt::getVoicePromptAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getVoicePromptAt",
@@ -64,14 +64,14 @@ namespace android::app
 			arg0
 		);
 	}
-	JString VoiceInteractor_Prompt::toString()
+	JString VoiceInteractor_Prompt::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VoiceInteractor_Prompt::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VoiceInteractor_Prompt::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

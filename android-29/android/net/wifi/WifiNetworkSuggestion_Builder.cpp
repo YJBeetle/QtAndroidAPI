@@ -19,14 +19,14 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	android::net::wifi::WifiNetworkSuggestion WifiNetworkSuggestion_Builder::build()
+	android::net::wifi::WifiNetworkSuggestion WifiNetworkSuggestion_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/WifiNetworkSuggestion;"
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setBssid(android::net::MacAddress arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setBssid(android::net::MacAddress arg0) const
 	{
 		return callObjectMethod(
 			"setBssid",
@@ -34,7 +34,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsAppInteractionRequired(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsAppInteractionRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsAppInteractionRequired",
@@ -42,7 +42,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsEnhancedOpen(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsEnhancedOpen(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsEnhancedOpen",
@@ -50,7 +50,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsHiddenSsid(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsHiddenSsid(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsHiddenSsid",
@@ -58,7 +58,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsMetered(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsMetered(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsMetered",
@@ -66,7 +66,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsUserInteractionRequired(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsUserInteractionRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsUserInteractionRequired",
@@ -74,7 +74,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setPriority(jint arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setPriority(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPriority",
@@ -82,7 +82,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setSsid(JString arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setSsid(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSsid",
@@ -90,7 +90,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0) const
 	{
 		return callObjectMethod(
 			"setWpa2EnterpriseConfig",
@@ -98,7 +98,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2Passphrase(JString arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2Passphrase(JString arg0) const
 	{
 		return callObjectMethod(
 			"setWpa2Passphrase",
@@ -106,7 +106,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0) const
 	{
 		return callObjectMethod(
 			"setWpa3EnterpriseConfig",
@@ -114,7 +114,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3Passphrase(JString arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3Passphrase(JString arg0) const
 	{
 		return callObjectMethod(
 			"setWpa3Passphrase",

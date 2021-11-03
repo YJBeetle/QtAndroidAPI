@@ -23,15 +23,15 @@ namespace android::text::util
 		static JString quoteComment(JString arg0);
 		static JString quoteName(JString arg0);
 		static JString quoteNameIfNecessary(JString arg0);
-		jboolean equals(JObject arg0);
-		JString getAddress();
-		JString getComment();
-		JString getName();
-		jint hashCode();
-		void setAddress(JString arg0);
-		void setComment(JString arg0);
-		void setName(JString arg0);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getAddress() const;
+		JString getComment() const;
+		JString getName() const;
+		jint hashCode() const;
+		void setAddress(JString arg0) const;
+		void setComment(JString arg0) const;
+		void setName(JString arg0) const;
+		JString toString() const;
 	};
 } // namespace android::text::util
 

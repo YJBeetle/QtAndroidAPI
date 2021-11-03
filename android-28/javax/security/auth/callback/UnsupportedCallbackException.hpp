@@ -20,7 +20,7 @@ namespace javax::security::auth::callback
 		UnsupportedCallbackException(JObject arg0, JString arg1);
 		
 		// Methods
-		JObject getCallback();
+		JObject getCallback() const;
 	};
 } // namespace javax::security::auth::callback
 

@@ -18,11 +18,11 @@ namespace android::mtp
 		// Constructors
 		
 		// Methods
-		JString getDescription();
-		jlong getFreeSpace();
-		jlong getMaxCapacity();
-		jint getStorageId();
-		JString getVolumeIdentifier();
+		JString getDescription() const;
+		jlong getFreeSpace() const;
+		jlong getMaxCapacity() const;
+		jint getStorageId() const;
+		JString getVolumeIdentifier() const;
 	};
 } // namespace android::mtp
 

@@ -12,7 +12,7 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jboolean AppSearchSchema::equals(JObject arg0)
+	jboolean AppSearchSchema::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,28 +20,28 @@ namespace android::app::appsearch
 			arg0.object<jobject>()
 		);
 	}
-	JObject AppSearchSchema::getProperties()
+	JObject AppSearchSchema::getProperties() const
 	{
 		return callObjectMethod(
 			"getProperties",
 			"()Ljava/util/List;"
 		);
 	}
-	JString AppSearchSchema::getSchemaType()
+	JString AppSearchSchema::getSchemaType() const
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint AppSearchSchema::hashCode()
+	jint AppSearchSchema::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AppSearchSchema::toString()
+	JString AppSearchSchema::toString() const
 	{
 		return callObjectMethod(
 			"toString",

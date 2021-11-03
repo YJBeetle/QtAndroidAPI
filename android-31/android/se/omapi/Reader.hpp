@@ -26,11 +26,11 @@ namespace android::se::omapi
 		// Constructors
 		
 		// Methods
-		void closeSessions();
-		JString getName();
-		android::se::omapi::SEService getSEService();
-		jboolean isSecureElementPresent();
-		android::se::omapi::Session openSession();
+		void closeSessions() const;
+		JString getName() const;
+		android::se::omapi::SEService getSEService() const;
+		jboolean isSecureElementPresent() const;
+		android::se::omapi::Session openSession() const;
 	};
 } // namespace android::se::omapi
 

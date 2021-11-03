@@ -26,9 +26,9 @@ namespace android::app::appsearch
 		GetSchemaResponse_Builder();
 		
 		// Methods
-		android::app::appsearch::GetSchemaResponse_Builder addSchema(android::app::appsearch::AppSearchSchema arg0);
-		android::app::appsearch::GetSchemaResponse build();
-		android::app::appsearch::GetSchemaResponse_Builder setVersion(jint arg0);
+		android::app::appsearch::GetSchemaResponse_Builder addSchema(android::app::appsearch::AppSearchSchema arg0) const;
+		android::app::appsearch::GetSchemaResponse build() const;
+		android::app::appsearch::GetSchemaResponse_Builder setVersion(jint arg0) const;
 	};
 } // namespace android::app::appsearch
 

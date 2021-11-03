@@ -49,7 +49,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void TabHost::addTab(android::widget::TabHost_TabSpec arg0)
+	void TabHost::addTab(android::widget::TabHost_TabSpec arg0) const
 	{
 		callMethod<void>(
 			"addTab",
@@ -57,14 +57,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabHost::clearAllTabs()
+	void TabHost::clearAllTabs() const
 	{
 		callMethod<void>(
 			"clearAllTabs",
 			"()V"
 		);
 	}
-	jboolean TabHost::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean TabHost::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -72,7 +72,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabHost::dispatchWindowFocusChanged(jboolean arg0)
+	void TabHost::dispatchWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchWindowFocusChanged",
@@ -80,56 +80,56 @@ namespace android::widget
 			arg0
 		);
 	}
-	JString TabHost::getAccessibilityClassName()
+	JString TabHost::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TabHost::getCurrentTab()
+	jint TabHost::getCurrentTab() const
 	{
 		return callMethod<jint>(
 			"getCurrentTab",
 			"()I"
 		);
 	}
-	JString TabHost::getCurrentTabTag()
+	JString TabHost::getCurrentTabTag() const
 	{
 		return callObjectMethod(
 			"getCurrentTabTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::view::View TabHost::getCurrentTabView()
+	android::view::View TabHost::getCurrentTabView() const
 	{
 		return callObjectMethod(
 			"getCurrentTabView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View TabHost::getCurrentView()
+	android::view::View TabHost::getCurrentView() const
 	{
 		return callObjectMethod(
 			"getCurrentView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::widget::FrameLayout TabHost::getTabContentView()
+	android::widget::FrameLayout TabHost::getTabContentView() const
 	{
 		return callObjectMethod(
 			"getTabContentView",
 			"()Landroid/widget/FrameLayout;"
 		);
 	}
-	android::widget::TabWidget TabHost::getTabWidget()
+	android::widget::TabWidget TabHost::getTabWidget() const
 	{
 		return callObjectMethod(
 			"getTabWidget",
 			"()Landroid/widget/TabWidget;"
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost::newTabSpec(JString arg0)
+	android::widget::TabHost_TabSpec TabHost::newTabSpec(JString arg0) const
 	{
 		return callObjectMethod(
 			"newTabSpec",
@@ -137,7 +137,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TabHost::onTouchModeChanged(jboolean arg0)
+	void TabHost::onTouchModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onTouchModeChanged",
@@ -145,7 +145,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabHost::setCurrentTab(jint arg0)
+	void TabHost::setCurrentTab(jint arg0) const
 	{
 		callMethod<void>(
 			"setCurrentTab",
@@ -153,7 +153,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabHost::setCurrentTabByTag(JString arg0)
+	void TabHost::setCurrentTabByTag(JString arg0) const
 	{
 		callMethod<void>(
 			"setCurrentTabByTag",
@@ -161,7 +161,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TabHost::setOnTabChangedListener(JObject arg0)
+	void TabHost::setOnTabChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnTabChangedListener",
@@ -169,14 +169,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TabHost::setup()
+	void TabHost::setup() const
 	{
 		callMethod<void>(
 			"setup",
 			"()V"
 		);
 	}
-	void TabHost::setup(android::app::LocalActivityManager arg0)
+	void TabHost::setup(android::app::LocalActivityManager arg0) const
 	{
 		callMethod<void>(
 			"setup",

@@ -18,14 +18,14 @@ namespace javax::xml::parsers
 	// Constructors
 	
 	// Methods
-	JObject SAXParser::getParser()
+	JObject SAXParser::getParser() const
 	{
 		return callObjectMethod(
 			"getParser",
 			"()Lorg/xml/sax/Parser;"
 		);
 	}
-	JObject SAXParser::getProperty(JString arg0)
+	JObject SAXParser::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -33,42 +33,42 @@ namespace javax::xml::parsers
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::validation::Schema SAXParser::getSchema()
+	javax::xml::validation::Schema SAXParser::getSchema() const
 	{
 		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
-	JObject SAXParser::getXMLReader()
+	JObject SAXParser::getXMLReader() const
 	{
 		return callObjectMethod(
 			"getXMLReader",
 			"()Lorg/xml/sax/XMLReader;"
 		);
 	}
-	jboolean SAXParser::isNamespaceAware()
+	jboolean SAXParser::isNamespaceAware() const
 	{
 		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
-	jboolean SAXParser::isValidating()
+	jboolean SAXParser::isValidating() const
 	{
 		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
-	jboolean SAXParser::isXIncludeAware()
+	jboolean SAXParser::isXIncludeAware() const
 	{
 		return callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z"
 		);
 	}
-	void SAXParser::parse(java::io::File arg0, org::xml::sax::HandlerBase arg1)
+	void SAXParser::parse(java::io::File arg0, org::xml::sax::HandlerBase arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -77,7 +77,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(java::io::File arg0, org::xml::sax::helpers::DefaultHandler arg1)
+	void SAXParser::parse(java::io::File arg0, org::xml::sax::helpers::DefaultHandler arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -86,7 +86,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1)
+	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -95,7 +95,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1)
+	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -104,7 +104,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(JString arg0, org::xml::sax::HandlerBase arg1)
+	void SAXParser::parse(JString arg0, org::xml::sax::HandlerBase arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -113,7 +113,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(JString arg0, org::xml::sax::helpers::DefaultHandler arg1)
+	void SAXParser::parse(JString arg0, org::xml::sax::helpers::DefaultHandler arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -122,7 +122,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(org::xml::sax::InputSource arg0, org::xml::sax::HandlerBase arg1)
+	void SAXParser::parse(org::xml::sax::InputSource arg0, org::xml::sax::HandlerBase arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -131,7 +131,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(org::xml::sax::InputSource arg0, org::xml::sax::helpers::DefaultHandler arg1)
+	void SAXParser::parse(org::xml::sax::InputSource arg0, org::xml::sax::helpers::DefaultHandler arg1) const
 	{
 		callMethod<void>(
 			"parse",
@@ -140,7 +140,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1, JString arg2)
+	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"parse",
@@ -150,7 +150,7 @@ namespace javax::xml::parsers
 			arg2.object<jstring>()
 		);
 	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, JString arg2)
+	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"parse",
@@ -160,14 +160,14 @@ namespace javax::xml::parsers
 			arg2.object<jstring>()
 		);
 	}
-	void SAXParser::reset()
+	void SAXParser::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void SAXParser::setProperty(JString arg0, JObject arg1)
+	void SAXParser::setProperty(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setProperty",

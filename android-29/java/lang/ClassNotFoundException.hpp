@@ -31,7 +31,7 @@ namespace java::lang
 		ClassNotFoundException(JString arg0, JThrowable arg1);
 		
 		// Methods
-		JThrowable getException();
+		JThrowable getException() const;
 	};
 } // namespace java::lang
 

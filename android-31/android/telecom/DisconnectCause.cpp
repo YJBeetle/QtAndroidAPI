@@ -177,14 +177,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jint DisconnectCause::describeContents()
+	jint DisconnectCause::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean DisconnectCause::equals(JObject arg0)
+	jboolean DisconnectCause::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -192,56 +192,56 @@ namespace android::telecom
 			arg0.object<jobject>()
 		);
 	}
-	jint DisconnectCause::getCode()
+	jint DisconnectCause::getCode() const
 	{
 		return callMethod<jint>(
 			"getCode",
 			"()I"
 		);
 	}
-	JString DisconnectCause::getDescription()
+	JString DisconnectCause::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DisconnectCause::getLabel()
+	JString DisconnectCause::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DisconnectCause::getReason()
+	JString DisconnectCause::getReason() const
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DisconnectCause::getTone()
+	jint DisconnectCause::getTone() const
 	{
 		return callMethod<jint>(
 			"getTone",
 			"()I"
 		);
 	}
-	jint DisconnectCause::hashCode()
+	jint DisconnectCause::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DisconnectCause::toString()
+	JString DisconnectCause::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DisconnectCause::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DisconnectCause::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

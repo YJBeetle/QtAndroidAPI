@@ -31,14 +31,14 @@ namespace java::text
 		static jint primaryOrder(jint arg0);
 		static jshort secondaryOrder(jint arg0);
 		static jshort tertiaryOrder(jint arg0);
-		jint getMaxExpansion(jint arg0);
-		jint getOffset();
-		jint next();
-		jint previous();
-		void reset();
-		void setOffset(jint arg0);
-		void setText(JString arg0);
-		void setText(JObject arg0);
+		jint getMaxExpansion(jint arg0) const;
+		jint getOffset() const;
+		jint next() const;
+		jint previous() const;
+		void reset() const;
+		void setOffset(jint arg0) const;
+		void setText(JString arg0) const;
+		void setText(JObject arg0) const;
 	};
 } // namespace java::text
 

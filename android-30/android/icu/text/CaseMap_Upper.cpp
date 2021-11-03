@@ -15,7 +15,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	JObject CaseMap_Upper::apply(java::util::Locale arg0, JString arg1, JObject arg2, android::icu::text::Edits arg3)
+	JObject CaseMap_Upper::apply(java::util::Locale arg0, JString arg1, JObject arg2, android::icu::text::Edits arg3) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -26,7 +26,7 @@ namespace android::icu::text
 			arg3.object()
 		);
 	}
-	JString CaseMap_Upper::apply(java::util::Locale arg0, JString arg1)
+	JString CaseMap_Upper::apply(java::util::Locale arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	android::icu::text::CaseMap_Upper CaseMap_Upper::omitUnchangedText()
+	android::icu::text::CaseMap_Upper CaseMap_Upper::omitUnchangedText() const
 	{
 		return callObjectMethod(
 			"omitUnchangedText",

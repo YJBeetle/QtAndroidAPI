@@ -18,14 +18,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jlong MediaParser_SeekMap::getDurationMicros()
+	jlong MediaParser_SeekMap::getDurationMicros() const
 	{
 		return callMethod<jlong>(
 			"getDurationMicros",
 			"()J"
 		);
 	}
-	android::util::Pair MediaParser_SeekMap::getSeekPoints(jlong arg0)
+	android::util::Pair MediaParser_SeekMap::getSeekPoints(jlong arg0) const
 	{
 		return callObjectMethod(
 			"getSeekPoints",
@@ -33,7 +33,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean MediaParser_SeekMap::isSeekable()
+	jboolean MediaParser_SeekMap::isSeekable() const
 	{
 		return callMethod<jboolean>(
 			"isSeekable",

@@ -17,7 +17,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	JString InputFilter_LengthFilter::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
+	JString InputFilter_LengthFilter::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const
 	{
 		return callObjectMethod(
 			"filter",
@@ -30,7 +30,7 @@ namespace android::text
 			arg5
 		);
 	}
-	jint InputFilter_LengthFilter::getMax()
+	jint InputFilter_LengthFilter::getMax() const
 	{
 		return callMethod<jint>(
 			"getMax",

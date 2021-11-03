@@ -27,105 +27,105 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	java::time::Instant LogRecord::getInstant()
+	java::time::Instant LogRecord::getInstant() const
 	{
 		return callObjectMethod(
 			"getInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	java::util::logging::Level LogRecord::getLevel()
+	java::util::logging::Level LogRecord::getLevel() const
 	{
 		return callObjectMethod(
 			"getLevel",
 			"()Ljava/util/logging/Level;"
 		);
 	}
-	JString LogRecord::getLoggerName()
+	JString LogRecord::getLoggerName() const
 	{
 		return callObjectMethod(
 			"getLoggerName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong LogRecord::getLongThreadID()
+	jlong LogRecord::getLongThreadID() const
 	{
 		return callMethod<jlong>(
 			"getLongThreadID",
 			"()J"
 		);
 	}
-	JString LogRecord::getMessage()
+	JString LogRecord::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong LogRecord::getMillis()
+	jlong LogRecord::getMillis() const
 	{
 		return callMethod<jlong>(
 			"getMillis",
 			"()J"
 		);
 	}
-	JObjectArray LogRecord::getParameters()
+	JObjectArray LogRecord::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	java::util::ResourceBundle LogRecord::getResourceBundle()
+	java::util::ResourceBundle LogRecord::getResourceBundle() const
 	{
 		return callObjectMethod(
 			"getResourceBundle",
 			"()Ljava/util/ResourceBundle;"
 		);
 	}
-	JString LogRecord::getResourceBundleName()
+	JString LogRecord::getResourceBundleName() const
 	{
 		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong LogRecord::getSequenceNumber()
+	jlong LogRecord::getSequenceNumber() const
 	{
 		return callMethod<jlong>(
 			"getSequenceNumber",
 			"()J"
 		);
 	}
-	JString LogRecord::getSourceClassName()
+	JString LogRecord::getSourceClassName() const
 	{
 		return callObjectMethod(
 			"getSourceClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString LogRecord::getSourceMethodName()
+	JString LogRecord::getSourceMethodName() const
 	{
 		return callObjectMethod(
 			"getSourceMethodName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint LogRecord::getThreadID()
+	jint LogRecord::getThreadID() const
 	{
 		return callMethod<jint>(
 			"getThreadID",
 			"()I"
 		);
 	}
-	JThrowable LogRecord::getThrown()
+	JThrowable LogRecord::getThrown() const
 	{
 		return callObjectMethod(
 			"getThrown",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	void LogRecord::setInstant(java::time::Instant arg0)
+	void LogRecord::setInstant(java::time::Instant arg0) const
 	{
 		callMethod<void>(
 			"setInstant",
@@ -133,7 +133,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogRecord::setLevel(java::util::logging::Level arg0)
+	void LogRecord::setLevel(java::util::logging::Level arg0) const
 	{
 		callMethod<void>(
 			"setLevel",
@@ -141,7 +141,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogRecord::setLoggerName(JString arg0)
+	void LogRecord::setLoggerName(JString arg0) const
 	{
 		callMethod<void>(
 			"setLoggerName",
@@ -149,7 +149,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	java::util::logging::LogRecord LogRecord::setLongThreadID(jlong arg0)
+	java::util::logging::LogRecord LogRecord::setLongThreadID(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setLongThreadID",
@@ -157,7 +157,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setMessage(JString arg0)
+	void LogRecord::setMessage(JString arg0) const
 	{
 		callMethod<void>(
 			"setMessage",
@@ -165,7 +165,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void LogRecord::setMillis(jlong arg0)
+	void LogRecord::setMillis(jlong arg0) const
 	{
 		callMethod<void>(
 			"setMillis",
@@ -173,7 +173,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setParameters(JObjectArray arg0)
+	void LogRecord::setParameters(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"setParameters",
@@ -181,7 +181,7 @@ namespace java::util::logging
 			arg0.object<jobjectArray>()
 		);
 	}
-	void LogRecord::setResourceBundle(java::util::ResourceBundle arg0)
+	void LogRecord::setResourceBundle(java::util::ResourceBundle arg0) const
 	{
 		callMethod<void>(
 			"setResourceBundle",
@@ -189,7 +189,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogRecord::setResourceBundleName(JString arg0)
+	void LogRecord::setResourceBundleName(JString arg0) const
 	{
 		callMethod<void>(
 			"setResourceBundleName",
@@ -197,7 +197,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void LogRecord::setSequenceNumber(jlong arg0)
+	void LogRecord::setSequenceNumber(jlong arg0) const
 	{
 		callMethod<void>(
 			"setSequenceNumber",
@@ -205,7 +205,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setSourceClassName(JString arg0)
+	void LogRecord::setSourceClassName(JString arg0) const
 	{
 		callMethod<void>(
 			"setSourceClassName",
@@ -213,7 +213,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void LogRecord::setSourceMethodName(JString arg0)
+	void LogRecord::setSourceMethodName(JString arg0) const
 	{
 		callMethod<void>(
 			"setSourceMethodName",
@@ -221,7 +221,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void LogRecord::setThreadID(jint arg0)
+	void LogRecord::setThreadID(jint arg0) const
 	{
 		callMethod<void>(
 			"setThreadID",
@@ -229,7 +229,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setThrown(JThrowable arg0)
+	void LogRecord::setThrown(JThrowable arg0) const
 	{
 		callMethod<void>(
 			"setThrown",

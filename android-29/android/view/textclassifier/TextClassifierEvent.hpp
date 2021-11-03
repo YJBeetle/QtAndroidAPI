@@ -66,20 +66,20 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JIntArray getActionIndices();
-		JArray getEntityTypes();
-		jint getEventCategory();
-		android::view::textclassifier::TextClassificationContext getEventContext();
-		jint getEventIndex();
-		jint getEventType();
-		android::os::Bundle getExtras();
-		android::icu::util::ULocale getLocale();
-		JString getModelName();
-		JString getResultId();
-		JFloatArray getScores();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JIntArray getActionIndices() const;
+		JArray getEntityTypes() const;
+		jint getEventCategory() const;
+		android::view::textclassifier::TextClassificationContext getEventContext() const;
+		jint getEventIndex() const;
+		jint getEventType() const;
+		android::os::Bundle getExtras() const;
+		android::icu::util::ULocale getLocale() const;
+		JString getModelName() const;
+		JString getResultId() const;
+		JFloatArray getScores() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

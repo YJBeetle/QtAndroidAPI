@@ -27,8 +27,8 @@ namespace android::text::method
 		
 		// Methods
 		static JObject getInstance();
-		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2);
-		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
+		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const;
+		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const;
 	};
 } // namespace android::text::method
 

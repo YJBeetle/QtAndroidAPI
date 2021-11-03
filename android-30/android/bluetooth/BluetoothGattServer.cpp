@@ -16,7 +16,7 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	jboolean BluetoothGattServer::addService(android::bluetooth::BluetoothGattService arg0)
+	jboolean BluetoothGattServer::addService(android::bluetooth::BluetoothGattService arg0) const
 	{
 		return callMethod<jboolean>(
 			"addService",
@@ -24,7 +24,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	void BluetoothGattServer::cancelConnection(android::bluetooth::BluetoothDevice arg0)
+	void BluetoothGattServer::cancelConnection(android::bluetooth::BluetoothDevice arg0) const
 	{
 		callMethod<void>(
 			"cancelConnection",
@@ -32,21 +32,21 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	void BluetoothGattServer::clearServices()
+	void BluetoothGattServer::clearServices() const
 	{
 		callMethod<void>(
 			"clearServices",
 			"()V"
 		);
 	}
-	void BluetoothGattServer::close()
+	void BluetoothGattServer::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean BluetoothGattServer::connect(android::bluetooth::BluetoothDevice arg0, jboolean arg1)
+	jboolean BluetoothGattServer::connect(android::bluetooth::BluetoothDevice arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"connect",
@@ -55,14 +55,14 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	JObject BluetoothGattServer::getConnectedDevices()
+	JObject BluetoothGattServer::getConnectedDevices() const
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint BluetoothGattServer::getConnectionState(android::bluetooth::BluetoothDevice arg0)
+	jint BluetoothGattServer::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
@@ -70,7 +70,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothGattServer::getDevicesMatchingConnectionStates(JIntArray arg0)
+	JObject BluetoothGattServer::getDevicesMatchingConnectionStates(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -78,7 +78,7 @@ namespace android::bluetooth
 			arg0.object<jintArray>()
 		);
 	}
-	android::bluetooth::BluetoothGattService BluetoothGattServer::getService(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattService BluetoothGattServer::getService(java::util::UUID arg0) const
 	{
 		return callObjectMethod(
 			"getService",
@@ -86,14 +86,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothGattServer::getServices()
+	JObject BluetoothGattServer::getServices() const
 	{
 		return callObjectMethod(
 			"getServices",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean BluetoothGattServer::notifyCharacteristicChanged(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jboolean arg2)
+	jboolean BluetoothGattServer::notifyCharacteristicChanged(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"notifyCharacteristicChanged",
@@ -103,7 +103,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattServer::readPhy(android::bluetooth::BluetoothDevice arg0)
+	void BluetoothGattServer::readPhy(android::bluetooth::BluetoothDevice arg0) const
 	{
 		callMethod<void>(
 			"readPhy",
@@ -111,7 +111,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothGattServer::removeService(android::bluetooth::BluetoothGattService arg0)
+	jboolean BluetoothGattServer::removeService(android::bluetooth::BluetoothGattService arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeService",
@@ -119,7 +119,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothGattServer::sendResponse(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4)
+	jboolean BluetoothGattServer::sendResponse(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4) const
 	{
 		return callMethod<jboolean>(
 			"sendResponse",
@@ -131,7 +131,7 @@ namespace android::bluetooth
 			arg4.object<jbyteArray>()
 		);
 	}
-	void BluetoothGattServer::setPreferredPhy(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3)
+	void BluetoothGattServer::setPreferredPhy(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPreferredPhy",

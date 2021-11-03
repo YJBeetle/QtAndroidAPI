@@ -104,7 +104,7 @@ namespace java::security
 			arg0
 		);
 	}
-	JByteArray SecureRandom::generateSeed(jint arg0)
+	JByteArray SecureRandom::generateSeed(jint arg0) const
 	{
 		return callObjectMethod(
 			"generateSeed",
@@ -112,28 +112,28 @@ namespace java::security
 			arg0
 		);
 	}
-	JString SecureRandom::getAlgorithm()
+	JString SecureRandom::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SecureRandom::getParameters()
+	JObject SecureRandom::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/SecureRandomParameters;"
 		);
 	}
-	java::security::Provider SecureRandom::getProvider()
+	java::security::Provider SecureRandom::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void SecureRandom::nextBytes(JByteArray arg0)
+	void SecureRandom::nextBytes(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"nextBytes",
@@ -141,7 +141,7 @@ namespace java::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	void SecureRandom::nextBytes(JByteArray arg0, JObject arg1)
+	void SecureRandom::nextBytes(JByteArray arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"nextBytes",
@@ -150,14 +150,14 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void SecureRandom::reseed()
+	void SecureRandom::reseed() const
 	{
 		callMethod<void>(
 			"reseed",
 			"()V"
 		);
 	}
-	void SecureRandom::reseed(JObject arg0)
+	void SecureRandom::reseed(JObject arg0) const
 	{
 		callMethod<void>(
 			"reseed",
@@ -165,7 +165,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void SecureRandom::setSeed(JByteArray arg0)
+	void SecureRandom::setSeed(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setSeed",
@@ -173,7 +173,7 @@ namespace java::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	void SecureRandom::setSeed(jlong arg0)
+	void SecureRandom::setSeed(jlong arg0) const
 	{
 		callMethod<void>(
 			"setSeed",
@@ -181,7 +181,7 @@ namespace java::security
 			arg0
 		);
 	}
-	JString SecureRandom::toString()
+	JString SecureRandom::toString() const
 	{
 		return callObjectMethod(
 			"toString",

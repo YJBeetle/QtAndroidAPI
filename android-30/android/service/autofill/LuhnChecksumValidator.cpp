@@ -27,21 +27,21 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	jint LuhnChecksumValidator::describeContents()
+	jint LuhnChecksumValidator::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString LuhnChecksumValidator::toString()
+	JString LuhnChecksumValidator::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LuhnChecksumValidator::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LuhnChecksumValidator::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

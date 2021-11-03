@@ -17,7 +17,7 @@ namespace android::view::contentcapture
 		) {}
 	
 	// Methods
-	android::view::contentcapture::DataRemovalRequest_Builder DataRemovalRequest_Builder::addLocusId(android::content::LocusId arg0, jint arg1)
+	android::view::contentcapture::DataRemovalRequest_Builder DataRemovalRequest_Builder::addLocusId(android::content::LocusId arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addLocusId",
@@ -26,14 +26,14 @@ namespace android::view::contentcapture
 			arg1
 		);
 	}
-	android::view::contentcapture::DataRemovalRequest DataRemovalRequest_Builder::build()
+	android::view::contentcapture::DataRemovalRequest DataRemovalRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/contentcapture/DataRemovalRequest;"
 		);
 	}
-	android::view::contentcapture::DataRemovalRequest_Builder DataRemovalRequest_Builder::forEverything()
+	android::view::contentcapture::DataRemovalRequest_Builder DataRemovalRequest_Builder::forEverything() const
 	{
 		return callObjectMethod(
 			"forEverything",

@@ -37,20 +37,20 @@ namespace android::icu::text
 		UnicodeSetSpanner(android::icu::text::UnicodeSet arg0);
 		
 		// Methods
-		jint countIn(JString arg0);
-		jint countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1);
-		jint countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
-		JString deleteFrom(JString arg0);
-		JString deleteFrom(JString arg0, android::icu::text::UnicodeSet_SpanCondition arg1);
-		jboolean equals(JObject arg0);
-		android::icu::text::UnicodeSet getUnicodeSet();
-		jint hashCode();
-		JString replaceFrom(JString arg0, JString arg1);
-		JString replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2);
-		JString replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2, android::icu::text::UnicodeSet_SpanCondition arg3);
-		JString trim(JString arg0);
-		JString trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1);
-		JString trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
+		jint countIn(JString arg0) const;
+		jint countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1) const;
+		jint countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1, android::icu::text::UnicodeSet_SpanCondition arg2) const;
+		JString deleteFrom(JString arg0) const;
+		JString deleteFrom(JString arg0, android::icu::text::UnicodeSet_SpanCondition arg1) const;
+		jboolean equals(JObject arg0) const;
+		android::icu::text::UnicodeSet getUnicodeSet() const;
+		jint hashCode() const;
+		JString replaceFrom(JString arg0, JString arg1) const;
+		JString replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2) const;
+		JString replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2, android::icu::text::UnicodeSet_SpanCondition arg3) const;
+		JString trim(JString arg0) const;
+		JString trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1) const;
+		JString trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1, android::icu::text::UnicodeSet_SpanCondition arg2) const;
 	};
 } // namespace android::icu::text
 

@@ -21,10 +21,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean acceptsDelayedFocusGain();
-		android::media::AudioAttributes getAudioAttributes();
-		jint getFocusGain();
-		jboolean willPauseWhenDucked();
+		jboolean acceptsDelayedFocusGain() const;
+		android::media::AudioAttributes getAudioAttributes() const;
+		jint getFocusGain() const;
+		jboolean willPauseWhenDucked() const;
 	};
 } // namespace android::media
 

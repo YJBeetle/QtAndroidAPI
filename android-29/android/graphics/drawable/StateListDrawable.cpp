@@ -20,7 +20,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void StateListDrawable::addState(JIntArray arg0, android::graphics::drawable::Drawable arg1)
+	void StateListDrawable::addState(JIntArray arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		callMethod<void>(
 			"addState",
@@ -29,7 +29,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	void StateListDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void StateListDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -37,7 +37,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint StateListDrawable::findStateDrawableIndex(JIntArray arg0)
+	jint StateListDrawable::findStateDrawableIndex(JIntArray arg0) const
 	{
 		return callMethod<jint>(
 			"findStateDrawableIndex",
@@ -45,14 +45,14 @@ namespace android::graphics::drawable
 			arg0.object<jintArray>()
 		);
 	}
-	jint StateListDrawable::getStateCount()
+	jint StateListDrawable::getStateCount() const
 	{
 		return callMethod<jint>(
 			"getStateCount",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable StateListDrawable::getStateDrawable(jint arg0)
+	android::graphics::drawable::Drawable StateListDrawable::getStateDrawable(jint arg0) const
 	{
 		return callObjectMethod(
 			"getStateDrawable",
@@ -60,7 +60,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	JIntArray StateListDrawable::getStateSet(jint arg0)
+	JIntArray StateListDrawable::getStateSet(jint arg0) const
 	{
 		return callObjectMethod(
 			"getStateSet",
@@ -68,7 +68,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void StateListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void StateListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -79,14 +79,14 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean StateListDrawable::isStateful()
+	jboolean StateListDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable StateListDrawable::mutate()
+	android::graphics::drawable::Drawable StateListDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",

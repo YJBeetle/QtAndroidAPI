@@ -21,8 +21,8 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		jint getType();
-		jboolean matches(javax::net::ssl::SNIServerName arg0);
+		jint getType() const;
+		jboolean matches(javax::net::ssl::SNIServerName arg0) const;
 	};
 } // namespace javax::net::ssl
 

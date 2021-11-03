@@ -23,8 +23,8 @@ namespace java::beans
 		PropertyChangeListenerProxy(JString arg0, JObject arg1);
 		
 		// Methods
-		JString getPropertyName();
-		void propertyChange(java::beans::PropertyChangeEvent arg0);
+		JString getPropertyName() const;
+		void propertyChange(java::beans::PropertyChangeEvent arg0) const;
 	};
 } // namespace java::beans
 

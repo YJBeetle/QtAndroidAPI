@@ -25,7 +25,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jlong DateSorter::getBoundary(jint arg0)
+	jlong DateSorter::getBoundary(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getBoundary",
@@ -33,7 +33,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jint DateSorter::getIndex(jlong arg0)
+	jint DateSorter::getIndex(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"getIndex",
@@ -41,7 +41,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	JString DateSorter::getLabel(jint arg0)
+	JString DateSorter::getLabel(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLabel",

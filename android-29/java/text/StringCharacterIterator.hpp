@@ -22,19 +22,19 @@ namespace java::text
 		StringCharacterIterator(JString arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JObject clone();
-		jchar current();
-		jboolean equals(JObject arg0);
-		jchar first();
-		jint getBeginIndex();
-		jint getEndIndex();
-		jint getIndex();
-		jint hashCode();
-		jchar last();
-		jchar next();
-		jchar previous();
-		jchar setIndex(jint arg0);
-		void setText(JString arg0);
+		JObject clone() const;
+		jchar current() const;
+		jboolean equals(JObject arg0) const;
+		jchar first() const;
+		jint getBeginIndex() const;
+		jint getEndIndex() const;
+		jint getIndex() const;
+		jint hashCode() const;
+		jchar last() const;
+		jchar next() const;
+		jchar previous() const;
+		jchar setIndex(jint arg0) const;
+		void setText(JString arg0) const;
 	};
 } // namespace java::text
 

@@ -19,9 +19,9 @@ namespace android::net::wifi
 		WifiManager_WpsCallback();
 		
 		// Methods
-		void onFailed(jint arg0);
-		void onStarted(JString arg0);
-		void onSucceeded();
+		void onFailed(jint arg0) const;
+		void onStarted(JString arg0) const;
+		void onSucceeded() const;
 	};
 } // namespace android::net::wifi
 

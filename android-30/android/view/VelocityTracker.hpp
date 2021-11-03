@@ -22,15 +22,15 @@ namespace android::view
 		
 		// Methods
 		static android::view::VelocityTracker obtain();
-		void addMovement(android::view::MotionEvent arg0);
-		void clear();
-		void computeCurrentVelocity(jint arg0);
-		void computeCurrentVelocity(jint arg0, jfloat arg1);
-		jfloat getXVelocity();
-		jfloat getXVelocity(jint arg0);
-		jfloat getYVelocity();
-		jfloat getYVelocity(jint arg0);
-		void recycle();
+		void addMovement(android::view::MotionEvent arg0) const;
+		void clear() const;
+		void computeCurrentVelocity(jint arg0) const;
+		void computeCurrentVelocity(jint arg0, jfloat arg1) const;
+		jfloat getXVelocity() const;
+		jfloat getXVelocity(jint arg0) const;
+		jfloat getYVelocity() const;
+		jfloat getYVelocity(jint arg0) const;
+		void recycle() const;
 	};
 } // namespace android::view
 

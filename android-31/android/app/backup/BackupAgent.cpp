@@ -48,7 +48,7 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void BackupAgent::fullBackupFile(java::io::File arg0, android::app::backup::FullBackupDataOutput arg1)
+	void BackupAgent::fullBackupFile(java::io::File arg0, android::app::backup::FullBackupDataOutput arg1) const
 	{
 		callMethod<void>(
 			"fullBackupFile",
@@ -57,7 +57,7 @@ namespace android::app::backup
 			arg1.object()
 		);
 	}
-	void BackupAgent::onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2)
+	void BackupAgent::onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2) const
 	{
 		callMethod<void>(
 			"onBackup",
@@ -67,21 +67,21 @@ namespace android::app::backup
 			arg2.object()
 		);
 	}
-	void BackupAgent::onCreate()
+	void BackupAgent::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void BackupAgent::onDestroy()
+	void BackupAgent::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void BackupAgent::onFullBackup(android::app::backup::FullBackupDataOutput arg0)
+	void BackupAgent::onFullBackup(android::app::backup::FullBackupDataOutput arg0) const
 	{
 		callMethod<void>(
 			"onFullBackup",
@@ -89,7 +89,7 @@ namespace android::app::backup
 			arg0.object()
 		);
 	}
-	void BackupAgent::onQuotaExceeded(jlong arg0, jlong arg1)
+	void BackupAgent::onQuotaExceeded(jlong arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"onQuotaExceeded",
@@ -98,7 +98,7 @@ namespace android::app::backup
 			arg1
 		);
 	}
-	void BackupAgent::onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2)
+	void BackupAgent::onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2) const
 	{
 		callMethod<void>(
 			"onRestore",
@@ -108,7 +108,7 @@ namespace android::app::backup
 			arg2.object()
 		);
 	}
-	void BackupAgent::onRestore(android::app::backup::BackupDataInput arg0, jlong arg1, android::os::ParcelFileDescriptor arg2)
+	void BackupAgent::onRestore(android::app::backup::BackupDataInput arg0, jlong arg1, android::os::ParcelFileDescriptor arg2) const
 	{
 		callMethod<void>(
 			"onRestore",
@@ -118,7 +118,7 @@ namespace android::app::backup
 			arg2.object()
 		);
 	}
-	void BackupAgent::onRestoreFile(android::os::ParcelFileDescriptor arg0, jlong arg1, java::io::File arg2, jint arg3, jlong arg4, jlong arg5)
+	void BackupAgent::onRestoreFile(android::os::ParcelFileDescriptor arg0, jlong arg1, java::io::File arg2, jint arg3, jlong arg4, jlong arg5) const
 	{
 		callMethod<void>(
 			"onRestoreFile",
@@ -131,7 +131,7 @@ namespace android::app::backup
 			arg5
 		);
 	}
-	void BackupAgent::onRestoreFinished()
+	void BackupAgent::onRestoreFinished() const
 	{
 		callMethod<void>(
 			"onRestoreFinished",

@@ -18,7 +18,7 @@ namespace android::net::sip
 		) {}
 	
 	// Methods
-	void SipAudioCall_Listener::onCallBusy(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onCallBusy(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onCallBusy",
@@ -26,7 +26,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onCallEnded(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onCallEnded(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onCallEnded",
@@ -34,7 +34,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onCallEstablished(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onCallEstablished(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onCallEstablished",
@@ -42,7 +42,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onCallHeld(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onCallHeld(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onCallHeld",
@@ -50,7 +50,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onCalling(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onCalling(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onCalling",
@@ -58,7 +58,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onChanged(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onChanged(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onChanged",
@@ -66,7 +66,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onError(android::net::sip::SipAudioCall arg0, jint arg1, JString arg2)
+	void SipAudioCall_Listener::onError(android::net::sip::SipAudioCall arg0, jint arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onError",
@@ -76,7 +76,7 @@ namespace android::net::sip
 			arg2.object<jstring>()
 		);
 	}
-	void SipAudioCall_Listener::onReadyToCall(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onReadyToCall(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onReadyToCall",
@@ -84,7 +84,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onRinging(android::net::sip::SipAudioCall arg0, android::net::sip::SipProfile arg1)
+	void SipAudioCall_Listener::onRinging(android::net::sip::SipAudioCall arg0, android::net::sip::SipProfile arg1) const
 	{
 		callMethod<void>(
 			"onRinging",
@@ -93,7 +93,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	void SipAudioCall_Listener::onRingingBack(android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onRingingBack(android::net::sip::SipAudioCall arg0) const
 	{
 		callMethod<void>(
 			"onRingingBack",

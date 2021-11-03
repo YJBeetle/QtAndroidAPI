@@ -31,14 +31,14 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::view::translation::TranslationSpec getSourceSpec();
-		jint getState();
-		jint getSupportedTranslationFlags();
-		android::view::translation::TranslationSpec getTargetSpec();
-		jboolean isUiTranslationEnabled();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::view::translation::TranslationSpec getSourceSpec() const;
+		jint getState() const;
+		jint getSupportedTranslationFlags() const;
+		android::view::translation::TranslationSpec getTargetSpec() const;
+		jboolean isUiTranslationEnabled() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::translation
 

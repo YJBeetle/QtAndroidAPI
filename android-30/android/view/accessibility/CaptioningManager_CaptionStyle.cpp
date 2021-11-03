@@ -83,42 +83,42 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	android::graphics::Typeface CaptioningManager_CaptionStyle::getTypeface()
+	android::graphics::Typeface CaptioningManager_CaptionStyle::getTypeface() const
 	{
 		return callObjectMethod(
 			"getTypeface",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
-	jboolean CaptioningManager_CaptionStyle::hasBackgroundColor()
+	jboolean CaptioningManager_CaptionStyle::hasBackgroundColor() const
 	{
 		return callMethod<jboolean>(
 			"hasBackgroundColor",
 			"()Z"
 		);
 	}
-	jboolean CaptioningManager_CaptionStyle::hasEdgeColor()
+	jboolean CaptioningManager_CaptionStyle::hasEdgeColor() const
 	{
 		return callMethod<jboolean>(
 			"hasEdgeColor",
 			"()Z"
 		);
 	}
-	jboolean CaptioningManager_CaptionStyle::hasEdgeType()
+	jboolean CaptioningManager_CaptionStyle::hasEdgeType() const
 	{
 		return callMethod<jboolean>(
 			"hasEdgeType",
 			"()Z"
 		);
 	}
-	jboolean CaptioningManager_CaptionStyle::hasForegroundColor()
+	jboolean CaptioningManager_CaptionStyle::hasForegroundColor() const
 	{
 		return callMethod<jboolean>(
 			"hasForegroundColor",
 			"()Z"
 		);
 	}
-	jboolean CaptioningManager_CaptionStyle::hasWindowColor()
+	jboolean CaptioningManager_CaptionStyle::hasWindowColor() const
 	{
 		return callMethod<jboolean>(
 			"hasWindowColor",

@@ -11,14 +11,14 @@ namespace android::app::usage
 	// Constructors
 	
 	// Methods
-	void NetworkStats::close()
+	void NetworkStats::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean NetworkStats::getNextBucket(android::app::usage::NetworkStats_Bucket arg0)
+	jboolean NetworkStats::getNextBucket(android::app::usage::NetworkStats_Bucket arg0) const
 	{
 		return callMethod<jboolean>(
 			"getNextBucket",
@@ -26,7 +26,7 @@ namespace android::app::usage
 			arg0.object()
 		);
 	}
-	jboolean NetworkStats::hasNextBucket()
+	jboolean NetworkStats::hasNextBucket() const
 	{
 		return callMethod<jboolean>(
 			"hasNextBucket",

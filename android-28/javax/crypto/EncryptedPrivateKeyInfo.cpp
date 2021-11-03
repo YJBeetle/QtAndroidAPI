@@ -36,35 +36,35 @@ namespace javax::crypto
 		) {}
 	
 	// Methods
-	JString EncryptedPrivateKeyInfo::getAlgName()
+	JString EncryptedPrivateKeyInfo::getAlgName() const
 	{
 		return callObjectMethod(
 			"getAlgName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::AlgorithmParameters EncryptedPrivateKeyInfo::getAlgParameters()
+	java::security::AlgorithmParameters EncryptedPrivateKeyInfo::getAlgParameters() const
 	{
 		return callObjectMethod(
 			"getAlgParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	JByteArray EncryptedPrivateKeyInfo::getEncoded()
+	JByteArray EncryptedPrivateKeyInfo::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JByteArray EncryptedPrivateKeyInfo::getEncryptedData()
+	JByteArray EncryptedPrivateKeyInfo::getEncryptedData() const
 	{
 		return callObjectMethod(
 			"getEncryptedData",
 			"()[B"
 		);
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -72,7 +72,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(javax::crypto::Cipher arg0)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(javax::crypto::Cipher arg0) const
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -80,7 +80,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, JString arg1)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -89,7 +89,7 @@ namespace javax::crypto
 			arg1.object<jstring>()
 		);
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, java::security::Provider arg1)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, java::security::Provider arg1) const
 	{
 		return callObjectMethod(
 			"getKeySpec",

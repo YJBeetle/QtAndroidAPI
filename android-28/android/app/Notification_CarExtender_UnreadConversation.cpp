@@ -14,49 +14,49 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jlong Notification_CarExtender_UnreadConversation::getLatestTimestamp()
+	jlong Notification_CarExtender_UnreadConversation::getLatestTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getLatestTimestamp",
 			"()J"
 		);
 	}
-	JArray Notification_CarExtender_UnreadConversation::getMessages()
+	JArray Notification_CarExtender_UnreadConversation::getMessages() const
 	{
 		return callObjectMethod(
 			"getMessages",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString Notification_CarExtender_UnreadConversation::getParticipant()
+	JString Notification_CarExtender_UnreadConversation::getParticipant() const
 	{
 		return callObjectMethod(
 			"getParticipant",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray Notification_CarExtender_UnreadConversation::getParticipants()
+	JArray Notification_CarExtender_UnreadConversation::getParticipants() const
 	{
 		return callObjectMethod(
 			"getParticipants",
 			"()[Ljava/lang/String;"
 		);
 	}
-	android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReadPendingIntent()
+	android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReadPendingIntent() const
 	{
 		return callObjectMethod(
 			"getReadPendingIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	android::app::RemoteInput Notification_CarExtender_UnreadConversation::getRemoteInput()
+	android::app::RemoteInput Notification_CarExtender_UnreadConversation::getRemoteInput() const
 	{
 		return callObjectMethod(
 			"getRemoteInput",
 			"()Landroid/app/RemoteInput;"
 		);
 	}
-	android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReplyPendingIntent()
+	android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReplyPendingIntent() const
 	{
 		return callObjectMethod(
 			"getReplyPendingIntent",

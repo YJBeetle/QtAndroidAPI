@@ -28,10 +28,10 @@ namespace android::service::quickaccesswallet
 		GetWalletCardsError(android::graphics::drawable::Icon arg0, JString arg1);
 		
 		// Methods
-		jint describeContents();
-		android::graphics::drawable::Icon getIcon();
-		JString getMessage();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getMessage() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::quickaccesswallet
 

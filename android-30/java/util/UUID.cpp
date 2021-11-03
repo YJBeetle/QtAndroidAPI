@@ -46,14 +46,14 @@ namespace java::util
 			"()Ljava/util/UUID;"
 		);
 	}
-	jint UUID::clockSequence()
+	jint UUID::clockSequence() const
 	{
 		return callMethod<jint>(
 			"clockSequence",
 			"()I"
 		);
 	}
-	jint UUID::compareTo(JObject arg0)
+	jint UUID::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -61,7 +61,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint UUID::compareTo(java::util::UUID arg0)
+	jint UUID::compareTo(java::util::UUID arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -69,7 +69,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean UUID::equals(JObject arg0)
+	jboolean UUID::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -77,56 +77,56 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jlong UUID::getLeastSignificantBits()
+	jlong UUID::getLeastSignificantBits() const
 	{
 		return callMethod<jlong>(
 			"getLeastSignificantBits",
 			"()J"
 		);
 	}
-	jlong UUID::getMostSignificantBits()
+	jlong UUID::getMostSignificantBits() const
 	{
 		return callMethod<jlong>(
 			"getMostSignificantBits",
 			"()J"
 		);
 	}
-	jint UUID::hashCode()
+	jint UUID::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jlong UUID::node()
+	jlong UUID::node() const
 	{
 		return callMethod<jlong>(
 			"node",
 			"()J"
 		);
 	}
-	jlong UUID::timestamp()
+	jlong UUID::timestamp() const
 	{
 		return callMethod<jlong>(
 			"timestamp",
 			"()J"
 		);
 	}
-	JString UUID::toString()
+	JString UUID::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UUID::variant()
+	jint UUID::variant() const
 	{
 		return callMethod<jint>(
 			"variant",
 			"()I"
 		);
 	}
-	jint UUID::version()
+	jint UUID::version() const
 	{
 		return callMethod<jint>(
 			"version",

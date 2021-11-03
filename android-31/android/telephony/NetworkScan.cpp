@@ -66,7 +66,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	void NetworkScan::stopScan()
+	void NetworkScan::stopScan() const
 	{
 		callMethod<void>(
 			"stopScan",

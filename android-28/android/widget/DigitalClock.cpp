@@ -25,7 +25,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString DigitalClock::getAccessibilityClassName()
+	JString DigitalClock::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",

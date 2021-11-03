@@ -20,12 +20,12 @@ namespace android::service::controls::templates
 		RangeTemplate(JString arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, JString arg5);
 		
 		// Methods
-		jfloat getCurrentValue();
-		JString getFormatString();
-		jfloat getMaxValue();
-		jfloat getMinValue();
-		jfloat getStepValue();
-		jint getTemplateType();
+		jfloat getCurrentValue() const;
+		JString getFormatString() const;
+		jfloat getMaxValue() const;
+		jfloat getMinValue() const;
+		jfloat getStepValue() const;
+		jint getTemplateType() const;
 	};
 } // namespace android::service::controls::templates
 

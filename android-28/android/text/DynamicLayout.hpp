@@ -37,18 +37,18 @@ namespace android::text
 		DynamicLayout(JString arg0, JString arg1, android::text::TextPaint arg2, jint arg3, android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9);
 		
 		// Methods
-		jint getBottomPadding();
-		jint getEllipsisCount(jint arg0);
-		jint getEllipsisStart(jint arg0);
-		jint getEllipsizedWidth();
-		jboolean getLineContainsTab(jint arg0);
-		jint getLineCount();
-		jint getLineDescent(jint arg0);
-		android::text::Layout_Directions getLineDirections(jint arg0);
-		jint getLineStart(jint arg0);
-		jint getLineTop(jint arg0);
-		jint getParagraphDirection(jint arg0);
-		jint getTopPadding();
+		jint getBottomPadding() const;
+		jint getEllipsisCount(jint arg0) const;
+		jint getEllipsisStart(jint arg0) const;
+		jint getEllipsizedWidth() const;
+		jboolean getLineContainsTab(jint arg0) const;
+		jint getLineCount() const;
+		jint getLineDescent(jint arg0) const;
+		android::text::Layout_Directions getLineDirections(jint arg0) const;
+		jint getLineStart(jint arg0) const;
+		jint getLineTop(jint arg0) const;
+		jint getParagraphDirection(jint arg0) const;
+		jint getTopPadding() const;
 	};
 } // namespace android::text
 

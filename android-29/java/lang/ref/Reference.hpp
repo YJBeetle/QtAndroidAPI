@@ -23,11 +23,11 @@ namespace java::lang::ref
 		
 		// Methods
 		static void reachabilityFence(JObject arg0);
-		void clear();
-		jboolean enqueue();
-		JObject get();
-		jboolean isEnqueued();
-		jboolean refersTo(JObject arg0);
+		void clear() const;
+		jboolean enqueue() const;
+		JObject get() const;
+		jboolean isEnqueued() const;
+		jboolean refersTo(JObject arg0) const;
 	};
 } // namespace java::lang::ref
 

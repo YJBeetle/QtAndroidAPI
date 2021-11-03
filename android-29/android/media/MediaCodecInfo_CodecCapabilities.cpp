@@ -475,49 +475,49 @@ namespace android::media
 			arg2
 		);
 	}
-	android::media::MediaCodecInfo_AudioCapabilities MediaCodecInfo_CodecCapabilities::getAudioCapabilities()
+	android::media::MediaCodecInfo_AudioCapabilities MediaCodecInfo_CodecCapabilities::getAudioCapabilities() const
 	{
 		return callObjectMethod(
 			"getAudioCapabilities",
 			"()Landroid/media/MediaCodecInfo$AudioCapabilities;"
 		);
 	}
-	android::media::MediaFormat MediaCodecInfo_CodecCapabilities::getDefaultFormat()
+	android::media::MediaFormat MediaCodecInfo_CodecCapabilities::getDefaultFormat() const
 	{
 		return callObjectMethod(
 			"getDefaultFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	android::media::MediaCodecInfo_EncoderCapabilities MediaCodecInfo_CodecCapabilities::getEncoderCapabilities()
+	android::media::MediaCodecInfo_EncoderCapabilities MediaCodecInfo_CodecCapabilities::getEncoderCapabilities() const
 	{
 		return callObjectMethod(
 			"getEncoderCapabilities",
 			"()Landroid/media/MediaCodecInfo$EncoderCapabilities;"
 		);
 	}
-	jint MediaCodecInfo_CodecCapabilities::getMaxSupportedInstances()
+	jint MediaCodecInfo_CodecCapabilities::getMaxSupportedInstances() const
 	{
 		return callMethod<jint>(
 			"getMaxSupportedInstances",
 			"()I"
 		);
 	}
-	JString MediaCodecInfo_CodecCapabilities::getMimeType()
+	JString MediaCodecInfo_CodecCapabilities::getMimeType() const
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::media::MediaCodecInfo_VideoCapabilities MediaCodecInfo_CodecCapabilities::getVideoCapabilities()
+	android::media::MediaCodecInfo_VideoCapabilities MediaCodecInfo_CodecCapabilities::getVideoCapabilities() const
 	{
 		return callObjectMethod(
 			"getVideoCapabilities",
 			"()Landroid/media/MediaCodecInfo$VideoCapabilities;"
 		);
 	}
-	jboolean MediaCodecInfo_CodecCapabilities::isFeatureRequired(JString arg0)
+	jboolean MediaCodecInfo_CodecCapabilities::isFeatureRequired(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isFeatureRequired",
@@ -525,7 +525,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jboolean MediaCodecInfo_CodecCapabilities::isFeatureSupported(JString arg0)
+	jboolean MediaCodecInfo_CodecCapabilities::isFeatureSupported(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isFeatureSupported",
@@ -533,7 +533,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jboolean MediaCodecInfo_CodecCapabilities::isFormatSupported(android::media::MediaFormat arg0)
+	jboolean MediaCodecInfo_CodecCapabilities::isFormatSupported(android::media::MediaFormat arg0) const
 	{
 		return callMethod<jboolean>(
 			"isFormatSupported",

@@ -32,7 +32,7 @@ namespace android::hardware::input
 	// Constructors
 	
 	// Methods
-	android::view::InputDevice InputManager::getInputDevice(jint arg0)
+	android::view::InputDevice InputManager::getInputDevice(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInputDevice",
@@ -40,14 +40,14 @@ namespace android::hardware::input
 			arg0
 		);
 	}
-	JIntArray InputManager::getInputDeviceIds()
+	JIntArray InputManager::getInputDeviceIds() const
 	{
 		return callObjectMethod(
 			"getInputDeviceIds",
 			"()[I"
 		);
 	}
-	void InputManager::registerInputDeviceListener(JObject arg0, android::os::Handler arg1)
+	void InputManager::registerInputDeviceListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerInputDeviceListener",
@@ -56,7 +56,7 @@ namespace android::hardware::input
 			arg1.object()
 		);
 	}
-	void InputManager::unregisterInputDeviceListener(JObject arg0)
+	void InputManager::unregisterInputDeviceListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterInputDeviceListener",
@@ -64,7 +64,7 @@ namespace android::hardware::input
 			arg0.object()
 		);
 	}
-	android::view::VerifiedInputEvent InputManager::verifyInputEvent(android::view::InputEvent arg0)
+	android::view::VerifiedInputEvent InputManager::verifyInputEvent(android::view::InputEvent arg0) const
 	{
 		return callObjectMethod(
 			"verifyInputEvent",

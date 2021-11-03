@@ -65,7 +65,7 @@ namespace android::icu::text
 			arg1.object<jarray>()
 		);
 	}
-	android::icu::text::DisplayContext LocaleDisplayNames::getContext(android::icu::text::DisplayContext_Type arg0)
+	android::icu::text::DisplayContext LocaleDisplayNames::getContext(android::icu::text::DisplayContext_Type arg0) const
 	{
 		return callObjectMethod(
 			"getContext",
@@ -73,21 +73,21 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames::getDialectHandling()
+	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames::getDialectHandling() const
 	{
 		return callObjectMethod(
 			"getDialectHandling",
 			"()Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
 		);
 	}
-	android::icu::util::ULocale LocaleDisplayNames::getLocale()
+	android::icu::util::ULocale LocaleDisplayNames::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	JObject LocaleDisplayNames::getUiList(JObject arg0, jboolean arg1, JObject arg2)
+	JObject LocaleDisplayNames::getUiList(JObject arg0, jboolean arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"getUiList",
@@ -97,7 +97,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject LocaleDisplayNames::getUiListCompareWholeItems(JObject arg0, JObject arg1)
+	JObject LocaleDisplayNames::getUiListCompareWholeItems(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getUiListCompareWholeItems",
@@ -106,7 +106,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JString LocaleDisplayNames::keyDisplayName(JString arg0)
+	JString LocaleDisplayNames::keyDisplayName(JString arg0) const
 	{
 		return callObjectMethod(
 			"keyDisplayName",
@@ -114,7 +114,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString LocaleDisplayNames::keyValueDisplayName(JString arg0, JString arg1)
+	JString LocaleDisplayNames::keyValueDisplayName(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"keyValueDisplayName",
@@ -123,7 +123,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	JString LocaleDisplayNames::languageDisplayName(JString arg0)
+	JString LocaleDisplayNames::languageDisplayName(JString arg0) const
 	{
 		return callObjectMethod(
 			"languageDisplayName",
@@ -131,7 +131,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString LocaleDisplayNames::localeDisplayName(android::icu::util::ULocale arg0)
+	JString LocaleDisplayNames::localeDisplayName(android::icu::util::ULocale arg0) const
 	{
 		return callObjectMethod(
 			"localeDisplayName",
@@ -139,7 +139,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString LocaleDisplayNames::localeDisplayName(JString arg0)
+	JString LocaleDisplayNames::localeDisplayName(JString arg0) const
 	{
 		return callObjectMethod(
 			"localeDisplayName",
@@ -147,7 +147,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString LocaleDisplayNames::localeDisplayName(java::util::Locale arg0)
+	JString LocaleDisplayNames::localeDisplayName(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"localeDisplayName",
@@ -155,7 +155,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString LocaleDisplayNames::regionDisplayName(JString arg0)
+	JString LocaleDisplayNames::regionDisplayName(JString arg0) const
 	{
 		return callObjectMethod(
 			"regionDisplayName",
@@ -163,7 +163,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString LocaleDisplayNames::scriptDisplayName(jint arg0)
+	JString LocaleDisplayNames::scriptDisplayName(jint arg0) const
 	{
 		return callObjectMethod(
 			"scriptDisplayName",
@@ -171,7 +171,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString LocaleDisplayNames::scriptDisplayName(JString arg0)
+	JString LocaleDisplayNames::scriptDisplayName(JString arg0) const
 	{
 		return callObjectMethod(
 			"scriptDisplayName",
@@ -179,7 +179,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString LocaleDisplayNames::variantDisplayName(JString arg0)
+	JString LocaleDisplayNames::variantDisplayName(JString arg0) const
 	{
 		return callObjectMethod(
 			"variantDisplayName",

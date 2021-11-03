@@ -17,7 +17,7 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	void BluetoothHidDevice_Callback::onAppStatusChanged(android::bluetooth::BluetoothDevice arg0, jboolean arg1)
+	void BluetoothHidDevice_Callback::onAppStatusChanged(android::bluetooth::BluetoothDevice arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onAppStatusChanged",
@@ -26,7 +26,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothHidDevice_Callback::onConnectionStateChanged(android::bluetooth::BluetoothDevice arg0, jint arg1)
+	void BluetoothHidDevice_Callback::onConnectionStateChanged(android::bluetooth::BluetoothDevice arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onConnectionStateChanged",
@@ -35,7 +35,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothHidDevice_Callback::onGetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jint arg3)
+	void BluetoothHidDevice_Callback::onGetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onGetReport",
@@ -46,7 +46,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothHidDevice_Callback::onInterruptData(android::bluetooth::BluetoothDevice arg0, jbyte arg1, JByteArray arg2)
+	void BluetoothHidDevice_Callback::onInterruptData(android::bluetooth::BluetoothDevice arg0, jbyte arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"onInterruptData",
@@ -56,7 +56,7 @@ namespace android::bluetooth
 			arg2.object<jbyteArray>()
 		);
 	}
-	void BluetoothHidDevice_Callback::onSetProtocol(android::bluetooth::BluetoothDevice arg0, jbyte arg1)
+	void BluetoothHidDevice_Callback::onSetProtocol(android::bluetooth::BluetoothDevice arg0, jbyte arg1) const
 	{
 		callMethod<void>(
 			"onSetProtocol",
@@ -65,7 +65,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothHidDevice_Callback::onSetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3)
+	void BluetoothHidDevice_Callback::onSetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3) const
 	{
 		callMethod<void>(
 			"onSetReport",
@@ -76,7 +76,7 @@ namespace android::bluetooth
 			arg3.object<jbyteArray>()
 		);
 	}
-	void BluetoothHidDevice_Callback::onVirtualCableUnplug(android::bluetooth::BluetoothDevice arg0)
+	void BluetoothHidDevice_Callback::onVirtualCableUnplug(android::bluetooth::BluetoothDevice arg0) const
 	{
 		callMethod<void>(
 			"onVirtualCableUnplug",

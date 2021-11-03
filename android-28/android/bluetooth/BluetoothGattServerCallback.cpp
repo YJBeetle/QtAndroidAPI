@@ -20,7 +20,7 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	void BluetoothGattServerCallback::onCharacteristicReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattCharacteristic arg3)
+	void BluetoothGattServerCallback::onCharacteristicReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattCharacteristic arg3) const
 	{
 		callMethod<void>(
 			"onCharacteristicReadRequest",
@@ -31,7 +31,7 @@ namespace android::bluetooth
 			arg3.object()
 		);
 	}
-	void BluetoothGattServerCallback::onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6)
+	void BluetoothGattServerCallback::onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6) const
 	{
 		callMethod<void>(
 			"onCharacteristicWriteRequest",
@@ -45,7 +45,7 @@ namespace android::bluetooth
 			arg6.object<jbyteArray>()
 		);
 	}
-	void BluetoothGattServerCallback::onConnectionStateChange(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2)
+	void BluetoothGattServerCallback::onConnectionStateChange(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onConnectionStateChange",
@@ -55,7 +55,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattServerCallback::onDescriptorReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattDescriptor arg3)
+	void BluetoothGattServerCallback::onDescriptorReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattDescriptor arg3) const
 	{
 		callMethod<void>(
 			"onDescriptorReadRequest",
@@ -66,7 +66,7 @@ namespace android::bluetooth
 			arg3.object()
 		);
 	}
-	void BluetoothGattServerCallback::onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6)
+	void BluetoothGattServerCallback::onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6) const
 	{
 		callMethod<void>(
 			"onDescriptorWriteRequest",
@@ -80,7 +80,7 @@ namespace android::bluetooth
 			arg6.object<jbyteArray>()
 		);
 	}
-	void BluetoothGattServerCallback::onExecuteWrite(android::bluetooth::BluetoothDevice arg0, jint arg1, jboolean arg2)
+	void BluetoothGattServerCallback::onExecuteWrite(android::bluetooth::BluetoothDevice arg0, jint arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"onExecuteWrite",
@@ -90,7 +90,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattServerCallback::onMtuChanged(android::bluetooth::BluetoothDevice arg0, jint arg1)
+	void BluetoothGattServerCallback::onMtuChanged(android::bluetooth::BluetoothDevice arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onMtuChanged",
@@ -99,7 +99,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothGattServerCallback::onNotificationSent(android::bluetooth::BluetoothDevice arg0, jint arg1)
+	void BluetoothGattServerCallback::onNotificationSent(android::bluetooth::BluetoothDevice arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onNotificationSent",
@@ -108,7 +108,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothGattServerCallback::onPhyRead(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3)
+	void BluetoothGattServerCallback::onPhyRead(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onPhyRead",
@@ -119,7 +119,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothGattServerCallback::onPhyUpdate(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3)
+	void BluetoothGattServerCallback::onPhyUpdate(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onPhyUpdate",
@@ -130,7 +130,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothGattServerCallback::onServiceAdded(jint arg0, android::bluetooth::BluetoothGattService arg1)
+	void BluetoothGattServerCallback::onServiceAdded(jint arg0, android::bluetooth::BluetoothGattService arg1) const
 	{
 		callMethod<void>(
 			"onServiceAdded",

@@ -19,14 +19,14 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	android::bluetooth::le::ScanFilter ScanFilter_Builder::build()
+	android::bluetooth::le::ScanFilter ScanFilter_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/ScanFilter;"
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceAddress(JString arg0)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceAddress(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDeviceAddress",
@@ -34,7 +34,7 @@ namespace android::bluetooth::le
 			arg0.object<jstring>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceName(JString arg0)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDeviceName",
@@ -42,7 +42,7 @@ namespace android::bluetooth::le
 			arg0.object<jstring>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, JByteArray arg1)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, JByteArray arg1) const
 	{
 		return callObjectMethod(
 			"setManufacturerData",
@@ -51,7 +51,7 @@ namespace android::bluetooth::le
 			arg1.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, JByteArray arg1, JByteArray arg2)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, JByteArray arg1, JByteArray arg2) const
 	{
 		return callObjectMethod(
 			"setManufacturerData",
@@ -61,7 +61,7 @@ namespace android::bluetooth::le
 			arg2.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, JByteArray arg1)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, JByteArray arg1) const
 	{
 		return callObjectMethod(
 			"setServiceData",
@@ -70,7 +70,7 @@ namespace android::bluetooth::le
 			arg1.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, JByteArray arg1, JByteArray arg2)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, JByteArray arg1, JByteArray arg2) const
 	{
 		return callObjectMethod(
 			"setServiceData",
@@ -80,7 +80,7 @@ namespace android::bluetooth::le
 			arg2.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceSolicitationUuid(android::os::ParcelUuid arg0)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceSolicitationUuid(android::os::ParcelUuid arg0) const
 	{
 		return callObjectMethod(
 			"setServiceSolicitationUuid",
@@ -88,7 +88,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceSolicitationUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceSolicitationUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1) const
 	{
 		return callObjectMethod(
 			"setServiceSolicitationUuid",
@@ -97,7 +97,7 @@ namespace android::bluetooth::le
 			arg1.object()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceUuid(android::os::ParcelUuid arg0)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceUuid(android::os::ParcelUuid arg0) const
 	{
 		return callObjectMethod(
 			"setServiceUuid",
@@ -105,7 +105,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1) const
 	{
 		return callObjectMethod(
 			"setServiceUuid",

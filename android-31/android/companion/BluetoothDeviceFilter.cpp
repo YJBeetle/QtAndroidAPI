@@ -21,14 +21,14 @@ namespace android::companion
 	// Constructors
 	
 	// Methods
-	jint BluetoothDeviceFilter::describeContents()
+	jint BluetoothDeviceFilter::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean BluetoothDeviceFilter::equals(JObject arg0)
+	jboolean BluetoothDeviceFilter::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,21 +36,21 @@ namespace android::companion
 			arg0.object<jobject>()
 		);
 	}
-	jint BluetoothDeviceFilter::hashCode()
+	jint BluetoothDeviceFilter::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString BluetoothDeviceFilter::toString()
+	JString BluetoothDeviceFilter::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BluetoothDeviceFilter::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothDeviceFilter::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

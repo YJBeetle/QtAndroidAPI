@@ -58,14 +58,14 @@ namespace android::view::autofill
 			arg0
 		);
 	}
-	jint AutofillValue::describeContents()
+	jint AutofillValue::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AutofillValue::equals(JObject arg0)
+	jboolean AutofillValue::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -73,77 +73,77 @@ namespace android::view::autofill
 			arg0.object<jobject>()
 		);
 	}
-	jlong AutofillValue::getDateValue()
+	jlong AutofillValue::getDateValue() const
 	{
 		return callMethod<jlong>(
 			"getDateValue",
 			"()J"
 		);
 	}
-	jint AutofillValue::getListValue()
+	jint AutofillValue::getListValue() const
 	{
 		return callMethod<jint>(
 			"getListValue",
 			"()I"
 		);
 	}
-	JString AutofillValue::getTextValue()
+	JString AutofillValue::getTextValue() const
 	{
 		return callObjectMethod(
 			"getTextValue",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean AutofillValue::getToggleValue()
+	jboolean AutofillValue::getToggleValue() const
 	{
 		return callMethod<jboolean>(
 			"getToggleValue",
 			"()Z"
 		);
 	}
-	jint AutofillValue::hashCode()
+	jint AutofillValue::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AutofillValue::isDate()
+	jboolean AutofillValue::isDate() const
 	{
 		return callMethod<jboolean>(
 			"isDate",
 			"()Z"
 		);
 	}
-	jboolean AutofillValue::isList()
+	jboolean AutofillValue::isList() const
 	{
 		return callMethod<jboolean>(
 			"isList",
 			"()Z"
 		);
 	}
-	jboolean AutofillValue::isText()
+	jboolean AutofillValue::isText() const
 	{
 		return callMethod<jboolean>(
 			"isText",
 			"()Z"
 		);
 	}
-	jboolean AutofillValue::isToggle()
+	jboolean AutofillValue::isToggle() const
 	{
 		return callMethod<jboolean>(
 			"isToggle",
 			"()Z"
 		);
 	}
-	JString AutofillValue::toString()
+	JString AutofillValue::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AutofillValue::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AutofillValue::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

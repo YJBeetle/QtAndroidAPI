@@ -12,7 +12,7 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	jboolean AlwaysOnHotwordDetector_ModelParamRange::equals(JObject arg0)
+	jboolean AlwaysOnHotwordDetector_ModelParamRange::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,28 +20,28 @@ namespace android::service::voice
 			arg0.object<jobject>()
 		);
 	}
-	jint AlwaysOnHotwordDetector_ModelParamRange::getEnd()
+	jint AlwaysOnHotwordDetector_ModelParamRange::getEnd() const
 	{
 		return callMethod<jint>(
 			"getEnd",
 			"()I"
 		);
 	}
-	jint AlwaysOnHotwordDetector_ModelParamRange::getStart()
+	jint AlwaysOnHotwordDetector_ModelParamRange::getStart() const
 	{
 		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
-	jint AlwaysOnHotwordDetector_ModelParamRange::hashCode()
+	jint AlwaysOnHotwordDetector_ModelParamRange::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AlwaysOnHotwordDetector_ModelParamRange::toString()
+	JString AlwaysOnHotwordDetector_ModelParamRange::toString() const
 	{
 		return callObjectMethod(
 			"toString",

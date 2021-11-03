@@ -15,35 +15,35 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jboolean ServiceWorkerWebSettings::getAllowContentAccess()
+	jboolean ServiceWorkerWebSettings::getAllowContentAccess() const
 	{
 		return callMethod<jboolean>(
 			"getAllowContentAccess",
 			"()Z"
 		);
 	}
-	jboolean ServiceWorkerWebSettings::getAllowFileAccess()
+	jboolean ServiceWorkerWebSettings::getAllowFileAccess() const
 	{
 		return callMethod<jboolean>(
 			"getAllowFileAccess",
 			"()Z"
 		);
 	}
-	jboolean ServiceWorkerWebSettings::getBlockNetworkLoads()
+	jboolean ServiceWorkerWebSettings::getBlockNetworkLoads() const
 	{
 		return callMethod<jboolean>(
 			"getBlockNetworkLoads",
 			"()Z"
 		);
 	}
-	jint ServiceWorkerWebSettings::getCacheMode()
+	jint ServiceWorkerWebSettings::getCacheMode() const
 	{
 		return callMethod<jint>(
 			"getCacheMode",
 			"()I"
 		);
 	}
-	void ServiceWorkerWebSettings::setAllowContentAccess(jboolean arg0)
+	void ServiceWorkerWebSettings::setAllowContentAccess(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowContentAccess",
@@ -51,7 +51,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void ServiceWorkerWebSettings::setAllowFileAccess(jboolean arg0)
+	void ServiceWorkerWebSettings::setAllowFileAccess(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowFileAccess",
@@ -59,7 +59,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void ServiceWorkerWebSettings::setBlockNetworkLoads(jboolean arg0)
+	void ServiceWorkerWebSettings::setBlockNetworkLoads(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setBlockNetworkLoads",
@@ -67,7 +67,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void ServiceWorkerWebSettings::setCacheMode(jint arg0)
+	void ServiceWorkerWebSettings::setCacheMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setCacheMode",

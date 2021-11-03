@@ -11,28 +11,28 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean AudioFocusRequest::acceptsDelayedFocusGain()
+	jboolean AudioFocusRequest::acceptsDelayedFocusGain() const
 	{
 		return callMethod<jboolean>(
 			"acceptsDelayedFocusGain",
 			"()Z"
 		);
 	}
-	android::media::AudioAttributes AudioFocusRequest::getAudioAttributes()
+	android::media::AudioAttributes AudioFocusRequest::getAudioAttributes() const
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	jint AudioFocusRequest::getFocusGain()
+	jint AudioFocusRequest::getFocusGain() const
 	{
 		return callMethod<jint>(
 			"getFocusGain",
 			"()I"
 		);
 	}
-	jboolean AudioFocusRequest::willPauseWhenDucked()
+	jboolean AudioFocusRequest::willPauseWhenDucked() const
 	{
 		return callMethod<jboolean>(
 			"willPauseWhenDucked",

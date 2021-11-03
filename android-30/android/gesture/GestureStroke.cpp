@@ -42,35 +42,35 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	void GestureStroke::clearPath()
+	void GestureStroke::clearPath() const
 	{
 		callMethod<void>(
 			"clearPath",
 			"()V"
 		);
 	}
-	JObject GestureStroke::clone()
+	JObject GestureStroke::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::gesture::OrientedBoundingBox GestureStroke::computeOrientedBoundingBox()
+	android::gesture::OrientedBoundingBox GestureStroke::computeOrientedBoundingBox() const
 	{
 		return callObjectMethod(
 			"computeOrientedBoundingBox",
 			"()Landroid/gesture/OrientedBoundingBox;"
 		);
 	}
-	android::graphics::Path GestureStroke::getPath()
+	android::graphics::Path GestureStroke::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	android::graphics::Path GestureStroke::toPath(jfloat arg0, jfloat arg1, jint arg2)
+	android::graphics::Path GestureStroke::toPath(jfloat arg0, jfloat arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"toPath",

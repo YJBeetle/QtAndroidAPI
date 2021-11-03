@@ -16,7 +16,7 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	jboolean Field::equals(JObject arg0)
+	jboolean Field::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -24,7 +24,7 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	JObject Field::get(JObject arg0)
+	JObject Field::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -32,14 +32,14 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	JObject Field::getAnnotatedType()
+	JObject Field::getAnnotatedType() const
 	{
 		return callObjectMethod(
 			"getAnnotatedType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Field::getAnnotation(JClass arg0)
+	JObject Field::getAnnotation(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -47,7 +47,7 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	JArray Field::getAnnotationsByType(JClass arg0)
+	JArray Field::getAnnotationsByType(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
@@ -55,7 +55,7 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	jboolean Field::getBoolean(JObject arg0)
+	jboolean Field::getBoolean(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
@@ -63,7 +63,7 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	jbyte Field::getByte(JObject arg0)
+	jbyte Field::getByte(JObject arg0) const
 	{
 		return callMethod<jbyte>(
 			"getByte",
@@ -71,7 +71,7 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	jchar Field::getChar(JObject arg0)
+	jchar Field::getChar(JObject arg0) const
 	{
 		return callMethod<jchar>(
 			"getChar",
@@ -79,21 +79,21 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	JArray Field::getDeclaredAnnotations()
+	JArray Field::getDeclaredAnnotations() const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	JClass Field::getDeclaringClass()
+	JClass Field::getDeclaringClass() const
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	jdouble Field::getDouble(JObject arg0)
+	jdouble Field::getDouble(JObject arg0) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -101,7 +101,7 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Field::getFloat(JObject arg0)
+	jfloat Field::getFloat(JObject arg0) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -109,14 +109,14 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	JObject Field::getGenericType()
+	JObject Field::getGenericType() const
 	{
 		return callObjectMethod(
 			"getGenericType",
 			"()Ljava/lang/reflect/Type;"
 		);
 	}
-	jint Field::getInt(JObject arg0)
+	jint Field::getInt(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -124,7 +124,7 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	jlong Field::getLong(JObject arg0)
+	jlong Field::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -132,21 +132,21 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	jint Field::getModifiers()
+	jint Field::getModifiers() const
 	{
 		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
-	JString Field::getName()
+	JString Field::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jshort Field::getShort(JObject arg0)
+	jshort Field::getShort(JObject arg0) const
 	{
 		return callMethod<jshort>(
 			"getShort",
@@ -154,35 +154,35 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	JClass Field::getType()
+	JClass Field::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	jint Field::hashCode()
+	jint Field::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Field::isEnumConstant()
+	jboolean Field::isEnumConstant() const
 	{
 		return callMethod<jboolean>(
 			"isEnumConstant",
 			"()Z"
 		);
 	}
-	jboolean Field::isSynthetic()
+	jboolean Field::isSynthetic() const
 	{
 		return callMethod<jboolean>(
 			"isSynthetic",
 			"()Z"
 		);
 	}
-	void Field::set(JObject arg0, JObject arg1)
+	void Field::set(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -191,7 +191,7 @@ namespace java::lang::reflect
 			arg1.object<jobject>()
 		);
 	}
-	void Field::setAccessible(jboolean arg0)
+	void Field::setAccessible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAccessible",
@@ -199,7 +199,7 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	void Field::setBoolean(JObject arg0, jboolean arg1)
+	void Field::setBoolean(JObject arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setBoolean",
@@ -208,7 +208,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setByte(JObject arg0, jbyte arg1)
+	void Field::setByte(JObject arg0, jbyte arg1) const
 	{
 		callMethod<void>(
 			"setByte",
@@ -217,7 +217,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setChar(JObject arg0, jchar arg1)
+	void Field::setChar(JObject arg0, jchar arg1) const
 	{
 		callMethod<void>(
 			"setChar",
@@ -226,7 +226,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setDouble(JObject arg0, jdouble arg1)
+	void Field::setDouble(JObject arg0, jdouble arg1) const
 	{
 		callMethod<void>(
 			"setDouble",
@@ -235,7 +235,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setFloat(JObject arg0, jfloat arg1)
+	void Field::setFloat(JObject arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setFloat",
@@ -244,7 +244,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setInt(JObject arg0, jint arg1)
+	void Field::setInt(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setInt",
@@ -253,7 +253,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setLong(JObject arg0, jlong arg1)
+	void Field::setLong(JObject arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setLong",
@@ -262,7 +262,7 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setShort(JObject arg0, jshort arg1)
+	void Field::setShort(JObject arg0, jshort arg1) const
 	{
 		callMethod<void>(
 			"setShort",
@@ -271,14 +271,14 @@ namespace java::lang::reflect
 			arg1
 		);
 	}
-	JString Field::toGenericString()
+	JString Field::toGenericString() const
 	{
 		return callObjectMethod(
 			"toGenericString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Field::toString()
+	JString Field::toString() const
 	{
 		return callObjectMethod(
 			"toString",

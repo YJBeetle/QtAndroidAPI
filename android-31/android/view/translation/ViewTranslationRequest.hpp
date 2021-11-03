@@ -33,14 +33,14 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::view::autofill::AutofillId getAutofillId();
-		JObject getKeys();
-		android::view::translation::TranslationRequestValue getValue(JString arg0);
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::view::autofill::AutofillId getAutofillId() const;
+		JObject getKeys() const;
+		android::view::translation::TranslationRequestValue getValue(JString arg0) const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::translation
 

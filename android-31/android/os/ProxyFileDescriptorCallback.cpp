@@ -16,21 +16,21 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void ProxyFileDescriptorCallback::onFsync()
+	void ProxyFileDescriptorCallback::onFsync() const
 	{
 		callMethod<void>(
 			"onFsync",
 			"()V"
 		);
 	}
-	jlong ProxyFileDescriptorCallback::onGetSize()
+	jlong ProxyFileDescriptorCallback::onGetSize() const
 	{
 		return callMethod<jlong>(
 			"onGetSize",
 			"()J"
 		);
 	}
-	jint ProxyFileDescriptorCallback::onRead(jlong arg0, jint arg1, JByteArray arg2)
+	jint ProxyFileDescriptorCallback::onRead(jlong arg0, jint arg1, JByteArray arg2) const
 	{
 		return callMethod<jint>(
 			"onRead",
@@ -40,14 +40,14 @@ namespace android::os
 			arg2.object<jbyteArray>()
 		);
 	}
-	void ProxyFileDescriptorCallback::onRelease()
+	void ProxyFileDescriptorCallback::onRelease() const
 	{
 		callMethod<void>(
 			"onRelease",
 			"()V"
 		);
 	}
-	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, JByteArray arg2)
+	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, JByteArray arg2) const
 	{
 		return callMethod<jint>(
 			"onWrite",

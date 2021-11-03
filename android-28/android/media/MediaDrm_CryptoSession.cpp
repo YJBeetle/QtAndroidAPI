@@ -13,7 +13,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray MediaDrm_CryptoSession::decrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2)
+	JByteArray MediaDrm_CryptoSession::decrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const
 	{
 		return callObjectMethod(
 			"decrypt",
@@ -23,7 +23,7 @@ namespace android::media
 			arg2.object<jbyteArray>()
 		);
 	}
-	JByteArray MediaDrm_CryptoSession::encrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2)
+	JByteArray MediaDrm_CryptoSession::encrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const
 	{
 		return callObjectMethod(
 			"encrypt",
@@ -33,7 +33,7 @@ namespace android::media
 			arg2.object<jbyteArray>()
 		);
 	}
-	JByteArray MediaDrm_CryptoSession::sign(JByteArray arg0, JByteArray arg1)
+	JByteArray MediaDrm_CryptoSession::sign(JByteArray arg0, JByteArray arg1) const
 	{
 		return callObjectMethod(
 			"sign",
@@ -42,7 +42,7 @@ namespace android::media
 			arg1.object<jbyteArray>()
 		);
 	}
-	jboolean MediaDrm_CryptoSession::verify(JByteArray arg0, JByteArray arg1, JByteArray arg2)
+	jboolean MediaDrm_CryptoSession::verify(JByteArray arg0, JByteArray arg1, JByteArray arg2) const
 	{
 		return callMethod<jboolean>(
 			"verify",

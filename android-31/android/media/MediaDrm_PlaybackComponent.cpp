@@ -12,14 +12,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::metrics::LogSessionId MediaDrm_PlaybackComponent::getLogSessionId()
+	android::media::metrics::LogSessionId MediaDrm_PlaybackComponent::getLogSessionId() const
 	{
 		return callObjectMethod(
 			"getLogSessionId",
 			"()Landroid/media/metrics/LogSessionId;"
 		);
 	}
-	void MediaDrm_PlaybackComponent::setLogSessionId(android::media::metrics::LogSessionId arg0)
+	void MediaDrm_PlaybackComponent::setLogSessionId(android::media::metrics::LogSessionId arg0) const
 	{
 		callMethod<void>(
 			"setLogSessionId",

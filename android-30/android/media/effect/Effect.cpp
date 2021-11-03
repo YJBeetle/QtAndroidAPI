@@ -17,7 +17,7 @@ namespace android::media::effect
 		) {}
 	
 	// Methods
-	void Effect::apply(jint arg0, jint arg1, jint arg2, jint arg3)
+	void Effect::apply(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"apply",
@@ -28,21 +28,21 @@ namespace android::media::effect
 			arg3
 		);
 	}
-	JString Effect::getName()
+	JString Effect::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Effect::release()
+	void Effect::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void Effect::setParameter(JString arg0, JObject arg1)
+	void Effect::setParameter(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setParameter",
@@ -51,7 +51,7 @@ namespace android::media::effect
 			arg1.object<jobject>()
 		);
 	}
-	void Effect::setUpdateListener(JObject arg0)
+	void Effect::setUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setUpdateListener",

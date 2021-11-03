@@ -42,14 +42,14 @@ namespace android::service::notification
 		
 		// Methods
 		static void requestRebind(android::content::ComponentName arg0);
-		void notifyCondition(android::service::notification::Condition arg0);
-		void notifyConditions(JArray arg0);
-		JObject onBind(android::content::Intent arg0);
-		void onConnected();
-		void onRequestConditions(jint arg0);
-		void onSubscribe(android::net::Uri arg0);
-		void onUnsubscribe(android::net::Uri arg0);
-		void requestUnbind();
+		void notifyCondition(android::service::notification::Condition arg0) const;
+		void notifyConditions(JArray arg0) const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onConnected() const;
+		void onRequestConditions(jint arg0) const;
+		void onSubscribe(android::net::Uri arg0) const;
+		void onUnsubscribe(android::net::Uri arg0) const;
+		void requestUnbind() const;
 	};
 } // namespace android::service::notification
 

@@ -57,16 +57,16 @@ namespace android::widget
 		RelativeLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::widget::RelativeLayout_LayoutParams generateLayoutParams(JObject arg0);
-		JString getAccessibilityClassName();
-		jint getBaseline();
-		jint getGravity();
-		void requestLayout();
-		void setGravity(jint arg0);
-		void setHorizontalGravity(jint arg0);
-		void setIgnoreGravity(jint arg0);
-		void setVerticalGravity(jint arg0);
-		jboolean shouldDelayChildPressedState();
+		android::widget::RelativeLayout_LayoutParams generateLayoutParams(JObject arg0) const;
+		JString getAccessibilityClassName() const;
+		jint getBaseline() const;
+		jint getGravity() const;
+		void requestLayout() const;
+		void setGravity(jint arg0) const;
+		void setHorizontalGravity(jint arg0) const;
+		void setIgnoreGravity(jint arg0) const;
+		void setVerticalGravity(jint arg0) const;
+		jboolean shouldDelayChildPressedState() const;
 	};
 } // namespace android::widget
 

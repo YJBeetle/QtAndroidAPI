@@ -36,7 +36,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void ContextThemeWrapper::applyOverrideConfiguration(android::content::res::Configuration arg0)
+	void ContextThemeWrapper::applyOverrideConfiguration(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"applyOverrideConfiguration",
@@ -44,21 +44,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::content::res::AssetManager ContextThemeWrapper::getAssets()
+	android::content::res::AssetManager ContextThemeWrapper::getAssets() const
 	{
 		return callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
 		);
 	}
-	android::content::res::Resources ContextThemeWrapper::getResources()
+	android::content::res::Resources ContextThemeWrapper::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	JObject ContextThemeWrapper::getSystemService(JString arg0)
+	JObject ContextThemeWrapper::getSystemService(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSystemService",
@@ -66,14 +66,14 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	android::content::res::Resources_Theme ContextThemeWrapper::getTheme()
+	android::content::res::Resources_Theme ContextThemeWrapper::getTheme() const
 	{
 		return callObjectMethod(
 			"getTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	void ContextThemeWrapper::setTheme(android::content::res::Resources_Theme arg0)
+	void ContextThemeWrapper::setTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"setTheme",
@@ -81,7 +81,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ContextThemeWrapper::setTheme(jint arg0)
+	void ContextThemeWrapper::setTheme(jint arg0) const
 	{
 		callMethod<void>(
 			"setTheme",

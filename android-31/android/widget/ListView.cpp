@@ -51,7 +51,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void ListView::addFooterView(android::view::View arg0)
+	void ListView::addFooterView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addFooterView",
@@ -59,7 +59,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::addFooterView(android::view::View arg0, JObject arg1, jboolean arg2)
+	void ListView::addFooterView(android::view::View arg0, JObject arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"addFooterView",
@@ -69,7 +69,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ListView::addHeaderView(android::view::View arg0)
+	void ListView::addHeaderView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addHeaderView",
@@ -77,7 +77,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::addHeaderView(android::view::View arg0, JObject arg1, jboolean arg2)
+	void ListView::addHeaderView(android::view::View arg0, JObject arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"addHeaderView",
@@ -87,21 +87,21 @@ namespace android::widget
 			arg2
 		);
 	}
-	jboolean ListView::areFooterDividersEnabled()
+	jboolean ListView::areFooterDividersEnabled() const
 	{
 		return callMethod<jboolean>(
 			"areFooterDividersEnabled",
 			"()Z"
 		);
 	}
-	jboolean ListView::areHeaderDividersEnabled()
+	jboolean ListView::areHeaderDividersEnabled() const
 	{
 		return callMethod<jboolean>(
 			"areHeaderDividersEnabled",
 			"()Z"
 		);
 	}
-	jboolean ListView::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean ListView::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -109,91 +109,91 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString ListView::getAccessibilityClassName()
+	JString ListView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject ListView::getAdapter()
+	JObject ListView::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	JLongArray ListView::getCheckItemIds()
+	JLongArray ListView::getCheckItemIds() const
 	{
 		return callObjectMethod(
 			"getCheckItemIds",
 			"()[J"
 		);
 	}
-	android::graphics::drawable::Drawable ListView::getDivider()
+	android::graphics::drawable::Drawable ListView::getDivider() const
 	{
 		return callObjectMethod(
 			"getDivider",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint ListView::getDividerHeight()
+	jint ListView::getDividerHeight() const
 	{
 		return callMethod<jint>(
 			"getDividerHeight",
 			"()I"
 		);
 	}
-	jint ListView::getFooterViewsCount()
+	jint ListView::getFooterViewsCount() const
 	{
 		return callMethod<jint>(
 			"getFooterViewsCount",
 			"()I"
 		);
 	}
-	jint ListView::getHeaderViewsCount()
+	jint ListView::getHeaderViewsCount() const
 	{
 		return callMethod<jint>(
 			"getHeaderViewsCount",
 			"()I"
 		);
 	}
-	jboolean ListView::getItemsCanFocus()
+	jboolean ListView::getItemsCanFocus() const
 	{
 		return callMethod<jboolean>(
 			"getItemsCanFocus",
 			"()Z"
 		);
 	}
-	jint ListView::getMaxScrollAmount()
+	jint ListView::getMaxScrollAmount() const
 	{
 		return callMethod<jint>(
 			"getMaxScrollAmount",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable ListView::getOverscrollFooter()
+	android::graphics::drawable::Drawable ListView::getOverscrollFooter() const
 	{
 		return callObjectMethod(
 			"getOverscrollFooter",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable ListView::getOverscrollHeader()
+	android::graphics::drawable::Drawable ListView::getOverscrollHeader() const
 	{
 		return callObjectMethod(
 			"getOverscrollHeader",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jboolean ListView::isOpaque()
+	jboolean ListView::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	void ListView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2)
+	void ListView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityNodeInfoForItem",
@@ -203,7 +203,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean ListView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean ListView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -212,7 +212,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean ListView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean ListView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -222,7 +222,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean ListView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean ListView::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -231,7 +231,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean ListView::removeFooterView(android::view::View arg0)
+	jboolean ListView::removeFooterView(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeFooterView",
@@ -239,7 +239,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ListView::removeHeaderView(android::view::View arg0)
+	jboolean ListView::removeHeaderView(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeHeaderView",
@@ -247,7 +247,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ListView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
+	jboolean ListView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
@@ -257,7 +257,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ListView::setAdapter(JObject arg0)
+	void ListView::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -265,7 +265,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::setCacheColorHint(jint arg0)
+	void ListView::setCacheColorHint(jint arg0) const
 	{
 		callMethod<void>(
 			"setCacheColorHint",
@@ -273,7 +273,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListView::setDivider(android::graphics::drawable::Drawable arg0)
+	void ListView::setDivider(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setDivider",
@@ -281,7 +281,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::setDividerHeight(jint arg0)
+	void ListView::setDividerHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setDividerHeight",
@@ -289,7 +289,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListView::setFooterDividersEnabled(jboolean arg0)
+	void ListView::setFooterDividersEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFooterDividersEnabled",
@@ -297,7 +297,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListView::setHeaderDividersEnabled(jboolean arg0)
+	void ListView::setHeaderDividersEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHeaderDividersEnabled",
@@ -305,7 +305,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListView::setItemsCanFocus(jboolean arg0)
+	void ListView::setItemsCanFocus(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setItemsCanFocus",
@@ -313,7 +313,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListView::setOverscrollFooter(android::graphics::drawable::Drawable arg0)
+	void ListView::setOverscrollFooter(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setOverscrollFooter",
@@ -321,7 +321,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::setOverscrollHeader(android::graphics::drawable::Drawable arg0)
+	void ListView::setOverscrollHeader(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setOverscrollHeader",
@@ -329,7 +329,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::setRemoteViewsAdapter(android::content::Intent arg0)
+	void ListView::setRemoteViewsAdapter(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setRemoteViewsAdapter",
@@ -337,7 +337,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::setSelection(jint arg0)
+	void ListView::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -345,14 +345,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListView::setSelectionAfterHeaderView()
+	void ListView::setSelectionAfterHeaderView() const
 	{
 		callMethod<void>(
 			"setSelectionAfterHeaderView",
 			"()V"
 		);
 	}
-	void ListView::smoothScrollByOffset(jint arg0)
+	void ListView::smoothScrollByOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"smoothScrollByOffset",
@@ -360,7 +360,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListView::smoothScrollToPosition(jint arg0)
+	void ListView::smoothScrollToPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"smoothScrollToPosition",

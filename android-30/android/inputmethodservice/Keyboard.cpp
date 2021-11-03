@@ -121,35 +121,35 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	jint Keyboard::getHeight()
+	jint Keyboard::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	JObject Keyboard::getKeys()
+	JObject Keyboard::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	jint Keyboard::getMinWidth()
+	jint Keyboard::getMinWidth() const
 	{
 		return callMethod<jint>(
 			"getMinWidth",
 			"()I"
 		);
 	}
-	JObject Keyboard::getModifierKeys()
+	JObject Keyboard::getModifierKeys() const
 	{
 		return callObjectMethod(
 			"getModifierKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	JIntArray Keyboard::getNearestKeys(jint arg0, jint arg1)
+	JIntArray Keyboard::getNearestKeys(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getNearestKeys",
@@ -158,21 +158,21 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	jint Keyboard::getShiftKeyIndex()
+	jint Keyboard::getShiftKeyIndex() const
 	{
 		return callMethod<jint>(
 			"getShiftKeyIndex",
 			"()I"
 		);
 	}
-	jboolean Keyboard::isShifted()
+	jboolean Keyboard::isShifted() const
 	{
 		return callMethod<jboolean>(
 			"isShifted",
 			"()Z"
 		);
 	}
-	jboolean Keyboard::setShifted(jboolean arg0)
+	jboolean Keyboard::setShifted(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setShifted",

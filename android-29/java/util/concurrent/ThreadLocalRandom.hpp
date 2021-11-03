@@ -45,31 +45,31 @@ namespace java::util::concurrent
 		
 		// Methods
 		static java::util::concurrent::ThreadLocalRandom current();
-		JObject doubles();
-		JObject doubles(jlong arg0);
-		JObject doubles(jdouble arg0, jdouble arg1);
-		JObject doubles(jlong arg0, jdouble arg1, jdouble arg2);
-		JObject ints();
-		JObject ints(jlong arg0);
-		JObject ints(jint arg0, jint arg1);
-		JObject ints(jlong arg0, jint arg1, jint arg2);
-		JObject longs();
-		JObject longs(jlong arg0);
-		JObject longs(jlong arg0, jlong arg1);
-		JObject longs(jlong arg0, jlong arg1, jlong arg2);
-		jboolean nextBoolean();
-		jdouble nextDouble();
-		jdouble nextDouble(jdouble arg0);
-		jdouble nextDouble(jdouble arg0, jdouble arg1);
-		jfloat nextFloat();
-		jdouble nextGaussian();
-		jint nextInt();
-		jint nextInt(jint arg0);
-		jint nextInt(jint arg0, jint arg1);
-		jlong nextLong();
-		jlong nextLong(jlong arg0);
-		jlong nextLong(jlong arg0, jlong arg1);
-		void setSeed(jlong arg0);
+		JObject doubles() const;
+		JObject doubles(jlong arg0) const;
+		JObject doubles(jdouble arg0, jdouble arg1) const;
+		JObject doubles(jlong arg0, jdouble arg1, jdouble arg2) const;
+		JObject ints() const;
+		JObject ints(jlong arg0) const;
+		JObject ints(jint arg0, jint arg1) const;
+		JObject ints(jlong arg0, jint arg1, jint arg2) const;
+		JObject longs() const;
+		JObject longs(jlong arg0) const;
+		JObject longs(jlong arg0, jlong arg1) const;
+		JObject longs(jlong arg0, jlong arg1, jlong arg2) const;
+		jboolean nextBoolean() const;
+		jdouble nextDouble() const;
+		jdouble nextDouble(jdouble arg0) const;
+		jdouble nextDouble(jdouble arg0, jdouble arg1) const;
+		jfloat nextFloat() const;
+		jdouble nextGaussian() const;
+		jint nextInt() const;
+		jint nextInt(jint arg0) const;
+		jint nextInt(jint arg0, jint arg1) const;
+		jlong nextLong() const;
+		jlong nextLong(jlong arg0) const;
+		jlong nextLong(jlong arg0, jlong arg1) const;
+		void setSeed(jlong arg0) const;
 	};
 } // namespace java::util::concurrent
 

@@ -59,147 +59,147 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void AutoCompleteTextView::clearListSelection()
+	void AutoCompleteTextView::clearListSelection() const
 	{
 		callMethod<void>(
 			"clearListSelection",
 			"()V"
 		);
 	}
-	void AutoCompleteTextView::dismissDropDown()
+	void AutoCompleteTextView::dismissDropDown() const
 	{
 		callMethod<void>(
 			"dismissDropDown",
 			"()V"
 		);
 	}
-	jboolean AutoCompleteTextView::enoughToFilter()
+	jboolean AutoCompleteTextView::enoughToFilter() const
 	{
 		return callMethod<jboolean>(
 			"enoughToFilter",
 			"()Z"
 		);
 	}
-	JObject AutoCompleteTextView::getAdapter()
+	JObject AutoCompleteTextView::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	JString AutoCompleteTextView::getCompletionHint()
+	JString AutoCompleteTextView::getCompletionHint() const
 	{
 		return callObjectMethod(
 			"getCompletionHint",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AutoCompleteTextView::getDropDownAnchor()
+	jint AutoCompleteTextView::getDropDownAnchor() const
 	{
 		return callMethod<jint>(
 			"getDropDownAnchor",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable AutoCompleteTextView::getDropDownBackground()
+	android::graphics::drawable::Drawable AutoCompleteTextView::getDropDownBackground() const
 	{
 		return callObjectMethod(
 			"getDropDownBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint AutoCompleteTextView::getDropDownHeight()
+	jint AutoCompleteTextView::getDropDownHeight() const
 	{
 		return callMethod<jint>(
 			"getDropDownHeight",
 			"()I"
 		);
 	}
-	jint AutoCompleteTextView::getDropDownHorizontalOffset()
+	jint AutoCompleteTextView::getDropDownHorizontalOffset() const
 	{
 		return callMethod<jint>(
 			"getDropDownHorizontalOffset",
 			"()I"
 		);
 	}
-	jint AutoCompleteTextView::getDropDownVerticalOffset()
+	jint AutoCompleteTextView::getDropDownVerticalOffset() const
 	{
 		return callMethod<jint>(
 			"getDropDownVerticalOffset",
 			"()I"
 		);
 	}
-	jint AutoCompleteTextView::getDropDownWidth()
+	jint AutoCompleteTextView::getDropDownWidth() const
 	{
 		return callMethod<jint>(
 			"getDropDownWidth",
 			"()I"
 		);
 	}
-	JObject AutoCompleteTextView::getItemClickListener()
+	JObject AutoCompleteTextView::getItemClickListener() const
 	{
 		return callObjectMethod(
 			"getItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	JObject AutoCompleteTextView::getItemSelectedListener()
+	JObject AutoCompleteTextView::getItemSelectedListener() const
 	{
 		return callObjectMethod(
 			"getItemSelectedListener",
 			"()Landroid/widget/AdapterView$OnItemSelectedListener;"
 		);
 	}
-	jint AutoCompleteTextView::getListSelection()
+	jint AutoCompleteTextView::getListSelection() const
 	{
 		return callMethod<jint>(
 			"getListSelection",
 			"()I"
 		);
 	}
-	JObject AutoCompleteTextView::getOnItemClickListener()
+	JObject AutoCompleteTextView::getOnItemClickListener() const
 	{
 		return callObjectMethod(
 			"getOnItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	JObject AutoCompleteTextView::getOnItemSelectedListener()
+	JObject AutoCompleteTextView::getOnItemSelectedListener() const
 	{
 		return callObjectMethod(
 			"getOnItemSelectedListener",
 			"()Landroid/widget/AdapterView$OnItemSelectedListener;"
 		);
 	}
-	jint AutoCompleteTextView::getThreshold()
+	jint AutoCompleteTextView::getThreshold() const
 	{
 		return callMethod<jint>(
 			"getThreshold",
 			"()I"
 		);
 	}
-	JObject AutoCompleteTextView::getValidator()
+	JObject AutoCompleteTextView::getValidator() const
 	{
 		return callObjectMethod(
 			"getValidator",
 			"()Landroid/widget/AutoCompleteTextView$Validator;"
 		);
 	}
-	jboolean AutoCompleteTextView::isPerformingCompletion()
+	jboolean AutoCompleteTextView::isPerformingCompletion() const
 	{
 		return callMethod<jboolean>(
 			"isPerformingCompletion",
 			"()Z"
 		);
 	}
-	jboolean AutoCompleteTextView::isPopupShowing()
+	jboolean AutoCompleteTextView::isPopupShowing() const
 	{
 		return callMethod<jboolean>(
 			"isPopupShowing",
 			"()Z"
 		);
 	}
-	void AutoCompleteTextView::onCommitCompletion(android::view::inputmethod::CompletionInfo arg0)
+	void AutoCompleteTextView::onCommitCompletion(android::view::inputmethod::CompletionInfo arg0) const
 	{
 		callMethod<void>(
 			"onCommitCompletion",
@@ -207,7 +207,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::onFilterComplete(jint arg0)
+	void AutoCompleteTextView::onFilterComplete(jint arg0) const
 	{
 		callMethod<void>(
 			"onFilterComplete",
@@ -215,7 +215,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean AutoCompleteTextView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean AutoCompleteTextView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -224,7 +224,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean AutoCompleteTextView::onKeyPreIme(jint arg0, android::view::KeyEvent arg1)
+	jboolean AutoCompleteTextView::onKeyPreIme(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyPreIme",
@@ -233,7 +233,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean AutoCompleteTextView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean AutoCompleteTextView::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -242,7 +242,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void AutoCompleteTextView::onWindowFocusChanged(jboolean arg0)
+	void AutoCompleteTextView::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -250,21 +250,21 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::performCompletion()
+	void AutoCompleteTextView::performCompletion() const
 	{
 		callMethod<void>(
 			"performCompletion",
 			"()V"
 		);
 	}
-	void AutoCompleteTextView::performValidation()
+	void AutoCompleteTextView::performValidation() const
 	{
 		callMethod<void>(
 			"performValidation",
 			"()V"
 		);
 	}
-	void AutoCompleteTextView::setAdapter(JObject arg0)
+	void AutoCompleteTextView::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -272,7 +272,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setCompletionHint(JString arg0)
+	void AutoCompleteTextView::setCompletionHint(JString arg0) const
 	{
 		callMethod<void>(
 			"setCompletionHint",
@@ -280,7 +280,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void AutoCompleteTextView::setDropDownAnchor(jint arg0)
+	void AutoCompleteTextView::setDropDownAnchor(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownAnchor",
@@ -288,7 +288,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setDropDownBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void AutoCompleteTextView::setDropDownBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setDropDownBackgroundDrawable",
@@ -296,7 +296,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setDropDownBackgroundResource(jint arg0)
+	void AutoCompleteTextView::setDropDownBackgroundResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownBackgroundResource",
@@ -304,7 +304,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setDropDownHeight(jint arg0)
+	void AutoCompleteTextView::setDropDownHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownHeight",
@@ -312,7 +312,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setDropDownHorizontalOffset(jint arg0)
+	void AutoCompleteTextView::setDropDownHorizontalOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownHorizontalOffset",
@@ -320,7 +320,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setDropDownVerticalOffset(jint arg0)
+	void AutoCompleteTextView::setDropDownVerticalOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownVerticalOffset",
@@ -328,7 +328,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setDropDownWidth(jint arg0)
+	void AutoCompleteTextView::setDropDownWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownWidth",
@@ -336,7 +336,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setListSelection(jint arg0)
+	void AutoCompleteTextView::setListSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setListSelection",
@@ -344,7 +344,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setOnClickListener(JObject arg0)
+	void AutoCompleteTextView::setOnClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnClickListener",
@@ -352,7 +352,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setOnDismissListener(JObject arg0)
+	void AutoCompleteTextView::setOnDismissListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -360,7 +360,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setOnItemClickListener(JObject arg0)
+	void AutoCompleteTextView::setOnItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -368,7 +368,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setOnItemSelectedListener(JObject arg0)
+	void AutoCompleteTextView::setOnItemSelectedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemSelectedListener",
@@ -376,7 +376,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setText(JString arg0, jboolean arg1)
+	void AutoCompleteTextView::setText(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setText",
@@ -385,7 +385,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AutoCompleteTextView::setThreshold(jint arg0)
+	void AutoCompleteTextView::setThreshold(jint arg0) const
 	{
 		callMethod<void>(
 			"setThreshold",
@@ -393,7 +393,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setValidator(JObject arg0)
+	void AutoCompleteTextView::setValidator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setValidator",
@@ -401,7 +401,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::showDropDown()
+	void AutoCompleteTextView::showDropDown() const
 	{
 		callMethod<void>(
 			"showDropDown",

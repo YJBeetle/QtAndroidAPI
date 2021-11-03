@@ -78,13 +78,13 @@ namespace android::util
 		static jint complexToDimensionPixelSize(jint arg0, android::util::DisplayMetrics arg1);
 		static jfloat complexToFloat(jint arg0);
 		static jfloat complexToFraction(jint arg0, jfloat arg1, jfloat arg2);
-		JString coerceToString();
-		jint getComplexUnit();
-		jfloat getDimension(android::util::DisplayMetrics arg0);
-		jfloat getFloat();
-		jfloat getFraction(jfloat arg0, jfloat arg1);
-		void setTo(android::util::TypedValue arg0);
-		JString toString();
+		JString coerceToString() const;
+		jint getComplexUnit() const;
+		jfloat getDimension(android::util::DisplayMetrics arg0) const;
+		jfloat getFloat() const;
+		jfloat getFraction(jfloat arg0, jfloat arg1) const;
+		void setTo(android::util::TypedValue arg0) const;
+		JString toString() const;
 	};
 } // namespace android::util
 

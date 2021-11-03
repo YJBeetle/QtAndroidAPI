@@ -40,19 +40,19 @@ namespace android::app::assist
 		AssistContent();
 		
 		// Methods
-		jint describeContents();
-		android::content::ClipData getClipData();
-		android::os::Bundle getExtras();
-		android::content::Intent getIntent();
-		JString getStructuredData();
-		android::net::Uri getWebUri();
-		jboolean isAppProvidedIntent();
-		jboolean isAppProvidedWebUri();
-		void setClipData(android::content::ClipData arg0);
-		void setIntent(android::content::Intent arg0);
-		void setStructuredData(JString arg0);
-		void setWebUri(android::net::Uri arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::content::ClipData getClipData() const;
+		android::os::Bundle getExtras() const;
+		android::content::Intent getIntent() const;
+		JString getStructuredData() const;
+		android::net::Uri getWebUri() const;
+		jboolean isAppProvidedIntent() const;
+		jboolean isAppProvidedWebUri() const;
+		void setClipData(android::content::ClipData arg0) const;
+		void setIntent(android::content::Intent arg0) const;
+		void setStructuredData(JString arg0) const;
+		void setWebUri(android::net::Uri arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::assist
 

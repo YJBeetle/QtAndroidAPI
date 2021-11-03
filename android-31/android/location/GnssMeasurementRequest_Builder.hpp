@@ -23,8 +23,8 @@ namespace android::location
 		GnssMeasurementRequest_Builder(android::location::GnssMeasurementRequest arg0);
 		
 		// Methods
-		android::location::GnssMeasurementRequest build();
-		android::location::GnssMeasurementRequest_Builder setFullTracking(jboolean arg0);
+		android::location::GnssMeasurementRequest build() const;
+		android::location::GnssMeasurementRequest_Builder setFullTracking(jboolean arg0) const;
 	};
 } // namespace android::location
 

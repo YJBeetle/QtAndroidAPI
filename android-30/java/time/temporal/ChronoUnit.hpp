@@ -41,14 +41,14 @@ namespace java::time::temporal
 		// Methods
 		static java::time::temporal::ChronoUnit valueOf(JString arg0);
 		static JArray values();
-		JObject addTo(JObject arg0, jlong arg1);
-		jlong between(JObject arg0, JObject arg1);
-		java::time::Duration getDuration();
-		jboolean isDateBased();
-		jboolean isDurationEstimated();
-		jboolean isSupportedBy(JObject arg0);
-		jboolean isTimeBased();
-		JString toString();
+		JObject addTo(JObject arg0, jlong arg1) const;
+		jlong between(JObject arg0, JObject arg1) const;
+		java::time::Duration getDuration() const;
+		jboolean isDateBased() const;
+		jboolean isDurationEstimated() const;
+		jboolean isSupportedBy(JObject arg0) const;
+		jboolean isTimeBased() const;
+		JString toString() const;
 	};
 } // namespace java::time::temporal
 

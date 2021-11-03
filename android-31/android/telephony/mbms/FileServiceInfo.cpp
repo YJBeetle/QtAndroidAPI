@@ -19,21 +19,21 @@ namespace android::telephony::mbms
 	// Constructors
 	
 	// Methods
-	jint FileServiceInfo::describeContents()
+	jint FileServiceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject FileServiceInfo::getFiles()
+	JObject FileServiceInfo::getFiles() const
 	{
 		return callObjectMethod(
 			"getFiles",
 			"()Ljava/util/List;"
 		);
 	}
-	void FileServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void FileServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

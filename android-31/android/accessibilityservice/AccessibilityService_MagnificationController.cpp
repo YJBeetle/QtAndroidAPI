@@ -12,7 +12,7 @@ namespace android::accessibilityservice
 	// Constructors
 	
 	// Methods
-	void AccessibilityService_MagnificationController::addListener(JObject arg0)
+	void AccessibilityService_MagnificationController::addListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addListener",
@@ -20,7 +20,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityService_MagnificationController::addListener(JObject arg0, android::os::Handler arg1)
+	void AccessibilityService_MagnificationController::addListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addListener",
@@ -29,35 +29,35 @@ namespace android::accessibilityservice
 			arg1.object()
 		);
 	}
-	jfloat AccessibilityService_MagnificationController::getCenterX()
+	jfloat AccessibilityService_MagnificationController::getCenterX() const
 	{
 		return callMethod<jfloat>(
 			"getCenterX",
 			"()F"
 		);
 	}
-	jfloat AccessibilityService_MagnificationController::getCenterY()
+	jfloat AccessibilityService_MagnificationController::getCenterY() const
 	{
 		return callMethod<jfloat>(
 			"getCenterY",
 			"()F"
 		);
 	}
-	android::graphics::Region AccessibilityService_MagnificationController::getMagnificationRegion()
+	android::graphics::Region AccessibilityService_MagnificationController::getMagnificationRegion() const
 	{
 		return callObjectMethod(
 			"getMagnificationRegion",
 			"()Landroid/graphics/Region;"
 		);
 	}
-	jfloat AccessibilityService_MagnificationController::getScale()
+	jfloat AccessibilityService_MagnificationController::getScale() const
 	{
 		return callMethod<jfloat>(
 			"getScale",
 			"()F"
 		);
 	}
-	jboolean AccessibilityService_MagnificationController::removeListener(JObject arg0)
+	jboolean AccessibilityService_MagnificationController::removeListener(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeListener",
@@ -65,7 +65,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityService_MagnificationController::reset(jboolean arg0)
+	jboolean AccessibilityService_MagnificationController::reset(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"reset",
@@ -73,7 +73,7 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	jboolean AccessibilityService_MagnificationController::setCenter(jfloat arg0, jfloat arg1, jboolean arg2)
+	jboolean AccessibilityService_MagnificationController::setCenter(jfloat arg0, jfloat arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"setCenter",
@@ -83,7 +83,7 @@ namespace android::accessibilityservice
 			arg2
 		);
 	}
-	jboolean AccessibilityService_MagnificationController::setScale(jfloat arg0, jboolean arg1)
+	jboolean AccessibilityService_MagnificationController::setScale(jfloat arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setScale",

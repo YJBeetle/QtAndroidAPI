@@ -39,14 +39,14 @@ namespace android::telephony::mbms
 			"()I"
 		);
 	}
-	jint DownloadRequest::describeContents()
+	jint DownloadRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean DownloadRequest::equals(JObject arg0)
+	jboolean DownloadRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -54,49 +54,49 @@ namespace android::telephony::mbms
 			arg0.object<jobject>()
 		);
 	}
-	android::net::Uri DownloadRequest::getDestinationUri()
+	android::net::Uri DownloadRequest::getDestinationUri() const
 	{
 		return callObjectMethod(
 			"getDestinationUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString DownloadRequest::getFileServiceId()
+	JString DownloadRequest::getFileServiceId() const
 	{
 		return callObjectMethod(
 			"getFileServiceId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri DownloadRequest::getSourceUri()
+	android::net::Uri DownloadRequest::getSourceUri() const
 	{
 		return callObjectMethod(
 			"getSourceUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint DownloadRequest::getSubscriptionId()
+	jint DownloadRequest::getSubscriptionId() const
 	{
 		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
-	jint DownloadRequest::hashCode()
+	jint DownloadRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JByteArray DownloadRequest::toByteArray()
+	JByteArray DownloadRequest::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	void DownloadRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DownloadRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -19,35 +19,35 @@ namespace android::hardware::usb
 		) {}
 	
 	// Methods
-	jboolean UsbRequest::cancel()
+	jboolean UsbRequest::cancel() const
 	{
 		return callMethod<jboolean>(
 			"cancel",
 			"()Z"
 		);
 	}
-	void UsbRequest::close()
+	void UsbRequest::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject UsbRequest::getClientData()
+	JObject UsbRequest::getClientData() const
 	{
 		return callObjectMethod(
 			"getClientData",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::hardware::usb::UsbEndpoint UsbRequest::getEndpoint()
+	android::hardware::usb::UsbEndpoint UsbRequest::getEndpoint() const
 	{
 		return callObjectMethod(
 			"getEndpoint",
 			"()Landroid/hardware/usb/UsbEndpoint;"
 		);
 	}
-	jboolean UsbRequest::initialize(android::hardware::usb::UsbDeviceConnection arg0, android::hardware::usb::UsbEndpoint arg1)
+	jboolean UsbRequest::initialize(android::hardware::usb::UsbDeviceConnection arg0, android::hardware::usb::UsbEndpoint arg1) const
 	{
 		return callMethod<jboolean>(
 			"initialize",
@@ -56,7 +56,7 @@ namespace android::hardware::usb
 			arg1.object()
 		);
 	}
-	jboolean UsbRequest::queue(java::nio::ByteBuffer arg0)
+	jboolean UsbRequest::queue(java::nio::ByteBuffer arg0) const
 	{
 		return callMethod<jboolean>(
 			"queue",
@@ -64,7 +64,7 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	jboolean UsbRequest::queue(java::nio::ByteBuffer arg0, jint arg1)
+	jboolean UsbRequest::queue(java::nio::ByteBuffer arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"queue",
@@ -73,7 +73,7 @@ namespace android::hardware::usb
 			arg1
 		);
 	}
-	void UsbRequest::setClientData(JObject arg0)
+	void UsbRequest::setClientData(JObject arg0) const
 	{
 		callMethod<void>(
 			"setClientData",

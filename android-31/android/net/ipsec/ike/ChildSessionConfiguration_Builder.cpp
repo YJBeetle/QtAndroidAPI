@@ -18,7 +18,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	android::net::ipsec::ike::ChildSessionConfiguration ChildSessionConfiguration_Builder::build()
+	android::net::ipsec::ike::ChildSessionConfiguration ChildSessionConfiguration_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

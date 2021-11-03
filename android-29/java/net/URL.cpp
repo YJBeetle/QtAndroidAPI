@@ -82,7 +82,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jboolean URL::equals(JObject arg0)
+	jboolean URL::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -90,21 +90,21 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JString URL::getAuthority()
+	JString URL::getAuthority() const
 	{
 		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject URL::getContent()
+	JObject URL::getContent() const
 	{
 		return callObjectMethod(
 			"getContent",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject URL::getContent(JArray arg0)
+	JObject URL::getContent(JArray arg0) const
 	{
 		return callObjectMethod(
 			"getContent",
@@ -112,84 +112,84 @@ namespace java::net
 			arg0.object<jarray>()
 		);
 	}
-	jint URL::getDefaultPort()
+	jint URL::getDefaultPort() const
 	{
 		return callMethod<jint>(
 			"getDefaultPort",
 			"()I"
 		);
 	}
-	JString URL::getFile()
+	JString URL::getFile() const
 	{
 		return callObjectMethod(
 			"getFile",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URL::getHost()
+	JString URL::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URL::getPath()
+	JString URL::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint URL::getPort()
+	jint URL::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JString URL::getProtocol()
+	JString URL::getProtocol() const
 	{
 		return callObjectMethod(
 			"getProtocol",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URL::getQuery()
+	JString URL::getQuery() const
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URL::getRef()
+	JString URL::getRef() const
 	{
 		return callObjectMethod(
 			"getRef",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URL::getUserInfo()
+	JString URL::getUserInfo() const
 	{
 		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint URL::hashCode()
+	jint URL::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::net::URLConnection URL::openConnection()
+	java::net::URLConnection URL::openConnection() const
 	{
 		return callObjectMethod(
 			"openConnection",
 			"()Ljava/net/URLConnection;"
 		);
 	}
-	java::net::URLConnection URL::openConnection(java::net::Proxy arg0)
+	java::net::URLConnection URL::openConnection(java::net::Proxy arg0) const
 	{
 		return callObjectMethod(
 			"openConnection",
@@ -197,14 +197,14 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::io::InputStream URL::openStream()
+	java::io::InputStream URL::openStream() const
 	{
 		return callObjectMethod(
 			"openStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jboolean URL::sameFile(java::net::URL arg0)
+	jboolean URL::sameFile(java::net::URL arg0) const
 	{
 		return callMethod<jboolean>(
 			"sameFile",
@@ -212,21 +212,21 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	JString URL::toExternalForm()
+	JString URL::toExternalForm() const
 	{
 		return callObjectMethod(
 			"toExternalForm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URL::toString()
+	JString URL::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::net::URI URL::toURI()
+	java::net::URI URL::toURI() const
 	{
 		return callObjectMethod(
 			"toURI",

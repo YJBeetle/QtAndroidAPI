@@ -40,8 +40,8 @@ namespace java::sql
 		BatchUpdateException(JString arg0, JString arg1, jint arg2, JLongArray arg3, JThrowable arg4);
 		
 		// Methods
-		JLongArray getLargeUpdateCounts();
-		JIntArray getUpdateCounts();
+		JLongArray getLargeUpdateCounts() const;
+		JIntArray getUpdateCounts() const;
 	};
 } // namespace java::sql
 

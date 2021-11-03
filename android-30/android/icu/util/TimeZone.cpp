@@ -266,21 +266,21 @@ namespace android::icu::util
 			arg0.object<jstring>()
 		);
 	}
-	JObject TimeZone::clone()
+	JObject TimeZone::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::icu::util::TimeZone TimeZone::cloneAsThawed()
+	android::icu::util::TimeZone TimeZone::cloneAsThawed() const
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	jboolean TimeZone::equals(JObject arg0)
+	jboolean TimeZone::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -288,28 +288,28 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::util::TimeZone TimeZone::freeze()
+	android::icu::util::TimeZone TimeZone::freeze() const
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	jint TimeZone::getDSTSavings()
+	jint TimeZone::getDSTSavings() const
 	{
 		return callMethod<jint>(
 			"getDSTSavings",
 			"()I"
 		);
 	}
-	JString TimeZone::getDisplayName()
+	JString TimeZone::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TimeZone::getDisplayName(android::icu::util::ULocale arg0)
+	JString TimeZone::getDisplayName(android::icu::util::ULocale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -317,7 +317,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString TimeZone::getDisplayName(java::util::Locale arg0)
+	JString TimeZone::getDisplayName(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -325,7 +325,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString TimeZone::getDisplayName(jboolean arg0, jint arg1)
+	JString TimeZone::getDisplayName(jboolean arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -334,7 +334,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	JString TimeZone::getDisplayName(jboolean arg0, jint arg1, android::icu::util::ULocale arg2)
+	JString TimeZone::getDisplayName(jboolean arg0, jint arg1, android::icu::util::ULocale arg2) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -344,7 +344,7 @@ namespace android::icu::util
 			arg2.object()
 		);
 	}
-	JString TimeZone::getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2)
+	JString TimeZone::getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -354,14 +354,14 @@ namespace android::icu::util
 			arg2.object()
 		);
 	}
-	JString TimeZone::getID()
+	JString TimeZone::getID() const
 	{
 		return callObjectMethod(
 			"getID",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TimeZone::getOffset(jlong arg0)
+	jint TimeZone::getOffset(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"getOffset",
@@ -369,7 +369,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint TimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	jint TimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		return callMethod<jint>(
 			"getOffset",
@@ -382,7 +382,7 @@ namespace android::icu::util
 			arg5
 		);
 	}
-	void TimeZone::getOffset(jlong arg0, jboolean arg1, JIntArray arg2)
+	void TimeZone::getOffset(jlong arg0, jboolean arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"getOffset",
@@ -392,14 +392,14 @@ namespace android::icu::util
 			arg2.object<jintArray>()
 		);
 	}
-	jint TimeZone::getRawOffset()
+	jint TimeZone::getRawOffset() const
 	{
 		return callMethod<jint>(
 			"getRawOffset",
 			"()I"
 		);
 	}
-	jboolean TimeZone::hasSameRules(android::icu::util::TimeZone arg0)
+	jboolean TimeZone::hasSameRules(android::icu::util::TimeZone arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasSameRules",
@@ -407,14 +407,14 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jint TimeZone::hashCode()
+	jint TimeZone::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean TimeZone::inDaylightTime(java::util::Date arg0)
+	jboolean TimeZone::inDaylightTime(java::util::Date arg0) const
 	{
 		return callMethod<jboolean>(
 			"inDaylightTime",
@@ -422,21 +422,21 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jboolean TimeZone::isFrozen()
+	jboolean TimeZone::isFrozen() const
 	{
 		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
-	jboolean TimeZone::observesDaylightTime()
+	jboolean TimeZone::observesDaylightTime() const
 	{
 		return callMethod<jboolean>(
 			"observesDaylightTime",
 			"()Z"
 		);
 	}
-	void TimeZone::setID(JString arg0)
+	void TimeZone::setID(JString arg0) const
 	{
 		callMethod<void>(
 			"setID",
@@ -444,7 +444,7 @@ namespace android::icu::util
 			arg0.object<jstring>()
 		);
 	}
-	void TimeZone::setRawOffset(jint arg0)
+	void TimeZone::setRawOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setRawOffset",
@@ -452,7 +452,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jboolean TimeZone::useDaylightTime()
+	jboolean TimeZone::useDaylightTime() const
 	{
 		return callMethod<jboolean>(
 			"useDaylightTime",

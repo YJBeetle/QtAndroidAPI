@@ -18,9 +18,9 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		void cancel();
-		void proceed(JString arg0, JString arg1);
-		jboolean useHttpAuthUsernamePassword();
+		void cancel() const;
+		void proceed(JString arg0, JString arg1) const;
+		jboolean useHttpAuthUsernamePassword() const;
 	};
 } // namespace android::webkit
 

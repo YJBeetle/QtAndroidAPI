@@ -29,7 +29,7 @@ namespace android::view
 		ViewOutlineProvider();
 		
 		// Methods
-		void getOutline(android::view::View arg0, android::graphics::Outline arg1);
+		void getOutline(android::view::View arg0, android::graphics::Outline arg1) const;
 	};
 } // namespace android::view
 

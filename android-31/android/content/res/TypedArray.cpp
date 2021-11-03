@@ -18,14 +18,14 @@ namespace android::content::res
 	// Constructors
 	
 	// Methods
-	void TypedArray::close()
+	void TypedArray::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean TypedArray::getBoolean(jint arg0, jboolean arg1)
+	jboolean TypedArray::getBoolean(jint arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
@@ -34,14 +34,14 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getChangingConfigurations()
+	jint TypedArray::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	jint TypedArray::getColor(jint arg0, jint arg1)
+	jint TypedArray::getColor(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getColor",
@@ -50,7 +50,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	android::content::res::ColorStateList TypedArray::getColorStateList(jint arg0)
+	android::content::res::ColorStateList TypedArray::getColorStateList(jint arg0) const
 	{
 		return callObjectMethod(
 			"getColorStateList",
@@ -58,7 +58,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jfloat TypedArray::getDimension(jint arg0, jfloat arg1)
+	jfloat TypedArray::getDimension(jint arg0, jfloat arg1) const
 	{
 		return callMethod<jfloat>(
 			"getDimension",
@@ -67,7 +67,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getDimensionPixelOffset(jint arg0, jint arg1)
+	jint TypedArray::getDimensionPixelOffset(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getDimensionPixelOffset",
@@ -76,7 +76,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getDimensionPixelSize(jint arg0, jint arg1)
+	jint TypedArray::getDimensionPixelSize(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getDimensionPixelSize",
@@ -85,7 +85,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	android::graphics::drawable::Drawable TypedArray::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable TypedArray::getDrawable(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -93,7 +93,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jfloat TypedArray::getFloat(jint arg0, jfloat arg1)
+	jfloat TypedArray::getFloat(jint arg0, jfloat arg1) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -102,7 +102,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	android::graphics::Typeface TypedArray::getFont(jint arg0)
+	android::graphics::Typeface TypedArray::getFont(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFont",
@@ -110,7 +110,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jfloat TypedArray::getFraction(jint arg0, jint arg1, jint arg2, jfloat arg3)
+	jfloat TypedArray::getFraction(jint arg0, jint arg1, jint arg2, jfloat arg3) const
 	{
 		return callMethod<jfloat>(
 			"getFraction",
@@ -121,7 +121,7 @@ namespace android::content::res
 			arg3
 		);
 	}
-	jint TypedArray::getIndex(jint arg0)
+	jint TypedArray::getIndex(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getIndex",
@@ -129,14 +129,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint TypedArray::getIndexCount()
+	jint TypedArray::getIndexCount() const
 	{
 		return callMethod<jint>(
 			"getIndexCount",
 			"()I"
 		);
 	}
-	jint TypedArray::getInt(jint arg0, jint arg1)
+	jint TypedArray::getInt(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -145,7 +145,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getInteger(jint arg0, jint arg1)
+	jint TypedArray::getInteger(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getInteger",
@@ -154,7 +154,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getLayoutDimension(jint arg0, jint arg1)
+	jint TypedArray::getLayoutDimension(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getLayoutDimension",
@@ -163,7 +163,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getLayoutDimension(jint arg0, JString arg1)
+	jint TypedArray::getLayoutDimension(jint arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"getLayoutDimension",
@@ -172,7 +172,7 @@ namespace android::content::res
 			arg1.object<jstring>()
 		);
 	}
-	JString TypedArray::getNonResourceString(jint arg0)
+	JString TypedArray::getNonResourceString(jint arg0) const
 	{
 		return callObjectMethod(
 			"getNonResourceString",
@@ -180,14 +180,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString TypedArray::getPositionDescription()
+	JString TypedArray::getPositionDescription() const
 	{
 		return callObjectMethod(
 			"getPositionDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TypedArray::getResourceId(jint arg0, jint arg1)
+	jint TypedArray::getResourceId(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getResourceId",
@@ -196,14 +196,14 @@ namespace android::content::res
 			arg1
 		);
 	}
-	android::content::res::Resources TypedArray::getResources()
+	android::content::res::Resources TypedArray::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	jint TypedArray::getSourceResourceId(jint arg0, jint arg1)
+	jint TypedArray::getSourceResourceId(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getSourceResourceId",
@@ -212,7 +212,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	JString TypedArray::getString(jint arg0)
+	JString TypedArray::getString(jint arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -220,7 +220,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JString TypedArray::getText(jint arg0)
+	JString TypedArray::getText(jint arg0) const
 	{
 		return callObjectMethod(
 			"getText",
@@ -228,7 +228,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	JArray TypedArray::getTextArray(jint arg0)
+	JArray TypedArray::getTextArray(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTextArray",
@@ -236,7 +236,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint TypedArray::getType(jint arg0)
+	jint TypedArray::getType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getType",
@@ -244,7 +244,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jboolean TypedArray::getValue(jint arg0, android::util::TypedValue arg1)
+	jboolean TypedArray::getValue(jint arg0, android::util::TypedValue arg1) const
 	{
 		return callMethod<jboolean>(
 			"getValue",
@@ -253,7 +253,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	jboolean TypedArray::hasValue(jint arg0)
+	jboolean TypedArray::hasValue(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasValue",
@@ -261,7 +261,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jboolean TypedArray::hasValueOrEmpty(jint arg0)
+	jboolean TypedArray::hasValueOrEmpty(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasValueOrEmpty",
@@ -269,14 +269,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint TypedArray::length()
+	jint TypedArray::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	android::util::TypedValue TypedArray::peekValue(jint arg0)
+	android::util::TypedValue TypedArray::peekValue(jint arg0) const
 	{
 		return callObjectMethod(
 			"peekValue",
@@ -284,14 +284,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void TypedArray::recycle()
+	void TypedArray::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	JString TypedArray::toString()
+	JString TypedArray::toString() const
 	{
 		return callObjectMethod(
 			"toString",

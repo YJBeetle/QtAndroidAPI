@@ -29,23 +29,23 @@ namespace android::app
 		ActionBar_Tab();
 		
 		// Methods
-		JString getContentDescription();
-		android::view::View getCustomView();
-		android::graphics::drawable::Drawable getIcon();
-		jint getPosition();
-		JObject getTag();
-		JString getText();
-		void select();
-		android::app::ActionBar_Tab setContentDescription(jint arg0);
-		android::app::ActionBar_Tab setContentDescription(JString arg0);
-		android::app::ActionBar_Tab setCustomView(android::view::View arg0);
-		android::app::ActionBar_Tab setCustomView(jint arg0);
-		android::app::ActionBar_Tab setIcon(android::graphics::drawable::Drawable arg0);
-		android::app::ActionBar_Tab setIcon(jint arg0);
-		android::app::ActionBar_Tab setTabListener(JObject arg0);
-		android::app::ActionBar_Tab setTag(JObject arg0);
-		android::app::ActionBar_Tab setText(jint arg0);
-		android::app::ActionBar_Tab setText(JString arg0);
+		JString getContentDescription() const;
+		android::view::View getCustomView() const;
+		android::graphics::drawable::Drawable getIcon() const;
+		jint getPosition() const;
+		JObject getTag() const;
+		JString getText() const;
+		void select() const;
+		android::app::ActionBar_Tab setContentDescription(jint arg0) const;
+		android::app::ActionBar_Tab setContentDescription(JString arg0) const;
+		android::app::ActionBar_Tab setCustomView(android::view::View arg0) const;
+		android::app::ActionBar_Tab setCustomView(jint arg0) const;
+		android::app::ActionBar_Tab setIcon(android::graphics::drawable::Drawable arg0) const;
+		android::app::ActionBar_Tab setIcon(jint arg0) const;
+		android::app::ActionBar_Tab setTabListener(JObject arg0) const;
+		android::app::ActionBar_Tab setTag(JObject arg0) const;
+		android::app::ActionBar_Tab setText(jint arg0) const;
+		android::app::ActionBar_Tab setText(JString arg0) const;
 	};
 } // namespace android::app
 

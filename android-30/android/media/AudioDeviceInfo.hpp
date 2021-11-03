@@ -46,21 +46,21 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getAddress();
-		JIntArray getChannelCounts();
-		JIntArray getChannelIndexMasks();
-		JIntArray getChannelMasks();
-		JIntArray getEncapsulationMetadataTypes();
-		JIntArray getEncapsulationModes();
-		JIntArray getEncodings();
-		jint getId();
-		JString getProductName();
-		JIntArray getSampleRates();
-		jint getType();
-		jint hashCode();
-		jboolean isSink();
-		jboolean isSource();
+		jboolean equals(JObject arg0) const;
+		JString getAddress() const;
+		JIntArray getChannelCounts() const;
+		JIntArray getChannelIndexMasks() const;
+		JIntArray getChannelMasks() const;
+		JIntArray getEncapsulationMetadataTypes() const;
+		JIntArray getEncapsulationModes() const;
+		JIntArray getEncodings() const;
+		jint getId() const;
+		JString getProductName() const;
+		JIntArray getSampleRates() const;
+		jint getType() const;
+		jint hashCode() const;
+		jboolean isSink() const;
+		jboolean isSource() const;
 	};
 } // namespace android::media
 

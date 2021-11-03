@@ -19,14 +19,14 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void Base64OutputStream::close()
+	void Base64OutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Base64OutputStream::write(jint arg0)
+	void Base64OutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -34,7 +34,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void Base64OutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void Base64OutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

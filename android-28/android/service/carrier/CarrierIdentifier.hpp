@@ -27,17 +27,17 @@ namespace android::service::carrier
 		CarrierIdentifier(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getGid1();
-		JString getGid2();
-		JString getImsi();
-		JString getMcc();
-		JString getMnc();
-		JString getSpn();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getGid1() const;
+		JString getGid2() const;
+		JString getImsi() const;
+		JString getMcc() const;
+		JString getMnc() const;
+		JString getSpn() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::carrier
 

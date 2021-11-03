@@ -36,49 +36,49 @@ namespace org::xml::sax
 		) {}
 	
 	// Methods
-	java::io::InputStream InputSource::getByteStream()
+	java::io::InputStream InputSource::getByteStream() const
 	{
 		return callObjectMethod(
 			"getByteStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	java::io::Reader InputSource::getCharacterStream()
+	java::io::Reader InputSource::getCharacterStream() const
 	{
 		return callObjectMethod(
 			"getCharacterStream",
 			"()Ljava/io/Reader;"
 		);
 	}
-	JString InputSource::getEncoding()
+	JString InputSource::getEncoding() const
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InputSource::getPublicId()
+	JString InputSource::getPublicId() const
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InputSource::getSystemId()
+	JString InputSource::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean InputSource::isEmpty()
+	jboolean InputSource::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void InputSource::setByteStream(java::io::InputStream arg0)
+	void InputSource::setByteStream(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"setByteStream",
@@ -86,7 +86,7 @@ namespace org::xml::sax
 			arg0.object()
 		);
 	}
-	void InputSource::setCharacterStream(java::io::Reader arg0)
+	void InputSource::setCharacterStream(java::io::Reader arg0) const
 	{
 		callMethod<void>(
 			"setCharacterStream",
@@ -94,7 +94,7 @@ namespace org::xml::sax
 			arg0.object()
 		);
 	}
-	void InputSource::setEncoding(JString arg0)
+	void InputSource::setEncoding(JString arg0) const
 	{
 		callMethod<void>(
 			"setEncoding",
@@ -102,7 +102,7 @@ namespace org::xml::sax
 			arg0.object<jstring>()
 		);
 	}
-	void InputSource::setPublicId(JString arg0)
+	void InputSource::setPublicId(JString arg0) const
 	{
 		callMethod<void>(
 			"setPublicId",
@@ -110,7 +110,7 @@ namespace org::xml::sax
 			arg0.object<jstring>()
 		);
 	}
-	void InputSource::setSystemId(JString arg0)
+	void InputSource::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",

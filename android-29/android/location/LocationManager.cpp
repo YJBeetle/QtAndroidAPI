@@ -102,7 +102,7 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jboolean LocationManager::addGpsStatusListener(JObject arg0)
+	jboolean LocationManager::addGpsStatusListener(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addGpsStatusListener",
@@ -110,7 +110,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::addNmeaListener(JObject arg0)
+	jboolean LocationManager::addNmeaListener(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addNmeaListener",
@@ -118,7 +118,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::addNmeaListener(JObject arg0, android::os::Handler arg1)
+	jboolean LocationManager::addNmeaListener(JObject arg0, android::os::Handler arg1) const
 	{
 		return callMethod<jboolean>(
 			"addNmeaListener",
@@ -127,7 +127,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::addProximityAlert(jdouble arg0, jdouble arg1, jfloat arg2, jlong arg3, android::app::PendingIntent arg4)
+	void LocationManager::addProximityAlert(jdouble arg0, jdouble arg1, jfloat arg2, jlong arg3, android::app::PendingIntent arg4) const
 	{
 		callMethod<void>(
 			"addProximityAlert",
@@ -139,7 +139,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::addTestProvider(JString arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4, jboolean arg5, jboolean arg6, jboolean arg7, jint arg8, jint arg9)
+	void LocationManager::addTestProvider(JString arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4, jboolean arg5, jboolean arg6, jboolean arg7, jint arg8, jint arg9) const
 	{
 		callMethod<void>(
 			"addTestProvider",
@@ -156,7 +156,7 @@ namespace android::location
 			arg9
 		);
 	}
-	void LocationManager::clearTestProviderEnabled(JString arg0)
+	void LocationManager::clearTestProviderEnabled(JString arg0) const
 	{
 		callMethod<void>(
 			"clearTestProviderEnabled",
@@ -164,7 +164,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void LocationManager::clearTestProviderLocation(JString arg0)
+	void LocationManager::clearTestProviderLocation(JString arg0) const
 	{
 		callMethod<void>(
 			"clearTestProviderLocation",
@@ -172,7 +172,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void LocationManager::clearTestProviderStatus(JString arg0)
+	void LocationManager::clearTestProviderStatus(JString arg0) const
 	{
 		callMethod<void>(
 			"clearTestProviderStatus",
@@ -180,14 +180,14 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	JObject LocationManager::getAllProviders()
+	JObject LocationManager::getAllProviders() const
 	{
 		return callObjectMethod(
 			"getAllProviders",
 			"()Ljava/util/List;"
 		);
 	}
-	JString LocationManager::getBestProvider(android::location::Criteria arg0, jboolean arg1)
+	JString LocationManager::getBestProvider(android::location::Criteria arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"getBestProvider",
@@ -196,21 +196,21 @@ namespace android::location
 			arg1
 		);
 	}
-	JString LocationManager::getGnssHardwareModelName()
+	JString LocationManager::getGnssHardwareModelName() const
 	{
 		return callObjectMethod(
 			"getGnssHardwareModelName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint LocationManager::getGnssYearOfHardware()
+	jint LocationManager::getGnssYearOfHardware() const
 	{
 		return callMethod<jint>(
 			"getGnssYearOfHardware",
 			"()I"
 		);
 	}
-	android::location::GpsStatus LocationManager::getGpsStatus(android::location::GpsStatus arg0)
+	android::location::GpsStatus LocationManager::getGpsStatus(android::location::GpsStatus arg0) const
 	{
 		return callObjectMethod(
 			"getGpsStatus",
@@ -218,7 +218,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	android::location::Location LocationManager::getLastKnownLocation(JString arg0)
+	android::location::Location LocationManager::getLastKnownLocation(JString arg0) const
 	{
 		return callObjectMethod(
 			"getLastKnownLocation",
@@ -226,7 +226,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	android::location::LocationProvider LocationManager::getProvider(JString arg0)
+	android::location::LocationProvider LocationManager::getProvider(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProvider",
@@ -234,7 +234,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	JObject LocationManager::getProviders(jboolean arg0)
+	JObject LocationManager::getProviders(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -242,7 +242,7 @@ namespace android::location
 			arg0
 		);
 	}
-	JObject LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1)
+	JObject LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -251,14 +251,14 @@ namespace android::location
 			arg1
 		);
 	}
-	jboolean LocationManager::isLocationEnabled()
+	jboolean LocationManager::isLocationEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isLocationEnabled",
 			"()Z"
 		);
 	}
-	jboolean LocationManager::isProviderEnabled(JString arg0)
+	jboolean LocationManager::isProviderEnabled(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isProviderEnabled",
@@ -266,7 +266,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	jboolean LocationManager::registerGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0)
+	jboolean LocationManager::registerGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0) const
 	{
 		return callMethod<jboolean>(
 			"registerGnssMeasurementsCallback",
@@ -274,7 +274,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::registerGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0, android::os::Handler arg1)
+	jboolean LocationManager::registerGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0, android::os::Handler arg1) const
 	{
 		return callMethod<jboolean>(
 			"registerGnssMeasurementsCallback",
@@ -283,7 +283,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	jboolean LocationManager::registerGnssNavigationMessageCallback(android::location::GnssNavigationMessage_Callback arg0)
+	jboolean LocationManager::registerGnssNavigationMessageCallback(android::location::GnssNavigationMessage_Callback arg0) const
 	{
 		return callMethod<jboolean>(
 			"registerGnssNavigationMessageCallback",
@@ -291,7 +291,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::registerGnssNavigationMessageCallback(android::location::GnssNavigationMessage_Callback arg0, android::os::Handler arg1)
+	jboolean LocationManager::registerGnssNavigationMessageCallback(android::location::GnssNavigationMessage_Callback arg0, android::os::Handler arg1) const
 	{
 		return callMethod<jboolean>(
 			"registerGnssNavigationMessageCallback",
@@ -300,7 +300,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	jboolean LocationManager::registerGnssStatusCallback(android::location::GnssStatus_Callback arg0)
+	jboolean LocationManager::registerGnssStatusCallback(android::location::GnssStatus_Callback arg0) const
 	{
 		return callMethod<jboolean>(
 			"registerGnssStatusCallback",
@@ -308,7 +308,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::registerGnssStatusCallback(android::location::GnssStatus_Callback arg0, android::os::Handler arg1)
+	jboolean LocationManager::registerGnssStatusCallback(android::location::GnssStatus_Callback arg0, android::os::Handler arg1) const
 	{
 		return callMethod<jboolean>(
 			"registerGnssStatusCallback",
@@ -317,7 +317,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::removeGpsStatusListener(JObject arg0)
+	void LocationManager::removeGpsStatusListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeGpsStatusListener",
@@ -325,7 +325,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeNmeaListener(JObject arg0)
+	void LocationManager::removeNmeaListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeNmeaListener",
@@ -333,7 +333,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeProximityAlert(android::app::PendingIntent arg0)
+	void LocationManager::removeProximityAlert(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"removeProximityAlert",
@@ -341,7 +341,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeTestProvider(JString arg0)
+	void LocationManager::removeTestProvider(JString arg0) const
 	{
 		callMethod<void>(
 			"removeTestProvider",
@@ -349,7 +349,7 @@ namespace android::location
 			arg0.object<jstring>()
 		);
 	}
-	void LocationManager::removeUpdates(android::app::PendingIntent arg0)
+	void LocationManager::removeUpdates(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"removeUpdates",
@@ -357,7 +357,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeUpdates(JObject arg0)
+	void LocationManager::removeUpdates(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeUpdates",
@@ -365,7 +365,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, android::app::PendingIntent arg3)
+	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, android::app::PendingIntent arg3) const
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -376,7 +376,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, JObject arg3)
+	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -387,7 +387,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, android::app::PendingIntent arg3)
+	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, android::app::PendingIntent arg3) const
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -398,7 +398,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, JObject arg3, android::os::Looper arg4)
+	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, JObject arg3, android::os::Looper arg4) const
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -410,7 +410,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, JObject arg3, android::os::Looper arg4)
+	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, JObject arg3, android::os::Looper arg4) const
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -422,7 +422,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, android::app::PendingIntent arg1)
+	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
@@ -431,7 +431,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(JString arg0, android::app::PendingIntent arg1)
+	void LocationManager::requestSingleUpdate(JString arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
@@ -440,7 +440,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, JObject arg1, android::os::Looper arg2)
+	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, JObject arg1, android::os::Looper arg2) const
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
@@ -450,7 +450,7 @@ namespace android::location
 			arg2.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(JString arg0, JObject arg1, android::os::Looper arg2)
+	void LocationManager::requestSingleUpdate(JString arg0, JObject arg1, android::os::Looper arg2) const
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
@@ -460,7 +460,7 @@ namespace android::location
 			arg2.object()
 		);
 	}
-	jboolean LocationManager::sendExtraCommand(JString arg0, JString arg1, android::os::Bundle arg2)
+	jboolean LocationManager::sendExtraCommand(JString arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"sendExtraCommand",
@@ -470,7 +470,7 @@ namespace android::location
 			arg2.object()
 		);
 	}
-	void LocationManager::setTestProviderEnabled(JString arg0, jboolean arg1)
+	void LocationManager::setTestProviderEnabled(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setTestProviderEnabled",
@@ -479,7 +479,7 @@ namespace android::location
 			arg1
 		);
 	}
-	void LocationManager::setTestProviderLocation(JString arg0, android::location::Location arg1)
+	void LocationManager::setTestProviderLocation(JString arg0, android::location::Location arg1) const
 	{
 		callMethod<void>(
 			"setTestProviderLocation",
@@ -488,7 +488,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::setTestProviderStatus(JString arg0, jint arg1, android::os::Bundle arg2, jlong arg3)
+	void LocationManager::setTestProviderStatus(JString arg0, jint arg1, android::os::Bundle arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"setTestProviderStatus",
@@ -499,7 +499,7 @@ namespace android::location
 			arg3
 		);
 	}
-	void LocationManager::unregisterGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0)
+	void LocationManager::unregisterGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterGnssMeasurementsCallback",
@@ -507,7 +507,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::unregisterGnssNavigationMessageCallback(android::location::GnssNavigationMessage_Callback arg0)
+	void LocationManager::unregisterGnssNavigationMessageCallback(android::location::GnssNavigationMessage_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterGnssNavigationMessageCallback",
@@ -515,7 +515,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::unregisterGnssStatusCallback(android::location::GnssStatus_Callback arg0)
+	void LocationManager::unregisterGnssStatusCallback(android::location::GnssStatus_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterGnssStatusCallback",

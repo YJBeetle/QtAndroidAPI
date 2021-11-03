@@ -58,7 +58,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	JString ClipData_Item::coerceToHtmlText(android::content::Context arg0)
+	JString ClipData_Item::coerceToHtmlText(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"coerceToHtmlText",
@@ -66,7 +66,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JString ClipData_Item::coerceToStyledText(android::content::Context arg0)
+	JString ClipData_Item::coerceToStyledText(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"coerceToStyledText",
@@ -74,7 +74,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JString ClipData_Item::coerceToText(android::content::Context arg0)
+	JString ClipData_Item::coerceToText(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"coerceToText",
@@ -82,42 +82,42 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JString ClipData_Item::getHtmlText()
+	JString ClipData_Item::getHtmlText() const
 	{
 		return callObjectMethod(
 			"getHtmlText",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::Intent ClipData_Item::getIntent()
+	android::content::Intent ClipData_Item::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JString ClipData_Item::getText()
+	JString ClipData_Item::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::textclassifier::TextLinks ClipData_Item::getTextLinks()
+	android::view::textclassifier::TextLinks ClipData_Item::getTextLinks() const
 	{
 		return callObjectMethod(
 			"getTextLinks",
 			"()Landroid/view/textclassifier/TextLinks;"
 		);
 	}
-	android::net::Uri ClipData_Item::getUri()
+	android::net::Uri ClipData_Item::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString ClipData_Item::toString()
+	JString ClipData_Item::toString() const
 	{
 		return callObjectMethod(
 			"toString",

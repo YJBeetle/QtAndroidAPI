@@ -24,10 +24,10 @@ namespace android::service::controls::templates
 		ControlButton(jboolean arg0, JString arg1);
 		
 		// Methods
-		jint describeContents();
-		JString getActionDescription();
-		jboolean isChecked();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getActionDescription() const;
+		jboolean isChecked() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::controls::templates
 

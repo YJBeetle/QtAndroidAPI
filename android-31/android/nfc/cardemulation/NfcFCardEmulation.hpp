@@ -31,13 +31,13 @@ namespace android::nfc::cardemulation
 		
 		// Methods
 		static android::nfc::cardemulation::NfcFCardEmulation getInstance(android::nfc::NfcAdapter arg0);
-		jboolean disableService(android::app::Activity arg0);
-		jboolean enableService(android::app::Activity arg0, android::content::ComponentName arg1);
-		JString getNfcid2ForService(android::content::ComponentName arg0);
-		JString getSystemCodeForService(android::content::ComponentName arg0);
-		jboolean registerSystemCodeForService(android::content::ComponentName arg0, JString arg1);
-		jboolean setNfcid2ForService(android::content::ComponentName arg0, JString arg1);
-		jboolean unregisterSystemCodeForService(android::content::ComponentName arg0);
+		jboolean disableService(android::app::Activity arg0) const;
+		jboolean enableService(android::app::Activity arg0, android::content::ComponentName arg1) const;
+		JString getNfcid2ForService(android::content::ComponentName arg0) const;
+		JString getSystemCodeForService(android::content::ComponentName arg0) const;
+		jboolean registerSystemCodeForService(android::content::ComponentName arg0, JString arg1) const;
+		jboolean setNfcid2ForService(android::content::ComponentName arg0, JString arg1) const;
+		jboolean unregisterSystemCodeForService(android::content::ComponentName arg0) const;
 	};
 } // namespace android::nfc::cardemulation
 

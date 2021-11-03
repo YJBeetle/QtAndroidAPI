@@ -34,14 +34,14 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void DngCreator::close()
+	void DngCreator::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::hardware::camera2::DngCreator DngCreator::setDescription(JString arg0)
+	android::hardware::camera2::DngCreator DngCreator::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -49,7 +49,7 @@ namespace android::hardware::camera2
 			arg0.object<jstring>()
 		);
 	}
-	android::hardware::camera2::DngCreator DngCreator::setLocation(android::location::Location arg0)
+	android::hardware::camera2::DngCreator DngCreator::setLocation(android::location::Location arg0) const
 	{
 		return callObjectMethod(
 			"setLocation",
@@ -57,7 +57,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	android::hardware::camera2::DngCreator DngCreator::setOrientation(jint arg0)
+	android::hardware::camera2::DngCreator DngCreator::setOrientation(jint arg0) const
 	{
 		return callObjectMethod(
 			"setOrientation",
@@ -65,7 +65,7 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	android::hardware::camera2::DngCreator DngCreator::setThumbnail(android::graphics::Bitmap arg0)
+	android::hardware::camera2::DngCreator DngCreator::setThumbnail(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"setThumbnail",
@@ -73,7 +73,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	android::hardware::camera2::DngCreator DngCreator::setThumbnail(android::media::Image arg0)
+	android::hardware::camera2::DngCreator DngCreator::setThumbnail(android::media::Image arg0) const
 	{
 		return callObjectMethod(
 			"setThumbnail",
@@ -81,7 +81,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void DngCreator::writeByteBuffer(java::io::OutputStream arg0, android::util::Size arg1, java::nio::ByteBuffer arg2, jlong arg3)
+	void DngCreator::writeByteBuffer(java::io::OutputStream arg0, android::util::Size arg1, java::nio::ByteBuffer arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"writeByteBuffer",
@@ -92,7 +92,7 @@ namespace android::hardware::camera2
 			arg3
 		);
 	}
-	void DngCreator::writeImage(java::io::OutputStream arg0, android::media::Image arg1)
+	void DngCreator::writeImage(java::io::OutputStream arg0, android::media::Image arg1) const
 	{
 		callMethod<void>(
 			"writeImage",
@@ -101,7 +101,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void DngCreator::writeInputStream(java::io::OutputStream arg0, android::util::Size arg1, java::io::InputStream arg2, jlong arg3)
+	void DngCreator::writeInputStream(java::io::OutputStream arg0, android::util::Size arg1, java::io::InputStream arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"writeInputStream",

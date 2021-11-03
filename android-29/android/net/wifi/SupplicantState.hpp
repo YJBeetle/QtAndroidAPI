@@ -39,8 +39,8 @@ namespace android::net::wifi
 		static jboolean isValidState(android::net::wifi::SupplicantState arg0);
 		static android::net::wifi::SupplicantState valueOf(JString arg0);
 		static JArray values();
-		jint describeContents();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

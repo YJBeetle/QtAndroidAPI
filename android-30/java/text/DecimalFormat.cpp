@@ -44,7 +44,7 @@ namespace java::text
 		) {}
 	
 	// Methods
-	void DecimalFormat::applyLocalizedPattern(JString arg0)
+	void DecimalFormat::applyLocalizedPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
@@ -52,7 +52,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::applyPattern(JString arg0)
+	void DecimalFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -60,14 +60,14 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject DecimalFormat::clone()
+	JObject DecimalFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DecimalFormat::equals(JObject arg0)
+	jboolean DecimalFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -75,7 +75,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -85,7 +85,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -95,7 +95,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -105,7 +105,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	JObject DecimalFormat::formatToCharacterIterator(JObject arg0)
+	JObject DecimalFormat::formatToCharacterIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -113,119 +113,119 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Currency DecimalFormat::getCurrency()
+	java::util::Currency DecimalFormat::getCurrency() const
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Ljava/util/Currency;"
 		);
 	}
-	java::text::DecimalFormatSymbols DecimalFormat::getDecimalFormatSymbols()
+	java::text::DecimalFormatSymbols DecimalFormat::getDecimalFormatSymbols() const
 	{
 		return callObjectMethod(
 			"getDecimalFormatSymbols",
 			"()Ljava/text/DecimalFormatSymbols;"
 		);
 	}
-	jint DecimalFormat::getGroupingSize()
+	jint DecimalFormat::getGroupingSize() const
 	{
 		return callMethod<jint>(
 			"getGroupingSize",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMaximumFractionDigits()
+	jint DecimalFormat::getMaximumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumFractionDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMaximumIntegerDigits()
+	jint DecimalFormat::getMaximumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumIntegerDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMinimumFractionDigits()
+	jint DecimalFormat::getMinimumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumFractionDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMinimumIntegerDigits()
+	jint DecimalFormat::getMinimumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumIntegerDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMultiplier()
+	jint DecimalFormat::getMultiplier() const
 	{
 		return callMethod<jint>(
 			"getMultiplier",
 			"()I"
 		);
 	}
-	JString DecimalFormat::getNegativePrefix()
+	JString DecimalFormat::getNegativePrefix() const
 	{
 		return callObjectMethod(
 			"getNegativePrefix",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::getNegativeSuffix()
+	JString DecimalFormat::getNegativeSuffix() const
 	{
 		return callObjectMethod(
 			"getNegativeSuffix",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::getPositivePrefix()
+	JString DecimalFormat::getPositivePrefix() const
 	{
 		return callObjectMethod(
 			"getPositivePrefix",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::getPositiveSuffix()
+	JString DecimalFormat::getPositiveSuffix() const
 	{
 		return callObjectMethod(
 			"getPositiveSuffix",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::math::RoundingMode DecimalFormat::getRoundingMode()
+	java::math::RoundingMode DecimalFormat::getRoundingMode() const
 	{
 		return callObjectMethod(
 			"getRoundingMode",
 			"()Ljava/math/RoundingMode;"
 		);
 	}
-	jint DecimalFormat::hashCode()
+	jint DecimalFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean DecimalFormat::isDecimalSeparatorAlwaysShown()
+	jboolean DecimalFormat::isDecimalSeparatorAlwaysShown() const
 	{
 		return callMethod<jboolean>(
 			"isDecimalSeparatorAlwaysShown",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isParseBigDecimal()
+	jboolean DecimalFormat::isParseBigDecimal() const
 	{
 		return callMethod<jboolean>(
 			"isParseBigDecimal",
 			"()Z"
 		);
 	}
-	java::lang::Number DecimalFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::lang::Number DecimalFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -234,7 +234,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	void DecimalFormat::setCurrency(java::util::Currency arg0)
+	void DecimalFormat::setCurrency(java::util::Currency arg0) const
 	{
 		callMethod<void>(
 			"setCurrency",
@@ -242,7 +242,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setDecimalFormatSymbols(java::text::DecimalFormatSymbols arg0)
+	void DecimalFormat::setDecimalFormatSymbols(java::text::DecimalFormatSymbols arg0) const
 	{
 		callMethod<void>(
 			"setDecimalFormatSymbols",
@@ -250,7 +250,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean arg0)
+	void DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDecimalSeparatorAlwaysShown",
@@ -258,7 +258,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setGroupingSize(jint arg0)
+	void DecimalFormat::setGroupingSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setGroupingSize",
@@ -266,7 +266,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setGroupingUsed(jboolean arg0)
+	void DecimalFormat::setGroupingUsed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setGroupingUsed",
@@ -274,7 +274,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMaximumFractionDigits(jint arg0)
+	void DecimalFormat::setMaximumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumFractionDigits",
@@ -282,7 +282,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMaximumIntegerDigits(jint arg0)
+	void DecimalFormat::setMaximumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumIntegerDigits",
@@ -290,7 +290,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMinimumFractionDigits(jint arg0)
+	void DecimalFormat::setMinimumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumFractionDigits",
@@ -298,7 +298,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMinimumIntegerDigits(jint arg0)
+	void DecimalFormat::setMinimumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumIntegerDigits",
@@ -306,7 +306,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMultiplier(jint arg0)
+	void DecimalFormat::setMultiplier(jint arg0) const
 	{
 		callMethod<void>(
 			"setMultiplier",
@@ -314,7 +314,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setNegativePrefix(JString arg0)
+	void DecimalFormat::setNegativePrefix(JString arg0) const
 	{
 		callMethod<void>(
 			"setNegativePrefix",
@@ -322,7 +322,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setNegativeSuffix(JString arg0)
+	void DecimalFormat::setNegativeSuffix(JString arg0) const
 	{
 		callMethod<void>(
 			"setNegativeSuffix",
@@ -330,7 +330,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setParseBigDecimal(jboolean arg0)
+	void DecimalFormat::setParseBigDecimal(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setParseBigDecimal",
@@ -338,7 +338,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setPositivePrefix(JString arg0)
+	void DecimalFormat::setPositivePrefix(JString arg0) const
 	{
 		callMethod<void>(
 			"setPositivePrefix",
@@ -346,7 +346,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setPositiveSuffix(JString arg0)
+	void DecimalFormat::setPositiveSuffix(JString arg0) const
 	{
 		callMethod<void>(
 			"setPositiveSuffix",
@@ -354,7 +354,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setRoundingMode(java::math::RoundingMode arg0)
+	void DecimalFormat::setRoundingMode(java::math::RoundingMode arg0) const
 	{
 		callMethod<void>(
 			"setRoundingMode",
@@ -362,14 +362,14 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	JString DecimalFormat::toLocalizedPattern()
+	JString DecimalFormat::toLocalizedPattern() const
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::toPattern()
+	JString DecimalFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",

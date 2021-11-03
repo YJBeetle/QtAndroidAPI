@@ -38,7 +38,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Optional::equals(JObject arg0)
+	jboolean Optional::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,7 +46,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Optional::filter(JObject arg0)
+	java::util::Optional Optional::filter(JObject arg0) const
 	{
 		return callObjectMethod(
 			"filter",
@@ -54,7 +54,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Optional Optional::flatMap(JObject arg0)
+	java::util::Optional Optional::flatMap(JObject arg0) const
 	{
 		return callObjectMethod(
 			"flatMap",
@@ -62,21 +62,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Optional::get()
+	JObject Optional::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Optional::hashCode()
+	jint Optional::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Optional::ifPresent(JObject arg0)
+	void Optional::ifPresent(JObject arg0) const
 	{
 		callMethod<void>(
 			"ifPresent",
@@ -84,7 +84,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Optional::ifPresentOrElse(JObject arg0, JObject arg1)
+	void Optional::ifPresentOrElse(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"ifPresentOrElse",
@@ -93,21 +93,21 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean Optional::isEmpty()
+	jboolean Optional::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jboolean Optional::isPresent()
+	jboolean Optional::isPresent() const
 	{
 		return callMethod<jboolean>(
 			"isPresent",
 			"()Z"
 		);
 	}
-	java::util::Optional Optional::map(JObject arg0)
+	java::util::Optional Optional::map(JObject arg0) const
 	{
 		return callObjectMethod(
 			"map",
@@ -115,7 +115,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Optional Optional::_or(JObject arg0)
+	java::util::Optional Optional::_or(JObject arg0) const
 	{
 		return callObjectMethod(
 			"or",
@@ -123,7 +123,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Optional::orElse(JObject arg0)
+	JObject Optional::orElse(JObject arg0) const
 	{
 		return callObjectMethod(
 			"orElse",
@@ -131,7 +131,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject Optional::orElseGet(JObject arg0)
+	JObject Optional::orElseGet(JObject arg0) const
 	{
 		return callObjectMethod(
 			"orElseGet",
@@ -139,14 +139,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Optional::orElseThrow()
+	JObject Optional::orElseThrow() const
 	{
 		return callObjectMethod(
 			"orElseThrow",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject Optional::orElseThrow(JObject arg0)
+	JObject Optional::orElseThrow(JObject arg0) const
 	{
 		return callObjectMethod(
 			"orElseThrow",
@@ -154,14 +154,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Optional::stream()
+	JObject Optional::stream() const
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	JString Optional::toString()
+	JString Optional::toString() const
 	{
 		return callObjectMethod(
 			"toString",

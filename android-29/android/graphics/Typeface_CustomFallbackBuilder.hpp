@@ -32,10 +32,10 @@ namespace android::graphics
 		
 		// Methods
 		static jint getMaxCustomFallbackCount();
-		android::graphics::Typeface_CustomFallbackBuilder addCustomFallback(android::graphics::fonts::FontFamily arg0);
-		android::graphics::Typeface build();
-		android::graphics::Typeface_CustomFallbackBuilder setStyle(android::graphics::fonts::FontStyle arg0);
-		android::graphics::Typeface_CustomFallbackBuilder setSystemFallback(JString arg0);
+		android::graphics::Typeface_CustomFallbackBuilder addCustomFallback(android::graphics::fonts::FontFamily arg0) const;
+		android::graphics::Typeface build() const;
+		android::graphics::Typeface_CustomFallbackBuilder setStyle(android::graphics::fonts::FontStyle arg0) const;
+		android::graphics::Typeface_CustomFallbackBuilder setSystemFallback(JString arg0) const;
 	};
 } // namespace android::graphics
 

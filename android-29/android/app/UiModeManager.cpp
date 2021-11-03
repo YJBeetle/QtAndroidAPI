@@ -85,7 +85,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	void UiModeManager::disableCarMode(jint arg0)
+	void UiModeManager::disableCarMode(jint arg0) const
 	{
 		callMethod<void>(
 			"disableCarMode",
@@ -93,7 +93,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void UiModeManager::enableCarMode(jint arg0)
+	void UiModeManager::enableCarMode(jint arg0) const
 	{
 		callMethod<void>(
 			"enableCarMode",
@@ -101,21 +101,21 @@ namespace android::app
 			arg0
 		);
 	}
-	jint UiModeManager::getCurrentModeType()
+	jint UiModeManager::getCurrentModeType() const
 	{
 		return callMethod<jint>(
 			"getCurrentModeType",
 			"()I"
 		);
 	}
-	jint UiModeManager::getNightMode()
+	jint UiModeManager::getNightMode() const
 	{
 		return callMethod<jint>(
 			"getNightMode",
 			"()I"
 		);
 	}
-	void UiModeManager::setNightMode(jint arg0)
+	void UiModeManager::setNightMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setNightMode",

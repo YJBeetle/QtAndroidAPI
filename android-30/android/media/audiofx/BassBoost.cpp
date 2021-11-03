@@ -32,28 +32,28 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	android::media::audiofx::BassBoost_Settings BassBoost::getProperties()
+	android::media::audiofx::BassBoost_Settings BassBoost::getProperties() const
 	{
 		return callObjectMethod(
 			"getProperties",
 			"()Landroid/media/audiofx/BassBoost$Settings;"
 		);
 	}
-	jshort BassBoost::getRoundedStrength()
+	jshort BassBoost::getRoundedStrength() const
 	{
 		return callMethod<jshort>(
 			"getRoundedStrength",
 			"()S"
 		);
 	}
-	jboolean BassBoost::getStrengthSupported()
+	jboolean BassBoost::getStrengthSupported() const
 	{
 		return callMethod<jboolean>(
 			"getStrengthSupported",
 			"()Z"
 		);
 	}
-	void BassBoost::setParameterListener(JObject arg0)
+	void BassBoost::setParameterListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParameterListener",
@@ -61,7 +61,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void BassBoost::setProperties(android::media::audiofx::BassBoost_Settings arg0)
+	void BassBoost::setProperties(android::media::audiofx::BassBoost_Settings arg0) const
 	{
 		callMethod<void>(
 			"setProperties",
@@ -69,7 +69,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void BassBoost::setStrength(jshort arg0)
+	void BassBoost::setStrength(jshort arg0) const
 	{
 		callMethod<void>(
 			"setStrength",

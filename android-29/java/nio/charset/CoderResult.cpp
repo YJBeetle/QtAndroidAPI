@@ -48,56 +48,56 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	jboolean CoderResult::isError()
+	jboolean CoderResult::isError() const
 	{
 		return callMethod<jboolean>(
 			"isError",
 			"()Z"
 		);
 	}
-	jboolean CoderResult::isMalformed()
+	jboolean CoderResult::isMalformed() const
 	{
 		return callMethod<jboolean>(
 			"isMalformed",
 			"()Z"
 		);
 	}
-	jboolean CoderResult::isOverflow()
+	jboolean CoderResult::isOverflow() const
 	{
 		return callMethod<jboolean>(
 			"isOverflow",
 			"()Z"
 		);
 	}
-	jboolean CoderResult::isUnderflow()
+	jboolean CoderResult::isUnderflow() const
 	{
 		return callMethod<jboolean>(
 			"isUnderflow",
 			"()Z"
 		);
 	}
-	jboolean CoderResult::isUnmappable()
+	jboolean CoderResult::isUnmappable() const
 	{
 		return callMethod<jboolean>(
 			"isUnmappable",
 			"()Z"
 		);
 	}
-	jint CoderResult::length()
+	jint CoderResult::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	void CoderResult::throwException()
+	void CoderResult::throwException() const
 	{
 		callMethod<void>(
 			"throwException",
 			"()V"
 		);
 	}
-	JString CoderResult::toString()
+	JString CoderResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",

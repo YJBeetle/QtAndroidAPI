@@ -24,21 +24,21 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAsuLevel();
-		jint getCdmaDbm();
-		jint getCdmaEcio();
-		jint getCdmaLevel();
-		jint getDbm();
-		jint getEvdoDbm();
-		jint getEvdoEcio();
-		jint getEvdoLevel();
-		jint getEvdoSnr();
-		jint getLevel();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAsuLevel() const;
+		jint getCdmaDbm() const;
+		jint getCdmaEcio() const;
+		jint getCdmaLevel() const;
+		jint getDbm() const;
+		jint getEvdoDbm() const;
+		jint getEvdoEcio() const;
+		jint getEvdoLevel() const;
+		jint getEvdoSnr() const;
+		jint getLevel() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

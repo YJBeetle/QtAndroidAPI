@@ -27,18 +27,18 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		void close();
-		JObject getFileStores();
-		JObject getPath(JString arg0, JArray arg1);
-		JObject getPathMatcher(JString arg0);
-		JObject getRootDirectories();
-		JString getSeparator();
-		java::nio::file::attribute::UserPrincipalLookupService getUserPrincipalLookupService();
-		jboolean isOpen();
-		jboolean isReadOnly();
-		JObject newWatchService();
-		java::nio::file::spi::FileSystemProvider provider();
-		JObject supportedFileAttributeViews();
+		void close() const;
+		JObject getFileStores() const;
+		JObject getPath(JString arg0, JArray arg1) const;
+		JObject getPathMatcher(JString arg0) const;
+		JObject getRootDirectories() const;
+		JString getSeparator() const;
+		java::nio::file::attribute::UserPrincipalLookupService getUserPrincipalLookupService() const;
+		jboolean isOpen() const;
+		jboolean isReadOnly() const;
+		JObject newWatchService() const;
+		java::nio::file::spi::FileSystemProvider provider() const;
+		JObject supportedFileAttributeViews() const;
 	};
 } // namespace java::nio::file
 

@@ -15,7 +15,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	void CaptureRequest_Builder::addTarget(android::view::Surface arg0)
+	void CaptureRequest_Builder::addTarget(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"addTarget",
@@ -23,14 +23,14 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	android::hardware::camera2::CaptureRequest CaptureRequest_Builder::build()
+	android::hardware::camera2::CaptureRequest CaptureRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/hardware/camera2/CaptureRequest;"
 		);
 	}
-	JObject CaptureRequest_Builder::get(android::hardware::camera2::CaptureRequest_Key arg0)
+	JObject CaptureRequest_Builder::get(android::hardware::camera2::CaptureRequest_Key arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -38,7 +38,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	JObject CaptureRequest_Builder::getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JString arg1)
+	JObject CaptureRequest_Builder::getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getPhysicalCameraKey",
@@ -47,7 +47,7 @@ namespace android::hardware::camera2
 			arg1.object<jstring>()
 		);
 	}
-	void CaptureRequest_Builder::removeTarget(android::view::Surface arg0)
+	void CaptureRequest_Builder::removeTarget(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"removeTarget",
@@ -55,7 +55,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CaptureRequest_Builder::set(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1)
+	void CaptureRequest_Builder::set(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -64,7 +64,7 @@ namespace android::hardware::camera2
 			arg1.object<jobject>()
 		);
 	}
-	android::hardware::camera2::CaptureRequest_Builder CaptureRequest_Builder::setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1, JString arg2)
+	android::hardware::camera2::CaptureRequest_Builder CaptureRequest_Builder::setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"setPhysicalCameraKey",
@@ -74,7 +74,7 @@ namespace android::hardware::camera2
 			arg2.object<jstring>()
 		);
 	}
-	void CaptureRequest_Builder::setTag(JObject arg0)
+	void CaptureRequest_Builder::setTag(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTag",

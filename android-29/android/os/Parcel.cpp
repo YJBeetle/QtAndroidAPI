@@ -52,7 +52,7 @@ namespace android::os
 			"()Landroid/os/Parcel;"
 		);
 	}
-	void Parcel::appendFrom(android::os::Parcel arg0, jint arg1, jint arg2)
+	void Parcel::appendFrom(android::os::Parcel arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"appendFrom",
@@ -62,84 +62,84 @@ namespace android::os
 			arg2
 		);
 	}
-	JArray Parcel::createBinderArray()
+	JArray Parcel::createBinderArray() const
 	{
 		return callObjectMethod(
 			"createBinderArray",
 			"()[Landroid/os/IBinder;"
 		);
 	}
-	java::util::ArrayList Parcel::createBinderArrayList()
+	java::util::ArrayList Parcel::createBinderArrayList() const
 	{
 		return callObjectMethod(
 			"createBinderArrayList",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	JBooleanArray Parcel::createBooleanArray()
+	JBooleanArray Parcel::createBooleanArray() const
 	{
 		return callObjectMethod(
 			"createBooleanArray",
 			"()[Z"
 		);
 	}
-	JByteArray Parcel::createByteArray()
+	JByteArray Parcel::createByteArray() const
 	{
 		return callObjectMethod(
 			"createByteArray",
 			"()[B"
 		);
 	}
-	JCharArray Parcel::createCharArray()
+	JCharArray Parcel::createCharArray() const
 	{
 		return callObjectMethod(
 			"createCharArray",
 			"()[C"
 		);
 	}
-	JDoubleArray Parcel::createDoubleArray()
+	JDoubleArray Parcel::createDoubleArray() const
 	{
 		return callObjectMethod(
 			"createDoubleArray",
 			"()[D"
 		);
 	}
-	JFloatArray Parcel::createFloatArray()
+	JFloatArray Parcel::createFloatArray() const
 	{
 		return callObjectMethod(
 			"createFloatArray",
 			"()[F"
 		);
 	}
-	JIntArray Parcel::createIntArray()
+	JIntArray Parcel::createIntArray() const
 	{
 		return callObjectMethod(
 			"createIntArray",
 			"()[I"
 		);
 	}
-	JLongArray Parcel::createLongArray()
+	JLongArray Parcel::createLongArray() const
 	{
 		return callObjectMethod(
 			"createLongArray",
 			"()[J"
 		);
 	}
-	JArray Parcel::createStringArray()
+	JArray Parcel::createStringArray() const
 	{
 		return callObjectMethod(
 			"createStringArray",
 			"()[Ljava/lang/String;"
 		);
 	}
-	java::util::ArrayList Parcel::createStringArrayList()
+	java::util::ArrayList Parcel::createStringArrayList() const
 	{
 		return callObjectMethod(
 			"createStringArrayList",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	JObjectArray Parcel::createTypedArray(JObject arg0)
+	JObjectArray Parcel::createTypedArray(JObject arg0) const
 	{
 		return callObjectMethod(
 			"createTypedArray",
@@ -147,7 +147,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	java::util::ArrayList Parcel::createTypedArrayList(JObject arg0)
+	java::util::ArrayList Parcel::createTypedArrayList(JObject arg0) const
 	{
 		return callObjectMethod(
 			"createTypedArrayList",
@@ -155,7 +155,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::util::ArrayMap Parcel::createTypedArrayMap(JObject arg0)
+	android::util::ArrayMap Parcel::createTypedArrayMap(JObject arg0) const
 	{
 		return callObjectMethod(
 			"createTypedArrayMap",
@@ -163,7 +163,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::util::SparseArray Parcel::createTypedSparseArray(JObject arg0)
+	android::util::SparseArray Parcel::createTypedSparseArray(JObject arg0) const
 	{
 		return callObjectMethod(
 			"createTypedSparseArray",
@@ -171,35 +171,35 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jint Parcel::dataAvail()
+	jint Parcel::dataAvail() const
 	{
 		return callMethod<jint>(
 			"dataAvail",
 			"()I"
 		);
 	}
-	jint Parcel::dataCapacity()
+	jint Parcel::dataCapacity() const
 	{
 		return callMethod<jint>(
 			"dataCapacity",
 			"()I"
 		);
 	}
-	jint Parcel::dataPosition()
+	jint Parcel::dataPosition() const
 	{
 		return callMethod<jint>(
 			"dataPosition",
 			"()I"
 		);
 	}
-	jint Parcel::dataSize()
+	jint Parcel::dataSize() const
 	{
 		return callMethod<jint>(
 			"dataSize",
 			"()I"
 		);
 	}
-	void Parcel::enforceInterface(JString arg0)
+	void Parcel::enforceInterface(JString arg0) const
 	{
 		callMethod<void>(
 			"enforceInterface",
@@ -207,21 +207,21 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Parcel::hasFileDescriptors()
+	jboolean Parcel::hasFileDescriptors() const
 	{
 		return callMethod<jboolean>(
 			"hasFileDescriptors",
 			"()Z"
 		);
 	}
-	JByteArray Parcel::marshall()
+	JByteArray Parcel::marshall() const
 	{
 		return callObjectMethod(
 			"marshall",
 			"()[B"
 		);
 	}
-	JObjectArray Parcel::readArray(java::lang::ClassLoader arg0)
+	JObjectArray Parcel::readArray(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readArray",
@@ -229,7 +229,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	java::util::ArrayList Parcel::readArrayList(java::lang::ClassLoader arg0)
+	java::util::ArrayList Parcel::readArrayList(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readArrayList",
@@ -237,7 +237,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::readBinderArray(JArray arg0)
+	void Parcel::readBinderArray(JArray arg0) const
 	{
 		callMethod<void>(
 			"readBinderArray",
@@ -245,7 +245,7 @@ namespace android::os
 			arg0.object<jarray>()
 		);
 	}
-	void Parcel::readBinderList(JObject arg0)
+	void Parcel::readBinderList(JObject arg0) const
 	{
 		callMethod<void>(
 			"readBinderList",
@@ -253,14 +253,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Parcel::readBoolean()
+	jboolean Parcel::readBoolean() const
 	{
 		return callMethod<jboolean>(
 			"readBoolean",
 			"()Z"
 		);
 	}
-	void Parcel::readBooleanArray(JBooleanArray arg0)
+	void Parcel::readBooleanArray(JBooleanArray arg0) const
 	{
 		callMethod<void>(
 			"readBooleanArray",
@@ -268,14 +268,14 @@ namespace android::os
 			arg0.object<jbooleanArray>()
 		);
 	}
-	android::os::Bundle Parcel::readBundle()
+	android::os::Bundle Parcel::readBundle() const
 	{
 		return callObjectMethod(
 			"readBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::os::Bundle Parcel::readBundle(java::lang::ClassLoader arg0)
+	android::os::Bundle Parcel::readBundle(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readBundle",
@@ -283,14 +283,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jbyte Parcel::readByte()
+	jbyte Parcel::readByte() const
 	{
 		return callMethod<jbyte>(
 			"readByte",
 			"()B"
 		);
 	}
-	void Parcel::readByteArray(JByteArray arg0)
+	void Parcel::readByteArray(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"readByteArray",
@@ -298,7 +298,7 @@ namespace android::os
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Parcel::readCharArray(JCharArray arg0)
+	void Parcel::readCharArray(JCharArray arg0) const
 	{
 		callMethod<void>(
 			"readCharArray",
@@ -306,14 +306,14 @@ namespace android::os
 			arg0.object<jcharArray>()
 		);
 	}
-	jdouble Parcel::readDouble()
+	jdouble Parcel::readDouble() const
 	{
 		return callMethod<jdouble>(
 			"readDouble",
 			"()D"
 		);
 	}
-	void Parcel::readDoubleArray(JDoubleArray arg0)
+	void Parcel::readDoubleArray(JDoubleArray arg0) const
 	{
 		callMethod<void>(
 			"readDoubleArray",
@@ -321,14 +321,14 @@ namespace android::os
 			arg0.object<jdoubleArray>()
 		);
 	}
-	void Parcel::readException()
+	void Parcel::readException() const
 	{
 		callMethod<void>(
 			"readException",
 			"()V"
 		);
 	}
-	void Parcel::readException(jint arg0, JString arg1)
+	void Parcel::readException(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"readException",
@@ -337,21 +337,21 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	android::os::ParcelFileDescriptor Parcel::readFileDescriptor()
+	android::os::ParcelFileDescriptor Parcel::readFileDescriptor() const
 	{
 		return callObjectMethod(
 			"readFileDescriptor",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
-	jfloat Parcel::readFloat()
+	jfloat Parcel::readFloat() const
 	{
 		return callMethod<jfloat>(
 			"readFloat",
 			"()F"
 		);
 	}
-	void Parcel::readFloatArray(JFloatArray arg0)
+	void Parcel::readFloatArray(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"readFloatArray",
@@ -359,7 +359,7 @@ namespace android::os
 			arg0.object<jfloatArray>()
 		);
 	}
-	java::util::HashMap Parcel::readHashMap(java::lang::ClassLoader arg0)
+	java::util::HashMap Parcel::readHashMap(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readHashMap",
@@ -367,14 +367,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jint Parcel::readInt()
+	jint Parcel::readInt() const
 	{
 		return callMethod<jint>(
 			"readInt",
 			"()I"
 		);
 	}
-	void Parcel::readIntArray(JIntArray arg0)
+	void Parcel::readIntArray(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"readIntArray",
@@ -382,7 +382,7 @@ namespace android::os
 			arg0.object<jintArray>()
 		);
 	}
-	void Parcel::readList(JObject arg0, java::lang::ClassLoader arg1)
+	void Parcel::readList(JObject arg0, java::lang::ClassLoader arg1) const
 	{
 		callMethod<void>(
 			"readList",
@@ -391,14 +391,14 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	jlong Parcel::readLong()
+	jlong Parcel::readLong() const
 	{
 		return callMethod<jlong>(
 			"readLong",
 			"()J"
 		);
 	}
-	void Parcel::readLongArray(JLongArray arg0)
+	void Parcel::readLongArray(JLongArray arg0) const
 	{
 		callMethod<void>(
 			"readLongArray",
@@ -406,7 +406,7 @@ namespace android::os
 			arg0.object<jlongArray>()
 		);
 	}
-	void Parcel::readMap(JObject arg0, java::lang::ClassLoader arg1)
+	void Parcel::readMap(JObject arg0, java::lang::ClassLoader arg1) const
 	{
 		callMethod<void>(
 			"readMap",
@@ -415,7 +415,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	JObject Parcel::readParcelable(java::lang::ClassLoader arg0)
+	JObject Parcel::readParcelable(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readParcelable",
@@ -423,7 +423,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JArray Parcel::readParcelableArray(java::lang::ClassLoader arg0)
+	JArray Parcel::readParcelableArray(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readParcelableArray",
@@ -431,7 +431,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JObject Parcel::readParcelableList(JObject arg0, java::lang::ClassLoader arg1)
+	JObject Parcel::readParcelableList(JObject arg0, java::lang::ClassLoader arg1) const
 	{
 		return callObjectMethod(
 			"readParcelableList",
@@ -440,14 +440,14 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	android::os::PersistableBundle Parcel::readPersistableBundle()
+	android::os::PersistableBundle Parcel::readPersistableBundle() const
 	{
 		return callObjectMethod(
 			"readPersistableBundle",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	android::os::PersistableBundle Parcel::readPersistableBundle(java::lang::ClassLoader arg0)
+	android::os::PersistableBundle Parcel::readPersistableBundle(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readPersistableBundle",
@@ -455,28 +455,28 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JObject Parcel::readSerializable()
+	JObject Parcel::readSerializable() const
 	{
 		return callObjectMethod(
 			"readSerializable",
 			"()Ljava/io/Serializable;"
 		);
 	}
-	android::util::Size Parcel::readSize()
+	android::util::Size Parcel::readSize() const
 	{
 		return callObjectMethod(
 			"readSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	android::util::SizeF Parcel::readSizeF()
+	android::util::SizeF Parcel::readSizeF() const
 	{
 		return callObjectMethod(
 			"readSizeF",
 			"()Landroid/util/SizeF;"
 		);
 	}
-	android::util::SparseArray Parcel::readSparseArray(java::lang::ClassLoader arg0)
+	android::util::SparseArray Parcel::readSparseArray(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readSparseArray",
@@ -484,21 +484,21 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::util::SparseBooleanArray Parcel::readSparseBooleanArray()
+	android::util::SparseBooleanArray Parcel::readSparseBooleanArray() const
 	{
 		return callObjectMethod(
 			"readSparseBooleanArray",
 			"()Landroid/util/SparseBooleanArray;"
 		);
 	}
-	JString Parcel::readString()
+	JString Parcel::readString() const
 	{
 		return callObjectMethod(
 			"readString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Parcel::readStringArray(JArray arg0)
+	void Parcel::readStringArray(JArray arg0) const
 	{
 		callMethod<void>(
 			"readStringArray",
@@ -506,7 +506,7 @@ namespace android::os
 			arg0.object<jarray>()
 		);
 	}
-	void Parcel::readStringList(JObject arg0)
+	void Parcel::readStringList(JObject arg0) const
 	{
 		callMethod<void>(
 			"readStringList",
@@ -514,14 +514,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JObject Parcel::readStrongBinder()
+	JObject Parcel::readStrongBinder() const
 	{
 		return callObjectMethod(
 			"readStrongBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	void Parcel::readTypedArray(JObjectArray arg0, JObject arg1)
+	void Parcel::readTypedArray(JObjectArray arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"readTypedArray",
@@ -530,7 +530,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Parcel::readTypedList(JObject arg0, JObject arg1)
+	void Parcel::readTypedList(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"readTypedList",
@@ -539,7 +539,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	JObject Parcel::readTypedObject(JObject arg0)
+	JObject Parcel::readTypedObject(JObject arg0) const
 	{
 		return callObjectMethod(
 			"readTypedObject",
@@ -547,7 +547,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JObject Parcel::readValue(java::lang::ClassLoader arg0)
+	JObject Parcel::readValue(java::lang::ClassLoader arg0) const
 	{
 		return callObjectMethod(
 			"readValue",
@@ -555,14 +555,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::recycle()
+	void Parcel::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	void Parcel::setDataCapacity(jint arg0)
+	void Parcel::setDataCapacity(jint arg0) const
 	{
 		callMethod<void>(
 			"setDataCapacity",
@@ -570,7 +570,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::setDataPosition(jint arg0)
+	void Parcel::setDataPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"setDataPosition",
@@ -578,7 +578,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::setDataSize(jint arg0)
+	void Parcel::setDataSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setDataSize",
@@ -586,7 +586,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::unmarshall(JByteArray arg0, jint arg1, jint arg2)
+	void Parcel::unmarshall(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"unmarshall",
@@ -596,7 +596,7 @@ namespace android::os
 			arg2
 		);
 	}
-	void Parcel::writeArray(JObjectArray arg0)
+	void Parcel::writeArray(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"writeArray",
@@ -604,7 +604,7 @@ namespace android::os
 			arg0.object<jobjectArray>()
 		);
 	}
-	void Parcel::writeBinderArray(JArray arg0)
+	void Parcel::writeBinderArray(JArray arg0) const
 	{
 		callMethod<void>(
 			"writeBinderArray",
@@ -612,7 +612,7 @@ namespace android::os
 			arg0.object<jarray>()
 		);
 	}
-	void Parcel::writeBinderList(JObject arg0)
+	void Parcel::writeBinderList(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeBinderList",
@@ -620,7 +620,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeBoolean(jboolean arg0)
+	void Parcel::writeBoolean(jboolean arg0) const
 	{
 		callMethod<void>(
 			"writeBoolean",
@@ -628,7 +628,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeBooleanArray(JBooleanArray arg0)
+	void Parcel::writeBooleanArray(JBooleanArray arg0) const
 	{
 		callMethod<void>(
 			"writeBooleanArray",
@@ -636,7 +636,7 @@ namespace android::os
 			arg0.object<jbooleanArray>()
 		);
 	}
-	void Parcel::writeBundle(android::os::Bundle arg0)
+	void Parcel::writeBundle(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"writeBundle",
@@ -644,7 +644,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeByte(jbyte arg0)
+	void Parcel::writeByte(jbyte arg0) const
 	{
 		callMethod<void>(
 			"writeByte",
@@ -652,7 +652,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeByteArray(JByteArray arg0)
+	void Parcel::writeByteArray(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"writeByteArray",
@@ -660,7 +660,7 @@ namespace android::os
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Parcel::writeByteArray(JByteArray arg0, jint arg1, jint arg2)
+	void Parcel::writeByteArray(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"writeByteArray",
@@ -670,7 +670,7 @@ namespace android::os
 			arg2
 		);
 	}
-	void Parcel::writeCharArray(JCharArray arg0)
+	void Parcel::writeCharArray(JCharArray arg0) const
 	{
 		callMethod<void>(
 			"writeCharArray",
@@ -678,7 +678,7 @@ namespace android::os
 			arg0.object<jcharArray>()
 		);
 	}
-	void Parcel::writeDouble(jdouble arg0)
+	void Parcel::writeDouble(jdouble arg0) const
 	{
 		callMethod<void>(
 			"writeDouble",
@@ -686,7 +686,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeDoubleArray(JDoubleArray arg0)
+	void Parcel::writeDoubleArray(JDoubleArray arg0) const
 	{
 		callMethod<void>(
 			"writeDoubleArray",
@@ -694,7 +694,7 @@ namespace android::os
 			arg0.object<jdoubleArray>()
 		);
 	}
-	void Parcel::writeException(java::lang::Exception arg0)
+	void Parcel::writeException(java::lang::Exception arg0) const
 	{
 		callMethod<void>(
 			"writeException",
@@ -702,7 +702,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeFileDescriptor(java::io::FileDescriptor arg0)
+	void Parcel::writeFileDescriptor(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"writeFileDescriptor",
@@ -710,7 +710,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeFloat(jfloat arg0)
+	void Parcel::writeFloat(jfloat arg0) const
 	{
 		callMethod<void>(
 			"writeFloat",
@@ -718,7 +718,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeFloatArray(JFloatArray arg0)
+	void Parcel::writeFloatArray(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"writeFloatArray",
@@ -726,7 +726,7 @@ namespace android::os
 			arg0.object<jfloatArray>()
 		);
 	}
-	void Parcel::writeInt(jint arg0)
+	void Parcel::writeInt(jint arg0) const
 	{
 		callMethod<void>(
 			"writeInt",
@@ -734,7 +734,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeIntArray(JIntArray arg0)
+	void Parcel::writeIntArray(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"writeIntArray",
@@ -742,7 +742,7 @@ namespace android::os
 			arg0.object<jintArray>()
 		);
 	}
-	void Parcel::writeInterfaceToken(JString arg0)
+	void Parcel::writeInterfaceToken(JString arg0) const
 	{
 		callMethod<void>(
 			"writeInterfaceToken",
@@ -750,7 +750,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	void Parcel::writeList(JObject arg0)
+	void Parcel::writeList(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeList",
@@ -758,7 +758,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeLong(jlong arg0)
+	void Parcel::writeLong(jlong arg0) const
 	{
 		callMethod<void>(
 			"writeLong",
@@ -766,7 +766,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeLongArray(JLongArray arg0)
+	void Parcel::writeLongArray(JLongArray arg0) const
 	{
 		callMethod<void>(
 			"writeLongArray",
@@ -774,7 +774,7 @@ namespace android::os
 			arg0.object<jlongArray>()
 		);
 	}
-	void Parcel::writeMap(JObject arg0)
+	void Parcel::writeMap(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeMap",
@@ -782,14 +782,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeNoException()
+	void Parcel::writeNoException() const
 	{
 		callMethod<void>(
 			"writeNoException",
 			"()V"
 		);
 	}
-	void Parcel::writeParcelable(JObject arg0, jint arg1)
+	void Parcel::writeParcelable(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeParcelable",
@@ -798,7 +798,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeParcelableArray(JArray arg0, jint arg1)
+	void Parcel::writeParcelableArray(JArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeParcelableArray",
@@ -807,7 +807,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeParcelableList(JObject arg0, jint arg1)
+	void Parcel::writeParcelableList(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeParcelableList",
@@ -816,7 +816,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writePersistableBundle(android::os::PersistableBundle arg0)
+	void Parcel::writePersistableBundle(android::os::PersistableBundle arg0) const
 	{
 		callMethod<void>(
 			"writePersistableBundle",
@@ -824,7 +824,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeSerializable(JObject arg0)
+	void Parcel::writeSerializable(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeSerializable",
@@ -832,7 +832,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeSize(android::util::Size arg0)
+	void Parcel::writeSize(android::util::Size arg0) const
 	{
 		callMethod<void>(
 			"writeSize",
@@ -840,7 +840,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeSizeF(android::util::SizeF arg0)
+	void Parcel::writeSizeF(android::util::SizeF arg0) const
 	{
 		callMethod<void>(
 			"writeSizeF",
@@ -848,7 +848,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeSparseArray(android::util::SparseArray arg0)
+	void Parcel::writeSparseArray(android::util::SparseArray arg0) const
 	{
 		callMethod<void>(
 			"writeSparseArray",
@@ -856,7 +856,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeSparseBooleanArray(android::util::SparseBooleanArray arg0)
+	void Parcel::writeSparseBooleanArray(android::util::SparseBooleanArray arg0) const
 	{
 		callMethod<void>(
 			"writeSparseBooleanArray",
@@ -864,7 +864,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeString(JString arg0)
+	void Parcel::writeString(JString arg0) const
 	{
 		callMethod<void>(
 			"writeString",
@@ -872,7 +872,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	void Parcel::writeStringArray(JArray arg0)
+	void Parcel::writeStringArray(JArray arg0) const
 	{
 		callMethod<void>(
 			"writeStringArray",
@@ -880,7 +880,7 @@ namespace android::os
 			arg0.object<jarray>()
 		);
 	}
-	void Parcel::writeStringList(JObject arg0)
+	void Parcel::writeStringList(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeStringList",
@@ -888,7 +888,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeStrongBinder(JObject arg0)
+	void Parcel::writeStrongBinder(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeStrongBinder",
@@ -896,7 +896,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeStrongInterface(JObject arg0)
+	void Parcel::writeStrongInterface(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeStrongInterface",
@@ -904,7 +904,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeTypedArray(JArray arg0, jint arg1)
+	void Parcel::writeTypedArray(JArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeTypedArray",
@@ -913,7 +913,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeTypedArrayMap(android::util::ArrayMap arg0, jint arg1)
+	void Parcel::writeTypedArrayMap(android::util::ArrayMap arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeTypedArrayMap",
@@ -922,7 +922,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeTypedList(JObject arg0)
+	void Parcel::writeTypedList(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeTypedList",
@@ -930,7 +930,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeTypedObject(JObject arg0, jint arg1)
+	void Parcel::writeTypedObject(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeTypedObject",
@@ -939,7 +939,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeTypedSparseArray(android::util::SparseArray arg0, jint arg1)
+	void Parcel::writeTypedSparseArray(android::util::SparseArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeTypedSparseArray",
@@ -948,7 +948,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeValue(JObject arg0)
+	void Parcel::writeValue(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeValue",

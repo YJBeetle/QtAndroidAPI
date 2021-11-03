@@ -26,9 +26,9 @@ namespace android::view::contentcapture
 		DataRemovalRequest_Builder();
 		
 		// Methods
-		android::view::contentcapture::DataRemovalRequest_Builder addLocusId(android::content::LocusId arg0, jint arg1);
-		android::view::contentcapture::DataRemovalRequest build();
-		android::view::contentcapture::DataRemovalRequest_Builder forEverything();
+		android::view::contentcapture::DataRemovalRequest_Builder addLocusId(android::content::LocusId arg0, jint arg1) const;
+		android::view::contentcapture::DataRemovalRequest build() const;
+		android::view::contentcapture::DataRemovalRequest_Builder forEverything() const;
 	};
 } // namespace android::view::contentcapture
 

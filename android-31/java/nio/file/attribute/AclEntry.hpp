@@ -29,13 +29,13 @@ namespace java::nio::file::attribute
 		// Methods
 		static java::nio::file::attribute::AclEntry_Builder newBuilder();
 		static java::nio::file::attribute::AclEntry_Builder newBuilder(java::nio::file::attribute::AclEntry arg0);
-		jboolean equals(JObject arg0);
-		JObject flags();
-		jint hashCode();
-		JObject permissions();
-		JObject principal();
-		JString toString();
-		java::nio::file::attribute::AclEntryType type();
+		jboolean equals(JObject arg0) const;
+		JObject flags() const;
+		jint hashCode() const;
+		JObject permissions() const;
+		JObject principal() const;
+		JString toString() const;
+		java::nio::file::attribute::AclEntryType type() const;
 	};
 } // namespace java::nio::file::attribute
 

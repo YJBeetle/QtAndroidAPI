@@ -17,7 +17,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaRouter2_TransferCallback::onStop(android::media::MediaRouter2_RoutingController arg0)
+	void MediaRouter2_TransferCallback::onStop(android::media::MediaRouter2_RoutingController arg0) const
 	{
 		callMethod<void>(
 			"onStop",
@@ -25,7 +25,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter2_TransferCallback::onTransfer(android::media::MediaRouter2_RoutingController arg0, android::media::MediaRouter2_RoutingController arg1)
+	void MediaRouter2_TransferCallback::onTransfer(android::media::MediaRouter2_RoutingController arg0, android::media::MediaRouter2_RoutingController arg1) const
 	{
 		callMethod<void>(
 			"onTransfer",
@@ -34,7 +34,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaRouter2_TransferCallback::onTransferFailure(android::media::MediaRoute2Info arg0)
+	void MediaRouter2_TransferCallback::onTransferFailure(android::media::MediaRoute2Info arg0) const
 	{
 		callMethod<void>(
 			"onTransferFailure",

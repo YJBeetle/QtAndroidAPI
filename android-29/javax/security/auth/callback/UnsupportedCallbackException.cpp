@@ -24,7 +24,7 @@ namespace javax::security::auth::callback
 		) {}
 	
 	// Methods
-	JObject UnsupportedCallbackException::getCallback()
+	JObject UnsupportedCallbackException::getCallback() const
 	{
 		return callObjectMethod(
 			"getCallback",

@@ -37,7 +37,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsicColorMatrix::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1)
+	void ScriptIntrinsicColorMatrix::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -46,7 +46,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void ScriptIntrinsicColorMatrix::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2)
+	void ScriptIntrinsicColorMatrix::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -56,14 +56,14 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	android::renderscript::Script_KernelID ScriptIntrinsicColorMatrix::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsicColorMatrix::getKernelID() const
 	{
 		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setAdd(android::renderscript::Float4 arg0)
+	void ScriptIntrinsicColorMatrix::setAdd(android::renderscript::Float4 arg0) const
 	{
 		callMethod<void>(
 			"setAdd",
@@ -71,7 +71,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setAdd(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void ScriptIntrinsicColorMatrix::setAdd(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setAdd",
@@ -82,7 +82,7 @@ namespace android::renderscript
 			arg3
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setColorMatrix(android::renderscript::Matrix3f arg0)
+	void ScriptIntrinsicColorMatrix::setColorMatrix(android::renderscript::Matrix3f arg0) const
 	{
 		callMethod<void>(
 			"setColorMatrix",
@@ -90,7 +90,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setColorMatrix(android::renderscript::Matrix4f arg0)
+	void ScriptIntrinsicColorMatrix::setColorMatrix(android::renderscript::Matrix4f arg0) const
 	{
 		callMethod<void>(
 			"setColorMatrix",
@@ -98,21 +98,21 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setGreyscale()
+	void ScriptIntrinsicColorMatrix::setGreyscale() const
 	{
 		callMethod<void>(
 			"setGreyscale",
 			"()V"
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setRGBtoYUV()
+	void ScriptIntrinsicColorMatrix::setRGBtoYUV() const
 	{
 		callMethod<void>(
 			"setRGBtoYUV",
 			"()V"
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setYUVtoRGB()
+	void ScriptIntrinsicColorMatrix::setYUVtoRGB() const
 	{
 		callMethod<void>(
 			"setYUVtoRGB",

@@ -25,28 +25,28 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString ViewFlipper::getAccessibilityClassName()
+	JString ViewFlipper::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ViewFlipper::isAutoStart()
+	jboolean ViewFlipper::isAutoStart() const
 	{
 		return callMethod<jboolean>(
 			"isAutoStart",
 			"()Z"
 		);
 	}
-	jboolean ViewFlipper::isFlipping()
+	jboolean ViewFlipper::isFlipping() const
 	{
 		return callMethod<jboolean>(
 			"isFlipping",
 			"()Z"
 		);
 	}
-	void ViewFlipper::setAutoStart(jboolean arg0)
+	void ViewFlipper::setAutoStart(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoStart",
@@ -54,7 +54,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ViewFlipper::setFlipInterval(jint arg0)
+	void ViewFlipper::setFlipInterval(jint arg0) const
 	{
 		callMethod<void>(
 			"setFlipInterval",
@@ -62,14 +62,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ViewFlipper::startFlipping()
+	void ViewFlipper::startFlipping() const
 	{
 		callMethod<void>(
 			"startFlipping",
 			"()V"
 		);
 	}
-	void ViewFlipper::stopFlipping()
+	void ViewFlipper::stopFlipping() const
 	{
 		callMethod<void>(
 			"stopFlipping",

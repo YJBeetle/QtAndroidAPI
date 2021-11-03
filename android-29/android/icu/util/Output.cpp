@@ -30,7 +30,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	JString Output::toString()
+	JString Output::toString() const
 	{
 		return callObjectMethod(
 			"toString",

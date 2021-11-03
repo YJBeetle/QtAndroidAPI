@@ -29,9 +29,9 @@ namespace android::hardware::lights
 		// Constructors
 		
 		// Methods
-		android::hardware::lights::LightState getLightState(android::hardware::lights::Light arg0);
-		JObject getLights();
-		android::hardware::lights::LightsManager_LightsSession openSession();
+		android::hardware::lights::LightState getLightState(android::hardware::lights::Light arg0) const;
+		JObject getLights() const;
+		android::hardware::lights::LightsManager_LightsSession openSession() const;
 	};
 } // namespace android::hardware::lights
 

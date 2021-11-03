@@ -19,35 +19,35 @@ namespace android::net::rtp
 		) {}
 	
 	// Methods
-	android::net::rtp::AudioCodec AudioStream::getCodec()
+	android::net::rtp::AudioCodec AudioStream::getCodec() const
 	{
 		return callObjectMethod(
 			"getCodec",
 			"()Landroid/net/rtp/AudioCodec;"
 		);
 	}
-	jint AudioStream::getDtmfType()
+	jint AudioStream::getDtmfType() const
 	{
 		return callMethod<jint>(
 			"getDtmfType",
 			"()I"
 		);
 	}
-	android::net::rtp::AudioGroup AudioStream::getGroup()
+	android::net::rtp::AudioGroup AudioStream::getGroup() const
 	{
 		return callObjectMethod(
 			"getGroup",
 			"()Landroid/net/rtp/AudioGroup;"
 		);
 	}
-	jboolean AudioStream::isBusy()
+	jboolean AudioStream::isBusy() const
 	{
 		return callMethod<jboolean>(
 			"isBusy",
 			"()Z"
 		);
 	}
-	void AudioStream::join(android::net::rtp::AudioGroup arg0)
+	void AudioStream::join(android::net::rtp::AudioGroup arg0) const
 	{
 		callMethod<void>(
 			"join",
@@ -55,7 +55,7 @@ namespace android::net::rtp
 			arg0.object()
 		);
 	}
-	void AudioStream::setCodec(android::net::rtp::AudioCodec arg0)
+	void AudioStream::setCodec(android::net::rtp::AudioCodec arg0) const
 	{
 		callMethod<void>(
 			"setCodec",
@@ -63,7 +63,7 @@ namespace android::net::rtp
 			arg0.object()
 		);
 	}
-	void AudioStream::setDtmfType(jint arg0)
+	void AudioStream::setDtmfType(jint arg0) const
 	{
 		callMethod<void>(
 			"setDtmfType",

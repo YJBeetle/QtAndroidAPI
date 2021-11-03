@@ -19,8 +19,8 @@ namespace android::media
 		AudioDeviceCallback();
 		
 		// Methods
-		void onAudioDevicesAdded(JArray arg0);
-		void onAudioDevicesRemoved(JArray arg0);
+		void onAudioDevicesAdded(JArray arg0) const;
+		void onAudioDevicesRemoved(JArray arg0) const;
 	};
 } // namespace android::media
 

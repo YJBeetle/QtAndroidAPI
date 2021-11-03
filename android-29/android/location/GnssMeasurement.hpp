@@ -50,36 +50,36 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jdouble getAccumulatedDeltaRangeMeters();
-		jint getAccumulatedDeltaRangeState();
-		jdouble getAccumulatedDeltaRangeUncertaintyMeters();
-		jdouble getAutomaticGainControlLevelDb();
-		jlong getCarrierCycles();
-		jfloat getCarrierFrequencyHz();
-		jdouble getCarrierPhase();
-		jdouble getCarrierPhaseUncertainty();
-		jdouble getCn0DbHz();
-		JString getCodeType();
-		jint getConstellationType();
-		jint getMultipathIndicator();
-		jdouble getPseudorangeRateMetersPerSecond();
-		jdouble getPseudorangeRateUncertaintyMetersPerSecond();
-		jlong getReceivedSvTimeNanos();
-		jlong getReceivedSvTimeUncertaintyNanos();
-		jdouble getSnrInDb();
-		jint getState();
-		jint getSvid();
-		jdouble getTimeOffsetNanos();
-		jboolean hasAutomaticGainControlLevelDb();
-		jboolean hasCarrierCycles();
-		jboolean hasCarrierFrequencyHz();
-		jboolean hasCarrierPhase();
-		jboolean hasCarrierPhaseUncertainty();
-		jboolean hasCodeType();
-		jboolean hasSnrInDb();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jdouble getAccumulatedDeltaRangeMeters() const;
+		jint getAccumulatedDeltaRangeState() const;
+		jdouble getAccumulatedDeltaRangeUncertaintyMeters() const;
+		jdouble getAutomaticGainControlLevelDb() const;
+		jlong getCarrierCycles() const;
+		jfloat getCarrierFrequencyHz() const;
+		jdouble getCarrierPhase() const;
+		jdouble getCarrierPhaseUncertainty() const;
+		jdouble getCn0DbHz() const;
+		JString getCodeType() const;
+		jint getConstellationType() const;
+		jint getMultipathIndicator() const;
+		jdouble getPseudorangeRateMetersPerSecond() const;
+		jdouble getPseudorangeRateUncertaintyMetersPerSecond() const;
+		jlong getReceivedSvTimeNanos() const;
+		jlong getReceivedSvTimeUncertaintyNanos() const;
+		jdouble getSnrInDb() const;
+		jint getState() const;
+		jint getSvid() const;
+		jdouble getTimeOffsetNanos() const;
+		jboolean hasAutomaticGainControlLevelDb() const;
+		jboolean hasCarrierCycles() const;
+		jboolean hasCarrierFrequencyHz() const;
+		jboolean hasCarrierPhase() const;
+		jboolean hasCarrierPhaseUncertainty() const;
+		jboolean hasCodeType() const;
+		jboolean hasSnrInDb() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

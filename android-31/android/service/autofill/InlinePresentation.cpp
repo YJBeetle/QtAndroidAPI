@@ -41,14 +41,14 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	jint InlinePresentation::describeContents()
+	jint InlinePresentation::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean InlinePresentation::equals(JObject arg0)
+	jboolean InlinePresentation::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -56,42 +56,42 @@ namespace android::service::autofill
 			arg0.object<jobject>()
 		);
 	}
-	android::widget::inline::InlinePresentationSpec InlinePresentation::getInlinePresentationSpec()
+	android::widget::inline::InlinePresentationSpec InlinePresentation::getInlinePresentationSpec() const
 	{
 		return callObjectMethod(
 			"getInlinePresentationSpec",
 			"()Landroid/widget/inline/InlinePresentationSpec;"
 		);
 	}
-	android::app::slice::Slice InlinePresentation::getSlice()
+	android::app::slice::Slice InlinePresentation::getSlice() const
 	{
 		return callObjectMethod(
 			"getSlice",
 			"()Landroid/app/slice/Slice;"
 		);
 	}
-	jint InlinePresentation::hashCode()
+	jint InlinePresentation::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean InlinePresentation::isPinned()
+	jboolean InlinePresentation::isPinned() const
 	{
 		return callMethod<jboolean>(
 			"isPinned",
 			"()Z"
 		);
 	}
-	JString InlinePresentation::toString()
+	JString InlinePresentation::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InlinePresentation::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InlinePresentation::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

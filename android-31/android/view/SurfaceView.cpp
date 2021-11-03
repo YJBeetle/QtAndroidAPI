@@ -46,7 +46,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void SurfaceView::draw(android::graphics::Canvas arg0)
+	void SurfaceView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -54,7 +54,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean SurfaceView::gatherTransparentRegion(android::graphics::Region arg0)
+	jboolean SurfaceView::gatherTransparentRegion(android::graphics::Region arg0) const
 	{
 		return callMethod<jboolean>(
 			"gatherTransparentRegion",
@@ -62,35 +62,35 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	JObject SurfaceView::getHolder()
+	JObject SurfaceView::getHolder() const
 	{
 		return callObjectMethod(
 			"getHolder",
 			"()Landroid/view/SurfaceHolder;"
 		);
 	}
-	JObject SurfaceView::getHostToken()
+	JObject SurfaceView::getHostToken() const
 	{
 		return callObjectMethod(
 			"getHostToken",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	jint SurfaceView::getImportantForAccessibility()
+	jint SurfaceView::getImportantForAccessibility() const
 	{
 		return callMethod<jint>(
 			"getImportantForAccessibility",
 			"()I"
 		);
 	}
-	android::view::SurfaceControl SurfaceView::getSurfaceControl()
+	android::view::SurfaceControl SurfaceView::getSurfaceControl() const
 	{
 		return callObjectMethod(
 			"getSurfaceControl",
 			"()Landroid/view/SurfaceControl;"
 		);
 	}
-	void SurfaceView::setAlpha(jfloat arg0)
+	void SurfaceView::setAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -98,7 +98,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void SurfaceView::setChildSurfacePackage(android::view::SurfaceControlViewHost_SurfacePackage arg0)
+	void SurfaceView::setChildSurfacePackage(android::view::SurfaceControlViewHost_SurfacePackage arg0) const
 	{
 		callMethod<void>(
 			"setChildSurfacePackage",
@@ -106,7 +106,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void SurfaceView::setClipBounds(android::graphics::Rect arg0)
+	void SurfaceView::setClipBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setClipBounds",
@@ -114,7 +114,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void SurfaceView::setSecure(jboolean arg0)
+	void SurfaceView::setSecure(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSecure",
@@ -122,7 +122,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void SurfaceView::setVisibility(jint arg0)
+	void SurfaceView::setVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setVisibility",
@@ -130,7 +130,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void SurfaceView::setZOrderMediaOverlay(jboolean arg0)
+	void SurfaceView::setZOrderMediaOverlay(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZOrderMediaOverlay",
@@ -138,7 +138,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void SurfaceView::setZOrderOnTop(jboolean arg0)
+	void SurfaceView::setZOrderOnTop(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZOrderOnTop",

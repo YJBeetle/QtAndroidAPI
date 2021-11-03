@@ -29,10 +29,10 @@ namespace java::security
 		SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2);
 		
 		// Methods
-		JString getAlgorithm();
-		JObject getObject();
-		JByteArray getSignature();
-		jboolean verify(JObject arg0, java::security::Signature arg1);
+		JString getAlgorithm() const;
+		JObject getObject() const;
+		JByteArray getSignature() const;
+		jboolean verify(JObject arg0, java::security::Signature arg1) const;
 	};
 } // namespace java::security
 

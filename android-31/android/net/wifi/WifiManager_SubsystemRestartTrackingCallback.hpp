@@ -17,8 +17,8 @@ namespace android::net::wifi
 		WifiManager_SubsystemRestartTrackingCallback();
 		
 		// Methods
-		void onSubsystemRestarted();
-		void onSubsystemRestarting();
+		void onSubsystemRestarted() const;
+		void onSubsystemRestarting() const;
 	};
 } // namespace android::net::wifi
 

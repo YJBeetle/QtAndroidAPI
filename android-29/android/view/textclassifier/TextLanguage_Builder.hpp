@@ -31,10 +31,10 @@ namespace android::view::textclassifier
 		TextLanguage_Builder();
 		
 		// Methods
-		android::view::textclassifier::TextLanguage build();
-		android::view::textclassifier::TextLanguage_Builder putLocale(android::icu::util::ULocale arg0, jfloat arg1);
-		android::view::textclassifier::TextLanguage_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::TextLanguage_Builder setId(JString arg0);
+		android::view::textclassifier::TextLanguage build() const;
+		android::view::textclassifier::TextLanguage_Builder putLocale(android::icu::util::ULocale arg0, jfloat arg1) const;
+		android::view::textclassifier::TextLanguage_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::textclassifier::TextLanguage_Builder setId(JString arg0) const;
 	};
 } // namespace android::view::textclassifier
 

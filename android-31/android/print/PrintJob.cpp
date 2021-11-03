@@ -13,14 +13,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	void PrintJob::cancel()
+	void PrintJob::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jboolean PrintJob::equals(JObject arg0)
+	jboolean PrintJob::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,70 +28,70 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	android::print::PrintJobId PrintJob::getId()
+	android::print::PrintJobId PrintJob::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Landroid/print/PrintJobId;"
 		);
 	}
-	android::print::PrintJobInfo PrintJob::getInfo()
+	android::print::PrintJobInfo PrintJob::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Landroid/print/PrintJobInfo;"
 		);
 	}
-	jint PrintJob::hashCode()
+	jint PrintJob::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PrintJob::isBlocked()
+	jboolean PrintJob::isBlocked() const
 	{
 		return callMethod<jboolean>(
 			"isBlocked",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isCancelled()
+	jboolean PrintJob::isCancelled() const
 	{
 		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isCompleted()
+	jboolean PrintJob::isCompleted() const
 	{
 		return callMethod<jboolean>(
 			"isCompleted",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isFailed()
+	jboolean PrintJob::isFailed() const
 	{
 		return callMethod<jboolean>(
 			"isFailed",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isQueued()
+	jboolean PrintJob::isQueued() const
 	{
 		return callMethod<jboolean>(
 			"isQueued",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isStarted()
+	jboolean PrintJob::isStarted() const
 	{
 		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
-	void PrintJob::restart()
+	void PrintJob::restart() const
 	{
 		callMethod<void>(
 			"restart",

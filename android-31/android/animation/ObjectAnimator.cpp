@@ -283,28 +283,28 @@ namespace android::animation
 			arg1.object<jarray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::clone()
+	android::animation::ObjectAnimator ObjectAnimator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
-	JString ObjectAnimator::getPropertyName()
+	JString ObjectAnimator::getPropertyName() const
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ObjectAnimator::getTarget()
+	JObject ObjectAnimator::getTarget() const
 	{
 		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void ObjectAnimator::setAutoCancel(jboolean arg0)
+	void ObjectAnimator::setAutoCancel(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoCancel",
@@ -312,7 +312,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::setDuration(jlong arg0)
+	android::animation::ObjectAnimator ObjectAnimator::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -320,7 +320,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ObjectAnimator::setFloatValues(JFloatArray arg0)
+	void ObjectAnimator::setFloatValues(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"setFloatValues",
@@ -328,7 +328,7 @@ namespace android::animation
 			arg0.object<jfloatArray>()
 		);
 	}
-	void ObjectAnimator::setIntValues(JIntArray arg0)
+	void ObjectAnimator::setIntValues(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"setIntValues",
@@ -336,7 +336,7 @@ namespace android::animation
 			arg0.object<jintArray>()
 		);
 	}
-	void ObjectAnimator::setObjectValues(JObjectArray arg0)
+	void ObjectAnimator::setObjectValues(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"setObjectValues",
@@ -344,7 +344,7 @@ namespace android::animation
 			arg0.object<jobjectArray>()
 		);
 	}
-	void ObjectAnimator::setProperty(android::util::Property arg0)
+	void ObjectAnimator::setProperty(android::util::Property arg0) const
 	{
 		callMethod<void>(
 			"setProperty",
@@ -352,7 +352,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ObjectAnimator::setPropertyName(JString arg0)
+	void ObjectAnimator::setPropertyName(JString arg0) const
 	{
 		callMethod<void>(
 			"setPropertyName",
@@ -360,7 +360,7 @@ namespace android::animation
 			arg0.object<jstring>()
 		);
 	}
-	void ObjectAnimator::setTarget(JObject arg0)
+	void ObjectAnimator::setTarget(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTarget",
@@ -368,28 +368,28 @@ namespace android::animation
 			arg0.object<jobject>()
 		);
 	}
-	void ObjectAnimator::setupEndValues()
+	void ObjectAnimator::setupEndValues() const
 	{
 		callMethod<void>(
 			"setupEndValues",
 			"()V"
 		);
 	}
-	void ObjectAnimator::setupStartValues()
+	void ObjectAnimator::setupStartValues() const
 	{
 		callMethod<void>(
 			"setupStartValues",
 			"()V"
 		);
 	}
-	void ObjectAnimator::start()
+	void ObjectAnimator::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	JString ObjectAnimator::toString()
+	JString ObjectAnimator::toString() const
 	{
 		return callObjectMethod(
 			"toString",

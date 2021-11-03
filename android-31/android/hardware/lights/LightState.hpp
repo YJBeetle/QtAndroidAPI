@@ -23,11 +23,11 @@ namespace android::hardware::lights
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getColor();
-		jint getPlayerId();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getColor() const;
+		jint getPlayerId() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::lights
 

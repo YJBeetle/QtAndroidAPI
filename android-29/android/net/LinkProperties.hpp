@@ -33,28 +33,28 @@ namespace android::net
 		LinkProperties();
 		
 		// Methods
-		jboolean addRoute(android::net::RouteInfo arg0);
-		void clear();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getDnsServers();
-		JString getDomains();
-		android::net::ProxyInfo getHttpProxy();
-		JString getInterfaceName();
-		JObject getLinkAddresses();
-		jint getMtu();
-		JString getPrivateDnsServerName();
-		JObject getRoutes();
-		jint hashCode();
-		jboolean isPrivateDnsActive();
-		void setDnsServers(JObject arg0);
-		void setDomains(JString arg0);
-		void setHttpProxy(android::net::ProxyInfo arg0);
-		void setInterfaceName(JString arg0);
-		void setLinkAddresses(JObject arg0);
-		void setMtu(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean addRoute(android::net::RouteInfo arg0) const;
+		void clear() const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getDnsServers() const;
+		JString getDomains() const;
+		android::net::ProxyInfo getHttpProxy() const;
+		JString getInterfaceName() const;
+		JObject getLinkAddresses() const;
+		jint getMtu() const;
+		JString getPrivateDnsServerName() const;
+		JObject getRoutes() const;
+		jint hashCode() const;
+		jboolean isPrivateDnsActive() const;
+		void setDnsServers(JObject arg0) const;
+		void setDomains(JString arg0) const;
+		void setHttpProxy(android::net::ProxyInfo arg0) const;
+		void setInterfaceName(JString arg0) const;
+		void setLinkAddresses(JObject arg0) const;
+		void setMtu(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

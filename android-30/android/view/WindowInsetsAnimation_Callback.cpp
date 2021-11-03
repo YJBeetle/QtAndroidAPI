@@ -33,14 +33,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jint WindowInsetsAnimation_Callback::getDispatchMode()
+	jint WindowInsetsAnimation_Callback::getDispatchMode() const
 	{
 		return callMethod<jint>(
 			"getDispatchMode",
 			"()I"
 		);
 	}
-	void WindowInsetsAnimation_Callback::onEnd(android::view::WindowInsetsAnimation arg0)
+	void WindowInsetsAnimation_Callback::onEnd(android::view::WindowInsetsAnimation arg0) const
 	{
 		callMethod<void>(
 			"onEnd",
@@ -48,7 +48,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void WindowInsetsAnimation_Callback::onPrepare(android::view::WindowInsetsAnimation arg0)
+	void WindowInsetsAnimation_Callback::onPrepare(android::view::WindowInsetsAnimation arg0) const
 	{
 		callMethod<void>(
 			"onPrepare",
@@ -56,7 +56,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets WindowInsetsAnimation_Callback::onProgress(android::view::WindowInsets arg0, JObject arg1)
+	android::view::WindowInsets WindowInsetsAnimation_Callback::onProgress(android::view::WindowInsets arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"onProgress",
@@ -65,7 +65,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::WindowInsetsAnimation_Bounds WindowInsetsAnimation_Callback::onStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1)
+	android::view::WindowInsetsAnimation_Bounds WindowInsetsAnimation_Callback::onStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1) const
 	{
 		return callObjectMethod(
 			"onStart",

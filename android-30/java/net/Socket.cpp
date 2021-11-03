@@ -88,7 +88,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void Socket::bind(java::net::SocketAddress arg0)
+	void Socket::bind(java::net::SocketAddress arg0) const
 	{
 		callMethod<void>(
 			"bind",
@@ -96,14 +96,14 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void Socket::close()
+	void Socket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Socket::connect(java::net::SocketAddress arg0)
+	void Socket::connect(java::net::SocketAddress arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -111,7 +111,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void Socket::connect(java::net::SocketAddress arg0, jint arg1)
+	void Socket::connect(java::net::SocketAddress arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"connect",
@@ -120,63 +120,63 @@ namespace java::net
 			arg1
 		);
 	}
-	java::nio::channels::SocketChannel Socket::getChannel()
+	java::nio::channels::SocketChannel Socket::getChannel() const
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	java::net::InetAddress Socket::getInetAddress()
+	java::net::InetAddress Socket::getInetAddress() const
 	{
 		return callObjectMethod(
 			"getInetAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	java::io::InputStream Socket::getInputStream()
+	java::io::InputStream Socket::getInputStream() const
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jboolean Socket::getKeepAlive()
+	jboolean Socket::getKeepAlive() const
 	{
 		return callMethod<jboolean>(
 			"getKeepAlive",
 			"()Z"
 		);
 	}
-	java::net::InetAddress Socket::getLocalAddress()
+	java::net::InetAddress Socket::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint Socket::getLocalPort()
+	jint Socket::getLocalPort() const
 	{
 		return callMethod<jint>(
 			"getLocalPort",
 			"()I"
 		);
 	}
-	java::net::SocketAddress Socket::getLocalSocketAddress()
+	java::net::SocketAddress Socket::getLocalSocketAddress() const
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jboolean Socket::getOOBInline()
+	jboolean Socket::getOOBInline() const
 	{
 		return callMethod<jboolean>(
 			"getOOBInline",
 			"()Z"
 		);
 	}
-	JObject Socket::getOption(JObject arg0)
+	JObject Socket::getOption(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getOption",
@@ -184,112 +184,112 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::io::OutputStream Socket::getOutputStream()
+	java::io::OutputStream Socket::getOutputStream() const
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	jint Socket::getPort()
+	jint Socket::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	jint Socket::getReceiveBufferSize()
+	jint Socket::getReceiveBufferSize() const
 	{
 		return callMethod<jint>(
 			"getReceiveBufferSize",
 			"()I"
 		);
 	}
-	java::net::SocketAddress Socket::getRemoteSocketAddress()
+	java::net::SocketAddress Socket::getRemoteSocketAddress() const
 	{
 		return callObjectMethod(
 			"getRemoteSocketAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jboolean Socket::getReuseAddress()
+	jboolean Socket::getReuseAddress() const
 	{
 		return callMethod<jboolean>(
 			"getReuseAddress",
 			"()Z"
 		);
 	}
-	jint Socket::getSendBufferSize()
+	jint Socket::getSendBufferSize() const
 	{
 		return callMethod<jint>(
 			"getSendBufferSize",
 			"()I"
 		);
 	}
-	jint Socket::getSoLinger()
+	jint Socket::getSoLinger() const
 	{
 		return callMethod<jint>(
 			"getSoLinger",
 			"()I"
 		);
 	}
-	jint Socket::getSoTimeout()
+	jint Socket::getSoTimeout() const
 	{
 		return callMethod<jint>(
 			"getSoTimeout",
 			"()I"
 		);
 	}
-	jboolean Socket::getTcpNoDelay()
+	jboolean Socket::getTcpNoDelay() const
 	{
 		return callMethod<jboolean>(
 			"getTcpNoDelay",
 			"()Z"
 		);
 	}
-	jint Socket::getTrafficClass()
+	jint Socket::getTrafficClass() const
 	{
 		return callMethod<jint>(
 			"getTrafficClass",
 			"()I"
 		);
 	}
-	jboolean Socket::isBound()
+	jboolean Socket::isBound() const
 	{
 		return callMethod<jboolean>(
 			"isBound",
 			"()Z"
 		);
 	}
-	jboolean Socket::isClosed()
+	jboolean Socket::isClosed() const
 	{
 		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
-	jboolean Socket::isConnected()
+	jboolean Socket::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	jboolean Socket::isInputShutdown()
+	jboolean Socket::isInputShutdown() const
 	{
 		return callMethod<jboolean>(
 			"isInputShutdown",
 			"()Z"
 		);
 	}
-	jboolean Socket::isOutputShutdown()
+	jboolean Socket::isOutputShutdown() const
 	{
 		return callMethod<jboolean>(
 			"isOutputShutdown",
 			"()Z"
 		);
 	}
-	void Socket::sendUrgentData(jint arg0)
+	void Socket::sendUrgentData(jint arg0) const
 	{
 		callMethod<void>(
 			"sendUrgentData",
@@ -297,7 +297,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::setKeepAlive(jboolean arg0)
+	void Socket::setKeepAlive(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setKeepAlive",
@@ -305,7 +305,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::setOOBInline(jboolean arg0)
+	void Socket::setOOBInline(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOOBInline",
@@ -313,7 +313,7 @@ namespace java::net
 			arg0
 		);
 	}
-	java::net::Socket Socket::setOption(JObject arg0, JObject arg1)
+	java::net::Socket Socket::setOption(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setOption",
@@ -322,7 +322,7 @@ namespace java::net
 			arg1.object<jobject>()
 		);
 	}
-	void Socket::setPerformancePreferences(jint arg0, jint arg1, jint arg2)
+	void Socket::setPerformancePreferences(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setPerformancePreferences",
@@ -332,7 +332,7 @@ namespace java::net
 			arg2
 		);
 	}
-	void Socket::setReceiveBufferSize(jint arg0)
+	void Socket::setReceiveBufferSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setReceiveBufferSize",
@@ -340,7 +340,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::setReuseAddress(jboolean arg0)
+	void Socket::setReuseAddress(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setReuseAddress",
@@ -348,7 +348,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::setSendBufferSize(jint arg0)
+	void Socket::setSendBufferSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setSendBufferSize",
@@ -356,7 +356,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::setSoLinger(jboolean arg0, jint arg1)
+	void Socket::setSoLinger(jboolean arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSoLinger",
@@ -365,7 +365,7 @@ namespace java::net
 			arg1
 		);
 	}
-	void Socket::setSoTimeout(jint arg0)
+	void Socket::setSoTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setSoTimeout",
@@ -373,7 +373,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::setTcpNoDelay(jboolean arg0)
+	void Socket::setTcpNoDelay(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTcpNoDelay",
@@ -381,7 +381,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::setTrafficClass(jint arg0)
+	void Socket::setTrafficClass(jint arg0) const
 	{
 		callMethod<void>(
 			"setTrafficClass",
@@ -389,28 +389,28 @@ namespace java::net
 			arg0
 		);
 	}
-	void Socket::shutdownInput()
+	void Socket::shutdownInput() const
 	{
 		callMethod<void>(
 			"shutdownInput",
 			"()V"
 		);
 	}
-	void Socket::shutdownOutput()
+	void Socket::shutdownOutput() const
 	{
 		callMethod<void>(
 			"shutdownOutput",
 			"()V"
 		);
 	}
-	JObject Socket::supportedOptions()
+	JObject Socket::supportedOptions() const
 	{
 		return callObjectMethod(
 			"supportedOptions",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString Socket::toString()
+	JString Socket::toString() const
 	{
 		return callObjectMethod(
 			"toString",

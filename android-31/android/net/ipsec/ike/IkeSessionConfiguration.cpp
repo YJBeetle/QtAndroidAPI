@@ -26,28 +26,28 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	android::net::ipsec::ike::IkeSessionConnectionInfo IkeSessionConfiguration::getIkeSessionConnectionInfo()
+	android::net::ipsec::ike::IkeSessionConnectionInfo IkeSessionConfiguration::getIkeSessionConnectionInfo() const
 	{
 		return callObjectMethod(
 			"getIkeSessionConnectionInfo",
 			"()Landroid/net/ipsec/ike/IkeSessionConnectionInfo;"
 		);
 	}
-	JString IkeSessionConfiguration::getRemoteApplicationVersion()
+	JString IkeSessionConfiguration::getRemoteApplicationVersion() const
 	{
 		return callObjectMethod(
 			"getRemoteApplicationVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject IkeSessionConfiguration::getRemoteVendorIds()
+	JObject IkeSessionConfiguration::getRemoteVendorIds() const
 	{
 		return callObjectMethod(
 			"getRemoteVendorIds",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean IkeSessionConfiguration::isIkeExtensionEnabled(jint arg0)
+	jboolean IkeSessionConfiguration::isIkeExtensionEnabled(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isIkeExtensionEnabled",

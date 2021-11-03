@@ -503,21 +503,21 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	jfloat Color::alpha()
+	jfloat Color::alpha() const
 	{
 		return callMethod<jfloat>(
 			"alpha",
 			"()F"
 		);
 	}
-	jfloat Color::blue()
+	jfloat Color::blue() const
 	{
 		return callMethod<jfloat>(
 			"blue",
 			"()F"
 		);
 	}
-	android::graphics::Color Color::convert(android::graphics::ColorSpace arg0)
+	android::graphics::Color Color::convert(android::graphics::ColorSpace arg0) const
 	{
 		return callObjectMethod(
 			"convert",
@@ -525,7 +525,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Color::equals(JObject arg0)
+	jboolean Color::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -533,14 +533,14 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::ColorSpace Color::getColorSpace()
+	android::graphics::ColorSpace Color::getColorSpace() const
 	{
 		return callObjectMethod(
 			"getColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	jfloat Color::getComponent(jint arg0)
+	jfloat Color::getComponent(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getComponent",
@@ -548,21 +548,21 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jint Color::getComponentCount()
+	jint Color::getComponentCount() const
 	{
 		return callMethod<jint>(
 			"getComponentCount",
 			"()I"
 		);
 	}
-	JFloatArray Color::getComponents()
+	JFloatArray Color::getComponents() const
 	{
 		return callObjectMethod(
 			"getComponents",
 			"()[F"
 		);
 	}
-	JFloatArray Color::getComponents(JFloatArray arg0)
+	JFloatArray Color::getComponents(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"getComponents",
@@ -570,70 +570,70 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	android::graphics::ColorSpace_Model Color::getModel()
+	android::graphics::ColorSpace_Model Color::getModel() const
 	{
 		return callObjectMethod(
 			"getModel",
 			"()Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	jfloat Color::green()
+	jfloat Color::green() const
 	{
 		return callMethod<jfloat>(
 			"green",
 			"()F"
 		);
 	}
-	jint Color::hashCode()
+	jint Color::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Color::isSrgb()
+	jboolean Color::isSrgb() const
 	{
 		return callMethod<jboolean>(
 			"isSrgb",
 			"()Z"
 		);
 	}
-	jboolean Color::isWideGamut()
+	jboolean Color::isWideGamut() const
 	{
 		return callMethod<jboolean>(
 			"isWideGamut",
 			"()Z"
 		);
 	}
-	jfloat Color::luminance()
+	jfloat Color::luminance() const
 	{
 		return callMethod<jfloat>(
 			"luminance",
 			"()F"
 		);
 	}
-	jlong Color::pack()
+	jlong Color::pack() const
 	{
 		return callMethod<jlong>(
 			"pack",
 			"()J"
 		);
 	}
-	jfloat Color::red()
+	jfloat Color::red() const
 	{
 		return callMethod<jfloat>(
 			"red",
 			"()F"
 		);
 	}
-	jint Color::toArgb()
+	jint Color::toArgb() const
 	{
 		return callMethod<jint>(
 			"toArgb",
 			"()I"
 		);
 	}
-	JString Color::toString()
+	JString Color::toString() const
 	{
 		return callObjectMethod(
 			"toString",

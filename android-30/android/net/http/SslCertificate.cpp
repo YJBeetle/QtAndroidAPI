@@ -57,56 +57,56 @@ namespace android::net::http
 			arg0.object()
 		);
 	}
-	android::net::http::SslCertificate_DName SslCertificate::getIssuedBy()
+	android::net::http::SslCertificate_DName SslCertificate::getIssuedBy() const
 	{
 		return callObjectMethod(
 			"getIssuedBy",
 			"()Landroid/net/http/SslCertificate$DName;"
 		);
 	}
-	android::net::http::SslCertificate_DName SslCertificate::getIssuedTo()
+	android::net::http::SslCertificate_DName SslCertificate::getIssuedTo() const
 	{
 		return callObjectMethod(
 			"getIssuedTo",
 			"()Landroid/net/http/SslCertificate$DName;"
 		);
 	}
-	JString SslCertificate::getValidNotAfter()
+	JString SslCertificate::getValidNotAfter() const
 	{
 		return callObjectMethod(
 			"getValidNotAfter",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::Date SslCertificate::getValidNotAfterDate()
+	java::util::Date SslCertificate::getValidNotAfterDate() const
 	{
 		return callObjectMethod(
 			"getValidNotAfterDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	JString SslCertificate::getValidNotBefore()
+	JString SslCertificate::getValidNotBefore() const
 	{
 		return callObjectMethod(
 			"getValidNotBefore",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::Date SslCertificate::getValidNotBeforeDate()
+	java::util::Date SslCertificate::getValidNotBeforeDate() const
 	{
 		return callObjectMethod(
 			"getValidNotBeforeDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::security::cert::X509Certificate SslCertificate::getX509Certificate()
+	java::security::cert::X509Certificate SslCertificate::getX509Certificate() const
 	{
 		return callObjectMethod(
 			"getX509Certificate",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	JString SslCertificate::toString()
+	JString SslCertificate::toString() const
 	{
 		return callObjectMethod(
 			"toString",

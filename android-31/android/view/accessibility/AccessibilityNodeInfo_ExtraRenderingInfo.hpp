@@ -21,9 +21,9 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		android::util::Size getLayoutSize();
-		jfloat getTextSizeInPx();
-		jint getTextSizeUnit();
+		android::util::Size getLayoutSize() const;
+		jfloat getTextSizeInPx() const;
+		jint getTextSizeUnit() const;
 	};
 } // namespace android::view::accessibility
 

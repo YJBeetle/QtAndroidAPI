@@ -28,21 +28,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint AuthenticationRequiredException::describeContents()
+	jint AuthenticationRequiredException::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::app::PendingIntent AuthenticationRequiredException::getUserAction()
+	android::app::PendingIntent AuthenticationRequiredException::getUserAction() const
 	{
 		return callObjectMethod(
 			"getUserAction",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	void AuthenticationRequiredException::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AuthenticationRequiredException::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

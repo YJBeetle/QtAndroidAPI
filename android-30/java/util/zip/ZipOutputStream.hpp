@@ -47,14 +47,14 @@ namespace java::util::zip
 		ZipOutputStream(java::io::OutputStream arg0, java::nio::charset::Charset arg1);
 		
 		// Methods
-		void close();
-		void closeEntry();
-		void finish();
-		void putNextEntry(java::util::zip::ZipEntry arg0);
-		void setComment(JString arg0);
-		void setLevel(jint arg0);
-		void setMethod(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
+		void close() const;
+		void closeEntry() const;
+		void finish() const;
+		void putNextEntry(java::util::zip::ZipEntry arg0) const;
+		void setComment(JString arg0) const;
+		void setLevel(jint arg0) const;
+		void setMethod(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::util::zip
 

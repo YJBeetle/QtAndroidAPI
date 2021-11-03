@@ -24,11 +24,11 @@ namespace android::webkit
 		TracingConfig_Builder();
 		
 		// Methods
-		android::webkit::TracingConfig_Builder addCategories(JIntArray arg0);
-		android::webkit::TracingConfig_Builder addCategories(JArray arg0);
-		android::webkit::TracingConfig_Builder addCategories(JObject arg0);
-		android::webkit::TracingConfig build();
-		android::webkit::TracingConfig_Builder setTracingMode(jint arg0);
+		android::webkit::TracingConfig_Builder addCategories(JIntArray arg0) const;
+		android::webkit::TracingConfig_Builder addCategories(JArray arg0) const;
+		android::webkit::TracingConfig_Builder addCategories(JObject arg0) const;
+		android::webkit::TracingConfig build() const;
+		android::webkit::TracingConfig_Builder setTracingMode(jint arg0) const;
 	};
 } // namespace android::webkit
 

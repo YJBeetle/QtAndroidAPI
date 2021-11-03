@@ -27,10 +27,10 @@ namespace android::hardware::camera2
 		CameraDevice_StateCallback();
 		
 		// Methods
-		void onClosed(android::hardware::camera2::CameraDevice arg0);
-		void onDisconnected(android::hardware::camera2::CameraDevice arg0);
-		void onError(android::hardware::camera2::CameraDevice arg0, jint arg1);
-		void onOpened(android::hardware::camera2::CameraDevice arg0);
+		void onClosed(android::hardware::camera2::CameraDevice arg0) const;
+		void onDisconnected(android::hardware::camera2::CameraDevice arg0) const;
+		void onError(android::hardware::camera2::CameraDevice arg0, jint arg1) const;
+		void onOpened(android::hardware::camera2::CameraDevice arg0) const;
 	};
 } // namespace android::hardware::camera2
 

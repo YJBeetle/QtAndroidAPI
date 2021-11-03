@@ -19,7 +19,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	void ConstrainedFieldPosition::constrainClass(JClass arg0)
+	void ConstrainedFieldPosition::constrainClass(JClass arg0) const
 	{
 		callMethod<void>(
 			"constrainClass",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			arg0.object<jclass>()
 		);
 	}
-	void ConstrainedFieldPosition::constrainField(java::text::Format_Field arg0)
+	void ConstrainedFieldPosition::constrainField(java::text::Format_Field arg0) const
 	{
 		callMethod<void>(
 			"constrainField",
@@ -35,42 +35,42 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	java::text::Format_Field ConstrainedFieldPosition::getField()
+	java::text::Format_Field ConstrainedFieldPosition::getField() const
 	{
 		return callObjectMethod(
 			"getField",
 			"()Ljava/text/Format$Field;"
 		);
 	}
-	JObject ConstrainedFieldPosition::getFieldValue()
+	JObject ConstrainedFieldPosition::getFieldValue() const
 	{
 		return callObjectMethod(
 			"getFieldValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jlong ConstrainedFieldPosition::getInt64IterationContext()
+	jlong ConstrainedFieldPosition::getInt64IterationContext() const
 	{
 		return callMethod<jlong>(
 			"getInt64IterationContext",
 			"()J"
 		);
 	}
-	jint ConstrainedFieldPosition::getLimit()
+	jint ConstrainedFieldPosition::getLimit() const
 	{
 		return callMethod<jint>(
 			"getLimit",
 			"()I"
 		);
 	}
-	jint ConstrainedFieldPosition::getStart()
+	jint ConstrainedFieldPosition::getStart() const
 	{
 		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
-	jboolean ConstrainedFieldPosition::matchesField(java::text::Format_Field arg0, JObject arg1)
+	jboolean ConstrainedFieldPosition::matchesField(java::text::Format_Field arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"matchesField",
@@ -79,14 +79,14 @@ namespace android::icu::text
 			arg1.object<jobject>()
 		);
 	}
-	void ConstrainedFieldPosition::reset()
+	void ConstrainedFieldPosition::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void ConstrainedFieldPosition::setInt64IterationContext(jlong arg0)
+	void ConstrainedFieldPosition::setInt64IterationContext(jlong arg0) const
 	{
 		callMethod<void>(
 			"setInt64IterationContext",
@@ -94,7 +94,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void ConstrainedFieldPosition::setState(java::text::Format_Field arg0, JObject arg1, jint arg2, jint arg3)
+	void ConstrainedFieldPosition::setState(java::text::Format_Field arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setState",
@@ -105,7 +105,7 @@ namespace android::icu::text
 			arg3
 		);
 	}
-	JString ConstrainedFieldPosition::toString()
+	JString ConstrainedFieldPosition::toString() const
 	{
 		return callObjectMethod(
 			"toString",

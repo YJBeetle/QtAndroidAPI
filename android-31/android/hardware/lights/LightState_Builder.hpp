@@ -22,9 +22,9 @@ namespace android::hardware::lights
 		LightState_Builder();
 		
 		// Methods
-		android::hardware::lights::LightState build();
-		android::hardware::lights::LightState_Builder setColor(jint arg0);
-		android::hardware::lights::LightState_Builder setPlayerId(jint arg0);
+		android::hardware::lights::LightState build() const;
+		android::hardware::lights::LightState_Builder setColor(jint arg0) const;
+		android::hardware::lights::LightState_Builder setPlayerId(jint arg0) const;
 	};
 } // namespace android::hardware::lights
 

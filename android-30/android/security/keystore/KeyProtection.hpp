@@ -22,24 +22,24 @@ namespace android::security::keystore
 		// Constructors
 		
 		// Methods
-		JArray getBlockModes();
-		JArray getDigests();
-		JArray getEncryptionPaddings();
-		java::util::Date getKeyValidityForConsumptionEnd();
-		java::util::Date getKeyValidityForOriginationEnd();
-		java::util::Date getKeyValidityStart();
-		jint getPurposes();
-		JArray getSignaturePaddings();
-		jint getUserAuthenticationType();
-		jint getUserAuthenticationValidityDurationSeconds();
-		jboolean isDigestsSpecified();
-		jboolean isInvalidatedByBiometricEnrollment();
-		jboolean isRandomizedEncryptionRequired();
-		jboolean isUnlockedDeviceRequired();
-		jboolean isUserAuthenticationRequired();
-		jboolean isUserAuthenticationValidWhileOnBody();
-		jboolean isUserConfirmationRequired();
-		jboolean isUserPresenceRequired();
+		JArray getBlockModes() const;
+		JArray getDigests() const;
+		JArray getEncryptionPaddings() const;
+		java::util::Date getKeyValidityForConsumptionEnd() const;
+		java::util::Date getKeyValidityForOriginationEnd() const;
+		java::util::Date getKeyValidityStart() const;
+		jint getPurposes() const;
+		JArray getSignaturePaddings() const;
+		jint getUserAuthenticationType() const;
+		jint getUserAuthenticationValidityDurationSeconds() const;
+		jboolean isDigestsSpecified() const;
+		jboolean isInvalidatedByBiometricEnrollment() const;
+		jboolean isRandomizedEncryptionRequired() const;
+		jboolean isUnlockedDeviceRequired() const;
+		jboolean isUserAuthenticationRequired() const;
+		jboolean isUserAuthenticationValidWhileOnBody() const;
+		jboolean isUserConfirmationRequired() const;
+		jboolean isUserPresenceRequired() const;
 	};
 } // namespace android::security::keystore
 

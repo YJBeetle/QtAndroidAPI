@@ -29,9 +29,9 @@ namespace android::icu::text
 		
 		// Methods
 		static JObject getComparator(JObject arg0, jboolean arg1);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

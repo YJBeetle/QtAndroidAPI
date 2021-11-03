@@ -21,14 +21,14 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	android::graphics::drawable::shapes::RectShape RectShape::clone()
+	android::graphics::drawable::shapes::RectShape RectShape::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/RectShape;"
 		);
 	}
-	void RectShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
+	void RectShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -37,7 +37,7 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	void RectShape::getOutline(android::graphics::Outline arg0)
+	void RectShape::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",

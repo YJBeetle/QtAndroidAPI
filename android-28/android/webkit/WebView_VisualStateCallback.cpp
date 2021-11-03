@@ -15,7 +15,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void WebView_VisualStateCallback::onComplete(jlong arg0)
+	void WebView_VisualStateCallback::onComplete(jlong arg0) const
 	{
 		callMethod<void>(
 			"onComplete",

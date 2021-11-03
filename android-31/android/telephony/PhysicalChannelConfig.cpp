@@ -84,14 +84,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint PhysicalChannelConfig::describeContents()
+	jint PhysicalChannelConfig::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PhysicalChannelConfig::equals(JObject arg0)
+	jboolean PhysicalChannelConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -99,91 +99,91 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint PhysicalChannelConfig::getBand()
+	jint PhysicalChannelConfig::getBand() const
 	{
 		return callMethod<jint>(
 			"getBand",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getCellBandwidthDownlinkKhz()
+	jint PhysicalChannelConfig::getCellBandwidthDownlinkKhz() const
 	{
 		return callMethod<jint>(
 			"getCellBandwidthDownlinkKhz",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getCellBandwidthUplinkKhz()
+	jint PhysicalChannelConfig::getCellBandwidthUplinkKhz() const
 	{
 		return callMethod<jint>(
 			"getCellBandwidthUplinkKhz",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getConnectionStatus()
+	jint PhysicalChannelConfig::getConnectionStatus() const
 	{
 		return callMethod<jint>(
 			"getConnectionStatus",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getDownlinkChannelNumber()
+	jint PhysicalChannelConfig::getDownlinkChannelNumber() const
 	{
 		return callMethod<jint>(
 			"getDownlinkChannelNumber",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getDownlinkFrequencyKhz()
+	jint PhysicalChannelConfig::getDownlinkFrequencyKhz() const
 	{
 		return callMethod<jint>(
 			"getDownlinkFrequencyKhz",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getNetworkType()
+	jint PhysicalChannelConfig::getNetworkType() const
 	{
 		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getPhysicalCellId()
+	jint PhysicalChannelConfig::getPhysicalCellId() const
 	{
 		return callMethod<jint>(
 			"getPhysicalCellId",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getUplinkChannelNumber()
+	jint PhysicalChannelConfig::getUplinkChannelNumber() const
 	{
 		return callMethod<jint>(
 			"getUplinkChannelNumber",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::getUplinkFrequencyKhz()
+	jint PhysicalChannelConfig::getUplinkFrequencyKhz() const
 	{
 		return callMethod<jint>(
 			"getUplinkFrequencyKhz",
 			"()I"
 		);
 	}
-	jint PhysicalChannelConfig::hashCode()
+	jint PhysicalChannelConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PhysicalChannelConfig::toString()
+	JString PhysicalChannelConfig::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PhysicalChannelConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PhysicalChannelConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

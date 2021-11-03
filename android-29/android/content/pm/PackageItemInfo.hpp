@@ -45,13 +45,13 @@ namespace android::content::pm
 		PackageItemInfo(android::content::pm::PackageItemInfo &arg0);
 		
 		// Methods
-		android::graphics::drawable::Drawable loadBanner(android::content::pm::PackageManager arg0);
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		android::graphics::drawable::Drawable loadLogo(android::content::pm::PackageManager arg0);
-		android::graphics::drawable::Drawable loadUnbadgedIcon(android::content::pm::PackageManager arg0);
-		JObject loadXmlMetaData(android::content::pm::PackageManager arg0, JString arg1);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::graphics::drawable::Drawable loadBanner(android::content::pm::PackageManager arg0) const;
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		android::graphics::drawable::Drawable loadLogo(android::content::pm::PackageManager arg0) const;
+		android::graphics::drawable::Drawable loadUnbadgedIcon(android::content::pm::PackageManager arg0) const;
+		JObject loadXmlMetaData(android::content::pm::PackageManager arg0, JString arg1) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

@@ -29,14 +29,14 @@ namespace java::net
 		) {}
 	
 	// Methods
-	java::net::SocketAddress Proxy::address()
+	java::net::SocketAddress Proxy::address() const
 	{
 		return callObjectMethod(
 			"address",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jboolean Proxy::equals(JObject arg0)
+	jboolean Proxy::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,21 +44,21 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	jint Proxy::hashCode()
+	jint Proxy::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Proxy::toString()
+	JString Proxy::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::net::Proxy_Type Proxy::type()
+	java::net::Proxy_Type Proxy::type() const
 	{
 		return callObjectMethod(
 			"type",

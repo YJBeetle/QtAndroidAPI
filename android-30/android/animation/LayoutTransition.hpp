@@ -35,32 +35,32 @@ namespace android::animation
 		LayoutTransition();
 		
 		// Methods
-		void addChild(android::view::ViewGroup arg0, android::view::View arg1);
-		void addTransitionListener(JObject arg0);
-		void disableTransitionType(jint arg0);
-		void enableTransitionType(jint arg0);
-		android::animation::Animator getAnimator(jint arg0);
-		jlong getDuration(jint arg0);
-		JObject getInterpolator(jint arg0);
-		jlong getStagger(jint arg0);
-		jlong getStartDelay(jint arg0);
-		JObject getTransitionListeners();
-		void hideChild(android::view::ViewGroup arg0, android::view::View arg1);
-		void hideChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2);
-		jboolean isChangingLayout();
-		jboolean isRunning();
-		jboolean isTransitionTypeEnabled(jint arg0);
-		void removeChild(android::view::ViewGroup arg0, android::view::View arg1);
-		void removeTransitionListener(JObject arg0);
-		void setAnimateParentHierarchy(jboolean arg0);
-		void setAnimator(jint arg0, android::animation::Animator arg1);
-		void setDuration(jlong arg0);
-		void setDuration(jint arg0, jlong arg1);
-		void setInterpolator(jint arg0, JObject arg1);
-		void setStagger(jint arg0, jlong arg1);
-		void setStartDelay(jint arg0, jlong arg1);
-		void showChild(android::view::ViewGroup arg0, android::view::View arg1);
-		void showChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2);
+		void addChild(android::view::ViewGroup arg0, android::view::View arg1) const;
+		void addTransitionListener(JObject arg0) const;
+		void disableTransitionType(jint arg0) const;
+		void enableTransitionType(jint arg0) const;
+		android::animation::Animator getAnimator(jint arg0) const;
+		jlong getDuration(jint arg0) const;
+		JObject getInterpolator(jint arg0) const;
+		jlong getStagger(jint arg0) const;
+		jlong getStartDelay(jint arg0) const;
+		JObject getTransitionListeners() const;
+		void hideChild(android::view::ViewGroup arg0, android::view::View arg1) const;
+		void hideChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2) const;
+		jboolean isChangingLayout() const;
+		jboolean isRunning() const;
+		jboolean isTransitionTypeEnabled(jint arg0) const;
+		void removeChild(android::view::ViewGroup arg0, android::view::View arg1) const;
+		void removeTransitionListener(JObject arg0) const;
+		void setAnimateParentHierarchy(jboolean arg0) const;
+		void setAnimator(jint arg0, android::animation::Animator arg1) const;
+		void setDuration(jlong arg0) const;
+		void setDuration(jint arg0, jlong arg1) const;
+		void setInterpolator(jint arg0, JObject arg1) const;
+		void setStagger(jint arg0, jlong arg1) const;
+		void setStartDelay(jint arg0, jlong arg1) const;
+		void showChild(android::view::ViewGroup arg0, android::view::View arg1) const;
+		void showChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2) const;
 	};
 } // namespace android::animation
 

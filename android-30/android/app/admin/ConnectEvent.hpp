@@ -27,11 +27,11 @@ namespace android::app::admin
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		java::net::InetAddress getInetAddress();
-		jint getPort();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		java::net::InetAddress getInetAddress() const;
+		jint getPort() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::admin
 

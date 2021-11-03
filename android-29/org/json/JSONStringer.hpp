@@ -20,16 +20,16 @@ namespace org::json
 		JSONStringer();
 		
 		// Methods
-		org::json::JSONStringer array();
-		org::json::JSONStringer endArray();
-		org::json::JSONStringer endObject();
-		org::json::JSONStringer key(JString arg0);
-		org::json::JSONStringer object();
-		JString toString();
-		org::json::JSONStringer value(jboolean arg0);
-		org::json::JSONStringer value(jdouble arg0);
-		org::json::JSONStringer value(JObject arg0);
-		org::json::JSONStringer value(jlong arg0);
+		org::json::JSONStringer array() const;
+		org::json::JSONStringer endArray() const;
+		org::json::JSONStringer endObject() const;
+		org::json::JSONStringer key(JString arg0) const;
+		org::json::JSONStringer object() const;
+		JString toString() const;
+		org::json::JSONStringer value(jboolean arg0) const;
+		org::json::JSONStringer value(jdouble arg0) const;
+		org::json::JSONStringer value(JObject arg0) const;
+		org::json::JSONStringer value(jlong arg0) const;
 	};
 } // namespace org::json
 

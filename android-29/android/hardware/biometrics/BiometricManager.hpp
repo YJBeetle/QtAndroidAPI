@@ -20,7 +20,7 @@ namespace android::hardware::biometrics
 		// Constructors
 		
 		// Methods
-		jint canAuthenticate();
+		jint canAuthenticate() const;
 	};
 } // namespace android::hardware::biometrics
 

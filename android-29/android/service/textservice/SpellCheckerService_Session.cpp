@@ -22,42 +22,42 @@ namespace android::service::textservice
 		) {}
 	
 	// Methods
-	android::os::Bundle SpellCheckerService_Session::getBundle()
+	android::os::Bundle SpellCheckerService_Session::getBundle() const
 	{
 		return callObjectMethod(
 			"getBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString SpellCheckerService_Session::getLocale()
+	JString SpellCheckerService_Session::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SpellCheckerService_Session::onCancel()
+	void SpellCheckerService_Session::onCancel() const
 	{
 		callMethod<void>(
 			"onCancel",
 			"()V"
 		);
 	}
-	void SpellCheckerService_Session::onClose()
+	void SpellCheckerService_Session::onClose() const
 	{
 		callMethod<void>(
 			"onClose",
 			"()V"
 		);
 	}
-	void SpellCheckerService_Session::onCreate()
+	void SpellCheckerService_Session::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	JArray SpellCheckerService_Session::onGetSentenceSuggestionsMultiple(JArray arg0, jint arg1)
+	JArray SpellCheckerService_Session::onGetSentenceSuggestionsMultiple(JArray arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onGetSentenceSuggestionsMultiple",
@@ -66,7 +66,7 @@ namespace android::service::textservice
 			arg1
 		);
 	}
-	android::view::textservice::SuggestionsInfo SpellCheckerService_Session::onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1)
+	android::view::textservice::SuggestionsInfo SpellCheckerService_Session::onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onGetSuggestions",
@@ -75,7 +75,7 @@ namespace android::service::textservice
 			arg1
 		);
 	}
-	JArray SpellCheckerService_Session::onGetSuggestionsMultiple(JArray arg0, jint arg1, jboolean arg2)
+	JArray SpellCheckerService_Session::onGetSuggestionsMultiple(JArray arg0, jint arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"onGetSuggestionsMultiple",

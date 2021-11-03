@@ -736,7 +736,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jint AudioManager::abandonAudioFocus(JObject arg0)
+	jint AudioManager::abandonAudioFocus(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"abandonAudioFocus",
@@ -744,7 +744,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioManager::abandonAudioFocusRequest(android::media::AudioFocusRequest arg0)
+	jint AudioManager::abandonAudioFocusRequest(android::media::AudioFocusRequest arg0) const
 	{
 		return callMethod<jint>(
 			"abandonAudioFocusRequest",
@@ -752,7 +752,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::adjustStreamVolume(jint arg0, jint arg1, jint arg2)
+	void AudioManager::adjustStreamVolume(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"adjustStreamVolume",
@@ -762,7 +762,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void AudioManager::adjustSuggestedStreamVolume(jint arg0, jint arg1, jint arg2)
+	void AudioManager::adjustSuggestedStreamVolume(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"adjustSuggestedStreamVolume",
@@ -772,7 +772,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void AudioManager::adjustVolume(jint arg0, jint arg1)
+	void AudioManager::adjustVolume(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"adjustVolume",
@@ -781,7 +781,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void AudioManager::dispatchMediaKeyEvent(android::view::KeyEvent arg0)
+	void AudioManager::dispatchMediaKeyEvent(android::view::KeyEvent arg0) const
 	{
 		callMethod<void>(
 			"dispatchMediaKeyEvent",
@@ -789,35 +789,35 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioManager::generateAudioSessionId()
+	jint AudioManager::generateAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"generateAudioSessionId",
 			"()I"
 		);
 	}
-	JObject AudioManager::getActivePlaybackConfigurations()
+	JObject AudioManager::getActivePlaybackConfigurations() const
 	{
 		return callObjectMethod(
 			"getActivePlaybackConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject AudioManager::getActiveRecordingConfigurations()
+	JObject AudioManager::getActiveRecordingConfigurations() const
 	{
 		return callObjectMethod(
 			"getActiveRecordingConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	jint AudioManager::getAllowedCapturePolicy()
+	jint AudioManager::getAllowedCapturePolicy() const
 	{
 		return callMethod<jint>(
 			"getAllowedCapturePolicy",
 			"()I"
 		);
 	}
-	JArray AudioManager::getDevices(jint arg0)
+	JArray AudioManager::getDevices(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDevices",
@@ -825,21 +825,21 @@ namespace android::media
 			arg0
 		);
 	}
-	JObject AudioManager::getMicrophones()
+	JObject AudioManager::getMicrophones() const
 	{
 		return callObjectMethod(
 			"getMicrophones",
 			"()Ljava/util/List;"
 		);
 	}
-	jint AudioManager::getMode()
+	jint AudioManager::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	JString AudioManager::getParameters(JString arg0)
+	JString AudioManager::getParameters(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParameters",
@@ -847,7 +847,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JString AudioManager::getProperty(JString arg0)
+	JString AudioManager::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -855,14 +855,14 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jint AudioManager::getRingerMode()
+	jint AudioManager::getRingerMode() const
 	{
 		return callMethod<jint>(
 			"getRingerMode",
 			"()I"
 		);
 	}
-	jint AudioManager::getRouting(jint arg0)
+	jint AudioManager::getRouting(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getRouting",
@@ -870,7 +870,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioManager::getStreamMaxVolume(jint arg0)
+	jint AudioManager::getStreamMaxVolume(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getStreamMaxVolume",
@@ -878,7 +878,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioManager::getStreamMinVolume(jint arg0)
+	jint AudioManager::getStreamMinVolume(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getStreamMinVolume",
@@ -886,7 +886,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioManager::getStreamVolume(jint arg0)
+	jint AudioManager::getStreamVolume(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getStreamVolume",
@@ -894,7 +894,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jfloat AudioManager::getStreamVolumeDb(jint arg0, jint arg1, jint arg2)
+	jfloat AudioManager::getStreamVolumeDb(jint arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jfloat>(
 			"getStreamVolumeDb",
@@ -904,7 +904,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioManager::getVibrateSetting(jint arg0)
+	jint AudioManager::getVibrateSetting(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getVibrateSetting",
@@ -912,56 +912,56 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean AudioManager::isBluetoothA2dpOn()
+	jboolean AudioManager::isBluetoothA2dpOn() const
 	{
 		return callMethod<jboolean>(
 			"isBluetoothA2dpOn",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isBluetoothScoAvailableOffCall()
+	jboolean AudioManager::isBluetoothScoAvailableOffCall() const
 	{
 		return callMethod<jboolean>(
 			"isBluetoothScoAvailableOffCall",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isBluetoothScoOn()
+	jboolean AudioManager::isBluetoothScoOn() const
 	{
 		return callMethod<jboolean>(
 			"isBluetoothScoOn",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isCallScreeningModeSupported()
+	jboolean AudioManager::isCallScreeningModeSupported() const
 	{
 		return callMethod<jboolean>(
 			"isCallScreeningModeSupported",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isMicrophoneMute()
+	jboolean AudioManager::isMicrophoneMute() const
 	{
 		return callMethod<jboolean>(
 			"isMicrophoneMute",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isMusicActive()
+	jboolean AudioManager::isMusicActive() const
 	{
 		return callMethod<jboolean>(
 			"isMusicActive",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isSpeakerphoneOn()
+	jboolean AudioManager::isSpeakerphoneOn() const
 	{
 		return callMethod<jboolean>(
 			"isSpeakerphoneOn",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isStreamMute(jint arg0)
+	jboolean AudioManager::isStreamMute(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isStreamMute",
@@ -969,28 +969,28 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean AudioManager::isVolumeFixed()
+	jboolean AudioManager::isVolumeFixed() const
 	{
 		return callMethod<jboolean>(
 			"isVolumeFixed",
 			"()Z"
 		);
 	}
-	jboolean AudioManager::isWiredHeadsetOn()
+	jboolean AudioManager::isWiredHeadsetOn() const
 	{
 		return callMethod<jboolean>(
 			"isWiredHeadsetOn",
 			"()Z"
 		);
 	}
-	void AudioManager::loadSoundEffects()
+	void AudioManager::loadSoundEffects() const
 	{
 		callMethod<void>(
 			"loadSoundEffects",
 			"()V"
 		);
 	}
-	void AudioManager::playSoundEffect(jint arg0)
+	void AudioManager::playSoundEffect(jint arg0) const
 	{
 		callMethod<void>(
 			"playSoundEffect",
@@ -998,7 +998,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::playSoundEffect(jint arg0, jfloat arg1)
+	void AudioManager::playSoundEffect(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"playSoundEffect",
@@ -1007,7 +1007,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void AudioManager::registerAudioDeviceCallback(android::media::AudioDeviceCallback arg0, android::os::Handler arg1)
+	void AudioManager::registerAudioDeviceCallback(android::media::AudioDeviceCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerAudioDeviceCallback",
@@ -1016,7 +1016,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioManager::registerAudioPlaybackCallback(android::media::AudioManager_AudioPlaybackCallback arg0, android::os::Handler arg1)
+	void AudioManager::registerAudioPlaybackCallback(android::media::AudioManager_AudioPlaybackCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerAudioPlaybackCallback",
@@ -1025,7 +1025,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioManager::registerAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0, android::os::Handler arg1)
+	void AudioManager::registerAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerAudioRecordingCallback",
@@ -1034,7 +1034,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioManager::registerMediaButtonEventReceiver(android::app::PendingIntent arg0)
+	void AudioManager::registerMediaButtonEventReceiver(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"registerMediaButtonEventReceiver",
@@ -1042,7 +1042,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::registerMediaButtonEventReceiver(android::content::ComponentName arg0)
+	void AudioManager::registerMediaButtonEventReceiver(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"registerMediaButtonEventReceiver",
@@ -1050,7 +1050,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::registerRemoteControlClient(android::media::RemoteControlClient arg0)
+	void AudioManager::registerRemoteControlClient(android::media::RemoteControlClient arg0) const
 	{
 		callMethod<void>(
 			"registerRemoteControlClient",
@@ -1058,7 +1058,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean AudioManager::registerRemoteController(android::media::RemoteController arg0)
+	jboolean AudioManager::registerRemoteController(android::media::RemoteController arg0) const
 	{
 		return callMethod<jboolean>(
 			"registerRemoteController",
@@ -1066,7 +1066,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioManager::requestAudioFocus(android::media::AudioFocusRequest arg0)
+	jint AudioManager::requestAudioFocus(android::media::AudioFocusRequest arg0) const
 	{
 		return callMethod<jint>(
 			"requestAudioFocus",
@@ -1074,7 +1074,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioManager::requestAudioFocus(JObject arg0, jint arg1, jint arg2)
+	jint AudioManager::requestAudioFocus(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"requestAudioFocus",
@@ -1084,7 +1084,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void AudioManager::setAllowedCapturePolicy(jint arg0)
+	void AudioManager::setAllowedCapturePolicy(jint arg0) const
 	{
 		callMethod<void>(
 			"setAllowedCapturePolicy",
@@ -1092,7 +1092,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setBluetoothA2dpOn(jboolean arg0)
+	void AudioManager::setBluetoothA2dpOn(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setBluetoothA2dpOn",
@@ -1100,7 +1100,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setBluetoothScoOn(jboolean arg0)
+	void AudioManager::setBluetoothScoOn(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setBluetoothScoOn",
@@ -1108,7 +1108,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setMicrophoneMute(jboolean arg0)
+	void AudioManager::setMicrophoneMute(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMicrophoneMute",
@@ -1116,7 +1116,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setMode(jint arg0)
+	void AudioManager::setMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setMode",
@@ -1124,7 +1124,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setParameters(JString arg0)
+	void AudioManager::setParameters(JString arg0) const
 	{
 		callMethod<void>(
 			"setParameters",
@@ -1132,7 +1132,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void AudioManager::setRingerMode(jint arg0)
+	void AudioManager::setRingerMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setRingerMode",
@@ -1140,7 +1140,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setRouting(jint arg0, jint arg1, jint arg2)
+	void AudioManager::setRouting(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setRouting",
@@ -1150,7 +1150,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void AudioManager::setSpeakerphoneOn(jboolean arg0)
+	void AudioManager::setSpeakerphoneOn(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSpeakerphoneOn",
@@ -1158,7 +1158,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setStreamMute(jint arg0, jboolean arg1)
+	void AudioManager::setStreamMute(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setStreamMute",
@@ -1167,7 +1167,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void AudioManager::setStreamSolo(jint arg0, jboolean arg1)
+	void AudioManager::setStreamSolo(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setStreamSolo",
@@ -1176,7 +1176,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void AudioManager::setStreamVolume(jint arg0, jint arg1, jint arg2)
+	void AudioManager::setStreamVolume(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setStreamVolume",
@@ -1186,7 +1186,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void AudioManager::setVibrateSetting(jint arg0, jint arg1)
+	void AudioManager::setVibrateSetting(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setVibrateSetting",
@@ -1195,7 +1195,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void AudioManager::setWiredHeadsetOn(jboolean arg0)
+	void AudioManager::setWiredHeadsetOn(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setWiredHeadsetOn",
@@ -1203,7 +1203,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean AudioManager::shouldVibrate(jint arg0)
+	jboolean AudioManager::shouldVibrate(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"shouldVibrate",
@@ -1211,28 +1211,28 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::startBluetoothSco()
+	void AudioManager::startBluetoothSco() const
 	{
 		callMethod<void>(
 			"startBluetoothSco",
 			"()V"
 		);
 	}
-	void AudioManager::stopBluetoothSco()
+	void AudioManager::stopBluetoothSco() const
 	{
 		callMethod<void>(
 			"stopBluetoothSco",
 			"()V"
 		);
 	}
-	void AudioManager::unloadSoundEffects()
+	void AudioManager::unloadSoundEffects() const
 	{
 		callMethod<void>(
 			"unloadSoundEffects",
 			"()V"
 		);
 	}
-	void AudioManager::unregisterAudioDeviceCallback(android::media::AudioDeviceCallback arg0)
+	void AudioManager::unregisterAudioDeviceCallback(android::media::AudioDeviceCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterAudioDeviceCallback",
@@ -1240,7 +1240,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::unregisterAudioPlaybackCallback(android::media::AudioManager_AudioPlaybackCallback arg0)
+	void AudioManager::unregisterAudioPlaybackCallback(android::media::AudioManager_AudioPlaybackCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterAudioPlaybackCallback",
@@ -1248,7 +1248,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::unregisterAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0)
+	void AudioManager::unregisterAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterAudioRecordingCallback",
@@ -1256,7 +1256,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::unregisterMediaButtonEventReceiver(android::app::PendingIntent arg0)
+	void AudioManager::unregisterMediaButtonEventReceiver(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"unregisterMediaButtonEventReceiver",
@@ -1264,7 +1264,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::unregisterMediaButtonEventReceiver(android::content::ComponentName arg0)
+	void AudioManager::unregisterMediaButtonEventReceiver(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"unregisterMediaButtonEventReceiver",
@@ -1272,7 +1272,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::unregisterRemoteControlClient(android::media::RemoteControlClient arg0)
+	void AudioManager::unregisterRemoteControlClient(android::media::RemoteControlClient arg0) const
 	{
 		callMethod<void>(
 			"unregisterRemoteControlClient",
@@ -1280,7 +1280,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::unregisterRemoteController(android::media::RemoteController arg0)
+	void AudioManager::unregisterRemoteController(android::media::RemoteController arg0) const
 	{
 		callMethod<void>(
 			"unregisterRemoteController",

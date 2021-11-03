@@ -1231,7 +1231,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jdouble ExifInterface::getAltitude(jdouble arg0)
+	jdouble ExifInterface::getAltitude(jdouble arg0) const
 	{
 		return callMethod<jdouble>(
 			"getAltitude",
@@ -1239,7 +1239,7 @@ namespace android::media
 			arg0
 		);
 	}
-	JString ExifInterface::getAttribute(JString arg0)
+	JString ExifInterface::getAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttribute",
@@ -1247,7 +1247,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray ExifInterface::getAttributeBytes(JString arg0)
+	JByteArray ExifInterface::getAttributeBytes(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttributeBytes",
@@ -1255,7 +1255,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jdouble ExifInterface::getAttributeDouble(JString arg0, jdouble arg1)
+	jdouble ExifInterface::getAttributeDouble(JString arg0, jdouble arg1) const
 	{
 		return callMethod<jdouble>(
 			"getAttributeDouble",
@@ -1264,7 +1264,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jint ExifInterface::getAttributeInt(JString arg0, jint arg1)
+	jint ExifInterface::getAttributeInt(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getAttributeInt",
@@ -1273,7 +1273,7 @@ namespace android::media
 			arg1
 		);
 	}
-	JLongArray ExifInterface::getAttributeRange(JString arg0)
+	JLongArray ExifInterface::getAttributeRange(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttributeRange",
@@ -1281,7 +1281,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ExifInterface::getLatLong(JFloatArray arg0)
+	jboolean ExifInterface::getLatLong(JFloatArray arg0) const
 	{
 		return callMethod<jboolean>(
 			"getLatLong",
@@ -1289,35 +1289,35 @@ namespace android::media
 			arg0.object<jfloatArray>()
 		);
 	}
-	JByteArray ExifInterface::getThumbnail()
+	JByteArray ExifInterface::getThumbnail() const
 	{
 		return callObjectMethod(
 			"getThumbnail",
 			"()[B"
 		);
 	}
-	android::graphics::Bitmap ExifInterface::getThumbnailBitmap()
+	android::graphics::Bitmap ExifInterface::getThumbnailBitmap() const
 	{
 		return callObjectMethod(
 			"getThumbnailBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	JByteArray ExifInterface::getThumbnailBytes()
+	JByteArray ExifInterface::getThumbnailBytes() const
 	{
 		return callObjectMethod(
 			"getThumbnailBytes",
 			"()[B"
 		);
 	}
-	JLongArray ExifInterface::getThumbnailRange()
+	JLongArray ExifInterface::getThumbnailRange() const
 	{
 		return callObjectMethod(
 			"getThumbnailRange",
 			"()[J"
 		);
 	}
-	jboolean ExifInterface::hasAttribute(JString arg0)
+	jboolean ExifInterface::hasAttribute(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasAttribute",
@@ -1325,28 +1325,28 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ExifInterface::hasThumbnail()
+	jboolean ExifInterface::hasThumbnail() const
 	{
 		return callMethod<jboolean>(
 			"hasThumbnail",
 			"()Z"
 		);
 	}
-	jboolean ExifInterface::isThumbnailCompressed()
+	jboolean ExifInterface::isThumbnailCompressed() const
 	{
 		return callMethod<jboolean>(
 			"isThumbnailCompressed",
 			"()Z"
 		);
 	}
-	void ExifInterface::saveAttributes()
+	void ExifInterface::saveAttributes() const
 	{
 		callMethod<void>(
 			"saveAttributes",
 			"()V"
 		);
 	}
-	void ExifInterface::setAttribute(JString arg0, JString arg1)
+	void ExifInterface::setAttribute(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setAttribute",

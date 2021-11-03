@@ -17,7 +17,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void Observable::addObserver(JObject arg0)
+	void Observable::addObserver(JObject arg0) const
 	{
 		callMethod<void>(
 			"addObserver",
@@ -25,14 +25,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint Observable::countObservers()
+	jint Observable::countObservers() const
 	{
 		return callMethod<jint>(
 			"countObservers",
 			"()I"
 		);
 	}
-	void Observable::deleteObserver(JObject arg0)
+	void Observable::deleteObserver(JObject arg0) const
 	{
 		callMethod<void>(
 			"deleteObserver",
@@ -40,28 +40,28 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Observable::deleteObservers()
+	void Observable::deleteObservers() const
 	{
 		callMethod<void>(
 			"deleteObservers",
 			"()V"
 		);
 	}
-	jboolean Observable::hasChanged()
+	jboolean Observable::hasChanged() const
 	{
 		return callMethod<jboolean>(
 			"hasChanged",
 			"()Z"
 		);
 	}
-	void Observable::notifyObservers()
+	void Observable::notifyObservers() const
 	{
 		callMethod<void>(
 			"notifyObservers",
 			"()V"
 		);
 	}
-	void Observable::notifyObservers(JObject arg0)
+	void Observable::notifyObservers(JObject arg0) const
 	{
 		callMethod<void>(
 			"notifyObservers",

@@ -23,11 +23,11 @@ namespace android::media::tv
 		TvRecordingClient_RecordingCallback();
 		
 		// Methods
-		void onConnectionFailed(JString arg0);
-		void onDisconnected(JString arg0);
-		void onError(jint arg0);
-		void onRecordingStopped(android::net::Uri arg0);
-		void onTuned(android::net::Uri arg0);
+		void onConnectionFailed(JString arg0) const;
+		void onDisconnected(JString arg0) const;
+		void onError(jint arg0) const;
+		void onRecordingStopped(android::net::Uri arg0) const;
+		void onTuned(android::net::Uri arg0) const;
 	};
 } // namespace android::media::tv
 

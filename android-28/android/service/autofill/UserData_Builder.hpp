@@ -27,9 +27,9 @@ namespace android::service::autofill
 		UserData_Builder(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		android::service::autofill::UserData_Builder add(JString arg0, JString arg1);
-		android::service::autofill::UserData build();
-		android::service::autofill::UserData_Builder setFieldClassificationAlgorithm(JString arg0, android::os::Bundle arg1);
+		android::service::autofill::UserData_Builder add(JString arg0, JString arg1) const;
+		android::service::autofill::UserData build() const;
+		android::service::autofill::UserData_Builder setFieldClassificationAlgorithm(JString arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::service::autofill
 

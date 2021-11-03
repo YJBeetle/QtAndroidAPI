@@ -32,18 +32,18 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		JObject appendTo(JObject arg0);
-		jchar charAt(jint arg0);
-		jboolean equals(JObject arg0);
-		java::math::BigDecimal getFirstBigDecimal();
-		android::icu::number::NumberRangeFormatter_RangeIdentityResult getIdentityResult();
-		java::math::BigDecimal getSecondBigDecimal();
-		jint hashCode();
-		jint length();
-		jboolean nextPosition(android::icu::text::ConstrainedFieldPosition arg0);
-		JString subSequence(jint arg0, jint arg1);
-		JObject toCharacterIterator();
-		JString toString();
+		JObject appendTo(JObject arg0) const;
+		jchar charAt(jint arg0) const;
+		jboolean equals(JObject arg0) const;
+		java::math::BigDecimal getFirstBigDecimal() const;
+		android::icu::number::NumberRangeFormatter_RangeIdentityResult getIdentityResult() const;
+		java::math::BigDecimal getSecondBigDecimal() const;
+		jint hashCode() const;
+		jint length() const;
+		jboolean nextPosition(android::icu::text::ConstrainedFieldPosition arg0) const;
+		JString subSequence(jint arg0, jint arg1) const;
+		JObject toCharacterIterator() const;
+		JString toString() const;
 	};
 } // namespace android::icu::number
 

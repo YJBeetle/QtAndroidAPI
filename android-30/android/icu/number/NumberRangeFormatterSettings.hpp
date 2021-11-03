@@ -30,13 +30,13 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::NumberRangeFormatterSettings collapse(android::icu::number::NumberRangeFormatter_RangeCollapse arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		android::icu::number::NumberRangeFormatterSettings identityFallback(android::icu::number::NumberRangeFormatter_RangeIdentityFallback arg0);
-		android::icu::number::NumberRangeFormatterSettings numberFormatterBoth(android::icu::number::UnlocalizedNumberFormatter arg0);
-		android::icu::number::NumberRangeFormatterSettings numberFormatterFirst(android::icu::number::UnlocalizedNumberFormatter arg0);
-		android::icu::number::NumberRangeFormatterSettings numberFormatterSecond(android::icu::number::UnlocalizedNumberFormatter arg0);
+		android::icu::number::NumberRangeFormatterSettings collapse(android::icu::number::NumberRangeFormatter_RangeCollapse arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		android::icu::number::NumberRangeFormatterSettings identityFallback(android::icu::number::NumberRangeFormatter_RangeIdentityFallback arg0) const;
+		android::icu::number::NumberRangeFormatterSettings numberFormatterBoth(android::icu::number::UnlocalizedNumberFormatter arg0) const;
+		android::icu::number::NumberRangeFormatterSettings numberFormatterFirst(android::icu::number::UnlocalizedNumberFormatter arg0) const;
+		android::icu::number::NumberRangeFormatterSettings numberFormatterSecond(android::icu::number::UnlocalizedNumberFormatter arg0) const;
 	};
 } // namespace android::icu::number
 

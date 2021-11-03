@@ -17,7 +17,7 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	void AbstractInputMethodService_AbstractInputMethodImpl::createSession(JObject arg0)
+	void AbstractInputMethodService_AbstractInputMethodImpl::createSession(JObject arg0) const
 	{
 		callMethod<void>(
 			"createSession",
@@ -25,7 +25,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodImpl::revokeSession(JObject arg0)
+	void AbstractInputMethodService_AbstractInputMethodImpl::revokeSession(JObject arg0) const
 	{
 		callMethod<void>(
 			"revokeSession",
@@ -33,7 +33,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodImpl::setSessionEnabled(JObject arg0, jboolean arg1)
+	void AbstractInputMethodService_AbstractInputMethodImpl::setSessionEnabled(JObject arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setSessionEnabled",

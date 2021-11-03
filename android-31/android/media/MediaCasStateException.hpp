@@ -18,7 +18,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getDiagnosticInfo();
+		JString getDiagnosticInfo() const;
 	};
 } // namespace android::media
 

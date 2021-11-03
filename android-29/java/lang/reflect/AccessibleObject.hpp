@@ -23,17 +23,17 @@ namespace java::lang::reflect
 		
 		// Methods
 		static void setAccessible(JArray arg0, jboolean arg1);
-		jboolean canAccess(JObject arg0);
-		JObject getAnnotation(JClass arg0);
-		JArray getAnnotations();
-		JArray getAnnotationsByType(JClass arg0);
-		JObject getDeclaredAnnotation(JClass arg0);
-		JArray getDeclaredAnnotations();
-		JArray getDeclaredAnnotationsByType(JClass arg0);
-		jboolean isAccessible();
-		jboolean isAnnotationPresent(JClass arg0);
-		void setAccessible(jboolean arg0);
-		jboolean trySetAccessible();
+		jboolean canAccess(JObject arg0) const;
+		JObject getAnnotation(JClass arg0) const;
+		JArray getAnnotations() const;
+		JArray getAnnotationsByType(JClass arg0) const;
+		JObject getDeclaredAnnotation(JClass arg0) const;
+		JArray getDeclaredAnnotations() const;
+		JArray getDeclaredAnnotationsByType(JClass arg0) const;
+		jboolean isAccessible() const;
+		jboolean isAnnotationPresent(JClass arg0) const;
+		void setAccessible(jboolean arg0) const;
+		jboolean trySetAccessible() const;
 	};
 } // namespace java::lang::reflect
 

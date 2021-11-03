@@ -14,7 +14,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	JObject CaseMap_Fold::apply(JString arg0, JObject arg1, android::icu::text::Edits arg2)
+	JObject CaseMap_Fold::apply(JString arg0, JObject arg1, android::icu::text::Edits arg2) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -24,7 +24,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JString CaseMap_Fold::apply(JString arg0)
+	JString CaseMap_Fold::apply(JString arg0) const
 	{
 		return callObjectMethod(
 			"apply",
@@ -32,14 +32,14 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::CaseMap_Fold CaseMap_Fold::omitUnchangedText()
+	android::icu::text::CaseMap_Fold CaseMap_Fold::omitUnchangedText() const
 	{
 		return callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap$Fold;"
 		);
 	}
-	android::icu::text::CaseMap_Fold CaseMap_Fold::turkic()
+	android::icu::text::CaseMap_Fold CaseMap_Fold::turkic() const
 	{
 		return callObjectMethod(
 			"turkic",

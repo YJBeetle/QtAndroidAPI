@@ -36,8 +36,8 @@ namespace dalvik::system
 		BaseDexClassLoader(JString arg0, java::io::File arg1, JString arg2, java::lang::ClassLoader arg3);
 		
 		// Methods
-		JString findLibrary(JString arg0);
-		JString toString();
+		JString findLibrary(JString arg0) const;
+		JString toString() const;
 	};
 } // namespace dalvik::system
 

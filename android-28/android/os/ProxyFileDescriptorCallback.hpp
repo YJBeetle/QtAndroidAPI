@@ -19,11 +19,11 @@ namespace android::os
 		ProxyFileDescriptorCallback();
 		
 		// Methods
-		void onFsync();
-		jlong onGetSize();
-		jint onRead(jlong arg0, jint arg1, JByteArray arg2);
-		void onRelease();
-		jint onWrite(jlong arg0, jint arg1, JByteArray arg2);
+		void onFsync() const;
+		jlong onGetSize() const;
+		jint onRead(jlong arg0, jint arg1, JByteArray arg2) const;
+		void onRelease() const;
+		jint onWrite(jlong arg0, jint arg1, JByteArray arg2) const;
 	};
 } // namespace android::os
 

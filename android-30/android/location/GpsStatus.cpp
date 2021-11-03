@@ -49,21 +49,21 @@ namespace android::location
 			arg1
 		);
 	}
-	jint GpsStatus::getMaxSatellites()
+	jint GpsStatus::getMaxSatellites() const
 	{
 		return callMethod<jint>(
 			"getMaxSatellites",
 			"()I"
 		);
 	}
-	JObject GpsStatus::getSatellites()
+	JObject GpsStatus::getSatellites() const
 	{
 		return callObjectMethod(
 			"getSatellites",
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	jint GpsStatus::getTimeToFirstFix()
+	jint GpsStatus::getTimeToFirstFix() const
 	{
 		return callMethod<jint>(
 			"getTimeToFirstFix",

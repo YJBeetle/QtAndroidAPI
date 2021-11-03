@@ -31,28 +31,28 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean OrientationEventListener::canDetectOrientation()
+	jboolean OrientationEventListener::canDetectOrientation() const
 	{
 		return callMethod<jboolean>(
 			"canDetectOrientation",
 			"()Z"
 		);
 	}
-	void OrientationEventListener::disable()
+	void OrientationEventListener::disable() const
 	{
 		callMethod<void>(
 			"disable",
 			"()V"
 		);
 	}
-	void OrientationEventListener::enable()
+	void OrientationEventListener::enable() const
 	{
 		callMethod<void>(
 			"enable",
 			"()V"
 		);
 	}
-	void OrientationEventListener::onOrientationChanged(jint arg0)
+	void OrientationEventListener::onOrientationChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onOrientationChanged",

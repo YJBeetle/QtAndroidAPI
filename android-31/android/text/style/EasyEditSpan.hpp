@@ -32,9 +32,9 @@ namespace android::text::style
 		EasyEditSpan(android::os::Parcel arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getSpanTypeId();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getSpanTypeId() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

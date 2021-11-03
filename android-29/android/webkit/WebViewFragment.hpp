@@ -38,12 +38,12 @@ namespace android::webkit
 		WebViewFragment();
 		
 		// Methods
-		android::webkit::WebView getWebView();
-		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
-		void onDestroy();
-		void onDestroyView();
-		void onPause();
-		void onResume();
+		android::webkit::WebView getWebView() const;
+		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const;
+		void onDestroy() const;
+		void onDestroyView() const;
+		void onPause() const;
+		void onResume() const;
 	};
 } // namespace android::webkit
 

@@ -61,7 +61,7 @@ namespace java::net
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	jboolean NetworkInterface::equals(JObject arg0)
+	jboolean NetworkInterface::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -69,126 +69,126 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JString NetworkInterface::getDisplayName()
+	JString NetworkInterface::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray NetworkInterface::getHardwareAddress()
+	JByteArray NetworkInterface::getHardwareAddress() const
 	{
 		return callObjectMethod(
 			"getHardwareAddress",
 			"()[B"
 		);
 	}
-	jint NetworkInterface::getIndex()
+	jint NetworkInterface::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	JObject NetworkInterface::getInetAddresses()
+	JObject NetworkInterface::getInetAddresses() const
 	{
 		return callObjectMethod(
 			"getInetAddresses",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject NetworkInterface::getInterfaceAddresses()
+	JObject NetworkInterface::getInterfaceAddresses() const
 	{
 		return callObjectMethod(
 			"getInterfaceAddresses",
 			"()Ljava/util/List;"
 		);
 	}
-	jint NetworkInterface::getMTU()
+	jint NetworkInterface::getMTU() const
 	{
 		return callMethod<jint>(
 			"getMTU",
 			"()I"
 		);
 	}
-	JString NetworkInterface::getName()
+	JString NetworkInterface::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::net::NetworkInterface NetworkInterface::getParent()
+	java::net::NetworkInterface NetworkInterface::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
-	JObject NetworkInterface::getSubInterfaces()
+	JObject NetworkInterface::getSubInterfaces() const
 	{
 		return callObjectMethod(
 			"getSubInterfaces",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jint NetworkInterface::hashCode()
+	jint NetworkInterface::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject NetworkInterface::inetAddresses()
+	JObject NetworkInterface::inetAddresses() const
 	{
 		return callObjectMethod(
 			"inetAddresses",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	jboolean NetworkInterface::isLoopback()
+	jboolean NetworkInterface::isLoopback() const
 	{
 		return callMethod<jboolean>(
 			"isLoopback",
 			"()Z"
 		);
 	}
-	jboolean NetworkInterface::isPointToPoint()
+	jboolean NetworkInterface::isPointToPoint() const
 	{
 		return callMethod<jboolean>(
 			"isPointToPoint",
 			"()Z"
 		);
 	}
-	jboolean NetworkInterface::isUp()
+	jboolean NetworkInterface::isUp() const
 	{
 		return callMethod<jboolean>(
 			"isUp",
 			"()Z"
 		);
 	}
-	jboolean NetworkInterface::isVirtual()
+	jboolean NetworkInterface::isVirtual() const
 	{
 		return callMethod<jboolean>(
 			"isVirtual",
 			"()Z"
 		);
 	}
-	JObject NetworkInterface::subInterfaces()
+	JObject NetworkInterface::subInterfaces() const
 	{
 		return callObjectMethod(
 			"subInterfaces",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	jboolean NetworkInterface::supportsMulticast()
+	jboolean NetworkInterface::supportsMulticast() const
 	{
 		return callMethod<jboolean>(
 			"supportsMulticast",
 			"()Z"
 		);
 	}
-	JString NetworkInterface::toString()
+	JString NetworkInterface::toString() const
 	{
 		return callObjectMethod(
 			"toString",

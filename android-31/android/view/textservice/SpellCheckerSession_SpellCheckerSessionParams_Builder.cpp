@@ -18,14 +18,14 @@ namespace android::view::textservice
 		) {}
 	
 	// Methods
-	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams SpellCheckerSession_SpellCheckerSessionParams_Builder::build()
+	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams SpellCheckerSession_SpellCheckerSessionParams_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionParams;"
 		);
 	}
-	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -33,7 +33,7 @@ namespace android::view::textservice
 			arg0.object()
 		);
 	}
-	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setLocale(java::util::Locale arg0)
+	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setLocale(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -41,7 +41,7 @@ namespace android::view::textservice
 			arg0.object()
 		);
 	}
-	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setShouldReferToSpellCheckerLanguageSettings(jboolean arg0)
+	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setShouldReferToSpellCheckerLanguageSettings(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setShouldReferToSpellCheckerLanguageSettings",
@@ -49,7 +49,7 @@ namespace android::view::textservice
 			arg0
 		);
 	}
-	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setSupportedAttributes(jint arg0)
+	android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setSupportedAttributes(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSupportedAttributes",

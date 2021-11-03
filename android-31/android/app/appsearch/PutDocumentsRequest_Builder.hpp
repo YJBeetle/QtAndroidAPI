@@ -23,9 +23,9 @@ namespace android::app::appsearch
 		PutDocumentsRequest_Builder();
 		
 		// Methods
-		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JArray arg0);
-		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JObject arg0);
-		android::app::appsearch::PutDocumentsRequest build();
+		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JArray arg0) const;
+		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JObject arg0) const;
+		android::app::appsearch::PutDocumentsRequest build() const;
 	};
 } // namespace android::app::appsearch
 

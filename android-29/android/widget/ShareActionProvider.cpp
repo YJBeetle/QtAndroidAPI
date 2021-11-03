@@ -28,21 +28,21 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean ShareActionProvider::hasSubMenu()
+	jboolean ShareActionProvider::hasSubMenu() const
 	{
 		return callMethod<jboolean>(
 			"hasSubMenu",
 			"()Z"
 		);
 	}
-	android::view::View ShareActionProvider::onCreateActionView()
+	android::view::View ShareActionProvider::onCreateActionView() const
 	{
 		return callObjectMethod(
 			"onCreateActionView",
 			"()Landroid/view/View;"
 		);
 	}
-	void ShareActionProvider::onPrepareSubMenu(JObject arg0)
+	void ShareActionProvider::onPrepareSubMenu(JObject arg0) const
 	{
 		callMethod<void>(
 			"onPrepareSubMenu",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ShareActionProvider::setOnShareTargetSelectedListener(JObject arg0)
+	void ShareActionProvider::setOnShareTargetSelectedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnShareTargetSelectedListener",
@@ -58,7 +58,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ShareActionProvider::setShareHistoryFileName(JString arg0)
+	void ShareActionProvider::setShareHistoryFileName(JString arg0) const
 	{
 		callMethod<void>(
 			"setShareHistoryFileName",
@@ -66,7 +66,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void ShareActionProvider::setShareIntent(android::content::Intent arg0)
+	void ShareActionProvider::setShareIntent(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setShareIntent",

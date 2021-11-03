@@ -40,16 +40,16 @@ namespace android::view
 		Surface(android::graphics::SurfaceTexture arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean isValid();
-		android::graphics::Canvas lockCanvas(android::graphics::Rect arg0);
-		android::graphics::Canvas lockHardwareCanvas();
-		void readFromParcel(android::os::Parcel arg0);
-		void release();
-		JString toString();
-		void unlockCanvas(android::graphics::Canvas arg0);
-		void unlockCanvasAndPost(android::graphics::Canvas arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean isValid() const;
+		android::graphics::Canvas lockCanvas(android::graphics::Rect arg0) const;
+		android::graphics::Canvas lockHardwareCanvas() const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void release() const;
+		JString toString() const;
+		void unlockCanvas(android::graphics::Canvas arg0) const;
+		void unlockCanvasAndPost(android::graphics::Canvas arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

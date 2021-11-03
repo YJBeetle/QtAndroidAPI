@@ -30,13 +30,13 @@ namespace java::util::concurrent
 		FutureTask(JObject arg0, JObject arg1);
 		
 		// Methods
-		jboolean cancel(jboolean arg0);
-		JObject get();
-		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jboolean isCancelled();
-		jboolean isDone();
-		void run();
-		JString toString();
+		jboolean cancel(jboolean arg0) const;
+		JObject get() const;
+		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		jboolean isCancelled() const;
+		jboolean isDone() const;
+		void run() const;
+		JString toString() const;
 	};
 } // namespace java::util::concurrent
 

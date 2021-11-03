@@ -21,13 +21,13 @@ namespace android::hardware::camera2::params
 		InputConfiguration(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getFormat();
-		jint getHeight();
-		jint getWidth();
-		jint hashCode();
-		jboolean isMultiResolution();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getFormat() const;
+		jint getHeight() const;
+		jint getWidth() const;
+		jint hashCode() const;
+		jboolean isMultiResolution() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

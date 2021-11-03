@@ -182,7 +182,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::addPattern(JString arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2)
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::addPattern(JString arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2) const
 	{
 		return callObjectMethod(
 			"addPattern",
@@ -192,28 +192,28 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject DateTimePatternGenerator::clone()
+	JObject DateTimePatternGenerator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::cloneAsThawed()
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::cloneAsThawed() const
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/text/DateTimePatternGenerator;"
 		);
 	}
-	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::freeze()
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::freeze() const
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/DateTimePatternGenerator;"
 		);
 	}
-	JString DateTimePatternGenerator::getAppendItemFormat(jint arg0)
+	JString DateTimePatternGenerator::getAppendItemFormat(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAppendItemFormat",
@@ -221,7 +221,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString DateTimePatternGenerator::getAppendItemName(jint arg0)
+	JString DateTimePatternGenerator::getAppendItemName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAppendItemName",
@@ -229,7 +229,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString DateTimePatternGenerator::getBaseSkeleton(JString arg0)
+	JString DateTimePatternGenerator::getBaseSkeleton(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBaseSkeleton",
@@ -237,7 +237,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject DateTimePatternGenerator::getBaseSkeletons(JObject arg0)
+	JObject DateTimePatternGenerator::getBaseSkeletons(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getBaseSkeletons",
@@ -245,7 +245,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString DateTimePatternGenerator::getBestPattern(JString arg0)
+	JString DateTimePatternGenerator::getBestPattern(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBestPattern",
@@ -253,7 +253,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString DateTimePatternGenerator::getBestPattern(JString arg0, jint arg1)
+	JString DateTimePatternGenerator::getBestPattern(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getBestPattern",
@@ -262,21 +262,21 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JString DateTimePatternGenerator::getDateTimeFormat()
+	JString DateTimePatternGenerator::getDateTimeFormat() const
 	{
 		return callObjectMethod(
 			"getDateTimeFormat",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DateTimePatternGenerator::getDecimal()
+	JString DateTimePatternGenerator::getDecimal() const
 	{
 		return callObjectMethod(
 			"getDecimal",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DateTimePatternGenerator::getSkeleton(JString arg0)
+	JString DateTimePatternGenerator::getSkeleton(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSkeleton",
@@ -284,7 +284,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject DateTimePatternGenerator::getSkeletons(JObject arg0)
+	JObject DateTimePatternGenerator::getSkeletons(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getSkeletons",
@@ -292,14 +292,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean DateTimePatternGenerator::isFrozen()
+	jboolean DateTimePatternGenerator::isFrozen() const
 	{
 		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
-	JString DateTimePatternGenerator::replaceFieldTypes(JString arg0, JString arg1)
+	JString DateTimePatternGenerator::replaceFieldTypes(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"replaceFieldTypes",
@@ -308,7 +308,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	JString DateTimePatternGenerator::replaceFieldTypes(JString arg0, JString arg1, jint arg2)
+	JString DateTimePatternGenerator::replaceFieldTypes(JString arg0, JString arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"replaceFieldTypes",
@@ -318,7 +318,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void DateTimePatternGenerator::setAppendItemFormat(jint arg0, JString arg1)
+	void DateTimePatternGenerator::setAppendItemFormat(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setAppendItemFormat",
@@ -327,7 +327,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	void DateTimePatternGenerator::setAppendItemName(jint arg0, JString arg1)
+	void DateTimePatternGenerator::setAppendItemName(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setAppendItemName",
@@ -336,7 +336,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	void DateTimePatternGenerator::setDateTimeFormat(JString arg0)
+	void DateTimePatternGenerator::setDateTimeFormat(JString arg0) const
 	{
 		callMethod<void>(
 			"setDateTimeFormat",
@@ -344,7 +344,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DateTimePatternGenerator::setDecimal(JString arg0)
+	void DateTimePatternGenerator::setDecimal(JString arg0) const
 	{
 		callMethod<void>(
 			"setDecimal",

@@ -28,7 +28,7 @@ namespace android::app::slice
 		) {}
 	
 	// Methods
-	jboolean SliceSpec::canRender(android::app::slice::SliceSpec arg0)
+	jboolean SliceSpec::canRender(android::app::slice::SliceSpec arg0) const
 	{
 		return callMethod<jboolean>(
 			"canRender",
@@ -36,14 +36,14 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	jint SliceSpec::describeContents()
+	jint SliceSpec::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SliceSpec::equals(JObject arg0)
+	jboolean SliceSpec::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,28 +51,28 @@ namespace android::app::slice
 			arg0.object<jobject>()
 		);
 	}
-	jint SliceSpec::getRevision()
+	jint SliceSpec::getRevision() const
 	{
 		return callMethod<jint>(
 			"getRevision",
 			"()I"
 		);
 	}
-	JString SliceSpec::getType()
+	JString SliceSpec::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SliceSpec::toString()
+	JString SliceSpec::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SliceSpec::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SliceSpec::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

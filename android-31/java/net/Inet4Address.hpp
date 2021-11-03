@@ -20,20 +20,20 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getAddress();
-		JString getHostAddress();
-		jint hashCode();
-		jboolean isAnyLocalAddress();
-		jboolean isLinkLocalAddress();
-		jboolean isLoopbackAddress();
-		jboolean isMCGlobal();
-		jboolean isMCLinkLocal();
-		jboolean isMCNodeLocal();
-		jboolean isMCOrgLocal();
-		jboolean isMCSiteLocal();
-		jboolean isMulticastAddress();
-		jboolean isSiteLocalAddress();
+		jboolean equals(JObject arg0) const;
+		JByteArray getAddress() const;
+		JString getHostAddress() const;
+		jint hashCode() const;
+		jboolean isAnyLocalAddress() const;
+		jboolean isLinkLocalAddress() const;
+		jboolean isLoopbackAddress() const;
+		jboolean isMCGlobal() const;
+		jboolean isMCLinkLocal() const;
+		jboolean isMCNodeLocal() const;
+		jboolean isMCOrgLocal() const;
+		jboolean isMCSiteLocal() const;
+		jboolean isMulticastAddress() const;
+		jboolean isSiteLocalAddress() const;
 	};
 } // namespace java::net
 

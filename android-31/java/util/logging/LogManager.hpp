@@ -71,18 +71,18 @@ namespace java::util::logging
 		// Methods
 		static java::util::logging::LogManager getLogManager();
 		static JObject getLoggingMXBean();
-		java::util::logging::LogManager addConfigurationListener(JObject arg0);
-		jboolean addLogger(java::util::logging::Logger arg0);
-		void checkAccess();
-		java::util::logging::Logger getLogger(JString arg0);
-		JObject getLoggerNames();
-		JString getProperty(JString arg0);
-		void readConfiguration();
-		void readConfiguration(java::io::InputStream arg0);
-		void removeConfigurationListener(JObject arg0);
-		void reset();
-		void updateConfiguration(JObject arg0);
-		void updateConfiguration(java::io::InputStream arg0, JObject arg1);
+		java::util::logging::LogManager addConfigurationListener(JObject arg0) const;
+		jboolean addLogger(java::util::logging::Logger arg0) const;
+		void checkAccess() const;
+		java::util::logging::Logger getLogger(JString arg0) const;
+		JObject getLoggerNames() const;
+		JString getProperty(JString arg0) const;
+		void readConfiguration() const;
+		void readConfiguration(java::io::InputStream arg0) const;
+		void removeConfigurationListener(JObject arg0) const;
+		void reset() const;
+		void updateConfiguration(JObject arg0) const;
+		void updateConfiguration(java::io::InputStream arg0, JObject arg1) const;
 	};
 } // namespace java::util::logging
 

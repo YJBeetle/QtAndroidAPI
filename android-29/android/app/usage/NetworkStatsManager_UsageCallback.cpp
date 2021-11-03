@@ -16,7 +16,7 @@ namespace android::app::usage
 		) {}
 	
 	// Methods
-	void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, JString arg1)
+	void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onThresholdReached",

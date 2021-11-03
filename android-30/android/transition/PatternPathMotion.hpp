@@ -28,9 +28,9 @@ namespace android::transition
 		PatternPathMotion(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		android::graphics::Path getPatternPath();
-		void setPatternPath(android::graphics::Path arg0);
+		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		android::graphics::Path getPatternPath() const;
+		void setPatternPath(android::graphics::Path arg0) const;
 	};
 } // namespace android::transition
 

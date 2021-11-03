@@ -18,7 +18,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2)
+	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onReceiveUssdResponse",
@@ -28,7 +28,7 @@ namespace android::telephony
 			arg2.object<jstring>()
 		);
 	}
-	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2)
+	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onReceiveUssdResponseFailed",

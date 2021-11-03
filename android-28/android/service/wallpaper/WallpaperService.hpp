@@ -38,10 +38,10 @@ namespace android::service::wallpaper
 		WallpaperService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onCreate();
-		android::service::wallpaper::WallpaperService_Engine onCreateEngine();
-		void onDestroy();
+		JObject onBind(android::content::Intent arg0) const;
+		void onCreate() const;
+		android::service::wallpaper::WallpaperService_Engine onCreateEngine() const;
+		void onDestroy() const;
 	};
 } // namespace android::service::wallpaper
 

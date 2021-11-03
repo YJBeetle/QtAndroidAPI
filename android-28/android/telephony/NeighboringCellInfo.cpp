@@ -60,49 +60,49 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	jint NeighboringCellInfo::describeContents()
+	jint NeighboringCellInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint NeighboringCellInfo::getCid()
+	jint NeighboringCellInfo::getCid() const
 	{
 		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
-	jint NeighboringCellInfo::getLac()
+	jint NeighboringCellInfo::getLac() const
 	{
 		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
-	jint NeighboringCellInfo::getNetworkType()
+	jint NeighboringCellInfo::getNetworkType() const
 	{
 		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
-	jint NeighboringCellInfo::getPsc()
+	jint NeighboringCellInfo::getPsc() const
 	{
 		return callMethod<jint>(
 			"getPsc",
 			"()I"
 		);
 	}
-	jint NeighboringCellInfo::getRssi()
+	jint NeighboringCellInfo::getRssi() const
 	{
 		return callMethod<jint>(
 			"getRssi",
 			"()I"
 		);
 	}
-	void NeighboringCellInfo::setCid(jint arg0)
+	void NeighboringCellInfo::setCid(jint arg0) const
 	{
 		callMethod<void>(
 			"setCid",
@@ -110,7 +110,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void NeighboringCellInfo::setRssi(jint arg0)
+	void NeighboringCellInfo::setRssi(jint arg0) const
 	{
 		callMethod<void>(
 			"setRssi",
@@ -118,14 +118,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString NeighboringCellInfo::toString()
+	JString NeighboringCellInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NeighboringCellInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NeighboringCellInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -31,7 +31,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void RadioGroup::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void RadioGroup::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -41,7 +41,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void RadioGroup::autofill(android::view::autofill::AutofillValue arg0)
+	void RadioGroup::autofill(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -49,7 +49,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void RadioGroup::check(jint arg0)
+	void RadioGroup::check(jint arg0) const
 	{
 		callMethod<void>(
 			"check",
@@ -57,14 +57,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RadioGroup::clearCheck()
+	void RadioGroup::clearCheck() const
 	{
 		callMethod<void>(
 			"clearCheck",
 			"()V"
 		);
 	}
-	android::widget::RadioGroup_LayoutParams RadioGroup::generateLayoutParams(JObject arg0)
+	android::widget::RadioGroup_LayoutParams RadioGroup::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -72,35 +72,35 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString RadioGroup::getAccessibilityClassName()
+	JString RadioGroup::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint RadioGroup::getAutofillType()
+	jint RadioGroup::getAutofillType() const
 	{
 		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
-	android::view::autofill::AutofillValue RadioGroup::getAutofillValue()
+	android::view::autofill::AutofillValue RadioGroup::getAutofillValue() const
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	jint RadioGroup::getCheckedRadioButtonId()
+	jint RadioGroup::getCheckedRadioButtonId() const
 	{
 		return callMethod<jint>(
 			"getCheckedRadioButtonId",
 			"()I"
 		);
 	}
-	void RadioGroup::onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0)
+	void RadioGroup::onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityNodeInfo",
@@ -108,7 +108,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void RadioGroup::setOnCheckedChangeListener(JObject arg0)
+	void RadioGroup::setOnCheckedChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCheckedChangeListener",
@@ -116,7 +116,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void RadioGroup::setOnHierarchyChangeListener(JObject arg0)
+	void RadioGroup::setOnHierarchyChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnHierarchyChangeListener",

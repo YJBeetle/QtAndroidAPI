@@ -16,15 +16,15 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint getAxis();
-		jfloat getFlat();
-		jfloat getFuzz();
-		jfloat getMax();
-		jfloat getMin();
-		jfloat getRange();
-		jfloat getResolution();
-		jint getSource();
-		jboolean isFromSource(jint arg0);
+		jint getAxis() const;
+		jfloat getFlat() const;
+		jfloat getFuzz() const;
+		jfloat getMax() const;
+		jfloat getMin() const;
+		jfloat getRange() const;
+		jfloat getResolution() const;
+		jint getSource() const;
+		jboolean isFromSource(jint arg0) const;
 	};
 } // namespace android::view
 

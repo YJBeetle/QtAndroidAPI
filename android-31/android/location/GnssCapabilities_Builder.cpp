@@ -22,14 +22,14 @@ namespace android::location
 		) {}
 	
 	// Methods
-	android::location::GnssCapabilities GnssCapabilities_Builder::build()
+	android::location::GnssCapabilities GnssCapabilities_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/location/GnssCapabilities;"
 		);
 	}
-	android::location::GnssCapabilities_Builder GnssCapabilities_Builder::setHasAntennaInfo(jboolean arg0)
+	android::location::GnssCapabilities_Builder GnssCapabilities_Builder::setHasAntennaInfo(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasAntennaInfo",
@@ -37,7 +37,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::GnssCapabilities_Builder GnssCapabilities_Builder::setHasMeasurements(jboolean arg0)
+	android::location::GnssCapabilities_Builder GnssCapabilities_Builder::setHasMeasurements(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasMeasurements",
@@ -45,7 +45,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::GnssCapabilities_Builder GnssCapabilities_Builder::setHasNavigationMessages(jboolean arg0)
+	android::location::GnssCapabilities_Builder GnssCapabilities_Builder::setHasNavigationMessages(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasNavigationMessages",
