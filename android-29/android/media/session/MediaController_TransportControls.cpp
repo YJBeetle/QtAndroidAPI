@@ -10,7 +10,7 @@ namespace android::media::session
 	// Fields
 	
 	// QJniObject forward
-	MediaController_TransportControls::MediaController_TransportControls(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaController_TransportControls::MediaController_TransportControls(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

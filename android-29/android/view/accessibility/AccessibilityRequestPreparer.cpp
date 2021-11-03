@@ -15,11 +15,11 @@ namespace android::view::accessibility
 	}
 	
 	// QJniObject forward
-	AccessibilityRequestPreparer::AccessibilityRequestPreparer(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityRequestPreparer::AccessibilityRequestPreparer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityRequestPreparer::AccessibilityRequestPreparer(android::view::View arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityRequestPreparer",
 			"(Landroid/view/View;I)V",
 			arg0.object(),

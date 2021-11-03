@@ -10,7 +10,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaController2::MediaController2(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaController2::MediaController2(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

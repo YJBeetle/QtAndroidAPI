@@ -5,7 +5,7 @@
 namespace android::media::session
 {
 	// Fields
-	__JniBaseClass MediaSession_QueueItem::CREATOR()
+	JObject MediaSession_QueueItem::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.session.MediaSession$QueueItem",
@@ -22,11 +22,11 @@ namespace android::media::session
 	}
 	
 	// QJniObject forward
-	MediaSession_QueueItem::MediaSession_QueueItem(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession_QueueItem::MediaSession_QueueItem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaSession_QueueItem::MediaSession_QueueItem(android::media::MediaDescription arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.session.MediaSession$QueueItem",
 			"(Landroid/media/MediaDescription;J)V",
 			arg0.object(),

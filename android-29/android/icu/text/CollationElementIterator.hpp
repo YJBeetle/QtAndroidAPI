@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -13,7 +13,7 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class CollationElementIterator : public __JniBaseClass
+	class CollationElementIterator : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::icu::text
 		static jint NULLORDER();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CollationElementIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CollationElementIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CollationElementIterator(QJniObject obj);
 		
 		// Constructors
@@ -40,7 +40,7 @@ namespace android::icu::text
 		void setOffset(jint arg0);
 		void setText(android::icu::text::UCharacterIterator arg0);
 		void setText(jstring arg0);
-		void setText(__JniBaseClass arg0);
+		void setText(JObject arg0);
 	};
 } // namespace android::icu::text
 

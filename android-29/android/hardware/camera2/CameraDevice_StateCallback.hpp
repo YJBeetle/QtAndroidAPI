@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::camera2
 {
@@ -9,7 +9,7 @@ namespace android::hardware::camera2
 
 namespace android::hardware::camera2
 {
-	class CameraDevice_StateCallback : public __JniBaseClass
+	class CameraDevice_StateCallback : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::hardware::camera2
 		static jint ERROR_MAX_CAMERAS_IN_USE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CameraDevice_StateCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CameraDevice_StateCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CameraDevice_StateCallback(QJniObject obj);
 		
 		// Constructors

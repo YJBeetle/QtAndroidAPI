@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::view::accessibility
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace android::view::accessibility
 {
-	class CaptioningManager_CaptioningChangeListener : public __JniBaseClass
+	class CaptioningManager_CaptioningChangeListener : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CaptioningManager_CaptioningChangeListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CaptioningManager_CaptioningChangeListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CaptioningManager_CaptioningChangeListener(QJniObject obj);
 		
 		// Constructors

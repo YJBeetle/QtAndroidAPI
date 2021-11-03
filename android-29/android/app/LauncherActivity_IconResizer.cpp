@@ -7,11 +7,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	LauncherActivity_IconResizer::LauncherActivity_IconResizer(QJniObject obj) : __JniBaseClass(obj) {}
+	LauncherActivity_IconResizer::LauncherActivity_IconResizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LauncherActivity_IconResizer::LauncherActivity_IconResizer(android::app::LauncherActivity arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.LauncherActivity$IconResizer",
 			"(Landroid/app/LauncherActivity;)V",
 			arg0.object()

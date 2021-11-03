@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./GLES20.hpp"
 #include "./GLES30.hpp"
 #include "./GLES31.hpp"
@@ -249,7 +249,7 @@ namespace android::opengl
 		static void glBlendFunci(jint arg0, jint arg1, jint arg2);
 		static void glColorMaski(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4);
 		static void glCopyImageSubData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14);
-		static void glDebugMessageCallback(__JniBaseClass arg0);
+		static void glDebugMessageCallback(JObject arg0);
 		static void glDebugMessageControl(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5);
 		static void glDebugMessageControl(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6);
 		static void glDebugMessageInsert(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5);

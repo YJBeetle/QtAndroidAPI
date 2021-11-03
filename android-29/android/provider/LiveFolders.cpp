@@ -107,7 +107,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	LiveFolders::LiveFolders(QJniObject obj) : __JniBaseClass(obj) {}
+	LiveFolders::LiveFolders(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics::drawable
 {
@@ -13,17 +13,17 @@ namespace android::os
 
 namespace android::service::quicksettings
 {
-	class Tile : public __JniBaseClass
+	class Tile : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATE_ACTIVE();
 		static jint STATE_INACTIVE();
 		static jint STATE_UNAVAILABLE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Tile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Tile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Tile(QJniObject obj);
 		
 		// Constructors

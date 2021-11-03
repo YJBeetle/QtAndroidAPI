@@ -32,16 +32,16 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	UnicodeSetIterator::UnicodeSetIterator(QJniObject obj) : __JniBaseClass(obj) {}
+	UnicodeSetIterator::UnicodeSetIterator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UnicodeSetIterator::UnicodeSetIterator()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.UnicodeSetIterator",
 			"()V"
 		) {}
 	UnicodeSetIterator::UnicodeSetIterator(android::icu::text::UnicodeSet arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.UnicodeSetIterator",
 			"(Landroid/icu/text/UnicodeSet;)V",
 			arg0.object()

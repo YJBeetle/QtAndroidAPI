@@ -43,7 +43,7 @@ namespace android::graphics
 			arg2,
 			arg3
 		) {}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, JObject arg2, JObject arg3)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[FLjava/util/function/DoubleUnaryOperator;Ljava/util/function/DoubleUnaryOperator;)V",
@@ -52,7 +52,7 @@ namespace android::graphics
 			arg2.object(),
 			arg3.object()
 		) {}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, __JniBaseClass arg3, __JniBaseClass arg4, jfloat arg5, jfloat arg6)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, JObject arg3, JObject arg4, jfloat arg5, jfloat arg6)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[F[FLjava/util/function/DoubleUnaryOperator;Ljava/util/function/DoubleUnaryOperator;FF)V",
@@ -100,7 +100,7 @@ namespace android::graphics
 			arg0
 		).object<jfloatArray>();
 	}
-	__JniBaseClass ColorSpace_Rgb::getEotf()
+	JObject ColorSpace_Rgb::getEotf()
 	{
 		return callObjectMethod(
 			"getEotf",
@@ -138,7 +138,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	__JniBaseClass ColorSpace_Rgb::getOetf()
+	JObject ColorSpace_Rgb::getOetf()
 	{
 		return callObjectMethod(
 			"getOetf",

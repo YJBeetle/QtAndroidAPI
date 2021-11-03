@@ -29,22 +29,22 @@ namespace android::text::style
 	}
 	
 	// QJniObject forward
-	EasyEditSpan::EasyEditSpan(QJniObject obj) : __JniBaseClass(obj) {}
+	EasyEditSpan::EasyEditSpan(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EasyEditSpan::EasyEditSpan()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.EasyEditSpan",
 			"()V"
 		) {}
 	EasyEditSpan::EasyEditSpan(android::app::PendingIntent arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.EasyEditSpan",
 			"(Landroid/app/PendingIntent;)V",
 			arg0.object()
 		) {}
 	EasyEditSpan::EasyEditSpan(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.EasyEditSpan",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()

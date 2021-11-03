@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/ContentProvider.hpp"
 
 namespace android::content
@@ -90,17 +90,17 @@ namespace android::provider
 		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2);
 		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
 		android::content::res::AssetFileDescriptor openTypedDocument(jstring arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		__JniBaseClass query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
-		__JniBaseClass queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2);
-		__JniBaseClass queryChildDocuments(jstring arg0, jarray arg1, jstring arg2);
-		__JniBaseClass queryDocument(jstring arg0, jarray arg1);
-		__JniBaseClass queryRecentDocuments(jstring arg0, jarray arg1);
-		__JniBaseClass queryRecentDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		__JniBaseClass queryRoots(jarray arg0);
-		__JniBaseClass querySearchDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2);
-		__JniBaseClass querySearchDocuments(jstring arg0, jstring arg1, jarray arg2);
+		JObject query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
+		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
+		JObject queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2);
+		JObject queryChildDocuments(jstring arg0, jarray arg1, jstring arg2);
+		JObject queryDocument(jstring arg0, jarray arg1);
+		JObject queryRecentDocuments(jstring arg0, jarray arg1);
+		JObject queryRecentDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject queryRoots(jarray arg0);
+		JObject querySearchDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2);
+		JObject querySearchDocuments(jstring arg0, jstring arg1, jarray arg2);
 		void removeDocument(jstring arg0, jstring arg1);
 		jstring renameDocument(jstring arg0, jstring arg1);
 		void revokeDocumentPermission(jstring arg0);

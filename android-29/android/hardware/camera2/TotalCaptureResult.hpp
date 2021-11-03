@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CameraMetadata.hpp"
 #include "./CaptureResult.hpp"
 
@@ -19,8 +19,8 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getPartialResults();
-		__JniBaseClass getPhysicalCameraResults();
+		JObject getPartialResults();
+		JObject getPhysicalCameraResults();
 	};
 } // namespace android::hardware::camera2
 

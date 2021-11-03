@@ -197,24 +197,24 @@ namespace android::icu::util
 	}
 	
 	// QJniObject forward
-	ULocale::ULocale(QJniObject obj) : __JniBaseClass(obj) {}
+	ULocale::ULocale(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ULocale::ULocale(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.ULocale",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	ULocale::ULocale(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.ULocale",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	ULocale::ULocale(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.ULocale",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -597,7 +597,7 @@ namespace android::icu::util
 			arg1
 		).object<jstring>();
 	}
-	__JniBaseClass ULocale::getKeywords(jstring arg0)
+	JObject ULocale::getKeywords(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -882,7 +882,7 @@ namespace android::icu::util
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass ULocale::getExtensionKeys()
+	JObject ULocale::getExtensionKeys()
 	{
 		return callObjectMethod(
 			"getExtensionKeys",
@@ -918,7 +918,7 @@ namespace android::icu::util
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass ULocale::getKeywords()
+	JObject ULocale::getKeywords()
 	{
 		return callObjectMethod(
 			"getKeywords",
@@ -953,14 +953,14 @@ namespace android::icu::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass ULocale::getUnicodeLocaleAttributes()
+	JObject ULocale::getUnicodeLocaleAttributes()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass ULocale::getUnicodeLocaleKeys()
+	JObject ULocale::getUnicodeLocaleKeys()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleKeys",

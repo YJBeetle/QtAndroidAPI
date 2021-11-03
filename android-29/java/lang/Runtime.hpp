@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,20 +17,20 @@ namespace java::lang
 
 namespace java::lang
 {
-	class Runtime : public __JniBaseClass
+	class Runtime : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Runtime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Runtime(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Runtime(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static java::lang::Runtime getRuntime();
-		static __JniBaseClass version();
+		static JObject version();
 		void addShutdownHook(java::lang::Thread arg0);
 		jint availableProcessors();
 		java::lang::Process exec(jarray arg0);

@@ -15,17 +15,17 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore_Video::MediaStore_Video(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Video::MediaStore_Video(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Video::MediaStore_Video()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Video",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass MediaStore_Video::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
+	JObject MediaStore_Video::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Video",

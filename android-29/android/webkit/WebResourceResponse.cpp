@@ -6,19 +6,19 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	WebResourceResponse::WebResourceResponse(QJniObject obj) : __JniBaseClass(obj) {}
+	WebResourceResponse::WebResourceResponse(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebResourceResponse::WebResourceResponse(jstring arg0, jstring arg1, java::io::InputStream arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebResourceResponse",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;)V",
 			arg0,
 			arg1,
 			arg2.object()
 		) {}
-	WebResourceResponse::WebResourceResponse(jstring arg0, jstring arg1, jint arg2, jstring arg3, __JniBaseClass arg4, java::io::InputStream arg5)
-		: __JniBaseClass(
+	WebResourceResponse::WebResourceResponse(jstring arg0, jstring arg1, jint arg2, jstring arg3, JObject arg4, java::io::InputStream arg5)
+		: JObject(
 			"android.webkit.WebResourceResponse",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/Map;Ljava/io/InputStream;)V",
 			arg0,
@@ -58,7 +58,7 @@ namespace android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass WebResourceResponse::getResponseHeaders()
+	JObject WebResourceResponse::getResponseHeaders()
 	{
 		return callObjectMethod(
 			"getResponseHeaders",
@@ -96,7 +96,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebResourceResponse::setResponseHeaders(__JniBaseClass arg0)
+	void WebResourceResponse::setResponseHeaders(JObject arg0)
 	{
 		callMethod<void>(
 			"setResponseHeaders",

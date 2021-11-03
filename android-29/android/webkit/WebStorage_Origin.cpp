@@ -5,7 +5,7 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	WebStorage_Origin::WebStorage_Origin(QJniObject obj) : __JniBaseClass(obj) {}
+	WebStorage_Origin::WebStorage_Origin(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

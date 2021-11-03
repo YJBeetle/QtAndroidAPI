@@ -10,7 +10,7 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	AccessController::AccessController(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessController::AccessController(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -24,7 +24,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jobject AccessController::doPrivileged(__JniBaseClass arg0)
+	jobject AccessController::doPrivileged(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
@@ -33,7 +33,7 @@ namespace java::security
 			arg0.object()
 		).object<jobject>();
 	}
-	jobject AccessController::doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1)
+	jobject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
@@ -43,7 +43,7 @@ namespace java::security
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject AccessController::doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2)
+	jobject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1, jarray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
@@ -54,7 +54,7 @@ namespace java::security
 			arg2
 		).object<jobject>();
 	}
-	jobject AccessController::doPrivilegedWithCombiner(__JniBaseClass arg0)
+	jobject AccessController::doPrivilegedWithCombiner(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
@@ -63,7 +63,7 @@ namespace java::security
 			arg0.object()
 		).object<jobject>();
 	}
-	jobject AccessController::doPrivilegedWithCombiner(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2)
+	jobject AccessController::doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, jarray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",

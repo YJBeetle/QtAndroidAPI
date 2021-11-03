@@ -8,17 +8,17 @@ namespace android::text::style
 	// Fields
 	
 	// QJniObject forward
-	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(QJniObject obj) : __JniBaseClass(obj) {}
+	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.LineBackgroundSpan$Standard",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.LineBackgroundSpan$Standard",
 			"(I)V",
 			arg0

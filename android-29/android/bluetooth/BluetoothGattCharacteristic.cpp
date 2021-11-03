@@ -9,7 +9,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	__JniBaseClass BluetoothGattCharacteristic::CREATOR()
+	JObject BluetoothGattCharacteristic::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattCharacteristic",
@@ -208,11 +208,11 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothGattCharacteristic::BluetoothGattCharacteristic(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothGattCharacteristic::BluetoothGattCharacteristic(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BluetoothGattCharacteristic::BluetoothGattCharacteristic(java::util::UUID arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"(Ljava/util/UUID;II)V",
 			arg0.object(),
@@ -244,7 +244,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothGattCharacteristic::getDescriptors()
+	JObject BluetoothGattCharacteristic::getDescriptors()
 	{
 		return callObjectMethod(
 			"getDescriptors",

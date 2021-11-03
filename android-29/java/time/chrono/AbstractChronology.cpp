@@ -10,7 +10,7 @@ namespace java::time::chrono
 	// Fields
 	
 	// QJniObject forward
-	AbstractChronology::AbstractChronology(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractChronology::AbstractChronology(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -23,7 +23,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	jint AbstractChronology::compareTo(__JniBaseClass arg0)
+	jint AbstractChronology::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -46,7 +46,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	__JniBaseClass AbstractChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	JObject AbstractChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",

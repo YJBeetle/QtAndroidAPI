@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -42,7 +42,7 @@ namespace android::net
 		static android::content::Intent prepare(android::content::Context arg0);
 		jboolean isAlwaysOn();
 		jboolean isLockdownEnabled();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onRevoke();
 		jboolean protect(jint arg0);
 		jboolean protect(java::net::DatagramSocket arg0);

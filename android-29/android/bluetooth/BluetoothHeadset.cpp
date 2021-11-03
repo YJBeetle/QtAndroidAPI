@@ -127,12 +127,12 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothHeadset::BluetoothHeadset(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothHeadset::BluetoothHeadset(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass BluetoothHeadset::getConnectedDevices()
+	JObject BluetoothHeadset::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -147,7 +147,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothHeadset::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothHeadset::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

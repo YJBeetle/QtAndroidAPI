@@ -6,11 +6,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	CookieHandler::CookieHandler(QJniObject obj) : __JniBaseClass(obj) {}
+	CookieHandler::CookieHandler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CookieHandler::CookieHandler()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.CookieHandler",
 			"()V"
 		) {}
@@ -33,7 +33,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	__JniBaseClass CookieHandler::get(java::net::URI arg0, __JniBaseClass arg1)
+	JObject CookieHandler::get(java::net::URI arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -42,7 +42,7 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	void CookieHandler::put(java::net::URI arg0, __JniBaseClass arg1)
+	void CookieHandler::put(java::net::URI arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"put",

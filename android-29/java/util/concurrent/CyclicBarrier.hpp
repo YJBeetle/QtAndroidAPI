@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util::concurrent
 {
@@ -13,18 +13,18 @@ namespace java::util::concurrent::locks
 
 namespace java::util::concurrent
 {
-	class CyclicBarrier : public __JniBaseClass
+	class CyclicBarrier : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CyclicBarrier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CyclicBarrier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CyclicBarrier(QJniObject obj);
 		
 		// Constructors
 		CyclicBarrier(jint arg0);
-		CyclicBarrier(jint arg0, __JniBaseClass arg1);
+		CyclicBarrier(jint arg0, JObject arg1);
 		
 		// Methods
 		jint await();

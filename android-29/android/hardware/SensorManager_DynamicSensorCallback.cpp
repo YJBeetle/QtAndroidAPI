@@ -6,11 +6,11 @@ namespace android::hardware
 	// Fields
 	
 	// QJniObject forward
-	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.SensorManager$DynamicSensorCallback",
 			"()V"
 		) {}

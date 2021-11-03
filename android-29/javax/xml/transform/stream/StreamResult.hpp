@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,14 +17,14 @@ namespace java::io
 
 namespace javax::xml::transform::stream
 {
-	class StreamResult : public __JniBaseClass
+	class StreamResult : public JObject
 	{
 	public:
 		// Fields
 		static jstring FEATURE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StreamResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StreamResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StreamResult(QJniObject obj);
 		
 		// Constructors

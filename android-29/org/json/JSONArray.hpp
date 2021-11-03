@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace org::json
 {
@@ -13,20 +13,20 @@ namespace org::json
 
 namespace org::json
 {
-	class JSONArray : public __JniBaseClass
+	class JSONArray : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit JSONArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit JSONArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		JSONArray(QJniObject obj);
 		
 		// Constructors
 		JSONArray();
 		JSONArray(jobject arg0);
 		JSONArray(jstring arg0);
-		JSONArray(__JniBaseClass arg0);
+		JSONArray(JObject arg0);
 		JSONArray(org::json::JSONTokener arg0);
 		
 		// Methods

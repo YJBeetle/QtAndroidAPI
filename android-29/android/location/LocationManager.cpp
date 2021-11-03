@@ -96,12 +96,12 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	LocationManager::LocationManager(QJniObject obj) : __JniBaseClass(obj) {}
+	LocationManager::LocationManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jboolean LocationManager::addGpsStatusListener(__JniBaseClass arg0)
+	jboolean LocationManager::addGpsStatusListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addGpsStatusListener",
@@ -109,7 +109,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::addNmeaListener(__JniBaseClass arg0)
+	jboolean LocationManager::addNmeaListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addNmeaListener",
@@ -117,7 +117,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::addNmeaListener(__JniBaseClass arg0, android::os::Handler arg1)
+	jboolean LocationManager::addNmeaListener(JObject arg0, android::os::Handler arg1)
 	{
 		return callMethod<jboolean>(
 			"addNmeaListener",
@@ -179,7 +179,7 @@ namespace android::location
 			arg0
 		);
 	}
-	__JniBaseClass LocationManager::getAllProviders()
+	JObject LocationManager::getAllProviders()
 	{
 		return callObjectMethod(
 			"getAllProviders",
@@ -233,7 +233,7 @@ namespace android::location
 			arg0
 		);
 	}
-	__JniBaseClass LocationManager::getProviders(jboolean arg0)
+	JObject LocationManager::getProviders(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -241,7 +241,7 @@ namespace android::location
 			arg0
 		);
 	}
-	__JniBaseClass LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1)
+	JObject LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -316,7 +316,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::removeGpsStatusListener(__JniBaseClass arg0)
+	void LocationManager::removeGpsStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeGpsStatusListener",
@@ -324,7 +324,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeNmeaListener(__JniBaseClass arg0)
+	void LocationManager::removeNmeaListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeNmeaListener",
@@ -356,7 +356,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeUpdates(__JniBaseClass arg0)
+	void LocationManager::removeUpdates(JObject arg0)
 	{
 		callMethod<void>(
 			"removeUpdates",
@@ -375,7 +375,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3)
+	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -397,7 +397,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3, android::os::Looper arg4)
+	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3, android::os::Looper arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -409,7 +409,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, __JniBaseClass arg3, android::os::Looper arg4)
+	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, JObject arg3, android::os::Looper arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -439,7 +439,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, __JniBaseClass arg1, android::os::Looper arg2)
+	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, JObject arg1, android::os::Looper arg2)
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
@@ -449,7 +449,7 @@ namespace android::location
 			arg2.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(jstring arg0, __JniBaseClass arg1, android::os::Looper arg2)
+	void LocationManager::requestSingleUpdate(jstring arg0, JObject arg1, android::os::Looper arg2)
 	{
 		callMethod<void>(
 			"requestSingleUpdate",

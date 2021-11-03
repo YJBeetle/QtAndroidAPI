@@ -4,7 +4,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass ConversationActions::CREATOR()
+	JObject ConversationActions::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions",
@@ -14,11 +14,11 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	ConversationActions::ConversationActions(QJniObject obj) : __JniBaseClass(obj) {}
+	ConversationActions::ConversationActions(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ConversationActions::ConversationActions(__JniBaseClass arg0, jstring arg1)
-		: __JniBaseClass(
+	ConversationActions::ConversationActions(JObject arg0, jstring arg1)
+		: JObject(
 			"android.view.textclassifier.ConversationActions",
 			"(Ljava/util/List;Ljava/lang/String;)V",
 			arg0.object(),
@@ -33,7 +33,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	__JniBaseClass ConversationActions::getConversationActions()
+	JObject ConversationActions::getConversationActions()
 	{
 		return callObjectMethod(
 			"getConversationActions",

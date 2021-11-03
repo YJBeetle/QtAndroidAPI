@@ -7,17 +7,17 @@ namespace android::graphics::text
 	// Fields
 	
 	// QJniObject forward
-	MeasuredText_Builder::MeasuredText_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	MeasuredText_Builder::MeasuredText_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MeasuredText_Builder::MeasuredText_Builder(jcharArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.text.MeasuredText$Builder",
 			"([C)V",
 			arg0
 		) {}
 	MeasuredText_Builder::MeasuredText_Builder(android::graphics::text::MeasuredText arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.text.MeasuredText$Builder",
 			"(Landroid/graphics/text/MeasuredText;)V",
 			arg0.object()

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
 namespace java::lang::ref
@@ -22,24 +22,24 @@ namespace java::util
 		// Constructors
 		WeakHashMap();
 		WeakHashMap(jint arg0);
-		WeakHashMap(__JniBaseClass arg0);
+		WeakHashMap(JObject arg0);
 		WeakHashMap(jint arg0, jfloat arg1);
 		
 		// Methods
 		void clear();
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass entrySet();
-		void forEach(__JniBaseClass arg0);
+		JObject entrySet();
+		void forEach(JObject arg0);
 		jobject get(jobject arg0);
 		jboolean isEmpty();
-		__JniBaseClass keySet();
+		JObject keySet();
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jobject remove(jobject arg0);
-		void replaceAll(__JniBaseClass arg0);
+		void replaceAll(JObject arg0);
 		jint size();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util
 

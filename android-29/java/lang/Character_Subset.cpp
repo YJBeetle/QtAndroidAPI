@@ -5,7 +5,7 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	Character_Subset::Character_Subset(QJniObject obj) : __JniBaseClass(obj) {}
+	Character_Subset::Character_Subset(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

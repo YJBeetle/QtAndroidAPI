@@ -257,11 +257,11 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	SecurityLog::SecurityLog(QJniObject obj) : __JniBaseClass(obj) {}
+	SecurityLog::SecurityLog(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SecurityLog::SecurityLog()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.admin.SecurityLog",
 			"()V"
 		) {}

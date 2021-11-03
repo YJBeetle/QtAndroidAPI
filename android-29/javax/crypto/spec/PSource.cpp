@@ -5,7 +5,7 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QJniObject forward
-	PSource::PSource(QJniObject obj) : __JniBaseClass(obj) {}
+	PSource::PSource(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

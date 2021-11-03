@@ -5,11 +5,11 @@ namespace android::media::audiofx
 	// Fields
 	
 	// QJniObject forward
-	DynamicsProcessing_Stage::DynamicsProcessing_Stage(QJniObject obj) : __JniBaseClass(obj) {}
+	DynamicsProcessing_Stage::DynamicsProcessing_Stage(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DynamicsProcessing_Stage::DynamicsProcessing_Stage(jboolean arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.DynamicsProcessing$Stage",
 			"(ZZ)V",
 			arg0,

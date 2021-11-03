@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::system
 {
-	class StructUtsname : public __JniBaseClass
+	class StructUtsname : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::system
 		jstring version();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StructUtsname(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StructUtsname(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StructUtsname(QJniObject obj);
 		
 		// Constructors

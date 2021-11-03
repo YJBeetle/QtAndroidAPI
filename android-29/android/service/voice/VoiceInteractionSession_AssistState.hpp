@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::assist
 {
@@ -21,13 +21,13 @@ namespace android::service::voice
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_AssistState : public __JniBaseClass
+	class VoiceInteractionSession_AssistState : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_AssistState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VoiceInteractionSession_AssistState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractionSession_AssistState(QJniObject obj);
 		
 		// Constructors

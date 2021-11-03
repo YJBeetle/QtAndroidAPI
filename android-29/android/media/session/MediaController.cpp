@@ -17,11 +17,11 @@ namespace android::media::session
 	// Fields
 	
 	// QJniObject forward
-	MediaController::MediaController(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaController::MediaController(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaController::MediaController(android::content::Context arg0, android::media::session::MediaSession_Token arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.session.MediaController",
 			"(Landroid/content/Context;Landroid/media/session/MediaSession$Token;)V",
 			arg0.object(),
@@ -88,7 +88,7 @@ namespace android::media::session
 			"()Landroid/media/session/PlaybackState;"
 		);
 	}
-	__JniBaseClass MediaController::getQueue()
+	JObject MediaController::getQueue()
 	{
 		return callObjectMethod(
 			"getQueue",

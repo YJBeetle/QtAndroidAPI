@@ -4,7 +4,7 @@
 namespace android::bluetooth::le
 {
 	// Fields
-	__JniBaseClass PeriodicAdvertisingParameters::CREATOR()
+	JObject PeriodicAdvertisingParameters::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.le.PeriodicAdvertisingParameters",
@@ -14,7 +14,7 @@ namespace android::bluetooth::le
 	}
 	
 	// QJniObject forward
-	PeriodicAdvertisingParameters::PeriodicAdvertisingParameters(QJniObject obj) : __JniBaseClass(obj) {}
+	PeriodicAdvertisingParameters::PeriodicAdvertisingParameters(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

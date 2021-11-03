@@ -5,11 +5,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.KeyguardManager$KeyguardDismissCallback",
 			"()V"
 		) {}

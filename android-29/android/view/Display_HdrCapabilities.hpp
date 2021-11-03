@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::view
 {
-	class Display_HdrCapabilities : public __JniBaseClass
+	class Display_HdrCapabilities : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint HDR_TYPE_DOLBY_VISION();
 		static jint HDR_TYPE_HDR10();
 		static jint HDR_TYPE_HDR10_PLUS();
@@ -21,7 +21,7 @@ namespace android::view
 		static jfloat INVALID_LUMINANCE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Display_HdrCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Display_HdrCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Display_HdrCapabilities(QJniObject obj);
 		
 		// Constructors

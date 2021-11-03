@@ -5,22 +5,22 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	ColorMatrix::ColorMatrix(QJniObject obj) : __JniBaseClass(obj) {}
+	ColorMatrix::ColorMatrix(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ColorMatrix::ColorMatrix()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ColorMatrix",
 			"()V"
 		) {}
 	ColorMatrix::ColorMatrix(jfloatArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ColorMatrix",
 			"([F)V",
 			arg0
 		) {}
 	ColorMatrix::ColorMatrix(android::graphics::ColorMatrix &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ColorMatrix",
 			"(Landroid/graphics/ColorMatrix;)V",
 			arg0.object()

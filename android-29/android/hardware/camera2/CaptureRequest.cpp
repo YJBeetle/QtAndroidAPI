@@ -205,7 +205,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	__JniBaseClass CaptureRequest::CREATOR()
+	JObject CaptureRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -491,7 +491,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		).object<jobject>();
 	}
-	__JniBaseClass CaptureRequest::getKeys()
+	JObject CaptureRequest::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

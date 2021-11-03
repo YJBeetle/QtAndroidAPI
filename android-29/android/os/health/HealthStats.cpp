@@ -6,7 +6,7 @@ namespace android::os::health
 	// Fields
 	
 	// QJniObject forward
-	HealthStats::HealthStats(QJniObject obj) : __JniBaseClass(obj) {}
+	HealthStats::HealthStats(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -41,7 +41,7 @@ namespace android::os::health
 			"()I"
 		);
 	}
-	__JniBaseClass HealthStats::getMeasurements(jint arg0)
+	JObject HealthStats::getMeasurements(jint arg0)
 	{
 		return callObjectMethod(
 			"getMeasurements",
@@ -64,7 +64,7 @@ namespace android::os::health
 			"()I"
 		);
 	}
-	__JniBaseClass HealthStats::getStats(jint arg0)
+	JObject HealthStats::getStats(jint arg0)
 	{
 		return callObjectMethod(
 			"getStats",
@@ -126,7 +126,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	__JniBaseClass HealthStats::getTimers(jint arg0)
+	JObject HealthStats::getTimers(jint arg0)
 	{
 		return callObjectMethod(
 			"getTimers",

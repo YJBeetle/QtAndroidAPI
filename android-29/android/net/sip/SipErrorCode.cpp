@@ -96,7 +96,7 @@ namespace android::net::sip
 	}
 	
 	// QJniObject forward
-	SipErrorCode::SipErrorCode(QJniObject obj) : __JniBaseClass(obj) {}
+	SipErrorCode::SipErrorCode(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "../TransformerFactory.hpp"
 
 
@@ -20,10 +20,10 @@ namespace javax::xml::transform::sax
 		// Constructors
 		
 		// Methods
-		__JniBaseClass newTemplatesHandler();
-		__JniBaseClass newTransformerHandler();
-		__JniBaseClass newTransformerHandler(__JniBaseClass arg0);
-		__JniBaseClass newXMLFilter(__JniBaseClass arg0);
+		JObject newTemplatesHandler();
+		JObject newTransformerHandler();
+		JObject newTransformerHandler(JObject arg0);
+		JObject newXMLFilter(JObject arg0);
 	};
 } // namespace javax::xml::transform::sax
 

@@ -151,11 +151,11 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	WifiConfiguration::WifiConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiConfiguration::WifiConfiguration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiConfiguration::WifiConfiguration()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiConfiguration",
 			"()V"
 		) {}

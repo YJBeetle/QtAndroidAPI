@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class MediaStore : public __JniBaseClass
+	class MediaStore : public JObject
 	{
 	public:
 		// Fields
@@ -57,7 +57,7 @@ namespace android::provider
 		static jstring VOLUME_INTERNAL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore(QJniObject obj);
 		
 		// Constructors
@@ -65,7 +65,7 @@ namespace android::provider
 		
 		// Methods
 		static android::net::Uri getDocumentUri(android::content::Context arg0, android::net::Uri arg1);
-		static __JniBaseClass getExternalVolumeNames(android::content::Context arg0);
+		static JObject getExternalVolumeNames(android::content::Context arg0);
 		static android::net::Uri getMediaScannerUri();
 		static android::net::Uri getMediaUri(android::content::Context arg0, android::net::Uri arg1);
 		static jstring getVersion(android::content::Context arg0);

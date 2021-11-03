@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media::projection
 {
@@ -9,13 +9,13 @@ namespace android::media::projection
 
 namespace android::media
 {
-	class AudioPlaybackCaptureConfiguration : public __JniBaseClass
+	class AudioPlaybackCaptureConfiguration : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioPlaybackCaptureConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioPlaybackCaptureConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioPlaybackCaptureConfiguration(QJniObject obj);
 		
 		// Constructors

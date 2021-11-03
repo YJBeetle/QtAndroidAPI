@@ -7,11 +7,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	TextSelection_Builder::TextSelection_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TextSelection_Builder::TextSelection_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextSelection_Builder::TextSelection_Builder(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.TextSelection$Builder",
 			"(II)V",
 			arg0,

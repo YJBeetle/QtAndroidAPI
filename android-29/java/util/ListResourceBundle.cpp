@@ -15,7 +15,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	__JniBaseClass ListResourceBundle::getKeys()
+	JObject ListResourceBundle::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

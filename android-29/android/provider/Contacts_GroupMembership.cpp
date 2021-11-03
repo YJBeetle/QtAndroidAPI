@@ -94,7 +94,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Contacts_GroupMembership::Contacts_GroupMembership(QJniObject obj) : __JniBaseClass(obj) {}
+	Contacts_GroupMembership::Contacts_GroupMembership(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

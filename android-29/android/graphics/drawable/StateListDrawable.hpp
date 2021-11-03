@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 #include "./DrawableContainer.hpp"
 
@@ -42,7 +42,7 @@ namespace android::graphics::drawable
 		jint getStateCount();
 		android::graphics::drawable::Drawable getStateDrawable(jint arg0);
 		jintArray getStateSet(jint arg0);
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		jboolean isStateful();
 		android::graphics::drawable::Drawable mutate();
 	};

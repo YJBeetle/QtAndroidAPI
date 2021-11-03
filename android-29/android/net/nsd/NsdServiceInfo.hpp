@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace java::net
 
 namespace android::net::nsd
 {
-	class NsdServiceInfo : public __JniBaseClass
+	class NsdServiceInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NsdServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NsdServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NsdServiceInfo(QJniObject obj);
 		
 		// Constructors
@@ -28,7 +28,7 @@ namespace android::net::nsd
 		
 		// Methods
 		jint describeContents();
-		__JniBaseClass getAttributes();
+		JObject getAttributes();
 		java::net::InetAddress getHost();
 		jint getPort();
 		jstring getServiceName();

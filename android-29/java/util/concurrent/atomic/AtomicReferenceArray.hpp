@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,13 +13,13 @@ namespace java::lang::reflect
 
 namespace java::util::concurrent::atomic
 {
-	class AtomicReferenceArray : public __JniBaseClass
+	class AtomicReferenceArray : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AtomicReferenceArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AtomicReferenceArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicReferenceArray(QJniObject obj);
 		
 		// Constructors
@@ -27,16 +27,16 @@ namespace java::util::concurrent::atomic
 		AtomicReferenceArray(jint arg0);
 		
 		// Methods
-		jobject accumulateAndGet(jint arg0, jobject arg1, __JniBaseClass arg2);
+		jobject accumulateAndGet(jint arg0, jobject arg1, JObject arg2);
 		jobject compareAndExchange(jint arg0, jobject arg1, jobject arg2);
 		jobject compareAndExchangeAcquire(jint arg0, jobject arg1, jobject arg2);
 		jobject compareAndExchangeRelease(jint arg0, jobject arg1, jobject arg2);
 		jboolean compareAndSet(jint arg0, jobject arg1, jobject arg2);
 		jobject get(jint arg0);
 		jobject getAcquire(jint arg0);
-		jobject getAndAccumulate(jint arg0, jobject arg1, __JniBaseClass arg2);
+		jobject getAndAccumulate(jint arg0, jobject arg1, JObject arg2);
 		jobject getAndSet(jint arg0, jobject arg1);
-		jobject getAndUpdate(jint arg0, __JniBaseClass arg1);
+		jobject getAndUpdate(jint arg0, JObject arg1);
 		jobject getOpaque(jint arg0);
 		jobject getPlain(jint arg0);
 		void lazySet(jint arg0, jobject arg1);
@@ -46,7 +46,7 @@ namespace java::util::concurrent::atomic
 		void setPlain(jint arg0, jobject arg1);
 		void setRelease(jint arg0, jobject arg1);
 		jstring toString();
-		jobject updateAndGet(jint arg0, __JniBaseClass arg1);
+		jobject updateAndGet(jint arg0, JObject arg1);
 		jboolean weakCompareAndSet(jint arg0, jobject arg1, jobject arg2);
 		jboolean weakCompareAndSetAcquire(jint arg0, jobject arg1, jobject arg2);
 		jboolean weakCompareAndSetPlain(jint arg0, jobject arg1, jobject arg2);

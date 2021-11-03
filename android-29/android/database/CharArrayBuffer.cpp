@@ -18,17 +18,17 @@ namespace android::database
 	}
 	
 	// QJniObject forward
-	CharArrayBuffer::CharArrayBuffer(QJniObject obj) : __JniBaseClass(obj) {}
+	CharArrayBuffer::CharArrayBuffer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CharArrayBuffer::CharArrayBuffer(jcharArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.database.CharArrayBuffer",
 			"([C)V",
 			arg0
 		) {}
 	CharArrayBuffer::CharArrayBuffer(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.database.CharArrayBuffer",
 			"(I)V",
 			arg0

@@ -6,11 +6,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	MessageDigestSpi::MessageDigestSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	MessageDigestSpi::MessageDigestSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MessageDigestSpi::MessageDigestSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.MessageDigestSpi",
 			"()V"
 		) {}

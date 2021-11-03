@@ -1,33 +1,33 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace javax::xml::transform::dom
 {
-	class DOMResult : public __JniBaseClass
+	class DOMResult : public JObject
 	{
 	public:
 		// Fields
 		static jstring FEATURE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DOMResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DOMResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DOMResult(QJniObject obj);
 		
 		// Constructors
 		DOMResult();
-		DOMResult(__JniBaseClass arg0);
-		DOMResult(__JniBaseClass arg0, jstring arg1);
-		DOMResult(__JniBaseClass arg0, __JniBaseClass arg1);
-		DOMResult(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2);
+		DOMResult(JObject arg0);
+		DOMResult(JObject arg0, jstring arg1);
+		DOMResult(JObject arg0, JObject arg1);
+		DOMResult(JObject arg0, JObject arg1, jstring arg2);
 		
 		// Methods
-		__JniBaseClass getNextSibling();
-		__JniBaseClass getNode();
+		JObject getNextSibling();
+		JObject getNode();
 		jstring getSystemId();
-		void setNextSibling(__JniBaseClass arg0);
-		void setNode(__JniBaseClass arg0);
+		void setNextSibling(JObject arg0);
+		void setNode(JObject arg0);
 		void setSystemId(jstring arg0);
 	};
 } // namespace javax::xml::transform::dom

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang::ref
 {
@@ -9,13 +9,13 @@ namespace java::lang::ref
 
 namespace java::lang::ref
 {
-	class ReferenceQueue : public __JniBaseClass
+	class ReferenceQueue : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ReferenceQueue(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ReferenceQueue(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ReferenceQueue(QJniObject obj);
 		
 		// Constructors

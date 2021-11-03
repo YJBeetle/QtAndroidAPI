@@ -5,7 +5,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass VisualVoicemailSmsFilterSettings::CREATOR()
+	JObject VisualVoicemailSmsFilterSettings::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.VisualVoicemailSmsFilterSettings",
@@ -40,7 +40,7 @@ namespace android::telephony
 			"destinationPort"
 		);
 	}
-	__JniBaseClass VisualVoicemailSmsFilterSettings::originatingNumbers()
+	JObject VisualVoicemailSmsFilterSettings::originatingNumbers()
 	{
 		return getObjectField(
 			"originatingNumbers",
@@ -49,7 +49,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	VisualVoicemailSmsFilterSettings::VisualVoicemailSmsFilterSettings(QJniObject obj) : __JniBaseClass(obj) {}
+	VisualVoicemailSmsFilterSettings::VisualVoicemailSmsFilterSettings(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

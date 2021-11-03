@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::wifi
 {
@@ -9,13 +9,13 @@ namespace android::net::wifi
 
 namespace android::net::wifi
 {
-	class WifiManager_MulticastLock : public __JniBaseClass
+	class WifiManager_MulticastLock : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiManager_MulticastLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiManager_MulticastLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager_MulticastLock(QJniObject obj);
 		
 		// Constructors

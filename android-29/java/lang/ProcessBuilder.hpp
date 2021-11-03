@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,27 +17,27 @@ namespace java::lang
 
 namespace java::lang
 {
-	class ProcessBuilder : public __JniBaseClass
+	class ProcessBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ProcessBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ProcessBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ProcessBuilder(QJniObject obj);
 		
 		// Constructors
 		ProcessBuilder(jarray arg0);
-		ProcessBuilder(__JniBaseClass arg0);
+		ProcessBuilder(JObject arg0);
 		
 		// Methods
-		static __JniBaseClass startPipeline(__JniBaseClass arg0);
+		static JObject startPipeline(JObject arg0);
 		java::lang::ProcessBuilder command(jarray arg0);
-		java::lang::ProcessBuilder command(__JniBaseClass arg0);
-		__JniBaseClass command();
+		java::lang::ProcessBuilder command(JObject arg0);
+		JObject command();
 		java::io::File directory();
 		java::lang::ProcessBuilder directory(java::io::File arg0);
-		__JniBaseClass environment();
+		JObject environment();
 		java::lang::ProcessBuilder inheritIO();
 		java::lang::ProcessBuilder redirectError(java::io::File arg0);
 		java::lang::ProcessBuilder redirectError(java::lang::ProcessBuilder_Redirect arg0);

@@ -10,7 +10,7 @@ namespace android::content
 	ContentQueryMap::ContentQueryMap(QJniObject obj) : java::util::Observable(obj) {}
 	
 	// Constructors
-	ContentQueryMap::ContentQueryMap(__JniBaseClass arg0, jstring arg1, jboolean arg2, android::os::Handler arg3)
+	ContentQueryMap::ContentQueryMap(JObject arg0, jstring arg1, jboolean arg2, android::os::Handler arg3)
 		: java::util::Observable(
 			"android.content.ContentQueryMap",
 			"(Landroid/database/Cursor;Ljava/lang/String;ZLandroid/os/Handler;)V",
@@ -28,7 +28,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	__JniBaseClass ContentQueryMap::getRows()
+	JObject ContentQueryMap::getRows()
 	{
 		return callObjectMethod(
 			"getRows",

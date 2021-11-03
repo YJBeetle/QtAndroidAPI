@@ -23,16 +23,16 @@ namespace android::renderscript
 	}
 	
 	// QJniObject forward
-	Byte3::Byte3(QJniObject obj) : __JniBaseClass(obj) {}
+	Byte3::Byte3(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Byte3::Byte3()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Byte3",
 			"()V"
 		) {}
 	Byte3::Byte3(jbyte arg0, jbyte arg1, jbyte arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Byte3",
 			"(BBB)V",
 			arg0,

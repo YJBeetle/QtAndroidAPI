@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./ContentProvider.hpp"
 
 namespace android::content
@@ -33,7 +33,7 @@ namespace android::content
 		jstring getType(android::net::Uri arg0);
 		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
 		jboolean onCreate();
-		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
+		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
 		jint update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3);
 	};
 } // namespace android::content

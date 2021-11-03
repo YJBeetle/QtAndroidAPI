@@ -25,11 +25,11 @@ namespace android::content::res
 	}
 	
 	// QJniObject forward
-	Resources::Resources(QJniObject obj) : __JniBaseClass(obj) {}
+	Resources::Resources(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Resources::Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.res.Resources",
 			"(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V",
 			arg0.object(),
@@ -38,7 +38,7 @@ namespace android::content::res
 		) {}
 	
 	// Methods
-	jint Resources::getAttributeSetSourceResId(__JniBaseClass arg0)
+	jint Resources::getAttributeSetSourceResId(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.content.res.Resources",
@@ -69,7 +69,7 @@ namespace android::content::res
 			"()V"
 		);
 	}
-	__JniBaseClass Resources::getAnimation(jint arg0)
+	JObject Resources::getAnimation(jint arg0)
 	{
 		return callObjectMethod(
 			"getAnimation",
@@ -252,7 +252,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	__JniBaseClass Resources::getLayout(jint arg0)
+	JObject Resources::getLayout(jint arg0)
 	{
 		return callObjectMethod(
 			"getLayout",
@@ -409,7 +409,7 @@ namespace android::content::res
 			arg3
 		);
 	}
-	__JniBaseClass Resources::getXml(jint arg0)
+	JObject Resources::getXml(jint arg0)
 	{
 		return callObjectMethod(
 			"getXml",
@@ -424,7 +424,7 @@ namespace android::content::res
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	android::content::res::TypedArray Resources::obtainAttributes(__JniBaseClass arg0, jintArray arg1)
+	android::content::res::TypedArray Resources::obtainAttributes(JObject arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"obtainAttributes",
@@ -466,7 +466,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void Resources::parseBundleExtra(jstring arg0, __JniBaseClass arg1, android::os::Bundle arg2)
+	void Resources::parseBundleExtra(jstring arg0, JObject arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"parseBundleExtra",
@@ -476,7 +476,7 @@ namespace android::content::res
 			arg2.object()
 		);
 	}
-	void Resources::parseBundleExtras(__JniBaseClass arg0, android::os::Bundle arg1)
+	void Resources::parseBundleExtras(JObject arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"parseBundleExtras",

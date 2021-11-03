@@ -8,11 +8,11 @@ namespace android::hardware
 	// Fields
 	
 	// QJniObject forward
-	SensorEventCallback::SensorEventCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	SensorEventCallback::SensorEventCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SensorEventCallback::SensorEventCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.SensorEventCallback",
 			"()V"
 		) {}

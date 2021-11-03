@@ -23,16 +23,16 @@ namespace android::renderscript
 	}
 	
 	// QJniObject forward
-	Short3::Short3(QJniObject obj) : __JniBaseClass(obj) {}
+	Short3::Short3(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Short3::Short3()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Short3",
 			"()V"
 		) {}
 	Short3::Short3(jshort arg0, jshort arg1, jshort arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Short3",
 			"(SSS)V",
 			arg0,

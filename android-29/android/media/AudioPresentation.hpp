@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -13,7 +13,7 @@ namespace java::util
 
 namespace android::media
 {
-	class AudioPresentation : public __JniBaseClass
+	class AudioPresentation : public JObject
 	{
 	public:
 		// Fields
@@ -24,14 +24,14 @@ namespace android::media
 		static jint MASTERING_NOT_INDICATED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioPresentation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioPresentation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioPresentation(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getLabels();
+		JObject getLabels();
 		java::util::Locale getLocale();
 		jint getMasteringIndication();
 		jint getPresentationId();

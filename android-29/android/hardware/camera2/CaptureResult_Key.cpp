@@ -5,11 +5,11 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QJniObject forward
-	CaptureResult_Key::CaptureResult_Key(QJniObject obj) : __JniBaseClass(obj) {}
+	CaptureResult_Key::CaptureResult_Key(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CaptureResult_Key::CaptureResult_Key(jstring arg0, jclass arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.CaptureResult$Key",
 			"(Ljava/lang/String;Ljava/lang/Class;)V",
 			arg0,

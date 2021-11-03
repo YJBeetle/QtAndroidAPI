@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::audiofx
 {
@@ -9,7 +9,7 @@ namespace android::media::audiofx
 
 namespace android::media::audiofx
 {
-	class Visualizer : public __JniBaseClass
+	class Visualizer : public JObject
 	{
 	public:
 		// Fields
@@ -30,7 +30,7 @@ namespace android::media::audiofx
 		static jint SUCCESS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Visualizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Visualizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Visualizer(QJniObject obj);
 		
 		// Constructors
@@ -49,7 +49,7 @@ namespace android::media::audiofx
 		jint getWaveForm(jbyteArray arg0);
 		void release();
 		jint setCaptureSize(jint arg0);
-		jint setDataCaptureListener(__JniBaseClass arg0, jint arg1, jboolean arg2, jboolean arg3);
+		jint setDataCaptureListener(JObject arg0, jint arg1, jboolean arg2, jboolean arg3);
 		jint setEnabled(jboolean arg0);
 		jint setMeasurementMode(jint arg0);
 		jint setScalingMode(jint arg0);

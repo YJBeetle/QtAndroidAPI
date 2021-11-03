@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::util::jar
 {
-	class Attributes_Name : public __JniBaseClass
+	class Attributes_Name : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace java::util::jar
 		static java::util::jar::Attributes_Name SPECIFICATION_VERSION();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Attributes_Name(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Attributes_Name(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Attributes_Name(QJniObject obj);
 		
 		// Constructors

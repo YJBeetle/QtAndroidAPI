@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::media::tv
 {
-	class TvContract_Programs : public __JniBaseClass
+	class TvContract_Programs : public JObject
 	{
 	public:
 		// Fields
@@ -52,7 +52,7 @@ namespace android::media::tv
 		static jint REVIEW_RATING_STYLE_THUMBS_UP_DOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvContract_Programs(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvContract_Programs(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_Programs(QJniObject obj);
 		
 		// Constructors

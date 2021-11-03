@@ -9,7 +9,7 @@ namespace android::widget
 	// Fields
 	
 	// QJniObject forward
-	TabHost_TabSpec::TabHost_TabSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	TabHost_TabSpec::TabHost_TabSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -29,7 +29,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(__JniBaseClass arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(JObject arg0)
 	{
 		return callObjectMethod(
 			"setContent",

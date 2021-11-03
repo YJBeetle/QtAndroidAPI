@@ -6,11 +6,11 @@ namespace android::service::voice
 	// Fields
 	
 	// QJniObject forward
-	AlwaysOnHotwordDetector_Callback::AlwaysOnHotwordDetector_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	AlwaysOnHotwordDetector_Callback::AlwaysOnHotwordDetector_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AlwaysOnHotwordDetector_Callback::AlwaysOnHotwordDetector_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.voice.AlwaysOnHotwordDetector$Callback",
 			"()V"
 		) {}

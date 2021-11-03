@@ -5,7 +5,7 @@ namespace android::security
 	// Fields
 	
 	// QJniObject forward
-	NetworkSecurityPolicy::NetworkSecurityPolicy(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkSecurityPolicy::NetworkSecurityPolicy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,7 +5,7 @@
 namespace android::net::wifi::p2p
 {
 	// Fields
-	__JniBaseClass WifiP2pConfig::CREATOR()
+	JObject WifiP2pConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pConfig",
@@ -56,16 +56,16 @@ namespace android::net::wifi::p2p
 	}
 	
 	// QJniObject forward
-	WifiP2pConfig::WifiP2pConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiP2pConfig::WifiP2pConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiP2pConfig::WifiP2pConfig()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"()V"
 		) {}
 	WifiP2pConfig::WifiP2pConfig(android::net::wifi::p2p::WifiP2pConfig &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"(Landroid/net/wifi/p2p/WifiP2pConfig;)V",
 			arg0.object()

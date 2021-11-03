@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,14 +17,14 @@ namespace android::os
 
 namespace android::net
 {
-	class LinkProperties : public __JniBaseClass
+	class LinkProperties : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LinkProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LinkProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LinkProperties(QJniObject obj);
 		
 		// Constructors
@@ -35,21 +35,21 @@ namespace android::net
 		void clear();
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getDnsServers();
+		JObject getDnsServers();
 		jstring getDomains();
 		android::net::ProxyInfo getHttpProxy();
 		jstring getInterfaceName();
-		__JniBaseClass getLinkAddresses();
+		JObject getLinkAddresses();
 		jint getMtu();
 		jstring getPrivateDnsServerName();
-		__JniBaseClass getRoutes();
+		JObject getRoutes();
 		jint hashCode();
 		jboolean isPrivateDnsActive();
-		void setDnsServers(__JniBaseClass arg0);
+		void setDnsServers(JObject arg0);
 		void setDomains(jstring arg0);
 		void setHttpProxy(android::net::ProxyInfo arg0);
 		void setInterfaceName(jstring arg0);
-		void setLinkAddresses(__JniBaseClass arg0);
+		void setLinkAddresses(JObject arg0);
 		void setMtu(jint arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

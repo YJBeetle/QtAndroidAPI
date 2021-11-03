@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -33,13 +33,13 @@ namespace android::os
 
 namespace android::app::slice
 {
-	class Slice_Builder : public __JniBaseClass
+	class Slice_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Slice_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Slice_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Slice_Builder(QJniObject obj);
 		
 		// Constructors
@@ -48,14 +48,14 @@ namespace android::app::slice
 		
 		// Methods
 		android::app::slice::Slice_Builder addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, jstring arg2);
-		android::app::slice::Slice_Builder addBundle(android::os::Bundle arg0, jstring arg1, __JniBaseClass arg2);
-		android::app::slice::Slice_Builder addHints(__JniBaseClass arg0);
-		android::app::slice::Slice_Builder addIcon(android::graphics::drawable::Icon arg0, jstring arg1, __JniBaseClass arg2);
-		android::app::slice::Slice_Builder addInt(jint arg0, jstring arg1, __JniBaseClass arg2);
-		android::app::slice::Slice_Builder addLong(jlong arg0, jstring arg1, __JniBaseClass arg2);
-		android::app::slice::Slice_Builder addRemoteInput(android::app::RemoteInput arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice_Builder addBundle(android::os::Bundle arg0, jstring arg1, JObject arg2);
+		android::app::slice::Slice_Builder addHints(JObject arg0);
+		android::app::slice::Slice_Builder addIcon(android::graphics::drawable::Icon arg0, jstring arg1, JObject arg2);
+		android::app::slice::Slice_Builder addInt(jint arg0, jstring arg1, JObject arg2);
+		android::app::slice::Slice_Builder addLong(jlong arg0, jstring arg1, JObject arg2);
+		android::app::slice::Slice_Builder addRemoteInput(android::app::RemoteInput arg0, jstring arg1, JObject arg2);
 		android::app::slice::Slice_Builder addSubSlice(android::app::slice::Slice arg0, jstring arg1);
-		android::app::slice::Slice_Builder addText(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice_Builder addText(jstring arg0, jstring arg1, JObject arg2);
 		android::app::slice::Slice build();
 		android::app::slice::Slice_Builder setCallerNeeded(jboolean arg0);
 	};

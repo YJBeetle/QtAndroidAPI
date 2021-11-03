@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::p2p
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pDeviceList : public __JniBaseClass
+	class WifiP2pDeviceList : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiP2pDeviceList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiP2pDeviceList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pDeviceList(QJniObject obj);
 		
 		// Constructors
@@ -30,7 +30,7 @@ namespace android::net::wifi::p2p
 		// Methods
 		jint describeContents();
 		android::net::wifi::p2p::WifiP2pDevice get(jstring arg0);
-		__JniBaseClass getDeviceList();
+		JObject getDeviceList();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

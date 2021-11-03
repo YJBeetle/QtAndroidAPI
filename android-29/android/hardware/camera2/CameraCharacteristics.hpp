@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CameraMetadata.hpp"
 
 namespace android::hardware::camera2
@@ -114,13 +114,13 @@ namespace android::hardware::camera2
 		
 		// Methods
 		jobject get(android::hardware::camera2::CameraCharacteristics_Key arg0);
-		__JniBaseClass getAvailableCaptureRequestKeys();
-		__JniBaseClass getAvailableCaptureResultKeys();
-		__JniBaseClass getAvailablePhysicalCameraRequestKeys();
-		__JniBaseClass getAvailableSessionKeys();
-		__JniBaseClass getKeys();
-		__JniBaseClass getKeysNeedingPermission();
-		__JniBaseClass getPhysicalCameraIds();
+		JObject getAvailableCaptureRequestKeys();
+		JObject getAvailableCaptureResultKeys();
+		JObject getAvailablePhysicalCameraRequestKeys();
+		JObject getAvailableSessionKeys();
+		JObject getKeys();
+		JObject getKeysNeedingPermission();
+		JObject getPhysicalCameraIds();
 		android::hardware::camera2::params::RecommendedStreamConfigurationMap getRecommendedStreamConfigurationMap(jint arg0);
 	};
 } // namespace android::hardware::camera2

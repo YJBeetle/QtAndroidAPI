@@ -5,7 +5,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass Session2CommandGroup::CREATOR()
+	JObject Session2CommandGroup::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.Session2CommandGroup",
@@ -15,7 +15,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	Session2CommandGroup::Session2CommandGroup(QJniObject obj) : __JniBaseClass(obj) {}
+	Session2CommandGroup::Session2CommandGroup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -27,7 +27,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass Session2CommandGroup::getCommands()
+	JObject Session2CommandGroup::getCommands()
 	{
 		return callObjectMethod(
 			"getCommands",

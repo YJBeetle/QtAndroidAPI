@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,22 +13,22 @@ namespace android::view::contentcapture
 
 namespace android::view::contentcapture
 {
-	class DataRemovalRequest : public __JniBaseClass
+	class DataRemovalRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_IS_PREFIX();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DataRemovalRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DataRemovalRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DataRemovalRequest(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jint describeContents();
-		__JniBaseClass getLocusIdRequests();
+		JObject getLocusIdRequests();
 		jstring getPackageName();
 		jboolean isForEverything();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

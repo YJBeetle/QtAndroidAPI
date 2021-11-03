@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class CallLog_Calls : public __JniBaseClass
+	class CallLog_Calls : public JObject
 	{
 	public:
 		// Fields
@@ -82,7 +82,7 @@ namespace android::provider
 		static jstring VOICEMAIL_URI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CallLog_Calls(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CallLog_Calls(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CallLog_Calls(QJniObject obj);
 		
 		// Constructors

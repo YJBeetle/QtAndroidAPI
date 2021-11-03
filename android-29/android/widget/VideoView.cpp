@@ -23,14 +23,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	VideoView::VideoView(android::content::Context arg0, __JniBaseClass arg1)
+	VideoView::VideoView(android::content::Context arg0, JObject arg1)
 		: android::view::SurfaceView(
 			"android.widget.VideoView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	VideoView::VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	VideoView::VideoView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::SurfaceView(
 			"android.widget.VideoView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -38,7 +38,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	VideoView::VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	VideoView::VideoView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::SurfaceView(
 			"android.widget.VideoView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -209,7 +209,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnCompletionListener(__JniBaseClass arg0)
+	void VideoView::setOnCompletionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCompletionListener",
@@ -217,7 +217,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnErrorListener(__JniBaseClass arg0)
+	void VideoView::setOnErrorListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnErrorListener",
@@ -225,7 +225,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnInfoListener(__JniBaseClass arg0)
+	void VideoView::setOnInfoListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnInfoListener",
@@ -233,7 +233,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnPreparedListener(__JniBaseClass arg0)
+	void VideoView::setOnPreparedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnPreparedListener",
@@ -257,7 +257,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setVideoURI(android::net::Uri arg0, __JniBaseClass arg1)
+	void VideoView::setVideoURI(android::net::Uri arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setVideoURI",

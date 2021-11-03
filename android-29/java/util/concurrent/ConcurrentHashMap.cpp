@@ -22,7 +22,7 @@ namespace java::util::concurrent
 			"(I)V",
 			arg0
 		) {}
-	ConcurrentHashMap::ConcurrentHashMap(__JniBaseClass arg0)
+	ConcurrentHashMap::ConcurrentHashMap(JObject arg0)
 		: java::util::AbstractMap(
 			"java.util.concurrent.ConcurrentHashMap",
 			"(Ljava/util/Map;)V",
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	jobject ConcurrentHashMap::compute(jobject arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::compute(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
@@ -78,7 +78,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::computeIfAbsent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -87,7 +87,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::computeIfPresent(jobject arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::computeIfPresent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -120,14 +120,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentHashMap::elements()
+	JObject ConcurrentHashMap::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass ConcurrentHashMap::entrySet()
+	JObject ConcurrentHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -142,7 +142,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ConcurrentHashMap::forEach(__JniBaseClass arg0)
+	void ConcurrentHashMap::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -150,7 +150,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ConcurrentHashMap::forEach(jlong arg0, __JniBaseClass arg1)
+	void ConcurrentHashMap::forEach(jlong arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"forEach",
@@ -159,7 +159,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEach(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void ConcurrentHashMap::forEach(jlong arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"forEach",
@@ -169,7 +169,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	void ConcurrentHashMap::forEachEntry(jlong arg0, __JniBaseClass arg1)
+	void ConcurrentHashMap::forEachEntry(jlong arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"forEachEntry",
@@ -178,7 +178,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEachEntry(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void ConcurrentHashMap::forEachEntry(jlong arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"forEachEntry",
@@ -188,7 +188,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	void ConcurrentHashMap::forEachKey(jlong arg0, __JniBaseClass arg1)
+	void ConcurrentHashMap::forEachKey(jlong arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"forEachKey",
@@ -197,7 +197,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEachKey(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void ConcurrentHashMap::forEachKey(jlong arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"forEachKey",
@@ -207,7 +207,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	void ConcurrentHashMap::forEachValue(jlong arg0, __JniBaseClass arg1)
+	void ConcurrentHashMap::forEachValue(jlong arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"forEachValue",
@@ -216,7 +216,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ConcurrentHashMap::forEachValue(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void ConcurrentHashMap::forEachValue(jlong arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"forEachValue",
@@ -272,7 +272,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentHashMap::keys()
+	JObject ConcurrentHashMap::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -286,7 +286,7 @@ namespace java::util::concurrent
 			"()J"
 		);
 	}
-	jobject ConcurrentHashMap::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jobject ConcurrentHashMap::merge(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
@@ -305,7 +305,7 @@ namespace java::util::concurrent
 			arg1
 		).object<jobject>();
 	}
-	void ConcurrentHashMap::putAll(__JniBaseClass arg0)
+	void ConcurrentHashMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -322,7 +322,7 @@ namespace java::util::concurrent
 			arg1
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::reduce(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduce(jlong arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"reduce",
@@ -332,7 +332,7 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::reduceEntries(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduceEntries(jlong arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"reduceEntries",
@@ -342,7 +342,7 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	__JniBaseClass ConcurrentHashMap::reduceEntries(jlong arg0, __JniBaseClass arg1)
+	JObject ConcurrentHashMap::reduceEntries(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"reduceEntries",
@@ -351,7 +351,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jdouble ConcurrentHashMap::reduceEntriesToDouble(jlong arg0, __JniBaseClass arg1, jdouble arg2, __JniBaseClass arg3)
+	jdouble ConcurrentHashMap::reduceEntriesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
 	{
 		return callMethod<jdouble>(
 			"reduceEntriesToDouble",
@@ -362,7 +362,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceEntriesToInt(jlong arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3)
+	jint ConcurrentHashMap::reduceEntriesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
 	{
 		return callMethod<jint>(
 			"reduceEntriesToInt",
@@ -373,7 +373,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceEntriesToLong(jlong arg0, __JniBaseClass arg1, jlong arg2, __JniBaseClass arg3)
+	jlong ConcurrentHashMap::reduceEntriesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
 	{
 		return callMethod<jlong>(
 			"reduceEntriesToLong",
@@ -384,7 +384,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jobject ConcurrentHashMap::reduceKeys(jlong arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::reduceKeys(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"reduceKeys",
@@ -393,7 +393,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::reduceKeys(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduceKeys(jlong arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"reduceKeys",
@@ -403,7 +403,7 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	jdouble ConcurrentHashMap::reduceKeysToDouble(jlong arg0, __JniBaseClass arg1, jdouble arg2, __JniBaseClass arg3)
+	jdouble ConcurrentHashMap::reduceKeysToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
 	{
 		return callMethod<jdouble>(
 			"reduceKeysToDouble",
@@ -414,7 +414,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceKeysToInt(jlong arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3)
+	jint ConcurrentHashMap::reduceKeysToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
 	{
 		return callMethod<jint>(
 			"reduceKeysToInt",
@@ -425,7 +425,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceKeysToLong(jlong arg0, __JniBaseClass arg1, jlong arg2, __JniBaseClass arg3)
+	jlong ConcurrentHashMap::reduceKeysToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
 	{
 		return callMethod<jlong>(
 			"reduceKeysToLong",
@@ -436,7 +436,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jdouble ConcurrentHashMap::reduceToDouble(jlong arg0, __JniBaseClass arg1, jdouble arg2, __JniBaseClass arg3)
+	jdouble ConcurrentHashMap::reduceToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
 	{
 		return callMethod<jdouble>(
 			"reduceToDouble",
@@ -447,7 +447,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceToInt(jlong arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3)
+	jint ConcurrentHashMap::reduceToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
 	{
 		return callMethod<jint>(
 			"reduceToInt",
@@ -458,7 +458,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceToLong(jlong arg0, __JniBaseClass arg1, jlong arg2, __JniBaseClass arg3)
+	jlong ConcurrentHashMap::reduceToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
 	{
 		return callMethod<jlong>(
 			"reduceToLong",
@@ -469,7 +469,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jobject ConcurrentHashMap::reduceValues(jlong arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::reduceValues(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"reduceValues",
@@ -478,7 +478,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::reduceValues(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduceValues(jlong arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"reduceValues",
@@ -488,7 +488,7 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	jdouble ConcurrentHashMap::reduceValuesToDouble(jlong arg0, __JniBaseClass arg1, jdouble arg2, __JniBaseClass arg3)
+	jdouble ConcurrentHashMap::reduceValuesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3)
 	{
 		return callMethod<jdouble>(
 			"reduceValuesToDouble",
@@ -499,7 +499,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jint ConcurrentHashMap::reduceValuesToInt(jlong arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3)
+	jint ConcurrentHashMap::reduceValuesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3)
 	{
 		return callMethod<jint>(
 			"reduceValuesToInt",
@@ -510,7 +510,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	jlong ConcurrentHashMap::reduceValuesToLong(jlong arg0, __JniBaseClass arg1, jlong arg2, __JniBaseClass arg3)
+	jlong ConcurrentHashMap::reduceValuesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3)
 	{
 		return callMethod<jlong>(
 			"reduceValuesToLong",
@@ -557,7 +557,7 @@ namespace java::util::concurrent
 			arg1
 		).object<jobject>();
 	}
-	void ConcurrentHashMap::replaceAll(__JniBaseClass arg0)
+	void ConcurrentHashMap::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -565,7 +565,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jobject ConcurrentHashMap::search(jlong arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::search(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"search",
@@ -574,7 +574,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::searchEntries(jlong arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::searchEntries(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"searchEntries",
@@ -583,7 +583,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::searchKeys(jlong arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::searchKeys(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"searchKeys",
@@ -592,7 +592,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentHashMap::searchValues(jlong arg0, __JniBaseClass arg1)
+	jobject ConcurrentHashMap::searchValues(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"searchValues",
@@ -615,7 +615,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass ConcurrentHashMap::values()
+	JObject ConcurrentHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

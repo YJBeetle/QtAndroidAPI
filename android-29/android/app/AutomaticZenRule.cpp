@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass AutomaticZenRule::CREATOR()
+	JObject AutomaticZenRule::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.AutomaticZenRule",
@@ -17,17 +17,17 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	AutomaticZenRule::AutomaticZenRule(QJniObject obj) : __JniBaseClass(obj) {}
+	AutomaticZenRule::AutomaticZenRule(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AutomaticZenRule::AutomaticZenRule(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.AutomaticZenRule",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	AutomaticZenRule::AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.AutomaticZenRule",
 			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/net/Uri;IZ)V",
 			arg0,
@@ -37,7 +37,7 @@ namespace android::app
 			arg4
 		) {}
 	AutomaticZenRule::AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::content::ComponentName arg2, android::net::Uri arg3, android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.AutomaticZenRule",
 			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/content/ComponentName;Landroid/net/Uri;Landroid/service/notification/ZenPolicy;IZ)V",
 			arg0,

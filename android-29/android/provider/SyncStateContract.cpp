@@ -5,11 +5,11 @@ namespace android::provider
 	// Fields
 	
 	// QJniObject forward
-	SyncStateContract::SyncStateContract(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncStateContract::SyncStateContract(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncStateContract::SyncStateContract()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.SyncStateContract",
 			"()V"
 		) {}

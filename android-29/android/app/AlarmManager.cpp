@@ -79,12 +79,12 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	AlarmManager::AlarmManager(QJniObject obj) : __JniBaseClass(obj) {}
+	AlarmManager::AlarmManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void AlarmManager::cancel(__JniBaseClass arg0)
+	void AlarmManager::cancel(JObject arg0)
 	{
 		callMethod<void>(
 			"cancel",
@@ -117,7 +117,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::set(jint arg0, jlong arg1, jstring arg2, __JniBaseClass arg3, android::os::Handler arg4)
+	void AlarmManager::set(jint arg0, jlong arg1, jstring arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callMethod<void>(
 			"set",
@@ -158,7 +158,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::setExact(jint arg0, jlong arg1, jstring arg2, __JniBaseClass arg3, android::os::Handler arg4)
+	void AlarmManager::setExact(jint arg0, jlong arg1, jstring arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callMethod<void>(
 			"setExact",
@@ -229,7 +229,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __JniBaseClass arg4, android::os::Handler arg5)
+	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, JObject arg4, android::os::Handler arg5)
 	{
 		callMethod<void>(
 			"setWindow",

@@ -12,7 +12,7 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QJniObject forward
-	SSLContext::SSLContext(QJniObject obj) : __JniBaseClass(obj) {}
+	SSLContext::SSLContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -79,7 +79,7 @@ namespace javax::net::ssl
 			arg1
 		);
 	}
-	__JniBaseClass SSLContext::getClientSessionContext()
+	JObject SSLContext::getClientSessionContext()
 	{
 		return callObjectMethod(
 			"getClientSessionContext",
@@ -107,7 +107,7 @@ namespace javax::net::ssl
 			"()Ljava/security/Provider;"
 		);
 	}
-	__JniBaseClass SSLContext::getServerSessionContext()
+	JObject SSLContext::getServerSessionContext()
 	{
 		return callObjectMethod(
 			"getServerSessionContext",

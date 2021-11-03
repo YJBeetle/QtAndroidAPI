@@ -7,11 +7,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	Person_Builder::Person_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	Person_Builder::Person_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Person_Builder::Person_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Person$Builder",
 			"()V"
 		) {}

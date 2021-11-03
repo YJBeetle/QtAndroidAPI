@@ -6,23 +6,23 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	InputFilter_AllCaps::InputFilter_AllCaps(QJniObject obj) : __JniBaseClass(obj) {}
+	InputFilter_AllCaps::InputFilter_AllCaps(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputFilter_AllCaps::InputFilter_AllCaps()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.InputFilter$AllCaps",
 			"()V"
 		) {}
 	InputFilter_AllCaps::InputFilter_AllCaps(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.InputFilter$AllCaps",
 			"(Ljava/util/Locale;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	jstring InputFilter_AllCaps::filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5)
+	jstring InputFilter_AllCaps::filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"filter",

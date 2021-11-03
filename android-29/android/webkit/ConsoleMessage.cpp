@@ -6,11 +6,11 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	ConsoleMessage::ConsoleMessage(QJniObject obj) : __JniBaseClass(obj) {}
+	ConsoleMessage::ConsoleMessage(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConsoleMessage::ConsoleMessage(jstring arg0, jstring arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.ConsoleMessage",
 			"(Ljava/lang/String;Ljava/lang/String;ILandroid/webkit/ConsoleMessage$MessageLevel;)V",
 			arg0,

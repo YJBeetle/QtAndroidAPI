@@ -7,12 +7,12 @@ namespace java::nio::channels
 	// Fields
 	
 	// QJniObject forward
-	AsynchronousChannelGroup::AsynchronousChannelGroup(QJniObject obj) : __JniBaseClass(obj) {}
+	AsynchronousChannelGroup::AsynchronousChannelGroup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withCachedThreadPool(__JniBaseClass arg0, jint arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withCachedThreadPool(JObject arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
@@ -22,7 +22,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withFixedThreadPool(jint arg0, __JniBaseClass arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withFixedThreadPool(jint arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
@@ -32,7 +32,7 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withThreadPool(__JniBaseClass arg0)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withThreadPool(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",

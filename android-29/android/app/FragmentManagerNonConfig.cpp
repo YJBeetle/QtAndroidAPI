@@ -5,7 +5,7 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	FragmentManagerNonConfig::FragmentManagerNonConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	FragmentManagerNonConfig::FragmentManagerNonConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

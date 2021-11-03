@@ -451,11 +451,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"()V"
 		) {}

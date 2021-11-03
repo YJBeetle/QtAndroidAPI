@@ -101,14 +101,14 @@ namespace android::view
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1)
+	ViewGroup::ViewGroup(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.view.ViewGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	ViewGroup::ViewGroup(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.view.ViewGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -116,7 +116,7 @@ namespace android::view
 			arg1.object(),
 			arg2
 		) {}
-	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ViewGroup::ViewGroup(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.view.ViewGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -156,7 +156,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewGroup::addKeyboardNavigationClusters(__JniBaseClass arg0, jint arg1)
+	void ViewGroup::addKeyboardNavigationClusters(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"addKeyboardNavigationClusters",
@@ -508,7 +508,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewGroup_LayoutParams ViewGroup::generateLayoutParams(__JniBaseClass arg0)
+	android::view::ViewGroup_LayoutParams ViewGroup::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -591,7 +591,7 @@ namespace android::view
 			"()Landroid/view/animation/LayoutAnimationController;"
 		);
 	}
-	__JniBaseClass ViewGroup::getLayoutAnimationListener()
+	JObject ViewGroup::getLayoutAnimationListener()
 	{
 		return callObjectMethod(
 			"getLayoutAnimationListener",
@@ -671,7 +671,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	__JniBaseClass ViewGroup::invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1)
+	JObject ViewGroup::invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1)
 	{
 		return callObjectMethod(
 			"invalidateChildInParent",
@@ -1089,7 +1089,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewGroup::setLayoutAnimationListener(__JniBaseClass arg0)
+	void ViewGroup::setLayoutAnimationListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setLayoutAnimationListener",
@@ -1121,7 +1121,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewGroup::setOnHierarchyChangeListener(__JniBaseClass arg0)
+	void ViewGroup::setOnHierarchyChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnHierarchyChangeListener",
@@ -1178,7 +1178,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"startActionModeForChild",
@@ -1187,7 +1187,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, JObject arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"startActionModeForChild",

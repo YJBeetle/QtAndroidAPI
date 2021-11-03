@@ -5,7 +5,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass ProxyInfo::CREATOR()
+	JObject ProxyInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.ProxyInfo",
@@ -15,7 +15,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	ProxyInfo::ProxyInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ProxyInfo::ProxyInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -30,7 +30,7 @@ namespace android::net
 			arg1
 		);
 	}
-	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2)
+	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.net.ProxyInfo",

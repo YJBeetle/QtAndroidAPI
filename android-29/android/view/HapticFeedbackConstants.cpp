@@ -82,7 +82,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	HapticFeedbackConstants::HapticFeedbackConstants(QJniObject obj) : __JniBaseClass(obj) {}
+	HapticFeedbackConstants::HapticFeedbackConstants(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

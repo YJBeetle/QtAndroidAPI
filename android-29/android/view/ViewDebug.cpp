@@ -22,11 +22,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	ViewDebug::ViewDebug(QJniObject obj) : __JniBaseClass(obj) {}
+	ViewDebug::ViewDebug(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewDebug::ViewDebug()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ViewDebug",
 			"()V"
 		) {}

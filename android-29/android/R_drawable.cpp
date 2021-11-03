@@ -1223,11 +1223,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_drawable::R_drawable(QJniObject obj) : __JniBaseClass(obj) {}
+	R_drawable::R_drawable(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_drawable::R_drawable()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$drawable",
 			"()V"
 		) {}

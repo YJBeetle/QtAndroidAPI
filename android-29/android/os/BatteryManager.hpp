@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::os
 {
-	class BatteryManager : public __JniBaseClass
+	class BatteryManager : public JObject
 	{
 	public:
 		// Fields
@@ -45,7 +45,7 @@ namespace android::os
 		static jstring EXTRA_VOLTAGE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BatteryManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BatteryManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BatteryManager(QJniObject obj);
 		
 		// Constructors

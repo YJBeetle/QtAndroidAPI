@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class Contacts_Phones : public __JniBaseClass
+	class Contacts_Phones : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::provider
 		static jstring PERSON_ID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Contacts_Phones(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Contacts_Phones(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts_Phones(QJniObject obj);
 		
 		// Constructors

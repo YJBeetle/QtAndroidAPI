@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	CalendarContract_Colors::CalendarContract_Colors(QJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_Colors::CalendarContract_Colors(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -6,7 +6,7 @@ namespace java::text
 	// Fields
 	
 	// QJniObject forward
-	Normalizer::Normalizer(QJniObject obj) : __JniBaseClass(obj) {}
+	Normalizer::Normalizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

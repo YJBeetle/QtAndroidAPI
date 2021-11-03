@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	
 	// QJniObject forward
-	Telephony::Telephony(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony::Telephony(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

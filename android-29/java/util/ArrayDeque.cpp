@@ -21,7 +21,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	ArrayDeque::ArrayDeque(__JniBaseClass arg0)
+	ArrayDeque::ArrayDeque(JObject arg0)
 		: java::util::AbstractCollection(
 			"java.util.ArrayDeque",
 			"(Ljava/util/Collection;)V",
@@ -37,7 +37,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayDeque::addAll(__JniBaseClass arg0)
+	jboolean ArrayDeque::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -83,7 +83,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass ArrayDeque::descendingIterator()
+	JObject ArrayDeque::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
@@ -97,7 +97,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	void ArrayDeque::forEach(__JniBaseClass arg0)
+	void ArrayDeque::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -126,7 +126,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass ArrayDeque::iterator()
+	JObject ArrayDeque::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -229,7 +229,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jboolean ArrayDeque::removeAll(__JniBaseClass arg0)
+	jboolean ArrayDeque::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -252,7 +252,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayDeque::removeIf(__JniBaseClass arg0)
+	jboolean ArrayDeque::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -275,7 +275,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayDeque::retainAll(__JniBaseClass arg0)
+	jboolean ArrayDeque::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -290,7 +290,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass ArrayDeque::spliterator()
+	JObject ArrayDeque::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

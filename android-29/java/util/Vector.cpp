@@ -21,7 +21,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	Vector::Vector(__JniBaseClass arg0)
+	Vector::Vector(JObject arg0)
 		: java::util::AbstractList(
 			"java.util.Vector",
 			"(Ljava/util/Collection;)V",
@@ -53,7 +53,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean Vector::addAll(__JniBaseClass arg0)
+	jboolean Vector::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -61,7 +61,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Vector::addAll(jint arg0, __JniBaseClass arg1)
+	jboolean Vector::addAll(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -107,7 +107,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::containsAll(__JniBaseClass arg0)
+	jboolean Vector::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -131,7 +131,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass Vector::elements()
+	JObject Vector::elements()
 	{
 		return callObjectMethod(
 			"elements",
@@ -161,7 +161,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	void Vector::forEach(__JniBaseClass arg0)
+	void Vector::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -217,7 +217,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass Vector::iterator()
+	JObject Vector::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -248,14 +248,14 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Vector::listIterator()
+	JObject Vector::listIterator()
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	__JniBaseClass Vector::listIterator(jint arg0)
+	JObject Vector::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -279,7 +279,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	jboolean Vector::removeAll(__JniBaseClass arg0)
+	jboolean Vector::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -310,7 +310,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::removeIf(__JniBaseClass arg0)
+	jboolean Vector::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -318,7 +318,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Vector::replaceAll(__JniBaseClass arg0)
+	void Vector::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -326,7 +326,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Vector::retainAll(__JniBaseClass arg0)
+	jboolean Vector::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -367,7 +367,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	void Vector::sort(__JniBaseClass arg0)
+	void Vector::sort(JObject arg0)
 	{
 		callMethod<void>(
 			"sort",
@@ -375,14 +375,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Vector::spliterator()
+	JObject Vector::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	__JniBaseClass Vector::subList(jint arg0, jint arg1)
+	JObject Vector::subList(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subList",

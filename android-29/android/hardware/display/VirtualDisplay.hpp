@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::view
 {
@@ -13,13 +13,13 @@ namespace android::view
 
 namespace android::hardware::display
 {
-	class VirtualDisplay : public __JniBaseClass
+	class VirtualDisplay : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VirtualDisplay(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VirtualDisplay(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VirtualDisplay(QJniObject obj);
 		
 		// Constructors

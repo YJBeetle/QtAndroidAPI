@@ -7,11 +7,11 @@ namespace android::text::method
 	// Fields
 	
 	// QJniObject forward
-	ReplacementTransformationMethod::ReplacementTransformationMethod(QJniObject obj) : __JniBaseClass(obj) {}
+	ReplacementTransformationMethod::ReplacementTransformationMethod(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ReplacementTransformationMethod::ReplacementTransformationMethod()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.method.ReplacementTransformationMethod",
 			"()V"
 		) {}

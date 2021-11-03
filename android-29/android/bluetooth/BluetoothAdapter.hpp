@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -29,7 +29,7 @@ namespace java::util
 
 namespace android::bluetooth
 {
-	class BluetoothAdapter : public __JniBaseClass
+	class BluetoothAdapter : public JObject
 	{
 	public:
 		// Fields
@@ -63,7 +63,7 @@ namespace android::bluetooth
 		static jint STATE_TURNING_ON();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothAdapter(QJniObject obj);
 		
 		// Constructors
@@ -72,17 +72,17 @@ namespace android::bluetooth
 		static jboolean checkBluetoothAddress(jstring arg0);
 		static android::bluetooth::BluetoothAdapter getDefaultAdapter();
 		jboolean cancelDiscovery();
-		void closeProfileProxy(jint arg0, __JniBaseClass arg1);
+		void closeProfileProxy(jint arg0, JObject arg1);
 		jboolean disable();
 		jboolean enable();
 		jstring getAddress();
 		android::bluetooth::le::BluetoothLeAdvertiser getBluetoothLeAdvertiser();
 		android::bluetooth::le::BluetoothLeScanner getBluetoothLeScanner();
-		__JniBaseClass getBondedDevices();
+		JObject getBondedDevices();
 		jint getLeMaximumAdvertisingDataLength();
 		jstring getName();
 		jint getProfileConnectionState(jint arg0);
-		jboolean getProfileProxy(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		jboolean getProfileProxy(android::content::Context arg0, JObject arg1, jint arg2);
 		android::bluetooth::BluetoothDevice getRemoteDevice(jbyteArray arg0);
 		android::bluetooth::BluetoothDevice getRemoteDevice(jstring arg0);
 		jint getScanMode();
@@ -102,9 +102,9 @@ namespace android::bluetooth
 		android::bluetooth::BluetoothServerSocket listenUsingRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
 		jboolean setName(jstring arg0);
 		jboolean startDiscovery();
-		jboolean startLeScan(__JniBaseClass arg0);
-		jboolean startLeScan(jarray arg0, __JniBaseClass arg1);
-		void stopLeScan(__JniBaseClass arg0);
+		jboolean startLeScan(JObject arg0);
+		jboolean startLeScan(jarray arg0, JObject arg1);
+		void stopLeScan(JObject arg0);
 	};
 } // namespace android::bluetooth
 

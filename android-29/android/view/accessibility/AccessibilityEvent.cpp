@@ -54,7 +54,7 @@ namespace android::view::accessibility
 			"CONTENT_CHANGE_TYPE_UNDEFINED"
 		);
 	}
-	__JniBaseClass AccessibilityEvent::CREATOR()
+	JObject AccessibilityEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityEvent",

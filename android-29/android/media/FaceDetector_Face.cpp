@@ -35,7 +35,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	FaceDetector_Face::FaceDetector_Face(QJniObject obj) : __JniBaseClass(obj) {}
+	FaceDetector_Face::FaceDetector_Face(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

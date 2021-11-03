@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ActivityManager_MemoryInfo::CREATOR()
+	JObject ActivityManager_MemoryInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$MemoryInfo",
@@ -38,11 +38,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$MemoryInfo",
 			"()V"
 		) {}

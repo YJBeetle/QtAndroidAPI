@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,24 +13,24 @@ namespace android::view
 
 namespace android::view
 {
-	class KeyboardShortcutGroup : public __JniBaseClass
+	class KeyboardShortcutGroup : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyboardShortcutGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyboardShortcutGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyboardShortcutGroup(QJniObject obj);
 		
 		// Constructors
 		KeyboardShortcutGroup(jstring arg0);
-		KeyboardShortcutGroup(jstring arg0, __JniBaseClass arg1);
+		KeyboardShortcutGroup(jstring arg0, JObject arg1);
 		
 		// Methods
 		void addItem(android::view::KeyboardShortcutInfo arg0);
 		jint describeContents();
-		__JniBaseClass getItems();
+		JObject getItems();
 		jstring getLabel();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -5,11 +5,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	SubtitleData::SubtitleData(QJniObject obj) : __JniBaseClass(obj) {}
+	SubtitleData::SubtitleData(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SubtitleData::SubtitleData(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.SubtitleData",
 			"(IJJ[B)V",
 			arg0,

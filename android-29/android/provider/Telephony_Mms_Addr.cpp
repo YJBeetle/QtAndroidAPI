@@ -45,7 +45,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_Mms_Addr::Telephony_Mms_Addr(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_Mms_Addr::Telephony_Mms_Addr(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

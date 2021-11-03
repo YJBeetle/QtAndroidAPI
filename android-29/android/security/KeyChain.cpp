@@ -81,17 +81,17 @@ namespace android::security
 	}
 	
 	// QJniObject forward
-	KeyChain::KeyChain(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyChain::KeyChain(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyChain::KeyChain()
-		: __JniBaseClass(
+		: JObject(
 			"android.security.KeyChain",
 			"()V"
 		) {}
 	
 	// Methods
-	void KeyChain::choosePrivateKeyAlias(android::app::Activity arg0, __JniBaseClass arg1, jarray arg2, jarray arg3, android::net::Uri arg4, jstring arg5)
+	void KeyChain::choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, jarray arg2, jarray arg3, android::net::Uri arg4, jstring arg5)
 	{
 		callStaticMethod<void>(
 			"android.security.KeyChain",
@@ -105,7 +105,7 @@ namespace android::security
 			arg5
 		);
 	}
-	void KeyChain::choosePrivateKeyAlias(android::app::Activity arg0, __JniBaseClass arg1, jarray arg2, jarray arg3, jstring arg4, jint arg5, jstring arg6)
+	void KeyChain::choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, jarray arg2, jarray arg3, jstring arg4, jint arg5, jstring arg6)
 	{
 		callStaticMethod<void>(
 			"android.security.KeyChain",
@@ -138,7 +138,7 @@ namespace android::security
 			arg1
 		).object<jarray>();
 	}
-	__JniBaseClass KeyChain::getPrivateKey(android::content::Context arg0, jstring arg1)
+	JObject KeyChain::getPrivateKey(android::content::Context arg0, jstring arg1)
 	{
 		return callStaticObjectMethod(
 			"android.security.KeyChain",

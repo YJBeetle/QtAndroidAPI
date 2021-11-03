@@ -55,11 +55,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore_Audio_Playlists_Members::MediaStore_Audio_Playlists_Members(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Audio_Playlists_Members::MediaStore_Audio_Playlists_Members(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Audio_Playlists_Members::MediaStore_Audio_Playlists_Members()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"()V"
 		) {}

@@ -8,11 +8,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	SignatureSpi::SignatureSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	SignatureSpi::SignatureSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SignatureSpi::SignatureSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.SignatureSpi",
 			"()V"
 		) {}

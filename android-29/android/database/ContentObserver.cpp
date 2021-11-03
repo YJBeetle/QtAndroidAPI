@@ -7,11 +7,11 @@ namespace android::database
 	// Fields
 	
 	// QJniObject forward
-	ContentObserver::ContentObserver(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentObserver::ContentObserver(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentObserver::ContentObserver(android::os::Handler arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.database.ContentObserver",
 			"(Landroid/os/Handler;)V",
 			arg0.object()

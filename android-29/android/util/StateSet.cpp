@@ -21,7 +21,7 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	StateSet::StateSet(QJniObject obj) : __JniBaseClass(obj) {}
+	StateSet::StateSet(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

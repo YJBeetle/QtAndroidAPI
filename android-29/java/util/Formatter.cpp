@@ -12,80 +12,80 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Formatter::Formatter(QJniObject obj) : __JniBaseClass(obj) {}
+	Formatter::Formatter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Formatter::Formatter()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"()V"
 		) {}
 	Formatter::Formatter(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	Formatter::Formatter(java::io::OutputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/OutputStream;)V",
 			arg0.object()
 		) {}
 	Formatter::Formatter(java::io::PrintStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/PrintStream;)V",
 			arg0.object()
 		) {}
-	Formatter::Formatter(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Formatter::Formatter(JObject arg0)
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/lang/Appendable;)V",
 			arg0.object()
 		) {}
 	Formatter::Formatter(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Formatter::Formatter(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/util/Locale;)V",
 			arg0.object()
 		) {}
 	Formatter::Formatter(java::io::File arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	Formatter::Formatter(java::io::OutputStream arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
-	Formatter::Formatter(__JniBaseClass arg0, java::util::Locale arg1)
-		: __JniBaseClass(
+	Formatter::Formatter(JObject arg0, java::util::Locale arg1)
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/lang/Appendable;Ljava/util/Locale;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	Formatter::Formatter(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	Formatter::Formatter(java::io::File arg0, jstring arg1, java::util::Locale arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/File;Ljava/lang/String;Ljava/util/Locale;)V",
 			arg0.object(),
@@ -93,7 +93,7 @@ namespace java::util
 			arg2.object()
 		) {}
 	Formatter::Formatter(java::io::File arg0, java::nio::charset::Charset arg1, java::util::Locale arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/File;Ljava/nio/charset/Charset;Ljava/util/Locale;)V",
 			arg0.object(),
@@ -101,7 +101,7 @@ namespace java::util
 			arg2.object()
 		) {}
 	Formatter::Formatter(java::io::OutputStream arg0, jstring arg1, java::util::Locale arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/util/Locale;)V",
 			arg0.object(),
@@ -109,7 +109,7 @@ namespace java::util
 			arg2.object()
 		) {}
 	Formatter::Formatter(java::io::OutputStream arg0, java::nio::charset::Charset arg1, java::util::Locale arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/io/OutputStream;Ljava/nio/charset/Charset;Ljava/util/Locale;)V",
 			arg0.object(),
@@ -117,7 +117,7 @@ namespace java::util
 			arg2.object()
 		) {}
 	Formatter::Formatter(jstring arg0, jstring arg1, java::util::Locale arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Locale;)V",
 			arg0,
@@ -125,7 +125,7 @@ namespace java::util
 			arg2.object()
 		) {}
 	Formatter::Formatter(jstring arg0, java::nio::charset::Charset arg1, java::util::Locale arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Formatter",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;Ljava/util/Locale;)V",
 			arg0,
@@ -181,7 +181,7 @@ namespace java::util
 			"()Ljava/util/Locale;"
 		);
 	}
-	__JniBaseClass Formatter::out()
+	JObject Formatter::out()
 	{
 		return callObjectMethod(
 			"out",

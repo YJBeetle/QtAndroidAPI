@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class Base64 : public __JniBaseClass
+	class Base64 : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::util
 		static jint URL_SAFE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Base64(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Base64(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Base64(QJniObject obj);
 		
 		// Constructors

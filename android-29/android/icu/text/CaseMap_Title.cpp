@@ -21,7 +21,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	__JniBaseClass CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, __JniBaseClass arg3, android::icu::text::Edits arg4)
+	JObject CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, JObject arg3, android::icu::text::Edits arg4)
 	{
 		return callObjectMethod(
 			"apply",

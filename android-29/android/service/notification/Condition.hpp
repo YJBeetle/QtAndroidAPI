@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,11 +21,11 @@ namespace android::os
 
 namespace android::service::notification
 {
-	class Condition : public __JniBaseClass
+	class Condition : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_RELEVANT_ALWAYS();
 		static jint FLAG_RELEVANT_NOW();
 		static jstring SCHEME();
@@ -42,7 +42,7 @@ namespace android::service::notification
 		jstring summary();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Condition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Condition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Condition(QJniObject obj);
 		
 		// Constructors

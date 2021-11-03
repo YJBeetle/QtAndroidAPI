@@ -48,11 +48,11 @@ namespace android::bluetooth::le
 	}
 	
 	// QJniObject forward
-	AdvertisingSetCallback::AdvertisingSetCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	AdvertisingSetCallback::AdvertisingSetCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AdvertisingSetCallback::AdvertisingSetCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.le.AdvertisingSetCallback",
 			"()V"
 		) {}

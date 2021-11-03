@@ -1198,29 +1198,29 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	ExifInterface::ExifInterface(QJniObject obj) : __JniBaseClass(obj) {}
+	ExifInterface::ExifInterface(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ExifInterface::ExifInterface(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.ExifInterface",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	ExifInterface::ExifInterface(java::io::FileDescriptor arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.ExifInterface",
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.object()
 		) {}
 	ExifInterface::ExifInterface(java::io::InputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.ExifInterface",
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
 	ExifInterface::ExifInterface(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.ExifInterface",
 			"(Ljava/lang/String;)V",
 			arg0

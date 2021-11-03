@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -37,7 +37,7 @@ namespace java::util::concurrent
 
 namespace java::lang::invoke
 {
-	class MethodHandles_Lookup : public __JniBaseClass
+	class MethodHandles_Lookup : public JObject
 	{
 	public:
 		// Fields
@@ -50,7 +50,7 @@ namespace java::lang::invoke
 		static jint UNCONDITIONAL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MethodHandles_Lookup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MethodHandles_Lookup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MethodHandles_Lookup(QJniObject obj);
 		
 		// Constructors
@@ -71,8 +71,8 @@ namespace java::lang::invoke
 		java::lang::invoke::MethodHandle findStatic(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2);
 		java::lang::invoke::MethodHandle findStaticGetter(jclass arg0, jstring arg1, jclass arg2);
 		java::lang::invoke::MethodHandle findStaticSetter(jclass arg0, jstring arg1, jclass arg2);
-		__JniBaseClass findStaticVarHandle(jclass arg0, jstring arg1, jclass arg2);
-		__JniBaseClass findVarHandle(jclass arg0, jstring arg1, jclass arg2);
+		JObject findStaticVarHandle(jclass arg0, jstring arg1, jclass arg2);
+		JObject findVarHandle(jclass arg0, jstring arg1, jclass arg2);
 		java::lang::invoke::MethodHandle findVirtual(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2);
 		jboolean hasFullPrivilegeAccess();
 		jboolean hasPrivateAccess();
@@ -80,14 +80,14 @@ namespace java::lang::invoke
 		jclass lookupClass();
 		jint lookupModes();
 		jclass previousLookupClass();
-		__JniBaseClass revealDirect(java::lang::invoke::MethodHandle arg0);
+		JObject revealDirect(java::lang::invoke::MethodHandle arg0);
 		jstring toString();
 		java::lang::invoke::MethodHandle unreflect(java::lang::reflect::Method arg0);
 		java::lang::invoke::MethodHandle unreflectConstructor(java::lang::reflect::Constructor arg0);
 		java::lang::invoke::MethodHandle unreflectGetter(java::lang::reflect::Field arg0);
 		java::lang::invoke::MethodHandle unreflectSetter(java::lang::reflect::Field arg0);
 		java::lang::invoke::MethodHandle unreflectSpecial(java::lang::reflect::Method arg0, jclass arg1);
-		__JniBaseClass unreflectVarHandle(java::lang::reflect::Field arg0);
+		JObject unreflectVarHandle(java::lang::reflect::Field arg0);
 	};
 } // namespace java::lang::invoke
 

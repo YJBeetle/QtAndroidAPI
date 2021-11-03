@@ -1382,7 +1382,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	CarrierConfigManager::CarrierConfigManager(QJniObject obj) : __JniBaseClass(obj) {}
+	CarrierConfigManager::CarrierConfigManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

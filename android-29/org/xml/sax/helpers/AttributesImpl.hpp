@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace org::xml::sax::helpers
 {
-	class AttributesImpl : public __JniBaseClass
+	class AttributesImpl : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AttributesImpl(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AttributesImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AttributesImpl(QJniObject obj);
 		
 		// Constructors
 		AttributesImpl();
-		AttributesImpl(__JniBaseClass arg0);
+		AttributesImpl(JObject arg0);
 		
 		// Methods
 		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
@@ -35,7 +35,7 @@ namespace org::xml::sax::helpers
 		jstring getValue(jstring arg0, jstring arg1);
 		void removeAttribute(jint arg0);
 		void setAttribute(jint arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
-		void setAttributes(__JniBaseClass arg0);
+		void setAttributes(JObject arg0);
 		void setLocalName(jint arg0, jstring arg1);
 		void setQName(jint arg0, jstring arg1);
 		void setType(jint arg0, jstring arg1);

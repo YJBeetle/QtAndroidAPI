@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::usage
 {
@@ -9,7 +9,7 @@ namespace android::app::usage
 
 namespace android::app::usage
 {
-	class UsageStatsManager : public __JniBaseClass
+	class UsageStatsManager : public JObject
 	{
 	public:
 		// Fields
@@ -24,7 +24,7 @@ namespace android::app::usage
 		static jint STANDBY_BUCKET_WORKING_SET();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UsageStatsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UsageStatsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UsageStatsManager(QJniObject obj);
 		
 		// Constructors
@@ -32,12 +32,12 @@ namespace android::app::usage
 		// Methods
 		jint getAppStandbyBucket();
 		jboolean isAppInactive(jstring arg0);
-		__JniBaseClass queryAndAggregateUsageStats(jlong arg0, jlong arg1);
-		__JniBaseClass queryConfigurations(jint arg0, jlong arg1, jlong arg2);
-		__JniBaseClass queryEventStats(jint arg0, jlong arg1, jlong arg2);
+		JObject queryAndAggregateUsageStats(jlong arg0, jlong arg1);
+		JObject queryConfigurations(jint arg0, jlong arg1, jlong arg2);
+		JObject queryEventStats(jint arg0, jlong arg1, jlong arg2);
 		android::app::usage::UsageEvents queryEvents(jlong arg0, jlong arg1);
 		android::app::usage::UsageEvents queryEventsForSelf(jlong arg0, jlong arg1);
-		__JniBaseClass queryUsageStats(jint arg0, jlong arg1, jlong arg2);
+		JObject queryUsageStats(jint arg0, jlong arg1, jlong arg2);
 	};
 } // namespace android::app::usage
 

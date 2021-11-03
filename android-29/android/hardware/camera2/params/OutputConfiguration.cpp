@@ -6,7 +6,7 @@
 namespace android::hardware::camera2::params
 {
 	// Fields
-	__JniBaseClass OutputConfiguration::CREATOR()
+	JObject OutputConfiguration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.camera2.params.OutputConfiguration",
@@ -23,24 +23,24 @@ namespace android::hardware::camera2::params
 	}
 	
 	// QJniObject forward
-	OutputConfiguration::OutputConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
+	OutputConfiguration::OutputConfiguration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	OutputConfiguration::OutputConfiguration(android::view::Surface arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.OutputConfiguration",
 			"(Landroid/view/Surface;)V",
 			arg0.object()
 		) {}
 	OutputConfiguration::OutputConfiguration(android::util::Size arg0, jclass arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.OutputConfiguration",
 			"(Landroid/util/Size;Ljava/lang/Class;)V",
 			arg0.object(),
 			arg1
 		) {}
 	OutputConfiguration::OutputConfiguration(jint arg0, android::view::Surface arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.OutputConfiguration",
 			"(ILandroid/view/Surface;)V",
 			arg0,
@@ -99,7 +99,7 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	__JniBaseClass OutputConfiguration::getSurfaces()
+	JObject OutputConfiguration::getSurfaces()
 	{
 		return callObjectMethod(
 			"getSurfaces",

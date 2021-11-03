@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::os::storage
 {
-	class OnObbStateChangeListener : public __JniBaseClass
+	class OnObbStateChangeListener : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::os::storage
 		static jint UNMOUNTED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit OnObbStateChangeListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OnObbStateChangeListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OnObbStateChangeListener(QJniObject obj);
 		
 		// Constructors

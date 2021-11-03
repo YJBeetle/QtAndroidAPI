@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	BaseBundle::BaseBundle(QJniObject obj) : __JniBaseClass(obj) {}
+	BaseBundle::BaseBundle(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -166,7 +166,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	__JniBaseClass BaseBundle::keySet()
+	JObject BaseBundle::keySet()
 	{
 		return callObjectMethod(
 			"keySet",

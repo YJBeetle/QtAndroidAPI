@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -31,7 +31,7 @@ namespace android::service::textservice
 		
 		// Methods
 		android::service::textservice::SpellCheckerService_Session createSession();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 	};
 } // namespace android::service::textservice
 

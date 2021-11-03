@@ -11,7 +11,7 @@ namespace java::nio::charset
 	// Fields
 	
 	// QJniObject forward
-	CharsetEncoder::CharsetEncoder(QJniObject obj) : __JniBaseClass(obj) {}
+	CharsetEncoder::CharsetEncoder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

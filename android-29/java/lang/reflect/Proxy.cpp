@@ -12,12 +12,12 @@ namespace java::lang::reflect
 	// Fields
 	
 	// QJniObject forward
-	Proxy::Proxy(QJniObject obj) : __JniBaseClass(obj) {}
+	Proxy::Proxy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Proxy::getInvocationHandler(jobject arg0)
+	JObject Proxy::getInvocationHandler(jobject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
@@ -45,7 +45,7 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	jobject Proxy::newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, __JniBaseClass arg2)
+	jobject Proxy::newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",

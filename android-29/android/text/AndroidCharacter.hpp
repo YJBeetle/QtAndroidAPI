@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::text
 {
-	class AndroidCharacter : public __JniBaseClass
+	class AndroidCharacter : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::text
 		static jint EAST_ASIAN_WIDTH_WIDE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AndroidCharacter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AndroidCharacter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AndroidCharacter(QJniObject obj);
 		
 		// Constructors

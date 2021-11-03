@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::text
 {
@@ -9,13 +9,13 @@ namespace android::text
 
 namespace android::text::style
 {
-	class CharacterStyle : public __JniBaseClass
+	class CharacterStyle : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CharacterStyle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CharacterStyle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CharacterStyle(QJniObject obj);
 		
 		// Constructors

@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass SurfaceControl::CREATOR()
+	JObject SurfaceControl::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.SurfaceControl",
@@ -14,7 +14,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	SurfaceControl::SurfaceControl(QJniObject obj) : __JniBaseClass(obj) {}
+	SurfaceControl::SurfaceControl(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -32,7 +32,7 @@ namespace android::database
 			arg0
 		);
 	}
-	void MatrixCursor::addRow(__JniBaseClass arg0)
+	void MatrixCursor::addRow(JObject arg0)
 	{
 		callMethod<void>(
 			"addRow",

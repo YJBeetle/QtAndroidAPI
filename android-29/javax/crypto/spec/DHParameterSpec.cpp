@@ -6,18 +6,18 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QJniObject forward
-	DHParameterSpec::DHParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	DHParameterSpec::DHParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DHParameterSpec::DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.DHParameterSpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	DHParameterSpec::DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.DHParameterSpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;I)V",
 			arg0.object(),

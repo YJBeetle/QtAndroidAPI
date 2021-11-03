@@ -10,11 +10,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	DatagramSocketImpl::DatagramSocketImpl(QJniObject obj) : __JniBaseClass(obj) {}
+	DatagramSocketImpl::DatagramSocketImpl(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DatagramSocketImpl::DatagramSocketImpl()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramSocketImpl",
 			"()V"
 		) {}

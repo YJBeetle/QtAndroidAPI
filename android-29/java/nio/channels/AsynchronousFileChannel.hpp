@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio
 {
@@ -13,33 +13,33 @@ namespace java::nio::channels
 
 namespace java::nio::channels
 {
-	class AsynchronousFileChannel : public __JniBaseClass
+	class AsynchronousFileChannel : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AsynchronousFileChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AsynchronousFileChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AsynchronousFileChannel(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::nio::channels::AsynchronousFileChannel open(__JniBaseClass arg0, jarray arg1);
-		static java::nio::channels::AsynchronousFileChannel open(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3);
+		static java::nio::channels::AsynchronousFileChannel open(JObject arg0, jarray arg1);
+		static java::nio::channels::AsynchronousFileChannel open(JObject arg0, JObject arg1, JObject arg2, jarray arg3);
 		void force(jboolean arg0);
-		__JniBaseClass lock();
-		__JniBaseClass lock(jlong arg0, jlong arg1, jboolean arg2);
-		void lock(jobject arg0, __JniBaseClass arg1);
-		void lock(jlong arg0, jlong arg1, jboolean arg2, jobject arg3, __JniBaseClass arg4);
-		__JniBaseClass read(java::nio::ByteBuffer arg0, jlong arg1);
-		void read(java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, __JniBaseClass arg3);
+		JObject lock();
+		JObject lock(jlong arg0, jlong arg1, jboolean arg2);
+		void lock(jobject arg0, JObject arg1);
+		void lock(jlong arg0, jlong arg1, jboolean arg2, jobject arg3, JObject arg4);
+		JObject read(java::nio::ByteBuffer arg0, jlong arg1);
+		void read(java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, JObject arg3);
 		jlong size();
 		java::nio::channels::AsynchronousFileChannel truncate(jlong arg0);
 		java::nio::channels::FileLock tryLock();
 		java::nio::channels::FileLock tryLock(jlong arg0, jlong arg1, jboolean arg2);
-		__JniBaseClass write(java::nio::ByteBuffer arg0, jlong arg1);
-		void write(java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, __JniBaseClass arg3);
+		JObject write(java::nio::ByteBuffer arg0, jlong arg1);
+		void write(java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, JObject arg3);
 	};
 } // namespace java::nio::channels
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,22 +13,22 @@ namespace android::telephony::mbms
 
 namespace android::telephony
 {
-	class MbmsGroupCallSession : public __JniBaseClass
+	class MbmsGroupCallSession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MbmsGroupCallSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MbmsGroupCallSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsGroupCallSession(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, JObject arg1, JObject arg2);
+		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, jint arg1, JObject arg2, JObject arg3);
 		void close();
-		android::telephony::mbms::GroupCall startGroupCall(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4);
+		android::telephony::mbms::GroupCall startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4);
 	};
 } // namespace android::telephony
 

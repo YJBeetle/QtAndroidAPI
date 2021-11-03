@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -53,33 +53,33 @@ namespace java::util::logging
 
 namespace java::util::logging
 {
-	class LogManager : public __JniBaseClass
+	class LogManager : public JObject
 	{
 	public:
 		// Fields
 		static jstring LOGGING_MXBEAN_NAME();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LogManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LogManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LogManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static java::util::logging::LogManager getLogManager();
-		static __JniBaseClass getLoggingMXBean();
-		java::util::logging::LogManager addConfigurationListener(__JniBaseClass arg0);
+		static JObject getLoggingMXBean();
+		java::util::logging::LogManager addConfigurationListener(JObject arg0);
 		jboolean addLogger(java::util::logging::Logger arg0);
 		void checkAccess();
 		java::util::logging::Logger getLogger(jstring arg0);
-		__JniBaseClass getLoggerNames();
+		JObject getLoggerNames();
 		jstring getProperty(jstring arg0);
 		void readConfiguration();
 		void readConfiguration(java::io::InputStream arg0);
-		void removeConfigurationListener(__JniBaseClass arg0);
+		void removeConfigurationListener(JObject arg0);
 		void reset();
-		void updateConfiguration(__JniBaseClass arg0);
-		void updateConfiguration(java::io::InputStream arg0, __JniBaseClass arg1);
+		void updateConfiguration(JObject arg0);
+		void updateConfiguration(java::io::InputStream arg0, JObject arg1);
 	};
 } // namespace java::util::logging
 

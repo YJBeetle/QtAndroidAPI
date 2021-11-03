@@ -7,7 +7,7 @@
 namespace android::print
 {
 	// Fields
-	__JniBaseClass PrintJobInfo::CREATOR()
+	JObject PrintJobInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.print.PrintJobInfo",
@@ -66,7 +66,7 @@ namespace android::print
 	}
 	
 	// QJniObject forward
-	PrintJobInfo::PrintJobInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintJobInfo::PrintJobInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

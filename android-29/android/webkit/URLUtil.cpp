@@ -5,11 +5,11 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	URLUtil::URLUtil(QJniObject obj) : __JniBaseClass(obj) {}
+	URLUtil::URLUtil(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	URLUtil::URLUtil()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.URLUtil",
 			"()V"
 		) {}

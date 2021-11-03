@@ -6,11 +6,11 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	WebHistoryItem::WebHistoryItem(QJniObject obj) : __JniBaseClass(obj) {}
+	WebHistoryItem::WebHistoryItem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebHistoryItem::WebHistoryItem()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebHistoryItem",
 			"()V"
 		) {}

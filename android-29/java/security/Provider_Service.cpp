@@ -8,11 +8,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	Provider_Service::Provider_Service(QJniObject obj) : __JniBaseClass(obj) {}
+	Provider_Service::Provider_Service(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Provider_Service::Provider_Service(java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, __JniBaseClass arg4, __JniBaseClass arg5)
-		: __JniBaseClass(
+	Provider_Service::Provider_Service(java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, JObject arg4, JObject arg5)
+		: JObject(
 			"java.security.Provider$Service",
 			"(Ljava/security/Provider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;)V",
 			arg0.object(),

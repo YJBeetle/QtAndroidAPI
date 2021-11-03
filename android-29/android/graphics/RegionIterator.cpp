@@ -7,11 +7,11 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	RegionIterator::RegionIterator(QJniObject obj) : __JniBaseClass(obj) {}
+	RegionIterator::RegionIterator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RegionIterator::RegionIterator(android::graphics::Region arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.RegionIterator",
 			"(Landroid/graphics/Region;)V",
 			arg0.object()

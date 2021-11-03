@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -109,9 +109,9 @@ namespace android::accessibilityservice
 		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
 		android::accessibilityservice::AccessibilityService_SoftKeyboardController getSoftKeyboardController();
 		jobject getSystemService(jstring arg0);
-		__JniBaseClass getWindows();
+		JObject getWindows();
 		void onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onInterrupt();
 		jboolean performGlobalAction(jint arg0);
 		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0);

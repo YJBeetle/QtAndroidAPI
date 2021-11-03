@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -33,13 +33,13 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class RemoteConnection_Callback : public __JniBaseClass
+	class RemoteConnection_Callback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RemoteConnection_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoteConnection_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteConnection_Callback(QJniObject obj);
 		
 		// Constructors
@@ -49,7 +49,7 @@ namespace android::telecom
 		void onAddressChanged(android::telecom::RemoteConnection arg0, android::net::Uri arg1, jint arg2);
 		void onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, jstring arg1, jint arg2);
 		void onConferenceChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConference arg1);
-		void onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, __JniBaseClass arg1);
+		void onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, JObject arg1);
 		void onConnectionCapabilitiesChanged(android::telecom::RemoteConnection arg0, jint arg1);
 		void onConnectionEvent(android::telecom::RemoteConnection arg0, jstring arg1, android::os::Bundle arg2);
 		void onConnectionPropertiesChanged(android::telecom::RemoteConnection arg0, jint arg1);

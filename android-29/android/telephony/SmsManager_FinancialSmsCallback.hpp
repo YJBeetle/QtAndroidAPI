@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::database
 {
@@ -9,13 +9,13 @@ namespace android::database
 
 namespace android::telephony
 {
-	class SmsManager_FinancialSmsCallback : public __JniBaseClass
+	class SmsManager_FinancialSmsCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SmsManager_FinancialSmsCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SmsManager_FinancialSmsCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SmsManager_FinancialSmsCallback(QJniObject obj);
 		
 		// Constructors

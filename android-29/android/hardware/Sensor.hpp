@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::hardware
 {
-	class Sensor : public __JniBaseClass
+	class Sensor : public JObject
 	{
 	public:
 		// Fields
@@ -71,7 +71,7 @@ namespace android::hardware
 		static jint TYPE_TEMPERATURE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Sensor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Sensor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Sensor(QJniObject obj);
 		
 		// Constructors

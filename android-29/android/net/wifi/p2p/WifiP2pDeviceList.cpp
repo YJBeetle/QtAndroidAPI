@@ -5,7 +5,7 @@
 namespace android::net::wifi::p2p
 {
 	// Fields
-	__JniBaseClass WifiP2pDeviceList::CREATOR()
+	JObject WifiP2pDeviceList::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pDeviceList",
@@ -15,16 +15,16 @@ namespace android::net::wifi::p2p
 	}
 	
 	// QJniObject forward
-	WifiP2pDeviceList::WifiP2pDeviceList(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiP2pDeviceList::WifiP2pDeviceList(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiP2pDeviceList::WifiP2pDeviceList()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.p2p.WifiP2pDeviceList",
 			"()V"
 		) {}
 	WifiP2pDeviceList::WifiP2pDeviceList(android::net::wifi::p2p::WifiP2pDeviceList &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.p2p.WifiP2pDeviceList",
 			"(Landroid/net/wifi/p2p/WifiP2pDeviceList;)V",
 			arg0.object()
@@ -46,7 +46,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	__JniBaseClass WifiP2pDeviceList::getDeviceList()
+	JObject WifiP2pDeviceList::getDeviceList()
 	{
 		return callObjectMethod(
 			"getDeviceList",

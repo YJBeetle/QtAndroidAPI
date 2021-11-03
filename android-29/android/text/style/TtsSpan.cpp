@@ -628,17 +628,17 @@ namespace android::text::style
 	}
 	
 	// QJniObject forward
-	TtsSpan::TtsSpan(QJniObject obj) : __JniBaseClass(obj) {}
+	TtsSpan::TtsSpan(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TtsSpan::TtsSpan(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.TtsSpan",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	TtsSpan::TtsSpan(jstring arg0, android::os::PersistableBundle arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.TtsSpan",
 			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,

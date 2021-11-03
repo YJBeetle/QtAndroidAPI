@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::location
 {
-	class GpsStatus : public __JniBaseClass
+	class GpsStatus : public JObject
 	{
 	public:
 		// Fields
@@ -15,14 +15,14 @@ namespace android::location
 		static jint GPS_EVENT_STOPPED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GpsStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GpsStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GpsStatus(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jint getMaxSatellites();
-		__JniBaseClass getSatellites();
+		JObject getSatellites();
 		jint getTimeToFirstFix();
 	};
 } // namespace android::location

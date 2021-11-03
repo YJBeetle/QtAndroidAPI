@@ -11,7 +11,7 @@ namespace java::util::logging
 	// Fields
 	
 	// QJniObject forward
-	Handler::Handler(QJniObject obj) : __JniBaseClass(obj) {}
+	Handler::Handler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -44,7 +44,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/ErrorManager;"
 		);
 	}
-	__JniBaseClass Handler::getFilter()
+	JObject Handler::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -97,7 +97,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Handler::setFilter(__JniBaseClass arg0)
+	void Handler::setFilter(JObject arg0)
 	{
 		callMethod<void>(
 			"setFilter",

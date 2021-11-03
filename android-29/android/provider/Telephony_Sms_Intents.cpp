@@ -161,7 +161,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_Sms_Intents::Telephony_Sms_Intents(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_Sms_Intents::Telephony_Sms_Intents(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

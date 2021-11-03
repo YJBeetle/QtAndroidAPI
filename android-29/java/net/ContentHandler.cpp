@@ -6,11 +6,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	ContentHandler::ContentHandler(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentHandler::ContentHandler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentHandler::ContentHandler()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.ContentHandler",
 			"()V"
 		) {}

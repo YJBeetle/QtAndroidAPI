@@ -5,11 +5,11 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	CancellationSignal::CancellationSignal(QJniObject obj) : __JniBaseClass(obj) {}
+	CancellationSignal::CancellationSignal(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CancellationSignal::CancellationSignal()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.CancellationSignal",
 			"()V"
 		) {}
@@ -29,7 +29,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	void CancellationSignal::setOnCancelListener(__JniBaseClass arg0)
+	void CancellationSignal::setOnCancelListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCancelListener",

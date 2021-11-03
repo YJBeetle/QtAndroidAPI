@@ -5,11 +5,11 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	PolicyQualifierInfo::PolicyQualifierInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	PolicyQualifierInfo::PolicyQualifierInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PolicyQualifierInfo::PolicyQualifierInfo(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.PolicyQualifierInfo",
 			"([B)V",
 			arg0

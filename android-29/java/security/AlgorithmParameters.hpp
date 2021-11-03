@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -13,13 +13,13 @@ namespace java::security
 
 namespace java::security
 {
-	class AlgorithmParameters : public __JniBaseClass
+	class AlgorithmParameters : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AlgorithmParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AlgorithmParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AlgorithmParameters(QJniObject obj);
 		
 		// Constructors
@@ -31,10 +31,10 @@ namespace java::security
 		jstring getAlgorithm();
 		jbyteArray getEncoded();
 		jbyteArray getEncoded(jstring arg0);
-		__JniBaseClass getParameterSpec(jclass arg0);
+		JObject getParameterSpec(jclass arg0);
 		java::security::Provider getProvider();
 		void init(jbyteArray arg0);
-		void init(__JniBaseClass arg0);
+		void init(JObject arg0);
 		void init(jbyteArray arg0, jstring arg1);
 		jstring toString();
 	};

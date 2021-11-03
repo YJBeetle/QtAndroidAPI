@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -17,13 +17,13 @@ namespace java::util::concurrent::locks
 
 namespace java::util::concurrent::locks
 {
-	class ReentrantReadWriteLock : public __JniBaseClass
+	class ReentrantReadWriteLock : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ReentrantReadWriteLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ReentrantReadWriteLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ReentrantReadWriteLock(QJniObject obj);
 		
 		// Constructors
@@ -34,11 +34,11 @@ namespace java::util::concurrent::locks
 		jint getQueueLength();
 		jint getReadHoldCount();
 		jint getReadLockCount();
-		jint getWaitQueueLength(__JniBaseClass arg0);
+		jint getWaitQueueLength(JObject arg0);
 		jint getWriteHoldCount();
 		jboolean hasQueuedThread(java::lang::Thread arg0);
 		jboolean hasQueuedThreads();
-		jboolean hasWaiters(__JniBaseClass arg0);
+		jboolean hasWaiters(JObject arg0);
 		jboolean isFair();
 		jboolean isWriteLocked();
 		jboolean isWriteLockedByCurrentThread();

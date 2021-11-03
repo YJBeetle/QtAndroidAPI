@@ -29,22 +29,22 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	MessagePattern::MessagePattern(QJniObject obj) : __JniBaseClass(obj) {}
+	MessagePattern::MessagePattern(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MessagePattern::MessagePattern()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.MessagePattern",
 			"()V"
 		) {}
 	MessagePattern::MessagePattern(android::icu::text::MessagePattern_ApostropheMode arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.MessagePattern",
 			"(Landroid/icu/text/MessagePattern$ApostropheMode;)V",
 			arg0.object()
 		) {}
 	MessagePattern::MessagePattern(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.MessagePattern",
 			"(Ljava/lang/String;)V",
 			arg0

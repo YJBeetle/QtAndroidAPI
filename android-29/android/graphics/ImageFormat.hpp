@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::graphics
 {
-	class ImageFormat : public __JniBaseClass
+	class ImageFormat : public JObject
 	{
 	public:
 		// Fields
@@ -33,7 +33,7 @@ namespace android::graphics
 		static jint YV12();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ImageFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImageFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImageFormat(QJniObject obj);
 		
 		// Constructors

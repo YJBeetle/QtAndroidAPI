@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::webkit
 {
@@ -13,13 +13,13 @@ namespace java::io
 
 namespace android::webkit
 {
-	class TracingController : public __JniBaseClass
+	class TracingController : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TracingController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TracingController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TracingController(QJniObject obj);
 		
 		// Constructors
@@ -29,7 +29,7 @@ namespace android::webkit
 		static android::webkit::TracingController getInstance();
 		jboolean isTracing();
 		void start(android::webkit::TracingConfig arg0);
-		jboolean stop(java::io::OutputStream arg0, __JniBaseClass arg1);
+		jboolean stop(java::io::OutputStream arg0, JObject arg1);
 	};
 } // namespace android::webkit
 

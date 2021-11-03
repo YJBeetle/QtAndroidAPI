@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::net
 {
-	class DnsResolver : public __JniBaseClass
+	class DnsResolver : public JObject
 	{
 	public:
 		// Fields
@@ -28,17 +28,17 @@ namespace android::net
 		static jint TYPE_AAAA();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DnsResolver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DnsResolver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DnsResolver(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static android::net::DnsResolver getInstance();
-		void query(android::net::Network arg0, jstring arg1, jint arg2, __JniBaseClass arg3, android::os::CancellationSignal arg4, __JniBaseClass arg5);
-		void query(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, __JniBaseClass arg4, android::os::CancellationSignal arg5, __JniBaseClass arg6);
-		void rawQuery(android::net::Network arg0, jbyteArray arg1, jint arg2, __JniBaseClass arg3, android::os::CancellationSignal arg4, __JniBaseClass arg5);
-		void rawQuery(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, jint arg4, __JniBaseClass arg5, android::os::CancellationSignal arg6, __JniBaseClass arg7);
+		void query(android::net::Network arg0, jstring arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5);
+		void query(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, JObject arg4, android::os::CancellationSignal arg5, JObject arg6);
+		void rawQuery(android::net::Network arg0, jbyteArray arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5);
+		void rawQuery(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, jint arg4, JObject arg5, android::os::CancellationSignal arg6, JObject arg7);
 	};
 } // namespace android::net
 

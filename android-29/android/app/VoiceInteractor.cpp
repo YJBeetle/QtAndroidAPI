@@ -6,7 +6,7 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	VoiceInteractor::VoiceInteractor(QJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractor::VoiceInteractor(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,7 +40,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	jboolean VoiceInteractor::registerOnDestroyedCallback(__JniBaseClass arg0, __JniBaseClass arg1)
+	jboolean VoiceInteractor::registerOnDestroyedCallback(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"registerOnDestroyedCallback",
@@ -74,7 +74,7 @@ namespace android::app
 			arg0
 		).object<jbooleanArray>();
 	}
-	jboolean VoiceInteractor::unregisterOnDestroyedCallback(__JniBaseClass arg0)
+	jboolean VoiceInteractor::unregisterOnDestroyedCallback(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"unregisterOnDestroyedCallback",

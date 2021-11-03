@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::media
 {
-	class Rating : public __JniBaseClass
+	class Rating : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint RATING_3_STARS();
 		static jint RATING_4_STARS();
 		static jint RATING_5_STARS();
@@ -23,7 +23,7 @@ namespace android::media
 		static jint RATING_THUMB_UP_DOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Rating(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Rating(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Rating(QJniObject obj);
 		
 		// Constructors

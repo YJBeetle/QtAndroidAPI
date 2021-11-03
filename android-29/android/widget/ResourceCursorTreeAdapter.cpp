@@ -11,7 +11,7 @@ namespace android::widget
 	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(QJniObject obj) : android::widget::CursorTreeAdapter(obj) {}
 	
 	// Constructors
-	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::CursorTreeAdapter(
 			"android.widget.ResourceCursorTreeAdapter",
 			"(Landroid/content/Context;Landroid/database/Cursor;II)V",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg2,
 			arg3
 		) {}
-	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
+	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4)
 		: android::widget::CursorTreeAdapter(
 			"android.widget.ResourceCursorTreeAdapter",
 			"(Landroid/content/Context;Landroid/database/Cursor;III)V",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg3,
 			arg4
 		) {}
-	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 		: android::widget::CursorTreeAdapter(
 			"android.widget.ResourceCursorTreeAdapter",
 			"(Landroid/content/Context;Landroid/database/Cursor;IIII)V",
@@ -43,7 +43,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::view::View ResourceCursorTreeAdapter::newChildView(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2, android::view::ViewGroup arg3)
+	android::view::View ResourceCursorTreeAdapter::newChildView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3)
 	{
 		return callObjectMethod(
 			"newChildView",
@@ -54,7 +54,7 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	android::view::View ResourceCursorTreeAdapter::newGroupView(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2, android::view::ViewGroup arg3)
+	android::view::View ResourceCursorTreeAdapter::newGroupView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3)
 	{
 		return callObjectMethod(
 			"newGroupView",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -17,13 +17,13 @@ namespace java::nio::file
 
 namespace java::nio::file
 {
-	class FileSystems : public __JniBaseClass
+	class FileSystems : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FileSystems(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileSystems(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileSystems(QJniObject obj);
 		
 		// Constructors
@@ -31,12 +31,12 @@ namespace java::nio::file
 		// Methods
 		static java::nio::file::FileSystem getDefault();
 		static java::nio::file::FileSystem getFileSystem(java::net::URI arg0);
-		static java::nio::file::FileSystem newFileSystem(__JniBaseClass arg0);
-		static java::nio::file::FileSystem newFileSystem(java::net::URI arg0, __JniBaseClass arg1);
-		static java::nio::file::FileSystem newFileSystem(__JniBaseClass arg0, java::lang::ClassLoader arg1);
-		static java::nio::file::FileSystem newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1);
-		static java::nio::file::FileSystem newFileSystem(java::net::URI arg0, __JniBaseClass arg1, java::lang::ClassLoader arg2);
-		static java::nio::file::FileSystem newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1, java::lang::ClassLoader arg2);
+		static java::nio::file::FileSystem newFileSystem(JObject arg0);
+		static java::nio::file::FileSystem newFileSystem(java::net::URI arg0, JObject arg1);
+		static java::nio::file::FileSystem newFileSystem(JObject arg0, java::lang::ClassLoader arg1);
+		static java::nio::file::FileSystem newFileSystem(JObject arg0, JObject arg1);
+		static java::nio::file::FileSystem newFileSystem(java::net::URI arg0, JObject arg1, java::lang::ClassLoader arg2);
+		static java::nio::file::FileSystem newFileSystem(JObject arg0, JObject arg1, java::lang::ClassLoader arg2);
 	};
 } // namespace java::nio::file
 

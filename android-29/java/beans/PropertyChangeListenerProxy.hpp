@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../util/EventListenerProxy.hpp"
 
 namespace java::beans
@@ -20,7 +20,7 @@ namespace java::beans
 		PropertyChangeListenerProxy(QJniObject obj);
 		
 		// Constructors
-		PropertyChangeListenerProxy(jstring arg0, __JniBaseClass arg1);
+		PropertyChangeListenerProxy(jstring arg0, JObject arg1);
 		
 		// Methods
 		jstring getPropertyName();

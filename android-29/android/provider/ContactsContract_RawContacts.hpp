@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class ContactsContract_RawContacts : public __JniBaseClass
+	class ContactsContract_RawContacts : public JObject
 	{
 	public:
 		// Fields
@@ -26,14 +26,14 @@ namespace android::provider
 		static android::net::Uri CONTENT_URI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_RawContacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_RawContacts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_RawContacts(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static android::net::Uri getContactLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static __JniBaseClass newEntityIterator(__JniBaseClass arg0);
+		static JObject newEntityIterator(JObject arg0);
 	};
 } // namespace android::provider
 

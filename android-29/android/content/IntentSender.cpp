@@ -8,7 +8,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass IntentSender::CREATOR()
+	JObject IntentSender::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.IntentSender",
@@ -18,7 +18,7 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	IntentSender::IntentSender(QJniObject obj) : __JniBaseClass(obj) {}
+	IntentSender::IntentSender(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -92,7 +92,7 @@ namespace android::content
 			"()I"
 		);
 	}
-	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4)
+	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callMethod<void>(
 			"sendIntent",
@@ -104,7 +104,7 @@ namespace android::content
 			arg4.object()
 		);
 	}
-	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5)
+	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5)
 	{
 		callMethod<void>(
 			"sendIntent",

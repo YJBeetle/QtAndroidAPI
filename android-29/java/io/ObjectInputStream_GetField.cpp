@@ -6,11 +6,11 @@ namespace java::io
 	// Fields
 	
 	// QJniObject forward
-	ObjectInputStream_GetField::ObjectInputStream_GetField(QJniObject obj) : __JniBaseClass(obj) {}
+	ObjectInputStream_GetField::ObjectInputStream_GetField(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ObjectInputStream_GetField::ObjectInputStream_GetField()
-		: __JniBaseClass(
+		: JObject(
 			"java.io.ObjectInputStream$GetField",
 			"()V"
 		) {}

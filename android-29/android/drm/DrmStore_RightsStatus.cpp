@@ -33,11 +33,11 @@ namespace android::drm
 	}
 	
 	// QJniObject forward
-	DrmStore_RightsStatus::DrmStore_RightsStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	DrmStore_RightsStatus::DrmStore_RightsStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmStore_RightsStatus::DrmStore_RightsStatus()
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmStore$RightsStatus",
 			"()V"
 		) {}

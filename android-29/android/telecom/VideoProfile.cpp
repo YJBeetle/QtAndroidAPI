@@ -4,7 +4,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass VideoProfile::CREATOR()
+	JObject VideoProfile::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.VideoProfile",
@@ -77,17 +77,17 @@ namespace android::telecom
 	}
 	
 	// QJniObject forward
-	VideoProfile::VideoProfile(QJniObject obj) : __JniBaseClass(obj) {}
+	VideoProfile::VideoProfile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VideoProfile::VideoProfile(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.VideoProfile",
 			"(I)V",
 			arg0
 		) {}
 	VideoProfile::VideoProfile(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.VideoProfile",
 			"(II)V",
 			arg0,

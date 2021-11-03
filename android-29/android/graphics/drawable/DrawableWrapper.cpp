@@ -137,7 +137,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void DrawableWrapper::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	void DrawableWrapper::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{
 		callMethod<void>(
 			"inflate",
@@ -178,7 +178,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableWrapper::scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2)
+	void DrawableWrapper::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -257,7 +257,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void DrawableWrapper::unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1)
+	void DrawableWrapper::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

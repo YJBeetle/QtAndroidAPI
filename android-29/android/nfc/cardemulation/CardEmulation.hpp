@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -17,7 +17,7 @@ namespace android::nfc
 
 namespace android::nfc::cardemulation
 {
-	class CardEmulation : public __JniBaseClass
+	class CardEmulation : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace android::nfc::cardemulation
 		static jint SELECTION_MODE_PREFER_DEFAULT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CardEmulation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CardEmulation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CardEmulation(QJniObject obj);
 		
 		// Constructors
@@ -39,11 +39,11 @@ namespace android::nfc::cardemulation
 		// Methods
 		static android::nfc::cardemulation::CardEmulation getInstance(android::nfc::NfcAdapter arg0);
 		jboolean categoryAllowsForegroundPreference(jstring arg0);
-		__JniBaseClass getAidsForService(android::content::ComponentName arg0, jstring arg1);
+		JObject getAidsForService(android::content::ComponentName arg0, jstring arg1);
 		jint getSelectionModeForCategory(jstring arg0);
 		jboolean isDefaultServiceForAid(android::content::ComponentName arg0, jstring arg1);
 		jboolean isDefaultServiceForCategory(android::content::ComponentName arg0, jstring arg1);
-		jboolean registerAidsForService(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2);
+		jboolean registerAidsForService(android::content::ComponentName arg0, jstring arg1, JObject arg2);
 		jboolean removeAidsForService(android::content::ComponentName arg0, jstring arg1);
 		jboolean setOffHostForService(android::content::ComponentName arg0, jstring arg1);
 		jboolean setPreferredService(android::app::Activity arg0, android::content::ComponentName arg1);

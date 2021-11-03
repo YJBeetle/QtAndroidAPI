@@ -79,7 +79,7 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	Patterns::Patterns(QJniObject obj) : __JniBaseClass(obj) {}
+	Patterns::Patterns(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

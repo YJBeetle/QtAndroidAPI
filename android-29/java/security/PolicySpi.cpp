@@ -9,11 +9,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	PolicySpi::PolicySpi(QJniObject obj) : __JniBaseClass(obj) {}
+	PolicySpi::PolicySpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PolicySpi::PolicySpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.PolicySpi",
 			"()V"
 		) {}

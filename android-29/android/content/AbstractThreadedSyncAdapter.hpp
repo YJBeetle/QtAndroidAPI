@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accounts
 {
@@ -29,14 +29,14 @@ namespace java::lang
 
 namespace android::content
 {
-	class AbstractThreadedSyncAdapter : public __JniBaseClass
+	class AbstractThreadedSyncAdapter : public JObject
 	{
 	public:
 		// Fields
 		static jint LOG_SYNC_DETAILS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AbstractThreadedSyncAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractThreadedSyncAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractThreadedSyncAdapter(QJniObject obj);
 		
 		// Constructors
@@ -45,7 +45,7 @@ namespace android::content
 		
 		// Methods
 		android::content::Context getContext();
-		__JniBaseClass getSyncAdapterBinder();
+		JObject getSyncAdapterBinder();
 		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4);
 		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::SyncResult arg3);
 		void onSyncCanceled();

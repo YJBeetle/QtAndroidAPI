@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class R_id : public __JniBaseClass
+	class R_id : public JObject
 	{
 	public:
 		// Fields
@@ -85,7 +85,7 @@ namespace android
 		static jint widget_frame();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit R_id(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit R_id(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		R_id(QJniObject obj);
 		
 		// Constructors

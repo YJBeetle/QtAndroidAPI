@@ -7,11 +7,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioPlaybackCaptureConfiguration$Builder",
 			"(Landroid/media/projection/MediaProjection;)V",
 			arg0.object()

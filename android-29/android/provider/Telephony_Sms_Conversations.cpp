@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_Sms_Conversations::Telephony_Sms_Conversations(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_Sms_Conversations::Telephony_Sms_Conversations(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

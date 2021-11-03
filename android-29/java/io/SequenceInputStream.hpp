@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
 namespace java::io
@@ -20,7 +20,7 @@ namespace java::io
 		SequenceInputStream(QJniObject obj);
 		
 		// Constructors
-		SequenceInputStream(__JniBaseClass arg0);
+		SequenceInputStream(JObject arg0);
 		SequenceInputStream(java::io::InputStream arg0, java::io::InputStream arg1);
 		
 		// Methods

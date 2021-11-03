@@ -6,19 +6,19 @@ namespace javax::xml::validation
 	// Fields
 	
 	// QJniObject forward
-	ValidatorHandler::ValidatorHandler(QJniObject obj) : __JniBaseClass(obj) {}
+	ValidatorHandler::ValidatorHandler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ValidatorHandler::getContentHandler()
+	JObject ValidatorHandler::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	__JniBaseClass ValidatorHandler::getErrorHandler()
+	JObject ValidatorHandler::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -41,7 +41,7 @@ namespace javax::xml::validation
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass ValidatorHandler::getResourceResolver()
+	JObject ValidatorHandler::getResourceResolver()
 	{
 		return callObjectMethod(
 			"getResourceResolver",
@@ -55,7 +55,7 @@ namespace javax::xml::validation
 			"()Ljavax/xml/validation/TypeInfoProvider;"
 		);
 	}
-	void ValidatorHandler::setContentHandler(__JniBaseClass arg0)
+	void ValidatorHandler::setContentHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setContentHandler",
@@ -63,7 +63,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void ValidatorHandler::setErrorHandler(__JniBaseClass arg0)
+	void ValidatorHandler::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -89,7 +89,7 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void ValidatorHandler::setResourceResolver(__JniBaseClass arg0)
+	void ValidatorHandler::setResourceResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setResourceResolver",

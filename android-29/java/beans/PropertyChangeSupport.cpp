@@ -8,18 +8,18 @@ namespace java::beans
 	// Fields
 	
 	// QJniObject forward
-	PropertyChangeSupport::PropertyChangeSupport(QJniObject obj) : __JniBaseClass(obj) {}
+	PropertyChangeSupport::PropertyChangeSupport(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PropertyChangeSupport::PropertyChangeSupport(jobject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.beans.PropertyChangeSupport",
 			"(Ljava/lang/Object;)V",
 			arg0
 		) {}
 	
 	// Methods
-	void PropertyChangeSupport::addPropertyChangeListener(__JniBaseClass arg0)
+	void PropertyChangeSupport::addPropertyChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addPropertyChangeListener",
@@ -27,7 +27,7 @@ namespace java::beans
 			arg0.object()
 		);
 	}
-	void PropertyChangeSupport::addPropertyChangeListener(jstring arg0, __JniBaseClass arg1)
+	void PropertyChangeSupport::addPropertyChangeListener(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addPropertyChangeListener",
@@ -130,7 +130,7 @@ namespace java::beans
 			arg0
 		);
 	}
-	void PropertyChangeSupport::removePropertyChangeListener(__JniBaseClass arg0)
+	void PropertyChangeSupport::removePropertyChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removePropertyChangeListener",
@@ -138,7 +138,7 @@ namespace java::beans
 			arg0.object()
 		);
 	}
-	void PropertyChangeSupport::removePropertyChangeListener(jstring arg0, __JniBaseClass arg1)
+	void PropertyChangeSupport::removePropertyChangeListener(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"removePropertyChangeListener",

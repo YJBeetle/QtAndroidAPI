@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,14 +17,14 @@ namespace android::print
 
 namespace android::print
 {
-	class PrinterCapabilitiesInfo : public __JniBaseClass
+	class PrinterCapabilitiesInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PrinterCapabilitiesInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PrinterCapabilitiesInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PrinterCapabilitiesInfo(QJniObject obj);
 		
 		// Constructors
@@ -35,9 +35,9 @@ namespace android::print
 		jint getColorModes();
 		android::print::PrintAttributes getDefaults();
 		jint getDuplexModes();
-		__JniBaseClass getMediaSizes();
+		JObject getMediaSizes();
 		android::print::PrintAttributes_Margins getMinMargins();
-		__JniBaseClass getResolutions();
+		JObject getResolutions();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

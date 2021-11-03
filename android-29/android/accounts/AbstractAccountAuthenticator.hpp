@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accounts
 {
@@ -21,14 +21,14 @@ namespace android::os
 
 namespace android::accounts
 {
-	class AbstractAccountAuthenticator : public __JniBaseClass
+	class AbstractAccountAuthenticator : public JObject
 	{
 	public:
 		// Fields
 		static jstring KEY_CUSTOM_TOKEN_EXPIRY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AbstractAccountAuthenticator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractAccountAuthenticator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractAccountAuthenticator(QJniObject obj);
 		
 		// Constructors
@@ -44,7 +44,7 @@ namespace android::accounts
 		android::os::Bundle getAccountRemovalAllowed(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1);
 		android::os::Bundle getAuthToken(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2, android::os::Bundle arg3);
 		jstring getAuthTokenLabel(jstring arg0);
-		__JniBaseClass getIBinder();
+		JObject getIBinder();
 		android::os::Bundle hasFeatures(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jarray arg2);
 		android::os::Bundle isCredentialsUpdateSuggested(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2);
 		android::os::Bundle startAddAccountSession(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, jstring arg2, jarray arg3, android::os::Bundle arg4);

@@ -6,11 +6,11 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QJniObject forward
-	DHPublicKeySpec::DHPublicKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
+	DHPublicKeySpec::DHPublicKeySpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DHPublicKeySpec::DHPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.DHPublicKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.object(),

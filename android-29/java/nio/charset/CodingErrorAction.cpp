@@ -29,7 +29,7 @@ namespace java::nio::charset
 	}
 	
 	// QJniObject forward
-	CodingErrorAction::CodingErrorAction(QJniObject obj) : __JniBaseClass(obj) {}
+	CodingErrorAction::CodingErrorAction(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1346,7 +1346,7 @@ namespace android::icu::lang
 	}
 	
 	// QJniObject forward
-	UScript::UScript(QJniObject obj) : __JniBaseClass(obj) {}
+	UScript::UScript(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

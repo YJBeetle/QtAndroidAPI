@@ -95,7 +95,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	WallpaperManager::WallpaperManager(QJniObject obj) : __JniBaseClass(obj) {}
+	WallpaperManager::WallpaperManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -109,7 +109,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::addOnColorsChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void WallpaperManager::addOnColorsChangedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addOnColorsChangedListener",
@@ -140,7 +140,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void WallpaperManager::clearWallpaperOffsets(__JniBaseClass arg0)
+	void WallpaperManager::clearWallpaperOffsets(JObject arg0)
 	{
 		callMethod<void>(
 			"clearWallpaperOffsets",
@@ -298,7 +298,7 @@ namespace android::app
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void WallpaperManager::removeOnColorsChangedListener(__JniBaseClass arg0)
+	void WallpaperManager::removeOnColorsChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnColorsChangedListener",
@@ -306,7 +306,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::sendWallpaperCommand(__JniBaseClass arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
+	void WallpaperManager::sendWallpaperCommand(JObject arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
 	{
 		callMethod<void>(
 			"sendWallpaperCommand",
@@ -411,7 +411,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void WallpaperManager::setWallpaperOffsets(__JniBaseClass arg0, jfloat arg1, jfloat arg2)
+	void WallpaperManager::setWallpaperOffsets(JObject arg0, jfloat arg1, jfloat arg2)
 	{
 		callMethod<void>(
 			"setWallpaperOffsets",

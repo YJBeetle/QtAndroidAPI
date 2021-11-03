@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::text
 {
@@ -21,13 +21,13 @@ namespace android::text
 
 namespace android::text
 {
-	class DynamicLayout_Builder : public __JniBaseClass
+	class DynamicLayout_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DynamicLayout_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DynamicLayout_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicLayout_Builder(QJniObject obj);
 		
 		// Constructors
@@ -44,7 +44,7 @@ namespace android::text
 		android::text::DynamicLayout_Builder setIncludePad(jboolean arg0);
 		android::text::DynamicLayout_Builder setJustificationMode(jint arg0);
 		android::text::DynamicLayout_Builder setLineSpacing(jfloat arg0, jfloat arg1);
-		android::text::DynamicLayout_Builder setTextDirection(__JniBaseClass arg0);
+		android::text::DynamicLayout_Builder setTextDirection(JObject arg0);
 		android::text::DynamicLayout_Builder setUseLineSpacingFromFallbacks(jboolean arg0);
 	};
 } // namespace android::text

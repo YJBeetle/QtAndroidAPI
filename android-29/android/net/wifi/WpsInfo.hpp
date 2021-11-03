@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,12 +9,12 @@ namespace android::os
 
 namespace android::net::wifi
 {
-	class WpsInfo : public __JniBaseClass
+	class WpsInfo : public JObject
 	{
 	public:
 		// Fields
 		jstring BSSID();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DISPLAY();
 		static jint INVALID();
 		static jint KEYPAD();
@@ -24,7 +24,7 @@ namespace android::net::wifi
 		jint setup();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WpsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WpsInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WpsInfo(QJniObject obj);
 		
 		// Constructors

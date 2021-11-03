@@ -937,7 +937,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void Allocation::setOnBufferAvailableListener(__JniBaseClass arg0)
+	void Allocation::setOnBufferAvailableListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnBufferAvailableListener",

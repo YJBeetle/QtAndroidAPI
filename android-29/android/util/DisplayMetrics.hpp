@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class DisplayMetrics : public __JniBaseClass
+	class DisplayMetrics : public JObject
 	{
 	public:
 		// Fields
@@ -42,7 +42,7 @@ namespace android::util
 		jfloat ydpi();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DisplayMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DisplayMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DisplayMetrics(QJniObject obj);
 		
 		// Constructors

@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	TimerTask::TimerTask(QJniObject obj) : __JniBaseClass(obj) {}
+	TimerTask::TimerTask(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

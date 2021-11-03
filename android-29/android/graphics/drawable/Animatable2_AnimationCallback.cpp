@@ -6,11 +6,11 @@ namespace android::graphics::drawable
 	// Fields
 	
 	// QJniObject forward
-	Animatable2_AnimationCallback::Animatable2_AnimationCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	Animatable2_AnimationCallback::Animatable2_AnimationCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Animatable2_AnimationCallback::Animatable2_AnimationCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.drawable.Animatable2$AnimationCallback",
 			"()V"
 		) {}

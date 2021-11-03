@@ -6,11 +6,11 @@ namespace java::security::spec
 	// Fields
 	
 	// QJniObject forward
-	DSAPublicKeySpec::DSAPublicKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
+	DSAPublicKeySpec::DSAPublicKeySpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DSAPublicKeySpec::DSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.DSAPublicKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.object(),

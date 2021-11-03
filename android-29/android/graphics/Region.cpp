@@ -7,7 +7,7 @@
 namespace android::graphics
 {
 	// Fields
-	__JniBaseClass Region::CREATOR()
+	JObject Region::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.Region",
@@ -17,28 +17,28 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	Region::Region(QJniObject obj) : __JniBaseClass(obj) {}
+	Region::Region(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Region::Region()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Region",
 			"()V"
 		) {}
 	Region::Region(android::graphics::Rect arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Region",
 			"(Landroid/graphics/Rect;)V",
 			arg0.object()
 		) {}
 	Region::Region(android::graphics::Region &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Region",
 			"(Landroid/graphics/Region;)V",
 			arg0.object()
 		) {}
 	Region::Region(jint arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Region",
 			"(IIII)V",
 			arg0,

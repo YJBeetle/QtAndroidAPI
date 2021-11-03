@@ -8,7 +8,7 @@ namespace android::print
 	// Fields
 	
 	// QJniObject forward
-	PrintJob::PrintJob(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintJob::PrintJob(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

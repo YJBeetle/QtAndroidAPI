@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,23 +25,23 @@ namespace android::telephony::mbms
 
 namespace android::telephony
 {
-	class MbmsStreamingSession : public __JniBaseClass
+	class MbmsStreamingSession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MbmsStreamingSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MbmsStreamingSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsStreamingSession(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2);
-		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3);
+		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, JObject arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2);
+		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, JObject arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3);
 		void close();
-		void requestUpdateStreamingServices(__JniBaseClass arg0);
-		android::telephony::mbms::StreamingService startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, __JniBaseClass arg1, android::telephony::mbms::StreamingServiceCallback arg2);
+		void requestUpdateStreamingServices(JObject arg0);
+		android::telephony::mbms::StreamingService startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, JObject arg1, android::telephony::mbms::StreamingServiceCallback arg2);
 	};
 } // namespace android::telephony
 

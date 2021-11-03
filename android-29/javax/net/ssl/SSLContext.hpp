@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security
 {
@@ -33,13 +33,13 @@ namespace javax::net::ssl
 
 namespace javax::net::ssl
 {
-	class SSLContext : public __JniBaseClass
+	class SSLContext : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SSLContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SSLContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SSLContext(QJniObject obj);
 		
 		// Constructors
@@ -52,11 +52,11 @@ namespace javax::net::ssl
 		static void setDefault(javax::net::ssl::SSLContext arg0);
 		javax::net::ssl::SSLEngine createSSLEngine();
 		javax::net::ssl::SSLEngine createSSLEngine(jstring arg0, jint arg1);
-		__JniBaseClass getClientSessionContext();
+		JObject getClientSessionContext();
 		javax::net::ssl::SSLParameters getDefaultSSLParameters();
 		jstring getProtocol();
 		java::security::Provider getProvider();
-		__JniBaseClass getServerSessionContext();
+		JObject getServerSessionContext();
 		javax::net::ssl::SSLServerSocketFactory getServerSocketFactory();
 		javax::net::ssl::SSLSocketFactory getSocketFactory();
 		javax::net::ssl::SSLParameters getSupportedSSLParameters();

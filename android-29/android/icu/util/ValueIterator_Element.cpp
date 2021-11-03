@@ -18,11 +18,11 @@ namespace android::icu::util
 	}
 	
 	// QJniObject forward
-	ValueIterator_Element::ValueIterator_Element(QJniObject obj) : __JniBaseClass(obj) {}
+	ValueIterator_Element::ValueIterator_Element(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ValueIterator_Element::ValueIterator_Element()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.ValueIterator$Element",
 			"()V"
 		) {}

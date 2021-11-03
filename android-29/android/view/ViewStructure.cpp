@@ -12,11 +12,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	ViewStructure::ViewStructure(QJniObject obj) : __JniBaseClass(obj) {}
+	ViewStructure::ViewStructure(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewStructure::ViewStructure()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ViewStructure",
 			"()V"
 		) {}

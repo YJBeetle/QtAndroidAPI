@@ -7,11 +7,11 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QJniObject forward
-	SSLEngineResult::SSLEngineResult(QJniObject obj) : __JniBaseClass(obj) {}
+	SSLEngineResult::SSLEngineResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SSLEngineResult::SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.SSLEngineResult",
 			"(Ljavax/net/ssl/SSLEngineResult$Status;Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;II)V",
 			arg0.object(),
@@ -20,7 +20,7 @@ namespace javax::net::ssl
 			arg3
 		) {}
 	SSLEngineResult::SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3, jlong arg4)
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.SSLEngineResult",
 			"(Ljavax/net/ssl/SSLEngineResult$Status;Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;IIJ)V",
 			arg0.object(),

@@ -40,11 +40,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_array::R_array(QJniObject obj) : __JniBaseClass(obj) {}
+	R_array::R_array(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_array::R_array()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$array",
 			"()V"
 		) {}

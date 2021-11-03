@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass Display_Mode::CREATOR()
+	JObject Display_Mode::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.Display$Mode",
@@ -14,7 +14,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	Display_Mode::Display_Mode(QJniObject obj) : __JniBaseClass(obj) {}
+	Display_Mode::Display_Mode(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

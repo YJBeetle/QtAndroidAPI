@@ -5,17 +5,17 @@ namespace javax::microedition::khronos::egl
 	// Fields
 	
 	// QJniObject forward
-	EGLContext::EGLContext(QJniObject obj) : __JniBaseClass(obj) {}
+	EGLContext::EGLContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EGLContext::EGLContext()
-		: __JniBaseClass(
+		: JObject(
 			"javax.microedition.khronos.egl.EGLContext",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass EGLContext::getEGL()
+	JObject EGLContext::getEGL()
 	{
 		return callStaticObjectMethod(
 			"javax.microedition.khronos.egl.EGLContext",
@@ -23,7 +23,7 @@ namespace javax::microedition::khronos::egl
 			"()Ljavax/microedition/khronos/egl/EGL;"
 		);
 	}
-	__JniBaseClass EGLContext::getGL()
+	JObject EGLContext::getGL()
 	{
 		return callObjectMethod(
 			"getGL",

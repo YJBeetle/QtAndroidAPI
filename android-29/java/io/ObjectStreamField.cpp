@@ -7,18 +7,18 @@ namespace java::io
 	// Fields
 	
 	// QJniObject forward
-	ObjectStreamField::ObjectStreamField(QJniObject obj) : __JniBaseClass(obj) {}
+	ObjectStreamField::ObjectStreamField(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ObjectStreamField::ObjectStreamField(jstring arg0, jclass arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.ObjectStreamField",
 			"(Ljava/lang/String;Ljava/lang/Class;)V",
 			arg0,
 			arg1
 		) {}
 	ObjectStreamField::ObjectStreamField(jstring arg0, jclass arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.ObjectStreamField",
 			"(Ljava/lang/String;Ljava/lang/Class;Z)V",
 			arg0,

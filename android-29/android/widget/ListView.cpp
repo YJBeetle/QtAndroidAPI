@@ -22,14 +22,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1)
+	ListView::ListView(android::content::Context arg0, JObject arg1)
 		: android::widget::AbsListView(
 			"android.widget.ListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	ListView::ListView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AbsListView(
 			"android.widget.ListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ListView::ListView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AbsListView(
 			"android.widget.ListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -113,7 +113,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass ListView::getAdapter()
+	JObject ListView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -254,7 +254,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ListView::setAdapter(__JniBaseClass arg0)
+	void ListView::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",

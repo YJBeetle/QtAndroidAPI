@@ -9,11 +9,11 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CertificateFactorySpi::CertificateFactorySpi(QJniObject obj) : __JniBaseClass(obj) {}
+	CertificateFactorySpi::CertificateFactorySpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CertificateFactorySpi::CertificateFactorySpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.CertificateFactorySpi",
 			"()V"
 		) {}
@@ -27,7 +27,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertificateFactorySpi::engineGenerateCRLs(java::io::InputStream arg0)
+	JObject CertificateFactorySpi::engineGenerateCRLs(java::io::InputStream arg0)
 	{
 		return callObjectMethod(
 			"engineGenerateCRLs",
@@ -43,7 +43,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(__JniBaseClass arg0)
+	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(JObject arg0)
 	{
 		return callObjectMethod(
 			"engineGenerateCertPath",
@@ -68,7 +68,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertificateFactorySpi::engineGenerateCertificates(java::io::InputStream arg0)
+	JObject CertificateFactorySpi::engineGenerateCertificates(java::io::InputStream arg0)
 	{
 		return callObjectMethod(
 			"engineGenerateCertificates",
@@ -76,7 +76,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertificateFactorySpi::engineGetCertPathEncodings()
+	JObject CertificateFactorySpi::engineGetCertPathEncodings()
 	{
 		return callObjectMethod(
 			"engineGetCertPathEncodings",

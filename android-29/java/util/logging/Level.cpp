@@ -78,7 +78,7 @@ namespace java::util::logging
 	}
 	
 	// QJniObject forward
-	Level::Level(QJniObject obj) : __JniBaseClass(obj) {}
+	Level::Level(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

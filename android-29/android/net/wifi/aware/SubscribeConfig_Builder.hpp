@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::aware
 {
@@ -9,13 +9,13 @@ namespace android::net::wifi::aware
 
 namespace android::net::wifi::aware
 {
-	class SubscribeConfig_Builder : public __JniBaseClass
+	class SubscribeConfig_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SubscribeConfig_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SubscribeConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SubscribeConfig_Builder(QJniObject obj);
 		
 		// Constructors
@@ -23,7 +23,7 @@ namespace android::net::wifi::aware
 		
 		// Methods
 		android::net::wifi::aware::SubscribeConfig build();
-		android::net::wifi::aware::SubscribeConfig_Builder setMatchFilter(__JniBaseClass arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setMatchFilter(JObject arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setMaxDistanceMm(jint arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setMinDistanceMm(jint arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setServiceName(jstring arg0);

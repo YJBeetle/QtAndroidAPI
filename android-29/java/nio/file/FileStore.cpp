@@ -5,7 +5,7 @@ namespace java::nio::file
 	// Fields
 	
 	// QJniObject forward
-	FileStore::FileStore(QJniObject obj) : __JniBaseClass(obj) {}
+	FileStore::FileStore(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -25,7 +25,7 @@ namespace java::nio::file
 			"()J"
 		);
 	}
-	__JniBaseClass FileStore::getFileStoreAttributeView(jclass arg0)
+	JObject FileStore::getFileStoreAttributeView(jclass arg0)
 	{
 		return callObjectMethod(
 			"getFileStoreAttributeView",

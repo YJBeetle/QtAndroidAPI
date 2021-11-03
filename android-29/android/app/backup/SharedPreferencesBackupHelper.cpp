@@ -9,11 +9,11 @@ namespace android::app::backup
 	// Fields
 	
 	// QJniObject forward
-	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(QJniObject obj) : __JniBaseClass(obj) {}
+	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(android::content::Context arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.backup.SharedPreferencesBackupHelper",
 			"(Landroid/content/Context;[Ljava/lang/String;)V",
 			arg0.object(),

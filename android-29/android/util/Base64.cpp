@@ -47,7 +47,7 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	Base64::Base64(QJniObject obj) : __JniBaseClass(obj) {}
+	Base64::Base64(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

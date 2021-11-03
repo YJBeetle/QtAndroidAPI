@@ -197,7 +197,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setParameterListener(__JniBaseClass arg0)
+	void EnvironmentalReverb::setParameterListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setParameterListener",

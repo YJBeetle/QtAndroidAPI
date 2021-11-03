@@ -8,11 +8,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	Notification_Style::Notification_Style(QJniObject obj) : __JniBaseClass(obj) {}
+	Notification_Style::Notification_Style(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_Style::Notification_Style()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$Style",
 			"()V"
 		) {}

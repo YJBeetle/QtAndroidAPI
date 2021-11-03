@@ -9,17 +9,17 @@ namespace android::telecom
 	// Fields
 	
 	// QJniObject forward
-	RemoteConference_Callback::RemoteConference_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoteConference_Callback::RemoteConference_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteConference_Callback::RemoteConference_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.RemoteConference$Callback",
 			"()V"
 		) {}
 	
 	// Methods
-	void RemoteConference_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, __JniBaseClass arg1)
+	void RemoteConference_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onConferenceableConnectionsChanged",

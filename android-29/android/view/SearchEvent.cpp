@@ -6,11 +6,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	SearchEvent::SearchEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	SearchEvent::SearchEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SearchEvent::SearchEvent(android::view::InputDevice arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.SearchEvent",
 			"(Landroid/view/InputDevice;)V",
 			arg0.object()

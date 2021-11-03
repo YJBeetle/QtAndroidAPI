@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 COMPONENTS Core REQUIRED)
 set(SRC_LIST 
-	"__JniBaseClass.cpp" "__JniBaseClass.hpp"
+	"JObject.cpp" "JObject.hpp"
 	"android/Manifest.cpp" "android/Manifest.hpp"
 	"android/nfc/NfcAdapter.cpp" "android/nfc/NfcAdapter.hpp"
 	"android/nfc/Tag.cpp" "android/nfc/Tag.hpp"

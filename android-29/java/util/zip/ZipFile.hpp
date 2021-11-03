@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -25,7 +25,7 @@ namespace java::util::zip
 
 namespace java::util::zip
 {
-	class ZipFile : public __JniBaseClass
+	class ZipFile : public JObject
 	{
 	public:
 		// Fields
@@ -33,7 +33,7 @@ namespace java::util::zip
 		static jint OPEN_READ();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ZipFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ZipFile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ZipFile(QJniObject obj);
 		
 		// Constructors
@@ -46,13 +46,13 @@ namespace java::util::zip
 		
 		// Methods
 		void close();
-		__JniBaseClass entries();
+		JObject entries();
 		jstring getComment();
 		java::util::zip::ZipEntry getEntry(jstring arg0);
 		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
 		jstring getName();
 		jint size();
-		__JniBaseClass stream();
+		JObject stream();
 	};
 } // namespace java::util::zip
 

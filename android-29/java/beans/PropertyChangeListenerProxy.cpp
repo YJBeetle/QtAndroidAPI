@@ -9,7 +9,7 @@ namespace java::beans
 	PropertyChangeListenerProxy::PropertyChangeListenerProxy(QJniObject obj) : java::util::EventListenerProxy(obj) {}
 	
 	// Constructors
-	PropertyChangeListenerProxy::PropertyChangeListenerProxy(jstring arg0, __JniBaseClass arg1)
+	PropertyChangeListenerProxy::PropertyChangeListenerProxy(jstring arg0, JObject arg1)
 		: java::util::EventListenerProxy(
 			"java.beans.PropertyChangeListenerProxy",
 			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",

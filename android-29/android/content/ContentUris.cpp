@@ -7,11 +7,11 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	ContentUris::ContentUris(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentUris::ContentUris(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentUris::ContentUris()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentUris",
 			"()V"
 		) {}

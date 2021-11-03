@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,7 +9,7 @@ namespace android::content
 
 namespace android::webkit
 {
-	class WebChromeClient_FileChooserParams : public __JniBaseClass
+	class WebChromeClient_FileChooserParams : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::webkit
 		static jint MODE_SAVE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WebChromeClient_FileChooserParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WebChromeClient_FileChooserParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WebChromeClient_FileChooserParams(QJniObject obj);
 		
 		// Constructors

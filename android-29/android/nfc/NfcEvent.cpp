@@ -25,7 +25,7 @@ namespace android::nfc
 	}
 	
 	// QJniObject forward
-	NfcEvent::NfcEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	NfcEvent::NfcEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

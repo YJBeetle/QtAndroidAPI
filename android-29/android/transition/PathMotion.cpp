@@ -7,16 +7,16 @@ namespace android::transition
 	// Fields
 	
 	// QJniObject forward
-	PathMotion::PathMotion(QJniObject obj) : __JniBaseClass(obj) {}
+	PathMotion::PathMotion(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PathMotion::PathMotion()
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.PathMotion",
 			"()V"
 		) {}
-	PathMotion::PathMotion(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	PathMotion::PathMotion(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.transition.PathMotion",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),

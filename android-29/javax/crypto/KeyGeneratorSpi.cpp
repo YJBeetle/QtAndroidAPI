@@ -6,11 +6,11 @@ namespace javax::crypto
 	// Fields
 	
 	// QJniObject forward
-	KeyGeneratorSpi::KeyGeneratorSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyGeneratorSpi::KeyGeneratorSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyGeneratorSpi::KeyGeneratorSpi()
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.KeyGeneratorSpi",
 			"()V"
 		) {}

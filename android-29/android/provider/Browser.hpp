@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,7 +9,7 @@ namespace android::content
 
 namespace android::provider
 {
-	class Browser : public __JniBaseClass
+	class Browser : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::provider
 		static jstring INITIAL_ZOOM_LEVEL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Browser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Browser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Browser(QJniObject obj);
 		
 		// Constructors

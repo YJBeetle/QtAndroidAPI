@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -29,7 +29,7 @@ namespace android::view
 
 namespace android::view
 {
-	class PixelCopy : public __JniBaseClass
+	class PixelCopy : public JObject
 	{
 	public:
 		// Fields
@@ -41,18 +41,18 @@ namespace android::view
 		static jint SUCCESS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PixelCopy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PixelCopy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PixelCopy(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static void request(android::view::Surface arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3);
-		static void request(android::view::SurfaceView arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3);
-		static void request(android::view::Window arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3);
-		static void request(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		static void request(android::view::SurfaceView arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		static void request(android::view::Window arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4);
+		static void request(android::view::Surface arg0, android::graphics::Bitmap arg1, JObject arg2, android::os::Handler arg3);
+		static void request(android::view::SurfaceView arg0, android::graphics::Bitmap arg1, JObject arg2, android::os::Handler arg3);
+		static void request(android::view::Window arg0, android::graphics::Bitmap arg1, JObject arg2, android::os::Handler arg3);
+		static void request(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, JObject arg3, android::os::Handler arg4);
+		static void request(android::view::SurfaceView arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, JObject arg3, android::os::Handler arg4);
+		static void request(android::view::Window arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, JObject arg3, android::os::Handler arg4);
 	};
 } // namespace android::view
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 
@@ -30,9 +30,9 @@ namespace android::widget
 		
 		// Constructors
 		Button(android::content::Context arg0);
-		Button(android::content::Context arg0, __JniBaseClass arg1);
-		Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Button(android::content::Context arg0, JObject arg1);
+		Button(android::content::Context arg0, JObject arg1, jint arg2);
+		Button(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();

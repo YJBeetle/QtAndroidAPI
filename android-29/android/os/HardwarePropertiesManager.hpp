@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::os
 {
-	class HardwarePropertiesManager : public __JniBaseClass
+	class HardwarePropertiesManager : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::os
 		static jfloat UNDEFINED_TEMPERATURE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit HardwarePropertiesManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HardwarePropertiesManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HardwarePropertiesManager(QJniObject obj);
 		
 		// Constructors

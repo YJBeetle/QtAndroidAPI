@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -33,13 +33,13 @@ namespace java::util
 
 namespace java::util
 {
-	class ServiceLoader : public __JniBaseClass
+	class ServiceLoader : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ServiceLoader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ServiceLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ServiceLoader(QJniObject obj);
 		
 		// Constructors
@@ -47,12 +47,12 @@ namespace java::util
 		// Methods
 		static java::util::ServiceLoader load(jclass arg0);
 		static java::util::ServiceLoader load(jclass arg0, java::lang::ClassLoader arg1);
-		static java::util::ServiceLoader load(__JniBaseClass arg0, jclass arg1);
+		static java::util::ServiceLoader load(JObject arg0, jclass arg1);
 		static java::util::ServiceLoader loadInstalled(jclass arg0);
 		java::util::Optional findFirst();
-		__JniBaseClass iterator();
+		JObject iterator();
 		void reload();
-		__JniBaseClass stream();
+		JObject stream();
 		jstring toString();
 	};
 } // namespace java::util

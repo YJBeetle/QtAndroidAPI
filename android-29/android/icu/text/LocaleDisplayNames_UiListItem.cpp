@@ -34,11 +34,11 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(QJniObject obj) : __JniBaseClass(obj) {}
+	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.LocaleDisplayNames$UiListItem",
 			"(Landroid/icu/util/ULocale;Landroid/icu/util/ULocale;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
@@ -48,7 +48,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	__JniBaseClass LocaleDisplayNames_UiListItem::getComparator(__JniBaseClass arg0, jboolean arg1)
+	JObject LocaleDisplayNames_UiListItem::getComparator(JObject arg0, jboolean arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$UiListItem",

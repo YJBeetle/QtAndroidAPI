@@ -5,18 +5,18 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CertStoreSpi::CertStoreSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	CertStoreSpi::CertStoreSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CertStoreSpi::CertStoreSpi(__JniBaseClass arg0)
-		: __JniBaseClass(
+	CertStoreSpi::CertStoreSpi(JObject arg0)
+		: JObject(
 			"java.security.cert.CertStoreSpi",
 			"(Ljava/security/cert/CertStoreParameters;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	__JniBaseClass CertStoreSpi::engineGetCRLs(__JniBaseClass arg0)
+	JObject CertStoreSpi::engineGetCRLs(JObject arg0)
 	{
 		return callObjectMethod(
 			"engineGetCRLs",
@@ -24,7 +24,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertStoreSpi::engineGetCertificates(__JniBaseClass arg0)
+	JObject CertStoreSpi::engineGetCertificates(JObject arg0)
 	{
 		return callObjectMethod(
 			"engineGetCertificates",

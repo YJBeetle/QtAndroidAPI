@@ -36,7 +36,7 @@ namespace android::view::textclassifier
 			"CATEGORY_SELECTION"
 		);
 	}
-	__JniBaseClass TextClassifierEvent::CREATOR()
+	JObject TextClassifierEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent",
@@ -186,7 +186,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	TextClassifierEvent::TextClassifierEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	TextClassifierEvent::TextClassifierEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

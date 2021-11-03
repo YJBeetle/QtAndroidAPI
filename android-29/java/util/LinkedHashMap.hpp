@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 #include "./HashMap.hpp"
 
@@ -23,20 +23,20 @@ namespace java::util
 		// Constructors
 		LinkedHashMap();
 		LinkedHashMap(jint arg0);
-		LinkedHashMap(__JniBaseClass arg0);
+		LinkedHashMap(JObject arg0);
 		LinkedHashMap(jint arg0, jfloat arg1);
 		LinkedHashMap(jint arg0, jfloat arg1, jboolean arg2);
 		
 		// Methods
 		void clear();
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass entrySet();
-		void forEach(__JniBaseClass arg0);
+		JObject entrySet();
+		void forEach(JObject arg0);
 		jobject get(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
-		__JniBaseClass keySet();
-		void replaceAll(__JniBaseClass arg0);
-		__JniBaseClass values();
+		JObject keySet();
+		void replaceAll(JObject arg0);
+		JObject values();
 	};
 } // namespace java::util
 

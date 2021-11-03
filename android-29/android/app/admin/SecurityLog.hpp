@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::admin
 {
-	class SecurityLog : public __JniBaseClass
+	class SecurityLog : public JObject
 	{
 	public:
 		// Fields
@@ -47,7 +47,7 @@ namespace android::app::admin
 		static jint TAG_WIPE_FAILURE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SecurityLog(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SecurityLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SecurityLog(QJniObject obj);
 		
 		// Constructors

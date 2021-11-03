@@ -9,18 +9,18 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	ProtectionDomain::ProtectionDomain(QJniObject obj) : __JniBaseClass(obj) {}
+	ProtectionDomain::ProtectionDomain(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.ProtectionDomain",
 			"(Ljava/security/CodeSource;Ljava/security/PermissionCollection;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, jarray arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.ProtectionDomain",
 			"(Ljava/security/CodeSource;Ljava/security/PermissionCollection;Ljava/lang/ClassLoader;[Ljava/security/Principal;)V",
 			arg0.object(),

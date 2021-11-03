@@ -421,7 +421,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	SearchManager::SearchManager(QJniObject obj) : __JniBaseClass(obj) {}
+	SearchManager::SearchManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -441,14 +441,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	__JniBaseClass SearchManager::getSearchablesInGlobalSearch()
+	JObject SearchManager::getSearchablesInGlobalSearch()
 	{
 		return callObjectMethod(
 			"getSearchablesInGlobalSearch",
 			"()Ljava/util/List;"
 		);
 	}
-	void SearchManager::onCancel(__JniBaseClass arg0)
+	void SearchManager::onCancel(JObject arg0)
 	{
 		callMethod<void>(
 			"onCancel",
@@ -456,7 +456,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SearchManager::onDismiss(__JniBaseClass arg0)
+	void SearchManager::onDismiss(JObject arg0)
 	{
 		callMethod<void>(
 			"onDismiss",
@@ -464,7 +464,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SearchManager::setOnCancelListener(__JniBaseClass arg0)
+	void SearchManager::setOnCancelListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCancelListener",
@@ -472,7 +472,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SearchManager::setOnDismissListener(__JniBaseClass arg0)
+	void SearchManager::setOnDismissListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDismissListener",

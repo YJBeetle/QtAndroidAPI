@@ -5,11 +5,11 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	PathEffect::PathEffect(QJniObject obj) : __JniBaseClass(obj) {}
+	PathEffect::PathEffect(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PathEffect::PathEffect()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PathEffect",
 			"()V"
 		) {}

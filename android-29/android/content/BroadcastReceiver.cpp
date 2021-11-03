@@ -9,11 +9,11 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	BroadcastReceiver::BroadcastReceiver(QJniObject obj) : __JniBaseClass(obj) {}
+	BroadcastReceiver::BroadcastReceiver(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BroadcastReceiver::BroadcastReceiver()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.BroadcastReceiver",
 			"()V"
 		) {}
@@ -99,7 +99,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	__JniBaseClass BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1)
+	JObject BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1)
 	{
 		return callObjectMethod(
 			"peekService",

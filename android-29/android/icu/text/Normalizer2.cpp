@@ -9,7 +9,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	Normalizer2::Normalizer2(QJniObject obj) : __JniBaseClass(obj) {}
+	Normalizer2::Normalizer2(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -139,7 +139,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass Normalizer2::normalize(jstring arg0, __JniBaseClass arg1)
+	JObject Normalizer2::normalize(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"normalize",

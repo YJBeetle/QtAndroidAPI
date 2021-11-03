@@ -5,7 +5,7 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	IpSecTransform::IpSecTransform(QJniObject obj) : __JniBaseClass(obj) {}
+	IpSecTransform::IpSecTransform(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

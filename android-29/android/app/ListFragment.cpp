@@ -20,7 +20,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	__JniBaseClass ListFragment::getListAdapter()
+	JObject ListFragment::getListAdapter()
 	{
 		return callObjectMethod(
 			"getListAdapter",
@@ -93,7 +93,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ListFragment::setListAdapter(__JniBaseClass arg0)
+	void ListFragment::setListAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setListAdapter",

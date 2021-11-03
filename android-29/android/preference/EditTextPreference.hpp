@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Preference.hpp"
 #include "./DialogPreference.hpp"
 
@@ -34,9 +34,9 @@ namespace android::preference
 		
 		// Constructors
 		EditTextPreference(android::content::Context arg0);
-		EditTextPreference(android::content::Context arg0, __JniBaseClass arg1);
-		EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		EditTextPreference(android::content::Context arg0, JObject arg1);
+		EditTextPreference(android::content::Context arg0, JObject arg1, jint arg2);
+		EditTextPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		android::widget::EditText getEditText();

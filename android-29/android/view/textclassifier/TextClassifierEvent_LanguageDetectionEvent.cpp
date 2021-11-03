@@ -4,7 +4,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextClassifierEvent_LanguageDetectionEvent::CREATOR()
+	JObject TextClassifierEvent_LanguageDetectionEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent$LanguageDetectionEvent",

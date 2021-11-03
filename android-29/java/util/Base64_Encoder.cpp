@@ -7,7 +7,7 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Base64_Encoder::Base64_Encoder(QJniObject obj) : __JniBaseClass(obj) {}
+	Base64_Encoder::Base64_Encoder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

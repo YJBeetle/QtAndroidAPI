@@ -19,7 +19,7 @@ namespace android::view::textclassifier
 			"APPLY_STRATEGY_REPLACE"
 		);
 	}
-	__JniBaseClass TextLinks::CREATOR()
+	JObject TextLinks::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextLinks",
@@ -64,12 +64,12 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	TextLinks::TextLinks(QJniObject obj) : __JniBaseClass(obj) {}
+	TextLinks::TextLinks(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jint TextLinks::apply(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2)
+	jint TextLinks::apply(JObject arg0, jint arg1, JObject arg2)
 	{
 		return callMethod<jint>(
 			"apply",
@@ -93,7 +93,7 @@ namespace android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass TextLinks::getLinks()
+	JObject TextLinks::getLinks()
 	{
 		return callObjectMethod(
 			"getLinks",

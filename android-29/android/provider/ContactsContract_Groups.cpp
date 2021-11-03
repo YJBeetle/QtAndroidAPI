@@ -38,12 +38,12 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_Groups::ContactsContract_Groups(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_Groups::ContactsContract_Groups(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ContactsContract_Groups::newEntityIterator(__JniBaseClass arg0)
+	JObject ContactsContract_Groups::newEntityIterator(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$Groups",

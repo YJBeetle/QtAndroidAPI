@@ -8,7 +8,7 @@ namespace javax::sql
 	RowSetEvent::RowSetEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
-	RowSetEvent::RowSetEvent(__JniBaseClass arg0)
+	RowSetEvent::RowSetEvent(JObject arg0)
 		: java::util::EventObject(
 			"javax.sql.RowSetEvent",
 			"(Ljavax/sql/RowSet;)V",

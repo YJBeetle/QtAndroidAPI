@@ -10,11 +10,11 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	SecurityManager::SecurityManager(QJniObject obj) : __JniBaseClass(obj) {}
+	SecurityManager::SecurityManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SecurityManager::SecurityManager()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.SecurityManager",
 			"()V"
 		) {}

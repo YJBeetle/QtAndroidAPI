@@ -5,11 +5,11 @@ namespace android::telephony::mbms
 	// Fields
 	
 	// QJniObject forward
-	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.mbms.MbmsStreamingSessionCallback",
 			"()V"
 		) {}
@@ -31,7 +31,7 @@ namespace android::telephony::mbms
 			"()V"
 		);
 	}
-	void MbmsStreamingSessionCallback::onStreamingServicesUpdated(__JniBaseClass arg0)
+	void MbmsStreamingSessionCallback::onStreamingServicesUpdated(JObject arg0)
 	{
 		callMethod<void>(
 			"onStreamingServicesUpdated",

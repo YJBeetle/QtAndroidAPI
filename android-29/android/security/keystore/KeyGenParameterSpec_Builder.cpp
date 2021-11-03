@@ -9,11 +9,11 @@ namespace android::security::keystore
 	// Fields
 	
 	// QJniObject forward
-	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.security.keystore.KeyGenParameterSpec$Builder",
 			"(Ljava/lang/String;I)V",
 			arg0,
@@ -28,7 +28,7 @@ namespace android::security::keystore
 			"()Landroid/security/keystore/KeyGenParameterSpec;"
 		);
 	}
-	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setAlgorithmParameterSpec(__JniBaseClass arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setAlgorithmParameterSpec(JObject arg0)
 	{
 		return callObjectMethod(
 			"setAlgorithmParameterSpec",

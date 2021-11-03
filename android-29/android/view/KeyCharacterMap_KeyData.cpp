@@ -31,11 +31,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.KeyCharacterMap$KeyData",
 			"()V"
 		) {}

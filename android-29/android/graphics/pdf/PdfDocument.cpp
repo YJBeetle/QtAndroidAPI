@@ -8,11 +8,11 @@ namespace android::graphics::pdf
 	// Fields
 	
 	// QJniObject forward
-	PdfDocument::PdfDocument(QJniObject obj) : __JniBaseClass(obj) {}
+	PdfDocument::PdfDocument(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PdfDocument::PdfDocument()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.pdf.PdfDocument",
 			"()V"
 		) {}
@@ -33,7 +33,7 @@ namespace android::graphics::pdf
 			arg0.object()
 		);
 	}
-	__JniBaseClass PdfDocument::getPages()
+	JObject PdfDocument::getPages()
 	{
 		return callObjectMethod(
 			"getPages",

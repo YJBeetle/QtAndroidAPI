@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,27 +9,27 @@ namespace android::os
 
 namespace android::telephony
 {
-	class AvailableNetworkInfo : public __JniBaseClass
+	class AvailableNetworkInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint PRIORITY_HIGH();
 		static jint PRIORITY_LOW();
 		static jint PRIORITY_MED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AvailableNetworkInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AvailableNetworkInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AvailableNetworkInfo(QJniObject obj);
 		
 		// Constructors
-		AvailableNetworkInfo(jint arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		AvailableNetworkInfo(jint arg0, jint arg1, JObject arg2, JObject arg3);
 		
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getBands();
-		__JniBaseClass getMccMncs();
+		JObject getBands();
+		JObject getMccMncs();
 		jint getPriority();
 		jint getSubId();
 		jint hashCode();

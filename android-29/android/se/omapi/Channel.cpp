@@ -6,7 +6,7 @@ namespace android::se::omapi
 	// Fields
 	
 	// QJniObject forward
-	Channel::Channel(QJniObject obj) : __JniBaseClass(obj) {}
+	Channel::Channel(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

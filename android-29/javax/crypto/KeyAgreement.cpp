@@ -9,7 +9,7 @@ namespace javax::crypto
 	// Fields
 	
 	// QJniObject forward
-	KeyAgreement::KeyAgreement(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyAgreement::KeyAgreement(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -43,7 +43,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	__JniBaseClass KeyAgreement::doPhase(__JniBaseClass arg0, jboolean arg1)
+	JObject KeyAgreement::doPhase(JObject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"doPhase",
@@ -68,7 +68,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	__JniBaseClass KeyAgreement::generateSecret(jstring arg0)
+	JObject KeyAgreement::generateSecret(jstring arg0)
 	{
 		return callObjectMethod(
 			"generateSecret",
@@ -90,7 +90,7 @@ namespace javax::crypto
 			"()Ljava/security/Provider;"
 		);
 	}
-	void KeyAgreement::init(__JniBaseClass arg0)
+	void KeyAgreement::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",
@@ -98,7 +98,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void KeyAgreement::init(__JniBaseClass arg0, java::security::SecureRandom arg1)
+	void KeyAgreement::init(JObject arg0, java::security::SecureRandom arg1)
 	{
 		callMethod<void>(
 			"init",
@@ -107,7 +107,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void KeyAgreement::init(__JniBaseClass arg0, __JniBaseClass arg1)
+	void KeyAgreement::init(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"init",
@@ -116,7 +116,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void KeyAgreement::init(__JniBaseClass arg0, __JniBaseClass arg1, java::security::SecureRandom arg2)
+	void KeyAgreement::init(JObject arg0, JObject arg1, java::security::SecureRandom arg2)
 	{
 		callMethod<void>(
 			"init",

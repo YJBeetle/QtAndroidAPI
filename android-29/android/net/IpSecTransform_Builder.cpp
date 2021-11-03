@@ -11,11 +11,11 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	IpSecTransform_Builder::IpSecTransform_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	IpSecTransform_Builder::IpSecTransform_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IpSecTransform_Builder::IpSecTransform_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.IpSecTransform$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()

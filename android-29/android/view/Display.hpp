@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -33,7 +33,7 @@ namespace android::view
 
 namespace android::view
 {
-	class Display : public __JniBaseClass
+	class Display : public JObject
 	{
 	public:
 		// Fields
@@ -53,7 +53,7 @@ namespace android::view
 		static jint STATE_VR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Display(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Display(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Display(QJniObject obj);
 		
 		// Constructors

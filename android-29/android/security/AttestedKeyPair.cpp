@@ -6,12 +6,12 @@ namespace android::security
 	// Fields
 	
 	// QJniObject forward
-	AttestedKeyPair::AttestedKeyPair(QJniObject obj) : __JniBaseClass(obj) {}
+	AttestedKeyPair::AttestedKeyPair(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass AttestedKeyPair::getAttestationRecord()
+	JObject AttestedKeyPair::getAttestationRecord()
 	{
 		return callObjectMethod(
 			"getAttestationRecord",

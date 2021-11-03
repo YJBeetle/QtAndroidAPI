@@ -5,11 +5,11 @@ namespace javax::microedition::khronos::egl
 	// Fields
 	
 	// QJniObject forward
-	EGLConfig::EGLConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	EGLConfig::EGLConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EGLConfig::EGLConfig()
-		: __JniBaseClass(
+		: JObject(
 			"javax.microedition.khronos.egl.EGLConfig",
 			"()V"
 		) {}

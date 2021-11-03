@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass CustomDescription::CREATOR()
+	JObject CustomDescription::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.CustomDescription",
@@ -15,7 +15,7 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	CustomDescription::CustomDescription(QJniObject obj) : __JniBaseClass(obj) {}
+	CustomDescription::CustomDescription(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

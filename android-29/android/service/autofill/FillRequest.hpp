@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,16 +13,16 @@ namespace android::os
 
 namespace android::service::autofill
 {
-	class FillRequest : public __JniBaseClass
+	class FillRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_COMPATIBILITY_MODE_REQUEST();
 		static jint FLAG_MANUAL_REQUEST();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FillRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FillRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FillRequest(QJniObject obj);
 		
 		// Constructors
@@ -30,7 +30,7 @@ namespace android::service::autofill
 		// Methods
 		jint describeContents();
 		android::os::Bundle getClientState();
-		__JniBaseClass getFillContexts();
+		JObject getFillContexts();
 		jint getFlags();
 		jint getId();
 		jstring toString();

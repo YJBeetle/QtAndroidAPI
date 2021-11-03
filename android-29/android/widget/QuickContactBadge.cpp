@@ -20,14 +20,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	QuickContactBadge::QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1)
+	QuickContactBadge::QuickContactBadge(android::content::Context arg0, JObject arg1)
 		: android::widget::ImageView(
 			"android.widget.QuickContactBadge",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	QuickContactBadge::QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	QuickContactBadge::QuickContactBadge(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::ImageView(
 			"android.widget.QuickContactBadge",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	QuickContactBadge::QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	QuickContactBadge::QuickContactBadge(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::ImageView(
 			"android.widget.QuickContactBadge",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

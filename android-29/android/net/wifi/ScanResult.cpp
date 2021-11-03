@@ -112,7 +112,7 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	ScanResult::ScanResult(QJniObject obj) : __JniBaseClass(obj) {}
+	ScanResult::ScanResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -8,11 +8,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$BubbleMetadata$Builder",
 			"()V"
 		) {}

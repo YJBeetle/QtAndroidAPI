@@ -13,11 +13,11 @@ namespace android::print
 	}
 	
 	// QJniObject forward
-	PrintAttributes_Margins::PrintAttributes_Margins(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintAttributes_Margins::PrintAttributes_Margins(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrintAttributes_Margins::PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrintAttributes$Margins",
 			"(IIII)V",
 			arg0,

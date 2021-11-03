@@ -7,17 +7,17 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	ThreadLocal::ThreadLocal(QJniObject obj) : __JniBaseClass(obj) {}
+	ThreadLocal::ThreadLocal(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ThreadLocal::ThreadLocal()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.ThreadLocal",
 			"()V"
 		) {}
 	
 	// Methods
-	java::lang::ThreadLocal ThreadLocal::withInitial(__JniBaseClass arg0)
+	java::lang::ThreadLocal ThreadLocal::withInitial(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ThreadLocal",

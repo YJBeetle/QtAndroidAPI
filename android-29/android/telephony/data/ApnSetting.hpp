@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -21,7 +21,7 @@ namespace java::net
 
 namespace android::telephony::data
 {
-	class ApnSetting : public __JniBaseClass
+	class ApnSetting : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace android::telephony::data
 		static jint AUTH_TYPE_NONE();
 		static jint AUTH_TYPE_PAP();
 		static jint AUTH_TYPE_PAP_OR_CHAP();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint MVNO_TYPE_GID();
 		static jint MVNO_TYPE_ICCID();
 		static jint MVNO_TYPE_IMSI();
@@ -53,7 +53,7 @@ namespace android::telephony::data
 		static jint TYPE_SUPL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ApnSetting(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ApnSetting(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ApnSetting(QJniObject obj);
 		
 		// Constructors

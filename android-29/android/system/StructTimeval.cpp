@@ -17,7 +17,7 @@ namespace android::system
 	}
 	
 	// QJniObject forward
-	StructTimeval::StructTimeval(QJniObject obj) : __JniBaseClass(obj) {}
+	StructTimeval::StructTimeval(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

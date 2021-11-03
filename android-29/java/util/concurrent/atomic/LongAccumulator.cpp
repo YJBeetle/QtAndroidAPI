@@ -6,11 +6,11 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QJniObject forward
-	LongAccumulator::LongAccumulator(QJniObject obj) : __JniBaseClass(obj) {}
+	LongAccumulator::LongAccumulator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LongAccumulator::LongAccumulator(__JniBaseClass arg0, jlong arg1)
-		: __JniBaseClass(
+	LongAccumulator::LongAccumulator(JObject arg0, jlong arg1)
+		: JObject(
 			"java.util.concurrent.atomic.LongAccumulator",
 			"(Ljava/util/function/LongBinaryOperator;J)V",
 			arg0.object(),

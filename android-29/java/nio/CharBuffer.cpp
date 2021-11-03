@@ -116,7 +116,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	__JniBaseClass CharBuffer::chars()
+	JObject CharBuffer::chars()
 	{
 		return callObjectMethod(
 			"chars",

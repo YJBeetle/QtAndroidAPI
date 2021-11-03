@@ -5,7 +5,7 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CertPath::CertPath(QJniObject obj) : __JniBaseClass(obj) {}
+	CertPath::CertPath(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -18,7 +18,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	__JniBaseClass CertPath::getCertificates()
+	JObject CertPath::getCertificates()
 	{
 		return callObjectMethod(
 			"getCertificates",
@@ -40,7 +40,7 @@ namespace java::security::cert
 			arg0
 		).object<jbyteArray>();
 	}
-	__JniBaseClass CertPath::getEncodings()
+	JObject CertPath::getEncodings()
 	{
 		return callObjectMethod(
 			"getEncodings",

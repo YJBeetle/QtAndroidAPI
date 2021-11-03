@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -45,7 +45,7 @@ namespace android::view::accessibility
 
 namespace android::view::accessibility
 {
-	class AccessibilityNodeInfo : public __JniBaseClass
+	class AccessibilityNodeInfo : public JObject
 	{
 	public:
 		// Fields
@@ -82,7 +82,7 @@ namespace android::view::accessibility
 		static jint ACTION_SELECT();
 		static jint ACTION_SET_SELECTION();
 		static jint ACTION_SET_TEXT();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH();
 		static jstring EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX();
 		static jstring EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY();
@@ -95,7 +95,7 @@ namespace android::view::accessibility
 		static jint MOVEMENT_GRANULARITY_WORD();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityNodeInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityNodeInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityNodeInfo(QJniObject obj);
 		
 		// Constructors
@@ -112,13 +112,13 @@ namespace android::view::accessibility
 		jboolean canOpenPopup();
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass findAccessibilityNodeInfosByText(jstring arg0);
-		__JniBaseClass findAccessibilityNodeInfosByViewId(jstring arg0);
+		JObject findAccessibilityNodeInfosByText(jstring arg0);
+		JObject findAccessibilityNodeInfosByViewId(jstring arg0);
 		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
 		android::view::accessibility::AccessibilityNodeInfo focusSearch(jint arg0);
-		__JniBaseClass getActionList();
+		JObject getActionList();
 		jint getActions();
-		__JniBaseClass getAvailableExtraData();
+		JObject getAvailableExtraData();
 		void getBoundsInParent(android::graphics::Rect arg0);
 		void getBoundsInScreen(android::graphics::Rect arg0);
 		android::view::accessibility::AccessibilityNodeInfo getChild(jint arg0);
@@ -184,7 +184,7 @@ namespace android::view::accessibility
 		jboolean removeChild(android::view::View arg0);
 		jboolean removeChild(android::view::View arg0, jint arg1);
 		void setAccessibilityFocused(jboolean arg0);
-		void setAvailableExtraData(__JniBaseClass arg0);
+		void setAvailableExtraData(JObject arg0);
 		void setBoundsInParent(android::graphics::Rect arg0);
 		void setBoundsInScreen(android::graphics::Rect arg0);
 		void setCanOpenPopup(jboolean arg0);

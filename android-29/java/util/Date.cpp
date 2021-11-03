@@ -9,28 +9,28 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Date::Date(QJniObject obj) : __JniBaseClass(obj) {}
+	Date::Date(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Date::Date()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Date",
 			"()V"
 		) {}
 	Date::Date(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Date",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Date::Date(jlong arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Date",
 			"(J)V",
 			arg0
 		) {}
 	Date::Date(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Date",
 			"(III)V",
 			arg0,
@@ -38,7 +38,7 @@ namespace java::util
 			arg2
 		) {}
 	Date::Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Date",
 			"(IIIII)V",
 			arg0,
@@ -48,7 +48,7 @@ namespace java::util
 			arg4
 		) {}
 	Date::Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Date",
 			"(IIIIII)V",
 			arg0,

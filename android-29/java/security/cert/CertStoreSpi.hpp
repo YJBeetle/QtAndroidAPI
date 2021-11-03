@@ -1,25 +1,25 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::security::cert
 {
-	class CertStoreSpi : public __JniBaseClass
+	class CertStoreSpi : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CertStoreSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CertStoreSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CertStoreSpi(QJniObject obj);
 		
 		// Constructors
-		CertStoreSpi(__JniBaseClass arg0);
+		CertStoreSpi(JObject arg0);
 		
 		// Methods
-		__JniBaseClass engineGetCRLs(__JniBaseClass arg0);
-		__JniBaseClass engineGetCertificates(__JniBaseClass arg0);
+		JObject engineGetCRLs(JObject arg0);
+		JObject engineGetCertificates(JObject arg0);
 	};
 } // namespace java::security::cert
 

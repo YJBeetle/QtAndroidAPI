@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass CpuUsageInfo::CREATOR()
+	JObject CpuUsageInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.CpuUsageInfo",
@@ -14,7 +14,7 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	CpuUsageInfo::CpuUsageInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	CpuUsageInfo::CpuUsageInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

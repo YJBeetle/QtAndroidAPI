@@ -8,17 +8,17 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	ThreadGroup::ThreadGroup(QJniObject obj) : __JniBaseClass(obj) {}
+	ThreadGroup::ThreadGroup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ThreadGroup::ThreadGroup(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.ThreadGroup",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	ThreadGroup::ThreadGroup(java::lang::ThreadGroup &arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.ThreadGroup",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
 			arg0.object(),

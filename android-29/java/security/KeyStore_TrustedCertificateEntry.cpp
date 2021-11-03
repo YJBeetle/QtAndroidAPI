@@ -6,17 +6,17 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	KeyStore_TrustedCertificateEntry::KeyStore_TrustedCertificateEntry(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyStore_TrustedCertificateEntry::KeyStore_TrustedCertificateEntry(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyStore_TrustedCertificateEntry::KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.KeyStore$TrustedCertificateEntry",
 			"(Ljava/security/cert/Certificate;)V",
 			arg0.object()
 		) {}
-	KeyStore_TrustedCertificateEntry::KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	KeyStore_TrustedCertificateEntry::KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0, JObject arg1)
+		: JObject(
 			"java.security.KeyStore$TrustedCertificateEntry",
 			"(Ljava/security/cert/Certificate;Ljava/util/Set;)V",
 			arg0.object(),
@@ -24,7 +24,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	__JniBaseClass KeyStore_TrustedCertificateEntry::getAttributes()
+	JObject KeyStore_TrustedCertificateEntry::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",

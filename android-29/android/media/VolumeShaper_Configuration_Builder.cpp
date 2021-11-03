@@ -6,16 +6,16 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.VolumeShaper$Configuration$Builder",
 			"()V"
 		) {}
 	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder(android::media::VolumeShaper_Configuration arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.VolumeShaper$Configuration$Builder",
 			"(Landroid/media/VolumeShaper$Configuration;)V",
 			arg0.object()

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class LayoutDirection : public __JniBaseClass
+	class LayoutDirection : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::util
 		static jint RTL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LayoutDirection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LayoutDirection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LayoutDirection(QJniObject obj);
 		
 		// Constructors

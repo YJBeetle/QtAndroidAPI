@@ -5,11 +5,11 @@ namespace android::media::effect
 	// Fields
 	
 	// QJniObject forward
-	Effect::Effect(QJniObject obj) : __JniBaseClass(obj) {}
+	Effect::Effect(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Effect::Effect()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.effect.Effect",
 			"()V"
 		) {}
@@ -49,7 +49,7 @@ namespace android::media::effect
 			arg1
 		);
 	}
-	void Effect::setUpdateListener(__JniBaseClass arg0)
+	void Effect::setUpdateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setUpdateListener",

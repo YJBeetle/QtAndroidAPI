@@ -21,32 +21,32 @@ namespace android::preference
 	}
 	
 	// QJniObject forward
-	Preference::Preference(QJniObject obj) : __JniBaseClass(obj) {}
+	Preference::Preference(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Preference::Preference(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.preference.Preference",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	Preference::Preference(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.preference.Preference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-		: __JniBaseClass(
+	Preference::Preference(android::content::Context arg0, JObject arg1, jint arg2)
+		: JObject(
 			"android.preference.Preference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.object(),
 			arg1.object(),
 			arg2
 		) {}
-	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+	Preference::Preference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: JObject(
 			"android.preference.Preference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.object(),
@@ -86,7 +86,7 @@ namespace android::preference
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Preference::getEditor()
+	JObject Preference::getEditor()
 	{
 		return callObjectMethod(
 			"getEditor",
@@ -135,14 +135,14 @@ namespace android::preference
 			"()I"
 		);
 	}
-	__JniBaseClass Preference::getOnPreferenceChangeListener()
+	JObject Preference::getOnPreferenceChangeListener()
 	{
 		return callObjectMethod(
 			"getOnPreferenceChangeListener",
 			"()Landroid/preference/Preference$OnPreferenceChangeListener;"
 		);
 	}
-	__JniBaseClass Preference::getOnPreferenceClickListener()
+	JObject Preference::getOnPreferenceClickListener()
 	{
 		return callObjectMethod(
 			"getOnPreferenceClickListener",
@@ -163,7 +163,7 @@ namespace android::preference
 			"()Landroid/preference/PreferenceGroup;"
 		);
 	}
-	__JniBaseClass Preference::getPersistedStringSet(__JniBaseClass arg0)
+	JObject Preference::getPersistedStringSet(JObject arg0)
 	{
 		return callObjectMethod(
 			"getPersistedStringSet",
@@ -171,7 +171,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	__JniBaseClass Preference::getPreferenceDataStore()
+	JObject Preference::getPreferenceDataStore()
 	{
 		return callObjectMethod(
 			"getPreferenceDataStore",
@@ -185,7 +185,7 @@ namespace android::preference
 			"()Landroid/preference/PreferenceManager;"
 		);
 	}
-	__JniBaseClass Preference::getSharedPreferences()
+	JObject Preference::getSharedPreferences()
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
@@ -318,7 +318,7 @@ namespace android::preference
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jboolean Preference::persistStringSet(__JniBaseClass arg0)
+	jboolean Preference::persistStringSet(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"persistStringSet",
@@ -422,7 +422,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void Preference::setOnPreferenceChangeListener(__JniBaseClass arg0)
+	void Preference::setOnPreferenceChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnPreferenceChangeListener",
@@ -430,7 +430,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void Preference::setOnPreferenceClickListener(__JniBaseClass arg0)
+	void Preference::setOnPreferenceClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnPreferenceClickListener",
@@ -454,7 +454,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void Preference::setPreferenceDataStore(__JniBaseClass arg0)
+	void Preference::setPreferenceDataStore(JObject arg0)
 	{
 		callMethod<void>(
 			"setPreferenceDataStore",

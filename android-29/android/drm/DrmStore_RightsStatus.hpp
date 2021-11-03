@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::drm
 {
-	class DrmStore_RightsStatus : public __JniBaseClass
+	class DrmStore_RightsStatus : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::drm
 		static jint RIGHTS_VALID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DrmStore_RightsStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmStore_RightsStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmStore_RightsStatus(QJniObject obj);
 		
 		// Constructors

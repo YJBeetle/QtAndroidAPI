@@ -28,7 +28,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	java::time::chrono::JapaneseDate JapaneseChronology::date(__JniBaseClass arg0)
+	java::time::chrono::JapaneseDate JapaneseChronology::date(JObject arg0)
 	{
 		return callObjectMethod(
 			"date",
@@ -46,7 +46,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	java::time::chrono::JapaneseDate JapaneseChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"date",
@@ -97,7 +97,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
+	java::time::chrono::JapaneseDate JapaneseChronology::dateYearDay(JObject arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -115,7 +115,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	__JniBaseClass JapaneseChronology::eras()
+	JObject JapaneseChronology::eras()
 	{
 		return callObjectMethod(
 			"eras",
@@ -144,7 +144,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	__JniBaseClass JapaneseChronology::localDateTime(__JniBaseClass arg0)
+	JObject JapaneseChronology::localDateTime(JObject arg0)
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -152,7 +152,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint JapaneseChronology::prolepticYear(__JniBaseClass arg0, jint arg1)
+	jint JapaneseChronology::prolepticYear(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"prolepticYear",
@@ -169,7 +169,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	java::time::chrono::JapaneseDate JapaneseChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -178,7 +178,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	__JniBaseClass JapaneseChronology::zonedDateTime(__JniBaseClass arg0)
+	JObject JapaneseChronology::zonedDateTime(JObject arg0)
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -186,7 +186,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	__JniBaseClass JapaneseChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	JObject JapaneseChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
 		return callObjectMethod(
 			"zonedDateTime",

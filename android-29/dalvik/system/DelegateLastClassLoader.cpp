@@ -44,7 +44,7 @@ namespace dalvik::system
 			arg0
 		);
 	}
-	__JniBaseClass DelegateLastClassLoader::getResources(jstring arg0)
+	JObject DelegateLastClassLoader::getResources(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResources",

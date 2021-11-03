@@ -43,7 +43,7 @@ namespace android::opengl
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	GLSurfaceView::GLSurfaceView(android::content::Context arg0, __JniBaseClass arg1)
+	GLSurfaceView::GLSurfaceView(android::content::Context arg0, JObject arg1)
 		: android::view::SurfaceView(
 			"android.opengl.GLSurfaceView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -87,7 +87,7 @@ namespace android::opengl
 			"()V"
 		);
 	}
-	void GLSurfaceView::queueEvent(__JniBaseClass arg0)
+	void GLSurfaceView::queueEvent(JObject arg0)
 	{
 		callMethod<void>(
 			"queueEvent",
@@ -110,7 +110,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setEGLConfigChooser(__JniBaseClass arg0)
+	void GLSurfaceView::setEGLConfigChooser(JObject arg0)
 	{
 		callMethod<void>(
 			"setEGLConfigChooser",
@@ -147,7 +147,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setEGLContextFactory(__JniBaseClass arg0)
+	void GLSurfaceView::setEGLContextFactory(JObject arg0)
 	{
 		callMethod<void>(
 			"setEGLContextFactory",
@@ -155,7 +155,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::setEGLWindowSurfaceFactory(__JniBaseClass arg0)
+	void GLSurfaceView::setEGLWindowSurfaceFactory(JObject arg0)
 	{
 		callMethod<void>(
 			"setEGLWindowSurfaceFactory",
@@ -163,7 +163,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::setGLWrapper(__JniBaseClass arg0)
+	void GLSurfaceView::setGLWrapper(JObject arg0)
 	{
 		callMethod<void>(
 			"setGLWrapper",
@@ -187,7 +187,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setRenderer(__JniBaseClass arg0)
+	void GLSurfaceView::setRenderer(JObject arg0)
 	{
 		callMethod<void>(
 			"setRenderer",
@@ -195,7 +195,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceChanged(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	void GLSurfaceView::surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"surfaceChanged",
@@ -206,7 +206,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	void GLSurfaceView::surfaceCreated(__JniBaseClass arg0)
+	void GLSurfaceView::surfaceCreated(JObject arg0)
 	{
 		callMethod<void>(
 			"surfaceCreated",
@@ -214,7 +214,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceDestroyed(__JniBaseClass arg0)
+	void GLSurfaceView::surfaceDestroyed(JObject arg0)
 	{
 		callMethod<void>(
 			"surfaceDestroyed",
@@ -222,7 +222,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceRedrawNeeded(__JniBaseClass arg0)
+	void GLSurfaceView::surfaceRedrawNeeded(JObject arg0)
 	{
 		callMethod<void>(
 			"surfaceRedrawNeeded",
@@ -230,7 +230,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceRedrawNeededAsync(__JniBaseClass arg0, __JniBaseClass arg1)
+	void GLSurfaceView::surfaceRedrawNeededAsync(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"surfaceRedrawNeededAsync",

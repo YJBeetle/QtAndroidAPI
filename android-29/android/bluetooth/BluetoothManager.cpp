@@ -10,7 +10,7 @@ namespace android::bluetooth
 	// Fields
 	
 	// QJniObject forward
-	BluetoothManager::BluetoothManager(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothManager::BluetoothManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -22,7 +22,7 @@ namespace android::bluetooth
 			"()Landroid/bluetooth/BluetoothAdapter;"
 		);
 	}
-	__JniBaseClass BluetoothManager::getConnectedDevices(jint arg0)
+	JObject BluetoothManager::getConnectedDevices(jint arg0)
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -39,7 +39,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	__JniBaseClass BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, jintArray arg1)
+	JObject BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

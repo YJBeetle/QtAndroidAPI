@@ -5,11 +5,11 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	WebViewRenderProcess::WebViewRenderProcess(QJniObject obj) : __JniBaseClass(obj) {}
+	WebViewRenderProcess::WebViewRenderProcess(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebViewRenderProcess::WebViewRenderProcess()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebViewRenderProcess",
 			"()V"
 		) {}

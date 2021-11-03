@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Dialog.hpp"
 
 namespace android::content
@@ -59,13 +59,13 @@ namespace android::app
 		android::widget::ListView getListView();
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		void setButton(jstring arg0, __JniBaseClass arg1);
+		void setButton(jstring arg0, JObject arg1);
 		void setButton(jstring arg0, android::os::Message arg1);
-		void setButton(jint arg0, jstring arg1, __JniBaseClass arg2);
+		void setButton(jint arg0, jstring arg1, JObject arg2);
 		void setButton(jint arg0, jstring arg1, android::os::Message arg2);
-		void setButton2(jstring arg0, __JniBaseClass arg1);
+		void setButton2(jstring arg0, JObject arg1);
 		void setButton2(jstring arg0, android::os::Message arg1);
-		void setButton3(jstring arg0, __JniBaseClass arg1);
+		void setButton3(jstring arg0, JObject arg1);
 		void setButton3(jstring arg0, android::os::Message arg1);
 		void setCustomTitle(android::view::View arg0);
 		void setIcon(android::graphics::drawable::Drawable arg0);

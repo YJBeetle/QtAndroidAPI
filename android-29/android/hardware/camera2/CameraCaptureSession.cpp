@@ -11,11 +11,11 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QJniObject forward
-	CameraCaptureSession::CameraCaptureSession(QJniObject obj) : __JniBaseClass(obj) {}
+	CameraCaptureSession::CameraCaptureSession(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CameraCaptureSession::CameraCaptureSession()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.CameraCaptureSession",
 			"()V"
 		) {}
@@ -38,7 +38,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::captureBurst(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
+	jint CameraCaptureSession::captureBurst(JObject arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
 	{
 		return callMethod<jint>(
 			"captureBurst",
@@ -48,7 +48,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::captureBurstRequests(__JniBaseClass arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::captureBurstRequests(JObject arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
 	{
 		return callMethod<jint>(
 			"captureBurstRequests",
@@ -58,7 +58,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::captureSingleRequest(android::hardware::camera2::CaptureRequest arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::captureSingleRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
 	{
 		return callMethod<jint>(
 			"captureSingleRequest",
@@ -75,7 +75,7 @@ namespace android::hardware::camera2
 			"()V"
 		);
 	}
-	void CameraCaptureSession::finalizeOutputConfigurations(__JniBaseClass arg0)
+	void CameraCaptureSession::finalizeOutputConfigurations(JObject arg0)
 	{
 		callMethod<void>(
 			"finalizeOutputConfigurations",
@@ -112,7 +112,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	jint CameraCaptureSession::setRepeatingBurst(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
+	jint CameraCaptureSession::setRepeatingBurst(JObject arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
 	{
 		return callMethod<jint>(
 			"setRepeatingBurst",
@@ -122,7 +122,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::setRepeatingBurstRequests(__JniBaseClass arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::setRepeatingBurstRequests(JObject arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
 	{
 		return callMethod<jint>(
 			"setRepeatingBurstRequests",
@@ -142,7 +142,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::setSingleRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::setSingleRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
 	{
 		return callMethod<jint>(
 			"setSingleRepeatingRequest",

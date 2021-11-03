@@ -26,14 +26,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ImageView::ImageView(android::content::Context arg0, __JniBaseClass arg1)
+	ImageView::ImageView(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.widget.ImageView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ImageView::ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	ImageView::ImageView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.widget.ImageView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -41,7 +41,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	ImageView::ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ImageView::ImageView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.widget.ImageView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

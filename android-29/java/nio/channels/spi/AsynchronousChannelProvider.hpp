@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -21,21 +21,21 @@ namespace java::nio::channels
 
 namespace java::nio::channels::spi
 {
-	class AsynchronousChannelProvider : public __JniBaseClass
+	class AsynchronousChannelProvider : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AsynchronousChannelProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AsynchronousChannelProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AsynchronousChannelProvider(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static java::nio::channels::spi::AsynchronousChannelProvider provider();
-		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(jint arg0, __JniBaseClass arg1);
-		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(__JniBaseClass arg0, jint arg1);
+		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(jint arg0, JObject arg1);
+		java::nio::channels::AsynchronousChannelGroup openAsynchronousChannelGroup(JObject arg0, jint arg1);
 		java::nio::channels::AsynchronousServerSocketChannel openAsynchronousServerSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0);
 		java::nio::channels::AsynchronousSocketChannel openAsynchronousSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0);
 	};

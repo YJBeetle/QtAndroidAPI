@@ -15,12 +15,12 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	CalendarContract_Attendees::CalendarContract_Attendees(QJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_Attendees::CalendarContract_Attendees(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CalendarContract_Attendees::query(android::content::ContentResolver arg0, jlong arg1, jarray arg2)
+	JObject CalendarContract_Attendees::query(android::content::ContentResolver arg0, jlong arg1, jarray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$Attendees",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AbstractExecutorService.hpp"
 #include "./ThreadPoolExecutor.hpp"
 
@@ -26,25 +26,25 @@ namespace java::util::concurrent
 		
 		// Constructors
 		ScheduledThreadPoolExecutor(jint arg0);
-		ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1);
-		ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		ScheduledThreadPoolExecutor(jint arg0, JObject arg1);
+		ScheduledThreadPoolExecutor(jint arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		void execute(__JniBaseClass arg0);
+		void execute(JObject arg0);
 		jboolean getContinueExistingPeriodicTasksAfterShutdownPolicy();
 		jboolean getExecuteExistingDelayedTasksAfterShutdownPolicy();
-		__JniBaseClass getQueue();
+		JObject getQueue();
 		jboolean getRemoveOnCancelPolicy();
-		__JniBaseClass schedule(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		__JniBaseClass scheduleAtFixedRate(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3);
-		__JniBaseClass scheduleWithFixedDelay(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3);
+		JObject schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3);
+		JObject scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3);
 		void setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0);
 		void setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0);
 		void setRemoveOnCancelPolicy(jboolean arg0);
 		void shutdown();
-		__JniBaseClass shutdownNow();
-		__JniBaseClass submit(__JniBaseClass arg0);
-		__JniBaseClass submit(__JniBaseClass arg0, jobject arg1);
+		JObject shutdownNow();
+		JObject submit(JObject arg0);
+		JObject submit(JObject arg0, jobject arg1);
 	};
 } // namespace java::util::concurrent
 

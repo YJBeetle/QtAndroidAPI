@@ -15,7 +15,7 @@ namespace org::xmlpull::v1
 	}
 	
 	// QJniObject forward
-	XmlPullParserFactory::XmlPullParserFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	XmlPullParserFactory::XmlPullParserFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -60,14 +60,14 @@ namespace org::xmlpull::v1
 			"()Z"
 		);
 	}
-	__JniBaseClass XmlPullParserFactory::newPullParser()
+	JObject XmlPullParserFactory::newPullParser()
 	{
 		return callObjectMethod(
 			"newPullParser",
 			"()Lorg/xmlpull/v1/XmlPullParser;"
 		);
 	}
-	__JniBaseClass XmlPullParserFactory::newSerializer()
+	JObject XmlPullParserFactory::newSerializer()
 	{
 		return callObjectMethod(
 			"newSerializer",

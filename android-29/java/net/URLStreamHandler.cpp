@@ -9,11 +9,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	URLStreamHandler::URLStreamHandler(QJniObject obj) : __JniBaseClass(obj) {}
+	URLStreamHandler::URLStreamHandler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	URLStreamHandler::URLStreamHandler()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URLStreamHandler",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../../java/lang/ClassLoader.hpp"
 #include "./BaseDexClassLoader.hpp"
 #include "./PathClassLoader.hpp"
@@ -32,7 +32,7 @@ namespace dalvik::system
 		
 		// Methods
 		java::net::URL getResource(jstring arg0);
-		__JniBaseClass getResources(jstring arg0);
+		JObject getResources(jstring arg0);
 	};
 } // namespace dalvik::system
 

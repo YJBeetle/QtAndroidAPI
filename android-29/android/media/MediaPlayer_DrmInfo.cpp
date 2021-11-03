@@ -6,12 +6,12 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaPlayer_DrmInfo::MediaPlayer_DrmInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaPlayer_DrmInfo::MediaPlayer_DrmInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass MediaPlayer_DrmInfo::getPssh()
+	JObject MediaPlayer_DrmInfo::getPssh()
 	{
 		return callObjectMethod(
 			"getPssh",

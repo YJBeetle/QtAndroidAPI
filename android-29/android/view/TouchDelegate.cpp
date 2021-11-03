@@ -37,11 +37,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	TouchDelegate::TouchDelegate(QJniObject obj) : __JniBaseClass(obj) {}
+	TouchDelegate::TouchDelegate(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TouchDelegate::TouchDelegate(android::graphics::Rect arg0, android::view::View arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.TouchDelegate",
 			"(Landroid/graphics/Rect;Landroid/view/View;)V",
 			arg0.object(),

@@ -8,18 +8,18 @@ namespace java::io
 	// Fields
 	
 	// QJniObject forward
-	RandomAccessFile::RandomAccessFile(QJniObject obj) : __JniBaseClass(obj) {}
+	RandomAccessFile::RandomAccessFile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RandomAccessFile::RandomAccessFile(java::io::File arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.RandomAccessFile",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	RandomAccessFile::RandomAccessFile(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.RandomAccessFile",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

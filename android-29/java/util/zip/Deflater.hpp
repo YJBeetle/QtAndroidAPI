@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio
 {
@@ -9,7 +9,7 @@ namespace java::nio
 
 namespace java::util::zip
 {
-	class Deflater : public __JniBaseClass
+	class Deflater : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace java::util::zip
 		static jint SYNC_FLUSH();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Deflater(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Deflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Deflater(QJniObject obj);
 		
 		// Constructors

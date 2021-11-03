@@ -88,7 +88,7 @@ namespace java::sql
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SQLException::iterator()
+	JObject SQLException::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

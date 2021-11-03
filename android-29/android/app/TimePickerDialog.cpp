@@ -11,7 +11,7 @@ namespace android::app
 	TimePickerDialog::TimePickerDialog(QJniObject obj) : android::app::AlertDialog(obj) {}
 	
 	// Constructors
-	TimePickerDialog::TimePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jboolean arg4)
+	TimePickerDialog::TimePickerDialog(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jboolean arg4)
 		: android::app::AlertDialog(
 			"android.app.TimePickerDialog",
 			"(Landroid/content/Context;Landroid/app/TimePickerDialog$OnTimeSetListener;IIZ)V",
@@ -21,7 +21,7 @@ namespace android::app
 			arg3,
 			arg4
 		) {}
-	TimePickerDialog::TimePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jboolean arg5)
+	TimePickerDialog::TimePickerDialog(android::content::Context arg0, jint arg1, JObject arg2, jint arg3, jint arg4, jboolean arg5)
 		: android::app::AlertDialog(
 			"android.app.TimePickerDialog",
 			"(Landroid/content/Context;ILandroid/app/TimePickerDialog$OnTimeSetListener;IIZ)V",
@@ -34,7 +34,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void TimePickerDialog::onClick(__JniBaseClass arg0, jint arg1)
+	void TimePickerDialog::onClick(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"onClick",

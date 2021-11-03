@@ -311,11 +311,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore::MediaStore(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore::MediaStore(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore::MediaStore()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore",
 			"()V"
 		) {}
@@ -331,7 +331,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaStore::getExternalVolumeNames(android::content::Context arg0)
+	JObject MediaStore::getExternalVolumeNames(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",

@@ -53,7 +53,7 @@ namespace android::bluetooth::le
 			"ADVERTISE_TX_POWER_ULTRA_LOW"
 		);
 	}
-	__JniBaseClass AdvertiseSettings::CREATOR()
+	JObject AdvertiseSettings::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.le.AdvertiseSettings",
@@ -63,7 +63,7 @@ namespace android::bluetooth::le
 	}
 	
 	// QJniObject forward
-	AdvertiseSettings::AdvertiseSettings(QJniObject obj) : __JniBaseClass(obj) {}
+	AdvertiseSettings::AdvertiseSettings(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

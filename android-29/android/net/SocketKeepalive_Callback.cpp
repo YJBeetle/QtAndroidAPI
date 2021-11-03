@@ -5,11 +5,11 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	SocketKeepalive_Callback::SocketKeepalive_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	SocketKeepalive_Callback::SocketKeepalive_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SocketKeepalive_Callback::SocketKeepalive_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.SocketKeepalive$Callback",
 			"()V"
 		) {}

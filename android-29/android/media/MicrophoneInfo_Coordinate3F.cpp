@@ -23,7 +23,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MicrophoneInfo_Coordinate3F::MicrophoneInfo_Coordinate3F(QJniObject obj) : __JniBaseClass(obj) {}
+	MicrophoneInfo_Coordinate3F::MicrophoneInfo_Coordinate3F(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

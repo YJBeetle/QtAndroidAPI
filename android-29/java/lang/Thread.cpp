@@ -31,57 +31,57 @@ namespace java::lang
 	}
 	
 	// QJniObject forward
-	Thread::Thread(QJniObject obj) : __JniBaseClass(obj) {}
+	Thread::Thread(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Thread::Thread()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Thread",
 			"()V"
 		) {}
-	Thread::Thread(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Thread::Thread(JObject arg0)
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/Runnable;)V",
 			arg0.object()
 		) {}
 	Thread::Thread(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
-	Thread::Thread(__JniBaseClass arg0, jstring arg1)
-		: __JniBaseClass(
+	Thread::Thread(JObject arg0, jstring arg1)
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1)
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	Thread::Thread(java::lang::ThreadGroup arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2)
-		: __JniBaseClass(
+	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2)
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
 			arg2
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2, jlong arg3)
-		: __JniBaseClass(
+	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2, jlong arg3)
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
 			arg0.object(),
@@ -89,8 +89,8 @@ namespace java::lang
 			arg2,
 			arg3
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4)
-		: __JniBaseClass(
+	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2, jlong arg3, jboolean arg4)
+		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;JZ)V",
 			arg0.object(),
@@ -134,7 +134,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass Thread::getAllStackTraces()
+	JObject Thread::getAllStackTraces()
 	{
 		return callStaticObjectMethod(
 			"java.lang.Thread",
@@ -142,7 +142,7 @@ namespace java::lang
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass Thread::getDefaultUncaughtExceptionHandler()
+	JObject Thread::getDefaultUncaughtExceptionHandler()
 	{
 		return callStaticObjectMethod(
 			"java.lang.Thread",
@@ -175,7 +175,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	void Thread::setDefaultUncaughtExceptionHandler(__JniBaseClass arg0)
+	void Thread::setDefaultUncaughtExceptionHandler(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.lang.Thread",
@@ -274,7 +274,7 @@ namespace java::lang
 			"()Ljava/lang/ThreadGroup;"
 		);
 	}
-	__JniBaseClass Thread::getUncaughtExceptionHandler()
+	JObject Thread::getUncaughtExceptionHandler()
 	{
 		return callObjectMethod(
 			"getUncaughtExceptionHandler",
@@ -379,7 +379,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void Thread::setUncaughtExceptionHandler(__JniBaseClass arg0)
+	void Thread::setUncaughtExceptionHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setUncaughtExceptionHandler",

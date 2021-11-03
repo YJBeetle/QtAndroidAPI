@@ -5,17 +5,17 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	IDNA_Info::IDNA_Info(QJniObject obj) : __JniBaseClass(obj) {}
+	IDNA_Info::IDNA_Info(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IDNA_Info::IDNA_Info()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.IDNA$Info",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass IDNA_Info::getErrors()
+	JObject IDNA_Info::getErrors()
 	{
 		return callObjectMethod(
 			"getErrors",

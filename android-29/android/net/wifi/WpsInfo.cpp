@@ -11,7 +11,7 @@ namespace android::net::wifi
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass WpsInfo::CREATOR()
+	JObject WpsInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WpsInfo",
@@ -69,16 +69,16 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	WpsInfo::WpsInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	WpsInfo::WpsInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WpsInfo::WpsInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WpsInfo",
 			"()V"
 		) {}
 	WpsInfo::WpsInfo(android::net::wifi::WpsInfo &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WpsInfo",
 			"(Landroid/net/wifi/WpsInfo;)V",
 			arg0.object()

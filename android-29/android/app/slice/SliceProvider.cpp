@@ -84,7 +84,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	android::app::slice::Slice SliceProvider::onBindSlice(android::net::Uri arg0, __JniBaseClass arg1)
+	android::app::slice::Slice SliceProvider::onBindSlice(android::net::Uri arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"onBindSlice",
@@ -101,7 +101,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	__JniBaseClass SliceProvider::onGetSliceDescendants(android::net::Uri arg0)
+	JObject SliceProvider::onGetSliceDescendants(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"onGetSliceDescendants",
@@ -133,7 +133,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	__JniBaseClass SliceProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject SliceProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
@@ -144,7 +144,7 @@ namespace android::app::slice
 			arg3.object()
 		);
 	}
-	__JniBaseClass SliceProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject SliceProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",
@@ -156,7 +156,7 @@ namespace android::app::slice
 			arg4
 		);
 	}
-	__JniBaseClass SliceProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject SliceProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",

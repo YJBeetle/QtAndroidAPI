@@ -5,16 +5,16 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QJniObject forward
-	LocatorImpl::LocatorImpl(QJniObject obj) : __JniBaseClass(obj) {}
+	LocatorImpl::LocatorImpl(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocatorImpl::LocatorImpl()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.LocatorImpl",
 			"()V"
 		) {}
-	LocatorImpl::LocatorImpl(__JniBaseClass arg0)
-		: __JniBaseClass(
+	LocatorImpl::LocatorImpl(JObject arg0)
+		: JObject(
 			"org.xml.sax.helpers.LocatorImpl",
 			"(Lorg/xml/sax/Locator;)V",
 			arg0.object()

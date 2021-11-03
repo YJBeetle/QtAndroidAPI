@@ -7,11 +7,11 @@ namespace android::content::pm
 	// Fields
 	
 	// QJniObject forward
-	PackageItemInfo_DisplayNameComparator::PackageItemInfo_DisplayNameComparator(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageItemInfo_DisplayNameComparator::PackageItemInfo_DisplayNameComparator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageItemInfo_DisplayNameComparator::PackageItemInfo_DisplayNameComparator(android::content::pm::PackageManager arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageItemInfo$DisplayNameComparator",
 			"(Landroid/content/pm/PackageManager;)V",
 			arg0.object()

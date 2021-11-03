@@ -23,11 +23,11 @@ namespace android::gesture
 	}
 	
 	// QJniObject forward
-	GesturePoint::GesturePoint(QJniObject obj) : __JniBaseClass(obj) {}
+	GesturePoint::GesturePoint(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GesturePoint::GesturePoint(jfloat arg0, jfloat arg1, jlong arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.gesture.GesturePoint",
 			"(FFJ)V",
 			arg0,

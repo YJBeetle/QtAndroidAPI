@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,7 +25,7 @@ namespace android::view
 
 namespace android::app
 {
-	class ActionBar : public __JniBaseClass
+	class ActionBar : public JObject
 	{
 	public:
 		// Fields
@@ -39,14 +39,14 @@ namespace android::app
 		static jint NAVIGATION_MODE_TABS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ActionBar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActionBar(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActionBar(QJniObject obj);
 		
 		// Constructors
 		ActionBar();
 		
 		// Methods
-		void addOnMenuVisibilityListener(__JniBaseClass arg0);
+		void addOnMenuVisibilityListener(JObject arg0);
 		void addTab(android::app::ActionBar_Tab arg0);
 		void addTab(android::app::ActionBar_Tab arg0, jboolean arg1);
 		void addTab(android::app::ActionBar_Tab arg0, jint arg1);
@@ -70,7 +70,7 @@ namespace android::app
 		jboolean isShowing();
 		android::app::ActionBar_Tab newTab();
 		void removeAllTabs();
-		void removeOnMenuVisibilityListener(__JniBaseClass arg0);
+		void removeOnMenuVisibilityListener(JObject arg0);
 		void removeTab(android::app::ActionBar_Tab arg0);
 		void removeTabAt(jint arg0);
 		void selectTab(android::app::ActionBar_Tab arg0);
@@ -95,7 +95,7 @@ namespace android::app
 		void setHomeButtonEnabled(jboolean arg0);
 		void setIcon(android::graphics::drawable::Drawable arg0);
 		void setIcon(jint arg0);
-		void setListNavigationCallbacks(__JniBaseClass arg0, __JniBaseClass arg1);
+		void setListNavigationCallbacks(JObject arg0, JObject arg1);
 		void setLogo(android::graphics::drawable::Drawable arg0);
 		void setLogo(jint arg0);
 		void setNavigationMode(jint arg0);

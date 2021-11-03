@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,23 +13,23 @@ namespace java::security
 
 namespace java::security
 {
-	class SignedObject : public __JniBaseClass
+	class SignedObject : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SignedObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SignedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SignedObject(QJniObject obj);
 		
 		// Constructors
-		SignedObject(__JniBaseClass arg0, __JniBaseClass arg1, java::security::Signature arg2);
+		SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2);
 		
 		// Methods
 		jstring getAlgorithm();
 		jobject getObject();
 		jbyteArray getSignature();
-		jboolean verify(__JniBaseClass arg0, java::security::Signature arg1);
+		jboolean verify(JObject arg0, java::security::Signature arg1);
 	};
 } // namespace java::security
 

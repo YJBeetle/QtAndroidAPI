@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security
 {
@@ -13,13 +13,13 @@ namespace java::security::cert
 
 namespace java::security::cert
 {
-	class CertPathBuilder : public __JniBaseClass
+	class CertPathBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CertPathBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CertPathBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CertPathBuilder(QJniObject obj);
 		
 		// Constructors
@@ -29,10 +29,10 @@ namespace java::security::cert
 		static java::security::cert::CertPathBuilder getInstance(jstring arg0);
 		static java::security::cert::CertPathBuilder getInstance(jstring arg0, jstring arg1);
 		static java::security::cert::CertPathBuilder getInstance(jstring arg0, java::security::Provider arg1);
-		__JniBaseClass build(__JniBaseClass arg0);
+		JObject build(JObject arg0);
 		jstring getAlgorithm();
 		java::security::Provider getProvider();
-		__JniBaseClass getRevocationChecker();
+		JObject getRevocationChecker();
 	};
 } // namespace java::security::cert
 

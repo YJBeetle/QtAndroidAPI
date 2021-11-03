@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -21,20 +21,20 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class RemoteConference_Callback : public __JniBaseClass
+	class RemoteConference_Callback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RemoteConference_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoteConference_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteConference_Callback(QJniObject obj);
 		
 		// Constructors
 		RemoteConference_Callback();
 		
 		// Methods
-		void onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, __JniBaseClass arg1);
+		void onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, JObject arg1);
 		void onConnectionAdded(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1);
 		void onConnectionCapabilitiesChanged(android::telecom::RemoteConference arg0, jint arg1);
 		void onConnectionPropertiesChanged(android::telecom::RemoteConference arg0, jint arg1);

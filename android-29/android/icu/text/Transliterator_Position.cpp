@@ -29,22 +29,22 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	Transliterator_Position::Transliterator_Position(QJniObject obj) : __JniBaseClass(obj) {}
+	Transliterator_Position::Transliterator_Position(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Transliterator_Position::Transliterator_Position()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Transliterator$Position",
 			"()V"
 		) {}
 	Transliterator_Position::Transliterator_Position(android::icu::text::Transliterator_Position &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Transliterator$Position",
 			"(Landroid/icu/text/Transliterator$Position;)V",
 			arg0.object()
 		) {}
 	Transliterator_Position::Transliterator_Position(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Transliterator$Position",
 			"(III)V",
 			arg0,
@@ -52,7 +52,7 @@ namespace android::icu::text
 			arg2
 		) {}
 	Transliterator_Position::Transliterator_Position(jint arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Transliterator$Position",
 			"(IIII)V",
 			arg0,

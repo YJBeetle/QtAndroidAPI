@@ -11,16 +11,16 @@ namespace android::service::autofill
 	// Fields
 	
 	// QJniObject forward
-	Dataset_Builder::Dataset_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	Dataset_Builder::Dataset_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Dataset_Builder::Dataset_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.Dataset$Builder",
 			"()V"
 		) {}
 	Dataset_Builder::Dataset_Builder(android::widget::RemoteViews arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.Dataset$Builder",
 			"(Landroid/widget/RemoteViews;)V",
 			arg0.object()

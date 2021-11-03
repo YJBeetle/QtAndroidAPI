@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace org::xml::sax::helpers
 {
-	class ParserFactory : public __JniBaseClass
+	class ParserFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ParserFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ParserFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ParserFactory(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass makeParser();
-		static __JniBaseClass makeParser(jstring arg0);
+		static JObject makeParser();
+		static JObject makeParser(jstring arg0);
 	};
 } // namespace org::xml::sax::helpers
 

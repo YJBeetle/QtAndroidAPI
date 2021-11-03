@@ -8,17 +8,17 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	DateIntervalInfo::DateIntervalInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	DateIntervalInfo::DateIntervalInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateIntervalInfo::DateIntervalInfo(android::icu::util::ULocale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateIntervalInfo",
 			"(Landroid/icu/util/ULocale;)V",
 			arg0.object()
 		) {}
 	DateIntervalInfo::DateIntervalInfo(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateIntervalInfo",
 			"(Ljava/util/Locale;)V",
 			arg0.object()

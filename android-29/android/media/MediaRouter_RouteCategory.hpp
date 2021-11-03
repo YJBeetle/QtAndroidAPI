@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,13 +9,13 @@ namespace android::content
 
 namespace android::media
 {
-	class MediaRouter_RouteCategory : public __JniBaseClass
+	class MediaRouter_RouteCategory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaRouter_RouteCategory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRouter_RouteCategory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter_RouteCategory(QJniObject obj);
 		
 		// Constructors
@@ -23,7 +23,7 @@ namespace android::media
 		// Methods
 		jstring getName();
 		jstring getName(android::content::Context arg0);
-		__JniBaseClass getRoutes(__JniBaseClass arg0);
+		JObject getRoutes(JObject arg0);
 		jint getSupportedTypes();
 		jboolean isGroupable();
 		jstring toString();

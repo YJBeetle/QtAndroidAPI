@@ -69,7 +69,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	java::time::DayOfWeek DayOfWeek::from(__JniBaseClass arg0)
+	java::time::DayOfWeek DayOfWeek::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.DayOfWeek",
@@ -104,7 +104,7 @@ namespace java::time
 			"()[Ljava/time/DayOfWeek;"
 		).object<jarray>();
 	}
-	__JniBaseClass DayOfWeek::adjustInto(__JniBaseClass arg0)
+	JObject DayOfWeek::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -112,7 +112,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint DayOfWeek::get(__JniBaseClass arg0)
+	jint DayOfWeek::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -129,7 +129,7 @@ namespace java::time
 			arg1.object()
 		).object<jstring>();
 	}
-	jlong DayOfWeek::getLong(__JniBaseClass arg0)
+	jlong DayOfWeek::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -144,7 +144,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jboolean DayOfWeek::isSupported(__JniBaseClass arg0)
+	jboolean DayOfWeek::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -168,7 +168,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject DayOfWeek::query(__JniBaseClass arg0)
+	jobject DayOfWeek::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -176,7 +176,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange DayOfWeek::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange DayOfWeek::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",

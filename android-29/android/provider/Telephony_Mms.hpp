@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class Telephony_Mms : public __JniBaseClass
+	class Telephony_Mms : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::provider
 		static android::net::Uri REPORT_STATUS_URI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Telephony_Mms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Telephony_Mms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Mms(QJniObject obj);
 		
 		// Constructors

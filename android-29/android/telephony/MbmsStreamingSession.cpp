@@ -10,12 +10,12 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	MbmsStreamingSession::MbmsStreamingSession(QJniObject obj) : __JniBaseClass(obj) {}
+	MbmsStreamingSession::MbmsStreamingSession(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::telephony::MbmsStreamingSession MbmsStreamingSession::create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2)
+	android::telephony::MbmsStreamingSession MbmsStreamingSession::create(android::content::Context arg0, JObject arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.MbmsStreamingSession",
@@ -26,7 +26,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	android::telephony::MbmsStreamingSession MbmsStreamingSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3)
+	android::telephony::MbmsStreamingSession MbmsStreamingSession::create(android::content::Context arg0, JObject arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.MbmsStreamingSession",
@@ -45,7 +45,7 @@ namespace android::telephony
 			"()V"
 		);
 	}
-	void MbmsStreamingSession::requestUpdateStreamingServices(__JniBaseClass arg0)
+	void MbmsStreamingSession::requestUpdateStreamingServices(JObject arg0)
 	{
 		callMethod<void>(
 			"requestUpdateStreamingServices",
@@ -53,7 +53,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	android::telephony::mbms::StreamingService MbmsStreamingSession::startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, __JniBaseClass arg1, android::telephony::mbms::StreamingServiceCallback arg2)
+	android::telephony::mbms::StreamingService MbmsStreamingSession::startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, JObject arg1, android::telephony::mbms::StreamingServiceCallback arg2)
 	{
 		return callObjectMethod(
 			"startStreaming",

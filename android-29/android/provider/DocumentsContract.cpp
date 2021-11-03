@@ -158,7 +158,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	DocumentsContract::DocumentsContract(QJniObject obj) : __JniBaseClass(obj) {}
+	DocumentsContract::DocumentsContract(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,7 +5,7 @@
 namespace android::view::contentcapture
 {
 	// Fields
-	__JniBaseClass DataRemovalRequest::CREATOR()
+	JObject DataRemovalRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.contentcapture.DataRemovalRequest",
@@ -22,7 +22,7 @@ namespace android::view::contentcapture
 	}
 	
 	// QJniObject forward
-	DataRemovalRequest::DataRemovalRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	DataRemovalRequest::DataRemovalRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	__JniBaseClass DataRemovalRequest::getLocusIdRequests()
+	JObject DataRemovalRequest::getLocusIdRequests()
 	{
 		return callObjectMethod(
 			"getLocusIdRequests",

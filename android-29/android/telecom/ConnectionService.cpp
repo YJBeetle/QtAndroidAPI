@@ -81,21 +81,21 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	__JniBaseClass ConnectionService::getAllConferences()
+	JObject ConnectionService::getAllConferences()
 	{
 		return callObjectMethod(
 			"getAllConferences",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass ConnectionService::getAllConnections()
+	JObject ConnectionService::getAllConnections()
 	{
 		return callObjectMethod(
 			"getAllConnections",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass ConnectionService::onBind(android::content::Intent arg0)
+	JObject ConnectionService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

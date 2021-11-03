@@ -48,7 +48,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaRecorder_VideoEncoder::MediaRecorder_VideoEncoder(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaRecorder_VideoEncoder::MediaRecorder_VideoEncoder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

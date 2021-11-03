@@ -40,7 +40,7 @@ namespace android::telephony::mbms
 	}
 	
 	// QJniObject forward
-	MbmsErrors::MbmsErrors(QJniObject obj) : __JniBaseClass(obj) {}
+	MbmsErrors::MbmsErrors(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -43,11 +43,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaDescrambler::MediaDescrambler(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaDescrambler::MediaDescrambler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaDescrambler::MediaDescrambler(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaDescrambler",
 			"(I)V",
 			arg0

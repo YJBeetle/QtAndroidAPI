@@ -5,7 +5,7 @@
 namespace android::database
 {
 	// Fields
-	__JniBaseClass CursorWindow::CREATOR()
+	JObject CursorWindow::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.database.CursorWindow",

@@ -12,16 +12,16 @@ namespace android::icu::util
 	}
 	
 	// QJniObject forward
-	Output::Output(QJniObject obj) : __JniBaseClass(obj) {}
+	Output::Output(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Output::Output()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.Output",
 			"()V"
 		) {}
 	Output::Output(jobject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.Output",
 			"(Ljava/lang/Object;)V",
 			arg0

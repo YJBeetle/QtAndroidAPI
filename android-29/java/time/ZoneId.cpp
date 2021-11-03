@@ -8,7 +8,7 @@
 namespace java::time
 {
 	// Fields
-	__JniBaseClass ZoneId::SHORT_IDS()
+	JObject ZoneId::SHORT_IDS()
 	{
 		return getStaticObjectField(
 			"java.time.ZoneId",
@@ -18,12 +18,12 @@ namespace java::time
 	}
 	
 	// QJniObject forward
-	ZoneId::ZoneId(QJniObject obj) : __JniBaseClass(obj) {}
+	ZoneId::ZoneId(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::ZoneId ZoneId::from(__JniBaseClass arg0)
+	java::time::ZoneId ZoneId::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -32,7 +32,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	__JniBaseClass ZoneId::getAvailableZoneIds()
+	JObject ZoneId::getAvailableZoneIds()
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -49,7 +49,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZoneId ZoneId::of(jstring arg0, __JniBaseClass arg1)
+	java::time::ZoneId ZoneId::of(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneId",

@@ -115,7 +115,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass TimeZoneFormat::formatToCharacterIterator(jobject arg0)
+	JObject TimeZoneFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",

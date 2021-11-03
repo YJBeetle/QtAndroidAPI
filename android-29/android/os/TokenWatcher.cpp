@@ -7,11 +7,11 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	TokenWatcher::TokenWatcher(QJniObject obj) : __JniBaseClass(obj) {}
+	TokenWatcher::TokenWatcher(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TokenWatcher::TokenWatcher(android::os::Handler arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.TokenWatcher",
 			"(Landroid/os/Handler;Ljava/lang/String;)V",
 			arg0.object(),
@@ -19,7 +19,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void TokenWatcher::acquire(__JniBaseClass arg0, jstring arg1)
+	void TokenWatcher::acquire(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"acquire",
@@ -35,7 +35,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	void TokenWatcher::cleanup(__JniBaseClass arg0, jboolean arg1)
+	void TokenWatcher::cleanup(JObject arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"cleanup",
@@ -66,7 +66,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	void TokenWatcher::release(__JniBaseClass arg0)
+	void TokenWatcher::release(JObject arg0)
 	{
 		callMethod<void>(
 			"release",

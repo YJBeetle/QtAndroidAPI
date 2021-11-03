@@ -31,7 +31,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	__JniBaseClass BufferedReader::lines()
+	JObject BufferedReader::lines()
 	{
 		return callObjectMethod(
 			"lines",

@@ -1545,7 +1545,7 @@ namespace android::opengl
 			arg14
 		);
 	}
-	void GLES32::glDebugMessageCallback(__JniBaseClass arg0)
+	void GLES32::glDebugMessageCallback(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES32",

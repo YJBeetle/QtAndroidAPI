@@ -1,26 +1,26 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::security::cert
 {
-	class CollectionCertStoreParameters : public __JniBaseClass
+	class CollectionCertStoreParameters : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CollectionCertStoreParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CollectionCertStoreParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CollectionCertStoreParameters(QJniObject obj);
 		
 		// Constructors
 		CollectionCertStoreParameters();
-		CollectionCertStoreParameters(__JniBaseClass arg0);
+		CollectionCertStoreParameters(JObject arg0);
 		
 		// Methods
 		jobject clone();
-		__JniBaseClass getCollection();
+		JObject getCollection();
 		jstring toString();
 	};
 } // namespace java::security::cert

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::gesture
 {
-	class OrientedBoundingBox : public __JniBaseClass
+	class OrientedBoundingBox : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::gesture
 		jfloat width();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit OrientedBoundingBox(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OrientedBoundingBox(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OrientedBoundingBox(QJniObject obj);
 		
 		// Constructors

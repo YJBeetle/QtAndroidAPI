@@ -7,7 +7,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass Message::CREATOR()
+	JObject Message::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.Message",
@@ -55,11 +55,11 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Message::Message(QJniObject obj) : __JniBaseClass(obj) {}
+	Message::Message(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Message::Message()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Message",
 			"()V"
 		) {}
@@ -101,7 +101,7 @@ namespace android::os
 			arg1
 		);
 	}
-	android::os::Message Message::obtain(android::os::Handler arg0, __JniBaseClass arg1)
+	android::os::Message Message::obtain(android::os::Handler arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.os.Message",
@@ -162,7 +162,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	__JniBaseClass Message::getCallback()
+	JObject Message::getCallback()
 	{
 		return callObjectMethod(
 			"getCallback",

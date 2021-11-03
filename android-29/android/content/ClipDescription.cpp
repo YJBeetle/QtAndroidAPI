@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass ClipDescription::CREATOR()
+	JObject ClipDescription::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.ClipDescription",
@@ -47,17 +47,17 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	ClipDescription::ClipDescription(QJniObject obj) : __JniBaseClass(obj) {}
+	ClipDescription::ClipDescription(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ClipDescription::ClipDescription(android::content::ClipDescription &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipDescription",
 			"(Landroid/content/ClipDescription;)V",
 			arg0.object()
 		) {}
 	ClipDescription::ClipDescription(jstring arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipDescription",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;)V",
 			arg0,

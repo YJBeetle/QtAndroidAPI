@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,7 +29,7 @@ namespace java::io
 
 namespace android::media
 {
-	class MediaMetadataRetriever : public __JniBaseClass
+	class MediaMetadataRetriever : public JObject
 	{
 	public:
 		// Fields
@@ -72,7 +72,7 @@ namespace android::media
 		static jint OPTION_PREVIOUS_SYNC();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaMetadataRetriever(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaMetadataRetriever(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaMetadataRetriever(QJniObject obj);
 		
 		// Constructors
@@ -87,8 +87,8 @@ namespace android::media
 		android::graphics::Bitmap getFrameAtTime();
 		android::graphics::Bitmap getFrameAtTime(jlong arg0);
 		android::graphics::Bitmap getFrameAtTime(jlong arg0, jint arg1);
-		__JniBaseClass getFramesAtIndex(jint arg0, jint arg1);
-		__JniBaseClass getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2);
+		JObject getFramesAtIndex(jint arg0, jint arg1);
+		JObject getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2);
 		android::graphics::Bitmap getImageAtIndex(jint arg0);
 		android::graphics::Bitmap getImageAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1);
 		android::graphics::Bitmap getPrimaryImage();
@@ -99,7 +99,7 @@ namespace android::media
 		void setDataSource(java::io::FileDescriptor arg0);
 		void setDataSource(jstring arg0);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1);
-		void setDataSource(jstring arg0, __JniBaseClass arg1);
+		void setDataSource(jstring arg0, JObject arg1);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 	};
 } // namespace android::media

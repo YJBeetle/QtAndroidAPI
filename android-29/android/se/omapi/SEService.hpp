@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,17 +9,17 @@ namespace android::content
 
 namespace android::se::omapi
 {
-	class SEService : public __JniBaseClass
+	class SEService : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SEService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SEService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SEService(QJniObject obj);
 		
 		// Constructors
-		SEService(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		SEService(android::content::Context arg0, JObject arg1, JObject arg2);
 		
 		// Methods
 		jarray getReaders();

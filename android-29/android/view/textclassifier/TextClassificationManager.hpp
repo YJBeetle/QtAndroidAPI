@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,22 +13,22 @@ namespace android::view::textclassifier
 
 namespace android::view::textclassifier
 {
-	class TextClassificationManager : public __JniBaseClass
+	class TextClassificationManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TextClassificationManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextClassificationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextClassificationManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0);
-		__JniBaseClass getTextClassifier();
-		void setTextClassificationSessionFactory(__JniBaseClass arg0);
-		void setTextClassifier(__JniBaseClass arg0);
+		JObject createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0);
+		JObject getTextClassifier();
+		void setTextClassificationSessionFactory(JObject arg0);
+		void setTextClassifier(JObject arg0);
 	};
 } // namespace android::view::textclassifier
 

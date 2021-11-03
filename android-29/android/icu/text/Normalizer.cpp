@@ -65,7 +65,7 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	Normalizer::Normalizer(QJniObject obj) : __JniBaseClass(obj) {}
+	Normalizer::Normalizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass SystemUpdateInfo::CREATOR()
+	JObject SystemUpdateInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.SystemUpdateInfo",
@@ -35,7 +35,7 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	SystemUpdateInfo::SystemUpdateInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SystemUpdateInfo::SystemUpdateInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::view
 {
@@ -13,7 +13,7 @@ namespace android::view
 
 namespace android::view
 {
-	class ActionMode : public __JniBaseClass
+	class ActionMode : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::view
 		static jint TYPE_PRIMARY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ActionMode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActionMode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActionMode(QJniObject obj);
 		
 		// Constructors
@@ -31,7 +31,7 @@ namespace android::view
 		// Methods
 		void finish();
 		android::view::View getCustomView();
-		__JniBaseClass getMenu();
+		JObject getMenu();
 		android::view::MenuInflater getMenuInflater();
 		jstring getSubtitle();
 		jobject getTag();

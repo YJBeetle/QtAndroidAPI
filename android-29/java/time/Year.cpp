@@ -28,12 +28,12 @@ namespace java::time
 	}
 	
 	// QJniObject forward
-	Year::Year(QJniObject obj) : __JniBaseClass(obj) {}
+	Year::Year(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::Year Year::from(__JniBaseClass arg0)
+	java::time::Year Year::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Year",
@@ -105,7 +105,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	__JniBaseClass Year::adjustInto(__JniBaseClass arg0)
+	JObject Year::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -177,7 +177,7 @@ namespace java::time
 			arg0.object()
 		).object<jstring>();
 	}
-	jint Year::get(__JniBaseClass arg0)
+	jint Year::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -185,7 +185,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong Year::getLong(__JniBaseClass arg0)
+	jlong Year::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -230,7 +230,7 @@ namespace java::time
 			"()Z"
 		);
 	}
-	jboolean Year::isSupported(__JniBaseClass arg0)
+	jboolean Year::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -253,7 +253,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	java::time::Year Year::minus(__JniBaseClass arg0)
+	java::time::Year Year::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -261,7 +261,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Year Year::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::Year Year::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -278,7 +278,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Year Year::plus(__JniBaseClass arg0)
+	java::time::Year Year::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -286,7 +286,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Year Year::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::Year Year::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -303,7 +303,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject Year::query(__JniBaseClass arg0)
+	jobject Year::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -311,7 +311,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange Year::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange Year::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -326,7 +326,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jlong Year::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong Year::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -335,7 +335,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Year Year::with(__JniBaseClass arg0)
+	java::time::Year Year::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -343,7 +343,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Year Year::with(__JniBaseClass arg0, jlong arg1)
+	java::time::Year Year::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

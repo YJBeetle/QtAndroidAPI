@@ -9,17 +9,17 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	KeyStoreSpi::KeyStoreSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyStoreSpi::KeyStoreSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyStoreSpi::KeyStoreSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.KeyStoreSpi",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass KeyStoreSpi::engineAliases()
+	JObject KeyStoreSpi::engineAliases()
 	{
 		return callObjectMethod(
 			"engineAliases",
@@ -83,7 +83,7 @@ namespace java::security
 			arg0
 		);
 	}
-	__JniBaseClass KeyStoreSpi::engineGetEntry(jstring arg0, __JniBaseClass arg1)
+	JObject KeyStoreSpi::engineGetEntry(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"engineGetEntry",
@@ -92,7 +92,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	__JniBaseClass KeyStoreSpi::engineGetKey(jstring arg0, jcharArray arg1)
+	JObject KeyStoreSpi::engineGetKey(jstring arg0, jcharArray arg1)
 	{
 		return callObjectMethod(
 			"engineGetKey",
@@ -117,7 +117,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void KeyStoreSpi::engineLoad(__JniBaseClass arg0)
+	void KeyStoreSpi::engineLoad(JObject arg0)
 	{
 		callMethod<void>(
 			"engineLoad",
@@ -151,7 +151,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyStoreSpi::engineSetEntry(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void KeyStoreSpi::engineSetEntry(jstring arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"engineSetEntry",
@@ -171,7 +171,7 @@ namespace java::security
 			arg2
 		);
 	}
-	void KeyStoreSpi::engineSetKeyEntry(jstring arg0, __JniBaseClass arg1, jcharArray arg2, jarray arg3)
+	void KeyStoreSpi::engineSetKeyEntry(jstring arg0, JObject arg1, jcharArray arg2, jarray arg3)
 	{
 		callMethod<void>(
 			"engineSetKeyEntry",
@@ -189,7 +189,7 @@ namespace java::security
 			"()I"
 		);
 	}
-	void KeyStoreSpi::engineStore(__JniBaseClass arg0)
+	void KeyStoreSpi::engineStore(JObject arg0)
 	{
 		callMethod<void>(
 			"engineStore",

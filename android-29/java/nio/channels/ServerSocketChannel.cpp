@@ -22,7 +22,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/ServerSocketChannel;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel ServerSocketChannel::open(__JniBaseClass arg0)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::open(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.ServerSocketChannel",
@@ -62,7 +62,7 @@ namespace java::nio::channels
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",

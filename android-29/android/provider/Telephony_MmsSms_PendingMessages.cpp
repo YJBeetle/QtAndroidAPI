@@ -86,7 +86,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_MmsSms_PendingMessages::Telephony_MmsSms_PendingMessages(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_MmsSms_PendingMessages::Telephony_MmsSms_PendingMessages(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

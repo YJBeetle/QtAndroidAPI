@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::nsd
 {
@@ -9,7 +9,7 @@ namespace android::net::nsd
 
 namespace android::net::nsd
 {
-	class NsdManager : public __JniBaseClass
+	class NsdManager : public JObject
 	{
 	public:
 		// Fields
@@ -23,17 +23,17 @@ namespace android::net::nsd
 		static jint PROTOCOL_DNS_SD();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NsdManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NsdManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NsdManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		void discoverServices(jstring arg0, jint arg1, __JniBaseClass arg2);
-		void registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, __JniBaseClass arg2);
-		void resolveService(android::net::nsd::NsdServiceInfo arg0, __JniBaseClass arg1);
-		void stopServiceDiscovery(__JniBaseClass arg0);
-		void unregisterService(__JniBaseClass arg0);
+		void discoverServices(jstring arg0, jint arg1, JObject arg2);
+		void registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, JObject arg2);
+		void resolveService(android::net::nsd::NsdServiceInfo arg0, JObject arg1);
+		void stopServiceDiscovery(JObject arg0);
+		void unregisterService(JObject arg0);
 	};
 } // namespace android::net::nsd
 

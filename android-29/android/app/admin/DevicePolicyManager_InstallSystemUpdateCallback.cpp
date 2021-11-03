@@ -40,11 +40,11 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
 			"()V"
 		) {}

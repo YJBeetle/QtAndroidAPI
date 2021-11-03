@@ -9,11 +9,11 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	UnicodeSetSpanner::UnicodeSetSpanner(QJniObject obj) : __JniBaseClass(obj) {}
+	UnicodeSetSpanner::UnicodeSetSpanner(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UnicodeSetSpanner::UnicodeSetSpanner(android::icu::text::UnicodeSet arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.UnicodeSetSpanner",
 			"(Landroid/icu/text/UnicodeSet;)V",
 			arg0.object()

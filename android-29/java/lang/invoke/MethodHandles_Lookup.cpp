@@ -62,7 +62,7 @@ namespace java::lang::invoke
 	}
 	
 	// QJniObject forward
-	MethodHandles_Lookup::MethodHandles_Lookup(QJniObject obj) : __JniBaseClass(obj) {}
+	MethodHandles_Lookup::MethodHandles_Lookup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -208,7 +208,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	__JniBaseClass MethodHandles_Lookup::findStaticVarHandle(jclass arg0, jstring arg1, jclass arg2)
+	JObject MethodHandles_Lookup::findStaticVarHandle(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findStaticVarHandle",
@@ -218,7 +218,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	__JniBaseClass MethodHandles_Lookup::findVarHandle(jclass arg0, jstring arg1, jclass arg2)
+	JObject MethodHandles_Lookup::findVarHandle(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findVarHandle",
@@ -281,7 +281,7 @@ namespace java::lang::invoke
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
-	__JniBaseClass MethodHandles_Lookup::revealDirect(java::lang::invoke::MethodHandle arg0)
+	JObject MethodHandles_Lookup::revealDirect(java::lang::invoke::MethodHandle arg0)
 	{
 		return callObjectMethod(
 			"revealDirect",
@@ -337,7 +337,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	__JniBaseClass MethodHandles_Lookup::unreflectVarHandle(java::lang::reflect::Field arg0)
+	JObject MethodHandles_Lookup::unreflectVarHandle(java::lang::reflect::Field arg0)
 	{
 		return callObjectMethod(
 			"unreflectVarHandle",

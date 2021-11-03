@@ -5,12 +5,12 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QJniObject forward
-	ParserFactory::ParserFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	ParserFactory::ParserFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ParserFactory::makeParser()
+	JObject ParserFactory::makeParser()
 	{
 		return callStaticObjectMethod(
 			"org.xml.sax.helpers.ParserFactory",
@@ -18,7 +18,7 @@ namespace org::xml::sax::helpers
 			"()Lorg/xml/sax/Parser;"
 		);
 	}
-	__JniBaseClass ParserFactory::makeParser(jstring arg0)
+	JObject ParserFactory::makeParser(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"org.xml.sax.helpers.ParserFactory",

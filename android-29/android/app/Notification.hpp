@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -45,7 +45,7 @@ namespace android::widget
 
 namespace android::app
 {
-	class Notification : public __JniBaseClass
+	class Notification : public JObject
 	{
 	public:
 		// Fields
@@ -70,7 +70,7 @@ namespace android::app
 		static jstring CATEGORY_SYSTEM();
 		static jstring CATEGORY_TRANSPORT();
 		static jint COLOR_DEFAULT();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DEFAULT_ALL();
 		static jint DEFAULT_LIGHTS();
 		static jint DEFAULT_SOUND();
@@ -168,7 +168,7 @@ namespace android::app
 		jlong when();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Notification(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Notification(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification(QJniObject obj);
 		
 		// Constructors

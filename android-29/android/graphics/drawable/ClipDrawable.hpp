@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 #include "./DrawableWrapper.hpp"
 
@@ -41,7 +41,7 @@ namespace android::graphics::drawable
 		void applyTheme(android::content::res::Resources_Theme arg0);
 		void draw(android::graphics::Canvas arg0);
 		jint getOpacity();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 	};
 } // namespace android::graphics::drawable
 

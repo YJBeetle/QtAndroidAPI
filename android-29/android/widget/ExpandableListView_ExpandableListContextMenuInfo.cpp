@@ -25,11 +25,11 @@ namespace android::widget
 	}
 	
 	// QJniObject forward
-	ExpandableListView_ExpandableListContextMenuInfo::ExpandableListView_ExpandableListContextMenuInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ExpandableListView_ExpandableListContextMenuInfo::ExpandableListView_ExpandableListContextMenuInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ExpandableListView_ExpandableListContextMenuInfo::ExpandableListView_ExpandableListContextMenuInfo(android::view::View arg0, jlong arg1, jlong arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.ExpandableListView$ExpandableListContextMenuInfo",
 			"(Landroid/view/View;JJ)V",
 			arg0.object(),

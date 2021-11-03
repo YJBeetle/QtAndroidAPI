@@ -78,7 +78,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	SettingsSlicesContract::SettingsSlicesContract(QJniObject obj) : __JniBaseClass(obj) {}
+	SettingsSlicesContract::SettingsSlicesContract(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

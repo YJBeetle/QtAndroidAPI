@@ -34,7 +34,7 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	WifiConfiguration_Status::WifiConfiguration_Status(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiConfiguration_Status::WifiConfiguration_Status(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

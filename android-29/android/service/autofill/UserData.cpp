@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass UserData::CREATOR()
+	JObject UserData::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.UserData",
@@ -15,7 +15,7 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	UserData::UserData(QJniObject obj) : __JniBaseClass(obj) {}
+	UserData::UserData(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

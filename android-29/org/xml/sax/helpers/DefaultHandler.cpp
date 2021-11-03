@@ -7,11 +7,11 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QJniObject forward
-	DefaultHandler::DefaultHandler(QJniObject obj) : __JniBaseClass(obj) {}
+	DefaultHandler::DefaultHandler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DefaultHandler::DefaultHandler()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.DefaultHandler",
 			"()V"
 		) {}
@@ -106,7 +106,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void DefaultHandler::setDocumentLocator(__JniBaseClass arg0)
+	void DefaultHandler::setDocumentLocator(JObject arg0)
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -129,7 +129,7 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void DefaultHandler::startElement(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
+	void DefaultHandler::startElement(jstring arg0, jstring arg1, jstring arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"startElement",

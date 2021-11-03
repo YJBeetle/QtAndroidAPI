@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::hardware::camera2::params
 {
@@ -21,7 +21,7 @@ namespace android::view
 
 namespace android::hardware::camera2::params
 {
-	class RecommendedStreamConfigurationMap : public __JniBaseClass
+	class RecommendedStreamConfigurationMap : public JObject
 	{
 	public:
 		// Fields
@@ -34,28 +34,28 @@ namespace android::hardware::camera2::params
 		static jint USECASE_ZSL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RecommendedStreamConfigurationMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RecommendedStreamConfigurationMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RecommendedStreamConfigurationMap(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getHighResolutionOutputSizes(jint arg0);
-		__JniBaseClass getHighSpeedVideoFpsRanges();
-		__JniBaseClass getHighSpeedVideoFpsRangesFor(android::util::Size arg0);
-		__JniBaseClass getHighSpeedVideoSizes();
-		__JniBaseClass getHighSpeedVideoSizesFor(android::util::Range arg0);
-		__JniBaseClass getInputFormats();
-		__JniBaseClass getInputSizes(jint arg0);
-		__JniBaseClass getOutputFormats();
+		JObject getHighResolutionOutputSizes(jint arg0);
+		JObject getHighSpeedVideoFpsRanges();
+		JObject getHighSpeedVideoFpsRangesFor(android::util::Size arg0);
+		JObject getHighSpeedVideoSizes();
+		JObject getHighSpeedVideoSizesFor(android::util::Range arg0);
+		JObject getInputFormats();
+		JObject getInputSizes(jint arg0);
+		JObject getOutputFormats();
 		jlong getOutputMinFrameDuration(jint arg0, android::util::Size arg1);
 		jlong getOutputMinFrameDuration(jclass arg0, android::util::Size arg1);
-		__JniBaseClass getOutputSizes(jint arg0);
-		__JniBaseClass getOutputSizes(jclass arg0);
+		JObject getOutputSizes(jint arg0);
+		JObject getOutputSizes(jclass arg0);
 		jlong getOutputStallDuration(jint arg0, android::util::Size arg1);
 		jlong getOutputStallDuration(jclass arg0, android::util::Size arg1);
 		jint getRecommendedUseCase();
-		__JniBaseClass getValidOutputFormatsForInput(jint arg0);
+		JObject getValidOutputFormatsForInput(jint arg0);
 		jboolean isOutputSupportedFor(android::view::Surface arg0);
 		jboolean isOutputSupportedFor(jint arg0);
 	};

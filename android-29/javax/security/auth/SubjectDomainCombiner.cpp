@@ -7,11 +7,11 @@ namespace javax::security::auth
 	// Fields
 	
 	// QJniObject forward
-	SubjectDomainCombiner::SubjectDomainCombiner(QJniObject obj) : __JniBaseClass(obj) {}
+	SubjectDomainCombiner::SubjectDomainCombiner(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SubjectDomainCombiner::SubjectDomainCombiner(javax::security::auth::Subject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.security.auth.SubjectDomainCombiner",
 			"(Ljavax/security/auth/Subject;)V",
 			arg0.object()

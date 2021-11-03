@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./spi/AbstractInterruptibleChannel.hpp"
 
 namespace java::nio::channels

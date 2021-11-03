@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,13 +21,13 @@ namespace java::nio
 
 namespace java::util
 {
-	class BitSet : public __JniBaseClass
+	class BitSet : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BitSet(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BitSet(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BitSet(QJniObject obj);
 		
 		// Constructors
@@ -65,7 +65,7 @@ namespace java::util
 		void set(jint arg0, jint arg1);
 		void set(jint arg0, jint arg1, jboolean arg2);
 		jint size();
-		__JniBaseClass stream();
+		JObject stream();
 		jbyteArray toByteArray();
 		jlongArray toLongArray();
 		jstring toString();

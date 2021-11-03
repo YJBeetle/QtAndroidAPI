@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class VoicemailContract : public __JniBaseClass
+	class VoicemailContract : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::provider
 		static jstring PARAM_KEY_SOURCE_PACKAGE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VoicemailContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VoicemailContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VoicemailContract(QJniObject obj);
 		
 		// Constructors

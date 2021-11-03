@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -49,8 +49,8 @@ namespace android::printservice
 		
 		// Methods
 		android::print::PrinterId generatePrinterId(jstring arg0);
-		__JniBaseClass getActivePrintJobs();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject getActivePrintJobs();
+		JObject onBind(android::content::Intent arg0);
 	};
 } // namespace android::printservice
 

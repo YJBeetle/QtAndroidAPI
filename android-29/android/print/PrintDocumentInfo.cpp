@@ -25,7 +25,7 @@ namespace android::print
 			"CONTENT_TYPE_UNKNOWN"
 		);
 	}
-	__JniBaseClass PrintDocumentInfo::CREATOR()
+	JObject PrintDocumentInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.print.PrintDocumentInfo",
@@ -42,7 +42,7 @@ namespace android::print
 	}
 	
 	// QJniObject forward
-	PrintDocumentInfo::PrintDocumentInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintDocumentInfo::PrintDocumentInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

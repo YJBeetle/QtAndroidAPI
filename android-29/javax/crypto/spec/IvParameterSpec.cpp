@@ -5,17 +5,17 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QJniObject forward
-	IvParameterSpec::IvParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	IvParameterSpec::IvParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IvParameterSpec::IvParameterSpec(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.IvParameterSpec",
 			"([B)V",
 			arg0
 		) {}
 	IvParameterSpec::IvParameterSpec(jbyteArray arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.IvParameterSpec",
 			"([BII)V",
 			arg0,

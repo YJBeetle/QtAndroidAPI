@@ -5,7 +5,7 @@ namespace android::renderscript
 	// Fields
 	
 	// QJniObject forward
-	ScriptGroup_Input::ScriptGroup_Input(QJniObject obj) : __JniBaseClass(obj) {}
+	ScriptGroup_Input::ScriptGroup_Input(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -13,11 +13,11 @@ namespace android::os
 
 namespace android::telecom
 {
-	class CallAudioState : public __JniBaseClass
+	class CallAudioState : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint ROUTE_BLUETOOTH();
 		static jint ROUTE_EARPIECE();
 		static jint ROUTE_SPEAKER();
@@ -25,7 +25,7 @@ namespace android::telecom
 		static jint ROUTE_WIRED_OR_EARPIECE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CallAudioState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CallAudioState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CallAudioState(QJniObject obj);
 		
 		// Constructors
@@ -37,7 +37,7 @@ namespace android::telecom
 		jboolean equals(jobject arg0);
 		android::bluetooth::BluetoothDevice getActiveBluetoothDevice();
 		jint getRoute();
-		__JniBaseClass getSupportedBluetoothDevices();
+		JObject getSupportedBluetoothDevices();
 		jint getSupportedRouteMask();
 		jboolean isMuted();
 		jstring toString();

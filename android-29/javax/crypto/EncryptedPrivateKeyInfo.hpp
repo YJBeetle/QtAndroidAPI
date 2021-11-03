@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -21,13 +21,13 @@ namespace javax::crypto
 
 namespace javax::crypto
 {
-	class EncryptedPrivateKeyInfo : public __JniBaseClass
+	class EncryptedPrivateKeyInfo : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EncryptedPrivateKeyInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EncryptedPrivateKeyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EncryptedPrivateKeyInfo(QJniObject obj);
 		
 		// Constructors
@@ -40,10 +40,10 @@ namespace javax::crypto
 		java::security::AlgorithmParameters getAlgParameters();
 		jbyteArray getEncoded();
 		jbyteArray getEncryptedData();
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(__JniBaseClass arg0);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0);
 		java::security::spec::PKCS8EncodedKeySpec getKeySpec(javax::crypto::Cipher arg0);
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(__JniBaseClass arg0, jstring arg1);
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(__JniBaseClass arg0, java::security::Provider arg1);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, jstring arg1);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, java::security::Provider arg1);
 	};
 } // namespace javax::crypto
 

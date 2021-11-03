@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,17 +17,17 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class PackageInstaller_SessionParams : public __JniBaseClass
+	class PackageInstaller_SessionParams : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint MODE_FULL_INSTALL();
 		static jint MODE_INHERIT_EXISTING();
-		static __JniBaseClass RESTRICTED_PERMISSIONS_ALL();
+		static JObject RESTRICTED_PERMISSIONS_ALL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller_SessionParams(QJniObject obj);
 		
 		// Constructors
@@ -45,7 +45,7 @@ namespace android::content::pm
 		void setOriginatingUri(android::net::Uri arg0);
 		void setReferrerUri(android::net::Uri arg0);
 		void setSize(jlong arg0);
-		void setWhitelistedRestrictedPermissions(__JniBaseClass arg0);
+		void setWhitelistedRestrictedPermissions(JObject arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

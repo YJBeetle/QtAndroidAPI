@@ -31,24 +31,24 @@ namespace android::view::animation
 	}
 	
 	// QJniObject forward
-	LayoutAnimationController::LayoutAnimationController(QJniObject obj) : __JniBaseClass(obj) {}
+	LayoutAnimationController::LayoutAnimationController(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/view/animation/Animation;)V",
 			arg0.object()
 		) {}
-	LayoutAnimationController::LayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	LayoutAnimationController::LayoutAnimationController(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/view/animation/Animation;F)V",
 			arg0.object(),
@@ -78,7 +78,7 @@ namespace android::view::animation
 			"()F"
 		);
 	}
-	__JniBaseClass LayoutAnimationController::getInterpolator()
+	JObject LayoutAnimationController::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -124,7 +124,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void LayoutAnimationController::setInterpolator(__JniBaseClass arg0)
+	void LayoutAnimationController::setInterpolator(JObject arg0)
 	{
 		callMethod<void>(
 			"setInterpolator",

@@ -704,7 +704,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioManager::AudioManager(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioManager::AudioManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -727,7 +727,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jint AudioManager::abandonAudioFocus(__JniBaseClass arg0)
+	jint AudioManager::abandonAudioFocus(JObject arg0)
 	{
 		return callMethod<jint>(
 			"abandonAudioFocus",
@@ -787,14 +787,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass AudioManager::getActivePlaybackConfigurations()
+	JObject AudioManager::getActivePlaybackConfigurations()
 	{
 		return callObjectMethod(
 			"getActivePlaybackConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass AudioManager::getActiveRecordingConfigurations()
+	JObject AudioManager::getActiveRecordingConfigurations()
 	{
 		return callObjectMethod(
 			"getActiveRecordingConfigurations",
@@ -816,7 +816,7 @@ namespace android::media
 			arg0
 		).object<jarray>();
 	}
-	__JniBaseClass AudioManager::getMicrophones()
+	JObject AudioManager::getMicrophones()
 	{
 		return callObjectMethod(
 			"getMicrophones",
@@ -1058,7 +1058,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioManager::requestAudioFocus(__JniBaseClass arg0, jint arg1, jint arg2)
+	jint AudioManager::requestAudioFocus(JObject arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"requestAudioFocus",

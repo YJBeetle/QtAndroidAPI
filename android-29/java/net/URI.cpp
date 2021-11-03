@@ -10,17 +10,17 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	URI::URI(QJniObject obj) : __JniBaseClass(obj) {}
+	URI::URI(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	URI::URI(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -28,7 +28,7 @@ namespace java::net
 			arg2
 		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -37,7 +37,7 @@ namespace java::net
 			arg3
 		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -47,7 +47,7 @@ namespace java::net
 			arg4
 		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,7 +9,7 @@ namespace java::util
 
 namespace java::lang
 {
-	class Boolean : public __JniBaseClass
+	class Boolean : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace java::lang
 		static jclass TYPE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Boolean(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Boolean(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Boolean(QJniObject obj);
 		
 		// Constructors

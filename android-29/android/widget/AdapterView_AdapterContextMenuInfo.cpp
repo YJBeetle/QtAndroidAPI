@@ -25,11 +25,11 @@ namespace android::widget
 	}
 	
 	// QJniObject forward
-	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(android::view::View arg0, jint arg1, jlong arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.AdapterView$AdapterContextMenuInfo",
 			"(Landroid/view/View;IJ)V",
 			arg0.object(),

@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	OptionalInt::OptionalInt(QJniObject obj) : __JniBaseClass(obj) {}
+	OptionalInt::OptionalInt(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -49,7 +49,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	void OptionalInt::ifPresent(__JniBaseClass arg0)
+	void OptionalInt::ifPresent(JObject arg0)
 	{
 		callMethod<void>(
 			"ifPresent",
@@ -57,7 +57,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void OptionalInt::ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1)
+	void OptionalInt::ifPresentOrElse(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"ifPresentOrElse",
@@ -88,7 +88,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint OptionalInt::orElseGet(__JniBaseClass arg0)
+	jint OptionalInt::orElseGet(JObject arg0)
 	{
 		return callMethod<jint>(
 			"orElseGet",
@@ -103,7 +103,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	jint OptionalInt::orElseThrow(__JniBaseClass arg0)
+	jint OptionalInt::orElseThrow(JObject arg0)
 	{
 		return callMethod<jint>(
 			"orElseThrow",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass OptionalInt::stream()
+	JObject OptionalInt::stream()
 	{
 		return callObjectMethod(
 			"stream",

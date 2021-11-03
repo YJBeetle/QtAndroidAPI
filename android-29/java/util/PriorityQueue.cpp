@@ -21,7 +21,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	PriorityQueue::PriorityQueue(__JniBaseClass arg0)
+	PriorityQueue::PriorityQueue(JObject arg0)
 		: java::util::AbstractQueue(
 			"java.util.PriorityQueue",
 			"(Ljava/util/Collection;)V",
@@ -33,7 +33,7 @@ namespace java::util
 			"(Ljava/util/PriorityQueue;)V",
 			arg0.object()
 		) {}
-	PriorityQueue::PriorityQueue(jint arg0, __JniBaseClass arg1)
+	PriorityQueue::PriorityQueue(jint arg0, JObject arg1)
 		: java::util::AbstractQueue(
 			"java.util.PriorityQueue",
 			"(ILjava/util/Comparator;)V",
@@ -57,7 +57,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	__JniBaseClass PriorityQueue::comparator()
+	JObject PriorityQueue::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -72,7 +72,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void PriorityQueue::forEach(__JniBaseClass arg0)
+	void PriorityQueue::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -80,7 +80,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass PriorityQueue::iterator()
+	JObject PriorityQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -117,7 +117,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean PriorityQueue::removeAll(__JniBaseClass arg0)
+	jboolean PriorityQueue::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -125,7 +125,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean PriorityQueue::removeIf(__JniBaseClass arg0)
+	jboolean PriorityQueue::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -133,7 +133,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean PriorityQueue::retainAll(__JniBaseClass arg0)
+	jboolean PriorityQueue::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -148,7 +148,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass PriorityQueue::spliterator()
+	JObject PriorityQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

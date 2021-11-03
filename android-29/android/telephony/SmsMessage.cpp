@@ -79,7 +79,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	SmsMessage::SmsMessage(QJniObject obj) : __JniBaseClass(obj) {}
+	SmsMessage::SmsMessage(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

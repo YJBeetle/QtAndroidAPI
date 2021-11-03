@@ -9,22 +9,22 @@ namespace java::util::jar
 	// Fields
 	
 	// QJniObject forward
-	Manifest::Manifest(QJniObject obj) : __JniBaseClass(obj) {}
+	Manifest::Manifest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Manifest::Manifest()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.jar.Manifest",
 			"()V"
 		) {}
 	Manifest::Manifest(java::io::InputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.jar.Manifest",
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
 	Manifest::Manifest(java::util::jar::Manifest &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.jar.Manifest",
 			"(Ljava/util/jar/Manifest;)V",
 			arg0.object()
@@ -61,7 +61,7 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	__JniBaseClass Manifest::getEntries()
+	JObject Manifest::getEntries()
 	{
 		return callObjectMethod(
 			"getEntries",

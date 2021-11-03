@@ -37,11 +37,11 @@ namespace android::gesture
 	}
 	
 	// QJniObject forward
-	GestureStore::GestureStore(QJniObject obj) : __JniBaseClass(obj) {}
+	GestureStore::GestureStore(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GestureStore::GestureStore()
-		: __JniBaseClass(
+		: JObject(
 			"android.gesture.GestureStore",
 			"()V"
 		) {}
@@ -56,7 +56,7 @@ namespace android::gesture
 			arg1.object()
 		);
 	}
-	__JniBaseClass GestureStore::getGestureEntries()
+	JObject GestureStore::getGestureEntries()
 	{
 		return callObjectMethod(
 			"getGestureEntries",

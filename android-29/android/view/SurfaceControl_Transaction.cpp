@@ -7,11 +7,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	SurfaceControl_Transaction::SurfaceControl_Transaction(QJniObject obj) : __JniBaseClass(obj) {}
+	SurfaceControl_Transaction::SurfaceControl_Transaction(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SurfaceControl_Transaction::SurfaceControl_Transaction()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.SurfaceControl$Transaction",
 			"()V"
 		) {}

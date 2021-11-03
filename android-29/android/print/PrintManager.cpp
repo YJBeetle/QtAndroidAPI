@@ -8,12 +8,12 @@ namespace android::print
 	// Fields
 	
 	// QJniObject forward
-	PrintManager::PrintManager(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintManager::PrintManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass PrintManager::getPrintJobs()
+	JObject PrintManager::getPrintJobs()
 	{
 		return callObjectMethod(
 			"getPrintJobs",

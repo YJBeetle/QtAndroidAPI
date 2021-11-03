@@ -26,7 +26,7 @@ namespace android::telephony::mbms
 	}
 	
 	// QJniObject forward
-	MbmsErrors_InitializationErrors::MbmsErrors_InitializationErrors(QJniObject obj) : __JniBaseClass(obj) {}
+	MbmsErrors_InitializationErrors::MbmsErrors_InitializationErrors(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

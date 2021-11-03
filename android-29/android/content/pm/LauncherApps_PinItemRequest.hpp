@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::appwidget
 {
@@ -25,16 +25,16 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class LauncherApps_PinItemRequest : public __JniBaseClass
+	class LauncherApps_PinItemRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint REQUEST_TYPE_APPWIDGET();
 		static jint REQUEST_TYPE_SHORTCUT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LauncherApps_PinItemRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LauncherApps_PinItemRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherApps_PinItemRequest(QJniObject obj);
 		
 		// Constructors

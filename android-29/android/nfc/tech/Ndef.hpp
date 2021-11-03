@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::nfc
 {
@@ -13,7 +13,7 @@ namespace android::nfc
 
 namespace android::nfc::tech
 {
-	class Ndef : public __JniBaseClass
+	class Ndef : public JObject
 	{
 	public:
 		// Fields
@@ -24,7 +24,7 @@ namespace android::nfc::tech
 		static jstring NFC_FORUM_TYPE_4();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Ndef(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Ndef(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Ndef(QJniObject obj);
 		
 		// Constructors

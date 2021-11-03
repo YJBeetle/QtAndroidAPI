@@ -4,7 +4,7 @@
 namespace android::telephony::emergency
 {
 	// Fields
-	__JniBaseClass EmergencyNumber::CREATOR()
+	JObject EmergencyNumber::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.emergency.EmergencyNumber",
@@ -126,7 +126,7 @@ namespace android::telephony::emergency
 	}
 	
 	// QJniObject forward
-	EmergencyNumber::EmergencyNumber(QJniObject obj) : __JniBaseClass(obj) {}
+	EmergencyNumber::EmergencyNumber(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -176,21 +176,21 @@ namespace android::telephony::emergency
 			"()I"
 		);
 	}
-	__JniBaseClass EmergencyNumber::getEmergencyNumberSources()
+	JObject EmergencyNumber::getEmergencyNumberSources()
 	{
 		return callObjectMethod(
 			"getEmergencyNumberSources",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass EmergencyNumber::getEmergencyServiceCategories()
+	JObject EmergencyNumber::getEmergencyServiceCategories()
 	{
 		return callObjectMethod(
 			"getEmergencyServiceCategories",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass EmergencyNumber::getEmergencyUrns()
+	JObject EmergencyNumber::getEmergencyUrns()
 	{
 		return callObjectMethod(
 			"getEmergencyUrns",

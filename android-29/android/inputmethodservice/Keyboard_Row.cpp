@@ -43,17 +43,17 @@ namespace android::inputmethodservice
 	}
 	
 	// QJniObject forward
-	Keyboard_Row::Keyboard_Row(QJniObject obj) : __JniBaseClass(obj) {}
+	Keyboard_Row::Keyboard_Row(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Keyboard_Row::Keyboard_Row(android::inputmethodservice::Keyboard arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.Keyboard$Row",
 			"(Landroid/inputmethodservice/Keyboard;)V",
 			arg0.object()
 		) {}
-	Keyboard_Row::Keyboard_Row(android::content::res::Resources arg0, android::inputmethodservice::Keyboard arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	Keyboard_Row::Keyboard_Row(android::content::res::Resources arg0, android::inputmethodservice::Keyboard arg1, JObject arg2)
+		: JObject(
 			"android.inputmethodservice.Keyboard$Row",
 			"(Landroid/content/res/Resources;Landroid/inputmethodservice/Keyboard;Landroid/content/res/XmlResourceParser;)V",
 			arg0.object(),

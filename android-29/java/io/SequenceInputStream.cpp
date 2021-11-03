@@ -9,7 +9,7 @@ namespace java::io
 	SequenceInputStream::SequenceInputStream(QJniObject obj) : java::io::InputStream(obj) {}
 	
 	// Constructors
-	SequenceInputStream::SequenceInputStream(__JniBaseClass arg0)
+	SequenceInputStream::SequenceInputStream(JObject arg0)
 		: java::io::InputStream(
 			"java.io.SequenceInputStream",
 			"(Ljava/util/Enumeration;)V",

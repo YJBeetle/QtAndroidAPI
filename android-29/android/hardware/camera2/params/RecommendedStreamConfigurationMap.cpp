@@ -58,12 +58,12 @@ namespace android::hardware::camera2::params
 	}
 	
 	// QJniObject forward
-	RecommendedStreamConfigurationMap::RecommendedStreamConfigurationMap(QJniObject obj) : __JniBaseClass(obj) {}
+	RecommendedStreamConfigurationMap::RecommendedStreamConfigurationMap(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass RecommendedStreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
 	{
 		return callObjectMethod(
 			"getHighResolutionOutputSizes",
@@ -71,14 +71,14 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRanges()
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRanges()
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoFpsRanges",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRangesFor(android::util::Size arg0)
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRangesFor(android::util::Size arg0)
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoFpsRangesFor",
@@ -86,14 +86,14 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getHighSpeedVideoSizes()
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizes()
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoSizes",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getHighSpeedVideoSizesFor(android::util::Range arg0)
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizesFor(android::util::Range arg0)
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoSizesFor",
@@ -101,14 +101,14 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getInputFormats()
+	JObject RecommendedStreamConfigurationMap::getInputFormats()
 	{
 		return callObjectMethod(
 			"getInputFormats",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getInputSizes(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getInputSizes(jint arg0)
 	{
 		return callObjectMethod(
 			"getInputSizes",
@@ -116,7 +116,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getOutputFormats()
+	JObject RecommendedStreamConfigurationMap::getOutputFormats()
 	{
 		return callObjectMethod(
 			"getOutputFormats",
@@ -141,7 +141,7 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getOutputSizes(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getOutputSizes(jint arg0)
 	{
 		return callObjectMethod(
 			"getOutputSizes",
@@ -149,7 +149,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getOutputSizes(jclass arg0)
+	JObject RecommendedStreamConfigurationMap::getOutputSizes(jclass arg0)
 	{
 		return callObjectMethod(
 			"getOutputSizes",
@@ -182,7 +182,7 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	__JniBaseClass RecommendedStreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
 	{
 		return callObjectMethod(
 			"getValidOutputFormatsForInput",

@@ -9,7 +9,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass IntentFilter::CREATOR()
+	JObject IntentFilter::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.IntentFilter",
@@ -131,28 +131,28 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	IntentFilter::IntentFilter(QJniObject obj) : __JniBaseClass(obj) {}
+	IntentFilter::IntentFilter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IntentFilter::IntentFilter()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.IntentFilter",
 			"()V"
 		) {}
 	IntentFilter::IntentFilter(android::content::IntentFilter &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.IntentFilter",
 			"(Landroid/content/IntentFilter;)V",
 			arg0.object()
 		) {}
 	IntentFilter::IntentFilter(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.IntentFilter",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	IntentFilter::IntentFilter(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.IntentFilter",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -170,7 +170,7 @@ namespace android::content
 			arg1
 		);
 	}
-	__JniBaseClass IntentFilter::actionsIterator()
+	JObject IntentFilter::actionsIterator()
 	{
 		return callObjectMethod(
 			"actionsIterator",
@@ -236,14 +236,14 @@ namespace android::content
 			arg0
 		);
 	}
-	__JniBaseClass IntentFilter::authoritiesIterator()
+	JObject IntentFilter::authoritiesIterator()
 	{
 		return callObjectMethod(
 			"authoritiesIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass IntentFilter::categoriesIterator()
+	JObject IntentFilter::categoriesIterator()
 	{
 		return callObjectMethod(
 			"categoriesIterator",
@@ -306,7 +306,7 @@ namespace android::content
 			"()I"
 		);
 	}
-	void IntentFilter::dump(__JniBaseClass arg0, jstring arg1)
+	void IntentFilter::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",
@@ -445,7 +445,7 @@ namespace android::content
 			arg3
 		);
 	}
-	jint IntentFilter::match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, __JniBaseClass arg4, jstring arg5)
+	jint IntentFilter::match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, JObject arg4, jstring arg5)
 	{
 		return callMethod<jint>(
 			"match",
@@ -466,7 +466,7 @@ namespace android::content
 			arg0
 		);
 	}
-	jstring IntentFilter::matchCategories(__JniBaseClass arg0)
+	jstring IntentFilter::matchCategories(JObject arg0)
 	{
 		return callObjectMethod(
 			"matchCategories",
@@ -492,14 +492,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	__JniBaseClass IntentFilter::pathsIterator()
+	JObject IntentFilter::pathsIterator()
 	{
 		return callObjectMethod(
 			"pathsIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void IntentFilter::readFromXml(__JniBaseClass arg0)
+	void IntentFilter::readFromXml(JObject arg0)
 	{
 		callMethod<void>(
 			"readFromXml",
@@ -507,14 +507,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	__JniBaseClass IntentFilter::schemeSpecificPartsIterator()
+	JObject IntentFilter::schemeSpecificPartsIterator()
 	{
 		return callObjectMethod(
 			"schemeSpecificPartsIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass IntentFilter::schemesIterator()
+	JObject IntentFilter::schemesIterator()
 	{
 		return callObjectMethod(
 			"schemesIterator",
@@ -529,7 +529,7 @@ namespace android::content
 			arg0
 		);
 	}
-	__JniBaseClass IntentFilter::typesIterator()
+	JObject IntentFilter::typesIterator()
 	{
 		return callObjectMethod(
 			"typesIterator",
@@ -545,7 +545,7 @@ namespace android::content
 			arg1
 		);
 	}
-	void IntentFilter::writeToXml(__JniBaseClass arg0)
+	void IntentFilter::writeToXml(JObject arg0)
 	{
 		callMethod<void>(
 			"writeToXml",

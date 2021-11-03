@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -61,7 +61,7 @@ namespace java::time::temporal
 
 namespace java::time
 {
-	class OffsetDateTime : public __JniBaseClass
+	class OffsetDateTime : public JObject
 	{
 	public:
 		// Fields
@@ -69,13 +69,13 @@ namespace java::time
 		static java::time::OffsetDateTime MIN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit OffsetDateTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OffsetDateTime(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OffsetDateTime(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::time::OffsetDateTime from(__JniBaseClass arg0);
+		static java::time::OffsetDateTime from(JObject arg0);
 		static java::time::OffsetDateTime now();
 		static java::time::OffsetDateTime now(java::time::Clock arg0);
 		static java::time::OffsetDateTime now(java::time::ZoneId arg0);
@@ -85,20 +85,20 @@ namespace java::time
 		static java::time::OffsetDateTime ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
 		static java::time::OffsetDateTime parse(jstring arg0);
 		static java::time::OffsetDateTime parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		static __JniBaseClass timeLineOrder();
-		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		static JObject timeLineOrder();
+		JObject adjustInto(JObject arg0);
 		java::time::ZonedDateTime atZoneSameInstant(java::time::ZoneId arg0);
 		java::time::ZonedDateTime atZoneSimilarLocal(java::time::ZoneId arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::time::OffsetDateTime arg0);
 		jboolean equals(jobject arg0);
 		jstring format(java::time::format::DateTimeFormatter arg0);
-		jint get(__JniBaseClass arg0);
+		jint get(JObject arg0);
 		jint getDayOfMonth();
 		java::time::DayOfWeek getDayOfWeek();
 		jint getDayOfYear();
 		jint getHour();
-		jlong getLong(__JniBaseClass arg0);
+		jlong getLong(JObject arg0);
 		jint getMinute();
 		java::time::Month getMonth();
 		jint getMonthValue();
@@ -110,9 +110,9 @@ namespace java::time
 		jboolean isAfter(java::time::OffsetDateTime arg0);
 		jboolean isBefore(java::time::OffsetDateTime arg0);
 		jboolean isEqual(java::time::OffsetDateTime arg0);
-		jboolean isSupported(__JniBaseClass arg0);
-		java::time::OffsetDateTime minus(__JniBaseClass arg0);
-		java::time::OffsetDateTime minus(jlong arg0, __JniBaseClass arg1);
+		jboolean isSupported(JObject arg0);
+		java::time::OffsetDateTime minus(JObject arg0);
+		java::time::OffsetDateTime minus(jlong arg0, JObject arg1);
 		java::time::OffsetDateTime minusDays(jlong arg0);
 		java::time::OffsetDateTime minusHours(jlong arg0);
 		java::time::OffsetDateTime minusMinutes(jlong arg0);
@@ -121,8 +121,8 @@ namespace java::time
 		java::time::OffsetDateTime minusSeconds(jlong arg0);
 		java::time::OffsetDateTime minusWeeks(jlong arg0);
 		java::time::OffsetDateTime minusYears(jlong arg0);
-		java::time::OffsetDateTime plus(__JniBaseClass arg0);
-		java::time::OffsetDateTime plus(jlong arg0, __JniBaseClass arg1);
+		java::time::OffsetDateTime plus(JObject arg0);
+		java::time::OffsetDateTime plus(jlong arg0, JObject arg1);
 		java::time::OffsetDateTime plusDays(jlong arg0);
 		java::time::OffsetDateTime plusHours(jlong arg0);
 		java::time::OffsetDateTime plusMinutes(jlong arg0);
@@ -131,8 +131,8 @@ namespace java::time
 		java::time::OffsetDateTime plusSeconds(jlong arg0);
 		java::time::OffsetDateTime plusWeeks(jlong arg0);
 		java::time::OffsetDateTime plusYears(jlong arg0);
-		jobject query(__JniBaseClass arg0);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		jobject query(JObject arg0);
+		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochSecond();
 		java::time::Instant toInstant();
 		java::time::LocalDate toLocalDate();
@@ -141,10 +141,10 @@ namespace java::time
 		java::time::OffsetTime toOffsetTime();
 		jstring toString();
 		java::time::ZonedDateTime toZonedDateTime();
-		java::time::OffsetDateTime truncatedTo(__JniBaseClass arg0);
-		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::time::OffsetDateTime with(__JniBaseClass arg0);
-		java::time::OffsetDateTime with(__JniBaseClass arg0, jlong arg1);
+		java::time::OffsetDateTime truncatedTo(JObject arg0);
+		jlong until(JObject arg0, JObject arg1);
+		java::time::OffsetDateTime with(JObject arg0);
+		java::time::OffsetDateTime with(JObject arg0, jlong arg1);
 		java::time::OffsetDateTime withDayOfMonth(jint arg0);
 		java::time::OffsetDateTime withDayOfYear(jint arg0);
 		java::time::OffsetDateTime withHour(jint arg0);

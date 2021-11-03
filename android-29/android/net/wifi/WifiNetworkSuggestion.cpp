@@ -4,7 +4,7 @@
 namespace android::net::wifi
 {
 	// Fields
-	__JniBaseClass WifiNetworkSuggestion::CREATOR()
+	JObject WifiNetworkSuggestion::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiNetworkSuggestion",
@@ -14,7 +14,7 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	WifiNetworkSuggestion::WifiNetworkSuggestion(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiNetworkSuggestion::WifiNetworkSuggestion(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -4,7 +4,7 @@
 namespace android::net::wifi::hotspot2::pps
 {
 	// Fields
-	__JniBaseClass Credential_SimCredential::CREATOR()
+	JObject Credential_SimCredential::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.Credential$SimCredential",
@@ -14,16 +14,16 @@ namespace android::net::wifi::hotspot2::pps
 	}
 	
 	// QJniObject forward
-	Credential_SimCredential::Credential_SimCredential(QJniObject obj) : __JniBaseClass(obj) {}
+	Credential_SimCredential::Credential_SimCredential(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Credential_SimCredential::Credential_SimCredential()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.pps.Credential$SimCredential",
 			"()V"
 		) {}
 	Credential_SimCredential::Credential_SimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.pps.Credential$SimCredential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;)V",
 			arg0.object()

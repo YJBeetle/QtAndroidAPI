@@ -7,7 +7,7 @@ namespace java::util::concurrent::locks
 	// Fields
 	
 	// QJniObject forward
-	ReentrantReadWriteLock_WriteLock::ReentrantReadWriteLock_WriteLock(QJniObject obj) : __JniBaseClass(obj) {}
+	ReentrantReadWriteLock_WriteLock::ReentrantReadWriteLock_WriteLock(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,7 +40,7 @@ namespace java::util::concurrent::locks
 			"()V"
 		);
 	}
-	__JniBaseClass ReentrantReadWriteLock_WriteLock::newCondition()
+	JObject ReentrantReadWriteLock_WriteLock::newCondition()
 	{
 		return callObjectMethod(
 			"newCondition",

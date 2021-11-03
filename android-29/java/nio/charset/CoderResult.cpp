@@ -22,7 +22,7 @@ namespace java::nio::charset
 	}
 	
 	// QJniObject forward
-	CoderResult::CoderResult(QJniObject obj) : __JniBaseClass(obj) {}
+	CoderResult::CoderResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

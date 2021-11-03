@@ -5,11 +5,11 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	CollationKey::CollationKey(QJniObject obj) : __JniBaseClass(obj) {}
+	CollationKey::CollationKey(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CollationKey::CollationKey(jstring arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.CollationKey",
 			"(Ljava/lang/String;[B)V",
 			arg0,

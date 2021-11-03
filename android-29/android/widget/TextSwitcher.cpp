@@ -17,7 +17,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	TextSwitcher::TextSwitcher(android::content::Context arg0, __JniBaseClass arg1)
+	TextSwitcher::TextSwitcher(android::content::Context arg0, JObject arg1)
 		: android::widget::ViewSwitcher(
 			"android.widget.TextSwitcher",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

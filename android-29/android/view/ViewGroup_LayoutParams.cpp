@@ -48,24 +48,24 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	ViewGroup_LayoutParams::ViewGroup_LayoutParams(QJniObject obj) : __JniBaseClass(obj) {}
+	ViewGroup_LayoutParams::ViewGroup_LayoutParams(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ViewGroup$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.object()
 		) {}
-	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.view.ViewGroup$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	ViewGroup_LayoutParams::ViewGroup_LayoutParams(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ViewGroup$LayoutParams",
 			"(II)V",
 			arg0,

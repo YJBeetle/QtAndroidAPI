@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -48,14 +48,14 @@ namespace android::widget
 		
 		// Constructors
 		Gallery(android::content::Context arg0);
-		Gallery(android::content::Context arg0, __JniBaseClass arg1);
-		Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Gallery(android::content::Context arg0, JObject arg1);
+		Gallery(android::content::Context arg0, JObject arg1, jint arg2);
+		Gallery(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		void dispatchSetSelected(jboolean arg0);
-		android::view::ViewGroup_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		jboolean onDown(android::view::MotionEvent arg0);
 		jboolean onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accounts
 {
@@ -17,18 +17,18 @@ namespace android::os
 
 namespace android::content
 {
-	class PeriodicSync : public __JniBaseClass
+	class PeriodicSync : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		android::accounts::Account account();
 		jstring authority();
 		android::os::Bundle extras();
 		jlong period();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PeriodicSync(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PeriodicSync(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PeriodicSync(QJniObject obj);
 		
 		// Constructors

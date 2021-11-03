@@ -101,7 +101,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaPlayer_MetricsConstants::MediaPlayer_MetricsConstants(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaPlayer_MetricsConstants::MediaPlayer_MetricsConstants(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -75,12 +75,12 @@ namespace android::webkit
 	}
 	
 	// QJniObject forward
-	TracingConfig::TracingConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	TracingConfig::TracingConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass TracingConfig::getCustomIncludedCategories()
+	JObject TracingConfig::getCustomIncludedCategories()
 	{
 		return callObjectMethod(
 			"getCustomIncludedCategories",

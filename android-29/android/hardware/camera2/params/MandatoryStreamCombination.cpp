@@ -5,7 +5,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QJniObject forward
-	MandatoryStreamCombination::MandatoryStreamCombination(QJniObject obj) : __JniBaseClass(obj) {}
+	MandatoryStreamCombination::MandatoryStreamCombination(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -25,7 +25,7 @@ namespace android::hardware::camera2::params
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass MandatoryStreamCombination::getStreamsInformation()
+	JObject MandatoryStreamCombination::getStreamsInformation()
 	{
 		return callObjectMethod(
 			"getStreamsInformation",

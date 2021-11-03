@@ -93,14 +93,14 @@ namespace android::webkit
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1)
+	WebView::WebView(android::content::Context arg0, JObject arg1)
 		: android::widget::AbsoluteLayout(
 			"android.webkit.WebView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	WebView::WebView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AbsoluteLayout(
 			"android.webkit.WebView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -108,7 +108,7 @@ namespace android::webkit
 			arg1.object(),
 			arg2
 		) {}
-	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jboolean arg3)
+	WebView::WebView(android::content::Context arg0, JObject arg1, jint arg2, jboolean arg3)
 		: android::widget::AbsoluteLayout(
 			"android.webkit.WebView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;IZ)V",
@@ -117,7 +117,7 @@ namespace android::webkit
 			arg2,
 			arg3
 		) {}
-	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	WebView::WebView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AbsoluteLayout(
 			"android.webkit.WebView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -128,7 +128,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void WebView::clearClientCertPreferences(__JniBaseClass arg0)
+	void WebView::clearClientCertPreferences(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.webkit.WebView",
@@ -195,7 +195,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setSafeBrowsingWhitelist(__JniBaseClass arg0, __JniBaseClass arg1)
+	void WebView::setSafeBrowsingWhitelist(JObject arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.webkit.WebView",
@@ -214,7 +214,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::startSafeBrowsing(android::content::Context arg0, __JniBaseClass arg1)
+	void WebView::startSafeBrowsing(android::content::Context arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.webkit.WebView",
@@ -386,7 +386,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::evaluateJavascript(jstring arg0, __JniBaseClass arg1)
+	void WebView::evaluateJavascript(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"evaluateJavascript",
@@ -542,7 +542,7 @@ namespace android::webkit
 			"()Landroid/webkit/WebSettings;"
 		);
 	}
-	__JniBaseClass WebView::getTextClassifier()
+	JObject WebView::getTextClassifier()
 	{
 		return callObjectMethod(
 			"getTextClassifier",
@@ -672,7 +672,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::loadUrl(jstring arg0, __JniBaseClass arg1)
+	void WebView::loadUrl(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"loadUrl",
@@ -706,7 +706,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	__JniBaseClass WebView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject WebView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -1006,7 +1006,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::saveWebArchive(jstring arg0, jboolean arg1, __JniBaseClass arg2)
+	void WebView::saveWebArchive(jstring arg0, jboolean arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"saveWebArchive",
@@ -1032,7 +1032,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setDownloadListener(__JniBaseClass arg0)
+	void WebView::setDownloadListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setDownloadListener",
@@ -1040,7 +1040,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setFindListener(__JniBaseClass arg0)
+	void WebView::setFindListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setFindListener",
@@ -1116,7 +1116,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setPictureListener(__JniBaseClass arg0)
+	void WebView::setPictureListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setPictureListener",
@@ -1141,7 +1141,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setTextClassifier(__JniBaseClass arg0)
+	void WebView::setTextClassifier(JObject arg0)
 	{
 		callMethod<void>(
 			"setTextClassifier",
@@ -1181,7 +1181,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setWebViewRenderProcessClient(__JniBaseClass arg0, android::webkit::WebViewRenderProcessClient arg1)
+	void WebView::setWebViewRenderProcessClient(JObject arg0, android::webkit::WebViewRenderProcessClient arg1)
 	{
 		callMethod<void>(
 			"setWebViewRenderProcessClient",

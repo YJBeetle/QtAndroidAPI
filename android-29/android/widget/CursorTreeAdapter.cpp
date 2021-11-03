@@ -12,14 +12,14 @@ namespace android::widget
 	CursorTreeAdapter::CursorTreeAdapter(QJniObject obj) : android::widget::BaseExpandableListAdapter(obj) {}
 	
 	// Constructors
-	CursorTreeAdapter::CursorTreeAdapter(__JniBaseClass arg0, android::content::Context arg1)
+	CursorTreeAdapter::CursorTreeAdapter(JObject arg0, android::content::Context arg1)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.CursorTreeAdapter",
 			"(Landroid/database/Cursor;Landroid/content/Context;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	CursorTreeAdapter::CursorTreeAdapter(__JniBaseClass arg0, android::content::Context arg1, jboolean arg2)
+	CursorTreeAdapter::CursorTreeAdapter(JObject arg0, android::content::Context arg1, jboolean arg2)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.CursorTreeAdapter",
 			"(Landroid/database/Cursor;Landroid/content/Context;Z)V",
@@ -29,7 +29,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void CursorTreeAdapter::changeCursor(__JniBaseClass arg0)
+	void CursorTreeAdapter::changeCursor(JObject arg0)
 	{
 		callMethod<void>(
 			"changeCursor",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring CursorTreeAdapter::convertToString(__JniBaseClass arg0)
+	jstring CursorTreeAdapter::convertToString(JObject arg0)
 	{
 		return callObjectMethod(
 			"convertToString",
@@ -45,7 +45,7 @@ namespace android::widget
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass CursorTreeAdapter::getChild(jint arg0, jint arg1)
+	JObject CursorTreeAdapter::getChild(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getChild",
@@ -83,7 +83,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	__JniBaseClass CursorTreeAdapter::getCursor()
+	JObject CursorTreeAdapter::getCursor()
 	{
 		return callObjectMethod(
 			"getCursor",
@@ -97,14 +97,14 @@ namespace android::widget
 			"()Landroid/widget/Filter;"
 		);
 	}
-	__JniBaseClass CursorTreeAdapter::getFilterQueryProvider()
+	JObject CursorTreeAdapter::getFilterQueryProvider()
 	{
 		return callObjectMethod(
 			"getFilterQueryProvider",
 			"()Landroid/widget/FilterQueryProvider;"
 		);
 	}
-	__JniBaseClass CursorTreeAdapter::getGroup(jint arg0)
+	JObject CursorTreeAdapter::getGroup(jint arg0)
 	{
 		return callObjectMethod(
 			"getGroup",
@@ -184,7 +184,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	__JniBaseClass CursorTreeAdapter::runQueryOnBackgroundThread(jstring arg0)
+	JObject CursorTreeAdapter::runQueryOnBackgroundThread(jstring arg0)
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",
@@ -192,7 +192,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CursorTreeAdapter::setChildrenCursor(jint arg0, __JniBaseClass arg1)
+	void CursorTreeAdapter::setChildrenCursor(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setChildrenCursor",
@@ -201,7 +201,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void CursorTreeAdapter::setFilterQueryProvider(__JniBaseClass arg0)
+	void CursorTreeAdapter::setFilterQueryProvider(JObject arg0)
 	{
 		callMethod<void>(
 			"setFilterQueryProvider",
@@ -209,7 +209,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CursorTreeAdapter::setGroupCursor(__JniBaseClass arg0)
+	void CursorTreeAdapter::setGroupCursor(JObject arg0)
 	{
 		callMethod<void>(
 			"setGroupCursor",

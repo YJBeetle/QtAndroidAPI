@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace javax::xml::validation
 {
-	class TypeInfoProvider : public __JniBaseClass
+	class TypeInfoProvider : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TypeInfoProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TypeInfoProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TypeInfoProvider(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getAttributeTypeInfo(jint arg0);
-		__JniBaseClass getElementTypeInfo();
+		JObject getAttributeTypeInfo(jint arg0);
+		JObject getElementTypeInfo();
 		jboolean isIdAttribute(jint arg0);
 		jboolean isSpecified(jint arg0);
 	};

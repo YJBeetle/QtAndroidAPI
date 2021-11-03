@@ -6,7 +6,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass Messenger::CREATOR()
+	JObject Messenger::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.Messenger",
@@ -16,17 +16,17 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Messenger::Messenger(QJniObject obj) : __JniBaseClass(obj) {}
+	Messenger::Messenger(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Messenger::Messenger(android::os::Handler arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Messenger",
 			"(Landroid/os/Handler;)V",
 			arg0.object()
 		) {}
-	Messenger::Messenger(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Messenger::Messenger(JObject arg0)
+		: JObject(
 			"android.os.Messenger",
 			"(Landroid/os/IBinder;)V",
 			arg0.object()
@@ -67,7 +67,7 @@ namespace android::os
 			arg0
 		);
 	}
-	__JniBaseClass Messenger::getBinder()
+	JObject Messenger::getBinder()
 	{
 		return callObjectMethod(
 			"getBinder",

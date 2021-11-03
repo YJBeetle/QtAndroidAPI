@@ -5,28 +5,28 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	Error::Error(QJniObject obj) : __JniBaseClass(obj) {}
+	Error::Error(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Error::Error()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Error",
 			"()V"
 		) {}
 	Error::Error(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Error",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Error::Error(jthrowable arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Error",
 			"(Ljava/lang/Throwable;)V",
 			arg0
 		) {}
 	Error::Error(jstring arg0, jthrowable arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Error",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,

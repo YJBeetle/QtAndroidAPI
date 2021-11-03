@@ -23,16 +23,16 @@ namespace android::renderscript
 	}
 	
 	// QJniObject forward
-	Int3::Int3(QJniObject obj) : __JniBaseClass(obj) {}
+	Int3::Int3(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Int3::Int3()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Int3",
 			"()V"
 		) {}
 	Int3::Int3(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Int3",
 			"(III)V",
 			arg0,

@@ -8,7 +8,7 @@ namespace android::content::pm
 	// Fields
 	
 	// QJniObject forward
-	PackageInstaller_Session::PackageInstaller_Session(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller_Session::PackageInstaller_Session(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

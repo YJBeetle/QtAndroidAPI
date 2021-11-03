@@ -46,12 +46,12 @@ namespace java::time
 	}
 	
 	// QJniObject forward
-	LocalDate::LocalDate(QJniObject obj) : __JniBaseClass(obj) {}
+	LocalDate::LocalDate(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::LocalDate LocalDate::from(__JniBaseClass arg0)
+	java::time::LocalDate LocalDate::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.LocalDate",
@@ -156,7 +156,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	__JniBaseClass LocalDate::adjustInto(__JniBaseClass arg0)
+	JObject LocalDate::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -233,7 +233,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jint LocalDate::compareTo(__JniBaseClass arg0)
+	jint LocalDate::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -241,7 +241,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	__JniBaseClass LocalDate::datesUntil(java::time::LocalDate arg0)
+	JObject LocalDate::datesUntil(java::time::LocalDate arg0)
 	{
 		return callObjectMethod(
 			"datesUntil",
@@ -249,7 +249,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	__JniBaseClass LocalDate::datesUntil(java::time::LocalDate arg0, java::time::Period arg1)
+	JObject LocalDate::datesUntil(java::time::LocalDate arg0, java::time::Period arg1)
 	{
 		return callObjectMethod(
 			"datesUntil",
@@ -274,7 +274,7 @@ namespace java::time
 			arg0.object()
 		).object<jstring>();
 	}
-	jint LocalDate::get(__JniBaseClass arg0)
+	jint LocalDate::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -317,7 +317,7 @@ namespace java::time
 			"()Ljava/time/chrono/IsoEra;"
 		);
 	}
-	jlong LocalDate::getLong(__JniBaseClass arg0)
+	jlong LocalDate::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -353,7 +353,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jboolean LocalDate::isAfter(__JniBaseClass arg0)
+	jboolean LocalDate::isAfter(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isAfter",
@@ -361,7 +361,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean LocalDate::isBefore(__JniBaseClass arg0)
+	jboolean LocalDate::isBefore(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isBefore",
@@ -369,7 +369,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean LocalDate::isEqual(__JniBaseClass arg0)
+	jboolean LocalDate::isEqual(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isEqual",
@@ -384,7 +384,7 @@ namespace java::time
 			"()Z"
 		);
 	}
-	jboolean LocalDate::isSupported(__JniBaseClass arg0)
+	jboolean LocalDate::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -406,7 +406,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	java::time::LocalDate LocalDate::minus(__JniBaseClass arg0)
+	java::time::LocalDate LocalDate::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -414,7 +414,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDate LocalDate::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::LocalDate LocalDate::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -455,7 +455,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalDate LocalDate::plus(__JniBaseClass arg0)
+	java::time::LocalDate LocalDate::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -463,7 +463,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDate LocalDate::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::LocalDate LocalDate::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -504,7 +504,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject LocalDate::query(__JniBaseClass arg0)
+	jobject LocalDate::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -512,7 +512,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange LocalDate::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange LocalDate::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -543,7 +543,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::time::Period LocalDate::until(__JniBaseClass arg0)
+	java::time::Period LocalDate::until(JObject arg0)
 	{
 		return callObjectMethod(
 			"until",
@@ -551,7 +551,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong LocalDate::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong LocalDate::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -560,7 +560,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::LocalDate LocalDate::with(__JniBaseClass arg0)
+	java::time::LocalDate LocalDate::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -568,7 +568,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDate LocalDate::with(__JniBaseClass arg0, jlong arg1)
+	java::time::LocalDate LocalDate::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

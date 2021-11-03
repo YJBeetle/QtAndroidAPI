@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::opengl
 {
@@ -33,7 +33,7 @@ namespace java::nio
 
 namespace android::opengl
 {
-	class EGL15 : public __JniBaseClass
+	class EGL15 : public JObject
 	{
 	public:
 		// Fields
@@ -86,7 +86,7 @@ namespace android::opengl
 		static jint EGL_UNSIGNALED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EGL15(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EGL15(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EGL15(QJniObject obj);
 		
 		// Constructors

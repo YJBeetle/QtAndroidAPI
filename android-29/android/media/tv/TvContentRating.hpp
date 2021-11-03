@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::media::tv
 {
-	class TvContentRating : public __JniBaseClass
+	class TvContentRating : public JObject
 	{
 	public:
 		// Fields
 		static android::media::tv::TvContentRating UNRATED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvContentRating(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvContentRating(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvContentRating(QJniObject obj);
 		
 		// Constructors
@@ -26,7 +26,7 @@ namespace android::media::tv
 		jstring getDomain();
 		jstring getMainRating();
 		jstring getRatingSystem();
-		__JniBaseClass getSubRatings();
+		JObject getSubRatings();
 		jint hashCode();
 	};
 } // namespace android::media::tv

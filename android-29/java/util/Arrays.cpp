@@ -6,12 +6,12 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Arrays::Arrays(QJniObject obj) : __JniBaseClass(obj) {}
+	Arrays::Arrays(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Arrays::asList(jobjectArray arg0)
+	JObject Arrays::asList(jobjectArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -100,7 +100,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Arrays::binarySearch(jobjectArray arg0, jobject arg1, __JniBaseClass arg2)
+	jint Arrays::binarySearch(jobjectArray arg0, jobject arg1, JObject arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Arrays",
@@ -207,7 +207,7 @@ namespace java::util
 			arg3
 		);
 	}
-	jint Arrays::binarySearch(jobjectArray arg0, jint arg1, jint arg2, jobject arg3, __JniBaseClass arg4)
+	jint Arrays::binarySearch(jobjectArray arg0, jint arg1, jint arg2, jobject arg3, JObject arg4)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Arrays",
@@ -310,7 +310,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Arrays::compare(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2)
+	jint Arrays::compare(jobjectArray arg0, jobjectArray arg1, JObject arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Arrays",
@@ -447,7 +447,7 @@ namespace java::util
 			arg5
 		);
 	}
-	jint Arrays::compare(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6)
+	jint Arrays::compare(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, JObject arg6)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Arrays",
@@ -888,7 +888,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean Arrays::equals(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2)
+	jboolean Arrays::equals(jobjectArray arg0, jobjectArray arg1, JObject arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
@@ -1025,7 +1025,7 @@ namespace java::util
 			arg5
 		);
 	}
-	jboolean Arrays::equals(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6)
+	jboolean Arrays::equals(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, JObject arg6)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
@@ -1409,7 +1409,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Arrays::mismatch(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2)
+	jint Arrays::mismatch(jobjectArray arg0, jobjectArray arg1, JObject arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Arrays",
@@ -1546,7 +1546,7 @@ namespace java::util
 			arg5
 		);
 	}
-	jint Arrays::mismatch(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6)
+	jint Arrays::mismatch(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, JObject arg6)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Arrays",
@@ -1561,7 +1561,7 @@ namespace java::util
 			arg6.object()
 		);
 	}
-	void Arrays::parallelPrefix(jdoubleArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelPrefix(jdoubleArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1571,7 +1571,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::parallelPrefix(jintArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelPrefix(jintArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1581,7 +1581,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::parallelPrefix(jlongArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelPrefix(jlongArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1591,7 +1591,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::parallelPrefix(jobjectArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelPrefix(jobjectArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1601,7 +1601,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::parallelPrefix(jdoubleArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	void Arrays::parallelPrefix(jdoubleArray arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1613,7 +1613,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	void Arrays::parallelPrefix(jintArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	void Arrays::parallelPrefix(jintArray arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1625,7 +1625,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	void Arrays::parallelPrefix(jlongArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	void Arrays::parallelPrefix(jlongArray arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1637,7 +1637,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	void Arrays::parallelPrefix(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	void Arrays::parallelPrefix(jobjectArray arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1649,7 +1649,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	void Arrays::parallelSetAll(jdoubleArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelSetAll(jdoubleArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1659,7 +1659,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::parallelSetAll(jintArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelSetAll(jintArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1669,7 +1669,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::parallelSetAll(jlongArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelSetAll(jlongArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1679,7 +1679,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::parallelSetAll(jobjectArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelSetAll(jobjectArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1761,7 +1761,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Arrays::parallelSort(jobjectArray arg0, __JniBaseClass arg1)
+	void Arrays::parallelSort(jobjectArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1859,7 +1859,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void Arrays::parallelSort(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	void Arrays::parallelSort(jobjectArray arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1871,7 +1871,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	void Arrays::setAll(jdoubleArray arg0, __JniBaseClass arg1)
+	void Arrays::setAll(jdoubleArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1881,7 +1881,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::setAll(jintArray arg0, __JniBaseClass arg1)
+	void Arrays::setAll(jintArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1891,7 +1891,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::setAll(jlongArray arg0, __JniBaseClass arg1)
+	void Arrays::setAll(jlongArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1901,7 +1901,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Arrays::setAll(jobjectArray arg0, __JniBaseClass arg1)
+	void Arrays::setAll(jobjectArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -1983,7 +1983,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Arrays::sort(jobjectArray arg0, __JniBaseClass arg1)
+	void Arrays::sort(jobjectArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -2081,7 +2081,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void Arrays::sort(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	void Arrays::sort(jobjectArray arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"java.util.Arrays",
@@ -2093,7 +2093,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jobjectArray arg0)
+	JObject Arrays::spliterator(jobjectArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2102,7 +2102,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jobjectArray arg0, jint arg1, jint arg2)
+	JObject Arrays::spliterator(jobjectArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2113,7 +2113,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jdoubleArray arg0)
+	JObject Arrays::spliterator(jdoubleArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2122,7 +2122,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jdoubleArray arg0, jint arg1, jint arg2)
+	JObject Arrays::spliterator(jdoubleArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2133,7 +2133,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jintArray arg0)
+	JObject Arrays::spliterator(jintArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2142,7 +2142,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jintArray arg0, jint arg1, jint arg2)
+	JObject Arrays::spliterator(jintArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2153,7 +2153,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jlongArray arg0)
+	JObject Arrays::spliterator(jlongArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2162,7 +2162,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::spliterator(jlongArray arg0, jint arg1, jint arg2)
+	JObject Arrays::spliterator(jlongArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2173,7 +2173,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Arrays::stream(jdoubleArray arg0)
+	JObject Arrays::stream(jdoubleArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2182,7 +2182,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::stream(jdoubleArray arg0, jint arg1, jint arg2)
+	JObject Arrays::stream(jdoubleArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2193,7 +2193,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Arrays::stream(jintArray arg0)
+	JObject Arrays::stream(jintArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2202,7 +2202,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::stream(jintArray arg0, jint arg1, jint arg2)
+	JObject Arrays::stream(jintArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2213,7 +2213,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Arrays::stream(jlongArray arg0)
+	JObject Arrays::stream(jlongArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2222,7 +2222,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::stream(jlongArray arg0, jint arg1, jint arg2)
+	JObject Arrays::stream(jlongArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2233,7 +2233,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Arrays::stream(jobjectArray arg0)
+	JObject Arrays::stream(jobjectArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2242,7 +2242,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Arrays::stream(jobjectArray arg0, jint arg1, jint arg2)
+	JObject Arrays::stream(jobjectArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Arrays",

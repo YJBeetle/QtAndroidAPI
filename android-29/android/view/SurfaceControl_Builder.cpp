@@ -6,11 +6,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	SurfaceControl_Builder::SurfaceControl_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	SurfaceControl_Builder::SurfaceControl_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SurfaceControl_Builder::SurfaceControl_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.SurfaceControl$Builder",
 			"()V"
 		) {}

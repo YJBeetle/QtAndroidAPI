@@ -6,11 +6,11 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Locale_Builder::Locale_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	Locale_Builder::Locale_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Locale_Builder::Locale_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Locale$Builder",
 			"()V"
 		) {}

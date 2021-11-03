@@ -5,11 +5,11 @@ namespace java::text
 	// Fields
 	
 	// QJniObject forward
-	ParsePosition::ParsePosition(QJniObject obj) : __JniBaseClass(obj) {}
+	ParsePosition::ParsePosition(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ParsePosition::ParsePosition(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.ParsePosition",
 			"(I)V",
 			arg0

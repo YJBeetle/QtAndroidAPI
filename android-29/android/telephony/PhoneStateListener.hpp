@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::telephony
 {
@@ -17,7 +17,7 @@ namespace android::telephony
 
 namespace android::telephony
 {
-	class PhoneStateListener : public __JniBaseClass
+	class PhoneStateListener : public JObject
 	{
 	public:
 		// Fields
@@ -37,18 +37,18 @@ namespace android::telephony
 		static jint LISTEN_USER_MOBILE_DATA_STATE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PhoneStateListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PhoneStateListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneStateListener(QJniObject obj);
 		
 		// Constructors
 		PhoneStateListener();
-		PhoneStateListener(__JniBaseClass arg0);
+		PhoneStateListener(JObject arg0);
 		
 		// Methods
 		void onActiveDataSubscriptionIdChanged(jint arg0);
 		void onCallForwardingIndicatorChanged(jboolean arg0);
 		void onCallStateChanged(jint arg0, jstring arg1);
-		void onCellInfoChanged(__JniBaseClass arg0);
+		void onCellInfoChanged(JObject arg0);
 		void onCellLocationChanged(android::telephony::CellLocation arg0);
 		void onDataActivity(jint arg0);
 		void onDataConnectionStateChanged(jint arg0);

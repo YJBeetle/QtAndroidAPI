@@ -6,7 +6,7 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	TimeUtils::TimeUtils(QJniObject obj) : __JniBaseClass(obj) {}
+	TimeUtils::TimeUtils(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -31,7 +31,7 @@ namespace android::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass TimeUtils::getTimeZoneIdsForCountryCode(jstring arg0)
+	JObject TimeUtils::getTimeZoneIdsForCountryCode(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.TimeUtils",

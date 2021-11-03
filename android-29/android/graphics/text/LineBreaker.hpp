@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics::text
 {
@@ -17,7 +17,7 @@ namespace android::graphics::text
 
 namespace android::graphics::text
 {
-	class LineBreaker : public __JniBaseClass
+	class LineBreaker : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace android::graphics::text
 		static jint JUSTIFICATION_MODE_NONE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LineBreaker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LineBreaker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LineBreaker(QJniObject obj);
 		
 		// Constructors

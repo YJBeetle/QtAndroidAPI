@@ -21,14 +21,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, JObject arg1)
 		: android::widget::EditText(
 			"android.widget.AutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::EditText(
 			"android.widget.AutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::EditText(
 			"android.widget.AutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -45,7 +45,7 @@ namespace android::widget
 			arg2,
 			arg3
 		) {}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, android::content::res::Resources_Theme arg4)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, android::content::res::Resources_Theme arg4)
 		: android::widget::EditText(
 			"android.widget.AutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;IILandroid/content/res/Resources$Theme;)V",
@@ -78,7 +78,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	__JniBaseClass AutoCompleteTextView::getAdapter()
+	JObject AutoCompleteTextView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -141,14 +141,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass AutoCompleteTextView::getItemClickListener()
+	JObject AutoCompleteTextView::getItemClickListener()
 	{
 		return callObjectMethod(
 			"getItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	__JniBaseClass AutoCompleteTextView::getItemSelectedListener()
+	JObject AutoCompleteTextView::getItemSelectedListener()
 	{
 		return callObjectMethod(
 			"getItemSelectedListener",
@@ -162,14 +162,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass AutoCompleteTextView::getOnItemClickListener()
+	JObject AutoCompleteTextView::getOnItemClickListener()
 	{
 		return callObjectMethod(
 			"getOnItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	__JniBaseClass AutoCompleteTextView::getOnItemSelectedListener()
+	JObject AutoCompleteTextView::getOnItemSelectedListener()
 	{
 		return callObjectMethod(
 			"getOnItemSelectedListener",
@@ -183,7 +183,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass AutoCompleteTextView::getValidator()
+	JObject AutoCompleteTextView::getValidator()
 	{
 		return callObjectMethod(
 			"getValidator",
@@ -276,7 +276,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void AutoCompleteTextView::setAdapter(__JniBaseClass arg0)
+	void AutoCompleteTextView::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -364,7 +364,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setOnClickListener(__JniBaseClass arg0)
+	void AutoCompleteTextView::setOnClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnClickListener",
@@ -372,7 +372,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setOnDismissListener(__JniBaseClass arg0)
+	void AutoCompleteTextView::setOnDismissListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -380,7 +380,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setOnItemClickListener(__JniBaseClass arg0)
+	void AutoCompleteTextView::setOnItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -388,7 +388,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setOnItemSelectedListener(__JniBaseClass arg0)
+	void AutoCompleteTextView::setOnItemSelectedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemSelectedListener",
@@ -413,7 +413,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setValidator(__JniBaseClass arg0)
+	void AutoCompleteTextView::setValidator(JObject arg0)
 	{
 		callMethod<void>(
 			"setValidator",

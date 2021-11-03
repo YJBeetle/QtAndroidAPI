@@ -8,7 +8,7 @@ namespace android::content::pm
 	// Fields
 	
 	// QJniObject forward
-	CrossProfileApps::CrossProfileApps(QJniObject obj) : __JniBaseClass(obj) {}
+	CrossProfileApps::CrossProfileApps(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -29,7 +29,7 @@ namespace android::content::pm
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass CrossProfileApps::getTargetUserProfiles()
+	JObject CrossProfileApps::getTargetUserProfiles()
 	{
 		return callObjectMethod(
 			"getTargetUserProfiles",

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::text::format
 {
-	class Time : public __JniBaseClass
+	class Time : public JObject
 	{
 	public:
 		// Fields
@@ -42,7 +42,7 @@ namespace android::text::format
 		jint yearDay();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Time(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Time(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Time(QJniObject obj);
 		
 		// Constructors

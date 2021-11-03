@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
 namespace java::io
@@ -50,7 +50,7 @@ namespace java::io
 		jint available();
 		void close();
 		void defaultReadObject();
-		__JniBaseClass getObjectInputFilter();
+		JObject getObjectInputFilter();
 		jint read();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jboolean readBoolean();
@@ -70,8 +70,8 @@ namespace java::io
 		jobject readUnshared();
 		jint readUnsignedByte();
 		jint readUnsignedShort();
-		void registerValidation(__JniBaseClass arg0, jint arg1);
-		void setObjectInputFilter(__JniBaseClass arg0);
+		void registerValidation(JObject arg0, jint arg1);
+		void setObjectInputFilter(JObject arg0);
 		jint skipBytes(jint arg0);
 	};
 } // namespace java::io

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
@@ -30,19 +30,19 @@ namespace java::util::concurrent
 		
 		// Constructors
 		LinkedTransferQueue();
-		LinkedTransferQueue(__JniBaseClass arg0);
+		LinkedTransferQueue(JObject arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
 		void clear();
 		jboolean contains(jobject arg0);
-		jint drainTo(__JniBaseClass arg0);
-		jint drainTo(__JniBaseClass arg0, jint arg1);
-		void forEach(__JniBaseClass arg0);
+		jint drainTo(JObject arg0);
+		jint drainTo(JObject arg0, jint arg1);
+		void forEach(JObject arg0);
 		jint getWaitingConsumerCount();
 		jboolean hasWaitingConsumer();
 		jboolean isEmpty();
-		__JniBaseClass iterator();
+		JObject iterator();
 		jboolean offer(jobject arg0);
 		jboolean offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
 		jobject peek();
@@ -51,11 +51,11 @@ namespace java::util::concurrent
 		void put(jobject arg0);
 		jint remainingCapacity();
 		jboolean remove(jobject arg0);
-		jboolean removeAll(__JniBaseClass arg0);
-		jboolean removeIf(__JniBaseClass arg0);
-		jboolean retainAll(__JniBaseClass arg0);
+		jboolean removeAll(JObject arg0);
+		jboolean removeIf(JObject arg0);
+		jboolean retainAll(JObject arg0);
 		jint size();
-		__JniBaseClass spliterator();
+		JObject spliterator();
 		jobject take();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);

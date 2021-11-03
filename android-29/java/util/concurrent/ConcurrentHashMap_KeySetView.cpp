@@ -6,7 +6,7 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	ConcurrentHashMap_KeySetView::ConcurrentHashMap_KeySetView(QJniObject obj) : __JniBaseClass(obj) {}
+	ConcurrentHashMap_KeySetView::ConcurrentHashMap_KeySetView(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -19,7 +19,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::addAll(__JniBaseClass arg0)
+	jboolean ConcurrentHashMap_KeySetView::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -43,7 +43,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ConcurrentHashMap_KeySetView::forEach(__JniBaseClass arg0)
+	void ConcurrentHashMap_KeySetView::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -72,7 +72,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass ConcurrentHashMap_KeySetView::iterator()
+	JObject ConcurrentHashMap_KeySetView::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -87,7 +87,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::removeAll(__JniBaseClass arg0)
+	jboolean ConcurrentHashMap_KeySetView::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -95,7 +95,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass ConcurrentHashMap_KeySetView::spliterator()
+	JObject ConcurrentHashMap_KeySetView::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

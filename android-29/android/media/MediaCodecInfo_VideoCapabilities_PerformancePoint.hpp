@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -9,7 +9,7 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaCodecInfo_VideoCapabilities_PerformancePoint : public __JniBaseClass
+	class MediaCodecInfo_VideoCapabilities_PerformancePoint : public JObject
 	{
 	public:
 		// Fields
@@ -48,7 +48,7 @@ namespace android::media
 		static android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint UHD_60();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodecInfo_VideoCapabilities_PerformancePoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodecInfo_VideoCapabilities_PerformancePoint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_VideoCapabilities_PerformancePoint(QJniObject obj);
 		
 		// Constructors

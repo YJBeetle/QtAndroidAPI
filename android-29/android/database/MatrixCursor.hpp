@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCursor.hpp"
 
 namespace android::database
@@ -25,7 +25,7 @@ namespace android::database
 		
 		// Methods
 		void addRow(jobjectArray arg0);
-		void addRow(__JniBaseClass arg0);
+		void addRow(JObject arg0);
 		jbyteArray getBlob(jint arg0);
 		jarray getColumnNames();
 		jint getCount();

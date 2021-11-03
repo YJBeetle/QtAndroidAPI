@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	MutableShort::MutableShort(QJniObject obj) : __JniBaseClass(obj) {}
+	MutableShort::MutableShort(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableShort::MutableShort(jshort arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableShort",
 			"(S)V",
 			arg0

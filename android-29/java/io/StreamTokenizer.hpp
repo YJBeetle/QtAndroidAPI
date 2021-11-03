@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,7 +13,7 @@ namespace java::io
 
 namespace java::io
 {
-	class StreamTokenizer : public __JniBaseClass
+	class StreamTokenizer : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace java::io
 		jint ttype();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StreamTokenizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StreamTokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StreamTokenizer(QJniObject obj);
 		
 		// Constructors

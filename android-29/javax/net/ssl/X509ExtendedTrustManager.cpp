@@ -7,11 +7,11 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QJniObject forward
-	X509ExtendedTrustManager::X509ExtendedTrustManager(QJniObject obj) : __JniBaseClass(obj) {}
+	X509ExtendedTrustManager::X509ExtendedTrustManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	X509ExtendedTrustManager::X509ExtendedTrustManager()
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.X509ExtendedTrustManager",
 			"()V"
 		) {}

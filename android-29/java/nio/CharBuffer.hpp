@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Buffer.hpp"
 
 namespace java::nio
@@ -38,7 +38,7 @@ namespace java::nio
 		jint arrayOffset();
 		java::nio::CharBuffer asReadOnlyBuffer();
 		jchar charAt(jint arg0);
-		__JniBaseClass chars();
+		JObject chars();
 		java::nio::CharBuffer clear();
 		java::nio::CharBuffer compact();
 		jint compareTo(jobject arg0);

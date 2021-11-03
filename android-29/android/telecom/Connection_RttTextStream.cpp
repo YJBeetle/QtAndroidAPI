@@ -6,7 +6,7 @@ namespace android::telecom
 	// Fields
 	
 	// QJniObject forward
-	Connection_RttTextStream::Connection_RttTextStream(QJniObject obj) : __JniBaseClass(obj) {}
+	Connection_RttTextStream::Connection_RttTextStream(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

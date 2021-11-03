@@ -7,12 +7,12 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	TextClassificationManager::TextClassificationManager(QJniObject obj) : __JniBaseClass(obj) {}
+	TextClassificationManager::TextClassificationManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass TextClassificationManager::createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0)
+	JObject TextClassificationManager::createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0)
 	{
 		return callObjectMethod(
 			"createTextClassificationSession",
@@ -20,14 +20,14 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	__JniBaseClass TextClassificationManager::getTextClassifier()
+	JObject TextClassificationManager::getTextClassifier()
 	{
 		return callObjectMethod(
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;"
 		);
 	}
-	void TextClassificationManager::setTextClassificationSessionFactory(__JniBaseClass arg0)
+	void TextClassificationManager::setTextClassificationSessionFactory(JObject arg0)
 	{
 		callMethod<void>(
 			"setTextClassificationSessionFactory",
@@ -35,7 +35,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	void TextClassificationManager::setTextClassifier(__JniBaseClass arg0)
+	void TextClassificationManager::setTextClassifier(JObject arg0)
 	{
 		callMethod<void>(
 			"setTextClassifier",

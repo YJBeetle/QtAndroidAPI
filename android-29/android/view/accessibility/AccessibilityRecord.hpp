@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::view
 {
@@ -13,13 +13,13 @@ namespace android::view::accessibility
 
 namespace android::view::accessibility
 {
-	class AccessibilityRecord : public __JniBaseClass
+	class AccessibilityRecord : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityRecord(QJniObject obj);
 		
 		// Constructors
@@ -36,14 +36,14 @@ namespace android::view::accessibility
 		jint getItemCount();
 		jint getMaxScrollX();
 		jint getMaxScrollY();
-		__JniBaseClass getParcelableData();
+		JObject getParcelableData();
 		jint getRemovedCount();
 		jint getScrollDeltaX();
 		jint getScrollDeltaY();
 		jint getScrollX();
 		jint getScrollY();
 		android::view::accessibility::AccessibilityNodeInfo getSource();
-		__JniBaseClass getText();
+		JObject getText();
 		jint getToIndex();
 		jint getWindowId();
 		jboolean isChecked();
@@ -64,7 +64,7 @@ namespace android::view::accessibility
 		void setItemCount(jint arg0);
 		void setMaxScrollX(jint arg0);
 		void setMaxScrollY(jint arg0);
-		void setParcelableData(__JniBaseClass arg0);
+		void setParcelableData(JObject arg0);
 		void setPassword(jboolean arg0);
 		void setRemovedCount(jint arg0);
 		void setScrollDeltaX(jint arg0);

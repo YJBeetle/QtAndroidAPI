@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::audiofx
 {
@@ -25,13 +25,13 @@ namespace android::media::audiofx
 
 namespace android::media::audiofx
 {
-	class DynamicsProcessing_Config_Builder : public __JniBaseClass
+	class DynamicsProcessing_Config_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DynamicsProcessing_Config_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DynamicsProcessing_Config_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicsProcessing_Config_Builder(QJniObject obj);
 		
 		// Constructors

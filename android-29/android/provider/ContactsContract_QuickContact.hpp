@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,7 +21,7 @@ namespace android::view
 
 namespace android::provider
 {
-	class ContactsContract_QuickContact : public __JniBaseClass
+	class ContactsContract_QuickContact : public JObject
 	{
 	public:
 		// Fields
@@ -34,7 +34,7 @@ namespace android::provider
 		static jint MODE_SMALL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_QuickContact(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_QuickContact(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_QuickContact(QJniObject obj);
 		
 		// Constructors

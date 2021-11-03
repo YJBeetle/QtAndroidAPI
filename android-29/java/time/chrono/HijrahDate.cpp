@@ -12,12 +12,12 @@ namespace java::time::chrono
 	// Fields
 	
 	// QJniObject forward
-	HijrahDate::HijrahDate(QJniObject obj) : __JniBaseClass(obj) {}
+	HijrahDate::HijrahDate(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::chrono::HijrahDate HijrahDate::from(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
@@ -63,7 +63,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	__JniBaseClass HijrahDate::atTime(java::time::LocalTime arg0)
+	JObject HijrahDate::atTime(java::time::LocalTime arg0)
 	{
 		return callObjectMethod(
 			"atTime",
@@ -93,7 +93,7 @@ namespace java::time::chrono
 			"()Ljava/time/chrono/HijrahEra;"
 		);
 	}
-	jlong HijrahDate::getLong(__JniBaseClass arg0)
+	jlong HijrahDate::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -129,7 +129,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::minus(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -137,7 +137,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::HijrahDate HijrahDate::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -146,7 +146,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::plus(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -154,7 +154,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::HijrahDate HijrahDate::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -163,7 +163,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::temporal::ValueRange HijrahDate::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange HijrahDate::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -185,7 +185,7 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass HijrahDate::until(__JniBaseClass arg0)
+	JObject HijrahDate::until(JObject arg0)
 	{
 		return callObjectMethod(
 			"until",
@@ -193,7 +193,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong HijrahDate::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong HijrahDate::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -202,7 +202,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::with(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -210,7 +210,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahDate::with(__JniBaseClass arg0, jlong arg1)
+	java::time::chrono::HijrahDate HijrahDate::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

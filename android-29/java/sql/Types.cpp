@@ -278,7 +278,7 @@ namespace java::sql
 	}
 	
 	// QJniObject forward
-	Types::Types(QJniObject obj) : __JniBaseClass(obj) {}
+	Types::Types(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -7,7 +7,7 @@ namespace java::nio::file
 	// Fields
 	
 	// QJniObject forward
-	SimpleFileVisitor::SimpleFileVisitor(QJniObject obj) : __JniBaseClass(obj) {}
+	SimpleFileVisitor::SimpleFileVisitor(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -21,7 +21,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileVisitResult SimpleFileVisitor::preVisitDirectory(jobject arg0, __JniBaseClass arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::preVisitDirectory(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"preVisitDirectory",
@@ -30,7 +30,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileVisitResult SimpleFileVisitor::visitFile(jobject arg0, __JniBaseClass arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::visitFile(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"visitFile",

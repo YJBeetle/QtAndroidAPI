@@ -89,11 +89,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	FrameMetrics::FrameMetrics(QJniObject obj) : __JniBaseClass(obj) {}
+	FrameMetrics::FrameMetrics(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FrameMetrics::FrameMetrics(android::view::FrameMetrics &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.FrameMetrics",
 			"(Landroid/view/FrameMetrics;)V",
 			arg0.object()

@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace javax::net::ssl
 {
-	class CertPathTrustManagerParameters : public __JniBaseClass
+	class CertPathTrustManagerParameters : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CertPathTrustManagerParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CertPathTrustManagerParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CertPathTrustManagerParameters(QJniObject obj);
 		
 		// Constructors
-		CertPathTrustManagerParameters(__JniBaseClass arg0);
+		CertPathTrustManagerParameters(JObject arg0);
 		
 		// Methods
-		__JniBaseClass getParameters();
+		JObject getParameters();
 	};
 } // namespace javax::net::ssl
 
