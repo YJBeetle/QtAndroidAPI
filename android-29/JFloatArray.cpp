@@ -1,2 +1,2 @@
 #include "./JFloatArray.hpp"
-JFloatArray::JFloatArray(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JFloatArray::JFloatArray(QAndroidJniObject obj) : JArray(obj) {}

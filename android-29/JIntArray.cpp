@@ -1,2 +1,2 @@
 #include "./JIntArray.hpp"
-JIntArray::JIntArray(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JIntArray::JIntArray(QAndroidJniObject obj) : JArray(obj) {}

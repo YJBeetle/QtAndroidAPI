@@ -1,2 +1,2 @@
 #include "./JString.hpp"
-JString::JString(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JString::JString(QAndroidJniObject obj) : JObject(obj) {}

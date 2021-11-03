@@ -1,2 +1,2 @@
 #include "./JObjectArray.hpp"
-JObjectArray::JObjectArray(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JObjectArray::JObjectArray(QAndroidJniObject obj) : JArray(obj) {}

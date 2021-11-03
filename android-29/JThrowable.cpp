@@ -1,2 +1,2 @@
 #include "./JThrowable.hpp"
-JThrowable::JThrowable(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JThrowable::JThrowable(QAndroidJniObject obj) : JObject(obj) {}

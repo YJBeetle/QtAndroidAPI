@@ -1,2 +1,2 @@
 #include "./JLongArray.hpp"
-JLongArray::JLongArray(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JLongArray::JLongArray(QAndroidJniObject obj) : JArray(obj) {}

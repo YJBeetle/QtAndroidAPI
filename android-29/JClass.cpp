@@ -1,2 +1,2 @@
 #include "./JClass.hpp"
-JClass::JClass(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JClass::JClass(QAndroidJniObject obj) : JObject(obj) {}

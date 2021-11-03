@@ -1,2 +1,2 @@
 #include "./JByteArray.hpp"
-JByteArray::JByteArray(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JByteArray::JByteArray(QAndroidJniObject obj) : JArray(obj) {}

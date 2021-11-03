@@ -1,2 +1,2 @@
 #include "./JDoubleArray.hpp"
-JDoubleArray::JDoubleArray(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JDoubleArray::JDoubleArray(QAndroidJniObject obj) : JArray(obj) {}

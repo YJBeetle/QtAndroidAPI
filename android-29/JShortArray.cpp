@@ -1,2 +1,2 @@
 #include "./JShortArray.hpp"
-JShortArray::JShortArray(QAndroidJniObject obj) : QAndroidJniObject(obj) {}
+JShortArray::JShortArray(QAndroidJniObject obj) : JArray(obj) {}
