@@ -141,12 +141,12 @@ void MainWindow::on_openFile_clicked() // WIP
 {
     QtAndroid::runOnAndroidThreadSync([] {
         auto intent = Intent(Intent::ACTION_GET_CONTENT());
-        intent.setType(QStringLiteral("image/*"));
+        // auto intent = Intent(Intent::ACTION_CREATE_DOCUMENT);
 
+        intent.addCategory(Intent::CATEGORY_OPENABLE());
+        intent.setType(QStringLiteral("*/*"));
+        // intent.putExtra(Intent::EXTRA_TITLE(), QStringLiteral("file.txt"));
 
-//            if (intent.resolveActivity(getPackageManager()) != null) {
-//                startActivityForResult(intent, REQUEST_IMAGE_GET);
-//            }
-
+        ACTIVITY.startActivityForResult(intent, 1);
     });
 }
