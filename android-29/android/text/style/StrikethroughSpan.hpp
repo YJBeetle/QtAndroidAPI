@@ -27,10 +27,10 @@ namespace android::text::style
 		StrikethroughSpan(android::os::Parcel arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getSpanTypeId();
-		void updateDrawState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getSpanTypeId() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

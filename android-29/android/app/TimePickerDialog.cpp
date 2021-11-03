@@ -34,7 +34,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void TimePickerDialog::onClick(JObject arg0, jint arg1)
+	void TimePickerDialog::onClick(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -43,7 +43,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void TimePickerDialog::onRestoreInstanceState(android::os::Bundle arg0)
+	void TimePickerDialog::onRestoreInstanceState(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -51,14 +51,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::os::Bundle TimePickerDialog::onSaveInstanceState()
+	android::os::Bundle TimePickerDialog::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void TimePickerDialog::onTimeChanged(android::widget::TimePicker arg0, jint arg1, jint arg2)
+	void TimePickerDialog::onTimeChanged(android::widget::TimePicker arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onTimeChanged",
@@ -68,14 +68,14 @@ namespace android::app
 			arg2
 		);
 	}
-	void TimePickerDialog::show()
+	void TimePickerDialog::show() const
 	{
 		callMethod<void>(
 			"show",
 			"()V"
 		);
 	}
-	void TimePickerDialog::updateTime(jint arg0, jint arg1)
+	void TimePickerDialog::updateTime(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"updateTime",

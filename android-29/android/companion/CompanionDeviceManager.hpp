@@ -35,11 +35,11 @@ namespace android::companion
 		// Constructors
 		
 		// Methods
-		void associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2);
-		void disassociate(JString arg0);
-		JObject getAssociations();
-		jboolean hasNotificationAccess(android::content::ComponentName arg0);
-		void requestNotificationAccess(android::content::ComponentName arg0);
+		void associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2) const;
+		void disassociate(JString arg0) const;
+		JObject getAssociations() const;
+		jboolean hasNotificationAccess(android::content::ComponentName arg0) const;
+		void requestNotificationAccess(android::content::ComponentName arg0) const;
 	};
 } // namespace android::companion
 

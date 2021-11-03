@@ -20,14 +20,14 @@ namespace android::media::session
 	// Constructors
 	
 	// Methods
-	jint MediaSession_Token::describeContents()
+	jint MediaSession_Token::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MediaSession_Token::equals(JObject arg0)
+	jboolean MediaSession_Token::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,14 +35,14 @@ namespace android::media::session
 			arg0.object<jobject>()
 		);
 	}
-	jint MediaSession_Token::hashCode()
+	jint MediaSession_Token::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void MediaSession_Token::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaSession_Token::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

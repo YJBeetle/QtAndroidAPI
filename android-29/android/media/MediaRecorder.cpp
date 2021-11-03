@@ -83,7 +83,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	void MediaRecorder::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1)
+	void MediaRecorder::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addOnRoutingChangedListener",
@@ -92,70 +92,70 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	JObject MediaRecorder::getActiveMicrophones()
+	JObject MediaRecorder::getActiveMicrophones() const
 	{
 		return callObjectMethod(
 			"getActiveMicrophones",
 			"()Ljava/util/List;"
 		);
 	}
-	android::media::AudioRecordingConfiguration MediaRecorder::getActiveRecordingConfiguration()
+	android::media::AudioRecordingConfiguration MediaRecorder::getActiveRecordingConfiguration() const
 	{
 		return callObjectMethod(
 			"getActiveRecordingConfiguration",
 			"()Landroid/media/AudioRecordingConfiguration;"
 		);
 	}
-	jint MediaRecorder::getMaxAmplitude()
+	jint MediaRecorder::getMaxAmplitude() const
 	{
 		return callMethod<jint>(
 			"getMaxAmplitude",
 			"()I"
 		);
 	}
-	android::os::PersistableBundle MediaRecorder::getMetrics()
+	android::os::PersistableBundle MediaRecorder::getMetrics() const
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	android::media::AudioDeviceInfo MediaRecorder::getPreferredDevice()
+	android::media::AudioDeviceInfo MediaRecorder::getPreferredDevice() const
 	{
 		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	android::media::AudioDeviceInfo MediaRecorder::getRoutedDevice()
+	android::media::AudioDeviceInfo MediaRecorder::getRoutedDevice() const
 	{
 		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	android::view::Surface MediaRecorder::getSurface()
+	android::view::Surface MediaRecorder::getSurface() const
 	{
 		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	void MediaRecorder::pause()
+	void MediaRecorder::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	void MediaRecorder::prepare()
+	void MediaRecorder::prepare() const
 	{
 		callMethod<void>(
 			"prepare",
 			"()V"
 		);
 	}
-	void MediaRecorder::registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1)
+	void MediaRecorder::registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1) const
 	{
 		callMethod<void>(
 			"registerAudioRecordingCallback",
@@ -164,14 +164,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaRecorder::release()
+	void MediaRecorder::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaRecorder::removeOnRoutingChangedListener(JObject arg0)
+	void MediaRecorder::removeOnRoutingChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnRoutingChangedListener",
@@ -179,21 +179,21 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::reset()
+	void MediaRecorder::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void MediaRecorder::resume()
+	void MediaRecorder::resume() const
 	{
 		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
-	void MediaRecorder::setAudioChannels(jint arg0)
+	void MediaRecorder::setAudioChannels(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioChannels",
@@ -201,7 +201,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setAudioEncoder(jint arg0)
+	void MediaRecorder::setAudioEncoder(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioEncoder",
@@ -209,7 +209,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setAudioEncodingBitRate(jint arg0)
+	void MediaRecorder::setAudioEncodingBitRate(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioEncodingBitRate",
@@ -217,7 +217,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setAudioSamplingRate(jint arg0)
+	void MediaRecorder::setAudioSamplingRate(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioSamplingRate",
@@ -225,7 +225,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setAudioSource(jint arg0)
+	void MediaRecorder::setAudioSource(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioSource",
@@ -233,7 +233,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setCamera(android::hardware::Camera arg0)
+	void MediaRecorder::setCamera(android::hardware::Camera arg0) const
 	{
 		callMethod<void>(
 			"setCamera",
@@ -241,7 +241,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setCaptureRate(jdouble arg0)
+	void MediaRecorder::setCaptureRate(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setCaptureRate",
@@ -249,7 +249,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setInputSurface(android::view::Surface arg0)
+	void MediaRecorder::setInputSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setInputSurface",
@@ -257,7 +257,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setLocation(jfloat arg0, jfloat arg1)
+	void MediaRecorder::setLocation(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setLocation",
@@ -266,7 +266,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaRecorder::setMaxDuration(jint arg0)
+	void MediaRecorder::setMaxDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxDuration",
@@ -274,7 +274,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setMaxFileSize(jlong arg0)
+	void MediaRecorder::setMaxFileSize(jlong arg0) const
 	{
 		callMethod<void>(
 			"setMaxFileSize",
@@ -282,7 +282,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setNextOutputFile(java::io::File arg0)
+	void MediaRecorder::setNextOutputFile(java::io::File arg0) const
 	{
 		callMethod<void>(
 			"setNextOutputFile",
@@ -290,7 +290,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setNextOutputFile(java::io::FileDescriptor arg0)
+	void MediaRecorder::setNextOutputFile(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"setNextOutputFile",
@@ -298,7 +298,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOnErrorListener(JObject arg0)
+	void MediaRecorder::setOnErrorListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnErrorListener",
@@ -306,7 +306,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOnInfoListener(JObject arg0)
+	void MediaRecorder::setOnInfoListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnInfoListener",
@@ -314,7 +314,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOrientationHint(jint arg0)
+	void MediaRecorder::setOrientationHint(jint arg0) const
 	{
 		callMethod<void>(
 			"setOrientationHint",
@@ -322,7 +322,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setOutputFile(java::io::File arg0)
+	void MediaRecorder::setOutputFile(java::io::File arg0) const
 	{
 		callMethod<void>(
 			"setOutputFile",
@@ -330,7 +330,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOutputFile(java::io::FileDescriptor arg0)
+	void MediaRecorder::setOutputFile(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"setOutputFile",
@@ -338,7 +338,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOutputFile(JString arg0)
+	void MediaRecorder::setOutputFile(JString arg0) const
 	{
 		callMethod<void>(
 			"setOutputFile",
@@ -346,7 +346,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaRecorder::setOutputFormat(jint arg0)
+	void MediaRecorder::setOutputFormat(jint arg0) const
 	{
 		callMethod<void>(
 			"setOutputFormat",
@@ -354,7 +354,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean MediaRecorder::setPreferredDevice(android::media::AudioDeviceInfo arg0)
+	jboolean MediaRecorder::setPreferredDevice(android::media::AudioDeviceInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredDevice",
@@ -362,7 +362,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaRecorder::setPreferredMicrophoneDirection(jint arg0)
+	jboolean MediaRecorder::setPreferredMicrophoneDirection(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredMicrophoneDirection",
@@ -370,7 +370,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean MediaRecorder::setPreferredMicrophoneFieldDimension(jfloat arg0)
+	jboolean MediaRecorder::setPreferredMicrophoneFieldDimension(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredMicrophoneFieldDimension",
@@ -378,7 +378,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setPreviewDisplay(android::view::Surface arg0)
+	void MediaRecorder::setPreviewDisplay(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setPreviewDisplay",
@@ -386,7 +386,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setProfile(android::media::CamcorderProfile arg0)
+	void MediaRecorder::setProfile(android::media::CamcorderProfile arg0) const
 	{
 		callMethod<void>(
 			"setProfile",
@@ -394,7 +394,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setVideoEncoder(jint arg0)
+	void MediaRecorder::setVideoEncoder(jint arg0) const
 	{
 		callMethod<void>(
 			"setVideoEncoder",
@@ -402,7 +402,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setVideoEncodingBitRate(jint arg0)
+	void MediaRecorder::setVideoEncodingBitRate(jint arg0) const
 	{
 		callMethod<void>(
 			"setVideoEncodingBitRate",
@@ -410,7 +410,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setVideoEncodingProfileLevel(jint arg0, jint arg1)
+	void MediaRecorder::setVideoEncodingProfileLevel(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setVideoEncodingProfileLevel",
@@ -419,7 +419,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaRecorder::setVideoFrameRate(jint arg0)
+	void MediaRecorder::setVideoFrameRate(jint arg0) const
 	{
 		callMethod<void>(
 			"setVideoFrameRate",
@@ -427,7 +427,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setVideoSize(jint arg0, jint arg1)
+	void MediaRecorder::setVideoSize(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setVideoSize",
@@ -436,7 +436,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaRecorder::setVideoSource(jint arg0)
+	void MediaRecorder::setVideoSource(jint arg0) const
 	{
 		callMethod<void>(
 			"setVideoSource",
@@ -444,21 +444,21 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::start()
+	void MediaRecorder::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void MediaRecorder::stop()
+	void MediaRecorder::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	void MediaRecorder::unregisterAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0)
+	void MediaRecorder::unregisterAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterAudioRecordingCallback",

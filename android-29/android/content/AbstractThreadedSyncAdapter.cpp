@@ -39,21 +39,21 @@ namespace android::content
 		) {}
 	
 	// Methods
-	android::content::Context AbstractThreadedSyncAdapter::getContext()
+	android::content::Context AbstractThreadedSyncAdapter::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JObject AbstractThreadedSyncAdapter::getSyncAdapterBinder()
+	JObject AbstractThreadedSyncAdapter::getSyncAdapterBinder() const
 	{
 		return callObjectMethod(
 			"getSyncAdapterBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	void AbstractThreadedSyncAdapter::onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4)
+	void AbstractThreadedSyncAdapter::onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4) const
 	{
 		callMethod<void>(
 			"onPerformSync",
@@ -65,7 +65,7 @@ namespace android::content
 			arg4.object()
 		);
 	}
-	void AbstractThreadedSyncAdapter::onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::SyncResult arg3)
+	void AbstractThreadedSyncAdapter::onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::SyncResult arg3) const
 	{
 		callMethod<void>(
 			"onSecurityException",
@@ -76,14 +76,14 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	void AbstractThreadedSyncAdapter::onSyncCanceled()
+	void AbstractThreadedSyncAdapter::onSyncCanceled() const
 	{
 		callMethod<void>(
 			"onSyncCanceled",
 			"()V"
 		);
 	}
-	void AbstractThreadedSyncAdapter::onSyncCanceled(java::lang::Thread arg0)
+	void AbstractThreadedSyncAdapter::onSyncCanceled(java::lang::Thread arg0) const
 	{
 		callMethod<void>(
 			"onSyncCanceled",
@@ -91,7 +91,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jboolean AbstractThreadedSyncAdapter::onUnsyncableAccount()
+	jboolean AbstractThreadedSyncAdapter::onUnsyncableAccount() const
 	{
 		return callMethod<jboolean>(
 			"onUnsyncableAccount",

@@ -22,7 +22,7 @@ namespace java::nio::file::spi
 		// Constructors
 		
 		// Methods
-		JString probeContentType(JObject arg0);
+		JString probeContentType(JObject arg0) const;
 	};
 } // namespace java::nio::file::spi
 

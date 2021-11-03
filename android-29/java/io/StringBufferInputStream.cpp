@@ -18,21 +18,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint StringBufferInputStream::available()
+	jint StringBufferInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	jint StringBufferInputStream::read()
+	jint StringBufferInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint StringBufferInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint StringBufferInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -42,14 +42,14 @@ namespace java::io
 			arg2
 		);
 	}
-	void StringBufferInputStream::reset()
+	void StringBufferInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong StringBufferInputStream::skip(jlong arg0)
+	jlong StringBufferInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

@@ -34,42 +34,42 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jint StringTokenizer::countTokens()
+	jint StringTokenizer::countTokens() const
 	{
 		return callMethod<jint>(
 			"countTokens",
 			"()I"
 		);
 	}
-	jboolean StringTokenizer::hasMoreElements()
+	jboolean StringTokenizer::hasMoreElements() const
 	{
 		return callMethod<jboolean>(
 			"hasMoreElements",
 			"()Z"
 		);
 	}
-	jboolean StringTokenizer::hasMoreTokens()
+	jboolean StringTokenizer::hasMoreTokens() const
 	{
 		return callMethod<jboolean>(
 			"hasMoreTokens",
 			"()Z"
 		);
 	}
-	JObject StringTokenizer::nextElement()
+	JObject StringTokenizer::nextElement() const
 	{
 		return callObjectMethod(
 			"nextElement",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString StringTokenizer::nextToken()
+	JString StringTokenizer::nextToken() const
 	{
 		return callObjectMethod(
 			"nextToken",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString StringTokenizer::nextToken(JString arg0)
+	JString StringTokenizer::nextToken(JString arg0) const
 	{
 		return callObjectMethod(
 			"nextToken",

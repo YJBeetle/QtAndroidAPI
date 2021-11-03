@@ -19,7 +19,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ResolveInfo_DisplayNameComparator::compare(android::content::pm::ResolveInfo arg0, android::content::pm::ResolveInfo arg1)
+	jint ResolveInfo_DisplayNameComparator::compare(android::content::pm::ResolveInfo arg0, android::content::pm::ResolveInfo arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -28,7 +28,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jint ResolveInfo_DisplayNameComparator::compare(JObject arg0, JObject arg1)
+	jint ResolveInfo_DisplayNameComparator::compare(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"compare",

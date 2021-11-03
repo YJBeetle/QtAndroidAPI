@@ -11,14 +11,14 @@ namespace javax::xml::datatype
 	// Constructors
 	
 	// Methods
-	jint DatatypeConstants_Field::getId()
+	jint DatatypeConstants_Field::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	JString DatatypeConstants_Field::toString()
+	JString DatatypeConstants_Field::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -26,8 +26,8 @@ namespace android::webkit
 		WebViewRenderProcessClient();
 		
 		// Methods
-		void onRenderProcessResponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1);
-		void onRenderProcessUnresponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1);
+		void onRenderProcessResponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const;
+		void onRenderProcessUnresponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const;
 	};
 } // namespace android::webkit
 

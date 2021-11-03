@@ -18,56 +18,56 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	java::util::jar::Attributes JarURLConnection::getAttributes()
+	java::util::jar::Attributes JarURLConnection::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	JArray JarURLConnection::getCertificates()
+	JArray JarURLConnection::getCertificates() const
 	{
 		return callObjectMethod(
 			"getCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JString JarURLConnection::getEntryName()
+	JString JarURLConnection::getEntryName() const
 	{
 		return callObjectMethod(
 			"getEntryName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::jar::JarEntry JarURLConnection::getJarEntry()
+	java::util::jar::JarEntry JarURLConnection::getJarEntry() const
 	{
 		return callObjectMethod(
 			"getJarEntry",
 			"()Ljava/util/jar/JarEntry;"
 		);
 	}
-	java::util::jar::JarFile JarURLConnection::getJarFile()
+	java::util::jar::JarFile JarURLConnection::getJarFile() const
 	{
 		return callObjectMethod(
 			"getJarFile",
 			"()Ljava/util/jar/JarFile;"
 		);
 	}
-	java::net::URL JarURLConnection::getJarFileURL()
+	java::net::URL JarURLConnection::getJarFileURL() const
 	{
 		return callObjectMethod(
 			"getJarFileURL",
 			"()Ljava/net/URL;"
 		);
 	}
-	java::util::jar::Attributes JarURLConnection::getMainAttributes()
+	java::util::jar::Attributes JarURLConnection::getMainAttributes() const
 	{
 		return callObjectMethod(
 			"getMainAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	java::util::jar::Manifest JarURLConnection::getManifest()
+	java::util::jar::Manifest JarURLConnection::getManifest() const
 	{
 		return callObjectMethod(
 			"getManifest",

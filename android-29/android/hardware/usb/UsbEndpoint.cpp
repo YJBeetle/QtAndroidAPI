@@ -20,70 +20,70 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	jint UsbEndpoint::describeContents()
+	jint UsbEndpoint::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getAddress()
+	jint UsbEndpoint::getAddress() const
 	{
 		return callMethod<jint>(
 			"getAddress",
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getAttributes()
+	jint UsbEndpoint::getAttributes() const
 	{
 		return callMethod<jint>(
 			"getAttributes",
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getDirection()
+	jint UsbEndpoint::getDirection() const
 	{
 		return callMethod<jint>(
 			"getDirection",
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getEndpointNumber()
+	jint UsbEndpoint::getEndpointNumber() const
 	{
 		return callMethod<jint>(
 			"getEndpointNumber",
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getInterval()
+	jint UsbEndpoint::getInterval() const
 	{
 		return callMethod<jint>(
 			"getInterval",
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getMaxPacketSize()
+	jint UsbEndpoint::getMaxPacketSize() const
 	{
 		return callMethod<jint>(
 			"getMaxPacketSize",
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getType()
+	jint UsbEndpoint::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JString UsbEndpoint::toString()
+	JString UsbEndpoint::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UsbEndpoint::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UsbEndpoint::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

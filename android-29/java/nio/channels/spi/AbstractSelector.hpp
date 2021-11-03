@@ -34,9 +34,9 @@ namespace java::nio::channels::spi
 		// Constructors
 		
 		// Methods
-		void close();
-		jboolean isOpen();
-		java::nio::channels::spi::SelectorProvider provider();
+		void close() const;
+		jboolean isOpen() const;
+		java::nio::channels::spi::SelectorProvider provider() const;
 	};
 } // namespace java::nio::channels::spi
 

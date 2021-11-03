@@ -12,14 +12,14 @@ namespace android::service::media
 	// Constructors
 	
 	// Methods
-	void MediaBrowserService_Result::detach()
+	void MediaBrowserService_Result::detach() const
 	{
 		callMethod<void>(
 			"detach",
 			"()V"
 		);
 	}
-	void MediaBrowserService_Result::sendResult(JObject arg0)
+	void MediaBrowserService_Result::sendResult(JObject arg0) const
 	{
 		callMethod<void>(
 			"sendResult",

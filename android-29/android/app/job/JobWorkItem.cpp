@@ -35,49 +35,49 @@ namespace android::app::job
 		) {}
 	
 	// Methods
-	jint JobWorkItem::describeContents()
+	jint JobWorkItem::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint JobWorkItem::getDeliveryCount()
+	jint JobWorkItem::getDeliveryCount() const
 	{
 		return callMethod<jint>(
 			"getDeliveryCount",
 			"()I"
 		);
 	}
-	jlong JobWorkItem::getEstimatedNetworkDownloadBytes()
+	jlong JobWorkItem::getEstimatedNetworkDownloadBytes() const
 	{
 		return callMethod<jlong>(
 			"getEstimatedNetworkDownloadBytes",
 			"()J"
 		);
 	}
-	jlong JobWorkItem::getEstimatedNetworkUploadBytes()
+	jlong JobWorkItem::getEstimatedNetworkUploadBytes() const
 	{
 		return callMethod<jlong>(
 			"getEstimatedNetworkUploadBytes",
 			"()J"
 		);
 	}
-	android::content::Intent JobWorkItem::getIntent()
+	android::content::Intent JobWorkItem::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JString JobWorkItem::toString()
+	JString JobWorkItem::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void JobWorkItem::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void JobWorkItem::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -24,7 +24,7 @@ namespace java::security
 		AccessControlException(JString arg0, java::security::Permission arg1);
 		
 		// Methods
-		java::security::Permission getPermission();
+		java::security::Permission getPermission() const;
 	};
 } // namespace java::security
 

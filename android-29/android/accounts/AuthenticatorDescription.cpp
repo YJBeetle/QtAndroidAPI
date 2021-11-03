@@ -97,14 +97,14 @@ namespace android::accounts
 			arg0.object<jstring>()
 		);
 	}
-	jint AuthenticatorDescription::describeContents()
+	jint AuthenticatorDescription::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AuthenticatorDescription::equals(JObject arg0)
+	jboolean AuthenticatorDescription::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -112,21 +112,21 @@ namespace android::accounts
 			arg0.object<jobject>()
 		);
 	}
-	jint AuthenticatorDescription::hashCode()
+	jint AuthenticatorDescription::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AuthenticatorDescription::toString()
+	JString AuthenticatorDescription::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AuthenticatorDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AuthenticatorDescription::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

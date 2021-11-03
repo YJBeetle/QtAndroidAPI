@@ -30,12 +30,12 @@ namespace android::media::session
 		MediaSession_QueueItem(android::media::MediaDescription arg0, jlong arg1);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::media::MediaDescription getDescription();
-		jlong getQueueId();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::media::MediaDescription getDescription() const;
+		jlong getQueueId() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::session
 

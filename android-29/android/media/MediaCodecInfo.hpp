@@ -24,15 +24,15 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getCanonicalName();
-		android::media::MediaCodecInfo_CodecCapabilities getCapabilitiesForType(JString arg0);
-		JString getName();
-		JArray getSupportedTypes();
-		jboolean isAlias();
-		jboolean isEncoder();
-		jboolean isHardwareAccelerated();
-		jboolean isSoftwareOnly();
-		jboolean isVendor();
+		JString getCanonicalName() const;
+		android::media::MediaCodecInfo_CodecCapabilities getCapabilitiesForType(JString arg0) const;
+		JString getName() const;
+		JArray getSupportedTypes() const;
+		jboolean isAlias() const;
+		jboolean isEncoder() const;
+		jboolean isHardwareAccelerated() const;
+		jboolean isSoftwareOnly() const;
+		jboolean isVendor() const;
 	};
 } // namespace android::media
 

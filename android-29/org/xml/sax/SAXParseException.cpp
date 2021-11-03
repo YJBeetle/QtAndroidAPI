@@ -48,35 +48,35 @@ namespace org::xml::sax
 		) {}
 	
 	// Methods
-	jint SAXParseException::getColumnNumber()
+	jint SAXParseException::getColumnNumber() const
 	{
 		return callMethod<jint>(
 			"getColumnNumber",
 			"()I"
 		);
 	}
-	jint SAXParseException::getLineNumber()
+	jint SAXParseException::getLineNumber() const
 	{
 		return callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
 	}
-	JString SAXParseException::getPublicId()
+	JString SAXParseException::getPublicId() const
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SAXParseException::getSystemId()
+	JString SAXParseException::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SAXParseException::toString()
+	JString SAXParseException::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -34,21 +34,21 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	void Manifest::clear()
+	void Manifest::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject Manifest::clone()
+	JObject Manifest::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean Manifest::equals(JObject arg0)
+	jboolean Manifest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -56,7 +56,7 @@ namespace java::util::jar
 			arg0.object<jobject>()
 		);
 	}
-	java::util::jar::Attributes Manifest::getAttributes(JString arg0)
+	java::util::jar::Attributes Manifest::getAttributes(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttributes",
@@ -64,28 +64,28 @@ namespace java::util::jar
 			arg0.object<jstring>()
 		);
 	}
-	JObject Manifest::getEntries()
+	JObject Manifest::getEntries() const
 	{
 		return callObjectMethod(
 			"getEntries",
 			"()Ljava/util/Map;"
 		);
 	}
-	java::util::jar::Attributes Manifest::getMainAttributes()
+	java::util::jar::Attributes Manifest::getMainAttributes() const
 	{
 		return callObjectMethod(
 			"getMainAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	jint Manifest::hashCode()
+	jint Manifest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Manifest::read(java::io::InputStream arg0)
+	void Manifest::read(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"read",
@@ -93,7 +93,7 @@ namespace java::util::jar
 			arg0.object()
 		);
 	}
-	void Manifest::write(java::io::OutputStream arg0)
+	void Manifest::write(java::io::OutputStream arg0) const
 	{
 		callMethod<void>(
 			"write",

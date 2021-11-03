@@ -22,29 +22,29 @@ namespace android::os::health
 		// Constructors
 		
 		// Methods
-		JString getDataType();
-		jlong getMeasurement(jint arg0);
-		jint getMeasurementKeyAt(jint arg0);
-		jint getMeasurementKeyCount();
-		JObject getMeasurements(jint arg0);
-		jint getMeasurementsKeyAt(jint arg0);
-		jint getMeasurementsKeyCount();
-		JObject getStats(jint arg0);
-		jint getStatsKeyAt(jint arg0);
-		jint getStatsKeyCount();
-		android::os::health::TimerStat getTimer(jint arg0);
-		jint getTimerCount(jint arg0);
-		jint getTimerKeyAt(jint arg0);
-		jint getTimerKeyCount();
-		jlong getTimerTime(jint arg0);
-		JObject getTimers(jint arg0);
-		jint getTimersKeyAt(jint arg0);
-		jint getTimersKeyCount();
-		jboolean hasMeasurement(jint arg0);
-		jboolean hasMeasurements(jint arg0);
-		jboolean hasStats(jint arg0);
-		jboolean hasTimer(jint arg0);
-		jboolean hasTimers(jint arg0);
+		JString getDataType() const;
+		jlong getMeasurement(jint arg0) const;
+		jint getMeasurementKeyAt(jint arg0) const;
+		jint getMeasurementKeyCount() const;
+		JObject getMeasurements(jint arg0) const;
+		jint getMeasurementsKeyAt(jint arg0) const;
+		jint getMeasurementsKeyCount() const;
+		JObject getStats(jint arg0) const;
+		jint getStatsKeyAt(jint arg0) const;
+		jint getStatsKeyCount() const;
+		android::os::health::TimerStat getTimer(jint arg0) const;
+		jint getTimerCount(jint arg0) const;
+		jint getTimerKeyAt(jint arg0) const;
+		jint getTimerKeyCount() const;
+		jlong getTimerTime(jint arg0) const;
+		JObject getTimers(jint arg0) const;
+		jint getTimersKeyAt(jint arg0) const;
+		jint getTimersKeyCount() const;
+		jboolean hasMeasurement(jint arg0) const;
+		jboolean hasMeasurements(jint arg0) const;
+		jboolean hasStats(jint arg0) const;
+		jboolean hasTimer(jint arg0) const;
+		jboolean hasTimers(jint arg0) const;
 	};
 } // namespace android::os::health
 

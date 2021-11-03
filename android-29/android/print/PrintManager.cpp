@@ -14,14 +14,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	JObject PrintManager::getPrintJobs()
+	JObject PrintManager::getPrintJobs() const
 	{
 		return callObjectMethod(
 			"getPrintJobs",
 			"()Ljava/util/List;"
 		);
 	}
-	android::print::PrintJob PrintManager::print(JString arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2)
+	android::print::PrintJob PrintManager::print(JString arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2) const
 	{
 		return callObjectMethod(
 			"print",

@@ -35,11 +35,11 @@ namespace android::content::pm
 		ComponentInfo(android::content::pm::ComponentInfo &arg0);
 		
 		// Methods
-		jint getBannerResource();
-		jint getIconResource();
-		jint getLogoResource();
-		jboolean isEnabled();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint getBannerResource() const;
+		jint getIconResource() const;
+		jint getLogoResource() const;
+		jboolean isEnabled() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

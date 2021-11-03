@@ -24,8 +24,8 @@ namespace android::animation
 		PointFEvaluator(android::graphics::PointF arg0);
 		
 		// Methods
-		android::graphics::PointF evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2);
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
+		android::graphics::PointF evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2) const;
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::animation
 

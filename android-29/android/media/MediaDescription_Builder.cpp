@@ -21,14 +21,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::MediaDescription MediaDescription_Builder::build()
+	android::media::MediaDescription MediaDescription_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setDescription(JString arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -36,7 +36,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setExtras(android::os::Bundle arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -44,7 +44,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setIconBitmap(android::graphics::Bitmap arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setIconBitmap(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"setIconBitmap",
@@ -52,7 +52,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setIconUri(android::net::Uri arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setIconUri(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setIconUri",
@@ -60,7 +60,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaId(JString arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setMediaId",
@@ -68,7 +68,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaUri(android::net::Uri arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaUri(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setMediaUri",
@@ -76,7 +76,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setSubtitle(JString arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setSubtitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSubtitle",
@@ -84,7 +84,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setTitle(JString arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",

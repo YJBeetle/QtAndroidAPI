@@ -23,10 +23,10 @@ namespace android::os
 		ParcelFileDescriptor_AutoCloseInputStream(android::os::ParcelFileDescriptor arg0);
 		
 		// Methods
-		void close();
-		jint read();
-		jint read(JByteArray arg0);
-		jint read(JByteArray arg0, jint arg1, jint arg2);
+		void close() const;
+		jint read() const;
+		jint read(JByteArray arg0) const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace android::os
 

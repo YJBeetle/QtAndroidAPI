@@ -36,7 +36,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void ClipDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void ClipDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -44,7 +44,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ClipDrawable::draw(android::graphics::Canvas arg0)
+	void ClipDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -52,14 +52,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint ClipDrawable::getOpacity()
+	jint ClipDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void ClipDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void ClipDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",

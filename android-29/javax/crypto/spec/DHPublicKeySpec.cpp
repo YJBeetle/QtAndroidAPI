@@ -19,21 +19,21 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger DHPublicKeySpec::getG()
+	java::math::BigInteger DHPublicKeySpec::getG() const
 	{
 		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger DHPublicKeySpec::getP()
+	java::math::BigInteger DHPublicKeySpec::getP() const
 	{
 		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger DHPublicKeySpec::getY()
+	java::math::BigInteger DHPublicKeySpec::getY() const
 	{
 		return callObjectMethod(
 			"getY",

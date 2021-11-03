@@ -11,7 +11,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean AbstractSet::equals(JObject arg0)
+	jboolean AbstractSet::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -19,14 +19,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint AbstractSet::hashCode()
+	jint AbstractSet::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AbstractSet::removeAll(JObject arg0)
+	jboolean AbstractSet::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",

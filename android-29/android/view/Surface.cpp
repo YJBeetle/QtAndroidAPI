@@ -64,21 +64,21 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jint Surface::describeContents()
+	jint Surface::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Surface::isValid()
+	jboolean Surface::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	android::graphics::Canvas Surface::lockCanvas(android::graphics::Rect arg0)
+	android::graphics::Canvas Surface::lockCanvas(android::graphics::Rect arg0) const
 	{
 		return callObjectMethod(
 			"lockCanvas",
@@ -86,14 +86,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::graphics::Canvas Surface::lockHardwareCanvas()
+	android::graphics::Canvas Surface::lockHardwareCanvas() const
 	{
 		return callObjectMethod(
 			"lockHardwareCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
-	void Surface::readFromParcel(android::os::Parcel arg0)
+	void Surface::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -101,21 +101,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Surface::release()
+	void Surface::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	JString Surface::toString()
+	JString Surface::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Surface::unlockCanvas(android::graphics::Canvas arg0)
+	void Surface::unlockCanvas(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"unlockCanvas",
@@ -123,7 +123,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Surface::unlockCanvasAndPost(android::graphics::Canvas arg0)
+	void Surface::unlockCanvasAndPost(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"unlockCanvasAndPost",
@@ -131,7 +131,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Surface::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Surface::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

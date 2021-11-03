@@ -27,11 +27,11 @@ namespace javax::net
 		
 		// Methods
 		static javax::net::SocketFactory getDefault();
-		java::net::Socket createSocket();
-		java::net::Socket createSocket(JString arg0, jint arg1);
-		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1);
-		java::net::Socket createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
-		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
+		java::net::Socket createSocket() const;
+		java::net::Socket createSocket(JString arg0, jint arg1) const;
+		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1) const;
+		java::net::Socket createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const;
+		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const;
 	};
 } // namespace javax::net
 

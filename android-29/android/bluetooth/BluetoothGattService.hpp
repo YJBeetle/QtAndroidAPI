@@ -33,16 +33,16 @@ namespace android::bluetooth
 		BluetoothGattService(java::util::UUID arg0, jint arg1);
 		
 		// Methods
-		jboolean addCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0);
-		jboolean addService(android::bluetooth::BluetoothGattService arg0);
-		jint describeContents();
-		android::bluetooth::BluetoothGattCharacteristic getCharacteristic(java::util::UUID arg0);
-		JObject getCharacteristics();
-		JObject getIncludedServices();
-		jint getInstanceId();
-		jint getType();
-		java::util::UUID getUuid();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean addCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0) const;
+		jboolean addService(android::bluetooth::BluetoothGattService arg0) const;
+		jint describeContents() const;
+		android::bluetooth::BluetoothGattCharacteristic getCharacteristic(java::util::UUID arg0) const;
+		JObject getCharacteristics() const;
+		JObject getIncludedServices() const;
+		jint getInstanceId() const;
+		jint getType() const;
+		java::util::UUID getUuid() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

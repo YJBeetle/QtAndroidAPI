@@ -15,14 +15,14 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void DataSetObserver::onChanged()
+	void DataSetObserver::onChanged() const
 	{
 		callMethod<void>(
 			"onChanged",
 			"()V"
 		);
 	}
-	void DataSetObserver::onInvalidated()
+	void DataSetObserver::onInvalidated() const
 	{
 		callMethod<void>(
 			"onInvalidated",

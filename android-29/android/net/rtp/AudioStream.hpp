@@ -30,13 +30,13 @@ namespace android::net::rtp
 		AudioStream(java::net::InetAddress arg0);
 		
 		// Methods
-		android::net::rtp::AudioCodec getCodec();
-		jint getDtmfType();
-		android::net::rtp::AudioGroup getGroup();
-		jboolean isBusy();
-		void join(android::net::rtp::AudioGroup arg0);
-		void setCodec(android::net::rtp::AudioCodec arg0);
-		void setDtmfType(jint arg0);
+		android::net::rtp::AudioCodec getCodec() const;
+		jint getDtmfType() const;
+		android::net::rtp::AudioGroup getGroup() const;
+		jboolean isBusy() const;
+		void join(android::net::rtp::AudioGroup arg0) const;
+		void setCodec(android::net::rtp::AudioCodec arg0) const;
+		void setDtmfType(jint arg0) const;
 	};
 } // namespace android::net::rtp
 

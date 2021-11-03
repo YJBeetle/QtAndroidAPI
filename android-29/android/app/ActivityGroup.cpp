@@ -24,14 +24,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Activity ActivityGroup::getCurrentActivity()
+	android::app::Activity ActivityGroup::getCurrentActivity() const
 	{
 		return callObjectMethod(
 			"getCurrentActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	android::app::LocalActivityManager ActivityGroup::getLocalActivityManager()
+	android::app::LocalActivityManager ActivityGroup::getLocalActivityManager() const
 	{
 		return callObjectMethod(
 			"getLocalActivityManager",

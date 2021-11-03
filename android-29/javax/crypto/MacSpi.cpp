@@ -18,7 +18,7 @@ namespace javax::crypto
 		) {}
 	
 	// Methods
-	JObject MacSpi::clone()
+	JObject MacSpi::clone() const
 	{
 		return callObjectMethod(
 			"clone",

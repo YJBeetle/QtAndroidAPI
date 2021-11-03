@@ -23,20 +23,20 @@ namespace android::net::sip
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JString getAuthUserName();
-		jboolean getAutoRegistration();
-		JString getDisplayName();
-		JString getPassword();
-		jint getPort();
-		JString getProfileName();
-		JString getProtocol();
-		JString getProxyAddress();
-		jboolean getSendKeepAlive();
-		JString getSipDomain();
-		JString getUriString();
-		JString getUserName();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getAuthUserName() const;
+		jboolean getAutoRegistration() const;
+		JString getDisplayName() const;
+		JString getPassword() const;
+		jint getPort() const;
+		JString getProfileName() const;
+		JString getProtocol() const;
+		JString getProxyAddress() const;
+		jboolean getSendKeepAlive() const;
+		JString getSipDomain() const;
+		JString getUriString() const;
+		JString getUserName() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::sip
 

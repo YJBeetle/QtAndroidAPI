@@ -34,16 +34,16 @@ namespace android::security
 		// Constructors
 		
 		// Methods
-		JObject getAlgorithmParameterSpec();
-		android::content::Context getContext();
-		java::util::Date getEndDate();
-		jint getKeySize();
-		JString getKeyType();
-		JString getKeystoreAlias();
-		java::math::BigInteger getSerialNumber();
-		java::util::Date getStartDate();
-		javax::security::auth::x500::X500Principal getSubjectDN();
-		jboolean isEncryptionRequired();
+		JObject getAlgorithmParameterSpec() const;
+		android::content::Context getContext() const;
+		java::util::Date getEndDate() const;
+		jint getKeySize() const;
+		JString getKeyType() const;
+		JString getKeystoreAlias() const;
+		java::math::BigInteger getSerialNumber() const;
+		java::util::Date getStartDate() const;
+		javax::security::auth::x500::X500Principal getSubjectDN() const;
+		jboolean isEncryptionRequired() const;
 	};
 } // namespace android::security
 

@@ -27,14 +27,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void CallRedirectionService::cancelCall()
+	void CallRedirectionService::cancelCall() const
 	{
 		callMethod<void>(
 			"cancelCall",
 			"()V"
 		);
 	}
-	JObject CallRedirectionService::onBind(android::content::Intent arg0)
+	JObject CallRedirectionService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -42,7 +42,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void CallRedirectionService::onPlaceCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2)
+	void CallRedirectionService::onPlaceCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"onPlaceCall",
@@ -52,7 +52,7 @@ namespace android::telecom
 			arg2
 		);
 	}
-	jboolean CallRedirectionService::onUnbind(android::content::Intent arg0)
+	jboolean CallRedirectionService::onUnbind(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnbind",
@@ -60,14 +60,14 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void CallRedirectionService::placeCallUnmodified()
+	void CallRedirectionService::placeCallUnmodified() const
 	{
 		callMethod<void>(
 			"placeCallUnmodified",
 			"()V"
 		);
 	}
-	void CallRedirectionService::redirectCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2)
+	void CallRedirectionService::redirectCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"redirectCall",

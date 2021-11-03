@@ -17,14 +17,14 @@ namespace org::apache::http::conn::ssl
 		) {}
 	
 	// Methods
-	JString BrowserCompatHostnameVerifier::toString()
+	JString BrowserCompatHostnameVerifier::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BrowserCompatHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2)
+	void BrowserCompatHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"verify",

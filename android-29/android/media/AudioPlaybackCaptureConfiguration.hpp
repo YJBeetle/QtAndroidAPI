@@ -22,11 +22,11 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JIntArray getExcludeUids();
-		JIntArray getExcludeUsages();
-		JIntArray getMatchingUids();
-		JIntArray getMatchingUsages();
-		android::media::projection::MediaProjection getMediaProjection();
+		JIntArray getExcludeUids() const;
+		JIntArray getExcludeUsages() const;
+		JIntArray getMatchingUids() const;
+		JIntArray getMatchingUsages() const;
+		android::media::projection::MediaProjection getMediaProjection() const;
 	};
 } // namespace android::media
 

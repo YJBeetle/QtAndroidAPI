@@ -26,8 +26,8 @@ namespace android::text::style
 		MetricAffectingSpan();
 		
 		// Methods
-		android::text::style::MetricAffectingSpan getUnderlying();
-		void updateMeasureState(android::text::TextPaint arg0);
+		android::text::style::MetricAffectingSpan getUnderlying() const;
+		void updateMeasureState(android::text::TextPaint arg0) const;
 	};
 } // namespace android::text::style
 

@@ -22,7 +22,7 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	jboolean Method::equals(JObject arg0)
+	jboolean Method::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -30,14 +30,14 @@ namespace java::lang::reflect
 			arg0.object<jobject>()
 		);
 	}
-	JObject Method::getAnnotatedReturnType()
+	JObject Method::getAnnotatedReturnType() const
 	{
 		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Method::getAnnotation(JClass arg0)
+	JObject Method::getAnnotation(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -45,112 +45,112 @@ namespace java::lang::reflect
 			arg0.object<jclass>()
 		);
 	}
-	JArray Method::getDeclaredAnnotations()
+	JArray Method::getDeclaredAnnotations() const
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	JClass Method::getDeclaringClass()
+	JClass Method::getDeclaringClass() const
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JObject Method::getDefaultValue()
+	JObject Method::getDefaultValue() const
 	{
 		return callObjectMethod(
 			"getDefaultValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JArray Method::getExceptionTypes()
+	JArray Method::getExceptionTypes() const
 	{
 		return callObjectMethod(
 			"getExceptionTypes",
 			"()[Ljava/lang/Class;"
 		);
 	}
-	JArray Method::getGenericExceptionTypes()
+	JArray Method::getGenericExceptionTypes() const
 	{
 		return callObjectMethod(
 			"getGenericExceptionTypes",
 			"()[Ljava/lang/reflect/Type;"
 		);
 	}
-	JArray Method::getGenericParameterTypes()
+	JArray Method::getGenericParameterTypes() const
 	{
 		return callObjectMethod(
 			"getGenericParameterTypes",
 			"()[Ljava/lang/reflect/Type;"
 		);
 	}
-	JObject Method::getGenericReturnType()
+	JObject Method::getGenericReturnType() const
 	{
 		return callObjectMethod(
 			"getGenericReturnType",
 			"()Ljava/lang/reflect/Type;"
 		);
 	}
-	jint Method::getModifiers()
+	jint Method::getModifiers() const
 	{
 		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
-	JString Method::getName()
+	JString Method::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray Method::getParameterAnnotations()
+	JArray Method::getParameterAnnotations() const
 	{
 		return callObjectMethod(
 			"getParameterAnnotations",
 			"()[[Ljava/lang/annotation/Annotation;"
 		);
 	}
-	jint Method::getParameterCount()
+	jint Method::getParameterCount() const
 	{
 		return callMethod<jint>(
 			"getParameterCount",
 			"()I"
 		);
 	}
-	JArray Method::getParameterTypes()
+	JArray Method::getParameterTypes() const
 	{
 		return callObjectMethod(
 			"getParameterTypes",
 			"()[Ljava/lang/Class;"
 		);
 	}
-	JClass Method::getReturnType()
+	JClass Method::getReturnType() const
 	{
 		return callObjectMethod(
 			"getReturnType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JArray Method::getTypeParameters()
+	JArray Method::getTypeParameters() const
 	{
 		return callObjectMethod(
 			"getTypeParameters",
 			"()[Ljava/lang/reflect/TypeVariable;"
 		);
 	}
-	jint Method::hashCode()
+	jint Method::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject Method::invoke(JObject arg0, JObjectArray arg1)
+	JObject Method::invoke(JObject arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"invoke",
@@ -159,35 +159,35 @@ namespace java::lang::reflect
 			arg1.object<jobjectArray>()
 		);
 	}
-	jboolean Method::isBridge()
+	jboolean Method::isBridge() const
 	{
 		return callMethod<jboolean>(
 			"isBridge",
 			"()Z"
 		);
 	}
-	jboolean Method::isDefault()
+	jboolean Method::isDefault() const
 	{
 		return callMethod<jboolean>(
 			"isDefault",
 			"()Z"
 		);
 	}
-	jboolean Method::isSynthetic()
+	jboolean Method::isSynthetic() const
 	{
 		return callMethod<jboolean>(
 			"isSynthetic",
 			"()Z"
 		);
 	}
-	jboolean Method::isVarArgs()
+	jboolean Method::isVarArgs() const
 	{
 		return callMethod<jboolean>(
 			"isVarArgs",
 			"()Z"
 		);
 	}
-	void Method::setAccessible(jboolean arg0)
+	void Method::setAccessible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAccessible",
@@ -195,14 +195,14 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	JString Method::toGenericString()
+	JString Method::toGenericString() const
 	{
 		return callObjectMethod(
 			"toGenericString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Method::toString()
+	JString Method::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -13,35 +13,35 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	void VoiceInteractor_Request::cancel()
+	void VoiceInteractor_Request::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	android::app::Activity VoiceInteractor_Request::getActivity()
+	android::app::Activity VoiceInteractor_Request::getActivity() const
 	{
 		return callObjectMethod(
 			"getActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	android::content::Context VoiceInteractor_Request::getContext()
+	android::content::Context VoiceInteractor_Request::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JString VoiceInteractor_Request::getName()
+	JString VoiceInteractor_Request::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VoiceInteractor_Request::onAttached(android::app::Activity arg0)
+	void VoiceInteractor_Request::onAttached(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"onAttached",
@@ -49,21 +49,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void VoiceInteractor_Request::onCancel()
+	void VoiceInteractor_Request::onCancel() const
 	{
 		callMethod<void>(
 			"onCancel",
 			"()V"
 		);
 	}
-	void VoiceInteractor_Request::onDetached()
+	void VoiceInteractor_Request::onDetached() const
 	{
 		callMethod<void>(
 			"onDetached",
 			"()V"
 		);
 	}
-	JString VoiceInteractor_Request::toString()
+	JString VoiceInteractor_Request::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -30,11 +30,11 @@ namespace android::media::audiofx
 		PresetReverb(jint arg0, jint arg1);
 		
 		// Methods
-		jshort getPreset();
-		android::media::audiofx::PresetReverb_Settings getProperties();
-		void setParameterListener(JObject arg0);
-		void setPreset(jshort arg0);
-		void setProperties(android::media::audiofx::PresetReverb_Settings arg0);
+		jshort getPreset() const;
+		android::media::audiofx::PresetReverb_Settings getProperties() const;
+		void setParameterListener(JObject arg0) const;
+		void setPreset(jshort arg0) const;
+		void setProperties(android::media::audiofx::PresetReverb_Settings arg0) const;
 	};
 } // namespace android::media::audiofx
 

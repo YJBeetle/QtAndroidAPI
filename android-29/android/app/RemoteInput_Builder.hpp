@@ -29,14 +29,14 @@ namespace android::app
 		RemoteInput_Builder(JString arg0);
 		
 		// Methods
-		android::app::RemoteInput_Builder addExtras(android::os::Bundle arg0);
-		android::app::RemoteInput build();
-		android::os::Bundle getExtras();
-		android::app::RemoteInput_Builder setAllowDataType(JString arg0, jboolean arg1);
-		android::app::RemoteInput_Builder setAllowFreeFormInput(jboolean arg0);
-		android::app::RemoteInput_Builder setChoices(JArray arg0);
-		android::app::RemoteInput_Builder setEditChoicesBeforeSending(jint arg0);
-		android::app::RemoteInput_Builder setLabel(JString arg0);
+		android::app::RemoteInput_Builder addExtras(android::os::Bundle arg0) const;
+		android::app::RemoteInput build() const;
+		android::os::Bundle getExtras() const;
+		android::app::RemoteInput_Builder setAllowDataType(JString arg0, jboolean arg1) const;
+		android::app::RemoteInput_Builder setAllowFreeFormInput(jboolean arg0) const;
+		android::app::RemoteInput_Builder setChoices(JArray arg0) const;
+		android::app::RemoteInput_Builder setEditChoicesBeforeSending(jint arg0) const;
+		android::app::RemoteInput_Builder setLabel(JString arg0) const;
 	};
 } // namespace android::app
 

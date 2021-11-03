@@ -31,7 +31,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	JString InvalidClassException::getMessage()
+	JString InvalidClassException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

@@ -85,7 +85,7 @@ namespace android::net
 			"()Landroid/net/DnsResolver;"
 		);
 	}
-	void DnsResolver::query(android::net::Network arg0, JString arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5)
+	void DnsResolver::query(android::net::Network arg0, JString arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5) const
 	{
 		callMethod<void>(
 			"query",
@@ -98,7 +98,7 @@ namespace android::net
 			arg5.object()
 		);
 	}
-	void DnsResolver::query(android::net::Network arg0, JString arg1, jint arg2, jint arg3, JObject arg4, android::os::CancellationSignal arg5, JObject arg6)
+	void DnsResolver::query(android::net::Network arg0, JString arg1, jint arg2, jint arg3, JObject arg4, android::os::CancellationSignal arg5, JObject arg6) const
 	{
 		callMethod<void>(
 			"query",
@@ -112,7 +112,7 @@ namespace android::net
 			arg6.object()
 		);
 	}
-	void DnsResolver::rawQuery(android::net::Network arg0, JByteArray arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5)
+	void DnsResolver::rawQuery(android::net::Network arg0, JByteArray arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5) const
 	{
 		callMethod<void>(
 			"rawQuery",
@@ -125,7 +125,7 @@ namespace android::net
 			arg5.object()
 		);
 	}
-	void DnsResolver::rawQuery(android::net::Network arg0, JString arg1, jint arg2, jint arg3, jint arg4, JObject arg5, android::os::CancellationSignal arg6, JObject arg7)
+	void DnsResolver::rawQuery(android::net::Network arg0, JString arg1, jint arg2, jint arg3, jint arg4, JObject arg5, android::os::CancellationSignal arg6, JObject arg7) const
 	{
 		callMethod<void>(
 			"rawQuery",

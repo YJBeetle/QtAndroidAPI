@@ -29,12 +29,12 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		android::content::Intent createEnrollIntent();
-		android::content::Intent createReEnrollIntent();
-		android::content::Intent createUnEnrollIntent();
-		jint getSupportedRecognitionModes();
-		jboolean startRecognition(jint arg0);
-		jboolean stopRecognition();
+		android::content::Intent createEnrollIntent() const;
+		android::content::Intent createReEnrollIntent() const;
+		android::content::Intent createUnEnrollIntent() const;
+		jint getSupportedRecognitionModes() const;
+		jboolean startRecognition(jint arg0) const;
+		jboolean stopRecognition() const;
 	};
 } // namespace android::service::voice
 

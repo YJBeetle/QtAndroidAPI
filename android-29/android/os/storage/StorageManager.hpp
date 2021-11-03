@@ -58,27 +58,27 @@ namespace android::os::storage
 		// Constructors
 		
 		// Methods
-		void allocateBytes(java::io::FileDescriptor arg0, jlong arg1);
-		void allocateBytes(java::util::UUID arg0, jlong arg1);
-		jlong getAllocatableBytes(java::util::UUID arg0);
-		jlong getCacheQuotaBytes(java::util::UUID arg0);
-		jlong getCacheSizeBytes(java::util::UUID arg0);
-		JString getMountedObbPath(JString arg0);
-		android::os::storage::StorageVolume getPrimaryStorageVolume();
-		android::os::storage::StorageVolume getStorageVolume(android::net::Uri arg0);
-		android::os::storage::StorageVolume getStorageVolume(java::io::File arg0);
-		JObject getStorageVolumes();
-		java::util::UUID getUuidForPath(java::io::File arg0);
-		jboolean isAllocationSupported(java::io::FileDescriptor arg0);
-		jboolean isCacheBehaviorGroup(java::io::File arg0);
-		jboolean isCacheBehaviorTombstone(java::io::File arg0);
-		jboolean isEncrypted(java::io::File arg0);
-		jboolean isObbMounted(JString arg0);
-		jboolean mountObb(JString arg0, JString arg1, android::os::storage::OnObbStateChangeListener arg2);
-		android::os::ParcelFileDescriptor openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2);
-		void setCacheBehaviorGroup(java::io::File arg0, jboolean arg1);
-		void setCacheBehaviorTombstone(java::io::File arg0, jboolean arg1);
-		jboolean unmountObb(JString arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2);
+		void allocateBytes(java::io::FileDescriptor arg0, jlong arg1) const;
+		void allocateBytes(java::util::UUID arg0, jlong arg1) const;
+		jlong getAllocatableBytes(java::util::UUID arg0) const;
+		jlong getCacheQuotaBytes(java::util::UUID arg0) const;
+		jlong getCacheSizeBytes(java::util::UUID arg0) const;
+		JString getMountedObbPath(JString arg0) const;
+		android::os::storage::StorageVolume getPrimaryStorageVolume() const;
+		android::os::storage::StorageVolume getStorageVolume(android::net::Uri arg0) const;
+		android::os::storage::StorageVolume getStorageVolume(java::io::File arg0) const;
+		JObject getStorageVolumes() const;
+		java::util::UUID getUuidForPath(java::io::File arg0) const;
+		jboolean isAllocationSupported(java::io::FileDescriptor arg0) const;
+		jboolean isCacheBehaviorGroup(java::io::File arg0) const;
+		jboolean isCacheBehaviorTombstone(java::io::File arg0) const;
+		jboolean isEncrypted(java::io::File arg0) const;
+		jboolean isObbMounted(JString arg0) const;
+		jboolean mountObb(JString arg0, JString arg1, android::os::storage::OnObbStateChangeListener arg2) const;
+		android::os::ParcelFileDescriptor openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2) const;
+		void setCacheBehaviorGroup(java::io::File arg0, jboolean arg1) const;
+		void setCacheBehaviorTombstone(java::io::File arg0, jboolean arg1) const;
+		jboolean unmountObb(JString arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2) const;
 	};
 } // namespace android::os::storage
 

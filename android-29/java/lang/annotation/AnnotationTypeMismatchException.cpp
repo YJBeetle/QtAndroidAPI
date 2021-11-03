@@ -19,14 +19,14 @@ namespace java::lang::annotation
 		) {}
 	
 	// Methods
-	java::lang::reflect::Method AnnotationTypeMismatchException::element()
+	java::lang::reflect::Method AnnotationTypeMismatchException::element() const
 	{
 		return callObjectMethod(
 			"element",
 			"()Ljava/lang/reflect/Method;"
 		);
 	}
-	JString AnnotationTypeMismatchException::foundType()
+	JString AnnotationTypeMismatchException::foundType() const
 	{
 		return callObjectMethod(
 			"foundType",

@@ -29,14 +29,14 @@ namespace android::app::backup
 			arg0.object<jstring>()
 		);
 	}
-	void BackupManager::dataChanged()
+	void BackupManager::dataChanged() const
 	{
 		callMethod<void>(
 			"dataChanged",
 			"()V"
 		);
 	}
-	android::os::UserHandle BackupManager::getUserForAncestralSerialNumber(jlong arg0)
+	android::os::UserHandle BackupManager::getUserForAncestralSerialNumber(jlong arg0) const
 	{
 		return callObjectMethod(
 			"getUserForAncestralSerialNumber",
@@ -44,7 +44,7 @@ namespace android::app::backup
 			arg0
 		);
 	}
-	jint BackupManager::requestRestore(android::app::backup::RestoreObserver arg0)
+	jint BackupManager::requestRestore(android::app::backup::RestoreObserver arg0) const
 	{
 		return callMethod<jint>(
 			"requestRestore",

@@ -19,14 +19,14 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	android::renderscript::Sampler Sampler_Builder::create()
+	android::renderscript::Sampler Sampler_Builder::create() const
 	{
 		return callObjectMethod(
 			"create",
 			"()Landroid/renderscript/Sampler;"
 		);
 	}
-	void Sampler_Builder::setAnisotropy(jfloat arg0)
+	void Sampler_Builder::setAnisotropy(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAnisotropy",
@@ -34,7 +34,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Sampler_Builder::setMagnification(android::renderscript::Sampler_Value arg0)
+	void Sampler_Builder::setMagnification(android::renderscript::Sampler_Value arg0) const
 	{
 		callMethod<void>(
 			"setMagnification",
@@ -42,7 +42,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Sampler_Builder::setMinification(android::renderscript::Sampler_Value arg0)
+	void Sampler_Builder::setMinification(android::renderscript::Sampler_Value arg0) const
 	{
 		callMethod<void>(
 			"setMinification",
@@ -50,7 +50,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Sampler_Builder::setWrapS(android::renderscript::Sampler_Value arg0)
+	void Sampler_Builder::setWrapS(android::renderscript::Sampler_Value arg0) const
 	{
 		callMethod<void>(
 			"setWrapS",
@@ -58,7 +58,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Sampler_Builder::setWrapT(android::renderscript::Sampler_Value arg0)
+	void Sampler_Builder::setWrapT(android::renderscript::Sampler_Value arg0) const
 	{
 		callMethod<void>(
 			"setWrapT",

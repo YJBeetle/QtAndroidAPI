@@ -17,14 +17,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	java::security::KeyPair KeyPairGeneratorSpi::generateKeyPair()
+	java::security::KeyPair KeyPairGeneratorSpi::generateKeyPair() const
 	{
 		return callObjectMethod(
 			"generateKeyPair",
 			"()Ljava/security/KeyPair;"
 		);
 	}
-	void KeyPairGeneratorSpi::initialize(jint arg0, java::security::SecureRandom arg1)
+	void KeyPairGeneratorSpi::initialize(jint arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -33,7 +33,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyPairGeneratorSpi::initialize(JObject arg0, java::security::SecureRandom arg1)
+	void KeyPairGeneratorSpi::initialize(JObject arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"initialize",

@@ -25,15 +25,15 @@ namespace android::telephony::gsm
 		GsmCellLocation(android::os::Bundle arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		void fillInNotifierBundle(android::os::Bundle arg0);
-		jint getCid();
-		jint getLac();
-		jint getPsc();
-		jint hashCode();
-		void setLacAndCid(jint arg0, jint arg1);
-		void setStateInvalid();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		void fillInNotifierBundle(android::os::Bundle arg0) const;
+		jint getCid() const;
+		jint getLac() const;
+		jint getPsc() const;
+		jint hashCode() const;
+		void setLacAndCid(jint arg0, jint arg1) const;
+		void setStateInvalid() const;
+		JString toString() const;
 	};
 } // namespace android::telephony::gsm
 

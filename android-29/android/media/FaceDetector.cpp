@@ -20,7 +20,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint FaceDetector::findFaces(android::graphics::Bitmap arg0, JArray arg1)
+	jint FaceDetector::findFaces(android::graphics::Bitmap arg0, JArray arg1) const
 	{
 		return callMethod<jint>(
 			"findFaces",

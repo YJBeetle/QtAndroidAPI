@@ -19,7 +19,7 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void BackupAgentHelper::addHelper(JString arg0, JObject arg1)
+	void BackupAgentHelper::addHelper(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"addHelper",
@@ -28,7 +28,7 @@ namespace android::app::backup
 			arg1.object()
 		);
 	}
-	void BackupAgentHelper::onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2)
+	void BackupAgentHelper::onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2) const
 	{
 		callMethod<void>(
 			"onBackup",
@@ -38,7 +38,7 @@ namespace android::app::backup
 			arg2.object()
 		);
 	}
-	void BackupAgentHelper::onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2)
+	void BackupAgentHelper::onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2) const
 	{
 		callMethod<void>(
 			"onRestore",

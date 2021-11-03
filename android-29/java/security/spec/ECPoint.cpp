@@ -27,7 +27,7 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	jboolean ECPoint::equals(JObject arg0)
+	jboolean ECPoint::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,21 +35,21 @@ namespace java::security::spec
 			arg0.object<jobject>()
 		);
 	}
-	java::math::BigInteger ECPoint::getAffineX()
+	java::math::BigInteger ECPoint::getAffineX() const
 	{
 		return callObjectMethod(
 			"getAffineX",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger ECPoint::getAffineY()
+	java::math::BigInteger ECPoint::getAffineY() const
 	{
 		return callObjectMethod(
 			"getAffineY",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jint ECPoint::hashCode()
+	jint ECPoint::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

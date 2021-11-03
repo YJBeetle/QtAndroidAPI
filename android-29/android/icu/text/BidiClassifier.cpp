@@ -17,7 +17,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jint BidiClassifier::classify(jint arg0)
+	jint BidiClassifier::classify(jint arg0) const
 	{
 		return callMethod<jint>(
 			"classify",
@@ -25,14 +25,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JObject BidiClassifier::getContext()
+	JObject BidiClassifier::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void BidiClassifier::setContext(JObject arg0)
+	void BidiClassifier::setContext(JObject arg0) const
 	{
 		callMethod<void>(
 			"setContext",

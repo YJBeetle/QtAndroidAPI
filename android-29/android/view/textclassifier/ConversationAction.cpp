@@ -103,49 +103,49 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint ConversationAction::describeContents()
+	jint ConversationAction::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::app::RemoteAction ConversationAction::getAction()
+	android::app::RemoteAction ConversationAction::getAction() const
 	{
 		return callObjectMethod(
 			"getAction",
 			"()Landroid/app/RemoteAction;"
 		);
 	}
-	jfloat ConversationAction::getConfidenceScore()
+	jfloat ConversationAction::getConfidenceScore() const
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
 			"()F"
 		);
 	}
-	android::os::Bundle ConversationAction::getExtras()
+	android::os::Bundle ConversationAction::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString ConversationAction::getTextReply()
+	JString ConversationAction::getTextReply() const
 	{
 		return callObjectMethod(
 			"getTextReply",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString ConversationAction::getType()
+	JString ConversationAction::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ConversationAction::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConversationAction::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

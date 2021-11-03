@@ -30,8 +30,8 @@ namespace java::security::spec
 		MGF1ParameterSpec(JString arg0);
 		
 		// Methods
-		JString getDigestAlgorithm();
-		JString toString();
+		JString getDigestAlgorithm() const;
+		JString toString() const;
 	};
 } // namespace java::security::spec
 

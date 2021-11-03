@@ -21,7 +21,7 @@ namespace java::nio::charset
 		// Constructors
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace java::nio::charset
 

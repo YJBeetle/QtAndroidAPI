@@ -223,7 +223,7 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	jboolean BluetoothGattCharacteristic::addDescriptor(android::bluetooth::BluetoothGattDescriptor arg0)
+	jboolean BluetoothGattCharacteristic::addDescriptor(android::bluetooth::BluetoothGattDescriptor arg0) const
 	{
 		return callMethod<jboolean>(
 			"addDescriptor",
@@ -231,14 +231,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jint BluetoothGattCharacteristic::describeContents()
+	jint BluetoothGattCharacteristic::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::bluetooth::BluetoothGattDescriptor BluetoothGattCharacteristic::getDescriptor(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattDescriptor BluetoothGattCharacteristic::getDescriptor(java::util::UUID arg0) const
 	{
 		return callObjectMethod(
 			"getDescriptor",
@@ -246,14 +246,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothGattCharacteristic::getDescriptors()
+	JObject BluetoothGattCharacteristic::getDescriptors() const
 	{
 		return callObjectMethod(
 			"getDescriptors",
 			"()Ljava/util/List;"
 		);
 	}
-	java::lang::Float BluetoothGattCharacteristic::getFloatValue(jint arg0, jint arg1)
+	java::lang::Float BluetoothGattCharacteristic::getFloatValue(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getFloatValue",
@@ -262,14 +262,14 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	jint BluetoothGattCharacteristic::getInstanceId()
+	jint BluetoothGattCharacteristic::getInstanceId() const
 	{
 		return callMethod<jint>(
 			"getInstanceId",
 			"()I"
 		);
 	}
-	java::lang::Integer BluetoothGattCharacteristic::getIntValue(jint arg0, jint arg1)
+	java::lang::Integer BluetoothGattCharacteristic::getIntValue(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getIntValue",
@@ -278,28 +278,28 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	jint BluetoothGattCharacteristic::getPermissions()
+	jint BluetoothGattCharacteristic::getPermissions() const
 	{
 		return callMethod<jint>(
 			"getPermissions",
 			"()I"
 		);
 	}
-	jint BluetoothGattCharacteristic::getProperties()
+	jint BluetoothGattCharacteristic::getProperties() const
 	{
 		return callMethod<jint>(
 			"getProperties",
 			"()I"
 		);
 	}
-	android::bluetooth::BluetoothGattService BluetoothGattCharacteristic::getService()
+	android::bluetooth::BluetoothGattService BluetoothGattCharacteristic::getService() const
 	{
 		return callObjectMethod(
 			"getService",
 			"()Landroid/bluetooth/BluetoothGattService;"
 		);
 	}
-	JString BluetoothGattCharacteristic::getStringValue(jint arg0)
+	JString BluetoothGattCharacteristic::getStringValue(jint arg0) const
 	{
 		return callObjectMethod(
 			"getStringValue",
@@ -307,28 +307,28 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	java::util::UUID BluetoothGattCharacteristic::getUuid()
+	java::util::UUID BluetoothGattCharacteristic::getUuid() const
 	{
 		return callObjectMethod(
 			"getUuid",
 			"()Ljava/util/UUID;"
 		);
 	}
-	JByteArray BluetoothGattCharacteristic::getValue()
+	JByteArray BluetoothGattCharacteristic::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
 		);
 	}
-	jint BluetoothGattCharacteristic::getWriteType()
+	jint BluetoothGattCharacteristic::getWriteType() const
 	{
 		return callMethod<jint>(
 			"getWriteType",
 			"()I"
 		);
 	}
-	jboolean BluetoothGattCharacteristic::setValue(JByteArray arg0)
+	jboolean BluetoothGattCharacteristic::setValue(JByteArray arg0) const
 	{
 		return callMethod<jboolean>(
 			"setValue",
@@ -336,7 +336,7 @@ namespace android::bluetooth
 			arg0.object<jbyteArray>()
 		);
 	}
-	jboolean BluetoothGattCharacteristic::setValue(JString arg0)
+	jboolean BluetoothGattCharacteristic::setValue(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"setValue",
@@ -344,7 +344,7 @@ namespace android::bluetooth
 			arg0.object<jstring>()
 		);
 	}
-	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2)
+	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"setValue",
@@ -354,7 +354,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"setValue",
@@ -365,7 +365,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothGattCharacteristic::setWriteType(jint arg0)
+	void BluetoothGattCharacteristic::setWriteType(jint arg0) const
 	{
 		callMethod<void>(
 			"setWriteType",
@@ -373,7 +373,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	void BluetoothGattCharacteristic::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothGattCharacteristic::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

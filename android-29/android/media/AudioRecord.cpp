@@ -120,7 +120,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void AudioRecord::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1)
+	void AudioRecord::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addOnRoutingChangedListener",
@@ -129,126 +129,126 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	JObject AudioRecord::getActiveMicrophones()
+	JObject AudioRecord::getActiveMicrophones() const
 	{
 		return callObjectMethod(
 			"getActiveMicrophones",
 			"()Ljava/util/List;"
 		);
 	}
-	android::media::AudioRecordingConfiguration AudioRecord::getActiveRecordingConfiguration()
+	android::media::AudioRecordingConfiguration AudioRecord::getActiveRecordingConfiguration() const
 	{
 		return callObjectMethod(
 			"getActiveRecordingConfiguration",
 			"()Landroid/media/AudioRecordingConfiguration;"
 		);
 	}
-	jint AudioRecord::getAudioFormat()
+	jint AudioRecord::getAudioFormat() const
 	{
 		return callMethod<jint>(
 			"getAudioFormat",
 			"()I"
 		);
 	}
-	jint AudioRecord::getAudioSessionId()
+	jint AudioRecord::getAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
-	jint AudioRecord::getAudioSource()
+	jint AudioRecord::getAudioSource() const
 	{
 		return callMethod<jint>(
 			"getAudioSource",
 			"()I"
 		);
 	}
-	jint AudioRecord::getBufferSizeInFrames()
+	jint AudioRecord::getBufferSizeInFrames() const
 	{
 		return callMethod<jint>(
 			"getBufferSizeInFrames",
 			"()I"
 		);
 	}
-	jint AudioRecord::getChannelConfiguration()
+	jint AudioRecord::getChannelConfiguration() const
 	{
 		return callMethod<jint>(
 			"getChannelConfiguration",
 			"()I"
 		);
 	}
-	jint AudioRecord::getChannelCount()
+	jint AudioRecord::getChannelCount() const
 	{
 		return callMethod<jint>(
 			"getChannelCount",
 			"()I"
 		);
 	}
-	android::media::AudioFormat AudioRecord::getFormat()
+	android::media::AudioFormat AudioRecord::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	android::os::PersistableBundle AudioRecord::getMetrics()
+	android::os::PersistableBundle AudioRecord::getMetrics() const
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jint AudioRecord::getNotificationMarkerPosition()
+	jint AudioRecord::getNotificationMarkerPosition() const
 	{
 		return callMethod<jint>(
 			"getNotificationMarkerPosition",
 			"()I"
 		);
 	}
-	jint AudioRecord::getPositionNotificationPeriod()
+	jint AudioRecord::getPositionNotificationPeriod() const
 	{
 		return callMethod<jint>(
 			"getPositionNotificationPeriod",
 			"()I"
 		);
 	}
-	android::media::AudioDeviceInfo AudioRecord::getPreferredDevice()
+	android::media::AudioDeviceInfo AudioRecord::getPreferredDevice() const
 	{
 		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	jint AudioRecord::getRecordingState()
+	jint AudioRecord::getRecordingState() const
 	{
 		return callMethod<jint>(
 			"getRecordingState",
 			"()I"
 		);
 	}
-	android::media::AudioDeviceInfo AudioRecord::getRoutedDevice()
+	android::media::AudioDeviceInfo AudioRecord::getRoutedDevice() const
 	{
 		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	jint AudioRecord::getSampleRate()
+	jint AudioRecord::getSampleRate() const
 	{
 		return callMethod<jint>(
 			"getSampleRate",
 			"()I"
 		);
 	}
-	jint AudioRecord::getState()
+	jint AudioRecord::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jint AudioRecord::getTimestamp(android::media::AudioTimestamp arg0, jint arg1)
+	jint AudioRecord::getTimestamp(android::media::AudioTimestamp arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getTimestamp",
@@ -257,7 +257,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jint AudioRecord::read(java::nio::ByteBuffer arg0, jint arg1)
+	jint AudioRecord::read(java::nio::ByteBuffer arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -266,7 +266,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jint AudioRecord::read(JByteArray arg0, jint arg1, jint arg2)
+	jint AudioRecord::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -276,7 +276,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioRecord::read(JShortArray arg0, jint arg1, jint arg2)
+	jint AudioRecord::read(JShortArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -286,7 +286,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioRecord::read(java::nio::ByteBuffer arg0, jint arg1, jint arg2)
+	jint AudioRecord::read(java::nio::ByteBuffer arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -296,7 +296,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioRecord::read(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioRecord::read(JByteArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -307,7 +307,7 @@ namespace android::media
 			arg3
 		);
 	}
-	jint AudioRecord::read(JFloatArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioRecord::read(JFloatArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -318,7 +318,7 @@ namespace android::media
 			arg3
 		);
 	}
-	jint AudioRecord::read(JShortArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioRecord::read(JShortArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -329,7 +329,7 @@ namespace android::media
 			arg3
 		);
 	}
-	void AudioRecord::registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1)
+	void AudioRecord::registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1) const
 	{
 		callMethod<void>(
 			"registerAudioRecordingCallback",
@@ -338,14 +338,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioRecord::release()
+	void AudioRecord::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void AudioRecord::removeOnRoutingChangedListener(JObject arg0)
+	void AudioRecord::removeOnRoutingChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnRoutingChangedListener",
@@ -353,7 +353,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioRecord::setNotificationMarkerPosition(jint arg0)
+	jint AudioRecord::setNotificationMarkerPosition(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setNotificationMarkerPosition",
@@ -361,7 +361,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint AudioRecord::setPositionNotificationPeriod(jint arg0)
+	jint AudioRecord::setPositionNotificationPeriod(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setPositionNotificationPeriod",
@@ -369,7 +369,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean AudioRecord::setPreferredDevice(android::media::AudioDeviceInfo arg0)
+	jboolean AudioRecord::setPreferredDevice(android::media::AudioDeviceInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredDevice",
@@ -377,7 +377,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean AudioRecord::setPreferredMicrophoneDirection(jint arg0)
+	jboolean AudioRecord::setPreferredMicrophoneDirection(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredMicrophoneDirection",
@@ -385,7 +385,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean AudioRecord::setPreferredMicrophoneFieldDimension(jfloat arg0)
+	jboolean AudioRecord::setPreferredMicrophoneFieldDimension(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredMicrophoneFieldDimension",
@@ -393,7 +393,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioRecord::setRecordPositionUpdateListener(JObject arg0)
+	void AudioRecord::setRecordPositionUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setRecordPositionUpdateListener",
@@ -401,7 +401,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioRecord::setRecordPositionUpdateListener(JObject arg0, android::os::Handler arg1)
+	void AudioRecord::setRecordPositionUpdateListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setRecordPositionUpdateListener",
@@ -410,14 +410,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioRecord::startRecording()
+	void AudioRecord::startRecording() const
 	{
 		callMethod<void>(
 			"startRecording",
 			"()V"
 		);
 	}
-	void AudioRecord::startRecording(android::media::MediaSyncEvent arg0)
+	void AudioRecord::startRecording(android::media::MediaSyncEvent arg0) const
 	{
 		callMethod<void>(
 			"startRecording",
@@ -425,14 +425,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioRecord::stop()
+	void AudioRecord::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	void AudioRecord::unregisterAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0)
+	void AudioRecord::unregisterAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterAudioRecordingCallback",

@@ -29,16 +29,16 @@ namespace android::net::wifi::p2p
 		WifiP2pGroup(android::net::wifi::p2p::WifiP2pGroup &arg0);
 		
 		// Methods
-		jint describeContents();
-		JObject getClientList();
-		jint getFrequency();
-		JString getInterface();
-		JString getNetworkName();
-		android::net::wifi::p2p::WifiP2pDevice getOwner();
-		JString getPassphrase();
-		jboolean isGroupOwner();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getClientList() const;
+		jint getFrequency() const;
+		JString getInterface() const;
+		JString getNetworkName() const;
+		android::net::wifi::p2p::WifiP2pDevice getOwner() const;
+		JString getPassphrase() const;
+		jboolean isGroupOwner() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::p2p
 

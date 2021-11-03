@@ -52,20 +52,20 @@ namespace android::app::slice
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::app::PendingIntent getAction();
-		android::os::Bundle getBundle();
-		JString getFormat();
-		JObject getHints();
-		android::graphics::drawable::Icon getIcon();
-		jint getInt();
-		jlong getLong();
-		android::app::RemoteInput getRemoteInput();
-		android::app::slice::Slice getSlice();
-		JString getSubType();
-		JString getText();
-		jboolean hasHint(JString arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::app::PendingIntent getAction() const;
+		android::os::Bundle getBundle() const;
+		JString getFormat() const;
+		JObject getHints() const;
+		android::graphics::drawable::Icon getIcon() const;
+		jint getInt() const;
+		jlong getLong() const;
+		android::app::RemoteInput getRemoteInput() const;
+		android::app::slice::Slice getSlice() const;
+		JString getSubType() const;
+		JString getText() const;
+		jboolean hasHint(JString arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::slice
 

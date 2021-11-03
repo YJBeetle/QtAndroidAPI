@@ -27,28 +27,28 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint AlarmManager_AlarmClockInfo::describeContents()
+	jint AlarmManager_AlarmClockInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::app::PendingIntent AlarmManager_AlarmClockInfo::getShowIntent()
+	android::app::PendingIntent AlarmManager_AlarmClockInfo::getShowIntent() const
 	{
 		return callObjectMethod(
 			"getShowIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	jlong AlarmManager_AlarmClockInfo::getTriggerTime()
+	jlong AlarmManager_AlarmClockInfo::getTriggerTime() const
 	{
 		return callMethod<jlong>(
 			"getTriggerTime",
 			"()J"
 		);
 	}
-	void AlarmManager_AlarmClockInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AlarmManager_AlarmClockInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

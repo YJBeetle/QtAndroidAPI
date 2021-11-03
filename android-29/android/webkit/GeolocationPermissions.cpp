@@ -19,7 +19,7 @@ namespace android::webkit
 			"()Landroid/webkit/GeolocationPermissions;"
 		);
 	}
-	void GeolocationPermissions::allow(JString arg0)
+	void GeolocationPermissions::allow(JString arg0) const
 	{
 		callMethod<void>(
 			"allow",
@@ -27,7 +27,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void GeolocationPermissions::clear(JString arg0)
+	void GeolocationPermissions::clear(JString arg0) const
 	{
 		callMethod<void>(
 			"clear",
@@ -35,14 +35,14 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void GeolocationPermissions::clearAll()
+	void GeolocationPermissions::clearAll() const
 	{
 		callMethod<void>(
 			"clearAll",
 			"()V"
 		);
 	}
-	void GeolocationPermissions::getAllowed(JString arg0, JObject arg1)
+	void GeolocationPermissions::getAllowed(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getAllowed",
@@ -51,7 +51,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void GeolocationPermissions::getOrigins(JObject arg0)
+	void GeolocationPermissions::getOrigins(JObject arg0) const
 	{
 		callMethod<void>(
 			"getOrigins",

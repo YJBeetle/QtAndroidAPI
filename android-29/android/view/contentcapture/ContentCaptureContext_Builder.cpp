@@ -19,14 +19,14 @@ namespace android::view::contentcapture
 		) {}
 	
 	// Methods
-	android::view::contentcapture::ContentCaptureContext ContentCaptureContext_Builder::build()
+	android::view::contentcapture::ContentCaptureContext ContentCaptureContext_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/contentcapture/ContentCaptureContext;"
 		);
 	}
-	android::view::contentcapture::ContentCaptureContext_Builder ContentCaptureContext_Builder::setExtras(android::os::Bundle arg0)
+	android::view::contentcapture::ContentCaptureContext_Builder ContentCaptureContext_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",

@@ -36,12 +36,12 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		JObject clone();
-		JString format(JObject arg0);
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObject formatToCharacterIterator(JObject arg0);
-		JObject parseObject(JString arg0);
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
+		JObject clone() const;
+		JString format(JObject arg0) const;
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		JObject formatToCharacterIterator(JObject arg0) const;
+		JObject parseObject(JString arg0) const;
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
 	};
 } // namespace java::text
 

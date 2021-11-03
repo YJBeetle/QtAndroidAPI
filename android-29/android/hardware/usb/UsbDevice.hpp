@@ -34,26 +34,26 @@ namespace android::hardware::usb
 		// Methods
 		static jint getDeviceId(JString arg0);
 		static JString getDeviceName(jint arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::hardware::usb::UsbConfiguration getConfiguration(jint arg0);
-		jint getConfigurationCount();
-		jint getDeviceClass();
-		jint getDeviceId();
-		JString getDeviceName();
-		jint getDeviceProtocol();
-		jint getDeviceSubclass();
-		android::hardware::usb::UsbInterface getInterface(jint arg0);
-		jint getInterfaceCount();
-		JString getManufacturerName();
-		jint getProductId();
-		JString getProductName();
-		JString getSerialNumber();
-		jint getVendorId();
-		JString getVersion();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::hardware::usb::UsbConfiguration getConfiguration(jint arg0) const;
+		jint getConfigurationCount() const;
+		jint getDeviceClass() const;
+		jint getDeviceId() const;
+		JString getDeviceName() const;
+		jint getDeviceProtocol() const;
+		jint getDeviceSubclass() const;
+		android::hardware::usb::UsbInterface getInterface(jint arg0) const;
+		jint getInterfaceCount() const;
+		JString getManufacturerName() const;
+		jint getProductId() const;
+		JString getProductName() const;
+		JString getSerialNumber() const;
+		jint getVendorId() const;
+		JString getVersion() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::usb
 

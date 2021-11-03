@@ -53,7 +53,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	void LayoutTransition::addChild(android::view::ViewGroup arg0, android::view::View arg1)
+	void LayoutTransition::addChild(android::view::ViewGroup arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"addChild",
@@ -62,7 +62,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::addTransitionListener(JObject arg0)
+	void LayoutTransition::addTransitionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addTransitionListener",
@@ -70,7 +70,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void LayoutTransition::disableTransitionType(jint arg0)
+	void LayoutTransition::disableTransitionType(jint arg0) const
 	{
 		callMethod<void>(
 			"disableTransitionType",
@@ -78,7 +78,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void LayoutTransition::enableTransitionType(jint arg0)
+	void LayoutTransition::enableTransitionType(jint arg0) const
 	{
 		callMethod<void>(
 			"enableTransitionType",
@@ -86,7 +86,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	android::animation::Animator LayoutTransition::getAnimator(jint arg0)
+	android::animation::Animator LayoutTransition::getAnimator(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAnimator",
@@ -94,7 +94,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	jlong LayoutTransition::getDuration(jint arg0)
+	jlong LayoutTransition::getDuration(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getDuration",
@@ -102,7 +102,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	JObject LayoutTransition::getInterpolator(jint arg0)
+	JObject LayoutTransition::getInterpolator(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -110,7 +110,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	jlong LayoutTransition::getStagger(jint arg0)
+	jlong LayoutTransition::getStagger(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getStagger",
@@ -118,7 +118,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	jlong LayoutTransition::getStartDelay(jint arg0)
+	jlong LayoutTransition::getStartDelay(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",
@@ -126,14 +126,14 @@ namespace android::animation
 			arg0
 		);
 	}
-	JObject LayoutTransition::getTransitionListeners()
+	JObject LayoutTransition::getTransitionListeners() const
 	{
 		return callObjectMethod(
 			"getTransitionListeners",
 			"()Ljava/util/List;"
 		);
 	}
-	void LayoutTransition::hideChild(android::view::ViewGroup arg0, android::view::View arg1)
+	void LayoutTransition::hideChild(android::view::ViewGroup arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"hideChild",
@@ -142,7 +142,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::hideChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2)
+	void LayoutTransition::hideChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"hideChild",
@@ -152,21 +152,21 @@ namespace android::animation
 			arg2
 		);
 	}
-	jboolean LayoutTransition::isChangingLayout()
+	jboolean LayoutTransition::isChangingLayout() const
 	{
 		return callMethod<jboolean>(
 			"isChangingLayout",
 			"()Z"
 		);
 	}
-	jboolean LayoutTransition::isRunning()
+	jboolean LayoutTransition::isRunning() const
 	{
 		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
-	jboolean LayoutTransition::isTransitionTypeEnabled(jint arg0)
+	jboolean LayoutTransition::isTransitionTypeEnabled(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isTransitionTypeEnabled",
@@ -174,7 +174,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void LayoutTransition::removeChild(android::view::ViewGroup arg0, android::view::View arg1)
+	void LayoutTransition::removeChild(android::view::ViewGroup arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"removeChild",
@@ -183,7 +183,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::removeTransitionListener(JObject arg0)
+	void LayoutTransition::removeTransitionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeTransitionListener",
@@ -191,7 +191,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void LayoutTransition::setAnimateParentHierarchy(jboolean arg0)
+	void LayoutTransition::setAnimateParentHierarchy(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAnimateParentHierarchy",
@@ -199,7 +199,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void LayoutTransition::setAnimator(jint arg0, android::animation::Animator arg1)
+	void LayoutTransition::setAnimator(jint arg0, android::animation::Animator arg1) const
 	{
 		callMethod<void>(
 			"setAnimator",
@@ -208,7 +208,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::setDuration(jlong arg0)
+	void LayoutTransition::setDuration(jlong arg0) const
 	{
 		callMethod<void>(
 			"setDuration",
@@ -216,7 +216,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void LayoutTransition::setDuration(jint arg0, jlong arg1)
+	void LayoutTransition::setDuration(jint arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setDuration",
@@ -225,7 +225,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	void LayoutTransition::setInterpolator(jint arg0, JObject arg1)
+	void LayoutTransition::setInterpolator(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setInterpolator",
@@ -234,7 +234,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::setStagger(jint arg0, jlong arg1)
+	void LayoutTransition::setStagger(jint arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setStagger",
@@ -243,7 +243,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	void LayoutTransition::setStartDelay(jint arg0, jlong arg1)
+	void LayoutTransition::setStartDelay(jint arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setStartDelay",
@@ -252,7 +252,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	void LayoutTransition::showChild(android::view::ViewGroup arg0, android::view::View arg1)
+	void LayoutTransition::showChild(android::view::ViewGroup arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"showChild",
@@ -261,7 +261,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::showChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2)
+	void LayoutTransition::showChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"showChild",

@@ -97,35 +97,35 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	jfloat GridLayoutAnimationController::getColumnDelay()
+	jfloat GridLayoutAnimationController::getColumnDelay() const
 	{
 		return callMethod<jfloat>(
 			"getColumnDelay",
 			"()F"
 		);
 	}
-	jint GridLayoutAnimationController::getDirection()
+	jint GridLayoutAnimationController::getDirection() const
 	{
 		return callMethod<jint>(
 			"getDirection",
 			"()I"
 		);
 	}
-	jint GridLayoutAnimationController::getDirectionPriority()
+	jint GridLayoutAnimationController::getDirectionPriority() const
 	{
 		return callMethod<jint>(
 			"getDirectionPriority",
 			"()I"
 		);
 	}
-	jfloat GridLayoutAnimationController::getRowDelay()
+	jfloat GridLayoutAnimationController::getRowDelay() const
 	{
 		return callMethod<jfloat>(
 			"getRowDelay",
 			"()F"
 		);
 	}
-	void GridLayoutAnimationController::setColumnDelay(jfloat arg0)
+	void GridLayoutAnimationController::setColumnDelay(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setColumnDelay",
@@ -133,7 +133,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void GridLayoutAnimationController::setDirection(jint arg0)
+	void GridLayoutAnimationController::setDirection(jint arg0) const
 	{
 		callMethod<void>(
 			"setDirection",
@@ -141,7 +141,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void GridLayoutAnimationController::setDirectionPriority(jint arg0)
+	void GridLayoutAnimationController::setDirectionPriority(jint arg0) const
 	{
 		callMethod<void>(
 			"setDirectionPriority",
@@ -149,7 +149,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void GridLayoutAnimationController::setRowDelay(jfloat arg0)
+	void GridLayoutAnimationController::setRowDelay(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRowDelay",
@@ -157,7 +157,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	jboolean GridLayoutAnimationController::willOverlap()
+	jboolean GridLayoutAnimationController::willOverlap() const
 	{
 		return callMethod<jboolean>(
 			"willOverlap",

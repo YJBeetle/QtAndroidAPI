@@ -17,9 +17,9 @@ namespace android::media::browse
 		MediaBrowser_ConnectionCallback();
 		
 		// Methods
-		void onConnected();
-		void onConnectionFailed();
-		void onConnectionSuspended();
+		void onConnected() const;
+		void onConnectionFailed() const;
+		void onConnectionSuspended() const;
 	};
 } // namespace android::media::browse
 

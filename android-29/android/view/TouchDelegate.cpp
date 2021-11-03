@@ -49,14 +49,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo TouchDelegate::getTouchDelegateInfo()
+	android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo TouchDelegate::getTouchDelegateInfo() const
 	{
 		return callObjectMethod(
 			"getTouchDelegateInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;"
 		);
 	}
-	jboolean TouchDelegate::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean TouchDelegate::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -64,7 +64,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean TouchDelegate::onTouchExplorationHoverEvent(android::view::MotionEvent arg0)
+	jboolean TouchDelegate::onTouchExplorationHoverEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchExplorationHoverEvent",

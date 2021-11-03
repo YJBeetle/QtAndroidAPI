@@ -21,7 +21,7 @@ namespace android::printservice
 		// Constructors
 		
 		// Methods
-		jboolean onCustomPrinterIconLoaded(android::graphics::drawable::Icon arg0);
+		jboolean onCustomPrinterIconLoaded(android::graphics::drawable::Icon arg0) const;
 	};
 } // namespace android::printservice
 

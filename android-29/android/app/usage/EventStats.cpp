@@ -25,7 +25,7 @@ namespace android::app::usage
 		) {}
 	
 	// Methods
-	void EventStats::add(android::app::usage::EventStats arg0)
+	void EventStats::add(android::app::usage::EventStats arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -33,56 +33,56 @@ namespace android::app::usage
 			arg0.object()
 		);
 	}
-	jint EventStats::describeContents()
+	jint EventStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint EventStats::getCount()
+	jint EventStats::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	jint EventStats::getEventType()
+	jint EventStats::getEventType() const
 	{
 		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
-	jlong EventStats::getFirstTimeStamp()
+	jlong EventStats::getFirstTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getFirstTimeStamp",
 			"()J"
 		);
 	}
-	jlong EventStats::getLastEventTime()
+	jlong EventStats::getLastEventTime() const
 	{
 		return callMethod<jlong>(
 			"getLastEventTime",
 			"()J"
 		);
 	}
-	jlong EventStats::getLastTimeStamp()
+	jlong EventStats::getLastTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getLastTimeStamp",
 			"()J"
 		);
 	}
-	jlong EventStats::getTotalTime()
+	jlong EventStats::getTotalTime() const
 	{
 		return callMethod<jlong>(
 			"getTotalTime",
 			"()J"
 		);
 	}
-	void EventStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void EventStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

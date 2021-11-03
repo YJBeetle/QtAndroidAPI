@@ -19,8 +19,8 @@ namespace android::media
 		MediaDataSource();
 		
 		// Methods
-		jlong getSize();
-		jint readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3);
+		jlong getSize() const;
+		jint readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3) const;
 	};
 } // namespace android::media
 

@@ -20,7 +20,7 @@ namespace android::gesture
 		// Constructors
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::gesture
 

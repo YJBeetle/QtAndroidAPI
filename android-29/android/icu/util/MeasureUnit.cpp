@@ -1118,7 +1118,7 @@ namespace android::icu::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean MeasureUnit::equals(JObject arg0)
+	jboolean MeasureUnit::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -1126,28 +1126,28 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	JString MeasureUnit::getSubtype()
+	JString MeasureUnit::getSubtype() const
 	{
 		return callObjectMethod(
 			"getSubtype",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MeasureUnit::getType()
+	JString MeasureUnit::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MeasureUnit::hashCode()
+	jint MeasureUnit::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString MeasureUnit::toString()
+	JString MeasureUnit::toString() const
 	{
 		return callObjectMethod(
 			"toString",

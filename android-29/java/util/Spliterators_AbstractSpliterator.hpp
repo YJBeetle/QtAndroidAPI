@@ -16,9 +16,9 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jint characteristics();
-		jlong estimateSize();
-		JObject trySplit();
+		jint characteristics() const;
+		jlong estimateSize() const;
+		JObject trySplit() const;
 	};
 } // namespace java::util
 

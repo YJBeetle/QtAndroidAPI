@@ -50,15 +50,15 @@ namespace android::telephony::euicc
 		// Constructors
 		
 		// Methods
-		android::telephony::euicc::EuiccManager createForCardId(jint arg0);
-		void deleteSubscription(jint arg0, android::app::PendingIntent arg1);
-		void downloadSubscription(android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, android::app::PendingIntent arg2);
-		JString getEid();
-		android::telephony::euicc::EuiccInfo getEuiccInfo();
-		jboolean isEnabled();
-		void startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3);
-		void switchToSubscription(jint arg0, android::app::PendingIntent arg1);
-		void updateSubscriptionNickname(jint arg0, JString arg1, android::app::PendingIntent arg2);
+		android::telephony::euicc::EuiccManager createForCardId(jint arg0) const;
+		void deleteSubscription(jint arg0, android::app::PendingIntent arg1) const;
+		void downloadSubscription(android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, android::app::PendingIntent arg2) const;
+		JString getEid() const;
+		android::telephony::euicc::EuiccInfo getEuiccInfo() const;
+		jboolean isEnabled() const;
+		void startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3) const;
+		void switchToSubscription(jint arg0, android::app::PendingIntent arg1) const;
+		void updateSubscriptionNickname(jint arg0, JString arg1, android::app::PendingIntent arg2) const;
 	};
 } // namespace android::telephony::euicc
 

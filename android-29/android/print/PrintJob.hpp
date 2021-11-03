@@ -30,18 +30,18 @@ namespace android::print
 		// Constructors
 		
 		// Methods
-		void cancel();
-		jboolean equals(JObject arg0);
-		android::print::PrintJobId getId();
-		android::print::PrintJobInfo getInfo();
-		jint hashCode();
-		jboolean isBlocked();
-		jboolean isCancelled();
-		jboolean isCompleted();
-		jboolean isFailed();
-		jboolean isQueued();
-		jboolean isStarted();
-		void restart();
+		void cancel() const;
+		jboolean equals(JObject arg0) const;
+		android::print::PrintJobId getId() const;
+		android::print::PrintJobInfo getInfo() const;
+		jint hashCode() const;
+		jboolean isBlocked() const;
+		jboolean isCancelled() const;
+		jboolean isCompleted() const;
+		jboolean isFailed() const;
+		jboolean isQueued() const;
+		jboolean isStarted() const;
+		void restart() const;
 	};
 } // namespace android::print
 

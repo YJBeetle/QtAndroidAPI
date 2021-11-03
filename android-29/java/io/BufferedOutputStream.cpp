@@ -25,14 +25,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void BufferedOutputStream::flush()
+	void BufferedOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void BufferedOutputStream::write(jint arg0)
+	void BufferedOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -40,7 +40,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void BufferedOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void BufferedOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

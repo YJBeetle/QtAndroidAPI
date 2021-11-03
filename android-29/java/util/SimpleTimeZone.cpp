@@ -95,14 +95,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject SimpleTimeZone::clone()
+	JObject SimpleTimeZone::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean SimpleTimeZone::equals(JObject arg0)
+	jboolean SimpleTimeZone::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -110,14 +110,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint SimpleTimeZone::getDSTSavings()
+	jint SimpleTimeZone::getDSTSavings() const
 	{
 		return callMethod<jint>(
 			"getDSTSavings",
 			"()I"
 		);
 	}
-	jint SimpleTimeZone::getOffset(jlong arg0)
+	jint SimpleTimeZone::getOffset(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"getOffset",
@@ -125,7 +125,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint SimpleTimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	jint SimpleTimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		return callMethod<jint>(
 			"getOffset",
@@ -138,14 +138,14 @@ namespace java::util
 			arg5
 		);
 	}
-	jint SimpleTimeZone::getRawOffset()
+	jint SimpleTimeZone::getRawOffset() const
 	{
 		return callMethod<jint>(
 			"getRawOffset",
 			"()I"
 		);
 	}
-	jboolean SimpleTimeZone::hasSameRules(java::util::TimeZone arg0)
+	jboolean SimpleTimeZone::hasSameRules(java::util::TimeZone arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasSameRules",
@@ -153,14 +153,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint SimpleTimeZone::hashCode()
+	jint SimpleTimeZone::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean SimpleTimeZone::inDaylightTime(java::util::Date arg0)
+	jboolean SimpleTimeZone::inDaylightTime(java::util::Date arg0) const
 	{
 		return callMethod<jboolean>(
 			"inDaylightTime",
@@ -168,14 +168,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean SimpleTimeZone::observesDaylightTime()
+	jboolean SimpleTimeZone::observesDaylightTime() const
 	{
 		return callMethod<jboolean>(
 			"observesDaylightTime",
 			"()Z"
 		);
 	}
-	void SimpleTimeZone::setDSTSavings(jint arg0)
+	void SimpleTimeZone::setDSTSavings(jint arg0) const
 	{
 		callMethod<void>(
 			"setDSTSavings",
@@ -183,7 +183,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2)
+	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setEndRule",
@@ -193,7 +193,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2, jint arg3)
+	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setEndRule",
@@ -204,7 +204,7 @@ namespace java::util
 			arg3
 		);
 	}
-	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
+	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const
 	{
 		callMethod<void>(
 			"setEndRule",
@@ -216,7 +216,7 @@ namespace java::util
 			arg4
 		);
 	}
-	void SimpleTimeZone::setRawOffset(jint arg0)
+	void SimpleTimeZone::setRawOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setRawOffset",
@@ -224,7 +224,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2)
+	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setStartRule",
@@ -234,7 +234,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3)
+	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setStartRule",
@@ -245,7 +245,7 @@ namespace java::util
 			arg3
 		);
 	}
-	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
+	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const
 	{
 		callMethod<void>(
 			"setStartRule",
@@ -257,7 +257,7 @@ namespace java::util
 			arg4
 		);
 	}
-	void SimpleTimeZone::setStartYear(jint arg0)
+	void SimpleTimeZone::setStartYear(jint arg0) const
 	{
 		callMethod<void>(
 			"setStartYear",
@@ -265,14 +265,14 @@ namespace java::util
 			arg0
 		);
 	}
-	JString SimpleTimeZone::toString()
+	JString SimpleTimeZone::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean SimpleTimeZone::useDaylightTime()
+	jboolean SimpleTimeZone::useDaylightTime() const
 	{
 		return callMethod<jboolean>(
 			"useDaylightTime",

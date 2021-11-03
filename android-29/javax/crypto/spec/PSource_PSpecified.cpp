@@ -25,7 +25,7 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	JByteArray PSource_PSpecified::getValue()
+	JByteArray PSource_PSpecified::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",

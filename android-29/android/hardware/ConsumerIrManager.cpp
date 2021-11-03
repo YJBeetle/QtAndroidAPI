@@ -12,21 +12,21 @@ namespace android::hardware
 	// Constructors
 	
 	// Methods
-	JArray ConsumerIrManager::getCarrierFrequencies()
+	JArray ConsumerIrManager::getCarrierFrequencies() const
 	{
 		return callObjectMethod(
 			"getCarrierFrequencies",
 			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;"
 		);
 	}
-	jboolean ConsumerIrManager::hasIrEmitter()
+	jboolean ConsumerIrManager::hasIrEmitter() const
 	{
 		return callMethod<jboolean>(
 			"hasIrEmitter",
 			"()Z"
 		);
 	}
-	void ConsumerIrManager::transmit(jint arg0, JIntArray arg1)
+	void ConsumerIrManager::transmit(jint arg0, JIntArray arg1) const
 	{
 		callMethod<void>(
 			"transmit",

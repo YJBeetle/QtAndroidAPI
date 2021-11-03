@@ -23,7 +23,7 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::os
 

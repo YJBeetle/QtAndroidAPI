@@ -21,10 +21,10 @@ namespace android::text::style
 		TtsSpan_DecimalBuilder(jdouble arg0, jint arg1, jint arg2);
 		
 		// Methods
-		android::text::style::TtsSpan_DecimalBuilder setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2);
-		android::text::style::TtsSpan_DecimalBuilder setFractionalPart(JString arg0);
-		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(JString arg0);
-		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(jlong arg0);
+		android::text::style::TtsSpan_DecimalBuilder setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2) const;
+		android::text::style::TtsSpan_DecimalBuilder setFractionalPart(JString arg0) const;
+		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(JString arg0) const;
+		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(jlong arg0) const;
 	};
 } // namespace android::text::style
 

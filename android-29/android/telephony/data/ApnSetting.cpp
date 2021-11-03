@@ -199,14 +199,14 @@ namespace android::telephony::data
 	// Constructors
 	
 	// Methods
-	jint ApnSetting::describeContents()
+	jint ApnSetting::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ApnSetting::equals(JObject arg0)
+	jboolean ApnSetting::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -214,161 +214,161 @@ namespace android::telephony::data
 			arg0.object<jobject>()
 		);
 	}
-	JString ApnSetting::getApnName()
+	JString ApnSetting::getApnName() const
 	{
 		return callObjectMethod(
 			"getApnName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ApnSetting::getApnTypeBitmask()
+	jint ApnSetting::getApnTypeBitmask() const
 	{
 		return callMethod<jint>(
 			"getApnTypeBitmask",
 			"()I"
 		);
 	}
-	jint ApnSetting::getAuthType()
+	jint ApnSetting::getAuthType() const
 	{
 		return callMethod<jint>(
 			"getAuthType",
 			"()I"
 		);
 	}
-	jint ApnSetting::getCarrierId()
+	jint ApnSetting::getCarrierId() const
 	{
 		return callMethod<jint>(
 			"getCarrierId",
 			"()I"
 		);
 	}
-	JString ApnSetting::getEntryName()
+	JString ApnSetting::getEntryName() const
 	{
 		return callObjectMethod(
 			"getEntryName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ApnSetting::getId()
+	jint ApnSetting::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	java::net::InetAddress ApnSetting::getMmsProxyAddress()
+	java::net::InetAddress ApnSetting::getMmsProxyAddress() const
 	{
 		return callObjectMethod(
 			"getMmsProxyAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	JString ApnSetting::getMmsProxyAddressAsString()
+	JString ApnSetting::getMmsProxyAddressAsString() const
 	{
 		return callObjectMethod(
 			"getMmsProxyAddressAsString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ApnSetting::getMmsProxyPort()
+	jint ApnSetting::getMmsProxyPort() const
 	{
 		return callMethod<jint>(
 			"getMmsProxyPort",
 			"()I"
 		);
 	}
-	android::net::Uri ApnSetting::getMmsc()
+	android::net::Uri ApnSetting::getMmsc() const
 	{
 		return callObjectMethod(
 			"getMmsc",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint ApnSetting::getMvnoType()
+	jint ApnSetting::getMvnoType() const
 	{
 		return callMethod<jint>(
 			"getMvnoType",
 			"()I"
 		);
 	}
-	jint ApnSetting::getNetworkTypeBitmask()
+	jint ApnSetting::getNetworkTypeBitmask() const
 	{
 		return callMethod<jint>(
 			"getNetworkTypeBitmask",
 			"()I"
 		);
 	}
-	JString ApnSetting::getOperatorNumeric()
+	JString ApnSetting::getOperatorNumeric() const
 	{
 		return callObjectMethod(
 			"getOperatorNumeric",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ApnSetting::getPassword()
+	JString ApnSetting::getPassword() const
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ApnSetting::getProtocol()
+	jint ApnSetting::getProtocol() const
 	{
 		return callMethod<jint>(
 			"getProtocol",
 			"()I"
 		);
 	}
-	java::net::InetAddress ApnSetting::getProxyAddress()
+	java::net::InetAddress ApnSetting::getProxyAddress() const
 	{
 		return callObjectMethod(
 			"getProxyAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	JString ApnSetting::getProxyAddressAsString()
+	JString ApnSetting::getProxyAddressAsString() const
 	{
 		return callObjectMethod(
 			"getProxyAddressAsString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ApnSetting::getProxyPort()
+	jint ApnSetting::getProxyPort() const
 	{
 		return callMethod<jint>(
 			"getProxyPort",
 			"()I"
 		);
 	}
-	jint ApnSetting::getRoamingProtocol()
+	jint ApnSetting::getRoamingProtocol() const
 	{
 		return callMethod<jint>(
 			"getRoamingProtocol",
 			"()I"
 		);
 	}
-	JString ApnSetting::getUser()
+	JString ApnSetting::getUser() const
 	{
 		return callObjectMethod(
 			"getUser",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean ApnSetting::isEnabled()
+	jboolean ApnSetting::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	JString ApnSetting::toString()
+	JString ApnSetting::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ApnSetting::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ApnSetting::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

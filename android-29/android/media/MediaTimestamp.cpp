@@ -28,7 +28,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jboolean MediaTimestamp::equals(JObject arg0)
+	jboolean MediaTimestamp::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,35 +36,35 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jlong MediaTimestamp::getAnchorMediaTimeUs()
+	jlong MediaTimestamp::getAnchorMediaTimeUs() const
 	{
 		return callMethod<jlong>(
 			"getAnchorMediaTimeUs",
 			"()J"
 		);
 	}
-	jlong MediaTimestamp::getAnchorSystemNanoTime()
+	jlong MediaTimestamp::getAnchorSystemNanoTime() const
 	{
 		return callMethod<jlong>(
 			"getAnchorSystemNanoTime",
 			"()J"
 		);
 	}
-	jlong MediaTimestamp::getAnchorSytemNanoTime()
+	jlong MediaTimestamp::getAnchorSytemNanoTime() const
 	{
 		return callMethod<jlong>(
 			"getAnchorSytemNanoTime",
 			"()J"
 		);
 	}
-	jfloat MediaTimestamp::getMediaClockRate()
+	jfloat MediaTimestamp::getMediaClockRate() const
 	{
 		return callMethod<jfloat>(
 			"getMediaClockRate",
 			"()F"
 		);
 	}
-	JString MediaTimestamp::toString()
+	JString MediaTimestamp::toString() const
 	{
 		return callObjectMethod(
 			"toString",

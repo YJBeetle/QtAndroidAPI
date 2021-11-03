@@ -28,7 +28,7 @@ namespace android::hardware::camera2
 		CameraAccessException(jint arg0, JString arg1, JThrowable arg2);
 		
 		// Methods
-		jint getReason();
+		jint getReason() const;
 	};
 } // namespace android::hardware::camera2
 

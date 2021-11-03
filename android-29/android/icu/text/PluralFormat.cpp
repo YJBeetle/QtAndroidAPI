@@ -108,7 +108,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	void PluralFormat::applyPattern(JString arg0)
+	void PluralFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -116,7 +116,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PluralFormat::equals(android::icu::text::PluralFormat arg0)
+	jboolean PluralFormat::equals(android::icu::text::PluralFormat arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -124,7 +124,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean PluralFormat::equals(JObject arg0)
+	jboolean PluralFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -132,7 +132,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	JString PluralFormat::format(jdouble arg0)
+	JString PluralFormat::format(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -140,7 +140,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	java::lang::StringBuffer PluralFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer PluralFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -150,14 +150,14 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	jint PluralFormat::hashCode()
+	jint PluralFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::lang::Number PluralFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::lang::Number PluralFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -166,7 +166,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JObject PluralFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject PluralFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -175,7 +175,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void PluralFormat::setNumberFormat(android::icu::text::NumberFormat arg0)
+	void PluralFormat::setNumberFormat(android::icu::text::NumberFormat arg0) const
 	{
 		callMethod<void>(
 			"setNumberFormat",
@@ -183,14 +183,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString PluralFormat::toPattern()
+	JString PluralFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PluralFormat::toString()
+	JString PluralFormat::toString() const
 	{
 		return callObjectMethod(
 			"toString",

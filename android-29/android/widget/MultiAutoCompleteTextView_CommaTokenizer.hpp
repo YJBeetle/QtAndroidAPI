@@ -19,9 +19,9 @@ namespace android::widget
 		MultiAutoCompleteTextView_CommaTokenizer();
 		
 		// Methods
-		jint findTokenEnd(JString arg0, jint arg1);
-		jint findTokenStart(JString arg0, jint arg1);
-		JString terminateToken(JString arg0);
+		jint findTokenEnd(JString arg0, jint arg1) const;
+		jint findTokenStart(JString arg0, jint arg1) const;
+		JString terminateToken(JString arg0) const;
 	};
 } // namespace android::widget
 

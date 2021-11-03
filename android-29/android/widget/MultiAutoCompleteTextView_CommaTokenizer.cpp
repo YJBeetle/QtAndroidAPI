@@ -16,7 +16,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenEnd(JString arg0, jint arg1)
+	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenEnd(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"findTokenEnd",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenStart(JString arg0, jint arg1)
+	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenStart(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"findTokenStart",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString MultiAutoCompleteTextView_CommaTokenizer::terminateToken(JString arg0)
+	JString MultiAutoCompleteTextView_CommaTokenizer::terminateToken(JString arg0) const
 	{
 		return callObjectMethod(
 			"terminateToken",

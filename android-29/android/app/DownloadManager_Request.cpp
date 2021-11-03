@@ -62,7 +62,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::DownloadManager_Request DownloadManager_Request::addRequestHeader(JString arg0, JString arg1)
+	android::app::DownloadManager_Request DownloadManager_Request::addRequestHeader(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"addRequestHeader",
@@ -71,14 +71,14 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void DownloadManager_Request::allowScanningByMediaScanner()
+	void DownloadManager_Request::allowScanningByMediaScanner() const
 	{
 		callMethod<void>(
 			"allowScanningByMediaScanner",
 			"()V"
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setAllowedNetworkTypes(jint arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setAllowedNetworkTypes(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAllowedNetworkTypes",
@@ -86,7 +86,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setAllowedOverMetered(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setAllowedOverMetered(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAllowedOverMetered",
@@ -94,7 +94,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setAllowedOverRoaming(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setAllowedOverRoaming(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAllowedOverRoaming",
@@ -102,7 +102,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setDescription(JString arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -110,7 +110,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalFilesDir(android::content::Context arg0, JString arg1, JString arg2)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalFilesDir(android::content::Context arg0, JString arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"setDestinationInExternalFilesDir",
@@ -120,7 +120,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalPublicDir(JString arg0, JString arg1)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalPublicDir(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setDestinationInExternalPublicDir",
@@ -129,7 +129,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setDestinationUri(android::net::Uri arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationUri(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setDestinationUri",
@@ -137,7 +137,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setMimeType(JString arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setMimeType(JString arg0) const
 	{
 		return callObjectMethod(
 			"setMimeType",
@@ -145,7 +145,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setNotificationVisibility(jint arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setNotificationVisibility(jint arg0) const
 	{
 		return callObjectMethod(
 			"setNotificationVisibility",
@@ -153,7 +153,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setRequiresCharging(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setRequiresCharging(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setRequiresCharging",
@@ -161,7 +161,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setRequiresDeviceIdle(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setRequiresDeviceIdle(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setRequiresDeviceIdle",
@@ -169,7 +169,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setShowRunningNotification(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setShowRunningNotification(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setShowRunningNotification",
@@ -177,7 +177,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setTitle(JString arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -185,7 +185,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setVisibleInDownloadsUi(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setVisibleInDownloadsUi(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setVisibleInDownloadsUi",

@@ -13,7 +13,7 @@ namespace java::util::logging
 	// Constructors
 	
 	// Methods
-	JString Formatter::format(java::util::logging::LogRecord arg0)
+	JString Formatter::format(java::util::logging::LogRecord arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -21,7 +21,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	JString Formatter::formatMessage(java::util::logging::LogRecord arg0)
+	JString Formatter::formatMessage(java::util::logging::LogRecord arg0) const
 	{
 		return callObjectMethod(
 			"formatMessage",
@@ -29,7 +29,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	JString Formatter::getHead(java::util::logging::Handler arg0)
+	JString Formatter::getHead(java::util::logging::Handler arg0) const
 	{
 		return callObjectMethod(
 			"getHead",
@@ -37,7 +37,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	JString Formatter::getTail(java::util::logging::Handler arg0)
+	JString Formatter::getTail(java::util::logging::Handler arg0) const
 	{
 		return callObjectMethod(
 			"getTail",

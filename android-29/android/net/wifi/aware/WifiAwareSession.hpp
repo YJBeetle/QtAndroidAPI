@@ -47,11 +47,11 @@ namespace android::net::wifi::aware
 		// Constructors
 		
 		// Methods
-		void close();
-		android::net::NetworkSpecifier createNetworkSpecifierOpen(jint arg0, JByteArray arg1);
-		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(jint arg0, JByteArray arg1, JString arg2);
-		void publish(android::net::wifi::aware::PublishConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2);
-		void subscribe(android::net::wifi::aware::SubscribeConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2);
+		void close() const;
+		android::net::NetworkSpecifier createNetworkSpecifierOpen(jint arg0, JByteArray arg1) const;
+		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(jint arg0, JByteArray arg1, JString arg2) const;
+		void publish(android::net::wifi::aware::PublishConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2) const;
+		void subscribe(android::net::wifi::aware::SubscribeConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2) const;
 	};
 } // namespace android::net::wifi::aware
 

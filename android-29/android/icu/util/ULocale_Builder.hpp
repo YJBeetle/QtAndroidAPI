@@ -23,19 +23,19 @@ namespace android::icu::util
 		ULocale_Builder();
 		
 		// Methods
-		android::icu::util::ULocale_Builder addUnicodeLocaleAttribute(JString arg0);
-		android::icu::util::ULocale build();
-		android::icu::util::ULocale_Builder clear();
-		android::icu::util::ULocale_Builder clearExtensions();
-		android::icu::util::ULocale_Builder removeUnicodeLocaleAttribute(JString arg0);
-		android::icu::util::ULocale_Builder setExtension(jchar arg0, JString arg1);
-		android::icu::util::ULocale_Builder setLanguage(JString arg0);
-		android::icu::util::ULocale_Builder setLanguageTag(JString arg0);
-		android::icu::util::ULocale_Builder setLocale(android::icu::util::ULocale arg0);
-		android::icu::util::ULocale_Builder setRegion(JString arg0);
-		android::icu::util::ULocale_Builder setScript(JString arg0);
-		android::icu::util::ULocale_Builder setUnicodeLocaleKeyword(JString arg0, JString arg1);
-		android::icu::util::ULocale_Builder setVariant(JString arg0);
+		android::icu::util::ULocale_Builder addUnicodeLocaleAttribute(JString arg0) const;
+		android::icu::util::ULocale build() const;
+		android::icu::util::ULocale_Builder clear() const;
+		android::icu::util::ULocale_Builder clearExtensions() const;
+		android::icu::util::ULocale_Builder removeUnicodeLocaleAttribute(JString arg0) const;
+		android::icu::util::ULocale_Builder setExtension(jchar arg0, JString arg1) const;
+		android::icu::util::ULocale_Builder setLanguage(JString arg0) const;
+		android::icu::util::ULocale_Builder setLanguageTag(JString arg0) const;
+		android::icu::util::ULocale_Builder setLocale(android::icu::util::ULocale arg0) const;
+		android::icu::util::ULocale_Builder setRegion(JString arg0) const;
+		android::icu::util::ULocale_Builder setScript(JString arg0) const;
+		android::icu::util::ULocale_Builder setUnicodeLocaleKeyword(JString arg0, JString arg1) const;
+		android::icu::util::ULocale_Builder setVariant(JString arg0) const;
 	};
 } // namespace android::icu::util
 

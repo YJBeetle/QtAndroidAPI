@@ -28,7 +28,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void AnimatedVectorDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void AnimatedVectorDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -36,21 +36,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean AnimatedVectorDrawable::canApplyTheme()
+	jboolean AnimatedVectorDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void AnimatedVectorDrawable::clearAnimationCallbacks()
+	void AnimatedVectorDrawable::clearAnimationCallbacks() const
 	{
 		callMethod<void>(
 			"clearAnimationCallbacks",
 			"()V"
 		);
 	}
-	void AnimatedVectorDrawable::draw(android::graphics::Canvas arg0)
+	void AnimatedVectorDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -58,63 +58,63 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint AnimatedVectorDrawable::getAlpha()
+	jint AnimatedVectorDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint AnimatedVectorDrawable::getChangingConfigurations()
+	jint AnimatedVectorDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::ColorFilter AnimatedVectorDrawable::getColorFilter()
+	android::graphics::ColorFilter AnimatedVectorDrawable::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState AnimatedVectorDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState AnimatedVectorDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jint AnimatedVectorDrawable::getIntrinsicHeight()
+	jint AnimatedVectorDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint AnimatedVectorDrawable::getIntrinsicWidth()
+	jint AnimatedVectorDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint AnimatedVectorDrawable::getOpacity()
+	jint AnimatedVectorDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Insets AnimatedVectorDrawable::getOpticalInsets()
+	android::graphics::Insets AnimatedVectorDrawable::getOpticalInsets() const
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	void AnimatedVectorDrawable::getOutline(android::graphics::Outline arg0)
+	void AnimatedVectorDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -122,7 +122,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedVectorDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void AnimatedVectorDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -133,28 +133,28 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean AnimatedVectorDrawable::isRunning()
+	jboolean AnimatedVectorDrawable::isRunning() const
 	{
 		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
-	jboolean AnimatedVectorDrawable::isStateful()
+	jboolean AnimatedVectorDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable AnimatedVectorDrawable::mutate()
+	android::graphics::drawable::Drawable AnimatedVectorDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jboolean AnimatedVectorDrawable::onLayoutDirectionChanged(jint arg0)
+	jboolean AnimatedVectorDrawable::onLayoutDirectionChanged(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onLayoutDirectionChanged",
@@ -162,7 +162,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AnimatedVectorDrawable::registerAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	void AnimatedVectorDrawable::registerAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0) const
 	{
 		callMethod<void>(
 			"registerAnimationCallback",
@@ -170,14 +170,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedVectorDrawable::reset()
+	void AnimatedVectorDrawable::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void AnimatedVectorDrawable::setAlpha(jint arg0)
+	void AnimatedVectorDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -185,7 +185,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AnimatedVectorDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void AnimatedVectorDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -193,7 +193,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedVectorDrawable::setHotspot(jfloat arg0, jfloat arg1)
+	void AnimatedVectorDrawable::setHotspot(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setHotspot",
@@ -202,7 +202,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void AnimatedVectorDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void AnimatedVectorDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setHotspotBounds",
@@ -213,7 +213,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void AnimatedVectorDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void AnimatedVectorDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -221,7 +221,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedVectorDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void AnimatedVectorDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -229,7 +229,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean AnimatedVectorDrawable::setVisible(jboolean arg0, jboolean arg1)
+	jboolean AnimatedVectorDrawable::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",
@@ -238,21 +238,21 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void AnimatedVectorDrawable::start()
+	void AnimatedVectorDrawable::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void AnimatedVectorDrawable::stop()
+	void AnimatedVectorDrawable::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	jboolean AnimatedVectorDrawable::unregisterAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	jboolean AnimatedVectorDrawable::unregisterAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0) const
 	{
 		return callMethod<jboolean>(
 			"unregisterAnimationCallback",

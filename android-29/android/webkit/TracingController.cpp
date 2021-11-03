@@ -25,14 +25,14 @@ namespace android::webkit
 			"()Landroid/webkit/TracingController;"
 		);
 	}
-	jboolean TracingController::isTracing()
+	jboolean TracingController::isTracing() const
 	{
 		return callMethod<jboolean>(
 			"isTracing",
 			"()Z"
 		);
 	}
-	void TracingController::start(android::webkit::TracingConfig arg0)
+	void TracingController::start(android::webkit::TracingConfig arg0) const
 	{
 		callMethod<void>(
 			"start",
@@ -40,7 +40,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	jboolean TracingController::stop(java::io::OutputStream arg0, JObject arg1)
+	jboolean TracingController::stop(java::io::OutputStream arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"stop",

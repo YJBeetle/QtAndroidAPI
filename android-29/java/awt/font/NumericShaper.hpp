@@ -56,15 +56,15 @@ namespace java::awt::font
 		static java::awt::font::NumericShaper getContextualShaper(JObject arg0, java::awt::font::NumericShaper_Range arg1);
 		static java::awt::font::NumericShaper getShaper(jint arg0);
 		static java::awt::font::NumericShaper getShaper(java::awt::font::NumericShaper_Range arg0);
-		jboolean equals(JObject arg0);
-		JObject getRangeSet();
-		jint getRanges();
-		jint hashCode();
-		jboolean isContextual();
-		void shape(JCharArray arg0, jint arg1, jint arg2);
-		void shape(JCharArray arg0, jint arg1, jint arg2, jint arg3);
-		void shape(JCharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getRangeSet() const;
+		jint getRanges() const;
+		jint hashCode() const;
+		jboolean isContextual() const;
+		void shape(JCharArray arg0, jint arg1, jint arg2) const;
+		void shape(JCharArray arg0, jint arg1, jint arg2, jint arg3) const;
+		void shape(JCharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3) const;
+		JString toString() const;
 	};
 } // namespace java::awt::font
 

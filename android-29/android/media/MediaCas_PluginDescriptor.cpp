@@ -11,21 +11,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaCas_PluginDescriptor::getName()
+	JString MediaCas_PluginDescriptor::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaCas_PluginDescriptor::getSystemId()
+	jint MediaCas_PluginDescriptor::getSystemId() const
 	{
 		return callMethod<jint>(
 			"getSystemId",
 			"()I"
 		);
 	}
-	JString MediaCas_PluginDescriptor::toString()
+	JString MediaCas_PluginDescriptor::toString() const
 	{
 		return callObjectMethod(
 			"toString",

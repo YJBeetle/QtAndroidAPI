@@ -21,14 +21,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellSignalStrengthGsm::describeContents()
+	jint CellSignalStrengthGsm::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellSignalStrengthGsm::equals(JObject arg0)
+	jboolean CellSignalStrengthGsm::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,56 +36,56 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellSignalStrengthGsm::getAsuLevel()
+	jint CellSignalStrengthGsm::getAsuLevel() const
 	{
 		return callMethod<jint>(
 			"getAsuLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthGsm::getBitErrorRate()
+	jint CellSignalStrengthGsm::getBitErrorRate() const
 	{
 		return callMethod<jint>(
 			"getBitErrorRate",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthGsm::getDbm()
+	jint CellSignalStrengthGsm::getDbm() const
 	{
 		return callMethod<jint>(
 			"getDbm",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthGsm::getLevel()
+	jint CellSignalStrengthGsm::getLevel() const
 	{
 		return callMethod<jint>(
 			"getLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthGsm::getTimingAdvance()
+	jint CellSignalStrengthGsm::getTimingAdvance() const
 	{
 		return callMethod<jint>(
 			"getTimingAdvance",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthGsm::hashCode()
+	jint CellSignalStrengthGsm::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellSignalStrengthGsm::toString()
+	JString CellSignalStrengthGsm::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellSignalStrengthGsm::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellSignalStrengthGsm::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

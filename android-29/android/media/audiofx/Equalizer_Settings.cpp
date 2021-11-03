@@ -42,7 +42,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	JString Equalizer_Settings::toString()
+	JString Equalizer_Settings::toString() const
 	{
 		return callObjectMethod(
 			"toString",

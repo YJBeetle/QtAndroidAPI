@@ -27,17 +27,17 @@ namespace java::time::format
 		static JObject getAvailableLocales();
 		static java::time::format::DecimalStyle of(java::util::Locale arg0);
 		static java::time::format::DecimalStyle ofDefaultLocale();
-		jboolean equals(JObject arg0);
-		jchar getDecimalSeparator();
-		jchar getNegativeSign();
-		jchar getPositiveSign();
-		jchar getZeroDigit();
-		jint hashCode();
-		JString toString();
-		java::time::format::DecimalStyle withDecimalSeparator(jchar arg0);
-		java::time::format::DecimalStyle withNegativeSign(jchar arg0);
-		java::time::format::DecimalStyle withPositiveSign(jchar arg0);
-		java::time::format::DecimalStyle withZeroDigit(jchar arg0);
+		jboolean equals(JObject arg0) const;
+		jchar getDecimalSeparator() const;
+		jchar getNegativeSign() const;
+		jchar getPositiveSign() const;
+		jchar getZeroDigit() const;
+		jint hashCode() const;
+		JString toString() const;
+		java::time::format::DecimalStyle withDecimalSeparator(jchar arg0) const;
+		java::time::format::DecimalStyle withNegativeSign(jchar arg0) const;
+		java::time::format::DecimalStyle withPositiveSign(jchar arg0) const;
+		java::time::format::DecimalStyle withZeroDigit(jchar arg0) const;
 	};
 } // namespace java::time::format
 

@@ -15,49 +15,49 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	jint Script_LaunchOptions::getXEnd()
+	jint Script_LaunchOptions::getXEnd() const
 	{
 		return callMethod<jint>(
 			"getXEnd",
 			"()I"
 		);
 	}
-	jint Script_LaunchOptions::getXStart()
+	jint Script_LaunchOptions::getXStart() const
 	{
 		return callMethod<jint>(
 			"getXStart",
 			"()I"
 		);
 	}
-	jint Script_LaunchOptions::getYEnd()
+	jint Script_LaunchOptions::getYEnd() const
 	{
 		return callMethod<jint>(
 			"getYEnd",
 			"()I"
 		);
 	}
-	jint Script_LaunchOptions::getYStart()
+	jint Script_LaunchOptions::getYStart() const
 	{
 		return callMethod<jint>(
 			"getYStart",
 			"()I"
 		);
 	}
-	jint Script_LaunchOptions::getZEnd()
+	jint Script_LaunchOptions::getZEnd() const
 	{
 		return callMethod<jint>(
 			"getZEnd",
 			"()I"
 		);
 	}
-	jint Script_LaunchOptions::getZStart()
+	jint Script_LaunchOptions::getZStart() const
 	{
 		return callMethod<jint>(
 			"getZStart",
 			"()I"
 		);
 	}
-	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setX(jint arg0, jint arg1)
+	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setX(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setX",
@@ -66,7 +66,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setY(jint arg0, jint arg1)
+	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setY(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setY",
@@ -75,7 +75,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setZ(jint arg0, jint arg1)
+	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setZ(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setZ",

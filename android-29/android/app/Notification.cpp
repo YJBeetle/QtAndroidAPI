@@ -907,119 +907,119 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification Notification::clone()
+	android::app::Notification Notification::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification;"
 		);
 	}
-	jint Notification::describeContents()
+	jint Notification::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Notification::getAllowSystemGeneratedContextualActions()
+	jboolean Notification::getAllowSystemGeneratedContextualActions() const
 	{
 		return callMethod<jboolean>(
 			"getAllowSystemGeneratedContextualActions",
 			"()Z"
 		);
 	}
-	jint Notification::getBadgeIconType()
+	jint Notification::getBadgeIconType() const
 	{
 		return callMethod<jint>(
 			"getBadgeIconType",
 			"()I"
 		);
 	}
-	android::app::Notification_BubbleMetadata Notification::getBubbleMetadata()
+	android::app::Notification_BubbleMetadata Notification::getBubbleMetadata() const
 	{
 		return callObjectMethod(
 			"getBubbleMetadata",
 			"()Landroid/app/Notification$BubbleMetadata;"
 		);
 	}
-	JString Notification::getChannelId()
+	JString Notification::getChannelId() const
 	{
 		return callObjectMethod(
 			"getChannelId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Notification::getGroup()
+	JString Notification::getGroup() const
 	{
 		return callObjectMethod(
 			"getGroup",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Notification::getGroupAlertBehavior()
+	jint Notification::getGroupAlertBehavior() const
 	{
 		return callMethod<jint>(
 			"getGroupAlertBehavior",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Icon Notification::getLargeIcon()
+	android::graphics::drawable::Icon Notification::getLargeIcon() const
 	{
 		return callObjectMethod(
 			"getLargeIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	android::content::LocusId Notification::getLocusId()
+	android::content::LocusId Notification::getLocusId() const
 	{
 		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
-	JString Notification::getSettingsText()
+	JString Notification::getSettingsText() const
 	{
 		return callObjectMethod(
 			"getSettingsText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Notification::getShortcutId()
+	JString Notification::getShortcutId() const
 	{
 		return callObjectMethod(
 			"getShortcutId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::graphics::drawable::Icon Notification::getSmallIcon()
+	android::graphics::drawable::Icon Notification::getSmallIcon() const
 	{
 		return callObjectMethod(
 			"getSmallIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString Notification::getSortKey()
+	JString Notification::getSortKey() const
 	{
 		return callObjectMethod(
 			"getSortKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong Notification::getTimeoutAfter()
+	jlong Notification::getTimeoutAfter() const
 	{
 		return callMethod<jlong>(
 			"getTimeoutAfter",
 			"()J"
 		);
 	}
-	JString Notification::toString()
+	JString Notification::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Notification::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Notification::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -35,16 +35,16 @@ namespace android::app
 		MediaRouteButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint getRouteTypes();
-		void jumpDrawablesToCurrentState();
-		void onAttachedToWindow();
-		void onDetachedFromWindow();
-		jboolean performClick();
-		void setContentDescription(JString arg0);
-		void setExtendedSettingsClickListener(JObject arg0);
-		void setRouteTypes(jint arg0);
-		void setVisibility(jint arg0);
-		void showDialog();
+		jint getRouteTypes() const;
+		void jumpDrawablesToCurrentState() const;
+		void onAttachedToWindow() const;
+		void onDetachedFromWindow() const;
+		jboolean performClick() const;
+		void setContentDescription(JString arg0) const;
+		void setExtendedSettingsClickListener(JObject arg0) const;
+		void setRouteTypes(jint arg0) const;
+		void setVisibility(jint arg0) const;
+		void showDialog() const;
 	};
 } // namespace android::app
 

@@ -46,19 +46,19 @@ namespace android::telephony
 		PhoneStateListener(JObject arg0);
 		
 		// Methods
-		void onActiveDataSubscriptionIdChanged(jint arg0);
-		void onCallForwardingIndicatorChanged(jboolean arg0);
-		void onCallStateChanged(jint arg0, JString arg1);
-		void onCellInfoChanged(JObject arg0);
-		void onCellLocationChanged(android::telephony::CellLocation arg0);
-		void onDataActivity(jint arg0);
-		void onDataConnectionStateChanged(jint arg0);
-		void onDataConnectionStateChanged(jint arg0, jint arg1);
-		void onMessageWaitingIndicatorChanged(jboolean arg0);
-		void onServiceStateChanged(android::telephony::ServiceState arg0);
-		void onSignalStrengthChanged(jint arg0);
-		void onSignalStrengthsChanged(android::telephony::SignalStrength arg0);
-		void onUserMobileDataStateChanged(jboolean arg0);
+		void onActiveDataSubscriptionIdChanged(jint arg0) const;
+		void onCallForwardingIndicatorChanged(jboolean arg0) const;
+		void onCallStateChanged(jint arg0, JString arg1) const;
+		void onCellInfoChanged(JObject arg0) const;
+		void onCellLocationChanged(android::telephony::CellLocation arg0) const;
+		void onDataActivity(jint arg0) const;
+		void onDataConnectionStateChanged(jint arg0) const;
+		void onDataConnectionStateChanged(jint arg0, jint arg1) const;
+		void onMessageWaitingIndicatorChanged(jboolean arg0) const;
+		void onServiceStateChanged(android::telephony::ServiceState arg0) const;
+		void onSignalStrengthChanged(jint arg0) const;
+		void onSignalStrengthsChanged(android::telephony::SignalStrength arg0) const;
+		void onUserMobileDataStateChanged(jboolean arg0) const;
 	};
 } // namespace android::telephony
 

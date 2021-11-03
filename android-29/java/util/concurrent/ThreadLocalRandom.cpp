@@ -27,14 +27,14 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ThreadLocalRandom;"
 		);
 	}
-	JObject ThreadLocalRandom::doubles()
+	JObject ThreadLocalRandom::doubles() const
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	JObject ThreadLocalRandom::doubles(jlong arg0)
+	JObject ThreadLocalRandom::doubles(jlong arg0) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -42,7 +42,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	JObject ThreadLocalRandom::doubles(jdouble arg0, jdouble arg1)
+	JObject ThreadLocalRandom::doubles(jdouble arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -51,7 +51,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	JObject ThreadLocalRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	JObject ThreadLocalRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2) const
 	{
 		return callObjectMethod(
 			"doubles",
@@ -61,14 +61,14 @@ namespace java::util::concurrent
 			arg2
 		);
 	}
-	JObject ThreadLocalRandom::ints()
+	JObject ThreadLocalRandom::ints() const
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	JObject ThreadLocalRandom::ints(jlong arg0)
+	JObject ThreadLocalRandom::ints(jlong arg0) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -76,7 +76,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	JObject ThreadLocalRandom::ints(jint arg0, jint arg1)
+	JObject ThreadLocalRandom::ints(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -85,7 +85,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	JObject ThreadLocalRandom::ints(jlong arg0, jint arg1, jint arg2)
+	JObject ThreadLocalRandom::ints(jlong arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"ints",
@@ -95,14 +95,14 @@ namespace java::util::concurrent
 			arg2
 		);
 	}
-	JObject ThreadLocalRandom::longs()
+	JObject ThreadLocalRandom::longs() const
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	JObject ThreadLocalRandom::longs(jlong arg0)
+	JObject ThreadLocalRandom::longs(jlong arg0) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -110,7 +110,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	JObject ThreadLocalRandom::longs(jlong arg0, jlong arg1)
+	JObject ThreadLocalRandom::longs(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -119,7 +119,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	JObject ThreadLocalRandom::longs(jlong arg0, jlong arg1, jlong arg2)
+	JObject ThreadLocalRandom::longs(jlong arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"longs",
@@ -129,21 +129,21 @@ namespace java::util::concurrent
 			arg2
 		);
 	}
-	jboolean ThreadLocalRandom::nextBoolean()
+	jboolean ThreadLocalRandom::nextBoolean() const
 	{
 		return callMethod<jboolean>(
 			"nextBoolean",
 			"()Z"
 		);
 	}
-	jdouble ThreadLocalRandom::nextDouble()
+	jdouble ThreadLocalRandom::nextDouble() const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
 			"()D"
 		);
 	}
-	jdouble ThreadLocalRandom::nextDouble(jdouble arg0)
+	jdouble ThreadLocalRandom::nextDouble(jdouble arg0) const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
@@ -151,7 +151,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jdouble ThreadLocalRandom::nextDouble(jdouble arg0, jdouble arg1)
+	jdouble ThreadLocalRandom::nextDouble(jdouble arg0, jdouble arg1) const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
@@ -160,28 +160,28 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	jfloat ThreadLocalRandom::nextFloat()
+	jfloat ThreadLocalRandom::nextFloat() const
 	{
 		return callMethod<jfloat>(
 			"nextFloat",
 			"()F"
 		);
 	}
-	jdouble ThreadLocalRandom::nextGaussian()
+	jdouble ThreadLocalRandom::nextGaussian() const
 	{
 		return callMethod<jdouble>(
 			"nextGaussian",
 			"()D"
 		);
 	}
-	jint ThreadLocalRandom::nextInt()
+	jint ThreadLocalRandom::nextInt() const
 	{
 		return callMethod<jint>(
 			"nextInt",
 			"()I"
 		);
 	}
-	jint ThreadLocalRandom::nextInt(jint arg0)
+	jint ThreadLocalRandom::nextInt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"nextInt",
@@ -189,7 +189,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint ThreadLocalRandom::nextInt(jint arg0, jint arg1)
+	jint ThreadLocalRandom::nextInt(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"nextInt",
@@ -198,14 +198,14 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	jlong ThreadLocalRandom::nextLong()
+	jlong ThreadLocalRandom::nextLong() const
 	{
 		return callMethod<jlong>(
 			"nextLong",
 			"()J"
 		);
 	}
-	jlong ThreadLocalRandom::nextLong(jlong arg0)
+	jlong ThreadLocalRandom::nextLong(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"nextLong",
@@ -213,7 +213,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jlong ThreadLocalRandom::nextLong(jlong arg0, jlong arg1)
+	jlong ThreadLocalRandom::nextLong(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"nextLong",
@@ -222,7 +222,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void ThreadLocalRandom::setSeed(jlong arg0)
+	void ThreadLocalRandom::setSeed(jlong arg0) const
 	{
 		callMethod<void>(
 			"setSeed",

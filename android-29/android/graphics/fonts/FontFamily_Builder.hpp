@@ -26,8 +26,8 @@ namespace android::graphics::fonts
 		FontFamily_Builder(android::graphics::fonts::Font arg0);
 		
 		// Methods
-		android::graphics::fonts::FontFamily_Builder addFont(android::graphics::fonts::Font arg0);
-		android::graphics::fonts::FontFamily build();
+		android::graphics::fonts::FontFamily_Builder addFont(android::graphics::fonts::Font arg0) const;
+		android::graphics::fonts::FontFamily build() const;
 	};
 } // namespace android::graphics::fonts
 

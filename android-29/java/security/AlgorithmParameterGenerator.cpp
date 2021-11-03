@@ -44,28 +44,28 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::AlgorithmParameters AlgorithmParameterGenerator::generateParameters()
+	java::security::AlgorithmParameters AlgorithmParameterGenerator::generateParameters() const
 	{
 		return callObjectMethod(
 			"generateParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	JString AlgorithmParameterGenerator::getAlgorithm()
+	JString AlgorithmParameterGenerator::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider AlgorithmParameterGenerator::getProvider()
+	java::security::Provider AlgorithmParameterGenerator::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void AlgorithmParameterGenerator::init(jint arg0)
+	void AlgorithmParameterGenerator::init(jint arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -73,7 +73,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void AlgorithmParameterGenerator::init(JObject arg0)
+	void AlgorithmParameterGenerator::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -81,7 +81,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void AlgorithmParameterGenerator::init(jint arg0, java::security::SecureRandom arg1)
+	void AlgorithmParameterGenerator::init(jint arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -90,7 +90,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void AlgorithmParameterGenerator::init(JObject arg0, java::security::SecureRandom arg1)
+	void AlgorithmParameterGenerator::init(JObject arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"init",

@@ -26,35 +26,35 @@ namespace java::security
 		) {}
 	
 	// Methods
-	void KeyStore_PasswordProtection::destroy()
+	void KeyStore_PasswordProtection::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	JCharArray KeyStore_PasswordProtection::getPassword()
+	JCharArray KeyStore_PasswordProtection::getPassword() const
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()[C"
 		);
 	}
-	JString KeyStore_PasswordProtection::getProtectionAlgorithm()
+	JString KeyStore_PasswordProtection::getProtectionAlgorithm() const
 	{
 		return callObjectMethod(
 			"getProtectionAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject KeyStore_PasswordProtection::getProtectionParameters()
+	JObject KeyStore_PasswordProtection::getProtectionParameters() const
 	{
 		return callObjectMethod(
 			"getProtectionParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	jboolean KeyStore_PasswordProtection::isDestroyed()
+	jboolean KeyStore_PasswordProtection::isDestroyed() const
 	{
 		return callMethod<jboolean>(
 			"isDestroyed",

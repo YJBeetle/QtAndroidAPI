@@ -40,11 +40,11 @@ namespace android::content::pm
 		ServiceInfo(android::content::pm::ServiceInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		jint getForegroundServiceType();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		jint getForegroundServiceType() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

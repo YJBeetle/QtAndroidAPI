@@ -25,14 +25,14 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	JString WebMessage::getData()
+	JString WebMessage::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray WebMessage::getPorts()
+	JArray WebMessage::getPorts() const
 	{
 		return callObjectMethod(
 			"getPorts",

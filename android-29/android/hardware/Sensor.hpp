@@ -78,26 +78,26 @@ namespace android::hardware
 		// Constructors
 		
 		// Methods
-		jint getFifoMaxEventCount();
-		jint getFifoReservedEventCount();
-		jint getHighestDirectReportRateLevel();
-		jint getId();
-		jint getMaxDelay();
-		jfloat getMaximumRange();
-		jint getMinDelay();
-		JString getName();
-		jfloat getPower();
-		jint getReportingMode();
-		jfloat getResolution();
-		JString getStringType();
-		jint getType();
-		JString getVendor();
-		jint getVersion();
-		jboolean isAdditionalInfoSupported();
-		jboolean isDirectChannelTypeSupported(jint arg0);
-		jboolean isDynamicSensor();
-		jboolean isWakeUpSensor();
-		JString toString();
+		jint getFifoMaxEventCount() const;
+		jint getFifoReservedEventCount() const;
+		jint getHighestDirectReportRateLevel() const;
+		jint getId() const;
+		jint getMaxDelay() const;
+		jfloat getMaximumRange() const;
+		jint getMinDelay() const;
+		JString getName() const;
+		jfloat getPower() const;
+		jint getReportingMode() const;
+		jfloat getResolution() const;
+		JString getStringType() const;
+		jint getType() const;
+		JString getVendor() const;
+		jint getVersion() const;
+		jboolean isAdditionalInfoSupported() const;
+		jboolean isDirectChannelTypeSupported(jint arg0) const;
+		jboolean isDynamicSensor() const;
+		jboolean isWakeUpSensor() const;
+		JString toString() const;
 	};
 } // namespace android::hardware
 

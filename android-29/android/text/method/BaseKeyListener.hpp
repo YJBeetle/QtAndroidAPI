@@ -26,10 +26,10 @@ namespace android::text::method
 		BaseKeyListener();
 		
 		// Methods
-		jboolean backspace(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean forwardDelete(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2);
+		jboolean backspace(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		jboolean forwardDelete(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		jboolean onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2) const;
 	};
 } // namespace android::text::method
 

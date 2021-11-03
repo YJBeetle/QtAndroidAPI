@@ -22,16 +22,16 @@ namespace java::io
 		
 		// Methods
 		static java::io::Writer nullWriter();
-		java::io::Writer append(jchar arg0);
-		java::io::Writer append(JString arg0);
-		java::io::Writer append(JString arg0, jint arg1, jint arg2);
-		void close();
-		void flush();
-		void write(JCharArray arg0);
-		void write(jint arg0);
-		void write(JString arg0);
-		void write(JCharArray arg0, jint arg1, jint arg2);
-		void write(JString arg0, jint arg1, jint arg2);
+		java::io::Writer append(jchar arg0) const;
+		java::io::Writer append(JString arg0) const;
+		java::io::Writer append(JString arg0, jint arg1, jint arg2) const;
+		void close() const;
+		void flush() const;
+		void write(JCharArray arg0) const;
+		void write(jint arg0) const;
+		void write(JString arg0) const;
+		void write(JCharArray arg0, jint arg1, jint arg2) const;
+		void write(JString arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

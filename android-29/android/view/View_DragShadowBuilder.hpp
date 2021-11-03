@@ -31,9 +31,9 @@ namespace android::view
 		View_DragShadowBuilder(android::view::View arg0);
 		
 		// Methods
-		android::view::View getView();
-		void onDrawShadow(android::graphics::Canvas arg0);
-		void onProvideShadowMetrics(android::graphics::Point arg0, android::graphics::Point arg1);
+		android::view::View getView() const;
+		void onDrawShadow(android::graphics::Canvas arg0) const;
+		void onProvideShadowMetrics(android::graphics::Point arg0, android::graphics::Point arg1) const;
 	};
 } // namespace android::view
 

@@ -36,14 +36,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint Signature::describeContents()
+	jint Signature::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Signature::equals(JObject arg0)
+	jboolean Signature::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,28 +51,28 @@ namespace android::content::pm
 			arg0.object<jobject>()
 		);
 	}
-	jint Signature::hashCode()
+	jint Signature::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JByteArray Signature::toByteArray()
+	JByteArray Signature::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	JCharArray Signature::toChars()
+	JCharArray Signature::toChars() const
 	{
 		return callObjectMethod(
 			"toChars",
 			"()[C"
 		);
 	}
-	JCharArray Signature::toChars(JCharArray arg0, JIntArray arg1)
+	JCharArray Signature::toChars(JCharArray arg0, JIntArray arg1) const
 	{
 		return callObjectMethod(
 			"toChars",
@@ -81,14 +81,14 @@ namespace android::content::pm
 			arg1.object<jintArray>()
 		);
 	}
-	JString Signature::toCharsString()
+	JString Signature::toCharsString() const
 	{
 		return callObjectMethod(
 			"toCharsString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Signature::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Signature::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

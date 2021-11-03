@@ -1046,14 +1046,14 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject DateFormat::clone()
+	JObject DateFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DateFormat::equals(JObject arg0)
+	jboolean DateFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -1061,7 +1061,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	JString DateFormat::format(java::util::Date arg0)
+	JString DateFormat::format(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -1069,7 +1069,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	java::lang::StringBuffer DateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -1079,7 +1079,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DateFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -1089,7 +1089,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -1099,7 +1099,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	jboolean DateFormat::getBooleanAttribute(android::icu::text::DateFormat_BooleanAttribute arg0)
+	jboolean DateFormat::getBooleanAttribute(android::icu::text::DateFormat_BooleanAttribute arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBooleanAttribute",
@@ -1107,14 +1107,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::util::Calendar DateFormat::getCalendar()
+	android::icu::util::Calendar DateFormat::getCalendar() const
 	{
 		return callObjectMethod(
 			"getCalendar",
 			"()Landroid/icu/util/Calendar;"
 		);
 	}
-	android::icu::text::DisplayContext DateFormat::getContext(android::icu::text::DisplayContext_Type arg0)
+	android::icu::text::DisplayContext DateFormat::getContext(android::icu::text::DisplayContext_Type arg0) const
 	{
 		return callObjectMethod(
 			"getContext",
@@ -1122,42 +1122,42 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::NumberFormat DateFormat::getNumberFormat()
+	android::icu::text::NumberFormat DateFormat::getNumberFormat() const
 	{
 		return callObjectMethod(
 			"getNumberFormat",
 			"()Landroid/icu/text/NumberFormat;"
 		);
 	}
-	android::icu::util::TimeZone DateFormat::getTimeZone()
+	android::icu::util::TimeZone DateFormat::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	jint DateFormat::hashCode()
+	jint DateFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean DateFormat::isCalendarLenient()
+	jboolean DateFormat::isCalendarLenient() const
 	{
 		return callMethod<jboolean>(
 			"isCalendarLenient",
 			"()Z"
 		);
 	}
-	jboolean DateFormat::isLenient()
+	jboolean DateFormat::isLenient() const
 	{
 		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
-	java::util::Date DateFormat::parse(JString arg0)
+	java::util::Date DateFormat::parse(JString arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -1165,7 +1165,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Date DateFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::util::Date DateFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -1174,7 +1174,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void DateFormat::parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2)
+	void DateFormat::parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2) const
 	{
 		callMethod<void>(
 			"parse",
@@ -1184,7 +1184,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject DateFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject DateFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -1193,7 +1193,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::setBooleanAttribute(android::icu::text::DateFormat_BooleanAttribute arg0, jboolean arg1)
+	android::icu::text::DateFormat DateFormat::setBooleanAttribute(android::icu::text::DateFormat_BooleanAttribute arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"setBooleanAttribute",
@@ -1202,7 +1202,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	void DateFormat::setCalendar(android::icu::util::Calendar arg0)
+	void DateFormat::setCalendar(android::icu::util::Calendar arg0) const
 	{
 		callMethod<void>(
 			"setCalendar",
@@ -1210,7 +1210,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DateFormat::setCalendarLenient(jboolean arg0)
+	void DateFormat::setCalendarLenient(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCalendarLenient",
@@ -1218,7 +1218,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DateFormat::setContext(android::icu::text::DisplayContext arg0)
+	void DateFormat::setContext(android::icu::text::DisplayContext arg0) const
 	{
 		callMethod<void>(
 			"setContext",
@@ -1226,7 +1226,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DateFormat::setLenient(jboolean arg0)
+	void DateFormat::setLenient(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLenient",
@@ -1234,7 +1234,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DateFormat::setNumberFormat(android::icu::text::NumberFormat arg0)
+	void DateFormat::setNumberFormat(android::icu::text::NumberFormat arg0) const
 	{
 		callMethod<void>(
 			"setNumberFormat",
@@ -1242,7 +1242,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DateFormat::setTimeZone(android::icu::util::TimeZone arg0)
+	void DateFormat::setTimeZone(android::icu::util::TimeZone arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",

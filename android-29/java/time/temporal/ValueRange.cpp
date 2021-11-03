@@ -46,7 +46,7 @@ namespace java::time::temporal
 			arg3
 		);
 	}
-	jint ValueRange::checkValidIntValue(jlong arg0, JObject arg1)
+	jint ValueRange::checkValidIntValue(jlong arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"checkValidIntValue",
@@ -55,7 +55,7 @@ namespace java::time::temporal
 			arg1.object()
 		);
 	}
-	jlong ValueRange::checkValidValue(jlong arg0, JObject arg1)
+	jlong ValueRange::checkValidValue(jlong arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"checkValidValue",
@@ -64,7 +64,7 @@ namespace java::time::temporal
 			arg1.object()
 		);
 	}
-	jboolean ValueRange::equals(JObject arg0)
+	jboolean ValueRange::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -72,56 +72,56 @@ namespace java::time::temporal
 			arg0.object<jobject>()
 		);
 	}
-	jlong ValueRange::getLargestMinimum()
+	jlong ValueRange::getLargestMinimum() const
 	{
 		return callMethod<jlong>(
 			"getLargestMinimum",
 			"()J"
 		);
 	}
-	jlong ValueRange::getMaximum()
+	jlong ValueRange::getMaximum() const
 	{
 		return callMethod<jlong>(
 			"getMaximum",
 			"()J"
 		);
 	}
-	jlong ValueRange::getMinimum()
+	jlong ValueRange::getMinimum() const
 	{
 		return callMethod<jlong>(
 			"getMinimum",
 			"()J"
 		);
 	}
-	jlong ValueRange::getSmallestMaximum()
+	jlong ValueRange::getSmallestMaximum() const
 	{
 		return callMethod<jlong>(
 			"getSmallestMaximum",
 			"()J"
 		);
 	}
-	jint ValueRange::hashCode()
+	jint ValueRange::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ValueRange::isFixed()
+	jboolean ValueRange::isFixed() const
 	{
 		return callMethod<jboolean>(
 			"isFixed",
 			"()Z"
 		);
 	}
-	jboolean ValueRange::isIntValue()
+	jboolean ValueRange::isIntValue() const
 	{
 		return callMethod<jboolean>(
 			"isIntValue",
 			"()Z"
 		);
 	}
-	jboolean ValueRange::isValidIntValue(jlong arg0)
+	jboolean ValueRange::isValidIntValue(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"isValidIntValue",
@@ -129,7 +129,7 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	jboolean ValueRange::isValidValue(jlong arg0)
+	jboolean ValueRange::isValidValue(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"isValidValue",
@@ -137,7 +137,7 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	JString ValueRange::toString()
+	JString ValueRange::toString() const
 	{
 		return callObjectMethod(
 			"toString",

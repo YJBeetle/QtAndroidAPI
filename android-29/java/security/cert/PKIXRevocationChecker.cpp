@@ -13,56 +13,56 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	java::security::cert::PKIXRevocationChecker PKIXRevocationChecker::clone()
+	java::security::cert::PKIXRevocationChecker PKIXRevocationChecker::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/security/cert/PKIXRevocationChecker;"
 		);
 	}
-	JObject PKIXRevocationChecker::getOcspExtensions()
+	JObject PKIXRevocationChecker::getOcspExtensions() const
 	{
 		return callObjectMethod(
 			"getOcspExtensions",
 			"()Ljava/util/List;"
 		);
 	}
-	java::net::URI PKIXRevocationChecker::getOcspResponder()
+	java::net::URI PKIXRevocationChecker::getOcspResponder() const
 	{
 		return callObjectMethod(
 			"getOcspResponder",
 			"()Ljava/net/URI;"
 		);
 	}
-	java::security::cert::X509Certificate PKIXRevocationChecker::getOcspResponderCert()
+	java::security::cert::X509Certificate PKIXRevocationChecker::getOcspResponderCert() const
 	{
 		return callObjectMethod(
 			"getOcspResponderCert",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	JObject PKIXRevocationChecker::getOcspResponses()
+	JObject PKIXRevocationChecker::getOcspResponses() const
 	{
 		return callObjectMethod(
 			"getOcspResponses",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject PKIXRevocationChecker::getOptions()
+	JObject PKIXRevocationChecker::getOptions() const
 	{
 		return callObjectMethod(
 			"getOptions",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject PKIXRevocationChecker::getSoftFailExceptions()
+	JObject PKIXRevocationChecker::getSoftFailExceptions() const
 	{
 		return callObjectMethod(
 			"getSoftFailExceptions",
 			"()Ljava/util/List;"
 		);
 	}
-	void PKIXRevocationChecker::setOcspExtensions(JObject arg0)
+	void PKIXRevocationChecker::setOcspExtensions(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOcspExtensions",
@@ -70,7 +70,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXRevocationChecker::setOcspResponder(java::net::URI arg0)
+	void PKIXRevocationChecker::setOcspResponder(java::net::URI arg0) const
 	{
 		callMethod<void>(
 			"setOcspResponder",
@@ -78,7 +78,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXRevocationChecker::setOcspResponderCert(java::security::cert::X509Certificate arg0)
+	void PKIXRevocationChecker::setOcspResponderCert(java::security::cert::X509Certificate arg0) const
 	{
 		callMethod<void>(
 			"setOcspResponderCert",
@@ -86,7 +86,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXRevocationChecker::setOcspResponses(JObject arg0)
+	void PKIXRevocationChecker::setOcspResponses(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOcspResponses",
@@ -94,7 +94,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXRevocationChecker::setOptions(JObject arg0)
+	void PKIXRevocationChecker::setOptions(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOptions",

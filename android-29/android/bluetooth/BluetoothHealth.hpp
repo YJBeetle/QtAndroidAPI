@@ -47,14 +47,14 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		jboolean connectChannelToSource(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1);
-		jboolean disconnectChannel(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1, jint arg2);
-		JObject getConnectedDevices();
-		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
-		android::os::ParcelFileDescriptor getMainChannelFd(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1);
-		jboolean registerSinkAppConfiguration(JString arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2);
-		jboolean unregisterAppConfiguration(android::bluetooth::BluetoothHealthAppConfiguration arg0);
+		jboolean connectChannelToSource(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1) const;
+		jboolean disconnectChannel(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1, jint arg2) const;
+		JObject getConnectedDevices() const;
+		jint getConnectionState(android::bluetooth::BluetoothDevice arg0) const;
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0) const;
+		android::os::ParcelFileDescriptor getMainChannelFd(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1) const;
+		jboolean registerSinkAppConfiguration(JString arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2) const;
+		jboolean unregisterAppConfiguration(android::bluetooth::BluetoothHealthAppConfiguration arg0) const;
 	};
 } // namespace android::bluetooth
 

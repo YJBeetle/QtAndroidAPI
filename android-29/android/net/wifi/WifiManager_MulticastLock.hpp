@@ -22,11 +22,11 @@ namespace android::net::wifi
 		// Constructors
 		
 		// Methods
-		void acquire();
-		jboolean isHeld();
-		void release();
-		void setReferenceCounted(jboolean arg0);
-		JString toString();
+		void acquire() const;
+		jboolean isHeld() const;
+		void release() const;
+		void setReferenceCounted(jboolean arg0) const;
+		JString toString() const;
 	};
 } // namespace android::net::wifi
 

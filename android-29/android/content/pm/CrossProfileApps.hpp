@@ -30,10 +30,10 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		android::graphics::drawable::Drawable getProfileSwitchingIconDrawable(android::os::UserHandle arg0);
-		JString getProfileSwitchingLabel(android::os::UserHandle arg0);
-		JObject getTargetUserProfiles();
-		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1);
+		android::graphics::drawable::Drawable getProfileSwitchingIconDrawable(android::os::UserHandle arg0) const;
+		JString getProfileSwitchingLabel(android::os::UserHandle arg0) const;
+		JObject getTargetUserProfiles() const;
+		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
 	};
 } // namespace android::content::pm
 

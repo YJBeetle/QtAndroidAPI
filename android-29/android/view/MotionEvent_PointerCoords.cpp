@@ -75,14 +75,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void MotionEvent_PointerCoords::clear()
+	void MotionEvent_PointerCoords::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void MotionEvent_PointerCoords::copyFrom(android::view::MotionEvent_PointerCoords arg0)
+	void MotionEvent_PointerCoords::copyFrom(android::view::MotionEvent_PointerCoords arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -90,7 +90,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jfloat MotionEvent_PointerCoords::getAxisValue(jint arg0)
+	jfloat MotionEvent_PointerCoords::getAxisValue(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getAxisValue",
@@ -98,7 +98,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void MotionEvent_PointerCoords::setAxisValue(jint arg0, jfloat arg1)
+	void MotionEvent_PointerCoords::setAxisValue(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setAxisValue",

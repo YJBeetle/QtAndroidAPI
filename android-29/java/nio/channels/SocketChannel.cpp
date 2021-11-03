@@ -42,7 +42,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	java::nio::channels::SocketChannel SocketChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::SocketChannel SocketChannel::bind(java::net::SocketAddress arg0) const
 	{
 		return callObjectMethod(
 			"bind",
@@ -50,7 +50,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jboolean SocketChannel::connect(java::net::SocketAddress arg0)
+	jboolean SocketChannel::connect(java::net::SocketAddress arg0) const
 	{
 		return callMethod<jboolean>(
 			"connect",
@@ -58,42 +58,42 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jboolean SocketChannel::finishConnect()
+	jboolean SocketChannel::finishConnect() const
 	{
 		return callMethod<jboolean>(
 			"finishConnect",
 			"()Z"
 		);
 	}
-	java::net::SocketAddress SocketChannel::getLocalAddress()
+	java::net::SocketAddress SocketChannel::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	java::net::SocketAddress SocketChannel::getRemoteAddress()
+	java::net::SocketAddress SocketChannel::getRemoteAddress() const
 	{
 		return callObjectMethod(
 			"getRemoteAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jboolean SocketChannel::isConnected()
+	jboolean SocketChannel::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	jboolean SocketChannel::isConnectionPending()
+	jboolean SocketChannel::isConnectionPending() const
 	{
 		return callMethod<jboolean>(
 			"isConnectionPending",
 			"()Z"
 		);
 	}
-	jint SocketChannel::read(java::nio::ByteBuffer arg0)
+	jint SocketChannel::read(java::nio::ByteBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -101,7 +101,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jlong SocketChannel::read(JArray arg0)
+	jlong SocketChannel::read(JArray arg0) const
 	{
 		return callMethod<jlong>(
 			"read",
@@ -109,7 +109,7 @@ namespace java::nio::channels
 			arg0.object<jarray>()
 		);
 	}
-	jlong SocketChannel::read(JArray arg0, jint arg1, jint arg2)
+	jlong SocketChannel::read(JArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jlong>(
 			"read",
@@ -119,7 +119,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	java::nio::channels::SocketChannel SocketChannel::setOption(JObject arg0, JObject arg1)
+	java::nio::channels::SocketChannel SocketChannel::setOption(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setOption",
@@ -128,35 +128,35 @@ namespace java::nio::channels
 			arg1.object<jobject>()
 		);
 	}
-	java::nio::channels::SocketChannel SocketChannel::shutdownInput()
+	java::nio::channels::SocketChannel SocketChannel::shutdownInput() const
 	{
 		return callObjectMethod(
 			"shutdownInput",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	java::nio::channels::SocketChannel SocketChannel::shutdownOutput()
+	java::nio::channels::SocketChannel SocketChannel::shutdownOutput() const
 	{
 		return callObjectMethod(
 			"shutdownOutput",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	java::net::Socket SocketChannel::socket()
+	java::net::Socket SocketChannel::socket() const
 	{
 		return callObjectMethod(
 			"socket",
 			"()Ljava/net/Socket;"
 		);
 	}
-	jint SocketChannel::validOps()
+	jint SocketChannel::validOps() const
 	{
 		return callMethod<jint>(
 			"validOps",
 			"()I"
 		);
 	}
-	jint SocketChannel::write(java::nio::ByteBuffer arg0)
+	jint SocketChannel::write(java::nio::ByteBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"write",
@@ -164,7 +164,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jlong SocketChannel::write(JArray arg0)
+	jlong SocketChannel::write(JArray arg0) const
 	{
 		return callMethod<jlong>(
 			"write",
@@ -172,7 +172,7 @@ namespace java::nio::channels
 			arg0.object<jarray>()
 		);
 	}
-	jlong SocketChannel::write(JArray arg0, jint arg1, jint arg2)
+	jlong SocketChannel::write(JArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jlong>(
 			"write",

@@ -30,15 +30,15 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean getAutoExpandBubble();
-		android::app::PendingIntent getDeleteIntent();
-		jint getDesiredHeight();
-		jint getDesiredHeightResId();
-		android::graphics::drawable::Icon getIcon();
-		android::app::PendingIntent getIntent();
-		jboolean isNotificationSuppressed();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean getAutoExpandBubble() const;
+		android::app::PendingIntent getDeleteIntent() const;
+		jint getDesiredHeight() const;
+		jint getDesiredHeightResId() const;
+		android::graphics::drawable::Icon getIcon() const;
+		android::app::PendingIntent getIntent() const;
+		jboolean isNotificationSuppressed() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

@@ -36,14 +36,14 @@ namespace android::view::contentcapture
 		) {}
 	
 	// Methods
-	jint ContentCaptureCondition::describeContents()
+	jint ContentCaptureCondition::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ContentCaptureCondition::equals(JObject arg0)
+	jboolean ContentCaptureCondition::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,35 +51,35 @@ namespace android::view::contentcapture
 			arg0.object<jobject>()
 		);
 	}
-	jint ContentCaptureCondition::getFlags()
+	jint ContentCaptureCondition::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	android::content::LocusId ContentCaptureCondition::getLocusId()
+	android::content::LocusId ContentCaptureCondition::getLocusId() const
 	{
 		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jint ContentCaptureCondition::hashCode()
+	jint ContentCaptureCondition::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ContentCaptureCondition::toString()
+	JString ContentCaptureCondition::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ContentCaptureCondition::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContentCaptureCondition::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

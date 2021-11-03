@@ -32,8 +32,8 @@ namespace android::view::accessibility
 		AccessibilityRequestPreparer(android::view::View arg0, jint arg1);
 		
 		// Methods
-		android::view::View getView();
-		void onPrepareExtraData(jint arg0, JString arg1, android::os::Bundle arg2, android::os::Message arg3);
+		android::view::View getView() const;
+		void onPrepareExtraData(jint arg0, JString arg1, android::os::Bundle arg2, android::os::Message arg3) const;
 	};
 } // namespace android::view::accessibility
 

@@ -46,26 +46,26 @@ namespace android::text::style
 		TextAppearanceSpan(JString arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4);
 		
 		// Methods
-		jint describeContents();
-		JString getFamily();
-		JString getFontFeatureSettings();
-		JString getFontVariationSettings();
-		android::content::res::ColorStateList getLinkTextColor();
-		jint getShadowColor();
-		jfloat getShadowDx();
-		jfloat getShadowDy();
-		jfloat getShadowRadius();
-		jint getSpanTypeId();
-		android::content::res::ColorStateList getTextColor();
-		jint getTextFontWeight();
-		android::os::LocaleList getTextLocales();
-		jint getTextSize();
-		jint getTextStyle();
-		android::graphics::Typeface getTypeface();
-		jboolean isElegantTextHeight();
-		void updateDrawState(android::text::TextPaint arg0);
-		void updateMeasureState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getFamily() const;
+		JString getFontFeatureSettings() const;
+		JString getFontVariationSettings() const;
+		android::content::res::ColorStateList getLinkTextColor() const;
+		jint getShadowColor() const;
+		jfloat getShadowDx() const;
+		jfloat getShadowDy() const;
+		jfloat getShadowRadius() const;
+		jint getSpanTypeId() const;
+		android::content::res::ColorStateList getTextColor() const;
+		jint getTextFontWeight() const;
+		android::os::LocaleList getTextLocales() const;
+		jint getTextSize() const;
+		jint getTextStyle() const;
+		android::graphics::Typeface getTypeface() const;
+		jboolean isElegantTextHeight() const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void updateMeasureState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

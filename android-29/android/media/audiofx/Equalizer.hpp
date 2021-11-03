@@ -35,20 +35,20 @@ namespace android::media::audiofx
 		Equalizer(jint arg0, jint arg1);
 		
 		// Methods
-		jshort getBand(jint arg0);
-		JIntArray getBandFreqRange(jshort arg0);
-		jshort getBandLevel(jshort arg0);
-		JShortArray getBandLevelRange();
-		jint getCenterFreq(jshort arg0);
-		jshort getCurrentPreset();
-		jshort getNumberOfBands();
-		jshort getNumberOfPresets();
-		JString getPresetName(jshort arg0);
-		android::media::audiofx::Equalizer_Settings getProperties();
-		void setBandLevel(jshort arg0, jshort arg1);
-		void setParameterListener(JObject arg0);
-		void setProperties(android::media::audiofx::Equalizer_Settings arg0);
-		void usePreset(jshort arg0);
+		jshort getBand(jint arg0) const;
+		JIntArray getBandFreqRange(jshort arg0) const;
+		jshort getBandLevel(jshort arg0) const;
+		JShortArray getBandLevelRange() const;
+		jint getCenterFreq(jshort arg0) const;
+		jshort getCurrentPreset() const;
+		jshort getNumberOfBands() const;
+		jshort getNumberOfPresets() const;
+		JString getPresetName(jshort arg0) const;
+		android::media::audiofx::Equalizer_Settings getProperties() const;
+		void setBandLevel(jshort arg0, jshort arg1) const;
+		void setParameterListener(JObject arg0) const;
+		void setProperties(android::media::audiofx::Equalizer_Settings arg0) const;
+		void usePreset(jshort arg0) const;
 	};
 } // namespace android::media::audiofx
 

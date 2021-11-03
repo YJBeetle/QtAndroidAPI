@@ -21,7 +21,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityLte::equals(JObject arg0)
+	jboolean CellIdentityLte::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -29,91 +29,91 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellIdentityLte::getBandwidth()
+	jint CellIdentityLte::getBandwidth() const
 	{
 		return callMethod<jint>(
 			"getBandwidth",
 			"()I"
 		);
 	}
-	jint CellIdentityLte::getCi()
+	jint CellIdentityLte::getCi() const
 	{
 		return callMethod<jint>(
 			"getCi",
 			"()I"
 		);
 	}
-	jint CellIdentityLte::getEarfcn()
+	jint CellIdentityLte::getEarfcn() const
 	{
 		return callMethod<jint>(
 			"getEarfcn",
 			"()I"
 		);
 	}
-	jint CellIdentityLte::getMcc()
+	jint CellIdentityLte::getMcc() const
 	{
 		return callMethod<jint>(
 			"getMcc",
 			"()I"
 		);
 	}
-	JString CellIdentityLte::getMccString()
+	JString CellIdentityLte::getMccString() const
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityLte::getMnc()
+	jint CellIdentityLte::getMnc() const
 	{
 		return callMethod<jint>(
 			"getMnc",
 			"()I"
 		);
 	}
-	JString CellIdentityLte::getMncString()
+	JString CellIdentityLte::getMncString() const
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CellIdentityLte::getMobileNetworkOperator()
+	JString CellIdentityLte::getMobileNetworkOperator() const
 	{
 		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityLte::getPci()
+	jint CellIdentityLte::getPci() const
 	{
 		return callMethod<jint>(
 			"getPci",
 			"()I"
 		);
 	}
-	jint CellIdentityLte::getTac()
+	jint CellIdentityLte::getTac() const
 	{
 		return callMethod<jint>(
 			"getTac",
 			"()I"
 		);
 	}
-	jint CellIdentityLte::hashCode()
+	jint CellIdentityLte::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellIdentityLte::toString()
+	JString CellIdentityLte::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellIdentityLte::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellIdentityLte::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

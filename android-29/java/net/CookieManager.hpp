@@ -28,10 +28,10 @@ namespace java::net
 		CookieManager(JObject arg0, JObject arg1);
 		
 		// Methods
-		JObject get(java::net::URI arg0, JObject arg1);
-		JObject getCookieStore();
-		void put(java::net::URI arg0, JObject arg1);
-		void setCookiePolicy(JObject arg0);
+		JObject get(java::net::URI arg0, JObject arg1) const;
+		JObject getCookieStore() const;
+		void put(java::net::URI arg0, JObject arg1) const;
+		void setCookiePolicy(JObject arg0) const;
 	};
 } // namespace java::net
 

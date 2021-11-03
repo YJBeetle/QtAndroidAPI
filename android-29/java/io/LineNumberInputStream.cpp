@@ -18,21 +18,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint LineNumberInputStream::available()
+	jint LineNumberInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	jint LineNumberInputStream::getLineNumber()
+	jint LineNumberInputStream::getLineNumber() const
 	{
 		return callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
 	}
-	void LineNumberInputStream::mark(jint arg0)
+	void LineNumberInputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -40,14 +40,14 @@ namespace java::io
 			arg0
 		);
 	}
-	jint LineNumberInputStream::read()
+	jint LineNumberInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint LineNumberInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint LineNumberInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -57,14 +57,14 @@ namespace java::io
 			arg2
 		);
 	}
-	void LineNumberInputStream::reset()
+	void LineNumberInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void LineNumberInputStream::setLineNumber(jint arg0)
+	void LineNumberInputStream::setLineNumber(jint arg0) const
 	{
 		callMethod<void>(
 			"setLineNumber",
@@ -72,7 +72,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jlong LineNumberInputStream::skip(jlong arg0)
+	jlong LineNumberInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

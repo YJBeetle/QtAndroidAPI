@@ -22,7 +22,7 @@ namespace javax::crypto::spec
 		
 		// Methods
 		static jboolean isParityAdjusted(JByteArray arg0, jint arg1);
-		JByteArray getKey();
+		JByteArray getKey() const;
 	};
 } // namespace javax::crypto::spec
 

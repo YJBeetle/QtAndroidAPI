@@ -15,7 +15,7 @@ namespace android::media::projection
 		) {}
 	
 	// Methods
-	void MediaProjection_Callback::onStop()
+	void MediaProjection_Callback::onStop() const
 	{
 		callMethod<void>(
 			"onStop",

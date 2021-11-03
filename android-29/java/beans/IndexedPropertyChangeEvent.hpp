@@ -24,7 +24,7 @@ namespace java::beans
 		IndexedPropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3, jint arg4);
 		
 		// Methods
-		jint getIndex();
+		jint getIndex() const;
 	};
 } // namespace java::beans
 

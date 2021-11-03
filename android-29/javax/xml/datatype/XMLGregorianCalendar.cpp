@@ -24,7 +24,7 @@ namespace javax::xml::datatype
 		) {}
 	
 	// Methods
-	void XMLGregorianCalendar::add(javax::xml::datatype::Duration arg0)
+	void XMLGregorianCalendar::add(javax::xml::datatype::Duration arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -32,21 +32,21 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	void XMLGregorianCalendar::clear()
+	void XMLGregorianCalendar::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject XMLGregorianCalendar::clone()
+	JObject XMLGregorianCalendar::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint XMLGregorianCalendar::compare(javax::xml::datatype::XMLGregorianCalendar arg0)
+	jint XMLGregorianCalendar::compare(javax::xml::datatype::XMLGregorianCalendar arg0) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -54,7 +54,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jboolean XMLGregorianCalendar::equals(JObject arg0)
+	jboolean XMLGregorianCalendar::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -62,70 +62,70 @@ namespace javax::xml::datatype
 			arg0.object<jobject>()
 		);
 	}
-	jint XMLGregorianCalendar::getDay()
+	jint XMLGregorianCalendar::getDay() const
 	{
 		return callMethod<jint>(
 			"getDay",
 			"()I"
 		);
 	}
-	java::math::BigInteger XMLGregorianCalendar::getEon()
+	java::math::BigInteger XMLGregorianCalendar::getEon() const
 	{
 		return callObjectMethod(
 			"getEon",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger XMLGregorianCalendar::getEonAndYear()
+	java::math::BigInteger XMLGregorianCalendar::getEonAndYear() const
 	{
 		return callObjectMethod(
 			"getEonAndYear",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigDecimal XMLGregorianCalendar::getFractionalSecond()
+	java::math::BigDecimal XMLGregorianCalendar::getFractionalSecond() const
 	{
 		return callObjectMethod(
 			"getFractionalSecond",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	jint XMLGregorianCalendar::getHour()
+	jint XMLGregorianCalendar::getHour() const
 	{
 		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
-	jint XMLGregorianCalendar::getMillisecond()
+	jint XMLGregorianCalendar::getMillisecond() const
 	{
 		return callMethod<jint>(
 			"getMillisecond",
 			"()I"
 		);
 	}
-	jint XMLGregorianCalendar::getMinute()
+	jint XMLGregorianCalendar::getMinute() const
 	{
 		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
-	jint XMLGregorianCalendar::getMonth()
+	jint XMLGregorianCalendar::getMonth() const
 	{
 		return callMethod<jint>(
 			"getMonth",
 			"()I"
 		);
 	}
-	jint XMLGregorianCalendar::getSecond()
+	jint XMLGregorianCalendar::getSecond() const
 	{
 		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
-	java::util::TimeZone XMLGregorianCalendar::getTimeZone(jint arg0)
+	java::util::TimeZone XMLGregorianCalendar::getTimeZone(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTimeZone",
@@ -133,56 +133,56 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	jint XMLGregorianCalendar::getTimezone()
+	jint XMLGregorianCalendar::getTimezone() const
 	{
 		return callMethod<jint>(
 			"getTimezone",
 			"()I"
 		);
 	}
-	javax::xml::_namespace::QName XMLGregorianCalendar::getXMLSchemaType()
+	javax::xml::_namespace::QName XMLGregorianCalendar::getXMLSchemaType() const
 	{
 		return callObjectMethod(
 			"getXMLSchemaType",
 			"()Ljavax/xml/namespace/QName;"
 		);
 	}
-	jint XMLGregorianCalendar::getYear()
+	jint XMLGregorianCalendar::getYear() const
 	{
 		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
-	jint XMLGregorianCalendar::hashCode()
+	jint XMLGregorianCalendar::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean XMLGregorianCalendar::isValid()
+	jboolean XMLGregorianCalendar::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar XMLGregorianCalendar::normalize()
+	javax::xml::datatype::XMLGregorianCalendar XMLGregorianCalendar::normalize() const
 	{
 		return callObjectMethod(
 			"normalize",
 			"()Ljavax/xml/datatype/XMLGregorianCalendar;"
 		);
 	}
-	void XMLGregorianCalendar::reset()
+	void XMLGregorianCalendar::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void XMLGregorianCalendar::setDay(jint arg0)
+	void XMLGregorianCalendar::setDay(jint arg0) const
 	{
 		callMethod<void>(
 			"setDay",
@@ -190,7 +190,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setFractionalSecond(java::math::BigDecimal arg0)
+	void XMLGregorianCalendar::setFractionalSecond(java::math::BigDecimal arg0) const
 	{
 		callMethod<void>(
 			"setFractionalSecond",
@@ -198,7 +198,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	void XMLGregorianCalendar::setHour(jint arg0)
+	void XMLGregorianCalendar::setHour(jint arg0) const
 	{
 		callMethod<void>(
 			"setHour",
@@ -206,7 +206,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setMillisecond(jint arg0)
+	void XMLGregorianCalendar::setMillisecond(jint arg0) const
 	{
 		callMethod<void>(
 			"setMillisecond",
@@ -214,7 +214,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setMinute(jint arg0)
+	void XMLGregorianCalendar::setMinute(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinute",
@@ -222,7 +222,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setMonth(jint arg0)
+	void XMLGregorianCalendar::setMonth(jint arg0) const
 	{
 		callMethod<void>(
 			"setMonth",
@@ -230,7 +230,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setSecond(jint arg0)
+	void XMLGregorianCalendar::setSecond(jint arg0) const
 	{
 		callMethod<void>(
 			"setSecond",
@@ -238,7 +238,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setTime(jint arg0, jint arg1, jint arg2)
+	void XMLGregorianCalendar::setTime(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -248,7 +248,7 @@ namespace javax::xml::datatype
 			arg2
 		);
 	}
-	void XMLGregorianCalendar::setTime(jint arg0, jint arg1, jint arg2, jint arg3)
+	void XMLGregorianCalendar::setTime(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -259,7 +259,7 @@ namespace javax::xml::datatype
 			arg3
 		);
 	}
-	void XMLGregorianCalendar::setTime(jint arg0, jint arg1, jint arg2, java::math::BigDecimal arg3)
+	void XMLGregorianCalendar::setTime(jint arg0, jint arg1, jint arg2, java::math::BigDecimal arg3) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -270,7 +270,7 @@ namespace javax::xml::datatype
 			arg3.object()
 		);
 	}
-	void XMLGregorianCalendar::setTimezone(jint arg0)
+	void XMLGregorianCalendar::setTimezone(jint arg0) const
 	{
 		callMethod<void>(
 			"setTimezone",
@@ -278,7 +278,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setYear(jint arg0)
+	void XMLGregorianCalendar::setYear(jint arg0) const
 	{
 		callMethod<void>(
 			"setYear",
@@ -286,7 +286,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	void XMLGregorianCalendar::setYear(java::math::BigInteger arg0)
+	void XMLGregorianCalendar::setYear(java::math::BigInteger arg0) const
 	{
 		callMethod<void>(
 			"setYear",
@@ -294,14 +294,14 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	java::util::GregorianCalendar XMLGregorianCalendar::toGregorianCalendar()
+	java::util::GregorianCalendar XMLGregorianCalendar::toGregorianCalendar() const
 	{
 		return callObjectMethod(
 			"toGregorianCalendar",
 			"()Ljava/util/GregorianCalendar;"
 		);
 	}
-	java::util::GregorianCalendar XMLGregorianCalendar::toGregorianCalendar(java::util::TimeZone arg0, java::util::Locale arg1, javax::xml::datatype::XMLGregorianCalendar arg2)
+	java::util::GregorianCalendar XMLGregorianCalendar::toGregorianCalendar(java::util::TimeZone arg0, java::util::Locale arg1, javax::xml::datatype::XMLGregorianCalendar arg2) const
 	{
 		return callObjectMethod(
 			"toGregorianCalendar",
@@ -311,14 +311,14 @@ namespace javax::xml::datatype
 			arg2.object()
 		);
 	}
-	JString XMLGregorianCalendar::toString()
+	JString XMLGregorianCalendar::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString XMLGregorianCalendar::toXMLFormat()
+	JString XMLGregorianCalendar::toXMLFormat() const
 	{
 		return callObjectMethod(
 			"toXMLFormat",

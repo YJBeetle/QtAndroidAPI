@@ -11,7 +11,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(JObject arg0, JObject arg1)
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setFrameCommitCallback",
@@ -20,7 +20,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setVsyncTime(jlong arg0)
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setVsyncTime(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setVsyncTime",
@@ -28,7 +28,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setWaitForPresent(jboolean arg0)
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setWaitForPresent(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setWaitForPresent",
@@ -36,7 +36,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jint HardwareRenderer_FrameRenderRequest::syncAndDraw()
+	jint HardwareRenderer_FrameRenderRequest::syncAndDraw() const
 	{
 		return callMethod<jint>(
 			"syncAndDraw",

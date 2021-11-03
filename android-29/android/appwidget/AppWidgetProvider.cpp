@@ -20,7 +20,7 @@ namespace android::appwidget
 		) {}
 	
 	// Methods
-	void AppWidgetProvider::onAppWidgetOptionsChanged(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, jint arg2, android::os::Bundle arg3)
+	void AppWidgetProvider::onAppWidgetOptionsChanged(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, jint arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"onAppWidgetOptionsChanged",
@@ -31,7 +31,7 @@ namespace android::appwidget
 			arg3.object()
 		);
 	}
-	void AppWidgetProvider::onDeleted(android::content::Context arg0, JIntArray arg1)
+	void AppWidgetProvider::onDeleted(android::content::Context arg0, JIntArray arg1) const
 	{
 		callMethod<void>(
 			"onDeleted",
@@ -40,7 +40,7 @@ namespace android::appwidget
 			arg1.object<jintArray>()
 		);
 	}
-	void AppWidgetProvider::onDisabled(android::content::Context arg0)
+	void AppWidgetProvider::onDisabled(android::content::Context arg0) const
 	{
 		callMethod<void>(
 			"onDisabled",
@@ -48,7 +48,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetProvider::onEnabled(android::content::Context arg0)
+	void AppWidgetProvider::onEnabled(android::content::Context arg0) const
 	{
 		callMethod<void>(
 			"onEnabled",
@@ -56,7 +56,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetProvider::onReceive(android::content::Context arg0, android::content::Intent arg1)
+	void AppWidgetProvider::onReceive(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onReceive",
@@ -65,7 +65,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetProvider::onRestored(android::content::Context arg0, JIntArray arg1, JIntArray arg2)
+	void AppWidgetProvider::onRestored(android::content::Context arg0, JIntArray arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"onRestored",
@@ -75,7 +75,7 @@ namespace android::appwidget
 			arg2.object<jintArray>()
 		);
 	}
-	void AppWidgetProvider::onUpdate(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, JIntArray arg2)
+	void AppWidgetProvider::onUpdate(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"onUpdate",

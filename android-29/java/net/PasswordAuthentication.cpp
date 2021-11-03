@@ -19,14 +19,14 @@ namespace java::net
 		) {}
 	
 	// Methods
-	JCharArray PasswordAuthentication::getPassword()
+	JCharArray PasswordAuthentication::getPassword() const
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()[C"
 		);
 	}
-	JString PasswordAuthentication::getUserName()
+	JString PasswordAuthentication::getUserName() const
 	{
 		return callObjectMethod(
 			"getUserName",

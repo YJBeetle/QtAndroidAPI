@@ -17,7 +17,7 @@ namespace java::nio::charset
 		) {}
 	
 	// Methods
-	JString UnsupportedCharsetException::getCharsetName()
+	JString UnsupportedCharsetException::getCharsetName() const
 	{
 		return callObjectMethod(
 			"getCharsetName",

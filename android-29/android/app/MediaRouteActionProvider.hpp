@@ -26,13 +26,13 @@ namespace android::app
 		MediaRouteActionProvider(android::content::Context arg0);
 		
 		// Methods
-		jboolean isVisible();
-		android::view::View onCreateActionView();
-		android::view::View onCreateActionView(JObject arg0);
-		jboolean onPerformDefaultAction();
-		jboolean overridesItemVisibility();
-		void setExtendedSettingsClickListener(JObject arg0);
-		void setRouteTypes(jint arg0);
+		jboolean isVisible() const;
+		android::view::View onCreateActionView() const;
+		android::view::View onCreateActionView(JObject arg0) const;
+		jboolean onPerformDefaultAction() const;
+		jboolean overridesItemVisibility() const;
+		void setExtendedSettingsClickListener(JObject arg0) const;
+		void setRouteTypes(jint arg0) const;
 	};
 } // namespace android::app
 

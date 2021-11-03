@@ -68,21 +68,21 @@ namespace android::animation
 		static android::animation::ObjectAnimator ofObject(JObject arg0, JString arg1, JObject arg2, JObjectArray arg3);
 		static android::animation::ObjectAnimator ofObject(JObject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, JObject arg3, JObjectArray arg4);
 		static android::animation::ObjectAnimator ofPropertyValuesHolder(JObject arg0, JArray arg1);
-		android::animation::ObjectAnimator clone();
-		JString getPropertyName();
-		JObject getTarget();
-		void setAutoCancel(jboolean arg0);
-		android::animation::ObjectAnimator setDuration(jlong arg0);
-		void setFloatValues(JFloatArray arg0);
-		void setIntValues(JIntArray arg0);
-		void setObjectValues(JObjectArray arg0);
-		void setProperty(android::util::Property arg0);
-		void setPropertyName(JString arg0);
-		void setTarget(JObject arg0);
-		void setupEndValues();
-		void setupStartValues();
-		void start();
-		JString toString();
+		android::animation::ObjectAnimator clone() const;
+		JString getPropertyName() const;
+		JObject getTarget() const;
+		void setAutoCancel(jboolean arg0) const;
+		android::animation::ObjectAnimator setDuration(jlong arg0) const;
+		void setFloatValues(JFloatArray arg0) const;
+		void setIntValues(JIntArray arg0) const;
+		void setObjectValues(JObjectArray arg0) const;
+		void setProperty(android::util::Property arg0) const;
+		void setPropertyName(JString arg0) const;
+		void setTarget(JObject arg0) const;
+		void setupEndValues() const;
+		void setupStartValues() const;
+		void start() const;
+		JString toString() const;
 	};
 } // namespace android::animation
 

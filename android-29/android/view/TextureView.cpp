@@ -49,14 +49,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void TextureView::buildLayer()
+	void TextureView::buildLayer() const
 	{
 		callMethod<void>(
 			"buildLayer",
 			"()V"
 		);
 	}
-	void TextureView::draw(android::graphics::Canvas arg0)
+	void TextureView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -64,14 +64,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::graphics::Bitmap TextureView::getBitmap()
+	android::graphics::Bitmap TextureView::getBitmap() const
 	{
 		return callObjectMethod(
 			"getBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::graphics::Bitmap TextureView::getBitmap(android::graphics::Bitmap arg0)
+	android::graphics::Bitmap TextureView::getBitmap(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -79,7 +79,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::graphics::Bitmap TextureView::getBitmap(jint arg0, jint arg1)
+	android::graphics::Bitmap TextureView::getBitmap(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -88,28 +88,28 @@ namespace android::view
 			arg1
 		);
 	}
-	jint TextureView::getLayerType()
+	jint TextureView::getLayerType() const
 	{
 		return callMethod<jint>(
 			"getLayerType",
 			"()I"
 		);
 	}
-	android::graphics::SurfaceTexture TextureView::getSurfaceTexture()
+	android::graphics::SurfaceTexture TextureView::getSurfaceTexture() const
 	{
 		return callObjectMethod(
 			"getSurfaceTexture",
 			"()Landroid/graphics/SurfaceTexture;"
 		);
 	}
-	JObject TextureView::getSurfaceTextureListener()
+	JObject TextureView::getSurfaceTextureListener() const
 	{
 		return callObjectMethod(
 			"getSurfaceTextureListener",
 			"()Landroid/view/TextureView$SurfaceTextureListener;"
 		);
 	}
-	android::graphics::Matrix TextureView::getTransform(android::graphics::Matrix arg0)
+	android::graphics::Matrix TextureView::getTransform(android::graphics::Matrix arg0) const
 	{
 		return callObjectMethod(
 			"getTransform",
@@ -117,28 +117,28 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean TextureView::isAvailable()
+	jboolean TextureView::isAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isAvailable",
 			"()Z"
 		);
 	}
-	jboolean TextureView::isOpaque()
+	jboolean TextureView::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	android::graphics::Canvas TextureView::lockCanvas()
+	android::graphics::Canvas TextureView::lockCanvas() const
 	{
 		return callObjectMethod(
 			"lockCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
-	android::graphics::Canvas TextureView::lockCanvas(android::graphics::Rect arg0)
+	android::graphics::Canvas TextureView::lockCanvas(android::graphics::Rect arg0) const
 	{
 		return callObjectMethod(
 			"lockCanvas",
@@ -146,7 +146,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::setBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void TextureView::setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawable",
@@ -154,7 +154,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::setForeground(android::graphics::drawable::Drawable arg0)
+	void TextureView::setForeground(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setForeground",
@@ -162,7 +162,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::setLayerPaint(android::graphics::Paint arg0)
+	void TextureView::setLayerPaint(android::graphics::Paint arg0) const
 	{
 		callMethod<void>(
 			"setLayerPaint",
@@ -170,7 +170,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::setLayerType(jint arg0, android::graphics::Paint arg1)
+	void TextureView::setLayerType(jint arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"setLayerType",
@@ -179,7 +179,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void TextureView::setOpaque(jboolean arg0)
+	void TextureView::setOpaque(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOpaque",
@@ -187,7 +187,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void TextureView::setSurfaceTexture(android::graphics::SurfaceTexture arg0)
+	void TextureView::setSurfaceTexture(android::graphics::SurfaceTexture arg0) const
 	{
 		callMethod<void>(
 			"setSurfaceTexture",
@@ -195,7 +195,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::setSurfaceTextureListener(JObject arg0)
+	void TextureView::setSurfaceTextureListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setSurfaceTextureListener",
@@ -203,7 +203,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::setTransform(android::graphics::Matrix arg0)
+	void TextureView::setTransform(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"setTransform",
@@ -211,7 +211,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::unlockCanvasAndPost(android::graphics::Canvas arg0)
+	void TextureView::unlockCanvasAndPost(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"unlockCanvasAndPost",

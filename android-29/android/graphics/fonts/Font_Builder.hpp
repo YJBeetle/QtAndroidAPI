@@ -49,12 +49,12 @@ namespace android::graphics::fonts
 		Font_Builder(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);
 		
 		// Methods
-		android::graphics::fonts::Font build();
-		android::graphics::fonts::Font_Builder setFontVariationSettings(JArray arg0);
-		android::graphics::fonts::Font_Builder setFontVariationSettings(JString arg0);
-		android::graphics::fonts::Font_Builder setSlant(jint arg0);
-		android::graphics::fonts::Font_Builder setTtcIndex(jint arg0);
-		android::graphics::fonts::Font_Builder setWeight(jint arg0);
+		android::graphics::fonts::Font build() const;
+		android::graphics::fonts::Font_Builder setFontVariationSettings(JArray arg0) const;
+		android::graphics::fonts::Font_Builder setFontVariationSettings(JString arg0) const;
+		android::graphics::fonts::Font_Builder setSlant(jint arg0) const;
+		android::graphics::fonts::Font_Builder setTtcIndex(jint arg0) const;
+		android::graphics::fonts::Font_Builder setWeight(jint arg0) const;
 	};
 } // namespace android::graphics::fonts
 

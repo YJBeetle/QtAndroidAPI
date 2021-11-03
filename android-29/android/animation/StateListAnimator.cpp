@@ -18,7 +18,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	void StateListAnimator::addState(JIntArray arg0, android::animation::Animator arg1)
+	void StateListAnimator::addState(JIntArray arg0, android::animation::Animator arg1) const
 	{
 		callMethod<void>(
 			"addState",
@@ -27,14 +27,14 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	android::animation::StateListAnimator StateListAnimator::clone()
+	android::animation::StateListAnimator StateListAnimator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/StateListAnimator;"
 		);
 	}
-	void StateListAnimator::jumpToCurrentState()
+	void StateListAnimator::jumpToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpToCurrentState",

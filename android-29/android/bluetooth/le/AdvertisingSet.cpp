@@ -13,7 +13,7 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	void AdvertisingSet::enableAdvertising(jboolean arg0, jint arg1, jint arg2)
+	void AdvertisingSet::enableAdvertising(jboolean arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"enableAdvertising",
@@ -23,7 +23,7 @@ namespace android::bluetooth::le
 			arg2
 		);
 	}
-	void AdvertisingSet::setAdvertisingData(android::bluetooth::le::AdvertiseData arg0)
+	void AdvertisingSet::setAdvertisingData(android::bluetooth::le::AdvertiseData arg0) const
 	{
 		callMethod<void>(
 			"setAdvertisingData",
@@ -31,7 +31,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void AdvertisingSet::setAdvertisingParameters(android::bluetooth::le::AdvertisingSetParameters arg0)
+	void AdvertisingSet::setAdvertisingParameters(android::bluetooth::le::AdvertisingSetParameters arg0) const
 	{
 		callMethod<void>(
 			"setAdvertisingParameters",
@@ -39,7 +39,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void AdvertisingSet::setPeriodicAdvertisingData(android::bluetooth::le::AdvertiseData arg0)
+	void AdvertisingSet::setPeriodicAdvertisingData(android::bluetooth::le::AdvertiseData arg0) const
 	{
 		callMethod<void>(
 			"setPeriodicAdvertisingData",
@@ -47,7 +47,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void AdvertisingSet::setPeriodicAdvertisingEnabled(jboolean arg0)
+	void AdvertisingSet::setPeriodicAdvertisingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPeriodicAdvertisingEnabled",
@@ -55,7 +55,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	void AdvertisingSet::setPeriodicAdvertisingParameters(android::bluetooth::le::PeriodicAdvertisingParameters arg0)
+	void AdvertisingSet::setPeriodicAdvertisingParameters(android::bluetooth::le::PeriodicAdvertisingParameters arg0) const
 	{
 		callMethod<void>(
 			"setPeriodicAdvertisingParameters",
@@ -63,7 +63,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void AdvertisingSet::setScanResponseData(android::bluetooth::le::AdvertiseData arg0)
+	void AdvertisingSet::setScanResponseData(android::bluetooth::le::AdvertiseData arg0) const
 	{
 		callMethod<void>(
 			"setScanResponseData",

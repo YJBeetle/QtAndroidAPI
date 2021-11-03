@@ -59,14 +59,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jint PeriodicSync::describeContents()
+	jint PeriodicSync::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PeriodicSync::equals(JObject arg0)
+	jboolean PeriodicSync::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -74,14 +74,14 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	JString PeriodicSync::toString()
+	JString PeriodicSync::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PeriodicSync::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PeriodicSync::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

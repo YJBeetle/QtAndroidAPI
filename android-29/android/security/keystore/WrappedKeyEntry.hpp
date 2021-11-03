@@ -20,10 +20,10 @@ namespace android::security::keystore
 		WrappedKeyEntry(JByteArray arg0, JString arg1, JString arg2, JObject arg3);
 		
 		// Methods
-		JObject getAlgorithmParameterSpec();
-		JString getTransformation();
-		JByteArray getWrappedKeyBytes();
-		JString getWrappingKeyAlias();
+		JObject getAlgorithmParameterSpec() const;
+		JString getTransformation() const;
+		JByteArray getWrappedKeyBytes() const;
+		JString getWrappingKeyAlias() const;
 	};
 } // namespace android::security::keystore
 

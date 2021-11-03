@@ -25,10 +25,10 @@ namespace android::media::midi
 		// Constructors
 		
 		// Methods
-		void close();
-		jint getPortNumber();
-		void onConnect(android::media::midi::MidiReceiver arg0);
-		void onDisconnect(android::media::midi::MidiReceiver arg0);
+		void close() const;
+		jint getPortNumber() const;
+		void onConnect(android::media::midi::MidiReceiver arg0) const;
+		void onDisconnect(android::media::midi::MidiReceiver arg0) const;
 	};
 } // namespace android::media::midi
 

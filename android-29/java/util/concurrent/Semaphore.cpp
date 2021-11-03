@@ -25,14 +25,14 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	void Semaphore::acquire()
+	void Semaphore::acquire() const
 	{
 		callMethod<void>(
 			"acquire",
 			"()V"
 		);
 	}
-	void Semaphore::acquire(jint arg0)
+	void Semaphore::acquire(jint arg0) const
 	{
 		callMethod<void>(
 			"acquire",
@@ -40,14 +40,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void Semaphore::acquireUninterruptibly()
+	void Semaphore::acquireUninterruptibly() const
 	{
 		callMethod<void>(
 			"acquireUninterruptibly",
 			"()V"
 		);
 	}
-	void Semaphore::acquireUninterruptibly(jint arg0)
+	void Semaphore::acquireUninterruptibly(jint arg0) const
 	{
 		callMethod<void>(
 			"acquireUninterruptibly",
@@ -55,49 +55,49 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint Semaphore::availablePermits()
+	jint Semaphore::availablePermits() const
 	{
 		return callMethod<jint>(
 			"availablePermits",
 			"()I"
 		);
 	}
-	jint Semaphore::drainPermits()
+	jint Semaphore::drainPermits() const
 	{
 		return callMethod<jint>(
 			"drainPermits",
 			"()I"
 		);
 	}
-	jint Semaphore::getQueueLength()
+	jint Semaphore::getQueueLength() const
 	{
 		return callMethod<jint>(
 			"getQueueLength",
 			"()I"
 		);
 	}
-	jboolean Semaphore::hasQueuedThreads()
+	jboolean Semaphore::hasQueuedThreads() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedThreads",
 			"()Z"
 		);
 	}
-	jboolean Semaphore::isFair()
+	jboolean Semaphore::isFair() const
 	{
 		return callMethod<jboolean>(
 			"isFair",
 			"()Z"
 		);
 	}
-	void Semaphore::release()
+	void Semaphore::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void Semaphore::release(jint arg0)
+	void Semaphore::release(jint arg0) const
 	{
 		callMethod<void>(
 			"release",
@@ -105,21 +105,21 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	JString Semaphore::toString()
+	JString Semaphore::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Semaphore::tryAcquire()
+	jboolean Semaphore::tryAcquire() const
 	{
 		return callMethod<jboolean>(
 			"tryAcquire",
 			"()Z"
 		);
 	}
-	jboolean Semaphore::tryAcquire(jint arg0)
+	jboolean Semaphore::tryAcquire(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"tryAcquire",
@@ -127,7 +127,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean Semaphore::tryAcquire(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean Semaphore::tryAcquire(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"tryAcquire",
@@ -136,7 +136,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean Semaphore::tryAcquire(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean Semaphore::tryAcquire(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callMethod<jboolean>(
 			"tryAcquire",

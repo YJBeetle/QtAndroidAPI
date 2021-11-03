@@ -40,16 +40,16 @@ namespace android::net::http
 		// Methods
 		static android::net::http::HttpResponseCache getInstalled();
 		static android::net::http::HttpResponseCache install(java::io::File arg0, jlong arg1);
-		void close();
-		void _delete();
-		void flush();
-		java::net::CacheResponse get(java::net::URI arg0, JString arg1, JObject arg2);
-		jint getHitCount();
-		jint getNetworkCount();
-		jint getRequestCount();
-		jlong maxSize();
-		java::net::CacheRequest put(java::net::URI arg0, java::net::URLConnection arg1);
-		jlong size();
+		void close() const;
+		void _delete() const;
+		void flush() const;
+		java::net::CacheResponse get(java::net::URI arg0, JString arg1, JObject arg2) const;
+		jint getHitCount() const;
+		jint getNetworkCount() const;
+		jint getRequestCount() const;
+		jlong maxSize() const;
+		java::net::CacheRequest put(java::net::URI arg0, java::net::URLConnection arg1) const;
+		jlong size() const;
 	};
 } // namespace android::net::http
 

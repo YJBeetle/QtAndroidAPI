@@ -551,7 +551,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderClient ContentResolver::acquireContentProviderClient(android::net::Uri arg0)
+	android::content::ContentProviderClient ContentResolver::acquireContentProviderClient(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"acquireContentProviderClient",
@@ -559,7 +559,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderClient ContentResolver::acquireContentProviderClient(JString arg0)
+	android::content::ContentProviderClient ContentResolver::acquireContentProviderClient(JString arg0) const
 	{
 		return callObjectMethod(
 			"acquireContentProviderClient",
@@ -567,7 +567,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::ContentProviderClient ContentResolver::acquireUnstableContentProviderClient(android::net::Uri arg0)
+	android::content::ContentProviderClient ContentResolver::acquireUnstableContentProviderClient(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"acquireUnstableContentProviderClient",
@@ -575,7 +575,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderClient ContentResolver::acquireUnstableContentProviderClient(JString arg0)
+	android::content::ContentProviderClient ContentResolver::acquireUnstableContentProviderClient(JString arg0) const
 	{
 		return callObjectMethod(
 			"acquireUnstableContentProviderClient",
@@ -583,7 +583,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JArray ContentResolver::applyBatch(JString arg0, java::util::ArrayList arg1)
+	JArray ContentResolver::applyBatch(JString arg0, java::util::ArrayList arg1) const
 	{
 		return callObjectMethod(
 			"applyBatch",
@@ -592,7 +592,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jint ContentResolver::bulkInsert(android::net::Uri arg0, JArray arg1)
+	jint ContentResolver::bulkInsert(android::net::Uri arg0, JArray arg1) const
 	{
 		return callMethod<jint>(
 			"bulkInsert",
@@ -601,7 +601,7 @@ namespace android::content
 			arg1.object<jarray>()
 		);
 	}
-	android::os::Bundle ContentResolver::call(android::net::Uri arg0, JString arg1, JString arg2, android::os::Bundle arg3)
+	android::os::Bundle ContentResolver::call(android::net::Uri arg0, JString arg1, JString arg2, android::os::Bundle arg3) const
 	{
 		return callObjectMethod(
 			"call",
@@ -612,7 +612,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	android::os::Bundle ContentResolver::call(JString arg0, JString arg1, JString arg2, android::os::Bundle arg3)
+	android::os::Bundle ContentResolver::call(JString arg0, JString arg1, JString arg2, android::os::Bundle arg3) const
 	{
 		return callObjectMethod(
 			"call",
@@ -623,7 +623,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	void ContentResolver::cancelSync(android::net::Uri arg0)
+	void ContentResolver::cancelSync(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"cancelSync",
@@ -631,7 +631,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::net::Uri ContentResolver::canonicalize(android::net::Uri arg0)
+	android::net::Uri ContentResolver::canonicalize(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"canonicalize",
@@ -639,7 +639,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint ContentResolver::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
+	jint ContentResolver::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -649,21 +649,21 @@ namespace android::content
 			arg2.object<jarray>()
 		);
 	}
-	JObject ContentResolver::getOutgoingPersistedUriPermissions()
+	JObject ContentResolver::getOutgoingPersistedUriPermissions() const
 	{
 		return callObjectMethod(
 			"getOutgoingPersistedUriPermissions",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ContentResolver::getPersistedUriPermissions()
+	JObject ContentResolver::getPersistedUriPermissions() const
 	{
 		return callObjectMethod(
 			"getPersistedUriPermissions",
 			"()Ljava/util/List;"
 		);
 	}
-	JArray ContentResolver::getStreamTypes(android::net::Uri arg0, JString arg1)
+	JArray ContentResolver::getStreamTypes(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getStreamTypes",
@@ -672,7 +672,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	JString ContentResolver::getType(android::net::Uri arg0)
+	JString ContentResolver::getType(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -680,7 +680,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentResolver_MimeTypeInfo ContentResolver::getTypeInfo(JString arg0)
+	android::content::ContentResolver_MimeTypeInfo ContentResolver::getTypeInfo(JString arg0) const
 	{
 		return callObjectMethod(
 			"getTypeInfo",
@@ -688,7 +688,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri ContentResolver::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri ContentResolver::insert(android::net::Uri arg0, android::content::ContentValues arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -697,7 +697,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::graphics::Bitmap ContentResolver::loadThumbnail(android::net::Uri arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
+	android::graphics::Bitmap ContentResolver::loadThumbnail(android::net::Uri arg0, android::util::Size arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"loadThumbnail",
@@ -707,7 +707,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void ContentResolver::notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1)
+	void ContentResolver::notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1) const
 	{
 		callMethod<void>(
 			"notifyChange",
@@ -716,7 +716,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentResolver::notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1, jboolean arg2)
+	void ContentResolver::notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"notifyChange",
@@ -726,7 +726,7 @@ namespace android::content
 			arg2
 		);
 	}
-	void ContentResolver::notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1, jint arg2)
+	void ContentResolver::notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"notifyChange",
@@ -736,7 +736,7 @@ namespace android::content
 			arg2
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor ContentResolver::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -746,7 +746,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, JString arg1)
+	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openAssetFileDescriptor",
@@ -755,7 +755,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openAssetFileDescriptor",
@@ -765,7 +765,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentResolver::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor ContentResolver::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openFile",
@@ -775,7 +775,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, JString arg1)
+	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openFileDescriptor",
@@ -784,7 +784,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openFileDescriptor",
@@ -794,7 +794,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	java::io::InputStream ContentResolver::openInputStream(android::net::Uri arg0)
+	java::io::InputStream ContentResolver::openInputStream(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"openInputStream",
@@ -802,7 +802,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	java::io::OutputStream ContentResolver::openOutputStream(android::net::Uri arg0)
+	java::io::OutputStream ContentResolver::openOutputStream(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"openOutputStream",
@@ -810,7 +810,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	java::io::OutputStream ContentResolver::openOutputStream(android::net::Uri arg0, JString arg1)
+	java::io::OutputStream ContentResolver::openOutputStream(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openOutputStream",
@@ -819,7 +819,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -830,7 +830,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
@@ -840,7 +840,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
@@ -851,7 +851,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"query",
@@ -862,7 +862,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
+	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"query",
@@ -874,7 +874,7 @@ namespace android::content
 			arg4.object<jstring>()
 		);
 	}
-	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5)
+	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5) const
 	{
 		return callObjectMethod(
 			"query",
@@ -887,7 +887,7 @@ namespace android::content
 			arg5.object()
 		);
 	}
-	jboolean ContentResolver::refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2)
+	jboolean ContentResolver::refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2) const
 	{
 		return callMethod<jboolean>(
 			"refresh",
@@ -897,7 +897,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void ContentResolver::registerContentObserver(android::net::Uri arg0, jboolean arg1, android::database::ContentObserver arg2)
+	void ContentResolver::registerContentObserver(android::net::Uri arg0, jboolean arg1, android::database::ContentObserver arg2) const
 	{
 		callMethod<void>(
 			"registerContentObserver",
@@ -907,7 +907,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void ContentResolver::releasePersistableUriPermission(android::net::Uri arg0, jint arg1)
+	void ContentResolver::releasePersistableUriPermission(android::net::Uri arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"releasePersistableUriPermission",
@@ -916,7 +916,7 @@ namespace android::content
 			arg1
 		);
 	}
-	void ContentResolver::startSync(android::net::Uri arg0, android::os::Bundle arg1)
+	void ContentResolver::startSync(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"startSync",
@@ -925,7 +925,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentResolver::takePersistableUriPermission(android::net::Uri arg0, jint arg1)
+	void ContentResolver::takePersistableUriPermission(android::net::Uri arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"takePersistableUriPermission",
@@ -934,7 +934,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::net::Uri ContentResolver::uncanonicalize(android::net::Uri arg0)
+	android::net::Uri ContentResolver::uncanonicalize(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"uncanonicalize",
@@ -942,7 +942,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContentResolver::unregisterContentObserver(android::database::ContentObserver arg0)
+	void ContentResolver::unregisterContentObserver(android::database::ContentObserver arg0) const
 	{
 		callMethod<void>(
 			"unregisterContentObserver",
@@ -950,7 +950,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint ContentResolver::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
+	jint ContentResolver::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const
 	{
 		return callMethod<jint>(
 			"update",

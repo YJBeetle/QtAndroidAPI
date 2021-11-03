@@ -49,84 +49,84 @@ namespace android::content::res
 		) {}
 	
 	// Methods
-	void AssetFileDescriptor::close()
+	void AssetFileDescriptor::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::io::FileInputStream AssetFileDescriptor::createInputStream()
+	java::io::FileInputStream AssetFileDescriptor::createInputStream() const
 	{
 		return callObjectMethod(
 			"createInputStream",
 			"()Ljava/io/FileInputStream;"
 		);
 	}
-	java::io::FileOutputStream AssetFileDescriptor::createOutputStream()
+	java::io::FileOutputStream AssetFileDescriptor::createOutputStream() const
 	{
 		return callObjectMethod(
 			"createOutputStream",
 			"()Ljava/io/FileOutputStream;"
 		);
 	}
-	jint AssetFileDescriptor::describeContents()
+	jint AssetFileDescriptor::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong AssetFileDescriptor::getDeclaredLength()
+	jlong AssetFileDescriptor::getDeclaredLength() const
 	{
 		return callMethod<jlong>(
 			"getDeclaredLength",
 			"()J"
 		);
 	}
-	android::os::Bundle AssetFileDescriptor::getExtras()
+	android::os::Bundle AssetFileDescriptor::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	java::io::FileDescriptor AssetFileDescriptor::getFileDescriptor()
+	java::io::FileDescriptor AssetFileDescriptor::getFileDescriptor() const
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	jlong AssetFileDescriptor::getLength()
+	jlong AssetFileDescriptor::getLength() const
 	{
 		return callMethod<jlong>(
 			"getLength",
 			"()J"
 		);
 	}
-	android::os::ParcelFileDescriptor AssetFileDescriptor::getParcelFileDescriptor()
+	android::os::ParcelFileDescriptor AssetFileDescriptor::getParcelFileDescriptor() const
 	{
 		return callObjectMethod(
 			"getParcelFileDescriptor",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
-	jlong AssetFileDescriptor::getStartOffset()
+	jlong AssetFileDescriptor::getStartOffset() const
 	{
 		return callMethod<jlong>(
 			"getStartOffset",
 			"()J"
 		);
 	}
-	JString AssetFileDescriptor::toString()
+	JString AssetFileDescriptor::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AssetFileDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AssetFileDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

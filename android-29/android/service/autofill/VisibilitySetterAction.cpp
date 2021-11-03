@@ -21,21 +21,21 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	jint VisibilitySetterAction::describeContents()
+	jint VisibilitySetterAction::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString VisibilitySetterAction::toString()
+	JString VisibilitySetterAction::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VisibilitySetterAction::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VisibilitySetterAction::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

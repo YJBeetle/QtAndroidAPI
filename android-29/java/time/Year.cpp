@@ -108,7 +108,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	JObject Year::adjustInto(JObject arg0)
+	JObject Year::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -116,7 +116,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDate Year::atDay(jint arg0)
+	java::time::LocalDate Year::atDay(jint arg0) const
 	{
 		return callObjectMethod(
 			"atDay",
@@ -124,7 +124,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::YearMonth Year::atMonth(jint arg0)
+	java::time::YearMonth Year::atMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"atMonth",
@@ -132,7 +132,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::YearMonth Year::atMonth(java::time::Month arg0)
+	java::time::YearMonth Year::atMonth(java::time::Month arg0) const
 	{
 		return callObjectMethod(
 			"atMonth",
@@ -140,7 +140,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDate Year::atMonthDay(java::time::MonthDay arg0)
+	java::time::LocalDate Year::atMonthDay(java::time::MonthDay arg0) const
 	{
 		return callObjectMethod(
 			"atMonthDay",
@@ -148,7 +148,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Year::compareTo(JObject arg0)
+	jint Year::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -156,7 +156,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint Year::compareTo(java::time::Year arg0)
+	jint Year::compareTo(java::time::Year arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -164,7 +164,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Year::equals(JObject arg0)
+	jboolean Year::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -172,7 +172,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	JString Year::format(java::time::format::DateTimeFormatter arg0)
+	JString Year::format(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -180,7 +180,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Year::get(JObject arg0)
+	jint Year::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -188,7 +188,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong Year::getLong(JObject arg0)
+	jlong Year::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -196,21 +196,21 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Year::getValue()
+	jint Year::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
-	jint Year::hashCode()
+	jint Year::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Year::isAfter(java::time::Year arg0)
+	jboolean Year::isAfter(java::time::Year arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAfter",
@@ -218,7 +218,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Year::isBefore(java::time::Year arg0)
+	jboolean Year::isBefore(java::time::Year arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBefore",
@@ -226,14 +226,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Year::isLeap()
+	jboolean Year::isLeap() const
 	{
 		return callMethod<jboolean>(
 			"isLeap",
 			"()Z"
 		);
 	}
-	jboolean Year::isSupported(JObject arg0)
+	jboolean Year::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -241,7 +241,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Year::isValidMonthDay(java::time::MonthDay arg0)
+	jboolean Year::isValidMonthDay(java::time::MonthDay arg0) const
 	{
 		return callMethod<jboolean>(
 			"isValidMonthDay",
@@ -249,14 +249,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Year::length()
+	jint Year::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	java::time::Year Year::minus(JObject arg0)
+	java::time::Year Year::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -264,7 +264,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Year Year::minus(jlong arg0, JObject arg1)
+	java::time::Year Year::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -273,7 +273,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Year Year::minusYears(jlong arg0)
+	java::time::Year Year::minusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusYears",
@@ -281,7 +281,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Year Year::plus(JObject arg0)
+	java::time::Year Year::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -289,7 +289,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Year Year::plus(jlong arg0, JObject arg1)
+	java::time::Year Year::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -298,7 +298,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Year Year::plusYears(jlong arg0)
+	java::time::Year Year::plusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusYears",
@@ -306,7 +306,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject Year::query(JObject arg0)
+	JObject Year::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -314,7 +314,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange Year::range(JObject arg0)
+	java::time::temporal::ValueRange Year::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -322,14 +322,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JString Year::toString()
+	JString Year::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong Year::until(JObject arg0, JObject arg1)
+	jlong Year::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -338,7 +338,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Year Year::with(JObject arg0)
+	java::time::Year Year::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -346,7 +346,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Year Year::with(JObject arg0, jlong arg1)
+	java::time::Year Year::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",

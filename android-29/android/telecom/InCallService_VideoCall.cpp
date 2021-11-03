@@ -21,7 +21,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void InCallService_VideoCall::registerCallback(android::telecom::InCallService_VideoCall_Callback arg0)
+	void InCallService_VideoCall::registerCallback(android::telecom::InCallService_VideoCall_Callback arg0) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -29,7 +29,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall::registerCallback(android::telecom::InCallService_VideoCall_Callback arg0, android::os::Handler arg1)
+	void InCallService_VideoCall::registerCallback(android::telecom::InCallService_VideoCall_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -38,21 +38,21 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void InCallService_VideoCall::requestCallDataUsage()
+	void InCallService_VideoCall::requestCallDataUsage() const
 	{
 		callMethod<void>(
 			"requestCallDataUsage",
 			"()V"
 		);
 	}
-	void InCallService_VideoCall::requestCameraCapabilities()
+	void InCallService_VideoCall::requestCameraCapabilities() const
 	{
 		callMethod<void>(
 			"requestCameraCapabilities",
 			"()V"
 		);
 	}
-	void InCallService_VideoCall::sendSessionModifyRequest(android::telecom::VideoProfile arg0)
+	void InCallService_VideoCall::sendSessionModifyRequest(android::telecom::VideoProfile arg0) const
 	{
 		callMethod<void>(
 			"sendSessionModifyRequest",
@@ -60,7 +60,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall::sendSessionModifyResponse(android::telecom::VideoProfile arg0)
+	void InCallService_VideoCall::sendSessionModifyResponse(android::telecom::VideoProfile arg0) const
 	{
 		callMethod<void>(
 			"sendSessionModifyResponse",
@@ -68,7 +68,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall::setCamera(JString arg0)
+	void InCallService_VideoCall::setCamera(JString arg0) const
 	{
 		callMethod<void>(
 			"setCamera",
@@ -76,7 +76,7 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	void InCallService_VideoCall::setDeviceOrientation(jint arg0)
+	void InCallService_VideoCall::setDeviceOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"setDeviceOrientation",
@@ -84,7 +84,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService_VideoCall::setDisplaySurface(android::view::Surface arg0)
+	void InCallService_VideoCall::setDisplaySurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setDisplaySurface",
@@ -92,7 +92,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall::setPauseImage(android::net::Uri arg0)
+	void InCallService_VideoCall::setPauseImage(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setPauseImage",
@@ -100,7 +100,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall::setPreviewSurface(android::view::Surface arg0)
+	void InCallService_VideoCall::setPreviewSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setPreviewSurface",
@@ -108,7 +108,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall::setZoom(jfloat arg0)
+	void InCallService_VideoCall::setZoom(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setZoom",
@@ -116,7 +116,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService_VideoCall::unregisterCallback(android::telecom::InCallService_VideoCall_Callback arg0)
+	void InCallService_VideoCall::unregisterCallback(android::telecom::InCallService_VideoCall_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

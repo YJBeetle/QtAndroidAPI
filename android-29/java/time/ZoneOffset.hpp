@@ -41,20 +41,20 @@ namespace java::time
 		static java::time::ZoneOffset ofHoursMinutes(jint arg0, jint arg1);
 		static java::time::ZoneOffset ofHoursMinutesSeconds(jint arg0, jint arg1, jint arg2);
 		static java::time::ZoneOffset ofTotalSeconds(jint arg0);
-		JObject adjustInto(JObject arg0);
-		jint compareTo(JObject arg0);
-		jint compareTo(java::time::ZoneOffset arg0);
-		jboolean equals(JObject arg0);
-		jint get(JObject arg0);
-		JString getId();
-		jlong getLong(JObject arg0);
-		java::time::zone::ZoneRules getRules();
-		jint getTotalSeconds();
-		jint hashCode();
-		jboolean isSupported(JObject arg0);
-		JObject query(JObject arg0);
-		java::time::temporal::ValueRange range(JObject arg0);
-		JString toString();
+		JObject adjustInto(JObject arg0) const;
+		jint compareTo(JObject arg0) const;
+		jint compareTo(java::time::ZoneOffset arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint get(JObject arg0) const;
+		JString getId() const;
+		jlong getLong(JObject arg0) const;
+		java::time::zone::ZoneRules getRules() const;
+		jint getTotalSeconds() const;
+		jint hashCode() const;
+		jboolean isSupported(JObject arg0) const;
+		JObject query(JObject arg0) const;
+		java::time::temporal::ValueRange range(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace java::time
 

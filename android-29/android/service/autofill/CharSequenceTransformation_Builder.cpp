@@ -22,7 +22,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::CharSequenceTransformation_Builder CharSequenceTransformation_Builder::addField(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, JString arg2)
+	android::service::autofill::CharSequenceTransformation_Builder CharSequenceTransformation_Builder::addField(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"addField",
@@ -32,7 +32,7 @@ namespace android::service::autofill
 			arg2.object<jstring>()
 		);
 	}
-	android::service::autofill::CharSequenceTransformation CharSequenceTransformation_Builder::build()
+	android::service::autofill::CharSequenceTransformation CharSequenceTransformation_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

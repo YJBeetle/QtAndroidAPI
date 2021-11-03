@@ -24,28 +24,28 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint RelativeSizeSpan::describeContents()
+	jint RelativeSizeSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jfloat RelativeSizeSpan::getSizeChange()
+	jfloat RelativeSizeSpan::getSizeChange() const
 	{
 		return callMethod<jfloat>(
 			"getSizeChange",
 			"()F"
 		);
 	}
-	jint RelativeSizeSpan::getSpanTypeId()
+	jint RelativeSizeSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void RelativeSizeSpan::updateDrawState(android::text::TextPaint arg0)
+	void RelativeSizeSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -53,7 +53,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void RelativeSizeSpan::updateMeasureState(android::text::TextPaint arg0)
+	void RelativeSizeSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -61,7 +61,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void RelativeSizeSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RelativeSizeSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

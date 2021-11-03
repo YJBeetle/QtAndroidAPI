@@ -210,14 +210,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint ActivityManager_RunningAppProcessInfo::describeContents()
+	jint ActivityManager_RunningAppProcessInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ActivityManager_RunningAppProcessInfo::readFromParcel(android::os::Parcel arg0)
+	void ActivityManager_RunningAppProcessInfo::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -225,7 +225,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActivityManager_RunningAppProcessInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ActivityManager_RunningAppProcessInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

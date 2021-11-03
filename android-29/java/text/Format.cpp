@@ -17,14 +17,14 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	JObject Format::clone()
+	JObject Format::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString Format::format(JObject arg0)
+	JString Format::format(JObject arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -32,7 +32,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer Format::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer Format::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -42,7 +42,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	JObject Format::formatToCharacterIterator(JObject arg0)
+	JObject Format::formatToCharacterIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -50,7 +50,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	JObject Format::parseObject(JString arg0)
+	JObject Format::parseObject(JString arg0) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -58,7 +58,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject Format::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject Format::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",

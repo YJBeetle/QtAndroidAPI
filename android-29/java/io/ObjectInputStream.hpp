@@ -51,32 +51,32 @@ namespace java::io
 		ObjectInputStream(java::io::InputStream arg0);
 		
 		// Methods
-		jint available();
-		void close();
-		void defaultReadObject();
-		JObject getObjectInputFilter();
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		jboolean readBoolean();
-		jbyte readByte();
-		jchar readChar();
-		jdouble readDouble();
-		java::io::ObjectInputStream_GetField readFields();
-		jfloat readFloat();
-		void readFully(JByteArray arg0);
-		void readFully(JByteArray arg0, jint arg1, jint arg2);
-		jint readInt();
-		JString readLine();
-		jlong readLong();
-		JObject readObject();
-		jshort readShort();
-		JString readUTF();
-		JObject readUnshared();
-		jint readUnsignedByte();
-		jint readUnsignedShort();
-		void registerValidation(JObject arg0, jint arg1);
-		void setObjectInputFilter(JObject arg0);
-		jint skipBytes(jint arg0);
+		jint available() const;
+		void close() const;
+		void defaultReadObject() const;
+		JObject getObjectInputFilter() const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		jboolean readBoolean() const;
+		jbyte readByte() const;
+		jchar readChar() const;
+		jdouble readDouble() const;
+		java::io::ObjectInputStream_GetField readFields() const;
+		jfloat readFloat() const;
+		void readFully(JByteArray arg0) const;
+		void readFully(JByteArray arg0, jint arg1, jint arg2) const;
+		jint readInt() const;
+		JString readLine() const;
+		jlong readLong() const;
+		JObject readObject() const;
+		jshort readShort() const;
+		JString readUTF() const;
+		JObject readUnshared() const;
+		jint readUnsignedByte() const;
+		jint readUnsignedShort() const;
+		void registerValidation(JObject arg0, jint arg1) const;
+		void setObjectInputFilter(JObject arg0) const;
+		jint skipBytes(jint arg0) const;
 	};
 } // namespace java::io
 

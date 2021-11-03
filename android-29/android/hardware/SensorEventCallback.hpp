@@ -30,10 +30,10 @@ namespace android::hardware
 		SensorEventCallback();
 		
 		// Methods
-		void onAccuracyChanged(android::hardware::Sensor arg0, jint arg1);
-		void onFlushCompleted(android::hardware::Sensor arg0);
-		void onSensorAdditionalInfo(android::hardware::SensorAdditionalInfo arg0);
-		void onSensorChanged(android::hardware::SensorEvent arg0);
+		void onAccuracyChanged(android::hardware::Sensor arg0, jint arg1) const;
+		void onFlushCompleted(android::hardware::Sensor arg0) const;
+		void onSensorAdditionalInfo(android::hardware::SensorAdditionalInfo arg0) const;
+		void onSensorChanged(android::hardware::SensorEvent arg0) const;
 	};
 } // namespace android::hardware
 

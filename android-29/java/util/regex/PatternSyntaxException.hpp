@@ -19,10 +19,10 @@ namespace java::util::regex
 		PatternSyntaxException(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
-		JString getDescription();
-		jint getIndex();
-		JString getMessage();
-		JString getPattern();
+		JString getDescription() const;
+		jint getIndex() const;
+		JString getMessage() const;
+		JString getPattern() const;
 	};
 } // namespace java::util::regex
 

@@ -34,9 +34,9 @@ namespace java::util::concurrent
 		// Constructors
 		
 		// Methods
-		java::util::concurrent::ForkJoinPool getPool();
-		jint getPoolIndex();
-		void run();
+		java::util::concurrent::ForkJoinPool getPool() const;
+		jint getPoolIndex() const;
+		void run() const;
 	};
 } // namespace java::util::concurrent
 

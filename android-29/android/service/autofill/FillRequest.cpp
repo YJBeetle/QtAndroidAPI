@@ -35,49 +35,49 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	jint FillRequest::describeContents()
+	jint FillRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::Bundle FillRequest::getClientState()
+	android::os::Bundle FillRequest::getClientState() const
 	{
 		return callObjectMethod(
 			"getClientState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject FillRequest::getFillContexts()
+	JObject FillRequest::getFillContexts() const
 	{
 		return callObjectMethod(
 			"getFillContexts",
 			"()Ljava/util/List;"
 		);
 	}
-	jint FillRequest::getFlags()
+	jint FillRequest::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	jint FillRequest::getId()
+	jint FillRequest::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	JString FillRequest::toString()
+	JString FillRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void FillRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void FillRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

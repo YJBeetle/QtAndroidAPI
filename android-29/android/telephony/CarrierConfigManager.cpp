@@ -1397,14 +1397,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	android::os::PersistableBundle CarrierConfigManager::getConfig()
+	android::os::PersistableBundle CarrierConfigManager::getConfig() const
 	{
 		return callObjectMethod(
 			"getConfig",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	android::os::PersistableBundle CarrierConfigManager::getConfigForSubId(jint arg0)
+	android::os::PersistableBundle CarrierConfigManager::getConfigForSubId(jint arg0) const
 	{
 		return callObjectMethod(
 			"getConfigForSubId",
@@ -1412,7 +1412,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void CarrierConfigManager::notifyConfigChangedForSubId(jint arg0)
+	void CarrierConfigManager::notifyConfigChangedForSubId(jint arg0) const
 	{
 		callMethod<void>(
 			"notifyConfigChangedForSubId",

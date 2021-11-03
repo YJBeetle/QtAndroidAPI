@@ -22,7 +22,7 @@ namespace android::view::textclassifier
 		TextClassifierEvent_TextLinkifyEvent_Builder(jint arg0);
 		
 		// Methods
-		android::view::textclassifier::TextClassifierEvent_TextLinkifyEvent build();
+		android::view::textclassifier::TextClassifierEvent_TextLinkifyEvent build() const;
 	};
 } // namespace android::view::textclassifier
 

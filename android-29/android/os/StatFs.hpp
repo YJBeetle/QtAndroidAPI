@@ -19,18 +19,18 @@ namespace android::os
 		StatFs(JString arg0);
 		
 		// Methods
-		jint getAvailableBlocks();
-		jlong getAvailableBlocksLong();
-		jlong getAvailableBytes();
-		jint getBlockCount();
-		jlong getBlockCountLong();
-		jint getBlockSize();
-		jlong getBlockSizeLong();
-		jint getFreeBlocks();
-		jlong getFreeBlocksLong();
-		jlong getFreeBytes();
-		jlong getTotalBytes();
-		void restat(JString arg0);
+		jint getAvailableBlocks() const;
+		jlong getAvailableBlocksLong() const;
+		jlong getAvailableBytes() const;
+		jint getBlockCount() const;
+		jlong getBlockCountLong() const;
+		jint getBlockSize() const;
+		jlong getBlockSizeLong() const;
+		jint getFreeBlocks() const;
+		jlong getFreeBlocksLong() const;
+		jlong getFreeBytes() const;
+		jlong getTotalBytes() const;
+		void restat(JString arg0) const;
 	};
 } // namespace android::os
 

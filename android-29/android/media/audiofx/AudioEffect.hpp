@@ -58,14 +58,14 @@ namespace android::media::audiofx
 		
 		// Methods
 		static JArray queryEffects();
-		android::media::audiofx::AudioEffect_Descriptor getDescriptor();
-		jboolean getEnabled();
-		jint getId();
-		jboolean hasControl();
-		void release();
-		void setControlStatusListener(JObject arg0);
-		void setEnableStatusListener(JObject arg0);
-		jint setEnabled(jboolean arg0);
+		android::media::audiofx::AudioEffect_Descriptor getDescriptor() const;
+		jboolean getEnabled() const;
+		jint getId() const;
+		jboolean hasControl() const;
+		void release() const;
+		void setControlStatusListener(JObject arg0) const;
+		void setEnableStatusListener(JObject arg0) const;
+		jint setEnabled(jboolean arg0) const;
 	};
 } // namespace android::media::audiofx
 

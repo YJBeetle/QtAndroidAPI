@@ -23,14 +23,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	jint PrinterCapabilitiesInfo::describeContents()
+	jint PrinterCapabilitiesInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PrinterCapabilitiesInfo::equals(JObject arg0)
+	jboolean PrinterCapabilitiesInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -38,63 +38,63 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PrinterCapabilitiesInfo::getColorModes()
+	jint PrinterCapabilitiesInfo::getColorModes() const
 	{
 		return callMethod<jint>(
 			"getColorModes",
 			"()I"
 		);
 	}
-	android::print::PrintAttributes PrinterCapabilitiesInfo::getDefaults()
+	android::print::PrintAttributes PrinterCapabilitiesInfo::getDefaults() const
 	{
 		return callObjectMethod(
 			"getDefaults",
 			"()Landroid/print/PrintAttributes;"
 		);
 	}
-	jint PrinterCapabilitiesInfo::getDuplexModes()
+	jint PrinterCapabilitiesInfo::getDuplexModes() const
 	{
 		return callMethod<jint>(
 			"getDuplexModes",
 			"()I"
 		);
 	}
-	JObject PrinterCapabilitiesInfo::getMediaSizes()
+	JObject PrinterCapabilitiesInfo::getMediaSizes() const
 	{
 		return callObjectMethod(
 			"getMediaSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	android::print::PrintAttributes_Margins PrinterCapabilitiesInfo::getMinMargins()
+	android::print::PrintAttributes_Margins PrinterCapabilitiesInfo::getMinMargins() const
 	{
 		return callObjectMethod(
 			"getMinMargins",
 			"()Landroid/print/PrintAttributes$Margins;"
 		);
 	}
-	JObject PrinterCapabilitiesInfo::getResolutions()
+	JObject PrinterCapabilitiesInfo::getResolutions() const
 	{
 		return callObjectMethod(
 			"getResolutions",
 			"()Ljava/util/List;"
 		);
 	}
-	jint PrinterCapabilitiesInfo::hashCode()
+	jint PrinterCapabilitiesInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrinterCapabilitiesInfo::toString()
+	JString PrinterCapabilitiesInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PrinterCapabilitiesInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PrinterCapabilitiesInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

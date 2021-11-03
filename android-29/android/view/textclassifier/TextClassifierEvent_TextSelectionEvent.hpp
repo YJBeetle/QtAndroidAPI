@@ -26,11 +26,11 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint getRelativeSuggestedWordEndIndex();
-		jint getRelativeSuggestedWordStartIndex();
-		jint getRelativeWordEndIndex();
-		jint getRelativeWordStartIndex();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint getRelativeSuggestedWordEndIndex() const;
+		jint getRelativeSuggestedWordStartIndex() const;
+		jint getRelativeWordEndIndex() const;
+		jint getRelativeWordStartIndex() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

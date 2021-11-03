@@ -16,7 +16,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	android::webkit::WebResourceResponse ServiceWorkerClient::shouldInterceptRequest(JObject arg0)
+	android::webkit::WebResourceResponse ServiceWorkerClient::shouldInterceptRequest(JObject arg0) const
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",

@@ -108,7 +108,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void AbsListView::addTouchables(java::util::ArrayList arg0)
+	void AbsListView::addTouchables(java::util::ArrayList arg0) const
 	{
 		callMethod<void>(
 			"addTouchables",
@@ -116,7 +116,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::afterTextChanged(JObject arg0)
+	void AbsListView::afterTextChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"afterTextChanged",
@@ -124,7 +124,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
+	void AbsListView::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"beforeTextChanged",
@@ -135,7 +135,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	jboolean AbsListView::canScrollList(jint arg0)
+	jboolean AbsListView::canScrollList(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"canScrollList",
@@ -143,7 +143,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean AbsListView::checkInputConnectionProxy(android::view::View arg0)
+	jboolean AbsListView::checkInputConnectionProxy(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"checkInputConnectionProxy",
@@ -151,28 +151,28 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::clearChoices()
+	void AbsListView::clearChoices() const
 	{
 		callMethod<void>(
 			"clearChoices",
 			"()V"
 		);
 	}
-	void AbsListView::clearTextFilter()
+	void AbsListView::clearTextFilter() const
 	{
 		callMethod<void>(
 			"clearTextFilter",
 			"()V"
 		);
 	}
-	void AbsListView::deferNotifyDataSetChanged()
+	void AbsListView::deferNotifyDataSetChanged() const
 	{
 		callMethod<void>(
 			"deferNotifyDataSetChanged",
 			"()V"
 		);
 	}
-	void AbsListView::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void AbsListView::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"dispatchDrawableHotspotChanged",
@@ -181,7 +181,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::draw(android::graphics::Canvas arg0)
+	void AbsListView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -189,7 +189,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::fling(jint arg0)
+	void AbsListView::fling(jint arg0) const
 	{
 		callMethod<void>(
 			"fling",
@@ -197,7 +197,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::widget::AbsListView_LayoutParams AbsListView::generateLayoutParams(JObject arg0)
+	android::widget::AbsListView_LayoutParams AbsListView::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -205,63 +205,63 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString AbsListView::getAccessibilityClassName()
+	JString AbsListView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AbsListView::getBottomEdgeEffectColor()
+	jint AbsListView::getBottomEdgeEffectColor() const
 	{
 		return callMethod<jint>(
 			"getBottomEdgeEffectColor",
 			"()I"
 		);
 	}
-	jint AbsListView::getCacheColorHint()
+	jint AbsListView::getCacheColorHint() const
 	{
 		return callMethod<jint>(
 			"getCacheColorHint",
 			"()I"
 		);
 	}
-	jint AbsListView::getCheckedItemCount()
+	jint AbsListView::getCheckedItemCount() const
 	{
 		return callMethod<jint>(
 			"getCheckedItemCount",
 			"()I"
 		);
 	}
-	JLongArray AbsListView::getCheckedItemIds()
+	JLongArray AbsListView::getCheckedItemIds() const
 	{
 		return callObjectMethod(
 			"getCheckedItemIds",
 			"()[J"
 		);
 	}
-	jint AbsListView::getCheckedItemPosition()
+	jint AbsListView::getCheckedItemPosition() const
 	{
 		return callMethod<jint>(
 			"getCheckedItemPosition",
 			"()I"
 		);
 	}
-	android::util::SparseBooleanArray AbsListView::getCheckedItemPositions()
+	android::util::SparseBooleanArray AbsListView::getCheckedItemPositions() const
 	{
 		return callObjectMethod(
 			"getCheckedItemPositions",
 			"()Landroid/util/SparseBooleanArray;"
 		);
 	}
-	jint AbsListView::getChoiceMode()
+	jint AbsListView::getChoiceMode() const
 	{
 		return callMethod<jint>(
 			"getChoiceMode",
 			"()I"
 		);
 	}
-	void AbsListView::getFocusedRect(android::graphics::Rect arg0)
+	void AbsListView::getFocusedRect(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getFocusedRect",
@@ -269,119 +269,119 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jint AbsListView::getListPaddingBottom()
+	jint AbsListView::getListPaddingBottom() const
 	{
 		return callMethod<jint>(
 			"getListPaddingBottom",
 			"()I"
 		);
 	}
-	jint AbsListView::getListPaddingLeft()
+	jint AbsListView::getListPaddingLeft() const
 	{
 		return callMethod<jint>(
 			"getListPaddingLeft",
 			"()I"
 		);
 	}
-	jint AbsListView::getListPaddingRight()
+	jint AbsListView::getListPaddingRight() const
 	{
 		return callMethod<jint>(
 			"getListPaddingRight",
 			"()I"
 		);
 	}
-	jint AbsListView::getListPaddingTop()
+	jint AbsListView::getListPaddingTop() const
 	{
 		return callMethod<jint>(
 			"getListPaddingTop",
 			"()I"
 		);
 	}
-	android::view::View AbsListView::getSelectedView()
+	android::view::View AbsListView::getSelectedView() const
 	{
 		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::graphics::drawable::Drawable AbsListView::getSelector()
+	android::graphics::drawable::Drawable AbsListView::getSelector() const
 	{
 		return callObjectMethod(
 			"getSelector",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint AbsListView::getSolidColor()
+	jint AbsListView::getSolidColor() const
 	{
 		return callMethod<jint>(
 			"getSolidColor",
 			"()I"
 		);
 	}
-	JString AbsListView::getTextFilter()
+	JString AbsListView::getTextFilter() const
 	{
 		return callObjectMethod(
 			"getTextFilter",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AbsListView::getTopEdgeEffectColor()
+	jint AbsListView::getTopEdgeEffectColor() const
 	{
 		return callMethod<jint>(
 			"getTopEdgeEffectColor",
 			"()I"
 		);
 	}
-	jint AbsListView::getTranscriptMode()
+	jint AbsListView::getTranscriptMode() const
 	{
 		return callMethod<jint>(
 			"getTranscriptMode",
 			"()I"
 		);
 	}
-	jint AbsListView::getVerticalScrollbarWidth()
+	jint AbsListView::getVerticalScrollbarWidth() const
 	{
 		return callMethod<jint>(
 			"getVerticalScrollbarWidth",
 			"()I"
 		);
 	}
-	jboolean AbsListView::hasTextFilter()
+	jboolean AbsListView::hasTextFilter() const
 	{
 		return callMethod<jboolean>(
 			"hasTextFilter",
 			"()Z"
 		);
 	}
-	void AbsListView::invalidateViews()
+	void AbsListView::invalidateViews() const
 	{
 		callMethod<void>(
 			"invalidateViews",
 			"()V"
 		);
 	}
-	jboolean AbsListView::isDrawSelectorOnTop()
+	jboolean AbsListView::isDrawSelectorOnTop() const
 	{
 		return callMethod<jboolean>(
 			"isDrawSelectorOnTop",
 			"()Z"
 		);
 	}
-	jboolean AbsListView::isFastScrollAlwaysVisible()
+	jboolean AbsListView::isFastScrollAlwaysVisible() const
 	{
 		return callMethod<jboolean>(
 			"isFastScrollAlwaysVisible",
 			"()Z"
 		);
 	}
-	jboolean AbsListView::isFastScrollEnabled()
+	jboolean AbsListView::isFastScrollEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isFastScrollEnabled",
 			"()Z"
 		);
 	}
-	jboolean AbsListView::isItemChecked(jint arg0)
+	jboolean AbsListView::isItemChecked(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isItemChecked",
@@ -389,49 +389,49 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean AbsListView::isScrollingCacheEnabled()
+	jboolean AbsListView::isScrollingCacheEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isScrollingCacheEnabled",
 			"()Z"
 		);
 	}
-	jboolean AbsListView::isSmoothScrollbarEnabled()
+	jboolean AbsListView::isSmoothScrollbarEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSmoothScrollbarEnabled",
 			"()Z"
 		);
 	}
-	jboolean AbsListView::isStackFromBottom()
+	jboolean AbsListView::isStackFromBottom() const
 	{
 		return callMethod<jboolean>(
 			"isStackFromBottom",
 			"()Z"
 		);
 	}
-	jboolean AbsListView::isTextFilterEnabled()
+	jboolean AbsListView::isTextFilterEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isTextFilterEnabled",
 			"()Z"
 		);
 	}
-	void AbsListView::jumpDrawablesToCurrentState()
+	void AbsListView::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	void AbsListView::onCancelPendingInputEvents()
+	void AbsListView::onCancelPendingInputEvents() const
 	{
 		callMethod<void>(
 			"onCancelPendingInputEvents",
 			"()V"
 		);
 	}
-	JObject AbsListView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject AbsListView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0) const
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -439,7 +439,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::onFilterComplete(jint arg0)
+	void AbsListView::onFilterComplete(jint arg0) const
 	{
 		callMethod<void>(
 			"onFilterComplete",
@@ -447,7 +447,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean AbsListView::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean AbsListView::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -455,14 +455,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::onGlobalLayout()
+	void AbsListView::onGlobalLayout() const
 	{
 		callMethod<void>(
 			"onGlobalLayout",
 			"()V"
 		);
 	}
-	void AbsListView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2)
+	void AbsListView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityNodeInfoForItem",
@@ -472,7 +472,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean AbsListView::onInterceptHoverEvent(android::view::MotionEvent arg0)
+	jboolean AbsListView::onInterceptHoverEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptHoverEvent",
@@ -480,7 +480,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean AbsListView::onInterceptTouchEvent(android::view::MotionEvent arg0)
+	jboolean AbsListView::onInterceptTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
@@ -488,7 +488,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean AbsListView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean AbsListView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -497,7 +497,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean AbsListView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean AbsListView::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -506,7 +506,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean AbsListView::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3)
+	jboolean AbsListView::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3) const
 	{
 		return callMethod<jboolean>(
 			"onNestedFling",
@@ -517,7 +517,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void AbsListView::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void AbsListView::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"onNestedScroll",
@@ -529,7 +529,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	void AbsListView::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2)
+	void AbsListView::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onNestedScrollAccepted",
@@ -539,21 +539,21 @@ namespace android::widget
 			arg2
 		);
 	}
-	jboolean AbsListView::onRemoteAdapterConnected()
+	jboolean AbsListView::onRemoteAdapterConnected() const
 	{
 		return callMethod<jboolean>(
 			"onRemoteAdapterConnected",
 			"()Z"
 		);
 	}
-	void AbsListView::onRemoteAdapterDisconnected()
+	void AbsListView::onRemoteAdapterDisconnected() const
 	{
 		callMethod<void>(
 			"onRemoteAdapterDisconnected",
 			"()V"
 		);
 	}
-	android::view::PointerIcon AbsListView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon AbsListView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -562,7 +562,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::onRestoreInstanceState(JObject arg0)
+	void AbsListView::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -570,7 +570,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::onRtlPropertiesChanged(jint arg0)
+	void AbsListView::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -578,14 +578,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject AbsListView::onSaveInstanceState()
+	JObject AbsListView::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	jboolean AbsListView::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2)
+	jboolean AbsListView::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"onStartNestedScroll",
@@ -595,7 +595,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void AbsListView::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
+	void AbsListView::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onTextChanged",
@@ -606,7 +606,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	jboolean AbsListView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean AbsListView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -614,7 +614,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::onTouchModeChanged(jboolean arg0)
+	void AbsListView::onTouchModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onTouchModeChanged",
@@ -622,7 +622,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::onWindowFocusChanged(jboolean arg0)
+	void AbsListView::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -630,7 +630,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean AbsListView::performItemClick(android::view::View arg0, jint arg1, jlong arg2)
+	jboolean AbsListView::performItemClick(android::view::View arg0, jint arg1, jlong arg2) const
 	{
 		return callMethod<jboolean>(
 			"performItemClick",
@@ -640,7 +640,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	jint AbsListView::pointToPosition(jint arg0, jint arg1)
+	jint AbsListView::pointToPosition(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"pointToPosition",
@@ -649,7 +649,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jlong AbsListView::pointToRowId(jint arg0, jint arg1)
+	jlong AbsListView::pointToRowId(jint arg0, jint arg1) const
 	{
 		return callMethod<jlong>(
 			"pointToRowId",
@@ -658,7 +658,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::reclaimViews(JObject arg0)
+	void AbsListView::reclaimViews(JObject arg0) const
 	{
 		callMethod<void>(
 			"reclaimViews",
@@ -666,7 +666,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::requestDisallowInterceptTouchEvent(jboolean arg0)
+	void AbsListView::requestDisallowInterceptTouchEvent(jboolean arg0) const
 	{
 		callMethod<void>(
 			"requestDisallowInterceptTouchEvent",
@@ -674,14 +674,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::requestLayout()
+	void AbsListView::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void AbsListView::scrollListBy(jint arg0)
+	void AbsListView::scrollListBy(jint arg0) const
 	{
 		callMethod<void>(
 			"scrollListBy",
@@ -689,7 +689,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0)
+	void AbsListView::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		callMethod<void>(
 			"sendAccessibilityEventUnchecked",
@@ -697,7 +697,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setAdapter(JObject arg0)
+	void AbsListView::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -705,7 +705,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setBottomEdgeEffectColor(jint arg0)
+	void AbsListView::setBottomEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setBottomEdgeEffectColor",
@@ -713,7 +713,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setCacheColorHint(jint arg0)
+	void AbsListView::setCacheColorHint(jint arg0) const
 	{
 		callMethod<void>(
 			"setCacheColorHint",
@@ -721,7 +721,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setChoiceMode(jint arg0)
+	void AbsListView::setChoiceMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setChoiceMode",
@@ -729,7 +729,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setDrawSelectorOnTop(jboolean arg0)
+	void AbsListView::setDrawSelectorOnTop(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDrawSelectorOnTop",
@@ -737,7 +737,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setEdgeEffectColor(jint arg0)
+	void AbsListView::setEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setEdgeEffectColor",
@@ -745,7 +745,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setFastScrollAlwaysVisible(jboolean arg0)
+	void AbsListView::setFastScrollAlwaysVisible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFastScrollAlwaysVisible",
@@ -753,7 +753,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setFastScrollEnabled(jboolean arg0)
+	void AbsListView::setFastScrollEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFastScrollEnabled",
@@ -761,7 +761,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setFastScrollStyle(jint arg0)
+	void AbsListView::setFastScrollStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setFastScrollStyle",
@@ -769,7 +769,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setFilterText(JString arg0)
+	void AbsListView::setFilterText(JString arg0) const
 	{
 		callMethod<void>(
 			"setFilterText",
@@ -777,7 +777,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void AbsListView::setFriction(jfloat arg0)
+	void AbsListView::setFriction(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setFriction",
@@ -785,7 +785,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setItemChecked(jint arg0, jboolean arg1)
+	void AbsListView::setItemChecked(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setItemChecked",
@@ -794,7 +794,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::setMultiChoiceModeListener(JObject arg0)
+	void AbsListView::setMultiChoiceModeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setMultiChoiceModeListener",
@@ -802,7 +802,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setOnScrollListener(JObject arg0)
+	void AbsListView::setOnScrollListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnScrollListener",
@@ -810,7 +810,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setRecyclerListener(JObject arg0)
+	void AbsListView::setRecyclerListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setRecyclerListener",
@@ -818,7 +818,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setRemoteViewsAdapter(android::content::Intent arg0)
+	void AbsListView::setRemoteViewsAdapter(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setRemoteViewsAdapter",
@@ -826,7 +826,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setScrollBarStyle(jint arg0)
+	void AbsListView::setScrollBarStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollBarStyle",
@@ -834,7 +834,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setScrollIndicators(android::view::View arg0, android::view::View arg1)
+	void AbsListView::setScrollIndicators(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"setScrollIndicators",
@@ -843,7 +843,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void AbsListView::setScrollingCacheEnabled(jboolean arg0)
+	void AbsListView::setScrollingCacheEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScrollingCacheEnabled",
@@ -851,7 +851,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setSelectionFromTop(jint arg0, jint arg1)
+	void AbsListView::setSelectionFromTop(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSelectionFromTop",
@@ -860,7 +860,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::setSelector(android::graphics::drawable::Drawable arg0)
+	void AbsListView::setSelector(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setSelector",
@@ -868,7 +868,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setSelector(jint arg0)
+	void AbsListView::setSelector(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelector",
@@ -876,7 +876,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setSmoothScrollbarEnabled(jboolean arg0)
+	void AbsListView::setSmoothScrollbarEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSmoothScrollbarEnabled",
@@ -884,7 +884,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setStackFromBottom(jboolean arg0)
+	void AbsListView::setStackFromBottom(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setStackFromBottom",
@@ -892,7 +892,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setTextFilterEnabled(jboolean arg0)
+	void AbsListView::setTextFilterEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTextFilterEnabled",
@@ -900,7 +900,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setTopEdgeEffectColor(jint arg0)
+	void AbsListView::setTopEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setTopEdgeEffectColor",
@@ -908,7 +908,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setTranscriptMode(jint arg0)
+	void AbsListView::setTranscriptMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setTranscriptMode",
@@ -916,7 +916,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setVelocityScale(jfloat arg0)
+	void AbsListView::setVelocityScale(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setVelocityScale",
@@ -924,7 +924,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setVerticalScrollbarPosition(jint arg0)
+	void AbsListView::setVerticalScrollbarPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalScrollbarPosition",
@@ -932,14 +932,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean AbsListView::showContextMenu()
+	jboolean AbsListView::showContextMenu() const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",
 			"()Z"
 		);
 	}
-	jboolean AbsListView::showContextMenu(jfloat arg0, jfloat arg1)
+	jboolean AbsListView::showContextMenu(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenu",
@@ -948,7 +948,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jboolean AbsListView::showContextMenuForChild(android::view::View arg0)
+	jboolean AbsListView::showContextMenuForChild(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenuForChild",
@@ -956,7 +956,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean AbsListView::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2)
+	jboolean AbsListView::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callMethod<jboolean>(
 			"showContextMenuForChild",
@@ -966,7 +966,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void AbsListView::smoothScrollBy(jint arg0, jint arg1)
+	void AbsListView::smoothScrollBy(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"smoothScrollBy",
@@ -975,7 +975,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::smoothScrollToPosition(jint arg0)
+	void AbsListView::smoothScrollToPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"smoothScrollToPosition",
@@ -983,7 +983,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::smoothScrollToPosition(jint arg0, jint arg1)
+	void AbsListView::smoothScrollToPosition(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"smoothScrollToPosition",
@@ -992,7 +992,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::smoothScrollToPositionFromTop(jint arg0, jint arg1)
+	void AbsListView::smoothScrollToPositionFromTop(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"smoothScrollToPositionFromTop",
@@ -1001,7 +1001,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::smoothScrollToPositionFromTop(jint arg0, jint arg1, jint arg2)
+	void AbsListView::smoothScrollToPositionFromTop(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"smoothScrollToPositionFromTop",
@@ -1011,7 +1011,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	jboolean AbsListView::verifyDrawable(android::graphics::drawable::Drawable arg0)
+	jboolean AbsListView::verifyDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		return callMethod<jboolean>(
 			"verifyDrawable",

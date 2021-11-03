@@ -21,14 +21,14 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	android::companion::BluetoothLeDeviceFilter BluetoothLeDeviceFilter_Builder::build()
+	android::companion::BluetoothLeDeviceFilter BluetoothLeDeviceFilter_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/companion/BluetoothLeDeviceFilter;"
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"setNamePattern",
@@ -36,7 +36,7 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRawDataFilter(JByteArray arg0, JByteArray arg1)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRawDataFilter(JByteArray arg0, JByteArray arg1) const
 	{
 		return callObjectMethod(
 			"setRawDataFilter",
@@ -45,7 +45,7 @@ namespace android::companion
 			arg1.object<jbyteArray>()
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromBytes(JString arg0, JString arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromBytes(JString arg0, JString arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4) const
 	{
 		return callObjectMethod(
 			"setRenameFromBytes",
@@ -57,7 +57,7 @@ namespace android::companion
 			arg4.object()
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromName(JString arg0, JString arg1, jint arg2, jint arg3)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromName(JString arg0, JString arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"setRenameFromName",
@@ -68,7 +68,7 @@ namespace android::companion
 			arg3
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setScanFilter(android::bluetooth::le::ScanFilter arg0)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setScanFilter(android::bluetooth::le::ScanFilter arg0) const
 	{
 		return callObjectMethod(
 			"setScanFilter",

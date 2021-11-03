@@ -15,42 +15,42 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	jbyte Number::byteValue()
+	jbyte Number::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jdouble Number::doubleValue()
+	jdouble Number::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jfloat Number::floatValue()
+	jfloat Number::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Number::intValue()
+	jint Number::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong Number::longValue()
+	jlong Number::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	jshort Number::shortValue()
+	jshort Number::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",

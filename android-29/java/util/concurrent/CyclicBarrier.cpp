@@ -25,14 +25,14 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jint CyclicBarrier::await()
+	jint CyclicBarrier::await() const
 	{
 		return callMethod<jint>(
 			"await",
 			"()I"
 		);
 	}
-	jint CyclicBarrier::await(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jint CyclicBarrier::await(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jint>(
 			"await",
@@ -41,28 +41,28 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jint CyclicBarrier::getNumberWaiting()
+	jint CyclicBarrier::getNumberWaiting() const
 	{
 		return callMethod<jint>(
 			"getNumberWaiting",
 			"()I"
 		);
 	}
-	jint CyclicBarrier::getParties()
+	jint CyclicBarrier::getParties() const
 	{
 		return callMethod<jint>(
 			"getParties",
 			"()I"
 		);
 	}
-	jboolean CyclicBarrier::isBroken()
+	jboolean CyclicBarrier::isBroken() const
 	{
 		return callMethod<jboolean>(
 			"isBroken",
 			"()Z"
 		);
 	}
-	void CyclicBarrier::reset()
+	void CyclicBarrier::reset() const
 	{
 		callMethod<void>(
 			"reset",

@@ -29,10 +29,10 @@ namespace android::app
 		RecoverableSecurityException(JThrowable arg0, JString arg1, android::app::RemoteAction arg2);
 		
 		// Methods
-		jint describeContents();
-		android::app::RemoteAction getUserAction();
-		JString getUserMessage();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::app::RemoteAction getUserAction() const;
+		JString getUserMessage() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

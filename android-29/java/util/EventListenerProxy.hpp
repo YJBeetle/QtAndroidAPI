@@ -17,7 +17,7 @@ namespace java::util
 		EventListenerProxy(JObject arg0);
 		
 		// Methods
-		JObject getListener();
+		JObject getListener() const;
 	};
 } // namespace java::util
 

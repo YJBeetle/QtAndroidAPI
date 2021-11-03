@@ -30,13 +30,13 @@ namespace java::util::concurrent::locks
 		AbstractQueuedSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedSynchronizer arg0);
 		
 		// Methods
-		jboolean await(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void await();
-		jlong awaitNanos(jlong arg0);
-		void awaitUninterruptibly();
-		jboolean awaitUntil(java::util::Date arg0);
-		void signal();
-		void signalAll();
+		jboolean await(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void await() const;
+		jlong awaitNanos(jlong arg0) const;
+		void awaitUninterruptibly() const;
+		jboolean awaitUntil(java::util::Date arg0) const;
+		void signal() const;
+		void signalAll() const;
 	};
 } // namespace java::util::concurrent::locks
 

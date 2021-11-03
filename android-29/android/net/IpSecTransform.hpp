@@ -18,8 +18,8 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		void close();
-		JString toString();
+		void close() const;
+		JString toString() const;
 	};
 } // namespace android::net
 

@@ -40,21 +40,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void Hashtable::clear()
+	void Hashtable::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject Hashtable::clone()
+	JObject Hashtable::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject Hashtable::compute(JObject arg0, JObject arg1)
+	JObject Hashtable::compute(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compute",
@@ -63,7 +63,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject Hashtable::computeIfAbsent(JObject arg0, JObject arg1)
+	JObject Hashtable::computeIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -72,7 +72,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject Hashtable::computeIfPresent(JObject arg0, JObject arg1)
+	JObject Hashtable::computeIfPresent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -81,7 +81,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean Hashtable::contains(JObject arg0)
+	jboolean Hashtable::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -89,7 +89,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Hashtable::containsKey(JObject arg0)
+	jboolean Hashtable::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -97,7 +97,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Hashtable::containsValue(JObject arg0)
+	jboolean Hashtable::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -105,21 +105,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject Hashtable::elements()
+	JObject Hashtable::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Hashtable::entrySet()
+	JObject Hashtable::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean Hashtable::equals(JObject arg0)
+	jboolean Hashtable::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -127,7 +127,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void Hashtable::forEach(JObject arg0)
+	void Hashtable::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -135,7 +135,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Hashtable::get(JObject arg0)
+	JObject Hashtable::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -143,7 +143,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject Hashtable::getOrDefault(JObject arg0, JObject arg1)
+	JObject Hashtable::getOrDefault(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getOrDefault",
@@ -152,35 +152,35 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jint Hashtable::hashCode()
+	jint Hashtable::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Hashtable::isEmpty()
+	jboolean Hashtable::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject Hashtable::keySet()
+	JObject Hashtable::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Hashtable::keys()
+	JObject Hashtable::keys() const
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Hashtable::merge(JObject arg0, JObject arg1, JObject arg2)
+	JObject Hashtable::merge(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -190,7 +190,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	JObject Hashtable::put(JObject arg0, JObject arg1)
+	JObject Hashtable::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -199,7 +199,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void Hashtable::putAll(JObject arg0)
+	void Hashtable::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -207,7 +207,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Hashtable::putIfAbsent(JObject arg0, JObject arg1)
+	JObject Hashtable::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
@@ -216,7 +216,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean Hashtable::remove(JObject arg0, JObject arg1)
+	jboolean Hashtable::remove(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -225,7 +225,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject Hashtable::remove(JObject arg0)
+	JObject Hashtable::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -233,7 +233,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Hashtable::replace(JObject arg0, JObject arg1, JObject arg2)
+	jboolean Hashtable::replace(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"replace",
@@ -243,7 +243,7 @@ namespace java::util
 			arg2.object<jobject>()
 		);
 	}
-	JObject Hashtable::replace(JObject arg0, JObject arg1)
+	JObject Hashtable::replace(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -252,7 +252,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void Hashtable::replaceAll(JObject arg0)
+	void Hashtable::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -260,21 +260,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint Hashtable::size()
+	jint Hashtable::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString Hashtable::toString()
+	JString Hashtable::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Hashtable::values()
+	JObject Hashtable::values() const
 	{
 		return callObjectMethod(
 			"values",

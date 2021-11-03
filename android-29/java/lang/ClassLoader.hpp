@@ -65,21 +65,21 @@ namespace java::lang
 		static java::net::URL getSystemResource(JString arg0);
 		static java::io::InputStream getSystemResourceAsStream(JString arg0);
 		static JObject getSystemResources(JString arg0);
-		void clearAssertionStatus();
-		java::lang::Package getDefinedPackage(JString arg0);
-		JArray getDefinedPackages();
-		JString getName();
-		java::lang::ClassLoader getParent();
-		java::net::URL getResource(JString arg0);
-		java::io::InputStream getResourceAsStream(JString arg0);
-		JObject getResources(JString arg0);
-		JObject getUnnamedModule();
-		jboolean isRegisteredAsParallelCapable();
-		JClass loadClass(JString arg0);
-		JObject resources(JString arg0);
-		void setClassAssertionStatus(JString arg0, jboolean arg1);
-		void setDefaultAssertionStatus(jboolean arg0);
-		void setPackageAssertionStatus(JString arg0, jboolean arg1);
+		void clearAssertionStatus() const;
+		java::lang::Package getDefinedPackage(JString arg0) const;
+		JArray getDefinedPackages() const;
+		JString getName() const;
+		java::lang::ClassLoader getParent() const;
+		java::net::URL getResource(JString arg0) const;
+		java::io::InputStream getResourceAsStream(JString arg0) const;
+		JObject getResources(JString arg0) const;
+		JObject getUnnamedModule() const;
+		jboolean isRegisteredAsParallelCapable() const;
+		JClass loadClass(JString arg0) const;
+		JObject resources(JString arg0) const;
+		void setClassAssertionStatus(JString arg0, jboolean arg1) const;
+		void setDefaultAssertionStatus(jboolean arg0) const;
+		void setPackageAssertionStatus(JString arg0, jboolean arg1) const;
 	};
 } // namespace java::lang
 

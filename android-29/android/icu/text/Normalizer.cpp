@@ -132,7 +132,7 @@ namespace android::icu::text
 			arg6
 		);
 	}
-	JObject Normalizer::clone()
+	JObject Normalizer::clone() const
 	{
 		return callObjectMethod(
 			"clone",

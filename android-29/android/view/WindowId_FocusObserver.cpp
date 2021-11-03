@@ -16,7 +16,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void WindowId_FocusObserver::onFocusGained(android::view::WindowId arg0)
+	void WindowId_FocusObserver::onFocusGained(android::view::WindowId arg0) const
 	{
 		callMethod<void>(
 			"onFocusGained",
@@ -24,7 +24,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void WindowId_FocusObserver::onFocusLost(android::view::WindowId arg0)
+	void WindowId_FocusObserver::onFocusLost(android::view::WindowId arg0) const
 	{
 		callMethod<void>(
 			"onFocusLost",

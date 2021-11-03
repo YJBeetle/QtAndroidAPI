@@ -37,12 +37,12 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::app::Person getAuthor();
-		android::os::Bundle getExtras();
-		java::time::ZonedDateTime getReferenceTime();
-		JString getText();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::app::Person getAuthor() const;
+		android::os::Bundle getExtras() const;
+		java::time::ZonedDateTime getReferenceTime() const;
+		JString getText() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

@@ -32,21 +32,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::util::Range MediaCodecInfo_EncoderCapabilities::getComplexityRange()
+	android::util::Range MediaCodecInfo_EncoderCapabilities::getComplexityRange() const
 	{
 		return callObjectMethod(
 			"getComplexityRange",
 			"()Landroid/util/Range;"
 		);
 	}
-	android::util::Range MediaCodecInfo_EncoderCapabilities::getQualityRange()
+	android::util::Range MediaCodecInfo_EncoderCapabilities::getQualityRange() const
 	{
 		return callObjectMethod(
 			"getQualityRange",
 			"()Landroid/util/Range;"
 		);
 	}
-	jboolean MediaCodecInfo_EncoderCapabilities::isBitrateModeSupported(jint arg0)
+	jboolean MediaCodecInfo_EncoderCapabilities::isBitrateModeSupported(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBitrateModeSupported",

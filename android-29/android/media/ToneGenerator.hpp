@@ -118,11 +118,11 @@ namespace android::media
 		ToneGenerator(jint arg0, jint arg1);
 		
 		// Methods
-		jint getAudioSessionId();
-		void release();
-		jboolean startTone(jint arg0);
-		jboolean startTone(jint arg0, jint arg1);
-		void stopTone();
+		jint getAudioSessionId() const;
+		void release() const;
+		jboolean startTone(jint arg0) const;
+		jboolean startTone(jint arg0, jint arg1) const;
+		void stopTone() const;
 	};
 } // namespace android::media
 

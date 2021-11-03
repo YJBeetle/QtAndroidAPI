@@ -28,11 +28,11 @@ namespace android::icu::util
 		Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::lang::Number getNumber();
-		android::icu::util::MeasureUnit getUnit();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		java::lang::Number getNumber() const;
+		android::icu::util::MeasureUnit getUnit() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::util
 

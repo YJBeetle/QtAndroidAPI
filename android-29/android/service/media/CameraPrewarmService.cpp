@@ -16,7 +16,7 @@ namespace android::service::media
 		) {}
 	
 	// Methods
-	JObject CameraPrewarmService::onBind(android::content::Intent arg0)
+	JObject CameraPrewarmService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -24,7 +24,7 @@ namespace android::service::media
 			arg0.object()
 		);
 	}
-	void CameraPrewarmService::onCooldown(jboolean arg0)
+	void CameraPrewarmService::onCooldown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onCooldown",
@@ -32,14 +32,14 @@ namespace android::service::media
 			arg0
 		);
 	}
-	void CameraPrewarmService::onPrewarm()
+	void CameraPrewarmService::onPrewarm() const
 	{
 		callMethod<void>(
 			"onPrewarm",
 			"()V"
 		);
 	}
-	jboolean CameraPrewarmService::onUnbind(android::content::Intent arg0)
+	jboolean CameraPrewarmService::onUnbind(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnbind",

@@ -25,14 +25,14 @@ namespace javax::net::ssl
 		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, JObject arg1);
 		
 		// Methods
-		JString getCipherSuite();
-		JArray getLocalCertificates();
-		JObject getLocalPrincipal();
-		JArray getPeerCertificateChain();
-		JArray getPeerCertificates();
-		JObject getPeerPrincipal();
-		JObject getSession();
-		javax::net::ssl::SSLSocket getSocket();
+		JString getCipherSuite() const;
+		JArray getLocalCertificates() const;
+		JObject getLocalPrincipal() const;
+		JArray getPeerCertificateChain() const;
+		JArray getPeerCertificates() const;
+		JObject getPeerPrincipal() const;
+		JObject getSession() const;
+		javax::net::ssl::SSLSocket getSocket() const;
 	};
 } // namespace javax::net::ssl
 

@@ -66,25 +66,25 @@ namespace android::telecom
 		
 		// Methods
 		static android::telecom::PhoneAccount_Builder builder(android::telecom::PhoneAccountHandle arg0, JString arg1);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::telecom::PhoneAccountHandle getAccountHandle();
-		android::net::Uri getAddress();
-		jint getCapabilities();
-		android::os::Bundle getExtras();
-		jint getHighlightColor();
-		android::graphics::drawable::Icon getIcon();
-		JString getLabel();
-		JString getShortDescription();
-		android::net::Uri getSubscriptionAddress();
-		JObject getSupportedUriSchemes();
-		jboolean hasCapabilities(jint arg0);
-		jint hashCode();
-		jboolean isEnabled();
-		jboolean supportsUriScheme(JString arg0);
-		android::telecom::PhoneAccount_Builder toBuilder();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::telecom::PhoneAccountHandle getAccountHandle() const;
+		android::net::Uri getAddress() const;
+		jint getCapabilities() const;
+		android::os::Bundle getExtras() const;
+		jint getHighlightColor() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getLabel() const;
+		JString getShortDescription() const;
+		android::net::Uri getSubscriptionAddress() const;
+		JObject getSupportedUriSchemes() const;
+		jboolean hasCapabilities(jint arg0) const;
+		jint hashCode() const;
+		jboolean isEnabled() const;
+		jboolean supportsUriScheme(JString arg0) const;
+		android::telecom::PhoneAccount_Builder toBuilder() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telecom
 

@@ -31,15 +31,15 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::content::pm::VersionedPackage getDeclaringPackage();
-		JObject getDependentPackages();
-		jlong getLongVersion();
-		JString getName();
-		jint getType();
-		jint getVersion();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::content::pm::VersionedPackage getDeclaringPackage() const;
+		JObject getDependentPackages() const;
+		jlong getLongVersion() const;
+		JString getName() const;
+		jint getType() const;
+		jint getVersion() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

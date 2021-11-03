@@ -17,7 +17,7 @@ namespace android::drm
 		) {}
 	
 	// Methods
-	void DrmSupportInfo::addFileSuffix(JString arg0)
+	void DrmSupportInfo::addFileSuffix(JString arg0) const
 	{
 		callMethod<void>(
 			"addFileSuffix",
@@ -25,7 +25,7 @@ namespace android::drm
 			arg0.object<jstring>()
 		);
 	}
-	void DrmSupportInfo::addMimeType(JString arg0)
+	void DrmSupportInfo::addMimeType(JString arg0) const
 	{
 		callMethod<void>(
 			"addMimeType",
@@ -33,7 +33,7 @@ namespace android::drm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean DrmSupportInfo::equals(JObject arg0)
+	jboolean DrmSupportInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -41,42 +41,42 @@ namespace android::drm
 			arg0.object<jobject>()
 		);
 	}
-	JString DrmSupportInfo::getDescriprition()
+	JString DrmSupportInfo::getDescriprition() const
 	{
 		return callObjectMethod(
 			"getDescriprition",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DrmSupportInfo::getDescription()
+	JString DrmSupportInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject DrmSupportInfo::getFileSuffixIterator()
+	JObject DrmSupportInfo::getFileSuffixIterator() const
 	{
 		return callObjectMethod(
 			"getFileSuffixIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject DrmSupportInfo::getMimeTypeIterator()
+	JObject DrmSupportInfo::getMimeTypeIterator() const
 	{
 		return callObjectMethod(
 			"getMimeTypeIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint DrmSupportInfo::hashCode()
+	jint DrmSupportInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void DrmSupportInfo::setDescription(JString arg0)
+	void DrmSupportInfo::setDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setDescription",

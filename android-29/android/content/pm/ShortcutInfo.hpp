@@ -58,30 +58,30 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::content::ComponentName getActivity();
-		JObject getCategories();
-		JString getDisabledMessage();
-		jint getDisabledReason();
-		android::os::PersistableBundle getExtras();
-		JString getId();
-		android::content::Intent getIntent();
-		JArray getIntents();
-		jlong getLastChangedTimestamp();
-		android::content::LocusId getLocusId();
-		JString getLongLabel();
-		JString getPackage();
-		jint getRank();
-		JString getShortLabel();
-		android::os::UserHandle getUserHandle();
-		jboolean hasKeyFieldsOnly();
-		jboolean isDeclaredInManifest();
-		jboolean isDynamic();
-		jboolean isEnabled();
-		jboolean isImmutable();
-		jboolean isPinned();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::content::ComponentName getActivity() const;
+		JObject getCategories() const;
+		JString getDisabledMessage() const;
+		jint getDisabledReason() const;
+		android::os::PersistableBundle getExtras() const;
+		JString getId() const;
+		android::content::Intent getIntent() const;
+		JArray getIntents() const;
+		jlong getLastChangedTimestamp() const;
+		android::content::LocusId getLocusId() const;
+		JString getLongLabel() const;
+		JString getPackage() const;
+		jint getRank() const;
+		JString getShortLabel() const;
+		android::os::UserHandle getUserHandle() const;
+		jboolean hasKeyFieldsOnly() const;
+		jboolean isDeclaredInManifest() const;
+		jboolean isDynamic() const;
+		jboolean isEnabled() const;
+		jboolean isImmutable() const;
+		jboolean isPinned() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

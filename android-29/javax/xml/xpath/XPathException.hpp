@@ -38,10 +38,10 @@ namespace javax::xml::xpath
 		XPathException(JThrowable arg0);
 		
 		// Methods
-		JThrowable getCause();
-		void printStackTrace();
-		void printStackTrace(java::io::PrintStream arg0);
-		void printStackTrace(java::io::PrintWriter arg0);
+		JThrowable getCause() const;
+		void printStackTrace() const;
+		void printStackTrace(java::io::PrintStream arg0) const;
+		void printStackTrace(java::io::PrintWriter arg0) const;
 	};
 } // namespace javax::xml::xpath
 

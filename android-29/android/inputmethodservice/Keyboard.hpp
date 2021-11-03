@@ -49,14 +49,14 @@ namespace android::inputmethodservice
 		Keyboard(android::content::Context arg0, jint arg1, JString arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jint getHeight();
-		JObject getKeys();
-		jint getMinWidth();
-		JObject getModifierKeys();
-		JIntArray getNearestKeys(jint arg0, jint arg1);
-		jint getShiftKeyIndex();
-		jboolean isShifted();
-		jboolean setShifted(jboolean arg0);
+		jint getHeight() const;
+		JObject getKeys() const;
+		jint getMinWidth() const;
+		JObject getModifierKeys() const;
+		JIntArray getNearestKeys(jint arg0, jint arg1) const;
+		jint getShiftKeyIndex() const;
+		jboolean isShifted() const;
+		jboolean setShifted(jboolean arg0) const;
 	};
 } // namespace android::inputmethodservice
 

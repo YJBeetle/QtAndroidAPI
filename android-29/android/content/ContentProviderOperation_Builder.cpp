@@ -16,14 +16,14 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	android::content::ContentProviderOperation ContentProviderOperation_Builder::build()
+	android::content::ContentProviderOperation ContentProviderOperation_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/content/ContentProviderOperation;"
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withExpectedCount(jint arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withExpectedCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"withExpectedCount",
@@ -31,7 +31,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelection(JString arg0, JArray arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelection(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"withSelection",
@@ -40,7 +40,7 @@ namespace android::content
 			arg1.object<jarray>()
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelectionBackReference(jint arg0, jint arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelectionBackReference(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"withSelectionBackReference",
@@ -49,7 +49,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValue(JString arg0, JObject arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValue(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"withValue",
@@ -58,7 +58,7 @@ namespace android::content
 			arg1.object<jobject>()
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReference(JString arg0, jint arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReference(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"withValueBackReference",
@@ -67,7 +67,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReferences(android::content::ContentValues arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReferences(android::content::ContentValues arg0) const
 	{
 		return callObjectMethod(
 			"withValueBackReferences",
@@ -75,7 +75,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValues(android::content::ContentValues arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValues(android::content::ContentValues arg0) const
 	{
 		return callObjectMethod(
 			"withValues",
@@ -83,7 +83,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withYieldAllowed(jboolean arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withYieldAllowed(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"withYieldAllowed",

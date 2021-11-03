@@ -57,17 +57,17 @@ namespace android::app
 		static android::app::ActivityOptions makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, JString arg2);
 		static android::app::ActivityOptions makeTaskLaunchBehind();
 		static android::app::ActivityOptions makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3);
-		android::graphics::Rect getLaunchBounds();
-		jint getLaunchDisplayId();
-		jboolean getLockTaskMode();
-		void requestUsageTimeReport(android::app::PendingIntent arg0);
-		android::app::ActivityOptions setAppVerificationBundle(android::os::Bundle arg0);
-		android::app::ActivityOptions setLaunchBounds(android::graphics::Rect arg0);
-		android::app::ActivityOptions setLaunchDisplayId(jint arg0);
-		android::app::ActivityOptions setLockTaskEnabled(jboolean arg0);
-		android::os::Bundle toBundle();
-		JString toString();
-		void update(android::app::ActivityOptions arg0);
+		android::graphics::Rect getLaunchBounds() const;
+		jint getLaunchDisplayId() const;
+		jboolean getLockTaskMode() const;
+		void requestUsageTimeReport(android::app::PendingIntent arg0) const;
+		android::app::ActivityOptions setAppVerificationBundle(android::os::Bundle arg0) const;
+		android::app::ActivityOptions setLaunchBounds(android::graphics::Rect arg0) const;
+		android::app::ActivityOptions setLaunchDisplayId(jint arg0) const;
+		android::app::ActivityOptions setLockTaskEnabled(jboolean arg0) const;
+		android::os::Bundle toBundle() const;
+		JString toString() const;
+		void update(android::app::ActivityOptions arg0) const;
 	};
 } // namespace android::app
 

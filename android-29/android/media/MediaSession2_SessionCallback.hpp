@@ -43,11 +43,11 @@ namespace android::media
 		MediaSession2_SessionCallback();
 		
 		// Methods
-		void onCommandResult(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, JObject arg2, android::media::Session2Command arg3, android::media::Session2Command_Result arg4);
-		android::media::Session2CommandGroup onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1);
-		void onDisconnected(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1);
-		void onPostConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1);
-		android::media::Session2Command_Result onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3);
+		void onCommandResult(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, JObject arg2, android::media::Session2Command arg3, android::media::Session2Command_Result arg4) const;
+		android::media::Session2CommandGroup onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1) const;
+		void onDisconnected(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1) const;
+		void onPostConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1) const;
+		android::media::Session2Command_Result onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3) const;
 	};
 } // namespace android::media
 

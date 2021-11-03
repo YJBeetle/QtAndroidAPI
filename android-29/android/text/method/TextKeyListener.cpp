@@ -60,14 +60,14 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jint TextKeyListener::getInputType()
+	jint TextKeyListener::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
-	jboolean TextKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean TextKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -78,7 +78,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	jboolean TextKeyListener::onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2)
+	jboolean TextKeyListener::onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyOther",
@@ -88,7 +88,7 @@ namespace android::text::method
 			arg2.object()
 		);
 	}
-	jboolean TextKeyListener::onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean TextKeyListener::onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -99,7 +99,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	void TextKeyListener::onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3)
+	void TextKeyListener::onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onSpanAdded",
@@ -110,7 +110,7 @@ namespace android::text::method
 			arg3
 		);
 	}
-	void TextKeyListener::onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void TextKeyListener::onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"onSpanChanged",
@@ -123,7 +123,7 @@ namespace android::text::method
 			arg5
 		);
 	}
-	void TextKeyListener::onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3)
+	void TextKeyListener::onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onSpanRemoved",
@@ -134,7 +134,7 @@ namespace android::text::method
 			arg3
 		);
 	}
-	void TextKeyListener::release()
+	void TextKeyListener::release() const
 	{
 		callMethod<void>(
 			"release",

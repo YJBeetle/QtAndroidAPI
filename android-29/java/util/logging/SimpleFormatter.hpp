@@ -23,7 +23,7 @@ namespace java::util::logging
 		SimpleFormatter();
 		
 		// Methods
-		JString format(java::util::logging::LogRecord arg0);
+		JString format(java::util::logging::LogRecord arg0) const;
 	};
 } // namespace java::util::logging
 

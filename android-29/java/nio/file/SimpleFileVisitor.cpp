@@ -13,7 +13,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	java::nio::file::FileVisitResult SimpleFileVisitor::postVisitDirectory(JObject arg0, java::io::IOException arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::postVisitDirectory(JObject arg0, java::io::IOException arg1) const
 	{
 		return callObjectMethod(
 			"postVisitDirectory",
@@ -22,7 +22,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileVisitResult SimpleFileVisitor::preVisitDirectory(JObject arg0, JObject arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::preVisitDirectory(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"preVisitDirectory",
@@ -31,7 +31,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileVisitResult SimpleFileVisitor::visitFile(JObject arg0, JObject arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::visitFile(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"visitFile",
@@ -40,7 +40,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileVisitResult SimpleFileVisitor::visitFileFailed(JObject arg0, java::io::IOException arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::visitFileFailed(JObject arg0, java::io::IOException arg1) const
 	{
 		return callObjectMethod(
 			"visitFileFailed",

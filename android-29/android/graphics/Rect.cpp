@@ -84,21 +84,21 @@ namespace android::graphics
 			arg0.object<jstring>()
 		);
 	}
-	jint Rect::centerX()
+	jint Rect::centerX() const
 	{
 		return callMethod<jint>(
 			"centerX",
 			"()I"
 		);
 	}
-	jint Rect::centerY()
+	jint Rect::centerY() const
 	{
 		return callMethod<jint>(
 			"centerY",
 			"()I"
 		);
 	}
-	jboolean Rect::contains(android::graphics::Rect arg0)
+	jboolean Rect::contains(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -106,7 +106,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Rect::contains(jint arg0, jint arg1)
+	jboolean Rect::contains(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -115,7 +115,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Rect::contains(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean Rect::contains(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -126,14 +126,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jint Rect::describeContents()
+	jint Rect::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Rect::equals(JObject arg0)
+	jboolean Rect::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -141,42 +141,42 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Rect::exactCenterX()
+	jfloat Rect::exactCenterX() const
 	{
 		return callMethod<jfloat>(
 			"exactCenterX",
 			"()F"
 		);
 	}
-	jfloat Rect::exactCenterY()
+	jfloat Rect::exactCenterY() const
 	{
 		return callMethod<jfloat>(
 			"exactCenterY",
 			"()F"
 		);
 	}
-	JString Rect::flattenToString()
+	JString Rect::flattenToString() const
 	{
 		return callObjectMethod(
 			"flattenToString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Rect::hashCode()
+	jint Rect::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Rect::height()
+	jint Rect::height() const
 	{
 		return callMethod<jint>(
 			"height",
 			"()I"
 		);
 	}
-	void Rect::inset(jint arg0, jint arg1)
+	void Rect::inset(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"inset",
@@ -185,7 +185,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Rect::intersect(android::graphics::Rect arg0)
+	jboolean Rect::intersect(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"intersect",
@@ -193,7 +193,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Rect::intersect(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean Rect::intersect(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"intersect",
@@ -204,7 +204,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Rect::intersects(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean Rect::intersects(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"intersects",
@@ -215,14 +215,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Rect::isEmpty()
+	jboolean Rect::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void Rect::offset(jint arg0, jint arg1)
+	void Rect::offset(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"offset",
@@ -231,7 +231,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Rect::offsetTo(jint arg0, jint arg1)
+	void Rect::offsetTo(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"offsetTo",
@@ -240,7 +240,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Rect::readFromParcel(android::os::Parcel arg0)
+	void Rect::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -248,7 +248,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Rect::set(android::graphics::Rect arg0)
+	void Rect::set(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -256,7 +256,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Rect::set(jint arg0, jint arg1, jint arg2, jint arg3)
+	void Rect::set(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"set",
@@ -267,14 +267,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Rect::setEmpty()
+	void Rect::setEmpty() const
 	{
 		callMethod<void>(
 			"setEmpty",
 			"()V"
 		);
 	}
-	jboolean Rect::setIntersect(android::graphics::Rect arg0, android::graphics::Rect arg1)
+	jboolean Rect::setIntersect(android::graphics::Rect arg0, android::graphics::Rect arg1) const
 	{
 		return callMethod<jboolean>(
 			"setIntersect",
@@ -283,28 +283,28 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void Rect::sort()
+	void Rect::sort() const
 	{
 		callMethod<void>(
 			"sort",
 			"()V"
 		);
 	}
-	JString Rect::toShortString()
+	JString Rect::toShortString() const
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Rect::toString()
+	JString Rect::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Rect::_union(android::graphics::Rect arg0)
+	void Rect::_union(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"union",
@@ -312,7 +312,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Rect::_union(jint arg0, jint arg1)
+	void Rect::_union(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"union",
@@ -321,7 +321,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Rect::_union(jint arg0, jint arg1, jint arg2, jint arg3)
+	void Rect::_union(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"union",
@@ -332,14 +332,14 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jint Rect::width()
+	jint Rect::width() const
 	{
 		return callMethod<jint>(
 			"width",
 			"()I"
 		);
 	}
-	void Rect::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Rect::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

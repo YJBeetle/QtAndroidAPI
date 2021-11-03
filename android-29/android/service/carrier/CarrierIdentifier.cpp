@@ -54,14 +54,14 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	jint CarrierIdentifier::describeContents()
+	jint CarrierIdentifier::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CarrierIdentifier::equals(JObject arg0)
+	jboolean CarrierIdentifier::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -69,77 +69,77 @@ namespace android::service::carrier
 			arg0.object<jobject>()
 		);
 	}
-	jint CarrierIdentifier::getCarrierId()
+	jint CarrierIdentifier::getCarrierId() const
 	{
 		return callMethod<jint>(
 			"getCarrierId",
 			"()I"
 		);
 	}
-	JString CarrierIdentifier::getGid1()
+	JString CarrierIdentifier::getGid1() const
 	{
 		return callObjectMethod(
 			"getGid1",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CarrierIdentifier::getGid2()
+	JString CarrierIdentifier::getGid2() const
 	{
 		return callObjectMethod(
 			"getGid2",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CarrierIdentifier::getImsi()
+	JString CarrierIdentifier::getImsi() const
 	{
 		return callObjectMethod(
 			"getImsi",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CarrierIdentifier::getMcc()
+	JString CarrierIdentifier::getMcc() const
 	{
 		return callObjectMethod(
 			"getMcc",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CarrierIdentifier::getMnc()
+	JString CarrierIdentifier::getMnc() const
 	{
 		return callObjectMethod(
 			"getMnc",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CarrierIdentifier::getSpecificCarrierId()
+	jint CarrierIdentifier::getSpecificCarrierId() const
 	{
 		return callMethod<jint>(
 			"getSpecificCarrierId",
 			"()I"
 		);
 	}
-	JString CarrierIdentifier::getSpn()
+	JString CarrierIdentifier::getSpn() const
 	{
 		return callObjectMethod(
 			"getSpn",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CarrierIdentifier::hashCode()
+	jint CarrierIdentifier::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CarrierIdentifier::toString()
+	JString CarrierIdentifier::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CarrierIdentifier::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CarrierIdentifier::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

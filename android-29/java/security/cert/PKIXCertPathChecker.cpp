@@ -12,7 +12,7 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	void PKIXCertPathChecker::check(java::security::cert::Certificate arg0)
+	void PKIXCertPathChecker::check(java::security::cert::Certificate arg0) const
 	{
 		callMethod<void>(
 			"check",
@@ -20,7 +20,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXCertPathChecker::check(java::security::cert::Certificate arg0, JObject arg1)
+	void PKIXCertPathChecker::check(java::security::cert::Certificate arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"check",
@@ -29,21 +29,21 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	JObject PKIXCertPathChecker::clone()
+	JObject PKIXCertPathChecker::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject PKIXCertPathChecker::getSupportedExtensions()
+	JObject PKIXCertPathChecker::getSupportedExtensions() const
 	{
 		return callObjectMethod(
 			"getSupportedExtensions",
 			"()Ljava/util/Set;"
 		);
 	}
-	void PKIXCertPathChecker::init(jboolean arg0)
+	void PKIXCertPathChecker::init(jboolean arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -51,7 +51,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	jboolean PKIXCertPathChecker::isForwardCheckingSupported()
+	jboolean PKIXCertPathChecker::isForwardCheckingSupported() const
 	{
 		return callMethod<jboolean>(
 			"isForwardCheckingSupported",

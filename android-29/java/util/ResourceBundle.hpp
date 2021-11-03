@@ -54,14 +54,14 @@ namespace java::util
 		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1, JObject arg2);
 		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2);
 		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3);
-		jboolean containsKey(JString arg0);
-		JString getBaseBundleName();
-		JObject getKeys();
-		java::util::Locale getLocale();
-		JObject getObject(JString arg0);
-		JString getString(JString arg0);
-		JArray getStringArray(JString arg0);
-		JObject keySet();
+		jboolean containsKey(JString arg0) const;
+		JString getBaseBundleName() const;
+		JObject getKeys() const;
+		java::util::Locale getLocale() const;
+		JObject getObject(JString arg0) const;
+		JString getString(JString arg0) const;
+		JArray getStringArray(JString arg0) const;
+		JObject keySet() const;
 	};
 } // namespace java::util
 

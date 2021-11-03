@@ -112,7 +112,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean ForkJoinTask::cancel(jboolean arg0)
+	jboolean ForkJoinTask::cancel(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"cancel",
@@ -120,7 +120,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ForkJoinTask::compareAndSetForkJoinTaskTag(jshort arg0, jshort arg1)
+	jboolean ForkJoinTask::compareAndSetForkJoinTaskTag(jshort arg0, jshort arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSetForkJoinTaskTag",
@@ -129,7 +129,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void ForkJoinTask::complete(JObject arg0)
+	void ForkJoinTask::complete(JObject arg0) const
 	{
 		callMethod<void>(
 			"complete",
@@ -137,7 +137,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ForkJoinTask::completeExceptionally(JThrowable arg0)
+	void ForkJoinTask::completeExceptionally(JThrowable arg0) const
 	{
 		callMethod<void>(
 			"completeExceptionally",
@@ -145,21 +145,21 @@ namespace java::util::concurrent
 			arg0.object<jthrowable>()
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinTask::fork()
+	java::util::concurrent::ForkJoinTask ForkJoinTask::fork() const
 	{
 		return callObjectMethod(
 			"fork",
 			"()Ljava/util/concurrent/ForkJoinTask;"
 		);
 	}
-	JObject ForkJoinTask::get()
+	JObject ForkJoinTask::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ForkJoinTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject ForkJoinTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -168,98 +168,98 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	JThrowable ForkJoinTask::getException()
+	JThrowable ForkJoinTask::getException() const
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	jshort ForkJoinTask::getForkJoinTaskTag()
+	jshort ForkJoinTask::getForkJoinTaskTag() const
 	{
 		return callMethod<jshort>(
 			"getForkJoinTaskTag",
 			"()S"
 		);
 	}
-	JObject ForkJoinTask::getRawResult()
+	JObject ForkJoinTask::getRawResult() const
 	{
 		return callObjectMethod(
 			"getRawResult",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ForkJoinTask::invoke()
+	JObject ForkJoinTask::invoke() const
 	{
 		return callObjectMethod(
 			"invoke",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ForkJoinTask::isCancelled()
+	jboolean ForkJoinTask::isCancelled() const
 	{
 		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
-	jboolean ForkJoinTask::isCompletedAbnormally()
+	jboolean ForkJoinTask::isCompletedAbnormally() const
 	{
 		return callMethod<jboolean>(
 			"isCompletedAbnormally",
 			"()Z"
 		);
 	}
-	jboolean ForkJoinTask::isCompletedNormally()
+	jboolean ForkJoinTask::isCompletedNormally() const
 	{
 		return callMethod<jboolean>(
 			"isCompletedNormally",
 			"()Z"
 		);
 	}
-	jboolean ForkJoinTask::isDone()
+	jboolean ForkJoinTask::isDone() const
 	{
 		return callMethod<jboolean>(
 			"isDone",
 			"()Z"
 		);
 	}
-	JObject ForkJoinTask::join()
+	JObject ForkJoinTask::join() const
 	{
 		return callObjectMethod(
 			"join",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void ForkJoinTask::quietlyComplete()
+	void ForkJoinTask::quietlyComplete() const
 	{
 		callMethod<void>(
 			"quietlyComplete",
 			"()V"
 		);
 	}
-	void ForkJoinTask::quietlyInvoke()
+	void ForkJoinTask::quietlyInvoke() const
 	{
 		callMethod<void>(
 			"quietlyInvoke",
 			"()V"
 		);
 	}
-	void ForkJoinTask::quietlyJoin()
+	void ForkJoinTask::quietlyJoin() const
 	{
 		callMethod<void>(
 			"quietlyJoin",
 			"()V"
 		);
 	}
-	void ForkJoinTask::reinitialize()
+	void ForkJoinTask::reinitialize() const
 	{
 		callMethod<void>(
 			"reinitialize",
 			"()V"
 		);
 	}
-	jshort ForkJoinTask::setForkJoinTaskTag(jshort arg0)
+	jshort ForkJoinTask::setForkJoinTaskTag(jshort arg0) const
 	{
 		return callMethod<jshort>(
 			"setForkJoinTaskTag",
@@ -267,7 +267,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ForkJoinTask::tryUnfork()
+	jboolean ForkJoinTask::tryUnfork() const
 	{
 		return callMethod<jboolean>(
 			"tryUnfork",

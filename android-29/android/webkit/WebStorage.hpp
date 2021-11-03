@@ -19,12 +19,12 @@ namespace android::webkit
 		
 		// Methods
 		static android::webkit::WebStorage getInstance();
-		void deleteAllData();
-		void deleteOrigin(JString arg0);
-		void getOrigins(JObject arg0);
-		void getQuotaForOrigin(JString arg0, JObject arg1);
-		void getUsageForOrigin(JString arg0, JObject arg1);
-		void setQuotaForOrigin(JString arg0, jlong arg1);
+		void deleteAllData() const;
+		void deleteOrigin(JString arg0) const;
+		void getOrigins(JObject arg0) const;
+		void getQuotaForOrigin(JString arg0, JObject arg1) const;
+		void getUsageForOrigin(JString arg0, JObject arg1) const;
+		void setQuotaForOrigin(JString arg0, jlong arg1) const;
 	};
 } // namespace android::webkit
 

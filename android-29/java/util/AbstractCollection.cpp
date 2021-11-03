@@ -13,7 +13,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean AbstractCollection::add(JObject arg0)
+	jboolean AbstractCollection::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -21,7 +21,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractCollection::addAll(JObject arg0)
+	jboolean AbstractCollection::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -29,14 +29,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void AbstractCollection::clear()
+	void AbstractCollection::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean AbstractCollection::contains(JObject arg0)
+	jboolean AbstractCollection::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -44,7 +44,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractCollection::containsAll(JObject arg0)
+	jboolean AbstractCollection::containsAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -52,21 +52,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean AbstractCollection::isEmpty()
+	jboolean AbstractCollection::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject AbstractCollection::iterator()
+	JObject AbstractCollection::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean AbstractCollection::remove(JObject arg0)
+	jboolean AbstractCollection::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -74,7 +74,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractCollection::removeAll(JObject arg0)
+	jboolean AbstractCollection::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -82,7 +82,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean AbstractCollection::retainAll(JObject arg0)
+	jboolean AbstractCollection::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -90,21 +90,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint AbstractCollection::size()
+	jint AbstractCollection::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObjectArray AbstractCollection::toArray()
+	JObjectArray AbstractCollection::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray AbstractCollection::toArray(JObjectArray arg0)
+	JObjectArray AbstractCollection::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -112,7 +112,7 @@ namespace java::util
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString AbstractCollection::toString()
+	JString AbstractCollection::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -108,14 +108,14 @@ namespace android::service::voice
 		) {}
 	
 	// Methods
-	void VoiceInteractionSession::closeSystemDialogs()
+	void VoiceInteractionSession::closeSystemDialogs() const
 	{
 		callMethod<void>(
 			"closeSystemDialogs",
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void VoiceInteractionSession::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -126,56 +126,56 @@ namespace android::service::voice
 			arg3.object<jarray>()
 		);
 	}
-	void VoiceInteractionSession::finish()
+	void VoiceInteractionSession::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	android::content::Context VoiceInteractionSession::getContext()
+	android::content::Context VoiceInteractionSession::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	jint VoiceInteractionSession::getDisabledShowContext()
+	jint VoiceInteractionSession::getDisabledShowContext() const
 	{
 		return callMethod<jint>(
 			"getDisabledShowContext",
 			"()I"
 		);
 	}
-	android::view::LayoutInflater VoiceInteractionSession::getLayoutInflater()
+	android::view::LayoutInflater VoiceInteractionSession::getLayoutInflater() const
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	jint VoiceInteractionSession::getUserDisabledShowContext()
+	jint VoiceInteractionSession::getUserDisabledShowContext() const
 	{
 		return callMethod<jint>(
 			"getUserDisabledShowContext",
 			"()I"
 		);
 	}
-	android::app::Dialog VoiceInteractionSession::getWindow()
+	android::app::Dialog VoiceInteractionSession::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/app/Dialog;"
 		);
 	}
-	void VoiceInteractionSession::hide()
+	void VoiceInteractionSession::hide() const
 	{
 		callMethod<void>(
 			"hide",
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::onAssistStructureFailure(JThrowable arg0)
+	void VoiceInteractionSession::onAssistStructureFailure(JThrowable arg0) const
 	{
 		callMethod<void>(
 			"onAssistStructureFailure",
@@ -183,14 +183,14 @@ namespace android::service::voice
 			arg0.object<jthrowable>()
 		);
 	}
-	void VoiceInteractionSession::onBackPressed()
+	void VoiceInteractionSession::onBackPressed() const
 	{
 		callMethod<void>(
 			"onBackPressed",
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::onCancelRequest(android::service::voice::VoiceInteractionSession_Request arg0)
+	void VoiceInteractionSession::onCancelRequest(android::service::voice::VoiceInteractionSession_Request arg0) const
 	{
 		callMethod<void>(
 			"onCancelRequest",
@@ -198,14 +198,14 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onCloseSystemDialogs()
+	void VoiceInteractionSession::onCloseSystemDialogs() const
 	{
 		callMethod<void>(
 			"onCloseSystemDialogs",
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::onComputeInsets(android::service::voice::VoiceInteractionSession_Insets arg0)
+	void VoiceInteractionSession::onComputeInsets(android::service::voice::VoiceInteractionSession_Insets arg0) const
 	{
 		callMethod<void>(
 			"onComputeInsets",
@@ -213,7 +213,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onConfigurationChanged(android::content::res::Configuration arg0)
+	void VoiceInteractionSession::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -221,28 +221,28 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onCreate()
+	void VoiceInteractionSession::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	android::view::View VoiceInteractionSession::onCreateContentView()
+	android::view::View VoiceInteractionSession::onCreateContentView() const
 	{
 		return callObjectMethod(
 			"onCreateContentView",
 			"()Landroid/view/View;"
 		);
 	}
-	void VoiceInteractionSession::onDestroy()
+	void VoiceInteractionSession::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::onDirectActionsInvalidated(android::service::voice::VoiceInteractionSession_ActivityId arg0)
+	void VoiceInteractionSession::onDirectActionsInvalidated(android::service::voice::VoiceInteractionSession_ActivityId arg0) const
 	{
 		callMethod<void>(
 			"onDirectActionsInvalidated",
@@ -250,7 +250,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	JBooleanArray VoiceInteractionSession::onGetSupportedCommands(JArray arg0)
+	JBooleanArray VoiceInteractionSession::onGetSupportedCommands(JArray arg0) const
 	{
 		return callObjectMethod(
 			"onGetSupportedCommands",
@@ -258,7 +258,7 @@ namespace android::service::voice
 			arg0.object<jarray>()
 		);
 	}
-	void VoiceInteractionSession::onHandleAssist(android::service::voice::VoiceInteractionSession_AssistState arg0)
+	void VoiceInteractionSession::onHandleAssist(android::service::voice::VoiceInteractionSession_AssistState arg0) const
 	{
 		callMethod<void>(
 			"onHandleAssist",
@@ -266,7 +266,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onHandleAssist(android::os::Bundle arg0, android::app::assist::AssistStructure arg1, android::app::assist::AssistContent arg2)
+	void VoiceInteractionSession::onHandleAssist(android::os::Bundle arg0, android::app::assist::AssistStructure arg1, android::app::assist::AssistContent arg2) const
 	{
 		callMethod<void>(
 			"onHandleAssist",
@@ -276,7 +276,7 @@ namespace android::service::voice
 			arg2.object()
 		);
 	}
-	void VoiceInteractionSession::onHandleAssistSecondary(android::os::Bundle arg0, android::app::assist::AssistStructure arg1, android::app::assist::AssistContent arg2, jint arg3, jint arg4)
+	void VoiceInteractionSession::onHandleAssistSecondary(android::os::Bundle arg0, android::app::assist::AssistStructure arg1, android::app::assist::AssistContent arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"onHandleAssistSecondary",
@@ -288,7 +288,7 @@ namespace android::service::voice
 			arg4
 		);
 	}
-	void VoiceInteractionSession::onHandleScreenshot(android::graphics::Bitmap arg0)
+	void VoiceInteractionSession::onHandleScreenshot(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"onHandleScreenshot",
@@ -296,14 +296,14 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onHide()
+	void VoiceInteractionSession::onHide() const
 	{
 		callMethod<void>(
 			"onHide",
 			"()V"
 		);
 	}
-	jboolean VoiceInteractionSession::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean VoiceInteractionSession::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -312,7 +312,7 @@ namespace android::service::voice
 			arg1.object()
 		);
 	}
-	jboolean VoiceInteractionSession::onKeyLongPress(jint arg0, android::view::KeyEvent arg1)
+	jboolean VoiceInteractionSession::onKeyLongPress(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyLongPress",
@@ -321,7 +321,7 @@ namespace android::service::voice
 			arg1.object()
 		);
 	}
-	jboolean VoiceInteractionSession::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean VoiceInteractionSession::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -331,7 +331,7 @@ namespace android::service::voice
 			arg2.object()
 		);
 	}
-	jboolean VoiceInteractionSession::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean VoiceInteractionSession::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -340,21 +340,21 @@ namespace android::service::voice
 			arg1.object()
 		);
 	}
-	void VoiceInteractionSession::onLockscreenShown()
+	void VoiceInteractionSession::onLockscreenShown() const
 	{
 		callMethod<void>(
 			"onLockscreenShown",
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::onLowMemory()
+	void VoiceInteractionSession::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::onPrepareShow(android::os::Bundle arg0, jint arg1)
+	void VoiceInteractionSession::onPrepareShow(android::os::Bundle arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onPrepareShow",
@@ -363,7 +363,7 @@ namespace android::service::voice
 			arg1
 		);
 	}
-	void VoiceInteractionSession::onRequestAbortVoice(android::service::voice::VoiceInteractionSession_AbortVoiceRequest arg0)
+	void VoiceInteractionSession::onRequestAbortVoice(android::service::voice::VoiceInteractionSession_AbortVoiceRequest arg0) const
 	{
 		callMethod<void>(
 			"onRequestAbortVoice",
@@ -371,7 +371,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onRequestCommand(android::service::voice::VoiceInteractionSession_CommandRequest arg0)
+	void VoiceInteractionSession::onRequestCommand(android::service::voice::VoiceInteractionSession_CommandRequest arg0) const
 	{
 		callMethod<void>(
 			"onRequestCommand",
@@ -379,7 +379,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onRequestCompleteVoice(android::service::voice::VoiceInteractionSession_CompleteVoiceRequest arg0)
+	void VoiceInteractionSession::onRequestCompleteVoice(android::service::voice::VoiceInteractionSession_CompleteVoiceRequest arg0) const
 	{
 		callMethod<void>(
 			"onRequestCompleteVoice",
@@ -387,7 +387,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onRequestConfirmation(android::service::voice::VoiceInteractionSession_ConfirmationRequest arg0)
+	void VoiceInteractionSession::onRequestConfirmation(android::service::voice::VoiceInteractionSession_ConfirmationRequest arg0) const
 	{
 		callMethod<void>(
 			"onRequestConfirmation",
@@ -395,7 +395,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onRequestPickOption(android::service::voice::VoiceInteractionSession_PickOptionRequest arg0)
+	void VoiceInteractionSession::onRequestPickOption(android::service::voice::VoiceInteractionSession_PickOptionRequest arg0) const
 	{
 		callMethod<void>(
 			"onRequestPickOption",
@@ -403,7 +403,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::onShow(android::os::Bundle arg0, jint arg1)
+	void VoiceInteractionSession::onShow(android::os::Bundle arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onShow",
@@ -412,7 +412,7 @@ namespace android::service::voice
 			arg1
 		);
 	}
-	void VoiceInteractionSession::onTaskFinished(android::content::Intent arg0, jint arg1)
+	void VoiceInteractionSession::onTaskFinished(android::content::Intent arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onTaskFinished",
@@ -421,7 +421,7 @@ namespace android::service::voice
 			arg1
 		);
 	}
-	void VoiceInteractionSession::onTaskStarted(android::content::Intent arg0, jint arg1)
+	void VoiceInteractionSession::onTaskStarted(android::content::Intent arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onTaskStarted",
@@ -430,7 +430,7 @@ namespace android::service::voice
 			arg1
 		);
 	}
-	void VoiceInteractionSession::onTrimMemory(jint arg0)
+	void VoiceInteractionSession::onTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"onTrimMemory",
@@ -438,7 +438,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionSession::performDirectAction(android::app::DirectAction arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4)
+	void VoiceInteractionSession::performDirectAction(android::app::DirectAction arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"performDirectAction",
@@ -450,7 +450,7 @@ namespace android::service::voice
 			arg4.object()
 		);
 	}
-	void VoiceInteractionSession::requestDirectActions(android::service::voice::VoiceInteractionSession_ActivityId arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3)
+	void VoiceInteractionSession::requestDirectActions(android::service::voice::VoiceInteractionSession_ActivityId arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"requestDirectActions",
@@ -461,7 +461,7 @@ namespace android::service::voice
 			arg3.object()
 		);
 	}
-	void VoiceInteractionSession::setContentView(android::view::View arg0)
+	void VoiceInteractionSession::setContentView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -469,7 +469,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::setDisabledShowContext(jint arg0)
+	void VoiceInteractionSession::setDisabledShowContext(jint arg0) const
 	{
 		callMethod<void>(
 			"setDisabledShowContext",
@@ -477,7 +477,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionSession::setKeepAwake(jboolean arg0)
+	void VoiceInteractionSession::setKeepAwake(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setKeepAwake",
@@ -485,7 +485,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionSession::setTheme(jint arg0)
+	void VoiceInteractionSession::setTheme(jint arg0) const
 	{
 		callMethod<void>(
 			"setTheme",
@@ -493,7 +493,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionSession::setUiEnabled(jboolean arg0)
+	void VoiceInteractionSession::setUiEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUiEnabled",
@@ -501,7 +501,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionSession::show(android::os::Bundle arg0, jint arg1)
+	void VoiceInteractionSession::show(android::os::Bundle arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"show",
@@ -510,7 +510,7 @@ namespace android::service::voice
 			arg1
 		);
 	}
-	void VoiceInteractionSession::startAssistantActivity(android::content::Intent arg0)
+	void VoiceInteractionSession::startAssistantActivity(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"startAssistantActivity",
@@ -518,7 +518,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession::startVoiceActivity(android::content::Intent arg0)
+	void VoiceInteractionSession::startVoiceActivity(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"startVoiceActivity",

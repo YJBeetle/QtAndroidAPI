@@ -40,70 +40,70 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void ActionMode::finish()
+	void ActionMode::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	android::view::View ActionMode::getCustomView()
+	android::view::View ActionMode::getCustomView() const
 	{
 		return callObjectMethod(
 			"getCustomView",
 			"()Landroid/view/View;"
 		);
 	}
-	JObject ActionMode::getMenu()
+	JObject ActionMode::getMenu() const
 	{
 		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
-	android::view::MenuInflater ActionMode::getMenuInflater()
+	android::view::MenuInflater ActionMode::getMenuInflater() const
 	{
 		return callObjectMethod(
 			"getMenuInflater",
 			"()Landroid/view/MenuInflater;"
 		);
 	}
-	JString ActionMode::getSubtitle()
+	JString ActionMode::getSubtitle() const
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject ActionMode::getTag()
+	JObject ActionMode::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString ActionMode::getTitle()
+	JString ActionMode::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ActionMode::getTitleOptionalHint()
+	jboolean ActionMode::getTitleOptionalHint() const
 	{
 		return callMethod<jboolean>(
 			"getTitleOptionalHint",
 			"()Z"
 		);
 	}
-	jint ActionMode::getType()
+	jint ActionMode::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	void ActionMode::hide(jlong arg0)
+	void ActionMode::hide(jlong arg0) const
 	{
 		callMethod<void>(
 			"hide",
@@ -111,28 +111,28 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::invalidate()
+	void ActionMode::invalidate() const
 	{
 		callMethod<void>(
 			"invalidate",
 			"()V"
 		);
 	}
-	void ActionMode::invalidateContentRect()
+	void ActionMode::invalidateContentRect() const
 	{
 		callMethod<void>(
 			"invalidateContentRect",
 			"()V"
 		);
 	}
-	jboolean ActionMode::isTitleOptional()
+	jboolean ActionMode::isTitleOptional() const
 	{
 		return callMethod<jboolean>(
 			"isTitleOptional",
 			"()Z"
 		);
 	}
-	void ActionMode::onWindowFocusChanged(jboolean arg0)
+	void ActionMode::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -140,7 +140,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::setCustomView(android::view::View arg0)
+	void ActionMode::setCustomView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setCustomView",
@@ -148,7 +148,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ActionMode::setSubtitle(jint arg0)
+	void ActionMode::setSubtitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setSubtitle",
@@ -156,7 +156,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::setSubtitle(JString arg0)
+	void ActionMode::setSubtitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubtitle",
@@ -164,7 +164,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ActionMode::setTag(JObject arg0)
+	void ActionMode::setTag(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTag",
@@ -172,7 +172,7 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	void ActionMode::setTitle(jint arg0)
+	void ActionMode::setTitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -180,7 +180,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::setTitle(JString arg0)
+	void ActionMode::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -188,7 +188,7 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	void ActionMode::setTitleOptionalHint(jboolean arg0)
+	void ActionMode::setTitleOptionalHint(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTitleOptionalHint",
@@ -196,7 +196,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::setType(jint arg0)
+	void ActionMode::setType(jint arg0) const
 	{
 		callMethod<void>(
 			"setType",

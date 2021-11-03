@@ -44,28 +44,28 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	JObject KeyGenerator::generateKey()
+	JObject KeyGenerator::generateKey() const
 	{
 		return callObjectMethod(
 			"generateKey",
 			"()Ljavax/crypto/SecretKey;"
 		);
 	}
-	JString KeyGenerator::getAlgorithm()
+	JString KeyGenerator::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider KeyGenerator::getProvider()
+	java::security::Provider KeyGenerator::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void KeyGenerator::init(jint arg0)
+	void KeyGenerator::init(jint arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -73,7 +73,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	void KeyGenerator::init(java::security::SecureRandom arg0)
+	void KeyGenerator::init(java::security::SecureRandom arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -81,7 +81,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void KeyGenerator::init(JObject arg0)
+	void KeyGenerator::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -89,7 +89,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void KeyGenerator::init(jint arg0, java::security::SecureRandom arg1)
+	void KeyGenerator::init(jint arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"init",
@@ -98,7 +98,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void KeyGenerator::init(JObject arg0, java::security::SecureRandom arg1)
+	void KeyGenerator::init(JObject arg0, java::security::SecureRandom arg1) const
 	{
 		callMethod<void>(
 			"init",

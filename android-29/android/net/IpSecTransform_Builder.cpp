@@ -22,7 +22,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::IpSecTransform IpSecTransform_Builder::buildTransportModeTransform(java::net::InetAddress arg0, android::net::IpSecManager_SecurityParameterIndex arg1)
+	android::net::IpSecTransform IpSecTransform_Builder::buildTransportModeTransform(java::net::InetAddress arg0, android::net::IpSecManager_SecurityParameterIndex arg1) const
 	{
 		return callObjectMethod(
 			"buildTransportModeTransform",
@@ -31,7 +31,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	android::net::IpSecTransform_Builder IpSecTransform_Builder::setAuthenticatedEncryption(android::net::IpSecAlgorithm arg0)
+	android::net::IpSecTransform_Builder IpSecTransform_Builder::setAuthenticatedEncryption(android::net::IpSecAlgorithm arg0) const
 	{
 		return callObjectMethod(
 			"setAuthenticatedEncryption",
@@ -39,7 +39,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::IpSecTransform_Builder IpSecTransform_Builder::setAuthentication(android::net::IpSecAlgorithm arg0)
+	android::net::IpSecTransform_Builder IpSecTransform_Builder::setAuthentication(android::net::IpSecAlgorithm arg0) const
 	{
 		return callObjectMethod(
 			"setAuthentication",
@@ -47,7 +47,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::IpSecTransform_Builder IpSecTransform_Builder::setEncryption(android::net::IpSecAlgorithm arg0)
+	android::net::IpSecTransform_Builder IpSecTransform_Builder::setEncryption(android::net::IpSecAlgorithm arg0) const
 	{
 		return callObjectMethod(
 			"setEncryption",
@@ -55,7 +55,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::IpSecTransform_Builder IpSecTransform_Builder::setIpv4Encapsulation(android::net::IpSecManager_UdpEncapsulationSocket arg0, jint arg1)
+	android::net::IpSecTransform_Builder IpSecTransform_Builder::setIpv4Encapsulation(android::net::IpSecManager_UdpEncapsulationSocket arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setIpv4Encapsulation",

@@ -19,7 +19,7 @@ namespace java::lang::ref
 		) {}
 	
 	// Methods
-	JObject PhantomReference::get()
+	JObject PhantomReference::get() const
 	{
 		return callObjectMethod(
 			"get",

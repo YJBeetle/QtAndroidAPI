@@ -18,7 +18,7 @@ namespace android::graphics::fonts
 		) {}
 	
 	// Methods
-	android::graphics::fonts::FontFamily_Builder FontFamily_Builder::addFont(android::graphics::fonts::Font arg0)
+	android::graphics::fonts::FontFamily_Builder FontFamily_Builder::addFont(android::graphics::fonts::Font arg0) const
 	{
 		return callObjectMethod(
 			"addFont",
@@ -26,7 +26,7 @@ namespace android::graphics::fonts
 			arg0.object()
 		);
 	}
-	android::graphics::fonts::FontFamily FontFamily_Builder::build()
+	android::graphics::fonts::FontFamily FontFamily_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

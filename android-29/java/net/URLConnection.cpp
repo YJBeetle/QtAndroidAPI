@@ -120,7 +120,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void URLConnection::addRequestProperty(JString arg0, JString arg1)
+	void URLConnection::addRequestProperty(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addRequestProperty",
@@ -129,35 +129,35 @@ namespace java::net
 			arg1.object<jstring>()
 		);
 	}
-	void URLConnection::connect()
+	void URLConnection::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	jboolean URLConnection::getAllowUserInteraction()
+	jboolean URLConnection::getAllowUserInteraction() const
 	{
 		return callMethod<jboolean>(
 			"getAllowUserInteraction",
 			"()Z"
 		);
 	}
-	jint URLConnection::getConnectTimeout()
+	jint URLConnection::getConnectTimeout() const
 	{
 		return callMethod<jint>(
 			"getConnectTimeout",
 			"()I"
 		);
 	}
-	JObject URLConnection::getContent()
+	JObject URLConnection::getContent() const
 	{
 		return callObjectMethod(
 			"getContent",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject URLConnection::getContent(JArray arg0)
+	JObject URLConnection::getContent(JArray arg0) const
 	{
 		return callObjectMethod(
 			"getContent",
@@ -165,70 +165,70 @@ namespace java::net
 			arg0.object<jarray>()
 		);
 	}
-	JString URLConnection::getContentEncoding()
+	JString URLConnection::getContentEncoding() const
 	{
 		return callObjectMethod(
 			"getContentEncoding",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint URLConnection::getContentLength()
+	jint URLConnection::getContentLength() const
 	{
 		return callMethod<jint>(
 			"getContentLength",
 			"()I"
 		);
 	}
-	jlong URLConnection::getContentLengthLong()
+	jlong URLConnection::getContentLengthLong() const
 	{
 		return callMethod<jlong>(
 			"getContentLengthLong",
 			"()J"
 		);
 	}
-	JString URLConnection::getContentType()
+	JString URLConnection::getContentType() const
 	{
 		return callObjectMethod(
 			"getContentType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong URLConnection::getDate()
+	jlong URLConnection::getDate() const
 	{
 		return callMethod<jlong>(
 			"getDate",
 			"()J"
 		);
 	}
-	jboolean URLConnection::getDefaultUseCaches()
+	jboolean URLConnection::getDefaultUseCaches() const
 	{
 		return callMethod<jboolean>(
 			"getDefaultUseCaches",
 			"()Z"
 		);
 	}
-	jboolean URLConnection::getDoInput()
+	jboolean URLConnection::getDoInput() const
 	{
 		return callMethod<jboolean>(
 			"getDoInput",
 			"()Z"
 		);
 	}
-	jboolean URLConnection::getDoOutput()
+	jboolean URLConnection::getDoOutput() const
 	{
 		return callMethod<jboolean>(
 			"getDoOutput",
 			"()Z"
 		);
 	}
-	jlong URLConnection::getExpiration()
+	jlong URLConnection::getExpiration() const
 	{
 		return callMethod<jlong>(
 			"getExpiration",
 			"()J"
 		);
 	}
-	JString URLConnection::getHeaderField(jint arg0)
+	JString URLConnection::getHeaderField(jint arg0) const
 	{
 		return callObjectMethod(
 			"getHeaderField",
@@ -236,7 +236,7 @@ namespace java::net
 			arg0
 		);
 	}
-	JString URLConnection::getHeaderField(JString arg0)
+	JString URLConnection::getHeaderField(JString arg0) const
 	{
 		return callObjectMethod(
 			"getHeaderField",
@@ -244,7 +244,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	jlong URLConnection::getHeaderFieldDate(JString arg0, jlong arg1)
+	jlong URLConnection::getHeaderFieldDate(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getHeaderFieldDate",
@@ -253,7 +253,7 @@ namespace java::net
 			arg1
 		);
 	}
-	jint URLConnection::getHeaderFieldInt(JString arg0, jint arg1)
+	jint URLConnection::getHeaderFieldInt(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getHeaderFieldInt",
@@ -262,7 +262,7 @@ namespace java::net
 			arg1
 		);
 	}
-	JString URLConnection::getHeaderFieldKey(jint arg0)
+	JString URLConnection::getHeaderFieldKey(jint arg0) const
 	{
 		return callObjectMethod(
 			"getHeaderFieldKey",
@@ -270,7 +270,7 @@ namespace java::net
 			arg0
 		);
 	}
-	jlong URLConnection::getHeaderFieldLong(JString arg0, jlong arg1)
+	jlong URLConnection::getHeaderFieldLong(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getHeaderFieldLong",
@@ -279,63 +279,63 @@ namespace java::net
 			arg1
 		);
 	}
-	JObject URLConnection::getHeaderFields()
+	JObject URLConnection::getHeaderFields() const
 	{
 		return callObjectMethod(
 			"getHeaderFields",
 			"()Ljava/util/Map;"
 		);
 	}
-	jlong URLConnection::getIfModifiedSince()
+	jlong URLConnection::getIfModifiedSince() const
 	{
 		return callMethod<jlong>(
 			"getIfModifiedSince",
 			"()J"
 		);
 	}
-	java::io::InputStream URLConnection::getInputStream()
+	java::io::InputStream URLConnection::getInputStream() const
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jlong URLConnection::getLastModified()
+	jlong URLConnection::getLastModified() const
 	{
 		return callMethod<jlong>(
 			"getLastModified",
 			"()J"
 		);
 	}
-	java::io::OutputStream URLConnection::getOutputStream()
+	java::io::OutputStream URLConnection::getOutputStream() const
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	java::security::Permission URLConnection::getPermission()
+	java::security::Permission URLConnection::getPermission() const
 	{
 		return callObjectMethod(
 			"getPermission",
 			"()Ljava/security/Permission;"
 		);
 	}
-	jint URLConnection::getReadTimeout()
+	jint URLConnection::getReadTimeout() const
 	{
 		return callMethod<jint>(
 			"getReadTimeout",
 			"()I"
 		);
 	}
-	JObject URLConnection::getRequestProperties()
+	JObject URLConnection::getRequestProperties() const
 	{
 		return callObjectMethod(
 			"getRequestProperties",
 			"()Ljava/util/Map;"
 		);
 	}
-	JString URLConnection::getRequestProperty(JString arg0)
+	JString URLConnection::getRequestProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getRequestProperty",
@@ -343,21 +343,21 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	java::net::URL URLConnection::getURL()
+	java::net::URL URLConnection::getURL() const
 	{
 		return callObjectMethod(
 			"getURL",
 			"()Ljava/net/URL;"
 		);
 	}
-	jboolean URLConnection::getUseCaches()
+	jboolean URLConnection::getUseCaches() const
 	{
 		return callMethod<jboolean>(
 			"getUseCaches",
 			"()Z"
 		);
 	}
-	void URLConnection::setAllowUserInteraction(jboolean arg0)
+	void URLConnection::setAllowUserInteraction(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAllowUserInteraction",
@@ -365,7 +365,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setConnectTimeout(jint arg0)
+	void URLConnection::setConnectTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setConnectTimeout",
@@ -373,7 +373,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setDefaultUseCaches(jboolean arg0)
+	void URLConnection::setDefaultUseCaches(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDefaultUseCaches",
@@ -381,7 +381,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setDoInput(jboolean arg0)
+	void URLConnection::setDoInput(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDoInput",
@@ -389,7 +389,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setDoOutput(jboolean arg0)
+	void URLConnection::setDoOutput(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDoOutput",
@@ -397,7 +397,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setIfModifiedSince(jlong arg0)
+	void URLConnection::setIfModifiedSince(jlong arg0) const
 	{
 		callMethod<void>(
 			"setIfModifiedSince",
@@ -405,7 +405,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setReadTimeout(jint arg0)
+	void URLConnection::setReadTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setReadTimeout",
@@ -413,7 +413,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setRequestProperty(JString arg0, JString arg1)
+	void URLConnection::setRequestProperty(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setRequestProperty",
@@ -422,7 +422,7 @@ namespace java::net
 			arg1.object<jstring>()
 		);
 	}
-	void URLConnection::setUseCaches(jboolean arg0)
+	void URLConnection::setUseCaches(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUseCaches",
@@ -430,7 +430,7 @@ namespace java::net
 			arg0
 		);
 	}
-	JString URLConnection::toString()
+	JString URLConnection::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -139,7 +139,7 @@ namespace android::hardware::biometrics
 	// Constructors
 	
 	// Methods
-	void BiometricPrompt::authenticate(android::os::CancellationSignal arg0, JObject arg1, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2)
+	void BiometricPrompt::authenticate(android::os::CancellationSignal arg0, JObject arg1, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2) const
 	{
 		callMethod<void>(
 			"authenticate",
@@ -149,7 +149,7 @@ namespace android::hardware::biometrics
 			arg2.object()
 		);
 	}
-	void BiometricPrompt::authenticate(android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, android::os::CancellationSignal arg1, JObject arg2, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3)
+	void BiometricPrompt::authenticate(android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, android::os::CancellationSignal arg1, JObject arg2, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3) const
 	{
 		callMethod<void>(
 			"authenticate",

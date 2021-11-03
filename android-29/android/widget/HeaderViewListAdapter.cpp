@@ -24,42 +24,42 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean HeaderViewListAdapter::areAllItemsEnabled()
+	jboolean HeaderViewListAdapter::areAllItemsEnabled() const
 	{
 		return callMethod<jboolean>(
 			"areAllItemsEnabled",
 			"()Z"
 		);
 	}
-	jint HeaderViewListAdapter::getCount()
+	jint HeaderViewListAdapter::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	android::widget::Filter HeaderViewListAdapter::getFilter()
+	android::widget::Filter HeaderViewListAdapter::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
-	jint HeaderViewListAdapter::getFootersCount()
+	jint HeaderViewListAdapter::getFootersCount() const
 	{
 		return callMethod<jint>(
 			"getFootersCount",
 			"()I"
 		);
 	}
-	jint HeaderViewListAdapter::getHeadersCount()
+	jint HeaderViewListAdapter::getHeadersCount() const
 	{
 		return callMethod<jint>(
 			"getHeadersCount",
 			"()I"
 		);
 	}
-	JObject HeaderViewListAdapter::getItem(jint arg0)
+	JObject HeaderViewListAdapter::getItem(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItem",
@@ -67,7 +67,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jlong HeaderViewListAdapter::getItemId(jint arg0)
+	jlong HeaderViewListAdapter::getItemId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getItemId",
@@ -75,7 +75,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint HeaderViewListAdapter::getItemViewType(jint arg0)
+	jint HeaderViewListAdapter::getItemViewType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getItemViewType",
@@ -83,7 +83,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::view::View HeaderViewListAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View HeaderViewListAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getView",
@@ -93,35 +93,35 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jint HeaderViewListAdapter::getViewTypeCount()
+	jint HeaderViewListAdapter::getViewTypeCount() const
 	{
 		return callMethod<jint>(
 			"getViewTypeCount",
 			"()I"
 		);
 	}
-	JObject HeaderViewListAdapter::getWrappedAdapter()
+	JObject HeaderViewListAdapter::getWrappedAdapter() const
 	{
 		return callObjectMethod(
 			"getWrappedAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	jboolean HeaderViewListAdapter::hasStableIds()
+	jboolean HeaderViewListAdapter::hasStableIds() const
 	{
 		return callMethod<jboolean>(
 			"hasStableIds",
 			"()Z"
 		);
 	}
-	jboolean HeaderViewListAdapter::isEmpty()
+	jboolean HeaderViewListAdapter::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jboolean HeaderViewListAdapter::isEnabled(jint arg0)
+	jboolean HeaderViewListAdapter::isEnabled(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
@@ -129,7 +129,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HeaderViewListAdapter::registerDataSetObserver(android::database::DataSetObserver arg0)
+	void HeaderViewListAdapter::registerDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"registerDataSetObserver",
@@ -137,7 +137,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean HeaderViewListAdapter::removeFooter(android::view::View arg0)
+	jboolean HeaderViewListAdapter::removeFooter(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeFooter",
@@ -145,7 +145,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean HeaderViewListAdapter::removeHeader(android::view::View arg0)
+	jboolean HeaderViewListAdapter::removeHeader(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeHeader",
@@ -153,7 +153,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void HeaderViewListAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0)
+	void HeaderViewListAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0) const
 	{
 		callMethod<void>(
 			"unregisterDataSetObserver",

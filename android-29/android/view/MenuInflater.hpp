@@ -22,7 +22,7 @@ namespace android::view
 		MenuInflater(android::content::Context arg0);
 		
 		// Methods
-		void inflate(jint arg0, JObject arg1);
+		void inflate(jint arg0, JObject arg1) const;
 	};
 } // namespace android::view
 

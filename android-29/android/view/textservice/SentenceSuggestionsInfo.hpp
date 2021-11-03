@@ -30,12 +30,12 @@ namespace android::view::textservice
 		SentenceSuggestionsInfo(JArray arg0, JIntArray arg1, JIntArray arg2);
 		
 		// Methods
-		jint describeContents();
-		jint getLengthAt(jint arg0);
-		jint getOffsetAt(jint arg0);
-		jint getSuggestionsCount();
-		android::view::textservice::SuggestionsInfo getSuggestionsInfoAt(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getLengthAt(jint arg0) const;
+		jint getOffsetAt(jint arg0) const;
+		jint getSuggestionsCount() const;
+		android::view::textservice::SuggestionsInfo getSuggestionsInfoAt(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textservice
 

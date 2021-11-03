@@ -35,15 +35,15 @@ namespace android::telecom
 		
 		// Methods
 		static JString audioRouteToString(jint arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::bluetooth::BluetoothDevice getActiveBluetoothDevice();
-		jint getRoute();
-		JObject getSupportedBluetoothDevices();
-		jint getSupportedRouteMask();
-		jboolean isMuted();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::bluetooth::BluetoothDevice getActiveBluetoothDevice() const;
+		jint getRoute() const;
+		JObject getSupportedBluetoothDevices() const;
+		jint getSupportedRouteMask() const;
+		jboolean isMuted() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telecom
 

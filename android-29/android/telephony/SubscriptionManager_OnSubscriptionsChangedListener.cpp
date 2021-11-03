@@ -15,7 +15,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void SubscriptionManager_OnSubscriptionsChangedListener::onSubscriptionsChanged()
+	void SubscriptionManager_OnSubscriptionsChangedListener::onSubscriptionsChanged() const
 	{
 		callMethod<void>(
 			"onSubscriptionsChanged",

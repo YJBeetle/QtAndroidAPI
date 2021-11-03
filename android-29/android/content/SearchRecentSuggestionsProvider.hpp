@@ -30,12 +30,12 @@ namespace android::content
 		SearchRecentSuggestionsProvider();
 		
 		// Methods
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2);
-		JString getType(android::net::Uri arg0);
-		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
-		jboolean onCreate();
-		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4);
-		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3);
+		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		JString getType(android::net::Uri arg0) const;
+		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1) const;
+		jboolean onCreate() const;
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const;
+		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const;
 	};
 } // namespace android::content
 

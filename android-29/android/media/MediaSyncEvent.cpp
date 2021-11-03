@@ -33,21 +33,21 @@ namespace android::media
 			arg0
 		);
 	}
-	jint MediaSyncEvent::getAudioSessionId()
+	jint MediaSyncEvent::getAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
-	jint MediaSyncEvent::getType()
+	jint MediaSyncEvent::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	android::media::MediaSyncEvent MediaSyncEvent::setAudioSessionId(jint arg0)
+	android::media::MediaSyncEvent MediaSyncEvent::setAudioSessionId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioSessionId",

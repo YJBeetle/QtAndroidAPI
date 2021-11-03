@@ -24,7 +24,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean YuvImage::compressToJpeg(android::graphics::Rect arg0, jint arg1, java::io::OutputStream arg2)
+	jboolean YuvImage::compressToJpeg(android::graphics::Rect arg0, jint arg1, java::io::OutputStream arg2) const
 	{
 		return callMethod<jboolean>(
 			"compressToJpeg",
@@ -34,35 +34,35 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	jint YuvImage::getHeight()
+	jint YuvImage::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	JIntArray YuvImage::getStrides()
+	JIntArray YuvImage::getStrides() const
 	{
 		return callObjectMethod(
 			"getStrides",
 			"()[I"
 		);
 	}
-	jint YuvImage::getWidth()
+	jint YuvImage::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	JByteArray YuvImage::getYuvData()
+	JByteArray YuvImage::getYuvData() const
 	{
 		return callObjectMethod(
 			"getYuvData",
 			"()[B"
 		);
 	}
-	jint YuvImage::getYuvFormat()
+	jint YuvImage::getYuvFormat() const
 	{
 		return callMethod<jint>(
 			"getYuvFormat",

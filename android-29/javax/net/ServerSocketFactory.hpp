@@ -26,10 +26,10 @@ namespace javax::net
 		
 		// Methods
 		static javax::net::ServerSocketFactory getDefault();
-		java::net::ServerSocket createServerSocket();
-		java::net::ServerSocket createServerSocket(jint arg0);
-		java::net::ServerSocket createServerSocket(jint arg0, jint arg1);
-		java::net::ServerSocket createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2);
+		java::net::ServerSocket createServerSocket() const;
+		java::net::ServerSocket createServerSocket(jint arg0) const;
+		java::net::ServerSocket createServerSocket(jint arg0, jint arg1) const;
+		java::net::ServerSocket createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2) const;
 	};
 } // namespace javax::net
 

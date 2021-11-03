@@ -22,14 +22,14 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	jint AdvertiseData::describeContents()
+	jint AdvertiseData::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AdvertiseData::equals(JObject arg0)
+	jboolean AdvertiseData::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,56 +37,56 @@ namespace android::bluetooth::le
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AdvertiseData::getIncludeDeviceName()
+	jboolean AdvertiseData::getIncludeDeviceName() const
 	{
 		return callMethod<jboolean>(
 			"getIncludeDeviceName",
 			"()Z"
 		);
 	}
-	jboolean AdvertiseData::getIncludeTxPowerLevel()
+	jboolean AdvertiseData::getIncludeTxPowerLevel() const
 	{
 		return callMethod<jboolean>(
 			"getIncludeTxPowerLevel",
 			"()Z"
 		);
 	}
-	android::util::SparseArray AdvertiseData::getManufacturerSpecificData()
+	android::util::SparseArray AdvertiseData::getManufacturerSpecificData() const
 	{
 		return callObjectMethod(
 			"getManufacturerSpecificData",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	JObject AdvertiseData::getServiceData()
+	JObject AdvertiseData::getServiceData() const
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject AdvertiseData::getServiceUuids()
+	JObject AdvertiseData::getServiceUuids() const
 	{
 		return callObjectMethod(
 			"getServiceUuids",
 			"()Ljava/util/List;"
 		);
 	}
-	jint AdvertiseData::hashCode()
+	jint AdvertiseData::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AdvertiseData::toString()
+	JString AdvertiseData::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AdvertiseData::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AdvertiseData::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

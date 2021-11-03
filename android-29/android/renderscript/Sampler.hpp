@@ -34,11 +34,11 @@ namespace android::renderscript
 		static android::renderscript::Sampler WRAP_LINEAR(android::renderscript::RenderScript arg0);
 		static android::renderscript::Sampler WRAP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0);
 		static android::renderscript::Sampler WRAP_NEAREST(android::renderscript::RenderScript arg0);
-		jfloat getAnisotropy();
-		android::renderscript::Sampler_Value getMagnification();
-		android::renderscript::Sampler_Value getMinification();
-		android::renderscript::Sampler_Value getWrapS();
-		android::renderscript::Sampler_Value getWrapT();
+		jfloat getAnisotropy() const;
+		android::renderscript::Sampler_Value getMagnification() const;
+		android::renderscript::Sampler_Value getMinification() const;
+		android::renderscript::Sampler_Value getWrapS() const;
+		android::renderscript::Sampler_Value getWrapT() const;
 	};
 } // namespace android::renderscript
 

@@ -24,7 +24,7 @@ namespace android::app::admin
 		DevicePolicyManager_InstallSystemUpdateCallback();
 		
 		// Methods
-		void onInstallUpdateError(jint arg0, JString arg1);
+		void onInstallUpdateError(jint arg0, JString arg1) const;
 	};
 } // namespace android::app::admin
 

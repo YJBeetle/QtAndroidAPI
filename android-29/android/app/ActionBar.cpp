@@ -77,7 +77,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void ActionBar::addOnMenuVisibilityListener(JObject arg0)
+	void ActionBar::addOnMenuVisibilityListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnMenuVisibilityListener",
@@ -85,7 +85,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::addTab(android::app::ActionBar_Tab arg0)
+	void ActionBar::addTab(android::app::ActionBar_Tab arg0) const
 	{
 		callMethod<void>(
 			"addTab",
@@ -93,7 +93,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::addTab(android::app::ActionBar_Tab arg0, jboolean arg1)
+	void ActionBar::addTab(android::app::ActionBar_Tab arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"addTab",
@@ -102,7 +102,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void ActionBar::addTab(android::app::ActionBar_Tab arg0, jint arg1)
+	void ActionBar::addTab(android::app::ActionBar_Tab arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addTab",
@@ -111,7 +111,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void ActionBar::addTab(android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2)
+	void ActionBar::addTab(android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"addTab",
@@ -121,77 +121,77 @@ namespace android::app
 			arg2
 		);
 	}
-	android::view::View ActionBar::getCustomView()
+	android::view::View ActionBar::getCustomView() const
 	{
 		return callObjectMethod(
 			"getCustomView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint ActionBar::getDisplayOptions()
+	jint ActionBar::getDisplayOptions() const
 	{
 		return callMethod<jint>(
 			"getDisplayOptions",
 			"()I"
 		);
 	}
-	jfloat ActionBar::getElevation()
+	jfloat ActionBar::getElevation() const
 	{
 		return callMethod<jfloat>(
 			"getElevation",
 			"()F"
 		);
 	}
-	jint ActionBar::getHeight()
+	jint ActionBar::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint ActionBar::getHideOffset()
+	jint ActionBar::getHideOffset() const
 	{
 		return callMethod<jint>(
 			"getHideOffset",
 			"()I"
 		);
 	}
-	jint ActionBar::getNavigationItemCount()
+	jint ActionBar::getNavigationItemCount() const
 	{
 		return callMethod<jint>(
 			"getNavigationItemCount",
 			"()I"
 		);
 	}
-	jint ActionBar::getNavigationMode()
+	jint ActionBar::getNavigationMode() const
 	{
 		return callMethod<jint>(
 			"getNavigationMode",
 			"()I"
 		);
 	}
-	jint ActionBar::getSelectedNavigationIndex()
+	jint ActionBar::getSelectedNavigationIndex() const
 	{
 		return callMethod<jint>(
 			"getSelectedNavigationIndex",
 			"()I"
 		);
 	}
-	android::app::ActionBar_Tab ActionBar::getSelectedTab()
+	android::app::ActionBar_Tab ActionBar::getSelectedTab() const
 	{
 		return callObjectMethod(
 			"getSelectedTab",
 			"()Landroid/app/ActionBar$Tab;"
 		);
 	}
-	JString ActionBar::getSubtitle()
+	JString ActionBar::getSubtitle() const
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::app::ActionBar_Tab ActionBar::getTabAt(jint arg0)
+	android::app::ActionBar_Tab ActionBar::getTabAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTabAt",
@@ -199,63 +199,63 @@ namespace android::app
 			arg0
 		);
 	}
-	jint ActionBar::getTabCount()
+	jint ActionBar::getTabCount() const
 	{
 		return callMethod<jint>(
 			"getTabCount",
 			"()I"
 		);
 	}
-	android::content::Context ActionBar::getThemedContext()
+	android::content::Context ActionBar::getThemedContext() const
 	{
 		return callObjectMethod(
 			"getThemedContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JString ActionBar::getTitle()
+	JString ActionBar::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void ActionBar::hide()
+	void ActionBar::hide() const
 	{
 		callMethod<void>(
 			"hide",
 			"()V"
 		);
 	}
-	jboolean ActionBar::isHideOnContentScrollEnabled()
+	jboolean ActionBar::isHideOnContentScrollEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isHideOnContentScrollEnabled",
 			"()Z"
 		);
 	}
-	jboolean ActionBar::isShowing()
+	jboolean ActionBar::isShowing() const
 	{
 		return callMethod<jboolean>(
 			"isShowing",
 			"()Z"
 		);
 	}
-	android::app::ActionBar_Tab ActionBar::newTab()
+	android::app::ActionBar_Tab ActionBar::newTab() const
 	{
 		return callObjectMethod(
 			"newTab",
 			"()Landroid/app/ActionBar$Tab;"
 		);
 	}
-	void ActionBar::removeAllTabs()
+	void ActionBar::removeAllTabs() const
 	{
 		callMethod<void>(
 			"removeAllTabs",
 			"()V"
 		);
 	}
-	void ActionBar::removeOnMenuVisibilityListener(JObject arg0)
+	void ActionBar::removeOnMenuVisibilityListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnMenuVisibilityListener",
@@ -263,7 +263,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::removeTab(android::app::ActionBar_Tab arg0)
+	void ActionBar::removeTab(android::app::ActionBar_Tab arg0) const
 	{
 		callMethod<void>(
 			"removeTab",
@@ -271,7 +271,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::removeTabAt(jint arg0)
+	void ActionBar::removeTabAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeTabAt",
@@ -279,7 +279,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::selectTab(android::app::ActionBar_Tab arg0)
+	void ActionBar::selectTab(android::app::ActionBar_Tab arg0) const
 	{
 		callMethod<void>(
 			"selectTab",
@@ -287,7 +287,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void ActionBar::setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawable",
@@ -295,7 +295,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setCustomView(android::view::View arg0)
+	void ActionBar::setCustomView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setCustomView",
@@ -303,7 +303,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setCustomView(jint arg0)
+	void ActionBar::setCustomView(jint arg0) const
 	{
 		callMethod<void>(
 			"setCustomView",
@@ -311,7 +311,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setCustomView(android::view::View arg0, android::app::ActionBar_LayoutParams arg1)
+	void ActionBar::setCustomView(android::view::View arg0, android::app::ActionBar_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"setCustomView",
@@ -320,7 +320,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void ActionBar::setDisplayHomeAsUpEnabled(jboolean arg0)
+	void ActionBar::setDisplayHomeAsUpEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDisplayHomeAsUpEnabled",
@@ -328,7 +328,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setDisplayOptions(jint arg0)
+	void ActionBar::setDisplayOptions(jint arg0) const
 	{
 		callMethod<void>(
 			"setDisplayOptions",
@@ -336,7 +336,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setDisplayOptions(jint arg0, jint arg1)
+	void ActionBar::setDisplayOptions(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setDisplayOptions",
@@ -345,7 +345,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void ActionBar::setDisplayShowCustomEnabled(jboolean arg0)
+	void ActionBar::setDisplayShowCustomEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDisplayShowCustomEnabled",
@@ -353,7 +353,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setDisplayShowHomeEnabled(jboolean arg0)
+	void ActionBar::setDisplayShowHomeEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDisplayShowHomeEnabled",
@@ -361,7 +361,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setDisplayShowTitleEnabled(jboolean arg0)
+	void ActionBar::setDisplayShowTitleEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDisplayShowTitleEnabled",
@@ -369,7 +369,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setDisplayUseLogoEnabled(jboolean arg0)
+	void ActionBar::setDisplayUseLogoEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDisplayUseLogoEnabled",
@@ -377,7 +377,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setElevation(jfloat arg0)
+	void ActionBar::setElevation(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setElevation",
@@ -385,7 +385,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setHideOffset(jint arg0)
+	void ActionBar::setHideOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setHideOffset",
@@ -393,7 +393,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setHideOnContentScrollEnabled(jboolean arg0)
+	void ActionBar::setHideOnContentScrollEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHideOnContentScrollEnabled",
@@ -401,7 +401,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setHomeActionContentDescription(jint arg0)
+	void ActionBar::setHomeActionContentDescription(jint arg0) const
 	{
 		callMethod<void>(
 			"setHomeActionContentDescription",
@@ -409,7 +409,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setHomeActionContentDescription(JString arg0)
+	void ActionBar::setHomeActionContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setHomeActionContentDescription",
@@ -417,7 +417,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void ActionBar::setHomeAsUpIndicator(android::graphics::drawable::Drawable arg0)
+	void ActionBar::setHomeAsUpIndicator(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setHomeAsUpIndicator",
@@ -425,7 +425,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setHomeAsUpIndicator(jint arg0)
+	void ActionBar::setHomeAsUpIndicator(jint arg0) const
 	{
 		callMethod<void>(
 			"setHomeAsUpIndicator",
@@ -433,7 +433,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setHomeButtonEnabled(jboolean arg0)
+	void ActionBar::setHomeButtonEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHomeButtonEnabled",
@@ -441,7 +441,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setIcon(android::graphics::drawable::Drawable arg0)
+	void ActionBar::setIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setIcon",
@@ -449,7 +449,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setIcon(jint arg0)
+	void ActionBar::setIcon(jint arg0) const
 	{
 		callMethod<void>(
 			"setIcon",
@@ -457,7 +457,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setListNavigationCallbacks(JObject arg0, JObject arg1)
+	void ActionBar::setListNavigationCallbacks(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setListNavigationCallbacks",
@@ -466,7 +466,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void ActionBar::setLogo(android::graphics::drawable::Drawable arg0)
+	void ActionBar::setLogo(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setLogo",
@@ -474,7 +474,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setLogo(jint arg0)
+	void ActionBar::setLogo(jint arg0) const
 	{
 		callMethod<void>(
 			"setLogo",
@@ -482,7 +482,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setNavigationMode(jint arg0)
+	void ActionBar::setNavigationMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setNavigationMode",
@@ -490,7 +490,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setSelectedNavigationItem(jint arg0)
+	void ActionBar::setSelectedNavigationItem(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelectedNavigationItem",
@@ -498,7 +498,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setSplitBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void ActionBar::setSplitBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setSplitBackgroundDrawable",
@@ -506,7 +506,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setStackedBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void ActionBar::setStackedBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setStackedBackgroundDrawable",
@@ -514,7 +514,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ActionBar::setSubtitle(jint arg0)
+	void ActionBar::setSubtitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setSubtitle",
@@ -522,7 +522,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setSubtitle(JString arg0)
+	void ActionBar::setSubtitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubtitle",
@@ -530,7 +530,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void ActionBar::setTitle(jint arg0)
+	void ActionBar::setTitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -538,7 +538,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setTitle(JString arg0)
+	void ActionBar::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -546,7 +546,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void ActionBar::show()
+	void ActionBar::show() const
 	{
 		callMethod<void>(
 			"show",

@@ -66,7 +66,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	JObject ThaiBuddhistDate::atTime(java::time::LocalTime arg0)
+	JObject ThaiBuddhistDate::atTime(java::time::LocalTime arg0) const
 	{
 		return callObjectMethod(
 			"atTime",
@@ -74,7 +74,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jboolean ThaiBuddhistDate::equals(JObject arg0)
+	jboolean ThaiBuddhistDate::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -82,21 +82,21 @@ namespace java::time::chrono
 			arg0.object<jobject>()
 		);
 	}
-	java::time::chrono::ThaiBuddhistChronology ThaiBuddhistDate::getChronology()
+	java::time::chrono::ThaiBuddhistChronology ThaiBuddhistDate::getChronology() const
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/ThaiBuddhistChronology;"
 		);
 	}
-	java::time::chrono::ThaiBuddhistEra ThaiBuddhistDate::getEra()
+	java::time::chrono::ThaiBuddhistEra ThaiBuddhistDate::getEra() const
 	{
 		return callObjectMethod(
 			"getEra",
 			"()Ljava/time/chrono/ThaiBuddhistEra;"
 		);
 	}
-	jlong ThaiBuddhistDate::getLong(JObject arg0)
+	jlong ThaiBuddhistDate::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -104,21 +104,21 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint ThaiBuddhistDate::hashCode()
+	jint ThaiBuddhistDate::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint ThaiBuddhistDate::lengthOfMonth()
+	jint ThaiBuddhistDate::lengthOfMonth() const
 	{
 		return callMethod<jint>(
 			"lengthOfMonth",
 			"()I"
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::minus(JObject arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -126,7 +126,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::minus(jlong arg0, JObject arg1)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -135,7 +135,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::plus(JObject arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -143,7 +143,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::plus(jlong arg0, JObject arg1)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -152,7 +152,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::temporal::ValueRange ThaiBuddhistDate::range(JObject arg0)
+	java::time::temporal::ValueRange ThaiBuddhistDate::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -160,21 +160,21 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong ThaiBuddhistDate::toEpochDay()
+	jlong ThaiBuddhistDate::toEpochDay() const
 	{
 		return callMethod<jlong>(
 			"toEpochDay",
 			"()J"
 		);
 	}
-	JString ThaiBuddhistDate::toString()
+	JString ThaiBuddhistDate::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ThaiBuddhistDate::until(JObject arg0)
+	JObject ThaiBuddhistDate::until(JObject arg0) const
 	{
 		return callObjectMethod(
 			"until",
@@ -182,7 +182,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong ThaiBuddhistDate::until(JObject arg0, JObject arg1)
+	jlong ThaiBuddhistDate::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -191,7 +191,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::with(JObject arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -199,7 +199,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::with(JObject arg0, jlong arg1)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",

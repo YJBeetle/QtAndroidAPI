@@ -24,21 +24,21 @@ namespace java::util::concurrent::locks
 		) {}
 	
 	// Methods
-	jint ReentrantLock::getHoldCount()
+	jint ReentrantLock::getHoldCount() const
 	{
 		return callMethod<jint>(
 			"getHoldCount",
 			"()I"
 		);
 	}
-	jint ReentrantLock::getQueueLength()
+	jint ReentrantLock::getQueueLength() const
 	{
 		return callMethod<jint>(
 			"getQueueLength",
 			"()I"
 		);
 	}
-	jint ReentrantLock::getWaitQueueLength(JObject arg0)
+	jint ReentrantLock::getWaitQueueLength(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getWaitQueueLength",
@@ -46,7 +46,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean ReentrantLock::hasQueuedThread(java::lang::Thread arg0)
+	jboolean ReentrantLock::hasQueuedThread(java::lang::Thread arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedThread",
@@ -54,14 +54,14 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean ReentrantLock::hasQueuedThreads()
+	jboolean ReentrantLock::hasQueuedThreads() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedThreads",
 			"()Z"
 		);
 	}
-	jboolean ReentrantLock::hasWaiters(JObject arg0)
+	jboolean ReentrantLock::hasWaiters(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasWaiters",
@@ -69,63 +69,63 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean ReentrantLock::isFair()
+	jboolean ReentrantLock::isFair() const
 	{
 		return callMethod<jboolean>(
 			"isFair",
 			"()Z"
 		);
 	}
-	jboolean ReentrantLock::isHeldByCurrentThread()
+	jboolean ReentrantLock::isHeldByCurrentThread() const
 	{
 		return callMethod<jboolean>(
 			"isHeldByCurrentThread",
 			"()Z"
 		);
 	}
-	jboolean ReentrantLock::isLocked()
+	jboolean ReentrantLock::isLocked() const
 	{
 		return callMethod<jboolean>(
 			"isLocked",
 			"()Z"
 		);
 	}
-	void ReentrantLock::lock()
+	void ReentrantLock::lock() const
 	{
 		callMethod<void>(
 			"lock",
 			"()V"
 		);
 	}
-	void ReentrantLock::lockInterruptibly()
+	void ReentrantLock::lockInterruptibly() const
 	{
 		callMethod<void>(
 			"lockInterruptibly",
 			"()V"
 		);
 	}
-	JObject ReentrantLock::newCondition()
+	JObject ReentrantLock::newCondition() const
 	{
 		return callObjectMethod(
 			"newCondition",
 			"()Ljava/util/concurrent/locks/Condition;"
 		);
 	}
-	JString ReentrantLock::toString()
+	JString ReentrantLock::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean ReentrantLock::tryLock()
+	jboolean ReentrantLock::tryLock() const
 	{
 		return callMethod<jboolean>(
 			"tryLock",
 			"()Z"
 		);
 	}
-	jboolean ReentrantLock::tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean ReentrantLock::tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"tryLock",
@@ -134,7 +134,7 @@ namespace java::util::concurrent::locks
 			arg1.object()
 		);
 	}
-	void ReentrantLock::unlock()
+	void ReentrantLock::unlock() const
 	{
 		callMethod<void>(
 			"unlock",

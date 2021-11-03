@@ -21,11 +21,11 @@ namespace android::util
 		
 		// Methods
 		static android::util::SizeF parseSizeF(JString arg0);
-		jboolean equals(JObject arg0);
-		jfloat getHeight();
-		jfloat getWidth();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jfloat getHeight() const;
+		jfloat getWidth() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::util
 

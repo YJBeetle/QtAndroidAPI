@@ -28,8 +28,8 @@ namespace android::text::method
 		ReplacementTransformationMethod();
 		
 		// Methods
-		JString getTransformation(JString arg0, android::view::View arg1);
-		void onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
+		JString getTransformation(JString arg0, android::view::View arg1) const;
+		void onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4) const;
 	};
 } // namespace android::text::method
 

@@ -89,7 +89,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ForkJoinPool::awaitQuiescence(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean ForkJoinPool::awaitQuiescence(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"awaitQuiescence",
@@ -98,7 +98,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean ForkJoinPool::awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean ForkJoinPool::awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"awaitTermination",
@@ -107,7 +107,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ForkJoinPool::execute(JObject arg0)
+	void ForkJoinPool::execute(JObject arg0) const
 	{
 		callMethod<void>(
 			"execute",
@@ -115,7 +115,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ForkJoinPool::execute(java::util::concurrent::ForkJoinTask arg0)
+	void ForkJoinPool::execute(java::util::concurrent::ForkJoinTask arg0) const
 	{
 		callMethod<void>(
 			"execute",
@@ -123,84 +123,84 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ForkJoinPool::getActiveThreadCount()
+	jint ForkJoinPool::getActiveThreadCount() const
 	{
 		return callMethod<jint>(
 			"getActiveThreadCount",
 			"()I"
 		);
 	}
-	jboolean ForkJoinPool::getAsyncMode()
+	jboolean ForkJoinPool::getAsyncMode() const
 	{
 		return callMethod<jboolean>(
 			"getAsyncMode",
 			"()Z"
 		);
 	}
-	JObject ForkJoinPool::getFactory()
+	JObject ForkJoinPool::getFactory() const
 	{
 		return callObjectMethod(
 			"getFactory",
 			"()Ljava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;"
 		);
 	}
-	jint ForkJoinPool::getParallelism()
+	jint ForkJoinPool::getParallelism() const
 	{
 		return callMethod<jint>(
 			"getParallelism",
 			"()I"
 		);
 	}
-	jint ForkJoinPool::getPoolSize()
+	jint ForkJoinPool::getPoolSize() const
 	{
 		return callMethod<jint>(
 			"getPoolSize",
 			"()I"
 		);
 	}
-	jint ForkJoinPool::getQueuedSubmissionCount()
+	jint ForkJoinPool::getQueuedSubmissionCount() const
 	{
 		return callMethod<jint>(
 			"getQueuedSubmissionCount",
 			"()I"
 		);
 	}
-	jlong ForkJoinPool::getQueuedTaskCount()
+	jlong ForkJoinPool::getQueuedTaskCount() const
 	{
 		return callMethod<jlong>(
 			"getQueuedTaskCount",
 			"()J"
 		);
 	}
-	jint ForkJoinPool::getRunningThreadCount()
+	jint ForkJoinPool::getRunningThreadCount() const
 	{
 		return callMethod<jint>(
 			"getRunningThreadCount",
 			"()I"
 		);
 	}
-	jlong ForkJoinPool::getStealCount()
+	jlong ForkJoinPool::getStealCount() const
 	{
 		return callMethod<jlong>(
 			"getStealCount",
 			"()J"
 		);
 	}
-	JObject ForkJoinPool::getUncaughtExceptionHandler()
+	JObject ForkJoinPool::getUncaughtExceptionHandler() const
 	{
 		return callObjectMethod(
 			"getUncaughtExceptionHandler",
 			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
 		);
 	}
-	jboolean ForkJoinPool::hasQueuedSubmissions()
+	jboolean ForkJoinPool::hasQueuedSubmissions() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedSubmissions",
 			"()Z"
 		);
 	}
-	JObject ForkJoinPool::invoke(java::util::concurrent::ForkJoinTask arg0)
+	JObject ForkJoinPool::invoke(java::util::concurrent::ForkJoinTask arg0) const
 	{
 		return callObjectMethod(
 			"invoke",
@@ -208,7 +208,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ForkJoinPool::invokeAll(JObject arg0)
+	JObject ForkJoinPool::invokeAll(JObject arg0) const
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -216,49 +216,49 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ForkJoinPool::isQuiescent()
+	jboolean ForkJoinPool::isQuiescent() const
 	{
 		return callMethod<jboolean>(
 			"isQuiescent",
 			"()Z"
 		);
 	}
-	jboolean ForkJoinPool::isShutdown()
+	jboolean ForkJoinPool::isShutdown() const
 	{
 		return callMethod<jboolean>(
 			"isShutdown",
 			"()Z"
 		);
 	}
-	jboolean ForkJoinPool::isTerminated()
+	jboolean ForkJoinPool::isTerminated() const
 	{
 		return callMethod<jboolean>(
 			"isTerminated",
 			"()Z"
 		);
 	}
-	jboolean ForkJoinPool::isTerminating()
+	jboolean ForkJoinPool::isTerminating() const
 	{
 		return callMethod<jboolean>(
 			"isTerminating",
 			"()Z"
 		);
 	}
-	void ForkJoinPool::shutdown()
+	void ForkJoinPool::shutdown() const
 	{
 		callMethod<void>(
 			"shutdown",
 			"()V"
 		);
 	}
-	JObject ForkJoinPool::shutdownNow()
+	JObject ForkJoinPool::shutdownNow() const
 	{
 		return callObjectMethod(
 			"shutdownNow",
 			"()Ljava/util/List;"
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0) const
 	{
 		return callObjectMethod(
 			"submit",
@@ -266,7 +266,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(java::util::concurrent::ForkJoinTask arg0)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(java::util::concurrent::ForkJoinTask arg0) const
 	{
 		return callObjectMethod(
 			"submit",
@@ -274,7 +274,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0, JObject arg1)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"submit",
@@ -283,7 +283,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	JString ForkJoinPool::toString()
+	JString ForkJoinPool::toString() const
 	{
 		return callObjectMethod(
 			"toString",

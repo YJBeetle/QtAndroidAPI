@@ -37,28 +37,28 @@ namespace javax::xml::transform::dom
 		) {}
 	
 	// Methods
-	JObject DOMSource::getNode()
+	JObject DOMSource::getNode() const
 	{
 		return callObjectMethod(
 			"getNode",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
-	JString DOMSource::getSystemId()
+	JString DOMSource::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean DOMSource::isEmpty()
+	jboolean DOMSource::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void DOMSource::setNode(JObject arg0)
+	void DOMSource::setNode(JObject arg0) const
 	{
 		callMethod<void>(
 			"setNode",
@@ -66,7 +66,7 @@ namespace javax::xml::transform::dom
 			arg0.object()
 		);
 	}
-	void DOMSource::setSystemId(JString arg0)
+	void DOMSource::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",

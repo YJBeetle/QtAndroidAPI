@@ -45,14 +45,14 @@ namespace javax::xml::validation
 			arg2.object()
 		);
 	}
-	JObject SchemaFactory::getErrorHandler()
+	JObject SchemaFactory::getErrorHandler() const
 	{
 		return callObjectMethod(
 			"getErrorHandler",
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean SchemaFactory::getFeature(JString arg0)
+	jboolean SchemaFactory::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -60,7 +60,7 @@ namespace javax::xml::validation
 			arg0.object<jstring>()
 		);
 	}
-	JObject SchemaFactory::getProperty(JString arg0)
+	JObject SchemaFactory::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -68,14 +68,14 @@ namespace javax::xml::validation
 			arg0.object<jstring>()
 		);
 	}
-	JObject SchemaFactory::getResourceResolver()
+	JObject SchemaFactory::getResourceResolver() const
 	{
 		return callObjectMethod(
 			"getResourceResolver",
 			"()Lorg/w3c/dom/ls/LSResourceResolver;"
 		);
 	}
-	jboolean SchemaFactory::isSchemaLanguageSupported(JString arg0)
+	jboolean SchemaFactory::isSchemaLanguageSupported(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSchemaLanguageSupported",
@@ -83,14 +83,14 @@ namespace javax::xml::validation
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::validation::Schema SchemaFactory::newSchema()
+	javax::xml::validation::Schema SchemaFactory::newSchema() const
 	{
 		return callObjectMethod(
 			"newSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
-	javax::xml::validation::Schema SchemaFactory::newSchema(JArray arg0)
+	javax::xml::validation::Schema SchemaFactory::newSchema(JArray arg0) const
 	{
 		return callObjectMethod(
 			"newSchema",
@@ -98,7 +98,7 @@ namespace javax::xml::validation
 			arg0.object<jarray>()
 		);
 	}
-	javax::xml::validation::Schema SchemaFactory::newSchema(java::io::File arg0)
+	javax::xml::validation::Schema SchemaFactory::newSchema(java::io::File arg0) const
 	{
 		return callObjectMethod(
 			"newSchema",
@@ -106,7 +106,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	javax::xml::validation::Schema SchemaFactory::newSchema(java::net::URL arg0)
+	javax::xml::validation::Schema SchemaFactory::newSchema(java::net::URL arg0) const
 	{
 		return callObjectMethod(
 			"newSchema",
@@ -114,7 +114,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	javax::xml::validation::Schema SchemaFactory::newSchema(JObject arg0)
+	javax::xml::validation::Schema SchemaFactory::newSchema(JObject arg0) const
 	{
 		return callObjectMethod(
 			"newSchema",
@@ -122,7 +122,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void SchemaFactory::setErrorHandler(JObject arg0)
+	void SchemaFactory::setErrorHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -130,7 +130,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void SchemaFactory::setFeature(JString arg0, jboolean arg1)
+	void SchemaFactory::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -139,7 +139,7 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void SchemaFactory::setProperty(JString arg0, JObject arg1)
+	void SchemaFactory::setProperty(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setProperty",
@@ -148,7 +148,7 @@ namespace javax::xml::validation
 			arg1.object<jobject>()
 		);
 	}
-	void SchemaFactory::setResourceResolver(JObject arg0)
+	void SchemaFactory::setResourceResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setResourceResolver",

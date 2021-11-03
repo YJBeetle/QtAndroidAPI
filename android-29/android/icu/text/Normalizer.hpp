@@ -37,7 +37,7 @@ namespace android::icu::text
 		static jint compare(jint arg0, JString arg1, jint arg2);
 		static jint compare(JString arg0, JString arg1, jint arg2);
 		static jint compare(JCharArray arg0, jint arg1, jint arg2, JCharArray arg3, jint arg4, jint arg5, jint arg6);
-		JObject clone();
+		JObject clone() const;
 	};
 } // namespace android::icu::text
 

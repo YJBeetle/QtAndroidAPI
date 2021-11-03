@@ -21,11 +21,11 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void addIdleHandler(JObject arg0);
-		void addOnFileDescriptorEventListener(java::io::FileDescriptor arg0, jint arg1, JObject arg2);
-		jboolean isIdle();
-		void removeIdleHandler(JObject arg0);
-		void removeOnFileDescriptorEventListener(java::io::FileDescriptor arg0);
+		void addIdleHandler(JObject arg0) const;
+		void addOnFileDescriptorEventListener(java::io::FileDescriptor arg0, jint arg1, JObject arg2) const;
+		jboolean isIdle() const;
+		void removeIdleHandler(JObject arg0) const;
+		void removeOnFileDescriptorEventListener(java::io::FileDescriptor arg0) const;
 	};
 } // namespace android::os
 

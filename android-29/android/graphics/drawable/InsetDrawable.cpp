@@ -50,7 +50,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void InsetDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void InsetDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -58,35 +58,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint InsetDrawable::getIntrinsicHeight()
+	jint InsetDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint InsetDrawable::getIntrinsicWidth()
+	jint InsetDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint InsetDrawable::getOpacity()
+	jint InsetDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Insets InsetDrawable::getOpticalInsets()
+	android::graphics::Insets InsetDrawable::getOpticalInsets() const
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	void InsetDrawable::getOutline(android::graphics::Outline arg0)
+	void InsetDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -94,7 +94,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean InsetDrawable::getPadding(android::graphics::Rect arg0)
+	jboolean InsetDrawable::getPadding(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPadding",
@@ -102,7 +102,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void InsetDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void InsetDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",

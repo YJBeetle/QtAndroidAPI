@@ -19,17 +19,17 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		JObject getErrorHandler();
-		jboolean getFeature(JString arg0);
-		JObject getProperty(JString arg0);
-		JObject getResourceResolver();
-		void reset();
-		void setErrorHandler(JObject arg0);
-		void setFeature(JString arg0, jboolean arg1);
-		void setProperty(JString arg0, JObject arg1);
-		void setResourceResolver(JObject arg0);
-		void validate(JObject arg0);
-		void validate(JObject arg0, JObject arg1);
+		JObject getErrorHandler() const;
+		jboolean getFeature(JString arg0) const;
+		JObject getProperty(JString arg0) const;
+		JObject getResourceResolver() const;
+		void reset() const;
+		void setErrorHandler(JObject arg0) const;
+		void setFeature(JString arg0, jboolean arg1) const;
+		void setProperty(JString arg0, JObject arg1) const;
+		void setResourceResolver(JObject arg0) const;
+		void validate(JObject arg0) const;
+		void validate(JObject arg0, JObject arg1) const;
 	};
 } // namespace javax::xml::validation
 

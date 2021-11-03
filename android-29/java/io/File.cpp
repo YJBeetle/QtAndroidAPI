@@ -103,28 +103,28 @@ namespace java::io
 			"()[Ljava/io/File;"
 		);
 	}
-	jboolean File::canExecute()
+	jboolean File::canExecute() const
 	{
 		return callMethod<jboolean>(
 			"canExecute",
 			"()Z"
 		);
 	}
-	jboolean File::canRead()
+	jboolean File::canRead() const
 	{
 		return callMethod<jboolean>(
 			"canRead",
 			"()Z"
 		);
 	}
-	jboolean File::canWrite()
+	jboolean File::canWrite() const
 	{
 		return callMethod<jboolean>(
 			"canWrite",
 			"()Z"
 		);
 	}
-	jint File::compareTo(java::io::File arg0)
+	jint File::compareTo(java::io::File arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -132,7 +132,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint File::compareTo(JObject arg0)
+	jint File::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -140,28 +140,28 @@ namespace java::io
 			arg0.object<jobject>()
 		);
 	}
-	jboolean File::createNewFile()
+	jboolean File::createNewFile() const
 	{
 		return callMethod<jboolean>(
 			"createNewFile",
 			"()Z"
 		);
 	}
-	jboolean File::_delete()
+	jboolean File::_delete() const
 	{
 		return callMethod<jboolean>(
 			"delete",
 			"()Z"
 		);
 	}
-	void File::deleteOnExit()
+	void File::deleteOnExit() const
 	{
 		callMethod<void>(
 			"deleteOnExit",
 			"()V"
 		);
 	}
-	jboolean File::equals(JObject arg0)
+	jboolean File::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -169,147 +169,147 @@ namespace java::io
 			arg0.object<jobject>()
 		);
 	}
-	jboolean File::exists()
+	jboolean File::exists() const
 	{
 		return callMethod<jboolean>(
 			"exists",
 			"()Z"
 		);
 	}
-	java::io::File File::getAbsoluteFile()
+	java::io::File File::getAbsoluteFile() const
 	{
 		return callObjectMethod(
 			"getAbsoluteFile",
 			"()Ljava/io/File;"
 		);
 	}
-	JString File::getAbsolutePath()
+	JString File::getAbsolutePath() const
 	{
 		return callObjectMethod(
 			"getAbsolutePath",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::io::File File::getCanonicalFile()
+	java::io::File File::getCanonicalFile() const
 	{
 		return callObjectMethod(
 			"getCanonicalFile",
 			"()Ljava/io/File;"
 		);
 	}
-	JString File::getCanonicalPath()
+	JString File::getCanonicalPath() const
 	{
 		return callObjectMethod(
 			"getCanonicalPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong File::getFreeSpace()
+	jlong File::getFreeSpace() const
 	{
 		return callMethod<jlong>(
 			"getFreeSpace",
 			"()J"
 		);
 	}
-	JString File::getName()
+	JString File::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString File::getParent()
+	JString File::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::io::File File::getParentFile()
+	java::io::File File::getParentFile() const
 	{
 		return callObjectMethod(
 			"getParentFile",
 			"()Ljava/io/File;"
 		);
 	}
-	JString File::getPath()
+	JString File::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong File::getTotalSpace()
+	jlong File::getTotalSpace() const
 	{
 		return callMethod<jlong>(
 			"getTotalSpace",
 			"()J"
 		);
 	}
-	jlong File::getUsableSpace()
+	jlong File::getUsableSpace() const
 	{
 		return callMethod<jlong>(
 			"getUsableSpace",
 			"()J"
 		);
 	}
-	jint File::hashCode()
+	jint File::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean File::isAbsolute()
+	jboolean File::isAbsolute() const
 	{
 		return callMethod<jboolean>(
 			"isAbsolute",
 			"()Z"
 		);
 	}
-	jboolean File::isDirectory()
+	jboolean File::isDirectory() const
 	{
 		return callMethod<jboolean>(
 			"isDirectory",
 			"()Z"
 		);
 	}
-	jboolean File::isFile()
+	jboolean File::isFile() const
 	{
 		return callMethod<jboolean>(
 			"isFile",
 			"()Z"
 		);
 	}
-	jboolean File::isHidden()
+	jboolean File::isHidden() const
 	{
 		return callMethod<jboolean>(
 			"isHidden",
 			"()Z"
 		);
 	}
-	jlong File::lastModified()
+	jlong File::lastModified() const
 	{
 		return callMethod<jlong>(
 			"lastModified",
 			"()J"
 		);
 	}
-	jlong File::length()
+	jlong File::length() const
 	{
 		return callMethod<jlong>(
 			"length",
 			"()J"
 		);
 	}
-	JArray File::list()
+	JArray File::list() const
 	{
 		return callObjectMethod(
 			"list",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray File::list(JObject arg0)
+	JArray File::list(JObject arg0) const
 	{
 		return callObjectMethod(
 			"list",
@@ -317,14 +317,14 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	JArray File::listFiles()
+	JArray File::listFiles() const
 	{
 		return callObjectMethod(
 			"listFiles",
 			"()[Ljava/io/File;"
 		);
 	}
-	JArray File::listFiles(JObject arg0)
+	JArray File::listFiles(JObject arg0) const
 	{
 		return callObjectMethod(
 			"listFiles",
@@ -332,21 +332,21 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jboolean File::mkdir()
+	jboolean File::mkdir() const
 	{
 		return callMethod<jboolean>(
 			"mkdir",
 			"()Z"
 		);
 	}
-	jboolean File::mkdirs()
+	jboolean File::mkdirs() const
 	{
 		return callMethod<jboolean>(
 			"mkdirs",
 			"()Z"
 		);
 	}
-	jboolean File::renameTo(java::io::File arg0)
+	jboolean File::renameTo(java::io::File arg0) const
 	{
 		return callMethod<jboolean>(
 			"renameTo",
@@ -354,7 +354,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jboolean File::setExecutable(jboolean arg0)
+	jboolean File::setExecutable(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setExecutable",
@@ -362,7 +362,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean File::setExecutable(jboolean arg0, jboolean arg1)
+	jboolean File::setExecutable(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setExecutable",
@@ -371,7 +371,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jboolean File::setLastModified(jlong arg0)
+	jboolean File::setLastModified(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"setLastModified",
@@ -379,14 +379,14 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean File::setReadOnly()
+	jboolean File::setReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"setReadOnly",
 			"()Z"
 		);
 	}
-	jboolean File::setReadable(jboolean arg0)
+	jboolean File::setReadable(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setReadable",
@@ -394,7 +394,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean File::setReadable(jboolean arg0, jboolean arg1)
+	jboolean File::setReadable(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setReadable",
@@ -403,7 +403,7 @@ namespace java::io
 			arg1
 		);
 	}
-	jboolean File::setWritable(jboolean arg0)
+	jboolean File::setWritable(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setWritable",
@@ -411,7 +411,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean File::setWritable(jboolean arg0, jboolean arg1)
+	jboolean File::setWritable(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setWritable",
@@ -420,28 +420,28 @@ namespace java::io
 			arg1
 		);
 	}
-	JObject File::toPath()
+	JObject File::toPath() const
 	{
 		return callObjectMethod(
 			"toPath",
 			"()Ljava/nio/file/Path;"
 		);
 	}
-	JString File::toString()
+	JString File::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::net::URI File::toURI()
+	java::net::URI File::toURI() const
 	{
 		return callObjectMethod(
 			"toURI",
 			"()Ljava/net/URI;"
 		);
 	}
-	java::net::URL File::toURL()
+	java::net::URL File::toURL() const
 	{
 		return callObjectMethod(
 			"toURL",

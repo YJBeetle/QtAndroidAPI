@@ -32,11 +32,11 @@ namespace android::widget
 		ViewSwitcher(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		JString getAccessibilityClassName();
-		android::view::View getNextView();
-		void reset();
-		void setFactory(JObject arg0);
+		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const;
+		JString getAccessibilityClassName() const;
+		android::view::View getNextView() const;
+		void reset() const;
+		void setFactory(JObject arg0) const;
 	};
 } // namespace android::widget
 

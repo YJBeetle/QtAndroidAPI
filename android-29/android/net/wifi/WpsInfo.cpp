@@ -86,21 +86,21 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	jint WpsInfo::describeContents()
+	jint WpsInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString WpsInfo::toString()
+	JString WpsInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WpsInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WpsInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

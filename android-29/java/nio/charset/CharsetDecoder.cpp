@@ -17,21 +17,21 @@ namespace java::nio::charset
 	// Constructors
 	
 	// Methods
-	jfloat CharsetDecoder::averageCharsPerByte()
+	jfloat CharsetDecoder::averageCharsPerByte() const
 	{
 		return callMethod<jfloat>(
 			"averageCharsPerByte",
 			"()F"
 		);
 	}
-	java::nio::charset::Charset CharsetDecoder::charset()
+	java::nio::charset::Charset CharsetDecoder::charset() const
 	{
 		return callObjectMethod(
 			"charset",
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
-	java::nio::CharBuffer CharsetDecoder::decode(java::nio::ByteBuffer arg0)
+	java::nio::CharBuffer CharsetDecoder::decode(java::nio::ByteBuffer arg0) const
 	{
 		return callObjectMethod(
 			"decode",
@@ -39,7 +39,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CoderResult CharsetDecoder::decode(java::nio::ByteBuffer arg0, java::nio::CharBuffer arg1, jboolean arg2)
+	java::nio::charset::CoderResult CharsetDecoder::decode(java::nio::ByteBuffer arg0, java::nio::CharBuffer arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"decode",
@@ -49,14 +49,14 @@ namespace java::nio::charset
 			arg2
 		);
 	}
-	java::nio::charset::Charset CharsetDecoder::detectedCharset()
+	java::nio::charset::Charset CharsetDecoder::detectedCharset() const
 	{
 		return callObjectMethod(
 			"detectedCharset",
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
-	java::nio::charset::CoderResult CharsetDecoder::flush(java::nio::CharBuffer arg0)
+	java::nio::charset::CoderResult CharsetDecoder::flush(java::nio::CharBuffer arg0) const
 	{
 		return callObjectMethod(
 			"flush",
@@ -64,35 +64,35 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	jboolean CharsetDecoder::isAutoDetecting()
+	jboolean CharsetDecoder::isAutoDetecting() const
 	{
 		return callMethod<jboolean>(
 			"isAutoDetecting",
 			"()Z"
 		);
 	}
-	jboolean CharsetDecoder::isCharsetDetected()
+	jboolean CharsetDecoder::isCharsetDetected() const
 	{
 		return callMethod<jboolean>(
 			"isCharsetDetected",
 			"()Z"
 		);
 	}
-	java::nio::charset::CodingErrorAction CharsetDecoder::malformedInputAction()
+	java::nio::charset::CodingErrorAction CharsetDecoder::malformedInputAction() const
 	{
 		return callObjectMethod(
 			"malformedInputAction",
 			"()Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
-	jfloat CharsetDecoder::maxCharsPerByte()
+	jfloat CharsetDecoder::maxCharsPerByte() const
 	{
 		return callMethod<jfloat>(
 			"maxCharsPerByte",
 			"()F"
 		);
 	}
-	java::nio::charset::CharsetDecoder CharsetDecoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0)
+	java::nio::charset::CharsetDecoder CharsetDecoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0) const
 	{
 		return callObjectMethod(
 			"onMalformedInput",
@@ -100,7 +100,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CharsetDecoder CharsetDecoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0)
+	java::nio::charset::CharsetDecoder CharsetDecoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0) const
 	{
 		return callObjectMethod(
 			"onUnmappableCharacter",
@@ -108,7 +108,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CharsetDecoder CharsetDecoder::replaceWith(JString arg0)
+	java::nio::charset::CharsetDecoder CharsetDecoder::replaceWith(JString arg0) const
 	{
 		return callObjectMethod(
 			"replaceWith",
@@ -116,21 +116,21 @@ namespace java::nio::charset
 			arg0.object<jstring>()
 		);
 	}
-	JString CharsetDecoder::replacement()
+	JString CharsetDecoder::replacement() const
 	{
 		return callObjectMethod(
 			"replacement",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::nio::charset::CharsetDecoder CharsetDecoder::reset()
+	java::nio::charset::CharsetDecoder CharsetDecoder::reset() const
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/charset/CharsetDecoder;"
 		);
 	}
-	java::nio::charset::CodingErrorAction CharsetDecoder::unmappableCharacterAction()
+	java::nio::charset::CodingErrorAction CharsetDecoder::unmappableCharacterAction() const
 	{
 		return callObjectMethod(
 			"unmappableCharacterAction",

@@ -546,7 +546,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	android::os::Bundle UserManager::getApplicationRestrictions(JString arg0)
+	android::os::Bundle UserManager::getApplicationRestrictions(JString arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
@@ -554,7 +554,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jlong UserManager::getSerialNumberForUser(android::os::UserHandle arg0)
+	jlong UserManager::getSerialNumberForUser(android::os::UserHandle arg0) const
 	{
 		return callMethod<jlong>(
 			"getSerialNumberForUser",
@@ -562,14 +562,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jint UserManager::getUserCount()
+	jint UserManager::getUserCount() const
 	{
 		return callMethod<jint>(
 			"getUserCount",
 			"()I"
 		);
 	}
-	jlong UserManager::getUserCreationTime(android::os::UserHandle arg0)
+	jlong UserManager::getUserCreationTime(android::os::UserHandle arg0) const
 	{
 		return callMethod<jlong>(
 			"getUserCreationTime",
@@ -577,7 +577,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::os::UserHandle UserManager::getUserForSerialNumber(jlong arg0)
+	android::os::UserHandle UserManager::getUserForSerialNumber(jlong arg0) const
 	{
 		return callObjectMethod(
 			"getUserForSerialNumber",
@@ -585,28 +585,28 @@ namespace android::os
 			arg0
 		);
 	}
-	JString UserManager::getUserName()
+	JString UserManager::getUserName() const
 	{
 		return callObjectMethod(
 			"getUserName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject UserManager::getUserProfiles()
+	JObject UserManager::getUserProfiles() const
 	{
 		return callObjectMethod(
 			"getUserProfiles",
 			"()Ljava/util/List;"
 		);
 	}
-	android::os::Bundle UserManager::getUserRestrictions()
+	android::os::Bundle UserManager::getUserRestrictions() const
 	{
 		return callObjectMethod(
 			"getUserRestrictions",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::os::Bundle UserManager::getUserRestrictions(android::os::UserHandle arg0)
+	android::os::Bundle UserManager::getUserRestrictions(android::os::UserHandle arg0) const
 	{
 		return callObjectMethod(
 			"getUserRestrictions",
@@ -614,7 +614,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean UserManager::hasUserRestriction(JString arg0)
+	jboolean UserManager::hasUserRestriction(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasUserRestriction",
@@ -622,14 +622,14 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean UserManager::isDemoUser()
+	jboolean UserManager::isDemoUser() const
 	{
 		return callMethod<jboolean>(
 			"isDemoUser",
 			"()Z"
 		);
 	}
-	jboolean UserManager::isQuietModeEnabled(android::os::UserHandle arg0)
+	jboolean UserManager::isQuietModeEnabled(android::os::UserHandle arg0) const
 	{
 		return callMethod<jboolean>(
 			"isQuietModeEnabled",
@@ -637,21 +637,21 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean UserManager::isSystemUser()
+	jboolean UserManager::isSystemUser() const
 	{
 		return callMethod<jboolean>(
 			"isSystemUser",
 			"()Z"
 		);
 	}
-	jboolean UserManager::isUserAGoat()
+	jboolean UserManager::isUserAGoat() const
 	{
 		return callMethod<jboolean>(
 			"isUserAGoat",
 			"()Z"
 		);
 	}
-	jboolean UserManager::isUserRunning(android::os::UserHandle arg0)
+	jboolean UserManager::isUserRunning(android::os::UserHandle arg0) const
 	{
 		return callMethod<jboolean>(
 			"isUserRunning",
@@ -659,7 +659,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean UserManager::isUserRunningOrStopping(android::os::UserHandle arg0)
+	jboolean UserManager::isUserRunningOrStopping(android::os::UserHandle arg0) const
 	{
 		return callMethod<jboolean>(
 			"isUserRunningOrStopping",
@@ -667,14 +667,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean UserManager::isUserUnlocked()
+	jboolean UserManager::isUserUnlocked() const
 	{
 		return callMethod<jboolean>(
 			"isUserUnlocked",
 			"()Z"
 		);
 	}
-	jboolean UserManager::isUserUnlocked(android::os::UserHandle arg0)
+	jboolean UserManager::isUserUnlocked(android::os::UserHandle arg0) const
 	{
 		return callMethod<jboolean>(
 			"isUserUnlocked",
@@ -682,7 +682,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean UserManager::requestQuietModeEnabled(jboolean arg0, android::os::UserHandle arg1)
+	jboolean UserManager::requestQuietModeEnabled(jboolean arg0, android::os::UserHandle arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestQuietModeEnabled",
@@ -691,7 +691,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	jboolean UserManager::setRestrictionsChallenge(JString arg0)
+	jboolean UserManager::setRestrictionsChallenge(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"setRestrictionsChallenge",
@@ -699,7 +699,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	void UserManager::setUserRestriction(JString arg0, jboolean arg1)
+	void UserManager::setUserRestriction(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setUserRestriction",
@@ -708,7 +708,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void UserManager::setUserRestrictions(android::os::Bundle arg0)
+	void UserManager::setUserRestrictions(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setUserRestrictions",
@@ -716,7 +716,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void UserManager::setUserRestrictions(android::os::Bundle arg0, android::os::UserHandle arg1)
+	void UserManager::setUserRestrictions(android::os::Bundle arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"setUserRestrictions",

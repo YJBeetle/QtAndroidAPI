@@ -31,7 +31,7 @@ namespace android::system
 		) {}
 	
 	// Methods
-	jint StructTimespec::compareTo(android::system::StructTimespec arg0)
+	jint StructTimespec::compareTo(android::system::StructTimespec arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -39,7 +39,7 @@ namespace android::system
 			arg0.object()
 		);
 	}
-	jint StructTimespec::compareTo(JObject arg0)
+	jint StructTimespec::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -47,7 +47,7 @@ namespace android::system
 			arg0.object<jobject>()
 		);
 	}
-	jboolean StructTimespec::equals(JObject arg0)
+	jboolean StructTimespec::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -55,14 +55,14 @@ namespace android::system
 			arg0.object<jobject>()
 		);
 	}
-	jint StructTimespec::hashCode()
+	jint StructTimespec::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString StructTimespec::toString()
+	JString StructTimespec::toString() const
 	{
 		return callObjectMethod(
 			"toString",

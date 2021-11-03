@@ -30,25 +30,25 @@ namespace android::database
 		MergeCursor(JArray arg0);
 		
 		// Methods
-		void close();
-		void deactivate();
-		JByteArray getBlob(jint arg0);
-		JArray getColumnNames();
-		jint getCount();
-		jdouble getDouble(jint arg0);
-		jfloat getFloat(jint arg0);
-		jint getInt(jint arg0);
-		jlong getLong(jint arg0);
-		jshort getShort(jint arg0);
-		JString getString(jint arg0);
-		jint getType(jint arg0);
-		jboolean isNull(jint arg0);
-		jboolean onMove(jint arg0, jint arg1);
-		void registerContentObserver(android::database::ContentObserver arg0);
-		void registerDataSetObserver(android::database::DataSetObserver arg0);
-		jboolean requery();
-		void unregisterContentObserver(android::database::ContentObserver arg0);
-		void unregisterDataSetObserver(android::database::DataSetObserver arg0);
+		void close() const;
+		void deactivate() const;
+		JByteArray getBlob(jint arg0) const;
+		JArray getColumnNames() const;
+		jint getCount() const;
+		jdouble getDouble(jint arg0) const;
+		jfloat getFloat(jint arg0) const;
+		jint getInt(jint arg0) const;
+		jlong getLong(jint arg0) const;
+		jshort getShort(jint arg0) const;
+		JString getString(jint arg0) const;
+		jint getType(jint arg0) const;
+		jboolean isNull(jint arg0) const;
+		jboolean onMove(jint arg0, jint arg1) const;
+		void registerContentObserver(android::database::ContentObserver arg0) const;
+		void registerDataSetObserver(android::database::DataSetObserver arg0) const;
+		jboolean requery() const;
+		void unregisterContentObserver(android::database::ContentObserver arg0) const;
+		void unregisterDataSetObserver(android::database::DataSetObserver arg0) const;
 	};
 } // namespace android::database
 

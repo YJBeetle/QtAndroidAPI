@@ -27,14 +27,14 @@ namespace android::bluetooth
 		BluetoothHidDeviceAppQosSettings(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jint describeContents();
-		jint getDelayVariation();
-		jint getLatency();
-		jint getPeakBandwidth();
-		jint getServiceType();
-		jint getTokenBucketSize();
-		jint getTokenRate();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getDelayVariation() const;
+		jint getLatency() const;
+		jint getPeakBandwidth() const;
+		jint getServiceType() const;
+		jint getTokenBucketSize() const;
+		jint getTokenRate() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

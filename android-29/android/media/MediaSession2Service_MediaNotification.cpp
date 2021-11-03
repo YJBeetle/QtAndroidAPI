@@ -18,14 +18,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::app::Notification MediaSession2Service_MediaNotification::getNotification()
+	android::app::Notification MediaSession2Service_MediaNotification::getNotification() const
 	{
 		return callObjectMethod(
 			"getNotification",
 			"()Landroid/app/Notification;"
 		);
 	}
-	jint MediaSession2Service_MediaNotification::getNotificationId()
+	jint MediaSession2Service_MediaNotification::getNotificationId() const
 	{
 		return callMethod<jint>(
 			"getNotificationId",

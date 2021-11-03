@@ -32,28 +32,28 @@ namespace android::service::notification
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getPriorityCallSenders();
-		jint getPriorityCategoryAlarms();
-		jint getPriorityCategoryCalls();
-		jint getPriorityCategoryEvents();
-		jint getPriorityCategoryMedia();
-		jint getPriorityCategoryMessages();
-		jint getPriorityCategoryReminders();
-		jint getPriorityCategoryRepeatCallers();
-		jint getPriorityCategorySystem();
-		jint getPriorityMessageSenders();
-		jint getVisualEffectAmbient();
-		jint getVisualEffectBadge();
-		jint getVisualEffectFullScreenIntent();
-		jint getVisualEffectLights();
-		jint getVisualEffectNotificationList();
-		jint getVisualEffectPeek();
-		jint getVisualEffectStatusBar();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getPriorityCallSenders() const;
+		jint getPriorityCategoryAlarms() const;
+		jint getPriorityCategoryCalls() const;
+		jint getPriorityCategoryEvents() const;
+		jint getPriorityCategoryMedia() const;
+		jint getPriorityCategoryMessages() const;
+		jint getPriorityCategoryReminders() const;
+		jint getPriorityCategoryRepeatCallers() const;
+		jint getPriorityCategorySystem() const;
+		jint getPriorityMessageSenders() const;
+		jint getVisualEffectAmbient() const;
+		jint getVisualEffectBadge() const;
+		jint getVisualEffectFullScreenIntent() const;
+		jint getVisualEffectLights() const;
+		jint getVisualEffectNotificationList() const;
+		jint getVisualEffectPeek() const;
+		jint getVisualEffectStatusBar() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::notification
 

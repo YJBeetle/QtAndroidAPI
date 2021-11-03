@@ -39,21 +39,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void Timer::cancel()
+	void Timer::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jint Timer::purge()
+	jint Timer::purge() const
 	{
 		return callMethod<jint>(
 			"purge",
 			"()I"
 		);
 	}
-	void Timer::schedule(java::util::TimerTask arg0, java::util::Date arg1)
+	void Timer::schedule(java::util::TimerTask arg0, java::util::Date arg1) const
 	{
 		callMethod<void>(
 			"schedule",
@@ -62,7 +62,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Timer::schedule(java::util::TimerTask arg0, jlong arg1)
+	void Timer::schedule(java::util::TimerTask arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"schedule",
@@ -71,7 +71,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Timer::schedule(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2)
+	void Timer::schedule(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"schedule",
@@ -81,7 +81,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void Timer::schedule(java::util::TimerTask arg0, jlong arg1, jlong arg2)
+	void Timer::schedule(java::util::TimerTask arg0, jlong arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"schedule",
@@ -91,7 +91,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void Timer::scheduleAtFixedRate(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2)
+	void Timer::scheduleAtFixedRate(java::util::TimerTask arg0, java::util::Date arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleAtFixedRate",
@@ -101,7 +101,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void Timer::scheduleAtFixedRate(java::util::TimerTask arg0, jlong arg1, jlong arg2)
+	void Timer::scheduleAtFixedRate(java::util::TimerTask arg0, jlong arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleAtFixedRate",

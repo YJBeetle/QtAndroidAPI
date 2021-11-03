@@ -49,7 +49,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jboolean ContextWrapper::bindIsolatedService(android::content::Intent arg0, jint arg1, JString arg2, JObject arg3, JObject arg4)
+	jboolean ContextWrapper::bindIsolatedService(android::content::Intent arg0, jint arg1, JString arg2, JObject arg3, JObject arg4) const
 	{
 		return callMethod<jboolean>(
 			"bindIsolatedService",
@@ -61,7 +61,7 @@ namespace android::content
 			arg4.object()
 		);
 	}
-	jboolean ContextWrapper::bindService(android::content::Intent arg0, JObject arg1, jint arg2)
+	jboolean ContextWrapper::bindService(android::content::Intent arg0, JObject arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"bindService",
@@ -71,7 +71,7 @@ namespace android::content
 			arg2
 		);
 	}
-	jboolean ContextWrapper::bindService(android::content::Intent arg0, jint arg1, JObject arg2, JObject arg3)
+	jboolean ContextWrapper::bindService(android::content::Intent arg0, jint arg1, JObject arg2, JObject arg3) const
 	{
 		return callMethod<jboolean>(
 			"bindService",
@@ -82,7 +82,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	jint ContextWrapper::checkCallingOrSelfPermission(JString arg0)
+	jint ContextWrapper::checkCallingOrSelfPermission(JString arg0) const
 	{
 		return callMethod<jint>(
 			"checkCallingOrSelfPermission",
@@ -90,7 +90,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint ContextWrapper::checkCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1)
+	jint ContextWrapper::checkCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"checkCallingOrSelfUriPermission",
@@ -99,7 +99,7 @@ namespace android::content
 			arg1
 		);
 	}
-	jint ContextWrapper::checkCallingPermission(JString arg0)
+	jint ContextWrapper::checkCallingPermission(JString arg0) const
 	{
 		return callMethod<jint>(
 			"checkCallingPermission",
@@ -107,7 +107,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint ContextWrapper::checkCallingUriPermission(android::net::Uri arg0, jint arg1)
+	jint ContextWrapper::checkCallingUriPermission(android::net::Uri arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"checkCallingUriPermission",
@@ -116,7 +116,7 @@ namespace android::content
 			arg1
 		);
 	}
-	jint ContextWrapper::checkPermission(JString arg0, jint arg1, jint arg2)
+	jint ContextWrapper::checkPermission(JString arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"checkPermission",
@@ -126,7 +126,7 @@ namespace android::content
 			arg2
 		);
 	}
-	jint ContextWrapper::checkSelfPermission(JString arg0)
+	jint ContextWrapper::checkSelfPermission(JString arg0) const
 	{
 		return callMethod<jint>(
 			"checkSelfPermission",
@@ -134,7 +134,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint ContextWrapper::checkUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3)
+	jint ContextWrapper::checkUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"checkUriPermission",
@@ -145,7 +145,7 @@ namespace android::content
 			arg3
 		);
 	}
-	jint ContextWrapper::checkUriPermission(android::net::Uri arg0, JString arg1, JString arg2, jint arg3, jint arg4, jint arg5)
+	jint ContextWrapper::checkUriPermission(android::net::Uri arg0, JString arg1, JString arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		return callMethod<jint>(
 			"checkUriPermission",
@@ -158,14 +158,14 @@ namespace android::content
 			arg5
 		);
 	}
-	void ContextWrapper::clearWallpaper()
+	void ContextWrapper::clearWallpaper() const
 	{
 		callMethod<void>(
 			"clearWallpaper",
 			"()V"
 		);
 	}
-	android::content::Context ContextWrapper::createConfigurationContext(android::content::res::Configuration arg0)
+	android::content::Context ContextWrapper::createConfigurationContext(android::content::res::Configuration arg0) const
 	{
 		return callObjectMethod(
 			"createConfigurationContext",
@@ -173,7 +173,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Context ContextWrapper::createContextForSplit(JString arg0)
+	android::content::Context ContextWrapper::createContextForSplit(JString arg0) const
 	{
 		return callObjectMethod(
 			"createContextForSplit",
@@ -181,14 +181,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::Context ContextWrapper::createDeviceProtectedStorageContext()
+	android::content::Context ContextWrapper::createDeviceProtectedStorageContext() const
 	{
 		return callObjectMethod(
 			"createDeviceProtectedStorageContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::content::Context ContextWrapper::createDisplayContext(android::view::Display arg0)
+	android::content::Context ContextWrapper::createDisplayContext(android::view::Display arg0) const
 	{
 		return callObjectMethod(
 			"createDisplayContext",
@@ -196,7 +196,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Context ContextWrapper::createPackageContext(JString arg0, jint arg1)
+	android::content::Context ContextWrapper::createPackageContext(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createPackageContext",
@@ -205,14 +205,14 @@ namespace android::content
 			arg1
 		);
 	}
-	JArray ContextWrapper::databaseList()
+	JArray ContextWrapper::databaseList() const
 	{
 		return callObjectMethod(
 			"databaseList",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jboolean ContextWrapper::deleteDatabase(JString arg0)
+	jboolean ContextWrapper::deleteDatabase(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"deleteDatabase",
@@ -220,7 +220,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ContextWrapper::deleteFile(JString arg0)
+	jboolean ContextWrapper::deleteFile(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"deleteFile",
@@ -228,7 +228,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ContextWrapper::deleteSharedPreferences(JString arg0)
+	jboolean ContextWrapper::deleteSharedPreferences(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"deleteSharedPreferences",
@@ -236,7 +236,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void ContextWrapper::enforceCallingOrSelfPermission(JString arg0, JString arg1)
+	void ContextWrapper::enforceCallingOrSelfPermission(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"enforceCallingOrSelfPermission",
@@ -245,7 +245,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void ContextWrapper::enforceCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1, JString arg2)
+	void ContextWrapper::enforceCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"enforceCallingOrSelfUriPermission",
@@ -255,7 +255,7 @@ namespace android::content
 			arg2.object<jstring>()
 		);
 	}
-	void ContextWrapper::enforceCallingPermission(JString arg0, JString arg1)
+	void ContextWrapper::enforceCallingPermission(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"enforceCallingPermission",
@@ -264,7 +264,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void ContextWrapper::enforceCallingUriPermission(android::net::Uri arg0, jint arg1, JString arg2)
+	void ContextWrapper::enforceCallingUriPermission(android::net::Uri arg0, jint arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"enforceCallingUriPermission",
@@ -274,7 +274,7 @@ namespace android::content
 			arg2.object<jstring>()
 		);
 	}
-	void ContextWrapper::enforcePermission(JString arg0, jint arg1, jint arg2, JString arg3)
+	void ContextWrapper::enforcePermission(JString arg0, jint arg1, jint arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"enforcePermission",
@@ -285,7 +285,7 @@ namespace android::content
 			arg3.object<jstring>()
 		);
 	}
-	void ContextWrapper::enforceUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3, JString arg4)
+	void ContextWrapper::enforceUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3, JString arg4) const
 	{
 		callMethod<void>(
 			"enforceUriPermission",
@@ -297,7 +297,7 @@ namespace android::content
 			arg4.object<jstring>()
 		);
 	}
-	void ContextWrapper::enforceUriPermission(android::net::Uri arg0, JString arg1, JString arg2, jint arg3, jint arg4, jint arg5, JString arg6)
+	void ContextWrapper::enforceUriPermission(android::net::Uri arg0, JString arg1, JString arg2, jint arg3, jint arg4, jint arg5, JString arg6) const
 	{
 		callMethod<void>(
 			"enforceUriPermission",
@@ -311,77 +311,77 @@ namespace android::content
 			arg6.object<jstring>()
 		);
 	}
-	JArray ContextWrapper::fileList()
+	JArray ContextWrapper::fileList() const
 	{
 		return callObjectMethod(
 			"fileList",
 			"()[Ljava/lang/String;"
 		);
 	}
-	android::content::Context ContextWrapper::getApplicationContext()
+	android::content::Context ContextWrapper::getApplicationContext() const
 	{
 		return callObjectMethod(
 			"getApplicationContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::content::pm::ApplicationInfo ContextWrapper::getApplicationInfo()
+	android::content::pm::ApplicationInfo ContextWrapper::getApplicationInfo() const
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
 			"()Landroid/content/pm/ApplicationInfo;"
 		);
 	}
-	android::content::res::AssetManager ContextWrapper::getAssets()
+	android::content::res::AssetManager ContextWrapper::getAssets() const
 	{
 		return callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
 		);
 	}
-	android::content::Context ContextWrapper::getBaseContext()
+	android::content::Context ContextWrapper::getBaseContext() const
 	{
 		return callObjectMethod(
 			"getBaseContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	java::io::File ContextWrapper::getCacheDir()
+	java::io::File ContextWrapper::getCacheDir() const
 	{
 		return callObjectMethod(
 			"getCacheDir",
 			"()Ljava/io/File;"
 		);
 	}
-	java::lang::ClassLoader ContextWrapper::getClassLoader()
+	java::lang::ClassLoader ContextWrapper::getClassLoader() const
 	{
 		return callObjectMethod(
 			"getClassLoader",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	java::io::File ContextWrapper::getCodeCacheDir()
+	java::io::File ContextWrapper::getCodeCacheDir() const
 	{
 		return callObjectMethod(
 			"getCodeCacheDir",
 			"()Ljava/io/File;"
 		);
 	}
-	android::content::ContentResolver ContextWrapper::getContentResolver()
+	android::content::ContentResolver ContextWrapper::getContentResolver() const
 	{
 		return callObjectMethod(
 			"getContentResolver",
 			"()Landroid/content/ContentResolver;"
 		);
 	}
-	java::io::File ContextWrapper::getDataDir()
+	java::io::File ContextWrapper::getDataDir() const
 	{
 		return callObjectMethod(
 			"getDataDir",
 			"()Ljava/io/File;"
 		);
 	}
-	java::io::File ContextWrapper::getDatabasePath(JString arg0)
+	java::io::File ContextWrapper::getDatabasePath(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDatabasePath",
@@ -389,7 +389,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::io::File ContextWrapper::getDir(JString arg0, jint arg1)
+	java::io::File ContextWrapper::getDir(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getDir",
@@ -398,21 +398,21 @@ namespace android::content
 			arg1
 		);
 	}
-	java::io::File ContextWrapper::getExternalCacheDir()
+	java::io::File ContextWrapper::getExternalCacheDir() const
 	{
 		return callObjectMethod(
 			"getExternalCacheDir",
 			"()Ljava/io/File;"
 		);
 	}
-	JArray ContextWrapper::getExternalCacheDirs()
+	JArray ContextWrapper::getExternalCacheDirs() const
 	{
 		return callObjectMethod(
 			"getExternalCacheDirs",
 			"()[Ljava/io/File;"
 		);
 	}
-	java::io::File ContextWrapper::getExternalFilesDir(JString arg0)
+	java::io::File ContextWrapper::getExternalFilesDir(JString arg0) const
 	{
 		return callObjectMethod(
 			"getExternalFilesDir",
@@ -420,7 +420,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JArray ContextWrapper::getExternalFilesDirs(JString arg0)
+	JArray ContextWrapper::getExternalFilesDirs(JString arg0) const
 	{
 		return callObjectMethod(
 			"getExternalFilesDirs",
@@ -428,14 +428,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JArray ContextWrapper::getExternalMediaDirs()
+	JArray ContextWrapper::getExternalMediaDirs() const
 	{
 		return callObjectMethod(
 			"getExternalMediaDirs",
 			"()[Ljava/io/File;"
 		);
 	}
-	java::io::File ContextWrapper::getFileStreamPath(JString arg0)
+	java::io::File ContextWrapper::getFileStreamPath(JString arg0) const
 	{
 		return callObjectMethod(
 			"getFileStreamPath",
@@ -443,91 +443,91 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::io::File ContextWrapper::getFilesDir()
+	java::io::File ContextWrapper::getFilesDir() const
 	{
 		return callObjectMethod(
 			"getFilesDir",
 			"()Ljava/io/File;"
 		);
 	}
-	JObject ContextWrapper::getMainExecutor()
+	JObject ContextWrapper::getMainExecutor() const
 	{
 		return callObjectMethod(
 			"getMainExecutor",
 			"()Ljava/util/concurrent/Executor;"
 		);
 	}
-	android::os::Looper ContextWrapper::getMainLooper()
+	android::os::Looper ContextWrapper::getMainLooper() const
 	{
 		return callObjectMethod(
 			"getMainLooper",
 			"()Landroid/os/Looper;"
 		);
 	}
-	java::io::File ContextWrapper::getNoBackupFilesDir()
+	java::io::File ContextWrapper::getNoBackupFilesDir() const
 	{
 		return callObjectMethod(
 			"getNoBackupFilesDir",
 			"()Ljava/io/File;"
 		);
 	}
-	java::io::File ContextWrapper::getObbDir()
+	java::io::File ContextWrapper::getObbDir() const
 	{
 		return callObjectMethod(
 			"getObbDir",
 			"()Ljava/io/File;"
 		);
 	}
-	JArray ContextWrapper::getObbDirs()
+	JArray ContextWrapper::getObbDirs() const
 	{
 		return callObjectMethod(
 			"getObbDirs",
 			"()[Ljava/io/File;"
 		);
 	}
-	JString ContextWrapper::getOpPackageName()
+	JString ContextWrapper::getOpPackageName() const
 	{
 		return callObjectMethod(
 			"getOpPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ContextWrapper::getPackageCodePath()
+	JString ContextWrapper::getPackageCodePath() const
 	{
 		return callObjectMethod(
 			"getPackageCodePath",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::pm::PackageManager ContextWrapper::getPackageManager()
+	android::content::pm::PackageManager ContextWrapper::getPackageManager() const
 	{
 		return callObjectMethod(
 			"getPackageManager",
 			"()Landroid/content/pm/PackageManager;"
 		);
 	}
-	JString ContextWrapper::getPackageName()
+	JString ContextWrapper::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ContextWrapper::getPackageResourcePath()
+	JString ContextWrapper::getPackageResourcePath() const
 	{
 		return callObjectMethod(
 			"getPackageResourcePath",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::res::Resources ContextWrapper::getResources()
+	android::content::res::Resources ContextWrapper::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	JObject ContextWrapper::getSharedPreferences(JString arg0, jint arg1)
+	JObject ContextWrapper::getSharedPreferences(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
@@ -536,7 +536,7 @@ namespace android::content
 			arg1
 		);
 	}
-	JObject ContextWrapper::getSystemService(JString arg0)
+	JObject ContextWrapper::getSystemService(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSystemService",
@@ -544,7 +544,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString ContextWrapper::getSystemServiceName(JClass arg0)
+	JString ContextWrapper::getSystemServiceName(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getSystemServiceName",
@@ -552,35 +552,35 @@ namespace android::content
 			arg0.object<jclass>()
 		);
 	}
-	android::content::res::Resources_Theme ContextWrapper::getTheme()
+	android::content::res::Resources_Theme ContextWrapper::getTheme() const
 	{
 		return callObjectMethod(
 			"getTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	android::graphics::drawable::Drawable ContextWrapper::getWallpaper()
+	android::graphics::drawable::Drawable ContextWrapper::getWallpaper() const
 	{
 		return callObjectMethod(
 			"getWallpaper",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint ContextWrapper::getWallpaperDesiredMinimumHeight()
+	jint ContextWrapper::getWallpaperDesiredMinimumHeight() const
 	{
 		return callMethod<jint>(
 			"getWallpaperDesiredMinimumHeight",
 			"()I"
 		);
 	}
-	jint ContextWrapper::getWallpaperDesiredMinimumWidth()
+	jint ContextWrapper::getWallpaperDesiredMinimumWidth() const
 	{
 		return callMethod<jint>(
 			"getWallpaperDesiredMinimumWidth",
 			"()I"
 		);
 	}
-	void ContextWrapper::grantUriPermission(JString arg0, android::net::Uri arg1, jint arg2)
+	void ContextWrapper::grantUriPermission(JString arg0, android::net::Uri arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"grantUriPermission",
@@ -590,21 +590,21 @@ namespace android::content
 			arg2
 		);
 	}
-	jboolean ContextWrapper::isDeviceProtectedStorage()
+	jboolean ContextWrapper::isDeviceProtectedStorage() const
 	{
 		return callMethod<jboolean>(
 			"isDeviceProtectedStorage",
 			"()Z"
 		);
 	}
-	jboolean ContextWrapper::isRestricted()
+	jboolean ContextWrapper::isRestricted() const
 	{
 		return callMethod<jboolean>(
 			"isRestricted",
 			"()Z"
 		);
 	}
-	jboolean ContextWrapper::moveDatabaseFrom(android::content::Context arg0, JString arg1)
+	jboolean ContextWrapper::moveDatabaseFrom(android::content::Context arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"moveDatabaseFrom",
@@ -613,7 +613,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	jboolean ContextWrapper::moveSharedPreferencesFrom(android::content::Context arg0, JString arg1)
+	jboolean ContextWrapper::moveSharedPreferencesFrom(android::content::Context arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"moveSharedPreferencesFrom",
@@ -622,7 +622,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	java::io::FileInputStream ContextWrapper::openFileInput(JString arg0)
+	java::io::FileInputStream ContextWrapper::openFileInput(JString arg0) const
 	{
 		return callObjectMethod(
 			"openFileInput",
@@ -630,7 +630,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	java::io::FileOutputStream ContextWrapper::openFileOutput(JString arg0, jint arg1)
+	java::io::FileOutputStream ContextWrapper::openFileOutput(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"openFileOutput",
@@ -639,7 +639,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::database::sqlite::SQLiteDatabase ContextWrapper::openOrCreateDatabase(JString arg0, jint arg1, JObject arg2)
+	android::database::sqlite::SQLiteDatabase ContextWrapper::openOrCreateDatabase(JString arg0, jint arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -649,7 +649,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase ContextWrapper::openOrCreateDatabase(JString arg0, jint arg1, JObject arg2, JObject arg3)
+	android::database::sqlite::SQLiteDatabase ContextWrapper::openOrCreateDatabase(JString arg0, jint arg1, JObject arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -660,14 +660,14 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	android::graphics::drawable::Drawable ContextWrapper::peekWallpaper()
+	android::graphics::drawable::Drawable ContextWrapper::peekWallpaper() const
 	{
 		return callObjectMethod(
 			"peekWallpaper",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1)
+	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1) const
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -676,7 +676,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jint arg2)
+	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -686,7 +686,7 @@ namespace android::content
 			arg2
 		);
 	}
-	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, JString arg2, android::os::Handler arg3)
+	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, JString arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -697,7 +697,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, JString arg2, android::os::Handler arg3, jint arg4)
+	android::content::Intent ContextWrapper::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, JString arg2, android::os::Handler arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -709,7 +709,7 @@ namespace android::content
 			arg4
 		);
 	}
-	void ContextWrapper::removeStickyBroadcast(android::content::Intent arg0)
+	void ContextWrapper::removeStickyBroadcast(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"removeStickyBroadcast",
@@ -717,7 +717,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::removeStickyBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1)
+	void ContextWrapper::removeStickyBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"removeStickyBroadcastAsUser",
@@ -726,7 +726,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContextWrapper::revokeUriPermission(android::net::Uri arg0, jint arg1)
+	void ContextWrapper::revokeUriPermission(android::net::Uri arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"revokeUriPermission",
@@ -735,7 +735,7 @@ namespace android::content
 			arg1
 		);
 	}
-	void ContextWrapper::revokeUriPermission(JString arg0, android::net::Uri arg1, jint arg2)
+	void ContextWrapper::revokeUriPermission(JString arg0, android::net::Uri arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"revokeUriPermission",
@@ -745,7 +745,7 @@ namespace android::content
 			arg2
 		);
 	}
-	void ContextWrapper::sendBroadcast(android::content::Intent arg0)
+	void ContextWrapper::sendBroadcast(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"sendBroadcast",
@@ -753,7 +753,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::sendBroadcast(android::content::Intent arg0, JString arg1)
+	void ContextWrapper::sendBroadcast(android::content::Intent arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"sendBroadcast",
@@ -762,7 +762,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void ContextWrapper::sendBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1)
+	void ContextWrapper::sendBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"sendBroadcastAsUser",
@@ -771,7 +771,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContextWrapper::sendBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, JString arg2)
+	void ContextWrapper::sendBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"sendBroadcastAsUser",
@@ -781,7 +781,7 @@ namespace android::content
 			arg2.object<jstring>()
 		);
 	}
-	void ContextWrapper::sendOrderedBroadcast(android::content::Intent arg0, JString arg1)
+	void ContextWrapper::sendOrderedBroadcast(android::content::Intent arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"sendOrderedBroadcast",
@@ -790,7 +790,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void ContextWrapper::sendOrderedBroadcast(android::content::Intent arg0, JString arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, JString arg5, android::os::Bundle arg6)
+	void ContextWrapper::sendOrderedBroadcast(android::content::Intent arg0, JString arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, JString arg5, android::os::Bundle arg6) const
 	{
 		callMethod<void>(
 			"sendOrderedBroadcast",
@@ -804,7 +804,7 @@ namespace android::content
 			arg6.object()
 		);
 	}
-	void ContextWrapper::sendOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, JString arg2, android::content::BroadcastReceiver arg3, android::os::Handler arg4, jint arg5, JString arg6, android::os::Bundle arg7)
+	void ContextWrapper::sendOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, JString arg2, android::content::BroadcastReceiver arg3, android::os::Handler arg4, jint arg5, JString arg6, android::os::Bundle arg7) const
 	{
 		callMethod<void>(
 			"sendOrderedBroadcastAsUser",
@@ -819,7 +819,7 @@ namespace android::content
 			arg7.object()
 		);
 	}
-	void ContextWrapper::sendStickyBroadcast(android::content::Intent arg0)
+	void ContextWrapper::sendStickyBroadcast(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"sendStickyBroadcast",
@@ -827,7 +827,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::sendStickyBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1)
+	void ContextWrapper::sendStickyBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"sendStickyBroadcastAsUser",
@@ -836,7 +836,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContextWrapper::sendStickyOrderedBroadcast(android::content::Intent arg0, android::content::BroadcastReceiver arg1, android::os::Handler arg2, jint arg3, JString arg4, android::os::Bundle arg5)
+	void ContextWrapper::sendStickyOrderedBroadcast(android::content::Intent arg0, android::content::BroadcastReceiver arg1, android::os::Handler arg2, jint arg3, JString arg4, android::os::Bundle arg5) const
 	{
 		callMethod<void>(
 			"sendStickyOrderedBroadcast",
@@ -849,7 +849,7 @@ namespace android::content
 			arg5.object()
 		);
 	}
-	void ContextWrapper::sendStickyOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, JString arg5, android::os::Bundle arg6)
+	void ContextWrapper::sendStickyOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, JString arg5, android::os::Bundle arg6) const
 	{
 		callMethod<void>(
 			"sendStickyOrderedBroadcastAsUser",
@@ -863,7 +863,7 @@ namespace android::content
 			arg6.object()
 		);
 	}
-	void ContextWrapper::setTheme(jint arg0)
+	void ContextWrapper::setTheme(jint arg0) const
 	{
 		callMethod<void>(
 			"setTheme",
@@ -871,7 +871,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void ContextWrapper::setWallpaper(android::graphics::Bitmap arg0)
+	void ContextWrapper::setWallpaper(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"setWallpaper",
@@ -879,7 +879,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::setWallpaper(java::io::InputStream arg0)
+	void ContextWrapper::setWallpaper(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"setWallpaper",
@@ -887,7 +887,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::startActivities(JArray arg0)
+	void ContextWrapper::startActivities(JArray arg0) const
 	{
 		callMethod<void>(
 			"startActivities",
@@ -895,7 +895,7 @@ namespace android::content
 			arg0.object<jarray>()
 		);
 	}
-	void ContextWrapper::startActivities(JArray arg0, android::os::Bundle arg1)
+	void ContextWrapper::startActivities(JArray arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"startActivities",
@@ -904,7 +904,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContextWrapper::startActivity(android::content::Intent arg0)
+	void ContextWrapper::startActivity(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -912,7 +912,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::startActivity(android::content::Intent arg0, android::os::Bundle arg1)
+	void ContextWrapper::startActivity(android::content::Intent arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -921,7 +921,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::ComponentName ContextWrapper::startForegroundService(android::content::Intent arg0)
+	android::content::ComponentName ContextWrapper::startForegroundService(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"startForegroundService",
@@ -929,7 +929,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jboolean ContextWrapper::startInstrumentation(android::content::ComponentName arg0, JString arg1, android::os::Bundle arg2)
+	jboolean ContextWrapper::startInstrumentation(android::content::ComponentName arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"startInstrumentation",
@@ -939,7 +939,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void ContextWrapper::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4)
+	void ContextWrapper::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"startIntentSender",
@@ -951,7 +951,7 @@ namespace android::content
 			arg4
 		);
 	}
-	void ContextWrapper::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
+	void ContextWrapper::startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5) const
 	{
 		callMethod<void>(
 			"startIntentSender",
@@ -964,7 +964,7 @@ namespace android::content
 			arg5.object()
 		);
 	}
-	android::content::ComponentName ContextWrapper::startService(android::content::Intent arg0)
+	android::content::ComponentName ContextWrapper::startService(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"startService",
@@ -972,7 +972,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jboolean ContextWrapper::stopService(android::content::Intent arg0)
+	jboolean ContextWrapper::stopService(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"stopService",
@@ -980,7 +980,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::unbindService(JObject arg0)
+	void ContextWrapper::unbindService(JObject arg0) const
 	{
 		callMethod<void>(
 			"unbindService",
@@ -988,7 +988,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::unregisterReceiver(android::content::BroadcastReceiver arg0)
+	void ContextWrapper::unregisterReceiver(android::content::BroadcastReceiver arg0) const
 	{
 		callMethod<void>(
 			"unregisterReceiver",
@@ -996,7 +996,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContextWrapper::updateServiceGroup(JObject arg0, jint arg1, jint arg2)
+	void ContextWrapper::updateServiceGroup(JObject arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"updateServiceGroup",

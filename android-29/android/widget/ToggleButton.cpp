@@ -43,35 +43,35 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString ToggleButton::getAccessibilityClassName()
+	JString ToggleButton::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jfloat ToggleButton::getDisabledAlpha()
+	jfloat ToggleButton::getDisabledAlpha() const
 	{
 		return callMethod<jfloat>(
 			"getDisabledAlpha",
 			"()F"
 		);
 	}
-	JString ToggleButton::getTextOff()
+	JString ToggleButton::getTextOff() const
 	{
 		return callObjectMethod(
 			"getTextOff",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString ToggleButton::getTextOn()
+	JString ToggleButton::getTextOn() const
 	{
 		return callObjectMethod(
 			"getTextOn",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void ToggleButton::setBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void ToggleButton::setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawable",
@@ -79,7 +79,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ToggleButton::setChecked(jboolean arg0)
+	void ToggleButton::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -87,7 +87,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ToggleButton::setTextOff(JString arg0)
+	void ToggleButton::setTextOff(JString arg0) const
 	{
 		callMethod<void>(
 			"setTextOff",
@@ -95,7 +95,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void ToggleButton::setTextOn(JString arg0)
+	void ToggleButton::setTextOn(JString arg0) const
 	{
 		callMethod<void>(
 			"setTextOn",

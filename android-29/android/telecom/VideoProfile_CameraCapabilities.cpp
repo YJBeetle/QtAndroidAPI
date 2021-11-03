@@ -35,42 +35,42 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jint VideoProfile_CameraCapabilities::describeContents()
+	jint VideoProfile_CameraCapabilities::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint VideoProfile_CameraCapabilities::getHeight()
+	jint VideoProfile_CameraCapabilities::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jfloat VideoProfile_CameraCapabilities::getMaxZoom()
+	jfloat VideoProfile_CameraCapabilities::getMaxZoom() const
 	{
 		return callMethod<jfloat>(
 			"getMaxZoom",
 			"()F"
 		);
 	}
-	jint VideoProfile_CameraCapabilities::getWidth()
+	jint VideoProfile_CameraCapabilities::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean VideoProfile_CameraCapabilities::isZoomSupported()
+	jboolean VideoProfile_CameraCapabilities::isZoomSupported() const
 	{
 		return callMethod<jboolean>(
 			"isZoomSupported",
 			"()Z"
 		);
 	}
-	void VideoProfile_CameraCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VideoProfile_CameraCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

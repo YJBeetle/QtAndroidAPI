@@ -20,42 +20,42 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/Selector;"
 		);
 	}
-	void Selector::close()
+	void Selector::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean Selector::isOpen()
+	jboolean Selector::isOpen() const
 	{
 		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
-	JObject Selector::keys()
+	JObject Selector::keys() const
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::nio::channels::spi::SelectorProvider Selector::provider()
+	java::nio::channels::spi::SelectorProvider Selector::provider() const
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	jint Selector::select()
+	jint Selector::select() const
 	{
 		return callMethod<jint>(
 			"select",
 			"()I"
 		);
 	}
-	jint Selector::select(JObject arg0)
+	jint Selector::select(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"select",
@@ -63,7 +63,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jint Selector::select(jlong arg0)
+	jint Selector::select(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"select",
@@ -71,7 +71,7 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	jint Selector::select(JObject arg0, jlong arg1)
+	jint Selector::select(JObject arg0, jlong arg1) const
 	{
 		return callMethod<jint>(
 			"select",
@@ -80,14 +80,14 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	jint Selector::selectNow()
+	jint Selector::selectNow() const
 	{
 		return callMethod<jint>(
 			"selectNow",
 			"()I"
 		);
 	}
-	jint Selector::selectNow(JObject arg0)
+	jint Selector::selectNow(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"selectNow",
@@ -95,14 +95,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	JObject Selector::selectedKeys()
+	JObject Selector::selectedKeys() const
 	{
 		return callObjectMethod(
 			"selectedKeys",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::nio::channels::Selector Selector::wakeup()
+	java::nio::channels::Selector Selector::wakeup() const
 	{
 		return callObjectMethod(
 			"wakeup",

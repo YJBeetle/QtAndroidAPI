@@ -46,8 +46,8 @@ namespace android::text::style
 		ImageSpan(android::graphics::drawable::Drawable arg0, JString arg1, jint arg2);
 		
 		// Methods
-		android::graphics::drawable::Drawable getDrawable();
-		JString getSource();
+		android::graphics::drawable::Drawable getDrawable() const;
+		JString getSource() const;
 	};
 } // namespace android::text::style
 

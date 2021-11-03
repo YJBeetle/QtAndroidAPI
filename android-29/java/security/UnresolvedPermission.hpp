@@ -38,16 +38,16 @@ namespace java::security
 		UnresolvedPermission(JString arg0, JString arg1, JString arg2, JArray arg3);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getActions();
-		JString getUnresolvedActions();
-		JArray getUnresolvedCerts();
-		JString getUnresolvedName();
-		JString getUnresolvedType();
-		jint hashCode();
-		jboolean implies(java::security::Permission arg0);
-		java::security::PermissionCollection newPermissionCollection();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getActions() const;
+		JString getUnresolvedActions() const;
+		JArray getUnresolvedCerts() const;
+		JString getUnresolvedName() const;
+		JString getUnresolvedType() const;
+		jint hashCode() const;
+		jboolean implies(java::security::Permission arg0) const;
+		java::security::PermissionCollection newPermissionCollection() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

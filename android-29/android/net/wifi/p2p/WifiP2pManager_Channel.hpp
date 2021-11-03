@@ -33,7 +33,7 @@ namespace android::net::wifi::p2p
 		// Constructors
 		
 		// Methods
-		void close();
+		void close() const;
 	};
 } // namespace android::net::wifi::p2p
 

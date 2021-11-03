@@ -18,7 +18,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void TimingLogger::addSplit(JString arg0)
+	void TimingLogger::addSplit(JString arg0) const
 	{
 		callMethod<void>(
 			"addSplit",
@@ -26,21 +26,21 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	void TimingLogger::dumpToLog()
+	void TimingLogger::dumpToLog() const
 	{
 		callMethod<void>(
 			"dumpToLog",
 			"()V"
 		);
 	}
-	void TimingLogger::reset()
+	void TimingLogger::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void TimingLogger::reset(JString arg0, JString arg1)
+	void TimingLogger::reset(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"reset",

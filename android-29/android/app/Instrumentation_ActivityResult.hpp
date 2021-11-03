@@ -22,8 +22,8 @@ namespace android::app
 		Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1);
 		
 		// Methods
-		jint getResultCode();
-		android::content::Intent getResultData();
+		jint getResultCode() const;
+		android::content::Intent getResultData() const;
 	};
 } // namespace android::app
 

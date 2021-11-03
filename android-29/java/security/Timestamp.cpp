@@ -22,7 +22,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jboolean Timestamp::equals(JObject arg0)
+	jboolean Timestamp::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -30,28 +30,28 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	java::security::cert::CertPath Timestamp::getSignerCertPath()
+	java::security::cert::CertPath Timestamp::getSignerCertPath() const
 	{
 		return callObjectMethod(
 			"getSignerCertPath",
 			"()Ljava/security/cert/CertPath;"
 		);
 	}
-	java::util::Date Timestamp::getTimestamp()
+	java::util::Date Timestamp::getTimestamp() const
 	{
 		return callObjectMethod(
 			"getTimestamp",
 			"()Ljava/util/Date;"
 		);
 	}
-	jint Timestamp::hashCode()
+	jint Timestamp::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Timestamp::toString()
+	JString Timestamp::toString() const
 	{
 		return callObjectMethod(
 			"toString",

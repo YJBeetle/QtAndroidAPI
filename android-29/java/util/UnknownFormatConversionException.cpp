@@ -17,14 +17,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JString UnknownFormatConversionException::getConversion()
+	JString UnknownFormatConversionException::getConversion() const
 	{
 		return callObjectMethod(
 			"getConversion",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UnknownFormatConversionException::getMessage()
+	JString UnknownFormatConversionException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

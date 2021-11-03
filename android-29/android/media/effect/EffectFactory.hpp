@@ -54,7 +54,7 @@ namespace android::media::effect
 		
 		// Methods
 		static jboolean isEffectSupported(JString arg0);
-		android::media::effect::Effect createEffect(JString arg0);
+		android::media::effect::Effect createEffect(JString arg0) const;
 	};
 } // namespace android::media::effect
 

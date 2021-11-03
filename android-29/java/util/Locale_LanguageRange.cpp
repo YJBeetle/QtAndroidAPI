@@ -68,7 +68,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean Locale_LanguageRange::equals(JObject arg0)
+	jboolean Locale_LanguageRange::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -76,28 +76,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JString Locale_LanguageRange::getRange()
+	JString Locale_LanguageRange::getRange() const
 	{
 		return callObjectMethod(
 			"getRange",
 			"()Ljava/lang/String;"
 		);
 	}
-	jdouble Locale_LanguageRange::getWeight()
+	jdouble Locale_LanguageRange::getWeight() const
 	{
 		return callMethod<jdouble>(
 			"getWeight",
 			"()D"
 		);
 	}
-	jint Locale_LanguageRange::hashCode()
+	jint Locale_LanguageRange::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Locale_LanguageRange::toString()
+	JString Locale_LanguageRange::toString() const
 	{
 		return callObjectMethod(
 			"toString",

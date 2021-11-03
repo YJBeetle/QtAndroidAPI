@@ -89,33 +89,33 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		JObject getActivityList(JString arg0, android::os::UserHandle arg1);
-		JObject getAllPackageInstallerSessions();
-		android::content::pm::ApplicationInfo getApplicationInfo(JString arg0, jint arg1, android::os::UserHandle arg2);
-		android::content::pm::LauncherApps_PinItemRequest getPinItemRequest(android::content::Intent arg0);
-		JObject getProfiles();
-		android::graphics::drawable::Drawable getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1);
-		android::content::IntentSender getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0);
-		JObject getShortcutConfigActivityList(JString arg0, android::os::UserHandle arg1);
-		android::graphics::drawable::Drawable getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1);
-		JObject getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1);
-		android::os::Bundle getSuspendedPackageLauncherExtras(JString arg0, android::os::UserHandle arg1);
-		jboolean hasShortcutHostPermission();
-		jboolean isActivityEnabled(android::content::ComponentName arg0, android::os::UserHandle arg1);
-		jboolean isPackageEnabled(JString arg0, android::os::UserHandle arg1);
-		void pinShortcuts(JString arg0, JObject arg1, android::os::UserHandle arg2);
-		void registerCallback(android::content::pm::LauncherApps_Callback arg0);
-		void registerCallback(android::content::pm::LauncherApps_Callback arg0, android::os::Handler arg1);
-		void registerPackageInstallerSessionCallback(JObject arg0, android::content::pm::PackageInstaller_SessionCallback arg1);
-		android::content::pm::LauncherActivityInfo resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1);
-		jboolean shouldHideFromSuggestions(JString arg0, android::os::UserHandle arg1);
-		void startAppDetailsActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3);
-		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3);
-		void startPackageInstallerSessionDetailsActivity(android::content::pm::PackageInstaller_SessionInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2);
-		void startShortcut(android::content::pm::ShortcutInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2);
-		void startShortcut(JString arg0, JString arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4);
-		void unregisterCallback(android::content::pm::LauncherApps_Callback arg0);
-		void unregisterPackageInstallerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
+		JObject getActivityList(JString arg0, android::os::UserHandle arg1) const;
+		JObject getAllPackageInstallerSessions() const;
+		android::content::pm::ApplicationInfo getApplicationInfo(JString arg0, jint arg1, android::os::UserHandle arg2) const;
+		android::content::pm::LauncherApps_PinItemRequest getPinItemRequest(android::content::Intent arg0) const;
+		JObject getProfiles() const;
+		android::graphics::drawable::Drawable getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const;
+		android::content::IntentSender getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0) const;
+		JObject getShortcutConfigActivityList(JString arg0, android::os::UserHandle arg1) const;
+		android::graphics::drawable::Drawable getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const;
+		JObject getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1) const;
+		android::os::Bundle getSuspendedPackageLauncherExtras(JString arg0, android::os::UserHandle arg1) const;
+		jboolean hasShortcutHostPermission() const;
+		jboolean isActivityEnabled(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
+		jboolean isPackageEnabled(JString arg0, android::os::UserHandle arg1) const;
+		void pinShortcuts(JString arg0, JObject arg1, android::os::UserHandle arg2) const;
+		void registerCallback(android::content::pm::LauncherApps_Callback arg0) const;
+		void registerCallback(android::content::pm::LauncherApps_Callback arg0, android::os::Handler arg1) const;
+		void registerPackageInstallerSessionCallback(JObject arg0, android::content::pm::PackageInstaller_SessionCallback arg1) const;
+		android::content::pm::LauncherActivityInfo resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1) const;
+		jboolean shouldHideFromSuggestions(JString arg0, android::os::UserHandle arg1) const;
+		void startAppDetailsActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const;
+		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const;
+		void startPackageInstallerSessionDetailsActivity(android::content::pm::PackageInstaller_SessionInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2) const;
+		void startShortcut(android::content::pm::ShortcutInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2) const;
+		void startShortcut(JString arg0, JString arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4) const;
+		void unregisterCallback(android::content::pm::LauncherApps_Callback arg0) const;
+		void unregisterPackageInstallerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0) const;
 	};
 } // namespace android::content::pm
 

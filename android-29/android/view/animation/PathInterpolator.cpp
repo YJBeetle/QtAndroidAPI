@@ -41,7 +41,7 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	jfloat PathInterpolator::getInterpolation(jfloat arg0)
+	jfloat PathInterpolator::getInterpolation(jfloat arg0) const
 	{
 		return callMethod<jfloat>(
 			"getInterpolation",

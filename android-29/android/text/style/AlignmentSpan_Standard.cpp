@@ -24,28 +24,28 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint AlignmentSpan_Standard::describeContents()
+	jint AlignmentSpan_Standard::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::text::Layout_Alignment AlignmentSpan_Standard::getAlignment()
+	android::text::Layout_Alignment AlignmentSpan_Standard::getAlignment() const
 	{
 		return callObjectMethod(
 			"getAlignment",
 			"()Landroid/text/Layout$Alignment;"
 		);
 	}
-	jint AlignmentSpan_Standard::getSpanTypeId()
+	jint AlignmentSpan_Standard::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void AlignmentSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AlignmentSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

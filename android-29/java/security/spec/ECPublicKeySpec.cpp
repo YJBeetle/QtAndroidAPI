@@ -19,14 +19,14 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::security::spec::ECParameterSpec ECPublicKeySpec::getParams()
+	java::security::spec::ECParameterSpec ECPublicKeySpec::getParams() const
 	{
 		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/ECParameterSpec;"
 		);
 	}
-	java::security::spec::ECPoint ECPublicKeySpec::getW()
+	java::security::spec::ECPoint ECPublicKeySpec::getW() const
 	{
 		return callObjectMethod(
 			"getW",

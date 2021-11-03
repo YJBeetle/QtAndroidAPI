@@ -23,7 +23,7 @@ namespace java::lang::ref
 		PhantomReference(JObject arg0, java::lang::ref::ReferenceQueue arg1);
 		
 		// Methods
-		JObject get();
+		JObject get() const;
 	};
 } // namespace java::lang::ref
 

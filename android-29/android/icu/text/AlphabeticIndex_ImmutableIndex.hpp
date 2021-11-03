@@ -22,10 +22,10 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		android::icu::text::AlphabeticIndex_Bucket getBucket(jint arg0);
-		jint getBucketCount();
-		jint getBucketIndex(JString arg0);
-		JObject iterator();
+		android::icu::text::AlphabeticIndex_Bucket getBucket(jint arg0) const;
+		jint getBucketCount() const;
+		jint getBucketIndex(JString arg0) const;
+		JObject iterator() const;
 	};
 } // namespace android::icu::text
 

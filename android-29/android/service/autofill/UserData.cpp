@@ -61,21 +61,21 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jint UserData::describeContents()
+	jint UserData::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString UserData::getFieldClassificationAlgorithm()
+	JString UserData::getFieldClassificationAlgorithm() const
 	{
 		return callObjectMethod(
 			"getFieldClassificationAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UserData::getFieldClassificationAlgorithmForCategory(JString arg0)
+	JString UserData::getFieldClassificationAlgorithmForCategory(JString arg0) const
 	{
 		return callObjectMethod(
 			"getFieldClassificationAlgorithmForCategory",
@@ -83,21 +83,21 @@ namespace android::service::autofill
 			arg0.object<jstring>()
 		);
 	}
-	JString UserData::getId()
+	JString UserData::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UserData::toString()
+	JString UserData::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UserData::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UserData::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

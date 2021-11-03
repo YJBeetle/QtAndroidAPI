@@ -21,7 +21,7 @@ namespace android::media::audiofx
 		PresetReverb_Settings(JString arg0);
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

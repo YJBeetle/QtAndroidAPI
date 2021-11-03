@@ -14,7 +14,7 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	jboolean SNIServerName::equals(JObject arg0)
+	jboolean SNIServerName::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -22,28 +22,28 @@ namespace javax::net::ssl
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray SNIServerName::getEncoded()
+	JByteArray SNIServerName::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	jint SNIServerName::getType()
+	jint SNIServerName::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint SNIServerName::hashCode()
+	jint SNIServerName::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SNIServerName::toString()
+	JString SNIServerName::toString() const
 	{
 		return callObjectMethod(
 			"toString",

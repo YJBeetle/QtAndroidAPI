@@ -40,12 +40,12 @@ namespace android::transition
 		Slide(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void captureEndValues(android::transition::TransitionValues arg0);
-		void captureStartValues(android::transition::TransitionValues arg0);
-		jint getSlideEdge();
-		android::animation::Animator onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3);
-		android::animation::Animator onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3);
-		void setSlideEdge(jint arg0);
+		void captureEndValues(android::transition::TransitionValues arg0) const;
+		void captureStartValues(android::transition::TransitionValues arg0) const;
+		jint getSlideEdge() const;
+		android::animation::Animator onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const;
+		android::animation::Animator onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const;
+		void setSlideEdge(jint arg0) const;
 	};
 } // namespace android::transition
 

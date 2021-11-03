@@ -17,7 +17,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	java::lang::Integer IntEvaluator::evaluate(jfloat arg0, java::lang::Integer arg1, java::lang::Integer arg2)
+	java::lang::Integer IntEvaluator::evaluate(jfloat arg0, java::lang::Integer arg1, java::lang::Integer arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",
@@ -27,7 +27,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	JObject IntEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
+	JObject IntEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",

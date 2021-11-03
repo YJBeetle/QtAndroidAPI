@@ -39,7 +39,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void Network::bindSocket(java::io::FileDescriptor arg0)
+	void Network::bindSocket(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"bindSocket",
@@ -47,7 +47,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void Network::bindSocket(java::net::DatagramSocket arg0)
+	void Network::bindSocket(java::net::DatagramSocket arg0) const
 	{
 		callMethod<void>(
 			"bindSocket",
@@ -55,7 +55,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void Network::bindSocket(java::net::Socket arg0)
+	void Network::bindSocket(java::net::Socket arg0) const
 	{
 		callMethod<void>(
 			"bindSocket",
@@ -63,14 +63,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jint Network::describeContents()
+	jint Network::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Network::equals(JObject arg0)
+	jboolean Network::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -78,7 +78,7 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	JArray Network::getAllByName(JString arg0)
+	JArray Network::getAllByName(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAllByName",
@@ -86,7 +86,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	java::net::InetAddress Network::getByName(JString arg0)
+	java::net::InetAddress Network::getByName(JString arg0) const
 	{
 		return callObjectMethod(
 			"getByName",
@@ -94,28 +94,28 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	jlong Network::getNetworkHandle()
+	jlong Network::getNetworkHandle() const
 	{
 		return callMethod<jlong>(
 			"getNetworkHandle",
 			"()J"
 		);
 	}
-	javax::net::SocketFactory Network::getSocketFactory()
+	javax::net::SocketFactory Network::getSocketFactory() const
 	{
 		return callObjectMethod(
 			"getSocketFactory",
 			"()Ljavax/net/SocketFactory;"
 		);
 	}
-	jint Network::hashCode()
+	jint Network::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::net::URLConnection Network::openConnection(java::net::URL arg0)
+	java::net::URLConnection Network::openConnection(java::net::URL arg0) const
 	{
 		return callObjectMethod(
 			"openConnection",
@@ -123,7 +123,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	java::net::URLConnection Network::openConnection(java::net::URL arg0, java::net::Proxy arg1)
+	java::net::URLConnection Network::openConnection(java::net::URL arg0, java::net::Proxy arg1) const
 	{
 		return callObjectMethod(
 			"openConnection",
@@ -132,14 +132,14 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	JString Network::toString()
+	JString Network::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Network::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Network::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

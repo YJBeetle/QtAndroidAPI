@@ -23,28 +23,28 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean Outline::canClip()
+	jboolean Outline::canClip() const
 	{
 		return callMethod<jboolean>(
 			"canClip",
 			"()Z"
 		);
 	}
-	jfloat Outline::getAlpha()
+	jfloat Outline::getAlpha() const
 	{
 		return callMethod<jfloat>(
 			"getAlpha",
 			"()F"
 		);
 	}
-	jfloat Outline::getRadius()
+	jfloat Outline::getRadius() const
 	{
 		return callMethod<jfloat>(
 			"getRadius",
 			"()F"
 		);
 	}
-	jboolean Outline::getRect(android::graphics::Rect arg0)
+	jboolean Outline::getRect(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getRect",
@@ -52,14 +52,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Outline::isEmpty()
+	jboolean Outline::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void Outline::offset(jint arg0, jint arg1)
+	void Outline::offset(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"offset",
@@ -68,7 +68,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Outline::set(android::graphics::Outline arg0)
+	void Outline::set(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -76,7 +76,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Outline::setAlpha(jfloat arg0)
+	void Outline::setAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -84,7 +84,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Outline::setConvexPath(android::graphics::Path arg0)
+	void Outline::setConvexPath(android::graphics::Path arg0) const
 	{
 		callMethod<void>(
 			"setConvexPath",
@@ -92,14 +92,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Outline::setEmpty()
+	void Outline::setEmpty() const
 	{
 		callMethod<void>(
 			"setEmpty",
 			"()V"
 		);
 	}
-	void Outline::setOval(android::graphics::Rect arg0)
+	void Outline::setOval(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setOval",
@@ -107,7 +107,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Outline::setOval(jint arg0, jint arg1, jint arg2, jint arg3)
+	void Outline::setOval(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setOval",
@@ -118,7 +118,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Outline::setRect(android::graphics::Rect arg0)
+	void Outline::setRect(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setRect",
@@ -126,7 +126,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Outline::setRect(jint arg0, jint arg1, jint arg2, jint arg3)
+	void Outline::setRect(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setRect",
@@ -137,7 +137,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Outline::setRoundRect(android::graphics::Rect arg0, jfloat arg1)
+	void Outline::setRoundRect(android::graphics::Rect arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setRoundRect",
@@ -146,7 +146,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Outline::setRoundRect(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4)
+	void Outline::setRoundRect(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4) const
 	{
 		callMethod<void>(
 			"setRoundRect",

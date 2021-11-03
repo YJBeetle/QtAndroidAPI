@@ -23,12 +23,12 @@ namespace android::view
 		KeyEvent_DispatcherState();
 		
 		// Methods
-		void handleUpEvent(android::view::KeyEvent arg0);
-		jboolean isTracking(android::view::KeyEvent arg0);
-		void performedLongPress(android::view::KeyEvent arg0);
-		void reset();
-		void reset(JObject arg0);
-		void startTracking(android::view::KeyEvent arg0, JObject arg1);
+		void handleUpEvent(android::view::KeyEvent arg0) const;
+		jboolean isTracking(android::view::KeyEvent arg0) const;
+		void performedLongPress(android::view::KeyEvent arg0) const;
+		void reset() const;
+		void reset(JObject arg0) const;
+		void startTracking(android::view::KeyEvent arg0, JObject arg1) const;
 	};
 } // namespace android::view
 

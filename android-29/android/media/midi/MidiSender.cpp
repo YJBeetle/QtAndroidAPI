@@ -16,7 +16,7 @@ namespace android::media::midi
 		) {}
 	
 	// Methods
-	void MidiSender::connect(android::media::midi::MidiReceiver arg0)
+	void MidiSender::connect(android::media::midi::MidiReceiver arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -24,7 +24,7 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	void MidiSender::disconnect(android::media::midi::MidiReceiver arg0)
+	void MidiSender::disconnect(android::media::midi::MidiReceiver arg0) const
 	{
 		callMethod<void>(
 			"disconnect",
@@ -32,7 +32,7 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	void MidiSender::onConnect(android::media::midi::MidiReceiver arg0)
+	void MidiSender::onConnect(android::media::midi::MidiReceiver arg0) const
 	{
 		callMethod<void>(
 			"onConnect",
@@ -40,7 +40,7 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	void MidiSender::onDisconnect(android::media::midi::MidiReceiver arg0)
+	void MidiSender::onDisconnect(android::media::midi::MidiReceiver arg0) const
 	{
 		callMethod<void>(
 			"onDisconnect",

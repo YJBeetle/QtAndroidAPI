@@ -32,17 +32,17 @@ namespace android::widget
 		PopupMenu(android::content::Context arg0, android::view::View arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		void dismiss();
-		JObject getDragToOpenListener();
-		jint getGravity();
-		JObject getMenu();
-		android::view::MenuInflater getMenuInflater();
-		void inflate(jint arg0);
-		void setForceShowIcon(jboolean arg0);
-		void setGravity(jint arg0);
-		void setOnDismissListener(JObject arg0);
-		void setOnMenuItemClickListener(JObject arg0);
-		void show();
+		void dismiss() const;
+		JObject getDragToOpenListener() const;
+		jint getGravity() const;
+		JObject getMenu() const;
+		android::view::MenuInflater getMenuInflater() const;
+		void inflate(jint arg0) const;
+		void setForceShowIcon(jboolean arg0) const;
+		void setGravity(jint arg0) const;
+		void setOnDismissListener(JObject arg0) const;
+		void setOnMenuItemClickListener(JObject arg0) const;
+		void show() const;
 	};
 } // namespace android::widget
 

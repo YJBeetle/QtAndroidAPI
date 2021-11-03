@@ -38,14 +38,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jint PhoneAccountHandle::describeContents()
+	jint PhoneAccountHandle::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PhoneAccountHandle::equals(JObject arg0)
+	jboolean PhoneAccountHandle::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -53,42 +53,42 @@ namespace android::telecom
 			arg0.object<jobject>()
 		);
 	}
-	android::content::ComponentName PhoneAccountHandle::getComponentName()
+	android::content::ComponentName PhoneAccountHandle::getComponentName() const
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	JString PhoneAccountHandle::getId()
+	JString PhoneAccountHandle::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::UserHandle PhoneAccountHandle::getUserHandle()
+	android::os::UserHandle PhoneAccountHandle::getUserHandle() const
 	{
 		return callObjectMethod(
 			"getUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jint PhoneAccountHandle::hashCode()
+	jint PhoneAccountHandle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PhoneAccountHandle::toString()
+	JString PhoneAccountHandle::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PhoneAccountHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PhoneAccountHandle::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

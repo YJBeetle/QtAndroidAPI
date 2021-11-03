@@ -20,9 +20,9 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint getMaxSatellites();
-		JObject getSatellites();
-		jint getTimeToFirstFix();
+		jint getMaxSatellites() const;
+		JObject getSatellites() const;
+		jint getTimeToFirstFix() const;
 	};
 } // namespace android::location
 

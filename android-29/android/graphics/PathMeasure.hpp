@@ -30,13 +30,13 @@ namespace android::graphics
 		PathMeasure(android::graphics::Path arg0, jboolean arg1);
 		
 		// Methods
-		jfloat getLength();
-		jboolean getMatrix(jfloat arg0, android::graphics::Matrix arg1, jint arg2);
-		jboolean getPosTan(jfloat arg0, JFloatArray arg1, JFloatArray arg2);
-		jboolean getSegment(jfloat arg0, jfloat arg1, android::graphics::Path arg2, jboolean arg3);
-		jboolean isClosed();
-		jboolean nextContour();
-		void setPath(android::graphics::Path arg0, jboolean arg1);
+		jfloat getLength() const;
+		jboolean getMatrix(jfloat arg0, android::graphics::Matrix arg1, jint arg2) const;
+		jboolean getPosTan(jfloat arg0, JFloatArray arg1, JFloatArray arg2) const;
+		jboolean getSegment(jfloat arg0, jfloat arg1, android::graphics::Path arg2, jboolean arg3) const;
+		jboolean isClosed() const;
+		jboolean nextContour() const;
+		void setPath(android::graphics::Path arg0, jboolean arg1) const;
 	};
 } // namespace android::graphics
 

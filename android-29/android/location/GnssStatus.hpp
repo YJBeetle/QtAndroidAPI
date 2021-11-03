@@ -27,17 +27,17 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jfloat getAzimuthDegrees(jint arg0);
-		jfloat getCarrierFrequencyHz(jint arg0);
-		jfloat getCn0DbHz(jint arg0);
-		jint getConstellationType(jint arg0);
-		jfloat getElevationDegrees(jint arg0);
-		jint getSatelliteCount();
-		jint getSvid(jint arg0);
-		jboolean hasAlmanacData(jint arg0);
-		jboolean hasCarrierFrequencyHz(jint arg0);
-		jboolean hasEphemerisData(jint arg0);
-		jboolean usedInFix(jint arg0);
+		jfloat getAzimuthDegrees(jint arg0) const;
+		jfloat getCarrierFrequencyHz(jint arg0) const;
+		jfloat getCn0DbHz(jint arg0) const;
+		jint getConstellationType(jint arg0) const;
+		jfloat getElevationDegrees(jint arg0) const;
+		jint getSatelliteCount() const;
+		jint getSvid(jint arg0) const;
+		jboolean hasAlmanacData(jint arg0) const;
+		jboolean hasCarrierFrequencyHz(jint arg0) const;
+		jboolean hasEphemerisData(jint arg0) const;
+		jboolean usedInFix(jint arg0) const;
 	};
 } // namespace android::location
 

@@ -24,28 +24,28 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	jfloat ArcMotion::getMaximumAngle()
+	jfloat ArcMotion::getMaximumAngle() const
 	{
 		return callMethod<jfloat>(
 			"getMaximumAngle",
 			"()F"
 		);
 	}
-	jfloat ArcMotion::getMinimumHorizontalAngle()
+	jfloat ArcMotion::getMinimumHorizontalAngle() const
 	{
 		return callMethod<jfloat>(
 			"getMinimumHorizontalAngle",
 			"()F"
 		);
 	}
-	jfloat ArcMotion::getMinimumVerticalAngle()
+	jfloat ArcMotion::getMinimumVerticalAngle() const
 	{
 		return callMethod<jfloat>(
 			"getMinimumVerticalAngle",
 			"()F"
 		);
 	}
-	android::graphics::Path ArcMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	android::graphics::Path ArcMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callObjectMethod(
 			"getPath",
@@ -56,7 +56,7 @@ namespace android::transition
 			arg3
 		);
 	}
-	void ArcMotion::setMaximumAngle(jfloat arg0)
+	void ArcMotion::setMaximumAngle(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setMaximumAngle",
@@ -64,7 +64,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	void ArcMotion::setMinimumHorizontalAngle(jfloat arg0)
+	void ArcMotion::setMinimumHorizontalAngle(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setMinimumHorizontalAngle",
@@ -72,7 +72,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	void ArcMotion::setMinimumVerticalAngle(jfloat arg0)
+	void ArcMotion::setMinimumVerticalAngle(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setMinimumVerticalAngle",

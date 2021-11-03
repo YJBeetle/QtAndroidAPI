@@ -31,14 +31,14 @@ namespace android::appwidget
 			"()V"
 		);
 	}
-	jint AppWidgetHost::allocateAppWidgetId()
+	jint AppWidgetHost::allocateAppWidgetId() const
 	{
 		return callMethod<jint>(
 			"allocateAppWidgetId",
 			"()I"
 		);
 	}
-	android::appwidget::AppWidgetHostView AppWidgetHost::createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2)
+	android::appwidget::AppWidgetHostView AppWidgetHost::createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2) const
 	{
 		return callObjectMethod(
 			"createView",
@@ -48,7 +48,7 @@ namespace android::appwidget
 			arg2.object()
 		);
 	}
-	void AppWidgetHost::deleteAppWidgetId(jint arg0)
+	void AppWidgetHost::deleteAppWidgetId(jint arg0) const
 	{
 		callMethod<void>(
 			"deleteAppWidgetId",
@@ -56,21 +56,21 @@ namespace android::appwidget
 			arg0
 		);
 	}
-	void AppWidgetHost::deleteHost()
+	void AppWidgetHost::deleteHost() const
 	{
 		callMethod<void>(
 			"deleteHost",
 			"()V"
 		);
 	}
-	JIntArray AppWidgetHost::getAppWidgetIds()
+	JIntArray AppWidgetHost::getAppWidgetIds() const
 	{
 		return callObjectMethod(
 			"getAppWidgetIds",
 			"()[I"
 		);
 	}
-	void AppWidgetHost::startAppWidgetConfigureActivityForResult(android::app::Activity arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4)
+	void AppWidgetHost::startAppWidgetConfigureActivityForResult(android::app::Activity arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4) const
 	{
 		callMethod<void>(
 			"startAppWidgetConfigureActivityForResult",
@@ -82,14 +82,14 @@ namespace android::appwidget
 			arg4.object()
 		);
 	}
-	void AppWidgetHost::startListening()
+	void AppWidgetHost::startListening() const
 	{
 		callMethod<void>(
 			"startListening",
 			"()V"
 		);
 	}
-	void AppWidgetHost::stopListening()
+	void AppWidgetHost::stopListening() const
 	{
 		callMethod<void>(
 			"stopListening",

@@ -24,8 +24,8 @@ namespace java::net
 		// Methods
 		static java::net::CookieHandler getDefault();
 		static void setDefault(java::net::CookieHandler arg0);
-		JObject get(java::net::URI arg0, JObject arg1);
-		void put(java::net::URI arg0, JObject arg1);
+		JObject get(java::net::URI arg0, JObject arg1) const;
+		void put(java::net::URI arg0, JObject arg1) const;
 	};
 } // namespace java::net
 

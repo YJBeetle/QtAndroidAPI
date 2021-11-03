@@ -10,49 +10,49 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jfloat GpsSatellite::getAzimuth()
+	jfloat GpsSatellite::getAzimuth() const
 	{
 		return callMethod<jfloat>(
 			"getAzimuth",
 			"()F"
 		);
 	}
-	jfloat GpsSatellite::getElevation()
+	jfloat GpsSatellite::getElevation() const
 	{
 		return callMethod<jfloat>(
 			"getElevation",
 			"()F"
 		);
 	}
-	jint GpsSatellite::getPrn()
+	jint GpsSatellite::getPrn() const
 	{
 		return callMethod<jint>(
 			"getPrn",
 			"()I"
 		);
 	}
-	jfloat GpsSatellite::getSnr()
+	jfloat GpsSatellite::getSnr() const
 	{
 		return callMethod<jfloat>(
 			"getSnr",
 			"()F"
 		);
 	}
-	jboolean GpsSatellite::hasAlmanac()
+	jboolean GpsSatellite::hasAlmanac() const
 	{
 		return callMethod<jboolean>(
 			"hasAlmanac",
 			"()Z"
 		);
 	}
-	jboolean GpsSatellite::hasEphemeris()
+	jboolean GpsSatellite::hasEphemeris() const
 	{
 		return callMethod<jboolean>(
 			"hasEphemeris",
 			"()Z"
 		);
 	}
-	jboolean GpsSatellite::usedInFix()
+	jboolean GpsSatellite::usedInFix() const
 	{
 		return callMethod<jboolean>(
 			"usedInFix",

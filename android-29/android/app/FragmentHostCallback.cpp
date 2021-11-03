@@ -31,7 +31,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void FragmentHostCallback::onAttachFragment(android::app::Fragment arg0)
+	void FragmentHostCallback::onAttachFragment(android::app::Fragment arg0) const
 	{
 		callMethod<void>(
 			"onAttachFragment",
@@ -39,7 +39,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentHostCallback::onDump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void FragmentHostCallback::onDump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"onDump",
@@ -50,7 +50,7 @@ namespace android::app
 			arg3.object<jarray>()
 		);
 	}
-	android::view::View FragmentHostCallback::onFindViewById(jint arg0)
+	android::view::View FragmentHostCallback::onFindViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"onFindViewById",
@@ -58,49 +58,49 @@ namespace android::app
 			arg0
 		);
 	}
-	JObject FragmentHostCallback::onGetHost()
+	JObject FragmentHostCallback::onGetHost() const
 	{
 		return callObjectMethod(
 			"onGetHost",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::view::LayoutInflater FragmentHostCallback::onGetLayoutInflater()
+	android::view::LayoutInflater FragmentHostCallback::onGetLayoutInflater() const
 	{
 		return callObjectMethod(
 			"onGetLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	jint FragmentHostCallback::onGetWindowAnimations()
+	jint FragmentHostCallback::onGetWindowAnimations() const
 	{
 		return callMethod<jint>(
 			"onGetWindowAnimations",
 			"()I"
 		);
 	}
-	jboolean FragmentHostCallback::onHasView()
+	jboolean FragmentHostCallback::onHasView() const
 	{
 		return callMethod<jboolean>(
 			"onHasView",
 			"()Z"
 		);
 	}
-	jboolean FragmentHostCallback::onHasWindowAnimations()
+	jboolean FragmentHostCallback::onHasWindowAnimations() const
 	{
 		return callMethod<jboolean>(
 			"onHasWindowAnimations",
 			"()Z"
 		);
 	}
-	void FragmentHostCallback::onInvalidateOptionsMenu()
+	void FragmentHostCallback::onInvalidateOptionsMenu() const
 	{
 		callMethod<void>(
 			"onInvalidateOptionsMenu",
 			"()V"
 		);
 	}
-	void FragmentHostCallback::onRequestPermissionsFromFragment(android::app::Fragment arg0, JArray arg1, jint arg2)
+	void FragmentHostCallback::onRequestPermissionsFromFragment(android::app::Fragment arg0, JArray arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onRequestPermissionsFromFragment",
@@ -110,7 +110,7 @@ namespace android::app
 			arg2
 		);
 	}
-	jboolean FragmentHostCallback::onShouldSaveFragmentState(android::app::Fragment arg0)
+	jboolean FragmentHostCallback::onShouldSaveFragmentState(android::app::Fragment arg0) const
 	{
 		return callMethod<jboolean>(
 			"onShouldSaveFragmentState",
@@ -118,7 +118,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentHostCallback::onStartActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3)
+	void FragmentHostCallback::onStartActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"onStartActivityFromFragment",
@@ -129,7 +129,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void FragmentHostCallback::onStartIntentSenderFromFragment(android::app::Fragment arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6, android::os::Bundle arg7)
+	void FragmentHostCallback::onStartIntentSenderFromFragment(android::app::Fragment arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6, android::os::Bundle arg7) const
 	{
 		callMethod<void>(
 			"onStartIntentSenderFromFragment",
@@ -144,7 +144,7 @@ namespace android::app
 			arg7.object()
 		);
 	}
-	jboolean FragmentHostCallback::onUseFragmentManagerInflaterFactory()
+	jboolean FragmentHostCallback::onUseFragmentManagerInflaterFactory() const
 	{
 		return callMethod<jboolean>(
 			"onUseFragmentManagerInflaterFactory",

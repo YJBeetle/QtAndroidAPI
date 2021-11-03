@@ -19,7 +19,7 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void DefaultHandler::characters(JCharArray arg0, jint arg1, jint arg2)
+	void DefaultHandler::characters(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"characters",
@@ -29,14 +29,14 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void DefaultHandler::endDocument()
+	void DefaultHandler::endDocument() const
 	{
 		callMethod<void>(
 			"endDocument",
 			"()V"
 		);
 	}
-	void DefaultHandler::endElement(JString arg0, JString arg1, JString arg2)
+	void DefaultHandler::endElement(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"endElement",
@@ -46,7 +46,7 @@ namespace org::xml::sax::helpers
 			arg2.object<jstring>()
 		);
 	}
-	void DefaultHandler::endPrefixMapping(JString arg0)
+	void DefaultHandler::endPrefixMapping(JString arg0) const
 	{
 		callMethod<void>(
 			"endPrefixMapping",
@@ -54,7 +54,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void DefaultHandler::error(org::xml::sax::SAXParseException arg0)
+	void DefaultHandler::error(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"error",
@@ -62,7 +62,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void DefaultHandler::fatalError(org::xml::sax::SAXParseException arg0)
+	void DefaultHandler::fatalError(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"fatalError",
@@ -70,7 +70,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void DefaultHandler::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
+	void DefaultHandler::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
@@ -80,7 +80,7 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void DefaultHandler::notationDecl(JString arg0, JString arg1, JString arg2)
+	void DefaultHandler::notationDecl(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"notationDecl",
@@ -90,7 +90,7 @@ namespace org::xml::sax::helpers
 			arg2.object<jstring>()
 		);
 	}
-	void DefaultHandler::processingInstruction(JString arg0, JString arg1)
+	void DefaultHandler::processingInstruction(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"processingInstruction",
@@ -99,7 +99,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource DefaultHandler::resolveEntity(JString arg0, JString arg1)
+	org::xml::sax::InputSource DefaultHandler::resolveEntity(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"resolveEntity",
@@ -108,7 +108,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void DefaultHandler::setDocumentLocator(JObject arg0)
+	void DefaultHandler::setDocumentLocator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -116,7 +116,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void DefaultHandler::skippedEntity(JString arg0)
+	void DefaultHandler::skippedEntity(JString arg0) const
 	{
 		callMethod<void>(
 			"skippedEntity",
@@ -124,14 +124,14 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void DefaultHandler::startDocument()
+	void DefaultHandler::startDocument() const
 	{
 		callMethod<void>(
 			"startDocument",
 			"()V"
 		);
 	}
-	void DefaultHandler::startElement(JString arg0, JString arg1, JString arg2, JObject arg3)
+	void DefaultHandler::startElement(JString arg0, JString arg1, JString arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"startElement",
@@ -142,7 +142,7 @@ namespace org::xml::sax::helpers
 			arg3.object()
 		);
 	}
-	void DefaultHandler::startPrefixMapping(JString arg0, JString arg1)
+	void DefaultHandler::startPrefixMapping(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"startPrefixMapping",
@@ -151,7 +151,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void DefaultHandler::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3)
+	void DefaultHandler::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"unparsedEntityDecl",
@@ -162,7 +162,7 @@ namespace org::xml::sax::helpers
 			arg3.object<jstring>()
 		);
 	}
-	void DefaultHandler::warning(org::xml::sax::SAXParseException arg0)
+	void DefaultHandler::warning(org::xml::sax::SAXParseException arg0) const
 	{
 		callMethod<void>(
 			"warning",

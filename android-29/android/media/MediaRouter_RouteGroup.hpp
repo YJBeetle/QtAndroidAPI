@@ -30,17 +30,17 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void addRoute(android::media::MediaRouter_RouteInfo arg0);
-		void addRoute(android::media::MediaRouter_RouteInfo arg0, jint arg1);
-		android::media::MediaRouter_RouteInfo getRouteAt(jint arg0);
-		jint getRouteCount();
-		void removeRoute(android::media::MediaRouter_RouteInfo arg0);
-		void removeRoute(jint arg0);
-		void requestSetVolume(jint arg0);
-		void requestUpdateVolume(jint arg0);
-		void setIconDrawable(android::graphics::drawable::Drawable arg0);
-		void setIconResource(jint arg0);
-		JString toString();
+		void addRoute(android::media::MediaRouter_RouteInfo arg0) const;
+		void addRoute(android::media::MediaRouter_RouteInfo arg0, jint arg1) const;
+		android::media::MediaRouter_RouteInfo getRouteAt(jint arg0) const;
+		jint getRouteCount() const;
+		void removeRoute(android::media::MediaRouter_RouteInfo arg0) const;
+		void removeRoute(jint arg0) const;
+		void requestSetVolume(jint arg0) const;
+		void requestUpdateVolume(jint arg0) const;
+		void setIconDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setIconResource(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace android::media
 

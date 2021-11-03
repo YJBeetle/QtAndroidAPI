@@ -18,7 +18,7 @@ namespace javax::microedition::khronos::egl
 		
 		// Methods
 		static JObject getEGL();
-		JObject getGL();
+		JObject getGL() const;
 	};
 } // namespace javax::microedition::khronos::egl
 

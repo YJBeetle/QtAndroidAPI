@@ -51,16 +51,16 @@ namespace android::renderscript
 		// Methods
 		static android::renderscript::ScriptIntrinsicColorMatrix create(android::renderscript::RenderScript arg0);
 		static android::renderscript::ScriptIntrinsicColorMatrix create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
-		void forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1);
-		void forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2);
-		android::renderscript::Script_KernelID getKernelID();
-		void setAdd(android::renderscript::Float4 arg0);
-		void setAdd(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setColorMatrix(android::renderscript::Matrix3f arg0);
-		void setColorMatrix(android::renderscript::Matrix4f arg0);
-		void setGreyscale();
-		void setRGBtoYUV();
-		void setYUVtoRGB();
+		void forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1) const;
+		void forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2) const;
+		android::renderscript::Script_KernelID getKernelID() const;
+		void setAdd(android::renderscript::Float4 arg0) const;
+		void setAdd(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void setColorMatrix(android::renderscript::Matrix3f arg0) const;
+		void setColorMatrix(android::renderscript::Matrix4f arg0) const;
+		void setGreyscale() const;
+		void setRGBtoYUV() const;
+		void setYUVtoRGB() const;
 	};
 } // namespace android::renderscript
 

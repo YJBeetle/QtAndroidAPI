@@ -15,7 +15,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	void PackageInstaller_SessionCallback::onActiveChanged(jint arg0, jboolean arg1)
+	void PackageInstaller_SessionCallback::onActiveChanged(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onActiveChanged",
@@ -24,7 +24,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageInstaller_SessionCallback::onBadgingChanged(jint arg0)
+	void PackageInstaller_SessionCallback::onBadgingChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onBadgingChanged",
@@ -32,7 +32,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionCallback::onCreated(jint arg0)
+	void PackageInstaller_SessionCallback::onCreated(jint arg0) const
 	{
 		callMethod<void>(
 			"onCreated",
@@ -40,7 +40,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionCallback::onFinished(jint arg0, jboolean arg1)
+	void PackageInstaller_SessionCallback::onFinished(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onFinished",
@@ -49,7 +49,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageInstaller_SessionCallback::onProgressChanged(jint arg0, jfloat arg1)
+	void PackageInstaller_SessionCallback::onProgressChanged(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"onProgressChanged",

@@ -19,7 +19,7 @@ namespace android::view
 			"()Landroid/view/Choreographer;"
 		);
 	}
-	void Choreographer::postFrameCallback(JObject arg0)
+	void Choreographer::postFrameCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"postFrameCallback",
@@ -27,7 +27,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Choreographer::postFrameCallbackDelayed(JObject arg0, jlong arg1)
+	void Choreographer::postFrameCallbackDelayed(JObject arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"postFrameCallbackDelayed",
@@ -36,7 +36,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Choreographer::removeFrameCallback(JObject arg0)
+	void Choreographer::removeFrameCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeFrameCallback",

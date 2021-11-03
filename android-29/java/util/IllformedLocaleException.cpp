@@ -29,7 +29,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jint IllformedLocaleException::getErrorIndex()
+	jint IllformedLocaleException::getErrorIndex() const
 	{
 		return callMethod<jint>(
 			"getErrorIndex",

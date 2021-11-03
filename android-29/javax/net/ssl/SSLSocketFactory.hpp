@@ -33,10 +33,10 @@ namespace javax::net::ssl
 		
 		// Methods
 		static javax::net::SocketFactory getDefault();
-		java::net::Socket createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2);
-		java::net::Socket createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3);
-		JArray getDefaultCipherSuites();
-		JArray getSupportedCipherSuites();
+		java::net::Socket createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2) const;
+		java::net::Socket createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3) const;
+		JArray getDefaultCipherSuites() const;
+		JArray getSupportedCipherSuites() const;
 	};
 } // namespace javax::net::ssl
 

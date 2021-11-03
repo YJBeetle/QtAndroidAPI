@@ -21,19 +21,19 @@ namespace java::util
 		// Methods
 		static java::util::OptionalInt empty();
 		static java::util::OptionalInt of(jint arg0);
-		jboolean equals(JObject arg0);
-		jint getAsInt();
-		jint hashCode();
-		void ifPresent(JObject arg0);
-		void ifPresentOrElse(JObject arg0, JObject arg1);
-		jboolean isEmpty();
-		jboolean isPresent();
-		jint orElse(jint arg0);
-		jint orElseGet(JObject arg0);
-		jint orElseThrow();
-		jint orElseThrow(JObject arg0);
-		JObject stream();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getAsInt() const;
+		jint hashCode() const;
+		void ifPresent(JObject arg0) const;
+		void ifPresentOrElse(JObject arg0, JObject arg1) const;
+		jboolean isEmpty() const;
+		jboolean isPresent() const;
+		jint orElse(jint arg0) const;
+		jint orElseGet(JObject arg0) const;
+		jint orElseThrow() const;
+		jint orElseThrow(JObject arg0) const;
+		JObject stream() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

@@ -19,14 +19,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextClassificationContext TextClassificationContext_Builder::build()
+	android::view::textclassifier::TextClassificationContext TextClassificationContext_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassificationContext;"
 		);
 	}
-	android::view::textclassifier::TextClassificationContext_Builder TextClassificationContext_Builder::setWidgetVersion(JString arg0)
+	android::view::textclassifier::TextClassificationContext_Builder TextClassificationContext_Builder::setWidgetVersion(JString arg0) const
 	{
 		return callObjectMethod(
 			"setWidgetVersion",

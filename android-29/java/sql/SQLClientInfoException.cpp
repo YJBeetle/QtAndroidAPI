@@ -81,7 +81,7 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	JObject SQLClientInfoException::getFailedProperties()
+	JObject SQLClientInfoException::getFailedProperties() const
 	{
 		return callObjectMethod(
 			"getFailedProperties",

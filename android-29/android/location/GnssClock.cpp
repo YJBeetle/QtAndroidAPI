@@ -20,161 +20,161 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint GnssClock::describeContents()
+	jint GnssClock::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jdouble GnssClock::getBiasNanos()
+	jdouble GnssClock::getBiasNanos() const
 	{
 		return callMethod<jdouble>(
 			"getBiasNanos",
 			"()D"
 		);
 	}
-	jdouble GnssClock::getBiasUncertaintyNanos()
+	jdouble GnssClock::getBiasUncertaintyNanos() const
 	{
 		return callMethod<jdouble>(
 			"getBiasUncertaintyNanos",
 			"()D"
 		);
 	}
-	jdouble GnssClock::getDriftNanosPerSecond()
+	jdouble GnssClock::getDriftNanosPerSecond() const
 	{
 		return callMethod<jdouble>(
 			"getDriftNanosPerSecond",
 			"()D"
 		);
 	}
-	jdouble GnssClock::getDriftUncertaintyNanosPerSecond()
+	jdouble GnssClock::getDriftUncertaintyNanosPerSecond() const
 	{
 		return callMethod<jdouble>(
 			"getDriftUncertaintyNanosPerSecond",
 			"()D"
 		);
 	}
-	jlong GnssClock::getElapsedRealtimeNanos()
+	jlong GnssClock::getElapsedRealtimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getElapsedRealtimeNanos",
 			"()J"
 		);
 	}
-	jdouble GnssClock::getElapsedRealtimeUncertaintyNanos()
+	jdouble GnssClock::getElapsedRealtimeUncertaintyNanos() const
 	{
 		return callMethod<jdouble>(
 			"getElapsedRealtimeUncertaintyNanos",
 			"()D"
 		);
 	}
-	jlong GnssClock::getFullBiasNanos()
+	jlong GnssClock::getFullBiasNanos() const
 	{
 		return callMethod<jlong>(
 			"getFullBiasNanos",
 			"()J"
 		);
 	}
-	jint GnssClock::getHardwareClockDiscontinuityCount()
+	jint GnssClock::getHardwareClockDiscontinuityCount() const
 	{
 		return callMethod<jint>(
 			"getHardwareClockDiscontinuityCount",
 			"()I"
 		);
 	}
-	jint GnssClock::getLeapSecond()
+	jint GnssClock::getLeapSecond() const
 	{
 		return callMethod<jint>(
 			"getLeapSecond",
 			"()I"
 		);
 	}
-	jlong GnssClock::getTimeNanos()
+	jlong GnssClock::getTimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getTimeNanos",
 			"()J"
 		);
 	}
-	jdouble GnssClock::getTimeUncertaintyNanos()
+	jdouble GnssClock::getTimeUncertaintyNanos() const
 	{
 		return callMethod<jdouble>(
 			"getTimeUncertaintyNanos",
 			"()D"
 		);
 	}
-	jboolean GnssClock::hasBiasNanos()
+	jboolean GnssClock::hasBiasNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasBiasNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasBiasUncertaintyNanos()
+	jboolean GnssClock::hasBiasUncertaintyNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasBiasUncertaintyNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasDriftNanosPerSecond()
+	jboolean GnssClock::hasDriftNanosPerSecond() const
 	{
 		return callMethod<jboolean>(
 			"hasDriftNanosPerSecond",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasDriftUncertaintyNanosPerSecond()
+	jboolean GnssClock::hasDriftUncertaintyNanosPerSecond() const
 	{
 		return callMethod<jboolean>(
 			"hasDriftUncertaintyNanosPerSecond",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasElapsedRealtimeNanos()
+	jboolean GnssClock::hasElapsedRealtimeNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasElapsedRealtimeNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasElapsedRealtimeUncertaintyNanos()
+	jboolean GnssClock::hasElapsedRealtimeUncertaintyNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasElapsedRealtimeUncertaintyNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasFullBiasNanos()
+	jboolean GnssClock::hasFullBiasNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasFullBiasNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasLeapSecond()
+	jboolean GnssClock::hasLeapSecond() const
 	{
 		return callMethod<jboolean>(
 			"hasLeapSecond",
 			"()Z"
 		);
 	}
-	jboolean GnssClock::hasTimeUncertaintyNanos()
+	jboolean GnssClock::hasTimeUncertaintyNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasTimeUncertaintyNanos",
 			"()Z"
 		);
 	}
-	JString GnssClock::toString()
+	JString GnssClock::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssClock::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssClock::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

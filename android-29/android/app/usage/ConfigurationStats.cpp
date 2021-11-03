@@ -26,56 +26,56 @@ namespace android::app::usage
 		) {}
 	
 	// Methods
-	jint ConfigurationStats::describeContents()
+	jint ConfigurationStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint ConfigurationStats::getActivationCount()
+	jint ConfigurationStats::getActivationCount() const
 	{
 		return callMethod<jint>(
 			"getActivationCount",
 			"()I"
 		);
 	}
-	android::content::res::Configuration ConfigurationStats::getConfiguration()
+	android::content::res::Configuration ConfigurationStats::getConfiguration() const
 	{
 		return callObjectMethod(
 			"getConfiguration",
 			"()Landroid/content/res/Configuration;"
 		);
 	}
-	jlong ConfigurationStats::getFirstTimeStamp()
+	jlong ConfigurationStats::getFirstTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getFirstTimeStamp",
 			"()J"
 		);
 	}
-	jlong ConfigurationStats::getLastTimeActive()
+	jlong ConfigurationStats::getLastTimeActive() const
 	{
 		return callMethod<jlong>(
 			"getLastTimeActive",
 			"()J"
 		);
 	}
-	jlong ConfigurationStats::getLastTimeStamp()
+	jlong ConfigurationStats::getLastTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getLastTimeStamp",
 			"()J"
 		);
 	}
-	jlong ConfigurationStats::getTotalTimeActive()
+	jlong ConfigurationStats::getTotalTimeActive() const
 	{
 		return callMethod<jlong>(
 			"getTotalTimeActive",
 			"()J"
 		);
 	}
-	void ConfigurationStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConfigurationStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

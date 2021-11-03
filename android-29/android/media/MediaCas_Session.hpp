@@ -27,12 +27,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void close();
-		jboolean equals(JObject arg0);
-		void processEcm(JByteArray arg0);
-		void processEcm(JByteArray arg0, jint arg1, jint arg2);
-		void sendSessionEvent(jint arg0, jint arg1, JByteArray arg2);
-		void setPrivateData(JByteArray arg0);
+		void close() const;
+		jboolean equals(JObject arg0) const;
+		void processEcm(JByteArray arg0) const;
+		void processEcm(JByteArray arg0, jint arg1, jint arg2) const;
+		void sendSessionEvent(jint arg0, jint arg1, JByteArray arg2) const;
+		void setPrivateData(JByteArray arg0) const;
 	};
 } // namespace android::media
 

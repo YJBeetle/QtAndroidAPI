@@ -24,28 +24,28 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint ScaleXSpan::describeContents()
+	jint ScaleXSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jfloat ScaleXSpan::getScaleX()
+	jfloat ScaleXSpan::getScaleX() const
 	{
 		return callMethod<jfloat>(
 			"getScaleX",
 			"()F"
 		);
 	}
-	jint ScaleXSpan::getSpanTypeId()
+	jint ScaleXSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void ScaleXSpan::updateDrawState(android::text::TextPaint arg0)
+	void ScaleXSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -53,7 +53,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void ScaleXSpan::updateMeasureState(android::text::TextPaint arg0)
+	void ScaleXSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -61,7 +61,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void ScaleXSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ScaleXSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

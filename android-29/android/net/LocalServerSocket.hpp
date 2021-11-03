@@ -32,10 +32,10 @@ namespace android::net
 		LocalServerSocket(JString arg0);
 		
 		// Methods
-		android::net::LocalSocket accept();
-		void close();
-		java::io::FileDescriptor getFileDescriptor();
-		android::net::LocalSocketAddress getLocalSocketAddress();
+		android::net::LocalSocket accept() const;
+		void close() const;
+		java::io::FileDescriptor getFileDescriptor() const;
+		android::net::LocalSocketAddress getLocalSocketAddress() const;
 	};
 } // namespace android::net
 

@@ -28,7 +28,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean FutureTask::cancel(jboolean arg0)
+	jboolean FutureTask::cancel(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"cancel",
@@ -36,14 +36,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	JObject FutureTask::get()
+	JObject FutureTask::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject FutureTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject FutureTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -52,28 +52,28 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean FutureTask::isCancelled()
+	jboolean FutureTask::isCancelled() const
 	{
 		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
-	jboolean FutureTask::isDone()
+	jboolean FutureTask::isDone() const
 	{
 		return callMethod<jboolean>(
 			"isDone",
 			"()Z"
 		);
 	}
-	void FutureTask::run()
+	void FutureTask::run() const
 	{
 		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
-	JString FutureTask::toString()
+	JString FutureTask::toString() const
 	{
 		return callObjectMethod(
 			"toString",

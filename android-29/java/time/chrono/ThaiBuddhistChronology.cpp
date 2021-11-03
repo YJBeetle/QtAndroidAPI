@@ -30,7 +30,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(JObject arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(JObject arg0) const
 	{
 		return callObjectMethod(
 			"date",
@@ -38,7 +38,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(jint arg0, jint arg1, jint arg2)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"date",
@@ -48,7 +48,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"date",
@@ -59,7 +59,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateEpochDay(jlong arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateEpochDay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"dateEpochDay",
@@ -67,14 +67,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow()
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow() const
 	{
 		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/chrono/ThaiBuddhistDate;"
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow(java::time::Clock arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow(java::time::Clock arg0) const
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -82,7 +82,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow(java::time::ZoneId arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -90,7 +90,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateYearDay(jint arg0, jint arg1)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateYearDay(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -99,7 +99,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateYearDay(JObject arg0, jint arg1, jint arg2)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateYearDay(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -109,7 +109,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::chrono::ThaiBuddhistEra ThaiBuddhistChronology::eraOf(jint arg0)
+	java::time::chrono::ThaiBuddhistEra ThaiBuddhistChronology::eraOf(jint arg0) const
 	{
 		return callObjectMethod(
 			"eraOf",
@@ -117,28 +117,28 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	JObject ThaiBuddhistChronology::eras()
+	JObject ThaiBuddhistChronology::eras() const
 	{
 		return callObjectMethod(
 			"eras",
 			"()Ljava/util/List;"
 		);
 	}
-	JString ThaiBuddhistChronology::getCalendarType()
+	JString ThaiBuddhistChronology::getCalendarType() const
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ThaiBuddhistChronology::getId()
+	JString ThaiBuddhistChronology::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean ThaiBuddhistChronology::isLeapYear(jlong arg0)
+	jboolean ThaiBuddhistChronology::isLeapYear(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLeapYear",
@@ -146,7 +146,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	JObject ThaiBuddhistChronology::localDateTime(JObject arg0)
+	JObject ThaiBuddhistChronology::localDateTime(JObject arg0) const
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -154,7 +154,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint ThaiBuddhistChronology::prolepticYear(JObject arg0, jint arg1)
+	jint ThaiBuddhistChronology::prolepticYear(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"prolepticYear",
@@ -163,7 +163,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::temporal::ValueRange ThaiBuddhistChronology::range(java::time::temporal::ChronoField arg0)
+	java::time::temporal::ValueRange ThaiBuddhistChronology::range(java::time::temporal::ChronoField arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -171,7 +171,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -180,7 +180,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	JObject ThaiBuddhistChronology::zonedDateTime(JObject arg0)
+	JObject ThaiBuddhistChronology::zonedDateTime(JObject arg0) const
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -188,7 +188,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	JObject ThaiBuddhistChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	JObject ThaiBuddhistChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1) const
 	{
 		return callObjectMethod(
 			"zonedDateTime",

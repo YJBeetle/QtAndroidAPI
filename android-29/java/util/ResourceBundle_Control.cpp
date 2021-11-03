@@ -72,7 +72,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ResourceBundle_Control::getCandidateLocales(JString arg0, java::util::Locale arg1)
+	JObject ResourceBundle_Control::getCandidateLocales(JString arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getCandidateLocales",
@@ -81,7 +81,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	java::util::Locale ResourceBundle_Control::getFallbackLocale(JString arg0, java::util::Locale arg1)
+	java::util::Locale ResourceBundle_Control::getFallbackLocale(JString arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getFallbackLocale",
@@ -90,7 +90,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject ResourceBundle_Control::getFormats(JString arg0)
+	JObject ResourceBundle_Control::getFormats(JString arg0) const
 	{
 		return callObjectMethod(
 			"getFormats",
@@ -98,7 +98,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	jlong ResourceBundle_Control::getTimeToLive(JString arg0, java::util::Locale arg1)
+	jlong ResourceBundle_Control::getTimeToLive(JString arg0, java::util::Locale arg1) const
 	{
 		return callMethod<jlong>(
 			"getTimeToLive",
@@ -107,7 +107,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean ResourceBundle_Control::needsReload(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, java::util::ResourceBundle arg4, jlong arg5)
+	jboolean ResourceBundle_Control::needsReload(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, java::util::ResourceBundle arg4, jlong arg5) const
 	{
 		return callMethod<jboolean>(
 			"needsReload",
@@ -120,7 +120,7 @@ namespace java::util
 			arg5
 		);
 	}
-	java::util::ResourceBundle ResourceBundle_Control::newBundle(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, jboolean arg4)
+	java::util::ResourceBundle ResourceBundle_Control::newBundle(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, jboolean arg4) const
 	{
 		return callObjectMethod(
 			"newBundle",
@@ -132,7 +132,7 @@ namespace java::util
 			arg4
 		);
 	}
-	JString ResourceBundle_Control::toBundleName(JString arg0, java::util::Locale arg1)
+	JString ResourceBundle_Control::toBundleName(JString arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"toBundleName",
@@ -141,7 +141,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JString ResourceBundle_Control::toResourceName(JString arg0, JString arg1)
+	JString ResourceBundle_Control::toResourceName(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"toResourceName",

@@ -524,14 +524,14 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jint ApplicationInfo::describeContents()
+	jint ApplicationInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ApplicationInfo::dump(JObject arg0, JString arg1)
+	void ApplicationInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -540,28 +540,28 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	jboolean ApplicationInfo::isProfileableByShell()
+	jboolean ApplicationInfo::isProfileableByShell() const
 	{
 		return callMethod<jboolean>(
 			"isProfileableByShell",
 			"()Z"
 		);
 	}
-	jboolean ApplicationInfo::isResourceOverlay()
+	jboolean ApplicationInfo::isResourceOverlay() const
 	{
 		return callMethod<jboolean>(
 			"isResourceOverlay",
 			"()Z"
 		);
 	}
-	jboolean ApplicationInfo::isVirtualPreload()
+	jboolean ApplicationInfo::isVirtualPreload() const
 	{
 		return callMethod<jboolean>(
 			"isVirtualPreload",
 			"()Z"
 		);
 	}
-	JString ApplicationInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString ApplicationInfo::loadDescription(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadDescription",
@@ -569,14 +569,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString ApplicationInfo::toString()
+	JString ApplicationInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ApplicationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ApplicationInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

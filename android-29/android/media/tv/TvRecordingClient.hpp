@@ -39,12 +39,12 @@ namespace android::media::tv
 		TvRecordingClient(android::content::Context arg0, JString arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3);
 		
 		// Methods
-		void release();
-		void sendAppPrivateCommand(JString arg0, android::os::Bundle arg1);
-		void startRecording(android::net::Uri arg0);
-		void stopRecording();
-		void tune(JString arg0, android::net::Uri arg1);
-		void tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2);
+		void release() const;
+		void sendAppPrivateCommand(JString arg0, android::os::Bundle arg1) const;
+		void startRecording(android::net::Uri arg0) const;
+		void stopRecording() const;
+		void tune(JString arg0, android::net::Uri arg1) const;
+		void tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2) const;
 	};
 } // namespace android::media::tv
 

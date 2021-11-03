@@ -58,35 +58,35 @@ namespace java::util
 			arg0.object<jclass>()
 		);
 	}
-	java::util::Optional ServiceLoader::findFirst()
+	java::util::Optional ServiceLoader::findFirst() const
 	{
 		return callObjectMethod(
 			"findFirst",
 			"()Ljava/util/Optional;"
 		);
 	}
-	JObject ServiceLoader::iterator()
+	JObject ServiceLoader::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void ServiceLoader::reload()
+	void ServiceLoader::reload() const
 	{
 		callMethod<void>(
 			"reload",
 			"()V"
 		);
 	}
-	JObject ServiceLoader::stream()
+	JObject ServiceLoader::stream() const
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	JString ServiceLoader::toString()
+	JString ServiceLoader::toString() const
 	{
 		return callObjectMethod(
 			"toString",

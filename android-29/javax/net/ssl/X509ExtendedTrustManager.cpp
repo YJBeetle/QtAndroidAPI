@@ -19,7 +19,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, java::net::Socket arg2)
+	void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const
 	{
 		callMethod<void>(
 			"checkClientTrusted",
@@ -29,7 +29,7 @@ namespace javax::net::ssl
 			arg2.object()
 		);
 	}
-	void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2)
+	void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const
 	{
 		callMethod<void>(
 			"checkClientTrusted",
@@ -39,7 +39,7 @@ namespace javax::net::ssl
 			arg2.object()
 		);
 	}
-	void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, java::net::Socket arg2)
+	void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const
 	{
 		callMethod<void>(
 			"checkServerTrusted",
@@ -49,7 +49,7 @@ namespace javax::net::ssl
 			arg2.object()
 		);
 	}
-	void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2)
+	void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const
 	{
 		callMethod<void>(
 			"checkServerTrusted",

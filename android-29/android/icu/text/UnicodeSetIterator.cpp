@@ -49,35 +49,35 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	JString UnicodeSetIterator::getString()
+	JString UnicodeSetIterator::getString() const
 	{
 		return callObjectMethod(
 			"getString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean UnicodeSetIterator::next()
+	jboolean UnicodeSetIterator::next() const
 	{
 		return callMethod<jboolean>(
 			"next",
 			"()Z"
 		);
 	}
-	jboolean UnicodeSetIterator::nextRange()
+	jboolean UnicodeSetIterator::nextRange() const
 	{
 		return callMethod<jboolean>(
 			"nextRange",
 			"()Z"
 		);
 	}
-	void UnicodeSetIterator::reset()
+	void UnicodeSetIterator::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void UnicodeSetIterator::reset(android::icu::text::UnicodeSet arg0)
+	void UnicodeSetIterator::reset(android::icu::text::UnicodeSet arg0) const
 	{
 		callMethod<void>(
 			"reset",

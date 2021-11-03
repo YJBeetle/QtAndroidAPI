@@ -50,7 +50,7 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	JObject CertPathBuilder::build(JObject arg0)
+	JObject CertPathBuilder::build(JObject arg0) const
 	{
 		return callObjectMethod(
 			"build",
@@ -58,21 +58,21 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JString CertPathBuilder::getAlgorithm()
+	JString CertPathBuilder::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider CertPathBuilder::getProvider()
+	java::security::Provider CertPathBuilder::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JObject CertPathBuilder::getRevocationChecker()
+	JObject CertPathBuilder::getRevocationChecker() const
 	{
 		return callObjectMethod(
 			"getRevocationChecker",

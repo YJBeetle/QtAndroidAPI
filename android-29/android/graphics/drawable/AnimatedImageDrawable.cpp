@@ -27,14 +27,14 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void AnimatedImageDrawable::clearAnimationCallbacks()
+	void AnimatedImageDrawable::clearAnimationCallbacks() const
 	{
 		callMethod<void>(
 			"clearAnimationCallbacks",
 			"()V"
 		);
 	}
-	void AnimatedImageDrawable::draw(android::graphics::Canvas arg0)
+	void AnimatedImageDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -42,49 +42,49 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint AnimatedImageDrawable::getAlpha()
+	jint AnimatedImageDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	android::graphics::ColorFilter AnimatedImageDrawable::getColorFilter()
+	android::graphics::ColorFilter AnimatedImageDrawable::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	jint AnimatedImageDrawable::getIntrinsicHeight()
+	jint AnimatedImageDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint AnimatedImageDrawable::getIntrinsicWidth()
+	jint AnimatedImageDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint AnimatedImageDrawable::getOpacity()
+	jint AnimatedImageDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	jint AnimatedImageDrawable::getRepeatCount()
+	jint AnimatedImageDrawable::getRepeatCount() const
 	{
 		return callMethod<jint>(
 			"getRepeatCount",
 			"()I"
 		);
 	}
-	void AnimatedImageDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void AnimatedImageDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -95,21 +95,21 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean AnimatedImageDrawable::isAutoMirrored()
+	jboolean AnimatedImageDrawable::isAutoMirrored() const
 	{
 		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
-	jboolean AnimatedImageDrawable::isRunning()
+	jboolean AnimatedImageDrawable::isRunning() const
 	{
 		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
-	jboolean AnimatedImageDrawable::onLayoutDirectionChanged(jint arg0)
+	jboolean AnimatedImageDrawable::onLayoutDirectionChanged(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onLayoutDirectionChanged",
@@ -117,7 +117,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AnimatedImageDrawable::registerAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	void AnimatedImageDrawable::registerAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0) const
 	{
 		callMethod<void>(
 			"registerAnimationCallback",
@@ -125,7 +125,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedImageDrawable::setAlpha(jint arg0)
+	void AnimatedImageDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -133,7 +133,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AnimatedImageDrawable::setAutoMirrored(jboolean arg0)
+	void AnimatedImageDrawable::setAutoMirrored(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoMirrored",
@@ -141,7 +141,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AnimatedImageDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void AnimatedImageDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -149,7 +149,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedImageDrawable::setRepeatCount(jint arg0)
+	void AnimatedImageDrawable::setRepeatCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setRepeatCount",
@@ -157,21 +157,21 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AnimatedImageDrawable::start()
+	void AnimatedImageDrawable::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void AnimatedImageDrawable::stop()
+	void AnimatedImageDrawable::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	jboolean AnimatedImageDrawable::unregisterAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	jboolean AnimatedImageDrawable::unregisterAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0) const
 	{
 		return callMethod<jboolean>(
 			"unregisterAnimationCallback",

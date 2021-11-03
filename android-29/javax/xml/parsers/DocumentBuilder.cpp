@@ -15,49 +15,49 @@ namespace javax::xml::parsers
 	// Constructors
 	
 	// Methods
-	JObject DocumentBuilder::getDOMImplementation()
+	JObject DocumentBuilder::getDOMImplementation() const
 	{
 		return callObjectMethod(
 			"getDOMImplementation",
 			"()Lorg/w3c/dom/DOMImplementation;"
 		);
 	}
-	javax::xml::validation::Schema DocumentBuilder::getSchema()
+	javax::xml::validation::Schema DocumentBuilder::getSchema() const
 	{
 		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
-	jboolean DocumentBuilder::isNamespaceAware()
+	jboolean DocumentBuilder::isNamespaceAware() const
 	{
 		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilder::isValidating()
+	jboolean DocumentBuilder::isValidating() const
 	{
 		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
-	jboolean DocumentBuilder::isXIncludeAware()
+	jboolean DocumentBuilder::isXIncludeAware() const
 	{
 		return callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z"
 		);
 	}
-	JObject DocumentBuilder::newDocument()
+	JObject DocumentBuilder::newDocument() const
 	{
 		return callObjectMethod(
 			"newDocument",
 			"()Lorg/w3c/dom/Document;"
 		);
 	}
-	JObject DocumentBuilder::parse(java::io::File arg0)
+	JObject DocumentBuilder::parse(java::io::File arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -65,7 +65,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	JObject DocumentBuilder::parse(java::io::InputStream arg0)
+	JObject DocumentBuilder::parse(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -73,7 +73,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	JObject DocumentBuilder::parse(JString arg0)
+	JObject DocumentBuilder::parse(JString arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -81,7 +81,7 @@ namespace javax::xml::parsers
 			arg0.object<jstring>()
 		);
 	}
-	JObject DocumentBuilder::parse(org::xml::sax::InputSource arg0)
+	JObject DocumentBuilder::parse(org::xml::sax::InputSource arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -89,7 +89,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	JObject DocumentBuilder::parse(java::io::InputStream arg0, JString arg1)
+	JObject DocumentBuilder::parse(java::io::InputStream arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -98,14 +98,14 @@ namespace javax::xml::parsers
 			arg1.object<jstring>()
 		);
 	}
-	void DocumentBuilder::reset()
+	void DocumentBuilder::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void DocumentBuilder::setEntityResolver(JObject arg0)
+	void DocumentBuilder::setEntityResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -113,7 +113,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	void DocumentBuilder::setErrorHandler(JObject arg0)
+	void DocumentBuilder::setErrorHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",

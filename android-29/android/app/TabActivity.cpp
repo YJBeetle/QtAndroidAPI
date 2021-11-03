@@ -21,28 +21,28 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::widget::TabHost TabActivity::getTabHost()
+	android::widget::TabHost TabActivity::getTabHost() const
 	{
 		return callObjectMethod(
 			"getTabHost",
 			"()Landroid/widget/TabHost;"
 		);
 	}
-	android::widget::TabWidget TabActivity::getTabWidget()
+	android::widget::TabWidget TabActivity::getTabWidget() const
 	{
 		return callObjectMethod(
 			"getTabWidget",
 			"()Landroid/widget/TabWidget;"
 		);
 	}
-	void TabActivity::onContentChanged()
+	void TabActivity::onContentChanged() const
 	{
 		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
-	void TabActivity::setDefaultTab(jint arg0)
+	void TabActivity::setDefaultTab(jint arg0) const
 	{
 		callMethod<void>(
 			"setDefaultTab",
@@ -50,7 +50,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void TabActivity::setDefaultTab(JString arg0)
+	void TabActivity::setDefaultTab(JString arg0) const
 	{
 		callMethod<void>(
 			"setDefaultTab",

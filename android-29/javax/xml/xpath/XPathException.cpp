@@ -29,21 +29,21 @@ namespace javax::xml::xpath
 		) {}
 	
 	// Methods
-	JThrowable XPathException::getCause()
+	JThrowable XPathException::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	void XPathException::printStackTrace()
+	void XPathException::printStackTrace() const
 	{
 		callMethod<void>(
 			"printStackTrace",
 			"()V"
 		);
 	}
-	void XPathException::printStackTrace(java::io::PrintStream arg0)
+	void XPathException::printStackTrace(java::io::PrintStream arg0) const
 	{
 		callMethod<void>(
 			"printStackTrace",
@@ -51,7 +51,7 @@ namespace javax::xml::xpath
 			arg0.object()
 		);
 	}
-	void XPathException::printStackTrace(java::io::PrintWriter arg0)
+	void XPathException::printStackTrace(java::io::PrintWriter arg0) const
 	{
 		callMethod<void>(
 			"printStackTrace",

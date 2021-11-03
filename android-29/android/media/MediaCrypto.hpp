@@ -25,9 +25,9 @@ namespace android::media
 		
 		// Methods
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0);
-		void release();
-		jboolean requiresSecureDecoderComponent(JString arg0);
-		void setMediaDrmSession(JByteArray arg0);
+		void release() const;
+		jboolean requiresSecureDecoderComponent(JString arg0) const;
+		void setMediaDrmSession(JByteArray arg0) const;
 	};
 } // namespace android::media
 

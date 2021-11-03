@@ -18,14 +18,14 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	android::net::wifi::p2p::WifiP2pConfig WifiP2pConfig_Builder::build()
+	android::net::wifi::p2p::WifiP2pConfig WifiP2pConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/p2p/WifiP2pConfig;"
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::enablePersistentMode(jboolean arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::enablePersistentMode(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"enablePersistentMode",
@@ -33,7 +33,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setDeviceAddress(android::net::MacAddress arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setDeviceAddress(android::net::MacAddress arg0) const
 	{
 		return callObjectMethod(
 			"setDeviceAddress",
@@ -41,7 +41,7 @@ namespace android::net::wifi::p2p
 			arg0.object()
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setGroupOperatingBand(jint arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setGroupOperatingBand(jint arg0) const
 	{
 		return callObjectMethod(
 			"setGroupOperatingBand",
@@ -49,7 +49,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setGroupOperatingFrequency(jint arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setGroupOperatingFrequency(jint arg0) const
 	{
 		return callObjectMethod(
 			"setGroupOperatingFrequency",
@@ -57,7 +57,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setNetworkName(JString arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setNetworkName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setNetworkName",
@@ -65,7 +65,7 @@ namespace android::net::wifi::p2p
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setPassphrase(JString arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setPassphrase(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPassphrase",

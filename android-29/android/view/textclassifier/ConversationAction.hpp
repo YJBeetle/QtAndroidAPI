@@ -42,13 +42,13 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::app::RemoteAction getAction();
-		jfloat getConfidenceScore();
-		android::os::Bundle getExtras();
-		JString getTextReply();
-		JString getType();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::app::RemoteAction getAction() const;
+		jfloat getConfidenceScore() const;
+		android::os::Bundle getExtras() const;
+		JString getTextReply() const;
+		JString getType() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

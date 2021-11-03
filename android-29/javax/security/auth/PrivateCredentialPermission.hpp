@@ -34,13 +34,13 @@ namespace javax::security::auth
 		PrivateCredentialPermission(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getActions();
-		JString getCredentialClass();
-		JArray getPrincipals();
-		jint hashCode();
-		jboolean implies(java::security::Permission arg0);
-		java::security::PermissionCollection newPermissionCollection();
+		jboolean equals(JObject arg0) const;
+		JString getActions() const;
+		JString getCredentialClass() const;
+		JArray getPrincipals() const;
+		jint hashCode() const;
+		jboolean implies(java::security::Permission arg0) const;
+		java::security::PermissionCollection newPermissionCollection() const;
 	};
 } // namespace javax::security::auth
 

@@ -11,56 +11,56 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jbyte BidiRun::getDirection()
+	jbyte BidiRun::getDirection() const
 	{
 		return callMethod<jbyte>(
 			"getDirection",
 			"()B"
 		);
 	}
-	jbyte BidiRun::getEmbeddingLevel()
+	jbyte BidiRun::getEmbeddingLevel() const
 	{
 		return callMethod<jbyte>(
 			"getEmbeddingLevel",
 			"()B"
 		);
 	}
-	jint BidiRun::getLength()
+	jint BidiRun::getLength() const
 	{
 		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
-	jint BidiRun::getLimit()
+	jint BidiRun::getLimit() const
 	{
 		return callMethod<jint>(
 			"getLimit",
 			"()I"
 		);
 	}
-	jint BidiRun::getStart()
+	jint BidiRun::getStart() const
 	{
 		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
-	jboolean BidiRun::isEvenRun()
+	jboolean BidiRun::isEvenRun() const
 	{
 		return callMethod<jboolean>(
 			"isEvenRun",
 			"()Z"
 		);
 	}
-	jboolean BidiRun::isOddRun()
+	jboolean BidiRun::isOddRun() const
 	{
 		return callMethod<jboolean>(
 			"isOddRun",
 			"()Z"
 		);
 	}
-	JString BidiRun::toString()
+	JString BidiRun::toString() const
 	{
 		return callObjectMethod(
 			"toString",

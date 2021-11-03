@@ -23,9 +23,9 @@ namespace android::print
 		PrintDocumentInfo_Builder(JString arg0);
 		
 		// Methods
-		android::print::PrintDocumentInfo build();
-		android::print::PrintDocumentInfo_Builder setContentType(jint arg0);
-		android::print::PrintDocumentInfo_Builder setPageCount(jint arg0);
+		android::print::PrintDocumentInfo build() const;
+		android::print::PrintDocumentInfo_Builder setContentType(jint arg0) const;
+		android::print::PrintDocumentInfo_Builder setPageCount(jint arg0) const;
 	};
 } // namespace android::print
 

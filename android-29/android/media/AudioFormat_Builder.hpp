@@ -23,11 +23,11 @@ namespace android::media
 		AudioFormat_Builder(android::media::AudioFormat arg0);
 		
 		// Methods
-		android::media::AudioFormat build();
-		android::media::AudioFormat_Builder setChannelIndexMask(jint arg0);
-		android::media::AudioFormat_Builder setChannelMask(jint arg0);
-		android::media::AudioFormat_Builder setEncoding(jint arg0);
-		android::media::AudioFormat_Builder setSampleRate(jint arg0);
+		android::media::AudioFormat build() const;
+		android::media::AudioFormat_Builder setChannelIndexMask(jint arg0) const;
+		android::media::AudioFormat_Builder setChannelMask(jint arg0) const;
+		android::media::AudioFormat_Builder setEncoding(jint arg0) const;
+		android::media::AudioFormat_Builder setSampleRate(jint arg0) const;
 	};
 } // namespace android::media
 

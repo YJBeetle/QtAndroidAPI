@@ -15,7 +15,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(JString arg0)
+	android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(JString arg0) const
 	{
 		return callObjectMethod(
 			"getActiveRequest",
@@ -23,28 +23,28 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	JArray VoiceInteractor::getActiveRequests()
+	JArray VoiceInteractor::getActiveRequests() const
 	{
 		return callObjectMethod(
 			"getActiveRequests",
 			"()[Landroid/app/VoiceInteractor$Request;"
 		);
 	}
-	jboolean VoiceInteractor::isDestroyed()
+	jboolean VoiceInteractor::isDestroyed() const
 	{
 		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
-	void VoiceInteractor::notifyDirectActionsChanged()
+	void VoiceInteractor::notifyDirectActionsChanged() const
 	{
 		callMethod<void>(
 			"notifyDirectActionsChanged",
 			"()V"
 		);
 	}
-	jboolean VoiceInteractor::registerOnDestroyedCallback(JObject arg0, JObject arg1)
+	jboolean VoiceInteractor::registerOnDestroyedCallback(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"registerOnDestroyedCallback",
@@ -53,7 +53,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0)
+	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0) const
 	{
 		return callMethod<jboolean>(
 			"submitRequest",
@@ -61,7 +61,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1)
+	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"submitRequest",
@@ -70,7 +70,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	JBooleanArray VoiceInteractor::supportsCommands(JArray arg0)
+	JBooleanArray VoiceInteractor::supportsCommands(JArray arg0) const
 	{
 		return callObjectMethod(
 			"supportsCommands",
@@ -78,7 +78,7 @@ namespace android::app
 			arg0.object<jarray>()
 		);
 	}
-	jboolean VoiceInteractor::unregisterOnDestroyedCallback(JObject arg0)
+	jboolean VoiceInteractor::unregisterOnDestroyedCallback(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"unregisterOnDestroyedCallback",

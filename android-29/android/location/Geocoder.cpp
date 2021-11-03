@@ -34,7 +34,7 @@ namespace android::location
 			"()Z"
 		);
 	}
-	JObject Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2)
+	JObject Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"getFromLocation",
@@ -44,7 +44,7 @@ namespace android::location
 			arg2
 		);
 	}
-	JObject Geocoder::getFromLocationName(JString arg0, jint arg1)
+	JObject Geocoder::getFromLocationName(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getFromLocationName",
@@ -53,7 +53,7 @@ namespace android::location
 			arg1
 		);
 	}
-	JObject Geocoder::getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
+	JObject Geocoder::getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5) const
 	{
 		return callObjectMethod(
 			"getFromLocationName",

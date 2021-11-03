@@ -10,14 +10,14 @@ namespace java::nio::channels::spi
 	// Constructors
 	
 	// Methods
-	void AbstractSelectionKey::cancel()
+	void AbstractSelectionKey::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jboolean AbstractSelectionKey::isValid()
+	jboolean AbstractSelectionKey::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",

@@ -18,35 +18,35 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jboolean TextUtils_SimpleStringSplitter::hasNext()
+	jboolean TextUtils_SimpleStringSplitter::hasNext() const
 	{
 		return callMethod<jboolean>(
 			"hasNext",
 			"()Z"
 		);
 	}
-	JObject TextUtils_SimpleStringSplitter::iterator()
+	JObject TextUtils_SimpleStringSplitter::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JString TextUtils_SimpleStringSplitter::next()
+	JString TextUtils_SimpleStringSplitter::next() const
 	{
 		return callObjectMethod(
 			"next",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextUtils_SimpleStringSplitter::remove()
+	void TextUtils_SimpleStringSplitter::remove() const
 	{
 		callMethod<void>(
 			"remove",
 			"()V"
 		);
 	}
-	void TextUtils_SimpleStringSplitter::setString(JString arg0)
+	void TextUtils_SimpleStringSplitter::setString(JString arg0) const
 	{
 		callMethod<void>(
 			"setString",

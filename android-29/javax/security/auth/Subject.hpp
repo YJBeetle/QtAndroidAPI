@@ -42,17 +42,17 @@ namespace javax::security::auth
 		static JObject doAs(javax::security::auth::Subject arg0, JObject arg1);
 		static JObject doAsPrivileged(javax::security::auth::Subject arg0, JObject arg1, java::security::AccessControlContext arg2);
 		static javax::security::auth::Subject getSubject(java::security::AccessControlContext arg0);
-		jboolean equals(JObject arg0);
-		JObject getPrincipals();
-		JObject getPrincipals(JClass arg0);
-		JObject getPrivateCredentials();
-		JObject getPrivateCredentials(JClass arg0);
-		JObject getPublicCredentials();
-		JObject getPublicCredentials(JClass arg0);
-		jint hashCode();
-		jboolean isReadOnly();
-		void setReadOnly();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getPrincipals() const;
+		JObject getPrincipals(JClass arg0) const;
+		JObject getPrivateCredentials() const;
+		JObject getPrivateCredentials(JClass arg0) const;
+		JObject getPublicCredentials() const;
+		JObject getPublicCredentials(JClass arg0) const;
+		jint hashCode() const;
+		jboolean isReadOnly() const;
+		void setReadOnly() const;
+		JString toString() const;
 	};
 } // namespace javax::security::auth
 

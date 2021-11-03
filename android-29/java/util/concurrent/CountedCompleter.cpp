@@ -12,7 +12,7 @@ namespace java::util::concurrent
 	// Constructors
 	
 	// Methods
-	void CountedCompleter::addToPendingCount(jint arg0)
+	void CountedCompleter::addToPendingCount(jint arg0) const
 	{
 		callMethod<void>(
 			"addToPendingCount",
@@ -20,7 +20,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CountedCompleter::compareAndSetPendingCount(jint arg0, jint arg1)
+	jboolean CountedCompleter::compareAndSetPendingCount(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSetPendingCount",
@@ -29,7 +29,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void CountedCompleter::complete(JObject arg0)
+	void CountedCompleter::complete(JObject arg0) const
 	{
 		callMethod<void>(
 			"complete",
@@ -37,56 +37,56 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void CountedCompleter::compute()
+	void CountedCompleter::compute() const
 	{
 		callMethod<void>(
 			"compute",
 			"()V"
 		);
 	}
-	jint CountedCompleter::decrementPendingCountUnlessZero()
+	jint CountedCompleter::decrementPendingCountUnlessZero() const
 	{
 		return callMethod<jint>(
 			"decrementPendingCountUnlessZero",
 			"()I"
 		);
 	}
-	java::util::concurrent::CountedCompleter CountedCompleter::firstComplete()
+	java::util::concurrent::CountedCompleter CountedCompleter::firstComplete() const
 	{
 		return callObjectMethod(
 			"firstComplete",
 			"()Ljava/util/concurrent/CountedCompleter;"
 		);
 	}
-	java::util::concurrent::CountedCompleter CountedCompleter::getCompleter()
+	java::util::concurrent::CountedCompleter CountedCompleter::getCompleter() const
 	{
 		return callObjectMethod(
 			"getCompleter",
 			"()Ljava/util/concurrent/CountedCompleter;"
 		);
 	}
-	jint CountedCompleter::getPendingCount()
+	jint CountedCompleter::getPendingCount() const
 	{
 		return callMethod<jint>(
 			"getPendingCount",
 			"()I"
 		);
 	}
-	JObject CountedCompleter::getRawResult()
+	JObject CountedCompleter::getRawResult() const
 	{
 		return callObjectMethod(
 			"getRawResult",
 			"()Ljava/lang/Object;"
 		);
 	}
-	java::util::concurrent::CountedCompleter CountedCompleter::getRoot()
+	java::util::concurrent::CountedCompleter CountedCompleter::getRoot() const
 	{
 		return callObjectMethod(
 			"getRoot",
 			"()Ljava/util/concurrent/CountedCompleter;"
 		);
 	}
-	void CountedCompleter::helpComplete(jint arg0)
+	void CountedCompleter::helpComplete(jint arg0) const
 	{
 		callMethod<void>(
 			"helpComplete",
@@ -94,14 +94,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	java::util::concurrent::CountedCompleter CountedCompleter::nextComplete()
+	java::util::concurrent::CountedCompleter CountedCompleter::nextComplete() const
 	{
 		return callObjectMethod(
 			"nextComplete",
 			"()Ljava/util/concurrent/CountedCompleter;"
 		);
 	}
-	void CountedCompleter::onCompletion(java::util::concurrent::CountedCompleter arg0)
+	void CountedCompleter::onCompletion(java::util::concurrent::CountedCompleter arg0) const
 	{
 		callMethod<void>(
 			"onCompletion",
@@ -109,7 +109,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CountedCompleter::onExceptionalCompletion(JThrowable arg0, java::util::concurrent::CountedCompleter arg1)
+	jboolean CountedCompleter::onExceptionalCompletion(JThrowable arg0, java::util::concurrent::CountedCompleter arg1) const
 	{
 		return callMethod<jboolean>(
 			"onExceptionalCompletion",
@@ -118,21 +118,21 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void CountedCompleter::propagateCompletion()
+	void CountedCompleter::propagateCompletion() const
 	{
 		callMethod<void>(
 			"propagateCompletion",
 			"()V"
 		);
 	}
-	void CountedCompleter::quietlyCompleteRoot()
+	void CountedCompleter::quietlyCompleteRoot() const
 	{
 		callMethod<void>(
 			"quietlyCompleteRoot",
 			"()V"
 		);
 	}
-	void CountedCompleter::setPendingCount(jint arg0)
+	void CountedCompleter::setPendingCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setPendingCount",
@@ -140,7 +140,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void CountedCompleter::tryComplete()
+	void CountedCompleter::tryComplete() const
 	{
 		callMethod<void>(
 			"tryComplete",

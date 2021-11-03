@@ -12,14 +12,14 @@ namespace android::accessibilityservice
 	// Constructors
 	
 	// Methods
-	jboolean AccessibilityButtonController::isAccessibilityButtonAvailable()
+	jboolean AccessibilityButtonController::isAccessibilityButtonAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isAccessibilityButtonAvailable",
 			"()Z"
 		);
 	}
-	void AccessibilityButtonController::registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0)
+	void AccessibilityButtonController::registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0) const
 	{
 		callMethod<void>(
 			"registerAccessibilityButtonCallback",
@@ -27,7 +27,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityButtonController::registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0, android::os::Handler arg1)
+	void AccessibilityButtonController::registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerAccessibilityButtonCallback",
@@ -36,7 +36,7 @@ namespace android::accessibilityservice
 			arg1.object()
 		);
 	}
-	void AccessibilityButtonController::unregisterAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0)
+	void AccessibilityButtonController::unregisterAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterAccessibilityButtonCallback",

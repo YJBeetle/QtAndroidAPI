@@ -12,14 +12,14 @@ namespace android::os::health
 	// Constructors
 	
 	// Methods
-	JString HealthStats::getDataType()
+	JString HealthStats::getDataType() const
 	{
 		return callObjectMethod(
 			"getDataType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong HealthStats::getMeasurement(jint arg0)
+	jlong HealthStats::getMeasurement(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getMeasurement",
@@ -27,7 +27,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getMeasurementKeyAt(jint arg0)
+	jint HealthStats::getMeasurementKeyAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMeasurementKeyAt",
@@ -35,14 +35,14 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getMeasurementKeyCount()
+	jint HealthStats::getMeasurementKeyCount() const
 	{
 		return callMethod<jint>(
 			"getMeasurementKeyCount",
 			"()I"
 		);
 	}
-	JObject HealthStats::getMeasurements(jint arg0)
+	JObject HealthStats::getMeasurements(jint arg0) const
 	{
 		return callObjectMethod(
 			"getMeasurements",
@@ -50,7 +50,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getMeasurementsKeyAt(jint arg0)
+	jint HealthStats::getMeasurementsKeyAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMeasurementsKeyAt",
@@ -58,14 +58,14 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getMeasurementsKeyCount()
+	jint HealthStats::getMeasurementsKeyCount() const
 	{
 		return callMethod<jint>(
 			"getMeasurementsKeyCount",
 			"()I"
 		);
 	}
-	JObject HealthStats::getStats(jint arg0)
+	JObject HealthStats::getStats(jint arg0) const
 	{
 		return callObjectMethod(
 			"getStats",
@@ -73,7 +73,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getStatsKeyAt(jint arg0)
+	jint HealthStats::getStatsKeyAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getStatsKeyAt",
@@ -81,14 +81,14 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getStatsKeyCount()
+	jint HealthStats::getStatsKeyCount() const
 	{
 		return callMethod<jint>(
 			"getStatsKeyCount",
 			"()I"
 		);
 	}
-	android::os::health::TimerStat HealthStats::getTimer(jint arg0)
+	android::os::health::TimerStat HealthStats::getTimer(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTimer",
@@ -96,7 +96,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getTimerCount(jint arg0)
+	jint HealthStats::getTimerCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getTimerCount",
@@ -104,7 +104,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getTimerKeyAt(jint arg0)
+	jint HealthStats::getTimerKeyAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getTimerKeyAt",
@@ -112,14 +112,14 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getTimerKeyCount()
+	jint HealthStats::getTimerKeyCount() const
 	{
 		return callMethod<jint>(
 			"getTimerKeyCount",
 			"()I"
 		);
 	}
-	jlong HealthStats::getTimerTime(jint arg0)
+	jlong HealthStats::getTimerTime(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getTimerTime",
@@ -127,7 +127,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	JObject HealthStats::getTimers(jint arg0)
+	JObject HealthStats::getTimers(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTimers",
@@ -135,7 +135,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getTimersKeyAt(jint arg0)
+	jint HealthStats::getTimersKeyAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getTimersKeyAt",
@@ -143,14 +143,14 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jint HealthStats::getTimersKeyCount()
+	jint HealthStats::getTimersKeyCount() const
 	{
 		return callMethod<jint>(
 			"getTimersKeyCount",
 			"()I"
 		);
 	}
-	jboolean HealthStats::hasMeasurement(jint arg0)
+	jboolean HealthStats::hasMeasurement(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasMeasurement",
@@ -158,7 +158,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jboolean HealthStats::hasMeasurements(jint arg0)
+	jboolean HealthStats::hasMeasurements(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasMeasurements",
@@ -166,7 +166,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jboolean HealthStats::hasStats(jint arg0)
+	jboolean HealthStats::hasStats(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasStats",
@@ -174,7 +174,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jboolean HealthStats::hasTimer(jint arg0)
+	jboolean HealthStats::hasTimer(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasTimer",
@@ -182,7 +182,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jboolean HealthStats::hasTimers(jint arg0)
+	jboolean HealthStats::hasTimers(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasTimers",

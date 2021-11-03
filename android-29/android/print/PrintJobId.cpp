@@ -20,14 +20,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	jint PrintJobId::describeContents()
+	jint PrintJobId::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PrintJobId::equals(JObject arg0)
+	jboolean PrintJobId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,14 +35,14 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PrintJobId::hashCode()
+	jint PrintJobId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void PrintJobId::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PrintJobId::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

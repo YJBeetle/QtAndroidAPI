@@ -255,21 +255,21 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::Intent RestrictionsManager::createLocalApprovalIntent()
+	android::content::Intent RestrictionsManager::createLocalApprovalIntent() const
 	{
 		return callObjectMethod(
 			"createLocalApprovalIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::os::Bundle RestrictionsManager::getApplicationRestrictions()
+	android::os::Bundle RestrictionsManager::getApplicationRestrictions() const
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject RestrictionsManager::getManifestRestrictions(JString arg0)
+	JObject RestrictionsManager::getManifestRestrictions(JString arg0) const
 	{
 		return callObjectMethod(
 			"getManifestRestrictions",
@@ -277,14 +277,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean RestrictionsManager::hasRestrictionsProvider()
+	jboolean RestrictionsManager::hasRestrictionsProvider() const
 	{
 		return callMethod<jboolean>(
 			"hasRestrictionsProvider",
 			"()Z"
 		);
 	}
-	void RestrictionsManager::notifyPermissionResponse(JString arg0, android::os::PersistableBundle arg1)
+	void RestrictionsManager::notifyPermissionResponse(JString arg0, android::os::PersistableBundle arg1) const
 	{
 		callMethod<void>(
 			"notifyPermissionResponse",
@@ -293,7 +293,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void RestrictionsManager::requestPermission(JString arg0, JString arg1, android::os::PersistableBundle arg2)
+	void RestrictionsManager::requestPermission(JString arg0, JString arg1, android::os::PersistableBundle arg2) const
 	{
 		callMethod<void>(
 			"requestPermission",

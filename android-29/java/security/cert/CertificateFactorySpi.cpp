@@ -20,7 +20,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	java::security::cert::CRL CertificateFactorySpi::engineGenerateCRL(java::io::InputStream arg0)
+	java::security::cert::CRL CertificateFactorySpi::engineGenerateCRL(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"engineGenerateCRL",
@@ -28,7 +28,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertificateFactorySpi::engineGenerateCRLs(java::io::InputStream arg0)
+	JObject CertificateFactorySpi::engineGenerateCRLs(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"engineGenerateCRLs",
@@ -36,7 +36,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(java::io::InputStream arg0)
+	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"engineGenerateCertPath",
@@ -44,7 +44,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(JObject arg0)
+	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(JObject arg0) const
 	{
 		return callObjectMethod(
 			"engineGenerateCertPath",
@@ -52,7 +52,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(java::io::InputStream arg0, JString arg1)
+	java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(java::io::InputStream arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"engineGenerateCertPath",
@@ -61,7 +61,7 @@ namespace java::security::cert
 			arg1.object<jstring>()
 		);
 	}
-	java::security::cert::Certificate CertificateFactorySpi::engineGenerateCertificate(java::io::InputStream arg0)
+	java::security::cert::Certificate CertificateFactorySpi::engineGenerateCertificate(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"engineGenerateCertificate",
@@ -69,7 +69,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertificateFactorySpi::engineGenerateCertificates(java::io::InputStream arg0)
+	JObject CertificateFactorySpi::engineGenerateCertificates(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"engineGenerateCertificates",
@@ -77,7 +77,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertificateFactorySpi::engineGetCertPathEncodings()
+	JObject CertificateFactorySpi::engineGetCertPathEncodings() const
 	{
 		return callObjectMethod(
 			"engineGetCertPathEncodings",

@@ -32,11 +32,11 @@ namespace android::text::style
 		LineBackgroundSpan_Standard(jint arg0);
 		
 		// Methods
-		jint describeContents();
-		void drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jint arg10);
-		jint getColor();
-		jint getSpanTypeId();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jint arg10) const;
+		jint getColor() const;
+		jint getSpanTypeId() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

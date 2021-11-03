@@ -47,7 +47,7 @@ namespace android::text::util
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Rfc822Token::equals(JObject arg0)
+	jboolean Rfc822Token::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -55,35 +55,35 @@ namespace android::text::util
 			arg0.object<jobject>()
 		);
 	}
-	JString Rfc822Token::getAddress()
+	JString Rfc822Token::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Rfc822Token::getComment()
+	JString Rfc822Token::getComment() const
 	{
 		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Rfc822Token::getName()
+	JString Rfc822Token::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Rfc822Token::hashCode()
+	jint Rfc822Token::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Rfc822Token::setAddress(JString arg0)
+	void Rfc822Token::setAddress(JString arg0) const
 	{
 		callMethod<void>(
 			"setAddress",
@@ -91,7 +91,7 @@ namespace android::text::util
 			arg0.object<jstring>()
 		);
 	}
-	void Rfc822Token::setComment(JString arg0)
+	void Rfc822Token::setComment(JString arg0) const
 	{
 		callMethod<void>(
 			"setComment",
@@ -99,7 +99,7 @@ namespace android::text::util
 			arg0.object<jstring>()
 		);
 	}
-	void Rfc822Token::setName(JString arg0)
+	void Rfc822Token::setName(JString arg0) const
 	{
 		callMethod<void>(
 			"setName",
@@ -107,7 +107,7 @@ namespace android::text::util
 			arg0.object<jstring>()
 		);
 	}
-	JString Rfc822Token::toString()
+	JString Rfc822Token::toString() const
 	{
 		return callObjectMethod(
 			"toString",

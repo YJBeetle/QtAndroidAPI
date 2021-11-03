@@ -46,21 +46,21 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	android::widget::EditText EditTextPreference::getEditText()
+	android::widget::EditText EditTextPreference::getEditText() const
 	{
 		return callObjectMethod(
 			"getEditText",
 			"()Landroid/widget/EditText;"
 		);
 	}
-	JString EditTextPreference::getText()
+	JString EditTextPreference::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		);
 	}
-	void EditTextPreference::setText(JString arg0)
+	void EditTextPreference::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -68,7 +68,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	jboolean EditTextPreference::shouldDisableDependents()
+	jboolean EditTextPreference::shouldDisableDependents() const
 	{
 		return callMethod<jboolean>(
 			"shouldDisableDependents",

@@ -199,28 +199,28 @@ namespace android::appwidget
 		) {}
 	
 	// Methods
-	android::appwidget::AppWidgetProviderInfo AppWidgetProviderInfo::clone()
+	android::appwidget::AppWidgetProviderInfo AppWidgetProviderInfo::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/appwidget/AppWidgetProviderInfo;"
 		);
 	}
-	jint AppWidgetProviderInfo::describeContents()
+	jint AppWidgetProviderInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::UserHandle AppWidgetProviderInfo::getProfile()
+	android::os::UserHandle AppWidgetProviderInfo::getProfile() const
 	{
 		return callObjectMethod(
 			"getProfile",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadIcon(android::content::Context arg0, jint arg1)
+	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadIcon(android::content::Context arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -229,7 +229,7 @@ namespace android::appwidget
 			arg1
 		);
 	}
-	JString AppWidgetProviderInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString AppWidgetProviderInfo::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -237,7 +237,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadPreviewImage(android::content::Context arg0, jint arg1)
+	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadPreviewImage(android::content::Context arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"loadPreviewImage",
@@ -246,14 +246,14 @@ namespace android::appwidget
 			arg1
 		);
 	}
-	JString AppWidgetProviderInfo::toString()
+	JString AppWidgetProviderInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AppWidgetProviderInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AppWidgetProviderInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

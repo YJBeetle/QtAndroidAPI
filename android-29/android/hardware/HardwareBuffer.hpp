@@ -49,15 +49,15 @@ namespace android::hardware
 		// Methods
 		static android::hardware::HardwareBuffer create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		static jboolean isSupported(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
-		void close();
-		jint describeContents();
-		jint getFormat();
-		jint getHeight();
-		jint getLayers();
-		jlong getUsage();
-		jint getWidth();
-		jboolean isClosed();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void close() const;
+		jint describeContents() const;
+		jint getFormat() const;
+		jint getHeight() const;
+		jint getLayers() const;
+		jlong getUsage() const;
+		jint getWidth() const;
+		jboolean isClosed() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware
 

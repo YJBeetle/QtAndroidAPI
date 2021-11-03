@@ -291,7 +291,7 @@ namespace android::text::format
 			arg0.object()
 		);
 	}
-	jboolean Time::after(android::text::format::Time arg0)
+	jboolean Time::after(android::text::format::Time arg0) const
 	{
 		return callMethod<jboolean>(
 			"after",
@@ -299,7 +299,7 @@ namespace android::text::format
 			arg0.object()
 		);
 	}
-	jboolean Time::before(android::text::format::Time arg0)
+	jboolean Time::before(android::text::format::Time arg0) const
 	{
 		return callMethod<jboolean>(
 			"before",
@@ -307,7 +307,7 @@ namespace android::text::format
 			arg0.object()
 		);
 	}
-	void Time::clear(JString arg0)
+	void Time::clear(JString arg0) const
 	{
 		callMethod<void>(
 			"clear",
@@ -315,7 +315,7 @@ namespace android::text::format
 			arg0.object<jstring>()
 		);
 	}
-	JString Time::format(JString arg0)
+	JString Time::format(JString arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -323,14 +323,14 @@ namespace android::text::format
 			arg0.object<jstring>()
 		);
 	}
-	JString Time::format2445()
+	JString Time::format2445() const
 	{
 		return callObjectMethod(
 			"format2445",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Time::format3339(jboolean arg0)
+	JString Time::format3339(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"format3339",
@@ -338,7 +338,7 @@ namespace android::text::format
 			arg0
 		);
 	}
-	jint Time::getActualMaximum(jint arg0)
+	jint Time::getActualMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMaximum",
@@ -346,14 +346,14 @@ namespace android::text::format
 			arg0
 		);
 	}
-	jint Time::getWeekNumber()
+	jint Time::getWeekNumber() const
 	{
 		return callMethod<jint>(
 			"getWeekNumber",
 			"()I"
 		);
 	}
-	jlong Time::normalize(jboolean arg0)
+	jlong Time::normalize(jboolean arg0) const
 	{
 		return callMethod<jlong>(
 			"normalize",
@@ -361,7 +361,7 @@ namespace android::text::format
 			arg0
 		);
 	}
-	jboolean Time::parse(JString arg0)
+	jboolean Time::parse(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"parse",
@@ -369,7 +369,7 @@ namespace android::text::format
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Time::parse3339(JString arg0)
+	jboolean Time::parse3339(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"parse3339",
@@ -377,7 +377,7 @@ namespace android::text::format
 			arg0.object<jstring>()
 		);
 	}
-	void Time::set(android::text::format::Time arg0)
+	void Time::set(android::text::format::Time arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -385,7 +385,7 @@ namespace android::text::format
 			arg0.object()
 		);
 	}
-	void Time::set(jlong arg0)
+	void Time::set(jlong arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -393,7 +393,7 @@ namespace android::text::format
 			arg0
 		);
 	}
-	void Time::set(jint arg0, jint arg1, jint arg2)
+	void Time::set(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"set",
@@ -403,7 +403,7 @@ namespace android::text::format
 			arg2
 		);
 	}
-	void Time::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void Time::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"set",
@@ -416,7 +416,7 @@ namespace android::text::format
 			arg5
 		);
 	}
-	jlong Time::setJulianDay(jint arg0)
+	jlong Time::setJulianDay(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"setJulianDay",
@@ -424,14 +424,14 @@ namespace android::text::format
 			arg0
 		);
 	}
-	void Time::setToNow()
+	void Time::setToNow() const
 	{
 		callMethod<void>(
 			"setToNow",
 			"()V"
 		);
 	}
-	void Time::switchTimezone(JString arg0)
+	void Time::switchTimezone(JString arg0) const
 	{
 		callMethod<void>(
 			"switchTimezone",
@@ -439,7 +439,7 @@ namespace android::text::format
 			arg0.object<jstring>()
 		);
 	}
-	jlong Time::toMillis(jboolean arg0)
+	jlong Time::toMillis(jboolean arg0) const
 	{
 		return callMethod<jlong>(
 			"toMillis",
@@ -447,7 +447,7 @@ namespace android::text::format
 			arg0
 		);
 	}
-	JString Time::toString()
+	JString Time::toString() const
 	{
 		return callObjectMethod(
 			"toString",

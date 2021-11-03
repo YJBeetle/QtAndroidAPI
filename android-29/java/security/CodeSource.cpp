@@ -26,7 +26,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jboolean CodeSource::equals(JObject arg0)
+	jboolean CodeSource::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -34,35 +34,35 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JArray CodeSource::getCertificates()
+	JArray CodeSource::getCertificates() const
 	{
 		return callObjectMethod(
 			"getCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JArray CodeSource::getCodeSigners()
+	JArray CodeSource::getCodeSigners() const
 	{
 		return callObjectMethod(
 			"getCodeSigners",
 			"()[Ljava/security/CodeSigner;"
 		);
 	}
-	java::net::URL CodeSource::getLocation()
+	java::net::URL CodeSource::getLocation() const
 	{
 		return callObjectMethod(
 			"getLocation",
 			"()Ljava/net/URL;"
 		);
 	}
-	jint CodeSource::hashCode()
+	jint CodeSource::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean CodeSource::implies(java::security::CodeSource arg0)
+	jboolean CodeSource::implies(java::security::CodeSource arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -70,7 +70,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JString CodeSource::toString()
+	JString CodeSource::toString() const
 	{
 		return callObjectMethod(
 			"toString",

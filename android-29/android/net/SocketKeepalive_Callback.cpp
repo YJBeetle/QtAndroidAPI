@@ -15,14 +15,14 @@ namespace android::net
 		) {}
 	
 	// Methods
-	void SocketKeepalive_Callback::onDataReceived()
+	void SocketKeepalive_Callback::onDataReceived() const
 	{
 		callMethod<void>(
 			"onDataReceived",
 			"()V"
 		);
 	}
-	void SocketKeepalive_Callback::onError(jint arg0)
+	void SocketKeepalive_Callback::onError(jint arg0) const
 	{
 		callMethod<void>(
 			"onError",
@@ -30,14 +30,14 @@ namespace android::net
 			arg0
 		);
 	}
-	void SocketKeepalive_Callback::onStarted()
+	void SocketKeepalive_Callback::onStarted() const
 	{
 		callMethod<void>(
 			"onStarted",
 			"()V"
 		);
 	}
-	void SocketKeepalive_Callback::onStopped()
+	void SocketKeepalive_Callback::onStopped() const
 	{
 		callMethod<void>(
 			"onStopped",

@@ -1105,7 +1105,7 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	void DevicePolicyManager::addCrossProfileIntentFilter(android::content::ComponentName arg0, android::content::IntentFilter arg1, jint arg2)
+	void DevicePolicyManager::addCrossProfileIntentFilter(android::content::ComponentName arg0, android::content::IntentFilter arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addCrossProfileIntentFilter",
@@ -1115,7 +1115,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	jboolean DevicePolicyManager::addCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::addCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"addCrossProfileWidgetProvider",
@@ -1124,7 +1124,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jint DevicePolicyManager::addOverrideApn(android::content::ComponentName arg0, android::telephony::data::ApnSetting arg1)
+	jint DevicePolicyManager::addOverrideApn(android::content::ComponentName arg0, android::telephony::data::ApnSetting arg1) const
 	{
 		return callMethod<jint>(
 			"addOverrideApn",
@@ -1133,7 +1133,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::addPersistentPreferredActivity(android::content::ComponentName arg0, android::content::IntentFilter arg1, android::content::ComponentName arg2)
+	void DevicePolicyManager::addPersistentPreferredActivity(android::content::ComponentName arg0, android::content::IntentFilter arg1, android::content::ComponentName arg2) const
 	{
 		callMethod<void>(
 			"addPersistentPreferredActivity",
@@ -1143,7 +1143,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::addUserRestriction(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::addUserRestriction(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addUserRestriction",
@@ -1152,7 +1152,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, JObject arg2, jint arg3, android::os::UserHandle arg4)
+	jboolean DevicePolicyManager::bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, JObject arg2, jint arg3, android::os::UserHandle arg4) const
 	{
 		return callMethod<jboolean>(
 			"bindDeviceAdminServiceAsUser",
@@ -1164,7 +1164,7 @@ namespace android::app::admin
 			arg4.object()
 		);
 	}
-	void DevicePolicyManager::clearApplicationUserData(android::content::ComponentName arg0, JString arg1, JObject arg2, JObject arg3)
+	void DevicePolicyManager::clearApplicationUserData(android::content::ComponentName arg0, JString arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"clearApplicationUserData",
@@ -1175,7 +1175,7 @@ namespace android::app::admin
 			arg3.object()
 		);
 	}
-	void DevicePolicyManager::clearCrossProfileIntentFilters(android::content::ComponentName arg0)
+	void DevicePolicyManager::clearCrossProfileIntentFilters(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"clearCrossProfileIntentFilters",
@@ -1183,7 +1183,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::clearDeviceOwnerApp(JString arg0)
+	void DevicePolicyManager::clearDeviceOwnerApp(JString arg0) const
 	{
 		callMethod<void>(
 			"clearDeviceOwnerApp",
@@ -1191,7 +1191,7 @@ namespace android::app::admin
 			arg0.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"clearPackagePersistentPreferredActivities",
@@ -1200,7 +1200,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::clearProfileOwner(android::content::ComponentName arg0)
+	void DevicePolicyManager::clearProfileOwner(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"clearProfileOwner",
@@ -1208,7 +1208,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::clearResetPasswordToken(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::clearResetPasswordToken(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"clearResetPasswordToken",
@@ -1216,7 +1216,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::clearUserRestriction(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::clearUserRestriction(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"clearUserRestriction",
@@ -1225,7 +1225,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	android::content::Intent DevicePolicyManager::createAdminSupportIntent(JString arg0)
+	android::content::Intent DevicePolicyManager::createAdminSupportIntent(JString arg0) const
 	{
 		return callObjectMethod(
 			"createAdminSupportIntent",
@@ -1233,7 +1233,7 @@ namespace android::app::admin
 			arg0.object<jstring>()
 		);
 	}
-	android::os::UserHandle DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, JString arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4)
+	android::os::UserHandle DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, JString arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"createAndManageUser",
@@ -1245,7 +1245,7 @@ namespace android::app::admin
 			arg4
 		);
 	}
-	jint DevicePolicyManager::enableSystemApp(android::content::ComponentName arg0, android::content::Intent arg1)
+	jint DevicePolicyManager::enableSystemApp(android::content::ComponentName arg0, android::content::Intent arg1) const
 	{
 		return callMethod<jint>(
 			"enableSystemApp",
@@ -1254,7 +1254,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::enableSystemApp(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::enableSystemApp(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"enableSystemApp",
@@ -1263,7 +1263,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	android::security::AttestedKeyPair DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, JString arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3)
+	android::security::AttestedKeyPair DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, JString arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"generateKeyPair",
@@ -1274,21 +1274,21 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	JArray DevicePolicyManager::getAccountTypesWithManagementDisabled()
+	JArray DevicePolicyManager::getAccountTypesWithManagementDisabled() const
 	{
 		return callObjectMethod(
 			"getAccountTypesWithManagementDisabled",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JObject DevicePolicyManager::getActiveAdmins()
+	JObject DevicePolicyManager::getActiveAdmins() const
 	{
 		return callObjectMethod(
 			"getActiveAdmins",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject DevicePolicyManager::getAffiliationIds(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getAffiliationIds(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getAffiliationIds",
@@ -1296,7 +1296,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getAlwaysOnVpnLockdownWhitelist",
@@ -1304,7 +1304,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getAlwaysOnVpnPackage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getAlwaysOnVpnPackage(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getAlwaysOnVpnPackage",
@@ -1312,7 +1312,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	android::os::Bundle DevicePolicyManager::getApplicationRestrictions(android::content::ComponentName arg0, JString arg1)
+	android::os::Bundle DevicePolicyManager::getApplicationRestrictions(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
@@ -1321,7 +1321,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	JString DevicePolicyManager::getApplicationRestrictionsManagingPackage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getApplicationRestrictionsManagingPackage(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationRestrictionsManagingPackage",
@@ -1329,14 +1329,14 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::getAutoTimeRequired()
+	jboolean DevicePolicyManager::getAutoTimeRequired() const
 	{
 		return callMethod<jboolean>(
 			"getAutoTimeRequired",
 			"()Z"
 		);
 	}
-	JObject DevicePolicyManager::getBindDeviceAdminTargetUsers(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getBindDeviceAdminTargetUsers(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getBindDeviceAdminTargetUsers",
@@ -1344,7 +1344,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::getBluetoothContactSharingDisabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::getBluetoothContactSharingDisabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"getBluetoothContactSharingDisabled",
@@ -1352,7 +1352,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::getCameraDisabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::getCameraDisabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"getCameraDisabled",
@@ -1360,7 +1360,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getCertInstallerPackage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getCertInstallerPackage(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getCertInstallerPackage",
@@ -1368,7 +1368,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getCrossProfileCalendarPackages(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getCrossProfileCalendarPackages(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getCrossProfileCalendarPackages",
@@ -1376,7 +1376,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::getCrossProfileCallerIdDisabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::getCrossProfileCallerIdDisabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"getCrossProfileCallerIdDisabled",
@@ -1384,7 +1384,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::getCrossProfileContactsSearchDisabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::getCrossProfileContactsSearchDisabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"getCrossProfileContactsSearchDisabled",
@@ -1392,7 +1392,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getCrossProfileWidgetProviders(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getCrossProfileWidgetProviders(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getCrossProfileWidgetProviders",
@@ -1400,14 +1400,14 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getCurrentFailedPasswordAttempts()
+	jint DevicePolicyManager::getCurrentFailedPasswordAttempts() const
 	{
 		return callMethod<jint>(
 			"getCurrentFailedPasswordAttempts",
 			"()I"
 		);
 	}
-	JObject DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, JString arg1)
+	JObject DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getDelegatePackages",
@@ -1416,7 +1416,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	JObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, JString arg1)
+	JObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getDelegatedScopes",
@@ -1425,14 +1425,14 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	JString DevicePolicyManager::getDeviceOwnerLockScreenInfo()
+	JString DevicePolicyManager::getDeviceOwnerLockScreenInfo() const
 	{
 		return callObjectMethod(
 			"getDeviceOwnerLockScreenInfo",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString DevicePolicyManager::getEndUserSessionMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getEndUserSessionMessage(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getEndUserSessionMessage",
@@ -1440,7 +1440,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getGlobalPrivateDnsHost(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getGlobalPrivateDnsHost(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getGlobalPrivateDnsHost",
@@ -1448,7 +1448,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getGlobalPrivateDnsMode(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getGlobalPrivateDnsMode(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getGlobalPrivateDnsMode",
@@ -1456,7 +1456,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getInstalledCaCerts(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getInstalledCaCerts(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getInstalledCaCerts",
@@ -1464,7 +1464,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getKeepUninstalledPackages(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getKeepUninstalledPackages(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getKeepUninstalledPackages",
@@ -1472,7 +1472,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getKeyguardDisabledFeatures(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getKeyguardDisabledFeatures(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getKeyguardDisabledFeatures",
@@ -1480,7 +1480,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getLockTaskFeatures(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getLockTaskFeatures(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getLockTaskFeatures",
@@ -1488,7 +1488,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JArray DevicePolicyManager::getLockTaskPackages(android::content::ComponentName arg0)
+	JArray DevicePolicyManager::getLockTaskPackages(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getLockTaskPackages",
@@ -1496,7 +1496,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getLongSupportMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getLongSupportMessage(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getLongSupportMessage",
@@ -1504,7 +1504,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getMaximumFailedPasswordsForWipe(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getMaximumFailedPasswordsForWipe(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getMaximumFailedPasswordsForWipe",
@@ -1512,7 +1512,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jlong DevicePolicyManager::getMaximumTimeToLock(android::content::ComponentName arg0)
+	jlong DevicePolicyManager::getMaximumTimeToLock(android::content::ComponentName arg0) const
 	{
 		return callMethod<jlong>(
 			"getMaximumTimeToLock",
@@ -1520,7 +1520,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getMeteredDataDisabledPackages(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getMeteredDataDisabledPackages(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getMeteredDataDisabledPackages",
@@ -1528,7 +1528,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getOrganizationColor(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getOrganizationColor(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getOrganizationColor",
@@ -1536,7 +1536,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getOrganizationName(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getOrganizationName(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getOrganizationName",
@@ -1544,7 +1544,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getOverrideApns(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getOverrideApns(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getOverrideApns",
@@ -1552,7 +1552,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	android::app::admin::DevicePolicyManager DevicePolicyManager::getParentProfileInstance(android::content::ComponentName arg0)
+	android::app::admin::DevicePolicyManager DevicePolicyManager::getParentProfileInstance(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getParentProfileInstance",
@@ -1560,14 +1560,14 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordComplexity()
+	jint DevicePolicyManager::getPasswordComplexity() const
 	{
 		return callMethod<jint>(
 			"getPasswordComplexity",
 			"()I"
 		);
 	}
-	jlong DevicePolicyManager::getPasswordExpiration(android::content::ComponentName arg0)
+	jlong DevicePolicyManager::getPasswordExpiration(android::content::ComponentName arg0) const
 	{
 		return callMethod<jlong>(
 			"getPasswordExpiration",
@@ -1575,7 +1575,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jlong DevicePolicyManager::getPasswordExpirationTimeout(android::content::ComponentName arg0)
+	jlong DevicePolicyManager::getPasswordExpirationTimeout(android::content::ComponentName arg0) const
 	{
 		return callMethod<jlong>(
 			"getPasswordExpirationTimeout",
@@ -1583,7 +1583,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordHistoryLength(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordHistoryLength(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordHistoryLength",
@@ -1591,7 +1591,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordMaximumLength(jint arg0)
+	jint DevicePolicyManager::getPasswordMaximumLength(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMaximumLength",
@@ -1599,7 +1599,7 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	jint DevicePolicyManager::getPasswordMinimumLength(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordMinimumLength(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMinimumLength",
@@ -1607,7 +1607,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordMinimumLetters(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordMinimumLetters(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMinimumLetters",
@@ -1615,7 +1615,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordMinimumLowerCase(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordMinimumLowerCase(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMinimumLowerCase",
@@ -1623,7 +1623,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordMinimumNonLetter(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordMinimumNonLetter(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMinimumNonLetter",
@@ -1631,7 +1631,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordMinimumNumeric(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordMinimumNumeric(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMinimumNumeric",
@@ -1639,7 +1639,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordMinimumSymbols(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordMinimumSymbols(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMinimumSymbols",
@@ -1647,7 +1647,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordMinimumUpperCase(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordMinimumUpperCase(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordMinimumUpperCase",
@@ -1655,7 +1655,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPasswordQuality(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPasswordQuality(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPasswordQuality",
@@ -1663,7 +1663,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	android::app::admin::SystemUpdateInfo DevicePolicyManager::getPendingSystemUpdate(android::content::ComponentName arg0)
+	android::app::admin::SystemUpdateInfo DevicePolicyManager::getPendingSystemUpdate(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getPendingSystemUpdate",
@@ -1671,7 +1671,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2)
+	jint DevicePolicyManager::getPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"getPermissionGrantState",
@@ -1681,7 +1681,7 @@ namespace android::app::admin
 			arg2.object<jstring>()
 		);
 	}
-	jint DevicePolicyManager::getPermissionPolicy(android::content::ComponentName arg0)
+	jint DevicePolicyManager::getPermissionPolicy(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getPermissionPolicy",
@@ -1689,7 +1689,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getPermittedAccessibilityServices(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getPermittedAccessibilityServices(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getPermittedAccessibilityServices",
@@ -1697,7 +1697,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getPermittedCrossProfileNotificationListeners",
@@ -1705,7 +1705,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getPermittedInputMethods(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getPermittedInputMethods(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getPermittedInputMethods",
@@ -1713,7 +1713,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jlong DevicePolicyManager::getRequiredStrongAuthTimeout(android::content::ComponentName arg0)
+	jlong DevicePolicyManager::getRequiredStrongAuthTimeout(android::content::ComponentName arg0) const
 	{
 		return callMethod<jlong>(
 			"getRequiredStrongAuthTimeout",
@@ -1721,7 +1721,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::getScreenCaptureDisabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::getScreenCaptureDisabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"getScreenCaptureDisabled",
@@ -1729,7 +1729,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getSecondaryUsers(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getSecondaryUsers(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getSecondaryUsers",
@@ -1737,7 +1737,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getShortSupportMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getShortSupportMessage(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getShortSupportMessage",
@@ -1745,7 +1745,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getStartUserSessionMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getStartUserSessionMessage(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getStartUserSessionMessage",
@@ -1753,7 +1753,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::getStorageEncryption(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::getStorageEncryption(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"getStorageEncryption",
@@ -1761,28 +1761,28 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getStorageEncryptionStatus()
+	jint DevicePolicyManager::getStorageEncryptionStatus() const
 	{
 		return callMethod<jint>(
 			"getStorageEncryptionStatus",
 			"()I"
 		);
 	}
-	android::app::admin::SystemUpdatePolicy DevicePolicyManager::getSystemUpdatePolicy()
+	android::app::admin::SystemUpdatePolicy DevicePolicyManager::getSystemUpdatePolicy() const
 	{
 		return callObjectMethod(
 			"getSystemUpdatePolicy",
 			"()Landroid/app/admin/SystemUpdatePolicy;"
 		);
 	}
-	android::os::PersistableBundle DevicePolicyManager::getTransferOwnershipBundle()
+	android::os::PersistableBundle DevicePolicyManager::getTransferOwnershipBundle() const
 	{
 		return callObjectMethod(
 			"getTransferOwnershipBundle",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	JObject DevicePolicyManager::getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1)
+	JObject DevicePolicyManager::getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1) const
 	{
 		return callObjectMethod(
 			"getTrustAgentConfiguration",
@@ -1791,7 +1791,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	android::os::Bundle DevicePolicyManager::getUserRestrictions(android::content::ComponentName arg0)
+	android::os::Bundle DevicePolicyManager::getUserRestrictions(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getUserRestrictions",
@@ -1799,7 +1799,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DevicePolicyManager::getWifiMacAddress(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getWifiMacAddress(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getWifiMacAddress",
@@ -1807,7 +1807,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::hasCaCertInstalled(android::content::ComponentName arg0, JByteArray arg1)
+	jboolean DevicePolicyManager::hasCaCertInstalled(android::content::ComponentName arg0, JByteArray arg1) const
 	{
 		return callMethod<jboolean>(
 			"hasCaCertInstalled",
@@ -1816,7 +1816,7 @@ namespace android::app::admin
 			arg1.object<jbyteArray>()
 		);
 	}
-	jboolean DevicePolicyManager::hasGrantedPolicy(android::content::ComponentName arg0, jint arg1)
+	jboolean DevicePolicyManager::hasGrantedPolicy(android::content::ComponentName arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"hasGrantedPolicy",
@@ -1825,7 +1825,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::installCaCert(android::content::ComponentName arg0, JByteArray arg1)
+	jboolean DevicePolicyManager::installCaCert(android::content::ComponentName arg0, JByteArray arg1) const
 	{
 		return callMethod<jboolean>(
 			"installCaCert",
@@ -1834,7 +1834,7 @@ namespace android::app::admin
 			arg1.object<jbyteArray>()
 		);
 	}
-	jboolean DevicePolicyManager::installExistingPackage(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::installExistingPackage(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"installExistingPackage",
@@ -1843,7 +1843,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, java::security::cert::Certificate arg2, JString arg3)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, java::security::cert::Certificate arg2, JString arg3) const
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
@@ -1854,7 +1854,7 @@ namespace android::app::admin
 			arg3.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jboolean arg4)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jboolean arg4) const
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
@@ -1866,7 +1866,7 @@ namespace android::app::admin
 			arg4
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jint arg4)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jint arg4) const
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
@@ -1878,7 +1878,7 @@ namespace android::app::admin
 			arg4
 		);
 	}
-	void DevicePolicyManager::installSystemUpdate(android::content::ComponentName arg0, android::net::Uri arg1, JObject arg2, android::app::admin::DevicePolicyManager_InstallSystemUpdateCallback arg3)
+	void DevicePolicyManager::installSystemUpdate(android::content::ComponentName arg0, android::net::Uri arg1, JObject arg2, android::app::admin::DevicePolicyManager_InstallSystemUpdateCallback arg3) const
 	{
 		callMethod<void>(
 			"installSystemUpdate",
@@ -1889,14 +1889,14 @@ namespace android::app::admin
 			arg3.object()
 		);
 	}
-	jboolean DevicePolicyManager::isActivePasswordSufficient()
+	jboolean DevicePolicyManager::isActivePasswordSufficient() const
 	{
 		return callMethod<jboolean>(
 			"isActivePasswordSufficient",
 			"()Z"
 		);
 	}
-	jboolean DevicePolicyManager::isAdminActive(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isAdminActive(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAdminActive",
@@ -1904,14 +1904,14 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isAffiliatedUser()
+	jboolean DevicePolicyManager::isAffiliatedUser() const
 	{
 		return callMethod<jboolean>(
 			"isAffiliatedUser",
 			"()Z"
 		);
 	}
-	jboolean DevicePolicyManager::isAlwaysOnVpnLockdownEnabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isAlwaysOnVpnLockdownEnabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAlwaysOnVpnLockdownEnabled",
@@ -1919,7 +1919,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isApplicationHidden(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::isApplicationHidden(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isApplicationHidden",
@@ -1928,7 +1928,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isBackupServiceEnabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isBackupServiceEnabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBackupServiceEnabled",
@@ -1936,21 +1936,21 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isCallerApplicationRestrictionsManagingPackage()
+	jboolean DevicePolicyManager::isCallerApplicationRestrictionsManagingPackage() const
 	{
 		return callMethod<jboolean>(
 			"isCallerApplicationRestrictionsManagingPackage",
 			"()Z"
 		);
 	}
-	jboolean DevicePolicyManager::isDeviceIdAttestationSupported()
+	jboolean DevicePolicyManager::isDeviceIdAttestationSupported() const
 	{
 		return callMethod<jboolean>(
 			"isDeviceIdAttestationSupported",
 			"()Z"
 		);
 	}
-	jboolean DevicePolicyManager::isDeviceOwnerApp(JString arg0)
+	jboolean DevicePolicyManager::isDeviceOwnerApp(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isDeviceOwnerApp",
@@ -1958,7 +1958,7 @@ namespace android::app::admin
 			arg0.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isEphemeralUser(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isEphemeralUser(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEphemeralUser",
@@ -1966,7 +1966,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isLockTaskPermitted(JString arg0)
+	jboolean DevicePolicyManager::isLockTaskPermitted(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLockTaskPermitted",
@@ -1974,14 +1974,14 @@ namespace android::app::admin
 			arg0.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isLogoutEnabled()
+	jboolean DevicePolicyManager::isLogoutEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isLogoutEnabled",
 			"()Z"
 		);
 	}
-	jboolean DevicePolicyManager::isManagedProfile(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isManagedProfile(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isManagedProfile",
@@ -1989,7 +1989,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isMasterVolumeMuted(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isMasterVolumeMuted(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isMasterVolumeMuted",
@@ -1997,7 +1997,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isNetworkLoggingEnabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isNetworkLoggingEnabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNetworkLoggingEnabled",
@@ -2005,7 +2005,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isOverrideApnEnabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isOverrideApnEnabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isOverrideApnEnabled",
@@ -2013,7 +2013,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isPackageSuspended(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::isPackageSuspended(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isPackageSuspended",
@@ -2022,7 +2022,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isProfileOwnerApp(JString arg0)
+	jboolean DevicePolicyManager::isProfileOwnerApp(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isProfileOwnerApp",
@@ -2030,7 +2030,7 @@ namespace android::app::admin
 			arg0.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isProvisioningAllowed(JString arg0)
+	jboolean DevicePolicyManager::isProvisioningAllowed(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isProvisioningAllowed",
@@ -2038,7 +2038,7 @@ namespace android::app::admin
 			arg0.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isResetPasswordTokenActive(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isResetPasswordTokenActive(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isResetPasswordTokenActive",
@@ -2046,7 +2046,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isSecurityLoggingEnabled(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isSecurityLoggingEnabled(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSecurityLoggingEnabled",
@@ -2054,7 +2054,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isUninstallBlocked(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::isUninstallBlocked(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isUninstallBlocked",
@@ -2063,7 +2063,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isUsingUnifiedPassword(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::isUsingUnifiedPassword(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"isUsingUnifiedPassword",
@@ -2071,14 +2071,14 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::lockNow()
+	void DevicePolicyManager::lockNow() const
 	{
 		callMethod<void>(
 			"lockNow",
 			"()V"
 		);
 	}
-	void DevicePolicyManager::lockNow(jint arg0)
+	void DevicePolicyManager::lockNow(jint arg0) const
 	{
 		callMethod<void>(
 			"lockNow",
@@ -2086,7 +2086,7 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	jint DevicePolicyManager::logoutUser(android::content::ComponentName arg0)
+	jint DevicePolicyManager::logoutUser(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"logoutUser",
@@ -2094,7 +2094,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::reboot(android::content::ComponentName arg0)
+	void DevicePolicyManager::reboot(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"reboot",
@@ -2102,7 +2102,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::removeActiveAdmin(android::content::ComponentName arg0)
+	void DevicePolicyManager::removeActiveAdmin(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"removeActiveAdmin",
@@ -2110,7 +2110,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::removeCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::removeCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"removeCrossProfileWidgetProvider",
@@ -2119,7 +2119,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::removeKeyPair(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::removeKeyPair(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"removeKeyPair",
@@ -2128,7 +2128,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::removeOverrideApn(android::content::ComponentName arg0, jint arg1)
+	jboolean DevicePolicyManager::removeOverrideApn(android::content::ComponentName arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"removeOverrideApn",
@@ -2137,7 +2137,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::removeUser(android::content::ComponentName arg0, android::os::UserHandle arg1)
+	jboolean DevicePolicyManager::removeUser(android::content::ComponentName arg0, android::os::UserHandle arg1) const
 	{
 		return callMethod<jboolean>(
 			"removeUser",
@@ -2146,7 +2146,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::requestBugreport(android::content::ComponentName arg0)
+	jboolean DevicePolicyManager::requestBugreport(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"requestBugreport",
@@ -2154,7 +2154,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::resetPassword(JString arg0, jint arg1)
+	jboolean DevicePolicyManager::resetPassword(JString arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"resetPassword",
@@ -2163,7 +2163,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::resetPasswordWithToken(android::content::ComponentName arg0, JString arg1, JByteArray arg2, jint arg3)
+	jboolean DevicePolicyManager::resetPasswordWithToken(android::content::ComponentName arg0, JString arg1, JByteArray arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"resetPasswordWithToken",
@@ -2174,7 +2174,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	JObject DevicePolicyManager::retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1)
+	JObject DevicePolicyManager::retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"retrieveNetworkLogs",
@@ -2183,7 +2183,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	JObject DevicePolicyManager::retrievePreRebootSecurityLogs(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::retrievePreRebootSecurityLogs(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"retrievePreRebootSecurityLogs",
@@ -2191,7 +2191,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::retrieveSecurityLogs(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::retrieveSecurityLogs(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"retrieveSecurityLogs",
@@ -2199,7 +2199,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::setAccountManagementDisabled(android::content::ComponentName arg0, JString arg1, jboolean arg2)
+	void DevicePolicyManager::setAccountManagementDisabled(android::content::ComponentName arg0, JString arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"setAccountManagementDisabled",
@@ -2209,7 +2209,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setAffiliationIds(android::content::ComponentName arg0, JObject arg1)
+	void DevicePolicyManager::setAffiliationIds(android::content::ComponentName arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setAffiliationIds",
@@ -2218,7 +2218,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2)
+	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"setAlwaysOnVpnPackage",
@@ -2228,7 +2228,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2, JObject arg3)
+	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"setAlwaysOnVpnPackage",
@@ -2239,7 +2239,7 @@ namespace android::app::admin
 			arg3.object()
 		);
 	}
-	jboolean DevicePolicyManager::setApplicationHidden(android::content::ComponentName arg0, JString arg1, jboolean arg2)
+	jboolean DevicePolicyManager::setApplicationHidden(android::content::ComponentName arg0, JString arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"setApplicationHidden",
@@ -2249,7 +2249,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setApplicationRestrictions(android::content::ComponentName arg0, JString arg1, android::os::Bundle arg2)
+	void DevicePolicyManager::setApplicationRestrictions(android::content::ComponentName arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"setApplicationRestrictions",
@@ -2259,7 +2259,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setApplicationRestrictionsManagingPackage",
@@ -2268,7 +2268,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setAutoTimeRequired(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setAutoTimeRequired(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setAutoTimeRequired",
@@ -2277,7 +2277,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setBackupServiceEnabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setBackupServiceEnabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setBackupServiceEnabled",
@@ -2286,7 +2286,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setBluetoothContactSharingDisabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setBluetoothContactSharingDisabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setBluetoothContactSharingDisabled",
@@ -2295,7 +2295,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setCameraDisabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setCameraDisabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setCameraDisabled",
@@ -2304,7 +2304,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setCertInstallerPackage(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setCertInstallerPackage(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setCertInstallerPackage",
@@ -2313,7 +2313,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setCrossProfileCalendarPackages(android::content::ComponentName arg0, JObject arg1)
+	void DevicePolicyManager::setCrossProfileCalendarPackages(android::content::ComponentName arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setCrossProfileCalendarPackages",
@@ -2322,7 +2322,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setCrossProfileCallerIdDisabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setCrossProfileCallerIdDisabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setCrossProfileCallerIdDisabled",
@@ -2331,7 +2331,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setCrossProfileContactsSearchDisabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setCrossProfileContactsSearchDisabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setCrossProfileContactsSearchDisabled",
@@ -2340,7 +2340,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setDefaultSmsApplication(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setDefaultSmsApplication(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setDefaultSmsApplication",
@@ -2349,7 +2349,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, JString arg1, JObject arg2)
+	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setDelegatedScopes",
@@ -2359,7 +2359,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::setDeviceOwnerLockScreenInfo(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setDeviceOwnerLockScreenInfo(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setDeviceOwnerLockScreenInfo",
@@ -2368,7 +2368,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setEndUserSessionMessage(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setEndUserSessionMessage(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setEndUserSessionMessage",
@@ -2377,7 +2377,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jint DevicePolicyManager::setGlobalPrivateDnsModeOpportunistic(android::content::ComponentName arg0)
+	jint DevicePolicyManager::setGlobalPrivateDnsModeOpportunistic(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"setGlobalPrivateDnsModeOpportunistic",
@@ -2385,7 +2385,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::setGlobalPrivateDnsModeSpecifiedHost(android::content::ComponentName arg0, JString arg1)
+	jint DevicePolicyManager::setGlobalPrivateDnsModeSpecifiedHost(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"setGlobalPrivateDnsModeSpecifiedHost",
@@ -2394,7 +2394,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setGlobalSetting(android::content::ComponentName arg0, JString arg1, JString arg2)
+	void DevicePolicyManager::setGlobalSetting(android::content::ComponentName arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setGlobalSetting",
@@ -2404,7 +2404,7 @@ namespace android::app::admin
 			arg2.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setKeepUninstalledPackages(android::content::ComponentName arg0, JObject arg1)
+	void DevicePolicyManager::setKeepUninstalledPackages(android::content::ComponentName arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setKeepUninstalledPackages",
@@ -2413,7 +2413,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setKeyPairCertificate(android::content::ComponentName arg0, JString arg1, JObject arg2, jboolean arg3)
+	jboolean DevicePolicyManager::setKeyPairCertificate(android::content::ComponentName arg0, JString arg1, JObject arg2, jboolean arg3) const
 	{
 		return callMethod<jboolean>(
 			"setKeyPairCertificate",
@@ -2424,7 +2424,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	jboolean DevicePolicyManager::setKeyguardDisabled(android::content::ComponentName arg0, jboolean arg1)
+	jboolean DevicePolicyManager::setKeyguardDisabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setKeyguardDisabled",
@@ -2433,7 +2433,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setKeyguardDisabledFeatures(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setKeyguardDisabledFeatures(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setKeyguardDisabledFeatures",
@@ -2442,7 +2442,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setLockTaskFeatures(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setLockTaskFeatures(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLockTaskFeatures",
@@ -2451,7 +2451,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setLockTaskPackages(android::content::ComponentName arg0, JArray arg1)
+	void DevicePolicyManager::setLockTaskPackages(android::content::ComponentName arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"setLockTaskPackages",
@@ -2460,7 +2460,7 @@ namespace android::app::admin
 			arg1.object<jarray>()
 		);
 	}
-	void DevicePolicyManager::setLogoutEnabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setLogoutEnabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setLogoutEnabled",
@@ -2469,7 +2469,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setLongSupportMessage(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setLongSupportMessage(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setLongSupportMessage",
@@ -2478,7 +2478,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setMasterVolumeMuted(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setMasterVolumeMuted(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setMasterVolumeMuted",
@@ -2487,7 +2487,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setMaximumFailedPasswordsForWipe(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setMaximumFailedPasswordsForWipe(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setMaximumFailedPasswordsForWipe",
@@ -2496,7 +2496,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setMaximumTimeToLock(android::content::ComponentName arg0, jlong arg1)
+	void DevicePolicyManager::setMaximumTimeToLock(android::content::ComponentName arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setMaximumTimeToLock",
@@ -2505,7 +2505,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	JObject DevicePolicyManager::setMeteredDataDisabledPackages(android::content::ComponentName arg0, JObject arg1)
+	JObject DevicePolicyManager::setMeteredDataDisabledPackages(android::content::ComponentName arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setMeteredDataDisabledPackages",
@@ -2514,7 +2514,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setNetworkLoggingEnabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setNetworkLoggingEnabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setNetworkLoggingEnabled",
@@ -2523,7 +2523,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setOrganizationColor(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setOrganizationColor(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setOrganizationColor",
@@ -2532,7 +2532,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setOrganizationName(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setOrganizationName(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setOrganizationName",
@@ -2541,7 +2541,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setOverrideApnsEnabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setOverrideApnsEnabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setOverrideApnsEnabled",
@@ -2550,7 +2550,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	JArray DevicePolicyManager::setPackagesSuspended(android::content::ComponentName arg0, JArray arg1, jboolean arg2)
+	JArray DevicePolicyManager::setPackagesSuspended(android::content::ComponentName arg0, JArray arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"setPackagesSuspended",
@@ -2560,7 +2560,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setPasswordExpirationTimeout(android::content::ComponentName arg0, jlong arg1)
+	void DevicePolicyManager::setPasswordExpirationTimeout(android::content::ComponentName arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setPasswordExpirationTimeout",
@@ -2569,7 +2569,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordHistoryLength(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordHistoryLength(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordHistoryLength",
@@ -2578,7 +2578,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordMinimumLength(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordMinimumLength(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordMinimumLength",
@@ -2587,7 +2587,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordMinimumLetters(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordMinimumLetters(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordMinimumLetters",
@@ -2596,7 +2596,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordMinimumLowerCase(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordMinimumLowerCase(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordMinimumLowerCase",
@@ -2605,7 +2605,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordMinimumNonLetter(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordMinimumNonLetter(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordMinimumNonLetter",
@@ -2614,7 +2614,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordMinimumNumeric(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordMinimumNumeric(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordMinimumNumeric",
@@ -2623,7 +2623,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordMinimumSymbols(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordMinimumSymbols(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordMinimumSymbols",
@@ -2632,7 +2632,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordMinimumUpperCase(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordMinimumUpperCase(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordMinimumUpperCase",
@@ -2641,7 +2641,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setPasswordQuality(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPasswordQuality(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPasswordQuality",
@@ -2650,7 +2650,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2, jint arg3)
+	jboolean DevicePolicyManager::setPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"setPermissionGrantState",
@@ -2661,7 +2661,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	void DevicePolicyManager::setPermissionPolicy(android::content::ComponentName arg0, jint arg1)
+	void DevicePolicyManager::setPermissionPolicy(android::content::ComponentName arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPermissionPolicy",
@@ -2670,7 +2670,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setPermittedAccessibilityServices(android::content::ComponentName arg0, JObject arg1)
+	jboolean DevicePolicyManager::setPermittedAccessibilityServices(android::content::ComponentName arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"setPermittedAccessibilityServices",
@@ -2679,7 +2679,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0, JObject arg1)
+	jboolean DevicePolicyManager::setPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"setPermittedCrossProfileNotificationListeners",
@@ -2688,7 +2688,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setPermittedInputMethods(android::content::ComponentName arg0, JObject arg1)
+	jboolean DevicePolicyManager::setPermittedInputMethods(android::content::ComponentName arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"setPermittedInputMethods",
@@ -2697,7 +2697,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setProfileEnabled(android::content::ComponentName arg0)
+	void DevicePolicyManager::setProfileEnabled(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"setProfileEnabled",
@@ -2705,7 +2705,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::setProfileName(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setProfileName(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setProfileName",
@@ -2714,7 +2714,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setRecommendedGlobalProxy(android::content::ComponentName arg0, android::net::ProxyInfo arg1)
+	void DevicePolicyManager::setRecommendedGlobalProxy(android::content::ComponentName arg0, android::net::ProxyInfo arg1) const
 	{
 		callMethod<void>(
 			"setRecommendedGlobalProxy",
@@ -2723,7 +2723,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setRequiredStrongAuthTimeout(android::content::ComponentName arg0, jlong arg1)
+	void DevicePolicyManager::setRequiredStrongAuthTimeout(android::content::ComponentName arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setRequiredStrongAuthTimeout",
@@ -2732,7 +2732,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setResetPasswordToken(android::content::ComponentName arg0, JByteArray arg1)
+	jboolean DevicePolicyManager::setResetPasswordToken(android::content::ComponentName arg0, JByteArray arg1) const
 	{
 		return callMethod<jboolean>(
 			"setResetPasswordToken",
@@ -2741,7 +2741,7 @@ namespace android::app::admin
 			arg1.object<jbyteArray>()
 		);
 	}
-	void DevicePolicyManager::setRestrictionsProvider(android::content::ComponentName arg0, android::content::ComponentName arg1)
+	void DevicePolicyManager::setRestrictionsProvider(android::content::ComponentName arg0, android::content::ComponentName arg1) const
 	{
 		callMethod<void>(
 			"setRestrictionsProvider",
@@ -2750,7 +2750,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setScreenCaptureDisabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setScreenCaptureDisabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setScreenCaptureDisabled",
@@ -2759,7 +2759,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setSecureSetting(android::content::ComponentName arg0, JString arg1, JString arg2)
+	void DevicePolicyManager::setSecureSetting(android::content::ComponentName arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setSecureSetting",
@@ -2769,7 +2769,7 @@ namespace android::app::admin
 			arg2.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setSecurityLoggingEnabled(android::content::ComponentName arg0, jboolean arg1)
+	void DevicePolicyManager::setSecurityLoggingEnabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setSecurityLoggingEnabled",
@@ -2778,7 +2778,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setShortSupportMessage(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setShortSupportMessage(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setShortSupportMessage",
@@ -2787,7 +2787,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setStartUserSessionMessage(android::content::ComponentName arg0, JString arg1)
+	void DevicePolicyManager::setStartUserSessionMessage(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setStartUserSessionMessage",
@@ -2796,7 +2796,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::setStatusBarDisabled(android::content::ComponentName arg0, jboolean arg1)
+	jboolean DevicePolicyManager::setStatusBarDisabled(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setStatusBarDisabled",
@@ -2805,7 +2805,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jint DevicePolicyManager::setStorageEncryption(android::content::ComponentName arg0, jboolean arg1)
+	jint DevicePolicyManager::setStorageEncryption(android::content::ComponentName arg0, jboolean arg1) const
 	{
 		return callMethod<jint>(
 			"setStorageEncryption",
@@ -2814,7 +2814,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setSystemSetting(android::content::ComponentName arg0, JString arg1, JString arg2)
+	void DevicePolicyManager::setSystemSetting(android::content::ComponentName arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setSystemSetting",
@@ -2824,7 +2824,7 @@ namespace android::app::admin
 			arg2.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setSystemUpdatePolicy(android::content::ComponentName arg0, android::app::admin::SystemUpdatePolicy arg1)
+	void DevicePolicyManager::setSystemUpdatePolicy(android::content::ComponentName arg0, android::app::admin::SystemUpdatePolicy arg1) const
 	{
 		callMethod<void>(
 			"setSystemUpdatePolicy",
@@ -2833,7 +2833,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setTime(android::content::ComponentName arg0, jlong arg1)
+	jboolean DevicePolicyManager::setTime(android::content::ComponentName arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"setTime",
@@ -2842,7 +2842,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setTimeZone(android::content::ComponentName arg0, JString arg1)
+	jboolean DevicePolicyManager::setTimeZone(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"setTimeZone",
@@ -2851,7 +2851,7 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2)
+	void DevicePolicyManager::setTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2) const
 	{
 		callMethod<void>(
 			"setTrustAgentConfiguration",
@@ -2861,7 +2861,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::setUninstallBlocked(android::content::ComponentName arg0, JString arg1, jboolean arg2)
+	void DevicePolicyManager::setUninstallBlocked(android::content::ComponentName arg0, JString arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"setUninstallBlocked",
@@ -2871,7 +2871,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setUserIcon(android::content::ComponentName arg0, android::graphics::Bitmap arg1)
+	void DevicePolicyManager::setUserIcon(android::content::ComponentName arg0, android::graphics::Bitmap arg1) const
 	{
 		callMethod<void>(
 			"setUserIcon",
@@ -2880,7 +2880,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jint DevicePolicyManager::startUserInBackground(android::content::ComponentName arg0, android::os::UserHandle arg1)
+	jint DevicePolicyManager::startUserInBackground(android::content::ComponentName arg0, android::os::UserHandle arg1) const
 	{
 		return callMethod<jint>(
 			"startUserInBackground",
@@ -2889,7 +2889,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jint DevicePolicyManager::stopUser(android::content::ComponentName arg0, android::os::UserHandle arg1)
+	jint DevicePolicyManager::stopUser(android::content::ComponentName arg0, android::os::UserHandle arg1) const
 	{
 		return callMethod<jint>(
 			"stopUser",
@@ -2898,7 +2898,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::switchUser(android::content::ComponentName arg0, android::os::UserHandle arg1)
+	jboolean DevicePolicyManager::switchUser(android::content::ComponentName arg0, android::os::UserHandle arg1) const
 	{
 		return callMethod<jboolean>(
 			"switchUser",
@@ -2907,7 +2907,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::transferOwnership(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2)
+	void DevicePolicyManager::transferOwnership(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2) const
 	{
 		callMethod<void>(
 			"transferOwnership",
@@ -2917,7 +2917,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::uninstallAllUserCaCerts(android::content::ComponentName arg0)
+	void DevicePolicyManager::uninstallAllUserCaCerts(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"uninstallAllUserCaCerts",
@@ -2925,7 +2925,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::uninstallCaCert(android::content::ComponentName arg0, JByteArray arg1)
+	void DevicePolicyManager::uninstallCaCert(android::content::ComponentName arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"uninstallCaCert",
@@ -2934,7 +2934,7 @@ namespace android::app::admin
 			arg1.object<jbyteArray>()
 		);
 	}
-	jboolean DevicePolicyManager::updateOverrideApn(android::content::ComponentName arg0, jint arg1, android::telephony::data::ApnSetting arg2)
+	jboolean DevicePolicyManager::updateOverrideApn(android::content::ComponentName arg0, jint arg1, android::telephony::data::ApnSetting arg2) const
 	{
 		return callMethod<jboolean>(
 			"updateOverrideApn",
@@ -2944,7 +2944,7 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::wipeData(jint arg0)
+	void DevicePolicyManager::wipeData(jint arg0) const
 	{
 		callMethod<void>(
 			"wipeData",
@@ -2952,7 +2952,7 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	void DevicePolicyManager::wipeData(jint arg0, JString arg1)
+	void DevicePolicyManager::wipeData(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"wipeData",

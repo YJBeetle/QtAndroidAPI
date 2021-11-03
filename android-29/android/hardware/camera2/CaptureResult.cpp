@@ -669,7 +669,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	JObject CaptureResult::get(android::hardware::camera2::CaptureResult_Key arg0)
+	JObject CaptureResult::get(android::hardware::camera2::CaptureResult_Key arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -677,28 +677,28 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	jlong CaptureResult::getFrameNumber()
+	jlong CaptureResult::getFrameNumber() const
 	{
 		return callMethod<jlong>(
 			"getFrameNumber",
 			"()J"
 		);
 	}
-	JObject CaptureResult::getKeys()
+	JObject CaptureResult::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	android::hardware::camera2::CaptureRequest CaptureResult::getRequest()
+	android::hardware::camera2::CaptureRequest CaptureResult::getRequest() const
 	{
 		return callObjectMethod(
 			"getRequest",
 			"()Landroid/hardware/camera2/CaptureRequest;"
 		);
 	}
-	jint CaptureResult::getSequenceId()
+	jint CaptureResult::getSequenceId() const
 	{
 		return callMethod<jint>(
 			"getSequenceId",

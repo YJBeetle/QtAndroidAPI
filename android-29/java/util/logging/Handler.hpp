@@ -42,20 +42,20 @@ namespace java::util::logging
 		// Constructors
 		
 		// Methods
-		void close();
-		void flush();
-		JString getEncoding();
-		java::util::logging::ErrorManager getErrorManager();
-		JObject getFilter();
-		java::util::logging::Formatter getFormatter();
-		java::util::logging::Level getLevel();
-		jboolean isLoggable(java::util::logging::LogRecord arg0);
-		void publish(java::util::logging::LogRecord arg0);
-		void setEncoding(JString arg0);
-		void setErrorManager(java::util::logging::ErrorManager arg0);
-		void setFilter(JObject arg0);
-		void setFormatter(java::util::logging::Formatter arg0);
-		void setLevel(java::util::logging::Level arg0);
+		void close() const;
+		void flush() const;
+		JString getEncoding() const;
+		java::util::logging::ErrorManager getErrorManager() const;
+		JObject getFilter() const;
+		java::util::logging::Formatter getFormatter() const;
+		java::util::logging::Level getLevel() const;
+		jboolean isLoggable(java::util::logging::LogRecord arg0) const;
+		void publish(java::util::logging::LogRecord arg0) const;
+		void setEncoding(JString arg0) const;
+		void setErrorManager(java::util::logging::ErrorManager arg0) const;
+		void setFilter(JObject arg0) const;
+		void setFormatter(java::util::logging::Formatter arg0) const;
+		void setLevel(java::util::logging::Level arg0) const;
 	};
 } // namespace java::util::logging
 

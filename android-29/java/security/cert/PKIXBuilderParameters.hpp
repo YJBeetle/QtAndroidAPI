@@ -24,9 +24,9 @@ namespace java::security::cert
 		PKIXBuilderParameters(JObject arg0, JObject arg1);
 		
 		// Methods
-		jint getMaxPathLength();
-		void setMaxPathLength(jint arg0);
-		JString toString();
+		jint getMaxPathLength() const;
+		void setMaxPathLength(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

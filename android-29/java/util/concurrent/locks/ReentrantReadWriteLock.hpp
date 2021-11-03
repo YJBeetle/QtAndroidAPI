@@ -32,20 +32,20 @@ namespace java::util::concurrent::locks
 		ReentrantReadWriteLock(jboolean arg0);
 		
 		// Methods
-		jint getQueueLength();
-		jint getReadHoldCount();
-		jint getReadLockCount();
-		jint getWaitQueueLength(JObject arg0);
-		jint getWriteHoldCount();
-		jboolean hasQueuedThread(java::lang::Thread arg0);
-		jboolean hasQueuedThreads();
-		jboolean hasWaiters(JObject arg0);
-		jboolean isFair();
-		jboolean isWriteLocked();
-		jboolean isWriteLockedByCurrentThread();
-		java::util::concurrent::locks::ReentrantReadWriteLock_ReadLock readLock();
-		JString toString();
-		java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock writeLock();
+		jint getQueueLength() const;
+		jint getReadHoldCount() const;
+		jint getReadLockCount() const;
+		jint getWaitQueueLength(JObject arg0) const;
+		jint getWriteHoldCount() const;
+		jboolean hasQueuedThread(java::lang::Thread arg0) const;
+		jboolean hasQueuedThreads() const;
+		jboolean hasWaiters(JObject arg0) const;
+		jboolean isFair() const;
+		jboolean isWriteLocked() const;
+		jboolean isWriteLockedByCurrentThread() const;
+		java::util::concurrent::locks::ReentrantReadWriteLock_ReadLock readLock() const;
+		JString toString() const;
+		java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock writeLock() const;
 	};
 } // namespace java::util::concurrent::locks
 

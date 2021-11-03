@@ -100,7 +100,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void ClipData::addItem(android::content::ClipData_Item arg0)
+	void ClipData::addItem(android::content::ClipData_Item arg0) const
 	{
 		callMethod<void>(
 			"addItem",
@@ -108,7 +108,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ClipData::addItem(android::content::ContentResolver arg0, android::content::ClipData_Item arg1)
+	void ClipData::addItem(android::content::ContentResolver arg0, android::content::ClipData_Item arg1) const
 	{
 		callMethod<void>(
 			"addItem",
@@ -117,21 +117,21 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jint ClipData::describeContents()
+	jint ClipData::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::content::ClipDescription ClipData::getDescription()
+	android::content::ClipDescription ClipData::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	android::content::ClipData_Item ClipData::getItemAt(jint arg0)
+	android::content::ClipData_Item ClipData::getItemAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItemAt",
@@ -139,21 +139,21 @@ namespace android::content
 			arg0
 		);
 	}
-	jint ClipData::getItemCount()
+	jint ClipData::getItemCount() const
 	{
 		return callMethod<jint>(
 			"getItemCount",
 			"()I"
 		);
 	}
-	JString ClipData::toString()
+	JString ClipData::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ClipData::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ClipData::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

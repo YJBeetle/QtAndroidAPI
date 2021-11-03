@@ -40,7 +40,7 @@ namespace javax::xml::transform
 			arg1.object()
 		);
 	}
-	JObject TransformerFactory::getAssociatedStylesheet(JObject arg0, JString arg1, JString arg2, JString arg3)
+	JObject TransformerFactory::getAssociatedStylesheet(JObject arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		return callObjectMethod(
 			"getAssociatedStylesheet",
@@ -51,7 +51,7 @@ namespace javax::xml::transform
 			arg3.object<jstring>()
 		);
 	}
-	JObject TransformerFactory::getAttribute(JString arg0)
+	JObject TransformerFactory::getAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttribute",
@@ -59,14 +59,14 @@ namespace javax::xml::transform
 			arg0.object<jstring>()
 		);
 	}
-	JObject TransformerFactory::getErrorListener()
+	JObject TransformerFactory::getErrorListener() const
 	{
 		return callObjectMethod(
 			"getErrorListener",
 			"()Ljavax/xml/transform/ErrorListener;"
 		);
 	}
-	jboolean TransformerFactory::getFeature(JString arg0)
+	jboolean TransformerFactory::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -74,14 +74,14 @@ namespace javax::xml::transform
 			arg0.object<jstring>()
 		);
 	}
-	JObject TransformerFactory::getURIResolver()
+	JObject TransformerFactory::getURIResolver() const
 	{
 		return callObjectMethod(
 			"getURIResolver",
 			"()Ljavax/xml/transform/URIResolver;"
 		);
 	}
-	JObject TransformerFactory::newTemplates(JObject arg0)
+	JObject TransformerFactory::newTemplates(JObject arg0) const
 	{
 		return callObjectMethod(
 			"newTemplates",
@@ -89,14 +89,14 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	javax::xml::transform::Transformer TransformerFactory::newTransformer()
+	javax::xml::transform::Transformer TransformerFactory::newTransformer() const
 	{
 		return callObjectMethod(
 			"newTransformer",
 			"()Ljavax/xml/transform/Transformer;"
 		);
 	}
-	javax::xml::transform::Transformer TransformerFactory::newTransformer(JObject arg0)
+	javax::xml::transform::Transformer TransformerFactory::newTransformer(JObject arg0) const
 	{
 		return callObjectMethod(
 			"newTransformer",
@@ -104,7 +104,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void TransformerFactory::setAttribute(JString arg0, JObject arg1)
+	void TransformerFactory::setAttribute(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setAttribute",
@@ -113,7 +113,7 @@ namespace javax::xml::transform
 			arg1.object<jobject>()
 		);
 	}
-	void TransformerFactory::setErrorListener(JObject arg0)
+	void TransformerFactory::setErrorListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorListener",
@@ -121,7 +121,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void TransformerFactory::setFeature(JString arg0, jboolean arg1)
+	void TransformerFactory::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -130,7 +130,7 @@ namespace javax::xml::transform
 			arg1
 		);
 	}
-	void TransformerFactory::setURIResolver(JObject arg0)
+	void TransformerFactory::setURIResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setURIResolver",

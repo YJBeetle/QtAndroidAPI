@@ -85,7 +85,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void GradientDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void GradientDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -93,14 +93,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean GradientDrawable::canApplyTheme()
+	jboolean GradientDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void GradientDrawable::draw(android::graphics::Canvas arg0)
+	void GradientDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -108,140 +108,140 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint GradientDrawable::getAlpha()
+	jint GradientDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint GradientDrawable::getChangingConfigurations()
+	jint GradientDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::content::res::ColorStateList GradientDrawable::getColor()
+	android::content::res::ColorStateList GradientDrawable::getColor() const
 	{
 		return callObjectMethod(
 			"getColor",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::ColorFilter GradientDrawable::getColorFilter()
+	android::graphics::ColorFilter GradientDrawable::getColorFilter() const
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	JIntArray GradientDrawable::getColors()
+	JIntArray GradientDrawable::getColors() const
 	{
 		return callObjectMethod(
 			"getColors",
 			"()[I"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState GradientDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState GradientDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	JFloatArray GradientDrawable::getCornerRadii()
+	JFloatArray GradientDrawable::getCornerRadii() const
 	{
 		return callObjectMethod(
 			"getCornerRadii",
 			"()[F"
 		);
 	}
-	jfloat GradientDrawable::getCornerRadius()
+	jfloat GradientDrawable::getCornerRadius() const
 	{
 		return callMethod<jfloat>(
 			"getCornerRadius",
 			"()F"
 		);
 	}
-	jfloat GradientDrawable::getGradientCenterX()
+	jfloat GradientDrawable::getGradientCenterX() const
 	{
 		return callMethod<jfloat>(
 			"getGradientCenterX",
 			"()F"
 		);
 	}
-	jfloat GradientDrawable::getGradientCenterY()
+	jfloat GradientDrawable::getGradientCenterY() const
 	{
 		return callMethod<jfloat>(
 			"getGradientCenterY",
 			"()F"
 		);
 	}
-	jfloat GradientDrawable::getGradientRadius()
+	jfloat GradientDrawable::getGradientRadius() const
 	{
 		return callMethod<jfloat>(
 			"getGradientRadius",
 			"()F"
 		);
 	}
-	jint GradientDrawable::getGradientType()
+	jint GradientDrawable::getGradientType() const
 	{
 		return callMethod<jint>(
 			"getGradientType",
 			"()I"
 		);
 	}
-	jint GradientDrawable::getInnerRadius()
+	jint GradientDrawable::getInnerRadius() const
 	{
 		return callMethod<jint>(
 			"getInnerRadius",
 			"()I"
 		);
 	}
-	jfloat GradientDrawable::getInnerRadiusRatio()
+	jfloat GradientDrawable::getInnerRadiusRatio() const
 	{
 		return callMethod<jfloat>(
 			"getInnerRadiusRatio",
 			"()F"
 		);
 	}
-	jint GradientDrawable::getIntrinsicHeight()
+	jint GradientDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint GradientDrawable::getIntrinsicWidth()
+	jint GradientDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint GradientDrawable::getOpacity()
+	jint GradientDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Insets GradientDrawable::getOpticalInsets()
+	android::graphics::Insets GradientDrawable::getOpticalInsets() const
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable::getOrientation()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable::getOrientation() const
 	{
 		return callObjectMethod(
 			"getOrientation",
 			"()Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	void GradientDrawable::getOutline(android::graphics::Outline arg0)
+	void GradientDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -249,7 +249,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean GradientDrawable::getPadding(android::graphics::Rect arg0)
+	jboolean GradientDrawable::getPadding(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPadding",
@@ -257,35 +257,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint GradientDrawable::getShape()
+	jint GradientDrawable::getShape() const
 	{
 		return callMethod<jint>(
 			"getShape",
 			"()I"
 		);
 	}
-	jint GradientDrawable::getThickness()
+	jint GradientDrawable::getThickness() const
 	{
 		return callMethod<jint>(
 			"getThickness",
 			"()I"
 		);
 	}
-	jfloat GradientDrawable::getThicknessRatio()
+	jfloat GradientDrawable::getThicknessRatio() const
 	{
 		return callMethod<jfloat>(
 			"getThicknessRatio",
 			"()F"
 		);
 	}
-	jboolean GradientDrawable::getUseLevel()
+	jboolean GradientDrawable::getUseLevel() const
 	{
 		return callMethod<jboolean>(
 			"getUseLevel",
 			"()Z"
 		);
 	}
-	void GradientDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void GradientDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -296,21 +296,21 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean GradientDrawable::isStateful()
+	jboolean GradientDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable GradientDrawable::mutate()
+	android::graphics::drawable::Drawable GradientDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void GradientDrawable::setAlpha(jint arg0)
+	void GradientDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -318,7 +318,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setColor(android::content::res::ColorStateList arg0)
+	void GradientDrawable::setColor(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setColor",
@@ -326,7 +326,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void GradientDrawable::setColor(jint arg0)
+	void GradientDrawable::setColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setColor",
@@ -334,7 +334,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void GradientDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -342,7 +342,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void GradientDrawable::setColors(JIntArray arg0)
+	void GradientDrawable::setColors(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"setColors",
@@ -350,7 +350,7 @@ namespace android::graphics::drawable
 			arg0.object<jintArray>()
 		);
 	}
-	void GradientDrawable::setColors(JIntArray arg0, JFloatArray arg1)
+	void GradientDrawable::setColors(JIntArray arg0, JFloatArray arg1) const
 	{
 		callMethod<void>(
 			"setColors",
@@ -359,7 +359,7 @@ namespace android::graphics::drawable
 			arg1.object<jfloatArray>()
 		);
 	}
-	void GradientDrawable::setCornerRadii(JFloatArray arg0)
+	void GradientDrawable::setCornerRadii(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"setCornerRadii",
@@ -367,7 +367,7 @@ namespace android::graphics::drawable
 			arg0.object<jfloatArray>()
 		);
 	}
-	void GradientDrawable::setCornerRadius(jfloat arg0)
+	void GradientDrawable::setCornerRadius(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setCornerRadius",
@@ -375,7 +375,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setDither(jboolean arg0)
+	void GradientDrawable::setDither(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDither",
@@ -383,7 +383,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setGradientCenter(jfloat arg0, jfloat arg1)
+	void GradientDrawable::setGradientCenter(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setGradientCenter",
@@ -392,7 +392,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void GradientDrawable::setGradientRadius(jfloat arg0)
+	void GradientDrawable::setGradientRadius(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setGradientRadius",
@@ -400,7 +400,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setGradientType(jint arg0)
+	void GradientDrawable::setGradientType(jint arg0) const
 	{
 		callMethod<void>(
 			"setGradientType",
@@ -408,7 +408,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setInnerRadius(jint arg0)
+	void GradientDrawable::setInnerRadius(jint arg0) const
 	{
 		callMethod<void>(
 			"setInnerRadius",
@@ -416,7 +416,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setInnerRadiusRatio(jfloat arg0)
+	void GradientDrawable::setInnerRadiusRatio(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setInnerRadiusRatio",
@@ -424,7 +424,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setOrientation(android::graphics::drawable::GradientDrawable_Orientation arg0)
+	void GradientDrawable::setOrientation(android::graphics::drawable::GradientDrawable_Orientation arg0) const
 	{
 		callMethod<void>(
 			"setOrientation",
@@ -432,7 +432,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void GradientDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
+	void GradientDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setPadding",
@@ -443,7 +443,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void GradientDrawable::setShape(jint arg0)
+	void GradientDrawable::setShape(jint arg0) const
 	{
 		callMethod<void>(
 			"setShape",
@@ -451,7 +451,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setSize(jint arg0, jint arg1)
+	void GradientDrawable::setSize(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSize",
@@ -460,7 +460,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void GradientDrawable::setStroke(jint arg0, android::content::res::ColorStateList arg1)
+	void GradientDrawable::setStroke(jint arg0, android::content::res::ColorStateList arg1) const
 	{
 		callMethod<void>(
 			"setStroke",
@@ -469,7 +469,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	void GradientDrawable::setStroke(jint arg0, jint arg1)
+	void GradientDrawable::setStroke(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setStroke",
@@ -478,7 +478,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void GradientDrawable::setStroke(jint arg0, android::content::res::ColorStateList arg1, jfloat arg2, jfloat arg3)
+	void GradientDrawable::setStroke(jint arg0, android::content::res::ColorStateList arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setStroke",
@@ -489,7 +489,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void GradientDrawable::setStroke(jint arg0, jint arg1, jfloat arg2, jfloat arg3)
+	void GradientDrawable::setStroke(jint arg0, jint arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setStroke",
@@ -500,7 +500,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void GradientDrawable::setThickness(jint arg0)
+	void GradientDrawable::setThickness(jint arg0) const
 	{
 		callMethod<void>(
 			"setThickness",
@@ -508,7 +508,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setThicknessRatio(jfloat arg0)
+	void GradientDrawable::setThicknessRatio(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setThicknessRatio",
@@ -516,7 +516,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
+	void GradientDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -524,7 +524,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void GradientDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void GradientDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -532,7 +532,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void GradientDrawable::setUseLevel(jboolean arg0)
+	void GradientDrawable::setUseLevel(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUseLevel",

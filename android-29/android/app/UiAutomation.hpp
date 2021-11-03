@@ -62,31 +62,31 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		void adoptShellPermissionIdentity();
-		void adoptShellPermissionIdentity(JArray arg0);
-		void clearWindowAnimationFrameStats();
-		jboolean clearWindowContentFrameStats(jint arg0);
-		void dropShellPermissionIdentity();
-		android::view::accessibility::AccessibilityEvent executeAndWaitForEvent(JObject arg0, JObject arg1, jlong arg2);
-		android::os::ParcelFileDescriptor executeShellCommand(JString arg0);
-		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
-		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow();
-		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
-		android::view::WindowAnimationFrameStats getWindowAnimationFrameStats();
-		android::view::WindowContentFrameStats getWindowContentFrameStats(jint arg0);
-		JObject getWindows();
-		void grantRuntimePermission(JString arg0, JString arg1);
-		void grantRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2);
-		jboolean injectInputEvent(android::view::InputEvent arg0, jboolean arg1);
-		jboolean performGlobalAction(jint arg0);
-		void revokeRuntimePermission(JString arg0, JString arg1);
-		void revokeRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2);
-		void setOnAccessibilityEventListener(JObject arg0);
-		jboolean setRotation(jint arg0);
-		void setRunAsMonkey(jboolean arg0);
-		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0);
-		android::graphics::Bitmap takeScreenshot();
-		void waitForIdle(jlong arg0, jlong arg1);
+		void adoptShellPermissionIdentity() const;
+		void adoptShellPermissionIdentity(JArray arg0) const;
+		void clearWindowAnimationFrameStats() const;
+		jboolean clearWindowContentFrameStats(jint arg0) const;
+		void dropShellPermissionIdentity() const;
+		android::view::accessibility::AccessibilityEvent executeAndWaitForEvent(JObject arg0, JObject arg1, jlong arg2) const;
+		android::os::ParcelFileDescriptor executeShellCommand(JString arg0) const;
+		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0) const;
+		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow() const;
+		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo() const;
+		android::view::WindowAnimationFrameStats getWindowAnimationFrameStats() const;
+		android::view::WindowContentFrameStats getWindowContentFrameStats(jint arg0) const;
+		JObject getWindows() const;
+		void grantRuntimePermission(JString arg0, JString arg1) const;
+		void grantRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2) const;
+		jboolean injectInputEvent(android::view::InputEvent arg0, jboolean arg1) const;
+		jboolean performGlobalAction(jint arg0) const;
+		void revokeRuntimePermission(JString arg0, JString arg1) const;
+		void revokeRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2) const;
+		void setOnAccessibilityEventListener(JObject arg0) const;
+		jboolean setRotation(jint arg0) const;
+		void setRunAsMonkey(jboolean arg0) const;
+		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0) const;
+		android::graphics::Bitmap takeScreenshot() const;
+		void waitForIdle(jlong arg0, jlong arg1) const;
 	};
 } // namespace android::app
 

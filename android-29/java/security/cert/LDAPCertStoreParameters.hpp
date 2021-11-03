@@ -22,10 +22,10 @@ namespace java::security::cert
 		LDAPCertStoreParameters(JString arg0, jint arg1);
 		
 		// Methods
-		JObject clone();
-		jint getPort();
-		JString getServerName();
-		JString toString();
+		JObject clone() const;
+		jint getPort() const;
+		JString getServerName() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

@@ -22,14 +22,14 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	jint WifiAwareNetworkInfo::describeContents()
+	jint WifiAwareNetworkInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean WifiAwareNetworkInfo::equals(JObject arg0)
+	jboolean WifiAwareNetworkInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,42 +37,42 @@ namespace android::net::wifi::aware
 			arg0.object<jobject>()
 		);
 	}
-	java::net::Inet6Address WifiAwareNetworkInfo::getPeerIpv6Addr()
+	java::net::Inet6Address WifiAwareNetworkInfo::getPeerIpv6Addr() const
 	{
 		return callObjectMethod(
 			"getPeerIpv6Addr",
 			"()Ljava/net/Inet6Address;"
 		);
 	}
-	jint WifiAwareNetworkInfo::getPort()
+	jint WifiAwareNetworkInfo::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	jint WifiAwareNetworkInfo::getTransportProtocol()
+	jint WifiAwareNetworkInfo::getTransportProtocol() const
 	{
 		return callMethod<jint>(
 			"getTransportProtocol",
 			"()I"
 		);
 	}
-	jint WifiAwareNetworkInfo::hashCode()
+	jint WifiAwareNetworkInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString WifiAwareNetworkInfo::toString()
+	JString WifiAwareNetworkInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiAwareNetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiAwareNetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

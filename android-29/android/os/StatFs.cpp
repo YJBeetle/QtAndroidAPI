@@ -17,84 +17,84 @@ namespace android::os
 		) {}
 	
 	// Methods
-	jint StatFs::getAvailableBlocks()
+	jint StatFs::getAvailableBlocks() const
 	{
 		return callMethod<jint>(
 			"getAvailableBlocks",
 			"()I"
 		);
 	}
-	jlong StatFs::getAvailableBlocksLong()
+	jlong StatFs::getAvailableBlocksLong() const
 	{
 		return callMethod<jlong>(
 			"getAvailableBlocksLong",
 			"()J"
 		);
 	}
-	jlong StatFs::getAvailableBytes()
+	jlong StatFs::getAvailableBytes() const
 	{
 		return callMethod<jlong>(
 			"getAvailableBytes",
 			"()J"
 		);
 	}
-	jint StatFs::getBlockCount()
+	jint StatFs::getBlockCount() const
 	{
 		return callMethod<jint>(
 			"getBlockCount",
 			"()I"
 		);
 	}
-	jlong StatFs::getBlockCountLong()
+	jlong StatFs::getBlockCountLong() const
 	{
 		return callMethod<jlong>(
 			"getBlockCountLong",
 			"()J"
 		);
 	}
-	jint StatFs::getBlockSize()
+	jint StatFs::getBlockSize() const
 	{
 		return callMethod<jint>(
 			"getBlockSize",
 			"()I"
 		);
 	}
-	jlong StatFs::getBlockSizeLong()
+	jlong StatFs::getBlockSizeLong() const
 	{
 		return callMethod<jlong>(
 			"getBlockSizeLong",
 			"()J"
 		);
 	}
-	jint StatFs::getFreeBlocks()
+	jint StatFs::getFreeBlocks() const
 	{
 		return callMethod<jint>(
 			"getFreeBlocks",
 			"()I"
 		);
 	}
-	jlong StatFs::getFreeBlocksLong()
+	jlong StatFs::getFreeBlocksLong() const
 	{
 		return callMethod<jlong>(
 			"getFreeBlocksLong",
 			"()J"
 		);
 	}
-	jlong StatFs::getFreeBytes()
+	jlong StatFs::getFreeBytes() const
 	{
 		return callMethod<jlong>(
 			"getFreeBytes",
 			"()J"
 		);
 	}
-	jlong StatFs::getTotalBytes()
+	jlong StatFs::getTotalBytes() const
 	{
 		return callMethod<jlong>(
 			"getTotalBytes",
 			"()J"
 		);
 	}
-	void StatFs::restat(JString arg0)
+	void StatFs::restat(JString arg0) const
 	{
 		callMethod<void>(
 			"restat",

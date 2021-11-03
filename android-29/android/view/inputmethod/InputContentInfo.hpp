@@ -32,13 +32,13 @@ namespace android::view::inputmethod
 		InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1, android::net::Uri arg2);
 		
 		// Methods
-		jint describeContents();
-		android::net::Uri getContentUri();
-		android::content::ClipDescription getDescription();
-		android::net::Uri getLinkUri();
-		void releasePermission();
-		void requestPermission();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::net::Uri getContentUri() const;
+		android::content::ClipDescription getDescription() const;
+		android::net::Uri getLinkUri() const;
+		void releasePermission() const;
+		void requestPermission() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

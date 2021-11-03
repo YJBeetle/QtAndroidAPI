@@ -20,24 +20,24 @@ namespace android::renderscript
 		Matrix3f(JFloatArray arg0);
 		
 		// Methods
-		jfloat get(jint arg0, jint arg1);
-		JFloatArray getArray();
-		void load(android::renderscript::Matrix3f arg0);
-		void loadIdentity();
-		void loadMultiply(android::renderscript::Matrix3f arg0, android::renderscript::Matrix3f arg1);
-		void loadRotate(jfloat arg0);
-		void loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void loadScale(jfloat arg0, jfloat arg1);
-		void loadScale(jfloat arg0, jfloat arg1, jfloat arg2);
-		void loadTranslate(jfloat arg0, jfloat arg1);
-		void multiply(android::renderscript::Matrix3f arg0);
-		void rotate(jfloat arg0);
-		void rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void scale(jfloat arg0, jfloat arg1);
-		void scale(jfloat arg0, jfloat arg1, jfloat arg2);
-		void set(jint arg0, jint arg1, jfloat arg2);
-		void translate(jfloat arg0, jfloat arg1);
-		void transpose();
+		jfloat get(jint arg0, jint arg1) const;
+		JFloatArray getArray() const;
+		void load(android::renderscript::Matrix3f arg0) const;
+		void loadIdentity() const;
+		void loadMultiply(android::renderscript::Matrix3f arg0, android::renderscript::Matrix3f arg1) const;
+		void loadRotate(jfloat arg0) const;
+		void loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void loadScale(jfloat arg0, jfloat arg1) const;
+		void loadScale(jfloat arg0, jfloat arg1, jfloat arg2) const;
+		void loadTranslate(jfloat arg0, jfloat arg1) const;
+		void multiply(android::renderscript::Matrix3f arg0) const;
+		void rotate(jfloat arg0) const;
+		void rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void scale(jfloat arg0, jfloat arg1) const;
+		void scale(jfloat arg0, jfloat arg1, jfloat arg2) const;
+		void set(jint arg0, jint arg1, jfloat arg2) const;
+		void translate(jfloat arg0, jfloat arg1) const;
+		void transpose() const;
 	};
 } // namespace android::renderscript
 

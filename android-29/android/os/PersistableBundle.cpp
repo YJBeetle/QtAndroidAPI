@@ -46,28 +46,28 @@ namespace android::os
 		) {}
 	
 	// Methods
-	JObject PersistableBundle::clone()
+	JObject PersistableBundle::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::os::PersistableBundle PersistableBundle::deepCopy()
+	android::os::PersistableBundle PersistableBundle::deepCopy() const
 	{
 		return callObjectMethod(
 			"deepCopy",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jint PersistableBundle::describeContents()
+	jint PersistableBundle::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::PersistableBundle PersistableBundle::getPersistableBundle(JString arg0)
+	android::os::PersistableBundle PersistableBundle::getPersistableBundle(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPersistableBundle",
@@ -75,7 +75,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	void PersistableBundle::putPersistableBundle(JString arg0, android::os::PersistableBundle arg1)
+	void PersistableBundle::putPersistableBundle(JString arg0, android::os::PersistableBundle arg1) const
 	{
 		callMethod<void>(
 			"putPersistableBundle",
@@ -84,14 +84,14 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	JString PersistableBundle::toString()
+	JString PersistableBundle::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PersistableBundle::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PersistableBundle::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

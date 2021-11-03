@@ -31,28 +31,28 @@ namespace android::view
 		ActionMode();
 		
 		// Methods
-		void finish();
-		android::view::View getCustomView();
-		JObject getMenu();
-		android::view::MenuInflater getMenuInflater();
-		JString getSubtitle();
-		JObject getTag();
-		JString getTitle();
-		jboolean getTitleOptionalHint();
-		jint getType();
-		void hide(jlong arg0);
-		void invalidate();
-		void invalidateContentRect();
-		jboolean isTitleOptional();
-		void onWindowFocusChanged(jboolean arg0);
-		void setCustomView(android::view::View arg0);
-		void setSubtitle(jint arg0);
-		void setSubtitle(JString arg0);
-		void setTag(JObject arg0);
-		void setTitle(jint arg0);
-		void setTitle(JString arg0);
-		void setTitleOptionalHint(jboolean arg0);
-		void setType(jint arg0);
+		void finish() const;
+		android::view::View getCustomView() const;
+		JObject getMenu() const;
+		android::view::MenuInflater getMenuInflater() const;
+		JString getSubtitle() const;
+		JObject getTag() const;
+		JString getTitle() const;
+		jboolean getTitleOptionalHint() const;
+		jint getType() const;
+		void hide(jlong arg0) const;
+		void invalidate() const;
+		void invalidateContentRect() const;
+		jboolean isTitleOptional() const;
+		void onWindowFocusChanged(jboolean arg0) const;
+		void setCustomView(android::view::View arg0) const;
+		void setSubtitle(jint arg0) const;
+		void setSubtitle(JString arg0) const;
+		void setTag(JObject arg0) const;
+		void setTitle(jint arg0) const;
+		void setTitle(JString arg0) const;
+		void setTitleOptionalHint(jboolean arg0) const;
+		void setType(jint arg0) const;
 	};
 } // namespace android::view
 

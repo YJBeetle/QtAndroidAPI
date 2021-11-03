@@ -22,12 +22,12 @@ namespace javax::crypto::spec
 		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getIV();
-		jint getRounds();
-		jint getVersion();
-		jint getWordSize();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JByteArray getIV() const;
+		jint getRounds() const;
+		jint getVersion() const;
+		jint getWordSize() const;
+		jint hashCode() const;
 	};
 } // namespace javax::crypto::spec
 

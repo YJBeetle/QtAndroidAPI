@@ -22,10 +22,10 @@ namespace android::media::midi
 		// Constructors
 		
 		// Methods
-		void close();
-		jint getPortNumber();
-		void onFlush();
-		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3);
+		void close() const;
+		jint getPortNumber() const;
+		void onFlush() const;
+		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const;
 	};
 } // namespace android::media::midi
 

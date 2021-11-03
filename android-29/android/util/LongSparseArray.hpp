@@ -21,22 +21,22 @@ namespace android::util
 		LongSparseArray(jint arg0);
 		
 		// Methods
-		void append(jlong arg0, JObject arg1);
-		void clear();
-		android::util::LongSparseArray clone();
-		void _delete(jlong arg0);
-		JObject get(jlong arg0);
-		JObject get(jlong arg0, JObject arg1);
-		jint indexOfKey(jlong arg0);
-		jint indexOfValue(JObject arg0);
-		jlong keyAt(jint arg0);
-		void put(jlong arg0, JObject arg1);
-		void remove(jlong arg0);
-		void removeAt(jint arg0);
-		void setValueAt(jint arg0, JObject arg1);
-		jint size();
-		JString toString();
-		JObject valueAt(jint arg0);
+		void append(jlong arg0, JObject arg1) const;
+		void clear() const;
+		android::util::LongSparseArray clone() const;
+		void _delete(jlong arg0) const;
+		JObject get(jlong arg0) const;
+		JObject get(jlong arg0, JObject arg1) const;
+		jint indexOfKey(jlong arg0) const;
+		jint indexOfValue(JObject arg0) const;
+		jlong keyAt(jint arg0) const;
+		void put(jlong arg0, JObject arg1) const;
+		void remove(jlong arg0) const;
+		void removeAt(jint arg0) const;
+		void setValueAt(jint arg0, JObject arg1) const;
+		jint size() const;
+		JString toString() const;
+		JObject valueAt(jint arg0) const;
 	};
 } // namespace android::util
 

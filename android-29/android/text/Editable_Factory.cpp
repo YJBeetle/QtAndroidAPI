@@ -24,7 +24,7 @@ namespace android::text
 			"()Landroid/text/Editable$Factory;"
 		);
 	}
-	JObject Editable_Factory::newEditable(JString arg0)
+	JObject Editable_Factory::newEditable(JString arg0) const
 	{
 		return callObjectMethod(
 			"newEditable",

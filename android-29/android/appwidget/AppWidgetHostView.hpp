@@ -60,15 +60,15 @@ namespace android::appwidget
 		
 		// Methods
 		static android::graphics::Rect getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2);
-		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0);
-		jint getAppWidgetId();
-		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo();
-		void setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1);
-		void setExecutor(JObject arg0);
-		void setOnLightBackground(jboolean arg0);
-		void updateAppWidget(android::widget::RemoteViews arg0);
-		void updateAppWidgetOptions(android::os::Bundle arg0);
-		void updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0) const;
+		jint getAppWidgetId() const;
+		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo() const;
+		void setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1) const;
+		void setExecutor(JObject arg0) const;
+		void setOnLightBackground(jboolean arg0) const;
+		void updateAppWidget(android::widget::RemoteViews arg0) const;
+		void updateAppWidgetOptions(android::os::Bundle arg0) const;
+		void updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
 	};
 } // namespace android::appwidget
 

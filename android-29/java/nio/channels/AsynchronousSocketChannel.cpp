@@ -34,7 +34,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::bind(java::net::SocketAddress arg0) const
 	{
 		return callObjectMethod(
 			"bind",
@@ -42,7 +42,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	JObject AsynchronousSocketChannel::connect(java::net::SocketAddress arg0)
+	JObject AsynchronousSocketChannel::connect(java::net::SocketAddress arg0) const
 	{
 		return callObjectMethod(
 			"connect",
@@ -50,7 +50,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	void AsynchronousSocketChannel::connect(java::net::SocketAddress arg0, JObject arg1, JObject arg2)
+	void AsynchronousSocketChannel::connect(java::net::SocketAddress arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"connect",
@@ -60,28 +60,28 @@ namespace java::nio::channels
 			arg2.object()
 		);
 	}
-	java::net::SocketAddress AsynchronousSocketChannel::getLocalAddress()
+	java::net::SocketAddress AsynchronousSocketChannel::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	java::net::SocketAddress AsynchronousSocketChannel::getRemoteAddress()
+	java::net::SocketAddress AsynchronousSocketChannel::getRemoteAddress() const
 	{
 		return callObjectMethod(
 			"getRemoteAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousSocketChannel::provider()
+	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousSocketChannel::provider() const
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	JObject AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0)
+	JObject AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0) const
 	{
 		return callObjectMethod(
 			"read",
@@ -89,7 +89,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2)
+	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"read",
@@ -99,7 +99,7 @@ namespace java::nio::channels
 			arg2.object()
 		);
 	}
-	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4)
+	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"read",
@@ -111,7 +111,7 @@ namespace java::nio::channels
 			arg4.object()
 		);
 	}
-	void AsynchronousSocketChannel::read(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6)
+	void AsynchronousSocketChannel::read(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6) const
 	{
 		callMethod<void>(
 			"read",
@@ -125,7 +125,7 @@ namespace java::nio::channels
 			arg6.object()
 		);
 	}
-	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::setOption(JObject arg0, JObject arg1)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::setOption(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setOption",
@@ -134,21 +134,21 @@ namespace java::nio::channels
 			arg1.object<jobject>()
 		);
 	}
-	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::shutdownInput()
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::shutdownInput() const
 	{
 		return callObjectMethod(
 			"shutdownInput",
 			"()Ljava/nio/channels/AsynchronousSocketChannel;"
 		);
 	}
-	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::shutdownOutput()
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::shutdownOutput() const
 	{
 		return callObjectMethod(
 			"shutdownOutput",
 			"()Ljava/nio/channels/AsynchronousSocketChannel;"
 		);
 	}
-	JObject AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0)
+	JObject AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0) const
 	{
 		return callObjectMethod(
 			"write",
@@ -156,7 +156,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2)
+	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -166,7 +166,7 @@ namespace java::nio::channels
 			arg2.object()
 		);
 	}
-	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4)
+	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"write",
@@ -178,7 +178,7 @@ namespace java::nio::channels
 			arg4.object()
 		);
 	}
-	void AsynchronousSocketChannel::write(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6)
+	void AsynchronousSocketChannel::write(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6) const
 	{
 		callMethod<void>(
 			"write",

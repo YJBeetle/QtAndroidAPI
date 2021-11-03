@@ -23,7 +23,7 @@ namespace java::beans
 		) {}
 	
 	// Methods
-	jint IndexedPropertyChangeEvent::getIndex()
+	jint IndexedPropertyChangeEvent::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",

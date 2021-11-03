@@ -17,14 +17,14 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	android::companion::WifiDeviceFilter WifiDeviceFilter_Builder::build()
+	android::companion::WifiDeviceFilter WifiDeviceFilter_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/companion/WifiDeviceFilter;"
 		);
 	}
-	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0)
+	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"setNamePattern",

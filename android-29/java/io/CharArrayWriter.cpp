@@ -25,7 +25,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	java::io::CharArrayWriter CharArrayWriter::append(jchar arg0)
+	java::io::CharArrayWriter CharArrayWriter::append(jchar arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -33,7 +33,7 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::CharArrayWriter CharArrayWriter::append(JString arg0)
+	java::io::CharArrayWriter CharArrayWriter::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -41,7 +41,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	java::io::CharArrayWriter CharArrayWriter::append(JString arg0, jint arg1, jint arg2)
+	java::io::CharArrayWriter CharArrayWriter::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -51,49 +51,49 @@ namespace java::io
 			arg2
 		);
 	}
-	void CharArrayWriter::close()
+	void CharArrayWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void CharArrayWriter::flush()
+	void CharArrayWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void CharArrayWriter::reset()
+	void CharArrayWriter::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jint CharArrayWriter::size()
+	jint CharArrayWriter::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JCharArray CharArrayWriter::toCharArray()
+	JCharArray CharArrayWriter::toCharArray() const
 	{
 		return callObjectMethod(
 			"toCharArray",
 			"()[C"
 		);
 	}
-	JString CharArrayWriter::toString()
+	JString CharArrayWriter::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CharArrayWriter::write(jint arg0)
+	void CharArrayWriter::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -101,7 +101,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void CharArrayWriter::write(JCharArray arg0, jint arg1, jint arg2)
+	void CharArrayWriter::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -111,7 +111,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void CharArrayWriter::write(JString arg0, jint arg1, jint arg2)
+	void CharArrayWriter::write(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -121,7 +121,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void CharArrayWriter::writeTo(java::io::Writer arg0)
+	void CharArrayWriter::writeTo(java::io::Writer arg0) const
 	{
 		callMethod<void>(
 			"writeTo",

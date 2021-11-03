@@ -31,11 +31,11 @@ namespace android::view::accessibility
 		AccessibilityNodeInfo_TouchDelegateInfo(JObject arg0);
 		
 		// Methods
-		jint describeContents();
-		android::graphics::Region getRegionAt(jint arg0);
-		jint getRegionCount();
-		android::view::accessibility::AccessibilityNodeInfo getTargetForRegion(android::graphics::Region arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::graphics::Region getRegionAt(jint arg0) const;
+		jint getRegionCount() const;
+		android::view::accessibility::AccessibilityNodeInfo getTargetForRegion(android::graphics::Region arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::accessibility
 

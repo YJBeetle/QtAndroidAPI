@@ -31,14 +31,14 @@ namespace android::net::sip
 		) {}
 	
 	// Methods
-	android::net::sip::SipProfile SipProfile_Builder::build()
+	android::net::sip::SipProfile SipProfile_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setAuthUserName(JString arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setAuthUserName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setAuthUserName",
@@ -46,7 +46,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setAutoRegistration(jboolean arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setAutoRegistration(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAutoRegistration",
@@ -54,7 +54,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setDisplayName(JString arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setDisplayName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDisplayName",
@@ -62,7 +62,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setOutboundProxy(JString arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setOutboundProxy(JString arg0) const
 	{
 		return callObjectMethod(
 			"setOutboundProxy",
@@ -70,7 +70,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setPassword(JString arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setPassword(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPassword",
@@ -78,7 +78,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setPort(jint arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setPort(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPort",
@@ -86,7 +86,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setProfileName(JString arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setProfileName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setProfileName",
@@ -94,7 +94,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setProtocol(JString arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setProtocol(JString arg0) const
 	{
 		return callObjectMethod(
 			"setProtocol",
@@ -102,7 +102,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipProfile_Builder SipProfile_Builder::setSendKeepAlive(jboolean arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setSendKeepAlive(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setSendKeepAlive",

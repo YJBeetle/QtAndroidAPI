@@ -22,28 +22,28 @@ namespace android::database
 		) {}
 	
 	// Methods
-	jboolean CursorJoiner::hasNext()
+	jboolean CursorJoiner::hasNext() const
 	{
 		return callMethod<jboolean>(
 			"hasNext",
 			"()Z"
 		);
 	}
-	JObject CursorJoiner::iterator()
+	JObject CursorJoiner::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	android::database::CursorJoiner_Result CursorJoiner::next()
+	android::database::CursorJoiner_Result CursorJoiner::next() const
 	{
 		return callObjectMethod(
 			"next",
 			"()Landroid/database/CursorJoiner$Result;"
 		);
 	}
-	void CursorJoiner::remove()
+	void CursorJoiner::remove() const
 	{
 		callMethod<void>(
 			"remove",

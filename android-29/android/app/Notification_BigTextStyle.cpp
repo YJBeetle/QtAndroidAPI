@@ -23,7 +23,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_BigTextStyle Notification_BigTextStyle::bigText(JString arg0)
+	android::app::Notification_BigTextStyle Notification_BigTextStyle::bigText(JString arg0) const
 	{
 		return callObjectMethod(
 			"bigText",
@@ -31,7 +31,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_BigTextStyle Notification_BigTextStyle::setBigContentTitle(JString arg0)
+	android::app::Notification_BigTextStyle Notification_BigTextStyle::setBigContentTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setBigContentTitle",
@@ -39,7 +39,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_BigTextStyle Notification_BigTextStyle::setSummaryText(JString arg0)
+	android::app::Notification_BigTextStyle Notification_BigTextStyle::setSummaryText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSummaryText",

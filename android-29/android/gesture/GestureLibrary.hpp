@@ -30,19 +30,19 @@ namespace android::gesture
 		// Constructors
 		
 		// Methods
-		void addGesture(JString arg0, android::gesture::Gesture arg1);
-		JObject getGestureEntries();
-		java::util::ArrayList getGestures(JString arg0);
-		jint getOrientationStyle();
-		jint getSequenceType();
-		jboolean isReadOnly();
-		jboolean load();
-		java::util::ArrayList recognize(android::gesture::Gesture arg0);
-		void removeEntry(JString arg0);
-		void removeGesture(JString arg0, android::gesture::Gesture arg1);
-		jboolean save();
-		void setOrientationStyle(jint arg0);
-		void setSequenceType(jint arg0);
+		void addGesture(JString arg0, android::gesture::Gesture arg1) const;
+		JObject getGestureEntries() const;
+		java::util::ArrayList getGestures(JString arg0) const;
+		jint getOrientationStyle() const;
+		jint getSequenceType() const;
+		jboolean isReadOnly() const;
+		jboolean load() const;
+		java::util::ArrayList recognize(android::gesture::Gesture arg0) const;
+		void removeEntry(JString arg0) const;
+		void removeGesture(JString arg0, android::gesture::Gesture arg1) const;
+		jboolean save() const;
+		void setOrientationStyle(jint arg0) const;
+		void setSequenceType(jint arg0) const;
 	};
 } // namespace android::gesture
 

@@ -22,14 +22,14 @@ namespace javax::crypto
 		) {}
 	
 	// Methods
-	JString SealedObject::getAlgorithm()
+	JString SealedObject::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SealedObject::getObject(JObject arg0)
+	JObject SealedObject::getObject(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getObject",
@@ -37,7 +37,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	JObject SealedObject::getObject(javax::crypto::Cipher arg0)
+	JObject SealedObject::getObject(javax::crypto::Cipher arg0) const
 	{
 		return callObjectMethod(
 			"getObject",
@@ -45,7 +45,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	JObject SealedObject::getObject(JObject arg0, JString arg1)
+	JObject SealedObject::getObject(JObject arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getObject",

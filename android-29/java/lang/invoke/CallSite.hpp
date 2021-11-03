@@ -33,10 +33,10 @@ namespace java::lang::invoke
 		// Constructors
 		
 		// Methods
-		java::lang::invoke::MethodHandle dynamicInvoker();
-		java::lang::invoke::MethodHandle getTarget();
-		void setTarget(java::lang::invoke::MethodHandle arg0);
-		java::lang::invoke::MethodType type();
+		java::lang::invoke::MethodHandle dynamicInvoker() const;
+		java::lang::invoke::MethodHandle getTarget() const;
+		void setTarget(java::lang::invoke::MethodHandle arg0) const;
+		java::lang::invoke::MethodType type() const;
 	};
 } // namespace java::lang::invoke
 

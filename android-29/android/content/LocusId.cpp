@@ -27,14 +27,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jint LocusId::describeContents()
+	jint LocusId::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean LocusId::equals(JObject arg0)
+	jboolean LocusId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -42,28 +42,28 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	JString LocusId::getId()
+	JString LocusId::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint LocusId::hashCode()
+	jint LocusId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString LocusId::toString()
+	JString LocusId::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LocusId::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LocusId::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

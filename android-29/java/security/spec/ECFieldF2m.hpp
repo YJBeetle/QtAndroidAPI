@@ -26,12 +26,12 @@ namespace java::security::spec
 		ECFieldF2m(jint arg0, java::math::BigInteger arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getFieldSize();
-		jint getM();
-		JIntArray getMidTermsOfReductionPolynomial();
-		java::math::BigInteger getReductionPolynomial();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getFieldSize() const;
+		jint getM() const;
+		JIntArray getMidTermsOfReductionPolynomial() const;
+		java::math::BigInteger getReductionPolynomial() const;
+		jint hashCode() const;
 	};
 } // namespace java::security::spec
 

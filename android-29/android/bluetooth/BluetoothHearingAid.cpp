@@ -22,14 +22,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	JObject BluetoothHearingAid::getConnectedDevices()
+	JObject BluetoothHearingAid::getConnectedDevices() const
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint BluetoothHearingAid::getConnectionState(android::bluetooth::BluetoothDevice arg0)
+	jint BluetoothHearingAid::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
 	{
 		return callMethod<jint>(
 			"getConnectionState",
@@ -37,7 +37,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothHearingAid::getDevicesMatchingConnectionStates(JIntArray arg0)
+	JObject BluetoothHearingAid::getDevicesMatchingConnectionStates(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

@@ -34,17 +34,17 @@ namespace android::view::textservice
 		SpellCheckerSubtype(jint arg0, JString arg1, JString arg2);
 		
 		// Methods
-		jboolean containsExtraValueKey(JString arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2);
-		JString getExtraValue();
-		JString getExtraValueOf(JString arg0);
-		JString getLanguageTag();
-		JString getLocale();
-		jint getNameResId();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean containsExtraValueKey(JString arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2) const;
+		JString getExtraValue() const;
+		JString getExtraValueOf(JString arg0) const;
+		JString getLanguageTag() const;
+		JString getLocale() const;
+		jint getNameResId() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textservice
 

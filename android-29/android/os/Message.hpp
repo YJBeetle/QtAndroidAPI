@@ -51,21 +51,21 @@ namespace android::os
 		static android::os::Message obtain(android::os::Handler arg0, jint arg1, JObject arg2);
 		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3);
 		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, JObject arg4);
-		void copyFrom(android::os::Message arg0);
-		jint describeContents();
-		JObject getCallback();
-		android::os::Bundle getData();
-		android::os::Handler getTarget();
-		jlong getWhen();
-		jboolean isAsynchronous();
-		android::os::Bundle peekData();
-		void recycle();
-		void sendToTarget();
-		void setAsynchronous(jboolean arg0);
-		void setData(android::os::Bundle arg0);
-		void setTarget(android::os::Handler arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void copyFrom(android::os::Message arg0) const;
+		jint describeContents() const;
+		JObject getCallback() const;
+		android::os::Bundle getData() const;
+		android::os::Handler getTarget() const;
+		jlong getWhen() const;
+		jboolean isAsynchronous() const;
+		android::os::Bundle peekData() const;
+		void recycle() const;
+		void sendToTarget() const;
+		void setAsynchronous(jboolean arg0) const;
+		void setData(android::os::Bundle arg0) const;
+		void setTarget(android::os::Handler arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

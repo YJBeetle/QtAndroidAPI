@@ -262,14 +262,14 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jlong BatteryManager::computeChargeTimeRemaining()
+	jlong BatteryManager::computeChargeTimeRemaining() const
 	{
 		return callMethod<jlong>(
 			"computeChargeTimeRemaining",
 			"()J"
 		);
 	}
-	jint BatteryManager::getIntProperty(jint arg0)
+	jint BatteryManager::getIntProperty(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getIntProperty",
@@ -277,7 +277,7 @@ namespace android::os
 			arg0
 		);
 	}
-	jlong BatteryManager::getLongProperty(jint arg0)
+	jlong BatteryManager::getLongProperty(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getLongProperty",
@@ -285,7 +285,7 @@ namespace android::os
 			arg0
 		);
 	}
-	jboolean BatteryManager::isCharging()
+	jboolean BatteryManager::isCharging() const
 	{
 		return callMethod<jboolean>(
 			"isCharging",

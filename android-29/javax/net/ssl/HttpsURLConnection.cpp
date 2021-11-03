@@ -49,63 +49,63 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	JString HttpsURLConnection::getCipherSuite()
+	JString HttpsURLConnection::getCipherSuite() const
 	{
 		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject HttpsURLConnection::getHostnameVerifier()
+	JObject HttpsURLConnection::getHostnameVerifier() const
 	{
 		return callObjectMethod(
 			"getHostnameVerifier",
 			"()Ljavax/net/ssl/HostnameVerifier;"
 		);
 	}
-	JArray HttpsURLConnection::getLocalCertificates()
+	JArray HttpsURLConnection::getLocalCertificates() const
 	{
 		return callObjectMethod(
 			"getLocalCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JObject HttpsURLConnection::getLocalPrincipal()
+	JObject HttpsURLConnection::getLocalPrincipal() const
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	JObject HttpsURLConnection::getPeerPrincipal()
+	JObject HttpsURLConnection::getPeerPrincipal() const
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	java::util::Optional HttpsURLConnection::getSSLSession()
+	java::util::Optional HttpsURLConnection::getSSLSession() const
 	{
 		return callObjectMethod(
 			"getSSLSession",
 			"()Ljava/util/Optional;"
 		);
 	}
-	javax::net::ssl::SSLSocketFactory HttpsURLConnection::getSSLSocketFactory()
+	javax::net::ssl::SSLSocketFactory HttpsURLConnection::getSSLSocketFactory() const
 	{
 		return callObjectMethod(
 			"getSSLSocketFactory",
 			"()Ljavax/net/ssl/SSLSocketFactory;"
 		);
 	}
-	JArray HttpsURLConnection::getServerCertificates()
+	JArray HttpsURLConnection::getServerCertificates() const
 	{
 		return callObjectMethod(
 			"getServerCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	void HttpsURLConnection::setHostnameVerifier(JObject arg0)
+	void HttpsURLConnection::setHostnameVerifier(JObject arg0) const
 	{
 		callMethod<void>(
 			"setHostnameVerifier",
@@ -113,7 +113,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void HttpsURLConnection::setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0)
+	void HttpsURLConnection::setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0) const
 	{
 		callMethod<void>(
 			"setSSLSocketFactory",

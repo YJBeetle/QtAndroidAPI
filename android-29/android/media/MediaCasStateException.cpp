@@ -11,7 +11,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaCasStateException::getDiagnosticInfo()
+	JString MediaCasStateException::getDiagnosticInfo() const
 	{
 		return callObjectMethod(
 			"getDiagnosticInfo",

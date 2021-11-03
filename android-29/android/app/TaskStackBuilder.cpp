@@ -27,7 +27,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::TaskStackBuilder TaskStackBuilder::addNextIntent(android::content::Intent arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addNextIntent(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"addNextIntent",
@@ -35,7 +35,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::TaskStackBuilder TaskStackBuilder::addNextIntentWithParentStack(android::content::Intent arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addNextIntentWithParentStack(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"addNextIntentWithParentStack",
@@ -43,7 +43,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::app::Activity arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::app::Activity arg0) const
 	{
 		return callObjectMethod(
 			"addParentStack",
@@ -51,7 +51,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::content::ComponentName arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"addParentStack",
@@ -59,7 +59,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(JClass arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(JClass arg0) const
 	{
 		return callObjectMethod(
 			"addParentStack",
@@ -67,7 +67,7 @@ namespace android::app
 			arg0.object<jclass>()
 		);
 	}
-	android::content::Intent TaskStackBuilder::editIntentAt(jint arg0)
+	android::content::Intent TaskStackBuilder::editIntentAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"editIntentAt",
@@ -75,21 +75,21 @@ namespace android::app
 			arg0
 		);
 	}
-	jint TaskStackBuilder::getIntentCount()
+	jint TaskStackBuilder::getIntentCount() const
 	{
 		return callMethod<jint>(
 			"getIntentCount",
 			"()I"
 		);
 	}
-	JArray TaskStackBuilder::getIntents()
+	JArray TaskStackBuilder::getIntents() const
 	{
 		return callObjectMethod(
 			"getIntents",
 			"()[Landroid/content/Intent;"
 		);
 	}
-	android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1)
+	android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPendingIntent",
@@ -98,7 +98,7 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2)
+	android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"getPendingIntent",
@@ -108,14 +108,14 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void TaskStackBuilder::startActivities()
+	void TaskStackBuilder::startActivities() const
 	{
 		callMethod<void>(
 			"startActivities",
 			"()V"
 		);
 	}
-	void TaskStackBuilder::startActivities(android::os::Bundle arg0)
+	void TaskStackBuilder::startActivities(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"startActivities",

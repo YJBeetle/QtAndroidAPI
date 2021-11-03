@@ -71,7 +71,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	java::lang::StringBuilder IDNA::labelToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::labelToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const
 	{
 		return callObjectMethod(
 			"labelToASCII",
@@ -81,7 +81,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuilder IDNA::labelToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::labelToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const
 	{
 		return callObjectMethod(
 			"labelToUnicode",
@@ -91,7 +91,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuilder IDNA::nameToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::nameToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const
 	{
 		return callObjectMethod(
 			"nameToASCII",
@@ -101,7 +101,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuilder IDNA::nameToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::nameToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2) const
 	{
 		return callObjectMethod(
 			"nameToUnicode",

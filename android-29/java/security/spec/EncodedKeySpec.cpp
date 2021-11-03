@@ -18,21 +18,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	JString EncodedKeySpec::getAlgorithm()
+	JString EncodedKeySpec::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray EncodedKeySpec::getEncoded()
+	JByteArray EncodedKeySpec::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JString EncodedKeySpec::getFormat()
+	JString EncodedKeySpec::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",

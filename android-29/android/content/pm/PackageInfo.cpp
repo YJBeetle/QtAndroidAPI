@@ -248,21 +248,21 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint PackageInfo::describeContents()
+	jint PackageInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong PackageInfo::getLongVersionCode()
+	jlong PackageInfo::getLongVersionCode() const
 	{
 		return callMethod<jlong>(
 			"getLongVersionCode",
 			"()J"
 		);
 	}
-	void PackageInfo::setLongVersionCode(jlong arg0)
+	void PackageInfo::setLongVersionCode(jlong arg0) const
 	{
 		callMethod<void>(
 			"setLongVersionCode",
@@ -270,14 +270,14 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	JString PackageInfo::toString()
+	JString PackageInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PackageInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PackageInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

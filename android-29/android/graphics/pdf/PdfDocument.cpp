@@ -18,14 +18,14 @@ namespace android::graphics::pdf
 		) {}
 	
 	// Methods
-	void PdfDocument::close()
+	void PdfDocument::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PdfDocument::finishPage(android::graphics::pdf::PdfDocument_Page arg0)
+	void PdfDocument::finishPage(android::graphics::pdf::PdfDocument_Page arg0) const
 	{
 		callMethod<void>(
 			"finishPage",
@@ -33,14 +33,14 @@ namespace android::graphics::pdf
 			arg0.object()
 		);
 	}
-	JObject PdfDocument::getPages()
+	JObject PdfDocument::getPages() const
 	{
 		return callObjectMethod(
 			"getPages",
 			"()Ljava/util/List;"
 		);
 	}
-	android::graphics::pdf::PdfDocument_Page PdfDocument::startPage(android::graphics::pdf::PdfDocument_PageInfo arg0)
+	android::graphics::pdf::PdfDocument_Page PdfDocument::startPage(android::graphics::pdf::PdfDocument_PageInfo arg0) const
 	{
 		return callObjectMethod(
 			"startPage",
@@ -48,7 +48,7 @@ namespace android::graphics::pdf
 			arg0.object()
 		);
 	}
-	void PdfDocument::writeTo(java::io::OutputStream arg0)
+	void PdfDocument::writeTo(java::io::OutputStream arg0) const
 	{
 		callMethod<void>(
 			"writeTo",

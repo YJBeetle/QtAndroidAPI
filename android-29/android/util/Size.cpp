@@ -28,7 +28,7 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Size::equals(JObject arg0)
+	jboolean Size::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,28 +36,28 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Size::getHeight()
+	jint Size::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint Size::getWidth()
+	jint Size::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jint Size::hashCode()
+	jint Size::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Size::toString()
+	JString Size::toString() const
 	{
 		return callObjectMethod(
 			"toString",

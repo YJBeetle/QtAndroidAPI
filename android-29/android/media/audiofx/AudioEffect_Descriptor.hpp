@@ -30,8 +30,8 @@ namespace android::media::audiofx
 		AudioEffect_Descriptor(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::media::audiofx
 

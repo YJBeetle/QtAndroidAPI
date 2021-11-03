@@ -23,21 +23,21 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint SubscriptSpan::describeContents()
+	jint SubscriptSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint SubscriptSpan::getSpanTypeId()
+	jint SubscriptSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void SubscriptSpan::updateDrawState(android::text::TextPaint arg0)
+	void SubscriptSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -45,7 +45,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void SubscriptSpan::updateMeasureState(android::text::TextPaint arg0)
+	void SubscriptSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -53,7 +53,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void SubscriptSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SubscriptSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

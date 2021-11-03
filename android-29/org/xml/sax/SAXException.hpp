@@ -36,10 +36,10 @@ namespace org::xml::sax
 		SAXException(JString arg0, java::lang::Exception arg1);
 		
 		// Methods
-		JThrowable getCause();
-		java::lang::Exception getException();
-		JString getMessage();
-		JString toString();
+		JThrowable getCause() const;
+		java::lang::Exception getException() const;
+		JString getMessage() const;
+		JString toString() const;
 	};
 } // namespace org::xml::sax
 

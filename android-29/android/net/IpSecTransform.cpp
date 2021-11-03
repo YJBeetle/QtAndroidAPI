@@ -11,14 +11,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	void IpSecTransform::close()
+	void IpSecTransform::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JString IpSecTransform::toString()
+	JString IpSecTransform::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -31,182 +31,182 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jint AccessibilityRecord::getAddedCount()
+	jint AccessibilityRecord::getAddedCount() const
 	{
 		return callMethod<jint>(
 			"getAddedCount",
 			"()I"
 		);
 	}
-	JString AccessibilityRecord::getBeforeText()
+	JString AccessibilityRecord::getBeforeText() const
 	{
 		return callObjectMethod(
 			"getBeforeText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString AccessibilityRecord::getClassName()
+	JString AccessibilityRecord::getClassName() const
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString AccessibilityRecord::getContentDescription()
+	JString AccessibilityRecord::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AccessibilityRecord::getCurrentItemIndex()
+	jint AccessibilityRecord::getCurrentItemIndex() const
 	{
 		return callMethod<jint>(
 			"getCurrentItemIndex",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getFromIndex()
+	jint AccessibilityRecord::getFromIndex() const
 	{
 		return callMethod<jint>(
 			"getFromIndex",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getItemCount()
+	jint AccessibilityRecord::getItemCount() const
 	{
 		return callMethod<jint>(
 			"getItemCount",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getMaxScrollX()
+	jint AccessibilityRecord::getMaxScrollX() const
 	{
 		return callMethod<jint>(
 			"getMaxScrollX",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getMaxScrollY()
+	jint AccessibilityRecord::getMaxScrollY() const
 	{
 		return callMethod<jint>(
 			"getMaxScrollY",
 			"()I"
 		);
 	}
-	JObject AccessibilityRecord::getParcelableData()
+	JObject AccessibilityRecord::getParcelableData() const
 	{
 		return callObjectMethod(
 			"getParcelableData",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	jint AccessibilityRecord::getRemovedCount()
+	jint AccessibilityRecord::getRemovedCount() const
 	{
 		return callMethod<jint>(
 			"getRemovedCount",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getScrollDeltaX()
+	jint AccessibilityRecord::getScrollDeltaX() const
 	{
 		return callMethod<jint>(
 			"getScrollDeltaX",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getScrollDeltaY()
+	jint AccessibilityRecord::getScrollDeltaY() const
 	{
 		return callMethod<jint>(
 			"getScrollDeltaY",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getScrollX()
+	jint AccessibilityRecord::getScrollX() const
 	{
 		return callMethod<jint>(
 			"getScrollX",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getScrollY()
+	jint AccessibilityRecord::getScrollY() const
 	{
 		return callMethod<jint>(
 			"getScrollY",
 			"()I"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityRecord::getSource()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityRecord::getSource() const
 	{
 		return callObjectMethod(
 			"getSource",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	JObject AccessibilityRecord::getText()
+	JObject AccessibilityRecord::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/util/List;"
 		);
 	}
-	jint AccessibilityRecord::getToIndex()
+	jint AccessibilityRecord::getToIndex() const
 	{
 		return callMethod<jint>(
 			"getToIndex",
 			"()I"
 		);
 	}
-	jint AccessibilityRecord::getWindowId()
+	jint AccessibilityRecord::getWindowId() const
 	{
 		return callMethod<jint>(
 			"getWindowId",
 			"()I"
 		);
 	}
-	jboolean AccessibilityRecord::isChecked()
+	jboolean AccessibilityRecord::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityRecord::isEnabled()
+	jboolean AccessibilityRecord::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityRecord::isFullScreen()
+	jboolean AccessibilityRecord::isFullScreen() const
 	{
 		return callMethod<jboolean>(
 			"isFullScreen",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityRecord::isPassword()
+	jboolean AccessibilityRecord::isPassword() const
 	{
 		return callMethod<jboolean>(
 			"isPassword",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityRecord::isScrollable()
+	jboolean AccessibilityRecord::isScrollable() const
 	{
 		return callMethod<jboolean>(
 			"isScrollable",
 			"()Z"
 		);
 	}
-	void AccessibilityRecord::recycle()
+	void AccessibilityRecord::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	void AccessibilityRecord::setAddedCount(jint arg0)
+	void AccessibilityRecord::setAddedCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setAddedCount",
@@ -214,7 +214,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setBeforeText(JString arg0)
+	void AccessibilityRecord::setBeforeText(JString arg0) const
 	{
 		callMethod<void>(
 			"setBeforeText",
@@ -222,7 +222,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityRecord::setChecked(jboolean arg0)
+	void AccessibilityRecord::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -230,7 +230,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setClassName(JString arg0)
+	void AccessibilityRecord::setClassName(JString arg0) const
 	{
 		callMethod<void>(
 			"setClassName",
@@ -238,7 +238,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityRecord::setContentDescription(JString arg0)
+	void AccessibilityRecord::setContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -246,7 +246,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityRecord::setCurrentItemIndex(jint arg0)
+	void AccessibilityRecord::setCurrentItemIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setCurrentItemIndex",
@@ -254,7 +254,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setEnabled(jboolean arg0)
+	void AccessibilityRecord::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -262,7 +262,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setFromIndex(jint arg0)
+	void AccessibilityRecord::setFromIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setFromIndex",
@@ -270,7 +270,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setFullScreen(jboolean arg0)
+	void AccessibilityRecord::setFullScreen(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFullScreen",
@@ -278,7 +278,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setItemCount(jint arg0)
+	void AccessibilityRecord::setItemCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setItemCount",
@@ -286,7 +286,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setMaxScrollX(jint arg0)
+	void AccessibilityRecord::setMaxScrollX(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxScrollX",
@@ -294,7 +294,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setMaxScrollY(jint arg0)
+	void AccessibilityRecord::setMaxScrollY(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxScrollY",
@@ -302,7 +302,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setParcelableData(JObject arg0)
+	void AccessibilityRecord::setParcelableData(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParcelableData",
@@ -310,7 +310,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityRecord::setPassword(jboolean arg0)
+	void AccessibilityRecord::setPassword(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPassword",
@@ -318,7 +318,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setRemovedCount(jint arg0)
+	void AccessibilityRecord::setRemovedCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setRemovedCount",
@@ -326,7 +326,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setScrollDeltaX(jint arg0)
+	void AccessibilityRecord::setScrollDeltaX(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollDeltaX",
@@ -334,7 +334,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setScrollDeltaY(jint arg0)
+	void AccessibilityRecord::setScrollDeltaY(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollDeltaY",
@@ -342,7 +342,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setScrollX(jint arg0)
+	void AccessibilityRecord::setScrollX(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollX",
@@ -350,7 +350,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setScrollY(jint arg0)
+	void AccessibilityRecord::setScrollY(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollY",
@@ -358,7 +358,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setScrollable(jboolean arg0)
+	void AccessibilityRecord::setScrollable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScrollable",
@@ -366,7 +366,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setSource(android::view::View arg0)
+	void AccessibilityRecord::setSource(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setSource",
@@ -374,7 +374,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityRecord::setSource(android::view::View arg0, jint arg1)
+	void AccessibilityRecord::setSource(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSource",
@@ -383,7 +383,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityRecord::setToIndex(jint arg0)
+	void AccessibilityRecord::setToIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setToIndex",
@@ -391,7 +391,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	JString AccessibilityRecord::toString()
+	JString AccessibilityRecord::toString() const
 	{
 		return callObjectMethod(
 			"toString",

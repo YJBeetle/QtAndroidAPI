@@ -26,14 +26,14 @@ namespace android::text
 			arg2
 		);
 	}
-	android::text::DynamicLayout DynamicLayout_Builder::build()
+	android::text::DynamicLayout DynamicLayout_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/DynamicLayout;"
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setAlignment(android::text::Layout_Alignment arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setAlignment(android::text::Layout_Alignment arg0) const
 	{
 		return callObjectMethod(
 			"setAlignment",
@@ -41,7 +41,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setBreakStrategy(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setBreakStrategy(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBreakStrategy",
@@ -49,7 +49,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setDisplayText(JString arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setDisplayText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDisplayText",
@@ -57,7 +57,7 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0) const
 	{
 		return callObjectMethod(
 			"setEllipsize",
@@ -65,7 +65,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setEllipsizedWidth(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setEllipsizedWidth(jint arg0) const
 	{
 		return callObjectMethod(
 			"setEllipsizedWidth",
@@ -73,7 +73,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setHyphenationFrequency(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setHyphenationFrequency(jint arg0) const
 	{
 		return callObjectMethod(
 			"setHyphenationFrequency",
@@ -81,7 +81,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setIncludePad(jboolean arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setIncludePad(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIncludePad",
@@ -89,7 +89,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setJustificationMode(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setJustificationMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"setJustificationMode",
@@ -97,7 +97,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"setLineSpacing",
@@ -106,7 +106,7 @@ namespace android::text
 			arg1
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setTextDirection(JObject arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setTextDirection(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setTextDirection",
@@ -114,7 +114,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUseLineSpacingFromFallbacks",

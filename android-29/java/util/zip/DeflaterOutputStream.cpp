@@ -58,28 +58,28 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	void DeflaterOutputStream::close()
+	void DeflaterOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void DeflaterOutputStream::finish()
+	void DeflaterOutputStream::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	void DeflaterOutputStream::flush()
+	void DeflaterOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void DeflaterOutputStream::write(jint arg0)
+	void DeflaterOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -87,7 +87,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void DeflaterOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void DeflaterOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

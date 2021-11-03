@@ -28,13 +28,13 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		java::nio::file::attribute::AclEntry build();
-		java::nio::file::attribute::AclEntry_Builder setFlags(JArray arg0);
-		java::nio::file::attribute::AclEntry_Builder setFlags(JObject arg0);
-		java::nio::file::attribute::AclEntry_Builder setPermissions(JArray arg0);
-		java::nio::file::attribute::AclEntry_Builder setPermissions(JObject arg0);
-		java::nio::file::attribute::AclEntry_Builder setPrincipal(JObject arg0);
-		java::nio::file::attribute::AclEntry_Builder setType(java::nio::file::attribute::AclEntryType arg0);
+		java::nio::file::attribute::AclEntry build() const;
+		java::nio::file::attribute::AclEntry_Builder setFlags(JArray arg0) const;
+		java::nio::file::attribute::AclEntry_Builder setFlags(JObject arg0) const;
+		java::nio::file::attribute::AclEntry_Builder setPermissions(JArray arg0) const;
+		java::nio::file::attribute::AclEntry_Builder setPermissions(JObject arg0) const;
+		java::nio::file::attribute::AclEntry_Builder setPrincipal(JObject arg0) const;
+		java::nio::file::attribute::AclEntry_Builder setType(java::nio::file::attribute::AclEntryType arg0) const;
 	};
 } // namespace java::nio::file::attribute
 

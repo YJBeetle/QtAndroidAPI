@@ -107,7 +107,7 @@ namespace java::time
 			"()[Ljava/time/DayOfWeek;"
 		);
 	}
-	JObject DayOfWeek::adjustInto(JObject arg0)
+	JObject DayOfWeek::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -115,7 +115,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint DayOfWeek::get(JObject arg0)
+	jint DayOfWeek::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -123,7 +123,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JString DayOfWeek::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString DayOfWeek::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -132,7 +132,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	jlong DayOfWeek::getLong(JObject arg0)
+	jlong DayOfWeek::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -140,14 +140,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint DayOfWeek::getValue()
+	jint DayOfWeek::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
-	jboolean DayOfWeek::isSupported(JObject arg0)
+	jboolean DayOfWeek::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -155,7 +155,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::DayOfWeek DayOfWeek::minus(jlong arg0)
+	java::time::DayOfWeek DayOfWeek::minus(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -163,7 +163,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::DayOfWeek DayOfWeek::plus(jlong arg0)
+	java::time::DayOfWeek DayOfWeek::plus(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -171,7 +171,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject DayOfWeek::query(JObject arg0)
+	JObject DayOfWeek::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -179,7 +179,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange DayOfWeek::range(JObject arg0)
+	java::time::temporal::ValueRange DayOfWeek::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",

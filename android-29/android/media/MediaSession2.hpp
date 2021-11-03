@@ -47,15 +47,15 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
-		void cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, JObject arg1);
-		void close();
-		JObject getConnectedControllers();
-		JString getId();
-		android::media::Session2Token getToken();
-		jboolean isPlaybackActive();
-		JObject sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2);
-		void setPlaybackActive(jboolean arg0);
+		void broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1) const;
+		void cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, JObject arg1) const;
+		void close() const;
+		JObject getConnectedControllers() const;
+		JString getId() const;
+		android::media::Session2Token getToken() const;
+		jboolean isPlaybackActive() const;
+		JObject sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2) const;
+		void setPlaybackActive(jboolean arg0) const;
 	};
 } // namespace android::media
 

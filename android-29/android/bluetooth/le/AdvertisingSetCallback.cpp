@@ -58,7 +58,7 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	void AdvertisingSetCallback::onAdvertisingDataSet(android::bluetooth::le::AdvertisingSet arg0, jint arg1)
+	void AdvertisingSetCallback::onAdvertisingDataSet(android::bluetooth::le::AdvertisingSet arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onAdvertisingDataSet",
@@ -67,7 +67,7 @@ namespace android::bluetooth::le
 			arg1
 		);
 	}
-	void AdvertisingSetCallback::onAdvertisingEnabled(android::bluetooth::le::AdvertisingSet arg0, jboolean arg1, jint arg2)
+	void AdvertisingSetCallback::onAdvertisingEnabled(android::bluetooth::le::AdvertisingSet arg0, jboolean arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onAdvertisingEnabled",
@@ -77,7 +77,7 @@ namespace android::bluetooth::le
 			arg2
 		);
 	}
-	void AdvertisingSetCallback::onAdvertisingParametersUpdated(android::bluetooth::le::AdvertisingSet arg0, jint arg1, jint arg2)
+	void AdvertisingSetCallback::onAdvertisingParametersUpdated(android::bluetooth::le::AdvertisingSet arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onAdvertisingParametersUpdated",
@@ -87,7 +87,7 @@ namespace android::bluetooth::le
 			arg2
 		);
 	}
-	void AdvertisingSetCallback::onAdvertisingSetStarted(android::bluetooth::le::AdvertisingSet arg0, jint arg1, jint arg2)
+	void AdvertisingSetCallback::onAdvertisingSetStarted(android::bluetooth::le::AdvertisingSet arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onAdvertisingSetStarted",
@@ -97,7 +97,7 @@ namespace android::bluetooth::le
 			arg2
 		);
 	}
-	void AdvertisingSetCallback::onAdvertisingSetStopped(android::bluetooth::le::AdvertisingSet arg0)
+	void AdvertisingSetCallback::onAdvertisingSetStopped(android::bluetooth::le::AdvertisingSet arg0) const
 	{
 		callMethod<void>(
 			"onAdvertisingSetStopped",
@@ -105,7 +105,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void AdvertisingSetCallback::onPeriodicAdvertisingDataSet(android::bluetooth::le::AdvertisingSet arg0, jint arg1)
+	void AdvertisingSetCallback::onPeriodicAdvertisingDataSet(android::bluetooth::le::AdvertisingSet arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onPeriodicAdvertisingDataSet",
@@ -114,7 +114,7 @@ namespace android::bluetooth::le
 			arg1
 		);
 	}
-	void AdvertisingSetCallback::onPeriodicAdvertisingEnabled(android::bluetooth::le::AdvertisingSet arg0, jboolean arg1, jint arg2)
+	void AdvertisingSetCallback::onPeriodicAdvertisingEnabled(android::bluetooth::le::AdvertisingSet arg0, jboolean arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onPeriodicAdvertisingEnabled",
@@ -124,7 +124,7 @@ namespace android::bluetooth::le
 			arg2
 		);
 	}
-	void AdvertisingSetCallback::onPeriodicAdvertisingParametersUpdated(android::bluetooth::le::AdvertisingSet arg0, jint arg1)
+	void AdvertisingSetCallback::onPeriodicAdvertisingParametersUpdated(android::bluetooth::le::AdvertisingSet arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onPeriodicAdvertisingParametersUpdated",
@@ -133,7 +133,7 @@ namespace android::bluetooth::le
 			arg1
 		);
 	}
-	void AdvertisingSetCallback::onScanResponseDataSet(android::bluetooth::le::AdvertisingSet arg0, jint arg1)
+	void AdvertisingSetCallback::onScanResponseDataSet(android::bluetooth::le::AdvertisingSet arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onScanResponseDataSet",

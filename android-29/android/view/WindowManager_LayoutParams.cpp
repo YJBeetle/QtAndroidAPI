@@ -950,7 +950,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jint WindowManager_LayoutParams::copyFrom(android::view::WindowManager_LayoutParams arg0)
+	jint WindowManager_LayoutParams::copyFrom(android::view::WindowManager_LayoutParams arg0) const
 	{
 		return callMethod<jint>(
 			"copyFrom",
@@ -958,7 +958,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	JString WindowManager_LayoutParams::debug(JString arg0)
+	JString WindowManager_LayoutParams::debug(JString arg0) const
 	{
 		return callObjectMethod(
 			"debug",
@@ -966,28 +966,28 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	jint WindowManager_LayoutParams::describeContents()
+	jint WindowManager_LayoutParams::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint WindowManager_LayoutParams::getColorMode()
+	jint WindowManager_LayoutParams::getColorMode() const
 	{
 		return callMethod<jint>(
 			"getColorMode",
 			"()I"
 		);
 	}
-	JString WindowManager_LayoutParams::getTitle()
+	JString WindowManager_LayoutParams::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void WindowManager_LayoutParams::setColorMode(jint arg0)
+	void WindowManager_LayoutParams::setColorMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setColorMode",
@@ -995,7 +995,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void WindowManager_LayoutParams::setTitle(JString arg0)
+	void WindowManager_LayoutParams::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -1003,14 +1003,14 @@ namespace android::view
 			arg0.object<jstring>()
 		);
 	}
-	JString WindowManager_LayoutParams::toString()
+	JString WindowManager_LayoutParams::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WindowManager_LayoutParams::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WindowManager_LayoutParams::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -30,91 +30,91 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	JObject SSLParameters::getAlgorithmConstraints()
+	JObject SSLParameters::getAlgorithmConstraints() const
 	{
 		return callObjectMethod(
 			"getAlgorithmConstraints",
 			"()Ljava/security/AlgorithmConstraints;"
 		);
 	}
-	JArray SSLParameters::getApplicationProtocols()
+	JArray SSLParameters::getApplicationProtocols() const
 	{
 		return callObjectMethod(
 			"getApplicationProtocols",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray SSLParameters::getCipherSuites()
+	JArray SSLParameters::getCipherSuites() const
 	{
 		return callObjectMethod(
 			"getCipherSuites",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jboolean SSLParameters::getEnableRetransmissions()
+	jboolean SSLParameters::getEnableRetransmissions() const
 	{
 		return callMethod<jboolean>(
 			"getEnableRetransmissions",
 			"()Z"
 		);
 	}
-	JString SSLParameters::getEndpointIdentificationAlgorithm()
+	JString SSLParameters::getEndpointIdentificationAlgorithm() const
 	{
 		return callObjectMethod(
 			"getEndpointIdentificationAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SSLParameters::getMaximumPacketSize()
+	jint SSLParameters::getMaximumPacketSize() const
 	{
 		return callMethod<jint>(
 			"getMaximumPacketSize",
 			"()I"
 		);
 	}
-	jboolean SSLParameters::getNeedClientAuth()
+	jboolean SSLParameters::getNeedClientAuth() const
 	{
 		return callMethod<jboolean>(
 			"getNeedClientAuth",
 			"()Z"
 		);
 	}
-	JArray SSLParameters::getProtocols()
+	JArray SSLParameters::getProtocols() const
 	{
 		return callObjectMethod(
 			"getProtocols",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JObject SSLParameters::getSNIMatchers()
+	JObject SSLParameters::getSNIMatchers() const
 	{
 		return callObjectMethod(
 			"getSNIMatchers",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject SSLParameters::getServerNames()
+	JObject SSLParameters::getServerNames() const
 	{
 		return callObjectMethod(
 			"getServerNames",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean SSLParameters::getUseCipherSuitesOrder()
+	jboolean SSLParameters::getUseCipherSuitesOrder() const
 	{
 		return callMethod<jboolean>(
 			"getUseCipherSuitesOrder",
 			"()Z"
 		);
 	}
-	jboolean SSLParameters::getWantClientAuth()
+	jboolean SSLParameters::getWantClientAuth() const
 	{
 		return callMethod<jboolean>(
 			"getWantClientAuth",
 			"()Z"
 		);
 	}
-	void SSLParameters::setAlgorithmConstraints(JObject arg0)
+	void SSLParameters::setAlgorithmConstraints(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAlgorithmConstraints",
@@ -122,7 +122,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLParameters::setApplicationProtocols(JArray arg0)
+	void SSLParameters::setApplicationProtocols(JArray arg0) const
 	{
 		callMethod<void>(
 			"setApplicationProtocols",
@@ -130,7 +130,7 @@ namespace javax::net::ssl
 			arg0.object<jarray>()
 		);
 	}
-	void SSLParameters::setCipherSuites(JArray arg0)
+	void SSLParameters::setCipherSuites(JArray arg0) const
 	{
 		callMethod<void>(
 			"setCipherSuites",
@@ -138,7 +138,7 @@ namespace javax::net::ssl
 			arg0.object<jarray>()
 		);
 	}
-	void SSLParameters::setEnableRetransmissions(jboolean arg0)
+	void SSLParameters::setEnableRetransmissions(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnableRetransmissions",
@@ -146,7 +146,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLParameters::setEndpointIdentificationAlgorithm(JString arg0)
+	void SSLParameters::setEndpointIdentificationAlgorithm(JString arg0) const
 	{
 		callMethod<void>(
 			"setEndpointIdentificationAlgorithm",
@@ -154,7 +154,7 @@ namespace javax::net::ssl
 			arg0.object<jstring>()
 		);
 	}
-	void SSLParameters::setMaximumPacketSize(jint arg0)
+	void SSLParameters::setMaximumPacketSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumPacketSize",
@@ -162,7 +162,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLParameters::setNeedClientAuth(jboolean arg0)
+	void SSLParameters::setNeedClientAuth(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNeedClientAuth",
@@ -170,7 +170,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLParameters::setProtocols(JArray arg0)
+	void SSLParameters::setProtocols(JArray arg0) const
 	{
 		callMethod<void>(
 			"setProtocols",
@@ -178,7 +178,7 @@ namespace javax::net::ssl
 			arg0.object<jarray>()
 		);
 	}
-	void SSLParameters::setSNIMatchers(JObject arg0)
+	void SSLParameters::setSNIMatchers(JObject arg0) const
 	{
 		callMethod<void>(
 			"setSNIMatchers",
@@ -186,7 +186,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLParameters::setServerNames(JObject arg0)
+	void SSLParameters::setServerNames(JObject arg0) const
 	{
 		callMethod<void>(
 			"setServerNames",
@@ -194,7 +194,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLParameters::setUseCipherSuitesOrder(jboolean arg0)
+	void SSLParameters::setUseCipherSuitesOrder(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUseCipherSuitesOrder",
@@ -202,7 +202,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLParameters::setWantClientAuth(jboolean arg0)
+	void SSLParameters::setWantClientAuth(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setWantClientAuth",

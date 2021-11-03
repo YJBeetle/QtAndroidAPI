@@ -11,14 +11,14 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	jint SNIMatcher::getType()
+	jint SNIMatcher::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jboolean SNIMatcher::matches(javax::net::ssl::SNIServerName arg0)
+	jboolean SNIMatcher::matches(javax::net::ssl::SNIServerName arg0) const
 	{
 		return callMethod<jboolean>(
 			"matches",

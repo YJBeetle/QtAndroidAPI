@@ -33,7 +33,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentController::attachHost(android::app::Fragment arg0)
+	void FragmentController::attachHost(android::app::Fragment arg0) const
 	{
 		callMethod<void>(
 			"attachHost",
@@ -41,14 +41,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentController::dispatchActivityCreated()
+	void FragmentController::dispatchActivityCreated() const
 	{
 		callMethod<void>(
 			"dispatchActivityCreated",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchConfigurationChanged(android::content::res::Configuration arg0)
+	void FragmentController::dispatchConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"dispatchConfigurationChanged",
@@ -56,7 +56,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean FragmentController::dispatchContextItemSelected(JObject arg0)
+	jboolean FragmentController::dispatchContextItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchContextItemSelected",
@@ -64,14 +64,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentController::dispatchCreate()
+	void FragmentController::dispatchCreate() const
 	{
 		callMethod<void>(
 			"dispatchCreate",
 			"()V"
 		);
 	}
-	jboolean FragmentController::dispatchCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1)
+	jboolean FragmentController::dispatchCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1) const
 	{
 		return callMethod<jboolean>(
 			"dispatchCreateOptionsMenu",
@@ -80,28 +80,28 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentController::dispatchDestroy()
+	void FragmentController::dispatchDestroy() const
 	{
 		callMethod<void>(
 			"dispatchDestroy",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchDestroyView()
+	void FragmentController::dispatchDestroyView() const
 	{
 		callMethod<void>(
 			"dispatchDestroyView",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchLowMemory()
+	void FragmentController::dispatchLowMemory() const
 	{
 		callMethod<void>(
 			"dispatchLowMemory",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchMultiWindowModeChanged(jboolean arg0)
+	void FragmentController::dispatchMultiWindowModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchMultiWindowModeChanged",
@@ -109,7 +109,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentController::dispatchMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1)
+	void FragmentController::dispatchMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1) const
 	{
 		callMethod<void>(
 			"dispatchMultiWindowModeChanged",
@@ -118,7 +118,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean FragmentController::dispatchOptionsItemSelected(JObject arg0)
+	jboolean FragmentController::dispatchOptionsItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchOptionsItemSelected",
@@ -126,7 +126,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentController::dispatchOptionsMenuClosed(JObject arg0)
+	void FragmentController::dispatchOptionsMenuClosed(JObject arg0) const
 	{
 		callMethod<void>(
 			"dispatchOptionsMenuClosed",
@@ -134,14 +134,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentController::dispatchPause()
+	void FragmentController::dispatchPause() const
 	{
 		callMethod<void>(
 			"dispatchPause",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchPictureInPictureModeChanged(jboolean arg0)
+	void FragmentController::dispatchPictureInPictureModeChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchPictureInPictureModeChanged",
@@ -149,7 +149,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentController::dispatchPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1)
+	void FragmentController::dispatchPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1) const
 	{
 		callMethod<void>(
 			"dispatchPictureInPictureModeChanged",
@@ -158,7 +158,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean FragmentController::dispatchPrepareOptionsMenu(JObject arg0)
+	jboolean FragmentController::dispatchPrepareOptionsMenu(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchPrepareOptionsMenu",
@@ -166,28 +166,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentController::dispatchResume()
+	void FragmentController::dispatchResume() const
 	{
 		callMethod<void>(
 			"dispatchResume",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchStart()
+	void FragmentController::dispatchStart() const
 	{
 		callMethod<void>(
 			"dispatchStart",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchStop()
+	void FragmentController::dispatchStop() const
 	{
 		callMethod<void>(
 			"dispatchStop",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchTrimMemory(jint arg0)
+	void FragmentController::dispatchTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"dispatchTrimMemory",
@@ -195,21 +195,21 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentController::doLoaderDestroy()
+	void FragmentController::doLoaderDestroy() const
 	{
 		callMethod<void>(
 			"doLoaderDestroy",
 			"()V"
 		);
 	}
-	void FragmentController::doLoaderStart()
+	void FragmentController::doLoaderStart() const
 	{
 		callMethod<void>(
 			"doLoaderStart",
 			"()V"
 		);
 	}
-	void FragmentController::doLoaderStop(jboolean arg0)
+	void FragmentController::doLoaderStop(jboolean arg0) const
 	{
 		callMethod<void>(
 			"doLoaderStop",
@@ -217,7 +217,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentController::dumpLoaders(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void FragmentController::dumpLoaders(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dumpLoaders",
@@ -228,14 +228,14 @@ namespace android::app
 			arg3.object<jarray>()
 		);
 	}
-	jboolean FragmentController::execPendingActions()
+	jboolean FragmentController::execPendingActions() const
 	{
 		return callMethod<jboolean>(
 			"execPendingActions",
 			"()Z"
 		);
 	}
-	android::app::Fragment FragmentController::findFragmentByWho(JString arg0)
+	android::app::Fragment FragmentController::findFragmentByWho(JString arg0) const
 	{
 		return callObjectMethod(
 			"findFragmentByWho",
@@ -243,28 +243,28 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::FragmentManager FragmentController::getFragmentManager()
+	android::app::FragmentManager FragmentController::getFragmentManager() const
 	{
 		return callObjectMethod(
 			"getFragmentManager",
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	android::app::LoaderManager FragmentController::getLoaderManager()
+	android::app::LoaderManager FragmentController::getLoaderManager() const
 	{
 		return callObjectMethod(
 			"getLoaderManager",
 			"()Landroid/app/LoaderManager;"
 		);
 	}
-	void FragmentController::noteStateNotSaved()
+	void FragmentController::noteStateNotSaved() const
 	{
 		callMethod<void>(
 			"noteStateNotSaved",
 			"()V"
 		);
 	}
-	android::view::View FragmentController::onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3)
+	android::view::View FragmentController::onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -275,14 +275,14 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void FragmentController::reportLoaderStart()
+	void FragmentController::reportLoaderStart() const
 	{
 		callMethod<void>(
 			"reportLoaderStart",
 			"()V"
 		);
 	}
-	void FragmentController::restoreAllState(JObject arg0, android::app::FragmentManagerNonConfig arg1)
+	void FragmentController::restoreAllState(JObject arg0, android::app::FragmentManagerNonConfig arg1) const
 	{
 		callMethod<void>(
 			"restoreAllState",
@@ -291,7 +291,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentController::restoreAllState(JObject arg0, JObject arg1)
+	void FragmentController::restoreAllState(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"restoreAllState",
@@ -300,7 +300,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentController::restoreLoaderNonConfig(android::util::ArrayMap arg0)
+	void FragmentController::restoreLoaderNonConfig(android::util::ArrayMap arg0) const
 	{
 		callMethod<void>(
 			"restoreLoaderNonConfig",
@@ -308,28 +308,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::util::ArrayMap FragmentController::retainLoaderNonConfig()
+	android::util::ArrayMap FragmentController::retainLoaderNonConfig() const
 	{
 		return callObjectMethod(
 			"retainLoaderNonConfig",
 			"()Landroid/util/ArrayMap;"
 		);
 	}
-	android::app::FragmentManagerNonConfig FragmentController::retainNestedNonConfig()
+	android::app::FragmentManagerNonConfig FragmentController::retainNestedNonConfig() const
 	{
 		return callObjectMethod(
 			"retainNestedNonConfig",
 			"()Landroid/app/FragmentManagerNonConfig;"
 		);
 	}
-	JObject FragmentController::retainNonConfig()
+	JObject FragmentController::retainNonConfig() const
 	{
 		return callObjectMethod(
 			"retainNonConfig",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject FragmentController::saveAllState()
+	JObject FragmentController::saveAllState() const
 	{
 		return callObjectMethod(
 			"saveAllState",

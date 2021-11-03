@@ -34,42 +34,42 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint VersionedPackage::describeContents()
+	jint VersionedPackage::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong VersionedPackage::getLongVersionCode()
+	jlong VersionedPackage::getLongVersionCode() const
 	{
 		return callMethod<jlong>(
 			"getLongVersionCode",
 			"()J"
 		);
 	}
-	JString VersionedPackage::getPackageName()
+	JString VersionedPackage::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint VersionedPackage::getVersionCode()
+	jint VersionedPackage::getVersionCode() const
 	{
 		return callMethod<jint>(
 			"getVersionCode",
 			"()I"
 		);
 	}
-	JString VersionedPackage::toString()
+	JString VersionedPackage::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VersionedPackage::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VersionedPackage::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

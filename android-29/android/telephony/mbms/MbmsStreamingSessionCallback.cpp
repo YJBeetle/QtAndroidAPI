@@ -16,7 +16,7 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	void MbmsStreamingSessionCallback::onError(jint arg0, JString arg1)
+	void MbmsStreamingSessionCallback::onError(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -25,14 +25,14 @@ namespace android::telephony::mbms
 			arg1.object<jstring>()
 		);
 	}
-	void MbmsStreamingSessionCallback::onMiddlewareReady()
+	void MbmsStreamingSessionCallback::onMiddlewareReady() const
 	{
 		callMethod<void>(
 			"onMiddlewareReady",
 			"()V"
 		);
 	}
-	void MbmsStreamingSessionCallback::onStreamingServicesUpdated(JObject arg0)
+	void MbmsStreamingSessionCallback::onStreamingServicesUpdated(JObject arg0) const
 	{
 		callMethod<void>(
 			"onStreamingServicesUpdated",

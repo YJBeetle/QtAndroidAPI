@@ -17,7 +17,7 @@ namespace android::webkit
 		WebViewRenderProcess();
 		
 		// Methods
-		jboolean terminate();
+		jboolean terminate() const;
 	};
 } // namespace android::webkit
 

@@ -33,70 +33,70 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jfloat DynamicsProcessing_MbcBand::getAttackTime()
+	jfloat DynamicsProcessing_MbcBand::getAttackTime() const
 	{
 		return callMethod<jfloat>(
 			"getAttackTime",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getExpanderRatio()
+	jfloat DynamicsProcessing_MbcBand::getExpanderRatio() const
 	{
 		return callMethod<jfloat>(
 			"getExpanderRatio",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getKneeWidth()
+	jfloat DynamicsProcessing_MbcBand::getKneeWidth() const
 	{
 		return callMethod<jfloat>(
 			"getKneeWidth",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getNoiseGateThreshold()
+	jfloat DynamicsProcessing_MbcBand::getNoiseGateThreshold() const
 	{
 		return callMethod<jfloat>(
 			"getNoiseGateThreshold",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getPostGain()
+	jfloat DynamicsProcessing_MbcBand::getPostGain() const
 	{
 		return callMethod<jfloat>(
 			"getPostGain",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getPreGain()
+	jfloat DynamicsProcessing_MbcBand::getPreGain() const
 	{
 		return callMethod<jfloat>(
 			"getPreGain",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getRatio()
+	jfloat DynamicsProcessing_MbcBand::getRatio() const
 	{
 		return callMethod<jfloat>(
 			"getRatio",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getReleaseTime()
+	jfloat DynamicsProcessing_MbcBand::getReleaseTime() const
 	{
 		return callMethod<jfloat>(
 			"getReleaseTime",
 			"()F"
 		);
 	}
-	jfloat DynamicsProcessing_MbcBand::getThreshold()
+	jfloat DynamicsProcessing_MbcBand::getThreshold() const
 	{
 		return callMethod<jfloat>(
 			"getThreshold",
 			"()F"
 		);
 	}
-	void DynamicsProcessing_MbcBand::setAttackTime(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setAttackTime(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAttackTime",
@@ -104,7 +104,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setExpanderRatio(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setExpanderRatio(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setExpanderRatio",
@@ -112,7 +112,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setKneeWidth(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setKneeWidth(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setKneeWidth",
@@ -120,7 +120,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setNoiseGateThreshold(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setNoiseGateThreshold(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setNoiseGateThreshold",
@@ -128,7 +128,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setPostGain(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setPostGain(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPostGain",
@@ -136,7 +136,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setPreGain(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setPreGain(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPreGain",
@@ -144,7 +144,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setRatio(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setRatio(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRatio",
@@ -152,7 +152,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setReleaseTime(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setReleaseTime(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setReleaseTime",
@@ -160,7 +160,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_MbcBand::setThreshold(jfloat arg0)
+	void DynamicsProcessing_MbcBand::setThreshold(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setThreshold",
@@ -168,7 +168,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	JString DynamicsProcessing_MbcBand::toString()
+	JString DynamicsProcessing_MbcBand::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -159,35 +159,35 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jint VideoProfile::describeContents()
+	jint VideoProfile::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint VideoProfile::getQuality()
+	jint VideoProfile::getQuality() const
 	{
 		return callMethod<jint>(
 			"getQuality",
 			"()I"
 		);
 	}
-	jint VideoProfile::getVideoState()
+	jint VideoProfile::getVideoState() const
 	{
 		return callMethod<jint>(
 			"getVideoState",
 			"()I"
 		);
 	}
-	JString VideoProfile::toString()
+	JString VideoProfile::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VideoProfile::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VideoProfile::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

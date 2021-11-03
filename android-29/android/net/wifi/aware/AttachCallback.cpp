@@ -16,14 +16,14 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	void AttachCallback::onAttachFailed()
+	void AttachCallback::onAttachFailed() const
 	{
 		callMethod<void>(
 			"onAttachFailed",
 			"()V"
 		);
 	}
-	void AttachCallback::onAttached(android::net::wifi::aware::WifiAwareSession arg0)
+	void AttachCallback::onAttached(android::net::wifi::aware::WifiAwareSession arg0) const
 	{
 		callMethod<void>(
 			"onAttached",

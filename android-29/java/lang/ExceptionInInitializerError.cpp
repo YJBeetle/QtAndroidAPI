@@ -32,7 +32,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	JThrowable ExceptionInInitializerError::getException()
+	JThrowable ExceptionInInitializerError::getException() const
 	{
 		return callObjectMethod(
 			"getException",

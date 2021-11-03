@@ -38,7 +38,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean ArrayBlockingQueue::add(JObject arg0)
+	jboolean ArrayBlockingQueue::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -46,14 +46,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayBlockingQueue::clear()
+	void ArrayBlockingQueue::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean ArrayBlockingQueue::contains(JObject arg0)
+	jboolean ArrayBlockingQueue::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -61,7 +61,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint ArrayBlockingQueue::drainTo(JObject arg0)
+	jint ArrayBlockingQueue::drainTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ArrayBlockingQueue::drainTo(JObject arg0, jint arg1)
+	jint ArrayBlockingQueue::drainTo(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -78,7 +78,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void ArrayBlockingQueue::forEach(JObject arg0)
+	void ArrayBlockingQueue::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -86,14 +86,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ArrayBlockingQueue::iterator()
+	JObject ArrayBlockingQueue::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ArrayBlockingQueue::offer(JObject arg0)
+	jboolean ArrayBlockingQueue::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -101,7 +101,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayBlockingQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean ArrayBlockingQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -111,21 +111,21 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject ArrayBlockingQueue::peek()
+	JObject ArrayBlockingQueue::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayBlockingQueue::poll()
+	JObject ArrayBlockingQueue::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayBlockingQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject ArrayBlockingQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"poll",
@@ -134,7 +134,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ArrayBlockingQueue::put(JObject arg0)
+	void ArrayBlockingQueue::put(JObject arg0) const
 	{
 		callMethod<void>(
 			"put",
@@ -142,14 +142,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint ArrayBlockingQueue::remainingCapacity()
+	jint ArrayBlockingQueue::remainingCapacity() const
 	{
 		return callMethod<jint>(
 			"remainingCapacity",
 			"()I"
 		);
 	}
-	jboolean ArrayBlockingQueue::remove(JObject arg0)
+	jboolean ArrayBlockingQueue::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -157,7 +157,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayBlockingQueue::removeAll(JObject arg0)
+	jboolean ArrayBlockingQueue::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -165,7 +165,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ArrayBlockingQueue::removeIf(JObject arg0)
+	jboolean ArrayBlockingQueue::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -173,7 +173,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ArrayBlockingQueue::retainAll(JObject arg0)
+	jboolean ArrayBlockingQueue::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -181,35 +181,35 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ArrayBlockingQueue::size()
+	jint ArrayBlockingQueue::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject ArrayBlockingQueue::spliterator()
+	JObject ArrayBlockingQueue::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject ArrayBlockingQueue::take()
+	JObject ArrayBlockingQueue::take() const
 	{
 		return callObjectMethod(
 			"take",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObjectArray ArrayBlockingQueue::toArray()
+	JObjectArray ArrayBlockingQueue::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray ArrayBlockingQueue::toArray(JObjectArray arg0)
+	JObjectArray ArrayBlockingQueue::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -217,7 +217,7 @@ namespace java::util::concurrent
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString ArrayBlockingQueue::toString()
+	JString ArrayBlockingQueue::toString() const
 	{
 		return callObjectMethod(
 			"toString",

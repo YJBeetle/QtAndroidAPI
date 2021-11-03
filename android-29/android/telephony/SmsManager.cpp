@@ -447,7 +447,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString SmsManager::createAppSpecificSmsToken(android::app::PendingIntent arg0)
+	JString SmsManager::createAppSpecificSmsToken(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"createAppSpecificSmsToken",
@@ -455,7 +455,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	JString SmsManager::createAppSpecificSmsTokenWithPackageInfo(JString arg0, android::app::PendingIntent arg1)
+	JString SmsManager::createAppSpecificSmsTokenWithPackageInfo(JString arg0, android::app::PendingIntent arg1) const
 	{
 		return callObjectMethod(
 			"createAppSpecificSmsTokenWithPackageInfo",
@@ -464,7 +464,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	java::util::ArrayList SmsManager::divideMessage(JString arg0)
+	java::util::ArrayList SmsManager::divideMessage(JString arg0) const
 	{
 		return callObjectMethod(
 			"divideMessage",
@@ -472,7 +472,7 @@ namespace android::telephony
 			arg0.object<jstring>()
 		);
 	}
-	void SmsManager::downloadMultimediaMessage(android::content::Context arg0, JString arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4)
+	void SmsManager::downloadMultimediaMessage(android::content::Context arg0, JString arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const
 	{
 		callMethod<void>(
 			"downloadMultimediaMessage",
@@ -484,14 +484,14 @@ namespace android::telephony
 			arg4.object()
 		);
 	}
-	android::os::Bundle SmsManager::getCarrierConfigValues()
+	android::os::Bundle SmsManager::getCarrierConfigValues() const
 	{
 		return callObjectMethod(
 			"getCarrierConfigValues",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2)
+	void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2) const
 	{
 		callMethod<void>(
 			"getSmsMessagesForFinancialApp",
@@ -501,14 +501,14 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	jint SmsManager::getSubscriptionId()
+	jint SmsManager::getSubscriptionId() const
 	{
 		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
-	void SmsManager::injectSmsPdu(JByteArray arg0, JString arg1, android::app::PendingIntent arg2)
+	void SmsManager::injectSmsPdu(JByteArray arg0, JString arg1, android::app::PendingIntent arg2) const
 	{
 		callMethod<void>(
 			"injectSmsPdu",
@@ -518,7 +518,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void SmsManager::sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5)
+	void SmsManager::sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5) const
 	{
 		callMethod<void>(
 			"sendDataMessage",
@@ -531,7 +531,7 @@ namespace android::telephony
 			arg5.object()
 		);
 	}
-	void SmsManager::sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, JString arg2, android::os::Bundle arg3, android::app::PendingIntent arg4)
+	void SmsManager::sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, JString arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const
 	{
 		callMethod<void>(
 			"sendMultimediaMessage",
@@ -543,7 +543,7 @@ namespace android::telephony
 			arg4.object()
 		);
 	}
-	void SmsManager::sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4)
+	void SmsManager::sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4) const
 	{
 		callMethod<void>(
 			"sendMultipartTextMessage",
@@ -555,7 +555,7 @@ namespace android::telephony
 			arg4.object()
 		);
 	}
-	void SmsManager::sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
+	void SmsManager::sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const
 	{
 		callMethod<void>(
 			"sendTextMessage",
@@ -567,7 +567,7 @@ namespace android::telephony
 			arg4.object()
 		);
 	}
-	void SmsManager::sendTextMessageWithoutPersisting(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
+	void SmsManager::sendTextMessageWithoutPersisting(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const
 	{
 		callMethod<void>(
 			"sendTextMessageWithoutPersisting",

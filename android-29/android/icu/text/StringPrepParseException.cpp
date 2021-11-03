@@ -122,7 +122,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jboolean StringPrepParseException::equals(JObject arg0)
+	jboolean StringPrepParseException::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -130,21 +130,21 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	jint StringPrepParseException::getError()
+	jint StringPrepParseException::getError() const
 	{
 		return callMethod<jint>(
 			"getError",
 			"()I"
 		);
 	}
-	jint StringPrepParseException::hashCode()
+	jint StringPrepParseException::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString StringPrepParseException::toString()
+	JString StringPrepParseException::toString() const
 	{
 		return callObjectMethod(
 			"toString",

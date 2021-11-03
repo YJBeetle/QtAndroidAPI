@@ -15,7 +15,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void TestLooperManager::execute(android::os::Message arg0)
+	void TestLooperManager::execute(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"execute",
@@ -23,14 +23,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::os::MessageQueue TestLooperManager::getMessageQueue()
+	android::os::MessageQueue TestLooperManager::getMessageQueue() const
 	{
 		return callObjectMethod(
 			"getMessageQueue",
 			"()Landroid/os/MessageQueue;"
 		);
 	}
-	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, JObject arg1, jint arg2)
+	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, JObject arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"hasMessages",
@@ -40,7 +40,7 @@ namespace android::os
 			arg2
 		);
 	}
-	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, JObject arg1, JObject arg2)
+	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, JObject arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"hasMessages",
@@ -50,14 +50,14 @@ namespace android::os
 			arg2.object()
 		);
 	}
-	android::os::Message TestLooperManager::next()
+	android::os::Message TestLooperManager::next() const
 	{
 		return callObjectMethod(
 			"next",
 			"()Landroid/os/Message;"
 		);
 	}
-	void TestLooperManager::recycle(android::os::Message arg0)
+	void TestLooperManager::recycle(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"recycle",
@@ -65,7 +65,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void TestLooperManager::release()
+	void TestLooperManager::release() const
 	{
 		callMethod<void>(
 			"release",

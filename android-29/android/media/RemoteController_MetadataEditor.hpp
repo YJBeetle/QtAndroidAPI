@@ -21,7 +21,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void apply();
+		void apply() const;
 	};
 } // namespace android::media
 

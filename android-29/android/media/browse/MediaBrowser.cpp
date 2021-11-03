@@ -43,28 +43,28 @@ namespace android::media::browse
 		) {}
 	
 	// Methods
-	void MediaBrowser::connect()
+	void MediaBrowser::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	void MediaBrowser::disconnect()
+	void MediaBrowser::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	android::os::Bundle MediaBrowser::getExtras()
+	android::os::Bundle MediaBrowser::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void MediaBrowser::getItem(JString arg0, android::media::browse::MediaBrowser_ItemCallback arg1)
+	void MediaBrowser::getItem(JString arg0, android::media::browse::MediaBrowser_ItemCallback arg1) const
 	{
 		callMethod<void>(
 			"getItem",
@@ -73,35 +73,35 @@ namespace android::media::browse
 			arg1.object()
 		);
 	}
-	JString MediaBrowser::getRoot()
+	JString MediaBrowser::getRoot() const
 	{
 		return callObjectMethod(
 			"getRoot",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::ComponentName MediaBrowser::getServiceComponent()
+	android::content::ComponentName MediaBrowser::getServiceComponent() const
 	{
 		return callObjectMethod(
 			"getServiceComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::media::session::MediaSession_Token MediaBrowser::getSessionToken()
+	android::media::session::MediaSession_Token MediaBrowser::getSessionToken() const
 	{
 		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
-	jboolean MediaBrowser::isConnected()
+	jboolean MediaBrowser::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	void MediaBrowser::subscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
+	void MediaBrowser::subscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1) const
 	{
 		callMethod<void>(
 			"subscribe",
@@ -110,7 +110,7 @@ namespace android::media::browse
 			arg1.object()
 		);
 	}
-	void MediaBrowser::subscribe(JString arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2)
+	void MediaBrowser::subscribe(JString arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2) const
 	{
 		callMethod<void>(
 			"subscribe",
@@ -120,7 +120,7 @@ namespace android::media::browse
 			arg2.object()
 		);
 	}
-	void MediaBrowser::unsubscribe(JString arg0)
+	void MediaBrowser::unsubscribe(JString arg0) const
 	{
 		callMethod<void>(
 			"unsubscribe",
@@ -128,7 +128,7 @@ namespace android::media::browse
 			arg0.object<jstring>()
 		);
 	}
-	void MediaBrowser::unsubscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
+	void MediaBrowser::unsubscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1) const
 	{
 		callMethod<void>(
 			"unsubscribe",

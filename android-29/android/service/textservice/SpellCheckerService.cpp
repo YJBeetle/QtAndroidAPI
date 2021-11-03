@@ -26,14 +26,14 @@ namespace android::service::textservice
 		) {}
 	
 	// Methods
-	android::service::textservice::SpellCheckerService_Session SpellCheckerService::createSession()
+	android::service::textservice::SpellCheckerService_Session SpellCheckerService::createSession() const
 	{
 		return callObjectMethod(
 			"createSession",
 			"()Landroid/service/textservice/SpellCheckerService$Session;"
 		);
 	}
-	JObject SpellCheckerService::onBind(android::content::Intent arg0)
+	JObject SpellCheckerService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",

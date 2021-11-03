@@ -43,7 +43,7 @@ namespace android::drm
 	// Constructors
 	
 	// Methods
-	JObject DrmEvent::getAttribute(JString arg0)
+	JObject DrmEvent::getAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttribute",
@@ -51,21 +51,21 @@ namespace android::drm
 			arg0.object<jstring>()
 		);
 	}
-	JString DrmEvent::getMessage()
+	JString DrmEvent::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DrmEvent::getType()
+	jint DrmEvent::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint DrmEvent::getUniqueId()
+	jint DrmEvent::getUniqueId() const
 	{
 		return callMethod<jint>(
 			"getUniqueId",

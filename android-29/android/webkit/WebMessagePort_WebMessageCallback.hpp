@@ -26,7 +26,7 @@ namespace android::webkit
 		WebMessagePort_WebMessageCallback();
 		
 		// Methods
-		void onMessage(android::webkit::WebMessagePort arg0, android::webkit::WebMessage arg1);
+		void onMessage(android::webkit::WebMessagePort arg0, android::webkit::WebMessage arg1) const;
 	};
 } // namespace android::webkit
 

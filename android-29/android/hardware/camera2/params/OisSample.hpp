@@ -20,12 +20,12 @@ namespace android::hardware::camera2::params
 		OisSample(jlong arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jlong getTimestamp();
-		jfloat getXshift();
-		jfloat getYshift();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jlong getTimestamp() const;
+		jfloat getXshift() const;
+		jfloat getYshift() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

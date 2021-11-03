@@ -26,7 +26,7 @@ namespace android::app
 		VoiceInteractor_CompleteVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
 		
 		// Methods
-		void onCompleteResult(android::os::Bundle arg0);
+		void onCompleteResult(android::os::Bundle arg0) const;
 	};
 } // namespace android::app
 

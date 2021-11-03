@@ -21,14 +21,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellSignalStrengthTdscdma::describeContents()
+	jint CellSignalStrengthTdscdma::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellSignalStrengthTdscdma::equals(JObject arg0)
+	jboolean CellSignalStrengthTdscdma::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,49 +36,49 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellSignalStrengthTdscdma::getAsuLevel()
+	jint CellSignalStrengthTdscdma::getAsuLevel() const
 	{
 		return callMethod<jint>(
 			"getAsuLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthTdscdma::getDbm()
+	jint CellSignalStrengthTdscdma::getDbm() const
 	{
 		return callMethod<jint>(
 			"getDbm",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthTdscdma::getLevel()
+	jint CellSignalStrengthTdscdma::getLevel() const
 	{
 		return callMethod<jint>(
 			"getLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthTdscdma::getRscp()
+	jint CellSignalStrengthTdscdma::getRscp() const
 	{
 		return callMethod<jint>(
 			"getRscp",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthTdscdma::hashCode()
+	jint CellSignalStrengthTdscdma::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellSignalStrengthTdscdma::toString()
+	JString CellSignalStrengthTdscdma::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellSignalStrengthTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellSignalStrengthTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

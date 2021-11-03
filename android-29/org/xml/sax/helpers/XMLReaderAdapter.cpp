@@ -25,7 +25,7 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void XMLReaderAdapter::characters(JCharArray arg0, jint arg1, jint arg2)
+	void XMLReaderAdapter::characters(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"characters",
@@ -35,14 +35,14 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void XMLReaderAdapter::endDocument()
+	void XMLReaderAdapter::endDocument() const
 	{
 		callMethod<void>(
 			"endDocument",
 			"()V"
 		);
 	}
-	void XMLReaderAdapter::endElement(JString arg0, JString arg1, JString arg2)
+	void XMLReaderAdapter::endElement(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"endElement",
@@ -52,7 +52,7 @@ namespace org::xml::sax::helpers
 			arg2.object<jstring>()
 		);
 	}
-	void XMLReaderAdapter::endPrefixMapping(JString arg0)
+	void XMLReaderAdapter::endPrefixMapping(JString arg0) const
 	{
 		callMethod<void>(
 			"endPrefixMapping",
@@ -60,7 +60,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void XMLReaderAdapter::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
+	void XMLReaderAdapter::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
@@ -70,7 +70,7 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void XMLReaderAdapter::parse(JString arg0)
+	void XMLReaderAdapter::parse(JString arg0) const
 	{
 		callMethod<void>(
 			"parse",
@@ -78,7 +78,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void XMLReaderAdapter::parse(org::xml::sax::InputSource arg0)
+	void XMLReaderAdapter::parse(org::xml::sax::InputSource arg0) const
 	{
 		callMethod<void>(
 			"parse",
@@ -86,7 +86,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::processingInstruction(JString arg0, JString arg1)
+	void XMLReaderAdapter::processingInstruction(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"processingInstruction",
@@ -95,7 +95,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void XMLReaderAdapter::setDTDHandler(JObject arg0)
+	void XMLReaderAdapter::setDTDHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDTDHandler",
@@ -103,7 +103,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setDocumentHandler(JObject arg0)
+	void XMLReaderAdapter::setDocumentHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDocumentHandler",
@@ -111,7 +111,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setDocumentLocator(JObject arg0)
+	void XMLReaderAdapter::setDocumentLocator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -119,7 +119,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setEntityResolver(JObject arg0)
+	void XMLReaderAdapter::setEntityResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -127,7 +127,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setErrorHandler(JObject arg0)
+	void XMLReaderAdapter::setErrorHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -135,7 +135,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setLocale(java::util::Locale arg0)
+	void XMLReaderAdapter::setLocale(java::util::Locale arg0) const
 	{
 		callMethod<void>(
 			"setLocale",
@@ -143,7 +143,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::skippedEntity(JString arg0)
+	void XMLReaderAdapter::skippedEntity(JString arg0) const
 	{
 		callMethod<void>(
 			"skippedEntity",
@@ -151,14 +151,14 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void XMLReaderAdapter::startDocument()
+	void XMLReaderAdapter::startDocument() const
 	{
 		callMethod<void>(
 			"startDocument",
 			"()V"
 		);
 	}
-	void XMLReaderAdapter::startElement(JString arg0, JString arg1, JString arg2, JObject arg3)
+	void XMLReaderAdapter::startElement(JString arg0, JString arg1, JString arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"startElement",
@@ -169,7 +169,7 @@ namespace org::xml::sax::helpers
 			arg3.object()
 		);
 	}
-	void XMLReaderAdapter::startPrefixMapping(JString arg0, JString arg1)
+	void XMLReaderAdapter::startPrefixMapping(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"startPrefixMapping",

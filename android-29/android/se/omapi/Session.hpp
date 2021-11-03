@@ -26,15 +26,15 @@ namespace android::se::omapi
 		// Constructors
 		
 		// Methods
-		void close();
-		void closeChannels();
-		JByteArray getATR();
-		android::se::omapi::Reader getReader();
-		jboolean isClosed();
-		android::se::omapi::Channel openBasicChannel(JByteArray arg0);
-		android::se::omapi::Channel openBasicChannel(JByteArray arg0, jbyte arg1);
-		android::se::omapi::Channel openLogicalChannel(JByteArray arg0);
-		android::se::omapi::Channel openLogicalChannel(JByteArray arg0, jbyte arg1);
+		void close() const;
+		void closeChannels() const;
+		JByteArray getATR() const;
+		android::se::omapi::Reader getReader() const;
+		jboolean isClosed() const;
+		android::se::omapi::Channel openBasicChannel(JByteArray arg0) const;
+		android::se::omapi::Channel openBasicChannel(JByteArray arg0, jbyte arg1) const;
+		android::se::omapi::Channel openLogicalChannel(JByteArray arg0) const;
+		android::se::omapi::Channel openLogicalChannel(JByteArray arg0, jbyte arg1) const;
 	};
 } // namespace android::se::omapi
 

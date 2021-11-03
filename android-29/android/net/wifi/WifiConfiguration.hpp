@@ -62,13 +62,13 @@ namespace android::net::wifi
 		WifiConfiguration();
 		
 		// Methods
-		jint describeContents();
-		android::net::ProxyInfo getHttpProxy();
-		android::net::MacAddress getRandomizedMacAddress();
-		jboolean isPasspoint();
-		void setHttpProxy(android::net::ProxyInfo arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::net::ProxyInfo getHttpProxy() const;
+		android::net::MacAddress getRandomizedMacAddress() const;
+		jboolean isPasspoint() const;
+		void setHttpProxy(android::net::ProxyInfo arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

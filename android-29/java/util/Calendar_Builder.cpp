@@ -21,14 +21,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	java::util::Calendar Calendar_Builder::build()
+	java::util::Calendar Calendar_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Ljava/util/Calendar;"
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::set(jint arg0, jint arg1)
+	java::util::Calendar_Builder Calendar_Builder::set(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"set",
@@ -37,7 +37,7 @@ namespace java::util
 			arg1
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setCalendarType(JString arg0)
+	java::util::Calendar_Builder Calendar_Builder::setCalendarType(JString arg0) const
 	{
 		return callObjectMethod(
 			"setCalendarType",
@@ -45,7 +45,7 @@ namespace java::util
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setDate(jint arg0, jint arg1, jint arg2)
+	java::util::Calendar_Builder Calendar_Builder::setDate(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"setDate",
@@ -55,7 +55,7 @@ namespace java::util
 			arg2
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setFields(JIntArray arg0)
+	java::util::Calendar_Builder Calendar_Builder::setFields(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"setFields",
@@ -63,7 +63,7 @@ namespace java::util
 			arg0.object<jintArray>()
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setInstant(java::util::Date arg0)
+	java::util::Calendar_Builder Calendar_Builder::setInstant(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"setInstant",
@@ -71,7 +71,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setInstant(jlong arg0)
+	java::util::Calendar_Builder Calendar_Builder::setInstant(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setInstant",
@@ -79,7 +79,7 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setLenient(jboolean arg0)
+	java::util::Calendar_Builder Calendar_Builder::setLenient(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setLenient",
@@ -87,7 +87,7 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setLocale(java::util::Locale arg0)
+	java::util::Calendar_Builder Calendar_Builder::setLocale(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -95,7 +95,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setTimeOfDay(jint arg0, jint arg1, jint arg2)
+	java::util::Calendar_Builder Calendar_Builder::setTimeOfDay(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"setTimeOfDay",
@@ -105,7 +105,7 @@ namespace java::util
 			arg2
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3)
+	java::util::Calendar_Builder Calendar_Builder::setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"setTimeOfDay",
@@ -116,7 +116,7 @@ namespace java::util
 			arg3
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setTimeZone(java::util::TimeZone arg0)
+	java::util::Calendar_Builder Calendar_Builder::setTimeZone(java::util::TimeZone arg0) const
 	{
 		return callObjectMethod(
 			"setTimeZone",
@@ -124,7 +124,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setWeekDate(jint arg0, jint arg1, jint arg2)
+	java::util::Calendar_Builder Calendar_Builder::setWeekDate(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"setWeekDate",
@@ -134,7 +134,7 @@ namespace java::util
 			arg2
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setWeekDefinition(jint arg0, jint arg1)
+	java::util::Calendar_Builder Calendar_Builder::setWeekDefinition(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setWeekDefinition",

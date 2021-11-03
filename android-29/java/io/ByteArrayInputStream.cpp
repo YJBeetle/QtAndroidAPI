@@ -26,21 +26,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint ByteArrayInputStream::available()
+	jint ByteArrayInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void ByteArrayInputStream::close()
+	void ByteArrayInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ByteArrayInputStream::mark(jint arg0)
+	void ByteArrayInputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -48,21 +48,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean ByteArrayInputStream::markSupported()
+	jboolean ByteArrayInputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint ByteArrayInputStream::read()
+	jint ByteArrayInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint ByteArrayInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint ByteArrayInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -72,14 +72,14 @@ namespace java::io
 			arg2
 		);
 	}
-	JByteArray ByteArrayInputStream::readAllBytes()
+	JByteArray ByteArrayInputStream::readAllBytes() const
 	{
 		return callObjectMethod(
 			"readAllBytes",
 			"()[B"
 		);
 	}
-	jint ByteArrayInputStream::readNBytes(JByteArray arg0, jint arg1, jint arg2)
+	jint ByteArrayInputStream::readNBytes(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"readNBytes",
@@ -89,14 +89,14 @@ namespace java::io
 			arg2
 		);
 	}
-	void ByteArrayInputStream::reset()
+	void ByteArrayInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong ByteArrayInputStream::skip(jlong arg0)
+	jlong ByteArrayInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",
@@ -104,7 +104,7 @@ namespace java::io
 			arg0
 		);
 	}
-	jlong ByteArrayInputStream::transferTo(java::io::OutputStream arg0)
+	jlong ByteArrayInputStream::transferTo(java::io::OutputStream arg0) const
 	{
 		return callMethod<jlong>(
 			"transferTo",

@@ -18,10 +18,10 @@ namespace android::os
 		ConditionVariable(jboolean arg0);
 		
 		// Methods
-		jboolean block(jlong arg0);
-		void block();
-		void close();
-		void open();
+		jboolean block(jlong arg0) const;
+		void block() const;
+		void close() const;
+		void open() const;
 	};
 } // namespace android::os
 

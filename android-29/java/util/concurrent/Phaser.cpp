@@ -37,28 +37,28 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jint Phaser::arrive()
+	jint Phaser::arrive() const
 	{
 		return callMethod<jint>(
 			"arrive",
 			"()I"
 		);
 	}
-	jint Phaser::arriveAndAwaitAdvance()
+	jint Phaser::arriveAndAwaitAdvance() const
 	{
 		return callMethod<jint>(
 			"arriveAndAwaitAdvance",
 			"()I"
 		);
 	}
-	jint Phaser::arriveAndDeregister()
+	jint Phaser::arriveAndDeregister() const
 	{
 		return callMethod<jint>(
 			"arriveAndDeregister",
 			"()I"
 		);
 	}
-	jint Phaser::awaitAdvance(jint arg0)
+	jint Phaser::awaitAdvance(jint arg0) const
 	{
 		return callMethod<jint>(
 			"awaitAdvance",
@@ -66,7 +66,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint Phaser::awaitAdvanceInterruptibly(jint arg0)
+	jint Phaser::awaitAdvanceInterruptibly(jint arg0) const
 	{
 		return callMethod<jint>(
 			"awaitAdvanceInterruptibly",
@@ -74,7 +74,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint Phaser::awaitAdvanceInterruptibly(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jint Phaser::awaitAdvanceInterruptibly(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callMethod<jint>(
 			"awaitAdvanceInterruptibly",
@@ -84,7 +84,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	jint Phaser::bulkRegister(jint arg0)
+	jint Phaser::bulkRegister(jint arg0) const
 	{
 		return callMethod<jint>(
 			"bulkRegister",
@@ -92,70 +92,70 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void Phaser::forceTermination()
+	void Phaser::forceTermination() const
 	{
 		callMethod<void>(
 			"forceTermination",
 			"()V"
 		);
 	}
-	jint Phaser::getArrivedParties()
+	jint Phaser::getArrivedParties() const
 	{
 		return callMethod<jint>(
 			"getArrivedParties",
 			"()I"
 		);
 	}
-	java::util::concurrent::Phaser Phaser::getParent()
+	java::util::concurrent::Phaser Phaser::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/util/concurrent/Phaser;"
 		);
 	}
-	jint Phaser::getPhase()
+	jint Phaser::getPhase() const
 	{
 		return callMethod<jint>(
 			"getPhase",
 			"()I"
 		);
 	}
-	jint Phaser::getRegisteredParties()
+	jint Phaser::getRegisteredParties() const
 	{
 		return callMethod<jint>(
 			"getRegisteredParties",
 			"()I"
 		);
 	}
-	java::util::concurrent::Phaser Phaser::getRoot()
+	java::util::concurrent::Phaser Phaser::getRoot() const
 	{
 		return callObjectMethod(
 			"getRoot",
 			"()Ljava/util/concurrent/Phaser;"
 		);
 	}
-	jint Phaser::getUnarrivedParties()
+	jint Phaser::getUnarrivedParties() const
 	{
 		return callMethod<jint>(
 			"getUnarrivedParties",
 			"()I"
 		);
 	}
-	jboolean Phaser::isTerminated()
+	jboolean Phaser::isTerminated() const
 	{
 		return callMethod<jboolean>(
 			"isTerminated",
 			"()Z"
 		);
 	}
-	jint Phaser::_register()
+	jint Phaser::_register() const
 	{
 		return callMethod<jint>(
 			"register",
 			"()I"
 		);
 	}
-	JString Phaser::toString()
+	JString Phaser::toString() const
 	{
 		return callObjectMethod(
 			"toString",

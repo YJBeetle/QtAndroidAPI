@@ -44,7 +44,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean AsyncTask::cancel(jboolean arg0)
+	jboolean AsyncTask::cancel(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"cancel",
@@ -52,7 +52,7 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::AsyncTask AsyncTask::execute(JObjectArray arg0)
+	android::os::AsyncTask AsyncTask::execute(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"execute",
@@ -60,7 +60,7 @@ namespace android::os
 			arg0.object<jobjectArray>()
 		);
 	}
-	android::os::AsyncTask AsyncTask::executeOnExecutor(JObject arg0, JObjectArray arg1)
+	android::os::AsyncTask AsyncTask::executeOnExecutor(JObject arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"executeOnExecutor",
@@ -69,14 +69,14 @@ namespace android::os
 			arg1.object<jobjectArray>()
 		);
 	}
-	JObject AsyncTask::get()
+	JObject AsyncTask::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject AsyncTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject AsyncTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -85,14 +85,14 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	android::os::AsyncTask_Status AsyncTask::getStatus()
+	android::os::AsyncTask_Status AsyncTask::getStatus() const
 	{
 		return callObjectMethod(
 			"getStatus",
 			"()Landroid/os/AsyncTask$Status;"
 		);
 	}
-	jboolean AsyncTask::isCancelled()
+	jboolean AsyncTask::isCancelled() const
 	{
 		return callMethod<jboolean>(
 			"isCancelled",

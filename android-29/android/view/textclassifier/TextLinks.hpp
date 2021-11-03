@@ -34,12 +34,12 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint apply(JObject arg0, jint arg1, JObject arg2);
-		jint describeContents();
-		android::os::Bundle getExtras();
-		JObject getLinks();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint apply(JObject arg0, jint arg1, JObject arg2) const;
+		jint describeContents() const;
+		android::os::Bundle getExtras() const;
+		JObject getLinks() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

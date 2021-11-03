@@ -31,7 +31,7 @@ namespace android::widget
 		AbsoluteLayout_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString debug(JString arg0);
+		JString debug(JString arg0) const;
 	};
 } // namespace android::widget
 

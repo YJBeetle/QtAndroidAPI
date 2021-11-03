@@ -94,7 +94,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	JObject MonthDay::adjustInto(JObject arg0)
+	JObject MonthDay::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -102,7 +102,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDate MonthDay::atYear(jint arg0)
+	java::time::LocalDate MonthDay::atYear(jint arg0) const
 	{
 		return callObjectMethod(
 			"atYear",
@@ -110,7 +110,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jint MonthDay::compareTo(JObject arg0)
+	jint MonthDay::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -118,7 +118,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint MonthDay::compareTo(java::time::MonthDay arg0)
+	jint MonthDay::compareTo(java::time::MonthDay arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -126,7 +126,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean MonthDay::equals(JObject arg0)
+	jboolean MonthDay::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -134,7 +134,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	JString MonthDay::format(java::time::format::DateTimeFormatter arg0)
+	JString MonthDay::format(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -142,7 +142,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint MonthDay::get(JObject arg0)
+	jint MonthDay::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -150,14 +150,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint MonthDay::getDayOfMonth()
+	jint MonthDay::getDayOfMonth() const
 	{
 		return callMethod<jint>(
 			"getDayOfMonth",
 			"()I"
 		);
 	}
-	jlong MonthDay::getLong(JObject arg0)
+	jlong MonthDay::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -165,28 +165,28 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Month MonthDay::getMonth()
+	java::time::Month MonthDay::getMonth() const
 	{
 		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
-	jint MonthDay::getMonthValue()
+	jint MonthDay::getMonthValue() const
 	{
 		return callMethod<jint>(
 			"getMonthValue",
 			"()I"
 		);
 	}
-	jint MonthDay::hashCode()
+	jint MonthDay::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean MonthDay::isAfter(java::time::MonthDay arg0)
+	jboolean MonthDay::isAfter(java::time::MonthDay arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAfter",
@@ -194,7 +194,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean MonthDay::isBefore(java::time::MonthDay arg0)
+	jboolean MonthDay::isBefore(java::time::MonthDay arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBefore",
@@ -202,7 +202,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean MonthDay::isSupported(JObject arg0)
+	jboolean MonthDay::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -210,7 +210,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean MonthDay::isValidYear(jint arg0)
+	jboolean MonthDay::isValidYear(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isValidYear",
@@ -218,7 +218,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject MonthDay::query(JObject arg0)
+	JObject MonthDay::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -226,7 +226,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange MonthDay::range(JObject arg0)
+	java::time::temporal::ValueRange MonthDay::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -234,14 +234,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	JString MonthDay::toString()
+	JString MonthDay::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::MonthDay MonthDay::with(java::time::Month arg0)
+	java::time::MonthDay MonthDay::with(java::time::Month arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -249,7 +249,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::MonthDay MonthDay::withDayOfMonth(jint arg0)
+	java::time::MonthDay MonthDay::withDayOfMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"withDayOfMonth",
@@ -257,7 +257,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::MonthDay MonthDay::withMonth(jint arg0)
+	java::time::MonthDay MonthDay::withMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMonth",

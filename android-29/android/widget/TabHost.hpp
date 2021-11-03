@@ -51,24 +51,24 @@ namespace android::widget
 		TabHost(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void addTab(android::widget::TabHost_TabSpec arg0);
-		void clearAllTabs();
-		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
-		void dispatchWindowFocusChanged(jboolean arg0);
-		JString getAccessibilityClassName();
-		jint getCurrentTab();
-		JString getCurrentTabTag();
-		android::view::View getCurrentTabView();
-		android::view::View getCurrentView();
-		android::widget::FrameLayout getTabContentView();
-		android::widget::TabWidget getTabWidget();
-		android::widget::TabHost_TabSpec newTabSpec(JString arg0);
-		void onTouchModeChanged(jboolean arg0);
-		void setCurrentTab(jint arg0);
-		void setCurrentTabByTag(JString arg0);
-		void setOnTabChangedListener(JObject arg0);
-		void setup();
-		void setup(android::app::LocalActivityManager arg0);
+		void addTab(android::widget::TabHost_TabSpec arg0) const;
+		void clearAllTabs() const;
+		jboolean dispatchKeyEvent(android::view::KeyEvent arg0) const;
+		void dispatchWindowFocusChanged(jboolean arg0) const;
+		JString getAccessibilityClassName() const;
+		jint getCurrentTab() const;
+		JString getCurrentTabTag() const;
+		android::view::View getCurrentTabView() const;
+		android::view::View getCurrentView() const;
+		android::widget::FrameLayout getTabContentView() const;
+		android::widget::TabWidget getTabWidget() const;
+		android::widget::TabHost_TabSpec newTabSpec(JString arg0) const;
+		void onTouchModeChanged(jboolean arg0) const;
+		void setCurrentTab(jint arg0) const;
+		void setCurrentTabByTag(JString arg0) const;
+		void setOnTabChangedListener(JObject arg0) const;
+		void setup() const;
+		void setup(android::app::LocalActivityManager arg0) const;
 	};
 } // namespace android::widget
 

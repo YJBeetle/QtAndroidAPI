@@ -30,8 +30,8 @@ namespace android::print
 		// Constructors
 		
 		// Methods
-		JObject getPrintJobs();
-		android::print::PrintJob print(JString arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2);
+		JObject getPrintJobs() const;
+		android::print::PrintJob print(JString arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2) const;
 	};
 } // namespace android::print
 

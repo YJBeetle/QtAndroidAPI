@@ -20,11 +20,11 @@ namespace android::icu::util
 		DateInterval(jlong arg0, jlong arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jlong getFromDate();
-		jlong getToDate();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jlong getFromDate() const;
+		jlong getToDate() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::util
 

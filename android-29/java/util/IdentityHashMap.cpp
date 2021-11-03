@@ -31,21 +31,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void IdentityHashMap::clear()
+	void IdentityHashMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject IdentityHashMap::clone()
+	JObject IdentityHashMap::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean IdentityHashMap::containsKey(JObject arg0)
+	jboolean IdentityHashMap::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -53,7 +53,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean IdentityHashMap::containsValue(JObject arg0)
+	jboolean IdentityHashMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -61,14 +61,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject IdentityHashMap::entrySet()
+	JObject IdentityHashMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean IdentityHashMap::equals(JObject arg0)
+	jboolean IdentityHashMap::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -76,7 +76,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void IdentityHashMap::forEach(JObject arg0)
+	void IdentityHashMap::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -84,7 +84,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject IdentityHashMap::get(JObject arg0)
+	JObject IdentityHashMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -92,28 +92,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint IdentityHashMap::hashCode()
+	jint IdentityHashMap::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean IdentityHashMap::isEmpty()
+	jboolean IdentityHashMap::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject IdentityHashMap::keySet()
+	JObject IdentityHashMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject IdentityHashMap::put(JObject arg0, JObject arg1)
+	JObject IdentityHashMap::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -122,7 +122,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void IdentityHashMap::putAll(JObject arg0)
+	void IdentityHashMap::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -130,7 +130,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject IdentityHashMap::remove(JObject arg0)
+	JObject IdentityHashMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -138,7 +138,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void IdentityHashMap::replaceAll(JObject arg0)
+	void IdentityHashMap::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -146,14 +146,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint IdentityHashMap::size()
+	jint IdentityHashMap::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject IdentityHashMap::values()
+	JObject IdentityHashMap::values() const
 	{
 		return callObjectMethod(
 			"values",

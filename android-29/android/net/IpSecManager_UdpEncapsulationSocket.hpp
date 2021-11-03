@@ -22,10 +22,10 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		void close();
-		java::io::FileDescriptor getFileDescriptor();
-		jint getPort();
-		JString toString();
+		void close() const;
+		java::io::FileDescriptor getFileDescriptor() const;
+		jint getPort() const;
+		JString toString() const;
 	};
 } // namespace android::net
 

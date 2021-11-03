@@ -22,19 +22,19 @@ namespace android::graphics
 		ColorMatrix(android::graphics::ColorMatrix &arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JFloatArray getArray();
-		void postConcat(android::graphics::ColorMatrix arg0);
-		void preConcat(android::graphics::ColorMatrix arg0);
-		void reset();
-		void set(JFloatArray arg0);
-		void set(android::graphics::ColorMatrix arg0);
-		void setConcat(android::graphics::ColorMatrix arg0, android::graphics::ColorMatrix arg1);
-		void setRGB2YUV();
-		void setRotate(jint arg0, jfloat arg1);
-		void setSaturation(jfloat arg0);
-		void setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setYUV2RGB();
+		jboolean equals(JObject arg0) const;
+		JFloatArray getArray() const;
+		void postConcat(android::graphics::ColorMatrix arg0) const;
+		void preConcat(android::graphics::ColorMatrix arg0) const;
+		void reset() const;
+		void set(JFloatArray arg0) const;
+		void set(android::graphics::ColorMatrix arg0) const;
+		void setConcat(android::graphics::ColorMatrix arg0, android::graphics::ColorMatrix arg1) const;
+		void setRGB2YUV() const;
+		void setRotate(jint arg0, jfloat arg1) const;
+		void setSaturation(jfloat arg0) const;
+		void setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void setYUV2RGB() const;
 	};
 } // namespace android::graphics
 

@@ -16,7 +16,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	void AccessibilityService_GestureResultCallback::onCancelled(android::accessibilityservice::GestureDescription arg0)
+	void AccessibilityService_GestureResultCallback::onCancelled(android::accessibilityservice::GestureDescription arg0) const
 	{
 		callMethod<void>(
 			"onCancelled",
@@ -24,7 +24,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityService_GestureResultCallback::onCompleted(android::accessibilityservice::GestureDescription arg0)
+	void AccessibilityService_GestureResultCallback::onCompleted(android::accessibilityservice::GestureDescription arg0) const
 	{
 		callMethod<void>(
 			"onCompleted",

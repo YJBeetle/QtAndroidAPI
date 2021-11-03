@@ -27,9 +27,9 @@ namespace android::media
 		Session2CommandGroup_Builder(android::media::Session2CommandGroup arg0);
 		
 		// Methods
-		android::media::Session2CommandGroup_Builder addCommand(android::media::Session2Command arg0);
-		android::media::Session2CommandGroup build();
-		android::media::Session2CommandGroup_Builder removeCommand(android::media::Session2Command arg0);
+		android::media::Session2CommandGroup_Builder addCommand(android::media::Session2Command arg0) const;
+		android::media::Session2CommandGroup build() const;
+		android::media::Session2CommandGroup_Builder removeCommand(android::media::Session2Command arg0) const;
 	};
 } // namespace android::media
 

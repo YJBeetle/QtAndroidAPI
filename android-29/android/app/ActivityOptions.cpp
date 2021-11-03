@@ -121,28 +121,28 @@ namespace android::app
 			arg3
 		);
 	}
-	android::graphics::Rect ActivityOptions::getLaunchBounds()
+	android::graphics::Rect ActivityOptions::getLaunchBounds() const
 	{
 		return callObjectMethod(
 			"getLaunchBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jint ActivityOptions::getLaunchDisplayId()
+	jint ActivityOptions::getLaunchDisplayId() const
 	{
 		return callMethod<jint>(
 			"getLaunchDisplayId",
 			"()I"
 		);
 	}
-	jboolean ActivityOptions::getLockTaskMode()
+	jboolean ActivityOptions::getLockTaskMode() const
 	{
 		return callMethod<jboolean>(
 			"getLockTaskMode",
 			"()Z"
 		);
 	}
-	void ActivityOptions::requestUsageTimeReport(android::app::PendingIntent arg0)
+	void ActivityOptions::requestUsageTimeReport(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"requestUsageTimeReport",
@@ -150,7 +150,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActivityOptions ActivityOptions::setAppVerificationBundle(android::os::Bundle arg0)
+	android::app::ActivityOptions ActivityOptions::setAppVerificationBundle(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setAppVerificationBundle",
@@ -158,7 +158,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActivityOptions ActivityOptions::setLaunchBounds(android::graphics::Rect arg0)
+	android::app::ActivityOptions ActivityOptions::setLaunchBounds(android::graphics::Rect arg0) const
 	{
 		return callObjectMethod(
 			"setLaunchBounds",
@@ -166,7 +166,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActivityOptions ActivityOptions::setLaunchDisplayId(jint arg0)
+	android::app::ActivityOptions ActivityOptions::setLaunchDisplayId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setLaunchDisplayId",
@@ -174,7 +174,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActivityOptions ActivityOptions::setLockTaskEnabled(jboolean arg0)
+	android::app::ActivityOptions ActivityOptions::setLockTaskEnabled(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setLockTaskEnabled",
@@ -182,21 +182,21 @@ namespace android::app
 			arg0
 		);
 	}
-	android::os::Bundle ActivityOptions::toBundle()
+	android::os::Bundle ActivityOptions::toBundle() const
 	{
 		return callObjectMethod(
 			"toBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString ActivityOptions::toString()
+	JString ActivityOptions::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ActivityOptions::update(android::app::ActivityOptions arg0)
+	void ActivityOptions::update(android::app::ActivityOptions arg0) const
 	{
 		callMethod<void>(
 			"update",

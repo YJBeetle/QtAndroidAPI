@@ -37,14 +37,14 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void PipedReader::close()
+	void PipedReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PipedReader::connect(java::io::PipedWriter arg0)
+	void PipedReader::connect(java::io::PipedWriter arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -52,14 +52,14 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint PipedReader::read()
+	jint PipedReader::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint PipedReader::read(JCharArray arg0, jint arg1, jint arg2)
+	jint PipedReader::read(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -69,7 +69,7 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean PipedReader::ready()
+	jboolean PipedReader::ready() const
 	{
 		return callMethod<jboolean>(
 			"ready",

@@ -38,26 +38,26 @@ namespace android::media::session
 		// Constructors
 		
 		// Methods
-		void fastForward();
-		void pause();
-		void play();
-		void playFromMediaId(JString arg0, android::os::Bundle arg1);
-		void playFromSearch(JString arg0, android::os::Bundle arg1);
-		void playFromUri(android::net::Uri arg0, android::os::Bundle arg1);
-		void prepare();
-		void prepareFromMediaId(JString arg0, android::os::Bundle arg1);
-		void prepareFromSearch(JString arg0, android::os::Bundle arg1);
-		void prepareFromUri(android::net::Uri arg0, android::os::Bundle arg1);
-		void rewind();
-		void seekTo(jlong arg0);
-		void sendCustomAction(android::media::session::PlaybackState_CustomAction arg0, android::os::Bundle arg1);
-		void sendCustomAction(JString arg0, android::os::Bundle arg1);
-		void setPlaybackSpeed(jfloat arg0);
-		void setRating(android::media::Rating arg0);
-		void skipToNext();
-		void skipToPrevious();
-		void skipToQueueItem(jlong arg0);
-		void stop();
+		void fastForward() const;
+		void pause() const;
+		void play() const;
+		void playFromMediaId(JString arg0, android::os::Bundle arg1) const;
+		void playFromSearch(JString arg0, android::os::Bundle arg1) const;
+		void playFromUri(android::net::Uri arg0, android::os::Bundle arg1) const;
+		void prepare() const;
+		void prepareFromMediaId(JString arg0, android::os::Bundle arg1) const;
+		void prepareFromSearch(JString arg0, android::os::Bundle arg1) const;
+		void prepareFromUri(android::net::Uri arg0, android::os::Bundle arg1) const;
+		void rewind() const;
+		void seekTo(jlong arg0) const;
+		void sendCustomAction(android::media::session::PlaybackState_CustomAction arg0, android::os::Bundle arg1) const;
+		void sendCustomAction(JString arg0, android::os::Bundle arg1) const;
+		void setPlaybackSpeed(jfloat arg0) const;
+		void setRating(android::media::Rating arg0) const;
+		void skipToNext() const;
+		void skipToPrevious() const;
+		void skipToQueueItem(jlong arg0) const;
+		void stop() const;
 	};
 } // namespace android::media::session
 

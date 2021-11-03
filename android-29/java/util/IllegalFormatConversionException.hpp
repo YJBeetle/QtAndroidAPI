@@ -20,9 +20,9 @@ namespace java::util
 		IllegalFormatConversionException(jchar arg0, JClass arg1);
 		
 		// Methods
-		JClass getArgumentClass();
-		jchar getConversion();
-		JString getMessage();
+		JClass getArgumentClass() const;
+		jchar getConversion() const;
+		JString getMessage() const;
 	};
 } // namespace java::util
 

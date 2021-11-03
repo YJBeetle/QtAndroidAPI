@@ -11,21 +11,21 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	JString FieldClassification_Match::getCategoryId()
+	JString FieldClassification_Match::getCategoryId() const
 	{
 		return callObjectMethod(
 			"getCategoryId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jfloat FieldClassification_Match::getScore()
+	jfloat FieldClassification_Match::getScore() const
 	{
 		return callMethod<jfloat>(
 			"getScore",
 			"()F"
 		);
 	}
-	JString FieldClassification_Match::toString()
+	JString FieldClassification_Match::toString() const
 	{
 		return callObjectMethod(
 			"toString",

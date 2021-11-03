@@ -115,63 +115,63 @@ namespace android::media
 			arg0
 		);
 	}
-	jint Rating::describeContents()
+	jint Rating::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jfloat Rating::getPercentRating()
+	jfloat Rating::getPercentRating() const
 	{
 		return callMethod<jfloat>(
 			"getPercentRating",
 			"()F"
 		);
 	}
-	jint Rating::getRatingStyle()
+	jint Rating::getRatingStyle() const
 	{
 		return callMethod<jint>(
 			"getRatingStyle",
 			"()I"
 		);
 	}
-	jfloat Rating::getStarRating()
+	jfloat Rating::getStarRating() const
 	{
 		return callMethod<jfloat>(
 			"getStarRating",
 			"()F"
 		);
 	}
-	jboolean Rating::hasHeart()
+	jboolean Rating::hasHeart() const
 	{
 		return callMethod<jboolean>(
 			"hasHeart",
 			"()Z"
 		);
 	}
-	jboolean Rating::isRated()
+	jboolean Rating::isRated() const
 	{
 		return callMethod<jboolean>(
 			"isRated",
 			"()Z"
 		);
 	}
-	jboolean Rating::isThumbUp()
+	jboolean Rating::isThumbUp() const
 	{
 		return callMethod<jboolean>(
 			"isThumbUp",
 			"()Z"
 		);
 	}
-	JString Rating::toString()
+	JString Rating::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Rating::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Rating::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

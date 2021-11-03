@@ -17,7 +17,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void MenuInflater::inflate(jint arg0, JObject arg1)
+	void MenuInflater::inflate(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"inflate",

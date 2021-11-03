@@ -22,17 +22,17 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		void abortBroadcast();
-		void clearAbortBroadcast();
-		void finish();
-		jboolean getAbortBroadcast();
-		jint getResultCode();
-		JString getResultData();
-		android::os::Bundle getResultExtras(jboolean arg0);
-		void setResult(jint arg0, JString arg1, android::os::Bundle arg2);
-		void setResultCode(jint arg0);
-		void setResultData(JString arg0);
-		void setResultExtras(android::os::Bundle arg0);
+		void abortBroadcast() const;
+		void clearAbortBroadcast() const;
+		void finish() const;
+		jboolean getAbortBroadcast() const;
+		jint getResultCode() const;
+		JString getResultData() const;
+		android::os::Bundle getResultExtras(jboolean arg0) const;
+		void setResult(jint arg0, JString arg1, android::os::Bundle arg2) const;
+		void setResultCode(jint arg0) const;
+		void setResultData(JString arg0) const;
+		void setResultExtras(android::os::Bundle arg0) const;
 	};
 } // namespace android::content
 

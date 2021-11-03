@@ -54,28 +54,28 @@ namespace android::view::accessibility
 			arg3
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
+	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount() const
 	{
 		return callMethod<jint>(
 			"getColumnCount",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionInfo::getRowCount()
+	jint AccessibilityNodeInfo_CollectionInfo::getRowCount() const
 	{
 		return callMethod<jint>(
 			"getRowCount",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
+	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode() const
 	{
 		return callMethod<jint>(
 			"getSelectionMode",
 			"()I"
 		);
 	}
-	jboolean AccessibilityNodeInfo_CollectionInfo::isHierarchical()
+	jboolean AccessibilityNodeInfo_CollectionInfo::isHierarchical() const
 	{
 		return callMethod<jboolean>(
 			"isHierarchical",

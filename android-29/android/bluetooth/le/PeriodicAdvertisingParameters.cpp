@@ -19,28 +19,28 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	jint PeriodicAdvertisingParameters::describeContents()
+	jint PeriodicAdvertisingParameters::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PeriodicAdvertisingParameters::getIncludeTxPower()
+	jboolean PeriodicAdvertisingParameters::getIncludeTxPower() const
 	{
 		return callMethod<jboolean>(
 			"getIncludeTxPower",
 			"()Z"
 		);
 	}
-	jint PeriodicAdvertisingParameters::getInterval()
+	jint PeriodicAdvertisingParameters::getInterval() const
 	{
 		return callMethod<jint>(
 			"getInterval",
 			"()I"
 		);
 	}
-	void PeriodicAdvertisingParameters::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PeriodicAdvertisingParameters::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

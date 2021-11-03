@@ -16,14 +16,14 @@ namespace android::graphics::text
 		// Constructors
 		
 		// Methods
-		jint getEndLineHyphenEdit(jint arg0);
-		jfloat getLineAscent(jint arg0);
-		jint getLineBreakOffset(jint arg0);
-		jint getLineCount();
-		jfloat getLineDescent(jint arg0);
-		jfloat getLineWidth(jint arg0);
-		jint getStartLineHyphenEdit(jint arg0);
-		jboolean hasLineTab(jint arg0);
+		jint getEndLineHyphenEdit(jint arg0) const;
+		jfloat getLineAscent(jint arg0) const;
+		jint getLineBreakOffset(jint arg0) const;
+		jint getLineCount() const;
+		jfloat getLineDescent(jint arg0) const;
+		jfloat getLineWidth(jint arg0) const;
+		jint getStartLineHyphenEdit(jint arg0) const;
+		jboolean hasLineTab(jint arg0) const;
 	};
 } // namespace android::graphics::text
 

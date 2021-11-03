@@ -34,10 +34,10 @@ namespace java::security::cert
 		static java::security::cert::CertPathValidator getInstance(JString arg0);
 		static java::security::cert::CertPathValidator getInstance(JString arg0, JString arg1);
 		static java::security::cert::CertPathValidator getInstance(JString arg0, java::security::Provider arg1);
-		JString getAlgorithm();
-		java::security::Provider getProvider();
-		JObject getRevocationChecker();
-		JObject validate(java::security::cert::CertPath arg0, JObject arg1);
+		JString getAlgorithm() const;
+		java::security::Provider getProvider() const;
+		JObject getRevocationChecker() const;
+		JObject validate(java::security::cert::CertPath arg0, JObject arg1) const;
 	};
 } // namespace java::security::cert
 

@@ -37,19 +37,19 @@ namespace android::widget
 		MediaController(android::content::Context arg0, jboolean arg1);
 		
 		// Methods
-		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
-		JString getAccessibilityClassName();
-		void hide();
-		jboolean isShowing();
-		void onFinishInflate();
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(android::view::MotionEvent arg0);
-		void setAnchorView(android::view::View arg0);
-		void setEnabled(jboolean arg0);
-		void setMediaPlayer(JObject arg0);
-		void setPrevNextListeners(JObject arg0, JObject arg1);
-		void show();
-		void show(jint arg0);
+		jboolean dispatchKeyEvent(android::view::KeyEvent arg0) const;
+		JString getAccessibilityClassName() const;
+		void hide() const;
+		jboolean isShowing() const;
+		void onFinishInflate() const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		jboolean onTrackballEvent(android::view::MotionEvent arg0) const;
+		void setAnchorView(android::view::View arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setMediaPlayer(JObject arg0) const;
+		void setPrevNextListeners(JObject arg0, JObject arg1) const;
+		void show() const;
+		void show(jint arg0) const;
 	};
 } // namespace android::widget
 

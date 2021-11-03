@@ -28,35 +28,35 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	jint DataRemovalRequest::describeContents()
+	jint DataRemovalRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject DataRemovalRequest::getLocusIdRequests()
+	JObject DataRemovalRequest::getLocusIdRequests() const
 	{
 		return callObjectMethod(
 			"getLocusIdRequests",
 			"()Ljava/util/List;"
 		);
 	}
-	JString DataRemovalRequest::getPackageName()
+	JString DataRemovalRequest::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean DataRemovalRequest::isForEverything()
+	jboolean DataRemovalRequest::isForEverything() const
 	{
 		return callMethod<jboolean>(
 			"isForEverything",
 			"()Z"
 		);
 	}
-	void DataRemovalRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DataRemovalRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

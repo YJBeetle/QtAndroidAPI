@@ -31,13 +31,13 @@ namespace android::view
 		WindowInsets_Builder(android::view::WindowInsets arg0);
 		
 		// Methods
-		android::view::WindowInsets build();
-		android::view::WindowInsets_Builder setDisplayCutout(android::view::DisplayCutout arg0);
-		android::view::WindowInsets_Builder setMandatorySystemGestureInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setStableInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setSystemGestureInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setSystemWindowInsets(android::graphics::Insets arg0);
-		android::view::WindowInsets_Builder setTappableElementInsets(android::graphics::Insets arg0);
+		android::view::WindowInsets build() const;
+		android::view::WindowInsets_Builder setDisplayCutout(android::view::DisplayCutout arg0) const;
+		android::view::WindowInsets_Builder setMandatorySystemGestureInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setStableInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setSystemGestureInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setSystemWindowInsets(android::graphics::Insets arg0) const;
+		android::view::WindowInsets_Builder setTappableElementInsets(android::graphics::Insets arg0) const;
 	};
 } // namespace android::view
 

@@ -13,21 +13,21 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	void FilterWriter::close()
+	void FilterWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void FilterWriter::flush()
+	void FilterWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void FilterWriter::write(jint arg0)
+	void FilterWriter::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -35,7 +35,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void FilterWriter::write(JCharArray arg0, jint arg1, jint arg2)
+	void FilterWriter::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -45,7 +45,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void FilterWriter::write(JString arg0, jint arg1, jint arg2)
+	void FilterWriter::write(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

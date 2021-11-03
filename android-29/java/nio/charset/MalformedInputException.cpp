@@ -17,14 +17,14 @@ namespace java::nio::charset
 		) {}
 	
 	// Methods
-	jint MalformedInputException::getInputLength()
+	jint MalformedInputException::getInputLength() const
 	{
 		return callMethod<jint>(
 			"getInputLength",
 			"()I"
 		);
 	}
-	JString MalformedInputException::getMessage()
+	JString MalformedInputException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

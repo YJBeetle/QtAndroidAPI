@@ -22,8 +22,8 @@ namespace android::accounts
 		AccountAuthenticatorActivity();
 		
 		// Methods
-		void finish();
-		void setAccountAuthenticatorResult(android::os::Bundle arg0);
+		void finish() const;
+		void setAccountAuthenticatorResult(android::os::Bundle arg0) const;
 	};
 } // namespace android::accounts
 

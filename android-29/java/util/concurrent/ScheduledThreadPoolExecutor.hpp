@@ -29,21 +29,21 @@ namespace java::util::concurrent
 		ScheduledThreadPoolExecutor(jint arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		void execute(JObject arg0);
-		jboolean getContinueExistingPeriodicTasksAfterShutdownPolicy();
-		jboolean getExecuteExistingDelayedTasksAfterShutdownPolicy();
-		JObject getQueue();
-		jboolean getRemoveOnCancelPolicy();
-		JObject schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		JObject scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3);
-		JObject scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3);
-		void setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0);
-		void setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0);
-		void setRemoveOnCancelPolicy(jboolean arg0);
-		void shutdown();
-		JObject shutdownNow();
-		JObject submit(JObject arg0);
-		JObject submit(JObject arg0, JObject arg1);
+		void execute(JObject arg0) const;
+		jboolean getContinueExistingPeriodicTasksAfterShutdownPolicy() const;
+		jboolean getExecuteExistingDelayedTasksAfterShutdownPolicy() const;
+		JObject getQueue() const;
+		jboolean getRemoveOnCancelPolicy() const;
+		JObject schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
+		JObject scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const;
+		JObject scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const;
+		void setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0) const;
+		void setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0) const;
+		void setRemoveOnCancelPolicy(jboolean arg0) const;
+		void shutdown() const;
+		JObject shutdownNow() const;
+		JObject submit(JObject arg0) const;
+		JObject submit(JObject arg0, JObject arg1) const;
 	};
 } // namespace java::util::concurrent
 

@@ -48,21 +48,21 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	jint TextClassifier_EntityConfig::describeContents()
+	jint TextClassifier_EntityConfig::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject TextClassifier_EntityConfig::getHints()
+	JObject TextClassifier_EntityConfig::getHints() const
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject TextClassifier_EntityConfig::resolveEntityListModifications(JObject arg0)
+	JObject TextClassifier_EntityConfig::resolveEntityListModifications(JObject arg0) const
 	{
 		return callObjectMethod(
 			"resolveEntityListModifications",
@@ -70,14 +70,14 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	jboolean TextClassifier_EntityConfig::shouldIncludeTypesFromTextClassifier()
+	jboolean TextClassifier_EntityConfig::shouldIncludeTypesFromTextClassifier() const
 	{
 		return callMethod<jboolean>(
 			"shouldIncludeTypesFromTextClassifier",
 			"()Z"
 		);
 	}
-	void TextClassifier_EntityConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextClassifier_EntityConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

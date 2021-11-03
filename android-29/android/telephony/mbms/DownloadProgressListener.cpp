@@ -17,7 +17,7 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	void DownloadProgressListener::onProgressUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void DownloadProgressListener::onProgressUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"onProgressUpdated",

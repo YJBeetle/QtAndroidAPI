@@ -25,21 +25,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint BufferedInputStream::available()
+	jint BufferedInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void BufferedInputStream::close()
+	void BufferedInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void BufferedInputStream::mark(jint arg0)
+	void BufferedInputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -47,21 +47,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean BufferedInputStream::markSupported()
+	jboolean BufferedInputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint BufferedInputStream::read()
+	jint BufferedInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint BufferedInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint BufferedInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -71,14 +71,14 @@ namespace java::io
 			arg2
 		);
 	}
-	void BufferedInputStream::reset()
+	void BufferedInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong BufferedInputStream::skip(jlong arg0)
+	jlong BufferedInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

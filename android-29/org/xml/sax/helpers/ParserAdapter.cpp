@@ -29,7 +29,7 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void ParserAdapter::characters(JCharArray arg0, jint arg1, jint arg2)
+	void ParserAdapter::characters(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"characters",
@@ -39,14 +39,14 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void ParserAdapter::endDocument()
+	void ParserAdapter::endDocument() const
 	{
 		callMethod<void>(
 			"endDocument",
 			"()V"
 		);
 	}
-	void ParserAdapter::endElement(JString arg0)
+	void ParserAdapter::endElement(JString arg0) const
 	{
 		callMethod<void>(
 			"endElement",
@@ -54,35 +54,35 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JObject ParserAdapter::getContentHandler()
+	JObject ParserAdapter::getContentHandler() const
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	JObject ParserAdapter::getDTDHandler()
+	JObject ParserAdapter::getDTDHandler() const
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	JObject ParserAdapter::getEntityResolver()
+	JObject ParserAdapter::getEntityResolver() const
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	JObject ParserAdapter::getErrorHandler()
+	JObject ParserAdapter::getErrorHandler() const
 	{
 		return callObjectMethod(
 			"getErrorHandler",
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean ParserAdapter::getFeature(JString arg0)
+	jboolean ParserAdapter::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -90,7 +90,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JObject ParserAdapter::getProperty(JString arg0)
+	JObject ParserAdapter::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -98,7 +98,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void ParserAdapter::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
+	void ParserAdapter::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
@@ -108,7 +108,7 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void ParserAdapter::parse(JString arg0)
+	void ParserAdapter::parse(JString arg0) const
 	{
 		callMethod<void>(
 			"parse",
@@ -116,7 +116,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	void ParserAdapter::parse(org::xml::sax::InputSource arg0)
+	void ParserAdapter::parse(org::xml::sax::InputSource arg0) const
 	{
 		callMethod<void>(
 			"parse",
@@ -124,7 +124,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::processingInstruction(JString arg0, JString arg1)
+	void ParserAdapter::processingInstruction(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"processingInstruction",
@@ -133,7 +133,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void ParserAdapter::setContentHandler(JObject arg0)
+	void ParserAdapter::setContentHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setContentHandler",
@@ -141,7 +141,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setDTDHandler(JObject arg0)
+	void ParserAdapter::setDTDHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDTDHandler",
@@ -149,7 +149,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setDocumentLocator(JObject arg0)
+	void ParserAdapter::setDocumentLocator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -157,7 +157,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setEntityResolver(JObject arg0)
+	void ParserAdapter::setEntityResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -165,7 +165,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setErrorHandler(JObject arg0)
+	void ParserAdapter::setErrorHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -173,7 +173,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setFeature(JString arg0, jboolean arg1)
+	void ParserAdapter::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -182,7 +182,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void ParserAdapter::setProperty(JString arg0, JObject arg1)
+	void ParserAdapter::setProperty(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setProperty",
@@ -191,14 +191,14 @@ namespace org::xml::sax::helpers
 			arg1.object<jobject>()
 		);
 	}
-	void ParserAdapter::startDocument()
+	void ParserAdapter::startDocument() const
 	{
 		callMethod<void>(
 			"startDocument",
 			"()V"
 		);
 	}
-	void ParserAdapter::startElement(JString arg0, JObject arg1)
+	void ParserAdapter::startElement(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"startElement",

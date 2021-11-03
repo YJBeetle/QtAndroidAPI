@@ -16,7 +16,7 @@ namespace android::printservice
 	// Constructors
 	
 	// Methods
-	jboolean PrintJob::block(JString arg0)
+	jboolean PrintJob::block(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"block",
@@ -24,21 +24,21 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PrintJob::cancel()
+	jboolean PrintJob::cancel() const
 	{
 		return callMethod<jboolean>(
 			"cancel",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::complete()
+	jboolean PrintJob::complete() const
 	{
 		return callMethod<jboolean>(
 			"complete",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::equals(JObject arg0)
+	jboolean PrintJob::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,7 +46,7 @@ namespace android::printservice
 			arg0.object<jobject>()
 		);
 	}
-	jboolean PrintJob::fail(JString arg0)
+	jboolean PrintJob::fail(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"fail",
@@ -54,7 +54,7 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	jint PrintJob::getAdvancedIntOption(JString arg0)
+	jint PrintJob::getAdvancedIntOption(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getAdvancedIntOption",
@@ -62,7 +62,7 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	JString PrintJob::getAdvancedStringOption(JString arg0)
+	JString PrintJob::getAdvancedStringOption(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAdvancedStringOption",
@@ -70,35 +70,35 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	android::printservice::PrintDocument PrintJob::getDocument()
+	android::printservice::PrintDocument PrintJob::getDocument() const
 	{
 		return callObjectMethod(
 			"getDocument",
 			"()Landroid/printservice/PrintDocument;"
 		);
 	}
-	android::print::PrintJobId PrintJob::getId()
+	android::print::PrintJobId PrintJob::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Landroid/print/PrintJobId;"
 		);
 	}
-	android::print::PrintJobInfo PrintJob::getInfo()
+	android::print::PrintJobInfo PrintJob::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Landroid/print/PrintJobInfo;"
 		);
 	}
-	JString PrintJob::getTag()
+	JString PrintJob::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean PrintJob::hasAdvancedOption(JString arg0)
+	jboolean PrintJob::hasAdvancedOption(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasAdvancedOption",
@@ -106,56 +106,56 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	jint PrintJob::hashCode()
+	jint PrintJob::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PrintJob::isBlocked()
+	jboolean PrintJob::isBlocked() const
 	{
 		return callMethod<jboolean>(
 			"isBlocked",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isCancelled()
+	jboolean PrintJob::isCancelled() const
 	{
 		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isCompleted()
+	jboolean PrintJob::isCompleted() const
 	{
 		return callMethod<jboolean>(
 			"isCompleted",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isFailed()
+	jboolean PrintJob::isFailed() const
 	{
 		return callMethod<jboolean>(
 			"isFailed",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isQueued()
+	jboolean PrintJob::isQueued() const
 	{
 		return callMethod<jboolean>(
 			"isQueued",
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isStarted()
+	jboolean PrintJob::isStarted() const
 	{
 		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
-	void PrintJob::setProgress(jfloat arg0)
+	void PrintJob::setProgress(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setProgress",
@@ -163,7 +163,7 @@ namespace android::printservice
 			arg0
 		);
 	}
-	void PrintJob::setStatus(jint arg0)
+	void PrintJob::setStatus(jint arg0) const
 	{
 		callMethod<void>(
 			"setStatus",
@@ -171,7 +171,7 @@ namespace android::printservice
 			arg0
 		);
 	}
-	void PrintJob::setStatus(JString arg0)
+	void PrintJob::setStatus(JString arg0) const
 	{
 		callMethod<void>(
 			"setStatus",
@@ -179,7 +179,7 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PrintJob::setTag(JString arg0)
+	jboolean PrintJob::setTag(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"setTag",
@@ -187,7 +187,7 @@ namespace android::printservice
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PrintJob::start()
+	jboolean PrintJob::start() const
 	{
 		return callMethod<jboolean>(
 			"start",

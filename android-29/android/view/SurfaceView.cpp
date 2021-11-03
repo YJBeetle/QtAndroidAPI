@@ -44,7 +44,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void SurfaceView::draw(android::graphics::Canvas arg0)
+	void SurfaceView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -52,7 +52,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean SurfaceView::gatherTransparentRegion(android::graphics::Region arg0)
+	jboolean SurfaceView::gatherTransparentRegion(android::graphics::Region arg0) const
 	{
 		return callMethod<jboolean>(
 			"gatherTransparentRegion",
@@ -60,21 +60,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	JObject SurfaceView::getHolder()
+	JObject SurfaceView::getHolder() const
 	{
 		return callObjectMethod(
 			"getHolder",
 			"()Landroid/view/SurfaceHolder;"
 		);
 	}
-	android::view::SurfaceControl SurfaceView::getSurfaceControl()
+	android::view::SurfaceControl SurfaceView::getSurfaceControl() const
 	{
 		return callObjectMethod(
 			"getSurfaceControl",
 			"()Landroid/view/SurfaceControl;"
 		);
 	}
-	void SurfaceView::setSecure(jboolean arg0)
+	void SurfaceView::setSecure(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSecure",
@@ -82,7 +82,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void SurfaceView::setVisibility(jint arg0)
+	void SurfaceView::setVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setVisibility",
@@ -90,7 +90,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void SurfaceView::setZOrderMediaOverlay(jboolean arg0)
+	void SurfaceView::setZOrderMediaOverlay(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZOrderMediaOverlay",
@@ -98,7 +98,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void SurfaceView::setZOrderOnTop(jboolean arg0)
+	void SurfaceView::setZOrderOnTop(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZOrderOnTop",

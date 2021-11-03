@@ -14,7 +14,7 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	void SSLSocket::addHandshakeCompletedListener(JObject arg0)
+	void SSLSocket::addHandshakeCompletedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addHandshakeCompletedListener",
@@ -22,105 +22,105 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	JString SSLSocket::getApplicationProtocol()
+	JString SSLSocket::getApplicationProtocol() const
 	{
 		return callObjectMethod(
 			"getApplicationProtocol",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean SSLSocket::getEnableSessionCreation()
+	jboolean SSLSocket::getEnableSessionCreation() const
 	{
 		return callMethod<jboolean>(
 			"getEnableSessionCreation",
 			"()Z"
 		);
 	}
-	JArray SSLSocket::getEnabledCipherSuites()
+	JArray SSLSocket::getEnabledCipherSuites() const
 	{
 		return callObjectMethod(
 			"getEnabledCipherSuites",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray SSLSocket::getEnabledProtocols()
+	JArray SSLSocket::getEnabledProtocols() const
 	{
 		return callObjectMethod(
 			"getEnabledProtocols",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString SSLSocket::getHandshakeApplicationProtocol()
+	JString SSLSocket::getHandshakeApplicationProtocol() const
 	{
 		return callObjectMethod(
 			"getHandshakeApplicationProtocol",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SSLSocket::getHandshakeApplicationProtocolSelector()
+	JObject SSLSocket::getHandshakeApplicationProtocolSelector() const
 	{
 		return callObjectMethod(
 			"getHandshakeApplicationProtocolSelector",
 			"()Ljava/util/function/BiFunction;"
 		);
 	}
-	JObject SSLSocket::getHandshakeSession()
+	JObject SSLSocket::getHandshakeSession() const
 	{
 		return callObjectMethod(
 			"getHandshakeSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
-	jboolean SSLSocket::getNeedClientAuth()
+	jboolean SSLSocket::getNeedClientAuth() const
 	{
 		return callMethod<jboolean>(
 			"getNeedClientAuth",
 			"()Z"
 		);
 	}
-	javax::net::ssl::SSLParameters SSLSocket::getSSLParameters()
+	javax::net::ssl::SSLParameters SSLSocket::getSSLParameters() const
 	{
 		return callObjectMethod(
 			"getSSLParameters",
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	JObject SSLSocket::getSession()
+	JObject SSLSocket::getSession() const
 	{
 		return callObjectMethod(
 			"getSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
-	JArray SSLSocket::getSupportedCipherSuites()
+	JArray SSLSocket::getSupportedCipherSuites() const
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray SSLSocket::getSupportedProtocols()
+	JArray SSLSocket::getSupportedProtocols() const
 	{
 		return callObjectMethod(
 			"getSupportedProtocols",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jboolean SSLSocket::getUseClientMode()
+	jboolean SSLSocket::getUseClientMode() const
 	{
 		return callMethod<jboolean>(
 			"getUseClientMode",
 			"()Z"
 		);
 	}
-	jboolean SSLSocket::getWantClientAuth()
+	jboolean SSLSocket::getWantClientAuth() const
 	{
 		return callMethod<jboolean>(
 			"getWantClientAuth",
 			"()Z"
 		);
 	}
-	void SSLSocket::removeHandshakeCompletedListener(JObject arg0)
+	void SSLSocket::removeHandshakeCompletedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeHandshakeCompletedListener",
@@ -128,7 +128,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLSocket::setEnableSessionCreation(jboolean arg0)
+	void SSLSocket::setEnableSessionCreation(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnableSessionCreation",
@@ -136,7 +136,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLSocket::setEnabledCipherSuites(JArray arg0)
+	void SSLSocket::setEnabledCipherSuites(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEnabledCipherSuites",
@@ -144,7 +144,7 @@ namespace javax::net::ssl
 			arg0.object<jarray>()
 		);
 	}
-	void SSLSocket::setEnabledProtocols(JArray arg0)
+	void SSLSocket::setEnabledProtocols(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEnabledProtocols",
@@ -152,7 +152,7 @@ namespace javax::net::ssl
 			arg0.object<jarray>()
 		);
 	}
-	void SSLSocket::setHandshakeApplicationProtocolSelector(JObject arg0)
+	void SSLSocket::setHandshakeApplicationProtocolSelector(JObject arg0) const
 	{
 		callMethod<void>(
 			"setHandshakeApplicationProtocolSelector",
@@ -160,7 +160,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLSocket::setNeedClientAuth(jboolean arg0)
+	void SSLSocket::setNeedClientAuth(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNeedClientAuth",
@@ -168,7 +168,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLSocket::setSSLParameters(javax::net::ssl::SSLParameters arg0)
+	void SSLSocket::setSSLParameters(javax::net::ssl::SSLParameters arg0) const
 	{
 		callMethod<void>(
 			"setSSLParameters",
@@ -176,7 +176,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLSocket::setUseClientMode(jboolean arg0)
+	void SSLSocket::setUseClientMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUseClientMode",
@@ -184,7 +184,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLSocket::setWantClientAuth(jboolean arg0)
+	void SSLSocket::setWantClientAuth(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setWantClientAuth",
@@ -192,7 +192,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLSocket::startHandshake()
+	void SSLSocket::startHandshake() const
 	{
 		callMethod<void>(
 			"startHandshake",

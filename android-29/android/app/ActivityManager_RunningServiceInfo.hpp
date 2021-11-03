@@ -46,9 +46,9 @@ namespace android::app
 		ActivityManager_RunningServiceInfo();
 		
 		// Methods
-		jint describeContents();
-		void readFromParcel(android::os::Parcel arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

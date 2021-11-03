@@ -25,28 +25,28 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint URLSpan::describeContents()
+	jint URLSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint URLSpan::getSpanTypeId()
+	jint URLSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	JString URLSpan::getURL()
+	JString URLSpan::getURL() const
 	{
 		return callObjectMethod(
 			"getURL",
 			"()Ljava/lang/String;"
 		);
 	}
-	void URLSpan::onClick(android::view::View arg0)
+	void URLSpan::onClick(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -54,7 +54,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void URLSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void URLSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

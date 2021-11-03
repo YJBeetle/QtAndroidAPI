@@ -35,7 +35,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	java::lang::StringBuffer StringBuffer::append(JCharArray arg0)
+	java::lang::StringBuffer StringBuffer::append(JCharArray arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -43,7 +43,7 @@ namespace java::lang
 			arg0.object<jcharArray>()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(jboolean arg0)
+	java::lang::StringBuffer StringBuffer::append(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -51,7 +51,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(jchar arg0)
+	java::lang::StringBuffer StringBuffer::append(jchar arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -59,7 +59,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(jdouble arg0)
+	java::lang::StringBuffer StringBuffer::append(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -67,7 +67,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(jfloat arg0)
+	java::lang::StringBuffer StringBuffer::append(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -75,7 +75,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(jint arg0)
+	java::lang::StringBuffer StringBuffer::append(jint arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -83,7 +83,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(JString arg0)
+	java::lang::StringBuffer StringBuffer::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -91,7 +91,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(JObject arg0)
+	java::lang::StringBuffer StringBuffer::append(JObject arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -99,7 +99,7 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(java::lang::StringBuffer arg0)
+	java::lang::StringBuffer StringBuffer::append(java::lang::StringBuffer arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -107,7 +107,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(jlong arg0)
+	java::lang::StringBuffer StringBuffer::append(jlong arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -115,7 +115,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(JCharArray arg0, jint arg1, jint arg2)
+	java::lang::StringBuffer StringBuffer::append(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -125,7 +125,7 @@ namespace java::lang
 			arg2
 		);
 	}
-	java::lang::StringBuffer StringBuffer::append(JString arg0, jint arg1, jint arg2)
+	java::lang::StringBuffer StringBuffer::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -135,7 +135,7 @@ namespace java::lang
 			arg2
 		);
 	}
-	java::lang::StringBuffer StringBuffer::appendCodePoint(jint arg0)
+	java::lang::StringBuffer StringBuffer::appendCodePoint(jint arg0) const
 	{
 		return callObjectMethod(
 			"appendCodePoint",
@@ -143,14 +143,14 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuffer::capacity()
+	jint StringBuffer::capacity() const
 	{
 		return callMethod<jint>(
 			"capacity",
 			"()I"
 		);
 	}
-	jchar StringBuffer::charAt(jint arg0)
+	jchar StringBuffer::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -158,14 +158,14 @@ namespace java::lang
 			arg0
 		);
 	}
-	JObject StringBuffer::chars()
+	JObject StringBuffer::chars() const
 	{
 		return callObjectMethod(
 			"chars",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	jint StringBuffer::codePointAt(jint arg0)
+	jint StringBuffer::codePointAt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"codePointAt",
@@ -173,7 +173,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuffer::codePointBefore(jint arg0)
+	jint StringBuffer::codePointBefore(jint arg0) const
 	{
 		return callMethod<jint>(
 			"codePointBefore",
@@ -181,7 +181,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuffer::codePointCount(jint arg0, jint arg1)
+	jint StringBuffer::codePointCount(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"codePointCount",
@@ -190,14 +190,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	JObject StringBuffer::codePoints()
+	JObject StringBuffer::codePoints() const
 	{
 		return callObjectMethod(
 			"codePoints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	jint StringBuffer::compareTo(JObject arg0)
+	jint StringBuffer::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -205,7 +205,7 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jint StringBuffer::compareTo(java::lang::StringBuffer arg0)
+	jint StringBuffer::compareTo(java::lang::StringBuffer arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -213,7 +213,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::_delete(jint arg0, jint arg1)
+	java::lang::StringBuffer StringBuffer::_delete(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"delete",
@@ -222,7 +222,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::deleteCharAt(jint arg0)
+	java::lang::StringBuffer StringBuffer::deleteCharAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"deleteCharAt",
@@ -230,7 +230,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void StringBuffer::ensureCapacity(jint arg0)
+	void StringBuffer::ensureCapacity(jint arg0) const
 	{
 		callMethod<void>(
 			"ensureCapacity",
@@ -238,7 +238,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void StringBuffer::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3)
+	void StringBuffer::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"getChars",
@@ -249,7 +249,7 @@ namespace java::lang
 			arg3
 		);
 	}
-	jint StringBuffer::indexOf(JString arg0)
+	jint StringBuffer::indexOf(JString arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -257,7 +257,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jint StringBuffer::indexOf(JString arg0, jint arg1)
+	jint StringBuffer::indexOf(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -266,7 +266,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, JCharArray arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, JCharArray arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -275,7 +275,7 @@ namespace java::lang
 			arg1.object<jcharArray>()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, jboolean arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -284,7 +284,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, jchar arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, jchar arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -293,7 +293,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, jdouble arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -302,7 +302,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, jfloat arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -311,7 +311,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, jint arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -320,7 +320,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, JString arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -329,7 +329,7 @@ namespace java::lang
 			arg1.object<jstring>()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, JObject arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -338,7 +338,7 @@ namespace java::lang
 			arg1.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, jlong arg1)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -347,7 +347,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, JCharArray arg1, jint arg2, jint arg3)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, JCharArray arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -358,7 +358,7 @@ namespace java::lang
 			arg3
 		);
 	}
-	java::lang::StringBuffer StringBuffer::insert(jint arg0, JString arg1, jint arg2, jint arg3)
+	java::lang::StringBuffer StringBuffer::insert(jint arg0, JString arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -369,7 +369,7 @@ namespace java::lang
 			arg3
 		);
 	}
-	jint StringBuffer::lastIndexOf(JString arg0)
+	jint StringBuffer::lastIndexOf(JString arg0) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -377,7 +377,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jint StringBuffer::lastIndexOf(JString arg0, jint arg1)
+	jint StringBuffer::lastIndexOf(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -386,14 +386,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	jint StringBuffer::length()
+	jint StringBuffer::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jint StringBuffer::offsetByCodePoints(jint arg0, jint arg1)
+	jint StringBuffer::offsetByCodePoints(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"offsetByCodePoints",
@@ -402,7 +402,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::StringBuffer StringBuffer::replace(jint arg0, jint arg1, JString arg2)
+	java::lang::StringBuffer StringBuffer::replace(jint arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -412,14 +412,14 @@ namespace java::lang
 			arg2.object<jstring>()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::reverse()
+	java::lang::StringBuffer StringBuffer::reverse() const
 	{
 		return callObjectMethod(
 			"reverse",
 			"()Ljava/lang/StringBuffer;"
 		);
 	}
-	void StringBuffer::setCharAt(jint arg0, jchar arg1)
+	void StringBuffer::setCharAt(jint arg0, jchar arg1) const
 	{
 		callMethod<void>(
 			"setCharAt",
@@ -428,7 +428,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	void StringBuffer::setLength(jint arg0)
+	void StringBuffer::setLength(jint arg0) const
 	{
 		callMethod<void>(
 			"setLength",
@@ -436,7 +436,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	JString StringBuffer::subSequence(jint arg0, jint arg1)
+	JString StringBuffer::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -445,7 +445,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	JString StringBuffer::substring(jint arg0)
+	JString StringBuffer::substring(jint arg0) const
 	{
 		return callObjectMethod(
 			"substring",
@@ -453,7 +453,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	JString StringBuffer::substring(jint arg0, jint arg1)
+	JString StringBuffer::substring(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"substring",
@@ -462,14 +462,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	JString StringBuffer::toString()
+	JString StringBuffer::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void StringBuffer::trimToSize()
+	void StringBuffer::trimToSize() const
 	{
 		callMethod<void>(
 			"trimToSize",

@@ -30,19 +30,19 @@ namespace java::text
 		// Methods
 		static void reorderVisually(JByteArray arg0, jint arg1, JObjectArray arg2, jint arg3, jint arg4);
 		static jboolean requiresBidi(JCharArray arg0, jint arg1, jint arg2);
-		jboolean baseIsLeftToRight();
-		java::text::Bidi createLineBidi(jint arg0, jint arg1);
-		jint getBaseLevel();
-		jint getLength();
-		jint getLevelAt(jint arg0);
-		jint getRunCount();
-		jint getRunLevel(jint arg0);
-		jint getRunLimit(jint arg0);
-		jint getRunStart(jint arg0);
-		jboolean isLeftToRight();
-		jboolean isMixed();
-		jboolean isRightToLeft();
-		JString toString();
+		jboolean baseIsLeftToRight() const;
+		java::text::Bidi createLineBidi(jint arg0, jint arg1) const;
+		jint getBaseLevel() const;
+		jint getLength() const;
+		jint getLevelAt(jint arg0) const;
+		jint getRunCount() const;
+		jint getRunLevel(jint arg0) const;
+		jint getRunLimit(jint arg0) const;
+		jint getRunStart(jint arg0) const;
+		jboolean isLeftToRight() const;
+		jboolean isMixed() const;
+		jboolean isRightToLeft() const;
+		JString toString() const;
 	};
 } // namespace java::text
 

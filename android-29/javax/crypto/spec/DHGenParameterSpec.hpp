@@ -17,8 +17,8 @@ namespace javax::crypto::spec
 		DHGenParameterSpec(jint arg0, jint arg1);
 		
 		// Methods
-		jint getExponentSize();
-		jint getPrimeSize();
+		jint getExponentSize() const;
+		jint getPrimeSize() const;
 	};
 } // namespace javax::crypto::spec
 

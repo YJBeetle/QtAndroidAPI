@@ -31,14 +31,14 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		void addTarget(android::view::Surface arg0);
-		android::hardware::camera2::CaptureRequest build();
-		JObject get(android::hardware::camera2::CaptureRequest_Key arg0);
-		JObject getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JString arg1);
-		void removeTarget(android::view::Surface arg0);
-		void set(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1);
-		android::hardware::camera2::CaptureRequest_Builder setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1, JString arg2);
-		void setTag(JObject arg0);
+		void addTarget(android::view::Surface arg0) const;
+		android::hardware::camera2::CaptureRequest build() const;
+		JObject get(android::hardware::camera2::CaptureRequest_Key arg0) const;
+		JObject getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JString arg1) const;
+		void removeTarget(android::view::Surface arg0) const;
+		void set(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1) const;
+		android::hardware::camera2::CaptureRequest_Builder setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1, JString arg2) const;
+		void setTag(JObject arg0) const;
 	};
 } // namespace android::hardware::camera2
 

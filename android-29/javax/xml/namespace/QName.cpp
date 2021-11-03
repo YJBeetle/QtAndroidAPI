@@ -42,7 +42,7 @@ namespace javax::xml::_namespace
 			arg0.object<jstring>()
 		);
 	}
-	jboolean QName::equals(JObject arg0)
+	jboolean QName::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -50,35 +50,35 @@ namespace javax::xml::_namespace
 			arg0.object<jobject>()
 		);
 	}
-	JString QName::getLocalPart()
+	JString QName::getLocalPart() const
 	{
 		return callObjectMethod(
 			"getLocalPart",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString QName::getNamespaceURI()
+	JString QName::getNamespaceURI() const
 	{
 		return callObjectMethod(
 			"getNamespaceURI",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString QName::getPrefix()
+	JString QName::getPrefix() const
 	{
 		return callObjectMethod(
 			"getPrefix",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint QName::hashCode()
+	jint QName::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString QName::toString()
+	JString QName::toString() const
 	{
 		return callObjectMethod(
 			"toString",

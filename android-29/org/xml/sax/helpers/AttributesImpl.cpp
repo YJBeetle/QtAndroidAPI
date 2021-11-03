@@ -23,7 +23,7 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void AttributesImpl::addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
+	void AttributesImpl::addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		callMethod<void>(
 			"addAttribute",
@@ -35,14 +35,14 @@ namespace org::xml::sax::helpers
 			arg4.object<jstring>()
 		);
 	}
-	void AttributesImpl::clear()
+	void AttributesImpl::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jint AttributesImpl::getIndex(JString arg0)
+	jint AttributesImpl::getIndex(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getIndex",
@@ -50,7 +50,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	jint AttributesImpl::getIndex(JString arg0, JString arg1)
+	jint AttributesImpl::getIndex(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"getIndex",
@@ -59,14 +59,14 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	jint AttributesImpl::getLength()
+	jint AttributesImpl::getLength() const
 	{
 		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
-	JString AttributesImpl::getLocalName(jint arg0)
+	JString AttributesImpl::getLocalName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLocalName",
@@ -74,7 +74,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributesImpl::getQName(jint arg0)
+	JString AttributesImpl::getQName(jint arg0) const
 	{
 		return callObjectMethod(
 			"getQName",
@@ -82,7 +82,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributesImpl::getType(jint arg0)
+	JString AttributesImpl::getType(jint arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -90,7 +90,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributesImpl::getType(JString arg0)
+	JString AttributesImpl::getType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -98,7 +98,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JString AttributesImpl::getType(JString arg0, JString arg1)
+	JString AttributesImpl::getType(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -107,7 +107,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	JString AttributesImpl::getURI(jint arg0)
+	JString AttributesImpl::getURI(jint arg0) const
 	{
 		return callObjectMethod(
 			"getURI",
@@ -115,7 +115,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributesImpl::getValue(jint arg0)
+	JString AttributesImpl::getValue(jint arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -123,7 +123,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	JString AttributesImpl::getValue(JString arg0)
+	JString AttributesImpl::getValue(JString arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -131,7 +131,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JString AttributesImpl::getValue(JString arg0, JString arg1)
+	JString AttributesImpl::getValue(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -140,7 +140,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void AttributesImpl::removeAttribute(jint arg0)
+	void AttributesImpl::removeAttribute(jint arg0) const
 	{
 		callMethod<void>(
 			"removeAttribute",
@@ -148,7 +148,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	void AttributesImpl::setAttribute(jint arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5)
+	void AttributesImpl::setAttribute(jint arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5) const
 	{
 		callMethod<void>(
 			"setAttribute",
@@ -161,7 +161,7 @@ namespace org::xml::sax::helpers
 			arg5.object<jstring>()
 		);
 	}
-	void AttributesImpl::setAttributes(JObject arg0)
+	void AttributesImpl::setAttributes(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAttributes",
@@ -169,7 +169,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void AttributesImpl::setLocalName(jint arg0, JString arg1)
+	void AttributesImpl::setLocalName(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setLocalName",
@@ -178,7 +178,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void AttributesImpl::setQName(jint arg0, JString arg1)
+	void AttributesImpl::setQName(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setQName",
@@ -187,7 +187,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void AttributesImpl::setType(jint arg0, JString arg1)
+	void AttributesImpl::setType(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setType",
@@ -196,7 +196,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void AttributesImpl::setURI(jint arg0, JString arg1)
+	void AttributesImpl::setURI(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setURI",
@@ -205,7 +205,7 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	void AttributesImpl::setValue(jint arg0, JString arg1)
+	void AttributesImpl::setValue(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setValue",

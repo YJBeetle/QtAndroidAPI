@@ -20,14 +20,14 @@ namespace android::speech::tts
 		UtteranceProgressListener();
 		
 		// Methods
-		void onAudioAvailable(JString arg0, JByteArray arg1);
-		void onBeginSynthesis(JString arg0, jint arg1, jint arg2, jint arg3);
-		void onDone(JString arg0);
-		void onError(JString arg0);
-		void onError(JString arg0, jint arg1);
-		void onRangeStart(JString arg0, jint arg1, jint arg2, jint arg3);
-		void onStart(JString arg0);
-		void onStop(JString arg0, jboolean arg1);
+		void onAudioAvailable(JString arg0, JByteArray arg1) const;
+		void onBeginSynthesis(JString arg0, jint arg1, jint arg2, jint arg3) const;
+		void onDone(JString arg0) const;
+		void onError(JString arg0) const;
+		void onError(JString arg0, jint arg1) const;
+		void onRangeStart(JString arg0, jint arg1, jint arg2, jint arg3) const;
+		void onStart(JString arg0) const;
+		void onStop(JString arg0, jboolean arg1) const;
 	};
 } // namespace android::speech::tts
 

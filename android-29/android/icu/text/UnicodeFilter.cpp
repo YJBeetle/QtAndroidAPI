@@ -11,7 +11,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jboolean UnicodeFilter::contains(jint arg0)
+	jboolean UnicodeFilter::contains(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint UnicodeFilter::matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3)
+	jint UnicodeFilter::matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3) const
 	{
 		return callMethod<jint>(
 			"matches",
