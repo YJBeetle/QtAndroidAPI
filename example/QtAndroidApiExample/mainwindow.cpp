@@ -13,6 +13,7 @@
 #include <android/app/ProgressDialog.hpp>
 #include <android/app/AlertDialog_Builder.hpp>
 #include <android/content/Intent.hpp>
+#include <android/net/Uri.hpp>
 
 using namespace android::widget;
 using namespace android::app;
@@ -137,7 +138,7 @@ void MainWindow::on_showAlert_clicked()
     });
 }
 
-void MainWindow::on_openFile_clicked() // WIP
+void MainWindow::on_openFile_clicked()
 {
     QtAndroid::runOnAndroidThreadSync([] {
         auto intent = Intent(Intent::ACTION_GET_CONTENT());
@@ -147,6 +148,10 @@ void MainWindow::on_openFile_clicked() // WIP
         intent.setType(QStringLiteral("*/*"));
         // intent.putExtra(Intent::EXTRA_TITLE(), QStringLiteral("file.txt"));
 
-        ACTIVITY.startActivityForResult(intent, 1);
+        QtAndroid::startActivity(intent, 1, [](int receiverRequestCode, int resultCode, const Intent &data){
+            qDebug()<< "handleActivityResult";
+            auto uri = data.getData();
+            qDebug() << uri.toString().toString();
+        });
     });
 }
