@@ -26,13 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2
+        uses: WillBrennan/yaqti
         with:
           version: 5.15.2
-          modules: all
           host: ${{ matrix.host.name }}
           target: android
-          arch: ${{ matrix.arch }}
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
       - name: Build
