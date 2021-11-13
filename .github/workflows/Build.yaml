@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         # arch: [android_armv7, android_arm64-v8a, android_x86, android_x86_64]
-        arch: [android_armv7]
+        arch: [android]
         host: 
           - name: linux
             os: ubuntu-latest
@@ -34,6 +34,7 @@ jobs:
         uses: jurplel/install-qt-action@v2
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          version: 5.15.2
           host: ${{ matrix.host.name }}
           target: android
           arch: ${{ matrix.arch }}
