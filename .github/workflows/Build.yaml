@@ -12,8 +12,6 @@ jobs:
   build:
     strategy:
       matrix:
-        # arch: [android_armv7, android_arm64-v8a, android_x86, android_x86_64]
-        arch: [android]
         host: 
           - name: linux
             os: ubuntu-latest
@@ -21,6 +19,9 @@ jobs:
             os: macos-latest
           - name: windows
             os: windows-latest
+        arch: [android]
+        # api: [android-28, android-29, android-30, android-31]
+        api: [android-28]
     runs-on: ${{ matrix.host.os }}
     steps:
       - uses: actions/checkout@v2
@@ -39,6 +40,6 @@ jobs:
           target: android
           arch: ${{ matrix.arch }}
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        run: cmake -B ${{github.workspace}}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
