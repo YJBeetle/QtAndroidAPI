@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Qt
-        uses: WillBrennan/yaqti
+        uses: WillBrennan/yaqti@main
         with:
           version: 5.15.2
           host: ${{ matrix.host.name }}
