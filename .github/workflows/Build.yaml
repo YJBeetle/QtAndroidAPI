@@ -14,7 +14,10 @@ jobs:
       matrix:
         # arch: [android_armv7, android_arm64-v8a, android_x86, android_x86_64]
         arch: [android_armv7]
-        host: [linux, mac, windows]
+        host: 
+          - linux
+          - mac
+          - windows
         include:
           - host: linux
             os: ubuntu-latest
