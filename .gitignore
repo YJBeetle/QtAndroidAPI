@@ -38,3 +38,10 @@ CMakeLists.txt.user
 
 # macOS
 .DS_Store
+
+# CMake
+/build
+/*/build
+
+# QtCreator
+/build-*
