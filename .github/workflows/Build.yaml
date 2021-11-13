@@ -29,8 +29,8 @@ jobs:
         uses: WillBrennan/yaqti@main
         with:
           version: 5.15.2
-          host: ${{ matrix.host.name }}
-          target: android
+          os: ${{ matrix.host.name }}
+          platform: android
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
       - name: Build
