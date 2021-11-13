@@ -15,17 +15,13 @@ jobs:
         # arch: [android_armv7, android_arm64-v8a, android_x86, android_x86_64]
         arch: [android_armv7]
         host: 
-          - linux
-          - mac
-          - windows
-        include:
-          - host: linux
+          - name: linux
             os: ubuntu-latest
-          - host: mac
+          - name: mac
             os: macos-latest
-          - host: windows
+          - name: windows
             os: windows-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.host.os }}
     steps:
       - uses: actions/checkout@v2
       - name: Cache Qt
@@ -38,7 +34,7 @@ jobs:
         uses: jurplel/install-qt-action@v2
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
-          host: ${{ matrix.host }}
+          host: ${{ matrix.host.name }}
           target: android
           arch: ${{ matrix.arch }}
       - name: Configure CMake
