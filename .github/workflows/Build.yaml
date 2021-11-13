@@ -29,6 +29,7 @@ jobs:
         uses: jurplel/install-qt-action@v2
         with:
           version: 5.15.2
+          modules: all
           host: ${{ matrix.host.name }}
           target: android
           arch: ${{ matrix.arch }}
