@@ -88,8 +88,8 @@ namespace android::content
 		android::os::Bundle call(JString arg0, JString arg1, JString arg2, android::os::Bundle arg3) const;
 		android::net::Uri canonicalize(android::net::Uri arg0) const;
 		android::content::ContentProvider_CallingIdentity clearCallingIdentity() const;
-		jint _delete(android::net::Uri arg0, android::os::Bundle arg1) const;
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::net::Uri arg0, android::os::Bundle arg1) const;
+		jint delete_(android::net::Uri arg0, JString arg1, JArray arg2) const;
 		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2) const;
 		android::content::AttributionSource getCallingAttributionSource() const;
 		JString getCallingAttributionTag() const;

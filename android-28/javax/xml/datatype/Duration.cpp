@@ -129,7 +129,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	javax::xml::_namespace::QName Duration::getXMLSchemaType() const
+	javax::xml::namespace_::QName Duration::getXMLSchemaType() const
 	{
 		return callObjectMethod(
 			"getXMLSchemaType",

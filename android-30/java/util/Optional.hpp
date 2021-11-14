@@ -32,7 +32,7 @@ namespace java::util
 		jboolean isEmpty() const;
 		jboolean isPresent() const;
 		java::util::Optional map(JObject arg0) const;
-		java::util::Optional _or(JObject arg0) const;
+		java::util::Optional or_(JObject arg0) const;
 		JObject orElse(JObject arg0) const;
 		JObject orElseGet(JObject arg0) const;
 		JObject orElseThrow() const;

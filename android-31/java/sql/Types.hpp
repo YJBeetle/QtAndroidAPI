@@ -29,7 +29,7 @@ namespace java::sql
 		static jint LONGVARCHAR();
 		static jint NCHAR();
 		static jint NCLOB();
-		static jint _NULL();
+		static jint NULL_();
 		static jint NUMERIC();
 		static jint NVARCHAR();
 		static jint OTHER();

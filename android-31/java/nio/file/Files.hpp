@@ -76,7 +76,7 @@ namespace java::nio::file
 		static JObject createTempDirectory(JObject arg0, JString arg1, JArray arg2);
 		static JObject createTempFile(JString arg0, JString arg1, JArray arg2);
 		static JObject createTempFile(JObject arg0, JString arg1, JString arg2, JArray arg3);
-		static void _delete(JObject arg0);
+		static void delete_(JObject arg0);
 		static jboolean deleteIfExists(JObject arg0);
 		static jboolean exists(JObject arg0, JArray arg1);
 		static JObject find(JObject arg0, jint arg1, JObject arg2, JArray arg3);

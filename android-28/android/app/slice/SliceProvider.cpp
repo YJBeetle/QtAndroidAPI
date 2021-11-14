@@ -59,7 +59,7 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	jint SliceProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
+	jint SliceProvider::delete_(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",

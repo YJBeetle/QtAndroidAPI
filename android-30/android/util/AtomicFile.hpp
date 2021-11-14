@@ -31,7 +31,7 @@ namespace android::util
 		AtomicFile(java::io::File arg0);
 		
 		// Methods
-		void _delete() const;
+		void delete_() const;
 		void failWrite(java::io::FileOutputStream arg0) const;
 		void finishWrite(java::io::FileOutputStream arg0) const;
 		java::io::File getBaseFile() const;

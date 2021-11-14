@@ -66,7 +66,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void BitSet::_and(java::util::BitSet arg0) const
+	void BitSet::and_(java::util::BitSet arg0) const
 	{
 		callMethod<void>(
 			"and",
@@ -207,7 +207,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void BitSet::_or(java::util::BitSet arg0) const
+	void BitSet::or_(java::util::BitSet arg0) const
 	{
 		callMethod<void>(
 			"or",
@@ -302,7 +302,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		);
 	}
-	void BitSet::_xor(java::util::BitSet arg0) const
+	void BitSet::xor_(java::util::BitSet arg0) const
 	{
 		callMethod<void>(
 			"xor",

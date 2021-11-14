@@ -69,7 +69,7 @@ namespace android::net::sip
 		android::net::sip::SipAudioCall makeAudioCall(JString arg0, JString arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3) const;
 		void open(android::net::sip::SipProfile arg0) const;
 		void open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, JObject arg2) const;
-		void _register(android::net::sip::SipProfile arg0, jint arg1, JObject arg2) const;
+		void register_(android::net::sip::SipProfile arg0, jint arg1, JObject arg2) const;
 		void setRegistrationListener(JString arg0, JObject arg1) const;
 		android::net::sip::SipAudioCall takeAudioCall(android::content::Intent arg0, android::net::sip::SipAudioCall_Listener arg1) const;
 		void unregister(android::net::sip::SipProfile arg0, JObject arg1) const;

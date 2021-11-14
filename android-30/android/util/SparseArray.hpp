@@ -25,7 +25,7 @@ namespace android::util
 		void clear() const;
 		android::util::SparseArray clone() const;
 		jboolean contains(jint arg0) const;
-		void _delete(jint arg0) const;
+		void delete_(jint arg0) const;
 		JObject get(jint arg0) const;
 		JObject get(jint arg0, JObject arg1) const;
 		jint indexOfKey(jint arg0) const;

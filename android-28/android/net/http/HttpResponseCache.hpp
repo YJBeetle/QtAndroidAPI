@@ -41,7 +41,7 @@ namespace android::net::http
 		static android::net::http::HttpResponseCache getInstalled();
 		static android::net::http::HttpResponseCache install(java::io::File arg0, jlong arg1);
 		void close() const;
-		void _delete() const;
+		void delete_() const;
 		void flush() const;
 		java::net::CacheResponse get(java::net::URI arg0, JString arg1, JObject arg2) const;
 		jint getHitCount() const;

@@ -60,7 +60,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	java::nio::channels::SelectionKey AbstractSelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, JObject arg2) const
+	java::nio::channels::SelectionKey AbstractSelectableChannel::register_(java::nio::channels::Selector arg0, jint arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"register",

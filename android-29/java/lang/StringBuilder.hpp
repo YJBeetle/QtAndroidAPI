@@ -57,7 +57,7 @@ namespace java::lang
 		JObject codePoints() const;
 		jint compareTo(JObject arg0) const;
 		jint compareTo(java::lang::StringBuilder arg0) const;
-		java::lang::StringBuilder _delete(jint arg0, jint arg1) const;
+		java::lang::StringBuilder delete_(jint arg0, jint arg1) const;
 		java::lang::StringBuilder deleteCharAt(jint arg0) const;
 		void ensureCapacity(jint arg0) const;
 		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const;

@@ -148,7 +148,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::_and(java::math::BigInteger arg0) const
+	java::math::BigInteger BigInteger::and_(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"and",
@@ -376,14 +376,14 @@ namespace java::math
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigInteger::_not() const
+	java::math::BigInteger BigInteger::not_() const
 	{
 		return callObjectMethod(
 			"not",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigInteger::_or(java::math::BigInteger arg0) const
+	java::math::BigInteger BigInteger::or_(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"or",
@@ -497,7 +497,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigInteger BigInteger::_xor(java::math::BigInteger arg0) const
+	java::math::BigInteger BigInteger::xor_(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"xor",

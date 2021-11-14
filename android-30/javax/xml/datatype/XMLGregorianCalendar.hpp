@@ -28,7 +28,7 @@ namespace javax::xml::datatype
 {
 	class Duration;
 }
-namespace javax::xml::_namespace
+namespace javax::xml::namespace_
 {
 	class QName;
 }
@@ -64,7 +64,7 @@ namespace javax::xml::datatype
 		jint getSecond() const;
 		java::util::TimeZone getTimeZone(jint arg0) const;
 		jint getTimezone() const;
-		javax::xml::_namespace::QName getXMLSchemaType() const;
+		javax::xml::namespace_::QName getXMLSchemaType() const;
 		jint getYear() const;
 		jint hashCode() const;
 		jboolean isValid() const;

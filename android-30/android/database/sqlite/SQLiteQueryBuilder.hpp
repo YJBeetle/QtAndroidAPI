@@ -47,7 +47,7 @@ namespace android::database::sqlite
 		JString buildUnionQuery(JArray arg0, JString arg1, JString arg2) const;
 		JString buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JString arg6, JString arg7) const;
 		JString buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JArray arg6, JString arg7, JString arg8) const;
-		jint _delete(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JArray arg2) const;
 		JObject getCursorFactory() const;
 		JObject getProjectionGreylist() const;
 		JObject getProjectionMap() const;

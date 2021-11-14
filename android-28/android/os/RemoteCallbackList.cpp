@@ -93,7 +93,7 @@ namespace android::os
 			arg1.object<jobject>()
 		);
 	}
-	jboolean RemoteCallbackList::_register(JObject arg0) const
+	jboolean RemoteCallbackList::register_(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"register",
@@ -101,7 +101,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean RemoteCallbackList::_register(JObject arg0, JObject arg1) const
+	jboolean RemoteCallbackList::register_(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"register",

@@ -5,7 +5,7 @@
 namespace javax::xml::xpath
 {
 	// Fields
-	javax::xml::_namespace::QName XPathConstants::BOOLEAN()
+	javax::xml::namespace_::QName XPathConstants::BOOLEAN()
 	{
 		return getStaticObjectField(
 			"javax.xml.xpath.XPathConstants",
@@ -21,7 +21,7 @@ namespace javax::xml::xpath
 			"Ljava/lang/String;"
 		);
 	}
-	javax::xml::_namespace::QName XPathConstants::NODE()
+	javax::xml::namespace_::QName XPathConstants::NODE()
 	{
 		return getStaticObjectField(
 			"javax.xml.xpath.XPathConstants",
@@ -29,7 +29,7 @@ namespace javax::xml::xpath
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName XPathConstants::NODESET()
+	javax::xml::namespace_::QName XPathConstants::NODESET()
 	{
 		return getStaticObjectField(
 			"javax.xml.xpath.XPathConstants",
@@ -37,7 +37,7 @@ namespace javax::xml::xpath
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName XPathConstants::NUMBER()
+	javax::xml::namespace_::QName XPathConstants::NUMBER()
 	{
 		return getStaticObjectField(
 			"javax.xml.xpath.XPathConstants",
@@ -45,7 +45,7 @@ namespace javax::xml::xpath
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName XPathConstants::STRING()
+	javax::xml::namespace_::QName XPathConstants::STRING()
 	{
 		return getStaticObjectField(
 			"javax.xml.xpath.XPathConstants",

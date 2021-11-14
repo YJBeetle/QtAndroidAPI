@@ -46,7 +46,7 @@ namespace android::util
 			"()Landroid/util/SparseBooleanArray;"
 		);
 	}
-	void SparseBooleanArray::_delete(jint arg0) const
+	void SparseBooleanArray::delete_(jint arg0) const
 	{
 		callMethod<void>(
 			"delete",
