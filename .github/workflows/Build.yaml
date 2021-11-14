@@ -31,7 +31,7 @@ jobs:
           version: 5.15.2
           os: ${{ matrix.host.name }}
           platform: android
-          modules: all
+          modules: android
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
       - name: Build
