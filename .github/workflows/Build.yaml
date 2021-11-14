@@ -72,10 +72,10 @@ jobs:
         run: cmake --build ${{ github.workspace }}/build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }} -- install
       - name: Archive Release
         uses: thedoctor0/zip-release@master
-        working-directory: ${{github.workspace}}/install
         with:
           type: tar
           filename: ${{ github.workspace }}/release.tar.gz
+          path: ${{github.workspace}}/install
       - name: Create release
         if: success() && (github.event_name == 'push' || github.event_name == 'pull_request')
         uses: actions/create-release@v1
