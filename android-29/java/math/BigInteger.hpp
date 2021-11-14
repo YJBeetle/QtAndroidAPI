@@ -59,7 +59,7 @@ namespace java::math
 		static java::math::BigInteger valueOf(jlong arg0);
 		java::math::BigInteger abs() const;
 		java::math::BigInteger add(java::math::BigInteger arg0) const;
-		java::math::BigInteger _and(java::math::BigInteger arg0) const;
+		java::math::BigInteger and_(java::math::BigInteger arg0) const;
 		java::math::BigInteger andNot(java::math::BigInteger arg0) const;
 		jint bitCount() const;
 		jint bitLength() const;
@@ -89,8 +89,8 @@ namespace java::math
 		java::math::BigInteger multiply(java::math::BigInteger arg0) const;
 		java::math::BigInteger negate() const;
 		java::math::BigInteger nextProbablePrime() const;
-		java::math::BigInteger _not() const;
-		java::math::BigInteger _or(java::math::BigInteger arg0) const;
+		java::math::BigInteger not_() const;
+		java::math::BigInteger or_(java::math::BigInteger arg0) const;
 		java::math::BigInteger pow(jint arg0) const;
 		java::math::BigInteger remainder(java::math::BigInteger arg0) const;
 		java::math::BigInteger setBit(jint arg0) const;
@@ -105,7 +105,7 @@ namespace java::math
 		JByteArray toByteArray() const;
 		JString toString() const;
 		JString toString(jint arg0) const;
-		java::math::BigInteger _xor(java::math::BigInteger arg0) const;
+		java::math::BigInteger xor_(java::math::BigInteger arg0) const;
 	};
 } // namespace java::math
 

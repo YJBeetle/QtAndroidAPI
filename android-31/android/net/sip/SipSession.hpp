@@ -36,7 +36,7 @@ namespace android::net::sip
 		jint getState() const;
 		jboolean isInCall() const;
 		void makeCall(android::net::sip::SipProfile arg0, JString arg1, jint arg2) const;
-		void _register(jint arg0) const;
+		void register_(jint arg0) const;
 		void setListener(android::net::sip::SipSession_Listener arg0) const;
 		void unregister() const;
 	};

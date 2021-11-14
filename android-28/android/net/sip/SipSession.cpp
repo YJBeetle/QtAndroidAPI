@@ -90,7 +90,7 @@ namespace android::net::sip
 			arg2
 		);
 	}
-	void SipSession::_register(jint arg0) const
+	void SipSession::register_(jint arg0) const
 	{
 		callMethod<void>(
 			"register",

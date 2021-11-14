@@ -61,7 +61,7 @@ namespace android::util
 			"Landroid/util/JsonToken;"
 		);
 	}
-	android::util::JsonToken JsonToken::_NULL()
+	android::util::JsonToken JsonToken::NULL_()
 	{
 		return getStaticObjectField(
 			"android.util.JsonToken",

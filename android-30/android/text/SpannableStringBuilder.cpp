@@ -104,7 +104,7 @@ namespace android::text
 			"()V"
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::_delete(jint arg0, jint arg1) const
+	android::text::SpannableStringBuilder SpannableStringBuilder::delete_(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"delete",

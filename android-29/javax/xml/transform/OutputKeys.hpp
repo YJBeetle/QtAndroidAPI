@@ -16,7 +16,7 @@ namespace javax::xml::transform
 		static JString ENCODING();
 		static JString INDENT();
 		static JString MEDIA_TYPE();
-		static JString _METHOD();
+		static JString METHOD_();
 		static JString OMIT_XML_DECLARATION();
 		static JString STANDALONE();
 		static JString VERSION();

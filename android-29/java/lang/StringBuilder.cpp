@@ -212,7 +212,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::lang::StringBuilder StringBuilder::_delete(jint arg0, jint arg1) const
+	java::lang::StringBuilder StringBuilder::delete_(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"delete",

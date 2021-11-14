@@ -14,7 +14,7 @@ namespace android::nfc::tech
 	{
 	public:
 		// Fields
-		static jint _PAGE_SIZE();
+		static jint PAGE_SIZE_();
 		static jint TYPE_ULTRALIGHT();
 		static jint TYPE_ULTRALIGHT_C();
 		static jint TYPE_UNKNOWN();

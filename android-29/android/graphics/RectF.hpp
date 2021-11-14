@@ -64,9 +64,9 @@ namespace android::graphics
 		void sort() const;
 		JString toShortString() const;
 		JString toString() const;
-		void _union(android::graphics::RectF arg0) const;
-		void _union(jfloat arg0, jfloat arg1) const;
-		void _union(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void union_(android::graphics::RectF arg0) const;
+		void union_(jfloat arg0, jfloat arg1) const;
+		void union_(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
 		jfloat width() const;
 		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};

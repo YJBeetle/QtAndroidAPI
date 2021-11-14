@@ -148,7 +148,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	jint Phaser::_register() const
+	jint Phaser::register_() const
 	{
 		return callMethod<jint>(
 			"register",

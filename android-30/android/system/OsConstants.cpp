@@ -368,42 +368,42 @@ namespace android::system
 			"CAP_WAKE_ALARM"
 		);
 	}
-	jint OsConstants::E2BIG()
+	jint OsConstants::E2BIG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"E2BIG"
 		);
 	}
-	jint OsConstants::EACCES()
+	jint OsConstants::EACCES_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EACCES"
 		);
 	}
-	jint OsConstants::EADDRINUSE()
+	jint OsConstants::EADDRINUSE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EADDRINUSE"
 		);
 	}
-	jint OsConstants::EADDRNOTAVAIL()
+	jint OsConstants::EADDRNOTAVAIL_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EADDRNOTAVAIL"
 		);
 	}
-	jint OsConstants::EAFNOSUPPORT()
+	jint OsConstants::EAFNOSUPPORT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EAFNOSUPPORT"
 		);
 	}
-	jint OsConstants::EAGAIN()
+	jint OsConstants::EAGAIN_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
@@ -487,476 +487,476 @@ namespace android::system
 			"EAI_SYSTEM"
 		);
 	}
-	jint OsConstants::EALREADY()
+	jint OsConstants::EALREADY_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EALREADY"
 		);
 	}
-	jint OsConstants::EBADF()
+	jint OsConstants::EBADF_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EBADF"
 		);
 	}
-	jint OsConstants::EBADMSG()
+	jint OsConstants::EBADMSG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EBADMSG"
 		);
 	}
-	jint OsConstants::EBUSY()
+	jint OsConstants::EBUSY_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EBUSY"
 		);
 	}
-	jint OsConstants::ECANCELED()
+	jint OsConstants::ECANCELED_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECANCELED"
 		);
 	}
-	jint OsConstants::ECHILD()
+	jint OsConstants::ECHILD_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECHILD"
 		);
 	}
-	jint OsConstants::ECONNABORTED()
+	jint OsConstants::ECONNABORTED_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECONNABORTED"
 		);
 	}
-	jint OsConstants::ECONNREFUSED()
+	jint OsConstants::ECONNREFUSED_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECONNREFUSED"
 		);
 	}
-	jint OsConstants::ECONNRESET()
+	jint OsConstants::ECONNRESET_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECONNRESET"
 		);
 	}
-	jint OsConstants::EDEADLK()
+	jint OsConstants::EDEADLK_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EDEADLK"
 		);
 	}
-	jint OsConstants::EDESTADDRREQ()
+	jint OsConstants::EDESTADDRREQ_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EDESTADDRREQ"
 		);
 	}
-	jint OsConstants::EDOM()
+	jint OsConstants::EDOM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EDOM"
 		);
 	}
-	jint OsConstants::EDQUOT()
+	jint OsConstants::EDQUOT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EDQUOT"
 		);
 	}
-	jint OsConstants::EEXIST()
+	jint OsConstants::EEXIST_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EEXIST"
 		);
 	}
-	jint OsConstants::EFAULT()
+	jint OsConstants::EFAULT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EFAULT"
 		);
 	}
-	jint OsConstants::EFBIG()
+	jint OsConstants::EFBIG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EFBIG"
 		);
 	}
-	jint OsConstants::EHOSTUNREACH()
+	jint OsConstants::EHOSTUNREACH_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EHOSTUNREACH"
 		);
 	}
-	jint OsConstants::EIDRM()
+	jint OsConstants::EIDRM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EIDRM"
 		);
 	}
-	jint OsConstants::EILSEQ()
+	jint OsConstants::EILSEQ_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EILSEQ"
 		);
 	}
-	jint OsConstants::EINPROGRESS()
+	jint OsConstants::EINPROGRESS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EINPROGRESS"
 		);
 	}
-	jint OsConstants::EINTR()
+	jint OsConstants::EINTR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EINTR"
 		);
 	}
-	jint OsConstants::EINVAL()
+	jint OsConstants::EINVAL_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EINVAL"
 		);
 	}
-	jint OsConstants::EIO()
+	jint OsConstants::EIO_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EIO"
 		);
 	}
-	jint OsConstants::EISCONN()
+	jint OsConstants::EISCONN_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EISCONN"
 		);
 	}
-	jint OsConstants::EISDIR()
+	jint OsConstants::EISDIR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EISDIR"
 		);
 	}
-	jint OsConstants::ELOOP()
+	jint OsConstants::ELOOP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ELOOP"
 		);
 	}
-	jint OsConstants::EMFILE()
+	jint OsConstants::EMFILE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EMFILE"
 		);
 	}
-	jint OsConstants::EMLINK()
+	jint OsConstants::EMLINK_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EMLINK"
 		);
 	}
-	jint OsConstants::EMSGSIZE()
+	jint OsConstants::EMSGSIZE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EMSGSIZE"
 		);
 	}
-	jint OsConstants::EMULTIHOP()
+	jint OsConstants::EMULTIHOP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EMULTIHOP"
 		);
 	}
-	jint OsConstants::ENAMETOOLONG()
+	jint OsConstants::ENAMETOOLONG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENAMETOOLONG"
 		);
 	}
-	jint OsConstants::ENETDOWN()
+	jint OsConstants::ENETDOWN_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENETDOWN"
 		);
 	}
-	jint OsConstants::ENETRESET()
+	jint OsConstants::ENETRESET_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENETRESET"
 		);
 	}
-	jint OsConstants::ENETUNREACH()
+	jint OsConstants::ENETUNREACH_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENETUNREACH"
 		);
 	}
-	jint OsConstants::ENFILE()
+	jint OsConstants::ENFILE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENFILE"
 		);
 	}
-	jint OsConstants::ENOBUFS()
+	jint OsConstants::ENOBUFS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOBUFS"
 		);
 	}
-	jint OsConstants::ENODATA()
+	jint OsConstants::ENODATA_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENODATA"
 		);
 	}
-	jint OsConstants::ENODEV()
+	jint OsConstants::ENODEV_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENODEV"
 		);
 	}
-	jint OsConstants::ENOENT()
+	jint OsConstants::ENOENT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOENT"
 		);
 	}
-	jint OsConstants::ENOEXEC()
+	jint OsConstants::ENOEXEC_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOEXEC"
 		);
 	}
-	jint OsConstants::ENOLCK()
+	jint OsConstants::ENOLCK_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOLCK"
 		);
 	}
-	jint OsConstants::ENOLINK()
+	jint OsConstants::ENOLINK_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOLINK"
 		);
 	}
-	jint OsConstants::ENOMEM()
+	jint OsConstants::ENOMEM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOMEM"
 		);
 	}
-	jint OsConstants::ENOMSG()
+	jint OsConstants::ENOMSG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOMSG"
 		);
 	}
-	jint OsConstants::ENOPROTOOPT()
+	jint OsConstants::ENOPROTOOPT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOPROTOOPT"
 		);
 	}
-	jint OsConstants::ENOSPC()
+	jint OsConstants::ENOSPC_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSPC"
 		);
 	}
-	jint OsConstants::ENOSR()
+	jint OsConstants::ENOSR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSR"
 		);
 	}
-	jint OsConstants::ENOSTR()
+	jint OsConstants::ENOSTR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSTR"
 		);
 	}
-	jint OsConstants::ENOSYS()
+	jint OsConstants::ENOSYS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSYS"
 		);
 	}
-	jint OsConstants::ENOTCONN()
+	jint OsConstants::ENOTCONN_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOTCONN"
 		);
 	}
-	jint OsConstants::ENOTDIR()
+	jint OsConstants::ENOTDIR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOTDIR"
 		);
 	}
-	jint OsConstants::ENOTEMPTY()
+	jint OsConstants::ENOTEMPTY_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOTEMPTY"
 		);
 	}
-	jint OsConstants::ENOTSOCK()
+	jint OsConstants::ENOTSOCK_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOTSOCK"
 		);
 	}
-	jint OsConstants::ENOTSUP()
+	jint OsConstants::ENOTSUP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOTSUP"
 		);
 	}
-	jint OsConstants::ENOTTY()
+	jint OsConstants::ENOTTY_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOTTY"
 		);
 	}
-	jint OsConstants::ENXIO()
+	jint OsConstants::ENXIO_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENXIO"
 		);
 	}
-	jint OsConstants::EOPNOTSUPP()
+	jint OsConstants::EOPNOTSUPP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EOPNOTSUPP"
 		);
 	}
-	jint OsConstants::EOVERFLOW()
+	jint OsConstants::EOVERFLOW_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EOVERFLOW"
 		);
 	}
-	jint OsConstants::EPERM()
+	jint OsConstants::EPERM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EPERM"
 		);
 	}
-	jint OsConstants::EPIPE()
+	jint OsConstants::EPIPE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EPIPE"
 		);
 	}
-	jint OsConstants::EPROTO()
+	jint OsConstants::EPROTO_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EPROTO"
 		);
 	}
-	jint OsConstants::EPROTONOSUPPORT()
+	jint OsConstants::EPROTONOSUPPORT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EPROTONOSUPPORT"
 		);
 	}
-	jint OsConstants::EPROTOTYPE()
+	jint OsConstants::EPROTOTYPE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EPROTOTYPE"
 		);
 	}
-	jint OsConstants::ERANGE()
+	jint OsConstants::ERANGE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ERANGE"
 		);
 	}
-	jint OsConstants::EROFS()
+	jint OsConstants::EROFS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EROFS"
 		);
 	}
-	jint OsConstants::ESPIPE()
+	jint OsConstants::ESPIPE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ESPIPE"
 		);
 	}
-	jint OsConstants::ESRCH()
+	jint OsConstants::ESRCH_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ESRCH"
 		);
 	}
-	jint OsConstants::ESTALE()
+	jint OsConstants::ESTALE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
@@ -991,42 +991,42 @@ namespace android::system
 			"ETH_P_IPV6"
 		);
 	}
-	jint OsConstants::ETIME()
+	jint OsConstants::ETIME_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ETIME"
 		);
 	}
-	jint OsConstants::ETIMEDOUT()
+	jint OsConstants::ETIMEDOUT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ETIMEDOUT"
 		);
 	}
-	jint OsConstants::ETXTBSY()
+	jint OsConstants::ETXTBSY_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ETXTBSY"
 		);
 	}
-	jint OsConstants::EXDEV()
+	jint OsConstants::EXDEV_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EXDEV"
 		);
 	}
-	jint OsConstants::_EXIT_FAILURE()
+	jint OsConstants::EXIT_FAILURE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EXIT_FAILURE"
 		);
 	}
-	jint OsConstants::_EXIT_SUCCESS()
+	jint OsConstants::EXIT_SUCCESS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
@@ -2034,21 +2034,21 @@ namespace android::system
 			"R_OK"
 		);
 	}
-	jint OsConstants::_SEEK_CUR()
+	jint OsConstants::SEEK_CUR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SEEK_CUR"
 		);
 	}
-	jint OsConstants::_SEEK_END()
+	jint OsConstants::SEEK_END_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SEEK_END"
 		);
 	}
-	jint OsConstants::_SEEK_SET()
+	jint OsConstants::SEEK_SET_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
@@ -2076,231 +2076,231 @@ namespace android::system
 			"SHUT_WR"
 		);
 	}
-	jint OsConstants::_SIGABRT()
+	jint OsConstants::SIGABRT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGABRT"
 		);
 	}
-	jint OsConstants::_SIGALRM()
+	jint OsConstants::SIGALRM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGALRM"
 		);
 	}
-	jint OsConstants::_SIGBUS()
+	jint OsConstants::SIGBUS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGBUS"
 		);
 	}
-	jint OsConstants::_SIGCHLD()
+	jint OsConstants::SIGCHLD_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGCHLD"
 		);
 	}
-	jint OsConstants::_SIGCONT()
+	jint OsConstants::SIGCONT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGCONT"
 		);
 	}
-	jint OsConstants::_SIGFPE()
+	jint OsConstants::SIGFPE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGFPE"
 		);
 	}
-	jint OsConstants::_SIGHUP()
+	jint OsConstants::SIGHUP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGHUP"
 		);
 	}
-	jint OsConstants::_SIGILL()
+	jint OsConstants::SIGILL_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGILL"
 		);
 	}
-	jint OsConstants::_SIGINT()
+	jint OsConstants::SIGINT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGINT"
 		);
 	}
-	jint OsConstants::_SIGIO()
+	jint OsConstants::SIGIO_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGIO"
 		);
 	}
-	jint OsConstants::_SIGKILL()
+	jint OsConstants::SIGKILL_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGKILL"
 		);
 	}
-	jint OsConstants::_SIGPIPE()
+	jint OsConstants::SIGPIPE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGPIPE"
 		);
 	}
-	jint OsConstants::_SIGPROF()
+	jint OsConstants::SIGPROF_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGPROF"
 		);
 	}
-	jint OsConstants::_SIGPWR()
+	jint OsConstants::SIGPWR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGPWR"
 		);
 	}
-	jint OsConstants::_SIGQUIT()
+	jint OsConstants::SIGQUIT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGQUIT"
 		);
 	}
-	jint OsConstants::_SIGRTMAX()
+	jint OsConstants::SIGRTMAX_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGRTMAX"
 		);
 	}
-	jint OsConstants::_SIGRTMIN()
+	jint OsConstants::SIGRTMIN_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGRTMIN"
 		);
 	}
-	jint OsConstants::_SIGSEGV()
+	jint OsConstants::SIGSEGV_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGSEGV"
 		);
 	}
-	jint OsConstants::_SIGSTKFLT()
+	jint OsConstants::SIGSTKFLT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGSTKFLT"
 		);
 	}
-	jint OsConstants::_SIGSTOP()
+	jint OsConstants::SIGSTOP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGSTOP"
 		);
 	}
-	jint OsConstants::_SIGSYS()
+	jint OsConstants::SIGSYS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGSYS"
 		);
 	}
-	jint OsConstants::_SIGTERM()
+	jint OsConstants::SIGTERM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGTERM"
 		);
 	}
-	jint OsConstants::_SIGTRAP()
+	jint OsConstants::SIGTRAP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGTRAP"
 		);
 	}
-	jint OsConstants::_SIGTSTP()
+	jint OsConstants::SIGTSTP_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGTSTP"
 		);
 	}
-	jint OsConstants::_SIGTTIN()
+	jint OsConstants::SIGTTIN_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGTTIN"
 		);
 	}
-	jint OsConstants::_SIGTTOU()
+	jint OsConstants::SIGTTOU_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGTTOU"
 		);
 	}
-	jint OsConstants::_SIGURG()
+	jint OsConstants::SIGURG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGURG"
 		);
 	}
-	jint OsConstants::_SIGUSR1()
+	jint OsConstants::SIGUSR1_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGUSR1"
 		);
 	}
-	jint OsConstants::_SIGUSR2()
+	jint OsConstants::SIGUSR2_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGUSR2"
 		);
 	}
-	jint OsConstants::_SIGVTALRM()
+	jint OsConstants::SIGVTALRM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGVTALRM"
 		);
 	}
-	jint OsConstants::_SIGWINCH()
+	jint OsConstants::SIGWINCH_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGWINCH"
 		);
 	}
-	jint OsConstants::_SIGXCPU()
+	jint OsConstants::SIGXCPU_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"SIGXCPU"
 		);
 	}
-	jint OsConstants::_SIGXFSZ()
+	jint OsConstants::SIGXFSZ_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
@@ -2769,42 +2769,42 @@ namespace android::system
 			"TCP_USER_TIMEOUT"
 		);
 	}
-	jint OsConstants::_WCONTINUED()
+	jint OsConstants::WCONTINUED_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"WCONTINUED"
 		);
 	}
-	jint OsConstants::_WEXITED()
+	jint OsConstants::WEXITED_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"WEXITED"
 		);
 	}
-	jint OsConstants::_WNOHANG()
+	jint OsConstants::WNOHANG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"WNOHANG"
 		);
 	}
-	jint OsConstants::_WNOWAIT()
+	jint OsConstants::WNOWAIT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"WNOWAIT"
 		);
 	}
-	jint OsConstants::_WSTOPPED()
+	jint OsConstants::WSTOPPED_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"WSTOPPED"
 		);
 	}
-	jint OsConstants::_WUNTRACED()
+	jint OsConstants::WUNTRACED_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
@@ -3525,7 +3525,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jboolean OsConstants::_WCOREDUMP(jint arg0)
+	jboolean OsConstants::WCOREDUMP_(jint arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.system.OsConstants",
@@ -3534,7 +3534,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jint OsConstants::_WEXITSTATUS(jint arg0)
+	jint OsConstants::WEXITSTATUS_(jint arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.system.OsConstants",
@@ -3543,7 +3543,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jboolean OsConstants::_WIFEXITED(jint arg0)
+	jboolean OsConstants::WIFEXITED_(jint arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.system.OsConstants",
@@ -3552,7 +3552,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jboolean OsConstants::_WIFSIGNALED(jint arg0)
+	jboolean OsConstants::WIFSIGNALED_(jint arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.system.OsConstants",
@@ -3561,7 +3561,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jboolean OsConstants::_WIFSTOPPED(jint arg0)
+	jboolean OsConstants::WIFSTOPPED_(jint arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.system.OsConstants",
@@ -3570,7 +3570,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jint OsConstants::_WSTOPSIG(jint arg0)
+	jint OsConstants::WSTOPSIG_(jint arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.system.OsConstants",
@@ -3579,7 +3579,7 @@ namespace android::system
 			arg0
 		);
 	}
-	jint OsConstants::_WTERMSIG(jint arg0)
+	jint OsConstants::WTERMSIG_(jint arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.system.OsConstants",

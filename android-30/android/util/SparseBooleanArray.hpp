@@ -24,7 +24,7 @@ namespace android::util
 		void append(jint arg0, jboolean arg1) const;
 		void clear() const;
 		android::util::SparseBooleanArray clone() const;
-		void _delete(jint arg0) const;
+		void delete_(jint arg0) const;
 		jboolean equals(JObject arg0) const;
 		jboolean get(jint arg0) const;
 		jboolean get(jint arg0, jboolean arg1) const;

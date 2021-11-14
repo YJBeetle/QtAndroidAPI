@@ -77,7 +77,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint ContentProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
+	jint ContentProvider::delete_(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",

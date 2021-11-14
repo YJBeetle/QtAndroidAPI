@@ -63,7 +63,7 @@ namespace java::nio::file::spi
 		void createDirectory(JObject arg0, JArray arg1) const;
 		void createLink(JObject arg0, JObject arg1) const;
 		void createSymbolicLink(JObject arg0, JObject arg1, JArray arg2) const;
-		void _delete(JObject arg0) const;
+		void delete_(JObject arg0) const;
 		jboolean deleteIfExists(JObject arg0) const;
 		JObject getFileAttributeView(JObject arg0, JClass arg1, JArray arg2) const;
 		java::nio::file::FileStore getFileStore(JObject arg0) const;

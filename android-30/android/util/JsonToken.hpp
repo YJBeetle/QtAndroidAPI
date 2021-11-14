@@ -18,7 +18,7 @@ namespace android::util
 		static android::util::JsonToken END_DOCUMENT();
 		static android::util::JsonToken END_OBJECT();
 		static android::util::JsonToken NAME();
-		static android::util::JsonToken _NULL();
+		static android::util::JsonToken NULL_();
 		static android::util::JsonToken NUMBER();
 		static android::util::JsonToken STRING();
 		

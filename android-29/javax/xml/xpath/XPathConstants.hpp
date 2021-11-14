@@ -3,7 +3,7 @@
 #include "../../../JObject.hpp"
 
 class JString;
-namespace javax::xml::_namespace
+namespace javax::xml::namespace_
 {
 	class QName;
 }
@@ -14,12 +14,12 @@ namespace javax::xml::xpath
 	{
 	public:
 		// Fields
-		static javax::xml::_namespace::QName BOOLEAN();
+		static javax::xml::namespace_::QName BOOLEAN();
 		static JString DOM_OBJECT_MODEL();
-		static javax::xml::_namespace::QName NODE();
-		static javax::xml::_namespace::QName NODESET();
-		static javax::xml::_namespace::QName NUMBER();
-		static javax::xml::_namespace::QName STRING();
+		static javax::xml::namespace_::QName NODE();
+		static javax::xml::namespace_::QName NODESET();
+		static javax::xml::namespace_::QName NUMBER();
+		static javax::xml::namespace_::QName STRING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XPathConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

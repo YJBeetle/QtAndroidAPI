@@ -84,7 +84,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	jint ContentProviderClient::_delete(android::net::Uri arg0, android::os::Bundle arg1) const
+	jint ContentProviderClient::delete_(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -93,7 +93,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jint ContentProviderClient::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
+	jint ContentProviderClient::delete_(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",

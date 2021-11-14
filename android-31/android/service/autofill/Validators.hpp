@@ -18,9 +18,9 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		static JObject _and(JArray arg0);
-		static JObject _not(JObject arg0);
-		static JObject _or(JArray arg0);
+		static JObject and_(JArray arg0);
+		static JObject not_(JObject arg0);
+		static JObject or_(JArray arg0);
 	};
 } // namespace android::service::autofill
 

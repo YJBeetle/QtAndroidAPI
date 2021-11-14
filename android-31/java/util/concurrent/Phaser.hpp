@@ -45,7 +45,7 @@ namespace java::util::concurrent
 		java::util::concurrent::Phaser getRoot() const;
 		jint getUnarrivedParties() const;
 		jboolean isTerminated() const;
-		jint _register() const;
+		jint register_() const;
 		JString toString() const;
 	};
 } // namespace java::util::concurrent

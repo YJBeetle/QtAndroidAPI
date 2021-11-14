@@ -52,7 +52,7 @@ namespace javax::xml::transform
 			"Ljava/lang/String;"
 		);
 	}
-	JString OutputKeys::_METHOD()
+	JString OutputKeys::METHOD_()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",

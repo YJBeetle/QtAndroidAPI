@@ -213,7 +213,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::lang::StringBuffer StringBuffer::_delete(jint arg0, jint arg1) const
+	java::lang::StringBuffer StringBuffer::delete_(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"delete",

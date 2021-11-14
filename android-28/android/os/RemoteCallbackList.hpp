@@ -29,8 +29,8 @@ namespace android::os
 		void kill() const;
 		void onCallbackDied(JObject arg0) const;
 		void onCallbackDied(JObject arg0, JObject arg1) const;
-		jboolean _register(JObject arg0) const;
-		jboolean _register(JObject arg0, JObject arg1) const;
+		jboolean register_(JObject arg0) const;
+		jboolean register_(JObject arg0, JObject arg1) const;
 		jboolean unregister(JObject arg0) const;
 	};
 } // namespace android::os

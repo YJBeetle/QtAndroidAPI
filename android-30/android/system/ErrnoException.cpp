@@ -7,7 +7,7 @@
 namespace android::system
 {
 	// Fields
-	jint ErrnoException::errno()
+	jint ErrnoException::errno_()
 	{
 		return getField<jint>(
 			"errno"
