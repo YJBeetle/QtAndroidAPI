@@ -13,16 +13,24 @@ jobs:
     strategy:
       matrix:
         host: 
-          - name: linux
-            os: ubuntu-latest
-          - name: mac
-            os: macos-latest
-          - name: windows
-            os: windows-latest
-        arch: [android]
-        # api: [android-28, android-29, android-30, android-31]
-        api: [android-28]
-    runs-on: ${{ matrix.host.os }}
+          - runs-on: ubuntu-latest
+            qt-host: linux
+          # - runs-on: macos-latest
+          #   qt-host: mac
+          # - runs-on: windows-latest
+          #   qt-host: windows
+        android-arch: 
+          - android
+          # - android_armv7
+          # - android_arm64-v8a
+          # - android_x86
+          # - android_x86_64
+        android-api-version:
+          - android-28
+          # - android-29
+          # - android-30
+          # - android-31
+    runs-on: ${{ matrix.host.runs-on }}
     steps:
       - uses: actions/checkout@v2
       - uses: nttld/setup-ndk@v1
@@ -40,10 +48,10 @@ jobs:
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: 5.15.2
-          host: ${{ matrix.host.name }}
+          host: ${{ matrix.host.qt-host }}
           target: android
-          arch: ${{ matrix.arch }}
+          arch: ${{ matrix.android-arch }}
       - name: Configure CMake
-        run: cmake -B ${{ github.workspace }}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake
+        run: cmake -B ${{ github.workspace }}/build -S ${{ matrix.android-api-version }} -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake
       - name: Build
         run: cmake --build ${{ github.workspace }}/build --config ${{ env.BUILD_TYPE }}
