@@ -305,7 +305,7 @@ namespace android::graphics
 			"()Ljava/lang/String;"
 		);
 	}
-	void RectF::_union(android::graphics::RectF arg0) const
+	void RectF::union_(android::graphics::RectF arg0) const
 	{
 		callMethod<void>(
 			"union",
@@ -313,7 +313,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void RectF::_union(jfloat arg0, jfloat arg1) const
+	void RectF::union_(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"union",
@@ -322,7 +322,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void RectF::_union(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
+	void RectF::union_(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"union",

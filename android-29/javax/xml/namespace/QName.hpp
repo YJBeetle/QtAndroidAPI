@@ -5,7 +5,7 @@
 class JObject;
 class JString;
 
-namespace javax::xml::_namespace
+namespace javax::xml::namespace_
 {
 	class QName : public JObject
 	{
@@ -22,7 +22,7 @@ namespace javax::xml::_namespace
 		QName(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		static javax::xml::_namespace::QName valueOf(JString arg0);
+		static javax::xml::namespace_::QName valueOf(JString arg0);
 		jboolean equals(JObject arg0) const;
 		JString getLocalPart() const;
 		JString getNamespaceURI() const;
@@ -30,5 +30,5 @@ namespace javax::xml::_namespace
 		jint hashCode() const;
 		JString toString() const;
 	};
-} // namespace javax::xml::_namespace
+} // namespace javax::xml::namespace_
 

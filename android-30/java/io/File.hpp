@@ -54,7 +54,7 @@ namespace java::io
 		jint compareTo(java::io::File arg0) const;
 		jint compareTo(JObject arg0) const;
 		jboolean createNewFile() const;
-		jboolean _delete() const;
+		jboolean delete_() const;
 		void deleteOnExit() const;
 		jboolean equals(JObject arg0) const;
 		jboolean exists() const;

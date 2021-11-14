@@ -41,7 +41,7 @@ namespace android::security::identity
 		// Methods
 		java::security::KeyPair createEphemeralKeyPair() const;
 		JByteArray decryptMessageFromReader(JByteArray arg0) const;
-		JByteArray _delete(JByteArray arg0) const;
+		JByteArray delete_(JByteArray arg0) const;
 		JByteArray encryptMessageToReader(JByteArray arg0) const;
 		JObject getAuthKeysNeedingCertification() const;
 		JIntArray getAuthenticationDataUsageCount() const;

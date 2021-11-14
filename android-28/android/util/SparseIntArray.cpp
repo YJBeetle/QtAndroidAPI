@@ -46,7 +46,7 @@ namespace android::util
 			"()Landroid/util/SparseIntArray;"
 		);
 	}
-	void SparseIntArray::_delete(jint arg0) const
+	void SparseIntArray::delete_(jint arg0) const
 	{
 		callMethod<void>(
 			"delete",

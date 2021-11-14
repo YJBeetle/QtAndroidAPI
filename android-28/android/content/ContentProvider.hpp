@@ -77,7 +77,7 @@ namespace android::content
 		jint bulkInsert(android::net::Uri arg0, JArray arg1) const;
 		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2) const;
 		android::net::Uri canonicalize(android::net::Uri arg0) const;
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::net::Uri arg0, JString arg1, JArray arg2) const;
 		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2) const;
 		JString getCallingPackage() const;
 		android::content::Context getContext() const;

@@ -115,7 +115,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Optional Optional::_or(JObject arg0) const
+	java::util::Optional Optional::or_(JObject arg0) const
 	{
 		return callObjectMethod(
 			"or",

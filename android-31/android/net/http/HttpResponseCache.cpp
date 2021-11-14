@@ -41,7 +41,7 @@ namespace android::net::http
 			"()V"
 		);
 	}
-	void HttpResponseCache::_delete() const
+	void HttpResponseCache::delete_() const
 	{
 		callMethod<void>(
 			"delete",

@@ -24,7 +24,7 @@ namespace javax::xml::datatype
 {
 	class DatatypeConstants_Field;
 }
-namespace javax::xml::_namespace
+namespace javax::xml::namespace_
 {
 	class QName;
 }
@@ -58,7 +58,7 @@ namespace javax::xml::datatype
 		jint getSign() const;
 		jlong getTimeInMillis(java::util::Calendar arg0) const;
 		jlong getTimeInMillis(java::util::Date arg0) const;
-		javax::xml::_namespace::QName getXMLSchemaType() const;
+		javax::xml::namespace_::QName getXMLSchemaType() const;
 		jint getYears() const;
 		jint hashCode() const;
 		jboolean isLongerThan(javax::xml::datatype::Duration arg0) const;

@@ -32,7 +32,7 @@ namespace android::security::identity
 			arg0.object<jbyteArray>()
 		);
 	}
-	JByteArray IdentityCredential::_delete(JByteArray arg0) const
+	JByteArray IdentityCredential::delete_(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"delete",

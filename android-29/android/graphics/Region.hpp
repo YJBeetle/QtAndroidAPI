@@ -68,7 +68,7 @@ namespace android::graphics
 		JString toString() const;
 		void translate(jint arg0, jint arg1) const;
 		void translate(jint arg0, jint arg1, android::graphics::Region arg2) const;
-		jboolean _union(android::graphics::Rect arg0) const;
+		jboolean union_(android::graphics::Rect arg0) const;
 		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::graphics

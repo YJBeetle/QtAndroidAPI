@@ -39,7 +39,7 @@ namespace android::text
 		jchar charAt(jint arg0) const;
 		void clear() const;
 		void clearSpans() const;
-		android::text::SpannableStringBuilder _delete(jint arg0, jint arg1) const;
+		android::text::SpannableStringBuilder delete_(jint arg0, jint arg1) const;
 		jboolean equals(JObject arg0) const;
 		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const;
 		JArray getFilters() const;

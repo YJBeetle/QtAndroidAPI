@@ -37,7 +37,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	java::lang::annotation::ElementType ElementType::_METHOD()
+	java::lang::annotation::ElementType ElementType::METHOD_()
 	{
 		return getStaticObjectField(
 			"java.lang.annotation.ElementType",

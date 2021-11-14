@@ -140,7 +140,7 @@ namespace javax::xml::datatype
 			"()I"
 		);
 	}
-	javax::xml::_namespace::QName XMLGregorianCalendar::getXMLSchemaType() const
+	javax::xml::namespace_::QName XMLGregorianCalendar::getXMLSchemaType() const
 	{
 		return callObjectMethod(
 			"getXMLSchemaType",

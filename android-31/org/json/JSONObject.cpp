@@ -9,7 +9,7 @@
 namespace org::json
 {
 	// Fields
-	JObject JSONObject::_NULL()
+	JObject JSONObject::NULL_()
 	{
 		return getStaticObjectField(
 			"org.json.JSONObject",

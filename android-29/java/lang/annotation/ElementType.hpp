@@ -15,7 +15,7 @@ namespace java::lang::annotation
 		static java::lang::annotation::ElementType CONSTRUCTOR();
 		static java::lang::annotation::ElementType FIELD();
 		static java::lang::annotation::ElementType LOCAL_VARIABLE();
-		static java::lang::annotation::ElementType _METHOD();
+		static java::lang::annotation::ElementType METHOD_();
 		static java::lang::annotation::ElementType MODULE();
 		static java::lang::annotation::ElementType PACKAGE();
 		static java::lang::annotation::ElementType PARAMETER();

@@ -256,7 +256,7 @@ namespace android::database::sqlite
 			arg0.object<jstring>()
 		);
 	}
-	jint SQLiteDatabase::_delete(JString arg0, JString arg1, JArray arg2) const
+	jint SQLiteDatabase::delete_(JString arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",

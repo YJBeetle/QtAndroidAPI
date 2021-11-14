@@ -44,7 +44,7 @@ namespace java::util
 		static java::util::BitSet valueOf(JLongArray arg0);
 		static java::util::BitSet valueOf(java::nio::ByteBuffer arg0);
 		static java::util::BitSet valueOf(java::nio::LongBuffer arg0);
-		void _and(java::util::BitSet arg0) const;
+		void and_(java::util::BitSet arg0) const;
 		void andNot(java::util::BitSet arg0) const;
 		jint cardinality() const;
 		void clear() const;
@@ -62,7 +62,7 @@ namespace java::util
 		jint length() const;
 		jint nextClearBit(jint arg0) const;
 		jint nextSetBit(jint arg0) const;
-		void _or(java::util::BitSet arg0) const;
+		void or_(java::util::BitSet arg0) const;
 		jint previousClearBit(jint arg0) const;
 		jint previousSetBit(jint arg0) const;
 		void set(jint arg0) const;
@@ -74,7 +74,7 @@ namespace java::util
 		JByteArray toByteArray() const;
 		JLongArray toLongArray() const;
 		JString toString() const;
-		void _xor(java::util::BitSet arg0) const;
+		void xor_(java::util::BitSet arg0) const;
 	};
 } // namespace java::util
 

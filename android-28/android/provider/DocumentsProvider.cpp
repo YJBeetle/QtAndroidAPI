@@ -83,7 +83,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	jint DocumentsProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
+	jint DocumentsProvider::delete_(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",

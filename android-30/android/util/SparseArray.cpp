@@ -54,7 +54,7 @@ namespace android::util
 			arg0
 		);
 	}
-	void SparseArray::_delete(jint arg0) const
+	void SparseArray::delete_(jint arg0) const
 	{
 		callMethod<void>(
 			"delete",

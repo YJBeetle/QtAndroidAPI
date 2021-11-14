@@ -24,7 +24,7 @@ namespace android::util
 		void append(jlong arg0, JObject arg1) const;
 		void clear() const;
 		android::util::LongSparseArray clone() const;
-		void _delete(jlong arg0) const;
+		void delete_(jlong arg0) const;
 		JObject get(jlong arg0) const;
 		JObject get(jlong arg0, JObject arg1) const;
 		jint indexOfKey(jlong arg0) const;
