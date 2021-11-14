@@ -25,6 +25,10 @@ jobs:
     runs-on: ${{ matrix.host.os }}
     steps:
       - uses: actions/checkout@v2
+      - uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: r21e
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v1
@@ -39,11 +43,7 @@ jobs:
           host: ${{ matrix.host.name }}
           target: android
           arch: ${{ matrix.arch }}
-      - uses: nttld/setup-ndk@v1
-        id: setup-ndk
-        with:
-          ndk-version: r21e
       - name: Configure CMake
-        run: cmake -B ${{ github.workspace }}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }}
+        run: cmake -B ${{ github.workspace }}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake
       - name: Build
         run: cmake --build ${{ github.workspace }}/build --config ${{ env.BUILD_TYPE }}
