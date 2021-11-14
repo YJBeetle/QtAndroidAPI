@@ -3,9 +3,9 @@ on:
   release:
     types: [created]
   push:
-    branches: [ Qt5Dev ]
+    branches: [ Qt5, Qt5Dev ]
   pull_request:
-    branches: [ Qt5Dev ]
+    branches: [ Qt5, Qt5Dev ]
 env:
   BUILD_TYPE: Release
   NDK_VERSION: r21d
