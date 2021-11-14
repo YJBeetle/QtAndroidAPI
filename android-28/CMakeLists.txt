@@ -6897,3 +6897,8 @@ set(SRC_LIST ${CPP_LIST} ${HPP_LIST})
 add_library(${PROJECT_NAME} STATIC ${SRC_LIST})
 target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Core Qt5::AndroidExtras)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+include(GNUInstallDirs)
+install(TARGETS ${PROJECT_NAME})
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        FILES_MATCHING PATTERN "*.hpp")
