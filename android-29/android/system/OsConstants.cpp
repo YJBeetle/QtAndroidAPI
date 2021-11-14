@@ -1005,14 +1005,14 @@ namespace android::system
 			"ETIMEDOUT"
 		);
 	}
-	jint OsConstants::ETXTBSY()
+	jint OsConstants::ETXTBSY_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ETXTBSY"
 		);
 	}
-	jint OsConstants::EXDEV()
+	jint OsConstants::EXDEV_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",

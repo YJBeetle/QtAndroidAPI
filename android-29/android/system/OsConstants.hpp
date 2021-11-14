@@ -153,8 +153,8 @@ namespace android::system
 		static jint ETH_P_IPV6();
 		static jint ETIME_();
 		static jint ETIMEDOUT_();
-		static jint ETXTBSY();
-		static jint EXDEV();
+		static jint ETXTBSY_();
+		static jint EXDEV_();
 		static jint EXIT_FAILURE_();
 		static jint EXIT_SUCCESS_();
 		static jint FD_CLOEXEC();
