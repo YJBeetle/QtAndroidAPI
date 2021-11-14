@@ -368,42 +368,42 @@ namespace android::system
 			"CAP_WAKE_ALARM"
 		);
 	}
-	jint OsConstants::E2BIG()
+	jint OsConstants::_E2BIG()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"E2BIG"
 		);
 	}
-	jint OsConstants::EACCES()
+	jint OsConstants::_EACCES()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EACCES"
 		);
 	}
-	jint OsConstants::EADDRINUSE()
+	jint OsConstants::_EADDRINUSE()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EADDRINUSE"
 		);
 	}
-	jint OsConstants::EADDRNOTAVAIL()
+	jint OsConstants::_EADDRNOTAVAIL()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EADDRNOTAVAIL"
 		);
 	}
-	jint OsConstants::EAFNOSUPPORT()
+	jint OsConstants::_EAFNOSUPPORT()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EAFNOSUPPORT"
 		);
 	}
-	jint OsConstants::EAGAIN()
+	jint OsConstants::_EAGAIN()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
@@ -487,91 +487,91 @@ namespace android::system
 			"EAI_SYSTEM"
 		);
 	}
-	jint OsConstants::EALREADY()
+	jint OsConstants::_EALREADY()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EALREADY"
 		);
 	}
-	jint OsConstants::EBADF()
+	jint OsConstants::_EBADF()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EBADF"
 		);
 	}
-	jint OsConstants::EBADMSG()
+	jint OsConstants::_EBADMSG()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EBADMSG"
 		);
 	}
-	jint OsConstants::EBUSY()
+	jint OsConstants::_EBUSY()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EBUSY"
 		);
 	}
-	jint OsConstants::ECANCELED()
+	jint OsConstants::_ECANCELED()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECANCELED"
 		);
 	}
-	jint OsConstants::ECHILD()
+	jint OsConstants::_ECHILD()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECHILD"
 		);
 	}
-	jint OsConstants::ECONNABORTED()
+	jint OsConstants::_ECONNABORTED()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECONNABORTED"
 		);
 	}
-	jint OsConstants::ECONNREFUSED()
+	jint OsConstants::_ECONNREFUSED()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECONNREFUSED"
 		);
 	}
-	jint OsConstants::ECONNRESET()
+	jint OsConstants::_ECONNRESET()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ECONNRESET"
 		);
 	}
-	jint OsConstants::EDEADLK()
+	jint OsConstants::_EDEADLK()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EDEADLK"
 		);
 	}
-	jint OsConstants::EDESTADDRREQ()
+	jint OsConstants::_EDESTADDRREQ()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EDESTADDRREQ"
 		);
 	}
-	jint OsConstants::EDOM()
+	jint OsConstants::_EDOM()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"EDOM"
 		);
 	}
-	jint OsConstants::EDQUOT()
+	jint OsConstants::_EDQUOT()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
