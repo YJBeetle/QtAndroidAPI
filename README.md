@@ -1,6 +1,6 @@
 # QtAndroidAPI
 
-[![Build](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build.yaml/badge.svg?branch=Qt5Dev)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build.yaml)
+[![Build](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build.yaml/badge.svg?branch=Qt5)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build.yaml)
 
 ## 这个项目可以做什么
 
