@@ -37,6 +37,10 @@ jobs:
         id: setup-ndk
         with:
           ndk-version: r21e
+      - name: Debug NDK
+        run: echo ${{ steps.setup-ndk.outputs.ndk-path }}
+      - name: Debug NDK 2
+        run: find ${{ steps.setup-ndk.outputs.ndk-path }}
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v1
