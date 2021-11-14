@@ -42,6 +42,8 @@ CMakeLists.txt.user
 # CMake
 /build
 /*/build
+/install
+/*/install
 
 # QtCreator
 /build-*
