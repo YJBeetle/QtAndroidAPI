@@ -75,7 +75,7 @@ jobs:
         with:
           type: tar
           filename: ${{ github.workspace }}/release.tar.gz
-          path: ${{github.workspace}}/install
+          directory: ${{github.workspace}}/install
       - name: Create release
         if: success() && (github.event_name == 'push' || github.event_name == 'pull_request')
         uses: actions/create-release@v1
@@ -83,8 +83,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
-          release_name: Release ${{ github.sha }}
+          tag_name: build-${{ github.sha }}
+          release_name: Build ${{ github.sha }}
           body: |
             Auto Build
           draft: false
