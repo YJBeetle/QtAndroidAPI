@@ -72,4 +72,27 @@ jobs:
         run: cmake --build ${{ github.workspace }}/build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }} -- install
       - name: Gzip
         working-directory: ${{github.workspace}}/install
-        run: tar zcvf ${{ github.workspace }}/${{ matrix.host.show-name }}-${{ matrix.arch.show-name }}-${{ matrix.android-api-version }}.tar.gz .
+        run: tar zcvf ${{ github.workspace }}/release.tar.gz .
+      - name: Create release
+        if: success() && (github.event_name == 'push' || github.event_name == 'pull_request')
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.sha }}
+          release_name: Release ${{ github.sha }}
+          body: |
+            Auto Build
+          draft: false
+          prerelease: true
+      - name: Upload release asset
+        id: upload-release-asset
+        if: success()
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ github.workspace }}/release.tar.gz
+          asset_name: ${{ matrix.host.show-name }}-${{ matrix.arch.show-name }}-${{ matrix.android-api-version }}.tar.gz
