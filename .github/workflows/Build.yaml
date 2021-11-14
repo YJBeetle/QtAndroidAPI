@@ -8,6 +8,7 @@ on:
     branches: [ Qt5Dev ]
 env:
   BUILD_TYPE: Release
+  NDK_VERSION: r21d
   QT_VERSION: 5.15.2
 jobs:
   build:
@@ -37,7 +38,7 @@ jobs:
       - uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r21d
+          ndk-version: ${{ env.NDK_VERSION }}
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v1
