@@ -1,5 +1,7 @@
 # QtAndroidAPI
 
+[![Build](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build.yaml/badge.svg?branch=Qt5Dev)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build.yaml)
+
 ## 这个项目可以做什么
 
 这是一个为方便在Qt中调用Android方法的库。
