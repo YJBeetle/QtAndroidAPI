@@ -36,7 +36,7 @@ jobs:
       - uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r21e
+          ndk-version: r21d
       - name: Debug NDK
         run: echo ${{ steps.setup-ndk.outputs.ndk-path }}
       - name: Debug NDK 2
