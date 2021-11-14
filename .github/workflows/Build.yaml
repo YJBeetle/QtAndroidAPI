@@ -19,8 +19,8 @@ jobs:
             qt: linux
           - runs-on: macos-latest
             qt: mac
-          - runs-on: windows-latest
-            qt: windows
+          # - runs-on: windows-latest
+          #   qt: windows
         android-arch: 
           - android
           # - android_armv7
