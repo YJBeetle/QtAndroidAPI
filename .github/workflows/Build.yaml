@@ -8,17 +8,18 @@ on:
     branches: [ Qt5Dev ]
 env:
   BUILD_TYPE: Release
+  QT_VERSION: 5.15.2
 jobs:
   build:
     strategy:
       matrix:
         host: 
           - runs-on: ubuntu-latest
-            qt-host: linux
+            qt: linux
           # - runs-on: macos-latest
-          #   qt-host: mac
+          #   qt: mac
           # - runs-on: windows-latest
-          #   qt-host: windows
+          #   qt: windows
         android-arch: 
           - android
           # - android_armv7
@@ -51,8 +52,8 @@ jobs:
         uses: jurplel/install-qt-action@v2
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
-          version: 5.15.2
-          host: ${{ matrix.host.qt-host }}
+          version: ${{ env.QT_VERSION }}
+          host: ${{ matrix.host.qt }}
           target: android
           arch: ${{ matrix.android-arch }}
       - name: Configure CMake
