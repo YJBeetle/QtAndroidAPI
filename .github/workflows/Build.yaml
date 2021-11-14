@@ -39,6 +39,9 @@ jobs:
           host: ${{ matrix.host.name }}
           target: android
           arch: ${{ matrix.arch }}
+      - uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r21e
       - name: Configure CMake
         run: cmake -B ${{ github.workspace }}/build -S ${{ matrix.api }} -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
       - name: Build
