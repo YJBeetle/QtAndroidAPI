@@ -690,133 +690,133 @@ namespace android::system
 			"ENETDOWN"
 		);
 	}
-	jint OsConstants::ENETRESET()
+	jint OsConstants::ENETRESET_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENETRESET"
 		);
 	}
-	jint OsConstants::ENETUNREACH()
+	jint OsConstants::ENETUNREACH_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENETUNREACH"
 		);
 	}
-	jint OsConstants::ENFILE()
+	jint OsConstants::ENFILE_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENFILE"
 		);
 	}
-	jint OsConstants::ENOBUFS()
+	jint OsConstants::ENOBUFS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOBUFS"
 		);
 	}
-	jint OsConstants::ENODATA()
+	jint OsConstants::ENODATA_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENODATA"
 		);
 	}
-	jint OsConstants::ENODEV()
+	jint OsConstants::ENODEV_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENODEV"
 		);
 	}
-	jint OsConstants::ENOENT()
+	jint OsConstants::ENOENT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOENT"
 		);
 	}
-	jint OsConstants::ENOEXEC()
+	jint OsConstants::ENOEXEC_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOEXEC"
 		);
 	}
-	jint OsConstants::ENOLCK()
+	jint OsConstants::ENOLCK_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOLCK"
 		);
 	}
-	jint OsConstants::ENOLINK()
+	jint OsConstants::ENOLINK_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOLINK"
 		);
 	}
-	jint OsConstants::ENOMEM()
+	jint OsConstants::ENOMEM_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOMEM"
 		);
 	}
-	jint OsConstants::ENOMSG()
+	jint OsConstants::ENOMSG_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOMSG"
 		);
 	}
-	jint OsConstants::ENOPROTOOPT()
+	jint OsConstants::ENOPROTOOPT_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOPROTOOPT"
 		);
 	}
-	jint OsConstants::ENOSPC()
+	jint OsConstants::ENOSPC_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSPC"
 		);
 	}
-	jint OsConstants::ENOSR()
+	jint OsConstants::ENOSR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSR"
 		);
 	}
-	jint OsConstants::ENOSTR()
+	jint OsConstants::ENOSTR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSTR"
 		);
 	}
-	jint OsConstants::ENOSYS()
+	jint OsConstants::ENOSYS_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOSYS"
 		);
 	}
-	jint OsConstants::ENOTCONN()
+	jint OsConstants::ENOTCONN_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
 			"ENOTCONN"
 		);
 	}
-	jint OsConstants::ENOTDIR()
+	jint OsConstants::ENOTDIR_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
