@@ -14,10 +14,6 @@ jobs:
   build:
     strategy:
       matrix:
-        host:
-          - runs-on: ubuntu-latest
-            qt: linux
-            show-name: Linux
         arch:
           - qt: android
             show-name: Multi-Abi
@@ -34,7 +30,7 @@ jobs:
           # - android-29
           # - android-30
           # - android-31
-    runs-on: ${{ matrix.host.runs-on }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: nttld/setup-ndk@v1
@@ -52,7 +48,7 @@ jobs:
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ env.QT_VERSION }}
-          host: ${{ matrix.host.qt }}
+          host: linux
           target: android
           arch: ${{ matrix.arch.qt }}
       - name: Configure CMake
@@ -91,5 +87,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ github.workspace }}/release.tar.gz
-          asset_name: ${{ matrix.host.show-name }}-${{ matrix.arch.show-name }}-${{ matrix.android-api-version }}.tar.gz
+          asset_name: ${{ matrix.arch.show-name }}-${{ matrix.android-api-version }}.tar.gz
           asset_content_type: application/zip
