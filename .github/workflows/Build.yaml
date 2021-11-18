@@ -76,8 +76,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: auto-build-${{ github.ref }}-${{ steps.slug.outputs.sha8 }}
-          release_name: Auto build ${{ github.ref }} ${{ steps.slug.outputs.sha8 }}
+          tag_name: auto-build-${{ github.ref_name }}-${{ steps.slug.outputs.sha8 }}
+          release_name: Auto build ${{ github.ref_name }} ${{ steps.slug.outputs.sha8 }}
           body: |
             Auto Build
           draft: false
@@ -90,5 +90,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ github.workspace }}/release.tar.gz
-          asset_name: ${{ github.ref }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
+          asset_name: ${{ github.ref_name }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
           asset_content_type: application/zip
