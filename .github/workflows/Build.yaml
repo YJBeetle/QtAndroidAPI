@@ -11,7 +11,32 @@ env:
   NDK_VERSION: r21d
   QT_VERSION: 5.15.2
 jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Get short SHA
+        id: slug
+        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+      - name: Create release
+        id: create_release
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: auto-build-${{ github.ref_name }}-${{ steps.slug.outputs.sha8 }}
+          release_name: Auto build ${{ github.ref_name }} ${{ steps.slug.outputs.sha8 }}
+          body: |
+            This is an automatic build. If the attachment is empty, the build failed.
+            这是一个自动构建，若附件为空则说明构建失败。
+          draft: false
+          prerelease: true
   build:
+    name: Build
+    needs: release
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,7 +53,7 @@ jobs:
           #   show-name: x86_64
         android-api-version:
           - android-28
-          # - android-29
+          - android-29
           # - android-30
           # - android-31
     steps:
@@ -68,29 +93,13 @@ jobs:
           type: tar
           filename: ./release.tar.gz
           directory: ./install
-      - name: Get short SHA
-        id: slug
-        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-      - name: Create release
-        if: github.event_name == 'push' || github.event_name == 'pull_request'
-        uses: actions/create-release@v1
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: auto-build-${{ github.ref_name }}-${{ steps.slug.outputs.sha8 }}
-          release_name: Auto build ${{ github.ref_name }} ${{ steps.slug.outputs.sha8 }}
-          body: |
-            Auto Build
-          draft: false
-          prerelease: true
       - name: Upload release asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ./release.tar.gz
           asset_name: ${{ github.ref_name }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
           asset_content_type: application/zip
