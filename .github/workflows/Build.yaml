@@ -18,12 +18,6 @@ jobs:
           - runs-on: ubuntu-latest
             qt: linux
             show-name: Linux
-          - runs-on: macos-latest
-            qt: mac
-            show-name: MacOS
-          - runs-on: windows-latest
-            qt: windows
-            show-name: Windows
         arch:
           - qt: android
             show-name: Multi-Abi
