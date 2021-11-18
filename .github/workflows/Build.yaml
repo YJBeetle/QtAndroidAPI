@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Get short SHA
         id: slug
-        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+        run: echo "::set-output name=sha7::$(echo ${GITHUB_SHA} | cut -c1-7)"
       - name: Create release
         id: create_release
         if: github.event_name == 'push' || github.event_name == 'pull_request'
@@ -27,8 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: auto-build-${{ github.ref_name }}-${{ steps.slug.outputs.sha8 }}
-          release_name: Auto build ${{ github.ref_name }} ${{ steps.slug.outputs.sha8 }}
+          tag_name: auto-build-${{ github.ref_name }}-${{ steps.slug.outputs.sha7 }}
+          release_name: Auto build ${{ github.ref_name }} ${{ steps.slug.outputs.sha7 }}
           body: |
             This is an automatic build. If the attachment is empty, the build failed.
             这是一个自动构建，若附件为空则说明构建失败。
