@@ -12,6 +12,7 @@ env:
   QT_VERSION: 5.15.2
 jobs:
   build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         arch:
@@ -30,10 +31,11 @@ jobs:
           # - android-29
           # - android-30
           # - android-31
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: nttld/setup-ndk@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup NDK
+        uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
           ndk-version: ${{ env.NDK_VERSION }}
