@@ -98,3 +98,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ github.workspace }}/release.tar.gz
           asset_name: ${{ matrix.host.show-name }}-${{ matrix.arch.show-name }}-${{ matrix.android-api-version }}.tar.gz
+          asset_content_type: application/zip
