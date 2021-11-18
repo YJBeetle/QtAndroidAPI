@@ -54,20 +54,20 @@ jobs:
           target: android
           arch: ${{ matrix.arch.qt }}
       - name: Configure CMake
-        run: cmake -B ${{ github.workspace }}/build -S ${{ matrix.android-api-version }} -G"Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/install
+        run: cmake -B ./build -S ${{ matrix.android-api-version }} -G"Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} -DCMAKE_INSTALL_PREFIX=./install
       - name: Get number of CPU cores
         id: cpu-cores
         uses: SimenB/github-actions-cpu-cores@v1
       - name: Build
-        run: cmake --build ${{ github.workspace }}/build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }}
+        run: cmake --build ./build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }}
       - name: Install
-        run: cmake --build ${{ github.workspace }}/build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }} -- install
+        run: cmake --build ./build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }} -- install
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           type: tar
-          filename: ${{ github.workspace }}/release.tar.gz
-          directory: ${{github.workspace}}/install
+          filename: ./release.tar.gz
+          directory: ./install
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
@@ -91,6 +91,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/release.tar.gz
+          asset_path: ./release.tar.gz
           asset_name: ${{ github.ref_name }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
           asset_content_type: application/zip
