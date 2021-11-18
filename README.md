@@ -33,13 +33,17 @@
 在你的CMake中添加以下：
 
     include(FetchContent)
-    FetchContent_Declare(androidapi
-        GIT_REPOSITORY https://github.com/YJBeetle/QtAndroidAPI.git
-        GIT_TAG origin/Qt5Dev
-        SOURCE_SUBDIR android-29
-    )
+    FetchContent_Declare(androidapi URL https://github.com/YJBeetle/QtAndroidAPI/releases/download/auto-build-Qt5Dev-821ce31f/Qt5Dev-android-28-Multi-Abi.tar.gz)
     FetchContent_MakeAvailable(androidapi)
 
 并且在你的Target之后添加链接库
 
     target_link_libraries(${PROJECT_NAME} PRIVATE QtAndroidAPI)
+
+如果因为各种原因无法使用预编译，你可以改从源代码构建：
+
+    FetchContent_Declare(androidapi
+        GIT_REPOSITORY https://github.com/YJBeetle/QtAndroidAPI.git
+        GIT_TAG origin/Qt5Dev
+        SOURCE_SUBDIR android-29
+    )
