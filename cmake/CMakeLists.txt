@@ -1,7 +1,0 @@
-cmake_minimum_required(VERSION 3.16)
-project(QtAndroidAPI LANGUAGES CXX)
-find_package(Qt5 COMPONENTS Core AndroidExtras REQUIRED)
-add_library(${PROJECT_NAME} INTERFACE)
-target_link_libraries(${PROJECT_NAME} INTERFACE Qt5::Core Qt5::AndroidExtras)
-target_link_libraries(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/lib/libQtAndroidAPI.a)
-target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
