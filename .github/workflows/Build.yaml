@@ -66,6 +66,9 @@ jobs:
           type: tar
           filename: ${{ github.workspace }}/release.tar.gz
           directory: ${{github.workspace}}/install
+      - name: Get short SHA
+        id: slug
+        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
       - name: Create release
         if: github.event_name == 'push' || github.event_name == 'pull_request'
         uses: actions/create-release@v1
@@ -73,8 +76,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: auto-build-${{ github.ref }}-${{ github.sha }}
-          release_name: Auto build ${{ github.ref }} ${{ github.sha }}
+          tag_name: auto-build-${{ github.ref }}-${{ steps.slug.outputs.sha8 }}
+          release_name: Auto build ${{ github.ref }} ${{ steps.slug.outputs.sha8 }}
           body: |
             Auto Build
           draft: false
