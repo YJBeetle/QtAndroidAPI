@@ -91,7 +91,7 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: tar
-          filename: ./release.tar.gz
+          filename: ${{ github.workspace }}/release.tar.gz
           directory: ./install
       - name: Upload release asset
         id: upload-release-asset
