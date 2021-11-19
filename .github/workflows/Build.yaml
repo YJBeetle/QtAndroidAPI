@@ -47,9 +47,9 @@ jobs:
         uses: actions/github-script@v5
         with:
           script: |
-            if ("${{ github.event_name }}" === "release") {
-              return "${{ steps.get_release.outputs.upload_url }}"
-            } else if ("${{ github.event_name }}" === "push" || "${{ github.event_name }}" === "pull_request") {
+            if ("${{ github.event_name }}" === "push" || "${{ github.event_name }}" === "pull_request") {
+              return "${{ steps.create_release.outputs.upload_url }}"
+            } else if ("${{ github.event_name }}" === "release") {
               return "${{ steps.get_release.outputs.upload_url }}"
             } 
           result-encoding: string
