@@ -64,8 +64,8 @@ jobs:
           #   show-name: Multi-Abi
           - qt: android_armv7
             show-name: armv7
-          - qt: android_arm64-v8a
-            show-name: arm64-v8a
+          - qt: android_arm64_v8a
+            show-name: arm64_v8a
           - qt: android_x86
             show-name: x86
           - qt: android_x86_64
