@@ -102,4 +102,4 @@ jobs:
           upload_url: ${{ needs.release.outputs.upload_url }}
           asset_path: ./release.tar.gz
           asset_name: ${{ github.ref_name }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
-          asset_content_type: application/x-tar
+          asset_content_type: application/tar+gzip
