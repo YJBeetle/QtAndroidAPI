@@ -67,7 +67,7 @@ namespace android::view::inputmethod
 			"()Ljava/util/List;"
 		);
 	}
-	android::widget::inline::InlinePresentationSpec InlineSuggestionsRequest::getInlineTooltipPresentationSpec() const
+	android::widget::inline_::InlinePresentationSpec InlineSuggestionsRequest::getInlineTooltipPresentationSpec() const
 	{
 		return callObjectMethod(
 			"getInlineTooltipPresentationSpec",

@@ -5,7 +5,7 @@
 #include "../../../JString.hpp"
 #include "./InlinePresentationSpec.hpp"
 
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	// Fields
 	JObject InlinePresentationSpec::CREATOR()
@@ -82,5 +82,5 @@ namespace android::widget::inline
 			arg1
 		);
 	}
-} // namespace android::widget::inline
+} // namespace android::widget::inline_
 

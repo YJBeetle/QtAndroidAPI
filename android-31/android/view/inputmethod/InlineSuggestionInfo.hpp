@@ -7,7 +7,7 @@ namespace android::os
 {
 	class Parcel;
 }
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	class InlinePresentationSpec;
 }
@@ -36,7 +36,7 @@ namespace android::view::inputmethod
 		jint describeContents() const;
 		jboolean equals(JObject arg0) const;
 		JArray getAutofillHints() const;
-		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec() const;
+		android::widget::inline_::InlinePresentationSpec getInlinePresentationSpec() const;
 		JString getSource() const;
 		JString getType() const;
 		jint hashCode() const;
