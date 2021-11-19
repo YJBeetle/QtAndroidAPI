@@ -15,7 +15,9 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     outputs:
-      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      # upload_url: ${{ steps.create_release.outputs.upload_url }}
+      # upload_url: ${{ steps.get_release.outputs.upload_url }}
+      upload_url: ${{ steps.output.outputs.result }}
     steps:
       - name: Get short SHA
         id: slug
@@ -34,6 +36,23 @@ jobs:
             这是一个自动构建，若附件为空则说明构建失败。
           draft: false
           prerelease: true
+      - name: Get release
+        id: get_release
+        if: github.event_name == 'release'
+        uses: bruceadams/get-release@v1.2.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Output
+        id: output
+        uses: actions/github-script@v5
+        with:
+          script: |
+            if ("${{ github.event_name }}" === "release") {
+              return "${{ steps.get_release.outputs.upload_url }}"
+            } else if ("${{ github.event_name }}" === "push" || "${{ github.event_name }}" === "pull_request") {
+              return "${{ steps.get_release.outputs.upload_url }}"
+            } 
+          result-encoding: string
   build:
     name: Build
     needs: release
