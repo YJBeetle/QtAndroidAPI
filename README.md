@@ -33,7 +33,7 @@
 在你的CMake中添加以下：
 
     include(FetchContent)
-    FetchContent_Declare(androidapi URL https://github.com/YJBeetle/QtAndroidAPI/releases/download/auto-build-Qt5Dev-821ce31f/Qt5Dev-android-28-Multi-Abi.tar.gz)
+    FetchContent_Declare(androidapi URL https://github.com/YJBeetle/QtAndroidAPI/releases/download/auto-build-Qt5Dev-???????/Qt5Dev-android-29-Multi-Abi.tar.gz)
     FetchContent_MakeAvailable(androidapi)
 
 并且在你的Target之后添加链接库
