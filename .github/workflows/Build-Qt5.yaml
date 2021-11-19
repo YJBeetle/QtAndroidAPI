@@ -1,0 +1,124 @@
+name: Build
+on:
+  release:
+    types: [created]
+  push:
+    branches: [ Qt5, Qt5Dev ]
+  pull_request:
+    branches: [ Qt5, Qt5Dev ]
+env:
+  BUILD_TYPE: Release
+  NDK_VERSION: r21d
+  QT_VERSION: 5.15.2
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    outputs:
+      # upload_url: ${{ steps.create_release.outputs.upload_url }}
+      # upload_url: ${{ steps.get_release.outputs.upload_url }}
+      upload_url: ${{ steps.output.outputs.result }}
+    steps:
+      - name: Get short SHA
+        id: slug
+        run: echo "::set-output name=sha7::$(echo ${GITHUB_SHA} | cut -c1-7)"
+      - name: Create release
+        id: create_release
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: auto-build-${{ github.ref_name }}-${{ steps.slug.outputs.sha7 }}
+          release_name: Auto build ${{ github.ref_name }} ${{ steps.slug.outputs.sha7 }}
+          body: |
+            This is an automatic build. If the attachment is empty, the build failed.
+            这是一个自动构建，若附件为空则说明构建失败。
+          draft: false
+          prerelease: true
+      - name: Get release
+        id: get_release
+        if: github.event_name == 'release'
+        uses: bruceadams/get-release@v1.2.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Output
+        id: output
+        uses: actions/github-script@v5
+        with:
+          script: |
+            if ("${{ github.event_name }}" === "push" || "${{ github.event_name }}" === "pull_request") {
+              return "${{ steps.create_release.outputs.upload_url }}"
+            } else if ("${{ github.event_name }}" === "release") {
+              return "${{ steps.get_release.outputs.upload_url }}"
+            } 
+          result-encoding: string
+  build:
+    name: Build
+    needs: release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch:
+          - qt: android
+            show-name: Multi-Abi
+          # - qt: android_armv7
+          #   show-name: armv7
+          # - qt: android_arm64-v8a
+          #   show-name: arm64-v8a
+          # - qt: android_x86
+          #   show-name: x86
+          # - qt: android_x86_64
+          #   show-name: x86_64
+        android-api-version:
+          - android-28
+          - android-29
+          - android-30
+          - android-31
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup NDK
+        uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: ${{ env.NDK_VERSION }}
+      - name: Cache Qt
+        id: cache-qt
+        uses: actions/cache@v1
+        with:
+          path: ../Qt
+          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}Cache
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          version: ${{ env.QT_VERSION }}
+          host: linux
+          target: android
+          arch: ${{ matrix.arch.qt }}
+      - name: Configure CMake
+        run: cmake -B ./build -S ${{ matrix.android-api-version }} -G"Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} -DCMAKE_INSTALL_PREFIX=./install
+      - name: Get number of CPU cores
+        id: cpu-cores
+        uses: SimenB/github-actions-cpu-cores@v1
+      - name: Build
+        run: cmake --build ./build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }}
+      - name: Install
+        run: cmake --build ./build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }} -- install
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: tar
+          filename: ${{ github.workspace }}/release.tar.gz
+          directory: ./install
+      - name: Upload release asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release.outputs.upload_url }}
+          asset_path: ./release.tar.gz
+          asset_name: Qt${{ env.QT_VERSION }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
+          asset_content_type: application/tar+gzip

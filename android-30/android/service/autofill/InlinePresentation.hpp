@@ -10,7 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	class InlinePresentationSpec;
 }
@@ -30,12 +30,12 @@ namespace android::service::autofill
 		InlinePresentation(QJniObject obj);
 		
 		// Constructors
-		InlinePresentation(android::app::slice::Slice arg0, android::widget::inline::InlinePresentationSpec arg1, jboolean arg2);
+		InlinePresentation(android::app::slice::Slice arg0, android::widget::inline_::InlinePresentationSpec arg1, jboolean arg2);
 		
 		// Methods
 		jint describeContents() const;
 		jboolean equals(JObject arg0) const;
-		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec() const;
+		android::widget::inline_::InlinePresentationSpec getInlinePresentationSpec() const;
 		android::app::slice::Slice getSlice() const;
 		jint hashCode() const;
 		jboolean isPinned() const;

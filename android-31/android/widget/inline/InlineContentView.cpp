@@ -2,7 +2,7 @@
 #include "../../view/SurfaceControl.hpp"
 #include "./InlineContentView.hpp"
 
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	// Fields
 	
@@ -62,5 +62,5 @@ namespace android::widget::inline
 			arg0
 		);
 	}
-} // namespace android::widget::inline
+} // namespace android::widget::inline_
 

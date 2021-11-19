@@ -124,7 +124,7 @@ namespace android::system
 		static jint ENOLINK_();
 		static jint ENOMEM_();
 		static jint ENOMSG_();
-		static jint ENONET();
+		static jint ENONET_();
 		static jint ENOPROTOOPT_();
 		static jint ENOSPC_();
 		static jint ENOSR_();
