@@ -24,7 +24,7 @@ namespace org::json
 	{
 	public:
 		// Fields
-		static JObject _NULL();
+		static JObject NULL_();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit JSONObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

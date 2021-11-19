@@ -2,7 +2,7 @@
 #include "../../../JString.hpp"
 #include "./QName.hpp"
 
-namespace javax::xml::_namespace
+namespace javax::xml::namespace_
 {
 	// Fields
 	
@@ -33,7 +33,7 @@ namespace javax::xml::_namespace
 		) {}
 	
 	// Methods
-	javax::xml::_namespace::QName QName::valueOf(JString arg0)
+	javax::xml::namespace_::QName QName::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.namespace.QName",
@@ -85,5 +85,5 @@ namespace javax::xml::_namespace
 			"()Ljava/lang/String;"
 		);
 	}
-} // namespace javax::xml::_namespace
+} // namespace javax::xml::namespace_
 

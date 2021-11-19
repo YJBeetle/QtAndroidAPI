@@ -70,7 +70,7 @@ namespace android::provider
 		JString copyDocument(JString arg0, JString arg1) const;
 		JString createDocument(JString arg0, JString arg1, JString arg2) const;
 		android::content::IntentSender createWebLinkIntent(JString arg0, android::os::Bundle arg1) const;
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::net::Uri arg0, JString arg1, JArray arg2) const;
 		void deleteDocument(JString arg0) const;
 		void ejectRoot(JString arg0) const;
 		android::provider::DocumentsContract_Path findDocumentPath(JString arg0, JString arg1) const;

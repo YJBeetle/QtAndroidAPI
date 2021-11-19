@@ -30,7 +30,7 @@ namespace android::content
 		SearchRecentSuggestionsProvider();
 		
 		// Methods
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::net::Uri arg0, JString arg1, JArray arg2) const;
 		JString getType(android::net::Uri arg0) const;
 		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1) const;
 		jboolean onCreate() const;

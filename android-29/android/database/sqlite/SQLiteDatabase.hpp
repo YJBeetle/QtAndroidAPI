@@ -73,7 +73,7 @@ namespace android::database::sqlite
 		void beginTransactionWithListener(JObject arg0) const;
 		void beginTransactionWithListenerNonExclusive(JObject arg0) const;
 		android::database::sqlite::SQLiteStatement compileStatement(JString arg0) const;
-		jint _delete(JString arg0, JString arg1, JArray arg2) const;
+		jint delete_(JString arg0, JString arg1, JArray arg2) const;
 		void disableWriteAheadLogging() const;
 		jboolean enableWriteAheadLogging() const;
 		void endTransaction() const;

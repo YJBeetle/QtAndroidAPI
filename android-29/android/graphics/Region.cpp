@@ -290,7 +290,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	jboolean Region::_union(android::graphics::Rect arg0) const
+	jboolean Region::union_(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"union",

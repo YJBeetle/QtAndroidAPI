@@ -178,8 +178,8 @@ namespace android::content
 		android::os::Bundle call(JString arg0, JString arg1, JString arg2, android::os::Bundle arg3) const;
 		void cancelSync(android::net::Uri arg0) const;
 		android::net::Uri canonicalize(android::net::Uri arg0) const;
-		jint _delete(android::net::Uri arg0, android::os::Bundle arg1) const;
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::net::Uri arg0, android::os::Bundle arg1) const;
+		jint delete_(android::net::Uri arg0, JString arg1, JArray arg2) const;
 		JObject getOutgoingPersistedUriPermissions() const;
 		JObject getPersistedUriPermissions() const;
 		JArray getStreamTypes(android::net::Uri arg0, JString arg1) const;

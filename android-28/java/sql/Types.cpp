@@ -150,7 +150,7 @@ namespace java::sql
 			"NCLOB"
 		);
 	}
-	jint Types::_NULL()
+	jint Types::NULL_()
 	{
 		return getStaticField<jint>(
 			"java.sql.Types",

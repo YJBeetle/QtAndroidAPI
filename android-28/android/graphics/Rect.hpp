@@ -60,9 +60,9 @@ namespace android::graphics
 		void sort() const;
 		JString toShortString() const;
 		JString toString() const;
-		void _union(android::graphics::Rect arg0) const;
-		void _union(jint arg0, jint arg1) const;
-		void _union(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void union_(android::graphics::Rect arg0) const;
+		void union_(jint arg0, jint arg1) const;
+		void union_(jint arg0, jint arg1, jint arg2, jint arg3) const;
 		jint width() const;
 		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};

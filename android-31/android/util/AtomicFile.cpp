@@ -20,7 +20,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void AtomicFile::_delete() const
+	void AtomicFile::delete_() const
 	{
 		callMethod<void>(
 			"delete",

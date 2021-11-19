@@ -5,7 +5,7 @@
 namespace android::nfc::tech
 {
 	// Fields
-	jint MifareUltralight::_PAGE_SIZE()
+	jint MifareUltralight::PAGE_SIZE_()
 	{
 		return getStaticField<jint>(
 			"android.nfc.tech.MifareUltralight",

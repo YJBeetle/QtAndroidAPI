@@ -60,7 +60,7 @@ namespace android::app::slice
 		// Methods
 		void attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1) const;
 		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2) const;
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::net::Uri arg0, JString arg1, JArray arg2) const;
 		JString getType(android::net::Uri arg0) const;
 		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1) const;
 		android::app::slice::Slice onBindSlice(android::net::Uri arg0, JObject arg1) const;

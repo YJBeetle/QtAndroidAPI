@@ -11,7 +11,7 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	JObject Validators::_and(JArray arg0)
+	JObject Validators::and_(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
@@ -20,7 +20,7 @@ namespace android::service::autofill
 			arg0.object<jarray>()
 		);
 	}
-	JObject Validators::_not(JObject arg0)
+	JObject Validators::not_(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
@@ -29,7 +29,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	JObject Validators::_or(JArray arg0)
+	JObject Validators::or_(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",

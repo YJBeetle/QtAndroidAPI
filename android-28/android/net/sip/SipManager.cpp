@@ -186,7 +186,7 @@ namespace android::net::sip
 			arg2.object()
 		);
 	}
-	void SipManager::_register(android::net::sip::SipProfile arg0, jint arg1, JObject arg2) const
+	void SipManager::register_(android::net::sip::SipProfile arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"register",

@@ -3,7 +3,7 @@
 #include "./InlinePresentationSpec.hpp"
 #include "./InlinePresentationSpec_Builder.hpp"
 
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	// Fields
 	
@@ -20,14 +20,14 @@ namespace android::widget::inline
 		) {}
 	
 	// Methods
-	android::widget::inline::InlinePresentationSpec InlinePresentationSpec_Builder::build() const
+	android::widget::inline_::InlinePresentationSpec InlinePresentationSpec_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/widget/inline/InlinePresentationSpec;"
 		);
 	}
-	android::widget::inline::InlinePresentationSpec_Builder InlinePresentationSpec_Builder::setStyle(android::os::Bundle arg0) const
+	android::widget::inline_::InlinePresentationSpec_Builder InlinePresentationSpec_Builder::setStyle(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setStyle",
@@ -35,5 +35,5 @@ namespace android::widget::inline
 			arg0.object()
 		);
 	}
-} // namespace android::widget::inline
+} // namespace android::widget::inline_
 

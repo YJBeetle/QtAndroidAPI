@@ -157,7 +157,7 @@ namespace java::nio::file
 			arg3.object<jarray>()
 		);
 	}
-	void Files::_delete(JObject arg0)
+	void Files::delete_(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.nio.file.Files",

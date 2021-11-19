@@ -24,7 +24,7 @@ namespace android::util
 		void append(jint arg0, jint arg1) const;
 		void clear() const;
 		android::util::SparseIntArray clone() const;
-		void _delete(jint arg0) const;
+		void delete_(jint arg0) const;
 		jint get(jint arg0) const;
 		jint get(jint arg0, jint arg1) const;
 		jint indexOfKey(jint arg0) const;

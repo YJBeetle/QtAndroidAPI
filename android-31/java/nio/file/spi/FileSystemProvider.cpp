@@ -81,7 +81,7 @@ namespace java::nio::file::spi
 			arg2.object<jarray>()
 		);
 	}
-	void FileSystemProvider::_delete(JObject arg0) const
+	void FileSystemProvider::delete_(JObject arg0) const
 	{
 		callMethod<void>(
 			"delete",

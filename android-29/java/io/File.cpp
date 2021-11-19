@@ -147,7 +147,7 @@ namespace java::io
 			"()Z"
 		);
 	}
-	jboolean File::_delete() const
+	jboolean File::delete_() const
 	{
 		return callMethod<jboolean>(
 			"delete",

@@ -304,7 +304,7 @@ namespace android::graphics
 			"()Ljava/lang/String;"
 		);
 	}
-	void Rect::_union(android::graphics::Rect arg0) const
+	void Rect::union_(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"union",
@@ -312,7 +312,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void Rect::_union(jint arg0, jint arg1) const
+	void Rect::union_(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"union",
@@ -321,7 +321,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Rect::_union(jint arg0, jint arg1, jint arg2, jint arg3) const
+	void Rect::union_(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"union",

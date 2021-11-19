@@ -140,7 +140,7 @@ namespace android::database::sqlite
 			arg8.object<jstring>()
 		);
 	}
-	jint SQLiteQueryBuilder::_delete(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JArray arg2) const
+	jint SQLiteQueryBuilder::delete_(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",

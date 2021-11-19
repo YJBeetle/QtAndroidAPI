@@ -27,7 +27,7 @@ namespace android::util
 		jboolean contains(jint arg0) const;
 		jboolean contentEquals(android::util::SparseArray arg0) const;
 		jint contentHashCode() const;
-		void _delete(jint arg0) const;
+		void delete_(jint arg0) const;
 		JObject get(jint arg0) const;
 		JObject get(jint arg0, JObject arg1) const;
 		jint indexOfKey(jint arg0) const;

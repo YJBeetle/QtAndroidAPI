@@ -58,7 +58,7 @@ namespace android::content
 		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2) const;
 		android::net::Uri canonicalize(android::net::Uri arg0) const;
 		void close() const;
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		jint delete_(android::net::Uri arg0, JString arg1, JArray arg2) const;
 		android::content::ContentProvider getLocalContentProvider() const;
 		JArray getStreamTypes(android::net::Uri arg0, JString arg1) const;
 		JString getType(android::net::Uri arg0) const;

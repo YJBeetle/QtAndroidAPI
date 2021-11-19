@@ -14,7 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	class InlinePresentationSpec;
 }
@@ -42,7 +42,7 @@ namespace android::view::inputmethod
 		android::os::Bundle getExtras() const;
 		JString getHostPackageName() const;
 		JObject getInlinePresentationSpecs() const;
-		android::widget::inline::InlinePresentationSpec getInlineTooltipPresentationSpec() const;
+		android::widget::inline_::InlinePresentationSpec getInlineTooltipPresentationSpec() const;
 		jint getMaxSuggestionCount() const;
 		android::os::LocaleList getSupportedLocales() const;
 		jint hashCode() const;

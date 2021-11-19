@@ -19,7 +19,7 @@ namespace javax::xml::datatype
 			"AUGUST"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::DATE()
+	javax::xml::namespace_::QName DatatypeConstants::DATE()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -27,7 +27,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::DATETIME()
+	javax::xml::namespace_::QName DatatypeConstants::DATETIME()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -50,7 +50,7 @@ namespace javax::xml::datatype
 			"DECEMBER"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::DURATION()
+	javax::xml::namespace_::QName DatatypeConstants::DURATION()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -58,7 +58,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::DURATION_DAYTIME()
+	javax::xml::namespace_::QName DatatypeConstants::DURATION_DAYTIME()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -66,7 +66,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::DURATION_YEARMONTH()
+	javax::xml::namespace_::QName DatatypeConstants::DURATION_YEARMONTH()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -95,7 +95,7 @@ namespace javax::xml::datatype
 			"FIELD_UNDEFINED"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::GDAY()
+	javax::xml::namespace_::QName DatatypeConstants::GDAY()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -103,7 +103,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::GMONTH()
+	javax::xml::namespace_::QName DatatypeConstants::GMONTH()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -111,7 +111,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::GMONTHDAY()
+	javax::xml::namespace_::QName DatatypeConstants::GMONTHDAY()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -126,7 +126,7 @@ namespace javax::xml::datatype
 			"GREATER"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::GYEAR()
+	javax::xml::namespace_::QName DatatypeConstants::GYEAR()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -134,7 +134,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::GYEARMONTH()
+	javax::xml::namespace_::QName DatatypeConstants::GYEARMONTH()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -258,7 +258,7 @@ namespace javax::xml::datatype
 			"SEPTEMBER"
 		);
 	}
-	javax::xml::_namespace::QName DatatypeConstants::TIME()
+	javax::xml::namespace_::QName DatatypeConstants::TIME()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
