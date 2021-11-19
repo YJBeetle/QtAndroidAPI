@@ -802,7 +802,7 @@ namespace android::system
 			"ENOMSG"
 		);
 	}
-	jint OsConstants::ENONET()
+	jint OsConstants::ENONET_()
 	{
 		return getStaticField<jint>(
 			"android.system.OsConstants",
