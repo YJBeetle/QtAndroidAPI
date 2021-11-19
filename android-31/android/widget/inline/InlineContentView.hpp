@@ -11,7 +11,7 @@ namespace android::view
 	class SurfaceControl;
 }
 
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	class InlineContentView : public android::view::ViewGroup
 	{
@@ -32,5 +32,5 @@ namespace android::widget::inline
 		void setSurfaceControlCallback(JObject arg0) const;
 		jboolean setZOrderedOnTop(jboolean arg0) const;
 	};
-} // namespace android::widget::inline
+} // namespace android::widget::inline_
 

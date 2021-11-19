@@ -17,7 +17,7 @@ namespace android::util
 class JObject;
 class JString;
 
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	class InlinePresentationSpec : public JObject
 	{
@@ -41,5 +41,5 @@ namespace android::widget::inline
 		JString toString() const;
 		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
-} // namespace android::widget::inline
+} // namespace android::widget::inline_
 

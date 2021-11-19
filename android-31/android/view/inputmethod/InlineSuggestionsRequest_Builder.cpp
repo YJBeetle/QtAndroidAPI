@@ -20,7 +20,7 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::addInlinePresentationSpecs(android::widget::inline::InlinePresentationSpec arg0) const
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::addInlinePresentationSpecs(android::widget::inline_::InlinePresentationSpec arg0) const
 	{
 		return callObjectMethod(
 			"addInlinePresentationSpecs",
@@ -51,7 +51,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setInlineTooltipPresentationSpec(android::widget::inline::InlinePresentationSpec arg0) const
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setInlineTooltipPresentationSpec(android::widget::inline_::InlinePresentationSpec arg0) const
 	{
 		return callObjectMethod(
 			"setInlineTooltipPresentationSpec",

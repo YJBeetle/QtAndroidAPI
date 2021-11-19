@@ -21,7 +21,7 @@ namespace android::service::autofill
 	InlinePresentation::InlinePresentation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	InlinePresentation::InlinePresentation(android::app::slice::Slice arg0, android::widget::inline::InlinePresentationSpec arg1, jboolean arg2)
+	InlinePresentation::InlinePresentation(android::app::slice::Slice arg0, android::widget::inline_::InlinePresentationSpec arg1, jboolean arg2)
 		: JObject(
 			"android.service.autofill.InlinePresentation",
 			"(Landroid/app/slice/Slice;Landroid/widget/inline/InlinePresentationSpec;Z)V",
@@ -31,7 +31,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::InlinePresentation InlinePresentation::createTooltipPresentation(android::app::slice::Slice arg0, android::widget::inline::InlinePresentationSpec arg1)
+	android::service::autofill::InlinePresentation InlinePresentation::createTooltipPresentation(android::app::slice::Slice arg0, android::widget::inline_::InlinePresentationSpec arg1)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.InlinePresentation",
@@ -56,7 +56,7 @@ namespace android::service::autofill
 			arg0.object<jobject>()
 		);
 	}
-	android::widget::inline::InlinePresentationSpec InlinePresentation::getInlinePresentationSpec() const
+	android::widget::inline_::InlinePresentationSpec InlinePresentation::getInlinePresentationSpec() const
 	{
 		return callObjectMethod(
 			"getInlinePresentationSpec",

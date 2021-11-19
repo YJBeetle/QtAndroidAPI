@@ -77,7 +77,7 @@ namespace android::view::inputmethod
 			"()[Ljava/lang/String;"
 		);
 	}
-	android::widget::inline::InlinePresentationSpec InlineSuggestionInfo::getInlinePresentationSpec() const
+	android::widget::inline_::InlinePresentationSpec InlineSuggestionInfo::getInlinePresentationSpec() const
 	{
 		return callObjectMethod(
 			"getInlinePresentationSpec",

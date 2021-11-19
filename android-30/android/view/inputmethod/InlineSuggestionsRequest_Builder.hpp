@@ -14,7 +14,7 @@ namespace android::view::inputmethod
 {
 	class InlineSuggestionsRequest;
 }
-namespace android::widget::inline
+namespace android::widget::inline_
 {
 	class InlinePresentationSpec;
 }
@@ -34,7 +34,7 @@ namespace android::view::inputmethod
 		InlineSuggestionsRequest_Builder(JObject arg0);
 		
 		// Methods
-		android::view::inputmethod::InlineSuggestionsRequest_Builder addInlinePresentationSpecs(android::widget::inline::InlinePresentationSpec arg0) const;
+		android::view::inputmethod::InlineSuggestionsRequest_Builder addInlinePresentationSpecs(android::widget::inline_::InlinePresentationSpec arg0) const;
 		android::view::inputmethod::InlineSuggestionsRequest build() const;
 		android::view::inputmethod::InlineSuggestionsRequest_Builder setExtras(android::os::Bundle arg0) const;
 		android::view::inputmethod::InlineSuggestionsRequest_Builder setInlinePresentationSpecs(JObject arg0) const;
