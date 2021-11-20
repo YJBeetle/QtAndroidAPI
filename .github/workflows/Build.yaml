@@ -61,13 +61,13 @@ jobs:
       matrix:
         arch:
           - qt: android
-            show-name: armeabi-v7a
+            abi: armeabi-v7a
           - qt: android-v8a
-            show-name: arm64-v8a
+            abi: arm64-v8a
           - qt: android
-            show-name: x86
+            abi: x86
           - qt: android
-            show-name: x86_64
+            abi: x86_64
         android-api-version:
           - android-28
           - android-29
@@ -103,6 +103,7 @@ jobs:
           -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
           -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
           -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} \
+          -DANDROID_ABI:STRING=${{ matrix.arch.abi }} \
           -DCMAKE_INSTALL_PREFIX=./install
       - name: Get number of CPU cores
         id: cpu-cores
@@ -125,5 +126,5 @@ jobs:
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
           asset_path: ./release.tar.gz
-          asset_name: ${{ github.ref_name }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
+          asset_name: ${{ github.ref_name }}-${{ matrix.android-api-version }}-${{ matrix.arch.abi }}.tar.gz
           asset_content_type: application/tar+gzip
