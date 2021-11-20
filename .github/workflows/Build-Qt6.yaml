@@ -81,6 +81,23 @@ jobs:
         id: setup-ndk
         with:
           ndk-version: ${{ env.NDK_VERSION }}
+      - name: Cache host Qt
+        id: cache-host-qt
+        uses: actions/cache@v1
+        with:
+          path: ../QtHost
+          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-Cache
+      - name: Install host Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-host-qt.outputs.cache-hit }}
+          version: ${{ env.QT_VERSION }}
+      - name: Get host Qt path
+        id: host-qt-path
+        uses: actions/github-script@v5
+        with:
+          script: return "${{ env.Qt6_DIR }}"
+          result-encoding: string
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v1
@@ -103,6 +120,7 @@ jobs:
           -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
           -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
           -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt6_DIR }} \
+          -DQT_HOST_PATH:PATH=${{ steps.host-qt-path.outputs.result }} \
           -DANDROID_ABI:STRING=${{ matrix.arch.abi }} \
           -DCMAKE_INSTALL_PREFIX=./install
       - name: Get number of CPU cores
