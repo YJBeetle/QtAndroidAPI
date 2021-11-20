@@ -104,7 +104,6 @@ jobs:
           -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} \
           -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
           -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
-          -DCMAKE_PREFIX_PATH:STRING=${{ env.Qt6_DIR }} \
           -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt6_DIR }} \
           -DANDROID_ABI:STRING=${{ matrix.arch.abi }} \
           -DCMAKE_INSTALL_PREFIX=./install
