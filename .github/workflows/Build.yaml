@@ -61,15 +61,13 @@ jobs:
       matrix:
         arch:
           - qt: android
-            show-name: Multi-Abi
-          # - qt: android_armv7
-          #   show-name: armv7
-          # - qt: android_arm64-v8a
-          #   show-name: arm64-v8a
-          # - qt: android_x86
-          #   show-name: x86
-          # - qt: android_x86_64
-          #   show-name: x86_64
+            show-name: armeabi-v7a
+          - qt: android-v8a
+            show-name: arm64-v8a
+          - qt: android
+            show-name: x86
+          - qt: android
+            show-name: x86_64
         android-api-version:
           - android-28
           - android-29
@@ -98,7 +96,14 @@ jobs:
           target: android
           arch: ${{ matrix.arch.qt }}
       - name: Configure CMake
-        run: cmake -B ./build -S ${{ matrix.android-api-version }} -G"Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} -DCMAKE_INSTALL_PREFIX=./install
+        run: |
+          cmake -B ./build -S ${{ matrix.android-api-version }} \
+          -G"Unix Makefiles" \
+          -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} \
+          -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
+          -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
+          -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} \
+          -DCMAKE_INSTALL_PREFIX=./install
       - name: Get number of CPU cores
         id: cpu-cores
         uses: SimenB/github-actions-cpu-cores@v1
