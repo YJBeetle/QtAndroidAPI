@@ -98,7 +98,14 @@ jobs:
           target: android
           arch: ${{ matrix.arch.qt }}
       - name: Configure CMake
-        run: cmake -B ./build -S ${{ matrix.android-api-version }} -G"Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} -DCMAKE_INSTALL_PREFIX=./install
+        run: |
+          cmake -B ./build -S ${{ matrix.android-api-version }} \
+          -G"Unix Makefiles" \
+          -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} \
+          -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
+          -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
+          -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} \
+          -DCMAKE_INSTALL_PREFIX=./install
       - name: Get number of CPU cores
         id: cpu-cores
         uses: SimenB/github-actions-cpu-cores@v1
