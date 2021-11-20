@@ -95,8 +95,6 @@ jobs:
           host: linux
           target: android
           arch: ${{ matrix.arch.qt }}
-      - name: debug
-        run: find ../Qt
       - name: Configure CMake
         run: |
           cmake -B ./build -S ${{ matrix.android-api-version }} \
