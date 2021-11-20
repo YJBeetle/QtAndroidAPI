@@ -126,5 +126,5 @@ jobs:
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
           asset_path: ./release.tar.gz
-          asset_name: ${{ github.ref_name }}-${{ matrix.android-api-version }}-${{ matrix.arch.abi }}.tar.gz
+          asset_name: Qt${{ env.QT_VERSION }}-${{ matrix.android-api-version }}-${{ matrix.arch.abi }}.tar.gz
           asset_content_type: application/tar+gzip
