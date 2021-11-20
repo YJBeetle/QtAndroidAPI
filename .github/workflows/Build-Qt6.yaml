@@ -8,7 +8,7 @@ on:
     branches: [ Qt6, Qt6Dev ]
 env:
   BUILD_TYPE: Release
-  NDK_VERSION: r21d
+  NDK_VERSION: r21d # 21.3.6528147
   QT_VERSION: 6.2.1
 jobs:
   release:
@@ -60,16 +60,14 @@ jobs:
     strategy:
       matrix:
         arch:
-          # - qt: android
-          #   show-name: Multi-Abi
           - qt: android_armv7
-            show-name: armv7
-          - qt: android_arm64-v8a
-            show-name: arm64-v8a
+            abi: armeabi-v7a
+          - qt: android_arm64_v8a
+            abi: arm64-v8a
           - qt: android_x86
-            show-name: x86
+            abi: x86
           - qt: android_x86_64
-            show-name: x86_64
+            abi: x86_64
         android-api-version:
           - android-28
           - android-29
@@ -83,12 +81,29 @@ jobs:
         id: setup-ndk
         with:
           ndk-version: ${{ env.NDK_VERSION }}
+      - name: Cache host Qt
+        id: cache-host-qt
+        uses: actions/cache@v1
+        with:
+          path: ../QtHost
+          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-Cache
+      - name: Install host Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-host-qt.outputs.cache-hit }}
+          version: ${{ env.QT_VERSION }}
+      - name: Get host Qt path
+        id: host-qt-path
+        uses: actions/github-script@v5
+        with:
+          script: return "${{ env.Qt6_DIR }}"
+          result-encoding: string
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v1
         with:
           path: ../Qt
-          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}Cache
+          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-${{ matrix.arch.qt }}-Cache
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
         with:
@@ -98,7 +113,16 @@ jobs:
           target: android
           arch: ${{ matrix.arch.qt }}
       - name: Configure CMake
-        run: cmake -B ./build -S ${{ matrix.android-api-version }} -G"Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt6_DIR }} -DCMAKE_INSTALL_PREFIX=./install
+        run: |
+          cmake -B ./build -S ${{ matrix.android-api-version }} \
+          -G"Unix Makefiles" \
+          -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} \
+          -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
+          -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
+          -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt6_DIR }} \
+          -DQT_HOST_PATH:PATH=${{ steps.host-qt-path.outputs.result }} \
+          -DANDROID_ABI:STRING=${{ matrix.arch.abi }} \
+          -DCMAKE_INSTALL_PREFIX=./install
       - name: Get number of CPU cores
         id: cpu-cores
         uses: SimenB/github-actions-cpu-cores@v1
@@ -120,5 +144,5 @@ jobs:
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
           asset_path: ./release.tar.gz
-          asset_name: Qt${{ env.QT_VERSION }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
+          asset_name: Qt${{ env.QT_VERSION }}-${{ matrix.android-api-version }}-${{ matrix.arch.abi }}.tar.gz
           asset_content_type: application/tar+gzip

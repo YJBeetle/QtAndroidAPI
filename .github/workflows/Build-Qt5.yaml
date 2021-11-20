@@ -61,15 +61,13 @@ jobs:
       matrix:
         arch:
           - qt: android
-            show-name: Multi-Abi
-          # - qt: android_armv7
-          #   show-name: armv7
-          # - qt: android_arm64-v8a
-          #   show-name: arm64-v8a
-          # - qt: android_x86
-          #   show-name: x86
-          # - qt: android_x86_64
-          #   show-name: x86_64
+            abi: armeabi-v7a
+          - qt: android
+            abi: arm64-v8a
+          - qt: android
+            abi: x86
+          - qt: android
+            abi: x86_64
         android-api-version:
           - android-28
           - android-29
@@ -88,7 +86,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ../Qt
-          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}Cache
+          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-${{ matrix.arch.qt }}-Cache
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
         with:
@@ -98,7 +96,15 @@ jobs:
           target: android
           arch: ${{ matrix.arch.qt }}
       - name: Configure CMake
-        run: cmake -B ./build -S ${{ matrix.android-api-version }} -G"Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} -DCMAKE_INSTALL_PREFIX=./install
+        run: |
+          cmake -B ./build -S ${{ matrix.android-api-version }} \
+          -G"Unix Makefiles" \
+          -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} \
+          -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
+          -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
+          -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt5_DIR }} \
+          -DANDROID_ABI:STRING=${{ matrix.arch.abi }} \
+          -DCMAKE_INSTALL_PREFIX=./install
       - name: Get number of CPU cores
         id: cpu-cores
         uses: SimenB/github-actions-cpu-cores@v1
@@ -120,5 +126,5 @@ jobs:
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
           asset_path: ./release.tar.gz
-          asset_name: Qt${{ env.QT_VERSION }}-${{ matrix.android-api-version }}-${{ matrix.arch.show-name }}.tar.gz
+          asset_name: Qt${{ env.QT_VERSION }}-${{ matrix.android-api-version }}-${{ matrix.arch.abi }}.tar.gz
           asset_content_type: application/tar+gzip
