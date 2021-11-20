@@ -33,7 +33,7 @@
 在你的CMake中添加以下：
 
     include(FetchContent)
-    FetchContent_Declare(androidapi URL https://github.com/YJBeetle/QtAndroidAPI/releases/download/auto-build-Qt6Dev-???????/Qt6Dev-android-29-arm64-v8a.tar.gz)
+    FetchContent_Declare(androidapi URL https://github.com/YJBeetle/QtAndroidAPI/releases/download/auto-build-Qt6Dev-???????/Qt6Dev-android-??-*.tar.gz)
     FetchContent_MakeAvailable(androidapi)
 
 并且在你的Target之后添加链接库
@@ -45,5 +45,5 @@
     FetchContent_Declare(androidapi
         GIT_REPOSITORY https://github.com/YJBeetle/QtAndroidAPI.git
         GIT_TAG origin/Qt6Dev
-        SOURCE_SUBDIR android-29
+        SOURCE_SUBDIR android-??
     )
