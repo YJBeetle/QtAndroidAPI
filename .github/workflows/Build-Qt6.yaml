@@ -8,7 +8,7 @@ on:
     branches: [ Qt6, Qt6Dev ]
 env:
   BUILD_TYPE: Release
-  NDK_VERSION: r21d # 21.3.6528147
+  NDK_VERSION: r22b # 22.1.7171670
   QT_VERSION: 6.2.3
 jobs:
   release:
