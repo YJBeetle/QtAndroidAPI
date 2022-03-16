@@ -11,51 +11,8 @@ env:
   NDK_VERSION: r22b # 22.1.7171670
   QT_VERSION: 6.2.3
 jobs:
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    outputs:
-      # upload_url: ${{ steps.create_release.outputs.upload_url }}
-      # upload_url: ${{ steps.get_release.outputs.upload_url }}
-      upload_url: ${{ steps.output.outputs.result }}
-    steps:
-      - name: Get short SHA
-        id: slug
-        run: echo "::set-output name=sha7::$(echo ${GITHUB_SHA} | cut -c1-7)"
-      - name: Create release
-        id: create_release
-        if: github.event_name == 'push' || github.event_name == 'pull_request'
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: auto-build-${{ github.ref_name }}-${{ steps.slug.outputs.sha7 }}
-          release_name: Auto build ${{ github.ref_name }} ${{ steps.slug.outputs.sha7 }}
-          body: |
-            This is an automatic build. If the attachment is empty, the build failed.
-            这是一个自动构建，若附件为空则说明构建失败。
-          draft: false
-          prerelease: true
-      - name: Get release
-        id: get_release
-        if: github.event_name == 'release'
-        uses: bruceadams/get-release@v1.2.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Output
-        id: output
-        uses: actions/github-script@v5
-        with:
-          script: |
-            if ("${{ github.event_name }}" === "push" || "${{ github.event_name }}" === "pull_request") {
-              return "${{ steps.create_release.outputs.upload_url }}"
-            } else if ("${{ github.event_name }}" === "release") {
-              return "${{ steps.get_release.outputs.upload_url }}"
-            } 
-          result-encoding: string
   build:
     name: Build
-    needs: release
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -122,27 +79,10 @@ jobs:
           -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt6_DIR }} \
           -DQT_HOST_PATH:PATH=${{ steps.host-qt-path.outputs.result }} \
           -DANDROID_ABI:STRING=${{ matrix.arch.abi }} \
-          -DCMAKE_INSTALL_PREFIX=./install
+          -DCMAKE_INSTALL_PREFIX=./install \
+          -DQT_ANDROID_API_TEST:BOOL=ON
       - name: Get number of CPU cores
         id: cpu-cores
         uses: SimenB/github-actions-cpu-cores@v1
       - name: Build
         run: cmake --build ./build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }}
-      - name: Install
-        run: cmake --build ./build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }} -- install
-      - name: Archive Release
-        uses: thedoctor0/zip-release@master
-        with:
-          type: tar
-          filename: ${{ github.workspace }}/release.tar.gz
-          directory: ./install
-      - name: Upload release asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.release.outputs.upload_url }}
-          asset_path: ./release.tar.gz
-          asset_name: Qt${{ env.QT_VERSION }}-${{ matrix.android-api-version }}-${{ matrix.arch.abi }}.tar.gz
-          asset_content_type: application/tar+gzip
