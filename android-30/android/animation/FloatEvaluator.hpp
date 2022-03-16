@@ -1,34 +1,43 @@
 #pragma once
 
+#include "../../java/lang/Float.def.hpp"
+#include "../../java/lang/Number.def.hpp"
 #include "../../JObject.hpp"
-
-namespace java::lang
-{
-	class Float;
-}
-namespace java::lang
-{
-	class Number;
-}
-class JObject;
+#include "./FloatEvaluator.def.hpp"
 
 namespace android::animation
 {
-	class FloatEvaluator : public JObject
+	// Fields
+	
+	// Constructors
+	inline FloatEvaluator::FloatEvaluator()
+		: JObject(
+			"android.animation.FloatEvaluator",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::lang::Float FloatEvaluator::evaluate(jfloat arg0, java::lang::Number arg1, java::lang::Number arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FloatEvaluator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FloatEvaluator(QJniObject obj);
-		
-		// Constructors
-		FloatEvaluator();
-		
-		// Methods
-		java::lang::Float evaluate(jfloat arg0, java::lang::Number arg1, java::lang::Number arg2) const;
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
-	};
+		return callObjectMethod(
+			"evaluate",
+			"(FLjava/lang/Number;Ljava/lang/Number;)Ljava/lang/Float;",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JObject FloatEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"evaluate",
+			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
+		);
+	}
 } // namespace android::animation
+
+// Base class headers
 

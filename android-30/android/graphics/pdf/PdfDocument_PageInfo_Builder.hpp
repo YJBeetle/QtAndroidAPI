@@ -1,33 +1,40 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::graphics::pdf
-{
-	class PdfDocument_PageInfo;
-}
+#include "../Rect.def.hpp"
+#include "./PdfDocument_PageInfo.def.hpp"
+#include "./PdfDocument_PageInfo_Builder.def.hpp"
 
 namespace android::graphics::pdf
 {
-	class PdfDocument_PageInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.graphics.pdf.PdfDocument$PageInfo$Builder",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline android::graphics::pdf::PdfDocument_PageInfo PdfDocument_PageInfo_Builder::create() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PdfDocument_PageInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PdfDocument_PageInfo_Builder(QJniObject obj);
-		
-		// Constructors
-		PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2);
-		
-		// Methods
-		android::graphics::pdf::PdfDocument_PageInfo create() const;
-		android::graphics::pdf::PdfDocument_PageInfo_Builder setContentRect(android::graphics::Rect arg0) const;
-	};
+		return callObjectMethod(
+			"create",
+			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
+		);
+	}
+	inline android::graphics::pdf::PdfDocument_PageInfo_Builder PdfDocument_PageInfo_Builder::setContentRect(android::graphics::Rect arg0) const
+	{
+		return callObjectMethod(
+			"setContentRect",
+			"(Landroid/graphics/Rect;)Landroid/graphics/pdf/PdfDocument$PageInfo$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics::pdf
+
+// Base class headers
 

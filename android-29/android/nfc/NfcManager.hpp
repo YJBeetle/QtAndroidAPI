@@ -1,31 +1,24 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::nfc
-{
-	class NfcAdapter;
-}
+#include "../content/Context.def.hpp"
+#include "./NfcAdapter.def.hpp"
+#include "./NfcManager.def.hpp"
 
 namespace android::nfc
 {
-	class NfcManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::nfc::NfcAdapter NfcManager::getDefaultAdapter() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NfcManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NfcManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::nfc::NfcAdapter getDefaultAdapter() const;
-	};
+		return callObjectMethod(
+			"getDefaultAdapter",
+			"()Landroid/nfc/NfcAdapter;"
+		);
+	}
 } // namespace android::nfc
+
+// Base class headers
 

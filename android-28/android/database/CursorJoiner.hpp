@@ -1,33 +1,55 @@
 #pragma once
 
+#include "../../JArray.hpp"
+#include "./CursorJoiner_Result.def.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-namespace android::database
-{
-	class CursorJoiner_Result;
-}
-class JObject;
+#include "./CursorJoiner.def.hpp"
 
 namespace android::database
 {
-	class CursorJoiner : public JObject
+	// Fields
+	
+	// Constructors
+	inline CursorJoiner::CursorJoiner(JObject arg0, JArray arg1, JObject arg2, JArray arg3)
+		: JObject(
+			"android.database.CursorJoiner",
+			"(Landroid/database/Cursor;[Ljava/lang/String;Landroid/database/Cursor;[Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jarray>(),
+			arg2.object(),
+			arg3.object<jarray>()
+		) {}
+	
+	// Methods
+	inline jboolean CursorJoiner::hasNext() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CursorJoiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CursorJoiner(QJniObject obj);
-		
-		// Constructors
-		CursorJoiner(JObject arg0, JArray arg1, JObject arg2, JArray arg3);
-		
-		// Methods
-		jboolean hasNext() const;
-		JObject iterator() const;
-		android::database::CursorJoiner_Result next() const;
-		void remove() const;
-	};
+		return callMethod<jboolean>(
+			"hasNext",
+			"()Z"
+		);
+	}
+	inline JObject CursorJoiner::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline android::database::CursorJoiner_Result CursorJoiner::next() const
+	{
+		return callObjectMethod(
+			"next",
+			"()Landroid/database/CursorJoiner$Result;"
+		);
+	}
+	inline void CursorJoiner::remove() const
+	{
+		callMethod<void>(
+			"remove",
+			"()V"
+		);
+	}
 } // namespace android::database
+
+// Base class headers
 

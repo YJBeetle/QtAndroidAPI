@@ -1,32 +1,62 @@
 #pragma once
 
+#include "../../../JIntArray.hpp"
+#include "../../../JLongArray.hpp"
 #include "../../../JObject.hpp"
-
-class JIntArray;
-class JLongArray;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./VcnGatewayConnectionConfig.def.hpp"
 
 namespace android::net::vcn
 {
-	class VcnGatewayConnectionConfig : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean VcnGatewayConnectionConfig::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VcnGatewayConnectionConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VcnGatewayConnectionConfig(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JIntArray getExposedCapabilities() const;
-		JString getGatewayConnectionName() const;
-		jint getMaxMtu() const;
-		JLongArray getRetryIntervalsMillis() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JIntArray VcnGatewayConnectionConfig::getExposedCapabilities() const
+	{
+		return callObjectMethod(
+			"getExposedCapabilities",
+			"()[I"
+		);
+	}
+	inline JString VcnGatewayConnectionConfig::getGatewayConnectionName() const
+	{
+		return callObjectMethod(
+			"getGatewayConnectionName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint VcnGatewayConnectionConfig::getMaxMtu() const
+	{
+		return callMethod<jint>(
+			"getMaxMtu",
+			"()I"
+		);
+	}
+	inline JLongArray VcnGatewayConnectionConfig::getRetryIntervalsMillis() const
+	{
+		return callObjectMethod(
+			"getRetryIntervalsMillis",
+			"()[J"
+		);
+	}
+	inline jint VcnGatewayConnectionConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::vcn
+
+// Base class headers
 

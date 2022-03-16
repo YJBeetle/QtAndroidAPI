@@ -1,30 +1,41 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaStore_Files.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Files : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaStore_Files::MediaStore_Files()
+		: JObject(
+			"android.provider.MediaStore$Files",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::net::Uri MediaStore_Files::getContentUri(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore_Files(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Files(QJniObject obj);
-		
-		// Constructors
-		MediaStore_Files();
-		
-		// Methods
-		static android::net::Uri getContentUri(JString arg0);
-		static android::net::Uri getContentUri(JString arg0, jlong arg1);
-	};
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Files",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::net::Uri MediaStore_Files::getContentUri(JString arg0, jlong arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Files",
+			"getContentUri",
+			"(Ljava/lang/String;J)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

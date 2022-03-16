@@ -1,35 +1,74 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Region;
-}
+#include "../graphics/Region.def.hpp"
+#include "./InputMethodService_Insets.def.hpp"
 
 namespace android::inputmethodservice
 {
-	class InputMethodService_Insets : public JObject
+	// Fields
+	inline jint InputMethodService_Insets::TOUCHABLE_INSETS_CONTENT()
 	{
-	public:
-		// Fields
-		static jint TOUCHABLE_INSETS_CONTENT();
-		static jint TOUCHABLE_INSETS_FRAME();
-		static jint TOUCHABLE_INSETS_REGION();
-		static jint TOUCHABLE_INSETS_VISIBLE();
-		jint contentTopInsets();
-		jint touchableInsets();
-		android::graphics::Region touchableRegion();
-		jint visibleTopInsets();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InputMethodService_Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputMethodService_Insets(QJniObject obj);
-		
-		// Constructors
-		InputMethodService_Insets();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.inputmethodservice.InputMethodService$Insets",
+			"TOUCHABLE_INSETS_CONTENT"
+		);
+	}
+	inline jint InputMethodService_Insets::TOUCHABLE_INSETS_FRAME()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.InputMethodService$Insets",
+			"TOUCHABLE_INSETS_FRAME"
+		);
+	}
+	inline jint InputMethodService_Insets::TOUCHABLE_INSETS_REGION()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.InputMethodService$Insets",
+			"TOUCHABLE_INSETS_REGION"
+		);
+	}
+	inline jint InputMethodService_Insets::TOUCHABLE_INSETS_VISIBLE()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.InputMethodService$Insets",
+			"TOUCHABLE_INSETS_VISIBLE"
+		);
+	}
+	inline jint InputMethodService_Insets::contentTopInsets()
+	{
+		return getField<jint>(
+			"contentTopInsets"
+		);
+	}
+	inline jint InputMethodService_Insets::touchableInsets()
+	{
+		return getField<jint>(
+			"touchableInsets"
+		);
+	}
+	inline android::graphics::Region InputMethodService_Insets::touchableRegion()
+	{
+		return getObjectField(
+			"touchableRegion",
+			"Landroid/graphics/Region;"
+		);
+	}
+	inline jint InputMethodService_Insets::visibleTopInsets()
+	{
+		return getField<jint>(
+			"visibleTopInsets"
+		);
+	}
+	
+	// Constructors
+	inline InputMethodService_Insets::InputMethodService_Insets()
+		: JObject(
+			"android.inputmethodservice.InputMethodService$Insets",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::inputmethodservice
+
+// Base class headers
 

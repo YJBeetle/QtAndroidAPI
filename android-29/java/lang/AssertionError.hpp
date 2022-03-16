@@ -1,34 +1,73 @@
 #pragma once
 
-#include "./Error.hpp"
-
-class JObject;
-class JString;
-class JThrowable;
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./AssertionError.def.hpp"
 
 namespace java::lang
 {
-	class AssertionError : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AssertionError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		AssertionError(QJniObject obj);
-		
-		// Constructors
-		AssertionError();
-		AssertionError(jboolean arg0);
-		AssertionError(jchar arg0);
-		AssertionError(jdouble arg0);
-		AssertionError(jfloat arg0);
-		AssertionError(jint arg0);
-		AssertionError(JObject arg0);
-		AssertionError(jlong arg0);
-		AssertionError(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AssertionError::AssertionError()
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"()V"
+		) {}
+	inline AssertionError::AssertionError(jboolean arg0)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(Z)V",
+			arg0
+		) {}
+	inline AssertionError::AssertionError(jchar arg0)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(C)V",
+			arg0
+		) {}
+	inline AssertionError::AssertionError(jdouble arg0)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(D)V",
+			arg0
+		) {}
+	inline AssertionError::AssertionError(jfloat arg0)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(F)V",
+			arg0
+		) {}
+	inline AssertionError::AssertionError(jint arg0)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(I)V",
+			arg0
+		) {}
+	inline AssertionError::AssertionError(JObject arg0)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		) {}
+	inline AssertionError::AssertionError(jlong arg0)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(J)V",
+			arg0
+		) {}
+	inline AssertionError::AssertionError(JString arg0, JThrowable arg1)
+		: java::lang::Error(
+			"java.lang.AssertionError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
 

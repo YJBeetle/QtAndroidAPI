@@ -1,27 +1,43 @@
 #pragma once
 
-#include "../lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllformedLocaleException.def.hpp"
 
 namespace java::util
 {
-	class IllformedLocaleException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline IllformedLocaleException::IllformedLocaleException()
+		: java::lang::RuntimeException(
+			"java.util.IllformedLocaleException",
+			"()V"
+		) {}
+	inline IllformedLocaleException::IllformedLocaleException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.util.IllformedLocaleException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline IllformedLocaleException::IllformedLocaleException(JString arg0, jint arg1)
+		: java::lang::RuntimeException(
+			"java.util.IllformedLocaleException",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jint IllformedLocaleException::getErrorIndex() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IllformedLocaleException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		IllformedLocaleException(QJniObject obj);
-		
-		// Constructors
-		IllformedLocaleException();
-		IllformedLocaleException(JString arg0);
-		IllformedLocaleException(JString arg0, jint arg1);
-		
-		// Methods
-		jint getErrorIndex() const;
-	};
+		return callMethod<jint>(
+			"getErrorIndex",
+			"()I"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 

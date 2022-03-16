@@ -1,33 +1,40 @@
 #pragma once
 
-#include "./BaseObj.hpp"
+#include "./Script_FieldID.def.hpp"
+#include "./ScriptGroup_Future.def.hpp"
+#include "./ScriptGroup_Closure.def.hpp"
 
 namespace android::renderscript
 {
-	class Script_FieldID;
-}
-namespace android::renderscript
-{
-	class ScriptGroup_Future;
-}
-
-namespace android::renderscript
-{
-	class ScriptGroup_Closure : public android::renderscript::BaseObj
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void ScriptGroup_Closure::destroy() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ScriptGroup_Closure(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptGroup_Closure(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void destroy() const;
-		android::renderscript::ScriptGroup_Future getGlobal(android::renderscript::Script_FieldID arg0) const;
-		android::renderscript::ScriptGroup_Future getReturn() const;
-	};
+		callMethod<void>(
+			"destroy",
+			"()V"
+		);
+	}
+	inline android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getGlobal(android::renderscript::Script_FieldID arg0) const
+	{
+		return callObjectMethod(
+			"getGlobal",
+			"(Landroid/renderscript/Script$FieldID;)Landroid/renderscript/ScriptGroup$Future;",
+			arg0.object()
+		);
+	}
+	inline android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getReturn() const
+	{
+		return callObjectMethod(
+			"getReturn",
+			"()Landroid/renderscript/ScriptGroup$Future;"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "./BaseObj.hpp"
 

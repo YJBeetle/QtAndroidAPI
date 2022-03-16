@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaStore_Audio.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Audio : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaStore_Audio::MediaStore_Audio()
+		: JObject(
+			"android.provider.MediaStore$Audio",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString MediaStore_Audio::keyFor(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore_Audio(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio(QJniObject obj);
-		
-		// Constructors
-		MediaStore_Audio();
-		
-		// Methods
-		static JString keyFor(JString arg0);
-	};
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Audio",
+			"keyFor",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./CertificateException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./CertificateNotYetValidException.def.hpp"
 
 namespace javax::security::cert
 {
-	class CertificateNotYetValidException : public javax::security::cert::CertificateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertificateNotYetValidException(const char *className, const char *sig, Ts...agv) : javax::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateNotYetValidException(QJniObject obj);
-		
-		// Constructors
-		CertificateNotYetValidException();
-		CertificateNotYetValidException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CertificateNotYetValidException::CertificateNotYetValidException()
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateNotYetValidException",
+			"()V"
+		) {}
+	inline CertificateNotYetValidException::CertificateNotYetValidException(JString arg0)
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateNotYetValidException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::security::cert
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./CertificateException.hpp"
 

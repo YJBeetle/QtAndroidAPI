@@ -1,27 +1,40 @@
 #pragma once
 
-#include "./AbstractVerifier.hpp"
-
-class JArray;
-class JString;
+#include "../../../../../JArray.hpp"
+#include "../../../../../JString.hpp"
+#include "./BrowserCompatHostnameVerifier.def.hpp"
 
 namespace org::apache::http::conn::ssl
 {
-	class BrowserCompatHostnameVerifier : public org::apache::http::conn::ssl::AbstractVerifier
+	// Fields
+	
+	// Constructors
+	inline BrowserCompatHostnameVerifier::BrowserCompatHostnameVerifier()
+		: org::apache::http::conn::ssl::AbstractVerifier(
+			"org.apache.http.conn.ssl.BrowserCompatHostnameVerifier",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString BrowserCompatHostnameVerifier::toString() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BrowserCompatHostnameVerifier(const char *className, const char *sig, Ts...agv) : org::apache::http::conn::ssl::AbstractVerifier(className, sig, std::forward<Ts>(agv)...) {}
-		BrowserCompatHostnameVerifier(QJniObject obj);
-		
-		// Constructors
-		BrowserCompatHostnameVerifier();
-		
-		// Methods
-		JString toString() const;
-		void verify(JString arg0, JArray arg1, JArray arg2) const;
-	};
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void BrowserCompatHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2) const
+	{
+		callMethod<void>(
+			"verify",
+			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object<jarray>()
+		);
+	}
 } // namespace org::apache::http::conn::ssl
+
+// Base class headers
+#include "./AbstractVerifier.hpp"
 

@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./FormattableFlags.def.hpp"
 
 namespace java::util
 {
-	class FormattableFlags : public JObject
+	// Fields
+	inline jint FormattableFlags::ALTERNATE()
 	{
-	public:
-		// Fields
-		static jint ALTERNATE();
-		static jint LEFT_JUSTIFY();
-		static jint UPPERCASE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FormattableFlags(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FormattableFlags(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"java.util.FormattableFlags",
+			"ALTERNATE"
+		);
+	}
+	inline jint FormattableFlags::LEFT_JUSTIFY()
+	{
+		return getStaticField<jint>(
+			"java.util.FormattableFlags",
+			"LEFT_JUSTIFY"
+		);
+	}
+	inline jint FormattableFlags::UPPERCASE()
+	{
+		return getStaticField<jint>(
+			"java.util.FormattableFlags",
+			"UPPERCASE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::util
+
+// Base class headers
 

@@ -1,182 +1,1285 @@
 #pragma once
 
-#include "../JObject.hpp"
-
-class JString;
+#include "../JString.hpp"
+#include "./Manifest_permission.def.hpp"
 
 namespace android
 {
-	class Manifest_permission : public JObject
+	// Fields
+	inline JString Manifest_permission::ACCEPT_HANDOVER()
 	{
-	public:
-		// Fields
-		static JString ACCEPT_HANDOVER();
-		static JString ACCESS_BACKGROUND_LOCATION();
-		static JString ACCESS_CHECKIN_PROPERTIES();
-		static JString ACCESS_COARSE_LOCATION();
-		static JString ACCESS_FINE_LOCATION();
-		static JString ACCESS_LOCATION_EXTRA_COMMANDS();
-		static JString ACCESS_MEDIA_LOCATION();
-		static JString ACCESS_NETWORK_STATE();
-		static JString ACCESS_NOTIFICATION_POLICY();
-		static JString ACCESS_WIFI_STATE();
-		static JString ACCOUNT_MANAGER();
-		static JString ACTIVITY_RECOGNITION();
-		static JString ADD_VOICEMAIL();
-		static JString ANSWER_PHONE_CALLS();
-		static JString BATTERY_STATS();
-		static JString BIND_ACCESSIBILITY_SERVICE();
-		static JString BIND_APPWIDGET();
-		static JString BIND_AUTOFILL_SERVICE();
-		static JString BIND_CALL_REDIRECTION_SERVICE();
-		static JString BIND_CARRIER_MESSAGING_CLIENT_SERVICE();
-		static JString BIND_CARRIER_MESSAGING_SERVICE();
-		static JString BIND_CARRIER_SERVICES();
-		static JString BIND_CHOOSER_TARGET_SERVICE();
-		static JString BIND_CONDITION_PROVIDER_SERVICE();
-		static JString BIND_DEVICE_ADMIN();
-		static JString BIND_DREAM_SERVICE();
-		static JString BIND_INCALL_SERVICE();
-		static JString BIND_INPUT_METHOD();
-		static JString BIND_MIDI_DEVICE_SERVICE();
-		static JString BIND_NFC_SERVICE();
-		static JString BIND_NOTIFICATION_LISTENER_SERVICE();
-		static JString BIND_PRINT_SERVICE();
-		static JString BIND_QUICK_SETTINGS_TILE();
-		static JString BIND_REMOTEVIEWS();
-		static JString BIND_SCREENING_SERVICE();
-		static JString BIND_TELECOM_CONNECTION_SERVICE();
-		static JString BIND_TEXT_SERVICE();
-		static JString BIND_TV_INPUT();
-		static JString BIND_VISUAL_VOICEMAIL_SERVICE();
-		static JString BIND_VOICE_INTERACTION();
-		static JString BIND_VPN_SERVICE();
-		static JString BIND_VR_LISTENER_SERVICE();
-		static JString BIND_WALLPAPER();
-		static JString BLUETOOTH();
-		static JString BLUETOOTH_ADMIN();
-		static JString BLUETOOTH_PRIVILEGED();
-		static JString BODY_SENSORS();
-		static JString BROADCAST_PACKAGE_REMOVED();
-		static JString BROADCAST_SMS();
-		static JString BROADCAST_STICKY();
-		static JString BROADCAST_WAP_PUSH();
-		static JString CALL_COMPANION_APP();
-		static JString CALL_PHONE();
-		static JString CALL_PRIVILEGED();
-		static JString CAMERA();
-		static JString CAPTURE_AUDIO_OUTPUT();
-		static JString CHANGE_COMPONENT_ENABLED_STATE();
-		static JString CHANGE_CONFIGURATION();
-		static JString CHANGE_NETWORK_STATE();
-		static JString CHANGE_WIFI_MULTICAST_STATE();
-		static JString CHANGE_WIFI_STATE();
-		static JString CLEAR_APP_CACHE();
-		static JString CONTROL_LOCATION_UPDATES();
-		static JString DELETE_CACHE_FILES();
-		static JString DELETE_PACKAGES();
-		static JString DIAGNOSTIC();
-		static JString DISABLE_KEYGUARD();
-		static JString DUMP();
-		static JString EXPAND_STATUS_BAR();
-		static JString FACTORY_TEST();
-		static JString FOREGROUND_SERVICE();
-		static JString GET_ACCOUNTS();
-		static JString GET_ACCOUNTS_PRIVILEGED();
-		static JString GET_PACKAGE_SIZE();
-		static JString GET_TASKS();
-		static JString GLOBAL_SEARCH();
-		static JString INSTALL_LOCATION_PROVIDER();
-		static JString INSTALL_PACKAGES();
-		static JString INSTALL_SHORTCUT();
-		static JString INSTANT_APP_FOREGROUND_SERVICE();
-		static JString INTERNET();
-		static JString KILL_BACKGROUND_PROCESSES();
-		static JString LOCATION_HARDWARE();
-		static JString MANAGE_DOCUMENTS();
-		static JString MANAGE_OWN_CALLS();
-		static JString MASTER_CLEAR();
-		static JString MEDIA_CONTENT_CONTROL();
-		static JString MODIFY_AUDIO_SETTINGS();
-		static JString MODIFY_PHONE_STATE();
-		static JString MOUNT_FORMAT_FILESYSTEMS();
-		static JString MOUNT_UNMOUNT_FILESYSTEMS();
-		static JString NFC();
-		static JString NFC_TRANSACTION_EVENT();
-		static JString PACKAGE_USAGE_STATS();
-		static JString PERSISTENT_ACTIVITY();
-		static JString PROCESS_OUTGOING_CALLS();
-		static JString READ_CALENDAR();
-		static JString READ_CALL_LOG();
-		static JString READ_CONTACTS();
-		static JString READ_EXTERNAL_STORAGE();
-		static JString READ_INPUT_STATE();
-		static JString READ_LOGS();
-		static JString READ_PHONE_NUMBERS();
-		static JString READ_PHONE_STATE();
-		static JString READ_SMS();
-		static JString READ_SYNC_SETTINGS();
-		static JString READ_SYNC_STATS();
-		static JString READ_VOICEMAIL();
-		static JString REBOOT();
-		static JString RECEIVE_BOOT_COMPLETED();
-		static JString RECEIVE_MMS();
-		static JString RECEIVE_SMS();
-		static JString RECEIVE_WAP_PUSH();
-		static JString RECORD_AUDIO();
-		static JString REORDER_TASKS();
-		static JString REQUEST_COMPANION_RUN_IN_BACKGROUND();
-		static JString REQUEST_COMPANION_USE_DATA_IN_BACKGROUND();
-		static JString REQUEST_DELETE_PACKAGES();
-		static JString REQUEST_IGNORE_BATTERY_OPTIMIZATIONS();
-		static JString REQUEST_INSTALL_PACKAGES();
-		static JString REQUEST_PASSWORD_COMPLEXITY();
-		static JString RESTART_PACKAGES();
-		static JString SEND_RESPOND_VIA_MESSAGE();
-		static JString SEND_SMS();
-		static JString SET_ALARM();
-		static JString SET_ALWAYS_FINISH();
-		static JString SET_ANIMATION_SCALE();
-		static JString SET_DEBUG_APP();
-		static JString SET_PREFERRED_APPLICATIONS();
-		static JString SET_PROCESS_LIMIT();
-		static JString SET_TIME();
-		static JString SET_TIME_ZONE();
-		static JString SET_WALLPAPER();
-		static JString SET_WALLPAPER_HINTS();
-		static JString SIGNAL_PERSISTENT_PROCESSES();
-		static JString SMS_FINANCIAL_TRANSACTIONS();
-		static JString START_VIEW_PERMISSION_USAGE();
-		static JString STATUS_BAR();
-		static JString SYSTEM_ALERT_WINDOW();
-		static JString TRANSMIT_IR();
-		static JString UNINSTALL_SHORTCUT();
-		static JString UPDATE_DEVICE_STATS();
-		static JString USE_BIOMETRIC();
-		static JString USE_FINGERPRINT();
-		static JString USE_FULL_SCREEN_INTENT();
-		static JString USE_SIP();
-		static JString VIBRATE();
-		static JString WAKE_LOCK();
-		static JString WRITE_APN_SETTINGS();
-		static JString WRITE_CALENDAR();
-		static JString WRITE_CALL_LOG();
-		static JString WRITE_CONTACTS();
-		static JString WRITE_EXTERNAL_STORAGE();
-		static JString WRITE_GSERVICES();
-		static JString WRITE_SECURE_SETTINGS();
-		static JString WRITE_SETTINGS();
-		static JString WRITE_SYNC_SETTINGS();
-		static JString WRITE_VOICEMAIL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Manifest_permission(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Manifest_permission(QJniObject obj);
-		
-		// Constructors
-		Manifest_permission();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCEPT_HANDOVER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_BACKGROUND_LOCATION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_BACKGROUND_LOCATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_CHECKIN_PROPERTIES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_CHECKIN_PROPERTIES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_COARSE_LOCATION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_COARSE_LOCATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_FINE_LOCATION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_FINE_LOCATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_LOCATION_EXTRA_COMMANDS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_LOCATION_EXTRA_COMMANDS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_MEDIA_LOCATION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_MEDIA_LOCATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_NETWORK_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_NETWORK_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_NOTIFICATION_POLICY()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_NOTIFICATION_POLICY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCESS_WIFI_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCESS_WIFI_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACCOUNT_MANAGER()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACCOUNT_MANAGER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ACTIVITY_RECOGNITION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ACTIVITY_RECOGNITION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ADD_VOICEMAIL()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ADD_VOICEMAIL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::ANSWER_PHONE_CALLS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"ANSWER_PHONE_CALLS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BATTERY_STATS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BATTERY_STATS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_ACCESSIBILITY_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_ACCESSIBILITY_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_APPWIDGET()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_APPWIDGET",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_AUTOFILL_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_AUTOFILL_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_CALL_REDIRECTION_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_CALL_REDIRECTION_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_CARRIER_MESSAGING_CLIENT_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_CARRIER_MESSAGING_CLIENT_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_CARRIER_MESSAGING_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_CARRIER_MESSAGING_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_CARRIER_SERVICES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_CARRIER_SERVICES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_CHOOSER_TARGET_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_CHOOSER_TARGET_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_CONDITION_PROVIDER_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_CONDITION_PROVIDER_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_DEVICE_ADMIN()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_DEVICE_ADMIN",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_DREAM_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_DREAM_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_INCALL_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_INCALL_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_INPUT_METHOD()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_INPUT_METHOD",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_MIDI_DEVICE_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_MIDI_DEVICE_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_NFC_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_NFC_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_NOTIFICATION_LISTENER_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_NOTIFICATION_LISTENER_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_PRINT_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_PRINT_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_QUICK_SETTINGS_TILE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_QUICK_SETTINGS_TILE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_REMOTEVIEWS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_REMOTEVIEWS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_SCREENING_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_SCREENING_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_TELECOM_CONNECTION_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_TELECOM_CONNECTION_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_TEXT_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_TEXT_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_TV_INPUT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_TV_INPUT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_VISUAL_VOICEMAIL_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_VISUAL_VOICEMAIL_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_VOICE_INTERACTION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_VOICE_INTERACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_VPN_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_VPN_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_VR_LISTENER_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_VR_LISTENER_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BIND_WALLPAPER()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BIND_WALLPAPER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BLUETOOTH()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BLUETOOTH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BLUETOOTH_ADMIN()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BLUETOOTH_ADMIN",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BLUETOOTH_PRIVILEGED()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BLUETOOTH_PRIVILEGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BODY_SENSORS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BODY_SENSORS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BROADCAST_PACKAGE_REMOVED()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BROADCAST_PACKAGE_REMOVED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BROADCAST_SMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BROADCAST_SMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BROADCAST_STICKY()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BROADCAST_STICKY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::BROADCAST_WAP_PUSH()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"BROADCAST_WAP_PUSH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CALL_COMPANION_APP()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CALL_COMPANION_APP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CALL_PHONE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CALL_PHONE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CALL_PRIVILEGED()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CALL_PRIVILEGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CAMERA()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CAMERA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CAPTURE_AUDIO_OUTPUT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CAPTURE_AUDIO_OUTPUT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CHANGE_COMPONENT_ENABLED_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CHANGE_COMPONENT_ENABLED_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CHANGE_CONFIGURATION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CHANGE_CONFIGURATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CHANGE_NETWORK_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CHANGE_NETWORK_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CHANGE_WIFI_MULTICAST_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CHANGE_WIFI_MULTICAST_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CHANGE_WIFI_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CHANGE_WIFI_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CLEAR_APP_CACHE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CLEAR_APP_CACHE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::CONTROL_LOCATION_UPDATES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"CONTROL_LOCATION_UPDATES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::DELETE_CACHE_FILES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"DELETE_CACHE_FILES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::DELETE_PACKAGES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"DELETE_PACKAGES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::DIAGNOSTIC()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"DIAGNOSTIC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::DISABLE_KEYGUARD()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"DISABLE_KEYGUARD",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::DUMP()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"DUMP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::EXPAND_STATUS_BAR()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"EXPAND_STATUS_BAR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::FACTORY_TEST()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"FACTORY_TEST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::FOREGROUND_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"FOREGROUND_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::GET_ACCOUNTS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"GET_ACCOUNTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::GET_ACCOUNTS_PRIVILEGED()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"GET_ACCOUNTS_PRIVILEGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::GET_PACKAGE_SIZE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"GET_PACKAGE_SIZE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::GET_TASKS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"GET_TASKS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::GLOBAL_SEARCH()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"GLOBAL_SEARCH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::INSTALL_LOCATION_PROVIDER()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"INSTALL_LOCATION_PROVIDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::INSTALL_PACKAGES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"INSTALL_PACKAGES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::INSTALL_SHORTCUT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"INSTALL_SHORTCUT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::INSTANT_APP_FOREGROUND_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"INSTANT_APP_FOREGROUND_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::INTERNET()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"INTERNET",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::KILL_BACKGROUND_PROCESSES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"KILL_BACKGROUND_PROCESSES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::LOCATION_HARDWARE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"LOCATION_HARDWARE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MANAGE_DOCUMENTS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MANAGE_DOCUMENTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MANAGE_OWN_CALLS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MANAGE_OWN_CALLS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MASTER_CLEAR()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MASTER_CLEAR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MEDIA_CONTENT_CONTROL()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MEDIA_CONTENT_CONTROL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MODIFY_AUDIO_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MODIFY_AUDIO_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MODIFY_PHONE_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MODIFY_PHONE_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MOUNT_FORMAT_FILESYSTEMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MOUNT_FORMAT_FILESYSTEMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::MOUNT_UNMOUNT_FILESYSTEMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"MOUNT_UNMOUNT_FILESYSTEMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::NFC()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"NFC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::NFC_TRANSACTION_EVENT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"NFC_TRANSACTION_EVENT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::PACKAGE_USAGE_STATS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"PACKAGE_USAGE_STATS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::PERSISTENT_ACTIVITY()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"PERSISTENT_ACTIVITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::PROCESS_OUTGOING_CALLS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"PROCESS_OUTGOING_CALLS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_CALENDAR()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_CALENDAR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_CALL_LOG()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_CALL_LOG",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_CONTACTS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_CONTACTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_EXTERNAL_STORAGE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_EXTERNAL_STORAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_INPUT_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_INPUT_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_LOGS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_LOGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_PHONE_NUMBERS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_PHONE_NUMBERS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_PHONE_STATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_PHONE_STATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_SMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_SMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_SYNC_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_SYNC_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_SYNC_STATS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_SYNC_STATS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::READ_VOICEMAIL()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"READ_VOICEMAIL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REBOOT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REBOOT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::RECEIVE_BOOT_COMPLETED()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"RECEIVE_BOOT_COMPLETED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::RECEIVE_MMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"RECEIVE_MMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::RECEIVE_SMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"RECEIVE_SMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::RECEIVE_WAP_PUSH()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"RECEIVE_WAP_PUSH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::RECORD_AUDIO()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"RECORD_AUDIO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REORDER_TASKS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REORDER_TASKS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REQUEST_COMPANION_RUN_IN_BACKGROUND()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REQUEST_COMPANION_RUN_IN_BACKGROUND",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REQUEST_COMPANION_USE_DATA_IN_BACKGROUND()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REQUEST_COMPANION_USE_DATA_IN_BACKGROUND",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REQUEST_DELETE_PACKAGES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REQUEST_DELETE_PACKAGES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REQUEST_IGNORE_BATTERY_OPTIMIZATIONS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REQUEST_INSTALL_PACKAGES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REQUEST_INSTALL_PACKAGES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::REQUEST_PASSWORD_COMPLEXITY()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"REQUEST_PASSWORD_COMPLEXITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::RESTART_PACKAGES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"RESTART_PACKAGES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SEND_RESPOND_VIA_MESSAGE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SEND_RESPOND_VIA_MESSAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SEND_SMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SEND_SMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_ALARM()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_ALARM",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_ALWAYS_FINISH()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_ALWAYS_FINISH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_ANIMATION_SCALE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_ANIMATION_SCALE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_DEBUG_APP()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_DEBUG_APP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_PREFERRED_APPLICATIONS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_PREFERRED_APPLICATIONS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_PROCESS_LIMIT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_PROCESS_LIMIT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_TIME()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_TIME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_TIME_ZONE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_TIME_ZONE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_WALLPAPER()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_WALLPAPER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SET_WALLPAPER_HINTS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SET_WALLPAPER_HINTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SIGNAL_PERSISTENT_PROCESSES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SIGNAL_PERSISTENT_PROCESSES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SMS_FINANCIAL_TRANSACTIONS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SMS_FINANCIAL_TRANSACTIONS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::START_VIEW_PERMISSION_USAGE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"START_VIEW_PERMISSION_USAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::STATUS_BAR()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"STATUS_BAR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::SYSTEM_ALERT_WINDOW()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"SYSTEM_ALERT_WINDOW",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::TRANSMIT_IR()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"TRANSMIT_IR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::UNINSTALL_SHORTCUT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"UNINSTALL_SHORTCUT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::UPDATE_DEVICE_STATS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"UPDATE_DEVICE_STATS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::USE_BIOMETRIC()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"USE_BIOMETRIC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::USE_FINGERPRINT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"USE_FINGERPRINT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::USE_FULL_SCREEN_INTENT()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"USE_FULL_SCREEN_INTENT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::USE_SIP()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"USE_SIP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::VIBRATE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"VIBRATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WAKE_LOCK()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WAKE_LOCK",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_APN_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_APN_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_CALENDAR()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_CALENDAR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_CALL_LOG()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_CALL_LOG",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_CONTACTS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_CONTACTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_EXTERNAL_STORAGE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_EXTERNAL_STORAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_GSERVICES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_GSERVICES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_SECURE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_SECURE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_SYNC_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_SYNC_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission::WRITE_VOICEMAIL()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission",
+			"WRITE_VOICEMAIL",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Manifest_permission::Manifest_permission()
+		: JObject(
+			"android.Manifest$permission",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

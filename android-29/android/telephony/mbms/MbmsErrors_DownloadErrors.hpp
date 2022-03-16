@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MbmsErrors_DownloadErrors.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors_DownloadErrors : public JObject
+	// Fields
+	inline jint MbmsErrors_DownloadErrors::ERROR_CANNOT_CHANGE_TEMP_FILE_ROOT()
 	{
-	public:
-		// Fields
-		static jint ERROR_CANNOT_CHANGE_TEMP_FILE_ROOT();
-		static jint ERROR_UNKNOWN_DOWNLOAD_REQUEST();
-		static jint ERROR_UNKNOWN_FILE_INFO();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MbmsErrors_DownloadErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_DownloadErrors(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$DownloadErrors",
+			"ERROR_CANNOT_CHANGE_TEMP_FILE_ROOT"
+		);
+	}
+	inline jint MbmsErrors_DownloadErrors::ERROR_UNKNOWN_DOWNLOAD_REQUEST()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$DownloadErrors",
+			"ERROR_UNKNOWN_DOWNLOAD_REQUEST"
+		);
+	}
+	inline jint MbmsErrors_DownloadErrors::ERROR_UNKNOWN_FILE_INFO()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$DownloadErrors",
+			"ERROR_UNKNOWN_FILE_INFO"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony::mbms
+
+// Base class headers
 

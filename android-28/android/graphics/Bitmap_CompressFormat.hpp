@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Bitmap_CompressFormat.def.hpp"
 
 namespace android::graphics
 {
-	class Bitmap_CompressFormat : public java::lang::Enum
+	// Fields
+	inline android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::JPEG()
 	{
-	public:
-		// Fields
-		static android::graphics::Bitmap_CompressFormat JPEG();
-		static android::graphics::Bitmap_CompressFormat PNG();
-		static android::graphics::Bitmap_CompressFormat WEBP();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Bitmap_CompressFormat(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Bitmap_CompressFormat(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Bitmap_CompressFormat valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Bitmap$CompressFormat",
+			"JPEG",
+			"Landroid/graphics/Bitmap$CompressFormat;"
+		);
+	}
+	inline android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::PNG()
+	{
+		return getStaticObjectField(
+			"android.graphics.Bitmap$CompressFormat",
+			"PNG",
+			"Landroid/graphics/Bitmap$CompressFormat;"
+		);
+	}
+	inline android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::WEBP()
+	{
+		return getStaticObjectField(
+			"android.graphics.Bitmap$CompressFormat",
+			"WEBP",
+			"Landroid/graphics/Bitmap$CompressFormat;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Bitmap$CompressFormat",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Bitmap$CompressFormat;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Bitmap_CompressFormat::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Bitmap$CompressFormat",
+			"values",
+			"()[Landroid/graphics/Bitmap$CompressFormat;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

@@ -1,33 +1,39 @@
 #pragma once
 
-#include "./Measure.hpp"
+#include "./Currency.def.hpp"
+#include "../../../java/lang/Number.def.hpp"
+#include "./CurrencyAmount.def.hpp"
 
 namespace android::icu::util
 {
-	class Currency;
-}
-namespace java::lang
-{
-	class Number;
-}
-
-namespace android::icu::util
-{
-	class CurrencyAmount : public android::icu::util::Measure
+	// Fields
+	
+	// Constructors
+	inline CurrencyAmount::CurrencyAmount(jdouble arg0, android::icu::util::Currency arg1)
+		: android::icu::util::Measure(
+			"android.icu.util.CurrencyAmount",
+			"(DLandroid/icu/util/Currency;)V",
+			arg0,
+			arg1.object()
+		) {}
+	inline CurrencyAmount::CurrencyAmount(java::lang::Number arg0, android::icu::util::Currency arg1)
+		: android::icu::util::Measure(
+			"android.icu.util.CurrencyAmount",
+			"(Ljava/lang/Number;Landroid/icu/util/Currency;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::icu::util::Currency CurrencyAmount::getCurrency() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CurrencyAmount(const char *className, const char *sig, Ts...agv) : android::icu::util::Measure(className, sig, std::forward<Ts>(agv)...) {}
-		CurrencyAmount(QJniObject obj);
-		
-		// Constructors
-		CurrencyAmount(jdouble arg0, android::icu::util::Currency arg1);
-		CurrencyAmount(java::lang::Number arg0, android::icu::util::Currency arg1);
-		
-		// Methods
-		android::icu::util::Currency getCurrency() const;
-	};
+		return callObjectMethod(
+			"getCurrency",
+			"()Landroid/icu/util/Currency;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
+#include "./Measure.hpp"
 

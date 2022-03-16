@@ -1,31 +1,51 @@
 #pragma once
 
-#include "../../io/FilterOutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
+#include "../../../JByteArray.hpp"
+#include "../../io/OutputStream.def.hpp"
+#include "./CheckedOutputStream.def.hpp"
 
 namespace java::util::zip
 {
-	class CheckedOutputStream : public java::io::FilterOutputStream
+	// Fields
+	
+	// Constructors
+	inline CheckedOutputStream::CheckedOutputStream(java::io::OutputStream arg0, JObject arg1)
+		: java::io::FilterOutputStream(
+			"java.util.zip.CheckedOutputStream",
+			"(Ljava/io/OutputStream;Ljava/util/zip/Checksum;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject CheckedOutputStream::getChecksum() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CheckedOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		CheckedOutputStream(QJniObject obj);
-		
-		// Constructors
-		CheckedOutputStream(java::io::OutputStream arg0, JObject arg1);
-		
-		// Methods
-		JObject getChecksum() const;
-		void write(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		return callObjectMethod(
+			"getChecksum",
+			"()Ljava/util/zip/Checksum;"
+		);
+	}
+	inline void CheckedOutputStream::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void CheckedOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../io/OutputStream.hpp"
+#include "../../io/FilterOutputStream.hpp"
 

@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../JArray.hpp"
+#include "../os/Parcel.def.hpp"
+#include "./MediaPlayer_DrmInfo.def.hpp"
 
 namespace android::media
 {
-	class MediaPlayer_DrmInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject MediaPlayer_DrmInfo::getPssh() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaPlayer_DrmInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_DrmInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getPssh() const;
-		JArray getSupportedSchemes() const;
-	};
+		return callObjectMethod(
+			"getPssh",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline JArray MediaPlayer_DrmInfo::getSupportedSchemes() const
+	{
+		return callObjectMethod(
+			"getSupportedSchemes",
+			"()[Ljava/util/UUID;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

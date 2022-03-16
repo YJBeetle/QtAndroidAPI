@@ -1,34 +1,46 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-namespace android::net
-{
-	class PlatformVpnProfile;
-}
+#include "../content/Intent.def.hpp"
+#include "./PlatformVpnProfile.def.hpp"
+#include "./VpnManager.def.hpp"
 
 namespace android::net
 {
-	class VpnManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void VpnManager::deleteProvisionedVpnProfile() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VpnManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VpnManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void deleteProvisionedVpnProfile() const;
-		android::content::Intent provisionVpnProfile(android::net::PlatformVpnProfile arg0) const;
-		void startProvisionedVpnProfile() const;
-		void stopProvisionedVpnProfile() const;
-	};
+		callMethod<void>(
+			"deleteProvisionedVpnProfile",
+			"()V"
+		);
+	}
+	inline android::content::Intent VpnManager::provisionVpnProfile(android::net::PlatformVpnProfile arg0) const
+	{
+		return callObjectMethod(
+			"provisionVpnProfile",
+			"(Landroid/net/PlatformVpnProfile;)Landroid/content/Intent;",
+			arg0.object()
+		);
+	}
+	inline void VpnManager::startProvisionedVpnProfile() const
+	{
+		callMethod<void>(
+			"startProvisionedVpnProfile",
+			"()V"
+		);
+	}
+	inline void VpnManager::stopProvisionedVpnProfile() const
+	{
+		callMethod<void>(
+			"stopProvisionedVpnProfile",
+			"()V"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

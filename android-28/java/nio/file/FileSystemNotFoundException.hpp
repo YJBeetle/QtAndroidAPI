@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../lang/RuntimeException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./FileSystemNotFoundException.def.hpp"
 
 namespace java::nio::file
 {
-	class FileSystemNotFoundException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileSystemNotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		FileSystemNotFoundException(QJniObject obj);
-		
-		// Constructors
-		FileSystemNotFoundException();
-		FileSystemNotFoundException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline FileSystemNotFoundException::FileSystemNotFoundException()
+		: java::lang::RuntimeException(
+			"java.nio.file.FileSystemNotFoundException",
+			"()V"
+		) {}
+	inline FileSystemNotFoundException::FileSystemNotFoundException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.nio.file.FileSystemNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 

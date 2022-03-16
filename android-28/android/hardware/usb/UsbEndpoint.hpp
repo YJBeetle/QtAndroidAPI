@@ -1,38 +1,97 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./UsbEndpoint.def.hpp"
 
 namespace android::hardware::usb
 {
-	class UsbEndpoint : public JObject
+	// Fields
+	inline JObject UsbEndpoint::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UsbEndpoint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsbEndpoint(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jint getAddress() const;
-		jint getAttributes() const;
-		jint getDirection() const;
-		jint getEndpointNumber() const;
-		jint getInterval() const;
-		jint getMaxPacketSize() const;
-		jint getType() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.hardware.usb.UsbEndpoint",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint UsbEndpoint::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint UsbEndpoint::getAddress() const
+	{
+		return callMethod<jint>(
+			"getAddress",
+			"()I"
+		);
+	}
+	inline jint UsbEndpoint::getAttributes() const
+	{
+		return callMethod<jint>(
+			"getAttributes",
+			"()I"
+		);
+	}
+	inline jint UsbEndpoint::getDirection() const
+	{
+		return callMethod<jint>(
+			"getDirection",
+			"()I"
+		);
+	}
+	inline jint UsbEndpoint::getEndpointNumber() const
+	{
+		return callMethod<jint>(
+			"getEndpointNumber",
+			"()I"
+		);
+	}
+	inline jint UsbEndpoint::getInterval() const
+	{
+		return callMethod<jint>(
+			"getInterval",
+			"()I"
+		);
+	}
+	inline jint UsbEndpoint::getMaxPacketSize() const
+	{
+		return callMethod<jint>(
+			"getMaxPacketSize",
+			"()I"
+		);
+	}
+	inline jint UsbEndpoint::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline JString UsbEndpoint::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void UsbEndpoint::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::hardware::usb
+
+// Base class headers
 

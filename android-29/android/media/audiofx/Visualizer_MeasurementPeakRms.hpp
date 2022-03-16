@@ -1,24 +1,32 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Visualizer_MeasurementPeakRms.def.hpp"
 
 namespace android::media::audiofx
 {
-	class Visualizer_MeasurementPeakRms : public JObject
+	// Fields
+	inline jint Visualizer_MeasurementPeakRms::mPeak()
 	{
-	public:
-		// Fields
-		jint mPeak();
-		jint mRms();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Visualizer_MeasurementPeakRms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Visualizer_MeasurementPeakRms(QJniObject obj);
-		
-		// Constructors
-		Visualizer_MeasurementPeakRms();
-		
-		// Methods
-	};
+		return getField<jint>(
+			"mPeak"
+		);
+	}
+	inline jint Visualizer_MeasurementPeakRms::mRms()
+	{
+		return getField<jint>(
+			"mRms"
+		);
+	}
+	
+	// Constructors
+	inline Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms()
+		: JObject(
+			"android.media.audiofx.Visualizer$MeasurementPeakRms",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::media::audiofx
+
+// Base class headers
 

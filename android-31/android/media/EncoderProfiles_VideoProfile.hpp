@@ -1,30 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./EncoderProfiles_VideoProfile.def.hpp"
 
 namespace android::media
 {
-	class EncoderProfiles_VideoProfile : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint EncoderProfiles_VideoProfile::getBitrate() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EncoderProfiles_VideoProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EncoderProfiles_VideoProfile(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getBitrate() const;
-		jint getCodec() const;
-		jint getFrameRate() const;
-		jint getHeight() const;
-		JString getMediaType() const;
-		jint getProfile() const;
-		jint getWidth() const;
-	};
+		return callMethod<jint>(
+			"getBitrate",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles_VideoProfile::getCodec() const
+	{
+		return callMethod<jint>(
+			"getCodec",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles_VideoProfile::getFrameRate() const
+	{
+		return callMethod<jint>(
+			"getFrameRate",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles_VideoProfile::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline JString EncoderProfiles_VideoProfile::getMediaType() const
+	{
+		return callObjectMethod(
+			"getMediaType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint EncoderProfiles_VideoProfile::getProfile() const
+	{
+		return callMethod<jint>(
+			"getProfile",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles_VideoProfile::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

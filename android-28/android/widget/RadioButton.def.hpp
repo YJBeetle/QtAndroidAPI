@@ -1,0 +1,33 @@
+#pragma once
+
+#include "./CompoundButton.def.hpp"
+
+namespace android::content
+{
+	class Context;
+}
+class JString;
+
+namespace android::widget
+{
+	class RadioButton : public android::widget::CompoundButton
+	{
+	public:
+		// Fields
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit RadioButton(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
+		RadioButton(QJniObject obj) : android::widget::CompoundButton(obj) {}
+		
+		// Constructors
+		RadioButton(android::content::Context arg0);
+		RadioButton(android::content::Context arg0, JObject arg1);
+		RadioButton(android::content::Context arg0, JObject arg1, jint arg2);
+		RadioButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
+		
+		// Methods
+		JString getAccessibilityClassName() const;
+		void toggle() const;
+	};
+} // namespace android::widget
+

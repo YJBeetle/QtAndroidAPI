@@ -1,35 +1,42 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PlaybackState_CustomAction.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./PlaybackState_CustomAction_Builder.def.hpp"
 
 namespace android::media::session
 {
-	class PlaybackState_CustomAction;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-class JString;
-
-namespace android::media::session
-{
-	class PlaybackState_CustomAction_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(JString arg0, JString arg1, jint arg2)
+		: JObject(
+			"android.media.session.PlaybackState$CustomAction$Builder",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	
+	// Methods
+	inline android::media::session::PlaybackState_CustomAction PlaybackState_CustomAction_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PlaybackState_CustomAction_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackState_CustomAction_Builder(QJniObject obj);
-		
-		// Constructors
-		PlaybackState_CustomAction_Builder(JString arg0, JString arg1, jint arg2);
-		
-		// Methods
-		android::media::session::PlaybackState_CustomAction build() const;
-		android::media::session::PlaybackState_CustomAction_Builder setExtras(android::os::Bundle arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/session/PlaybackState$CustomAction;"
+		);
+	}
+	inline android::media::session::PlaybackState_CustomAction_Builder PlaybackState_CustomAction_Builder::setExtras(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/media/session/PlaybackState$CustomAction$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::media::session
+
+// Base class headers
 

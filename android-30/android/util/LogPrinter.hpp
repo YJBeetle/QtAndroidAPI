@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./LogPrinter.def.hpp"
 
 namespace android::util
 {
-	class LogPrinter : public JObject
+	// Fields
+	
+	// Constructors
+	inline LogPrinter::LogPrinter(jint arg0, JString arg1)
+		: JObject(
+			"android.util.LogPrinter",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline void LogPrinter::println(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LogPrinter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LogPrinter(QJniObject obj);
-		
-		// Constructors
-		LogPrinter(jint arg0, JString arg1);
-		
-		// Methods
-		void println(JString arg0) const;
-	};
+		callMethod<void>(
+			"println",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

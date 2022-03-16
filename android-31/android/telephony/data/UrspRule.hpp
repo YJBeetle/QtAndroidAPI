@@ -1,37 +1,85 @@
 #pragma once
 
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./UrspRule.def.hpp"
 
 namespace android::telephony::data
 {
-	class UrspRule : public JObject
+	// Fields
+	inline JObject UrspRule::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UrspRule(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UrspRule(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getPrecedence() const;
-		JObject getRouteSelectionDescriptor() const;
-		JObject getTrafficDescriptors() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.data.UrspRule",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint UrspRule::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean UrspRule::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint UrspRule::getPrecedence() const
+	{
+		return callMethod<jint>(
+			"getPrecedence",
+			"()I"
+		);
+	}
+	inline JObject UrspRule::getRouteSelectionDescriptor() const
+	{
+		return callObjectMethod(
+			"getRouteSelectionDescriptor",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject UrspRule::getTrafficDescriptors() const
+	{
+		return callObjectMethod(
+			"getTrafficDescriptors",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint UrspRule::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString UrspRule::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void UrspRule::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony::data
+
+// Base class headers
 

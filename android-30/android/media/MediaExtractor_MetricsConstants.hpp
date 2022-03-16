@@ -1,26 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaExtractor_MetricsConstants.def.hpp"
 
 namespace android::media
 {
-	class MediaExtractor_MetricsConstants : public JObject
+	// Fields
+	inline JString MediaExtractor_MetricsConstants::FORMAT()
 	{
-	public:
-		// Fields
-		static JString FORMAT();
-		static JString MIME_TYPE();
-		static JString TRACKS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaExtractor_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaExtractor_MetricsConstants(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.media.MediaExtractor$MetricsConstants",
+			"FORMAT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaExtractor_MetricsConstants::MIME_TYPE()
+	{
+		return getStaticObjectField(
+			"android.media.MediaExtractor$MetricsConstants",
+			"MIME_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaExtractor_MetricsConstants::TRACKS()
+	{
+		return getStaticObjectField(
+			"android.media.MediaExtractor$MetricsConstants",
+			"TRACKS",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

@@ -1,24 +1,38 @@
 #pragma once
 
-#include "./CaptureResult.hpp"
+#include "./TotalCaptureResult.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class TotalCaptureResult : public android::hardware::camera2::CaptureResult
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject TotalCaptureResult::getPartialResults() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TotalCaptureResult(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CaptureResult(className, sig, std::forward<Ts>(agv)...) {}
-		TotalCaptureResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getPartialResults() const;
-		JObject getPhysicalCameraResults() const;
-		JObject getPhysicalCameraTotalResults() const;
-	};
+		return callObjectMethod(
+			"getPartialResults",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject TotalCaptureResult::getPhysicalCameraResults() const
+	{
+		return callObjectMethod(
+			"getPhysicalCameraResults",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline JObject TotalCaptureResult::getPhysicalCameraTotalResults() const
+	{
+		return callObjectMethod(
+			"getPhysicalCameraTotalResults",
+			"()Ljava/util/Map;"
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
+#include "./CameraMetadata.hpp"
+#include "./CaptureResult.hpp"
 

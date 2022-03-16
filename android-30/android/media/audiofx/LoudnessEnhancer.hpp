@@ -1,25 +1,44 @@
 #pragma once
 
-#include "./AudioEffect.hpp"
+#include "./LoudnessEnhancer.def.hpp"
 
 namespace android::media::audiofx
 {
-	class LoudnessEnhancer : public android::media::audiofx::AudioEffect
+	// Fields
+	inline jint LoudnessEnhancer::PARAM_TARGET_GAIN_MB()
 	{
-	public:
-		// Fields
-		static jint PARAM_TARGET_GAIN_MB();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LoudnessEnhancer(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		LoudnessEnhancer(QJniObject obj);
-		
-		// Constructors
-		LoudnessEnhancer(jint arg0);
-		
-		// Methods
-		jfloat getTargetGain() const;
-		void setTargetGain(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.media.audiofx.LoudnessEnhancer",
+			"PARAM_TARGET_GAIN_MB"
+		);
+	}
+	
+	// Constructors
+	inline LoudnessEnhancer::LoudnessEnhancer(jint arg0)
+		: android::media::audiofx::AudioEffect(
+			"android.media.audiofx.LoudnessEnhancer",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jfloat LoudnessEnhancer::getTargetGain() const
+	{
+		return callMethod<jfloat>(
+			"getTargetGain",
+			"()F"
+		);
+	}
+	inline void LoudnessEnhancer::setTargetGain(jint arg0) const
+	{
+		callMethod<void>(
+			"setTargetGain",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./AudioEffect.hpp"
 

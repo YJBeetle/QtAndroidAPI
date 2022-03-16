@@ -1,33 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrmInitData_SchemeInitData.def.hpp"
+#include "../../java/util/UUID.def.hpp"
+#include "./DrmInitData.def.hpp"
 
 namespace android::media
 {
-	class DrmInitData_SchemeInitData;
-}
-namespace java::util
-{
-	class UUID;
-}
-
-namespace android::media
-{
-	class DrmInitData : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::DrmInitData_SchemeInitData DrmInitData::get(java::util::UUID arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DrmInitData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInitData(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::media::DrmInitData_SchemeInitData get(java::util::UUID arg0) const;
-		android::media::DrmInitData_SchemeInitData getSchemeInitDataAt(jint arg0) const;
-		jint getSchemeInitDataCount() const;
-	};
+		return callObjectMethod(
+			"get",
+			"(Ljava/util/UUID;)Landroid/media/DrmInitData$SchemeInitData;",
+			arg0.object()
+		);
+	}
+	inline android::media::DrmInitData_SchemeInitData DrmInitData::getSchemeInitDataAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"getSchemeInitDataAt",
+			"(I)Landroid/media/DrmInitData$SchemeInitData;",
+			arg0
+		);
+	}
+	inline jint DrmInitData::getSchemeInitDataCount() const
+	{
+		return callMethod<jint>(
+			"getSchemeInitDataCount",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

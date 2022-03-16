@@ -1,46 +1,68 @@
 #pragma once
 
-#include "./ActivityGroup.hpp"
+#include "./Activity.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../widget/TabHost.def.hpp"
+#include "../widget/TabWidget.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./TabActivity.def.hpp"
 
 namespace android::app
 {
-	class Activity;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::widget
-{
-	class TabHost;
-}
-namespace android::widget
-{
-	class TabWidget;
-}
-class JString;
-class JString;
-
-namespace android::app
-{
-	class TabActivity : public android::app::ActivityGroup
+	// Fields
+	
+	// Constructors
+	inline TabActivity::TabActivity()
+		: android::app::ActivityGroup(
+			"android.app.TabActivity",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::widget::TabHost TabActivity::getTabHost() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TabActivity(const char *className, const char *sig, Ts...agv) : android::app::ActivityGroup(className, sig, std::forward<Ts>(agv)...) {}
-		TabActivity(QJniObject obj);
-		
-		// Constructors
-		TabActivity();
-		
-		// Methods
-		android::widget::TabHost getTabHost() const;
-		android::widget::TabWidget getTabWidget() const;
-		void onContentChanged() const;
-		void setDefaultTab(jint arg0) const;
-		void setDefaultTab(JString arg0) const;
-	};
+		return callObjectMethod(
+			"getTabHost",
+			"()Landroid/widget/TabHost;"
+		);
+	}
+	inline android::widget::TabWidget TabActivity::getTabWidget() const
+	{
+		return callObjectMethod(
+			"getTabWidget",
+			"()Landroid/widget/TabWidget;"
+		);
+	}
+	inline void TabActivity::onContentChanged() const
+	{
+		callMethod<void>(
+			"onContentChanged",
+			"()V"
+		);
+	}
+	inline void TabActivity::setDefaultTab(jint arg0) const
+	{
+		callMethod<void>(
+			"setDefaultTab",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void TabActivity::setDefaultTab(JString arg0) const
+	{
+		callMethod<void>(
+			"setDefaultTab",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../view/ContextThemeWrapper.hpp"
+#include "./Activity.hpp"
+#include "./ActivityGroup.hpp"
 

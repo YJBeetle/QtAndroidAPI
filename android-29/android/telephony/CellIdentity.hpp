@@ -1,36 +1,72 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./CellIdentity.def.hpp"
 
 namespace android::telephony
 {
-	class CellIdentity : public JObject
+	// Fields
+	inline JObject CellIdentity::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CellIdentity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CellIdentity(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JString getOperatorAlphaLong() const;
-		JString getOperatorAlphaShort() const;
-		jint hashCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.CellIdentity",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint CellIdentity::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean CellIdentity::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString CellIdentity::getOperatorAlphaLong() const
+	{
+		return callObjectMethod(
+			"getOperatorAlphaLong",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString CellIdentity::getOperatorAlphaShort() const
+	{
+		return callObjectMethod(
+			"getOperatorAlphaShort",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint CellIdentity::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void CellIdentity::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

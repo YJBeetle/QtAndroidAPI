@@ -1,73 +1,124 @@
 #pragma once
 
-#include "../security/SecureClassLoader.hpp"
-
-class JArray;
-namespace java::io
-{
-	class InputStream;
-}
-class JClass;
-namespace java::lang
-{
-	class ClassLoader;
-}
-namespace java::lang
-{
-	class Package;
-}
-class JString;
-namespace java::net
-{
-	class URL;
-}
-namespace java::security
-{
-	class AccessControlContext;
-}
-namespace java::security
-{
-	class CodeSource;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
-namespace java::util
-{
-	class WeakHashMap;
-}
-namespace java::util::jar
-{
-	class Manifest;
-}
+#include "../../JArray.hpp"
+#include "../io/InputStream.def.hpp"
+#include "../../JClass.hpp"
+#include "../lang/ClassLoader.def.hpp"
+#include "../lang/Package.def.hpp"
+#include "../../JString.hpp"
+#include "./URL.def.hpp"
+#include "../security/AccessControlContext.def.hpp"
+#include "../security/CodeSource.def.hpp"
+#include "../security/PermissionCollection.def.hpp"
+#include "../util/WeakHashMap.def.hpp"
+#include "../util/jar/Manifest.def.hpp"
+#include "./URLClassLoader.def.hpp"
 
 namespace java::net
 {
-	class URLClassLoader : public java::security::SecureClassLoader
+	// Fields
+	
+	// Constructors
+	inline URLClassLoader::URLClassLoader(JArray arg0)
+		: java::security::SecureClassLoader(
+			"java.net.URLClassLoader",
+			"([Ljava/net/URL;)V",
+			arg0.object<jarray>()
+		) {}
+	inline URLClassLoader::URLClassLoader(JArray arg0, java::lang::ClassLoader arg1)
+		: java::security::SecureClassLoader(
+			"java.net.URLClassLoader",
+			"([Ljava/net/URL;Ljava/lang/ClassLoader;)V",
+			arg0.object<jarray>(),
+			arg1.object()
+		) {}
+	inline URLClassLoader::URLClassLoader(JArray arg0, java::lang::ClassLoader arg1, JObject arg2)
+		: java::security::SecureClassLoader(
+			"java.net.URLClassLoader",
+			"([Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
+			arg0.object<jarray>(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	inline URLClassLoader::URLClassLoader(JString arg0, JArray arg1, java::lang::ClassLoader arg2)
+		: java::security::SecureClassLoader(
+			"java.net.URLClassLoader",
+			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;)V",
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object()
+		) {}
+	inline URLClassLoader::URLClassLoader(JString arg0, JArray arg1, java::lang::ClassLoader arg2, JObject arg3)
+		: java::security::SecureClassLoader(
+			"java.net.URLClassLoader",
+			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object(),
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline java::net::URLClassLoader URLClassLoader::newInstance(JArray arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit URLClassLoader(const char *className, const char *sig, Ts...agv) : java::security::SecureClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		URLClassLoader(QJniObject obj);
-		
-		// Constructors
-		URLClassLoader(JArray arg0);
-		URLClassLoader(JArray arg0, java::lang::ClassLoader arg1);
-		URLClassLoader(JArray arg0, java::lang::ClassLoader arg1, JObject arg2);
-		URLClassLoader(JString arg0, JArray arg1, java::lang::ClassLoader arg2);
-		URLClassLoader(JString arg0, JArray arg1, java::lang::ClassLoader arg2, JObject arg3);
-		
-		// Methods
-		static java::net::URLClassLoader newInstance(JArray arg0);
-		static java::net::URLClassLoader newInstance(JArray arg0, java::lang::ClassLoader arg1);
-		void close() const;
-		java::net::URL findResource(JString arg0) const;
-		JObject findResources(JString arg0) const;
-		java::io::InputStream getResourceAsStream(JString arg0) const;
-		JArray getURLs() const;
-	};
+		return callStaticObjectMethod(
+			"java.net.URLClassLoader",
+			"newInstance",
+			"([Ljava/net/URL;)Ljava/net/URLClassLoader;",
+			arg0.object<jarray>()
+		);
+	}
+	inline java::net::URLClassLoader URLClassLoader::newInstance(JArray arg0, java::lang::ClassLoader arg1)
+	{
+		return callStaticObjectMethod(
+			"java.net.URLClassLoader",
+			"newInstance",
+			"([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;",
+			arg0.object<jarray>(),
+			arg1.object()
+		);
+	}
+	inline void URLClassLoader::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline java::net::URL URLClassLoader::findResource(JString arg0) const
+	{
+		return callObjectMethod(
+			"findResource",
+			"(Ljava/lang/String;)Ljava/net/URL;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject URLClassLoader::findResources(JString arg0) const
+	{
+		return callObjectMethod(
+			"findResources",
+			"(Ljava/lang/String;)Ljava/util/Enumeration;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::io::InputStream URLClassLoader::getResourceAsStream(JString arg0) const
+	{
+		return callObjectMethod(
+			"getResourceAsStream",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray URLClassLoader::getURLs() const
+	{
+		return callObjectMethod(
+			"getURLs",
+			"()[Ljava/net/URL;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "../lang/ClassLoader.hpp"
+#include "../security/SecureClassLoader.hpp"
 

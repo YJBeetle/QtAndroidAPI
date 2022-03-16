@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::nio
-{
-	class ByteBuffer;
-}
+#include "../../java/nio/ByteBuffer.def.hpp"
+#include "./Image_Plane.def.hpp"
 
 namespace android::media
 {
-	class Image_Plane : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::ByteBuffer Image_Plane::getBuffer() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Image_Plane(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Image_Plane(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		java::nio::ByteBuffer getBuffer() const;
-		jint getPixelStride() const;
-		jint getRowStride() const;
-	};
+		return callObjectMethod(
+			"getBuffer",
+			"()Ljava/nio/ByteBuffer;"
+		);
+	}
+	inline jint Image_Plane::getPixelStride() const
+	{
+		return callMethod<jint>(
+			"getPixelStride",
+			"()I"
+		);
+	}
+	inline jint Image_Plane::getRowStride() const
+	{
+		return callMethod<jint>(
+			"getRowStride",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

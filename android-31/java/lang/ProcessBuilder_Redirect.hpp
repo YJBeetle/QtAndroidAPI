@@ -1,41 +1,98 @@
 #pragma once
 
+#include "../io/File.def.hpp"
 #include "../../JObject.hpp"
-
-namespace java::io
-{
-	class File;
-}
-class JObject;
-namespace java::lang
-{
-	class ProcessBuilder_Redirect_Type;
-}
+#include "./ProcessBuilder_Redirect_Type.def.hpp"
+#include "./ProcessBuilder_Redirect.def.hpp"
 
 namespace java::lang
 {
-	class ProcessBuilder_Redirect : public JObject
+	// Fields
+	inline java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::DISCARD()
 	{
-	public:
-		// Fields
-		static java::lang::ProcessBuilder_Redirect DISCARD();
-		static java::lang::ProcessBuilder_Redirect INHERIT();
-		static java::lang::ProcessBuilder_Redirect PIPE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ProcessBuilder_Redirect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessBuilder_Redirect(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::lang::ProcessBuilder_Redirect appendTo(java::io::File arg0);
-		static java::lang::ProcessBuilder_Redirect from(java::io::File arg0);
-		static java::lang::ProcessBuilder_Redirect to(java::io::File arg0);
-		jboolean equals(JObject arg0) const;
-		java::io::File file() const;
-		jint hashCode() const;
-		java::lang::ProcessBuilder_Redirect_Type type() const;
-	};
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect",
+			"DISCARD",
+			"Ljava/lang/ProcessBuilder$Redirect;"
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::INHERIT()
+	{
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect",
+			"INHERIT",
+			"Ljava/lang/ProcessBuilder$Redirect;"
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::PIPE()
+	{
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect",
+			"PIPE",
+			"Ljava/lang/ProcessBuilder$Redirect;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::appendTo(java::io::File arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.ProcessBuilder$Redirect",
+			"appendTo",
+			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
+			arg0.object()
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::from(java::io::File arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.ProcessBuilder$Redirect",
+			"from",
+			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
+			arg0.object()
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::to(java::io::File arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.ProcessBuilder$Redirect",
+			"to",
+			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
+			arg0.object()
+		);
+	}
+	inline jboolean ProcessBuilder_Redirect::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::io::File ProcessBuilder_Redirect::file() const
+	{
+		return callObjectMethod(
+			"file",
+			"()Ljava/io/File;"
+		);
+	}
+	inline jint ProcessBuilder_Redirect::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect::type() const
+	{
+		return callObjectMethod(
+			"type",
+			"()Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
 

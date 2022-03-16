@@ -1,34 +1,72 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Canvas.def.hpp"
+#include "./Picture.def.hpp"
 
 namespace android::graphics
 {
-	class Canvas;
-}
-
-namespace android::graphics
-{
-	class Picture : public JObject
+	// Fields
+	
+	// Constructors
+	inline Picture::Picture()
+		: JObject(
+			"android.graphics.Picture",
+			"()V"
+		) {}
+	inline Picture::Picture(android::graphics::Picture &arg0)
+		: JObject(
+			"android.graphics.Picture",
+			"(Landroid/graphics/Picture;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::Canvas Picture::beginRecording(jint arg0, jint arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Picture(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Picture(QJniObject obj);
-		
-		// Constructors
-		Picture();
-		Picture(android::graphics::Picture &arg0);
-		
-		// Methods
-		android::graphics::Canvas beginRecording(jint arg0, jint arg1) const;
-		void draw(android::graphics::Canvas arg0) const;
-		void endRecording() const;
-		jint getHeight() const;
-		jint getWidth() const;
-		jboolean requiresHardwareAcceleration() const;
-	};
+		return callObjectMethod(
+			"beginRecording",
+			"(II)Landroid/graphics/Canvas;",
+			arg0,
+			arg1
+		);
+	}
+	inline void Picture::draw(android::graphics::Canvas arg0) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.object()
+		);
+	}
+	inline void Picture::endRecording() const
+	{
+		callMethod<void>(
+			"endRecording",
+			"()V"
+		);
+	}
+	inline jint Picture::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint Picture::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	inline jboolean Picture::requiresHardwareAcceleration() const
+	{
+		return callMethod<jboolean>(
+			"requiresHardwareAcceleration",
+			"()Z"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

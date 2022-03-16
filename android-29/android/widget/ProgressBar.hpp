@@ -1,115 +1,538 @@
 #pragma once
 
-#include "../view/View.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::content::res
-{
-	class ColorStateList;
-}
-namespace android::graphics
-{
-	class BlendMode;
-}
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class PorterDuff_Mode;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../content/res/ColorStateList.def.hpp"
+#include "../graphics/BlendMode.def.hpp"
+#include "../graphics/Canvas.def.hpp"
+#include "../graphics/PorterDuff_Mode.def.hpp"
+#include "../graphics/drawable/Drawable.def.hpp"
+#include "../../JString.hpp"
+#include "./ProgressBar.def.hpp"
 
 namespace android::widget
 {
-	class ProgressBar : public android::view::View
+	// Fields
+	
+	// Constructors
+	inline ProgressBar::ProgressBar(android::content::Context arg0)
+		: android::view::View(
+			"android.widget.ProgressBar",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline ProgressBar::ProgressBar(android::content::Context arg0, JObject arg1)
+		: android::view::View(
+			"android.widget.ProgressBar",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline ProgressBar::ProgressBar(android::content::Context arg0, JObject arg1, jint arg2)
+		: android::view::View(
+			"android.widget.ProgressBar",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		) {}
+	inline ProgressBar::ProgressBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: android::view::View(
+			"android.widget.ProgressBar",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline void ProgressBar::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ProgressBar(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		ProgressBar(QJniObject obj);
-		
-		// Constructors
-		ProgressBar(android::content::Context arg0);
-		ProgressBar(android::content::Context arg0, JObject arg1);
-		ProgressBar(android::content::Context arg0, JObject arg1, jint arg2);
-		ProgressBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
-		
-		// Methods
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1) const;
-		JString getAccessibilityClassName() const;
-		android::graphics::drawable::Drawable getCurrentDrawable() const;
-		android::graphics::drawable::Drawable getIndeterminateDrawable() const;
-		android::graphics::BlendMode getIndeterminateTintBlendMode() const;
-		android::content::res::ColorStateList getIndeterminateTintList() const;
-		android::graphics::PorterDuff_Mode getIndeterminateTintMode() const;
-		JObject getInterpolator() const;
-		jint getMax() const;
-		jint getMaxHeight() const;
-		jint getMaxWidth() const;
-		jint getMin() const;
-		jint getMinHeight() const;
-		jint getMinWidth() const;
-		jint getProgress() const;
-		android::graphics::BlendMode getProgressBackgroundTintBlendMode() const;
-		android::content::res::ColorStateList getProgressBackgroundTintList() const;
-		android::graphics::PorterDuff_Mode getProgressBackgroundTintMode() const;
-		android::graphics::drawable::Drawable getProgressDrawable() const;
-		android::graphics::BlendMode getProgressTintBlendMode() const;
-		android::content::res::ColorStateList getProgressTintList() const;
-		android::graphics::PorterDuff_Mode getProgressTintMode() const;
-		jint getSecondaryProgress() const;
-		android::graphics::BlendMode getSecondaryProgressTintBlendMode() const;
-		android::content::res::ColorStateList getSecondaryProgressTintList() const;
-		android::graphics::PorterDuff_Mode getSecondaryProgressTintMode() const;
-		void incrementProgressBy(jint arg0) const;
-		void incrementSecondaryProgressBy(jint arg0) const;
-		void invalidateDrawable(android::graphics::drawable::Drawable arg0) const;
-		jboolean isAnimating() const;
-		jboolean isIndeterminate() const;
-		void jumpDrawablesToCurrentState() const;
-		void onRestoreInstanceState(JObject arg0) const;
-		JObject onSaveInstanceState() const;
-		void onVisibilityAggregated(jboolean arg0) const;
-		void postInvalidate() const;
-		void setIndeterminate(jboolean arg0) const;
-		void setIndeterminateDrawable(android::graphics::drawable::Drawable arg0) const;
-		void setIndeterminateDrawableTiled(android::graphics::drawable::Drawable arg0) const;
-		void setIndeterminateTintBlendMode(android::graphics::BlendMode arg0) const;
-		void setIndeterminateTintList(android::content::res::ColorStateList arg0) const;
-		void setIndeterminateTintMode(android::graphics::PorterDuff_Mode arg0) const;
-		void setInterpolator(JObject arg0) const;
-		void setInterpolator(android::content::Context arg0, jint arg1) const;
-		void setMax(jint arg0) const;
-		void setMaxHeight(jint arg0) const;
-		void setMaxWidth(jint arg0) const;
-		void setMin(jint arg0) const;
-		void setMinHeight(jint arg0) const;
-		void setMinWidth(jint arg0) const;
-		void setProgress(jint arg0) const;
-		void setProgress(jint arg0, jboolean arg1) const;
-		void setProgressBackgroundTintBlendMode(android::graphics::BlendMode arg0) const;
-		void setProgressBackgroundTintList(android::content::res::ColorStateList arg0) const;
-		void setProgressBackgroundTintMode(android::graphics::PorterDuff_Mode arg0) const;
-		void setProgressDrawable(android::graphics::drawable::Drawable arg0) const;
-		void setProgressDrawableTiled(android::graphics::drawable::Drawable arg0) const;
-		void setProgressTintBlendMode(android::graphics::BlendMode arg0) const;
-		void setProgressTintList(android::content::res::ColorStateList arg0) const;
-		void setProgressTintMode(android::graphics::PorterDuff_Mode arg0) const;
-		void setSecondaryProgress(jint arg0) const;
-		void setSecondaryProgressTintBlendMode(android::graphics::BlendMode arg0) const;
-		void setSecondaryProgressTintList(android::content::res::ColorStateList arg0) const;
-		void setSecondaryProgressTintMode(android::graphics::PorterDuff_Mode arg0) const;
-	};
+		callMethod<void>(
+			"drawableHotspotChanged",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	inline JString ProgressBar::getAccessibilityClassName() const
+	{
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::graphics::drawable::Drawable ProgressBar::getCurrentDrawable() const
+	{
+		return callObjectMethod(
+			"getCurrentDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline android::graphics::drawable::Drawable ProgressBar::getIndeterminateDrawable() const
+	{
+		return callObjectMethod(
+			"getIndeterminateDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline android::graphics::BlendMode ProgressBar::getIndeterminateTintBlendMode() const
+	{
+		return callObjectMethod(
+			"getIndeterminateTintBlendMode",
+			"()Landroid/graphics/BlendMode;"
+		);
+	}
+	inline android::content::res::ColorStateList ProgressBar::getIndeterminateTintList() const
+	{
+		return callObjectMethod(
+			"getIndeterminateTintList",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode ProgressBar::getIndeterminateTintMode() const
+	{
+		return callObjectMethod(
+			"getIndeterminateTintMode",
+			"()Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline JObject ProgressBar::getInterpolator() const
+	{
+		return callObjectMethod(
+			"getInterpolator",
+			"()Landroid/view/animation/Interpolator;"
+		);
+	}
+	inline jint ProgressBar::getMax() const
+	{
+		return callMethod<jint>(
+			"getMax",
+			"()I"
+		);
+	}
+	inline jint ProgressBar::getMaxHeight() const
+	{
+		return callMethod<jint>(
+			"getMaxHeight",
+			"()I"
+		);
+	}
+	inline jint ProgressBar::getMaxWidth() const
+	{
+		return callMethod<jint>(
+			"getMaxWidth",
+			"()I"
+		);
+	}
+	inline jint ProgressBar::getMin() const
+	{
+		return callMethod<jint>(
+			"getMin",
+			"()I"
+		);
+	}
+	inline jint ProgressBar::getMinHeight() const
+	{
+		return callMethod<jint>(
+			"getMinHeight",
+			"()I"
+		);
+	}
+	inline jint ProgressBar::getMinWidth() const
+	{
+		return callMethod<jint>(
+			"getMinWidth",
+			"()I"
+		);
+	}
+	inline jint ProgressBar::getProgress() const
+	{
+		return callMethod<jint>(
+			"getProgress",
+			"()I"
+		);
+	}
+	inline android::graphics::BlendMode ProgressBar::getProgressBackgroundTintBlendMode() const
+	{
+		return callObjectMethod(
+			"getProgressBackgroundTintBlendMode",
+			"()Landroid/graphics/BlendMode;"
+		);
+	}
+	inline android::content::res::ColorStateList ProgressBar::getProgressBackgroundTintList() const
+	{
+		return callObjectMethod(
+			"getProgressBackgroundTintList",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode ProgressBar::getProgressBackgroundTintMode() const
+	{
+		return callObjectMethod(
+			"getProgressBackgroundTintMode",
+			"()Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::drawable::Drawable ProgressBar::getProgressDrawable() const
+	{
+		return callObjectMethod(
+			"getProgressDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline android::graphics::BlendMode ProgressBar::getProgressTintBlendMode() const
+	{
+		return callObjectMethod(
+			"getProgressTintBlendMode",
+			"()Landroid/graphics/BlendMode;"
+		);
+	}
+	inline android::content::res::ColorStateList ProgressBar::getProgressTintList() const
+	{
+		return callObjectMethod(
+			"getProgressTintList",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode ProgressBar::getProgressTintMode() const
+	{
+		return callObjectMethod(
+			"getProgressTintMode",
+			"()Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline jint ProgressBar::getSecondaryProgress() const
+	{
+		return callMethod<jint>(
+			"getSecondaryProgress",
+			"()I"
+		);
+	}
+	inline android::graphics::BlendMode ProgressBar::getSecondaryProgressTintBlendMode() const
+	{
+		return callObjectMethod(
+			"getSecondaryProgressTintBlendMode",
+			"()Landroid/graphics/BlendMode;"
+		);
+	}
+	inline android::content::res::ColorStateList ProgressBar::getSecondaryProgressTintList() const
+	{
+		return callObjectMethod(
+			"getSecondaryProgressTintList",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode ProgressBar::getSecondaryProgressTintMode() const
+	{
+		return callObjectMethod(
+			"getSecondaryProgressTintMode",
+			"()Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline void ProgressBar::incrementProgressBy(jint arg0) const
+	{
+		callMethod<void>(
+			"incrementProgressBy",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::incrementSecondaryProgressBy(jint arg0) const
+	{
+		callMethod<void>(
+			"incrementSecondaryProgressBy",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"invalidateDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean ProgressBar::isAnimating() const
+	{
+		return callMethod<jboolean>(
+			"isAnimating",
+			"()Z"
+		);
+	}
+	inline jboolean ProgressBar::isIndeterminate() const
+	{
+		return callMethod<jboolean>(
+			"isIndeterminate",
+			"()Z"
+		);
+	}
+	inline void ProgressBar::jumpDrawablesToCurrentState() const
+	{
+		callMethod<void>(
+			"jumpDrawablesToCurrentState",
+			"()V"
+		);
+	}
+	inline void ProgressBar::onRestoreInstanceState(JObject arg0) const
+	{
+		callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.object()
+		);
+	}
+	inline JObject ProgressBar::onSaveInstanceState() const
+	{
+		return callObjectMethod(
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;"
+		);
+	}
+	inline void ProgressBar::onVisibilityAggregated(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onVisibilityAggregated",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::postInvalidate() const
+	{
+		callMethod<void>(
+			"postInvalidate",
+			"()V"
+		);
+	}
+	inline void ProgressBar::setIndeterminate(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setIndeterminate",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setIndeterminateDrawable(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"setIndeterminateDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setIndeterminateDrawableTiled(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"setIndeterminateDrawableTiled",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setIndeterminateTintBlendMode(android::graphics::BlendMode arg0) const
+	{
+		callMethod<void>(
+			"setIndeterminateTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setIndeterminateTintList(android::content::res::ColorStateList arg0) const
+	{
+		callMethod<void>(
+			"setIndeterminateTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setIndeterminateTintMode(android::graphics::PorterDuff_Mode arg0) const
+	{
+		callMethod<void>(
+			"setIndeterminateTintMode",
+			"(Landroid/graphics/PorterDuff$Mode;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setInterpolator(JObject arg0) const
+	{
+		callMethod<void>(
+			"setInterpolator",
+			"(Landroid/view/animation/Interpolator;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setInterpolator(android::content::Context arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"setInterpolator",
+			"(Landroid/content/Context;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void ProgressBar::setMax(jint arg0) const
+	{
+		callMethod<void>(
+			"setMax",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setMaxHeight(jint arg0) const
+	{
+		callMethod<void>(
+			"setMaxHeight",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setMaxWidth(jint arg0) const
+	{
+		callMethod<void>(
+			"setMaxWidth",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setMin(jint arg0) const
+	{
+		callMethod<void>(
+			"setMin",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setMinHeight(jint arg0) const
+	{
+		callMethod<void>(
+			"setMinHeight",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setMinWidth(jint arg0) const
+	{
+		callMethod<void>(
+			"setMinWidth",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setProgress(jint arg0) const
+	{
+		callMethod<void>(
+			"setProgress",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setProgress(jint arg0, jboolean arg1) const
+	{
+		callMethod<void>(
+			"setProgress",
+			"(IZ)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void ProgressBar::setProgressBackgroundTintBlendMode(android::graphics::BlendMode arg0) const
+	{
+		callMethod<void>(
+			"setProgressBackgroundTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setProgressBackgroundTintList(android::content::res::ColorStateList arg0) const
+	{
+		callMethod<void>(
+			"setProgressBackgroundTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setProgressBackgroundTintMode(android::graphics::PorterDuff_Mode arg0) const
+	{
+		callMethod<void>(
+			"setProgressBackgroundTintMode",
+			"(Landroid/graphics/PorterDuff$Mode;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setProgressDrawable(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"setProgressDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setProgressDrawableTiled(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"setProgressDrawableTiled",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setProgressTintBlendMode(android::graphics::BlendMode arg0) const
+	{
+		callMethod<void>(
+			"setProgressTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setProgressTintList(android::content::res::ColorStateList arg0) const
+	{
+		callMethod<void>(
+			"setProgressTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setProgressTintMode(android::graphics::PorterDuff_Mode arg0) const
+	{
+		callMethod<void>(
+			"setProgressTintMode",
+			"(Landroid/graphics/PorterDuff$Mode;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setSecondaryProgress(jint arg0) const
+	{
+		callMethod<void>(
+			"setSecondaryProgress",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ProgressBar::setSecondaryProgressTintBlendMode(android::graphics::BlendMode arg0) const
+	{
+		callMethod<void>(
+			"setSecondaryProgressTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setSecondaryProgressTintList(android::content::res::ColorStateList arg0) const
+	{
+		callMethod<void>(
+			"setSecondaryProgressTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.object()
+		);
+	}
+	inline void ProgressBar::setSecondaryProgressTintMode(android::graphics::PorterDuff_Mode arg0) const
+	{
+		callMethod<void>(
+			"setSecondaryProgressTintMode",
+			"(Landroid/graphics/PorterDuff$Mode;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
 

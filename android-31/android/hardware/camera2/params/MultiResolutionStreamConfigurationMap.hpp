@@ -1,32 +1,70 @@
 #pragma once
 
+#include "../../../../JIntArray.hpp"
 #include "../../../../JObject.hpp"
-
-class JIntArray;
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./MultiResolutionStreamConfigurationMap.def.hpp"
 
 namespace android::hardware::camera2::params
 {
-	class MultiResolutionStreamConfigurationMap : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MultiResolutionStreamConfigurationMap::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MultiResolutionStreamConfigurationMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MultiResolutionStreamConfigurationMap(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JIntArray getInputFormats() const;
-		JObject getInputInfo(jint arg0) const;
-		JIntArray getOutputFormats() const;
-		JObject getOutputInfo(jint arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JIntArray MultiResolutionStreamConfigurationMap::getInputFormats() const
+	{
+		return callObjectMethod(
+			"getInputFormats",
+			"()[I"
+		);
+	}
+	inline JObject MultiResolutionStreamConfigurationMap::getInputInfo(jint arg0) const
+	{
+		return callObjectMethod(
+			"getInputInfo",
+			"(I)Ljava/util/Collection;",
+			arg0
+		);
+	}
+	inline JIntArray MultiResolutionStreamConfigurationMap::getOutputFormats() const
+	{
+		return callObjectMethod(
+			"getOutputFormats",
+			"()[I"
+		);
+	}
+	inline JObject MultiResolutionStreamConfigurationMap::getOutputInfo(jint arg0) const
+	{
+		return callObjectMethod(
+			"getOutputInfo",
+			"(I)Ljava/util/Collection;",
+			arg0
+		);
+	}
+	inline jint MultiResolutionStreamConfigurationMap::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString MultiResolutionStreamConfigurationMap::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::hardware::camera2::params
+
+// Base class headers
 

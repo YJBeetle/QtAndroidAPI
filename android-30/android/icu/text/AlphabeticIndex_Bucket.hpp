@@ -1,32 +1,52 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AlphabeticIndex_Bucket_LabelType.def.hpp"
+#include "../../../JString.hpp"
+#include "./AlphabeticIndex_Bucket.def.hpp"
 
 namespace android::icu::text
 {
-	class AlphabeticIndex_Bucket_LabelType;
-}
-class JString;
-
-namespace android::icu::text
-{
-	class AlphabeticIndex_Bucket : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString AlphabeticIndex_Bucket::getLabel() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlphabeticIndex_Bucket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_Bucket(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getLabel() const;
-		android::icu::text::AlphabeticIndex_Bucket_LabelType getLabelType() const;
-		JObject iterator() const;
-		jint size() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket::getLabelType() const
+	{
+		return callObjectMethod(
+			"getLabelType",
+			"()Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
+	}
+	inline JObject AlphabeticIndex_Bucket::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline jint AlphabeticIndex_Bucket::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JString AlphabeticIndex_Bucket::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

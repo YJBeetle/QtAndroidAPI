@@ -1,28 +1,49 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./GesturePoint.def.hpp"
 
 namespace android::gesture
 {
-	class GesturePoint : public JObject
+	// Fields
+	inline jlong GesturePoint::timestamp()
 	{
-	public:
-		// Fields
-		jlong timestamp();
-		jfloat x();
-		jfloat y();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GesturePoint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GesturePoint(QJniObject obj);
-		
-		// Constructors
-		GesturePoint(jfloat arg0, jfloat arg1, jlong arg2);
-		
-		// Methods
-		JObject clone() const;
-	};
+		return getField<jlong>(
+			"timestamp"
+		);
+	}
+	inline jfloat GesturePoint::x()
+	{
+		return getField<jfloat>(
+			"x"
+		);
+	}
+	inline jfloat GesturePoint::y()
+	{
+		return getField<jfloat>(
+			"y"
+		);
+	}
+	
+	// Constructors
+	inline GesturePoint::GesturePoint(jfloat arg0, jfloat arg1, jlong arg2)
+		: JObject(
+			"android.gesture.GesturePoint",
+			"(FFJ)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline JObject GesturePoint::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
 } // namespace android::gesture
+
+// Base class headers
 

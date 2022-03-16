@@ -1,22 +1,24 @@
 #pragma once
 
-#include "../util/AndroidException.hpp"
+#include "./IpSecManager_SpiUnavailableException.def.hpp"
 
 namespace android::net
 {
-	class IpSecManager_SpiUnavailableException : public android::util::AndroidException
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint IpSecManager_SpiUnavailableException::getSpi() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IpSecManager_SpiUnavailableException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager_SpiUnavailableException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getSpi() const;
-	};
+		return callMethod<jint>(
+			"getSpi",
+			"()I"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
 

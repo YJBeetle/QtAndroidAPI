@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./StrictMode_ThreadPolicy.def.hpp"
 
 namespace android::os
 {
-	class StrictMode_ThreadPolicy : public JObject
+	// Fields
+	inline android::os::StrictMode_ThreadPolicy StrictMode_ThreadPolicy::LAX()
 	{
-	public:
-		// Fields
-		static android::os::StrictMode_ThreadPolicy LAX();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StrictMode_ThreadPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StrictMode_ThreadPolicy(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.os.StrictMode$ThreadPolicy",
+			"LAX",
+			"Landroid/os/StrictMode$ThreadPolicy;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString StrictMode_ThreadPolicy::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

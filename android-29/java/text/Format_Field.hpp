@@ -1,23 +1,17 @@
 #pragma once
 
-#include "./AttributedCharacterIterator_Attribute.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Format_Field.def.hpp"
 
 namespace java::text
 {
-	class Format_Field : public java::text::AttributedCharacterIterator_Attribute
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Format_Field(const char *className, const char *sig, Ts...agv) : java::text::AttributedCharacterIterator_Attribute(className, sig, std::forward<Ts>(agv)...) {}
-		Format_Field(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::text
+
+// Base class headers
+#include "./AttributedCharacterIterator_Attribute.hpp"
 

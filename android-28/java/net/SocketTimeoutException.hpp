@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../io/InterruptedIOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./SocketTimeoutException.def.hpp"
 
 namespace java::net
 {
-	class SocketTimeoutException : public java::io::InterruptedIOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SocketTimeoutException(const char *className, const char *sig, Ts...agv) : java::io::InterruptedIOException(className, sig, std::forward<Ts>(agv)...) {}
-		SocketTimeoutException(QJniObject obj);
-		
-		// Constructors
-		SocketTimeoutException();
-		SocketTimeoutException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SocketTimeoutException::SocketTimeoutException()
+		: java::io::InterruptedIOException(
+			"java.net.SocketTimeoutException",
+			"()V"
+		) {}
+	inline SocketTimeoutException::SocketTimeoutException(JString arg0)
+		: java::io::InterruptedIOException(
+			"java.net.SocketTimeoutException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
+#include "../io/InterruptedIOException.hpp"
 

@@ -1,28 +1,42 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./Output.def.hpp"
 
 namespace android::icu::util
 {
-	class Output : public JObject
+	// Fields
+	inline JObject Output::value()
 	{
-	public:
-		// Fields
-		JObject value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Output(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Output(QJniObject obj);
-		
-		// Constructors
-		Output();
-		Output(JObject arg0);
-		
-		// Methods
-		JString toString() const;
-	};
+		return getObjectField(
+			"value",
+			"Ljava/lang/Object;"
+		);
+	}
+	
+	// Constructors
+	inline Output::Output()
+		: JObject(
+			"android.icu.util.Output",
+			"()V"
+		) {}
+	inline Output::Output(JObject arg0)
+		: JObject(
+			"android.icu.util.Output",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		) {}
+	
+	// Methods
+	inline JString Output::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
 

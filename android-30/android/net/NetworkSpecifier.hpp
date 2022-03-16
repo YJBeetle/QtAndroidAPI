@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./NetworkSpecifier.def.hpp"
 
 namespace android::net
 {
-	class NetworkSpecifier : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkSpecifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkSpecifier(QJniObject obj);
-		
-		// Constructors
-		NetworkSpecifier();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NetworkSpecifier::NetworkSpecifier()
+		: JObject(
+			"android.net.NetworkSpecifier",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::net
+
+// Base class headers
 

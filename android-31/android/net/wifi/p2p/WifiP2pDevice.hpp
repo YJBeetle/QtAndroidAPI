@@ -1,57 +1,195 @@
 #pragma once
 
+#include "./WifiP2pWfdInfo.def.hpp"
+#include "../../../os/Parcel.def.hpp"
 #include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
+#include "./WifiP2pDevice.def.hpp"
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pWfdInfo;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
-
-namespace android::net::wifi::p2p
-{
-	class WifiP2pDevice : public JObject
+	// Fields
+	inline jint WifiP2pDevice::AVAILABLE()
 	{
-	public:
-		// Fields
-		static jint AVAILABLE();
-		static jint CONNECTED();
-		static JObject CREATOR();
-		static jint FAILED();
-		static jint INVITED();
-		static jint UNAVAILABLE();
-		JString deviceAddress();
-		JString deviceName();
-		JString primaryDeviceType();
-		JString secondaryDeviceType();
-		jint status();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiP2pDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pDevice(QJniObject obj);
-		
-		// Constructors
-		WifiP2pDevice();
-		WifiP2pDevice(android::net::wifi::p2p::WifiP2pDevice &arg0);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::net::wifi::p2p::WifiP2pWfdInfo getWfdInfo() const;
-		jint hashCode() const;
-		jboolean isGroupOwner() const;
-		jboolean isServiceDiscoveryCapable() const;
-		JString toString() const;
-		void update(android::net::wifi::p2p::WifiP2pDevice arg0) const;
-		jboolean wpsDisplaySupported() const;
-		jboolean wpsKeypadSupported() const;
-		jboolean wpsPbcSupported() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"AVAILABLE"
+		);
+	}
+	inline jint WifiP2pDevice::CONNECTED()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"CONNECTED"
+		);
+	}
+	inline JObject WifiP2pDevice::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint WifiP2pDevice::FAILED()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"FAILED"
+		);
+	}
+	inline jint WifiP2pDevice::INVITED()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"INVITED"
+		);
+	}
+	inline jint WifiP2pDevice::UNAVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"UNAVAILABLE"
+		);
+	}
+	inline JString WifiP2pDevice::deviceAddress()
+	{
+		return getObjectField(
+			"deviceAddress",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiP2pDevice::deviceName()
+	{
+		return getObjectField(
+			"deviceName",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiP2pDevice::primaryDeviceType()
+	{
+		return getObjectField(
+			"primaryDeviceType",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiP2pDevice::secondaryDeviceType()
+	{
+		return getObjectField(
+			"secondaryDeviceType",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint WifiP2pDevice::status()
+	{
+		return getField<jint>(
+			"status"
+		);
+	}
+	
+	// Constructors
+	inline WifiP2pDevice::WifiP2pDevice()
+		: JObject(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"()V"
+		) {}
+	inline WifiP2pDevice::WifiP2pDevice(android::net::wifi::p2p::WifiP2pDevice &arg0)
+		: JObject(
+			"android.net.wifi.p2p.WifiP2pDevice",
+			"(Landroid/net/wifi/p2p/WifiP2pDevice;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint WifiP2pDevice::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean WifiP2pDevice::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::net::wifi::p2p::WifiP2pWfdInfo WifiP2pDevice::getWfdInfo() const
+	{
+		return callObjectMethod(
+			"getWfdInfo",
+			"()Landroid/net/wifi/p2p/WifiP2pWfdInfo;"
+		);
+	}
+	inline jint WifiP2pDevice::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean WifiP2pDevice::isGroupOwner() const
+	{
+		return callMethod<jboolean>(
+			"isGroupOwner",
+			"()Z"
+		);
+	}
+	inline jboolean WifiP2pDevice::isServiceDiscoveryCapable() const
+	{
+		return callMethod<jboolean>(
+			"isServiceDiscoveryCapable",
+			"()Z"
+		);
+	}
+	inline JString WifiP2pDevice::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void WifiP2pDevice::update(android::net::wifi::p2p::WifiP2pDevice arg0) const
+	{
+		callMethod<void>(
+			"update",
+			"(Landroid/net/wifi/p2p/WifiP2pDevice;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean WifiP2pDevice::wpsDisplaySupported() const
+	{
+		return callMethod<jboolean>(
+			"wpsDisplaySupported",
+			"()Z"
+		);
+	}
+	inline jboolean WifiP2pDevice::wpsKeypadSupported() const
+	{
+		return callMethod<jboolean>(
+			"wpsKeypadSupported",
+			"()Z"
+		);
+	}
+	inline jboolean WifiP2pDevice::wpsPbcSupported() const
+	{
+		return callMethod<jboolean>(
+			"wpsPbcSupported",
+			"()Z"
+		);
+	}
+	inline void WifiP2pDevice::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::wifi::p2p
+
+// Base class headers
 

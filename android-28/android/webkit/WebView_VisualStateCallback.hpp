@@ -1,23 +1,28 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WebView_VisualStateCallback.def.hpp"
 
 namespace android::webkit
 {
-	class WebView_VisualStateCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebView_VisualStateCallback::WebView_VisualStateCallback()
+		: JObject(
+			"android.webkit.WebView$VisualStateCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void WebView_VisualStateCallback::onComplete(jlong arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebView_VisualStateCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebView_VisualStateCallback(QJniObject obj);
-		
-		// Constructors
-		WebView_VisualStateCallback();
-		
-		// Methods
-		void onComplete(jlong arg0) const;
-	};
+		callMethod<void>(
+			"onComplete",
+			"(J)V",
+			arg0
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

@@ -1,32 +1,33 @@
 #pragma once
 
-#include "./VoiceInteractor_Request.hpp"
+#include "./VoiceInteractor_Prompt.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./VoiceInteractor_CompleteVoiceRequest.def.hpp"
 
 namespace android::app
 {
-	class VoiceInteractor_Prompt;
-}
-namespace android::os
-{
-	class Bundle;
-}
-
-namespace android::app
-{
-	class VoiceInteractor_CompleteVoiceRequest : public android::app::VoiceInteractor_Request
+	// Fields
+	
+	// Constructors
+	inline VoiceInteractor_CompleteVoiceRequest::VoiceInteractor_CompleteVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1)
+		: android::app::VoiceInteractor_Request(
+			"android.app.VoiceInteractor$CompleteVoiceRequest",
+			"(Landroid/app/VoiceInteractor$Prompt;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void VoiceInteractor_CompleteVoiceRequest::onCompleteResult(android::os::Bundle arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractor_CompleteVoiceRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_CompleteVoiceRequest(QJniObject obj);
-		
-		// Constructors
-		VoiceInteractor_CompleteVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
-		
-		// Methods
-		void onCompleteResult(android::os::Bundle arg0) const;
-	};
+		callMethod<void>(
+			"onCompleteResult",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./VoiceInteractor_Request.hpp"
 

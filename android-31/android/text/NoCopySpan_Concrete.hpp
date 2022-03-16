@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./NoCopySpan_Concrete.def.hpp"
 
 namespace android::text
 {
-	class NoCopySpan_Concrete : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoCopySpan_Concrete(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NoCopySpan_Concrete(QJniObject obj);
-		
-		// Constructors
-		NoCopySpan_Concrete();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoCopySpan_Concrete::NoCopySpan_Concrete()
+		: JObject(
+			"android.text.NoCopySpan$Concrete",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::text
+
+// Base class headers
 

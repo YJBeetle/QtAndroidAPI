@@ -1,34 +1,75 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ClientCertRequest.def.hpp"
 
 namespace android::webkit
 {
-	class ClientCertRequest : public JObject
+	// Fields
+	
+	// Constructors
+	inline ClientCertRequest::ClientCertRequest()
+		: JObject(
+			"android.webkit.ClientCertRequest",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ClientCertRequest::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ClientCertRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClientCertRequest(QJniObject obj);
-		
-		// Constructors
-		ClientCertRequest();
-		
-		// Methods
-		void cancel() const;
-		JString getHost() const;
-		JArray getKeyTypes() const;
-		jint getPort() const;
-		JArray getPrincipals() const;
-		void ignore() const;
-		void proceed(JObject arg0, JArray arg1) const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline JString ClientCertRequest::getHost() const
+	{
+		return callObjectMethod(
+			"getHost",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JArray ClientCertRequest::getKeyTypes() const
+	{
+		return callObjectMethod(
+			"getKeyTypes",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jint ClientCertRequest::getPort() const
+	{
+		return callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
+	inline JArray ClientCertRequest::getPrincipals() const
+	{
+		return callObjectMethod(
+			"getPrincipals",
+			"()[Ljava/security/Principal;"
+		);
+	}
+	inline void ClientCertRequest::ignore() const
+	{
+		callMethod<void>(
+			"ignore",
+			"()V"
+		);
+	}
+	inline void ClientCertRequest::proceed(JObject arg0, JArray arg1) const
+	{
+		callMethod<void>(
+			"proceed",
+			"(Ljava/security/PrivateKey;[Ljava/security/cert/X509Certificate;)V",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

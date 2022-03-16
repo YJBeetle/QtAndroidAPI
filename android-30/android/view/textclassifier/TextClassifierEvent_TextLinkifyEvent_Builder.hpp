@@ -1,28 +1,30 @@
 #pragma once
 
-#include "./TextClassifierEvent_Builder.hpp"
+#include "./TextClassifierEvent_TextLinkifyEvent.def.hpp"
+#include "./TextClassifierEvent_TextLinkifyEvent_Builder.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextClassifierEvent_TextLinkifyEvent;
-}
-
-namespace android::view::textclassifier
-{
-	class TextClassifierEvent_TextLinkifyEvent_Builder : public android::view::textclassifier::TextClassifierEvent_Builder
+	// Fields
+	
+	// Constructors
+	inline TextClassifierEvent_TextLinkifyEvent_Builder::TextClassifierEvent_TextLinkifyEvent_Builder(jint arg0)
+		: android::view::textclassifier::TextClassifierEvent_Builder(
+			"android.view.textclassifier.TextClassifierEvent$TextLinkifyEvent$Builder",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline android::view::textclassifier::TextClassifierEvent_TextLinkifyEvent TextClassifierEvent_TextLinkifyEvent_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TextClassifierEvent_TextLinkifyEvent_Builder(const char *className, const char *sig, Ts...agv) : android::view::textclassifier::TextClassifierEvent_Builder(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassifierEvent_TextLinkifyEvent_Builder(QJniObject obj);
-		
-		// Constructors
-		TextClassifierEvent_TextLinkifyEvent_Builder(jint arg0);
-		
-		// Methods
-		android::view::textclassifier::TextClassifierEvent_TextLinkifyEvent build() const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/textclassifier/TextClassifierEvent$TextLinkifyEvent;"
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
+#include "./TextClassifierEvent_Builder.hpp"
 

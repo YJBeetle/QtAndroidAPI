@@ -1,37 +1,93 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRecorder.def.hpp"
+#include "./MediaRecorder_AudioSource.def.hpp"
 
 namespace android::media
 {
-	class MediaRecorder;
-}
-
-namespace android::media
-{
-	class MediaRecorder_AudioSource : public JObject
+	// Fields
+	inline jint MediaRecorder_AudioSource::CAMCORDER()
 	{
-	public:
-		// Fields
-		static jint CAMCORDER();
-		static jint DEFAULT();
-		static jint MIC();
-		static jint REMOTE_SUBMIX();
-		static jint UNPROCESSED();
-		static jint VOICE_CALL();
-		static jint VOICE_COMMUNICATION();
-		static jint VOICE_DOWNLINK();
-		static jint VOICE_PERFORMANCE();
-		static jint VOICE_RECOGNITION();
-		static jint VOICE_UPLINK();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaRecorder_AudioSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder_AudioSource(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"CAMCORDER"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"DEFAULT"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::MIC()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"MIC"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::REMOTE_SUBMIX()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"REMOTE_SUBMIX"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::UNPROCESSED()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"UNPROCESSED"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::VOICE_CALL()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"VOICE_CALL"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::VOICE_COMMUNICATION()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"VOICE_COMMUNICATION"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::VOICE_DOWNLINK()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"VOICE_DOWNLINK"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::VOICE_PERFORMANCE()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"VOICE_PERFORMANCE"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::VOICE_RECOGNITION()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"VOICE_RECOGNITION"
+		);
+	}
+	inline jint MediaRecorder_AudioSource::VOICE_UPLINK()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$AudioSource",
+			"VOICE_UPLINK"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

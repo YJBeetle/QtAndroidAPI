@@ -1,30 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
+#include "../net/Uri.def.hpp"
+#include "./ContactsContract_Profile.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Profile : public JObject
+	// Fields
+	inline android::net::Uri ContactsContract_Profile::CONTENT_RAW_CONTACTS_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_RAW_CONTACTS_URI();
-		static android::net::Uri CONTENT_URI();
-		static android::net::Uri CONTENT_VCARD_URI();
-		static jlong MIN_ID();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Profile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Profile(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Profile",
+			"CONTENT_RAW_CONTACTS_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri ContactsContract_Profile::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Profile",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri ContactsContract_Profile::CONTENT_VCARD_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Profile",
+			"CONTENT_VCARD_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jlong ContactsContract_Profile::MIN_ID()
+	{
+		return getStaticField<jlong>(
+			"android.provider.ContactsContract$Profile",
+			"MIN_ID"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

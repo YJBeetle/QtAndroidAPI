@@ -1,50 +1,75 @@
 #pragma once
 
-#include "./CertificateException.hpp"
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JString;
-namespace java::security::cert
-{
-	class CRLReason;
-}
-namespace java::util
-{
-	class Date;
-}
-namespace javax::security::auth::x500
-{
-	class X500Principal;
-}
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../io/ObjectOutputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "./CRLReason.def.hpp"
+#include "../../util/Date.def.hpp"
+#include "../../../javax/security/auth/x500/X500Principal.def.hpp"
+#include "./CertificateRevokedException.def.hpp"
 
 namespace java::security::cert
 {
-	class CertificateRevokedException : public java::security::cert::CertificateException
+	// Fields
+	
+	// Constructors
+	inline CertificateRevokedException::CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, JObject arg3)
+		: java::security::cert::CertificateException(
+			"java.security.cert.CertificateRevokedException",
+			"(Ljava/util/Date;Ljava/security/cert/CRLReason;Ljavax/security/auth/x500/X500Principal;Ljava/util/Map;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline javax::security::auth::x500::X500Principal CertificateRevokedException::getAuthorityName() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertificateRevokedException(const char *className, const char *sig, Ts...agv) : java::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateRevokedException(QJniObject obj);
-		
-		// Constructors
-		CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, JObject arg3);
-		
-		// Methods
-		javax::security::auth::x500::X500Principal getAuthorityName() const;
-		JObject getExtensions() const;
-		java::util::Date getInvalidityDate() const;
-		JString getMessage() const;
-		java::util::Date getRevocationDate() const;
-		java::security::cert::CRLReason getRevocationReason() const;
-	};
+		return callObjectMethod(
+			"getAuthorityName",
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
+	}
+	inline JObject CertificateRevokedException::getExtensions() const
+	{
+		return callObjectMethod(
+			"getExtensions",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline java::util::Date CertificateRevokedException::getInvalidityDate() const
+	{
+		return callObjectMethod(
+			"getInvalidityDate",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline JString CertificateRevokedException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::util::Date CertificateRevokedException::getRevocationDate() const
+	{
+		return callObjectMethod(
+			"getRevocationDate",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline java::security::cert::CRLReason CertificateRevokedException::getRevocationReason() const
+	{
+		return callObjectMethod(
+			"getRevocationReason",
+			"()Ljava/security/cert/CRLReason;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../GeneralSecurityException.hpp"
+#include "./CertificateException.hpp"
 

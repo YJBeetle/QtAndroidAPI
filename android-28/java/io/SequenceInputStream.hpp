@@ -1,33 +1,62 @@
 #pragma once
 
-#include "./InputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class InputStream;
-}
+#include "../../JByteArray.hpp"
+#include "./InputStream.def.hpp"
+#include "./SequenceInputStream.def.hpp"
 
 namespace java::io
 {
-	class SequenceInputStream : public java::io::InputStream
+	// Fields
+	
+	// Constructors
+	inline SequenceInputStream::SequenceInputStream(JObject arg0)
+		: java::io::InputStream(
+			"java.io.SequenceInputStream",
+			"(Ljava/util/Enumeration;)V",
+			arg0.object()
+		) {}
+	inline SequenceInputStream::SequenceInputStream(java::io::InputStream arg0, java::io::InputStream arg1)
+		: java::io::InputStream(
+			"java.io.SequenceInputStream",
+			"(Ljava/io/InputStream;Ljava/io/InputStream;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jint SequenceInputStream::available() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SequenceInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
-		SequenceInputStream(QJniObject obj);
-		
-		// Constructors
-		SequenceInputStream(JObject arg0);
-		SequenceInputStream(java::io::InputStream arg0, java::io::InputStream arg1);
-		
-		// Methods
-		jint available() const;
-		void close() const;
-		jint read() const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		return callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	inline void SequenceInputStream::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jint SequenceInputStream::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	inline jint SequenceInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./InputStream.hpp"
 

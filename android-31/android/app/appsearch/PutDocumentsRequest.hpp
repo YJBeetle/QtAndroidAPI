@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PutDocumentsRequest.def.hpp"
 
 namespace android::app::appsearch
 {
-	class PutDocumentsRequest : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject PutDocumentsRequest::getGenericDocuments() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PutDocumentsRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PutDocumentsRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getGenericDocuments() const;
-	};
+		return callObjectMethod(
+			"getGenericDocuments",
+			"()Ljava/util/List;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

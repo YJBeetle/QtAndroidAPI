@@ -1,28 +1,30 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
+#include "../../os/Bundle.def.hpp"
+#include "./Event.def.hpp"
 
 namespace android::media::metrics
 {
-	class Event : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::Bundle Event::getMetricsBundle() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Event(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Event(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::os::Bundle getMetricsBundle() const;
-		jlong getTimeSinceCreatedMillis() const;
-	};
+		return callObjectMethod(
+			"getMetricsBundle",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline jlong Event::getTimeSinceCreatedMillis() const
+	{
+		return callMethod<jlong>(
+			"getTimeSinceCreatedMillis",
+			"()J"
+		);
+	}
 } // namespace android::media::metrics
+
+// Base class headers
 

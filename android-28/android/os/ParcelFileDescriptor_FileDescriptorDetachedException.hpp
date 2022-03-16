@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../java/io/IOException.hpp"
+#include "./ParcelFileDescriptor_FileDescriptorDetachedException.def.hpp"
 
 namespace android::os
 {
-	class ParcelFileDescriptor_FileDescriptorDetachedException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ParcelFileDescriptor_FileDescriptorDetachedException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelFileDescriptor_FileDescriptorDetachedException(QJniObject obj);
-		
-		// Constructors
-		ParcelFileDescriptor_FileDescriptorDetachedException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ParcelFileDescriptor_FileDescriptorDetachedException::ParcelFileDescriptor_FileDescriptorDetachedException()
+		: java::io::IOException(
+			"android.os.ParcelFileDescriptor$FileDescriptorDetachedException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/io/IOException.hpp"
 

@@ -1,32 +1,51 @@
 #pragma once
 
+#include "./WebHistoryItem.def.hpp"
 #include "../../JObject.hpp"
+#include "./WebBackForwardList.def.hpp"
 
 namespace android::webkit
 {
-	class WebHistoryItem;
-}
-class JObject;
-
-namespace android::webkit
-{
-	class WebBackForwardList : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebBackForwardList::WebBackForwardList()
+		: JObject(
+			"android.webkit.WebBackForwardList",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint WebBackForwardList::getCurrentIndex() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebBackForwardList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebBackForwardList(QJniObject obj);
-		
-		// Constructors
-		WebBackForwardList();
-		
-		// Methods
-		jint getCurrentIndex() const;
-		android::webkit::WebHistoryItem getCurrentItem() const;
-		android::webkit::WebHistoryItem getItemAtIndex(jint arg0) const;
-		jint getSize() const;
-	};
+		return callMethod<jint>(
+			"getCurrentIndex",
+			"()I"
+		);
+	}
+	inline android::webkit::WebHistoryItem WebBackForwardList::getCurrentItem() const
+	{
+		return callObjectMethod(
+			"getCurrentItem",
+			"()Landroid/webkit/WebHistoryItem;"
+		);
+	}
+	inline android::webkit::WebHistoryItem WebBackForwardList::getItemAtIndex(jint arg0) const
+	{
+		return callObjectMethod(
+			"getItemAtIndex",
+			"(I)Landroid/webkit/WebHistoryItem;",
+			arg0
+		);
+	}
+	inline jint WebBackForwardList::getSize() const
+	{
+		return callMethod<jint>(
+			"getSize",
+			"()I"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

@@ -1,26 +1,48 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SQLiteClosable.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteClosable : public JObject
+	// Fields
+	
+	// Constructors
+	inline SQLiteClosable::SQLiteClosable()
+		: JObject(
+			"android.database.sqlite.SQLiteClosable",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void SQLiteClosable::acquireReference() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SQLiteClosable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteClosable(QJniObject obj);
-		
-		// Constructors
-		SQLiteClosable();
-		
-		// Methods
-		void acquireReference() const;
-		void close() const;
-		void releaseReference() const;
-		void releaseReferenceFromContainer() const;
-	};
+		callMethod<void>(
+			"acquireReference",
+			"()V"
+		);
+	}
+	inline void SQLiteClosable::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void SQLiteClosable::releaseReference() const
+	{
+		callMethod<void>(
+			"releaseReference",
+			"()V"
+		);
+	}
+	inline void SQLiteClosable::releaseReferenceFromContainer() const
+	{
+		callMethod<void>(
+			"releaseReferenceFromContainer",
+			"()V"
+		);
+	}
 } // namespace android::database::sqlite
+
+// Base class headers
 

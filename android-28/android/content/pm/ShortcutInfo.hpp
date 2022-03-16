@@ -1,82 +1,259 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::content::pm
-{
-	class ShortcutInfo_Builder;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::os
-{
-	class PersistableBundle;
-}
-namespace android::os
-{
-	class UserHandle;
-}
-class JString;
-class JString;
+#include "../../../JArray.hpp"
+#include "../ComponentName.def.hpp"
+#include "../Intent.def.hpp"
+#include "./ShortcutInfo_Builder.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../os/PersistableBundle.def.hpp"
+#include "../../os/UserHandle.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./ShortcutInfo.def.hpp"
 
 namespace android::content::pm
 {
-	class ShortcutInfo : public JObject
+	// Fields
+	inline JObject ShortcutInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint DISABLED_REASON_APP_CHANGED();
-		static jint DISABLED_REASON_BACKUP_NOT_SUPPORTED();
-		static jint DISABLED_REASON_BY_APP();
-		static jint DISABLED_REASON_NOT_DISABLED();
-		static jint DISABLED_REASON_OTHER_RESTORE_ISSUE();
-		static jint DISABLED_REASON_SIGNATURE_MISMATCH();
-		static jint DISABLED_REASON_UNKNOWN();
-		static jint DISABLED_REASON_VERSION_LOWER();
-		static JString SHORTCUT_CATEGORY_CONVERSATION();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ShortcutInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ShortcutInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::content::ComponentName getActivity() const;
-		JObject getCategories() const;
-		JString getDisabledMessage() const;
-		jint getDisabledReason() const;
-		android::os::PersistableBundle getExtras() const;
-		JString getId() const;
-		android::content::Intent getIntent() const;
-		JArray getIntents() const;
-		jlong getLastChangedTimestamp() const;
-		JString getLongLabel() const;
-		JString getPackage() const;
-		jint getRank() const;
-		JString getShortLabel() const;
-		android::os::UserHandle getUserHandle() const;
-		jboolean hasKeyFieldsOnly() const;
-		jboolean isDeclaredInManifest() const;
-		jboolean isDynamic() const;
-		jboolean isEnabled() const;
-		jboolean isImmutable() const;
-		jboolean isPinned() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.ShortcutInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_APP_CHANGED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_APP_CHANGED"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_BACKUP_NOT_SUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_BACKUP_NOT_SUPPORTED"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_BY_APP()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_BY_APP"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_NOT_DISABLED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_NOT_DISABLED"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_OTHER_RESTORE_ISSUE()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_OTHER_RESTORE_ISSUE"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_SIGNATURE_MISMATCH()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_SIGNATURE_MISMATCH"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_UNKNOWN"
+		);
+	}
+	inline jint ShortcutInfo::DISABLED_REASON_VERSION_LOWER()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.ShortcutInfo",
+			"DISABLED_REASON_VERSION_LOWER"
+		);
+	}
+	inline JString ShortcutInfo::SHORTCUT_CATEGORY_CONVERSATION()
+	{
+		return getStaticObjectField(
+			"android.content.pm.ShortcutInfo",
+			"SHORTCUT_CATEGORY_CONVERSATION",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint ShortcutInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::content::ComponentName ShortcutInfo::getActivity() const
+	{
+		return callObjectMethod(
+			"getActivity",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	inline JObject ShortcutInfo::getCategories() const
+	{
+		return callObjectMethod(
+			"getCategories",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JString ShortcutInfo::getDisabledMessage() const
+	{
+		return callObjectMethod(
+			"getDisabledMessage",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint ShortcutInfo::getDisabledReason() const
+	{
+		return callMethod<jint>(
+			"getDisabledReason",
+			"()I"
+		);
+	}
+	inline android::os::PersistableBundle ShortcutInfo::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	inline JString ShortcutInfo::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::content::Intent ShortcutInfo::getIntent() const
+	{
+		return callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	inline JArray ShortcutInfo::getIntents() const
+	{
+		return callObjectMethod(
+			"getIntents",
+			"()[Landroid/content/Intent;"
+		);
+	}
+	inline jlong ShortcutInfo::getLastChangedTimestamp() const
+	{
+		return callMethod<jlong>(
+			"getLastChangedTimestamp",
+			"()J"
+		);
+	}
+	inline JString ShortcutInfo::getLongLabel() const
+	{
+		return callObjectMethod(
+			"getLongLabel",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString ShortcutInfo::getPackage() const
+	{
+		return callObjectMethod(
+			"getPackage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ShortcutInfo::getRank() const
+	{
+		return callMethod<jint>(
+			"getRank",
+			"()I"
+		);
+	}
+	inline JString ShortcutInfo::getShortLabel() const
+	{
+		return callObjectMethod(
+			"getShortLabel",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::os::UserHandle ShortcutInfo::getUserHandle() const
+	{
+		return callObjectMethod(
+			"getUserHandle",
+			"()Landroid/os/UserHandle;"
+		);
+	}
+	inline jboolean ShortcutInfo::hasKeyFieldsOnly() const
+	{
+		return callMethod<jboolean>(
+			"hasKeyFieldsOnly",
+			"()Z"
+		);
+	}
+	inline jboolean ShortcutInfo::isDeclaredInManifest() const
+	{
+		return callMethod<jboolean>(
+			"isDeclaredInManifest",
+			"()Z"
+		);
+	}
+	inline jboolean ShortcutInfo::isDynamic() const
+	{
+		return callMethod<jboolean>(
+			"isDynamic",
+			"()Z"
+		);
+	}
+	inline jboolean ShortcutInfo::isEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	inline jboolean ShortcutInfo::isImmutable() const
+	{
+		return callMethod<jboolean>(
+			"isImmutable",
+			"()Z"
+		);
+	}
+	inline jboolean ShortcutInfo::isPinned() const
+	{
+		return callMethod<jboolean>(
+			"isPinned",
+			"()Z"
+		);
+	}
+	inline JString ShortcutInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

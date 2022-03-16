@@ -1,58 +1,164 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./BroadcastReceiver_PendingResult.def.hpp"
+#include "./Context.def.hpp"
+#include "./Intent.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../../JString.hpp"
+#include "./BroadcastReceiver.def.hpp"
 
 namespace android::content
 {
-	class BroadcastReceiver_PendingResult;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-
-namespace android::content
-{
-	class BroadcastReceiver : public JObject
+	// Fields
+	
+	// Constructors
+	inline BroadcastReceiver::BroadcastReceiver()
+		: JObject(
+			"android.content.BroadcastReceiver",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void BroadcastReceiver::abortBroadcast() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BroadcastReceiver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BroadcastReceiver(QJniObject obj);
-		
-		// Constructors
-		BroadcastReceiver();
-		
-		// Methods
-		void abortBroadcast() const;
-		void clearAbortBroadcast() const;
-		jboolean getAbortBroadcast() const;
-		jboolean getDebugUnregister() const;
-		jint getResultCode() const;
-		JString getResultData() const;
-		android::os::Bundle getResultExtras(jboolean arg0) const;
-		android::content::BroadcastReceiver_PendingResult goAsync() const;
-		jboolean isInitialStickyBroadcast() const;
-		jboolean isOrderedBroadcast() const;
-		void onReceive(android::content::Context arg0, android::content::Intent arg1) const;
-		JObject peekService(android::content::Context arg0, android::content::Intent arg1) const;
-		void setDebugUnregister(jboolean arg0) const;
-		void setOrderedHint(jboolean arg0) const;
-		void setResult(jint arg0, JString arg1, android::os::Bundle arg2) const;
-		void setResultCode(jint arg0) const;
-		void setResultData(JString arg0) const;
-		void setResultExtras(android::os::Bundle arg0) const;
-	};
+		callMethod<void>(
+			"abortBroadcast",
+			"()V"
+		);
+	}
+	inline void BroadcastReceiver::clearAbortBroadcast() const
+	{
+		callMethod<void>(
+			"clearAbortBroadcast",
+			"()V"
+		);
+	}
+	inline jboolean BroadcastReceiver::getAbortBroadcast() const
+	{
+		return callMethod<jboolean>(
+			"getAbortBroadcast",
+			"()Z"
+		);
+	}
+	inline jboolean BroadcastReceiver::getDebugUnregister() const
+	{
+		return callMethod<jboolean>(
+			"getDebugUnregister",
+			"()Z"
+		);
+	}
+	inline jint BroadcastReceiver::getResultCode() const
+	{
+		return callMethod<jint>(
+			"getResultCode",
+			"()I"
+		);
+	}
+	inline JString BroadcastReceiver::getResultData() const
+	{
+		return callObjectMethod(
+			"getResultData",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::os::Bundle BroadcastReceiver::getResultExtras(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"getResultExtras",
+			"(Z)Landroid/os/Bundle;",
+			arg0
+		);
+	}
+	inline android::content::BroadcastReceiver_PendingResult BroadcastReceiver::goAsync() const
+	{
+		return callObjectMethod(
+			"goAsync",
+			"()Landroid/content/BroadcastReceiver$PendingResult;"
+		);
+	}
+	inline jboolean BroadcastReceiver::isInitialStickyBroadcast() const
+	{
+		return callMethod<jboolean>(
+			"isInitialStickyBroadcast",
+			"()Z"
+		);
+	}
+	inline jboolean BroadcastReceiver::isOrderedBroadcast() const
+	{
+		return callMethod<jboolean>(
+			"isOrderedBroadcast",
+			"()Z"
+		);
+	}
+	inline void BroadcastReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1) const
+	{
+		callMethod<void>(
+			"onReceive",
+			"(Landroid/content/Context;Landroid/content/Intent;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JObject BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1) const
+	{
+		return callObjectMethod(
+			"peekService",
+			"(Landroid/content/Context;Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void BroadcastReceiver::setDebugUnregister(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDebugUnregister",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void BroadcastReceiver::setOrderedHint(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setOrderedHint",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void BroadcastReceiver::setResult(jint arg0, JString arg1, android::os::Bundle arg2) const
+	{
+		callMethod<void>(
+			"setResult",
+			"(ILjava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void BroadcastReceiver::setResultCode(jint arg0) const
+	{
+		callMethod<void>(
+			"setResultCode",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void BroadcastReceiver::setResultData(JString arg0) const
+	{
+		callMethod<void>(
+			"setResultData",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void BroadcastReceiver::setResultExtras(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"setResultExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

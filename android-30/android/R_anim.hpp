@@ -1,35 +1,111 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_anim.def.hpp"
 
 namespace android
 {
-	class R_anim : public JObject
+	// Fields
+	inline jint R_anim::accelerate_decelerate_interpolator()
 	{
-	public:
-		// Fields
-		static jint accelerate_decelerate_interpolator();
-		static jint accelerate_interpolator();
-		static jint anticipate_interpolator();
-		static jint anticipate_overshoot_interpolator();
-		static jint bounce_interpolator();
-		static jint cycle_interpolator();
-		static jint decelerate_interpolator();
-		static jint fade_in();
-		static jint fade_out();
-		static jint linear_interpolator();
-		static jint overshoot_interpolator();
-		static jint slide_in_left();
-		static jint slide_out_right();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_anim(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_anim(QJniObject obj);
-		
-		// Constructors
-		R_anim();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$anim",
+			"accelerate_decelerate_interpolator"
+		);
+	}
+	inline jint R_anim::accelerate_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"accelerate_interpolator"
+		);
+	}
+	inline jint R_anim::anticipate_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"anticipate_interpolator"
+		);
+	}
+	inline jint R_anim::anticipate_overshoot_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"anticipate_overshoot_interpolator"
+		);
+	}
+	inline jint R_anim::bounce_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"bounce_interpolator"
+		);
+	}
+	inline jint R_anim::cycle_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"cycle_interpolator"
+		);
+	}
+	inline jint R_anim::decelerate_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"decelerate_interpolator"
+		);
+	}
+	inline jint R_anim::fade_in()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"fade_in"
+		);
+	}
+	inline jint R_anim::fade_out()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"fade_out"
+		);
+	}
+	inline jint R_anim::linear_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"linear_interpolator"
+		);
+	}
+	inline jint R_anim::overshoot_interpolator()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"overshoot_interpolator"
+		);
+	}
+	inline jint R_anim::slide_in_left()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"slide_in_left"
+		);
+	}
+	inline jint R_anim::slide_out_right()
+	{
+		return getStaticField<jint>(
+			"android.R$anim",
+			"slide_out_right"
+		);
+	}
+	
+	// Constructors
+	inline R_anim::R_anim()
+		: JObject(
+			"android.R$anim",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

@@ -1,26 +1,40 @@
 #pragma once
 
-#include "./IllegalFormatException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MissingFormatWidthException.def.hpp"
 
 namespace java::util
 {
-	class MissingFormatWidthException : public java::util::IllegalFormatException
+	// Fields
+	
+	// Constructors
+	inline MissingFormatWidthException::MissingFormatWidthException(JString arg0)
+		: java::util::IllegalFormatException(
+			"java.util.MissingFormatWidthException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString MissingFormatWidthException::getFormatSpecifier() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MissingFormatWidthException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		MissingFormatWidthException(QJniObject obj);
-		
-		// Constructors
-		MissingFormatWidthException(JString arg0);
-		
-		// Methods
-		JString getFormatSpecifier() const;
-		JString getMessage() const;
-	};
+		return callObjectMethod(
+			"getFormatSpecifier",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString MissingFormatWidthException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
+#include "./IllegalFormatException.hpp"
 

@@ -1,49 +1,129 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JString;
-namespace java::security
-{
-	class AlgorithmParameters;
-}
-namespace java::security
-{
-	class Provider;
-}
-namespace javax::crypto
-{
-	class ExemptionMechanismSpi;
-}
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "../../java/security/AlgorithmParameters.def.hpp"
+#include "../../java/security/Provider.def.hpp"
+#include "./ExemptionMechanismSpi.def.hpp"
+#include "./ExemptionMechanism.def.hpp"
 
 namespace javax::crypto
 {
-	class ExemptionMechanism : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ExemptionMechanism(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExemptionMechanism(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static javax::crypto::ExemptionMechanism getInstance(JString arg0);
-		static javax::crypto::ExemptionMechanism getInstance(JString arg0, JString arg1);
-		static javax::crypto::ExemptionMechanism getInstance(JString arg0, java::security::Provider arg1);
-		JByteArray genExemptionBlob() const;
-		jint genExemptionBlob(JByteArray arg0) const;
-		jint genExemptionBlob(JByteArray arg0, jint arg1) const;
-		JString getName() const;
-		jint getOutputSize(jint arg0) const;
-		java::security::Provider getProvider() const;
-		void init(JObject arg0) const;
-		void init(JObject arg0, java::security::AlgorithmParameters arg1) const;
-		void init(JObject arg0, JObject arg1) const;
-		jboolean isCryptoAllowed(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"javax.crypto.ExemptionMechanism",
+			"getInstance",
+			"(Ljava/lang/String;)Ljavax/crypto/ExemptionMechanism;",
+			arg0.object<jstring>()
+		);
+	}
+	inline javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"javax.crypto.ExemptionMechanism",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/ExemptionMechanism;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(JString arg0, java::security::Provider arg1)
+	{
+		return callStaticObjectMethod(
+			"javax.crypto.ExemptionMechanism",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/ExemptionMechanism;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JByteArray ExemptionMechanism::genExemptionBlob() const
+	{
+		return callObjectMethod(
+			"genExemptionBlob",
+			"()[B"
+		);
+	}
+	inline jint ExemptionMechanism::genExemptionBlob(JByteArray arg0) const
+	{
+		return callMethod<jint>(
+			"genExemptionBlob",
+			"([B)I",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline jint ExemptionMechanism::genExemptionBlob(JByteArray arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"genExemptionBlob",
+			"([BI)I",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline JString ExemptionMechanism::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ExemptionMechanism::getOutputSize(jint arg0) const
+	{
+		return callMethod<jint>(
+			"getOutputSize",
+			"(I)I",
+			arg0
+		);
+	}
+	inline java::security::Provider ExemptionMechanism::getProvider() const
+	{
+		return callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	inline void ExemptionMechanism::init(JObject arg0) const
+	{
+		callMethod<void>(
+			"init",
+			"(Ljava/security/Key;)V",
+			arg0.object()
+		);
+	}
+	inline void ExemptionMechanism::init(JObject arg0, java::security::AlgorithmParameters arg1) const
+	{
+		callMethod<void>(
+			"init",
+			"(Ljava/security/Key;Ljava/security/AlgorithmParameters;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ExemptionMechanism::init(JObject arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"init",
+			"(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean ExemptionMechanism::isCryptoAllowed(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"isCryptoAllowed",
+			"(Ljava/security/Key;)Z",
+			arg0.object()
+		);
+	}
 } // namespace javax::crypto
+
+// Base class headers
 

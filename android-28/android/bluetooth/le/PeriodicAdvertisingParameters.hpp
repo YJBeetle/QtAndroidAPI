@@ -1,31 +1,54 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./PeriodicAdvertisingParameters.def.hpp"
 
 namespace android::bluetooth::le
 {
-	class PeriodicAdvertisingParameters : public JObject
+	// Fields
+	inline JObject PeriodicAdvertisingParameters::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PeriodicAdvertisingParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PeriodicAdvertisingParameters(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean getIncludeTxPower() const;
-		jint getInterval() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.bluetooth.le.PeriodicAdvertisingParameters",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PeriodicAdvertisingParameters::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean PeriodicAdvertisingParameters::getIncludeTxPower() const
+	{
+		return callMethod<jboolean>(
+			"getIncludeTxPower",
+			"()Z"
+		);
+	}
+	inline jint PeriodicAdvertisingParameters::getInterval() const
+	{
+		return callMethod<jint>(
+			"getInterval",
+			"()I"
+		);
+	}
+	inline void PeriodicAdvertisingParameters::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::bluetooth::le
+
+// Base class headers
 

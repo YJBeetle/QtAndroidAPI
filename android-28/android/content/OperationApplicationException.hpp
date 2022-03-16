@@ -1,31 +1,62 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./OperationApplicationException.def.hpp"
 
 namespace android::content
 {
-	class OperationApplicationException : public java::lang::Exception
+	// Fields
+	
+	// Constructors
+	inline OperationApplicationException::OperationApplicationException()
+		: java::lang::Exception(
+			"android.content.OperationApplicationException",
+			"()V"
+		) {}
+	inline OperationApplicationException::OperationApplicationException(jint arg0)
+		: java::lang::Exception(
+			"android.content.OperationApplicationException",
+			"(I)V",
+			arg0
+		) {}
+	inline OperationApplicationException::OperationApplicationException(JString arg0)
+		: java::lang::Exception(
+			"android.content.OperationApplicationException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline OperationApplicationException::OperationApplicationException(JThrowable arg0)
+		: java::lang::Exception(
+			"android.content.OperationApplicationException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline OperationApplicationException::OperationApplicationException(JString arg0, jint arg1)
+		: java::lang::Exception(
+			"android.content.OperationApplicationException",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline OperationApplicationException::OperationApplicationException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"android.content.OperationApplicationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline jint OperationApplicationException::getNumSuccessfulYieldPoints() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit OperationApplicationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		OperationApplicationException(QJniObject obj);
-		
-		// Constructors
-		OperationApplicationException();
-		OperationApplicationException(jint arg0);
-		OperationApplicationException(JString arg0);
-		OperationApplicationException(JThrowable arg0);
-		OperationApplicationException(JString arg0, jint arg1);
-		OperationApplicationException(JString arg0, JThrowable arg1);
-		
-		// Methods
-		jint getNumSuccessfulYieldPoints() const;
-	};
+		return callMethod<jint>(
+			"getNumSuccessfulYieldPoints",
+			"()I"
+		);
+	}
 } // namespace android::content
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

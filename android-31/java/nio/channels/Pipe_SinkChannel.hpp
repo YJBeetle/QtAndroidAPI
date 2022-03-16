@@ -1,27 +1,26 @@
 #pragma once
 
-#include "./spi/AbstractSelectableChannel.hpp"
-
-namespace java::nio::channels::spi
-{
-	class SelectorProvider;
-}
+#include "./spi/SelectorProvider.def.hpp"
+#include "./Pipe_SinkChannel.def.hpp"
 
 namespace java::nio::channels
 {
-	class Pipe_SinkChannel : public java::nio::channels::spi::AbstractSelectableChannel
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint Pipe_SinkChannel::validOps() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Pipe_SinkChannel(const char *className, const char *sig, Ts...agv) : java::nio::channels::spi::AbstractSelectableChannel(className, sig, std::forward<Ts>(agv)...) {}
-		Pipe_SinkChannel(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint validOps() const;
-	};
+		return callMethod<jint>(
+			"validOps",
+			"()I"
+		);
+	}
 } // namespace java::nio::channels
+
+// Base class headers
+#include "./spi/AbstractInterruptibleChannel.hpp"
+#include "./SelectableChannel.hpp"
+#include "./spi/AbstractSelectableChannel.hpp"
 

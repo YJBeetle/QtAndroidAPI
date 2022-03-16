@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./ReflectiveOperationException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NoSuchMethodException.def.hpp"
 
 namespace java::lang
 {
-	class NoSuchMethodException : public java::lang::ReflectiveOperationException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoSuchMethodException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchMethodException(QJniObject obj);
-		
-		// Constructors
-		NoSuchMethodException();
-		NoSuchMethodException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoSuchMethodException::NoSuchMethodException()
+		: java::lang::ReflectiveOperationException(
+			"java.lang.NoSuchMethodException",
+			"()V"
+		) {}
+	inline NoSuchMethodException::NoSuchMethodException(JString arg0)
+		: java::lang::ReflectiveOperationException(
+			"java.lang.NoSuchMethodException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./ReflectiveOperationException.hpp"
 

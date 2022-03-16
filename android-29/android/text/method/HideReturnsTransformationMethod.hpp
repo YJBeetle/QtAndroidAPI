@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./ReplacementTransformationMethod.hpp"
-
-class JCharArray;
+#include "../../../JCharArray.hpp"
+#include "./HideReturnsTransformationMethod.def.hpp"
 
 namespace android::text::method
 {
-	class HideReturnsTransformationMethod : public android::text::method::ReplacementTransformationMethod
+	// Fields
+	
+	// Constructors
+	inline HideReturnsTransformationMethod::HideReturnsTransformationMethod()
+		: android::text::method::ReplacementTransformationMethod(
+			"android.text.method.HideReturnsTransformationMethod",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::method::HideReturnsTransformationMethod HideReturnsTransformationMethod::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit HideReturnsTransformationMethod(const char *className, const char *sig, Ts...agv) : android::text::method::ReplacementTransformationMethod(className, sig, std::forward<Ts>(agv)...) {}
-		HideReturnsTransformationMethod(QJniObject obj);
-		
-		// Constructors
-		HideReturnsTransformationMethod();
-		
-		// Methods
-		static android::text::method::HideReturnsTransformationMethod getInstance();
-	};
+		return callStaticObjectMethod(
+			"android.text.method.HideReturnsTransformationMethod",
+			"getInstance",
+			"()Landroid/text/method/HideReturnsTransformationMethod;"
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./ReplacementTransformationMethod.hpp"
 

@@ -1,32 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "./DateSorter.def.hpp"
 
 namespace android::webkit
 {
-	class DateSorter : public JObject
+	// Fields
+	inline jint DateSorter::DAY_COUNT()
 	{
-	public:
-		// Fields
-		static jint DAY_COUNT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DateSorter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateSorter(QJniObject obj);
-		
-		// Constructors
-		DateSorter(android::content::Context arg0);
-		
-		// Methods
-		jlong getBoundary(jint arg0) const;
-		jint getIndex(jlong arg0) const;
-		JString getLabel(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.webkit.DateSorter",
+			"DAY_COUNT"
+		);
+	}
+	
+	// Constructors
+	inline DateSorter::DateSorter(android::content::Context arg0)
+		: JObject(
+			"android.webkit.DateSorter",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jlong DateSorter::getBoundary(jint arg0) const
+	{
+		return callMethod<jlong>(
+			"getBoundary",
+			"(I)J",
+			arg0
+		);
+	}
+	inline jint DateSorter::getIndex(jlong arg0) const
+	{
+		return callMethod<jint>(
+			"getIndex",
+			"(J)I",
+			arg0
+		);
+	}
+	inline JString DateSorter::getLabel(jint arg0) const
+	{
+		return callObjectMethod(
+			"getLabel",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

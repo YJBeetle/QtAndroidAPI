@@ -1,46 +1,95 @@
 #pragma once
 
+#include "../accounts/Account.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::accounts
-{
-	class Account;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./PeriodicSync.def.hpp"
 
 namespace android::content
 {
-	class PeriodicSync : public JObject
+	// Fields
+	inline JObject PeriodicSync::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		android::accounts::Account account();
-		JString authority();
-		android::os::Bundle extras();
-		jlong period();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PeriodicSync(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PeriodicSync(QJniObject obj);
-		
-		// Constructors
-		PeriodicSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jlong arg3);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.PeriodicSync",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline android::accounts::Account PeriodicSync::account()
+	{
+		return getObjectField(
+			"account",
+			"Landroid/accounts/Account;"
+		);
+	}
+	inline JString PeriodicSync::authority()
+	{
+		return getObjectField(
+			"authority",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::os::Bundle PeriodicSync::extras()
+	{
+		return getObjectField(
+			"extras",
+			"Landroid/os/Bundle;"
+		);
+	}
+	inline jlong PeriodicSync::period()
+	{
+		return getField<jlong>(
+			"period"
+		);
+	}
+	
+	// Constructors
+	inline PeriodicSync::PeriodicSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jlong arg3)
+		: JObject(
+			"android.content.PeriodicSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3
+		) {}
+	
+	// Methods
+	inline jint PeriodicSync::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean PeriodicSync::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString PeriodicSync::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PeriodicSync::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

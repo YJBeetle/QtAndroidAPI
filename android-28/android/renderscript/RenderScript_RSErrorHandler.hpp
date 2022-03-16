@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./RenderScript_RSErrorHandler.def.hpp"
 
 namespace android::renderscript
 {
-	class RenderScript_RSErrorHandler : public JObject
+	// Fields
+	
+	// Constructors
+	inline RenderScript_RSErrorHandler::RenderScript_RSErrorHandler()
+		: JObject(
+			"android.renderscript.RenderScript$RSErrorHandler",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void RenderScript_RSErrorHandler::run() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RenderScript_RSErrorHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript_RSErrorHandler(QJniObject obj);
-		
-		// Constructors
-		RenderScript_RSErrorHandler();
-		
-		// Methods
-		void run() const;
-	};
+		callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
 

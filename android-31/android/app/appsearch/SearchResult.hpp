@@ -1,32 +1,52 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./GenericDocument.def.hpp"
+#include "../../../JString.hpp"
+#include "./SearchResult.def.hpp"
 
 namespace android::app::appsearch
 {
-	class GenericDocument;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class SearchResult : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString SearchResult::getDatabaseName() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SearchResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getDatabaseName() const;
-		android::app::appsearch::GenericDocument getGenericDocument() const;
-		JObject getMatchInfos() const;
-		JString getPackageName() const;
-		jdouble getRankingSignal() const;
-	};
+		return callObjectMethod(
+			"getDatabaseName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::app::appsearch::GenericDocument SearchResult::getGenericDocument() const
+	{
+		return callObjectMethod(
+			"getGenericDocument",
+			"()Landroid/app/appsearch/GenericDocument;"
+		);
+	}
+	inline JObject SearchResult::getMatchInfos() const
+	{
+		return callObjectMethod(
+			"getMatchInfos",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString SearchResult::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jdouble SearchResult::getRankingSignal() const
+	{
+		return callMethod<jdouble>(
+			"getRankingSignal",
+			"()D"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

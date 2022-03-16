@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MediaBrowser_MediaItem.def.hpp"
+#include "../../../JString.hpp"
+#include "./MediaBrowser_ItemCallback.def.hpp"
 
 namespace android::media::browse
 {
-	class MediaBrowser_MediaItem;
-}
-class JString;
-
-namespace android::media::browse
-{
-	class MediaBrowser_ItemCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaBrowser_ItemCallback::MediaBrowser_ItemCallback()
+		: JObject(
+			"android.media.browse.MediaBrowser$ItemCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaBrowser_ItemCallback::onError(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaBrowser_ItemCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowser_ItemCallback(QJniObject obj);
-		
-		// Constructors
-		MediaBrowser_ItemCallback();
-		
-		// Methods
-		void onError(JString arg0) const;
-		void onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0) const;
-	};
+		callMethod<void>(
+			"onError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void MediaBrowser_ItemCallback::onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0) const
+	{
+		callMethod<void>(
+			"onItemLoaded",
+			"(Landroid/media/browse/MediaBrowser$MediaItem;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media::browse
+
+// Base class headers
 

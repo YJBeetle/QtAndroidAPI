@@ -1,28 +1,45 @@
 #pragma once
 
-#include "./EncodedKeySpec.hpp"
-
-class JByteArray;
-class JString;
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
+#include "./PKCS8EncodedKeySpec.def.hpp"
 
 namespace java::security::spec
 {
-	class PKCS8EncodedKeySpec : public java::security::spec::EncodedKeySpec
+	// Fields
+	
+	// Constructors
+	inline PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(JByteArray arg0)
+		: java::security::spec::EncodedKeySpec(
+			"java.security.spec.PKCS8EncodedKeySpec",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		) {}
+	inline PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(JByteArray arg0, JString arg1)
+		: java::security::spec::EncodedKeySpec(
+			"java.security.spec.PKCS8EncodedKeySpec",
+			"([BLjava/lang/String;)V",
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JByteArray PKCS8EncodedKeySpec::getEncoded() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PKCS8EncodedKeySpec(const char *className, const char *sig, Ts...agv) : java::security::spec::EncodedKeySpec(className, sig, std::forward<Ts>(agv)...) {}
-		PKCS8EncodedKeySpec(QJniObject obj);
-		
-		// Constructors
-		PKCS8EncodedKeySpec(JByteArray arg0);
-		PKCS8EncodedKeySpec(JByteArray arg0, JString arg1);
-		
-		// Methods
-		JByteArray getEncoded() const;
-		JString getFormat() const;
-	};
+		return callObjectMethod(
+			"getEncoded",
+			"()[B"
+		);
+	}
+	inline JString PKCS8EncodedKeySpec::getFormat() const
+	{
+		return callObjectMethod(
+			"getFormat",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
+#include "./EncodedKeySpec.hpp"
 

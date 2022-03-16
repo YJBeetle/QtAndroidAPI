@@ -1,29 +1,28 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JByteArray;
-namespace android::net::wifi::hotspot2
-{
-	class PasspointConfiguration;
-}
-class JString;
+#include "../../../../JByteArray.hpp"
+#include "./PasspointConfiguration.def.hpp"
+#include "../../../../JString.hpp"
+#include "./ConfigParser.def.hpp"
 
 namespace android::net::wifi::hotspot2
 {
-	class ConfigParser : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::wifi::hotspot2::PasspointConfiguration ConfigParser::parsePasspointConfig(JString arg0, JByteArray arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConfigParser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConfigParser(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::net::wifi::hotspot2::PasspointConfiguration parsePasspointConfig(JString arg0, JByteArray arg1);
-	};
+		return callStaticObjectMethod(
+			"android.net.wifi.hotspot2.ConfigParser",
+			"parsePasspointConfig",
+			"(Ljava/lang/String;[B)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
+		);
+	}
 } // namespace android::net::wifi::hotspot2
+
+// Base class headers
 

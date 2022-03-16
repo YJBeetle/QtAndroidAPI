@@ -1,22 +1,21 @@
 #pragma once
 
-#include "../../../java/text/Format.hpp"
+#include "./UFormat.def.hpp"
 
 namespace android::icu::text
 {
-	class UFormat : public java::text::Format
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
-		UFormat(QJniObject obj);
-		
-		// Constructors
-		UFormat();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UFormat::UFormat()
+		: java::text::Format(
+			"android.icu.text.UFormat",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/text/Format.hpp"
 

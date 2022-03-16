@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./AppSearchBatchResult.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchBatchResult : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject AppSearchBatchResult::getAll() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchBatchResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchBatchResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getAll() const;
-		JObject getFailures() const;
-		JObject getSuccesses() const;
-		jboolean isSuccess() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getAll",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline JObject AppSearchBatchResult::getFailures() const
+	{
+		return callObjectMethod(
+			"getFailures",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline JObject AppSearchBatchResult::getSuccesses() const
+	{
+		return callObjectMethod(
+			"getSuccesses",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline jboolean AppSearchBatchResult::isSuccess() const
+	{
+		return callMethod<jboolean>(
+			"isSuccess",
+			"()Z"
+		);
+	}
+	inline JString AppSearchBatchResult::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

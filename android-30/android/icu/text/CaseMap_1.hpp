@@ -1,21 +1,15 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CaseMap_1.def.hpp"
 
 namespace android::icu::text
 {
-	class CaseMap_1 : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CaseMap_1(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaseMap_1(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::icu::text
+
+// Base class headers
 

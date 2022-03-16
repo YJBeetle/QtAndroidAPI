@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./PathEffect.def.hpp"
 
 namespace android::graphics
 {
-	class PathEffect : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PathEffect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PathEffect(QJniObject obj);
-		
-		// Constructors
-		PathEffect();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PathEffect::PathEffect()
+		: JObject(
+			"android.graphics.PathEffect",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
 

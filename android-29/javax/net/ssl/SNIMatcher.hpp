@@ -1,28 +1,31 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SNIServerName.def.hpp"
+#include "./SNIMatcher.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SNIServerName;
-}
-
-namespace javax::net::ssl
-{
-	class SNIMatcher : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint SNIMatcher::getType() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SNIMatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SNIMatcher(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getType() const;
-		jboolean matches(javax::net::ssl::SNIServerName arg0) const;
-	};
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline jboolean SNIMatcher::matches(javax::net::ssl::SNIServerName arg0) const
+	{
+		return callMethod<jboolean>(
+			"matches",
+			"(Ljavax/net/ssl/SNIServerName;)Z",
+			arg0.object()
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
 

@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::media
-{
-	class MediaCas_Session;
-}
+#include "../../JByteArray.hpp"
+#include "./MediaCas_Session.def.hpp"
+#include "./MediaExtractor_CasInfo.def.hpp"
 
 namespace android::media
 {
-	class MediaExtractor_CasInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray MediaExtractor_CasInfo::getPrivateData() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaExtractor_CasInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaExtractor_CasInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JByteArray getPrivateData() const;
-		android::media::MediaCas_Session getSession() const;
-		jint getSystemId() const;
-	};
+		return callObjectMethod(
+			"getPrivateData",
+			"()[B"
+		);
+	}
+	inline android::media::MediaCas_Session MediaExtractor_CasInfo::getSession() const
+	{
+		return callObjectMethod(
+			"getSession",
+			"()Landroid/media/MediaCas$Session;"
+		);
+	}
+	inline jint MediaExtractor_CasInfo::getSystemId() const
+	{
+		return callMethod<jint>(
+			"getSystemId",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

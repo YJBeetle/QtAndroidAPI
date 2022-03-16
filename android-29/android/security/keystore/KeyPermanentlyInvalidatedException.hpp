@@ -1,27 +1,39 @@
 #pragma once
 
-#include "../../../java/security/InvalidKeyException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./KeyPermanentlyInvalidatedException.def.hpp"
 
 namespace android::security::keystore
 {
-	class KeyPermanentlyInvalidatedException : public java::security::InvalidKeyException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyPermanentlyInvalidatedException(const char *className, const char *sig, Ts...agv) : java::security::InvalidKeyException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyPermanentlyInvalidatedException(QJniObject obj);
-		
-		// Constructors
-		KeyPermanentlyInvalidatedException();
-		KeyPermanentlyInvalidatedException(JString arg0);
-		KeyPermanentlyInvalidatedException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException()
+		: java::security::InvalidKeyException(
+			"android.security.keystore.KeyPermanentlyInvalidatedException",
+			"()V"
+		) {}
+	inline KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(JString arg0)
+		: java::security::InvalidKeyException(
+			"android.security.keystore.KeyPermanentlyInvalidatedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(JString arg0, JThrowable arg1)
+		: java::security::InvalidKeyException(
+			"android.security.keystore.KeyPermanentlyInvalidatedException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::security::keystore
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/security/GeneralSecurityException.hpp"
+#include "../../../java/security/KeyException.hpp"
+#include "../../../java/security/InvalidKeyException.hpp"
 

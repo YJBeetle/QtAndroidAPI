@@ -1,34 +1,59 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::telephony::mbms
-{
-	class GroupCall;
-}
+#include "../content/Context.def.hpp"
+#include "./mbms/GroupCall.def.hpp"
+#include "./MbmsGroupCallSession.def.hpp"
 
 namespace android::telephony
 {
-	class MbmsGroupCallSession : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, JObject arg1, JObject arg2)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MbmsGroupCallSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsGroupCallSession(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, JObject arg1, JObject arg2);
-		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, jint arg1, JObject arg2, JObject arg3);
-		void close() const;
-		android::telephony::mbms::GroupCall startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4) const;
-	};
+		return callStaticObjectMethod(
+			"android.telephony.MbmsGroupCallSession",
+			"create",
+			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsGroupCallSessionCallback;)Landroid/telephony/MbmsGroupCallSession;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, jint arg1, JObject arg2, JObject arg3)
+	{
+		return callStaticObjectMethod(
+			"android.telephony.MbmsGroupCallSession",
+			"create",
+			"(Landroid/content/Context;ILjava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsGroupCallSessionCallback;)Landroid/telephony/MbmsGroupCallSession;",
+			arg0.object(),
+			arg1,
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline void MbmsGroupCallSession::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline android::telephony::mbms::GroupCall MbmsGroupCallSession::startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4) const
+	{
+		return callObjectMethod(
+			"startGroupCall",
+			"(JLjava/util/List;Ljava/util/List;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/GroupCallCallback;)Landroid/telephony/mbms/GroupCall;",
+			arg0,
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

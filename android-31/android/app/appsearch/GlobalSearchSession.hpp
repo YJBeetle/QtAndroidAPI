@@ -1,38 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ReportSystemUsageRequest.def.hpp"
+#include "./SearchResults.def.hpp"
+#include "./SearchSpec.def.hpp"
+#include "../../../JString.hpp"
+#include "./GlobalSearchSession.def.hpp"
 
 namespace android::app::appsearch
 {
-	class ReportSystemUsageRequest;
-}
-namespace android::app::appsearch
-{
-	class SearchResults;
-}
-namespace android::app::appsearch
-{
-	class SearchSpec;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class GlobalSearchSession : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void GlobalSearchSession::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GlobalSearchSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GlobalSearchSession(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2) const;
-		android::app::appsearch::SearchResults search(JString arg0, android::app::appsearch::SearchSpec arg1) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void GlobalSearchSession::reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"reportSystemUsage",
+			"(Landroid/app/appsearch/ReportSystemUsageRequest;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::app::appsearch::SearchResults GlobalSearchSession::search(JString arg0, android::app::appsearch::SearchSpec arg1) const
+	{
+		return callObjectMethod(
+			"search",
+			"(Ljava/lang/String;Landroid/app/appsearch/SearchSpec;)Landroid/app/appsearch/SearchResults;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

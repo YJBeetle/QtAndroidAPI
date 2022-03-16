@@ -1,23 +1,32 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./IntegerWidth.def.hpp"
 
 namespace android::icu::number
 {
-	class IntegerWidth : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::IntegerWidth IntegerWidth::zeroFillTo(jint arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IntegerWidth(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IntegerWidth(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::number::IntegerWidth zeroFillTo(jint arg0);
-		android::icu::number::IntegerWidth truncateAt(jint arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.icu.number.IntegerWidth",
+			"zeroFillTo",
+			"(I)Landroid/icu/number/IntegerWidth;",
+			arg0
+		);
+	}
+	inline android::icu::number::IntegerWidth IntegerWidth::truncateAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"truncateAt",
+			"(I)Landroid/icu/number/IntegerWidth;",
+			arg0
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
 

@@ -1,38 +1,69 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
-namespace java::util::concurrent
-{
-	class TimeUnit;
-}
-namespace java::util::concurrent::locks
-{
-	class ReentrantReadWriteLock;
-}
+#include "../../../../JString.hpp"
+#include "../TimeUnit.def.hpp"
+#include "./ReentrantReadWriteLock.def.hpp"
+#include "./ReentrantReadWriteLock_ReadLock.def.hpp"
 
 namespace java::util::concurrent::locks
 {
-	class ReentrantReadWriteLock_ReadLock : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void ReentrantReadWriteLock_ReadLock::lock() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ReentrantReadWriteLock_ReadLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReentrantReadWriteLock_ReadLock(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void lock() const;
-		void lockInterruptibly() const;
-		JObject newCondition() const;
-		JString toString() const;
-		jboolean tryLock() const;
-		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
-		void unlock() const;
-	};
+		callMethod<void>(
+			"lock",
+			"()V"
+		);
+	}
+	inline void ReentrantReadWriteLock_ReadLock::lockInterruptibly() const
+	{
+		callMethod<void>(
+			"lockInterruptibly",
+			"()V"
+		);
+	}
+	inline JObject ReentrantReadWriteLock_ReadLock::newCondition() const
+	{
+		return callObjectMethod(
+			"newCondition",
+			"()Ljava/util/concurrent/locks/Condition;"
+		);
+	}
+	inline JString ReentrantReadWriteLock_ReadLock::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean ReentrantReadWriteLock_ReadLock::tryLock() const
+	{
+		return callMethod<jboolean>(
+			"tryLock",
+			"()Z"
+		);
+	}
+	inline jboolean ReentrantReadWriteLock_ReadLock::tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1) const
+	{
+		return callMethod<jboolean>(
+			"tryLock",
+			"(JLjava/util/concurrent/TimeUnit;)Z",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void ReentrantReadWriteLock_ReadLock::unlock() const
+	{
+		callMethod<void>(
+			"unlock",
+			"()V"
+		);
+	}
 } // namespace java::util::concurrent::locks
+
+// Base class headers
 

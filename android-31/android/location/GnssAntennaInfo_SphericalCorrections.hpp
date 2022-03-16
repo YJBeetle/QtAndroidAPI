@@ -1,40 +1,100 @@
 #pragma once
 
+#include "../../JArray.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./GnssAntennaInfo_SphericalCorrections.def.hpp"
 
 namespace android::location
 {
-	class GnssAntennaInfo_SphericalCorrections : public JObject
+	// Fields
+	inline JObject GnssAntennaInfo_SphericalCorrections::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GnssAntennaInfo_SphericalCorrections(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_SphericalCorrections(QJniObject obj);
-		
-		// Constructors
-		GnssAntennaInfo_SphericalCorrections(JArray arg0, JArray arg1);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JArray getCorrectionUncertaintiesArray() const;
-		JArray getCorrectionsArray() const;
-		jdouble getDeltaPhi() const;
-		jdouble getDeltaTheta() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.location.GnssAntennaInfo$SphericalCorrections",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(JArray arg0, JArray arg1)
+		: JObject(
+			"android.location.GnssAntennaInfo$SphericalCorrections",
+			"([[D[[D)V",
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
+		) {}
+	
+	// Methods
+	inline jint GnssAntennaInfo_SphericalCorrections::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean GnssAntennaInfo_SphericalCorrections::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JArray GnssAntennaInfo_SphericalCorrections::getCorrectionUncertaintiesArray() const
+	{
+		return callObjectMethod(
+			"getCorrectionUncertaintiesArray",
+			"()[[D"
+		);
+	}
+	inline JArray GnssAntennaInfo_SphericalCorrections::getCorrectionsArray() const
+	{
+		return callObjectMethod(
+			"getCorrectionsArray",
+			"()[[D"
+		);
+	}
+	inline jdouble GnssAntennaInfo_SphericalCorrections::getDeltaPhi() const
+	{
+		return callMethod<jdouble>(
+			"getDeltaPhi",
+			"()D"
+		);
+	}
+	inline jdouble GnssAntennaInfo_SphericalCorrections::getDeltaTheta() const
+	{
+		return callMethod<jdouble>(
+			"getDeltaTheta",
+			"()D"
+		);
+	}
+	inline jint GnssAntennaInfo_SphericalCorrections::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString GnssAntennaInfo_SphericalCorrections::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void GnssAntennaInfo_SphericalCorrections::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

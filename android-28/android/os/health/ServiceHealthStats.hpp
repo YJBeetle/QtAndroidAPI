@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ServiceHealthStats.def.hpp"
 
 namespace android::os::health
 {
-	class ServiceHealthStats : public JObject
+	// Fields
+	inline jint ServiceHealthStats::MEASUREMENT_LAUNCH_COUNT()
 	{
-	public:
-		// Fields
-		static jint MEASUREMENT_LAUNCH_COUNT();
-		static jint MEASUREMENT_START_SERVICE_COUNT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ServiceHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceHealthStats(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.os.health.ServiceHealthStats",
+			"MEASUREMENT_LAUNCH_COUNT"
+		);
+	}
+	inline jint ServiceHealthStats::MEASUREMENT_START_SERVICE_COUNT()
+	{
+		return getStaticField<jint>(
+			"android.os.health.ServiceHealthStats",
+			"MEASUREMENT_START_SERVICE_COUNT"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::os::health
+
+// Base class headers
 

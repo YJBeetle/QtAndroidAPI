@@ -1,28 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::security::cert
-{
-	class X509Certificate;
-}
+#include "../../java/security/cert/X509Certificate.def.hpp"
+#include "./FileIntegrityManager.def.hpp"
 
 namespace android::security
 {
-	class FileIntegrityManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean FileIntegrityManager::isApkVeritySupported() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileIntegrityManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileIntegrityManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean isApkVeritySupported() const;
-		jboolean isAppSourceCertificateTrusted(java::security::cert::X509Certificate arg0) const;
-	};
+		return callMethod<jboolean>(
+			"isApkVeritySupported",
+			"()Z"
+		);
+	}
+	inline jboolean FileIntegrityManager::isAppSourceCertificateTrusted(java::security::cert::X509Certificate arg0) const
+	{
+		return callMethod<jboolean>(
+			"isAppSourceCertificateTrusted",
+			"(Ljava/security/cert/X509Certificate;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

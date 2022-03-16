@@ -1,34 +1,73 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Contacts_Groups.def.hpp"
 
 namespace android::provider
 {
-	class Contacts_Groups : public JObject
+	// Fields
+	inline JString Contacts_Groups::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString DEFAULT_SORT_ORDER();
-		static android::net::Uri DELETED_CONTENT_URI();
-		static JString GROUP_ANDROID_STARRED();
-		static JString GROUP_MY_CONTACTS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Contacts_Groups(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Groups(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Contacts$Groups",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Groups::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Groups",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Contacts_Groups::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Groups",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Contacts_Groups::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Groups",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Contacts_Groups::DELETED_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Groups",
+			"DELETED_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Contacts_Groups::GROUP_ANDROID_STARRED()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Groups",
+			"GROUP_ANDROID_STARRED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Groups::GROUP_MY_CONTACTS()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Groups",
+			"GROUP_MY_CONTACTS",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

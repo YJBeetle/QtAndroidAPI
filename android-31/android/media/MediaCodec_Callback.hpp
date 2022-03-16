@@ -1,43 +1,61 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaCodec.def.hpp"
+#include "./MediaCodec_BufferInfo.def.hpp"
+#include "./MediaCodec_CodecException.def.hpp"
+#include "./MediaFormat.def.hpp"
+#include "./MediaCodec_Callback.def.hpp"
 
 namespace android::media
 {
-	class MediaCodec;
-}
-namespace android::media
-{
-	class MediaCodec_BufferInfo;
-}
-namespace android::media
-{
-	class MediaCodec_CodecException;
-}
-namespace android::media
-{
-	class MediaFormat;
-}
-
-namespace android::media
-{
-	class MediaCodec_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaCodec_Callback::MediaCodec_Callback()
+		: JObject(
+			"android.media.MediaCodec$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaCodec_Callback::onError(android::media::MediaCodec arg0, android::media::MediaCodec_CodecException arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodec_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_Callback(QJniObject obj);
-		
-		// Constructors
-		MediaCodec_Callback();
-		
-		// Methods
-		void onError(android::media::MediaCodec arg0, android::media::MediaCodec_CodecException arg1) const;
-		void onInputBufferAvailable(android::media::MediaCodec arg0, jint arg1) const;
-		void onOutputBufferAvailable(android::media::MediaCodec arg0, jint arg1, android::media::MediaCodec_BufferInfo arg2) const;
-		void onOutputFormatChanged(android::media::MediaCodec arg0, android::media::MediaFormat arg1) const;
-	};
+		callMethod<void>(
+			"onError",
+			"(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaCodec_Callback::onInputBufferAvailable(android::media::MediaCodec arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onInputBufferAvailable",
+			"(Landroid/media/MediaCodec;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void MediaCodec_Callback::onOutputBufferAvailable(android::media::MediaCodec arg0, jint arg1, android::media::MediaCodec_BufferInfo arg2) const
+	{
+		callMethod<void>(
+			"onOutputBufferAvailable",
+			"(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void MediaCodec_Callback::onOutputFormatChanged(android::media::MediaCodec arg0, android::media::MediaFormat arg1) const
+	{
+		callMethod<void>(
+			"onOutputFormatChanged",
+			"(Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

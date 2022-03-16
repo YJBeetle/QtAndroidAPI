@@ -1,29 +1,34 @@
 #pragma once
 
-#include "./VoiceInteractor_Request.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
+#include "../os/Bundle.def.hpp"
+#include "../../JString.hpp"
+#include "./VoiceInteractor_CommandRequest.def.hpp"
 
 namespace android::app
 {
-	class VoiceInteractor_CommandRequest : public android::app::VoiceInteractor_Request
+	// Fields
+	
+	// Constructors
+	inline VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(JString arg0, android::os::Bundle arg1)
+		: android::app::VoiceInteractor_Request(
+			"android.app.VoiceInteractor$CommandRequest",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void VoiceInteractor_CommandRequest::onCommandResult(jboolean arg0, android::os::Bundle arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractor_CommandRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_CommandRequest(QJniObject obj);
-		
-		// Constructors
-		VoiceInteractor_CommandRequest(JString arg0, android::os::Bundle arg1);
-		
-		// Methods
-		void onCommandResult(jboolean arg0, android::os::Bundle arg1) const;
-	};
+		callMethod<void>(
+			"onCommandResult",
+			"(ZLandroid/os/Bundle;)V",
+			arg0,
+			arg1.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./VoiceInteractor_Request.hpp"
 

@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./CertificateException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./CertificateEncodingException.def.hpp"
 
 namespace javax::security::cert
 {
-	class CertificateEncodingException : public javax::security::cert::CertificateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertificateEncodingException(const char *className, const char *sig, Ts...agv) : javax::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateEncodingException(QJniObject obj);
-		
-		// Constructors
-		CertificateEncodingException();
-		CertificateEncodingException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CertificateEncodingException::CertificateEncodingException()
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateEncodingException",
+			"()V"
+		) {}
+	inline CertificateEncodingException::CertificateEncodingException(JString arg0)
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateEncodingException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::security::cert
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./CertificateException.hpp"
 

@@ -1,38 +1,76 @@
 #pragma once
 
-#include "../view/ActionProvider.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../content/Context.def.hpp"
+#include "../view/View.def.hpp"
+#include "./MediaRouteActionProvider.def.hpp"
 
 namespace android::app
 {
-	class MediaRouteActionProvider : public android::view::ActionProvider
+	// Fields
+	
+	// Constructors
+	inline MediaRouteActionProvider::MediaRouteActionProvider(android::content::Context arg0)
+		: android::view::ActionProvider(
+			"android.app.MediaRouteActionProvider",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean MediaRouteActionProvider::isVisible() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaRouteActionProvider(const char *className, const char *sig, Ts...agv) : android::view::ActionProvider(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouteActionProvider(QJniObject obj);
-		
-		// Constructors
-		MediaRouteActionProvider(android::content::Context arg0);
-		
-		// Methods
-		jboolean isVisible() const;
-		android::view::View onCreateActionView() const;
-		android::view::View onCreateActionView(JObject arg0) const;
-		jboolean onPerformDefaultAction() const;
-		jboolean overridesItemVisibility() const;
-		void setExtendedSettingsClickListener(JObject arg0) const;
-		void setRouteTypes(jint arg0) const;
-	};
+		return callMethod<jboolean>(
+			"isVisible",
+			"()Z"
+		);
+	}
+	inline android::view::View MediaRouteActionProvider::onCreateActionView() const
+	{
+		return callObjectMethod(
+			"onCreateActionView",
+			"()Landroid/view/View;"
+		);
+	}
+	inline android::view::View MediaRouteActionProvider::onCreateActionView(JObject arg0) const
+	{
+		return callObjectMethod(
+			"onCreateActionView",
+			"(Landroid/view/MenuItem;)Landroid/view/View;",
+			arg0.object()
+		);
+	}
+	inline jboolean MediaRouteActionProvider::onPerformDefaultAction() const
+	{
+		return callMethod<jboolean>(
+			"onPerformDefaultAction",
+			"()Z"
+		);
+	}
+	inline jboolean MediaRouteActionProvider::overridesItemVisibility() const
+	{
+		return callMethod<jboolean>(
+			"overridesItemVisibility",
+			"()Z"
+		);
+	}
+	inline void MediaRouteActionProvider::setExtendedSettingsClickListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setExtendedSettingsClickListener",
+			"(Landroid/view/View$OnClickListener;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouteActionProvider::setRouteTypes(jint arg0) const
+	{
+		callMethod<void>(
+			"setRouteTypes",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "../view/ActionProvider.hpp"
 

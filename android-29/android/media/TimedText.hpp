@@ -1,33 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../graphics/Rect.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./TimedText.def.hpp"
 
 namespace android::media
 {
-	class TimedText : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Rect TimedText::getBounds() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TimedText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimedText(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::Rect getBounds() const;
-		JString getText() const;
-	};
+		return callObjectMethod(
+			"getBounds",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	inline JString TimedText::getText() const
+	{
+		return callObjectMethod(
+			"getText",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

@@ -1,41 +1,109 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JArray;
-namespace java::lang
-{
-	class Integer;
-}
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../lang/Integer.def.hpp"
+#include "../../../JString.hpp"
+#include "./CoderResult.def.hpp"
 
 namespace java::nio::charset
 {
-	class CoderResult : public JObject
+	// Fields
+	inline java::nio::charset::CoderResult CoderResult::OVERFLOW()
 	{
-	public:
-		// Fields
-		static java::nio::charset::CoderResult OVERFLOW();
-		static java::nio::charset::CoderResult UNDERFLOW();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CoderResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CoderResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::nio::charset::CoderResult malformedForLength(jint arg0);
-		static java::nio::charset::CoderResult unmappableForLength(jint arg0);
-		jboolean isError() const;
-		jboolean isMalformed() const;
-		jboolean isOverflow() const;
-		jboolean isUnderflow() const;
-		jboolean isUnmappable() const;
-		jint length() const;
-		void throwException() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"java.nio.charset.CoderResult",
+			"OVERFLOW",
+			"Ljava/nio/charset/CoderResult;"
+		);
+	}
+	inline java::nio::charset::CoderResult CoderResult::UNDERFLOW()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.CoderResult",
+			"UNDERFLOW",
+			"Ljava/nio/charset/CoderResult;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::charset::CoderResult CoderResult::malformedForLength(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.charset.CoderResult",
+			"malformedForLength",
+			"(I)Ljava/nio/charset/CoderResult;",
+			arg0
+		);
+	}
+	inline java::nio::charset::CoderResult CoderResult::unmappableForLength(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.charset.CoderResult",
+			"unmappableForLength",
+			"(I)Ljava/nio/charset/CoderResult;",
+			arg0
+		);
+	}
+	inline jboolean CoderResult::isError() const
+	{
+		return callMethod<jboolean>(
+			"isError",
+			"()Z"
+		);
+	}
+	inline jboolean CoderResult::isMalformed() const
+	{
+		return callMethod<jboolean>(
+			"isMalformed",
+			"()Z"
+		);
+	}
+	inline jboolean CoderResult::isOverflow() const
+	{
+		return callMethod<jboolean>(
+			"isOverflow",
+			"()Z"
+		);
+	}
+	inline jboolean CoderResult::isUnderflow() const
+	{
+		return callMethod<jboolean>(
+			"isUnderflow",
+			"()Z"
+		);
+	}
+	inline jboolean CoderResult::isUnmappable() const
+	{
+		return callMethod<jboolean>(
+			"isUnmappable",
+			"()Z"
+		);
+	}
+	inline jint CoderResult::length() const
+	{
+		return callMethod<jint>(
+			"length",
+			"()I"
+		);
+	}
+	inline void CoderResult::throwException() const
+	{
+		callMethod<void>(
+			"throwException",
+			"()V"
+		);
+	}
+	inline JString CoderResult::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::charset
+
+// Base class headers
 

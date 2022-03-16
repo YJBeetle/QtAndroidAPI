@@ -1,33 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GnssMeasurementsEvent.def.hpp"
+#include "./GnssMeasurementsEvent_Callback.def.hpp"
 
 namespace android::location
 {
-	class GnssMeasurementsEvent;
-}
-
-namespace android::location
-{
-	class GnssMeasurementsEvent_Callback : public JObject
+	// Fields
+	inline jint GnssMeasurementsEvent_Callback::STATUS_LOCATION_DISABLED()
 	{
-	public:
-		// Fields
-		static jint STATUS_LOCATION_DISABLED();
-		static jint STATUS_NOT_ALLOWED();
-		static jint STATUS_NOT_SUPPORTED();
-		static jint STATUS_READY();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GnssMeasurementsEvent_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssMeasurementsEvent_Callback(QJniObject obj);
-		
-		// Constructors
-		GnssMeasurementsEvent_Callback();
-		
-		// Methods
-		void onGnssMeasurementsReceived(android::location::GnssMeasurementsEvent arg0) const;
-		void onStatusChanged(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.location.GnssMeasurementsEvent$Callback",
+			"STATUS_LOCATION_DISABLED"
+		);
+	}
+	inline jint GnssMeasurementsEvent_Callback::STATUS_NOT_ALLOWED()
+	{
+		return getStaticField<jint>(
+			"android.location.GnssMeasurementsEvent$Callback",
+			"STATUS_NOT_ALLOWED"
+		);
+	}
+	inline jint GnssMeasurementsEvent_Callback::STATUS_NOT_SUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.location.GnssMeasurementsEvent$Callback",
+			"STATUS_NOT_SUPPORTED"
+		);
+	}
+	inline jint GnssMeasurementsEvent_Callback::STATUS_READY()
+	{
+		return getStaticField<jint>(
+			"android.location.GnssMeasurementsEvent$Callback",
+			"STATUS_READY"
+		);
+	}
+	
+	// Constructors
+	inline GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback()
+		: JObject(
+			"android.location.GnssMeasurementsEvent$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void GnssMeasurementsEvent_Callback::onGnssMeasurementsReceived(android::location::GnssMeasurementsEvent arg0) const
+	{
+		callMethod<void>(
+			"onGnssMeasurementsReceived",
+			"(Landroid/location/GnssMeasurementsEvent;)V",
+			arg0.object()
+		);
+	}
+	inline void GnssMeasurementsEvent_Callback::onStatusChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onStatusChanged",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

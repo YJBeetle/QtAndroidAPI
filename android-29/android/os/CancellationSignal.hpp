@@ -1,26 +1,49 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CancellationSignal.def.hpp"
 
 namespace android::os
 {
-	class CancellationSignal : public JObject
+	// Fields
+	
+	// Constructors
+	inline CancellationSignal::CancellationSignal()
+		: JObject(
+			"android.os.CancellationSignal",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CancellationSignal::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CancellationSignal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CancellationSignal(QJniObject obj);
-		
-		// Constructors
-		CancellationSignal();
-		
-		// Methods
-		void cancel() const;
-		jboolean isCanceled() const;
-		void setOnCancelListener(JObject arg0) const;
-		void throwIfCanceled() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline jboolean CancellationSignal::isCanceled() const
+	{
+		return callMethod<jboolean>(
+			"isCanceled",
+			"()Z"
+		);
+	}
+	inline void CancellationSignal::setOnCancelListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnCancelListener",
+			"(Landroid/os/CancellationSignal$OnCancelListener;)V",
+			arg0.object()
+		);
+	}
+	inline void CancellationSignal::throwIfCanceled() const
+	{
+		callMethod<void>(
+			"throwIfCanceled",
+			"()V"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

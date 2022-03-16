@@ -1,36 +1,57 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-namespace java::util::regex
-{
-	class Pattern;
-}
+#include "../../java/util/regex/Pattern.def.hpp"
+#include "./WifiDeviceFilter.def.hpp"
 
 namespace android::companion
 {
-	class WifiDeviceFilter : public JObject
+	// Fields
+	inline JObject WifiDeviceFilter::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiDeviceFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiDeviceFilter(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.companion.WifiDeviceFilter",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint WifiDeviceFilter::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean WifiDeviceFilter::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint WifiDeviceFilter::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void WifiDeviceFilter::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::companion
+
+// Base class headers
 

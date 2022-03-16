@@ -1,37 +1,40 @@
 #pragma once
 
-#include "../EventObject.hpp"
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-namespace java::util::prefs
-{
-	class Preferences;
-}
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../io/ObjectOutputStream.def.hpp"
+#include "./Preferences.def.hpp"
+#include "./NodeChangeEvent.def.hpp"
 
 namespace java::util::prefs
 {
-	class NodeChangeEvent : public java::util::EventObject
+	// Fields
+	
+	// Constructors
+	inline NodeChangeEvent::NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1)
+		: java::util::EventObject(
+			"java.util.prefs.NodeChangeEvent",
+			"(Ljava/util/prefs/Preferences;Ljava/util/prefs/Preferences;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline java::util::prefs::Preferences NodeChangeEvent::getChild() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NodeChangeEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		NodeChangeEvent(QJniObject obj);
-		
-		// Constructors
-		NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1);
-		
-		// Methods
-		java::util::prefs::Preferences getChild() const;
-		java::util::prefs::Preferences getParent() const;
-	};
+		return callObjectMethod(
+			"getChild",
+			"()Ljava/util/prefs/Preferences;"
+		);
+	}
+	inline java::util::prefs::Preferences NodeChangeEvent::getParent() const
+	{
+		return callObjectMethod(
+			"getParent",
+			"()Ljava/util/prefs/Preferences;"
+		);
+	}
 } // namespace java::util::prefs
+
+// Base class headers
+#include "../EventObject.hpp"
 

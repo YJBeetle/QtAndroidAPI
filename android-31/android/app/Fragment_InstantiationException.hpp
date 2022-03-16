@@ -1,28 +1,27 @@
 #pragma once
 
-#include "../util/AndroidRuntimeException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
+#include "../../java/lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "./Fragment_InstantiationException.def.hpp"
 
 namespace android::app
 {
-	class Fragment_InstantiationException : public android::util::AndroidRuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Fragment_InstantiationException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		Fragment_InstantiationException(QJniObject obj);
-		
-		// Constructors
-		Fragment_InstantiationException(JString arg0, java::lang::Exception arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Fragment_InstantiationException::Fragment_InstantiationException(JString arg0, java::lang::Exception arg1)
+		: android::util::AndroidRuntimeException(
+			"android.app.Fragment$InstantiationException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace android::app
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "../util/AndroidRuntimeException.hpp"
 

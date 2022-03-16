@@ -1,26 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WindowInsets_Side.def.hpp"
 
 namespace android::view
 {
-	class WindowInsets_Side : public JObject
+	// Fields
+	inline jint WindowInsets_Side::BOTTOM()
 	{
-	public:
-		// Fields
-		static jint BOTTOM();
-		static jint LEFT();
-		static jint RIGHT();
-		static jint TOP();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WindowInsets_Side(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsets_Side(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jint all();
-	};
+		return getStaticField<jint>(
+			"android.view.WindowInsets$Side",
+			"BOTTOM"
+		);
+	}
+	inline jint WindowInsets_Side::LEFT()
+	{
+		return getStaticField<jint>(
+			"android.view.WindowInsets$Side",
+			"LEFT"
+		);
+	}
+	inline jint WindowInsets_Side::RIGHT()
+	{
+		return getStaticField<jint>(
+			"android.view.WindowInsets$Side",
+			"RIGHT"
+		);
+	}
+	inline jint WindowInsets_Side::TOP()
+	{
+		return getStaticField<jint>(
+			"android.view.WindowInsets$Side",
+			"TOP"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint WindowInsets_Side::all()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Side",
+			"all",
+			"()I"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

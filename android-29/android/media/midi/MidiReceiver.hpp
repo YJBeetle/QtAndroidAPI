@@ -1,31 +1,80 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
+#include "../../../JByteArray.hpp"
+#include "./MidiReceiver.def.hpp"
 
 namespace android::media::midi
 {
-	class MidiReceiver : public JObject
+	// Fields
+	
+	// Constructors
+	inline MidiReceiver::MidiReceiver()
+		: JObject(
+			"android.media.midi.MidiReceiver",
+			"()V"
+		) {}
+	inline MidiReceiver::MidiReceiver(jint arg0)
+		: JObject(
+			"android.media.midi.MidiReceiver",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline void MidiReceiver::flush() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MidiReceiver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiReceiver(QJniObject obj);
-		
-		// Constructors
-		MidiReceiver();
-		MidiReceiver(jint arg0);
-		
-		// Methods
-		void flush() const;
-		jint getMaxMessageSize() const;
-		void onFlush() const;
-		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const;
-		void send(JByteArray arg0, jint arg1, jint arg2) const;
-		void send(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const;
-	};
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline jint MidiReceiver::getMaxMessageSize() const
+	{
+		return callMethod<jint>(
+			"getMaxMessageSize",
+			"()I"
+		);
+	}
+	inline void MidiReceiver::onFlush() const
+	{
+		callMethod<void>(
+			"onFlush",
+			"()V"
+		);
+	}
+	inline void MidiReceiver::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const
+	{
+		callMethod<void>(
+			"onSend",
+			"([BIIJ)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"send",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const
+	{
+		callMethod<void>(
+			"send",
+			"([BIIJ)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::media::midi
+
+// Base class headers
 

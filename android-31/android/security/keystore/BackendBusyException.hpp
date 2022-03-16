@@ -1,28 +1,48 @@
 #pragma once
 
-#include "../../../java/security/ProviderException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./BackendBusyException.def.hpp"
 
 namespace android::security::keystore
 {
-	class BackendBusyException : public java::security::ProviderException
+	// Fields
+	
+	// Constructors
+	inline BackendBusyException::BackendBusyException(jlong arg0)
+		: java::security::ProviderException(
+			"android.security.keystore.BackendBusyException",
+			"(J)V",
+			arg0
+		) {}
+	inline BackendBusyException::BackendBusyException(jlong arg0, JString arg1)
+		: java::security::ProviderException(
+			"android.security.keystore.BackendBusyException",
+			"(JLjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	inline BackendBusyException::BackendBusyException(jlong arg0, JString arg1, JThrowable arg2)
+		: java::security::ProviderException(
+			"android.security.keystore.BackendBusyException",
+			"(JLjava/lang/String;Ljava/lang/Throwable;)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline jlong BackendBusyException::getBackOffHintMillis() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BackendBusyException(const char *className, const char *sig, Ts...agv) : java::security::ProviderException(className, sig, std::forward<Ts>(agv)...) {}
-		BackendBusyException(QJniObject obj);
-		
-		// Constructors
-		BackendBusyException(jlong arg0);
-		BackendBusyException(jlong arg0, JString arg1);
-		BackendBusyException(jlong arg0, JString arg1, JThrowable arg2);
-		
-		// Methods
-		jlong getBackOffHintMillis() const;
-	};
+		return callMethod<jlong>(
+			"getBackOffHintMillis",
+			"()J"
+		);
+	}
 } // namespace android::security::keystore
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../../../java/security/ProviderException.hpp"
 

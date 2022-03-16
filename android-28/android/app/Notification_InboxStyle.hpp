@@ -1,32 +1,53 @@
 #pragma once
 
-#include "./Notification_Style.hpp"
+#include "./Notification_Builder.def.hpp"
+#include "../../JString.hpp"
+#include "./Notification_InboxStyle.def.hpp"
 
 namespace android::app
 {
-	class Notification_Builder;
-}
-class JString;
-
-namespace android::app
-{
-	class Notification_InboxStyle : public android::app::Notification_Style
+	// Fields
+	
+	// Constructors
+	inline Notification_InboxStyle::Notification_InboxStyle()
+		: android::app::Notification_Style(
+			"android.app.Notification$InboxStyle",
+			"()V"
+		) {}
+	inline Notification_InboxStyle::Notification_InboxStyle(android::app::Notification_Builder arg0)
+		: android::app::Notification_Style(
+			"android.app.Notification$InboxStyle",
+			"(Landroid/app/Notification$Builder;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::app::Notification_InboxStyle Notification_InboxStyle::addLine(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Notification_InboxStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_Style(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_InboxStyle(QJniObject obj);
-		
-		// Constructors
-		Notification_InboxStyle();
-		Notification_InboxStyle(android::app::Notification_Builder arg0);
-		
-		// Methods
-		android::app::Notification_InboxStyle addLine(JString arg0) const;
-		android::app::Notification_InboxStyle setBigContentTitle(JString arg0) const;
-		android::app::Notification_InboxStyle setSummaryText(JString arg0) const;
-	};
+		return callObjectMethod(
+			"addLine",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::app::Notification_InboxStyle Notification_InboxStyle::setBigContentTitle(JString arg0) const
+	{
+		return callObjectMethod(
+			"setBigContentTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::app::Notification_InboxStyle Notification_InboxStyle::setSummaryText(JString arg0) const
+	{
+		return callObjectMethod(
+			"setSummaryText",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./Notification_Style.hpp"
 

@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaFeature.def.hpp"
 
 namespace android::media
 {
-	class MediaFeature : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaFeature(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaFeature(QJniObject obj);
-		
-		// Constructors
-		MediaFeature();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MediaFeature::MediaFeature()
+		: JObject(
+			"android.media.MediaFeature",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

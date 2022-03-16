@@ -1,32 +1,61 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./GetWalletCardsResponse.def.hpp"
 
 namespace android::service::quickaccesswallet
 {
-	class GetWalletCardsResponse : public JObject
+	// Fields
+	inline JObject GetWalletCardsResponse::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GetWalletCardsResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetWalletCardsResponse(QJniObject obj);
-		
-		// Constructors
-		GetWalletCardsResponse(JObject arg0, jint arg1);
-		
-		// Methods
-		jint describeContents() const;
-		jint getSelectedIndex() const;
-		JObject getWalletCards() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.quickaccesswallet.GetWalletCardsResponse",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline GetWalletCardsResponse::GetWalletCardsResponse(JObject arg0, jint arg1)
+		: JObject(
+			"android.service.quickaccesswallet.GetWalletCardsResponse",
+			"(Ljava/util/List;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jint GetWalletCardsResponse::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint GetWalletCardsResponse::getSelectedIndex() const
+	{
+		return callMethod<jint>(
+			"getSelectedIndex",
+			"()I"
+		);
+	}
+	inline JObject GetWalletCardsResponse::getWalletCards() const
+	{
+		return callObjectMethod(
+			"getWalletCards",
+			"()Ljava/util/List;"
+		);
+	}
+	inline void GetWalletCardsResponse::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::service::quickaccesswallet
+
+// Base class headers
 

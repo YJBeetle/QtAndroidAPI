@@ -1,38 +1,106 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./VibrationEffect.def.hpp"
+#include "./VibrationEffect_Composition.def.hpp"
 
 namespace android::os
 {
-	class VibrationEffect;
-}
-
-namespace android::os
-{
-	class VibrationEffect_Composition : public JObject
+	// Fields
+	inline jint VibrationEffect_Composition::PRIMITIVE_CLICK()
 	{
-	public:
-		// Fields
-		static jint PRIMITIVE_CLICK();
-		static jint PRIMITIVE_LOW_TICK();
-		static jint PRIMITIVE_QUICK_FALL();
-		static jint PRIMITIVE_QUICK_RISE();
-		static jint PRIMITIVE_SLOW_RISE();
-		static jint PRIMITIVE_SPIN();
-		static jint PRIMITIVE_THUD();
-		static jint PRIMITIVE_TICK();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VibrationEffect_Composition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VibrationEffect_Composition(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::os::VibrationEffect_Composition addPrimitive(jint arg0) const;
-		android::os::VibrationEffect_Composition addPrimitive(jint arg0, jfloat arg1) const;
-		android::os::VibrationEffect_Composition addPrimitive(jint arg0, jfloat arg1, jint arg2) const;
-		android::os::VibrationEffect compose() const;
-	};
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_CLICK"
+		);
+	}
+	inline jint VibrationEffect_Composition::PRIMITIVE_LOW_TICK()
+	{
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_LOW_TICK"
+		);
+	}
+	inline jint VibrationEffect_Composition::PRIMITIVE_QUICK_FALL()
+	{
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_QUICK_FALL"
+		);
+	}
+	inline jint VibrationEffect_Composition::PRIMITIVE_QUICK_RISE()
+	{
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_QUICK_RISE"
+		);
+	}
+	inline jint VibrationEffect_Composition::PRIMITIVE_SLOW_RISE()
+	{
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_SLOW_RISE"
+		);
+	}
+	inline jint VibrationEffect_Composition::PRIMITIVE_SPIN()
+	{
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_SPIN"
+		);
+	}
+	inline jint VibrationEffect_Composition::PRIMITIVE_THUD()
+	{
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_THUD"
+		);
+	}
+	inline jint VibrationEffect_Composition::PRIMITIVE_TICK()
+	{
+		return getStaticField<jint>(
+			"android.os.VibrationEffect$Composition",
+			"PRIMITIVE_TICK"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0) const
+	{
+		return callObjectMethod(
+			"addPrimitive",
+			"(I)Landroid/os/VibrationEffect$Composition;",
+			arg0
+		);
+	}
+	inline android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0, jfloat arg1) const
+	{
+		return callObjectMethod(
+			"addPrimitive",
+			"(IF)Landroid/os/VibrationEffect$Composition;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::os::VibrationEffect_Composition VibrationEffect_Composition::addPrimitive(jint arg0, jfloat arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"addPrimitive",
+			"(IFI)Landroid/os/VibrationEffect$Composition;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline android::os::VibrationEffect VibrationEffect_Composition::compose() const
+	{
+		return callObjectMethod(
+			"compose",
+			"()Landroid/os/VibrationEffect;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

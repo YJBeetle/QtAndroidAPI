@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WebViewRenderProcess.def.hpp"
 
 namespace android::webkit
 {
-	class WebViewRenderProcess : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebViewRenderProcess::WebViewRenderProcess()
+		: JObject(
+			"android.webkit.WebViewRenderProcess",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean WebViewRenderProcess::terminate() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebViewRenderProcess(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebViewRenderProcess(QJniObject obj);
-		
-		// Constructors
-		WebViewRenderProcess();
-		
-		// Methods
-		jboolean terminate() const;
-	};
+		return callMethod<jboolean>(
+			"terminate",
+			"()Z"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

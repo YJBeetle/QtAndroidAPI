@@ -1,30 +1,66 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./EventLog_Event.def.hpp"
 
 namespace android::util
 {
-	class EventLog_Event : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean EventLog_Event::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EventLog_Event(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EventLog_Event(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JObject getData() const;
-		jint getProcessId() const;
-		jint getTag() const;
-		jint getThreadId() const;
-		jlong getTimeNanos() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject EventLog_Event::getData() const
+	{
+		return callObjectMethod(
+			"getData",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jint EventLog_Event::getProcessId() const
+	{
+		return callMethod<jint>(
+			"getProcessId",
+			"()I"
+		);
+	}
+	inline jint EventLog_Event::getTag() const
+	{
+		return callMethod<jint>(
+			"getTag",
+			"()I"
+		);
+	}
+	inline jint EventLog_Event::getThreadId() const
+	{
+		return callMethod<jint>(
+			"getThreadId",
+			"()I"
+		);
+	}
+	inline jlong EventLog_Event::getTimeNanos() const
+	{
+		return callMethod<jlong>(
+			"getTimeNanos",
+			"()J"
+		);
+	}
+	inline jint EventLog_Event::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

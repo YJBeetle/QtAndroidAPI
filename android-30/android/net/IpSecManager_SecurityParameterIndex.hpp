@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IpSecManager_SecurityParameterIndex.def.hpp"
 
 namespace android::net
 {
-	class IpSecManager_SecurityParameterIndex : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void IpSecManager_SecurityParameterIndex::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IpSecManager_SecurityParameterIndex(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager_SecurityParameterIndex(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jint getSpi() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jint IpSecManager_SecurityParameterIndex::getSpi() const
+	{
+		return callMethod<jint>(
+			"getSpi",
+			"()I"
+		);
+	}
+	inline JString IpSecManager_SecurityParameterIndex::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

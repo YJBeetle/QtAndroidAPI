@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Path_FillType.def.hpp"
 
 namespace android::graphics
 {
-	class Path_FillType : public java::lang::Enum
+	// Fields
+	inline android::graphics::Path_FillType Path_FillType::EVEN_ODD()
 	{
-	public:
-		// Fields
-		static android::graphics::Path_FillType EVEN_ODD();
-		static android::graphics::Path_FillType INVERSE_EVEN_ODD();
-		static android::graphics::Path_FillType INVERSE_WINDING();
-		static android::graphics::Path_FillType WINDING();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Path_FillType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Path_FillType(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Path_FillType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Path$FillType",
+			"EVEN_ODD",
+			"Landroid/graphics/Path$FillType;"
+		);
+	}
+	inline android::graphics::Path_FillType Path_FillType::INVERSE_EVEN_ODD()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$FillType",
+			"INVERSE_EVEN_ODD",
+			"Landroid/graphics/Path$FillType;"
+		);
+	}
+	inline android::graphics::Path_FillType Path_FillType::INVERSE_WINDING()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$FillType",
+			"INVERSE_WINDING",
+			"Landroid/graphics/Path$FillType;"
+		);
+	}
+	inline android::graphics::Path_FillType Path_FillType::WINDING()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$FillType",
+			"WINDING",
+			"Landroid/graphics/Path$FillType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Path_FillType Path_FillType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Path$FillType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Path$FillType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Path_FillType::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Path$FillType",
+			"values",
+			"()[Landroid/graphics/Path$FillType;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

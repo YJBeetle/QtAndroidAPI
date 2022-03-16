@@ -1,44 +1,80 @@
 #pragma once
 
+#include "../content/LocusId.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::content
-{
-	class LocusId;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./DirectAction.def.hpp"
 
 namespace android::app
 {
-	class DirectAction : public JObject
+	// Fields
+	inline JObject DirectAction::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DirectAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DirectAction(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::os::Bundle getExtras() const;
-		JString getId() const;
-		android::content::LocusId getLocusId() const;
-		jint hashCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.DirectAction",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint DirectAction::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean DirectAction::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::os::Bundle DirectAction::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JString DirectAction::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::content::LocusId DirectAction::getLocusId() const
+	{
+		return callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
+	}
+	inline jint DirectAction::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void DirectAction::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./EGLConfig.def.hpp"
 
 namespace javax::microedition::khronos::egl
 {
-	class EGLConfig : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EGLConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EGLConfig(QJniObject obj);
-		
-		// Constructors
-		EGLConfig();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline EGLConfig::EGLConfig()
+		: JObject(
+			"javax.microedition.khronos.egl.EGLConfig",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::microedition::khronos::egl
+
+// Base class headers
 

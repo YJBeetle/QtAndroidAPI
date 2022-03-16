@@ -1,34 +1,49 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AccessibilityButtonController_AccessibilityButtonCallback.def.hpp"
+#include "../os/Handler.def.hpp"
+#include "./AccessibilityButtonController.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class AccessibilityButtonController_AccessibilityButtonCallback;
-}
-namespace android::os
-{
-	class Handler;
-}
-
-namespace android::accessibilityservice
-{
-	class AccessibilityButtonController : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean AccessibilityButtonController::isAccessibilityButtonAvailable() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityButtonController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityButtonController(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean isAccessibilityButtonAvailable() const;
-		void registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0) const;
-		void registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0, android::os::Handler arg1) const;
-		void unregisterAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0) const;
-	};
+		return callMethod<jboolean>(
+			"isAccessibilityButtonAvailable",
+			"()Z"
+		);
+	}
+	inline void AccessibilityButtonController::registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0) const
+	{
+		callMethod<void>(
+			"registerAccessibilityButtonCallback",
+			"(Landroid/accessibilityservice/AccessibilityButtonController$AccessibilityButtonCallback;)V",
+			arg0.object()
+		);
+	}
+	inline void AccessibilityButtonController::registerAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0, android::os::Handler arg1) const
+	{
+		callMethod<void>(
+			"registerAccessibilityButtonCallback",
+			"(Landroid/accessibilityservice/AccessibilityButtonController$AccessibilityButtonCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void AccessibilityButtonController::unregisterAccessibilityButtonCallback(android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0) const
+	{
+		callMethod<void>(
+			"unregisterAccessibilityButtonCallback",
+			"(Landroid/accessibilityservice/AccessibilityButtonController$AccessibilityButtonCallback;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

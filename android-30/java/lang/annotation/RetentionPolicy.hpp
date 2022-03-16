@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./RetentionPolicy.def.hpp"
 
 namespace java::lang::annotation
 {
-	class RetentionPolicy : public java::lang::Enum
+	// Fields
+	inline java::lang::annotation::RetentionPolicy RetentionPolicy::CLASS()
 	{
-	public:
-		// Fields
-		static java::lang::annotation::RetentionPolicy CLASS();
-		static java::lang::annotation::RetentionPolicy RUNTIME();
-		static java::lang::annotation::RetentionPolicy SOURCE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RetentionPolicy(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RetentionPolicy(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::lang::annotation::RetentionPolicy valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.lang.annotation.RetentionPolicy",
+			"CLASS",
+			"Ljava/lang/annotation/RetentionPolicy;"
+		);
+	}
+	inline java::lang::annotation::RetentionPolicy RetentionPolicy::RUNTIME()
+	{
+		return getStaticObjectField(
+			"java.lang.annotation.RetentionPolicy",
+			"RUNTIME",
+			"Ljava/lang/annotation/RetentionPolicy;"
+		);
+	}
+	inline java::lang::annotation::RetentionPolicy RetentionPolicy::SOURCE()
+	{
+		return getStaticObjectField(
+			"java.lang.annotation.RetentionPolicy",
+			"SOURCE",
+			"Ljava/lang/annotation/RetentionPolicy;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::lang::annotation::RetentionPolicy RetentionPolicy::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.annotation.RetentionPolicy",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/annotation/RetentionPolicy;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray RetentionPolicy::values()
+	{
+		return callStaticObjectMethod(
+			"java.lang.annotation.RetentionPolicy",
+			"values",
+			"()[Ljava/lang/annotation/RetentionPolicy;"
+		);
+	}
 } // namespace java::lang::annotation
+
+// Base class headers
+#include "../Enum.hpp"
 

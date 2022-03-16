@@ -1,43 +1,108 @@
 #pragma once
 
-#include "./VerifiedInputEvent.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace java::lang
-{
-	class Boolean;
-}
-class JObject;
+#include "../os/Parcel.def.hpp"
+#include "../../java/lang/Boolean.def.hpp"
+#include "../../JObject.hpp"
+#include "./VerifiedKeyEvent.def.hpp"
 
 namespace android::view
 {
-	class VerifiedKeyEvent : public android::view::VerifiedInputEvent
+	// Fields
+	inline JObject VerifiedKeyEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VerifiedKeyEvent(const char *className, const char *sig, Ts...agv) : android::view::VerifiedInputEvent(className, sig, std::forward<Ts>(agv)...) {}
-		VerifiedKeyEvent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getAction() const;
-		jlong getDownTimeNanos() const;
-		java::lang::Boolean getFlag(jint arg0) const;
-		jint getKeyCode() const;
-		jint getMetaState() const;
-		jint getRepeatCount() const;
-		jint getScanCode() const;
-		jint hashCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.VerifiedKeyEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint VerifiedKeyEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean VerifiedKeyEvent::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint VerifiedKeyEvent::getAction() const
+	{
+		return callMethod<jint>(
+			"getAction",
+			"()I"
+		);
+	}
+	inline jlong VerifiedKeyEvent::getDownTimeNanos() const
+	{
+		return callMethod<jlong>(
+			"getDownTimeNanos",
+			"()J"
+		);
+	}
+	inline java::lang::Boolean VerifiedKeyEvent::getFlag(jint arg0) const
+	{
+		return callObjectMethod(
+			"getFlag",
+			"(I)Ljava/lang/Boolean;",
+			arg0
+		);
+	}
+	inline jint VerifiedKeyEvent::getKeyCode() const
+	{
+		return callMethod<jint>(
+			"getKeyCode",
+			"()I"
+		);
+	}
+	inline jint VerifiedKeyEvent::getMetaState() const
+	{
+		return callMethod<jint>(
+			"getMetaState",
+			"()I"
+		);
+	}
+	inline jint VerifiedKeyEvent::getRepeatCount() const
+	{
+		return callMethod<jint>(
+			"getRepeatCount",
+			"()I"
+		);
+	}
+	inline jint VerifiedKeyEvent::getScanCode() const
+	{
+		return callMethod<jint>(
+			"getScanCode",
+			"()I"
+		);
+	}
+	inline jint VerifiedKeyEvent::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void VerifiedKeyEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
+#include "./VerifiedInputEvent.hpp"
 

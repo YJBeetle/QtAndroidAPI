@@ -1,31 +1,67 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JObject;
+#include "./RC2ParameterSpec.def.hpp"
 
 namespace javax::crypto::spec
 {
-	class RC2ParameterSpec : public JObject
+	// Fields
+	
+	// Constructors
+	inline RC2ParameterSpec::RC2ParameterSpec(jint arg0)
+		: JObject(
+			"javax.crypto.spec.RC2ParameterSpec",
+			"(I)V",
+			arg0
+		) {}
+	inline RC2ParameterSpec::RC2ParameterSpec(jint arg0, JByteArray arg1)
+		: JObject(
+			"javax.crypto.spec.RC2ParameterSpec",
+			"(I[B)V",
+			arg0,
+			arg1.object<jbyteArray>()
+		) {}
+	inline RC2ParameterSpec::RC2ParameterSpec(jint arg0, JByteArray arg1, jint arg2)
+		: JObject(
+			"javax.crypto.spec.RC2ParameterSpec",
+			"(I[BI)V",
+			arg0,
+			arg1.object<jbyteArray>(),
+			arg2
+		) {}
+	
+	// Methods
+	inline jboolean RC2ParameterSpec::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RC2ParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RC2ParameterSpec(QJniObject obj);
-		
-		// Constructors
-		RC2ParameterSpec(jint arg0);
-		RC2ParameterSpec(jint arg0, JByteArray arg1);
-		RC2ParameterSpec(jint arg0, JByteArray arg1, jint arg2);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getEffectiveKeyBits() const;
-		JByteArray getIV() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint RC2ParameterSpec::getEffectiveKeyBits() const
+	{
+		return callMethod<jint>(
+			"getEffectiveKeyBits",
+			"()I"
+		);
+	}
+	inline JByteArray RC2ParameterSpec::getIV() const
+	{
+		return callObjectMethod(
+			"getIV",
+			"()[B"
+		);
+	}
+	inline jint RC2ParameterSpec::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace javax::crypto::spec
+
+// Base class headers
 

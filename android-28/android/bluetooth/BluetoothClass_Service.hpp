@@ -1,31 +1,83 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./BluetoothClass_Service.def.hpp"
 
 namespace android::bluetooth
 {
-	class BluetoothClass_Service : public JObject
+	// Fields
+	inline jint BluetoothClass_Service::AUDIO()
 	{
-	public:
-		// Fields
-		static jint AUDIO();
-		static jint CAPTURE();
-		static jint INFORMATION();
-		static jint LIMITED_DISCOVERABILITY();
-		static jint NETWORKING();
-		static jint OBJECT_TRANSFER();
-		static jint POSITIONING();
-		static jint RENDER();
-		static jint TELEPHONY();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothClass_Service(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothClass_Service(QJniObject obj);
-		
-		// Constructors
-		BluetoothClass_Service();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"AUDIO"
+		);
+	}
+	inline jint BluetoothClass_Service::CAPTURE()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"CAPTURE"
+		);
+	}
+	inline jint BluetoothClass_Service::INFORMATION()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"INFORMATION"
+		);
+	}
+	inline jint BluetoothClass_Service::LIMITED_DISCOVERABILITY()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"LIMITED_DISCOVERABILITY"
+		);
+	}
+	inline jint BluetoothClass_Service::NETWORKING()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"NETWORKING"
+		);
+	}
+	inline jint BluetoothClass_Service::OBJECT_TRANSFER()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"OBJECT_TRANSFER"
+		);
+	}
+	inline jint BluetoothClass_Service::POSITIONING()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"POSITIONING"
+		);
+	}
+	inline jint BluetoothClass_Service::RENDER()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"RENDER"
+		);
+	}
+	inline jint BluetoothClass_Service::TELEPHONY()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothClass$Service",
+			"TELEPHONY"
+		);
+	}
+	
+	// Constructors
+	inline BluetoothClass_Service::BluetoothClass_Service()
+		: JObject(
+			"android.bluetooth.BluetoothClass$Service",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::bluetooth
+
+// Base class headers
 

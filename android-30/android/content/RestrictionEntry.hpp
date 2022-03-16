@@ -1,79 +1,359 @@
 #pragma once
 
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "./Context.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-class JArray;
-namespace android::content
-{
-	class Context;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./RestrictionEntry.def.hpp"
 
 namespace android::content
 {
-	class RestrictionEntry : public JObject
+	// Fields
+	inline JObject RestrictionEntry::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint TYPE_BOOLEAN();
-		static jint TYPE_BUNDLE();
-		static jint TYPE_BUNDLE_ARRAY();
-		static jint TYPE_CHOICE();
-		static jint TYPE_INTEGER();
-		static jint TYPE_MULTI_SELECT();
-		static jint TYPE_NULL();
-		static jint TYPE_STRING();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RestrictionEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RestrictionEntry(QJniObject obj);
-		
-		// Constructors
-		RestrictionEntry(android::os::Parcel arg0);
-		RestrictionEntry(jint arg0, JString arg1);
-		RestrictionEntry(JString arg0, JArray arg1);
-		RestrictionEntry(JString arg0, jboolean arg1);
-		RestrictionEntry(JString arg0, jint arg1);
-		RestrictionEntry(JString arg0, JString arg1);
-		
-		// Methods
-		static android::content::RestrictionEntry createBundleArrayEntry(JString arg0, JArray arg1);
-		static android::content::RestrictionEntry createBundleEntry(JString arg0, JArray arg1);
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JArray getAllSelectedStrings() const;
-		JArray getChoiceEntries() const;
-		JArray getChoiceValues() const;
-		JString getDescription() const;
-		jint getIntValue() const;
-		JString getKey() const;
-		JArray getRestrictions() const;
-		jboolean getSelectedState() const;
-		JString getSelectedString() const;
-		JString getTitle() const;
-		jint getType() const;
-		jint hashCode() const;
-		void setAllSelectedStrings(JArray arg0) const;
-		void setChoiceEntries(JArray arg0) const;
-		void setChoiceEntries(android::content::Context arg0, jint arg1) const;
-		void setChoiceValues(JArray arg0) const;
-		void setChoiceValues(android::content::Context arg0, jint arg1) const;
-		void setDescription(JString arg0) const;
-		void setIntValue(jint arg0) const;
-		void setRestrictions(JArray arg0) const;
-		void setSelectedState(jboolean arg0) const;
-		void setSelectedString(JString arg0) const;
-		void setTitle(JString arg0) const;
-		void setType(jint arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.RestrictionEntry",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_BOOLEAN()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_BOOLEAN"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_BUNDLE()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_BUNDLE"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_BUNDLE_ARRAY()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_BUNDLE_ARRAY"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_CHOICE()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_CHOICE"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_INTEGER()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_INTEGER"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_MULTI_SELECT()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_MULTI_SELECT"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_NULL()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_NULL"
+		);
+	}
+	inline jint RestrictionEntry::TYPE_STRING()
+	{
+		return getStaticField<jint>(
+			"android.content.RestrictionEntry",
+			"TYPE_STRING"
+		);
+	}
+	
+	// Constructors
+	inline RestrictionEntry::RestrictionEntry(android::os::Parcel arg0)
+		: JObject(
+			"android.content.RestrictionEntry",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		) {}
+	inline RestrictionEntry::RestrictionEntry(jint arg0, JString arg1)
+		: JObject(
+			"android.content.RestrictionEntry",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	inline RestrictionEntry::RestrictionEntry(JString arg0, JArray arg1)
+		: JObject(
+			"android.content.RestrictionEntry",
+			"(Ljava/lang/String;[Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
+		) {}
+	inline RestrictionEntry::RestrictionEntry(JString arg0, jboolean arg1)
+		: JObject(
+			"android.content.RestrictionEntry",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline RestrictionEntry::RestrictionEntry(JString arg0, jint arg1)
+		: JObject(
+			"android.content.RestrictionEntry",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline RestrictionEntry::RestrictionEntry(JString arg0, JString arg1)
+		: JObject(
+			"android.content.RestrictionEntry",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::content::RestrictionEntry RestrictionEntry::createBundleArrayEntry(JString arg0, JArray arg1)
+	{
+		return callStaticObjectMethod(
+			"android.content.RestrictionEntry",
+			"createBundleArrayEntry",
+			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
+		);
+	}
+	inline android::content::RestrictionEntry RestrictionEntry::createBundleEntry(JString arg0, JArray arg1)
+	{
+		return callStaticObjectMethod(
+			"android.content.RestrictionEntry",
+			"createBundleEntry",
+			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
+		);
+	}
+	inline jint RestrictionEntry::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean RestrictionEntry::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JArray RestrictionEntry::getAllSelectedStrings() const
+	{
+		return callObjectMethod(
+			"getAllSelectedStrings",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray RestrictionEntry::getChoiceEntries() const
+	{
+		return callObjectMethod(
+			"getChoiceEntries",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray RestrictionEntry::getChoiceValues() const
+	{
+		return callObjectMethod(
+			"getChoiceValues",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JString RestrictionEntry::getDescription() const
+	{
+		return callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint RestrictionEntry::getIntValue() const
+	{
+		return callMethod<jint>(
+			"getIntValue",
+			"()I"
+		);
+	}
+	inline JString RestrictionEntry::getKey() const
+	{
+		return callObjectMethod(
+			"getKey",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JArray RestrictionEntry::getRestrictions() const
+	{
+		return callObjectMethod(
+			"getRestrictions",
+			"()[Landroid/content/RestrictionEntry;"
+		);
+	}
+	inline jboolean RestrictionEntry::getSelectedState() const
+	{
+		return callMethod<jboolean>(
+			"getSelectedState",
+			"()Z"
+		);
+	}
+	inline JString RestrictionEntry::getSelectedString() const
+	{
+		return callObjectMethod(
+			"getSelectedString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString RestrictionEntry::getTitle() const
+	{
+		return callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint RestrictionEntry::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline jint RestrictionEntry::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void RestrictionEntry::setAllSelectedStrings(JArray arg0) const
+	{
+		callMethod<void>(
+			"setAllSelectedStrings",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void RestrictionEntry::setChoiceEntries(JArray arg0) const
+	{
+		callMethod<void>(
+			"setChoiceEntries",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void RestrictionEntry::setChoiceEntries(android::content::Context arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"setChoiceEntries",
+			"(Landroid/content/Context;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void RestrictionEntry::setChoiceValues(JArray arg0) const
+	{
+		callMethod<void>(
+			"setChoiceValues",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void RestrictionEntry::setChoiceValues(android::content::Context arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"setChoiceValues",
+			"(Landroid/content/Context;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void RestrictionEntry::setDescription(JString arg0) const
+	{
+		callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void RestrictionEntry::setIntValue(jint arg0) const
+	{
+		callMethod<void>(
+			"setIntValue",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void RestrictionEntry::setRestrictions(JArray arg0) const
+	{
+		callMethod<void>(
+			"setRestrictions",
+			"([Landroid/content/RestrictionEntry;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void RestrictionEntry::setSelectedState(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setSelectedState",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void RestrictionEntry::setSelectedString(JString arg0) const
+	{
+		callMethod<void>(
+			"setSelectedString",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void RestrictionEntry::setTitle(JString arg0) const
+	{
+		callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void RestrictionEntry::setType(jint arg0) const
+	{
+		callMethod<void>(
+			"setType",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JString RestrictionEntry::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void RestrictionEntry::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

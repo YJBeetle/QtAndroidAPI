@@ -1,31 +1,51 @@
 #pragma once
 
-#include "../../java/io/FilterOutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
+#include "../../JByteArray.hpp"
+#include "../../java/io/OutputStream.def.hpp"
+#include "./Base64OutputStream.def.hpp"
 
 namespace android::util
 {
-	class Base64OutputStream : public java::io::FilterOutputStream
+	// Fields
+	
+	// Constructors
+	inline Base64OutputStream::Base64OutputStream(java::io::OutputStream arg0, jint arg1)
+		: java::io::FilterOutputStream(
+			"android.util.Base64OutputStream",
+			"(Ljava/io/OutputStream;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void Base64OutputStream::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Base64OutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		Base64OutputStream(QJniObject obj);
-		
-		// Constructors
-		Base64OutputStream(java::io::OutputStream arg0, jint arg1);
-		
-		// Methods
-		void close() const;
-		void write(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void Base64OutputStream::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Base64OutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::util
+
+// Base class headers
+#include "../../java/io/OutputStream.hpp"
+#include "../../java/io/FilterOutputStream.hpp"
 

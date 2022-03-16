@@ -1,36 +1,82 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::nfc
-{
-	class Tag;
-}
+#include "../../../JByteArray.hpp"
+#include "../Tag.def.hpp"
+#include "./NfcBarcode.def.hpp"
 
 namespace android::nfc::tech
 {
-	class NfcBarcode : public JObject
+	// Fields
+	inline jint NfcBarcode::TYPE_KOVIO()
 	{
-	public:
-		// Fields
-		static jint TYPE_KOVIO();
-		static jint TYPE_UNKNOWN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NfcBarcode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NfcBarcode(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::nfc::tech::NfcBarcode get(android::nfc::Tag arg0);
-		void close() const;
-		void connect() const;
-		JByteArray getBarcode() const;
-		android::nfc::Tag getTag() const;
-		jint getType() const;
-		jboolean isConnected() const;
-	};
+		return getStaticField<jint>(
+			"android.nfc.tech.NfcBarcode",
+			"TYPE_KOVIO"
+		);
+	}
+	inline jint NfcBarcode::TYPE_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.nfc.tech.NfcBarcode",
+			"TYPE_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::nfc::tech::NfcBarcode NfcBarcode::get(android::nfc::Tag arg0)
+	{
+		return callStaticObjectMethod(
+			"android.nfc.tech.NfcBarcode",
+			"get",
+			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcBarcode;",
+			arg0.object()
+		);
+	}
+	inline void NfcBarcode::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void NfcBarcode::connect() const
+	{
+		callMethod<void>(
+			"connect",
+			"()V"
+		);
+	}
+	inline JByteArray NfcBarcode::getBarcode() const
+	{
+		return callObjectMethod(
+			"getBarcode",
+			"()[B"
+		);
+	}
+	inline android::nfc::Tag NfcBarcode::getTag() const
+	{
+		return callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
+		);
+	}
+	inline jint NfcBarcode::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline jboolean NfcBarcode::isConnected() const
+	{
+		return callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
 } // namespace android::nfc::tech
+
+// Base class headers
 

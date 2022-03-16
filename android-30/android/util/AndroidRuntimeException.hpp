@@ -1,32 +1,44 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
-class JThrowable;
+#include "../../java/lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./AndroidRuntimeException.def.hpp"
 
 namespace android::util
 {
-	class AndroidRuntimeException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AndroidRuntimeException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		AndroidRuntimeException(QJniObject obj);
-		
-		// Constructors
-		AndroidRuntimeException();
-		AndroidRuntimeException(java::lang::Exception arg0);
-		AndroidRuntimeException(JString arg0);
-		AndroidRuntimeException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AndroidRuntimeException::AndroidRuntimeException()
+		: java::lang::RuntimeException(
+			"android.util.AndroidRuntimeException",
+			"()V"
+		) {}
+	inline AndroidRuntimeException::AndroidRuntimeException(java::lang::Exception arg0)
+		: java::lang::RuntimeException(
+			"android.util.AndroidRuntimeException",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	inline AndroidRuntimeException::AndroidRuntimeException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.util.AndroidRuntimeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline AndroidRuntimeException::AndroidRuntimeException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"android.util.AndroidRuntimeException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

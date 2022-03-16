@@ -1,28 +1,43 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./IllegalArgumentException.def.hpp"
 
 namespace java::lang
 {
-	class IllegalArgumentException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IllegalArgumentException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalArgumentException(QJniObject obj);
-		
-		// Constructors
-		IllegalArgumentException();
-		IllegalArgumentException(JString arg0);
-		IllegalArgumentException(JThrowable arg0);
-		IllegalArgumentException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IllegalArgumentException::IllegalArgumentException()
+		: java::lang::RuntimeException(
+			"java.lang.IllegalArgumentException",
+			"()V"
+		) {}
+	inline IllegalArgumentException::IllegalArgumentException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.IllegalArgumentException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline IllegalArgumentException::IllegalArgumentException(JThrowable arg0)
+		: java::lang::RuntimeException(
+			"java.lang.IllegalArgumentException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline IllegalArgumentException::IllegalArgumentException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"java.lang.IllegalArgumentException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

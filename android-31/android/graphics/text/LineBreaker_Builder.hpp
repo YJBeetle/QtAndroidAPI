@@ -1,33 +1,61 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JIntArray;
-namespace android::graphics::text
-{
-	class LineBreaker;
-}
+#include "../../../JIntArray.hpp"
+#include "./LineBreaker.def.hpp"
+#include "./LineBreaker_Builder.def.hpp"
 
 namespace android::graphics::text
 {
-	class LineBreaker_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline LineBreaker_Builder::LineBreaker_Builder()
+		: JObject(
+			"android.graphics.text.LineBreaker$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::graphics::text::LineBreaker LineBreaker_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LineBreaker_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LineBreaker_Builder(QJniObject obj);
-		
-		// Constructors
-		LineBreaker_Builder();
-		
-		// Methods
-		android::graphics::text::LineBreaker build() const;
-		android::graphics::text::LineBreaker_Builder setBreakStrategy(jint arg0) const;
-		android::graphics::text::LineBreaker_Builder setHyphenationFrequency(jint arg0) const;
-		android::graphics::text::LineBreaker_Builder setIndents(JIntArray arg0) const;
-		android::graphics::text::LineBreaker_Builder setJustificationMode(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/graphics/text/LineBreaker;"
+		);
+	}
+	inline android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setBreakStrategy(jint arg0) const
+	{
+		return callObjectMethod(
+			"setBreakStrategy",
+			"(I)Landroid/graphics/text/LineBreaker$Builder;",
+			arg0
+		);
+	}
+	inline android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setHyphenationFrequency(jint arg0) const
+	{
+		return callObjectMethod(
+			"setHyphenationFrequency",
+			"(I)Landroid/graphics/text/LineBreaker$Builder;",
+			arg0
+		);
+	}
+	inline android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setIndents(JIntArray arg0) const
+	{
+		return callObjectMethod(
+			"setIndents",
+			"([I)Landroid/graphics/text/LineBreaker$Builder;",
+			arg0.object<jintArray>()
+		);
+	}
+	inline android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setJustificationMode(jint arg0) const
+	{
+		return callObjectMethod(
+			"setJustificationMode",
+			"(I)Landroid/graphics/text/LineBreaker$Builder;",
+			arg0
+		);
+	}
 } // namespace android::graphics::text
+
+// Base class headers
 

@@ -1,35 +1,107 @@
 #pragma once
 
-#include "../../../java/text/Format_Field.hpp"
-
-class JObject;
-class JString;
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "./NumberFormat_Field.def.hpp"
 
 namespace android::icu::text
 {
-	class NumberFormat_Field : public java::text::Format_Field
+	// Fields
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::CURRENCY()
 	{
-	public:
-		// Fields
-		static android::icu::text::NumberFormat_Field CURRENCY();
-		static android::icu::text::NumberFormat_Field DECIMAL_SEPARATOR();
-		static android::icu::text::NumberFormat_Field EXPONENT();
-		static android::icu::text::NumberFormat_Field EXPONENT_SIGN();
-		static android::icu::text::NumberFormat_Field EXPONENT_SYMBOL();
-		static android::icu::text::NumberFormat_Field FRACTION();
-		static android::icu::text::NumberFormat_Field GROUPING_SEPARATOR();
-		static android::icu::text::NumberFormat_Field INTEGER();
-		static android::icu::text::NumberFormat_Field PERCENT();
-		static android::icu::text::NumberFormat_Field PERMILLE();
-		static android::icu::text::NumberFormat_Field SIGN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NumberFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormat_Field(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"CURRENCY",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::DECIMAL_SEPARATOR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"DECIMAL_SEPARATOR",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::EXPONENT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"EXPONENT",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::EXPONENT_SIGN()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"EXPONENT_SIGN",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::EXPONENT_SYMBOL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"EXPONENT_SYMBOL",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::FRACTION()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"FRACTION",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::GROUPING_SEPARATOR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"GROUPING_SEPARATOR",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::INTEGER()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"INTEGER",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::PERCENT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"PERCENT",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::PERMILLE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"PERMILLE",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	inline android::icu::text::NumberFormat_Field NumberFormat_Field::SIGN()
+	{
+		return getStaticObjectField(
+			"android.icu.text.NumberFormat$Field",
+			"SIGN",
+			"Landroid/icu/text/NumberFormat$Field;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/text/AttributedCharacterIterator_Attribute.hpp"
+#include "../../../java/text/Format_Field.hpp"
 

@@ -1,33 +1,61 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ApplicationMediaCapabilities.def.hpp"
+#include "../../JString.hpp"
+#include "./ApplicationMediaCapabilities_Builder.def.hpp"
 
 namespace android::media
 {
-	class ApplicationMediaCapabilities;
-}
-class JString;
-
-namespace android::media
-{
-	class ApplicationMediaCapabilities_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ApplicationMediaCapabilities_Builder::ApplicationMediaCapabilities_Builder()
+		: JObject(
+			"android.media.ApplicationMediaCapabilities$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedHdrType(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ApplicationMediaCapabilities_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationMediaCapabilities_Builder(QJniObject obj);
-		
-		// Constructors
-		ApplicationMediaCapabilities_Builder();
-		
-		// Methods
-		android::media::ApplicationMediaCapabilities_Builder addSupportedHdrType(JString arg0) const;
-		android::media::ApplicationMediaCapabilities_Builder addSupportedVideoMimeType(JString arg0) const;
-		android::media::ApplicationMediaCapabilities_Builder addUnsupportedHdrType(JString arg0) const;
-		android::media::ApplicationMediaCapabilities_Builder addUnsupportedVideoMimeType(JString arg0) const;
-		android::media::ApplicationMediaCapabilities build() const;
-	};
+		return callObjectMethod(
+			"addSupportedHdrType",
+			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedVideoMimeType(JString arg0) const
+	{
+		return callObjectMethod(
+			"addSupportedVideoMimeType",
+			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedHdrType(JString arg0) const
+	{
+		return callObjectMethod(
+			"addUnsupportedHdrType",
+			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedVideoMimeType(JString arg0) const
+	{
+		return callObjectMethod(
+			"addUnsupportedVideoMimeType",
+			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::ApplicationMediaCapabilities ApplicationMediaCapabilities_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/ApplicationMediaCapabilities;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

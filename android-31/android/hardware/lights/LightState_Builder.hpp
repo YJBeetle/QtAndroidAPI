@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LightState.def.hpp"
+#include "./LightState_Builder.def.hpp"
 
 namespace android::hardware::lights
 {
-	class LightState;
-}
-
-namespace android::hardware::lights
-{
-	class LightState_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline LightState_Builder::LightState_Builder()
+		: JObject(
+			"android.hardware.lights.LightState$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::hardware::lights::LightState LightState_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LightState_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LightState_Builder(QJniObject obj);
-		
-		// Constructors
-		LightState_Builder();
-		
-		// Methods
-		android::hardware::lights::LightState build() const;
-		android::hardware::lights::LightState_Builder setColor(jint arg0) const;
-		android::hardware::lights::LightState_Builder setPlayerId(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/hardware/lights/LightState;"
+		);
+	}
+	inline android::hardware::lights::LightState_Builder LightState_Builder::setColor(jint arg0) const
+	{
+		return callObjectMethod(
+			"setColor",
+			"(I)Landroid/hardware/lights/LightState$Builder;",
+			arg0
+		);
+	}
+	inline android::hardware::lights::LightState_Builder LightState_Builder::setPlayerId(jint arg0) const
+	{
+		return callObjectMethod(
+			"setPlayerId",
+			"(I)Landroid/hardware/lights/LightState$Builder;",
+			arg0
+		);
+	}
 } // namespace android::hardware::lights
+
+// Base class headers
 

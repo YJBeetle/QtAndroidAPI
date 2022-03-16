@@ -1,30 +1,81 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WindowInsetsAnimation.def.hpp"
 
 namespace android::view
 {
-	class WindowInsetsAnimation : public JObject
+	// Fields
+	
+	// Constructors
+	inline WindowInsetsAnimation::WindowInsetsAnimation(jint arg0, JObject arg1, jlong arg2)
+		: JObject(
+			"android.view.WindowInsetsAnimation",
+			"(ILandroid/view/animation/Interpolator;J)V",
+			arg0,
+			arg1.object(),
+			arg2
+		) {}
+	
+	// Methods
+	inline jfloat WindowInsetsAnimation::getAlpha() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WindowInsetsAnimation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsetsAnimation(QJniObject obj);
-		
-		// Constructors
-		WindowInsetsAnimation(jint arg0, JObject arg1, jlong arg2);
-		
-		// Methods
-		jfloat getAlpha() const;
-		jlong getDurationMillis() const;
-		jfloat getFraction() const;
-		jfloat getInterpolatedFraction() const;
-		JObject getInterpolator() const;
-		jint getTypeMask() const;
-		void setAlpha(jfloat arg0) const;
-		void setFraction(jfloat arg0) const;
-	};
+		return callMethod<jfloat>(
+			"getAlpha",
+			"()F"
+		);
+	}
+	inline jlong WindowInsetsAnimation::getDurationMillis() const
+	{
+		return callMethod<jlong>(
+			"getDurationMillis",
+			"()J"
+		);
+	}
+	inline jfloat WindowInsetsAnimation::getFraction() const
+	{
+		return callMethod<jfloat>(
+			"getFraction",
+			"()F"
+		);
+	}
+	inline jfloat WindowInsetsAnimation::getInterpolatedFraction() const
+	{
+		return callMethod<jfloat>(
+			"getInterpolatedFraction",
+			"()F"
+		);
+	}
+	inline JObject WindowInsetsAnimation::getInterpolator() const
+	{
+		return callObjectMethod(
+			"getInterpolator",
+			"()Landroid/view/animation/Interpolator;"
+		);
+	}
+	inline jint WindowInsetsAnimation::getTypeMask() const
+	{
+		return callMethod<jint>(
+			"getTypeMask",
+			"()I"
+		);
+	}
+	inline void WindowInsetsAnimation::setAlpha(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setAlpha",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void WindowInsetsAnimation::setFraction(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setFraction",
+			"(F)V",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

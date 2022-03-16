@@ -1,43 +1,165 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./SparseArray.def.hpp"
 
 namespace android::util
 {
-	class SparseArray : public JObject
+	// Fields
+	
+	// Constructors
+	inline SparseArray::SparseArray()
+		: JObject(
+			"android.util.SparseArray",
+			"()V"
+		) {}
+	inline SparseArray::SparseArray(jint arg0)
+		: JObject(
+			"android.util.SparseArray",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline void SparseArray::append(jint arg0, JObject arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SparseArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SparseArray(QJniObject obj);
-		
-		// Constructors
-		SparseArray();
-		SparseArray(jint arg0);
-		
-		// Methods
-		void append(jint arg0, JObject arg1) const;
-		void clear() const;
-		android::util::SparseArray clone() const;
-		void delete_(jint arg0) const;
-		JObject get(jint arg0) const;
-		JObject get(jint arg0, JObject arg1) const;
-		jint indexOfKey(jint arg0) const;
-		jint indexOfValue(JObject arg0) const;
-		jint keyAt(jint arg0) const;
-		void put(jint arg0, JObject arg1) const;
-		void remove(jint arg0) const;
-		void removeAt(jint arg0) const;
-		void removeAtRange(jint arg0, jint arg1) const;
-		void setValueAt(jint arg0, JObject arg1) const;
-		jint size() const;
-		JString toString() const;
-		JObject valueAt(jint arg0) const;
-	};
+		callMethod<void>(
+			"append",
+			"(ILjava/lang/Object;)V",
+			arg0,
+			arg1.object<jobject>()
+		);
+	}
+	inline void SparseArray::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline android::util::SparseArray SparseArray::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Landroid/util/SparseArray;"
+		);
+	}
+	inline void SparseArray::delete_(jint arg0) const
+	{
+		callMethod<void>(
+			"delete",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JObject SparseArray::get(jint arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(I)Ljava/lang/Object;",
+			arg0
+		);
+	}
+	inline JObject SparseArray::get(jint arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"get",
+			"(ILjava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1.object<jobject>()
+		);
+	}
+	inline jint SparseArray::indexOfKey(jint arg0) const
+	{
+		return callMethod<jint>(
+			"indexOfKey",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint SparseArray::indexOfValue(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"indexOfValue",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint SparseArray::keyAt(jint arg0) const
+	{
+		return callMethod<jint>(
+			"keyAt",
+			"(I)I",
+			arg0
+		);
+	}
+	inline void SparseArray::put(jint arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"put",
+			"(ILjava/lang/Object;)V",
+			arg0,
+			arg1.object<jobject>()
+		);
+	}
+	inline void SparseArray::remove(jint arg0) const
+	{
+		callMethod<void>(
+			"remove",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void SparseArray::removeAt(jint arg0) const
+	{
+		callMethod<void>(
+			"removeAt",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void SparseArray::removeAtRange(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"removeAtRange",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void SparseArray::setValueAt(jint arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"setValueAt",
+			"(ILjava/lang/Object;)V",
+			arg0,
+			arg1.object<jobject>()
+		);
+	}
+	inline jint SparseArray::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JString SparseArray::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject SparseArray::valueAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"valueAt",
+			"(I)Ljava/lang/Object;",
+			arg0
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

@@ -1,36 +1,86 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRecorder.def.hpp"
+#include "./MediaRecorder_OutputFormat.def.hpp"
 
 namespace android::media
 {
-	class MediaRecorder;
-}
-
-namespace android::media
-{
-	class MediaRecorder_OutputFormat : public JObject
+	// Fields
+	inline jint MediaRecorder_OutputFormat::AAC_ADTS()
 	{
-	public:
-		// Fields
-		static jint AAC_ADTS();
-		static jint AMR_NB();
-		static jint AMR_WB();
-		static jint DEFAULT();
-		static jint MPEG_2_TS();
-		static jint MPEG_4();
-		static jint OGG();
-		static jint RAW_AMR();
-		static jint THREE_GPP();
-		static jint WEBM();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaRecorder_OutputFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder_OutputFormat(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"AAC_ADTS"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::AMR_NB()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"AMR_NB"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::AMR_WB()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"AMR_WB"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"DEFAULT"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::MPEG_2_TS()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"MPEG_2_TS"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::MPEG_4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"MPEG_4"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::OGG()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"OGG"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::RAW_AMR()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"RAW_AMR"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::THREE_GPP()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"THREE_GPP"
+		);
+	}
+	inline jint MediaRecorder_OutputFormat::WEBM()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$OutputFormat",
+			"WEBM"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

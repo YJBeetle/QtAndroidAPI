@@ -1,34 +1,70 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_CommonDataKinds_Callable.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_CommonDataKinds_Callable : public JObject
+	// Fields
+	inline android::net::Uri ContactsContract_CommonDataKinds_Callable::CONTENT_FILTER_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_FILTER_URI();
-		static android::net::Uri CONTENT_URI();
-		static android::net::Uri ENTERPRISE_CONTENT_FILTER_URI();
-		static JString EXTRA_ADDRESS_BOOK_INDEX();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Callable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Callable(QJniObject obj);
-		
-		// Constructors
-		ContactsContract_CommonDataKinds_Callable();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Callable",
+			"CONTENT_FILTER_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri ContactsContract_CommonDataKinds_Callable::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Callable",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri ContactsContract_CommonDataKinds_Callable::ENTERPRISE_CONTENT_FILTER_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Callable",
+			"ENTERPRISE_CONTENT_FILTER_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Callable::EXTRA_ADDRESS_BOOK_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Callable",
+			"EXTRA_ADDRESS_BOOK_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Callable::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Callable",
+			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Callable::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Callable",
+			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline ContactsContract_CommonDataKinds_Callable::ContactsContract_CommonDataKinds_Callable()
+		: JObject(
+			"android.provider.ContactsContract$CommonDataKinds$Callable",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

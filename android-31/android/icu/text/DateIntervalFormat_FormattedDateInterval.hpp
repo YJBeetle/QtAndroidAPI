@@ -1,35 +1,72 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ConstrainedFieldPosition.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./DateIntervalFormat_FormattedDateInterval.def.hpp"
 
 namespace android::icu::text
 {
-	class ConstrainedFieldPosition;
-}
-class JString;
-class JString;
-
-namespace android::icu::text
-{
-	class DateIntervalFormat_FormattedDateInterval : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject DateIntervalFormat_FormattedDateInterval::appendTo(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DateIntervalFormat_FormattedDateInterval(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateIntervalFormat_FormattedDateInterval(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject appendTo(JObject arg0) const;
-		jchar charAt(jint arg0) const;
-		jint length() const;
-		jboolean nextPosition(android::icu::text::ConstrainedFieldPosition arg0) const;
-		JString subSequence(jint arg0, jint arg1) const;
-		JObject toCharacterIterator() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"appendTo",
+			"(Ljava/lang/Appendable;)Ljava/lang/Appendable;",
+			arg0.object()
+		);
+	}
+	inline jchar DateIntervalFormat_FormattedDateInterval::charAt(jint arg0) const
+	{
+		return callMethod<jchar>(
+			"charAt",
+			"(I)C",
+			arg0
+		);
+	}
+	inline jint DateIntervalFormat_FormattedDateInterval::length() const
+	{
+		return callMethod<jint>(
+			"length",
+			"()I"
+		);
+	}
+	inline jboolean DateIntervalFormat_FormattedDateInterval::nextPosition(android::icu::text::ConstrainedFieldPosition arg0) const
+	{
+		return callMethod<jboolean>(
+			"nextPosition",
+			"(Landroid/icu/text/ConstrainedFieldPosition;)Z",
+			arg0.object()
+		);
+	}
+	inline JString DateIntervalFormat_FormattedDateInterval::subSequence(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"subSequence",
+			"(II)Ljava/lang/CharSequence;",
+			arg0,
+			arg1
+		);
+	}
+	inline JObject DateIntervalFormat_FormattedDateInterval::toCharacterIterator() const
+	{
+		return callObjectMethod(
+			"toCharacterIterator",
+			"()Ljava/text/AttributedCharacterIterator;"
+		);
+	}
+	inline JString DateIntervalFormat_FormattedDateInterval::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

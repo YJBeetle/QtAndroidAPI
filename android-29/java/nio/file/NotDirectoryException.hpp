@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./FileSystemException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./NotDirectoryException.def.hpp"
 
 namespace java::nio::file
 {
-	class NotDirectoryException : public java::nio::file::FileSystemException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NotDirectoryException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		NotDirectoryException(QJniObject obj);
-		
-		// Constructors
-		NotDirectoryException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NotDirectoryException::NotDirectoryException(JString arg0)
+		: java::nio::file::FileSystemException(
+			"java.nio.file.NotDirectoryException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
+#include "./FileSystemException.hpp"
 

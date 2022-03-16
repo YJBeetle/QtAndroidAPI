@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NoSuchPropertyException.def.hpp"
 
 namespace android::util
 {
-	class NoSuchPropertyException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoSuchPropertyException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchPropertyException(QJniObject obj);
-		
-		// Constructors
-		NoSuchPropertyException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoSuchPropertyException::NoSuchPropertyException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.util.NoSuchPropertyException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

@@ -1,61 +1,191 @@
 #pragma once
 
+#include "../../../../JIntArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../util/Range.def.hpp"
+#include "../../../util/Size.def.hpp"
+#include "../../../view/Surface.def.hpp"
+#include "../../../../JClass.hpp"
 #include "../../../../JObject.hpp"
-
-class JIntArray;
-class JArray;
-class JArray;
-namespace android::util
-{
-	class Range;
-}
-namespace android::util
-{
-	class Size;
-}
-namespace android::view
-{
-	class Surface;
-}
-class JClass;
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./StreamConfigurationMap.def.hpp"
 
 namespace android::hardware::camera2::params
 {
-	class StreamConfigurationMap : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean StreamConfigurationMap::isOutputSupportedFor(JClass arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StreamConfigurationMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamConfigurationMap(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isOutputSupportedFor(JClass arg0);
-		jboolean equals(JObject arg0) const;
-		JArray getHighResolutionOutputSizes(jint arg0) const;
-		JArray getHighSpeedVideoFpsRanges() const;
-		JArray getHighSpeedVideoFpsRangesFor(android::util::Size arg0) const;
-		JArray getHighSpeedVideoSizes() const;
-		JArray getHighSpeedVideoSizesFor(android::util::Range arg0) const;
-		JIntArray getInputFormats() const;
-		JArray getInputSizes(jint arg0) const;
-		JIntArray getOutputFormats() const;
-		jlong getOutputMinFrameDuration(jint arg0, android::util::Size arg1) const;
-		jlong getOutputMinFrameDuration(JClass arg0, android::util::Size arg1) const;
-		JArray getOutputSizes(jint arg0) const;
-		JArray getOutputSizes(JClass arg0) const;
-		jlong getOutputStallDuration(jint arg0, android::util::Size arg1) const;
-		jlong getOutputStallDuration(JClass arg0, android::util::Size arg1) const;
-		JIntArray getValidOutputFormatsForInput(jint arg0) const;
-		jint hashCode() const;
-		jboolean isOutputSupportedFor(android::view::Surface arg0) const;
-		jboolean isOutputSupportedFor(jint arg0) const;
-		JString toString() const;
-	};
+		return callStaticMethod<jboolean>(
+			"android.hardware.camera2.params.StreamConfigurationMap",
+			"isOutputSupportedFor",
+			"(Ljava/lang/Class;)Z",
+			arg0.object<jclass>()
+		);
+	}
+	inline jboolean StreamConfigurationMap::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JArray StreamConfigurationMap::getHighResolutionOutputSizes(jint arg0) const
+	{
+		return callObjectMethod(
+			"getHighResolutionOutputSizes",
+			"(I)[Landroid/util/Size;",
+			arg0
+		);
+	}
+	inline JArray StreamConfigurationMap::getHighSpeedVideoFpsRanges() const
+	{
+		return callObjectMethod(
+			"getHighSpeedVideoFpsRanges",
+			"()[Landroid/util/Range;"
+		);
+	}
+	inline JArray StreamConfigurationMap::getHighSpeedVideoFpsRangesFor(android::util::Size arg0) const
+	{
+		return callObjectMethod(
+			"getHighSpeedVideoFpsRangesFor",
+			"(Landroid/util/Size;)[Landroid/util/Range;",
+			arg0.object()
+		);
+	}
+	inline JArray StreamConfigurationMap::getHighSpeedVideoSizes() const
+	{
+		return callObjectMethod(
+			"getHighSpeedVideoSizes",
+			"()[Landroid/util/Size;"
+		);
+	}
+	inline JArray StreamConfigurationMap::getHighSpeedVideoSizesFor(android::util::Range arg0) const
+	{
+		return callObjectMethod(
+			"getHighSpeedVideoSizesFor",
+			"(Landroid/util/Range;)[Landroid/util/Size;",
+			arg0.object()
+		);
+	}
+	inline JIntArray StreamConfigurationMap::getInputFormats() const
+	{
+		return callObjectMethod(
+			"getInputFormats",
+			"()[I"
+		);
+	}
+	inline JArray StreamConfigurationMap::getInputSizes(jint arg0) const
+	{
+		return callObjectMethod(
+			"getInputSizes",
+			"(I)[Landroid/util/Size;",
+			arg0
+		);
+	}
+	inline JIntArray StreamConfigurationMap::getOutputFormats() const
+	{
+		return callObjectMethod(
+			"getOutputFormats",
+			"()[I"
+		);
+	}
+	inline jlong StreamConfigurationMap::getOutputMinFrameDuration(jint arg0, android::util::Size arg1) const
+	{
+		return callMethod<jlong>(
+			"getOutputMinFrameDuration",
+			"(ILandroid/util/Size;)J",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline jlong StreamConfigurationMap::getOutputMinFrameDuration(JClass arg0, android::util::Size arg1) const
+	{
+		return callMethod<jlong>(
+			"getOutputMinFrameDuration",
+			"(Ljava/lang/Class;Landroid/util/Size;)J",
+			arg0.object<jclass>(),
+			arg1.object()
+		);
+	}
+	inline JArray StreamConfigurationMap::getOutputSizes(jint arg0) const
+	{
+		return callObjectMethod(
+			"getOutputSizes",
+			"(I)[Landroid/util/Size;",
+			arg0
+		);
+	}
+	inline JArray StreamConfigurationMap::getOutputSizes(JClass arg0) const
+	{
+		return callObjectMethod(
+			"getOutputSizes",
+			"(Ljava/lang/Class;)[Landroid/util/Size;",
+			arg0.object<jclass>()
+		);
+	}
+	inline jlong StreamConfigurationMap::getOutputStallDuration(jint arg0, android::util::Size arg1) const
+	{
+		return callMethod<jlong>(
+			"getOutputStallDuration",
+			"(ILandroid/util/Size;)J",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline jlong StreamConfigurationMap::getOutputStallDuration(JClass arg0, android::util::Size arg1) const
+	{
+		return callMethod<jlong>(
+			"getOutputStallDuration",
+			"(Ljava/lang/Class;Landroid/util/Size;)J",
+			arg0.object<jclass>(),
+			arg1.object()
+		);
+	}
+	inline JIntArray StreamConfigurationMap::getValidOutputFormatsForInput(jint arg0) const
+	{
+		return callObjectMethod(
+			"getValidOutputFormatsForInput",
+			"(I)[I",
+			arg0
+		);
+	}
+	inline jint StreamConfigurationMap::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean StreamConfigurationMap::isOutputSupportedFor(android::view::Surface arg0) const
+	{
+		return callMethod<jboolean>(
+			"isOutputSupportedFor",
+			"(Landroid/view/Surface;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean StreamConfigurationMap::isOutputSupportedFor(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isOutputSupportedFor",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline JString StreamConfigurationMap::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::hardware::camera2::params
+
+// Base class headers
 

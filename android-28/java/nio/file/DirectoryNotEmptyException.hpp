@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./FileSystemException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DirectoryNotEmptyException.def.hpp"
 
 namespace java::nio::file
 {
-	class DirectoryNotEmptyException : public java::nio::file::FileSystemException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DirectoryNotEmptyException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		DirectoryNotEmptyException(QJniObject obj);
-		
-		// Constructors
-		DirectoryNotEmptyException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DirectoryNotEmptyException::DirectoryNotEmptyException(JString arg0)
+		: java::nio::file::FileSystemException(
+			"java.nio.file.DirectoryNotEmptyException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
+#include "./FileSystemException.hpp"
 

@@ -1,30 +1,41 @@
 #pragma once
 
-#include "./Shader.hpp"
-
-class JFloatArray;
-class JIntArray;
-namespace android::graphics
-{
-	class Shader_TileMode;
-}
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "./Shader_TileMode.def.hpp"
+#include "./RadialGradient.def.hpp"
 
 namespace android::graphics
 {
-	class RadialGradient : public android::graphics::Shader
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RadialGradient(const char *className, const char *sig, Ts...agv) : android::graphics::Shader(className, sig, std::forward<Ts>(agv)...) {}
-		RadialGradient(QJniObject obj);
-		
-		// Constructors
-		RadialGradient(jfloat arg0, jfloat arg1, jfloat arg2, JIntArray arg3, JFloatArray arg4, android::graphics::Shader_TileMode arg5);
-		RadialGradient(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, android::graphics::Shader_TileMode arg5);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline RadialGradient::RadialGradient(jfloat arg0, jfloat arg1, jfloat arg2, JIntArray arg3, JFloatArray arg4, android::graphics::Shader_TileMode arg5)
+		: android::graphics::Shader(
+			"android.graphics.RadialGradient",
+			"(FFF[I[FLandroid/graphics/Shader$TileMode;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.object<jintArray>(),
+			arg4.object<jfloatArray>(),
+			arg5.object()
+		) {}
+	inline RadialGradient::RadialGradient(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, android::graphics::Shader_TileMode arg5)
+		: android::graphics::Shader(
+			"android.graphics.RadialGradient",
+			"(FFFIILandroid/graphics/Shader$TileMode;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.object()
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "./Shader.hpp"
 

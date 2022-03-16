@@ -1,24 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LocaleData_MeasurementSystem.def.hpp"
 
 namespace android::icu::util
 {
-	class LocaleData_MeasurementSystem : public JObject
+	// Fields
+	inline android::icu::util::LocaleData_MeasurementSystem LocaleData_MeasurementSystem::SI()
 	{
-	public:
-		// Fields
-		static android::icu::util::LocaleData_MeasurementSystem SI();
-		static android::icu::util::LocaleData_MeasurementSystem UK();
-		static android::icu::util::LocaleData_MeasurementSystem US();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LocaleData_MeasurementSystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData_MeasurementSystem(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.icu.util.LocaleData$MeasurementSystem",
+			"SI",
+			"Landroid/icu/util/LocaleData$MeasurementSystem;"
+		);
+	}
+	inline android::icu::util::LocaleData_MeasurementSystem LocaleData_MeasurementSystem::UK()
+	{
+		return getStaticObjectField(
+			"android.icu.util.LocaleData$MeasurementSystem",
+			"UK",
+			"Landroid/icu/util/LocaleData$MeasurementSystem;"
+		);
+	}
+	inline android::icu::util::LocaleData_MeasurementSystem LocaleData_MeasurementSystem::US()
+	{
+		return getStaticObjectField(
+			"android.icu.util.LocaleData$MeasurementSystem",
+			"US",
+			"Landroid/icu/util/LocaleData$MeasurementSystem;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::icu::util
+
+// Base class headers
 

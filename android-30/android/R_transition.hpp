@@ -1,30 +1,76 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_transition.def.hpp"
 
 namespace android
 {
-	class R_transition : public JObject
+	// Fields
+	inline jint R_transition::explode()
 	{
-	public:
-		// Fields
-		static jint explode();
-		static jint fade();
-		static jint move();
-		static jint no_transition();
-		static jint slide_bottom();
-		static jint slide_left();
-		static jint slide_right();
-		static jint slide_top();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_transition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_transition(QJniObject obj);
-		
-		// Constructors
-		R_transition();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$transition",
+			"explode"
+		);
+	}
+	inline jint R_transition::fade()
+	{
+		return getStaticField<jint>(
+			"android.R$transition",
+			"fade"
+		);
+	}
+	inline jint R_transition::move()
+	{
+		return getStaticField<jint>(
+			"android.R$transition",
+			"move"
+		);
+	}
+	inline jint R_transition::no_transition()
+	{
+		return getStaticField<jint>(
+			"android.R$transition",
+			"no_transition"
+		);
+	}
+	inline jint R_transition::slide_bottom()
+	{
+		return getStaticField<jint>(
+			"android.R$transition",
+			"slide_bottom"
+		);
+	}
+	inline jint R_transition::slide_left()
+	{
+		return getStaticField<jint>(
+			"android.R$transition",
+			"slide_left"
+		);
+	}
+	inline jint R_transition::slide_right()
+	{
+		return getStaticField<jint>(
+			"android.R$transition",
+			"slide_right"
+		);
+	}
+	inline jint R_transition::slide_top()
+	{
+		return getStaticField<jint>(
+			"android.R$transition",
+			"slide_top"
+		);
+	}
+	
+	// Constructors
+	inline R_transition::R_transition()
+		: JObject(
+			"android.R$transition",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

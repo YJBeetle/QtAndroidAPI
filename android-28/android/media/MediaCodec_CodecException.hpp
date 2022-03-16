@@ -1,29 +1,61 @@
 #pragma once
 
-#include "../../java/lang/IllegalStateException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaCodec_CodecException.def.hpp"
 
 namespace android::media
 {
-	class MediaCodec_CodecException : public java::lang::IllegalStateException
+	// Fields
+	inline jint MediaCodec_CodecException::ERROR_INSUFFICIENT_RESOURCE()
 	{
-	public:
-		// Fields
-		static jint ERROR_INSUFFICIENT_RESOURCE();
-		static jint ERROR_RECLAIMED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodec_CodecException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_CodecException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getDiagnosticInfo() const;
-		jint getErrorCode() const;
-		jboolean isRecoverable() const;
-		jboolean isTransient() const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaCodec$CodecException",
+			"ERROR_INSUFFICIENT_RESOURCE"
+		);
+	}
+	inline jint MediaCodec_CodecException::ERROR_RECLAIMED()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodec$CodecException",
+			"ERROR_RECLAIMED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString MediaCodec_CodecException::getDiagnosticInfo() const
+	{
+		return callObjectMethod(
+			"getDiagnosticInfo",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint MediaCodec_CodecException::getErrorCode() const
+	{
+		return callMethod<jint>(
+			"getErrorCode",
+			"()I"
+		);
+	}
+	inline jboolean MediaCodec_CodecException::isRecoverable() const
+	{
+		return callMethod<jboolean>(
+			"isRecoverable",
+			"()Z"
+		);
+	}
+	inline jboolean MediaCodec_CodecException::isTransient() const
+	{
+		return callMethod<jboolean>(
+			"isTransient",
+			"()Z"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "../../java/lang/IllegalStateException.hpp"
 

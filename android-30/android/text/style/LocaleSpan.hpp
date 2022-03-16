@@ -1,48 +1,92 @@
 #pragma once
 
-#include "./MetricAffectingSpan.hpp"
-
-namespace android::os
-{
-	class LocaleList;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::text
-{
-	class TextPaint;
-}
-namespace java::util
-{
-	class Locale;
-}
+#include "../../os/LocaleList.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../TextPaint.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./LocaleSpan.def.hpp"
 
 namespace android::text::style
 {
-	class LocaleSpan : public android::text::style::MetricAffectingSpan
+	// Fields
+	
+	// Constructors
+	inline LocaleSpan::LocaleSpan(android::os::LocaleList arg0)
+		: android::text::style::MetricAffectingSpan(
+			"android.text.style.LocaleSpan",
+			"(Landroid/os/LocaleList;)V",
+			arg0.object()
+		) {}
+	inline LocaleSpan::LocaleSpan(android::os::Parcel arg0)
+		: android::text::style::MetricAffectingSpan(
+			"android.text.style.LocaleSpan",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		) {}
+	inline LocaleSpan::LocaleSpan(java::util::Locale arg0)
+		: android::text::style::MetricAffectingSpan(
+			"android.text.style.LocaleSpan",
+			"(Ljava/util/Locale;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint LocaleSpan::describeContents() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LocaleSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleSpan(QJniObject obj);
-		
-		// Constructors
-		LocaleSpan(android::os::LocaleList arg0);
-		LocaleSpan(android::os::Parcel arg0);
-		LocaleSpan(java::util::Locale arg0);
-		
-		// Methods
-		jint describeContents() const;
-		java::util::Locale getLocale() const;
-		android::os::LocaleList getLocales() const;
-		jint getSpanTypeId() const;
-		void updateDrawState(android::text::TextPaint arg0) const;
-		void updateMeasureState(android::text::TextPaint arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline java::util::Locale LocaleSpan::getLocale() const
+	{
+		return callObjectMethod(
+			"getLocale",
+			"()Ljava/util/Locale;"
+		);
+	}
+	inline android::os::LocaleList LocaleSpan::getLocales() const
+	{
+		return callObjectMethod(
+			"getLocales",
+			"()Landroid/os/LocaleList;"
+		);
+	}
+	inline jint LocaleSpan::getSpanTypeId() const
+	{
+		return callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
+	inline void LocaleSpan::updateDrawState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
+	inline void LocaleSpan::updateMeasureState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
+	inline void LocaleSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./CharacterStyle.hpp"
+#include "./MetricAffectingSpan.hpp"
 

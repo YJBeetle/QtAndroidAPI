@@ -1,29 +1,35 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
+#include "../../JString.hpp"
+#include "../../java/net/InetAddress.def.hpp"
+#include "./InetAddresses.def.hpp"
 
 namespace android::net
 {
-	class InetAddresses : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean InetAddresses::isNumericAddress(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InetAddresses(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InetAddresses(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isNumericAddress(JString arg0);
-		static java::net::InetAddress parseNumericAddress(JString arg0);
-	};
+		return callStaticMethod<jboolean>(
+			"android.net.InetAddresses",
+			"isNumericAddress",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::net::InetAddress InetAddresses::parseNumericAddress(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.net.InetAddresses",
+			"parseNumericAddress",
+			"(Ljava/lang/String;)Ljava/net/InetAddress;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

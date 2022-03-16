@@ -1,31 +1,26 @@
 #pragma once
 
-#include "./Precision.hpp"
+#include "./Precision.def.hpp"
+#include "../util/Currency.def.hpp"
+#include "./CurrencyPrecision.def.hpp"
 
 namespace android::icu::number
 {
-	class Precision;
-}
-namespace android::icu::util
-{
-	class Currency;
-}
-
-namespace android::icu::number
-{
-	class CurrencyPrecision : public android::icu::number::Precision
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::Precision CurrencyPrecision::withCurrency(android::icu::util::Currency arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CurrencyPrecision(const char *className, const char *sig, Ts...agv) : android::icu::number::Precision(className, sig, std::forward<Ts>(agv)...) {}
-		CurrencyPrecision(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::icu::number::Precision withCurrency(android::icu::util::Currency arg0) const;
-	};
+		return callObjectMethod(
+			"withCurrency",
+			"(Landroid/icu/util/Currency;)Landroid/icu/number/Precision;",
+			arg0.object()
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
+#include "./Precision.hpp"
 

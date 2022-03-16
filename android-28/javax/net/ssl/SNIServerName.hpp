@@ -1,31 +1,55 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
+#include "../../../JCharArray.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JCharArray;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./SNIServerName.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SNIServerName : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean SNIServerName::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SNIServerName(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SNIServerName(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JByteArray getEncoded() const;
-		jint getType() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JByteArray SNIServerName::getEncoded() const
+	{
+		return callObjectMethod(
+			"getEncoded",
+			"()[B"
+		);
+	}
+	inline jint SNIServerName::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline jint SNIServerName::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString SNIServerName::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
 

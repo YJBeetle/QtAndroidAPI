@@ -1,28 +1,32 @@
 #pragma once
 
-#include "../../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
+#include "../../content/Intent.def.hpp"
+#include "./CarrierMessagingClientService.def.hpp"
 
 namespace android::service::carrier
 {
-	class CarrierMessagingClientService : public android::app::Service
+	// Fields
+	
+	// Constructors
+	inline CarrierMessagingClientService::CarrierMessagingClientService()
+		: android::app::Service(
+			"android.service.carrier.CarrierMessagingClientService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject CarrierMessagingClientService::onBind(android::content::Intent arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CarrierMessagingClientService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierMessagingClientService(QJniObject obj);
-		
-		// Constructors
-		CarrierMessagingClientService();
-		
-		// Methods
-		JObject onBind(android::content::Intent arg0) const;
-	};
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
 } // namespace android::service::carrier
+
+// Base class headers
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
+#include "../../app/Service.hpp"
 

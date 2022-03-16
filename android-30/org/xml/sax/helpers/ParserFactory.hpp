@@ -1,25 +1,33 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./ParserFactory.def.hpp"
 
 namespace org::xml::sax::helpers
 {
-	class ParserFactory : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject ParserFactory::makeParser()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ParserFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ParserFactory(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject makeParser();
-		static JObject makeParser(JString arg0);
-	};
+		return callStaticObjectMethod(
+			"org.xml.sax.helpers.ParserFactory",
+			"makeParser",
+			"()Lorg/xml/sax/Parser;"
+		);
+	}
+	inline JObject ParserFactory::makeParser(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"org.xml.sax.helpers.ParserFactory",
+			"makeParser",
+			"(Ljava/lang/String;)Lorg/xml/sax/Parser;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace org::xml::sax::helpers
+
+// Base class headers
 

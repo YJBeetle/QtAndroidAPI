@@ -1,35 +1,48 @@
 #pragma once
 
-#include "./EapSessionConfig_EapMethodConfig.hpp"
+#include "./EapSessionConfig.def.hpp"
+#include "../../../JObject.hpp"
+#include "../../../java/security/cert/X509Certificate.def.hpp"
+#include "./EapSessionConfig_EapTtlsConfig.def.hpp"
 
 namespace android::net::eap
 {
-	class EapSessionConfig;
-}
-class JObject;
-namespace java::security::cert
-{
-	class X509Certificate;
-}
-
-namespace android::net::eap
-{
-	class EapSessionConfig_EapTtlsConfig : public android::net::eap::EapSessionConfig_EapMethodConfig
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean EapSessionConfig_EapTtlsConfig::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EapSessionConfig_EapTtlsConfig(const char *className, const char *sig, Ts...agv) : android::net::eap::EapSessionConfig_EapMethodConfig(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_EapTtlsConfig(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		android::net::eap::EapSessionConfig getInnerEapSessionConfig() const;
-		java::security::cert::X509Certificate getServerCaCert() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::net::eap::EapSessionConfig EapSessionConfig_EapTtlsConfig::getInnerEapSessionConfig() const
+	{
+		return callObjectMethod(
+			"getInnerEapSessionConfig",
+			"()Landroid/net/eap/EapSessionConfig;"
+		);
+	}
+	inline java::security::cert::X509Certificate EapSessionConfig_EapTtlsConfig::getServerCaCert() const
+	{
+		return callObjectMethod(
+			"getServerCaCert",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	inline jint EapSessionConfig_EapTtlsConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::eap
+
+// Base class headers
+#include "./EapSessionConfig_EapMethodConfig.hpp"
 

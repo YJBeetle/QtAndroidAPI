@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../io/IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UnknownHostException.def.hpp"
 
 namespace java::net
 {
-	class UnknownHostException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UnknownHostException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		UnknownHostException(QJniObject obj);
-		
-		// Constructors
-		UnknownHostException();
-		UnknownHostException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UnknownHostException::UnknownHostException()
+		: java::io::IOException(
+			"java.net.UnknownHostException",
+			"()V"
+		) {}
+	inline UnknownHostException::UnknownHostException(JString arg0)
+		: java::io::IOException(
+			"java.net.UnknownHostException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 

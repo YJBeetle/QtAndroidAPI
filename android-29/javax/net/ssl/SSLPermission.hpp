@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../../../java/security/BasicPermission.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SSLPermission.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLPermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SSLPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		SSLPermission(QJniObject obj);
-		
-		// Constructors
-		SSLPermission(JString arg0);
-		SSLPermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SSLPermission::SSLPermission(JString arg0)
+		: java::security::BasicPermission(
+			"javax.net.ssl.SSLPermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SSLPermission::SSLPermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"javax.net.ssl.SSLPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/security/Permission.hpp"
+#include "../../../java/security/BasicPermission.hpp"
 

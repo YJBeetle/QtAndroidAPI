@@ -1,26 +1,32 @@
 #pragma once
 
-#include "../../lang/RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./CompletionException.def.hpp"
 
 namespace java::util::concurrent
 {
-	class CompletionException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CompletionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		CompletionException(QJniObject obj);
-		
-		// Constructors
-		CompletionException(JThrowable arg0);
-		CompletionException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CompletionException::CompletionException(JThrowable arg0)
+		: java::lang::RuntimeException(
+			"java.util.concurrent.CompletionException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline CompletionException::CompletionException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"java.util.concurrent.CompletionException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 

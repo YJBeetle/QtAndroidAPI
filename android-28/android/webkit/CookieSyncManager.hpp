@@ -1,34 +1,69 @@
 #pragma once
 
+#include "../content/Context.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JObject;
+#include "./CookieSyncManager.def.hpp"
 
 namespace android::webkit
 {
-	class CookieSyncManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::webkit::CookieSyncManager CookieSyncManager::createInstance(android::content::Context arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CookieSyncManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CookieSyncManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::webkit::CookieSyncManager createInstance(android::content::Context arg0);
-		static android::webkit::CookieSyncManager getInstance();
-		void resetSync() const;
-		void run() const;
-		void startSync() const;
-		void stopSync() const;
-		void sync() const;
-	};
+		return callStaticObjectMethod(
+			"android.webkit.CookieSyncManager",
+			"createInstance",
+			"(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;",
+			arg0.object()
+		);
+	}
+	inline android::webkit::CookieSyncManager CookieSyncManager::getInstance()
+	{
+		return callStaticObjectMethod(
+			"android.webkit.CookieSyncManager",
+			"getInstance",
+			"()Landroid/webkit/CookieSyncManager;"
+		);
+	}
+	inline void CookieSyncManager::resetSync() const
+	{
+		callMethod<void>(
+			"resetSync",
+			"()V"
+		);
+	}
+	inline void CookieSyncManager::run() const
+	{
+		callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
+	inline void CookieSyncManager::startSync() const
+	{
+		callMethod<void>(
+			"startSync",
+			"()V"
+		);
+	}
+	inline void CookieSyncManager::stopSync() const
+	{
+		callMethod<void>(
+			"stopSync",
+			"()V"
+		);
+	}
+	inline void CookieSyncManager::sync() const
+	{
+		callMethod<void>(
+			"sync",
+			"()V"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

@@ -1,42 +1,71 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::telecom
-{
-	class PhoneAccountHandle;
-}
-class JString;
+#include "../os/Bundle.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../telecom/PhoneAccountHandle.def.hpp"
+#include "../../JString.hpp"
+#include "./VisualVoicemailSms.def.hpp"
 
 namespace android::telephony
 {
-	class VisualVoicemailSms : public JObject
+	// Fields
+	inline JObject VisualVoicemailSms::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VisualVoicemailSms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailSms(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::os::Bundle getFields() const;
-		JString getMessageBody() const;
-		android::telecom::PhoneAccountHandle getPhoneAccountHandle() const;
-		JString getPrefix() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.VisualVoicemailSms",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint VisualVoicemailSms::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::os::Bundle VisualVoicemailSms::getFields() const
+	{
+		return callObjectMethod(
+			"getFields",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JString VisualVoicemailSms::getMessageBody() const
+	{
+		return callObjectMethod(
+			"getMessageBody",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::telecom::PhoneAccountHandle VisualVoicemailSms::getPhoneAccountHandle() const
+	{
+		return callObjectMethod(
+			"getPhoneAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	inline JString VisualVoicemailSms::getPrefix() const
+	{
+		return callObjectMethod(
+			"getPrefix",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void VisualVoicemailSms::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

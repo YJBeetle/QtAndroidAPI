@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./TelephonyManager_NetworkSlicingException.def.hpp"
 
 namespace android::telephony
 {
-	class TelephonyManager_NetworkSlicingException : public java::lang::Exception
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString TelephonyManager_NetworkSlicingException::toString() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyManager_NetworkSlicingException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_NetworkSlicingException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

@@ -1,48 +1,85 @@
 #pragma once
 
+#include "../../content/Context.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../util/Size.def.hpp"
+#include "./InlineSuggestionInfo.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::util
-{
-	class Size;
-}
-namespace android::view::inputmethod
-{
-	class InlineSuggestionInfo;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./InlineSuggestion.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InlineSuggestion : public JObject
+	// Fields
+	inline JObject InlineSuggestion::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InlineSuggestion(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlineSuggestion(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::view::inputmethod::InlineSuggestionInfo getInfo() const;
-		jint hashCode() const;
-		void inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestion",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint InlineSuggestion::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean InlineSuggestion::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::view::inputmethod::InlineSuggestionInfo InlineSuggestion::getInfo() const
+	{
+		return callObjectMethod(
+			"getInfo",
+			"()Landroid/view/inputmethod/InlineSuggestionInfo;"
+		);
+	}
+	inline jint InlineSuggestion::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void InlineSuggestion::inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3) const
+	{
+		callMethod<void>(
+			"inflate",
+			"(Landroid/content/Context;Landroid/util/Size;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline JString InlineSuggestion::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void InlineSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

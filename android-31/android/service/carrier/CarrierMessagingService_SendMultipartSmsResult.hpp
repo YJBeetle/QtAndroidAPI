@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JIntArray;
+#include "../../../JIntArray.hpp"
+#include "./CarrierMessagingService_SendMultipartSmsResult.def.hpp"
 
 namespace android::service::carrier
 {
-	class CarrierMessagingService_SendMultipartSmsResult : public JObject
+	// Fields
+	
+	// Constructors
+	inline CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(jint arg0, JIntArray arg1)
+		: JObject(
+			"android.service.carrier.CarrierMessagingService$SendMultipartSmsResult",
+			"(I[I)V",
+			arg0,
+			arg1.object<jintArray>()
+		) {}
+	
+	// Methods
+	inline JIntArray CarrierMessagingService_SendMultipartSmsResult::getMessageRefs() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CarrierMessagingService_SendMultipartSmsResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierMessagingService_SendMultipartSmsResult(QJniObject obj);
-		
-		// Constructors
-		CarrierMessagingService_SendMultipartSmsResult(jint arg0, JIntArray arg1);
-		
-		// Methods
-		JIntArray getMessageRefs() const;
-		jint getSendStatus() const;
-	};
+		return callObjectMethod(
+			"getMessageRefs",
+			"()[I"
+		);
+	}
+	inline jint CarrierMessagingService_SendMultipartSmsResult::getSendStatus() const
+	{
+		return callMethod<jint>(
+			"getSendStatus",
+			"()I"
+		);
+	}
 } // namespace android::service::carrier
+
+// Base class headers
 

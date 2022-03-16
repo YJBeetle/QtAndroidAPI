@@ -1,26 +1,30 @@
 #pragma once
 
-#include "../RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./WrongMethodTypeException.def.hpp"
 
 namespace java::lang::invoke
 {
-	class WrongMethodTypeException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WrongMethodTypeException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		WrongMethodTypeException(QJniObject obj);
-		
-		// Constructors
-		WrongMethodTypeException();
-		WrongMethodTypeException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline WrongMethodTypeException::WrongMethodTypeException()
+		: java::lang::RuntimeException(
+			"java.lang.invoke.WrongMethodTypeException",
+			"()V"
+		) {}
+	inline WrongMethodTypeException::WrongMethodTypeException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.invoke.WrongMethodTypeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang::invoke
+
+// Base class headers
+#include "../Exception.hpp"
+#include "../RuntimeException.hpp"
 

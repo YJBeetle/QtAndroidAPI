@@ -1,46 +1,108 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Parcel.def.hpp"
+#include "../../java/io/FileDescriptor.def.hpp"
+#include "../../JString.hpp"
+#include "../../java/nio/ByteBuffer.def.hpp"
+#include "./SharedMemory.def.hpp"
 
 namespace android::os
 {
-	class Parcel;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JString;
-namespace java::nio
-{
-	class ByteBuffer;
-}
-
-namespace android::os
-{
-	class SharedMemory : public JObject
+	// Fields
+	inline JObject SharedMemory::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SharedMemory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SharedMemory(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::os::SharedMemory create(JString arg0, jint arg1);
-		static void unmap(java::nio::ByteBuffer arg0);
-		void close() const;
-		jint describeContents() const;
-		jint getSize() const;
-		java::nio::ByteBuffer map(jint arg0, jint arg1, jint arg2) const;
-		java::nio::ByteBuffer mapReadOnly() const;
-		java::nio::ByteBuffer mapReadWrite() const;
-		jboolean setProtect(jint arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.os.SharedMemory",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::SharedMemory SharedMemory::create(JString arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.os.SharedMemory",
+			"create",
+			"(Ljava/lang/String;I)Landroid/os/SharedMemory;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void SharedMemory::unmap(java::nio::ByteBuffer arg0)
+	{
+		callStaticMethod<void>(
+			"android.os.SharedMemory",
+			"unmap",
+			"(Ljava/nio/ByteBuffer;)V",
+			arg0.object()
+		);
+	}
+	inline void SharedMemory::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jint SharedMemory::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint SharedMemory::getSize() const
+	{
+		return callMethod<jint>(
+			"getSize",
+			"()I"
+		);
+	}
+	inline java::nio::ByteBuffer SharedMemory::map(jint arg0, jint arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"map",
+			"(III)Ljava/nio/ByteBuffer;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline java::nio::ByteBuffer SharedMemory::mapReadOnly() const
+	{
+		return callObjectMethod(
+			"mapReadOnly",
+			"()Ljava/nio/ByteBuffer;"
+		);
+	}
+	inline java::nio::ByteBuffer SharedMemory::mapReadWrite() const
+	{
+		return callObjectMethod(
+			"mapReadWrite",
+			"()Ljava/nio/ByteBuffer;"
+		);
+	}
+	inline jboolean SharedMemory::setProtect(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"setProtect",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline void SharedMemory::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

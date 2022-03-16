@@ -1,44 +1,96 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
-namespace java::security
-{
-	class NoSuchAlgorithmException;
-}
-namespace java::security
-{
-	class Provider;
-}
-namespace java::security::cert
-{
-	class CertStoreSpi;
-}
+#include "../../../JString.hpp"
+#include "../NoSuchAlgorithmException.def.hpp"
+#include "../Provider.def.hpp"
+#include "./CertStoreSpi.def.hpp"
+#include "./CertStore.def.hpp"
 
 namespace java::security::cert
 {
-	class CertStore : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString CertStore::getDefaultType()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertStore(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JString getDefaultType();
-		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1);
-		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1, JString arg2);
-		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
-		JObject getCRLs(JObject arg0) const;
-		JObject getCertStoreParameters() const;
-		JObject getCertificates(JObject arg0) const;
-		java::security::Provider getProvider() const;
-		JString getType() const;
-	};
+		return callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getDefaultType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::security::cert::CertStore CertStore::getInstance(JString arg0, JObject arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;)Ljava/security/cert/CertStore;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline java::security::cert::CertStore CertStore::getInstance(JString arg0, JObject arg1, JString arg2)
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/lang/String;)Ljava/security/cert/CertStore;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object<jstring>()
+		);
+	}
+	inline java::security::cert::CertStore CertStore::getInstance(JString arg0, JObject arg1, java::security::Provider arg2)
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/security/Provider;)Ljava/security/cert/CertStore;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JObject CertStore::getCRLs(JObject arg0) const
+	{
+		return callObjectMethod(
+			"getCRLs",
+			"(Ljava/security/cert/CRLSelector;)Ljava/util/Collection;",
+			arg0.object()
+		);
+	}
+	inline JObject CertStore::getCertStoreParameters() const
+	{
+		return callObjectMethod(
+			"getCertStoreParameters",
+			"()Ljava/security/cert/CertStoreParameters;"
+		);
+	}
+	inline JObject CertStore::getCertificates(JObject arg0) const
+	{
+		return callObjectMethod(
+			"getCertificates",
+			"(Ljava/security/cert/CertSelector;)Ljava/util/Collection;",
+			arg0.object()
+		);
+	}
+	inline java::security::Provider CertStore::getProvider() const
+	{
+		return callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	inline JString CertStore::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

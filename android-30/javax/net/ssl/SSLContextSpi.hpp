@@ -1,50 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JString;
-namespace java::security
-{
-	class SecureRandom;
-}
-namespace javax::net::ssl
-{
-	class SSLEngine;
-}
-namespace javax::net::ssl
-{
-	class SSLParameters;
-}
-namespace javax::net::ssl
-{
-	class SSLServerSocketFactory;
-}
-namespace javax::net::ssl
-{
-	class SSLSocket;
-}
-namespace javax::net::ssl
-{
-	class SSLSocketFactory;
-}
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/security/SecureRandom.def.hpp"
+#include "./SSLEngine.def.hpp"
+#include "./SSLParameters.def.hpp"
+#include "./SSLServerSocketFactory.def.hpp"
+#include "./SSLSocket.def.hpp"
+#include "./SSLSocketFactory.def.hpp"
+#include "./SSLContextSpi.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLContextSpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SSLContextSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLContextSpi(QJniObject obj);
-		
-		// Constructors
-		SSLContextSpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SSLContextSpi::SSLContextSpi()
+		: JObject(
+			"javax.net.ssl.SSLContextSpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::net::ssl
+
+// Base class headers
 

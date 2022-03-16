@@ -1,31 +1,79 @@
 #pragma once
 
-#include "./TtsSpan_SemioticClassBuilder.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TtsSpan_FractionBuilder.def.hpp"
 
 namespace android::text::style
 {
-	class TtsSpan_FractionBuilder : public android::text::style::TtsSpan_SemioticClassBuilder
+	// Fields
+	
+	// Constructors
+	inline TtsSpan_FractionBuilder::TtsSpan_FractionBuilder()
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$FractionBuilder",
+			"()V"
+		) {}
+	inline TtsSpan_FractionBuilder::TtsSpan_FractionBuilder(jlong arg0, jlong arg1, jlong arg2)
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$FractionBuilder",
+			"(JJJ)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setDenominator(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TtsSpan_FractionBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_FractionBuilder(QJniObject obj);
-		
-		// Constructors
-		TtsSpan_FractionBuilder();
-		TtsSpan_FractionBuilder(jlong arg0, jlong arg1, jlong arg2);
-		
-		// Methods
-		android::text::style::TtsSpan_FractionBuilder setDenominator(JString arg0) const;
-		android::text::style::TtsSpan_FractionBuilder setDenominator(jlong arg0) const;
-		android::text::style::TtsSpan_FractionBuilder setIntegerPart(JString arg0) const;
-		android::text::style::TtsSpan_FractionBuilder setIntegerPart(jlong arg0) const;
-		android::text::style::TtsSpan_FractionBuilder setNumerator(JString arg0) const;
-		android::text::style::TtsSpan_FractionBuilder setNumerator(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"setDenominator",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setDenominator(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setDenominator",
+			"(J)Landroid/text/style/TtsSpan$FractionBuilder;",
+			arg0
+		);
+	}
+	inline android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setIntegerPart(JString arg0) const
+	{
+		return callObjectMethod(
+			"setIntegerPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setIntegerPart(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setIntegerPart",
+			"(J)Landroid/text/style/TtsSpan$FractionBuilder;",
+			arg0
+		);
+	}
+	inline android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setNumerator(JString arg0) const
+	{
+		return callObjectMethod(
+			"setNumerator",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setNumerator(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setNumerator",
+			"(J)Landroid/text/style/TtsSpan$FractionBuilder;",
+			arg0
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./TtsSpan_Builder.hpp"
+#include "./TtsSpan_SemioticClassBuilder.hpp"
 

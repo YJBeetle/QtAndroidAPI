@@ -1,34 +1,56 @@
 #pragma once
 
+#include "../../java/io/FileDescriptor.def.hpp"
 #include "../../JObject.hpp"
-
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./StructPollfd.def.hpp"
 
 namespace android::system
 {
-	class StructPollfd : public JObject
+	// Fields
+	inline jshort StructPollfd::events()
 	{
-	public:
-		// Fields
-		jshort events();
-		java::io::FileDescriptor fd();
-		jshort revents();
-		JObject userData();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StructPollfd(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StructPollfd(QJniObject obj);
-		
-		// Constructors
-		StructPollfd();
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jshort>(
+			"events"
+		);
+	}
+	inline java::io::FileDescriptor StructPollfd::fd()
+	{
+		return getObjectField(
+			"fd",
+			"Ljava/io/FileDescriptor;"
+		);
+	}
+	inline jshort StructPollfd::revents()
+	{
+		return getField<jshort>(
+			"revents"
+		);
+	}
+	inline JObject StructPollfd::userData()
+	{
+		return getObjectField(
+			"userData",
+			"Ljava/lang/Object;"
+		);
+	}
+	
+	// Constructors
+	inline StructPollfd::StructPollfd()
+		: JObject(
+			"android.system.StructPollfd",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString StructPollfd::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::system
+
+// Base class headers
 

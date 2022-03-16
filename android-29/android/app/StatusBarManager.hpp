@@ -1,26 +1,16 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
+#include "../content/Context.def.hpp"
+#include "./StatusBarManager.def.hpp"
 
 namespace android::app
 {
-	class StatusBarManager : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StatusBarManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StatusBarManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::app
+
+// Base class headers
 

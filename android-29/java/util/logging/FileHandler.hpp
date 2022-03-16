@@ -1,44 +1,81 @@
 #pragma once
 
-#include "./StreamHandler.hpp"
-
-class JArray;
-namespace java::io
-{
-	class File;
-}
-class JString;
-namespace java::nio::channels
-{
-	class FileChannel;
-}
-namespace java::util::logging
-{
-	class LogRecord;
-}
+#include "../../../JArray.hpp"
+#include "../../io/File.def.hpp"
+#include "../../../JString.hpp"
+#include "../../nio/channels/FileChannel.def.hpp"
+#include "./LogRecord.def.hpp"
+#include "./FileHandler.def.hpp"
 
 namespace java::util::logging
 {
-	class FileHandler : public java::util::logging::StreamHandler
+	// Fields
+	
+	// Constructors
+	inline FileHandler::FileHandler()
+		: java::util::logging::StreamHandler(
+			"java.util.logging.FileHandler",
+			"()V"
+		) {}
+	inline FileHandler::FileHandler(JString arg0)
+		: java::util::logging::StreamHandler(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline FileHandler::FileHandler(JString arg0, jboolean arg1)
+		: java::util::logging::StreamHandler(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline FileHandler::FileHandler(JString arg0, jint arg1, jint arg2)
+		: java::util::logging::StreamHandler(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;II)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		) {}
+	inline FileHandler::FileHandler(JString arg0, jint arg1, jint arg2, jboolean arg3)
+		: java::util::logging::StreamHandler(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;IIZ)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		) {}
+	inline FileHandler::FileHandler(JString arg0, jlong arg1, jint arg2, jboolean arg3)
+		: java::util::logging::StreamHandler(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;JIZ)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline void FileHandler::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileHandler(const char *className, const char *sig, Ts...agv) : java::util::logging::StreamHandler(className, sig, std::forward<Ts>(agv)...) {}
-		FileHandler(QJniObject obj);
-		
-		// Constructors
-		FileHandler();
-		FileHandler(JString arg0);
-		FileHandler(JString arg0, jboolean arg1);
-		FileHandler(JString arg0, jint arg1, jint arg2);
-		FileHandler(JString arg0, jint arg1, jint arg2, jboolean arg3);
-		FileHandler(JString arg0, jlong arg1, jint arg2, jboolean arg3);
-		
-		// Methods
-		void close() const;
-		void publish(java::util::logging::LogRecord arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void FileHandler::publish(java::util::logging::LogRecord arg0) const
+	{
+		callMethod<void>(
+			"publish",
+			"(Ljava/util/logging/LogRecord;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::util::logging
+
+// Base class headers
+#include "./Handler.hpp"
+#include "./StreamHandler.hpp"
 

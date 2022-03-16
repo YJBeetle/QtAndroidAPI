@@ -1,30 +1,38 @@
 #pragma once
 
-#include "./ColorFilter.hpp"
-
-class JFloatArray;
-namespace android::graphics
-{
-	class ColorMatrix;
-}
+#include "../../JFloatArray.hpp"
+#include "./ColorMatrix.def.hpp"
+#include "./ColorMatrixColorFilter.def.hpp"
 
 namespace android::graphics
 {
-	class ColorMatrixColorFilter : public android::graphics::ColorFilter
+	// Fields
+	
+	// Constructors
+	inline ColorMatrixColorFilter::ColorMatrixColorFilter(JFloatArray arg0)
+		: android::graphics::ColorFilter(
+			"android.graphics.ColorMatrixColorFilter",
+			"([F)V",
+			arg0.object<jfloatArray>()
+		) {}
+	inline ColorMatrixColorFilter::ColorMatrixColorFilter(android::graphics::ColorMatrix arg0)
+		: android::graphics::ColorFilter(
+			"android.graphics.ColorMatrixColorFilter",
+			"(Landroid/graphics/ColorMatrix;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void ColorMatrixColorFilter::getColorMatrix(android::graphics::ColorMatrix arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ColorMatrixColorFilter(const char *className, const char *sig, Ts...agv) : android::graphics::ColorFilter(className, sig, std::forward<Ts>(agv)...) {}
-		ColorMatrixColorFilter(QJniObject obj);
-		
-		// Constructors
-		ColorMatrixColorFilter(JFloatArray arg0);
-		ColorMatrixColorFilter(android::graphics::ColorMatrix arg0);
-		
-		// Methods
-		void getColorMatrix(android::graphics::ColorMatrix arg0) const;
-	};
+		callMethod<void>(
+			"getColorMatrix",
+			"(Landroid/graphics/ColorMatrix;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "./ColorFilter.hpp"
 

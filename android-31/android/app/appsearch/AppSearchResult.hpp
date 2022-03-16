@@ -1,42 +1,149 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./AppSearchResult.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchResult : public JObject
+	// Fields
+	inline jint AppSearchResult::RESULT_INTERNAL_ERROR()
 	{
-	public:
-		// Fields
-		static jint RESULT_INTERNAL_ERROR();
-		static jint RESULT_INVALID_ARGUMENT();
-		static jint RESULT_INVALID_SCHEMA();
-		static jint RESULT_IO_ERROR();
-		static jint RESULT_NOT_FOUND();
-		static jint RESULT_OK();
-		static jint RESULT_OUT_OF_SPACE();
-		static jint RESULT_SECURITY_ERROR();
-		static jint RESULT_UNKNOWN_ERROR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::app::appsearch::AppSearchResult newFailedResult(jint arg0, JString arg1);
-		static android::app::appsearch::AppSearchResult newSuccessfulResult(JObject arg0);
-		jboolean equals(JObject arg0) const;
-		JString getErrorMessage() const;
-		jint getResultCode() const;
-		JObject getResultValue() const;
-		jint hashCode() const;
-		jboolean isSuccess() const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_INTERNAL_ERROR"
+		);
+	}
+	inline jint AppSearchResult::RESULT_INVALID_ARGUMENT()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_INVALID_ARGUMENT"
+		);
+	}
+	inline jint AppSearchResult::RESULT_INVALID_SCHEMA()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_INVALID_SCHEMA"
+		);
+	}
+	inline jint AppSearchResult::RESULT_IO_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_IO_ERROR"
+		);
+	}
+	inline jint AppSearchResult::RESULT_NOT_FOUND()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_NOT_FOUND"
+		);
+	}
+	inline jint AppSearchResult::RESULT_OK()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_OK"
+		);
+	}
+	inline jint AppSearchResult::RESULT_OUT_OF_SPACE()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_OUT_OF_SPACE"
+		);
+	}
+	inline jint AppSearchResult::RESULT_SECURITY_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_SECURITY_ERROR"
+		);
+	}
+	inline jint AppSearchResult::RESULT_UNKNOWN_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchResult",
+			"RESULT_UNKNOWN_ERROR"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::app::appsearch::AppSearchResult AppSearchResult::newFailedResult(jint arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.app.appsearch.AppSearchResult",
+			"newFailedResult",
+			"(ILjava/lang/String;)Landroid/app/appsearch/AppSearchResult;",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline android::app::appsearch::AppSearchResult AppSearchResult::newSuccessfulResult(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"android.app.appsearch.AppSearchResult",
+			"newSuccessfulResult",
+			"(Ljava/lang/Object;)Landroid/app/appsearch/AppSearchResult;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean AppSearchResult::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString AppSearchResult::getErrorMessage() const
+	{
+		return callObjectMethod(
+			"getErrorMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint AppSearchResult::getResultCode() const
+	{
+		return callMethod<jint>(
+			"getResultCode",
+			"()I"
+		);
+	}
+	inline JObject AppSearchResult::getResultValue() const
+	{
+		return callObjectMethod(
+			"getResultValue",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jint AppSearchResult::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean AppSearchResult::isSuccess() const
+	{
+		return callMethod<jboolean>(
+			"isSuccess",
+			"()Z"
+		);
+	}
+	inline JString AppSearchResult::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

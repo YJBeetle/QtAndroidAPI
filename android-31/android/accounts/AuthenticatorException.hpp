@@ -1,28 +1,43 @@
 #pragma once
 
-#include "./AccountsException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./AuthenticatorException.def.hpp"
 
 namespace android::accounts
 {
-	class AuthenticatorException : public android::accounts::AccountsException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AuthenticatorException(const char *className, const char *sig, Ts...agv) : android::accounts::AccountsException(className, sig, std::forward<Ts>(agv)...) {}
-		AuthenticatorException(QJniObject obj);
-		
-		// Constructors
-		AuthenticatorException();
-		AuthenticatorException(JString arg0);
-		AuthenticatorException(JThrowable arg0);
-		AuthenticatorException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AuthenticatorException::AuthenticatorException()
+		: android::accounts::AccountsException(
+			"android.accounts.AuthenticatorException",
+			"()V"
+		) {}
+	inline AuthenticatorException::AuthenticatorException(JString arg0)
+		: android::accounts::AccountsException(
+			"android.accounts.AuthenticatorException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline AuthenticatorException::AuthenticatorException(JThrowable arg0)
+		: android::accounts::AccountsException(
+			"android.accounts.AuthenticatorException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline AuthenticatorException::AuthenticatorException(JString arg0, JThrowable arg1)
+		: android::accounts::AccountsException(
+			"android.accounts.AuthenticatorException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::accounts
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "./AccountsException.hpp"
 

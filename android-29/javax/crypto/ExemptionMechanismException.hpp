@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/security/GeneralSecurityException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ExemptionMechanismException.def.hpp"
 
 namespace javax::crypto
 {
-	class ExemptionMechanismException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ExemptionMechanismException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		ExemptionMechanismException(QJniObject obj);
-		
-		// Constructors
-		ExemptionMechanismException();
-		ExemptionMechanismException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ExemptionMechanismException::ExemptionMechanismException()
+		: java::security::GeneralSecurityException(
+			"javax.crypto.ExemptionMechanismException",
+			"()V"
+		) {}
+	inline ExemptionMechanismException::ExemptionMechanismException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"javax.crypto.ExemptionMechanismException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/security/GeneralSecurityException.hpp"
 

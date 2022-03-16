@@ -1,32 +1,59 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./ResourcesProvider.def.hpp"
+#include "./ResourcesLoader.def.hpp"
 
 namespace android::content::res::loader
 {
-	class ResourcesProvider;
-}
-
-namespace android::content::res::loader
-{
-	class ResourcesLoader : public JObject
+	// Fields
+	
+	// Constructors
+	inline ResourcesLoader::ResourcesLoader()
+		: JObject(
+			"android.content.res.loader.ResourcesLoader",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ResourcesLoader::addProvider(android::content::res::loader::ResourcesProvider arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ResourcesLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ResourcesLoader(QJniObject obj);
-		
-		// Constructors
-		ResourcesLoader();
-		
-		// Methods
-		void addProvider(android::content::res::loader::ResourcesProvider arg0) const;
-		void clearProviders() const;
-		JObject getProviders() const;
-		void removeProvider(android::content::res::loader::ResourcesProvider arg0) const;
-		void setProviders(JObject arg0) const;
-	};
+		callMethod<void>(
+			"addProvider",
+			"(Landroid/content/res/loader/ResourcesProvider;)V",
+			arg0.object()
+		);
+	}
+	inline void ResourcesLoader::clearProviders() const
+	{
+		callMethod<void>(
+			"clearProviders",
+			"()V"
+		);
+	}
+	inline JObject ResourcesLoader::getProviders() const
+	{
+		return callObjectMethod(
+			"getProviders",
+			"()Ljava/util/List;"
+		);
+	}
+	inline void ResourcesLoader::removeProvider(android::content::res::loader::ResourcesProvider arg0) const
+	{
+		callMethod<void>(
+			"removeProvider",
+			"(Landroid/content/res/loader/ResourcesProvider;)V",
+			arg0.object()
+		);
+	}
+	inline void ResourcesLoader::setProviders(JObject arg0) const
+	{
+		callMethod<void>(
+			"setProviders",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::content::res::loader
+
+// Base class headers
 

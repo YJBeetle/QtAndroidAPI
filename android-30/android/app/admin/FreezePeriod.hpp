@@ -1,31 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
-namespace java::time
-{
-	class MonthDay;
-}
+#include "../../../JString.hpp"
+#include "../../../java/time/MonthDay.def.hpp"
+#include "./FreezePeriod.def.hpp"
 
 namespace android::app::admin
 {
-	class FreezePeriod : public JObject
+	// Fields
+	
+	// Constructors
+	inline FreezePeriod::FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1)
+		: JObject(
+			"android.app.admin.FreezePeriod",
+			"(Ljava/time/MonthDay;Ljava/time/MonthDay;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline java::time::MonthDay FreezePeriod::getEnd() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FreezePeriod(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FreezePeriod(QJniObject obj);
-		
-		// Constructors
-		FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1);
-		
-		// Methods
-		java::time::MonthDay getEnd() const;
-		java::time::MonthDay getStart() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getEnd",
+			"()Ljava/time/MonthDay;"
+		);
+	}
+	inline java::time::MonthDay FreezePeriod::getStart() const
+	{
+		return callObjectMethod(
+			"getStart",
+			"()Ljava/time/MonthDay;"
+		);
+	}
+	inline JString FreezePeriod::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::admin
+
+// Base class headers
 

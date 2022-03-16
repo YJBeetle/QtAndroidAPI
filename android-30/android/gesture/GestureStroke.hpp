@@ -1,49 +1,85 @@
 #pragma once
 
+#include "../../JFloatArray.hpp"
+#include "./OrientedBoundingBox.def.hpp"
+#include "../graphics/Path.def.hpp"
+#include "../graphics/RectF.def.hpp"
 #include "../../JObject.hpp"
-
-class JFloatArray;
-namespace android::gesture
-{
-	class OrientedBoundingBox;
-}
-namespace android::graphics
-{
-	class Path;
-}
-namespace android::graphics
-{
-	class RectF;
-}
-class JObject;
-namespace java::util
-{
-	class ArrayList;
-}
+#include "../../java/util/ArrayList.def.hpp"
+#include "./GestureStroke.def.hpp"
 
 namespace android::gesture
 {
-	class GestureStroke : public JObject
+	// Fields
+	inline android::graphics::RectF GestureStroke::boundingBox()
 	{
-	public:
-		// Fields
-		android::graphics::RectF boundingBox();
-		jfloat length();
-		JFloatArray points();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GestureStroke(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureStroke(QJniObject obj);
-		
-		// Constructors
-		GestureStroke(java::util::ArrayList arg0);
-		
-		// Methods
-		void clearPath() const;
-		JObject clone() const;
-		android::gesture::OrientedBoundingBox computeOrientedBoundingBox() const;
-		android::graphics::Path getPath() const;
-		android::graphics::Path toPath(jfloat arg0, jfloat arg1, jint arg2) const;
-	};
+		return getObjectField(
+			"boundingBox",
+			"Landroid/graphics/RectF;"
+		);
+	}
+	inline jfloat GestureStroke::length()
+	{
+		return getField<jfloat>(
+			"length"
+		);
+	}
+	inline JFloatArray GestureStroke::points()
+	{
+		return getObjectField(
+			"points",
+			"[F"
+		);
+	}
+	
+	// Constructors
+	inline GestureStroke::GestureStroke(java::util::ArrayList arg0)
+		: JObject(
+			"android.gesture.GestureStroke",
+			"(Ljava/util/ArrayList;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void GestureStroke::clearPath() const
+	{
+		callMethod<void>(
+			"clearPath",
+			"()V"
+		);
+	}
+	inline JObject GestureStroke::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline android::gesture::OrientedBoundingBox GestureStroke::computeOrientedBoundingBox() const
+	{
+		return callObjectMethod(
+			"computeOrientedBoundingBox",
+			"()Landroid/gesture/OrientedBoundingBox;"
+		);
+	}
+	inline android::graphics::Path GestureStroke::getPath() const
+	{
+		return callObjectMethod(
+			"getPath",
+			"()Landroid/graphics/Path;"
+		);
+	}
+	inline android::graphics::Path GestureStroke::toPath(jfloat arg0, jfloat arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"toPath",
+			"(FFI)Landroid/graphics/Path;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::gesture
+
+// Base class headers
 

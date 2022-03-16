@@ -1,39 +1,77 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::view
-{
-	class KeyboardShortcutInfo;
-}
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "./KeyboardShortcutInfo.def.hpp"
+#include "../../JString.hpp"
+#include "./KeyboardShortcutGroup.def.hpp"
 
 namespace android::view
 {
-	class KeyboardShortcutGroup : public JObject
+	// Fields
+	inline JObject KeyboardShortcutGroup::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyboardShortcutGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyboardShortcutGroup(QJniObject obj);
-		
-		// Constructors
-		KeyboardShortcutGroup(JString arg0);
-		KeyboardShortcutGroup(JString arg0, JObject arg1);
-		
-		// Methods
-		void addItem(android::view::KeyboardShortcutInfo arg0) const;
-		jint describeContents() const;
-		JObject getItems() const;
-		JString getLabel() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.KeyboardShortcutGroup",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline KeyboardShortcutGroup::KeyboardShortcutGroup(JString arg0)
+		: JObject(
+			"android.view.KeyboardShortcutGroup",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		) {}
+	inline KeyboardShortcutGroup::KeyboardShortcutGroup(JString arg0, JObject arg1)
+		: JObject(
+			"android.view.KeyboardShortcutGroup",
+			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void KeyboardShortcutGroup::addItem(android::view::KeyboardShortcutInfo arg0) const
+	{
+		callMethod<void>(
+			"addItem",
+			"(Landroid/view/KeyboardShortcutInfo;)V",
+			arg0.object()
+		);
+	}
+	inline jint KeyboardShortcutGroup::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JObject KeyboardShortcutGroup::getItems() const
+	{
+		return callObjectMethod(
+			"getItems",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString KeyboardShortcutGroup::getLabel() const
+	{
+		return callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline void KeyboardShortcutGroup::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

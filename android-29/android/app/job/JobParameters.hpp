@@ -1,62 +1,125 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JArray;
-namespace android::app::job
-{
-	class JobWorkItem;
-}
-namespace android::content
-{
-	class ClipData;
-}
-namespace android::net
-{
-	class Network;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::os
-{
-	class PersistableBundle;
-}
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "./JobWorkItem.def.hpp"
+#include "../../content/ClipData.def.hpp"
+#include "../../net/Network.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../os/PersistableBundle.def.hpp"
+#include "./JobParameters.def.hpp"
 
 namespace android::app::job
 {
-	class JobParameters : public JObject
+	// Fields
+	inline JObject JobParameters::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit JobParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobParameters(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void completeWork(android::app::job::JobWorkItem arg0) const;
-		android::app::job::JobWorkItem dequeueWork() const;
-		jint describeContents() const;
-		android::content::ClipData getClipData() const;
-		jint getClipGrantFlags() const;
-		android::os::PersistableBundle getExtras() const;
-		jint getJobId() const;
-		android::net::Network getNetwork() const;
-		android::os::Bundle getTransientExtras() const;
-		JArray getTriggeredContentAuthorities() const;
-		JArray getTriggeredContentUris() const;
-		jboolean isOverrideDeadlineExpired() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.job.JobParameters",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void JobParameters::completeWork(android::app::job::JobWorkItem arg0) const
+	{
+		callMethod<void>(
+			"completeWork",
+			"(Landroid/app/job/JobWorkItem;)V",
+			arg0.object()
+		);
+	}
+	inline android::app::job::JobWorkItem JobParameters::dequeueWork() const
+	{
+		return callObjectMethod(
+			"dequeueWork",
+			"()Landroid/app/job/JobWorkItem;"
+		);
+	}
+	inline jint JobParameters::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::content::ClipData JobParameters::getClipData() const
+	{
+		return callObjectMethod(
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	inline jint JobParameters::getClipGrantFlags() const
+	{
+		return callMethod<jint>(
+			"getClipGrantFlags",
+			"()I"
+		);
+	}
+	inline android::os::PersistableBundle JobParameters::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	inline jint JobParameters::getJobId() const
+	{
+		return callMethod<jint>(
+			"getJobId",
+			"()I"
+		);
+	}
+	inline android::net::Network JobParameters::getNetwork() const
+	{
+		return callObjectMethod(
+			"getNetwork",
+			"()Landroid/net/Network;"
+		);
+	}
+	inline android::os::Bundle JobParameters::getTransientExtras() const
+	{
+		return callObjectMethod(
+			"getTransientExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JArray JobParameters::getTriggeredContentAuthorities() const
+	{
+		return callObjectMethod(
+			"getTriggeredContentAuthorities",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray JobParameters::getTriggeredContentUris() const
+	{
+		return callObjectMethod(
+			"getTriggeredContentUris",
+			"()[Landroid/net/Uri;"
+		);
+	}
+	inline jboolean JobParameters::isOverrideDeadlineExpired() const
+	{
+		return callMethod<jboolean>(
+			"isOverrideDeadlineExpired",
+			"()Z"
+		);
+	}
+	inline void JobParameters::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::job
+
+// Base class headers
 

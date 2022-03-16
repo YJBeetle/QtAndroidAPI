@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./BadPaddingException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./AEADBadTagException.def.hpp"
 
 namespace javax::crypto
 {
-	class AEADBadTagException : public javax::crypto::BadPaddingException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AEADBadTagException(const char *className, const char *sig, Ts...agv) : javax::crypto::BadPaddingException(className, sig, std::forward<Ts>(agv)...) {}
-		AEADBadTagException(QJniObject obj);
-		
-		// Constructors
-		AEADBadTagException();
-		AEADBadTagException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AEADBadTagException::AEADBadTagException()
+		: javax::crypto::BadPaddingException(
+			"javax.crypto.AEADBadTagException",
+			"()V"
+		) {}
+	inline AEADBadTagException::AEADBadTagException(JString arg0)
+		: javax::crypto::BadPaddingException(
+			"javax.crypto.AEADBadTagException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/security/GeneralSecurityException.hpp"
+#include "./BadPaddingException.hpp"
 

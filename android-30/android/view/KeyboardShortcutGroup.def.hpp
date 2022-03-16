@@ -1,0 +1,39 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+namespace android::os
+{
+	class Parcel;
+}
+namespace android::view
+{
+	class KeyboardShortcutInfo;
+}
+class JString;
+
+namespace android::view
+{
+	class KeyboardShortcutGroup : public JObject
+	{
+	public:
+		// Fields
+		static JObject CREATOR();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit KeyboardShortcutGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		KeyboardShortcutGroup(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		KeyboardShortcutGroup(JString arg0);
+		KeyboardShortcutGroup(JString arg0, JObject arg1);
+		
+		// Methods
+		void addItem(android::view::KeyboardShortcutInfo arg0) const;
+		jint describeContents() const;
+		JObject getItems() const;
+		JString getLabel() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
+	};
+} // namespace android::view
+

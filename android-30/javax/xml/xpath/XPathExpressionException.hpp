@@ -1,26 +1,31 @@
 #pragma once
 
-#include "./XPathException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./XPathExpressionException.def.hpp"
 
 namespace javax::xml::xpath
 {
-	class XPathExpressionException : public javax::xml::xpath::XPathException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit XPathExpressionException(const char *className, const char *sig, Ts...agv) : javax::xml::xpath::XPathException(className, sig, std::forward<Ts>(agv)...) {}
-		XPathExpressionException(QJniObject obj);
-		
-		// Constructors
-		XPathExpressionException(JString arg0);
-		XPathExpressionException(JThrowable arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline XPathExpressionException::XPathExpressionException(JString arg0)
+		: javax::xml::xpath::XPathException(
+			"javax.xml.xpath.XPathExpressionException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline XPathExpressionException::XPathExpressionException(JThrowable arg0)
+		: javax::xml::xpath::XPathException(
+			"javax.xml.xpath.XPathExpressionException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace javax::xml::xpath
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./XPathException.hpp"
 

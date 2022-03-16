@@ -1,32 +1,83 @@
 #pragma once
 
-#include "./Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Thread_State.def.hpp"
 
 namespace java::lang
 {
-	class Thread_State : public java::lang::Enum
+	// Fields
+	inline java::lang::Thread_State Thread_State::BLOCKED()
 	{
-	public:
-		// Fields
-		static java::lang::Thread_State BLOCKED();
-		static java::lang::Thread_State NEW();
-		static java::lang::Thread_State RUNNABLE();
-		static java::lang::Thread_State TERMINATED();
-		static java::lang::Thread_State TIMED_WAITING();
-		static java::lang::Thread_State WAITING();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Thread_State(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Thread_State(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::lang::Thread_State valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.lang.Thread$State",
+			"BLOCKED",
+			"Ljava/lang/Thread$State;"
+		);
+	}
+	inline java::lang::Thread_State Thread_State::NEW()
+	{
+		return getStaticObjectField(
+			"java.lang.Thread$State",
+			"NEW",
+			"Ljava/lang/Thread$State;"
+		);
+	}
+	inline java::lang::Thread_State Thread_State::RUNNABLE()
+	{
+		return getStaticObjectField(
+			"java.lang.Thread$State",
+			"RUNNABLE",
+			"Ljava/lang/Thread$State;"
+		);
+	}
+	inline java::lang::Thread_State Thread_State::TERMINATED()
+	{
+		return getStaticObjectField(
+			"java.lang.Thread$State",
+			"TERMINATED",
+			"Ljava/lang/Thread$State;"
+		);
+	}
+	inline java::lang::Thread_State Thread_State::TIMED_WAITING()
+	{
+		return getStaticObjectField(
+			"java.lang.Thread$State",
+			"TIMED_WAITING",
+			"Ljava/lang/Thread$State;"
+		);
+	}
+	inline java::lang::Thread_State Thread_State::WAITING()
+	{
+		return getStaticObjectField(
+			"java.lang.Thread$State",
+			"WAITING",
+			"Ljava/lang/Thread$State;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::lang::Thread_State Thread_State::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.Thread$State",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/Thread$State;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Thread_State::values()
+	{
+		return callStaticObjectMethod(
+			"java.lang.Thread$State",
+			"values",
+			"()[Ljava/lang/Thread$State;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
+#include "./Enum.hpp"
 

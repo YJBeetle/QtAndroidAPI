@@ -1,35 +1,41 @@
 #pragma once
 
-#include "../lang/RuntimeException.hpp"
+#include "./IOException.def.hpp"
+#include "./ObjectInputStream.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./UncheckedIOException.def.hpp"
 
 namespace java::io
 {
-	class IOException;
-}
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JString;
-class JThrowable;
-
-namespace java::io
-{
-	class UncheckedIOException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline UncheckedIOException::UncheckedIOException(java::io::IOException arg0)
+		: java::lang::RuntimeException(
+			"java.io.UncheckedIOException",
+			"(Ljava/io/IOException;)V",
+			arg0.object()
+		) {}
+	inline UncheckedIOException::UncheckedIOException(JString arg0, java::io::IOException arg1)
+		: java::lang::RuntimeException(
+			"java.io.UncheckedIOException",
+			"(Ljava/lang/String;Ljava/io/IOException;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline java::io::IOException UncheckedIOException::getCause() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UncheckedIOException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UncheckedIOException(QJniObject obj);
-		
-		// Constructors
-		UncheckedIOException(java::io::IOException arg0);
-		UncheckedIOException(JString arg0, java::io::IOException arg1);
-		
-		// Methods
-		java::io::IOException getCause() const;
-	};
+		return callObjectMethod(
+			"getCause",
+			"()Ljava/io/IOException;"
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 

@@ -1,35 +1,71 @@
 #pragma once
 
-#include "../util/EventObject.hpp"
-
-class JObject;
-class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../lang/StringBuilder.def.hpp"
+#include "./PropertyChangeEvent.def.hpp"
 
 namespace java::beans
 {
-	class PropertyChangeEvent : public java::util::EventObject
+	// Fields
+	
+	// Constructors
+	inline PropertyChangeEvent::PropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3)
+		: java::util::EventObject(
+			"java.beans.PropertyChangeEvent",
+			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V",
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jobject>(),
+			arg3.object<jobject>()
+		) {}
+	
+	// Methods
+	inline JObject PropertyChangeEvent::getNewValue() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PropertyChangeEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyChangeEvent(QJniObject obj);
-		
-		// Constructors
-		PropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3);
-		
-		// Methods
-		JObject getNewValue() const;
-		JObject getOldValue() const;
-		JObject getPropagationId() const;
-		JString getPropertyName() const;
-		void setPropagationId(JObject arg0) const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getNewValue",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject PropertyChangeEvent::getOldValue() const
+	{
+		return callObjectMethod(
+			"getOldValue",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject PropertyChangeEvent::getPropagationId() const
+	{
+		return callObjectMethod(
+			"getPropagationId",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JString PropertyChangeEvent::getPropertyName() const
+	{
+		return callObjectMethod(
+			"getPropertyName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PropertyChangeEvent::setPropagationId(JObject arg0) const
+	{
+		callMethod<void>(
+			"setPropagationId",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString PropertyChangeEvent::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::beans
+
+// Base class headers
+#include "../util/EventObject.hpp"
 

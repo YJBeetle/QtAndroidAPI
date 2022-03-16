@@ -1,27 +1,55 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_array.def.hpp"
 
 namespace android
 {
-	class R_array : public JObject
+	// Fields
+	inline jint R_array::emailAddressTypes()
 	{
-	public:
-		// Fields
-		static jint emailAddressTypes();
-		static jint imProtocols();
-		static jint organizationTypes();
-		static jint phoneTypes();
-		static jint postalAddressTypes();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_array(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_array(QJniObject obj);
-		
-		// Constructors
-		R_array();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$array",
+			"emailAddressTypes"
+		);
+	}
+	inline jint R_array::imProtocols()
+	{
+		return getStaticField<jint>(
+			"android.R$array",
+			"imProtocols"
+		);
+	}
+	inline jint R_array::organizationTypes()
+	{
+		return getStaticField<jint>(
+			"android.R$array",
+			"organizationTypes"
+		);
+	}
+	inline jint R_array::phoneTypes()
+	{
+		return getStaticField<jint>(
+			"android.R$array",
+			"phoneTypes"
+		);
+	}
+	inline jint R_array::postalAddressTypes()
+	{
+		return getStaticField<jint>(
+			"android.R$array",
+			"postalAddressTypes"
+		);
+	}
+	
+	// Constructors
+	inline R_array::R_array()
+		: JObject(
+			"android.R$array",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

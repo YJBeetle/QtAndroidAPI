@@ -1,29 +1,99 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./StreamSupport.def.hpp"
 
 namespace java::util::stream
 {
-	class StreamSupport : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject StreamSupport::doubleStream(JObject arg0, jboolean arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StreamSupport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamSupport(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject doubleStream(JObject arg0, jboolean arg1);
-		static JObject doubleStream(JObject arg0, jint arg1, jboolean arg2);
-		static JObject intStream(JObject arg0, jboolean arg1);
-		static JObject intStream(JObject arg0, jint arg1, jboolean arg2);
-		static JObject longStream(JObject arg0, jboolean arg1);
-		static JObject longStream(JObject arg0, jint arg1, jboolean arg2);
-		static JObject stream(JObject arg0, jboolean arg1);
-		static JObject stream(JObject arg0, jint arg1, jboolean arg2);
-	};
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"doubleStream",
+			"(Ljava/util/Spliterator$OfDouble;Z)Ljava/util/stream/DoubleStream;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline JObject StreamSupport::doubleStream(JObject arg0, jint arg1, jboolean arg2)
+	{
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"doubleStream",
+			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/DoubleStream;",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline JObject StreamSupport::intStream(JObject arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"intStream",
+			"(Ljava/util/Spliterator$OfInt;Z)Ljava/util/stream/IntStream;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline JObject StreamSupport::intStream(JObject arg0, jint arg1, jboolean arg2)
+	{
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"intStream",
+			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/IntStream;",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline JObject StreamSupport::longStream(JObject arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"longStream",
+			"(Ljava/util/Spliterator$OfLong;Z)Ljava/util/stream/LongStream;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline JObject StreamSupport::longStream(JObject arg0, jint arg1, jboolean arg2)
+	{
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"longStream",
+			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/LongStream;",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline JObject StreamSupport::stream(JObject arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"stream",
+			"(Ljava/util/Spliterator;Z)Ljava/util/stream/Stream;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline JObject StreamSupport::stream(JObject arg0, jint arg1, jboolean arg2)
+	{
+		return callStaticObjectMethod(
+			"java.util.stream.StreamSupport",
+			"stream",
+			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/Stream;",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::util::stream
+
+// Base class headers
 

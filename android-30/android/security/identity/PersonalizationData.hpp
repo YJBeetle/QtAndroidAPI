@@ -1,21 +1,15 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PersonalizationData.def.hpp"
 
 namespace android::security::identity
 {
-	class PersonalizationData : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PersonalizationData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PersonalizationData(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::security::identity
+
+// Base class headers
 

@@ -1,32 +1,46 @@
 #pragma once
 
+#include "../../JIntArray.hpp"
+#include "./Animator.def.hpp"
 #include "../../JObject.hpp"
-
-class JIntArray;
-namespace android::animation
-{
-	class Animator;
-}
-class JObject;
+#include "./StateListAnimator.def.hpp"
 
 namespace android::animation
 {
-	class StateListAnimator : public JObject
+	// Fields
+	
+	// Constructors
+	inline StateListAnimator::StateListAnimator()
+		: JObject(
+			"android.animation.StateListAnimator",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void StateListAnimator::addState(JIntArray arg0, android::animation::Animator arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StateListAnimator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StateListAnimator(QJniObject obj);
-		
-		// Constructors
-		StateListAnimator();
-		
-		// Methods
-		void addState(JIntArray arg0, android::animation::Animator arg1) const;
-		android::animation::StateListAnimator clone() const;
-		void jumpToCurrentState() const;
-	};
+		callMethod<void>(
+			"addState",
+			"([ILandroid/animation/Animator;)V",
+			arg0.object<jintArray>(),
+			arg1.object()
+		);
+	}
+	inline android::animation::StateListAnimator StateListAnimator::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Landroid/animation/StateListAnimator;"
+		);
+	}
+	inline void StateListAnimator::jumpToCurrentState() const
+	{
+		callMethod<void>(
+			"jumpToCurrentState",
+			"()V"
+		);
+	}
 } // namespace android::animation
+
+// Base class headers
 

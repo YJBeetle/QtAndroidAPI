@@ -1,31 +1,56 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./URI.def.hpp"
+#include "./CookieHandler.def.hpp"
 
 namespace java::net
 {
-	class URI;
-}
-
-namespace java::net
-{
-	class CookieHandler : public JObject
+	// Fields
+	
+	// Constructors
+	inline CookieHandler::CookieHandler()
+		: JObject(
+			"java.net.CookieHandler",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::net::CookieHandler CookieHandler::getDefault()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CookieHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CookieHandler(QJniObject obj);
-		
-		// Constructors
-		CookieHandler();
-		
-		// Methods
-		static java::net::CookieHandler getDefault();
-		static void setDefault(java::net::CookieHandler arg0);
-		JObject get(java::net::URI arg0, JObject arg1) const;
-		void put(java::net::URI arg0, JObject arg1) const;
-	};
+		return callStaticObjectMethod(
+			"java.net.CookieHandler",
+			"getDefault",
+			"()Ljava/net/CookieHandler;"
+		);
+	}
+	inline void CookieHandler::setDefault(java::net::CookieHandler arg0)
+	{
+		callStaticMethod<void>(
+			"java.net.CookieHandler",
+			"setDefault",
+			"(Ljava/net/CookieHandler;)V",
+			arg0.object()
+		);
+	}
+	inline JObject CookieHandler::get(java::net::URI arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Ljava/net/URI;Ljava/util/Map;)Ljava/util/Map;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void CookieHandler::put(java::net::URI arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"put",
+			"(Ljava/net/URI;Ljava/util/Map;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

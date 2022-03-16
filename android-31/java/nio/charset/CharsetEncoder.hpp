@@ -1,65 +1,147 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-class JArray;
-class JString;
-namespace java::lang::ref
-{
-	class WeakReference;
-}
-namespace java::nio
-{
-	class ByteBuffer;
-}
-namespace java::nio
-{
-	class CharBuffer;
-}
-namespace java::nio::charset
-{
-	class Charset;
-}
-namespace java::nio::charset
-{
-	class CoderResult;
-}
-namespace java::nio::charset
-{
-	class CodingErrorAction;
-}
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../lang/ref/WeakReference.def.hpp"
+#include "../ByteBuffer.def.hpp"
+#include "../CharBuffer.def.hpp"
+#include "./Charset.def.hpp"
+#include "./CoderResult.def.hpp"
+#include "./CodingErrorAction.def.hpp"
+#include "./CharsetEncoder.def.hpp"
 
 namespace java::nio::charset
 {
-	class CharsetEncoder : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jfloat CharsetEncoder::averageBytesPerChar() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CharsetEncoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharsetEncoder(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jfloat averageBytesPerChar() const;
-		jboolean canEncode(jchar arg0) const;
-		jboolean canEncode(JString arg0) const;
-		java::nio::charset::Charset charset() const;
-		java::nio::ByteBuffer encode(java::nio::CharBuffer arg0) const;
-		java::nio::charset::CoderResult encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2) const;
-		java::nio::charset::CoderResult flush(java::nio::ByteBuffer arg0) const;
-		jboolean isLegalReplacement(JByteArray arg0) const;
-		java::nio::charset::CodingErrorAction malformedInputAction() const;
-		jfloat maxBytesPerChar() const;
-		java::nio::charset::CharsetEncoder onMalformedInput(java::nio::charset::CodingErrorAction arg0) const;
-		java::nio::charset::CharsetEncoder onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0) const;
-		java::nio::charset::CharsetEncoder replaceWith(JByteArray arg0) const;
-		JByteArray replacement() const;
-		java::nio::charset::CharsetEncoder reset() const;
-		java::nio::charset::CodingErrorAction unmappableCharacterAction() const;
-	};
+		return callMethod<jfloat>(
+			"averageBytesPerChar",
+			"()F"
+		);
+	}
+	inline jboolean CharsetEncoder::canEncode(jchar arg0) const
+	{
+		return callMethod<jboolean>(
+			"canEncode",
+			"(C)Z",
+			arg0
+		);
+	}
+	inline jboolean CharsetEncoder::canEncode(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"canEncode",
+			"(Ljava/lang/CharSequence;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::nio::charset::Charset CharsetEncoder::charset() const
+	{
+		return callObjectMethod(
+			"charset",
+			"()Ljava/nio/charset/Charset;"
+		);
+	}
+	inline java::nio::ByteBuffer CharsetEncoder::encode(java::nio::CharBuffer arg0) const
+	{
+		return callObjectMethod(
+			"encode",
+			"(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;",
+			arg0.object()
+		);
+	}
+	inline java::nio::charset::CoderResult CharsetEncoder::encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2) const
+	{
+		return callObjectMethod(
+			"encode",
+			"(Ljava/nio/CharBuffer;Ljava/nio/ByteBuffer;Z)Ljava/nio/charset/CoderResult;",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline java::nio::charset::CoderResult CharsetEncoder::flush(java::nio::ByteBuffer arg0) const
+	{
+		return callObjectMethod(
+			"flush",
+			"(Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult;",
+			arg0.object()
+		);
+	}
+	inline jboolean CharsetEncoder::isLegalReplacement(JByteArray arg0) const
+	{
+		return callMethod<jboolean>(
+			"isLegalReplacement",
+			"([B)Z",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline java::nio::charset::CodingErrorAction CharsetEncoder::malformedInputAction() const
+	{
+		return callObjectMethod(
+			"malformedInputAction",
+			"()Ljava/nio/charset/CodingErrorAction;"
+		);
+	}
+	inline jfloat CharsetEncoder::maxBytesPerChar() const
+	{
+		return callMethod<jfloat>(
+			"maxBytesPerChar",
+			"()F"
+		);
+	}
+	inline java::nio::charset::CharsetEncoder CharsetEncoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0) const
+	{
+		return callObjectMethod(
+			"onMalformedInput",
+			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
+			arg0.object()
+		);
+	}
+	inline java::nio::charset::CharsetEncoder CharsetEncoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0) const
+	{
+		return callObjectMethod(
+			"onUnmappableCharacter",
+			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
+			arg0.object()
+		);
+	}
+	inline java::nio::charset::CharsetEncoder CharsetEncoder::replaceWith(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"replaceWith",
+			"([B)Ljava/nio/charset/CharsetEncoder;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline JByteArray CharsetEncoder::replacement() const
+	{
+		return callObjectMethod(
+			"replacement",
+			"()[B"
+		);
+	}
+	inline java::nio::charset::CharsetEncoder CharsetEncoder::reset() const
+	{
+		return callObjectMethod(
+			"reset",
+			"()Ljava/nio/charset/CharsetEncoder;"
+		);
+	}
+	inline java::nio::charset::CodingErrorAction CharsetEncoder::unmappableCharacterAction() const
+	{
+		return callObjectMethod(
+			"unmappableCharacterAction",
+			"()Ljava/nio/charset/CodingErrorAction;"
+		);
+	}
 } // namespace java::nio::charset
+
+// Base class headers
 

@@ -1,29 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../os/Parcel.def.hpp"
+#include "./PictureInPictureParams.def.hpp"
 
 namespace android::app
 {
-	class PictureInPictureParams : public JObject
+	// Fields
+	inline JObject PictureInPictureParams::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PictureInPictureParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PictureInPictureParams(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.PictureInPictureParams",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PictureInPictureParams::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void PictureInPictureParams::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

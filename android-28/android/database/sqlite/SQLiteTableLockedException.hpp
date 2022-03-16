@@ -1,25 +1,31 @@
 #pragma once
 
-#include "./SQLiteException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SQLiteTableLockedException.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteTableLockedException : public android::database::sqlite::SQLiteException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SQLiteTableLockedException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteTableLockedException(QJniObject obj);
-		
-		// Constructors
-		SQLiteTableLockedException();
-		SQLiteTableLockedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SQLiteTableLockedException::SQLiteTableLockedException()
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteTableLockedException",
+			"()V"
+		) {}
+	inline SQLiteTableLockedException::SQLiteTableLockedException(JString arg0)
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteTableLockedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::database::sqlite
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
+#include "./SQLiteException.hpp"
 

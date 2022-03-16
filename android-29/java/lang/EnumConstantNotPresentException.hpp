@@ -1,27 +1,40 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JClass;
-class JString;
+#include "../../JClass.hpp"
+#include "../../JString.hpp"
+#include "./EnumConstantNotPresentException.def.hpp"
 
 namespace java::lang
 {
-	class EnumConstantNotPresentException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline EnumConstantNotPresentException::EnumConstantNotPresentException(JClass arg0, JString arg1)
+		: java::lang::RuntimeException(
+			"java.lang.EnumConstantNotPresentException",
+			"(Ljava/lang/Class;Ljava/lang/String;)V",
+			arg0.object<jclass>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString EnumConstantNotPresentException::constantName() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EnumConstantNotPresentException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		EnumConstantNotPresentException(QJniObject obj);
-		
-		// Constructors
-		EnumConstantNotPresentException(JClass arg0, JString arg1);
-		
-		// Methods
-		JString constantName() const;
-		JClass enumType() const;
-	};
+		return callObjectMethod(
+			"constantName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JClass EnumConstantNotPresentException::enumType() const
+	{
+		return callObjectMethod(
+			"enumType",
+			"()Ljava/lang/Class;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

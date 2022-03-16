@@ -1,36 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::content
-{
-	class Context;
-}
-namespace android::security
-{
-	class ConfirmationPrompt;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "../content/Context.def.hpp"
+#include "./ConfirmationPrompt.def.hpp"
+#include "../../JString.hpp"
+#include "./ConfirmationPrompt_Builder.def.hpp"
 
 namespace android::security
 {
-	class ConfirmationPrompt_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(android::content::Context arg0)
+		: JObject(
+			"android.security.ConfirmationPrompt$Builder",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::security::ConfirmationPrompt ConfirmationPrompt_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConfirmationPrompt_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationPrompt_Builder(QJniObject obj);
-		
-		// Constructors
-		ConfirmationPrompt_Builder(android::content::Context arg0);
-		
-		// Methods
-		android::security::ConfirmationPrompt build() const;
-		android::security::ConfirmationPrompt_Builder setExtraData(JByteArray arg0) const;
-		android::security::ConfirmationPrompt_Builder setPromptText(JString arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/security/ConfirmationPrompt;"
+		);
+	}
+	inline android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setExtraData(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"setExtraData",
+			"([B)Landroid/security/ConfirmationPrompt$Builder;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setPromptText(JString arg0) const
+	{
+		return callObjectMethod(
+			"setPromptText",
+			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

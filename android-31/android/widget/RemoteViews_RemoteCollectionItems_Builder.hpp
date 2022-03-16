@@ -1,35 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./RemoteViews.def.hpp"
+#include "./RemoteViews_RemoteCollectionItems.def.hpp"
+#include "./RemoteViews_RemoteCollectionItems_Builder.def.hpp"
 
 namespace android::widget
 {
-	class RemoteViews;
-}
-namespace android::widget
-{
-	class RemoteViews_RemoteCollectionItems;
-}
-
-namespace android::widget
-{
-	class RemoteViews_RemoteCollectionItems_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline RemoteViews_RemoteCollectionItems_Builder::RemoteViews_RemoteCollectionItems_Builder()
+		: JObject(
+			"android.widget.RemoteViews$RemoteCollectionItems$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::addItem(jlong arg0, android::widget::RemoteViews arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RemoteViews_RemoteCollectionItems_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews_RemoteCollectionItems_Builder(QJniObject obj);
-		
-		// Constructors
-		RemoteViews_RemoteCollectionItems_Builder();
-		
-		// Methods
-		android::widget::RemoteViews_RemoteCollectionItems_Builder addItem(jlong arg0, android::widget::RemoteViews arg1) const;
-		android::widget::RemoteViews_RemoteCollectionItems build() const;
-		android::widget::RemoteViews_RemoteCollectionItems_Builder setHasStableIds(jboolean arg0) const;
-		android::widget::RemoteViews_RemoteCollectionItems_Builder setViewTypeCount(jint arg0) const;
-	};
+		return callObjectMethod(
+			"addItem",
+			"(JLandroid/widget/RemoteViews;)Landroid/widget/RemoteViews$RemoteCollectionItems$Builder;",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline android::widget::RemoteViews_RemoteCollectionItems RemoteViews_RemoteCollectionItems_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/widget/RemoteViews$RemoteCollectionItems;"
+		);
+	}
+	inline android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::setHasStableIds(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setHasStableIds",
+			"(Z)Landroid/widget/RemoteViews$RemoteCollectionItems$Builder;",
+			arg0
+		);
+	}
+	inline android::widget::RemoteViews_RemoteCollectionItems_Builder RemoteViews_RemoteCollectionItems_Builder::setViewTypeCount(jint arg0) const
+	{
+		return callObjectMethod(
+			"setViewTypeCount",
+			"(I)Landroid/widget/RemoteViews$RemoteCollectionItems$Builder;",
+			arg0
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
 

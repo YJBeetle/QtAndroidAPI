@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../java/io/IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Base64DataException.def.hpp"
 
 namespace android::util
 {
-	class Base64DataException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Base64DataException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		Base64DataException(QJniObject obj);
-		
-		// Constructors
-		Base64DataException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Base64DataException::Base64DataException(JString arg0)
+		: java::io::IOException(
+			"android.util.Base64DataException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/io/IOException.hpp"
 

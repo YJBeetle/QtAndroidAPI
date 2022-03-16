@@ -1,26 +1,31 @@
 #pragma once
 
-#include "../../../java/lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./IdentityCredentialException.def.hpp"
 
 namespace android::security::identity
 {
-	class IdentityCredentialException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IdentityCredentialException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityCredentialException(QJniObject obj);
-		
-		// Constructors
-		IdentityCredentialException(JString arg0);
-		IdentityCredentialException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IdentityCredentialException::IdentityCredentialException(JString arg0)
+		: java::lang::Exception(
+			"android.security.identity.IdentityCredentialException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline IdentityCredentialException::IdentityCredentialException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"android.security.identity.IdentityCredentialException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::security::identity
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
 

@@ -1,28 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::telephony::ims::feature
-{
-	class MmTelFeature_MmTelCapabilities;
-}
+#include "./feature/MmTelFeature_MmTelCapabilities.def.hpp"
+#include "./ImsMmTelManager_CapabilityCallback.def.hpp"
 
 namespace android::telephony::ims
 {
-	class ImsMmTelManager_CapabilityCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline ImsMmTelManager_CapabilityCallback::ImsMmTelManager_CapabilityCallback()
+		: JObject(
+			"android.telephony.ims.ImsMmTelManager$CapabilityCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ImsMmTelManager_CapabilityCallback::onCapabilitiesStatusChanged(android::telephony::ims::feature::MmTelFeature_MmTelCapabilities arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ImsMmTelManager_CapabilityCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImsMmTelManager_CapabilityCallback(QJniObject obj);
-		
-		// Constructors
-		ImsMmTelManager_CapabilityCallback();
-		
-		// Methods
-		void onCapabilitiesStatusChanged(android::telephony::ims::feature::MmTelFeature_MmTelCapabilities arg0) const;
-	};
+		callMethod<void>(
+			"onCapabilitiesStatusChanged",
+			"(Landroid/telephony/ims/feature/MmTelFeature$MmTelCapabilities;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::telephony::ims
+
+// Base class headers
 

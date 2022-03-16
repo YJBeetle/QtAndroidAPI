@@ -1,28 +1,52 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DynamicsProcessing_Stage.def.hpp"
 
 namespace android::media::audiofx
 {
-	class DynamicsProcessing_Stage : public JObject
+	// Fields
+	
+	// Constructors
+	inline DynamicsProcessing_Stage::DynamicsProcessing_Stage(jboolean arg0, jboolean arg1)
+		: JObject(
+			"android.media.audiofx.DynamicsProcessing$Stage",
+			"(ZZ)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean DynamicsProcessing_Stage::isEnabled() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DynamicsProcessing_Stage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing_Stage(QJniObject obj);
-		
-		// Constructors
-		DynamicsProcessing_Stage(jboolean arg0, jboolean arg1);
-		
-		// Methods
-		jboolean isEnabled() const;
-		jboolean isInUse() const;
-		void setEnabled(jboolean arg0) const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	inline jboolean DynamicsProcessing_Stage::isInUse() const
+	{
+		return callMethod<jboolean>(
+			"isInUse",
+			"()Z"
+		);
+	}
+	inline void DynamicsProcessing_Stage::setEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline JString DynamicsProcessing_Stage::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
 

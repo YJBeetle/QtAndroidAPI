@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./StorageInfo.def.hpp"
 
 namespace android::app::appsearch
 {
-	class StorageInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint StorageInfo::getAliveDocumentsCount() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StorageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StorageInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getAliveDocumentsCount() const;
-		jint getAliveNamespacesCount() const;
-		jlong getSizeBytes() const;
-	};
+		return callMethod<jint>(
+			"getAliveDocumentsCount",
+			"()I"
+		);
+	}
+	inline jint StorageInfo::getAliveNamespacesCount() const
+	{
+		return callMethod<jint>(
+			"getAliveNamespacesCount",
+			"()I"
+		);
+	}
+	inline jlong StorageInfo::getSizeBytes() const
+	{
+		return callMethod<jlong>(
+			"getSizeBytes",
+			"()J"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

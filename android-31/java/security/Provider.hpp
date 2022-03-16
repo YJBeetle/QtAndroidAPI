@@ -1,70 +1,281 @@
 #pragma once
 
-#include "../util/Properties.hpp"
-
-class JArray;
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JClass;
-class JObject;
-class JString;
-namespace java::security
-{
-	class Provider_Service;
-}
+#include "../../JArray.hpp"
+#include "../io/InputStream.def.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./Provider_Service.def.hpp"
+#include "./Provider.def.hpp"
 
 namespace java::security
 {
-	class Provider : public java::util::Properties
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void Provider::clear() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Provider(const char *className, const char *sig, Ts...agv) : java::util::Properties(className, sig, std::forward<Ts>(agv)...) {}
-		Provider(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void clear() const;
-		JObject compute(JObject arg0, JObject arg1) const;
-		JObject computeIfAbsent(JObject arg0, JObject arg1) const;
-		JObject computeIfPresent(JObject arg0, JObject arg1) const;
-		java::security::Provider configure(JString arg0) const;
-		JObject elements() const;
-		JObject entrySet() const;
-		void forEach(JObject arg0) const;
-		JObject get(JObject arg0) const;
-		JString getInfo() const;
-		JString getName() const;
-		JObject getOrDefault(JObject arg0, JObject arg1) const;
-		JString getProperty(JString arg0) const;
-		java::security::Provider_Service getService(JString arg0, JString arg1) const;
-		JObject getServices() const;
-		jdouble getVersion() const;
-		JString getVersionStr() const;
-		jboolean isConfigured() const;
-		JObject keySet() const;
-		JObject keys() const;
-		void load(java::io::InputStream arg0) const;
-		JObject merge(JObject arg0, JObject arg1, JObject arg2) const;
-		JObject put(JObject arg0, JObject arg1) const;
-		void putAll(JObject arg0) const;
-		JObject putIfAbsent(JObject arg0, JObject arg1) const;
-		jboolean remove(JObject arg0, JObject arg1) const;
-		JObject remove(JObject arg0) const;
-		jboolean replace(JObject arg0, JObject arg1, JObject arg2) const;
-		JObject replace(JObject arg0, JObject arg1) const;
-		void replaceAll(JObject arg0) const;
-		JString toString() const;
-		JObject values() const;
-	};
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline JObject Provider::compute(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"compute",
+			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline JObject Provider::computeIfAbsent(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"computeIfAbsent",
+			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline JObject Provider::computeIfPresent(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"computeIfPresent",
+			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline java::security::Provider Provider::configure(JString arg0) const
+	{
+		return callObjectMethod(
+			"configure",
+			"(Ljava/lang/String;)Ljava/security/Provider;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject Provider::elements() const
+	{
+		return callObjectMethod(
+			"elements",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline JObject Provider::entrySet() const
+	{
+		return callObjectMethod(
+			"entrySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline void Provider::forEach(JObject arg0) const
+	{
+		callMethod<void>(
+			"forEach",
+			"(Ljava/util/function/BiConsumer;)V",
+			arg0.object()
+		);
+	}
+	inline JObject Provider::get(JObject arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString Provider::getInfo() const
+	{
+		return callObjectMethod(
+			"getInfo",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Provider::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject Provider::getOrDefault(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"getOrDefault",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline JString Provider::getProperty(JString arg0) const
+	{
+		return callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::security::Provider_Service Provider::getService(JString arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"getService",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline JObject Provider::getServices() const
+	{
+		return callObjectMethod(
+			"getServices",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jdouble Provider::getVersion() const
+	{
+		return callMethod<jdouble>(
+			"getVersion",
+			"()D"
+		);
+	}
+	inline JString Provider::getVersionStr() const
+	{
+		return callObjectMethod(
+			"getVersionStr",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean Provider::isConfigured() const
+	{
+		return callMethod<jboolean>(
+			"isConfigured",
+			"()Z"
+		);
+	}
+	inline JObject Provider::keySet() const
+	{
+		return callObjectMethod(
+			"keySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject Provider::keys() const
+	{
+		return callObjectMethod(
+			"keys",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline void Provider::load(java::io::InputStream arg0) const
+	{
+		callMethod<void>(
+			"load",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		);
+	}
+	inline JObject Provider::merge(JObject arg0, JObject arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"merge",
+			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object()
+		);
+	}
+	inline JObject Provider::put(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"put",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline void Provider::putAll(JObject arg0) const
+	{
+		callMethod<void>(
+			"putAll",
+			"(Ljava/util/Map;)V",
+			arg0.object()
+		);
+	}
+	inline JObject Provider::putIfAbsent(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"putIfAbsent",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline jboolean Provider::remove(JObject arg0, JObject arg1) const
+	{
+		return callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline JObject Provider::remove(JObject arg0) const
+	{
+		return callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean Provider::replace(JObject arg0, JObject arg1, JObject arg2) const
+	{
+		return callMethod<jboolean>(
+			"replace",
+			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
+		);
+	}
+	inline JObject Provider::replace(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"replace",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline void Provider::replaceAll(JObject arg0) const
+	{
+		callMethod<void>(
+			"replaceAll",
+			"(Ljava/util/function/BiFunction;)V",
+			arg0.object()
+		);
+	}
+	inline JString Provider::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject Provider::values() const
+	{
+		return callObjectMethod(
+			"values",
+			"()Ljava/util/Collection;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
+#include "../util/Dictionary.hpp"
+#include "../util/Hashtable.hpp"
+#include "../util/Properties.hpp"
 

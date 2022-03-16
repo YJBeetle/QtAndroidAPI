@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./UnsupportedCallbackException.def.hpp"
 
 namespace javax::security::auth::callback
 {
-	class UnsupportedCallbackException : public java::lang::Exception
+	// Fields
+	
+	// Constructors
+	inline UnsupportedCallbackException::UnsupportedCallbackException(JObject arg0)
+		: java::lang::Exception(
+			"javax.security.auth.callback.UnsupportedCallbackException",
+			"(Ljavax/security/auth/callback/Callback;)V",
+			arg0.object()
+		) {}
+	inline UnsupportedCallbackException::UnsupportedCallbackException(JObject arg0, JString arg1)
+		: java::lang::Exception(
+			"javax.security.auth.callback.UnsupportedCallbackException",
+			"(Ljavax/security/auth/callback/Callback;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JObject UnsupportedCallbackException::getCallback() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UnsupportedCallbackException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		UnsupportedCallbackException(QJniObject obj);
-		
-		// Constructors
-		UnsupportedCallbackException(JObject arg0);
-		UnsupportedCallbackException(JObject arg0, JString arg1);
-		
-		// Methods
-		JObject getCallback() const;
-	};
+		return callObjectMethod(
+			"getCallback",
+			"()Ljavax/security/auth/callback/Callback;"
+		);
+	}
 } // namespace javax::security::auth::callback
+
+// Base class headers
+#include "../../../../java/lang/Exception.hpp"
 

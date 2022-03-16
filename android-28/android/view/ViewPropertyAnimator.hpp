@@ -1,63 +1,306 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./View.def.hpp"
+#include "./ViewPropertyAnimator.def.hpp"
 
 namespace android::view
 {
-	class View;
-}
-
-namespace android::view
-{
-	class ViewPropertyAnimator : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::alpha(jfloat arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ViewPropertyAnimator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewPropertyAnimator(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::view::ViewPropertyAnimator alpha(jfloat arg0) const;
-		android::view::ViewPropertyAnimator alphaBy(jfloat arg0) const;
-		void cancel() const;
-		jlong getDuration() const;
-		JObject getInterpolator() const;
-		jlong getStartDelay() const;
-		android::view::ViewPropertyAnimator rotation(jfloat arg0) const;
-		android::view::ViewPropertyAnimator rotationBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator rotationX(jfloat arg0) const;
-		android::view::ViewPropertyAnimator rotationXBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator rotationY(jfloat arg0) const;
-		android::view::ViewPropertyAnimator rotationYBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator scaleX(jfloat arg0) const;
-		android::view::ViewPropertyAnimator scaleXBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator scaleY(jfloat arg0) const;
-		android::view::ViewPropertyAnimator scaleYBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator setDuration(jlong arg0) const;
-		android::view::ViewPropertyAnimator setInterpolator(JObject arg0) const;
-		android::view::ViewPropertyAnimator setListener(JObject arg0) const;
-		android::view::ViewPropertyAnimator setStartDelay(jlong arg0) const;
-		android::view::ViewPropertyAnimator setUpdateListener(JObject arg0) const;
-		void start() const;
-		android::view::ViewPropertyAnimator translationX(jfloat arg0) const;
-		android::view::ViewPropertyAnimator translationXBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator translationY(jfloat arg0) const;
-		android::view::ViewPropertyAnimator translationYBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator translationZ(jfloat arg0) const;
-		android::view::ViewPropertyAnimator translationZBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator withEndAction(JObject arg0) const;
-		android::view::ViewPropertyAnimator withLayer() const;
-		android::view::ViewPropertyAnimator withStartAction(JObject arg0) const;
-		android::view::ViewPropertyAnimator x(jfloat arg0) const;
-		android::view::ViewPropertyAnimator xBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator y(jfloat arg0) const;
-		android::view::ViewPropertyAnimator yBy(jfloat arg0) const;
-		android::view::ViewPropertyAnimator z(jfloat arg0) const;
-		android::view::ViewPropertyAnimator zBy(jfloat arg0) const;
-	};
+		return callObjectMethod(
+			"alpha",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::alphaBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"alphaBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline void ViewPropertyAnimator::cancel() const
+	{
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline jlong ViewPropertyAnimator::getDuration() const
+	{
+		return callMethod<jlong>(
+			"getDuration",
+			"()J"
+		);
+	}
+	inline JObject ViewPropertyAnimator::getInterpolator() const
+	{
+		return callObjectMethod(
+			"getInterpolator",
+			"()Landroid/animation/TimeInterpolator;"
+		);
+	}
+	inline jlong ViewPropertyAnimator::getStartDelay() const
+	{
+		return callMethod<jlong>(
+			"getStartDelay",
+			"()J"
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::rotation(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"rotation",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"rotationBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationX(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"rotationX",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationXBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"rotationXBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationY(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"rotationY",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationYBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"rotationYBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleX(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"scaleX",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleXBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"scaleXBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleY(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"scaleY",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleYBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"scaleYBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::setDuration(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setDuration",
+			"(J)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::setInterpolator(JObject arg0) const
+	{
+		return callObjectMethod(
+			"setInterpolator",
+			"(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;",
+			arg0.object()
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::setListener(JObject arg0) const
+	{
+		return callObjectMethod(
+			"setListener",
+			"(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;",
+			arg0.object()
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::setStartDelay(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setStartDelay",
+			"(J)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::setUpdateListener(JObject arg0) const
+	{
+		return callObjectMethod(
+			"setUpdateListener",
+			"(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;",
+			arg0.object()
+		);
+	}
+	inline void ViewPropertyAnimator::start() const
+	{
+		callMethod<void>(
+			"start",
+			"()V"
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::translationX(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"translationX",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::translationXBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"translationXBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::translationY(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"translationY",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::translationYBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"translationYBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZ(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"translationZ",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"translationZBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::withEndAction(JObject arg0) const
+	{
+		return callObjectMethod(
+			"withEndAction",
+			"(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;",
+			arg0.object()
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::withLayer() const
+	{
+		return callObjectMethod(
+			"withLayer",
+			"()Landroid/view/ViewPropertyAnimator;"
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::withStartAction(JObject arg0) const
+	{
+		return callObjectMethod(
+			"withStartAction",
+			"(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;",
+			arg0.object()
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::x(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"x",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::xBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"xBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::y(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"y",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::yBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"yBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::z(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"z",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	inline android::view::ViewPropertyAnimator ViewPropertyAnimator::zBy(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"zBy",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

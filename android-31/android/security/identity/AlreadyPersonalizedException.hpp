@@ -1,26 +1,32 @@
 #pragma once
 
-#include "./IdentityCredentialException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./AlreadyPersonalizedException.def.hpp"
 
 namespace android::security::identity
 {
-	class AlreadyPersonalizedException : public android::security::identity::IdentityCredentialException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlreadyPersonalizedException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		AlreadyPersonalizedException(QJniObject obj);
-		
-		// Constructors
-		AlreadyPersonalizedException(JString arg0);
-		AlreadyPersonalizedException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AlreadyPersonalizedException::AlreadyPersonalizedException(JString arg0)
+		: android::security::identity::IdentityCredentialException(
+			"android.security.identity.AlreadyPersonalizedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline AlreadyPersonalizedException::AlreadyPersonalizedException(JString arg0, JThrowable arg1)
+		: android::security::identity::IdentityCredentialException(
+			"android.security.identity.AlreadyPersonalizedException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::security::identity
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./IdentityCredentialException.hpp"
 

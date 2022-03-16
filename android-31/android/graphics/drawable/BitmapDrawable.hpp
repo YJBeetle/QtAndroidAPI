@@ -1,138 +1,403 @@
 #pragma once
 
-#include "./Drawable.hpp"
-
-class JIntArray;
-namespace android::content::res
-{
-	class ColorStateList;
-}
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::content::res
-{
-	class Resources_Theme;
-}
-namespace android::graphics
-{
-	class Bitmap;
-}
-namespace android::graphics
-{
-	class BlendMode;
-}
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class ColorFilter;
-}
-namespace android::graphics
-{
-	class Insets;
-}
-namespace android::graphics
-{
-	class Outline;
-}
-namespace android::graphics
-{
-	class Paint;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::graphics
-{
-	class Shader_TileMode;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::graphics::drawable
-{
-	class Drawable_ConstantState;
-}
-namespace android::util
-{
-	class DisplayMetrics;
-}
-namespace java::io
-{
-	class InputStream;
-}
-class JString;
+#include "../../../JIntArray.hpp"
+#include "../../content/res/ColorStateList.def.hpp"
+#include "../../content/res/Resources.def.hpp"
+#include "../../content/res/Resources_Theme.def.hpp"
+#include "../Bitmap.def.hpp"
+#include "../BlendMode.def.hpp"
+#include "../Canvas.def.hpp"
+#include "../ColorFilter.def.hpp"
+#include "../Insets.def.hpp"
+#include "../Outline.def.hpp"
+#include "../Paint.def.hpp"
+#include "../Rect.def.hpp"
+#include "../Shader_TileMode.def.hpp"
+#include "./Drawable.def.hpp"
+#include "./Drawable_ConstantState.def.hpp"
+#include "../../util/DisplayMetrics.def.hpp"
+#include "../../../java/io/InputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "./BitmapDrawable.def.hpp"
 
 namespace android::graphics::drawable
 {
-	class BitmapDrawable : public android::graphics::drawable::Drawable
+	// Fields
+	
+	// Constructors
+	inline BitmapDrawable::BitmapDrawable()
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"()V"
+		) {}
+	inline BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0)
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Landroid/content/res/Resources;)V",
+			arg0.object()
+		) {}
+	inline BitmapDrawable::BitmapDrawable(android::graphics::Bitmap arg0)
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Landroid/graphics/Bitmap;)V",
+			arg0.object()
+		) {}
+	inline BitmapDrawable::BitmapDrawable(java::io::InputStream arg0)
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		) {}
+	inline BitmapDrawable::BitmapDrawable(JString arg0)
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1)
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, java::io::InputStream arg1)
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Landroid/content/res/Resources;Ljava/io/InputStream;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, JString arg1)
+		: android::graphics::drawable::Drawable(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Landroid/content/res/Resources;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline void BitmapDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BitmapDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
-		BitmapDrawable(QJniObject obj);
-		
-		// Constructors
-		BitmapDrawable();
-		BitmapDrawable(android::content::res::Resources arg0);
-		BitmapDrawable(android::graphics::Bitmap arg0);
-		BitmapDrawable(java::io::InputStream arg0);
-		BitmapDrawable(JString arg0);
-		BitmapDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1);
-		BitmapDrawable(android::content::res::Resources arg0, java::io::InputStream arg1);
-		BitmapDrawable(android::content::res::Resources arg0, JString arg1);
-		
-		// Methods
-		void applyTheme(android::content::res::Resources_Theme arg0) const;
-		jboolean canApplyTheme() const;
-		void draw(android::graphics::Canvas arg0) const;
-		jint getAlpha() const;
-		android::graphics::Bitmap getBitmap() const;
-		jint getChangingConfigurations() const;
-		android::graphics::ColorFilter getColorFilter() const;
-		android::graphics::drawable::Drawable_ConstantState getConstantState() const;
-		jint getGravity() const;
-		jint getIntrinsicHeight() const;
-		jint getIntrinsicWidth() const;
-		jint getOpacity() const;
-		android::graphics::Insets getOpticalInsets() const;
-		void getOutline(android::graphics::Outline arg0) const;
-		android::graphics::Paint getPaint() const;
-		android::graphics::Shader_TileMode getTileModeX() const;
-		android::graphics::Shader_TileMode getTileModeY() const;
-		jboolean hasAntiAlias() const;
-		jboolean hasFocusStateSpecified() const;
-		jboolean hasMipMap() const;
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
-		jboolean isAutoMirrored() const;
-		jboolean isFilterBitmap() const;
-		jboolean isStateful() const;
-		android::graphics::drawable::Drawable mutate() const;
-		void setAlpha(jint arg0) const;
-		void setAntiAlias(jboolean arg0) const;
-		void setAutoMirrored(jboolean arg0) const;
-		void setBitmap(android::graphics::Bitmap arg0) const;
-		void setColorFilter(android::graphics::ColorFilter arg0) const;
-		void setDither(jboolean arg0) const;
-		void setFilterBitmap(jboolean arg0) const;
-		void setGravity(jint arg0) const;
-		void setMipMap(jboolean arg0) const;
-		void setTargetDensity(android::graphics::Canvas arg0) const;
-		void setTargetDensity(android::util::DisplayMetrics arg0) const;
-		void setTargetDensity(jint arg0) const;
-		void setTileModeX(android::graphics::Shader_TileMode arg0) const;
-		void setTileModeXY(android::graphics::Shader_TileMode arg0, android::graphics::Shader_TileMode arg1) const;
-		void setTileModeY(android::graphics::Shader_TileMode arg0) const;
-		void setTintBlendMode(android::graphics::BlendMode arg0) const;
-		void setTintList(android::content::res::ColorStateList arg0) const;
-	};
+		callMethod<void>(
+			"applyTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean BitmapDrawable::canApplyTheme() const
+	{
+		return callMethod<jboolean>(
+			"canApplyTheme",
+			"()Z"
+		);
+	}
+	inline void BitmapDrawable::draw(android::graphics::Canvas arg0) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.object()
+		);
+	}
+	inline jint BitmapDrawable::getAlpha() const
+	{
+		return callMethod<jint>(
+			"getAlpha",
+			"()I"
+		);
+	}
+	inline android::graphics::Bitmap BitmapDrawable::getBitmap() const
+	{
+		return callObjectMethod(
+			"getBitmap",
+			"()Landroid/graphics/Bitmap;"
+		);
+	}
+	inline jint BitmapDrawable::getChangingConfigurations() const
+	{
+		return callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
+	}
+	inline android::graphics::ColorFilter BitmapDrawable::getColorFilter() const
+	{
+		return callObjectMethod(
+			"getColorFilter",
+			"()Landroid/graphics/ColorFilter;"
+		);
+	}
+	inline android::graphics::drawable::Drawable_ConstantState BitmapDrawable::getConstantState() const
+	{
+		return callObjectMethod(
+			"getConstantState",
+			"()Landroid/graphics/drawable/Drawable$ConstantState;"
+		);
+	}
+	inline jint BitmapDrawable::getGravity() const
+	{
+		return callMethod<jint>(
+			"getGravity",
+			"()I"
+		);
+	}
+	inline jint BitmapDrawable::getIntrinsicHeight() const
+	{
+		return callMethod<jint>(
+			"getIntrinsicHeight",
+			"()I"
+		);
+	}
+	inline jint BitmapDrawable::getIntrinsicWidth() const
+	{
+		return callMethod<jint>(
+			"getIntrinsicWidth",
+			"()I"
+		);
+	}
+	inline jint BitmapDrawable::getOpacity() const
+	{
+		return callMethod<jint>(
+			"getOpacity",
+			"()I"
+		);
+	}
+	inline android::graphics::Insets BitmapDrawable::getOpticalInsets() const
+	{
+		return callObjectMethod(
+			"getOpticalInsets",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	inline void BitmapDrawable::getOutline(android::graphics::Outline arg0) const
+	{
+		callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Paint BitmapDrawable::getPaint() const
+	{
+		return callObjectMethod(
+			"getPaint",
+			"()Landroid/graphics/Paint;"
+		);
+	}
+	inline android::graphics::Shader_TileMode BitmapDrawable::getTileModeX() const
+	{
+		return callObjectMethod(
+			"getTileModeX",
+			"()Landroid/graphics/Shader$TileMode;"
+		);
+	}
+	inline android::graphics::Shader_TileMode BitmapDrawable::getTileModeY() const
+	{
+		return callObjectMethod(
+			"getTileModeY",
+			"()Landroid/graphics/Shader$TileMode;"
+		);
+	}
+	inline jboolean BitmapDrawable::hasAntiAlias() const
+	{
+		return callMethod<jboolean>(
+			"hasAntiAlias",
+			"()Z"
+		);
+	}
+	inline jboolean BitmapDrawable::hasFocusStateSpecified() const
+	{
+		return callMethod<jboolean>(
+			"hasFocusStateSpecified",
+			"()Z"
+		);
+	}
+	inline jboolean BitmapDrawable::hasMipMap() const
+	{
+		return callMethod<jboolean>(
+			"hasMipMap",
+			"()Z"
+		);
+	}
+	inline void BitmapDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
+	{
+		callMethod<void>(
+			"inflate",
+			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline jboolean BitmapDrawable::isAutoMirrored() const
+	{
+		return callMethod<jboolean>(
+			"isAutoMirrored",
+			"()Z"
+		);
+	}
+	inline jboolean BitmapDrawable::isFilterBitmap() const
+	{
+		return callMethod<jboolean>(
+			"isFilterBitmap",
+			"()Z"
+		);
+	}
+	inline jboolean BitmapDrawable::isStateful() const
+	{
+		return callMethod<jboolean>(
+			"isStateful",
+			"()Z"
+		);
+	}
+	inline android::graphics::drawable::Drawable BitmapDrawable::mutate() const
+	{
+		return callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline void BitmapDrawable::setAlpha(jint arg0) const
+	{
+		callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setAntiAlias(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAntiAlias",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setAutoMirrored(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAutoMirrored",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setBitmap(android::graphics::Bitmap arg0) const
+	{
+		callMethod<void>(
+			"setBitmap",
+			"(Landroid/graphics/Bitmap;)V",
+			arg0.object()
+		);
+	}
+	inline void BitmapDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
+	{
+		callMethod<void>(
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
+			arg0.object()
+		);
+	}
+	inline void BitmapDrawable::setDither(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDither",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setFilterBitmap(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setFilterBitmap",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setGravity(jint arg0) const
+	{
+		callMethod<void>(
+			"setGravity",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setMipMap(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setMipMap",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setTargetDensity(android::graphics::Canvas arg0) const
+	{
+		callMethod<void>(
+			"setTargetDensity",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.object()
+		);
+	}
+	inline void BitmapDrawable::setTargetDensity(android::util::DisplayMetrics arg0) const
+	{
+		callMethod<void>(
+			"setTargetDensity",
+			"(Landroid/util/DisplayMetrics;)V",
+			arg0.object()
+		);
+	}
+	inline void BitmapDrawable::setTargetDensity(jint arg0) const
+	{
+		callMethod<void>(
+			"setTargetDensity",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void BitmapDrawable::setTileModeX(android::graphics::Shader_TileMode arg0) const
+	{
+		callMethod<void>(
+			"setTileModeX",
+			"(Landroid/graphics/Shader$TileMode;)V",
+			arg0.object()
+		);
+	}
+	inline void BitmapDrawable::setTileModeXY(android::graphics::Shader_TileMode arg0, android::graphics::Shader_TileMode arg1) const
+	{
+		callMethod<void>(
+			"setTileModeXY",
+			"(Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void BitmapDrawable::setTileModeY(android::graphics::Shader_TileMode arg0) const
+	{
+		callMethod<void>(
+			"setTileModeY",
+			"(Landroid/graphics/Shader$TileMode;)V",
+			arg0.object()
+		);
+	}
+	inline void BitmapDrawable::setTintBlendMode(android::graphics::BlendMode arg0) const
+	{
+		callMethod<void>(
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.object()
+		);
+	}
+	inline void BitmapDrawable::setTintList(android::content::res::ColorStateList arg0) const
+	{
+		callMethod<void>(
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics::drawable
+
+// Base class headers
+#include "./Drawable.hpp"
 

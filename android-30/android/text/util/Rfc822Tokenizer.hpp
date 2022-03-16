@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./Rfc822Tokenizer.def.hpp"
 
 namespace android::text::util
 {
-	class Rfc822Tokenizer : public JObject
+	// Fields
+	
+	// Constructors
+	inline Rfc822Tokenizer::Rfc822Tokenizer()
+		: JObject(
+			"android.text.util.Rfc822Tokenizer",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JArray Rfc822Tokenizer::tokenize(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Rfc822Tokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Rfc822Tokenizer(QJniObject obj);
-		
-		// Constructors
-		Rfc822Tokenizer();
-		
-		// Methods
-		static JArray tokenize(JString arg0);
-		static void tokenize(JString arg0, JObject arg1);
-		jint findTokenEnd(JString arg0, jint arg1) const;
-		jint findTokenStart(JString arg0, jint arg1) const;
-		JString terminateToken(JString arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.text.util.Rfc822Tokenizer",
+			"tokenize",
+			"(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Rfc822Tokenizer::tokenize(JString arg0, JObject arg1)
+	{
+		callStaticMethod<void>(
+			"android.text.util.Rfc822Tokenizer",
+			"tokenize",
+			"(Ljava/lang/CharSequence;Ljava/util/Collection;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline jint Rfc822Tokenizer::findTokenEnd(JString arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"findTokenEnd",
+			"(Ljava/lang/CharSequence;I)I",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline jint Rfc822Tokenizer::findTokenStart(JString arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"findTokenStart",
+			"(Ljava/lang/CharSequence;I)I",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline JString Rfc822Tokenizer::terminateToken(JString arg0) const
+	{
+		return callObjectMethod(
+			"terminateToken",
+			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::text::util
+
+// Base class headers
 

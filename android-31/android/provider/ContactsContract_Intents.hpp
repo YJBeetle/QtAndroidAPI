@@ -1,39 +1,141 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_Intents.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Intents : public JObject
+	// Fields
+	inline JString ContactsContract_Intents::ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS()
 	{
-	public:
-		// Fields
-		static JString ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS();
-		static JString ATTACH_IMAGE();
-		static JString CONTACTS_DATABASE_CREATED();
-		static JString EXTRA_CREATE_DESCRIPTION();
-		static JString EXTRA_FORCE_CREATE();
-		static JString EXTRA_RECIPIENT_CONTACT_CHAT_ID();
-		static JString EXTRA_RECIPIENT_CONTACT_NAME();
-		static JString EXTRA_RECIPIENT_CONTACT_URI();
-		static JString INVITE_CONTACT();
-		static JString METADATA_ACCOUNT_TYPE();
-		static JString METADATA_MIMETYPE();
-		static JString SEARCH_SUGGESTION_CLICKED();
-		static JString SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED();
-		static JString SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED();
-		static JString SHOW_OR_CREATE_CONTACT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Intents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Intents(QJniObject obj);
-		
-		// Constructors
-		ContactsContract_Intents();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::ATTACH_IMAGE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"ATTACH_IMAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::CONTACTS_DATABASE_CREATED()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"CONTACTS_DATABASE_CREATED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::EXTRA_CREATE_DESCRIPTION()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"EXTRA_CREATE_DESCRIPTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::EXTRA_FORCE_CREATE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"EXTRA_FORCE_CREATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::EXTRA_RECIPIENT_CONTACT_CHAT_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"EXTRA_RECIPIENT_CONTACT_CHAT_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::EXTRA_RECIPIENT_CONTACT_NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"EXTRA_RECIPIENT_CONTACT_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::EXTRA_RECIPIENT_CONTACT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"EXTRA_RECIPIENT_CONTACT_URI",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::INVITE_CONTACT()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"INVITE_CONTACT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::METADATA_ACCOUNT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"METADATA_ACCOUNT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::METADATA_MIMETYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"METADATA_MIMETYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::SEARCH_SUGGESTION_CLICKED()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"SEARCH_SUGGESTION_CLICKED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Intents::SHOW_OR_CREATE_CONTACT()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Intents",
+			"SHOW_OR_CREATE_CONTACT",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline ContactsContract_Intents::ContactsContract_Intents()
+		: JObject(
+			"android.provider.ContactsContract$Intents",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

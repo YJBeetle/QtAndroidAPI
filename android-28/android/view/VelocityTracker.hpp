@@ -1,37 +1,94 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MotionEvent.def.hpp"
+#include "../../JString.hpp"
+#include "./VelocityTracker.def.hpp"
 
 namespace android::view
 {
-	class MotionEvent;
-}
-class JString;
-
-namespace android::view
-{
-	class VelocityTracker : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::VelocityTracker VelocityTracker::obtain()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VelocityTracker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VelocityTracker(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::view::VelocityTracker obtain();
-		void addMovement(android::view::MotionEvent arg0) const;
-		void clear() const;
-		void computeCurrentVelocity(jint arg0) const;
-		void computeCurrentVelocity(jint arg0, jfloat arg1) const;
-		jfloat getXVelocity() const;
-		jfloat getXVelocity(jint arg0) const;
-		jfloat getYVelocity() const;
-		jfloat getYVelocity(jint arg0) const;
-		void recycle() const;
-	};
+		return callStaticObjectMethod(
+			"android.view.VelocityTracker",
+			"obtain",
+			"()Landroid/view/VelocityTracker;"
+		);
+	}
+	inline void VelocityTracker::addMovement(android::view::MotionEvent arg0) const
+	{
+		callMethod<void>(
+			"addMovement",
+			"(Landroid/view/MotionEvent;)V",
+			arg0.object()
+		);
+	}
+	inline void VelocityTracker::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline void VelocityTracker::computeCurrentVelocity(jint arg0) const
+	{
+		callMethod<void>(
+			"computeCurrentVelocity",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void VelocityTracker::computeCurrentVelocity(jint arg0, jfloat arg1) const
+	{
+		callMethod<void>(
+			"computeCurrentVelocity",
+			"(IF)V",
+			arg0,
+			arg1
+		);
+	}
+	inline jfloat VelocityTracker::getXVelocity() const
+	{
+		return callMethod<jfloat>(
+			"getXVelocity",
+			"()F"
+		);
+	}
+	inline jfloat VelocityTracker::getXVelocity(jint arg0) const
+	{
+		return callMethod<jfloat>(
+			"getXVelocity",
+			"(I)F",
+			arg0
+		);
+	}
+	inline jfloat VelocityTracker::getYVelocity() const
+	{
+		return callMethod<jfloat>(
+			"getYVelocity",
+			"()F"
+		);
+	}
+	inline jfloat VelocityTracker::getYVelocity(jint arg0) const
+	{
+		return callMethod<jfloat>(
+			"getYVelocity",
+			"(I)F",
+			arg0
+		);
+	}
+	inline void VelocityTracker::recycle() const
+	{
+		callMethod<void>(
+			"recycle",
+			"()V"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

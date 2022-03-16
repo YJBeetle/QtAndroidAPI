@@ -1,32 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::security::cert
-{
-	class Certificate;
-}
+#include "../../JString.hpp"
+#include "./cert/Certificate.def.hpp"
+#include "./KeyStore_TrustedCertificateEntry.def.hpp"
 
 namespace java::security
 {
-	class KeyStore_TrustedCertificateEntry : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyStore_TrustedCertificateEntry::KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0)
+		: JObject(
+			"java.security.KeyStore$TrustedCertificateEntry",
+			"(Ljava/security/cert/Certificate;)V",
+			arg0.object()
+		) {}
+	inline KeyStore_TrustedCertificateEntry::KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0, JObject arg1)
+		: JObject(
+			"java.security.KeyStore$TrustedCertificateEntry",
+			"(Ljava/security/cert/Certificate;Ljava/util/Set;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject KeyStore_TrustedCertificateEntry::getAttributes() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyStore_TrustedCertificateEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_TrustedCertificateEntry(QJniObject obj);
-		
-		// Constructors
-		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0);
-		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0, JObject arg1);
-		
-		// Methods
-		JObject getAttributes() const;
-		java::security::cert::Certificate getTrustedCertificate() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getAttributes",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline java::security::cert::Certificate KeyStore_TrustedCertificateEntry::getTrustedCertificate() const
+	{
+		return callObjectMethod(
+			"getTrustedCertificate",
+			"()Ljava/security/cert/Certificate;"
+		);
+	}
+	inline JString KeyStore_TrustedCertificateEntry::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

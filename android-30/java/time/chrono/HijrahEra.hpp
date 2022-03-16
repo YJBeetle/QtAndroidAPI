@@ -1,43 +1,79 @@
 #pragma once
 
-#include "../../lang/Enum.hpp"
-
-class JArray;
-class JString;
-namespace java::time::format
-{
-	class TextStyle;
-}
-namespace java::time::temporal
-{
-	class ValueRange;
-}
-namespace java::util
-{
-	class Locale;
-}
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../format/TextStyle.def.hpp"
+#include "../temporal/ValueRange.def.hpp"
+#include "../../util/Locale.def.hpp"
+#include "./HijrahEra.def.hpp"
 
 namespace java::time::chrono
 {
-	class HijrahEra : public java::lang::Enum
+	// Fields
+	inline java::time::chrono::HijrahEra HijrahEra::AH()
 	{
-	public:
-		// Fields
-		static java::time::chrono::HijrahEra AH();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit HijrahEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		HijrahEra(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::time::chrono::HijrahEra of(jint arg0);
-		static java::time::chrono::HijrahEra valueOf(JString arg0);
-		static JArray values();
-		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const;
-		jint getValue() const;
-		java::time::temporal::ValueRange range(JObject arg0) const;
-	};
+		return getStaticObjectField(
+			"java.time.chrono.HijrahEra",
+			"AH",
+			"Ljava/time/chrono/HijrahEra;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::time::chrono::HijrahEra HijrahEra::of(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.time.chrono.HijrahEra",
+			"of",
+			"(I)Ljava/time/chrono/HijrahEra;",
+			arg0
+		);
+	}
+	inline java::time::chrono::HijrahEra HijrahEra::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.time.chrono.HijrahEra",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/chrono/HijrahEra;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray HijrahEra::values()
+	{
+		return callStaticObjectMethod(
+			"java.time.chrono.HijrahEra",
+			"values",
+			"()[Ljava/time/chrono/HijrahEra;"
+		);
+	}
+	inline JString HijrahEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
+	{
+		return callObjectMethod(
+			"getDisplayName",
+			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jint HijrahEra::getValue() const
+	{
+		return callMethod<jint>(
+			"getValue",
+			"()I"
+		);
+	}
+	inline java::time::temporal::ValueRange HijrahEra::range(JObject arg0) const
+	{
+		return callObjectMethod(
+			"range",
+			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
+			arg0.object()
+		);
+	}
 } // namespace java::time::chrono
+
+// Base class headers
+#include "../../lang/Enum.hpp"
 

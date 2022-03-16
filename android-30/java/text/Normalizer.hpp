@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-class JString;
-namespace java::text
-{
-	class Normalizer_Form;
-}
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./Normalizer_Form.def.hpp"
+#include "./Normalizer.def.hpp"
 
 namespace java::text
 {
-	class Normalizer : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean Normalizer::isNormalized(JString arg0, java::text::Normalizer_Form arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Normalizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isNormalized(JString arg0, java::text::Normalizer_Form arg1);
-		static JString normalize(JString arg0, java::text::Normalizer_Form arg1);
-	};
+		return callStaticMethod<jboolean>(
+			"java.text.Normalizer",
+			"isNormalized",
+			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Z",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JString Normalizer::normalize(JString arg0, java::text::Normalizer_Form arg1)
+	{
+		return callStaticObjectMethod(
+			"java.text.Normalizer",
+			"normalize",
+			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
 } // namespace java::text
+
+// Base class headers
 

@@ -1,31 +1,46 @@
 #pragma once
 
+#include "./LogSessionId.def.hpp"
 #include "../../../JObject.hpp"
+#include "./RecordingSession.def.hpp"
 
 namespace android::media::metrics
 {
-	class LogSessionId;
-}
-class JObject;
-
-namespace android::media::metrics
-{
-	class RecordingSession : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void RecordingSession::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RecordingSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RecordingSession(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jboolean equals(JObject arg0) const;
-		android::media::metrics::LogSessionId getSessionId() const;
-		jint hashCode() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jboolean RecordingSession::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::media::metrics::LogSessionId RecordingSession::getSessionId() const
+	{
+		return callObjectMethod(
+			"getSessionId",
+			"()Landroid/media/metrics/LogSessionId;"
+		);
+	}
+	inline jint RecordingSession::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::media::metrics
+
+// Base class headers
 

@@ -1,42 +1,54 @@
 #pragma once
 
-#include "./DrawableContainer.hpp"
-
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::content::res
-{
-	class Resources_Theme;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::graphics::drawable
-{
-	class DrawableContainer_DrawableContainerState;
-}
+#include "../../content/res/Resources.def.hpp"
+#include "../../content/res/Resources_Theme.def.hpp"
+#include "./Drawable.def.hpp"
+#include "./DrawableContainer_DrawableContainerState.def.hpp"
+#include "./LevelListDrawable.def.hpp"
 
 namespace android::graphics::drawable
 {
-	class LevelListDrawable : public android::graphics::drawable::DrawableContainer
+	// Fields
+	
+	// Constructors
+	inline LevelListDrawable::LevelListDrawable()
+		: android::graphics::drawable::DrawableContainer(
+			"android.graphics.drawable.LevelListDrawable",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void LevelListDrawable::addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LevelListDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableContainer(className, sig, std::forward<Ts>(agv)...) {}
-		LevelListDrawable(QJniObject obj);
-		
-		// Constructors
-		LevelListDrawable();
-		
-		// Methods
-		void addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2) const;
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
-		android::graphics::drawable::Drawable mutate() const;
-	};
+		callMethod<void>(
+			"addLevel",
+			"(IILandroid/graphics/drawable/Drawable;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void LevelListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
+	{
+		callMethod<void>(
+			"inflate",
+			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline android::graphics::drawable::Drawable LevelListDrawable::mutate() const
+	{
+		return callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
 } // namespace android::graphics::drawable
+
+// Base class headers
+#include "./Drawable.hpp"
+#include "./DrawableContainer.hpp"
 

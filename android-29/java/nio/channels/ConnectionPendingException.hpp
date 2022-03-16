@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalStateException.hpp"
+#include "./ConnectionPendingException.def.hpp"
 
 namespace java::nio::channels
 {
-	class ConnectionPendingException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConnectionPendingException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectionPendingException(QJniObject obj);
-		
-		// Constructors
-		ConnectionPendingException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ConnectionPendingException::ConnectionPendingException()
+		: java::lang::IllegalStateException(
+			"java.nio.channels.ConnectionPendingException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalStateException.hpp"
 

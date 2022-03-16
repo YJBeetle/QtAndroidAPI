@@ -1,35 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::content
-{
-	class Context;
-}
-namespace android::security
-{
-	class ConfirmationCallback;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "../content/Context.def.hpp"
+#include "./ConfirmationCallback.def.hpp"
+#include "../../JString.hpp"
+#include "./ConfirmationPrompt.def.hpp"
 
 namespace android::security
 {
-	class ConfirmationPrompt : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean ConfirmationPrompt::isSupported(android::content::Context arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConfirmationPrompt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationPrompt(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isSupported(android::content::Context arg0);
-		void cancelPrompt() const;
-		void presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1) const;
-	};
+		return callStaticMethod<jboolean>(
+			"android.security.ConfirmationPrompt",
+			"isSupported",
+			"(Landroid/content/Context;)Z",
+			arg0.object()
+		);
+	}
+	inline void ConfirmationPrompt::cancelPrompt() const
+	{
+		callMethod<void>(
+			"cancelPrompt",
+			"()V"
+		);
+	}
+	inline void ConfirmationPrompt::presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1) const
+	{
+		callMethod<void>(
+			"presentPrompt",
+			"(Ljava/util/concurrent/Executor;Landroid/security/ConfirmationCallback;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

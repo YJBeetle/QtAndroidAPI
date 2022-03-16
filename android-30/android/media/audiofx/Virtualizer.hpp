@@ -1,44 +1,146 @@
 #pragma once
 
-#include "./AudioEffect.hpp"
-
-class JIntArray;
-namespace android::media::audiofx
-{
-	class Virtualizer_Settings;
-}
+#include "../../../JIntArray.hpp"
+#include "./Virtualizer_Settings.def.hpp"
+#include "./Virtualizer.def.hpp"
 
 namespace android::media::audiofx
 {
-	class Virtualizer : public android::media::audiofx::AudioEffect
+	// Fields
+	inline jint Virtualizer::PARAM_STRENGTH()
 	{
-	public:
-		// Fields
-		static jint PARAM_STRENGTH();
-		static jint PARAM_STRENGTH_SUPPORTED();
-		static jint VIRTUALIZATION_MODE_AUTO();
-		static jint VIRTUALIZATION_MODE_BINAURAL();
-		static jint VIRTUALIZATION_MODE_OFF();
-		static jint VIRTUALIZATION_MODE_TRANSAURAL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Virtualizer(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		Virtualizer(QJniObject obj);
-		
-		// Constructors
-		Virtualizer(jint arg0, jint arg1);
-		
-		// Methods
-		jboolean canVirtualize(jint arg0, jint arg1) const;
-		jboolean forceVirtualizationMode(jint arg0) const;
-		android::media::audiofx::Virtualizer_Settings getProperties() const;
-		jshort getRoundedStrength() const;
-		jboolean getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2) const;
-		jboolean getStrengthSupported() const;
-		jint getVirtualizationMode() const;
-		void setParameterListener(JObject arg0) const;
-		void setProperties(android::media::audiofx::Virtualizer_Settings arg0) const;
-		void setStrength(jshort arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.media.audiofx.Virtualizer",
+			"PARAM_STRENGTH"
+		);
+	}
+	inline jint Virtualizer::PARAM_STRENGTH_SUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.media.audiofx.Virtualizer",
+			"PARAM_STRENGTH_SUPPORTED"
+		);
+	}
+	inline jint Virtualizer::VIRTUALIZATION_MODE_AUTO()
+	{
+		return getStaticField<jint>(
+			"android.media.audiofx.Virtualizer",
+			"VIRTUALIZATION_MODE_AUTO"
+		);
+	}
+	inline jint Virtualizer::VIRTUALIZATION_MODE_BINAURAL()
+	{
+		return getStaticField<jint>(
+			"android.media.audiofx.Virtualizer",
+			"VIRTUALIZATION_MODE_BINAURAL"
+		);
+	}
+	inline jint Virtualizer::VIRTUALIZATION_MODE_OFF()
+	{
+		return getStaticField<jint>(
+			"android.media.audiofx.Virtualizer",
+			"VIRTUALIZATION_MODE_OFF"
+		);
+	}
+	inline jint Virtualizer::VIRTUALIZATION_MODE_TRANSAURAL()
+	{
+		return getStaticField<jint>(
+			"android.media.audiofx.Virtualizer",
+			"VIRTUALIZATION_MODE_TRANSAURAL"
+		);
+	}
+	
+	// Constructors
+	inline Virtualizer::Virtualizer(jint arg0, jint arg1)
+		: android::media::audiofx::AudioEffect(
+			"android.media.audiofx.Virtualizer",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean Virtualizer::canVirtualize(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"canVirtualize",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean Virtualizer::forceVirtualizationMode(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"forceVirtualizationMode",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline android::media::audiofx::Virtualizer_Settings Virtualizer::getProperties() const
+	{
+		return callObjectMethod(
+			"getProperties",
+			"()Landroid/media/audiofx/Virtualizer$Settings;"
+		);
+	}
+	inline jshort Virtualizer::getRoundedStrength() const
+	{
+		return callMethod<jshort>(
+			"getRoundedStrength",
+			"()S"
+		);
+	}
+	inline jboolean Virtualizer::getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2) const
+	{
+		return callMethod<jboolean>(
+			"getSpeakerAngles",
+			"(II[I)Z",
+			arg0,
+			arg1,
+			arg2.object<jintArray>()
+		);
+	}
+	inline jboolean Virtualizer::getStrengthSupported() const
+	{
+		return callMethod<jboolean>(
+			"getStrengthSupported",
+			"()Z"
+		);
+	}
+	inline jint Virtualizer::getVirtualizationMode() const
+	{
+		return callMethod<jint>(
+			"getVirtualizationMode",
+			"()I"
+		);
+	}
+	inline void Virtualizer::setParameterListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setParameterListener",
+			"(Landroid/media/audiofx/Virtualizer$OnParameterChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void Virtualizer::setProperties(android::media::audiofx::Virtualizer_Settings arg0) const
+	{
+		callMethod<void>(
+			"setProperties",
+			"(Landroid/media/audiofx/Virtualizer$Settings;)V",
+			arg0.object()
+		);
+	}
+	inline void Virtualizer::setStrength(jshort arg0) const
+	{
+		callMethod<void>(
+			"setStrength",
+			"(S)V",
+			arg0
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./AudioEffect.hpp"
 

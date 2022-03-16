@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GestureDescription.def.hpp"
+#include "./AccessibilityService_GestureResultCallback.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class GestureDescription;
-}
-
-namespace android::accessibilityservice
-{
-	class AccessibilityService_GestureResultCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline AccessibilityService_GestureResultCallback::AccessibilityService_GestureResultCallback()
+		: JObject(
+			"android.accessibilityservice.AccessibilityService$GestureResultCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void AccessibilityService_GestureResultCallback::onCancelled(android::accessibilityservice::GestureDescription arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityService_GestureResultCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService_GestureResultCallback(QJniObject obj);
-		
-		// Constructors
-		AccessibilityService_GestureResultCallback();
-		
-		// Methods
-		void onCancelled(android::accessibilityservice::GestureDescription arg0) const;
-		void onCompleted(android::accessibilityservice::GestureDescription arg0) const;
-	};
+		callMethod<void>(
+			"onCancelled",
+			"(Landroid/accessibilityservice/GestureDescription;)V",
+			arg0.object()
+		);
+	}
+	inline void AccessibilityService_GestureResultCallback::onCompleted(android::accessibilityservice::GestureDescription arg0) const
+	{
+		callMethod<void>(
+			"onCompleted",
+			"(Landroid/accessibilityservice/GestureDescription;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

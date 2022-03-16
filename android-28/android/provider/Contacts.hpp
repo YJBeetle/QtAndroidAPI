@@ -1,34 +1,68 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Contacts.def.hpp"
 
 namespace android::provider
 {
-	class Contacts : public JObject
+	// Fields
+	inline JString Contacts::AUTHORITY()
 	{
-	public:
-		// Fields
-		static JString AUTHORITY();
-		static android::net::Uri CONTENT_URI();
-		static jint KIND_EMAIL();
-		static jint KIND_IM();
-		static jint KIND_ORGANIZATION();
-		static jint KIND_PHONE();
-		static jint KIND_POSTAL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Contacts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Contacts",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Contacts::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jint Contacts::KIND_EMAIL()
+	{
+		return getStaticField<jint>(
+			"android.provider.Contacts",
+			"KIND_EMAIL"
+		);
+	}
+	inline jint Contacts::KIND_IM()
+	{
+		return getStaticField<jint>(
+			"android.provider.Contacts",
+			"KIND_IM"
+		);
+	}
+	inline jint Contacts::KIND_ORGANIZATION()
+	{
+		return getStaticField<jint>(
+			"android.provider.Contacts",
+			"KIND_ORGANIZATION"
+		);
+	}
+	inline jint Contacts::KIND_PHONE()
+	{
+		return getStaticField<jint>(
+			"android.provider.Contacts",
+			"KIND_PHONE"
+		);
+	}
+	inline jint Contacts::KIND_POSTAL()
+	{
+		return getStaticField<jint>(
+			"android.provider.Contacts",
+			"KIND_POSTAL"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

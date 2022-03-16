@@ -1,41 +1,98 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
-
-class JArray;
-class JString;
-namespace java::security::cert
-{
-	class X509Certificate;
-}
-namespace javax::net::ssl
-{
-	class SSLSocket;
-}
+#include "../../../../../JArray.hpp"
+#include "../../../../../JString.hpp"
+#include "../../../../../java/security/cert/X509Certificate.def.hpp"
+#include "../../../../../javax/net/ssl/SSLSocket.def.hpp"
+#include "./AbstractVerifier.def.hpp"
 
 namespace org::apache::http::conn::ssl
 {
-	class AbstractVerifier : public JObject
+	// Fields
+	
+	// Constructors
+	inline AbstractVerifier::AbstractVerifier()
+		: JObject(
+			"org.apache.http.conn.ssl.AbstractVerifier",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean AbstractVerifier::acceptableCountryWildcard(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AbstractVerifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractVerifier(QJniObject obj);
-		
-		// Constructors
-		AbstractVerifier();
-		
-		// Methods
-		static jboolean acceptableCountryWildcard(JString arg0);
-		static jint countDots(JString arg0);
-		static JArray getCNs(java::security::cert::X509Certificate arg0);
-		static JArray getDNSSubjectAlts(java::security::cert::X509Certificate arg0);
-		jboolean verify(JString arg0, JObject arg1) const;
-		void verify(JString arg0, java::security::cert::X509Certificate arg1) const;
-		void verify(JString arg0, javax::net::ssl::SSLSocket arg1) const;
-		void verify(JString arg0, JArray arg1, JArray arg2, jboolean arg3) const;
-	};
+		return callStaticMethod<jboolean>(
+			"org.apache.http.conn.ssl.AbstractVerifier",
+			"acceptableCountryWildcard",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint AbstractVerifier::countDots(JString arg0)
+	{
+		return callStaticMethod<jint>(
+			"org.apache.http.conn.ssl.AbstractVerifier",
+			"countDots",
+			"(Ljava/lang/String;)I",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray AbstractVerifier::getCNs(java::security::cert::X509Certificate arg0)
+	{
+		return callStaticObjectMethod(
+			"org.apache.http.conn.ssl.AbstractVerifier",
+			"getCNs",
+			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JArray AbstractVerifier::getDNSSubjectAlts(java::security::cert::X509Certificate arg0)
+	{
+		return callStaticObjectMethod(
+			"org.apache.http.conn.ssl.AbstractVerifier",
+			"getDNSSubjectAlts",
+			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline jboolean AbstractVerifier::verify(JString arg0, JObject arg1) const
+	{
+		return callMethod<jboolean>(
+			"verify",
+			"(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AbstractVerifier::verify(JString arg0, java::security::cert::X509Certificate arg1) const
+	{
+		callMethod<void>(
+			"verify",
+			"(Ljava/lang/String;Ljava/security/cert/X509Certificate;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AbstractVerifier::verify(JString arg0, javax::net::ssl::SSLSocket arg1) const
+	{
+		callMethod<void>(
+			"verify",
+			"(Ljava/lang/String;Ljavax/net/ssl/SSLSocket;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AbstractVerifier::verify(JString arg0, JArray arg1, JArray arg2, jboolean arg3) const
+	{
+		callMethod<void>(
+			"verify",
+			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object<jarray>(),
+			arg3
+		);
+	}
 } // namespace org::apache::http::conn::ssl
+
+// Base class headers
 

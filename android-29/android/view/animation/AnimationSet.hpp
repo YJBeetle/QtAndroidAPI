@@ -1,55 +1,174 @@
 #pragma once
 
-#include "./Animation.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view::animation
-{
-	class Animation;
-}
-namespace android::view::animation
-{
-	class Transformation;
-}
-class JObject;
+#include "../../content/Context.def.hpp"
+#include "./Animation.def.hpp"
+#include "./Transformation.def.hpp"
+#include "../../../JObject.hpp"
+#include "./AnimationSet.def.hpp"
 
 namespace android::view::animation
 {
-	class AnimationSet : public android::view::animation::Animation
+	// Fields
+	
+	// Constructors
+	inline AnimationSet::AnimationSet(jboolean arg0)
+		: android::view::animation::Animation(
+			"android.view.animation.AnimationSet",
+			"(Z)V",
+			arg0
+		) {}
+	inline AnimationSet::AnimationSet(android::content::Context arg0, JObject arg1)
+		: android::view::animation::Animation(
+			"android.view.animation.AnimationSet",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void AnimationSet::addAnimation(android::view::animation::Animation arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AnimationSet(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		AnimationSet(QJniObject obj);
-		
-		// Constructors
-		AnimationSet(jboolean arg0);
-		AnimationSet(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		void addAnimation(android::view::animation::Animation arg0) const;
-		jlong computeDurationHint() const;
-		JObject getAnimations() const;
-		jlong getDuration() const;
-		jlong getStartTime() const;
-		jboolean getTransformation(jlong arg0, android::view::animation::Transformation arg1) const;
-		void initialize(jint arg0, jint arg1, jint arg2, jint arg3) const;
-		void reset() const;
-		void restrictDuration(jlong arg0) const;
-		void scaleCurrentDuration(jfloat arg0) const;
-		void setDuration(jlong arg0) const;
-		void setFillAfter(jboolean arg0) const;
-		void setFillBefore(jboolean arg0) const;
-		void setRepeatMode(jint arg0) const;
-		void setStartOffset(jlong arg0) const;
-		void setStartTime(jlong arg0) const;
-		jboolean willChangeBounds() const;
-		jboolean willChangeTransformationMatrix() const;
-	};
+		callMethod<void>(
+			"addAnimation",
+			"(Landroid/view/animation/Animation;)V",
+			arg0.object()
+		);
+	}
+	inline jlong AnimationSet::computeDurationHint() const
+	{
+		return callMethod<jlong>(
+			"computeDurationHint",
+			"()J"
+		);
+	}
+	inline JObject AnimationSet::getAnimations() const
+	{
+		return callObjectMethod(
+			"getAnimations",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jlong AnimationSet::getDuration() const
+	{
+		return callMethod<jlong>(
+			"getDuration",
+			"()J"
+		);
+	}
+	inline jlong AnimationSet::getStartTime() const
+	{
+		return callMethod<jlong>(
+			"getStartTime",
+			"()J"
+		);
+	}
+	inline jboolean AnimationSet::getTransformation(jlong arg0, android::view::animation::Transformation arg1) const
+	{
+		return callMethod<jboolean>(
+			"getTransformation",
+			"(JLandroid/view/animation/Transformation;)Z",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void AnimationSet::initialize(jint arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"initialize",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void AnimationSet::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline void AnimationSet::restrictDuration(jlong arg0) const
+	{
+		callMethod<void>(
+			"restrictDuration",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void AnimationSet::scaleCurrentDuration(jfloat arg0) const
+	{
+		callMethod<void>(
+			"scaleCurrentDuration",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void AnimationSet::setDuration(jlong arg0) const
+	{
+		callMethod<void>(
+			"setDuration",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void AnimationSet::setFillAfter(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setFillAfter",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void AnimationSet::setFillBefore(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setFillBefore",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void AnimationSet::setRepeatMode(jint arg0) const
+	{
+		callMethod<void>(
+			"setRepeatMode",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void AnimationSet::setStartOffset(jlong arg0) const
+	{
+		callMethod<void>(
+			"setStartOffset",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void AnimationSet::setStartTime(jlong arg0) const
+	{
+		callMethod<void>(
+			"setStartTime",
+			"(J)V",
+			arg0
+		);
+	}
+	inline jboolean AnimationSet::willChangeBounds() const
+	{
+		return callMethod<jboolean>(
+			"willChangeBounds",
+			"()Z"
+		);
+	}
+	inline jboolean AnimationSet::willChangeTransformationMatrix() const
+	{
+		return callMethod<jboolean>(
+			"willChangeTransformationMatrix",
+			"()Z"
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./Animation.hpp"
 

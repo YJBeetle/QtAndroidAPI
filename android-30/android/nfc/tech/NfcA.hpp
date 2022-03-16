@@ -1,38 +1,98 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::nfc
-{
-	class Tag;
-}
+#include "../../../JByteArray.hpp"
+#include "../Tag.def.hpp"
+#include "./NfcA.def.hpp"
 
 namespace android::nfc::tech
 {
-	class NfcA : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::nfc::tech::NfcA NfcA::get(android::nfc::Tag arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NfcA(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NfcA(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::nfc::tech::NfcA get(android::nfc::Tag arg0);
-		void close() const;
-		void connect() const;
-		JByteArray getAtqa() const;
-		jint getMaxTransceiveLength() const;
-		jshort getSak() const;
-		android::nfc::Tag getTag() const;
-		jint getTimeout() const;
-		jboolean isConnected() const;
-		void setTimeout(jint arg0) const;
-		JByteArray transceive(JByteArray arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.nfc.tech.NfcA",
+			"get",
+			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcA;",
+			arg0.object()
+		);
+	}
+	inline void NfcA::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void NfcA::connect() const
+	{
+		callMethod<void>(
+			"connect",
+			"()V"
+		);
+	}
+	inline JByteArray NfcA::getAtqa() const
+	{
+		return callObjectMethod(
+			"getAtqa",
+			"()[B"
+		);
+	}
+	inline jint NfcA::getMaxTransceiveLength() const
+	{
+		return callMethod<jint>(
+			"getMaxTransceiveLength",
+			"()I"
+		);
+	}
+	inline jshort NfcA::getSak() const
+	{
+		return callMethod<jshort>(
+			"getSak",
+			"()S"
+		);
+	}
+	inline android::nfc::Tag NfcA::getTag() const
+	{
+		return callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
+		);
+	}
+	inline jint NfcA::getTimeout() const
+	{
+		return callMethod<jint>(
+			"getTimeout",
+			"()I"
+		);
+	}
+	inline jboolean NfcA::isConnected() const
+	{
+		return callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
+	inline void NfcA::setTimeout(jint arg0) const
+	{
+		callMethod<void>(
+			"setTimeout",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JByteArray NfcA::transceive(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"transceive",
+			"([B)[B",
+			arg0.object<jbyteArray>()
+		);
+	}
 } // namespace android::nfc::tech
+
+// Base class headers
 

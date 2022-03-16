@@ -1,46 +1,71 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::security::identity
-{
-	class IdentityCredential;
-}
-namespace java::security
-{
-	class Signature;
-}
-namespace javax::crypto
-{
-	class Cipher;
-}
-namespace javax::crypto
-{
-	class Mac;
-}
+#include "../../security/identity/IdentityCredential.def.hpp"
+#include "../../../java/security/Signature.def.hpp"
+#include "../../../javax/crypto/Cipher.def.hpp"
+#include "../../../javax/crypto/Mac.def.hpp"
+#include "./BiometricPrompt_CryptoObject.def.hpp"
 
 namespace android::hardware::biometrics
 {
-	class BiometricPrompt_CryptoObject : public JObject
+	// Fields
+	
+	// Constructors
+	inline BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(android::security::identity::IdentityCredential arg0)
+		: JObject(
+			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
+			"(Landroid/security/identity/IdentityCredential;)V",
+			arg0.object()
+		) {}
+	inline BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(java::security::Signature arg0)
+		: JObject(
+			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
+			"(Ljava/security/Signature;)V",
+			arg0.object()
+		) {}
+	inline BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Cipher arg0)
+		: JObject(
+			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
+			"(Ljavax/crypto/Cipher;)V",
+			arg0.object()
+		) {}
+	inline BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Mac arg0)
+		: JObject(
+			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
+			"(Ljavax/crypto/Mac;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline javax::crypto::Cipher BiometricPrompt_CryptoObject::getCipher() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BiometricPrompt_CryptoObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricPrompt_CryptoObject(QJniObject obj);
-		
-		// Constructors
-		BiometricPrompt_CryptoObject(android::security::identity::IdentityCredential arg0);
-		BiometricPrompt_CryptoObject(java::security::Signature arg0);
-		BiometricPrompt_CryptoObject(javax::crypto::Cipher arg0);
-		BiometricPrompt_CryptoObject(javax::crypto::Mac arg0);
-		
-		// Methods
-		javax::crypto::Cipher getCipher() const;
-		android::security::identity::IdentityCredential getIdentityCredential() const;
-		javax::crypto::Mac getMac() const;
-		java::security::Signature getSignature() const;
-	};
+		return callObjectMethod(
+			"getCipher",
+			"()Ljavax/crypto/Cipher;"
+		);
+	}
+	inline android::security::identity::IdentityCredential BiometricPrompt_CryptoObject::getIdentityCredential() const
+	{
+		return callObjectMethod(
+			"getIdentityCredential",
+			"()Landroid/security/identity/IdentityCredential;"
+		);
+	}
+	inline javax::crypto::Mac BiometricPrompt_CryptoObject::getMac() const
+	{
+		return callObjectMethod(
+			"getMac",
+			"()Ljavax/crypto/Mac;"
+		);
+	}
+	inline java::security::Signature BiometricPrompt_CryptoObject::getSignature() const
+	{
+		return callObjectMethod(
+			"getSignature",
+			"()Ljava/security/Signature;"
+		);
+	}
 } // namespace android::hardware::biometrics
+
+// Base class headers
 

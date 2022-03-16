@@ -1,36 +1,58 @@
 #pragma once
 
-#include "./InflaterInputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::util::zip
-{
-	class CRC32;
-}
+#include "../../../JByteArray.hpp"
+#include "../../io/InputStream.def.hpp"
+#include "./CRC32.def.hpp"
+#include "./GZIPInputStream.def.hpp"
 
 namespace java::util::zip
 {
-	class GZIPInputStream : public java::util::zip::InflaterInputStream
+	// Fields
+	inline jint GZIPInputStream::GZIP_MAGIC()
 	{
-	public:
-		// Fields
-		static jint GZIP_MAGIC();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GZIPInputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::InflaterInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		GZIPInputStream(QJniObject obj);
-		
-		// Constructors
-		GZIPInputStream(java::io::InputStream arg0);
-		GZIPInputStream(java::io::InputStream arg0, jint arg1);
-		
-		// Methods
-		void close() const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		return getStaticField<jint>(
+			"java.util.zip.GZIPInputStream",
+			"GZIP_MAGIC"
+		);
+	}
+	
+	// Constructors
+	inline GZIPInputStream::GZIPInputStream(java::io::InputStream arg0)
+		: java::util::zip::InflaterInputStream(
+			"java.util.zip.GZIPInputStream",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		) {}
+	inline GZIPInputStream::GZIPInputStream(java::io::InputStream arg0, jint arg1)
+		: java::util::zip::InflaterInputStream(
+			"java.util.zip.GZIPInputStream",
+			"(Ljava/io/InputStream;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void GZIPInputStream::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jint GZIPInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../io/InputStream.hpp"
+#include "../../io/FilterInputStream.hpp"
+#include "./InflaterInputStream.hpp"
 

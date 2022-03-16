@@ -1,47 +1,50 @@
 #pragma once
 
-#include "./PermissionCollection.hpp"
-
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
-namespace java::util::concurrent
-{
-	class ConcurrentHashMap;
-}
+#include "../../JArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "./Permission.def.hpp"
+#include "./PermissionCollection.def.hpp"
+#include "../util/concurrent/ConcurrentHashMap.def.hpp"
+#include "./Permissions.def.hpp"
 
 namespace java::security
 {
-	class Permissions : public java::security::PermissionCollection
+	// Fields
+	
+	// Constructors
+	inline Permissions::Permissions()
+		: java::security::PermissionCollection(
+			"java.security.Permissions",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void Permissions::add(java::security::Permission arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Permissions(const char *className, const char *sig, Ts...agv) : java::security::PermissionCollection(className, sig, std::forward<Ts>(agv)...) {}
-		Permissions(QJniObject obj);
-		
-		// Constructors
-		Permissions();
-		
-		// Methods
-		void add(java::security::Permission arg0) const;
-		JObject elements() const;
-		jboolean implies(java::security::Permission arg0) const;
-	};
+		callMethod<void>(
+			"add",
+			"(Ljava/security/Permission;)V",
+			arg0.object()
+		);
+	}
+	inline JObject Permissions::elements() const
+	{
+		return callObjectMethod(
+			"elements",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline jboolean Permissions::implies(java::security::Permission arg0) const
+	{
+		return callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/Permission;)Z",
+			arg0.object()
+		);
+	}
 } // namespace java::security
+
+// Base class headers
+#include "./PermissionCollection.hpp"
 

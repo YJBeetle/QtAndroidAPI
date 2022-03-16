@@ -1,32 +1,53 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./VisualVoicemailSmsFilterSettings.def.hpp"
+#include "../../JString.hpp"
+#include "./VisualVoicemailSmsFilterSettings_Builder.def.hpp"
 
 namespace android::telephony
 {
-	class VisualVoicemailSmsFilterSettings;
-}
-class JString;
-
-namespace android::telephony
-{
-	class VisualVoicemailSmsFilterSettings_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline VisualVoicemailSmsFilterSettings_Builder::VisualVoicemailSmsFilterSettings_Builder()
+		: JObject(
+			"android.telephony.VisualVoicemailSmsFilterSettings$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::telephony::VisualVoicemailSmsFilterSettings VisualVoicemailSmsFilterSettings_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VisualVoicemailSmsFilterSettings_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailSmsFilterSettings_Builder(QJniObject obj);
-		
-		// Constructors
-		VisualVoicemailSmsFilterSettings_Builder();
-		
-		// Methods
-		android::telephony::VisualVoicemailSmsFilterSettings build() const;
-		android::telephony::VisualVoicemailSmsFilterSettings_Builder setClientPrefix(JString arg0) const;
-		android::telephony::VisualVoicemailSmsFilterSettings_Builder setDestinationPort(jint arg0) const;
-		android::telephony::VisualVoicemailSmsFilterSettings_Builder setOriginatingNumbers(JObject arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/telephony/VisualVoicemailSmsFilterSettings;"
+		);
+	}
+	inline android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setClientPrefix(JString arg0) const
+	{
+		return callObjectMethod(
+			"setClientPrefix",
+			"(Ljava/lang/String;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setDestinationPort(jint arg0) const
+	{
+		return callObjectMethod(
+			"setDestinationPort",
+			"(I)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
+			arg0
+		);
+	}
+	inline android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setOriginatingNumbers(JObject arg0) const
+	{
+		return callObjectMethod(
+			"setOriginatingNumbers",
+			"(Ljava/util/List;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

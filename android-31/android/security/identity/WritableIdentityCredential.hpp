@@ -1,29 +1,33 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::security::identity
-{
-	class PersonalizationData;
-}
+#include "../../../JByteArray.hpp"
+#include "./PersonalizationData.def.hpp"
+#include "./WritableIdentityCredential.def.hpp"
 
 namespace android::security::identity
 {
-	class WritableIdentityCredential : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject WritableIdentityCredential::getCredentialKeyCertificateChain(JByteArray arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WritableIdentityCredential(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WritableIdentityCredential(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getCredentialKeyCertificateChain(JByteArray arg0) const;
-		JByteArray personalize(android::security::identity::PersonalizationData arg0) const;
-	};
+		return callObjectMethod(
+			"getCredentialKeyCertificateChain",
+			"([B)Ljava/util/Collection;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline JByteArray WritableIdentityCredential::personalize(android::security::identity::PersonalizationData arg0) const
+	{
+		return callObjectMethod(
+			"personalize",
+			"(Landroid/security/identity/PersonalizationData;)[B",
+			arg0.object()
+		);
+	}
 } // namespace android::security::identity
+
+// Base class headers
 

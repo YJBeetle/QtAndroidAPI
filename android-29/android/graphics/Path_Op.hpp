@@ -1,31 +1,75 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Path_Op.def.hpp"
 
 namespace android::graphics
 {
-	class Path_Op : public java::lang::Enum
+	// Fields
+	inline android::graphics::Path_Op Path_Op::DIFFERENCE()
 	{
-	public:
-		// Fields
-		static android::graphics::Path_Op DIFFERENCE();
-		static android::graphics::Path_Op INTERSECT();
-		static android::graphics::Path_Op REVERSE_DIFFERENCE();
-		static android::graphics::Path_Op UNION();
-		static android::graphics::Path_Op XOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Path_Op(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Path_Op(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Path_Op valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Path$Op",
+			"DIFFERENCE",
+			"Landroid/graphics/Path$Op;"
+		);
+	}
+	inline android::graphics::Path_Op Path_Op::INTERSECT()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$Op",
+			"INTERSECT",
+			"Landroid/graphics/Path$Op;"
+		);
+	}
+	inline android::graphics::Path_Op Path_Op::REVERSE_DIFFERENCE()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$Op",
+			"REVERSE_DIFFERENCE",
+			"Landroid/graphics/Path$Op;"
+		);
+	}
+	inline android::graphics::Path_Op Path_Op::UNION()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$Op",
+			"UNION",
+			"Landroid/graphics/Path$Op;"
+		);
+	}
+	inline android::graphics::Path_Op Path_Op::XOR()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$Op",
+			"XOR",
+			"Landroid/graphics/Path$Op;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Path_Op Path_Op::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Path$Op",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Path$Op;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Path_Op::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Path$Op",
+			"values",
+			"()[Landroid/graphics/Path$Op;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

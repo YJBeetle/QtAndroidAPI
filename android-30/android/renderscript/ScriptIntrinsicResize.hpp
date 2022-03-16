@@ -1,48 +1,71 @@
 #pragma once
 
-#include "./ScriptIntrinsic.hpp"
+#include "./Allocation.def.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Script_FieldID.def.hpp"
+#include "./Script_KernelID.def.hpp"
+#include "./Script_LaunchOptions.def.hpp"
+#include "./ScriptIntrinsicResize.def.hpp"
 
 namespace android::renderscript
 {
-	class Allocation;
-}
-namespace android::renderscript
-{
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Script_FieldID;
-}
-namespace android::renderscript
-{
-	class Script_KernelID;
-}
-namespace android::renderscript
-{
-	class Script_LaunchOptions;
-}
-
-namespace android::renderscript
-{
-	class ScriptIntrinsicResize : public android::renderscript::ScriptIntrinsic
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::renderscript::ScriptIntrinsicResize ScriptIntrinsicResize::create(android::renderscript::RenderScript arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ScriptIntrinsicResize(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsicResize(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::renderscript::ScriptIntrinsicResize create(android::renderscript::RenderScript arg0);
-		void forEach_bicubic(android::renderscript::Allocation arg0) const;
-		void forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const;
-		android::renderscript::Script_FieldID getFieldID_Input() const;
-		android::renderscript::Script_KernelID getKernelID_bicubic() const;
-		void setInput(android::renderscript::Allocation arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.renderscript.ScriptIntrinsicResize",
+			"create",
+			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicResize;",
+			arg0.object()
+		);
+	}
+	inline void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0) const
+	{
+		callMethod<void>(
+			"forEach_bicubic",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.object()
+		);
+	}
+	inline void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const
+	{
+		callMethod<void>(
+			"forEach_bicubic",
+			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::renderscript::Script_FieldID ScriptIntrinsicResize::getFieldID_Input() const
+	{
+		return callObjectMethod(
+			"getFieldID_Input",
+			"()Landroid/renderscript/Script$FieldID;"
+		);
+	}
+	inline android::renderscript::Script_KernelID ScriptIntrinsicResize::getKernelID_bicubic() const
+	{
+		return callObjectMethod(
+			"getKernelID_bicubic",
+			"()Landroid/renderscript/Script$KernelID;"
+		);
+	}
+	inline void ScriptIntrinsicResize::setInput(android::renderscript::Allocation arg0) const
+	{
+		callMethod<void>(
+			"setInput",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "./BaseObj.hpp"
+#include "./Script.hpp"
+#include "./ScriptIntrinsic.hpp"
 

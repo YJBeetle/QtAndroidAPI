@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./IncompatibleClassChangeError.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NoSuchMethodError.def.hpp"
 
 namespace java::lang
 {
-	class NoSuchMethodError : public java::lang::IncompatibleClassChangeError
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoSuchMethodError(const char *className, const char *sig, Ts...agv) : java::lang::IncompatibleClassChangeError(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchMethodError(QJniObject obj);
-		
-		// Constructors
-		NoSuchMethodError();
-		NoSuchMethodError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoSuchMethodError::NoSuchMethodError()
+		: java::lang::IncompatibleClassChangeError(
+			"java.lang.NoSuchMethodError",
+			"()V"
+		) {}
+	inline NoSuchMethodError::NoSuchMethodError(JString arg0)
+		: java::lang::IncompatibleClassChangeError(
+			"java.lang.NoSuchMethodError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./LinkageError.hpp"
+#include "./IncompatibleClassChangeError.hpp"
 

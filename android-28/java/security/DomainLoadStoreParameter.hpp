@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::net
-{
-	class URI;
-}
+#include "../net/URI.def.hpp"
+#include "./DomainLoadStoreParameter.def.hpp"
 
 namespace java::security
 {
-	class DomainLoadStoreParameter : public JObject
+	// Fields
+	
+	// Constructors
+	inline DomainLoadStoreParameter::DomainLoadStoreParameter(java::net::URI arg0, JObject arg1)
+		: JObject(
+			"java.security.DomainLoadStoreParameter",
+			"(Ljava/net/URI;Ljava/util/Map;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline java::net::URI DomainLoadStoreParameter::getConfiguration() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DomainLoadStoreParameter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DomainLoadStoreParameter(QJniObject obj);
-		
-		// Constructors
-		DomainLoadStoreParameter(java::net::URI arg0, JObject arg1);
-		
-		// Methods
-		java::net::URI getConfiguration() const;
-		JObject getProtectionParameter() const;
-		JObject getProtectionParams() const;
-	};
+		return callObjectMethod(
+			"getConfiguration",
+			"()Ljava/net/URI;"
+		);
+	}
+	inline JObject DomainLoadStoreParameter::getProtectionParameter() const
+	{
+		return callObjectMethod(
+			"getProtectionParameter",
+			"()Ljava/security/KeyStore$ProtectionParameter;"
+		);
+	}
+	inline JObject DomainLoadStoreParameter::getProtectionParams() const
+	{
+		return callObjectMethod(
+			"getProtectionParams",
+			"()Ljava/util/Map;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

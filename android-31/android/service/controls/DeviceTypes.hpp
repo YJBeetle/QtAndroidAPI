@@ -1,81 +1,437 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./DeviceTypes.def.hpp"
 
 namespace android::service::controls
 {
-	class DeviceTypes : public JObject
+	// Fields
+	inline jint DeviceTypes::TYPE_AC_HEATER()
 	{
-	public:
-		// Fields
-		static jint TYPE_AC_HEATER();
-		static jint TYPE_AC_UNIT();
-		static jint TYPE_AIR_FRESHENER();
-		static jint TYPE_AIR_PURIFIER();
-		static jint TYPE_AWNING();
-		static jint TYPE_BLINDS();
-		static jint TYPE_CAMERA();
-		static jint TYPE_CLOSET();
-		static jint TYPE_COFFEE_MAKER();
-		static jint TYPE_CURTAIN();
-		static jint TYPE_DEHUMIDIFIER();
-		static jint TYPE_DISHWASHER();
-		static jint TYPE_DISPLAY();
-		static jint TYPE_DOOR();
-		static jint TYPE_DOORBELL();
-		static jint TYPE_DRAWER();
-		static jint TYPE_DRYER();
-		static jint TYPE_FAN();
-		static jint TYPE_GARAGE();
-		static jint TYPE_GATE();
-		static jint TYPE_GENERIC_ARM_DISARM();
-		static jint TYPE_GENERIC_LOCK_UNLOCK();
-		static jint TYPE_GENERIC_ON_OFF();
-		static jint TYPE_GENERIC_OPEN_CLOSE();
-		static jint TYPE_GENERIC_START_STOP();
-		static jint TYPE_GENERIC_TEMP_SETTING();
-		static jint TYPE_GENERIC_VIEWSTREAM();
-		static jint TYPE_HEATER();
-		static jint TYPE_HOOD();
-		static jint TYPE_HUMIDIFIER();
-		static jint TYPE_KETTLE();
-		static jint TYPE_LIGHT();
-		static jint TYPE_LOCK();
-		static jint TYPE_MICROWAVE();
-		static jint TYPE_MOP();
-		static jint TYPE_MOWER();
-		static jint TYPE_MULTICOOKER();
-		static jint TYPE_OUTLET();
-		static jint TYPE_PERGOLA();
-		static jint TYPE_RADIATOR();
-		static jint TYPE_REFRIGERATOR();
-		static jint TYPE_REMOTE_CONTROL();
-		static jint TYPE_ROUTINE();
-		static jint TYPE_SECURITY_SYSTEM();
-		static jint TYPE_SET_TOP();
-		static jint TYPE_SHOWER();
-		static jint TYPE_SHUTTER();
-		static jint TYPE_SPRINKLER();
-		static jint TYPE_STANDMIXER();
-		static jint TYPE_STYLER();
-		static jint TYPE_SWITCH();
-		static jint TYPE_THERMOSTAT();
-		static jint TYPE_TV();
-		static jint TYPE_UNKNOWN();
-		static jint TYPE_VACUUM();
-		static jint TYPE_VALVE();
-		static jint TYPE_WASHER();
-		static jint TYPE_WATER_HEATER();
-		static jint TYPE_WINDOW();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DeviceTypes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceTypes(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean validDeviceType(jint arg0);
-	};
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_AC_HEATER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_AC_UNIT()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_AC_UNIT"
+		);
+	}
+	inline jint DeviceTypes::TYPE_AIR_FRESHENER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_AIR_FRESHENER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_AIR_PURIFIER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_AIR_PURIFIER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_AWNING()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_AWNING"
+		);
+	}
+	inline jint DeviceTypes::TYPE_BLINDS()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_BLINDS"
+		);
+	}
+	inline jint DeviceTypes::TYPE_CAMERA()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_CAMERA"
+		);
+	}
+	inline jint DeviceTypes::TYPE_CLOSET()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_CLOSET"
+		);
+	}
+	inline jint DeviceTypes::TYPE_COFFEE_MAKER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_COFFEE_MAKER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_CURTAIN()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_CURTAIN"
+		);
+	}
+	inline jint DeviceTypes::TYPE_DEHUMIDIFIER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_DEHUMIDIFIER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_DISHWASHER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_DISHWASHER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_DISPLAY()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_DISPLAY"
+		);
+	}
+	inline jint DeviceTypes::TYPE_DOOR()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_DOOR"
+		);
+	}
+	inline jint DeviceTypes::TYPE_DOORBELL()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_DOORBELL"
+		);
+	}
+	inline jint DeviceTypes::TYPE_DRAWER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_DRAWER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_DRYER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_DRYER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_FAN()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_FAN"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GARAGE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GARAGE"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GATE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GATE"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GENERIC_ARM_DISARM()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GENERIC_ARM_DISARM"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GENERIC_LOCK_UNLOCK()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GENERIC_LOCK_UNLOCK"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GENERIC_ON_OFF()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GENERIC_ON_OFF"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GENERIC_OPEN_CLOSE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GENERIC_OPEN_CLOSE"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GENERIC_START_STOP()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GENERIC_START_STOP"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GENERIC_TEMP_SETTING()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GENERIC_TEMP_SETTING"
+		);
+	}
+	inline jint DeviceTypes::TYPE_GENERIC_VIEWSTREAM()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_GENERIC_VIEWSTREAM"
+		);
+	}
+	inline jint DeviceTypes::TYPE_HEATER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_HEATER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_HOOD()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_HOOD"
+		);
+	}
+	inline jint DeviceTypes::TYPE_HUMIDIFIER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_HUMIDIFIER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_KETTLE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_KETTLE"
+		);
+	}
+	inline jint DeviceTypes::TYPE_LIGHT()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_LIGHT"
+		);
+	}
+	inline jint DeviceTypes::TYPE_LOCK()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_LOCK"
+		);
+	}
+	inline jint DeviceTypes::TYPE_MICROWAVE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_MICROWAVE"
+		);
+	}
+	inline jint DeviceTypes::TYPE_MOP()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_MOP"
+		);
+	}
+	inline jint DeviceTypes::TYPE_MOWER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_MOWER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_MULTICOOKER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_MULTICOOKER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_OUTLET()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_OUTLET"
+		);
+	}
+	inline jint DeviceTypes::TYPE_PERGOLA()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_PERGOLA"
+		);
+	}
+	inline jint DeviceTypes::TYPE_RADIATOR()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_RADIATOR"
+		);
+	}
+	inline jint DeviceTypes::TYPE_REFRIGERATOR()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_REFRIGERATOR"
+		);
+	}
+	inline jint DeviceTypes::TYPE_REMOTE_CONTROL()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_REMOTE_CONTROL"
+		);
+	}
+	inline jint DeviceTypes::TYPE_ROUTINE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_ROUTINE"
+		);
+	}
+	inline jint DeviceTypes::TYPE_SECURITY_SYSTEM()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_SECURITY_SYSTEM"
+		);
+	}
+	inline jint DeviceTypes::TYPE_SET_TOP()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_SET_TOP"
+		);
+	}
+	inline jint DeviceTypes::TYPE_SHOWER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_SHOWER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_SHUTTER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_SHUTTER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_SPRINKLER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_SPRINKLER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_STANDMIXER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_STANDMIXER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_STYLER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_STYLER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_SWITCH()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_SWITCH"
+		);
+	}
+	inline jint DeviceTypes::TYPE_THERMOSTAT()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_THERMOSTAT"
+		);
+	}
+	inline jint DeviceTypes::TYPE_TV()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_TV"
+		);
+	}
+	inline jint DeviceTypes::TYPE_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_UNKNOWN"
+		);
+	}
+	inline jint DeviceTypes::TYPE_VACUUM()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_VACUUM"
+		);
+	}
+	inline jint DeviceTypes::TYPE_VALVE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_VALVE"
+		);
+	}
+	inline jint DeviceTypes::TYPE_WASHER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_WASHER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_WATER_HEATER()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_WATER_HEATER"
+		);
+	}
+	inline jint DeviceTypes::TYPE_WINDOW()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.DeviceTypes",
+			"TYPE_WINDOW"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean DeviceTypes::validDeviceType(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.service.controls.DeviceTypes",
+			"validDeviceType",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::service::controls
+
+// Base class headers
 

@@ -1,43 +1,158 @@
 #pragma once
 
-#include "../../../java/text/ParseException.hpp"
-
-class JObject;
-class JString;
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "./StringPrepParseException.def.hpp"
 
 namespace android::icu::text
 {
-	class StringPrepParseException : public java::text::ParseException
+	// Fields
+	inline jint StringPrepParseException::ACE_PREFIX_ERROR()
 	{
-	public:
-		// Fields
-		static jint ACE_PREFIX_ERROR();
-		static jint BUFFER_OVERFLOW_ERROR();
-		static jint CHECK_BIDI_ERROR();
-		static jint DOMAIN_NAME_TOO_LONG_ERROR();
-		static jint ILLEGAL_CHAR_FOUND();
-		static jint INVALID_CHAR_FOUND();
-		static jint LABEL_TOO_LONG_ERROR();
-		static jint PROHIBITED_ERROR();
-		static jint STD3_ASCII_RULES_ERROR();
-		static jint UNASSIGNED_ERROR();
-		static jint VERIFICATION_ERROR();
-		static jint ZERO_LENGTH_LABEL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StringPrepParseException(const char *className, const char *sig, Ts...agv) : java::text::ParseException(className, sig, std::forward<Ts>(agv)...) {}
-		StringPrepParseException(QJniObject obj);
-		
-		// Constructors
-		StringPrepParseException(JString arg0, jint arg1);
-		StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3);
-		StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3, jint arg4);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getError() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"ACE_PREFIX_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::BUFFER_OVERFLOW_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"BUFFER_OVERFLOW_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::CHECK_BIDI_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"CHECK_BIDI_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::DOMAIN_NAME_TOO_LONG_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"DOMAIN_NAME_TOO_LONG_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::ILLEGAL_CHAR_FOUND()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"ILLEGAL_CHAR_FOUND"
+		);
+	}
+	inline jint StringPrepParseException::INVALID_CHAR_FOUND()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"INVALID_CHAR_FOUND"
+		);
+	}
+	inline jint StringPrepParseException::LABEL_TOO_LONG_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"LABEL_TOO_LONG_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::PROHIBITED_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"PROHIBITED_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::STD3_ASCII_RULES_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"STD3_ASCII_RULES_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::UNASSIGNED_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"UNASSIGNED_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::VERIFICATION_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"VERIFICATION_ERROR"
+		);
+	}
+	inline jint StringPrepParseException::ZERO_LENGTH_LABEL()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.StringPrepParseException",
+			"ZERO_LENGTH_LABEL"
+		);
+	}
+	
+	// Constructors
+	inline StringPrepParseException::StringPrepParseException(JString arg0, jint arg1)
+		: java::text::ParseException(
+			"android.icu.text.StringPrepParseException",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline StringPrepParseException::StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3)
+		: java::text::ParseException(
+			"android.icu.text.StringPrepParseException",
+			"(Ljava/lang/String;ILjava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jstring>(),
+			arg3
+		) {}
+	inline StringPrepParseException::StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3, jint arg4)
+		: java::text::ParseException(
+			"android.icu.text.StringPrepParseException",
+			"(Ljava/lang/String;ILjava/lang/String;II)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jstring>(),
+			arg3,
+			arg4
+		) {}
+	
+	// Methods
+	inline jboolean StringPrepParseException::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint StringPrepParseException::getError() const
+	{
+		return callMethod<jint>(
+			"getError",
+			"()I"
+		);
+	}
+	inline jint StringPrepParseException::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString StringPrepParseException::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/text/ParseException.hpp"
 

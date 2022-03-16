@@ -1,29 +1,71 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Trace.def.hpp"
 
 namespace android::os
 {
-	class Trace : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void Trace::beginAsyncSection(JString arg0, jint arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Trace(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Trace(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static void beginAsyncSection(JString arg0, jint arg1);
-		static void beginSection(JString arg0);
-		static void endAsyncSection(JString arg0, jint arg1);
-		static void endSection();
-		static jboolean isEnabled();
-		static void setCounter(JString arg0, jlong arg1);
-	};
+		callStaticMethod<void>(
+			"android.os.Trace",
+			"beginAsyncSection",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void Trace::beginSection(JString arg0)
+	{
+		callStaticMethod<void>(
+			"android.os.Trace",
+			"beginSection",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Trace::endAsyncSection(JString arg0, jint arg1)
+	{
+		callStaticMethod<void>(
+			"android.os.Trace",
+			"endAsyncSection",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void Trace::endSection()
+	{
+		callStaticMethod<void>(
+			"android.os.Trace",
+			"endSection",
+			"()V"
+		);
+	}
+	inline jboolean Trace::isEnabled()
+	{
+		return callStaticMethod<jboolean>(
+			"android.os.Trace",
+			"isEnabled",
+			"()Z"
+		);
+	}
+	inline void Trace::setCounter(JString arg0, jlong arg1)
+	{
+		callStaticMethod<void>(
+			"android.os.Trace",
+			"setCounter",
+			"(Ljava/lang/String;J)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

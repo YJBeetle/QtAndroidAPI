@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./RemoveByDocumentIdRequest.def.hpp"
 
 namespace android::app::appsearch
 {
-	class RemoveByDocumentIdRequest : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject RemoveByDocumentIdRequest::getIds() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RemoveByDocumentIdRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoveByDocumentIdRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getIds() const;
-		JString getNamespace() const;
-	};
+		return callObjectMethod(
+			"getIds",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JString RemoveByDocumentIdRequest::getNamespace() const
+	{
+		return callObjectMethod(
+			"getNamespace",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

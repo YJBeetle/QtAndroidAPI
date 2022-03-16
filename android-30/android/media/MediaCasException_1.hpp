@@ -1,21 +1,15 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaCasException_1.def.hpp"
 
 namespace android::media
 {
-	class MediaCasException_1 : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaCasException_1(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasException_1(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

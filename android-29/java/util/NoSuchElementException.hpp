@@ -1,28 +1,43 @@
 #pragma once
 
-#include "../lang/RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./NoSuchElementException.def.hpp"
 
 namespace java::util
 {
-	class NoSuchElementException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoSuchElementException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchElementException(QJniObject obj);
-		
-		// Constructors
-		NoSuchElementException();
-		NoSuchElementException(JString arg0);
-		NoSuchElementException(JThrowable arg0);
-		NoSuchElementException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoSuchElementException::NoSuchElementException()
+		: java::lang::RuntimeException(
+			"java.util.NoSuchElementException",
+			"()V"
+		) {}
+	inline NoSuchElementException::NoSuchElementException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.util.NoSuchElementException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline NoSuchElementException::NoSuchElementException(JThrowable arg0)
+		: java::lang::RuntimeException(
+			"java.util.NoSuchElementException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline NoSuchElementException::NoSuchElementException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"java.util.NoSuchElementException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 

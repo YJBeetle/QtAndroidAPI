@@ -1,24 +1,34 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Toast_Callback.def.hpp"
 
 namespace android::widget
 {
-	class Toast_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline Toast_Callback::Toast_Callback()
+		: JObject(
+			"android.widget.Toast$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void Toast_Callback::onToastHidden() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Toast_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Toast_Callback(QJniObject obj);
-		
-		// Constructors
-		Toast_Callback();
-		
-		// Methods
-		void onToastHidden() const;
-		void onToastShown() const;
-	};
+		callMethod<void>(
+			"onToastHidden",
+			"()V"
+		);
+	}
+	inline void Toast_Callback::onToastShown() const
+	{
+		callMethod<void>(
+			"onToastShown",
+			"()V"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
 

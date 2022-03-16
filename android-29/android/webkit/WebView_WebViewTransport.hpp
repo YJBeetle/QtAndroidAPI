@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WebView.def.hpp"
+#include "./WebView_WebViewTransport.def.hpp"
 
 namespace android::webkit
 {
-	class WebView;
-}
-
-namespace android::webkit
-{
-	class WebView_WebViewTransport : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebView_WebViewTransport::WebView_WebViewTransport(android::webkit::WebView arg0)
+		: JObject(
+			"android.webkit.WebView$WebViewTransport",
+			"(Landroid/webkit/WebView;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::webkit::WebView WebView_WebViewTransport::getWebView() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebView_WebViewTransport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebView_WebViewTransport(QJniObject obj);
-		
-		// Constructors
-		WebView_WebViewTransport(android::webkit::WebView arg0);
-		
-		// Methods
-		android::webkit::WebView getWebView() const;
-		void setWebView(android::webkit::WebView arg0) const;
-	};
+		return callObjectMethod(
+			"getWebView",
+			"()Landroid/webkit/WebView;"
+		);
+	}
+	inline void WebView_WebViewTransport::setWebView(android::webkit::WebView arg0) const
+	{
+		callMethod<void>(
+			"setWebView",
+			"(Landroid/webkit/WebView;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

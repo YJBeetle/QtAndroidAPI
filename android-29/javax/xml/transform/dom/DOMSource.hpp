@@ -1,32 +1,79 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./DOMSource.def.hpp"
 
 namespace javax::xml::transform::dom
 {
-	class DOMSource : public JObject
+	// Fields
+	inline JString DOMSource::FEATURE()
 	{
-	public:
-		// Fields
-		static JString FEATURE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DOMSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DOMSource(QJniObject obj);
-		
-		// Constructors
-		DOMSource();
-		DOMSource(JObject arg0);
-		DOMSource(JObject arg0, JString arg1);
-		
-		// Methods
-		JObject getNode() const;
-		JString getSystemId() const;
-		jboolean isEmpty() const;
-		void setNode(JObject arg0) const;
-		void setSystemId(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"javax.xml.transform.dom.DOMSource",
+			"FEATURE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline DOMSource::DOMSource()
+		: JObject(
+			"javax.xml.transform.dom.DOMSource",
+			"()V"
+		) {}
+	inline DOMSource::DOMSource(JObject arg0)
+		: JObject(
+			"javax.xml.transform.dom.DOMSource",
+			"(Lorg/w3c/dom/Node;)V",
+			arg0.object()
+		) {}
+	inline DOMSource::DOMSource(JObject arg0, JString arg1)
+		: JObject(
+			"javax.xml.transform.dom.DOMSource",
+			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JObject DOMSource::getNode() const
+	{
+		return callObjectMethod(
+			"getNode",
+			"()Lorg/w3c/dom/Node;"
+		);
+	}
+	inline JString DOMSource::getSystemId() const
+	{
+		return callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean DOMSource::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline void DOMSource::setNode(JObject arg0) const
+	{
+		callMethod<void>(
+			"setNode",
+			"(Lorg/w3c/dom/Node;)V",
+			arg0.object()
+		);
+	}
+	inline void DOMSource::setSystemId(JString arg0) const
+	{
+		callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace javax::xml::transform::dom
+
+// Base class headers
 

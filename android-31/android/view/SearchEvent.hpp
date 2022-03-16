@@ -1,28 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./InputDevice.def.hpp"
+#include "./SearchEvent.def.hpp"
 
 namespace android::view
 {
-	class InputDevice;
-}
-
-namespace android::view
-{
-	class SearchEvent : public JObject
+	// Fields
+	
+	// Constructors
+	inline SearchEvent::SearchEvent(android::view::InputDevice arg0)
+		: JObject(
+			"android.view.SearchEvent",
+			"(Landroid/view/InputDevice;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::view::InputDevice SearchEvent::getInputDevice() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SearchEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchEvent(QJniObject obj);
-		
-		// Constructors
-		SearchEvent(android::view::InputDevice arg0);
-		
-		// Methods
-		android::view::InputDevice getInputDevice() const;
-	};
+		return callObjectMethod(
+			"getInputDevice",
+			"()Landroid/view/InputDevice;"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

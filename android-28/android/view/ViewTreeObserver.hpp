@@ -1,47 +1,180 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
+#include "../content/Context.def.hpp"
+#include "./ViewTreeObserver.def.hpp"
 
 namespace android::view
 {
-	class ViewTreeObserver : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void ViewTreeObserver::addOnDrawListener(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ViewTreeObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewTreeObserver(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void addOnDrawListener(JObject arg0) const;
-		void addOnGlobalFocusChangeListener(JObject arg0) const;
-		void addOnGlobalLayoutListener(JObject arg0) const;
-		void addOnPreDrawListener(JObject arg0) const;
-		void addOnScrollChangedListener(JObject arg0) const;
-		void addOnTouchModeChangeListener(JObject arg0) const;
-		void addOnWindowAttachListener(JObject arg0) const;
-		void addOnWindowFocusChangeListener(JObject arg0) const;
-		void dispatchOnDraw() const;
-		void dispatchOnGlobalLayout() const;
-		jboolean dispatchOnPreDraw() const;
-		jboolean isAlive() const;
-		void removeGlobalOnLayoutListener(JObject arg0) const;
-		void removeOnDrawListener(JObject arg0) const;
-		void removeOnGlobalFocusChangeListener(JObject arg0) const;
-		void removeOnGlobalLayoutListener(JObject arg0) const;
-		void removeOnPreDrawListener(JObject arg0) const;
-		void removeOnScrollChangedListener(JObject arg0) const;
-		void removeOnTouchModeChangeListener(JObject arg0) const;
-		void removeOnWindowAttachListener(JObject arg0) const;
-		void removeOnWindowFocusChangeListener(JObject arg0) const;
-	};
+		callMethod<void>(
+			"addOnDrawListener",
+			"(Landroid/view/ViewTreeObserver$OnDrawListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::addOnGlobalFocusChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"addOnGlobalFocusChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::addOnGlobalLayoutListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"addOnGlobalLayoutListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::addOnPreDrawListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"addOnPreDrawListener",
+			"(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::addOnScrollChangedListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"addOnScrollChangedListener",
+			"(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::addOnTouchModeChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"addOnTouchModeChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::addOnWindowAttachListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"addOnWindowAttachListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::addOnWindowFocusChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"addOnWindowFocusChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::dispatchOnDraw() const
+	{
+		callMethod<void>(
+			"dispatchOnDraw",
+			"()V"
+		);
+	}
+	inline void ViewTreeObserver::dispatchOnGlobalLayout() const
+	{
+		callMethod<void>(
+			"dispatchOnGlobalLayout",
+			"()V"
+		);
+	}
+	inline jboolean ViewTreeObserver::dispatchOnPreDraw() const
+	{
+		return callMethod<jboolean>(
+			"dispatchOnPreDraw",
+			"()Z"
+		);
+	}
+	inline jboolean ViewTreeObserver::isAlive() const
+	{
+		return callMethod<jboolean>(
+			"isAlive",
+			"()Z"
+		);
+	}
+	inline void ViewTreeObserver::removeGlobalOnLayoutListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeGlobalOnLayoutListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnDrawListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnDrawListener",
+			"(Landroid/view/ViewTreeObserver$OnDrawListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnGlobalFocusChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnGlobalFocusChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnGlobalLayoutListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnGlobalLayoutListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnPreDrawListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnPreDrawListener",
+			"(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnScrollChangedListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnScrollChangedListener",
+			"(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnTouchModeChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnTouchModeChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnWindowAttachListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnWindowAttachListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ViewTreeObserver::removeOnWindowFocusChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeOnWindowFocusChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

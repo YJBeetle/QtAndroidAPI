@@ -1,26 +1,51 @@
 #pragma once
 
-#include "../../../java/lang/Exception.hpp"
+#include "./ImsException.def.hpp"
 
 namespace android::telephony::ims
 {
-	class ImsException : public java::lang::Exception
+	// Fields
+	inline jint ImsException::CODE_ERROR_INVALID_SUBSCRIPTION()
 	{
-	public:
-		// Fields
-		static jint CODE_ERROR_INVALID_SUBSCRIPTION();
-		static jint CODE_ERROR_SERVICE_UNAVAILABLE();
-		static jint CODE_ERROR_UNSPECIFIED();
-		static jint CODE_ERROR_UNSUPPORTED_OPERATION();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ImsException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ImsException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getCode() const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.ims.ImsException",
+			"CODE_ERROR_INVALID_SUBSCRIPTION"
+		);
+	}
+	inline jint ImsException::CODE_ERROR_SERVICE_UNAVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.ImsException",
+			"CODE_ERROR_SERVICE_UNAVAILABLE"
+		);
+	}
+	inline jint ImsException::CODE_ERROR_UNSPECIFIED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.ImsException",
+			"CODE_ERROR_UNSPECIFIED"
+		);
+	}
+	inline jint ImsException::CODE_ERROR_UNSUPPORTED_OPERATION()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.ImsException",
+			"CODE_ERROR_UNSUPPORTED_OPERATION"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint ImsException::getCode() const
+	{
+		return callMethod<jint>(
+			"getCode",
+			"()I"
+		);
+	}
 } // namespace android::telephony::ims
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
 

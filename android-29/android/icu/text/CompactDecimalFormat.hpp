@@ -1,52 +1,65 @@
 #pragma once
 
-#include "./DecimalFormat.hpp"
+#include "./CompactDecimalFormat_CompactStyle.def.hpp"
+#include "../util/CurrencyAmount.def.hpp"
+#include "../util/ULocale.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/lang/Number.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/text/ParsePosition.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./CompactDecimalFormat.def.hpp"
 
 namespace android::icu::text
 {
-	class CompactDecimalFormat_CompactStyle;
-}
-namespace android::icu::util
-{
-	class CurrencyAmount;
-}
-namespace android::icu::util
-{
-	class ULocale;
-}
-class JString;
-namespace java::lang
-{
-	class Number;
-}
-class JString;
-namespace java::text
-{
-	class ParsePosition;
-}
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::icu::text
-{
-	class CompactDecimalFormat : public android::icu::text::DecimalFormat
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::CompactDecimalFormat CompactDecimalFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CompactDecimalFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::DecimalFormat(className, sig, std::forward<Ts>(agv)...) {}
-		CompactDecimalFormat(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::CompactDecimalFormat getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
-		static android::icu::text::CompactDecimalFormat getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
-		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1) const;
-		android::icu::util::CurrencyAmount parseCurrency(JString arg0, java::text::ParsePosition arg1) const;
-	};
+		return callStaticObjectMethod(
+			"android.icu.text.CompactDecimalFormat",
+			"getInstance",
+			"(Landroid/icu/util/ULocale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::icu::text::CompactDecimalFormat CompactDecimalFormat::getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.CompactDecimalFormat",
+			"getInstance",
+			"(Ljava/util/Locale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline java::lang::Number CompactDecimalFormat::parse(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline android::icu::util::CurrencyAmount CompactDecimalFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callObjectMethod(
+			"parseCurrency",
+			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/text/Format.hpp"
+#include "./UFormat.hpp"
+#include "./NumberFormat.hpp"
+#include "./DecimalFormat.hpp"
 

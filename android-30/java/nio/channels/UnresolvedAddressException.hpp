@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalArgumentException.hpp"
+#include "./UnresolvedAddressException.def.hpp"
 
 namespace java::nio::channels
 {
-	class UnresolvedAddressException : public java::lang::IllegalArgumentException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UnresolvedAddressException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		UnresolvedAddressException(QJniObject obj);
-		
-		// Constructors
-		UnresolvedAddressException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UnresolvedAddressException::UnresolvedAddressException()
+		: java::lang::IllegalArgumentException(
+			"java.nio.channels.UnresolvedAddressException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalArgumentException.hpp"
 

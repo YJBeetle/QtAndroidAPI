@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./NetworkStatsManager_UsageCallback.def.hpp"
 
 namespace android::app::usage
 {
-	class NetworkStatsManager_UsageCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline NetworkStatsManager_UsageCallback::NetworkStatsManager_UsageCallback()
+		: JObject(
+			"android.app.usage.NetworkStatsManager$UsageCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, JString arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkStatsManager_UsageCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStatsManager_UsageCallback(QJniObject obj);
-		
-		// Constructors
-		NetworkStatsManager_UsageCallback();
-		
-		// Methods
-		void onThresholdReached(jint arg0, JString arg1) const;
-	};
+		callMethod<void>(
+			"onThresholdReached",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

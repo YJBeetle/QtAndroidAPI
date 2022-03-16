@@ -1,58 +1,66 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JObjectArray;
-namespace android::renderscript
-{
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Script_InvokeID;
-}
-namespace android::renderscript
-{
-	class Script_KernelID;
-}
-namespace android::renderscript
-{
-	class ScriptGroup;
-}
-namespace android::renderscript
-{
-	class ScriptGroup_Closure;
-}
-namespace android::renderscript
-{
-	class ScriptGroup_Input;
-}
-namespace android::renderscript
-{
-	class Type;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Script_InvokeID.def.hpp"
+#include "./Script_KernelID.def.hpp"
+#include "./ScriptGroup.def.hpp"
+#include "./ScriptGroup_Closure.def.hpp"
+#include "./ScriptGroup_Input.def.hpp"
+#include "./Type.def.hpp"
+#include "../../JString.hpp"
+#include "./ScriptGroup_Builder2.def.hpp"
 
 namespace android::renderscript
 {
-	class ScriptGroup_Builder2 : public JObject
+	// Fields
+	
+	// Constructors
+	inline ScriptGroup_Builder2::ScriptGroup_Builder2(android::renderscript::RenderScript arg0)
+		: JObject(
+			"android.renderscript.ScriptGroup$Builder2",
+			"(Landroid/renderscript/RenderScript;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::renderscript::ScriptGroup_Input ScriptGroup_Builder2::addInput() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ScriptGroup_Builder2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptGroup_Builder2(QJniObject obj);
-		
-		// Constructors
-		ScriptGroup_Builder2(android::renderscript::RenderScript arg0);
-		
-		// Methods
-		android::renderscript::ScriptGroup_Input addInput() const;
-		android::renderscript::ScriptGroup_Closure addInvoke(android::renderscript::Script_InvokeID arg0, JObjectArray arg1) const;
-		android::renderscript::ScriptGroup_Closure addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, JObjectArray arg2) const;
-		android::renderscript::ScriptGroup create(JString arg0, JArray arg1) const;
-	};
+		return callObjectMethod(
+			"addInput",
+			"()Landroid/renderscript/ScriptGroup$Input;"
+		);
+	}
+	inline android::renderscript::ScriptGroup_Closure ScriptGroup_Builder2::addInvoke(android::renderscript::Script_InvokeID arg0, JObjectArray arg1) const
+	{
+		return callObjectMethod(
+			"addInvoke",
+			"(Landroid/renderscript/Script$InvokeID;[Ljava/lang/Object;)Landroid/renderscript/ScriptGroup$Closure;",
+			arg0.object(),
+			arg1.object<jobjectArray>()
+		);
+	}
+	inline android::renderscript::ScriptGroup_Closure ScriptGroup_Builder2::addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, JObjectArray arg2) const
+	{
+		return callObjectMethod(
+			"addKernel",
+			"(Landroid/renderscript/Script$KernelID;Landroid/renderscript/Type;[Ljava/lang/Object;)Landroid/renderscript/ScriptGroup$Closure;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jobjectArray>()
+		);
+	}
+	inline android::renderscript::ScriptGroup ScriptGroup_Builder2::create(JString arg0, JArray arg1) const
+	{
+		return callObjectMethod(
+			"create",
+			"(Ljava/lang/String;[Landroid/renderscript/ScriptGroup$Future;)Landroid/renderscript/ScriptGroup;",
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
 

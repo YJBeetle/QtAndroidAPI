@@ -1,22 +1,23 @@
 #pragma once
 
-#include "./Violation.hpp"
+#include "./InstanceCountViolation.def.hpp"
 
 namespace android::os::strictmode
 {
-	class InstanceCountViolation : public android::os::strictmode::Violation
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jlong InstanceCountViolation::getNumberOfInstances() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InstanceCountViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		InstanceCountViolation(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jlong getNumberOfInstances() const;
-	};
+		return callMethod<jlong>(
+			"getNumberOfInstances",
+			"()J"
+		);
+	}
 } // namespace android::os::strictmode
+
+// Base class headers
+#include "./Violation.hpp"
 

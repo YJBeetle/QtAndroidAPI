@@ -1,27 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Settings_Panel.def.hpp"
 
 namespace android::provider
 {
-	class Settings_Panel : public JObject
+	// Fields
+	inline JString Settings_Panel::ACTION_INTERNET_CONNECTIVITY()
 	{
-	public:
-		// Fields
-		static JString ACTION_INTERNET_CONNECTIVITY();
-		static JString ACTION_NFC();
-		static JString ACTION_VOLUME();
-		static JString ACTION_WIFI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Settings_Panel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_Panel(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Settings$Panel",
+			"ACTION_INTERNET_CONNECTIVITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings_Panel::ACTION_NFC()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings$Panel",
+			"ACTION_NFC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings_Panel::ACTION_VOLUME()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings$Panel",
+			"ACTION_VOLUME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings_Panel::ACTION_WIFI()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings$Panel",
+			"ACTION_WIFI",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

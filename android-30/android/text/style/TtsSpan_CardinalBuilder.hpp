@@ -1,28 +1,51 @@
 #pragma once
 
-#include "./TtsSpan_SemioticClassBuilder.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TtsSpan_CardinalBuilder.def.hpp"
 
 namespace android::text::style
 {
-	class TtsSpan_CardinalBuilder : public android::text::style::TtsSpan_SemioticClassBuilder
+	// Fields
+	
+	// Constructors
+	inline TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder()
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$CardinalBuilder",
+			"()V"
+		) {}
+	inline TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(JString arg0)
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$CardinalBuilder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(jlong arg0)
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$CardinalBuilder",
+			"(J)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline android::text::style::TtsSpan_CardinalBuilder TtsSpan_CardinalBuilder::setNumber(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TtsSpan_CardinalBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_CardinalBuilder(QJniObject obj);
-		
-		// Constructors
-		TtsSpan_CardinalBuilder();
-		TtsSpan_CardinalBuilder(JString arg0);
-		TtsSpan_CardinalBuilder(jlong arg0);
-		
-		// Methods
-		android::text::style::TtsSpan_CardinalBuilder setNumber(JString arg0) const;
-		android::text::style::TtsSpan_CardinalBuilder setNumber(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"setNumber",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$CardinalBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_CardinalBuilder TtsSpan_CardinalBuilder::setNumber(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setNumber",
+			"(J)Landroid/text/style/TtsSpan$CardinalBuilder;",
+			arg0
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./TtsSpan_Builder.hpp"
+#include "./TtsSpan_SemioticClassBuilder.hpp"
 

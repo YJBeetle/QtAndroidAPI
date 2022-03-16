@@ -1,36 +1,63 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./BlockedNumberContract.def.hpp"
 
 namespace android::provider
 {
-	class BlockedNumberContract : public JObject
+	// Fields
+	inline JString BlockedNumberContract::AUTHORITY()
 	{
-	public:
-		// Fields
-		static JString AUTHORITY();
-		static android::net::Uri AUTHORITY_URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BlockedNumberContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BlockedNumberContract(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean canCurrentUserBlockNumbers(android::content::Context arg0);
-		static jboolean isBlocked(android::content::Context arg0, JString arg1);
-		static jint unblock(android::content::Context arg0, JString arg1);
-	};
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri BlockedNumberContract::AUTHORITY_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract",
+			"AUTHORITY_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean BlockedNumberContract::canCurrentUserBlockNumbers(android::content::Context arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.BlockedNumberContract",
+			"canCurrentUserBlockNumbers",
+			"(Landroid/content/Context;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean BlockedNumberContract::isBlocked(android::content::Context arg0, JString arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.BlockedNumberContract",
+			"isBlocked",
+			"(Landroid/content/Context;Ljava/lang/String;)Z",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jint BlockedNumberContract::unblock(android::content::Context arg0, JString arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.provider.BlockedNumberContract",
+			"unblock",
+			"(Landroid/content/Context;Ljava/lang/String;)I",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

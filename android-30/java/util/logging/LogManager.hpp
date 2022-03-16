@@ -1,88 +1,147 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace java::io
-{
-	class InputStream;
-}
-class JClass;
-class JString;
-namespace java::lang
-{
-	class Void;
-}
-namespace java::lang::ref
-{
-	class ReferenceQueue;
-}
-namespace java::security
-{
-	class AccessControlContext;
-}
-namespace java::security
-{
-	class Permission;
-}
-namespace java::util
-{
-	class Properties;
-}
-namespace java::util
-{
-	class WeakHashMap;
-}
-namespace java::util::concurrent
-{
-	class CopyOnWriteArrayList;
-}
-namespace java::util::concurrent::locks
-{
-	class ReentrantLock;
-}
-namespace java::util::logging
-{
-	class Formatter;
-}
-namespace java::util::logging
-{
-	class Level;
-}
-namespace java::util::logging
-{
-	class Logger;
-}
+#include "../../../JArray.hpp"
+#include "../../io/InputStream.def.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JString.hpp"
+#include "../../lang/Void.def.hpp"
+#include "../../lang/ref/ReferenceQueue.def.hpp"
+#include "../../security/AccessControlContext.def.hpp"
+#include "../../security/Permission.def.hpp"
+#include "../Properties.def.hpp"
+#include "../WeakHashMap.def.hpp"
+#include "../concurrent/CopyOnWriteArrayList.def.hpp"
+#include "../concurrent/locks/ReentrantLock.def.hpp"
+#include "./Formatter.def.hpp"
+#include "./Level.def.hpp"
+#include "./Logger.def.hpp"
+#include "./LogManager.def.hpp"
 
 namespace java::util::logging
 {
-	class LogManager : public JObject
+	// Fields
+	inline JString LogManager::LOGGING_MXBEAN_NAME()
 	{
-	public:
-		// Fields
-		static JString LOGGING_MXBEAN_NAME();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LogManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LogManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::util::logging::LogManager getLogManager();
-		static JObject getLoggingMXBean();
-		java::util::logging::LogManager addConfigurationListener(JObject arg0) const;
-		jboolean addLogger(java::util::logging::Logger arg0) const;
-		void checkAccess() const;
-		java::util::logging::Logger getLogger(JString arg0) const;
-		JObject getLoggerNames() const;
-		JString getProperty(JString arg0) const;
-		void readConfiguration() const;
-		void readConfiguration(java::io::InputStream arg0) const;
-		void removeConfigurationListener(JObject arg0) const;
-		void reset() const;
-		void updateConfiguration(JObject arg0) const;
-		void updateConfiguration(java::io::InputStream arg0, JObject arg1) const;
-	};
+		return getStaticObjectField(
+			"java.util.logging.LogManager",
+			"LOGGING_MXBEAN_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::logging::LogManager LogManager::getLogManager()
+	{
+		return callStaticObjectMethod(
+			"java.util.logging.LogManager",
+			"getLogManager",
+			"()Ljava/util/logging/LogManager;"
+		);
+	}
+	inline JObject LogManager::getLoggingMXBean()
+	{
+		return callStaticObjectMethod(
+			"java.util.logging.LogManager",
+			"getLoggingMXBean",
+			"()Ljava/util/logging/LoggingMXBean;"
+		);
+	}
+	inline java::util::logging::LogManager LogManager::addConfigurationListener(JObject arg0) const
+	{
+		return callObjectMethod(
+			"addConfigurationListener",
+			"(Ljava/lang/Runnable;)Ljava/util/logging/LogManager;",
+			arg0.object()
+		);
+	}
+	inline jboolean LogManager::addLogger(java::util::logging::Logger arg0) const
+	{
+		return callMethod<jboolean>(
+			"addLogger",
+			"(Ljava/util/logging/Logger;)Z",
+			arg0.object()
+		);
+	}
+	inline void LogManager::checkAccess() const
+	{
+		callMethod<void>(
+			"checkAccess",
+			"()V"
+		);
+	}
+	inline java::util::logging::Logger LogManager::getLogger(JString arg0) const
+	{
+		return callObjectMethod(
+			"getLogger",
+			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject LogManager::getLoggerNames() const
+	{
+		return callObjectMethod(
+			"getLoggerNames",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline JString LogManager::getProperty(JString arg0) const
+	{
+		return callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline void LogManager::readConfiguration() const
+	{
+		callMethod<void>(
+			"readConfiguration",
+			"()V"
+		);
+	}
+	inline void LogManager::readConfiguration(java::io::InputStream arg0) const
+	{
+		callMethod<void>(
+			"readConfiguration",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		);
+	}
+	inline void LogManager::removeConfigurationListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeConfigurationListener",
+			"(Ljava/lang/Runnable;)V",
+			arg0.object()
+		);
+	}
+	inline void LogManager::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline void LogManager::updateConfiguration(JObject arg0) const
+	{
+		callMethod<void>(
+			"updateConfiguration",
+			"(Ljava/util/function/Function;)V",
+			arg0.object()
+		);
+	}
+	inline void LogManager::updateConfiguration(java::io::InputStream arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"updateConfiguration",
+			"(Ljava/io/InputStream;Ljava/util/function/Function;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace java::util::logging
+
+// Base class headers
 

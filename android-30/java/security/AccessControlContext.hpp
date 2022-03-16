@@ -1,39 +1,63 @@
 #pragma once
 
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JObject;
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class ProtectionDomain;
-}
+#include "./Permission.def.hpp"
+#include "./ProtectionDomain.def.hpp"
+#include "./AccessControlContext.def.hpp"
 
 namespace java::security
 {
-	class AccessControlContext : public JObject
+	// Fields
+	
+	// Constructors
+	inline AccessControlContext::AccessControlContext(JArray arg0)
+		: JObject(
+			"java.security.AccessControlContext",
+			"([Ljava/security/ProtectionDomain;)V",
+			arg0.object<jarray>()
+		) {}
+	inline AccessControlContext::AccessControlContext(java::security::AccessControlContext &arg0, JObject arg1)
+		: JObject(
+			"java.security.AccessControlContext",
+			"(Ljava/security/AccessControlContext;Ljava/security/DomainCombiner;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void AccessControlContext::checkPermission(java::security::Permission arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessControlContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlContext(QJniObject obj);
-		
-		// Constructors
-		AccessControlContext(JArray arg0);
-		AccessControlContext(java::security::AccessControlContext &arg0, JObject arg1);
-		
-		// Methods
-		void checkPermission(java::security::Permission arg0) const;
-		jboolean equals(JObject arg0) const;
-		JObject getDomainCombiner() const;
-		jint hashCode() const;
-	};
+		callMethod<void>(
+			"checkPermission",
+			"(Ljava/security/Permission;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean AccessControlContext::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject AccessControlContext::getDomainCombiner() const
+	{
+		return callObjectMethod(
+			"getDomainCombiner",
+			"()Ljava/security/DomainCombiner;"
+		);
+	}
+	inline jint AccessControlContext::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

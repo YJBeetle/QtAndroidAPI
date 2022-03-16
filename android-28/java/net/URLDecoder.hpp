@@ -1,31 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::nio::charset
-{
-	class Charset;
-}
+#include "../../JString.hpp"
+#include "../nio/charset/Charset.def.hpp"
+#include "./URLDecoder.def.hpp"
 
 namespace java::net
 {
-	class URLDecoder : public JObject
+	// Fields
+	
+	// Constructors
+	inline URLDecoder::URLDecoder()
+		: JObject(
+			"java.net.URLDecoder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString URLDecoder::decode(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit URLDecoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URLDecoder(QJniObject obj);
-		
-		// Constructors
-		URLDecoder();
-		
-		// Methods
-		static JString decode(JString arg0);
-		static JString decode(JString arg0, JString arg1);
-		static JString decode(JString arg0, java::nio::charset::Charset arg1);
-	};
+		return callStaticObjectMethod(
+			"java.net.URLDecoder",
+			"decode",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString URLDecoder::decode(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"java.net.URLDecoder",
+			"decode",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline JString URLDecoder::decode(JString arg0, java::nio::charset::Charset arg1)
+	{
+		return callStaticObjectMethod(
+			"java.net.URLDecoder",
+			"decode",
+			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

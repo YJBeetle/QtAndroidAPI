@@ -1,33 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./BlockedNumberContract_BlockedNumbers.def.hpp"
 
 namespace android::provider
 {
-	class BlockedNumberContract_BlockedNumbers : public JObject
+	// Fields
+	inline JString BlockedNumberContract_BlockedNumbers::COLUMN_E164_NUMBER()
 	{
-	public:
-		// Fields
-		static JString COLUMN_E164_NUMBER();
-		static JString COLUMN_ID();
-		static JString COLUMN_ORIGINAL_NUMBER();
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BlockedNumberContract_BlockedNumbers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BlockedNumberContract_BlockedNumbers(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract$BlockedNumbers",
+			"COLUMN_E164_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString BlockedNumberContract_BlockedNumbers::COLUMN_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract$BlockedNumbers",
+			"COLUMN_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString BlockedNumberContract_BlockedNumbers::COLUMN_ORIGINAL_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract$BlockedNumbers",
+			"COLUMN_ORIGINAL_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString BlockedNumberContract_BlockedNumbers::CONTENT_ITEM_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract$BlockedNumbers",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString BlockedNumberContract_BlockedNumbers::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract$BlockedNumbers",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri BlockedNumberContract_BlockedNumbers::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.BlockedNumberContract$BlockedNumbers",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

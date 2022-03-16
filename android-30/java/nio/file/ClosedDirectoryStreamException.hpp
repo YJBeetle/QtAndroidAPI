@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalStateException.hpp"
+#include "./ClosedDirectoryStreamException.def.hpp"
 
 namespace java::nio::file
 {
-	class ClosedDirectoryStreamException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ClosedDirectoryStreamException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ClosedDirectoryStreamException(QJniObject obj);
-		
-		// Constructors
-		ClosedDirectoryStreamException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ClosedDirectoryStreamException::ClosedDirectoryStreamException()
+		: java::lang::IllegalStateException(
+			"java.nio.file.ClosedDirectoryStreamException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalStateException.hpp"
 

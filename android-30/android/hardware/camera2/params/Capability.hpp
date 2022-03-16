@@ -1,38 +1,62 @@
 #pragma once
 
+#include "../../../util/Range.def.hpp"
+#include "../../../util/Size.def.hpp"
 #include "../../../../JObject.hpp"
-
-namespace android::util
-{
-	class Range;
-}
-namespace android::util
-{
-	class Size;
-}
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./Capability.def.hpp"
 
 namespace android::hardware::camera2::params
 {
-	class Capability : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean Capability::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Capability(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Capability(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		android::util::Size getMaxStreamingSize() const;
-		jint getMode() const;
-		android::util::Range getZoomRatioRange() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::util::Size Capability::getMaxStreamingSize() const
+	{
+		return callObjectMethod(
+			"getMaxStreamingSize",
+			"()Landroid/util/Size;"
+		);
+	}
+	inline jint Capability::getMode() const
+	{
+		return callMethod<jint>(
+			"getMode",
+			"()I"
+		);
+	}
+	inline android::util::Range Capability::getZoomRatioRange() const
+	{
+		return callObjectMethod(
+			"getZoomRatioRange",
+			"()Landroid/util/Range;"
+		);
+	}
+	inline jint Capability::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString Capability::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::hardware::camera2::params
+
+// Base class headers
 

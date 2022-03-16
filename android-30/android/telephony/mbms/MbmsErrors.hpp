@@ -1,26 +1,50 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MbmsErrors.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors : public JObject
+	// Fields
+	inline jint MbmsErrors::ERROR_MIDDLEWARE_LOST()
 	{
-	public:
-		// Fields
-		static jint ERROR_MIDDLEWARE_LOST();
-		static jint ERROR_MIDDLEWARE_NOT_BOUND();
-		static jint ERROR_NO_UNIQUE_MIDDLEWARE();
-		static jint SUCCESS();
-		static jint UNKNOWN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MbmsErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors",
+			"ERROR_MIDDLEWARE_LOST"
+		);
+	}
+	inline jint MbmsErrors::ERROR_MIDDLEWARE_NOT_BOUND()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors",
+			"ERROR_MIDDLEWARE_NOT_BOUND"
+		);
+	}
+	inline jint MbmsErrors::ERROR_NO_UNIQUE_MIDDLEWARE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors",
+			"ERROR_NO_UNIQUE_MIDDLEWARE"
+		);
+	}
+	inline jint MbmsErrors::SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors",
+			"SUCCESS"
+		);
+	}
+	inline jint MbmsErrors::UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors",
+			"UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony::mbms
+
+// Base class headers
 

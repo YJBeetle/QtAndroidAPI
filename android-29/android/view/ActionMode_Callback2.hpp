@@ -1,36 +1,33 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::view
-{
-	class ActionMode;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../graphics/Rect.def.hpp"
+#include "./ActionMode.def.hpp"
+#include "./View.def.hpp"
+#include "./ActionMode_Callback2.def.hpp"
 
 namespace android::view
 {
-	class ActionMode_Callback2 : public JObject
+	// Fields
+	
+	// Constructors
+	inline ActionMode_Callback2::ActionMode_Callback2()
+		: JObject(
+			"android.view.ActionMode$Callback2",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ActionMode_Callback2::onGetContentRect(android::view::ActionMode arg0, android::view::View arg1, android::graphics::Rect arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ActionMode_Callback2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActionMode_Callback2(QJniObject obj);
-		
-		// Constructors
-		ActionMode_Callback2();
-		
-		// Methods
-		void onGetContentRect(android::view::ActionMode arg0, android::view::View arg1, android::graphics::Rect arg2) const;
-	};
+		callMethod<void>(
+			"onGetContentRect",
+			"(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

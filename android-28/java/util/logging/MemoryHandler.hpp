@@ -1,44 +1,85 @@
 #pragma once
 
-#include "./Handler.hpp"
-
-class JArray;
-namespace java::util::logging
-{
-	class Handler;
-}
-namespace java::util::logging
-{
-	class Level;
-}
-namespace java::util::logging
-{
-	class LogRecord;
-}
+#include "../../../JArray.hpp"
+#include "./Handler.def.hpp"
+#include "./Level.def.hpp"
+#include "./LogRecord.def.hpp"
+#include "./MemoryHandler.def.hpp"
 
 namespace java::util::logging
 {
-	class MemoryHandler : public java::util::logging::Handler
+	// Fields
+	
+	// Constructors
+	inline MemoryHandler::MemoryHandler()
+		: java::util::logging::Handler(
+			"java.util.logging.MemoryHandler",
+			"()V"
+		) {}
+	inline MemoryHandler::MemoryHandler(java::util::logging::Handler arg0, jint arg1, java::util::logging::Level arg2)
+		: java::util::logging::Handler(
+			"java.util.logging.MemoryHandler",
+			"(Ljava/util/logging/Handler;ILjava/util/logging/Level;)V",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline void MemoryHandler::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MemoryHandler(const char *className, const char *sig, Ts...agv) : java::util::logging::Handler(className, sig, std::forward<Ts>(agv)...) {}
-		MemoryHandler(QJniObject obj);
-		
-		// Constructors
-		MemoryHandler();
-		MemoryHandler(java::util::logging::Handler arg0, jint arg1, java::util::logging::Level arg2);
-		
-		// Methods
-		void close() const;
-		void flush() const;
-		java::util::logging::Level getPushLevel() const;
-		jboolean isLoggable(java::util::logging::LogRecord arg0) const;
-		void publish(java::util::logging::LogRecord arg0) const;
-		void push() const;
-		void setPushLevel(java::util::logging::Level arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void MemoryHandler::flush() const
+	{
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline java::util::logging::Level MemoryHandler::getPushLevel() const
+	{
+		return callObjectMethod(
+			"getPushLevel",
+			"()Ljava/util/logging/Level;"
+		);
+	}
+	inline jboolean MemoryHandler::isLoggable(java::util::logging::LogRecord arg0) const
+	{
+		return callMethod<jboolean>(
+			"isLoggable",
+			"(Ljava/util/logging/LogRecord;)Z",
+			arg0.object()
+		);
+	}
+	inline void MemoryHandler::publish(java::util::logging::LogRecord arg0) const
+	{
+		callMethod<void>(
+			"publish",
+			"(Ljava/util/logging/LogRecord;)V",
+			arg0.object()
+		);
+	}
+	inline void MemoryHandler::push() const
+	{
+		callMethod<void>(
+			"push",
+			"()V"
+		);
+	}
+	inline void MemoryHandler::setPushLevel(java::util::logging::Level arg0) const
+	{
+		callMethod<void>(
+			"setPushLevel",
+			"(Ljava/util/logging/Level;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::util::logging
+
+// Base class headers
+#include "./Handler.hpp"
 

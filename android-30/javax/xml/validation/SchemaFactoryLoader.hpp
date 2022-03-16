@@ -1,28 +1,25 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
-namespace javax::xml::validation
-{
-	class SchemaFactory;
-}
+#include "../../../JString.hpp"
+#include "./SchemaFactory.def.hpp"
+#include "./SchemaFactoryLoader.def.hpp"
 
 namespace javax::xml::validation
 {
-	class SchemaFactoryLoader : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline javax::xml::validation::SchemaFactory SchemaFactoryLoader::newFactory(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SchemaFactoryLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SchemaFactoryLoader(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		javax::xml::validation::SchemaFactory newFactory(JString arg0) const;
-	};
+		return callObjectMethod(
+			"newFactory",
+			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace javax::xml::validation
+
+// Base class headers
 

@@ -1,30 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../os/Parcel.def.hpp"
+#include "./SurfaceControlViewHost_SurfacePackage.def.hpp"
 
 namespace android::view
 {
-	class SurfaceControlViewHost_SurfacePackage : public JObject
+	// Fields
+	inline JObject SurfaceControlViewHost_SurfacePackage::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SurfaceControlViewHost_SurfacePackage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceControlViewHost_SurfacePackage(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		void release() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.SurfaceControlViewHost$SurfacePackage",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint SurfaceControlViewHost_SurfacePackage::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void SurfaceControlViewHost_SurfacePackage::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	inline void SurfaceControlViewHost_SurfacePackage::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

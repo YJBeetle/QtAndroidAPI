@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Locale_Category.def.hpp"
 
 namespace java::util
 {
-	class Locale_Category : public java::lang::Enum
+	// Fields
+	inline java::util::Locale_Category Locale_Category::DISPLAY()
 	{
-	public:
-		// Fields
-		static java::util::Locale_Category DISPLAY();
-		static java::util::Locale_Category FORMAT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Locale_Category(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Locale_Category(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::util::Locale_Category valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.util.Locale$Category",
+			"DISPLAY",
+			"Ljava/util/Locale$Category;"
+		);
+	}
+	inline java::util::Locale_Category Locale_Category::FORMAT()
+	{
+		return getStaticObjectField(
+			"java.util.Locale$Category",
+			"FORMAT",
+			"Ljava/util/Locale$Category;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::Locale_Category Locale_Category::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale$Category",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/util/Locale$Category;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Locale_Category::values()
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale$Category",
+			"values",
+			"()[Ljava/util/Locale$Category;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Enum.hpp"
 

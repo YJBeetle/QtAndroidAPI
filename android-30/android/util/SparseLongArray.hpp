@@ -1,40 +1,139 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./SparseLongArray.def.hpp"
 
 namespace android::util
 {
-	class SparseLongArray : public JObject
+	// Fields
+	
+	// Constructors
+	inline SparseLongArray::SparseLongArray()
+		: JObject(
+			"android.util.SparseLongArray",
+			"()V"
+		) {}
+	inline SparseLongArray::SparseLongArray(jint arg0)
+		: JObject(
+			"android.util.SparseLongArray",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline void SparseLongArray::append(jint arg0, jlong arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SparseLongArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SparseLongArray(QJniObject obj);
-		
-		// Constructors
-		SparseLongArray();
-		SparseLongArray(jint arg0);
-		
-		// Methods
-		void append(jint arg0, jlong arg1) const;
-		void clear() const;
-		android::util::SparseLongArray clone() const;
-		void delete_(jint arg0) const;
-		jlong get(jint arg0) const;
-		jlong get(jint arg0, jlong arg1) const;
-		jint indexOfKey(jint arg0) const;
-		jint indexOfValue(jlong arg0) const;
-		jint keyAt(jint arg0) const;
-		void put(jint arg0, jlong arg1) const;
-		void removeAt(jint arg0) const;
-		jint size() const;
-		JString toString() const;
-		jlong valueAt(jint arg0) const;
-	};
+		callMethod<void>(
+			"append",
+			"(IJ)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void SparseLongArray::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline android::util::SparseLongArray SparseLongArray::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Landroid/util/SparseLongArray;"
+		);
+	}
+	inline void SparseLongArray::delete_(jint arg0) const
+	{
+		callMethod<void>(
+			"delete",
+			"(I)V",
+			arg0
+		);
+	}
+	inline jlong SparseLongArray::get(jint arg0) const
+	{
+		return callMethod<jlong>(
+			"get",
+			"(I)J",
+			arg0
+		);
+	}
+	inline jlong SparseLongArray::get(jint arg0, jlong arg1) const
+	{
+		return callMethod<jlong>(
+			"get",
+			"(IJ)J",
+			arg0,
+			arg1
+		);
+	}
+	inline jint SparseLongArray::indexOfKey(jint arg0) const
+	{
+		return callMethod<jint>(
+			"indexOfKey",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint SparseLongArray::indexOfValue(jlong arg0) const
+	{
+		return callMethod<jint>(
+			"indexOfValue",
+			"(J)I",
+			arg0
+		);
+	}
+	inline jint SparseLongArray::keyAt(jint arg0) const
+	{
+		return callMethod<jint>(
+			"keyAt",
+			"(I)I",
+			arg0
+		);
+	}
+	inline void SparseLongArray::put(jint arg0, jlong arg1) const
+	{
+		callMethod<void>(
+			"put",
+			"(IJ)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void SparseLongArray::removeAt(jint arg0) const
+	{
+		callMethod<void>(
+			"removeAt",
+			"(I)V",
+			arg0
+		);
+	}
+	inline jint SparseLongArray::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JString SparseLongArray::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong SparseLongArray::valueAt(jint arg0) const
+	{
+		return callMethod<jlong>(
+			"valueAt",
+			"(I)J",
+			arg0
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

@@ -1,35 +1,77 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../os/Parcel.def.hpp"
+#include "./ActivityManager_MemoryInfo.def.hpp"
 
 namespace android::app
 {
-	class ActivityManager_MemoryInfo : public JObject
+	// Fields
+	inline JObject ActivityManager_MemoryInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		jlong availMem();
-		jboolean lowMemory();
-		jlong threshold();
-		jlong totalMem();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ActivityManager_MemoryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_MemoryInfo(QJniObject obj);
-		
-		// Constructors
-		ActivityManager_MemoryInfo();
-		
-		// Methods
-		jint describeContents() const;
-		void readFromParcel(android::os::Parcel arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.ActivityManager$MemoryInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jlong ActivityManager_MemoryInfo::availMem()
+	{
+		return getField<jlong>(
+			"availMem"
+		);
+	}
+	inline jboolean ActivityManager_MemoryInfo::lowMemory()
+	{
+		return getField<jboolean>(
+			"lowMemory"
+		);
+	}
+	inline jlong ActivityManager_MemoryInfo::threshold()
+	{
+		return getField<jlong>(
+			"threshold"
+		);
+	}
+	inline jlong ActivityManager_MemoryInfo::totalMem()
+	{
+		return getField<jlong>(
+			"totalMem"
+		);
+	}
+	
+	// Constructors
+	inline ActivityManager_MemoryInfo::ActivityManager_MemoryInfo()
+		: JObject(
+			"android.app.ActivityManager$MemoryInfo",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint ActivityManager_MemoryInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void ActivityManager_MemoryInfo::readFromParcel(android::os::Parcel arg0) const
+	{
+		callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		);
+	}
+	inline void ActivityManager_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

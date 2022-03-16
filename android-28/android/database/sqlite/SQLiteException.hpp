@@ -1,27 +1,38 @@
 #pragma once
 
-#include "../SQLException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./SQLiteException.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteException : public android::database::SQLException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SQLiteException(const char *className, const char *sig, Ts...agv) : android::database::SQLException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteException(QJniObject obj);
-		
-		// Constructors
-		SQLiteException();
-		SQLiteException(JString arg0);
-		SQLiteException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SQLiteException::SQLiteException()
+		: android::database::SQLException(
+			"android.database.sqlite.SQLiteException",
+			"()V"
+		) {}
+	inline SQLiteException::SQLiteException(JString arg0)
+		: android::database::SQLException(
+			"android.database.sqlite.SQLiteException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SQLiteException::SQLiteException(JString arg0, JThrowable arg1)
+		: android::database::SQLException(
+			"android.database.sqlite.SQLiteException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::database::sqlite
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
 

@@ -1,27 +1,38 @@
 #pragma once
 
-#include "../../../java/io/IOException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./SSLException.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SSLException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		SSLException(QJniObject obj);
-		
-		// Constructors
-		SSLException(JString arg0);
-		SSLException(JThrowable arg0);
-		SSLException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SSLException::SSLException(JString arg0)
+		: java::io::IOException(
+			"javax.net.ssl.SSLException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SSLException::SSLException(JThrowable arg0)
+		: java::io::IOException(
+			"javax.net.ssl.SSLException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline SSLException::SSLException(JString arg0, JThrowable arg1)
+		: java::io::IOException(
+			"javax.net.ssl.SSLException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/io/IOException.hpp"
 

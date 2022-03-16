@@ -1,32 +1,83 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Region_Op.def.hpp"
 
 namespace android::graphics
 {
-	class Region_Op : public java::lang::Enum
+	// Fields
+	inline android::graphics::Region_Op Region_Op::DIFFERENCE()
 	{
-	public:
-		// Fields
-		static android::graphics::Region_Op DIFFERENCE();
-		static android::graphics::Region_Op INTERSECT();
-		static android::graphics::Region_Op REPLACE();
-		static android::graphics::Region_Op REVERSE_DIFFERENCE();
-		static android::graphics::Region_Op UNION();
-		static android::graphics::Region_Op XOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Region_Op(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Region_Op(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Region_Op valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Region$Op",
+			"DIFFERENCE",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
+	inline android::graphics::Region_Op Region_Op::INTERSECT()
+	{
+		return getStaticObjectField(
+			"android.graphics.Region$Op",
+			"INTERSECT",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
+	inline android::graphics::Region_Op Region_Op::REPLACE()
+	{
+		return getStaticObjectField(
+			"android.graphics.Region$Op",
+			"REPLACE",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
+	inline android::graphics::Region_Op Region_Op::REVERSE_DIFFERENCE()
+	{
+		return getStaticObjectField(
+			"android.graphics.Region$Op",
+			"REVERSE_DIFFERENCE",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
+	inline android::graphics::Region_Op Region_Op::UNION()
+	{
+		return getStaticObjectField(
+			"android.graphics.Region$Op",
+			"UNION",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
+	inline android::graphics::Region_Op Region_Op::XOR()
+	{
+		return getStaticObjectField(
+			"android.graphics.Region$Op",
+			"XOR",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Region_Op Region_Op::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Region$Op",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Region$Op;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Region_Op::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Region$Op",
+			"values",
+			"()[Landroid/graphics/Region$Op;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

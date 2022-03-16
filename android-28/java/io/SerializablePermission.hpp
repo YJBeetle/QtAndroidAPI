@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../security/BasicPermission.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./SerializablePermission.def.hpp"
 
 namespace java::io
 {
-	class SerializablePermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SerializablePermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		SerializablePermission(QJniObject obj);
-		
-		// Constructors
-		SerializablePermission(JString arg0);
-		SerializablePermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SerializablePermission::SerializablePermission(JString arg0)
+		: java::security::BasicPermission(
+			"java.io.SerializablePermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SerializablePermission::SerializablePermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"java.io.SerializablePermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../security/Permission.hpp"
+#include "../security/BasicPermission.hpp"
 

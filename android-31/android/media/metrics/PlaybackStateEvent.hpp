@@ -1,54 +1,184 @@
 #pragma once
 
-#include "./Event.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JObject.hpp"
+#include "./PlaybackStateEvent.def.hpp"
 
 namespace android::media::metrics
 {
-	class PlaybackStateEvent : public android::media::metrics::Event
+	// Fields
+	inline JObject PlaybackStateEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint STATE_ABANDONED();
-		static jint STATE_BUFFERING();
-		static jint STATE_ENDED();
-		static jint STATE_FAILED();
-		static jint STATE_INTERRUPTED_BY_AD();
-		static jint STATE_JOINING_BACKGROUND();
-		static jint STATE_JOINING_FOREGROUND();
-		static jint STATE_NOT_STARTED();
-		static jint STATE_PAUSED();
-		static jint STATE_PAUSED_BUFFERING();
-		static jint STATE_PLAYING();
-		static jint STATE_SEEKING();
-		static jint STATE_STOPPED();
-		static jint STATE_SUPPRESSED();
-		static jint STATE_SUPPRESSED_BUFFERING();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PlaybackStateEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackStateEvent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::os::Bundle getMetricsBundle() const;
-		jint getState() const;
-		jlong getTimeSinceCreatedMillis() const;
-		jint hashCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.media.metrics.PlaybackStateEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_ABANDONED()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_ABANDONED"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_BUFFERING()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_BUFFERING"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_ENDED()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_ENDED"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_FAILED()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_FAILED"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_INTERRUPTED_BY_AD()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_INTERRUPTED_BY_AD"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_JOINING_BACKGROUND()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_JOINING_BACKGROUND"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_JOINING_FOREGROUND()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_JOINING_FOREGROUND"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_NOT_STARTED()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_NOT_STARTED"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_PAUSED()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_PAUSED"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_PAUSED_BUFFERING()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_PAUSED_BUFFERING"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_PLAYING()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_PLAYING"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_SEEKING()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_SEEKING"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_STOPPED()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_STOPPED"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_SUPPRESSED()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_SUPPRESSED"
+		);
+	}
+	inline jint PlaybackStateEvent::STATE_SUPPRESSED_BUFFERING()
+	{
+		return getStaticField<jint>(
+			"android.media.metrics.PlaybackStateEvent",
+			"STATE_SUPPRESSED_BUFFERING"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PlaybackStateEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean PlaybackStateEvent::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::os::Bundle PlaybackStateEvent::getMetricsBundle() const
+	{
+		return callObjectMethod(
+			"getMetricsBundle",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline jint PlaybackStateEvent::getState() const
+	{
+		return callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	inline jlong PlaybackStateEvent::getTimeSinceCreatedMillis() const
+	{
+		return callMethod<jlong>(
+			"getTimeSinceCreatedMillis",
+			"()J"
+		);
+	}
+	inline jint PlaybackStateEvent::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void PlaybackStateEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::media::metrics
+
+// Base class headers
+#include "./Event.hpp"
 

@@ -1,32 +1,73 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-class JString;
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
+#include "./AudioProfile.def.hpp"
 
 namespace android::media
 {
-	class AudioProfile : public JObject
+	// Fields
+	inline jint AudioProfile::AUDIO_ENCAPSULATION_TYPE_IEC61937()
 	{
-	public:
-		// Fields
-		static jint AUDIO_ENCAPSULATION_TYPE_IEC61937();
-		static jint AUDIO_ENCAPSULATION_TYPE_NONE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AudioProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioProfile(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JIntArray getChannelIndexMasks() const;
-		JIntArray getChannelMasks() const;
-		jint getEncapsulationType() const;
-		jint getFormat() const;
-		JIntArray getSampleRates() const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.media.AudioProfile",
+			"AUDIO_ENCAPSULATION_TYPE_IEC61937"
+		);
+	}
+	inline jint AudioProfile::AUDIO_ENCAPSULATION_TYPE_NONE()
+	{
+		return getStaticField<jint>(
+			"android.media.AudioProfile",
+			"AUDIO_ENCAPSULATION_TYPE_NONE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JIntArray AudioProfile::getChannelIndexMasks() const
+	{
+		return callObjectMethod(
+			"getChannelIndexMasks",
+			"()[I"
+		);
+	}
+	inline JIntArray AudioProfile::getChannelMasks() const
+	{
+		return callObjectMethod(
+			"getChannelMasks",
+			"()[I"
+		);
+	}
+	inline jint AudioProfile::getEncapsulationType() const
+	{
+		return callMethod<jint>(
+			"getEncapsulationType",
+			"()I"
+		);
+	}
+	inline jint AudioProfile::getFormat() const
+	{
+		return callMethod<jint>(
+			"getFormat",
+			"()I"
+		);
+	}
+	inline JIntArray AudioProfile::getSampleRates() const
+	{
+		return callObjectMethod(
+			"getSampleRates",
+			"()[I"
+		);
+	}
+	inline JString AudioProfile::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

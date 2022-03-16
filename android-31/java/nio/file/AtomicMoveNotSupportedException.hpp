@@ -1,24 +1,27 @@
 #pragma once
 
-#include "./FileSystemException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./AtomicMoveNotSupportedException.def.hpp"
 
 namespace java::nio::file
 {
-	class AtomicMoveNotSupportedException : public java::nio::file::FileSystemException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AtomicMoveNotSupportedException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicMoveNotSupportedException(QJniObject obj);
-		
-		// Constructors
-		AtomicMoveNotSupportedException(JString arg0, JString arg1, JString arg2);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AtomicMoveNotSupportedException::AtomicMoveNotSupportedException(JString arg0, JString arg1, JString arg2)
+		: java::nio::file::FileSystemException(
+			"java.nio.file.AtomicMoveNotSupportedException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
+#include "./FileSystemException.hpp"
 

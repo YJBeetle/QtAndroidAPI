@@ -1,51 +1,114 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LocaleData_MeasurementSystem.def.hpp"
+#include "./LocaleData_PaperSize.def.hpp"
+#include "./ULocale.def.hpp"
+#include "./VersionInfo.def.hpp"
+#include "../../../JString.hpp"
+#include "./LocaleData.def.hpp"
 
 namespace android::icu::util
 {
-	class LocaleData_MeasurementSystem;
-}
-namespace android::icu::util
-{
-	class LocaleData_PaperSize;
-}
-namespace android::icu::util
-{
-	class ULocale;
-}
-namespace android::icu::util
-{
-	class VersionInfo;
-}
-class JString;
-
-namespace android::icu::util
-{
-	class LocaleData : public JObject
+	// Fields
+	inline jint LocaleData::ALT_QUOTATION_END()
 	{
-	public:
-		// Fields
-		static jint ALT_QUOTATION_END();
-		static jint ALT_QUOTATION_START();
-		static jint QUOTATION_END();
-		static jint QUOTATION_START();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LocaleData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::util::VersionInfo getCLDRVersion();
-		static android::icu::util::LocaleData getInstance();
-		static android::icu::util::LocaleData getInstance(android::icu::util::ULocale arg0);
-		static android::icu::util::LocaleData_MeasurementSystem getMeasurementSystem(android::icu::util::ULocale arg0);
-		static android::icu::util::LocaleData_PaperSize getPaperSize(android::icu::util::ULocale arg0);
-		JString getDelimiter(jint arg0) const;
-		jboolean getNoSubstitute() const;
-		void setNoSubstitute(jboolean arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.icu.util.LocaleData",
+			"ALT_QUOTATION_END"
+		);
+	}
+	inline jint LocaleData::ALT_QUOTATION_START()
+	{
+		return getStaticField<jint>(
+			"android.icu.util.LocaleData",
+			"ALT_QUOTATION_START"
+		);
+	}
+	inline jint LocaleData::QUOTATION_END()
+	{
+		return getStaticField<jint>(
+			"android.icu.util.LocaleData",
+			"QUOTATION_END"
+		);
+	}
+	inline jint LocaleData::QUOTATION_START()
+	{
+		return getStaticField<jint>(
+			"android.icu.util.LocaleData",
+			"QUOTATION_START"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::util::VersionInfo LocaleData::getCLDRVersion()
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.LocaleData",
+			"getCLDRVersion",
+			"()Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::LocaleData LocaleData::getInstance()
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.LocaleData",
+			"getInstance",
+			"()Landroid/icu/util/LocaleData;"
+		);
+	}
+	inline android::icu::util::LocaleData LocaleData::getInstance(android::icu::util::ULocale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.LocaleData",
+			"getInstance",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData;",
+			arg0.object()
+		);
+	}
+	inline android::icu::util::LocaleData_MeasurementSystem LocaleData::getMeasurementSystem(android::icu::util::ULocale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.LocaleData",
+			"getMeasurementSystem",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData$MeasurementSystem;",
+			arg0.object()
+		);
+	}
+	inline android::icu::util::LocaleData_PaperSize LocaleData::getPaperSize(android::icu::util::ULocale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.LocaleData",
+			"getPaperSize",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData$PaperSize;",
+			arg0.object()
+		);
+	}
+	inline JString LocaleData::getDelimiter(jint arg0) const
+	{
+		return callObjectMethod(
+			"getDelimiter",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline jboolean LocaleData::getNoSubstitute() const
+	{
+		return callMethod<jboolean>(
+			"getNoSubstitute",
+			"()Z"
+		);
+	}
+	inline void LocaleData::setNoSubstitute(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setNoSubstitute",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
 

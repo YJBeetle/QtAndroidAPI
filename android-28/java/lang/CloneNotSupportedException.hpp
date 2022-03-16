@@ -1,25 +1,28 @@
 #pragma once
 
-#include "./Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./CloneNotSupportedException.def.hpp"
 
 namespace java::lang
 {
-	class CloneNotSupportedException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CloneNotSupportedException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		CloneNotSupportedException(QJniObject obj);
-		
-		// Constructors
-		CloneNotSupportedException();
-		CloneNotSupportedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CloneNotSupportedException::CloneNotSupportedException()
+		: java::lang::Exception(
+			"java.lang.CloneNotSupportedException",
+			"()V"
+		) {}
+	inline CloneNotSupportedException::CloneNotSupportedException(JString arg0)
+		: java::lang::Exception(
+			"java.lang.CloneNotSupportedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
 

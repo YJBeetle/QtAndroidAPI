@@ -1,26 +1,43 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
+#include "../../../JArray.hpp"
+#include "./Validators.def.hpp"
 
 namespace android::service::autofill
 {
-	class Validators : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject Validators::and_(JArray arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Validators(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Validators(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject and_(JArray arg0);
-		static JObject not_(JObject arg0);
-		static JObject or_(JArray arg0);
-	};
+		return callStaticObjectMethod(
+			"android.service.autofill.Validators",
+			"and",
+			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
+			arg0.object<jarray>()
+		);
+	}
+	inline JObject Validators::not_(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"android.service.autofill.Validators",
+			"not",
+			"(Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
+			arg0.object()
+		);
+	}
+	inline JObject Validators::or_(JArray arg0)
+	{
+		return callStaticObjectMethod(
+			"android.service.autofill.Validators",
+			"or",
+			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
+			arg0.object<jarray>()
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

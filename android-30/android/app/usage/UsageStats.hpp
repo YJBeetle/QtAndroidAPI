@@ -1,41 +1,118 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./UsageStats.def.hpp"
 
 namespace android::app::usage
 {
-	class UsageStats : public JObject
+	// Fields
+	inline JObject UsageStats::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UsageStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsageStats(QJniObject obj);
-		
-		// Constructors
-		UsageStats(android::app::usage::UsageStats &arg0);
-		
-		// Methods
-		void add(android::app::usage::UsageStats arg0) const;
-		jint describeContents() const;
-		jlong getFirstTimeStamp() const;
-		jlong getLastTimeForegroundServiceUsed() const;
-		jlong getLastTimeStamp() const;
-		jlong getLastTimeUsed() const;
-		jlong getLastTimeVisible() const;
-		JString getPackageName() const;
-		jlong getTotalTimeForegroundServiceUsed() const;
-		jlong getTotalTimeInForeground() const;
-		jlong getTotalTimeVisible() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.usage.UsageStats",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline UsageStats::UsageStats(android::app::usage::UsageStats &arg0)
+		: JObject(
+			"android.app.usage.UsageStats",
+			"(Landroid/app/usage/UsageStats;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void UsageStats::add(android::app::usage::UsageStats arg0) const
+	{
+		callMethod<void>(
+			"add",
+			"(Landroid/app/usage/UsageStats;)V",
+			arg0.object()
+		);
+	}
+	inline jint UsageStats::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jlong UsageStats::getFirstTimeStamp() const
+	{
+		return callMethod<jlong>(
+			"getFirstTimeStamp",
+			"()J"
+		);
+	}
+	inline jlong UsageStats::getLastTimeForegroundServiceUsed() const
+	{
+		return callMethod<jlong>(
+			"getLastTimeForegroundServiceUsed",
+			"()J"
+		);
+	}
+	inline jlong UsageStats::getLastTimeStamp() const
+	{
+		return callMethod<jlong>(
+			"getLastTimeStamp",
+			"()J"
+		);
+	}
+	inline jlong UsageStats::getLastTimeUsed() const
+	{
+		return callMethod<jlong>(
+			"getLastTimeUsed",
+			"()J"
+		);
+	}
+	inline jlong UsageStats::getLastTimeVisible() const
+	{
+		return callMethod<jlong>(
+			"getLastTimeVisible",
+			"()J"
+		);
+	}
+	inline JString UsageStats::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong UsageStats::getTotalTimeForegroundServiceUsed() const
+	{
+		return callMethod<jlong>(
+			"getTotalTimeForegroundServiceUsed",
+			"()J"
+		);
+	}
+	inline jlong UsageStats::getTotalTimeInForeground() const
+	{
+		return callMethod<jlong>(
+			"getTotalTimeInForeground",
+			"()J"
+		);
+	}
+	inline jlong UsageStats::getTotalTimeVisible() const
+	{
+		return callMethod<jlong>(
+			"getTotalTimeVisible",
+			"()J"
+		);
+	}
+	inline void UsageStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

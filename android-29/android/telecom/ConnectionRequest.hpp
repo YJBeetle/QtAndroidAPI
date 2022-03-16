@@ -1,55 +1,111 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::telecom
-{
-	class Connection_RttTextStream;
-}
-namespace android::telecom
-{
-	class PhoneAccountHandle;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "./Connection_RttTextStream.def.hpp"
+#include "./PhoneAccountHandle.def.hpp"
+#include "../../JString.hpp"
+#include "./ConnectionRequest.def.hpp"
 
 namespace android::telecom
 {
-	class ConnectionRequest : public JObject
+	// Fields
+	inline JObject ConnectionRequest::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConnectionRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectionRequest(QJniObject obj);
-		
-		// Constructors
-		ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2);
-		ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2, jint arg3);
-		
-		// Methods
-		jint describeContents() const;
-		android::telecom::PhoneAccountHandle getAccountHandle() const;
-		android::net::Uri getAddress() const;
-		android::os::Bundle getExtras() const;
-		android::telecom::Connection_RttTextStream getRttTextStream() const;
-		jint getVideoState() const;
-		jboolean isRequestingRtt() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telecom.ConnectionRequest",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2)
+		: JObject(
+			"android.telecom.ConnectionRequest",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/net/Uri;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	inline ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2, jint arg3)
+		: JObject(
+			"android.telecom.ConnectionRequest",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/net/Uri;Landroid/os/Bundle;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3
+		) {}
+	
+	// Methods
+	inline jint ConnectionRequest::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::telecom::PhoneAccountHandle ConnectionRequest::getAccountHandle() const
+	{
+		return callObjectMethod(
+			"getAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	inline android::net::Uri ConnectionRequest::getAddress() const
+	{
+		return callObjectMethod(
+			"getAddress",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline android::os::Bundle ConnectionRequest::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline android::telecom::Connection_RttTextStream ConnectionRequest::getRttTextStream() const
+	{
+		return callObjectMethod(
+			"getRttTextStream",
+			"()Landroid/telecom/Connection$RttTextStream;"
+		);
+	}
+	inline jint ConnectionRequest::getVideoState() const
+	{
+		return callMethod<jint>(
+			"getVideoState",
+			"()I"
+		);
+	}
+	inline jboolean ConnectionRequest::isRequestingRtt() const
+	{
+		return callMethod<jboolean>(
+			"isRequestingRtt",
+			"()Z"
+		);
+	}
+	inline JString ConnectionRequest::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ConnectionRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
 

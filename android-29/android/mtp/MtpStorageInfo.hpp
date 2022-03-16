@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MtpStorageInfo.def.hpp"
 
 namespace android::mtp
 {
-	class MtpStorageInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString MtpStorageInfo::getDescription() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MtpStorageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MtpStorageInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getDescription() const;
-		jlong getFreeSpace() const;
-		jlong getMaxCapacity() const;
-		jint getStorageId() const;
-		JString getVolumeIdentifier() const;
-	};
+		return callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong MtpStorageInfo::getFreeSpace() const
+	{
+		return callMethod<jlong>(
+			"getFreeSpace",
+			"()J"
+		);
+	}
+	inline jlong MtpStorageInfo::getMaxCapacity() const
+	{
+		return callMethod<jlong>(
+			"getMaxCapacity",
+			"()J"
+		);
+	}
+	inline jint MtpStorageInfo::getStorageId() const
+	{
+		return callMethod<jint>(
+			"getStorageId",
+			"()I"
+		);
+	}
+	inline JString MtpStorageInfo::getVolumeIdentifier() const
+	{
+		return callObjectMethod(
+			"getVolumeIdentifier",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::mtp
+
+// Base class headers
 

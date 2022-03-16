@@ -1,29 +1,38 @@
 #pragma once
 
-#include "../database/ContentObserver.hpp"
+#include "./Loader.def.hpp"
+#include "./Loader_ForceLoadContentObserver.def.hpp"
 
 namespace android::content
 {
-	class Loader;
-}
-
-namespace android::content
-{
-	class Loader_ForceLoadContentObserver : public android::database::ContentObserver
+	// Fields
+	
+	// Constructors
+	inline Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(android::content::Loader arg0)
+		: android::database::ContentObserver(
+			"android.content.Loader$ForceLoadContentObserver",
+			"(Landroid/content/Loader;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean Loader_ForceLoadContentObserver::deliverSelfNotifications() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Loader_ForceLoadContentObserver(const char *className, const char *sig, Ts...agv) : android::database::ContentObserver(className, sig, std::forward<Ts>(agv)...) {}
-		Loader_ForceLoadContentObserver(QJniObject obj);
-		
-		// Constructors
-		Loader_ForceLoadContentObserver(android::content::Loader arg0);
-		
-		// Methods
-		jboolean deliverSelfNotifications() const;
-		void onChange(jboolean arg0) const;
-	};
+		return callMethod<jboolean>(
+			"deliverSelfNotifications",
+			"()Z"
+		);
+	}
+	inline void Loader_ForceLoadContentObserver::onChange(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onChange",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::content
+
+// Base class headers
+#include "../database/ContentObserver.hpp"
 

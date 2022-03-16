@@ -1,29 +1,62 @@
 #pragma once
 
-#include "../../lang/IllegalArgumentException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./InvalidPathException.def.hpp"
 
 namespace java::nio::file
 {
-	class InvalidPathException : public java::lang::IllegalArgumentException
+	// Fields
+	
+	// Constructors
+	inline InvalidPathException::InvalidPathException(JString arg0, JString arg1)
+		: java::lang::IllegalArgumentException(
+			"java.nio.file.InvalidPathException",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	inline InvalidPathException::InvalidPathException(JString arg0, JString arg1, jint arg2)
+		: java::lang::IllegalArgumentException(
+			"java.nio.file.InvalidPathException",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	
+	// Methods
+	inline jint InvalidPathException::getIndex() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InvalidPathException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidPathException(QJniObject obj);
-		
-		// Constructors
-		InvalidPathException(JString arg0, JString arg1);
-		InvalidPathException(JString arg0, JString arg1, jint arg2);
-		
-		// Methods
-		jint getIndex() const;
-		JString getInput() const;
-		JString getMessage() const;
-		JString getReason() const;
-	};
+		return callMethod<jint>(
+			"getIndex",
+			"()I"
+		);
+	}
+	inline JString InvalidPathException::getInput() const
+	{
+		return callObjectMethod(
+			"getInput",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString InvalidPathException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString InvalidPathException::getReason() const
+	{
+		return callObjectMethod(
+			"getReason",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalArgumentException.hpp"
 

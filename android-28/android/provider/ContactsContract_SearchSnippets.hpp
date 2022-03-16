@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_SearchSnippets.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_SearchSnippets : public JObject
+	// Fields
+	inline JString ContactsContract_SearchSnippets::DEFERRED_SNIPPETING_KEY()
 	{
-	public:
-		// Fields
-		static JString DEFERRED_SNIPPETING_KEY();
-		static JString SNIPPET();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_SearchSnippets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_SearchSnippets(QJniObject obj);
-		
-		// Constructors
-		ContactsContract_SearchSnippets();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$SearchSnippets",
+			"DEFERRED_SNIPPETING_KEY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_SearchSnippets::SNIPPET()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$SearchSnippets",
+			"SNIPPET",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline ContactsContract_SearchSnippets::ContactsContract_SearchSnippets()
+		: JObject(
+			"android.provider.ContactsContract$SearchSnippets",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

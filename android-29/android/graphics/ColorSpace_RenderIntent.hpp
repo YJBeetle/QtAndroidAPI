@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ColorSpace_RenderIntent.def.hpp"
 
 namespace android::graphics
 {
-	class ColorSpace_RenderIntent : public java::lang::Enum
+	// Fields
+	inline android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::ABSOLUTE()
 	{
-	public:
-		// Fields
-		static android::graphics::ColorSpace_RenderIntent ABSOLUTE();
-		static android::graphics::ColorSpace_RenderIntent PERCEPTUAL();
-		static android::graphics::ColorSpace_RenderIntent RELATIVE();
-		static android::graphics::ColorSpace_RenderIntent SATURATION();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ColorSpace_RenderIntent(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_RenderIntent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::ColorSpace_RenderIntent valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$RenderIntent",
+			"ABSOLUTE",
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
+	}
+	inline android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::PERCEPTUAL()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$RenderIntent",
+			"PERCEPTUAL",
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
+	}
+	inline android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::RELATIVE()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$RenderIntent",
+			"RELATIVE",
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
+	}
+	inline android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::SATURATION()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$RenderIntent",
+			"SATURATION",
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$RenderIntent",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$RenderIntent;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ColorSpace_RenderIntent::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$RenderIntent",
+			"values",
+			"()[Landroid/graphics/ColorSpace$RenderIntent;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

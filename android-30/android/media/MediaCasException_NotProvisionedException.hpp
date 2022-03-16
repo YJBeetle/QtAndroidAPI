@@ -1,21 +1,17 @@
 #pragma once
 
-#include "./MediaCasException.hpp"
+#include "./MediaCasException_NotProvisionedException.def.hpp"
 
 namespace android::media
 {
-	class MediaCasException_NotProvisionedException : public android::media::MediaCasException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaCasException_NotProvisionedException(const char *className, const char *sig, Ts...agv) : android::media::MediaCasException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasException_NotProvisionedException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "./MediaCasException.hpp"
 

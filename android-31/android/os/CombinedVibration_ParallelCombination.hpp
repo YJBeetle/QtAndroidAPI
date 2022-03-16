@@ -1,32 +1,33 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CombinedVibration.def.hpp"
+#include "./VibrationEffect.def.hpp"
+#include "./CombinedVibration_ParallelCombination.def.hpp"
 
 namespace android::os
 {
-	class CombinedVibration;
-}
-namespace android::os
-{
-	class VibrationEffect;
-}
-
-namespace android::os
-{
-	class CombinedVibration_ParallelCombination : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::CombinedVibration_ParallelCombination CombinedVibration_ParallelCombination::addVibrator(jint arg0, android::os::VibrationEffect arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CombinedVibration_ParallelCombination(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CombinedVibration_ParallelCombination(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::os::CombinedVibration_ParallelCombination addVibrator(jint arg0, android::os::VibrationEffect arg1) const;
-		android::os::CombinedVibration combine() const;
-	};
+		return callObjectMethod(
+			"addVibrator",
+			"(ILandroid/os/VibrationEffect;)Landroid/os/CombinedVibration$ParallelCombination;",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline android::os::CombinedVibration CombinedVibration_ParallelCombination::combine() const
+	{
+		return callObjectMethod(
+			"combine",
+			"()Landroid/os/CombinedVibration;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

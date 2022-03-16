@@ -1,24 +1,32 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LayoutAnimationController_AnimationParameters.def.hpp"
 
 namespace android::view::animation
 {
-	class LayoutAnimationController_AnimationParameters : public JObject
+	// Fields
+	inline jint LayoutAnimationController_AnimationParameters::count()
 	{
-	public:
-		// Fields
-		jint count();
-		jint index();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LayoutAnimationController_AnimationParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LayoutAnimationController_AnimationParameters(QJniObject obj);
-		
-		// Constructors
-		LayoutAnimationController_AnimationParameters();
-		
-		// Methods
-	};
+		return getField<jint>(
+			"count"
+		);
+	}
+	inline jint LayoutAnimationController_AnimationParameters::index()
+	{
+		return getField<jint>(
+			"index"
+		);
+	}
+	
+	// Constructors
+	inline LayoutAnimationController_AnimationParameters::LayoutAnimationController_AnimationParameters()
+		: JObject(
+			"android.view.animation.LayoutAnimationController$AnimationParameters",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::view::animation
+
+// Base class headers
 

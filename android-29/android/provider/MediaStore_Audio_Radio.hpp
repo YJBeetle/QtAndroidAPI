@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaStore_Audio_Radio.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Audio_Radio : public JObject
+	// Fields
+	inline JString MediaStore_Audio_Radio::ENTRY_CONTENT_TYPE()
 	{
-	public:
-		// Fields
-		static JString ENTRY_CONTENT_TYPE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore_Audio_Radio(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Radio(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Radio",
+			"ENTRY_CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

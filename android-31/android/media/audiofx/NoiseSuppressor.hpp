@@ -1,23 +1,33 @@
 #pragma once
 
-#include "./AudioEffect.hpp"
+#include "./NoiseSuppressor.def.hpp"
 
 namespace android::media::audiofx
 {
-	class NoiseSuppressor : public android::media::audiofx::AudioEffect
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::audiofx::NoiseSuppressor NoiseSuppressor::create(jint arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoiseSuppressor(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		NoiseSuppressor(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::media::audiofx::NoiseSuppressor create(jint arg0);
-		static jboolean isAvailable();
-	};
+		return callStaticObjectMethod(
+			"android.media.audiofx.NoiseSuppressor",
+			"create",
+			"(I)Landroid/media/audiofx/NoiseSuppressor;",
+			arg0
+		);
+	}
+	inline jboolean NoiseSuppressor::isAvailable()
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.audiofx.NoiseSuppressor",
+			"isAvailable",
+			"()Z"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./AudioEffect.hpp"
 

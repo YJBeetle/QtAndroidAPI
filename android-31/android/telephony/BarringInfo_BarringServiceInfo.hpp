@@ -1,41 +1,119 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
+#include "./BarringInfo_BarringServiceInfo.def.hpp"
 
 namespace android::telephony
 {
-	class BarringInfo_BarringServiceInfo : public JObject
+	// Fields
+	inline jint BarringInfo_BarringServiceInfo::BARRING_TYPE_CONDITIONAL()
 	{
-	public:
-		// Fields
-		static jint BARRING_TYPE_CONDITIONAL();
-		static jint BARRING_TYPE_NONE();
-		static jint BARRING_TYPE_UNCONDITIONAL();
-		static jint BARRING_TYPE_UNKNOWN();
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BarringInfo_BarringServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BarringInfo_BarringServiceInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getBarringType() const;
-		jint getConditionalBarringFactor() const;
-		jint getConditionalBarringTimeSeconds() const;
-		jint hashCode() const;
-		jboolean isBarred() const;
-		jboolean isConditionallyBarred() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.BarringInfo$BarringServiceInfo",
+			"BARRING_TYPE_CONDITIONAL"
+		);
+	}
+	inline jint BarringInfo_BarringServiceInfo::BARRING_TYPE_NONE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.BarringInfo$BarringServiceInfo",
+			"BARRING_TYPE_NONE"
+		);
+	}
+	inline jint BarringInfo_BarringServiceInfo::BARRING_TYPE_UNCONDITIONAL()
+	{
+		return getStaticField<jint>(
+			"android.telephony.BarringInfo$BarringServiceInfo",
+			"BARRING_TYPE_UNCONDITIONAL"
+		);
+	}
+	inline jint BarringInfo_BarringServiceInfo::BARRING_TYPE_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.BarringInfo$BarringServiceInfo",
+			"BARRING_TYPE_UNKNOWN"
+		);
+	}
+	inline JObject BarringInfo_BarringServiceInfo::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.telephony.BarringInfo$BarringServiceInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint BarringInfo_BarringServiceInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean BarringInfo_BarringServiceInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint BarringInfo_BarringServiceInfo::getBarringType() const
+	{
+		return callMethod<jint>(
+			"getBarringType",
+			"()I"
+		);
+	}
+	inline jint BarringInfo_BarringServiceInfo::getConditionalBarringFactor() const
+	{
+		return callMethod<jint>(
+			"getConditionalBarringFactor",
+			"()I"
+		);
+	}
+	inline jint BarringInfo_BarringServiceInfo::getConditionalBarringTimeSeconds() const
+	{
+		return callMethod<jint>(
+			"getConditionalBarringTimeSeconds",
+			"()I"
+		);
+	}
+	inline jint BarringInfo_BarringServiceInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean BarringInfo_BarringServiceInfo::isBarred() const
+	{
+		return callMethod<jboolean>(
+			"isBarred",
+			"()Z"
+		);
+	}
+	inline jboolean BarringInfo_BarringServiceInfo::isConditionallyBarred() const
+	{
+		return callMethod<jboolean>(
+			"isConditionallyBarred",
+			"()Z"
+		);
+	}
+	inline void BarringInfo_BarringServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

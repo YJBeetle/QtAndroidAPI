@@ -1,35 +1,73 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CaptureRequest.def.hpp"
+#include "../../../JString.hpp"
+#include "./CaptureFailure.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CaptureRequest;
-}
-class JString;
-
-namespace android::hardware::camera2
-{
-	class CaptureFailure : public JObject
+	// Fields
+	inline jint CaptureFailure::REASON_ERROR()
 	{
-	public:
-		// Fields
-		static jint REASON_ERROR();
-		static jint REASON_FLUSHED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CaptureFailure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptureFailure(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jlong getFrameNumber() const;
-		JString getPhysicalCameraId() const;
-		jint getReason() const;
-		android::hardware::camera2::CaptureRequest getRequest() const;
-		jint getSequenceId() const;
-		jboolean wasImageCaptured() const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.camera2.CaptureFailure",
+			"REASON_ERROR"
+		);
+	}
+	inline jint CaptureFailure::REASON_FLUSHED()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CaptureFailure",
+			"REASON_FLUSHED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jlong CaptureFailure::getFrameNumber() const
+	{
+		return callMethod<jlong>(
+			"getFrameNumber",
+			"()J"
+		);
+	}
+	inline JString CaptureFailure::getPhysicalCameraId() const
+	{
+		return callObjectMethod(
+			"getPhysicalCameraId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint CaptureFailure::getReason() const
+	{
+		return callMethod<jint>(
+			"getReason",
+			"()I"
+		);
+	}
+	inline android::hardware::camera2::CaptureRequest CaptureFailure::getRequest() const
+	{
+		return callObjectMethod(
+			"getRequest",
+			"()Landroid/hardware/camera2/CaptureRequest;"
+		);
+	}
+	inline jint CaptureFailure::getSequenceId() const
+	{
+		return callMethod<jint>(
+			"getSequenceId",
+			"()I"
+		);
+	}
+	inline jboolean CaptureFailure::wasImageCaptured() const
+	{
+		return callMethod<jboolean>(
+			"wasImageCaptured",
+			"()Z"
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
 

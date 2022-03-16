@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
+#include "../../JByteArray.hpp"
+#include "./TimedMetaData.def.hpp"
 
 namespace android::media
 {
-	class TimedMetaData : public JObject
+	// Fields
+	
+	// Constructors
+	inline TimedMetaData::TimedMetaData(jlong arg0, JByteArray arg1)
+		: JObject(
+			"android.media.TimedMetaData",
+			"(J[B)V",
+			arg0,
+			arg1.object<jbyteArray>()
+		) {}
+	
+	// Methods
+	inline JByteArray TimedMetaData::getMetaData() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TimedMetaData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimedMetaData(QJniObject obj);
-		
-		// Constructors
-		TimedMetaData(jlong arg0, JByteArray arg1);
-		
-		// Methods
-		JByteArray getMetaData() const;
-		jlong getTimestamp() const;
-	};
+		return callObjectMethod(
+			"getMetaData",
+			"()[B"
+		);
+	}
+	inline jlong TimedMetaData::getTimestamp() const
+	{
+		return callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

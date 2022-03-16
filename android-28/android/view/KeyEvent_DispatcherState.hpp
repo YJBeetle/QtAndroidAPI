@@ -1,34 +1,70 @@
 #pragma once
 
+#include "./KeyEvent.def.hpp"
 #include "../../JObject.hpp"
+#include "./KeyEvent_DispatcherState.def.hpp"
 
 namespace android::view
 {
-	class KeyEvent;
-}
-class JObject;
-
-namespace android::view
-{
-	class KeyEvent_DispatcherState : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyEvent_DispatcherState::KeyEvent_DispatcherState()
+		: JObject(
+			"android.view.KeyEvent$DispatcherState",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void KeyEvent_DispatcherState::handleUpEvent(android::view::KeyEvent arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyEvent_DispatcherState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyEvent_DispatcherState(QJniObject obj);
-		
-		// Constructors
-		KeyEvent_DispatcherState();
-		
-		// Methods
-		void handleUpEvent(android::view::KeyEvent arg0) const;
-		jboolean isTracking(android::view::KeyEvent arg0) const;
-		void performedLongPress(android::view::KeyEvent arg0) const;
-		void reset() const;
-		void reset(JObject arg0) const;
-		void startTracking(android::view::KeyEvent arg0, JObject arg1) const;
-	};
+		callMethod<void>(
+			"handleUpEvent",
+			"(Landroid/view/KeyEvent;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean KeyEvent_DispatcherState::isTracking(android::view::KeyEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"isTracking",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline void KeyEvent_DispatcherState::performedLongPress(android::view::KeyEvent arg0) const
+	{
+		callMethod<void>(
+			"performedLongPress",
+			"(Landroid/view/KeyEvent;)V",
+			arg0.object()
+		);
+	}
+	inline void KeyEvent_DispatcherState::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline void KeyEvent_DispatcherState::reset(JObject arg0) const
+	{
+		callMethod<void>(
+			"reset",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void KeyEvent_DispatcherState::startTracking(android::view::KeyEvent arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"startTracking",
+			"(Landroid/view/KeyEvent;Ljava/lang/Object;)V",
+			arg0.object(),
+			arg1.object<jobject>()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

@@ -1,35 +1,55 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Outline;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../graphics/Outline.def.hpp"
+#include "./View.def.hpp"
+#include "./ViewOutlineProvider.def.hpp"
 
 namespace android::view
 {
-	class ViewOutlineProvider : public JObject
+	// Fields
+	inline android::view::ViewOutlineProvider ViewOutlineProvider::BACKGROUND()
 	{
-	public:
-		// Fields
-		static android::view::ViewOutlineProvider BACKGROUND();
-		static android::view::ViewOutlineProvider BOUNDS();
-		static android::view::ViewOutlineProvider PADDED_BOUNDS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ViewOutlineProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewOutlineProvider(QJniObject obj);
-		
-		// Constructors
-		ViewOutlineProvider();
-		
-		// Methods
-		void getOutline(android::view::View arg0, android::graphics::Outline arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.ViewOutlineProvider",
+			"BACKGROUND",
+			"Landroid/view/ViewOutlineProvider;"
+		);
+	}
+	inline android::view::ViewOutlineProvider ViewOutlineProvider::BOUNDS()
+	{
+		return getStaticObjectField(
+			"android.view.ViewOutlineProvider",
+			"BOUNDS",
+			"Landroid/view/ViewOutlineProvider;"
+		);
+	}
+	inline android::view::ViewOutlineProvider ViewOutlineProvider::PADDED_BOUNDS()
+	{
+		return getStaticObjectField(
+			"android.view.ViewOutlineProvider",
+			"PADDED_BOUNDS",
+			"Landroid/view/ViewOutlineProvider;"
+		);
+	}
+	
+	// Constructors
+	inline ViewOutlineProvider::ViewOutlineProvider()
+		: JObject(
+			"android.view.ViewOutlineProvider",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ViewOutlineProvider::getOutline(android::view::View arg0, android::graphics::Outline arg1) const
+	{
+		callMethod<void>(
+			"getOutline",
+			"(Landroid/view/View;Landroid/graphics/Outline;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

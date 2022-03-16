@@ -1,40 +1,59 @@
 #pragma once
 
-#include "../../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-namespace android::os
-{
-	class PersistableBundle;
-}
-namespace android::service::carrier
-{
-	class CarrierIdentifier;
-}
-class JString;
+#include "../../content/Intent.def.hpp"
+#include "../../os/PersistableBundle.def.hpp"
+#include "./CarrierIdentifier.def.hpp"
+#include "../../../JString.hpp"
+#include "./CarrierService.def.hpp"
 
 namespace android::service::carrier
 {
-	class CarrierService : public android::app::Service
+	// Fields
+	inline JString CarrierService::CARRIER_SERVICE_INTERFACE()
 	{
-	public:
-		// Fields
-		static JString CARRIER_SERVICE_INTERFACE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CarrierService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierService(QJniObject obj);
-		
-		// Constructors
-		CarrierService();
-		
-		// Methods
-		void notifyCarrierNetworkChange(jboolean arg0) const;
-		JObject onBind(android::content::Intent arg0) const;
-		android::os::PersistableBundle onLoadConfig(android::service::carrier::CarrierIdentifier arg0) const;
-	};
+		return getStaticObjectField(
+			"android.service.carrier.CarrierService",
+			"CARRIER_SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline CarrierService::CarrierService()
+		: android::app::Service(
+			"android.service.carrier.CarrierService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CarrierService::notifyCarrierNetworkChange(jboolean arg0) const
+	{
+		callMethod<void>(
+			"notifyCarrierNetworkChange",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline JObject CarrierService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline android::os::PersistableBundle CarrierService::onLoadConfig(android::service::carrier::CarrierIdentifier arg0) const
+	{
+		return callObjectMethod(
+			"onLoadConfig",
+			"(Landroid/service/carrier/CarrierIdentifier;)Landroid/os/PersistableBundle;",
+			arg0.object()
+		);
+	}
 } // namespace android::service::carrier
+
+// Base class headers
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
+#include "../../app/Service.hpp"
 

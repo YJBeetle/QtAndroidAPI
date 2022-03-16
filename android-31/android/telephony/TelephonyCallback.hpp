@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TelephonyCallback.def.hpp"
 
 namespace android::telephony
 {
-	class TelephonyCallback : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyCallback(QJniObject obj);
-		
-		// Constructors
-		TelephonyCallback();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TelephonyCallback::TelephonyCallback()
+		: JObject(
+			"android.telephony.TelephonyCallback",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

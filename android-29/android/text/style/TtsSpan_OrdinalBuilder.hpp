@@ -1,28 +1,51 @@
 #pragma once
 
-#include "./TtsSpan_SemioticClassBuilder.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TtsSpan_OrdinalBuilder.def.hpp"
 
 namespace android::text::style
 {
-	class TtsSpan_OrdinalBuilder : public android::text::style::TtsSpan_SemioticClassBuilder
+	// Fields
+	
+	// Constructors
+	inline TtsSpan_OrdinalBuilder::TtsSpan_OrdinalBuilder()
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$OrdinalBuilder",
+			"()V"
+		) {}
+	inline TtsSpan_OrdinalBuilder::TtsSpan_OrdinalBuilder(JString arg0)
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$OrdinalBuilder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline TtsSpan_OrdinalBuilder::TtsSpan_OrdinalBuilder(jlong arg0)
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$OrdinalBuilder",
+			"(J)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TtsSpan_OrdinalBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_OrdinalBuilder(QJniObject obj);
-		
-		// Constructors
-		TtsSpan_OrdinalBuilder();
-		TtsSpan_OrdinalBuilder(JString arg0);
-		TtsSpan_OrdinalBuilder(jlong arg0);
-		
-		// Methods
-		android::text::style::TtsSpan_OrdinalBuilder setNumber(JString arg0) const;
-		android::text::style::TtsSpan_OrdinalBuilder setNumber(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"setNumber",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$OrdinalBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setNumber",
+			"(J)Landroid/text/style/TtsSpan$OrdinalBuilder;",
+			arg0
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./TtsSpan_Builder.hpp"
+#include "./TtsSpan_SemioticClassBuilder.hpp"
 

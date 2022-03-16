@@ -1,32 +1,83 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./NetworkInfo_State.def.hpp"
 
 namespace android::net
 {
-	class NetworkInfo_State : public java::lang::Enum
+	// Fields
+	inline android::net::NetworkInfo_State NetworkInfo_State::CONNECTED()
 	{
-	public:
-		// Fields
-		static android::net::NetworkInfo_State CONNECTED();
-		static android::net::NetworkInfo_State CONNECTING();
-		static android::net::NetworkInfo_State DISCONNECTED();
-		static android::net::NetworkInfo_State DISCONNECTING();
-		static android::net::NetworkInfo_State SUSPENDED();
-		static android::net::NetworkInfo_State UNKNOWN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkInfo_State(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkInfo_State(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::net::NetworkInfo_State valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.net.NetworkInfo$State",
+			"CONNECTED",
+			"Landroid/net/NetworkInfo$State;"
+		);
+	}
+	inline android::net::NetworkInfo_State NetworkInfo_State::CONNECTING()
+	{
+		return getStaticObjectField(
+			"android.net.NetworkInfo$State",
+			"CONNECTING",
+			"Landroid/net/NetworkInfo$State;"
+		);
+	}
+	inline android::net::NetworkInfo_State NetworkInfo_State::DISCONNECTED()
+	{
+		return getStaticObjectField(
+			"android.net.NetworkInfo$State",
+			"DISCONNECTED",
+			"Landroid/net/NetworkInfo$State;"
+		);
+	}
+	inline android::net::NetworkInfo_State NetworkInfo_State::DISCONNECTING()
+	{
+		return getStaticObjectField(
+			"android.net.NetworkInfo$State",
+			"DISCONNECTING",
+			"Landroid/net/NetworkInfo$State;"
+		);
+	}
+	inline android::net::NetworkInfo_State NetworkInfo_State::SUSPENDED()
+	{
+		return getStaticObjectField(
+			"android.net.NetworkInfo$State",
+			"SUSPENDED",
+			"Landroid/net/NetworkInfo$State;"
+		);
+	}
+	inline android::net::NetworkInfo_State NetworkInfo_State::UNKNOWN()
+	{
+		return getStaticObjectField(
+			"android.net.NetworkInfo$State",
+			"UNKNOWN",
+			"Landroid/net/NetworkInfo$State;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::NetworkInfo_State NetworkInfo_State::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.net.NetworkInfo$State",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/net/NetworkInfo$State;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray NetworkInfo_State::values()
+	{
+		return callStaticObjectMethod(
+			"android.net.NetworkInfo$State",
+			"values",
+			"()[Landroid/net/NetworkInfo$State;"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

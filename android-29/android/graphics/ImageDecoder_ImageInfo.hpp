@@ -1,39 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ColorSpace.def.hpp"
+#include "./ImageDecoder.def.hpp"
+#include "../util/Size.def.hpp"
+#include "../../JString.hpp"
+#include "./ImageDecoder_ImageInfo.def.hpp"
 
 namespace android::graphics
 {
-	class ColorSpace;
-}
-namespace android::graphics
-{
-	class ImageDecoder;
-}
-namespace android::util
-{
-	class Size;
-}
-class JString;
-
-namespace android::graphics
-{
-	class ImageDecoder_ImageInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::ColorSpace ImageDecoder_ImageInfo::getColorSpace() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ImageDecoder_ImageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImageDecoder_ImageInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::ColorSpace getColorSpace() const;
-		JString getMimeType() const;
-		android::util::Size getSize() const;
-		jboolean isAnimated() const;
-	};
+		return callObjectMethod(
+			"getColorSpace",
+			"()Landroid/graphics/ColorSpace;"
+		);
+	}
+	inline JString ImageDecoder_ImageInfo::getMimeType() const
+	{
+		return callObjectMethod(
+			"getMimeType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::util::Size ImageDecoder_ImageInfo::getSize() const
+	{
+		return callObjectMethod(
+			"getSize",
+			"()Landroid/util/Size;"
+		);
+	}
+	inline jboolean ImageDecoder_ImageInfo::isAnimated() const
+	{
+		return callMethod<jboolean>(
+			"isAnimated",
+			"()Z"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

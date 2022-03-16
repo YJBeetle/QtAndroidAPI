@@ -1,39 +1,49 @@
 #pragma once
 
-#include "../EventObject.hpp"
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JString;
-namespace java::util::prefs
-{
-	class Preferences;
-}
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../io/ObjectOutputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "./Preferences.def.hpp"
+#include "./PreferenceChangeEvent.def.hpp"
 
 namespace java::util::prefs
 {
-	class PreferenceChangeEvent : public java::util::EventObject
+	// Fields
+	
+	// Constructors
+	inline PreferenceChangeEvent::PreferenceChangeEvent(java::util::prefs::Preferences arg0, JString arg1, JString arg2)
+		: java::util::EventObject(
+			"java.util.prefs.PreferenceChangeEvent",
+			"(Ljava/util/prefs/Preferences;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString PreferenceChangeEvent::getKey() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PreferenceChangeEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceChangeEvent(QJniObject obj);
-		
-		// Constructors
-		PreferenceChangeEvent(java::util::prefs::Preferences arg0, JString arg1, JString arg2);
-		
-		// Methods
-		JString getKey() const;
-		JString getNewValue() const;
-		java::util::prefs::Preferences getNode() const;
-	};
+		return callObjectMethod(
+			"getKey",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString PreferenceChangeEvent::getNewValue() const
+	{
+		return callObjectMethod(
+			"getNewValue",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::util::prefs::Preferences PreferenceChangeEvent::getNode() const
+	{
+		return callObjectMethod(
+			"getNode",
+			"()Ljava/util/prefs/Preferences;"
+		);
+	}
 } // namespace java::util::prefs
+
+// Base class headers
+#include "../EventObject.hpp"
 

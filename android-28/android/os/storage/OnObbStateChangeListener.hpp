@@ -1,33 +1,86 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./OnObbStateChangeListener.def.hpp"
 
 namespace android::os::storage
 {
-	class OnObbStateChangeListener : public JObject
+	// Fields
+	inline jint OnObbStateChangeListener::ERROR_ALREADY_MOUNTED()
 	{
-	public:
-		// Fields
-		static jint ERROR_ALREADY_MOUNTED();
-		static jint ERROR_COULD_NOT_MOUNT();
-		static jint ERROR_COULD_NOT_UNMOUNT();
-		static jint ERROR_INTERNAL();
-		static jint ERROR_NOT_MOUNTED();
-		static jint ERROR_PERMISSION_DENIED();
-		static jint MOUNTED();
-		static jint UNMOUNTED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit OnObbStateChangeListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OnObbStateChangeListener(QJniObject obj);
-		
-		// Constructors
-		OnObbStateChangeListener();
-		
-		// Methods
-		void onObbStateChange(JString arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"ERROR_ALREADY_MOUNTED"
+		);
+	}
+	inline jint OnObbStateChangeListener::ERROR_COULD_NOT_MOUNT()
+	{
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"ERROR_COULD_NOT_MOUNT"
+		);
+	}
+	inline jint OnObbStateChangeListener::ERROR_COULD_NOT_UNMOUNT()
+	{
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"ERROR_COULD_NOT_UNMOUNT"
+		);
+	}
+	inline jint OnObbStateChangeListener::ERROR_INTERNAL()
+	{
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"ERROR_INTERNAL"
+		);
+	}
+	inline jint OnObbStateChangeListener::ERROR_NOT_MOUNTED()
+	{
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"ERROR_NOT_MOUNTED"
+		);
+	}
+	inline jint OnObbStateChangeListener::ERROR_PERMISSION_DENIED()
+	{
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"ERROR_PERMISSION_DENIED"
+		);
+	}
+	inline jint OnObbStateChangeListener::MOUNTED()
+	{
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"MOUNTED"
+		);
+	}
+	inline jint OnObbStateChangeListener::UNMOUNTED()
+	{
+		return getStaticField<jint>(
+			"android.os.storage.OnObbStateChangeListener",
+			"UNMOUNTED"
+		);
+	}
+	
+	// Constructors
+	inline OnObbStateChangeListener::OnObbStateChangeListener()
+		: JObject(
+			"android.os.storage.OnObbStateChangeListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void OnObbStateChangeListener::onObbStateChange(JString arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onObbStateChange",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::os::storage
+
+// Base class headers
 

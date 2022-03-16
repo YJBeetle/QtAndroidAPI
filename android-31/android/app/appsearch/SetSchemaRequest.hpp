@@ -1,27 +1,57 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SetSchemaRequest.def.hpp"
 
 namespace android::app::appsearch
 {
-	class SetSchemaRequest : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject SetSchemaRequest::getMigrators() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SetSchemaRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SetSchemaRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getMigrators() const;
-		JObject getSchemas() const;
-		JObject getSchemasNotDisplayedBySystem() const;
-		JObject getSchemasVisibleToPackages() const;
-		jint getVersion() const;
-		jboolean isForceOverride() const;
-	};
+		return callObjectMethod(
+			"getMigrators",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline JObject SetSchemaRequest::getSchemas() const
+	{
+		return callObjectMethod(
+			"getSchemas",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject SetSchemaRequest::getSchemasNotDisplayedBySystem() const
+	{
+		return callObjectMethod(
+			"getSchemasNotDisplayedBySystem",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject SetSchemaRequest::getSchemasVisibleToPackages() const
+	{
+		return callObjectMethod(
+			"getSchemasVisibleToPackages",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline jint SetSchemaRequest::getVersion() const
+	{
+		return callMethod<jint>(
+			"getVersion",
+			"()I"
+		);
+	}
+	inline jboolean SetSchemaRequest::isForceOverride() const
+	{
+		return callMethod<jboolean>(
+			"isForceOverride",
+			"()Z"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

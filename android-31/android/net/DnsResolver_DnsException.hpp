@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
+#include "./DnsResolver_DnsException.def.hpp"
 
 namespace android::net
 {
-	class DnsResolver_DnsException : public java::lang::Exception
+	// Fields
+	inline jint DnsResolver_DnsException::code()
 	{
-	public:
-		// Fields
-		jint code();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DnsResolver_DnsException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		DnsResolver_DnsException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getField<jint>(
+			"code"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

@@ -1,33 +1,58 @@
 #pragma once
 
-#include "../../../java/io/InputStream.hpp"
-
-class JByteArray;
-namespace android::app::backup
-{
-	class BackupDataInput;
-}
-class JString;
+#include "../../../JByteArray.hpp"
+#include "./BackupDataInput.def.hpp"
+#include "../../../JString.hpp"
+#include "./BackupDataInputStream.def.hpp"
 
 namespace android::app::backup
 {
-	class BackupDataInputStream : public java::io::InputStream
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString BackupDataInputStream::getKey() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BackupDataInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
-		BackupDataInputStream(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getKey() const;
-		jint read() const;
-		jint read(JByteArray arg0) const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-		jint size() const;
-	};
+		return callObjectMethod(
+			"getKey",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint BackupDataInputStream::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	inline jint BackupDataInputStream::read(JByteArray arg0) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([B)I",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline jint BackupDataInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jint BackupDataInputStream::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
 } // namespace android::app::backup
+
+// Base class headers
+#include "../../../java/io/InputStream.hpp"
 

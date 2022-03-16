@@ -1,23 +1,28 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AccessControlProfileId.def.hpp"
 
 namespace android::security::identity
 {
-	class AccessControlProfileId : public JObject
+	// Fields
+	
+	// Constructors
+	inline AccessControlProfileId::AccessControlProfileId(jint arg0)
+		: JObject(
+			"android.security.identity.AccessControlProfileId",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jint AccessControlProfileId::getId() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessControlProfileId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlProfileId(QJniObject obj);
-		
-		// Constructors
-		AccessControlProfileId(jint arg0);
-		
-		// Methods
-		jint getId() const;
-	};
+		return callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
 } // namespace android::security::identity
+
+// Base class headers
 

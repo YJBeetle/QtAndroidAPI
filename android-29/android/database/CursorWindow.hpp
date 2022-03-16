@@ -1,66 +1,306 @@
 #pragma once
 
-#include "./sqlite/SQLiteClosable.hpp"
-
-class JByteArray;
-namespace android::database
-{
-	class CharArrayBuffer;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "./CharArrayBuffer.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./CursorWindow.def.hpp"
 
 namespace android::database
 {
-	class CursorWindow : public android::database::sqlite::SQLiteClosable
+	// Fields
+	inline JObject CursorWindow::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CursorWindow(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteClosable(className, sig, std::forward<Ts>(agv)...) {}
-		CursorWindow(QJniObject obj);
-		
-		// Constructors
-		CursorWindow(jboolean arg0);
-		CursorWindow(JString arg0);
-		CursorWindow(JString arg0, jlong arg1);
-		
-		// Methods
-		static android::database::CursorWindow newFromParcel(android::os::Parcel arg0);
-		jboolean allocRow() const;
-		void clear() const;
-		void copyStringToBuffer(jint arg0, jint arg1, android::database::CharArrayBuffer arg2) const;
-		jint describeContents() const;
-		void freeLastRow() const;
-		JByteArray getBlob(jint arg0, jint arg1) const;
-		jdouble getDouble(jint arg0, jint arg1) const;
-		jfloat getFloat(jint arg0, jint arg1) const;
-		jint getInt(jint arg0, jint arg1) const;
-		jlong getLong(jint arg0, jint arg1) const;
-		jint getNumRows() const;
-		jshort getShort(jint arg0, jint arg1) const;
-		jint getStartPosition() const;
-		JString getString(jint arg0, jint arg1) const;
-		jint getType(jint arg0, jint arg1) const;
-		jboolean isBlob(jint arg0, jint arg1) const;
-		jboolean isFloat(jint arg0, jint arg1) const;
-		jboolean isLong(jint arg0, jint arg1) const;
-		jboolean isNull(jint arg0, jint arg1) const;
-		jboolean isString(jint arg0, jint arg1) const;
-		jboolean putBlob(JByteArray arg0, jint arg1, jint arg2) const;
-		jboolean putDouble(jdouble arg0, jint arg1, jint arg2) const;
-		jboolean putLong(jlong arg0, jint arg1, jint arg2) const;
-		jboolean putNull(jint arg0, jint arg1) const;
-		jboolean putString(JString arg0, jint arg1, jint arg2) const;
-		jboolean setNumColumns(jint arg0) const;
-		void setStartPosition(jint arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.database.CursorWindow",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline CursorWindow::CursorWindow(jboolean arg0)
+		: android::database::sqlite::SQLiteClosable(
+			"android.database.CursorWindow",
+			"(Z)V",
+			arg0
+		) {}
+	inline CursorWindow::CursorWindow(JString arg0)
+		: android::database::sqlite::SQLiteClosable(
+			"android.database.CursorWindow",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline CursorWindow::CursorWindow(JString arg0, jlong arg1)
+		: android::database::sqlite::SQLiteClosable(
+			"android.database.CursorWindow",
+			"(Ljava/lang/String;J)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline android::database::CursorWindow CursorWindow::newFromParcel(android::os::Parcel arg0)
+	{
+		return callStaticObjectMethod(
+			"android.database.CursorWindow",
+			"newFromParcel",
+			"(Landroid/os/Parcel;)Landroid/database/CursorWindow;",
+			arg0.object()
+		);
+	}
+	inline jboolean CursorWindow::allocRow() const
+	{
+		return callMethod<jboolean>(
+			"allocRow",
+			"()Z"
+		);
+	}
+	inline void CursorWindow::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline void CursorWindow::copyStringToBuffer(jint arg0, jint arg1, android::database::CharArrayBuffer arg2) const
+	{
+		callMethod<void>(
+			"copyStringToBuffer",
+			"(IILandroid/database/CharArrayBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline jint CursorWindow::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void CursorWindow::freeLastRow() const
+	{
+		callMethod<void>(
+			"freeLastRow",
+			"()V"
+		);
+	}
+	inline JByteArray CursorWindow::getBlob(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getBlob",
+			"(II)[B",
+			arg0,
+			arg1
+		);
+	}
+	inline jdouble CursorWindow::getDouble(jint arg0, jint arg1) const
+	{
+		return callMethod<jdouble>(
+			"getDouble",
+			"(II)D",
+			arg0,
+			arg1
+		);
+	}
+	inline jfloat CursorWindow::getFloat(jint arg0, jint arg1) const
+	{
+		return callMethod<jfloat>(
+			"getFloat",
+			"(II)F",
+			arg0,
+			arg1
+		);
+	}
+	inline jint CursorWindow::getInt(jint arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"getInt",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong CursorWindow::getLong(jint arg0, jint arg1) const
+	{
+		return callMethod<jlong>(
+			"getLong",
+			"(II)J",
+			arg0,
+			arg1
+		);
+	}
+	inline jint CursorWindow::getNumRows() const
+	{
+		return callMethod<jint>(
+			"getNumRows",
+			"()I"
+		);
+	}
+	inline jshort CursorWindow::getShort(jint arg0, jint arg1) const
+	{
+		return callMethod<jshort>(
+			"getShort",
+			"(II)S",
+			arg0,
+			arg1
+		);
+	}
+	inline jint CursorWindow::getStartPosition() const
+	{
+		return callMethod<jint>(
+			"getStartPosition",
+			"()I"
+		);
+	}
+	inline JString CursorWindow::getString(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getString",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
+		);
+	}
+	inline jint CursorWindow::getType(jint arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"getType",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean CursorWindow::isBlob(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"isBlob",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean CursorWindow::isFloat(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"isFloat",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean CursorWindow::isLong(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"isLong",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean CursorWindow::isNull(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"isNull",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean CursorWindow::isString(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"isString",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean CursorWindow::putBlob(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jboolean>(
+			"putBlob",
+			"([BII)Z",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean CursorWindow::putDouble(jdouble arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jboolean>(
+			"putDouble",
+			"(DII)Z",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean CursorWindow::putLong(jlong arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jboolean>(
+			"putLong",
+			"(JII)Z",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean CursorWindow::putNull(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"putNull",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean CursorWindow::putString(JString arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jboolean>(
+			"putString",
+			"(Ljava/lang/String;II)Z",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean CursorWindow::setNumColumns(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"setNumColumns",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline void CursorWindow::setStartPosition(jint arg0) const
+	{
+		callMethod<void>(
+			"setStartPosition",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JString CursorWindow::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void CursorWindow::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::database
+
+// Base class headers
+#include "./sqlite/SQLiteClosable.hpp"
 

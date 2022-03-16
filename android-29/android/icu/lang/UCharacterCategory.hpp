@@ -1,24 +1,25 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./UCharacterCategory.def.hpp"
 
 namespace android::icu::lang
 {
-	class UCharacterCategory : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString UCharacterCategory::toString(jint arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UCharacterCategory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacterCategory(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JString toString(jint arg0);
-	};
+		return callStaticObjectMethod(
+			"android.icu.lang.UCharacterCategory",
+			"toString",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
 } // namespace android::icu::lang
+
+// Base class headers
 

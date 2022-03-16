@@ -1,25 +1,35 @@
 #pragma once
 
-#include "../../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./PropertyReader_PropertyTypeMismatchException.def.hpp"
 
 namespace android::view::inspector
 {
-	class PropertyReader_PropertyTypeMismatchException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PropertyReader_PropertyTypeMismatchException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyReader_PropertyTypeMismatchException(QJniObject obj);
-		
-		// Constructors
-		PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2);
-		PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2, JString arg3);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PropertyReader_PropertyTypeMismatchException::PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2)
+		: java::lang::RuntimeException(
+			"android.view.inspector.PropertyReader$PropertyTypeMismatchException",
+			"(ILjava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	inline PropertyReader_PropertyTypeMismatchException::PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2, JString arg3)
+		: java::lang::RuntimeException(
+			"android.view.inspector.PropertyReader$PropertyTypeMismatchException",
+			"(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::view::inspector
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
 

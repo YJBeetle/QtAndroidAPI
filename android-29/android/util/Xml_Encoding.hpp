@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Xml_Encoding.def.hpp"
 
 namespace android::util
 {
-	class Xml_Encoding : public java::lang::Enum
+	// Fields
+	inline android::util::Xml_Encoding Xml_Encoding::ISO_8859_1()
 	{
-	public:
-		// Fields
-		static android::util::Xml_Encoding ISO_8859_1();
-		static android::util::Xml_Encoding US_ASCII();
-		static android::util::Xml_Encoding UTF_16();
-		static android::util::Xml_Encoding UTF_8();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Xml_Encoding(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Xml_Encoding(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::util::Xml_Encoding valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.util.Xml$Encoding",
+			"ISO_8859_1",
+			"Landroid/util/Xml$Encoding;"
+		);
+	}
+	inline android::util::Xml_Encoding Xml_Encoding::US_ASCII()
+	{
+		return getStaticObjectField(
+			"android.util.Xml$Encoding",
+			"US_ASCII",
+			"Landroid/util/Xml$Encoding;"
+		);
+	}
+	inline android::util::Xml_Encoding Xml_Encoding::UTF_16()
+	{
+		return getStaticObjectField(
+			"android.util.Xml$Encoding",
+			"UTF_16",
+			"Landroid/util/Xml$Encoding;"
+		);
+	}
+	inline android::util::Xml_Encoding Xml_Encoding::UTF_8()
+	{
+		return getStaticObjectField(
+			"android.util.Xml$Encoding",
+			"UTF_8",
+			"Landroid/util/Xml$Encoding;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::util::Xml_Encoding Xml_Encoding::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.util.Xml$Encoding",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Xml_Encoding::values()
+	{
+		return callStaticObjectMethod(
+			"android.util.Xml$Encoding",
+			"values",
+			"()[Landroid/util/Xml$Encoding;"
+		);
+	}
 } // namespace android::util
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

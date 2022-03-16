@@ -1,27 +1,37 @@
 #pragma once
 
-#include "../../lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./InvalidPreferencesFormatException.def.hpp"
 
 namespace java::util::prefs
 {
-	class InvalidPreferencesFormatException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InvalidPreferencesFormatException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidPreferencesFormatException(QJniObject obj);
-		
-		// Constructors
-		InvalidPreferencesFormatException(JString arg0);
-		InvalidPreferencesFormatException(JThrowable arg0);
-		InvalidPreferencesFormatException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InvalidPreferencesFormatException::InvalidPreferencesFormatException(JString arg0)
+		: java::lang::Exception(
+			"java.util.prefs.InvalidPreferencesFormatException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline InvalidPreferencesFormatException::InvalidPreferencesFormatException(JThrowable arg0)
+		: java::lang::Exception(
+			"java.util.prefs.InvalidPreferencesFormatException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline InvalidPreferencesFormatException::InvalidPreferencesFormatException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"java.util.prefs.InvalidPreferencesFormatException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util::prefs
+
+// Base class headers
+#include "../../lang/Exception.hpp"
 

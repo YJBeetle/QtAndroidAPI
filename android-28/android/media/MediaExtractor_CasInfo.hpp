@@ -1,28 +1,30 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaCas_Session.def.hpp"
+#include "./MediaExtractor_CasInfo.def.hpp"
 
 namespace android::media
 {
-	class MediaCas_Session;
-}
-
-namespace android::media
-{
-	class MediaExtractor_CasInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::MediaCas_Session MediaExtractor_CasInfo::getSession() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaExtractor_CasInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaExtractor_CasInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::media::MediaCas_Session getSession() const;
-		jint getSystemId() const;
-	};
+		return callObjectMethod(
+			"getSession",
+			"()Landroid/media/MediaCas$Session;"
+		);
+	}
+	inline jint MediaExtractor_CasInfo::getSystemId() const
+	{
+		return callMethod<jint>(
+			"getSystemId",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

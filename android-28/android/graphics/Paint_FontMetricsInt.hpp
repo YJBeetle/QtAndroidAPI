@@ -1,30 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Paint_FontMetricsInt.def.hpp"
 
 namespace android::graphics
 {
-	class Paint_FontMetricsInt : public JObject
+	// Fields
+	inline jint Paint_FontMetricsInt::ascent()
 	{
-	public:
-		// Fields
-		jint ascent();
-		jint bottom();
-		jint descent();
-		jint leading();
-		jint top();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Paint_FontMetricsInt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_FontMetricsInt(QJniObject obj);
-		
-		// Constructors
-		Paint_FontMetricsInt();
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jint>(
+			"ascent"
+		);
+	}
+	inline jint Paint_FontMetricsInt::bottom()
+	{
+		return getField<jint>(
+			"bottom"
+		);
+	}
+	inline jint Paint_FontMetricsInt::descent()
+	{
+		return getField<jint>(
+			"descent"
+		);
+	}
+	inline jint Paint_FontMetricsInt::leading()
+	{
+		return getField<jint>(
+			"leading"
+		);
+	}
+	inline jint Paint_FontMetricsInt::top()
+	{
+		return getField<jint>(
+			"top"
+		);
+	}
+	
+	// Constructors
+	inline Paint_FontMetricsInt::Paint_FontMetricsInt()
+		: JObject(
+			"android.graphics.Paint$FontMetricsInt",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString Paint_FontMetricsInt::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Spliterators_AbstractDoubleSpliterator.def.hpp"
 
 namespace java::util
 {
-	class Spliterators_AbstractDoubleSpliterator : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint Spliterators_AbstractDoubleSpliterator::characteristics() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Spliterators_AbstractDoubleSpliterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Spliterators_AbstractDoubleSpliterator(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint characteristics() const;
-		jlong estimateSize() const;
-		JObject trySplit() const;
-	};
+		return callMethod<jint>(
+			"characteristics",
+			"()I"
+		);
+	}
+	inline jlong Spliterators_AbstractDoubleSpliterator::estimateSize() const
+	{
+		return callMethod<jlong>(
+			"estimateSize",
+			"()J"
+		);
+	}
+	inline JObject Spliterators_AbstractDoubleSpliterator::trySplit() const
+	{
+		return callObjectMethod(
+			"trySplit",
+			"()Ljava/util/Spliterator$OfDouble;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

@@ -1,32 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class ParcelFileDescriptor;
-}
-namespace android::print
-{
-	class PrintDocumentInfo;
-}
+#include "../os/ParcelFileDescriptor.def.hpp"
+#include "../print/PrintDocumentInfo.def.hpp"
+#include "./PrintDocument.def.hpp"
 
 namespace android::printservice
 {
-	class PrintDocument : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::ParcelFileDescriptor PrintDocument::getData() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PrintDocument(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocument(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::os::ParcelFileDescriptor getData() const;
-		android::print::PrintDocumentInfo getInfo() const;
-	};
+		return callObjectMethod(
+			"getData",
+			"()Landroid/os/ParcelFileDescriptor;"
+		);
+	}
+	inline android::print::PrintDocumentInfo PrintDocument::getInfo() const
+	{
+		return callObjectMethod(
+			"getInfo",
+			"()Landroid/print/PrintDocumentInfo;"
+		);
+	}
 } // namespace android::printservice
+
+// Base class headers
 

@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalStateException.hpp"
+#include "./ShutdownChannelGroupException.def.hpp"
 
 namespace java::nio::channels
 {
-	class ShutdownChannelGroupException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ShutdownChannelGroupException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ShutdownChannelGroupException(QJniObject obj);
-		
-		// Constructors
-		ShutdownChannelGroupException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ShutdownChannelGroupException::ShutdownChannelGroupException()
+		: java::lang::IllegalStateException(
+			"java.nio.channels.ShutdownChannelGroupException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalStateException.hpp"
 

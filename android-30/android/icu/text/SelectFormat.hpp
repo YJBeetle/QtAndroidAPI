@@ -1,45 +1,91 @@
 #pragma once
 
-#include "../../../java/text/Format.hpp"
-
-class JObject;
-class JString;
-namespace java::lang
-{
-	class StringBuffer;
-}
-namespace java::text
-{
-	class FieldPosition;
-}
-namespace java::text
-{
-	class ParsePosition;
-}
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/lang/StringBuffer.def.hpp"
+#include "../../../java/text/FieldPosition.def.hpp"
+#include "../../../java/text/ParsePosition.def.hpp"
+#include "./SelectFormat.def.hpp"
 
 namespace android::icu::text
 {
-	class SelectFormat : public java::text::Format
+	// Fields
+	
+	// Constructors
+	inline SelectFormat::SelectFormat(JString arg0)
+		: java::text::Format(
+			"android.icu.text.SelectFormat",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline void SelectFormat::applyPattern(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SelectFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
-		SelectFormat(QJniObject obj);
-		
-		// Constructors
-		SelectFormat(JString arg0);
-		
-		// Methods
-		void applyPattern(JString arg0) const;
-		jboolean equals(JObject arg0) const;
-		JString format(JString arg0) const;
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
-		jint hashCode() const;
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
-		JString toPattern() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean SelectFormat::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString SelectFormat::format(JString arg0) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::lang::StringBuffer SelectFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0.object<jobject>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline jint SelectFormat::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JObject SelectFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JString SelectFormat::toPattern() const
+	{
+		return callObjectMethod(
+			"toPattern",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString SelectFormat::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/text/Format.hpp"
 

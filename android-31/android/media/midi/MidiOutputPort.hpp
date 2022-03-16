@@ -1,30 +1,47 @@
 #pragma once
 
-#include "./MidiSender.hpp"
+#include "./MidiReceiver.def.hpp"
+#include "./MidiOutputPort.def.hpp"
 
 namespace android::media::midi
 {
-	class MidiReceiver;
-}
-
-namespace android::media::midi
-{
-	class MidiOutputPort : public android::media::midi::MidiSender
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void MidiOutputPort::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MidiOutputPort(const char *className, const char *sig, Ts...agv) : android::media::midi::MidiSender(className, sig, std::forward<Ts>(agv)...) {}
-		MidiOutputPort(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jint getPortNumber() const;
-		void onConnect(android::media::midi::MidiReceiver arg0) const;
-		void onDisconnect(android::media::midi::MidiReceiver arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jint MidiOutputPort::getPortNumber() const
+	{
+		return callMethod<jint>(
+			"getPortNumber",
+			"()I"
+		);
+	}
+	inline void MidiOutputPort::onConnect(android::media::midi::MidiReceiver arg0) const
+	{
+		callMethod<void>(
+			"onConnect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.object()
+		);
+	}
+	inline void MidiOutputPort::onDisconnect(android::media::midi::MidiReceiver arg0) const
+	{
+		callMethod<void>(
+			"onDisconnect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media::midi
+
+// Base class headers
+#include "./MidiSender.hpp"
 

@@ -1,28 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::database::sqlite
-{
-	class SQLiteDatabase;
-}
+#include "./sqlite/SQLiteDatabase.def.hpp"
+#include "./DefaultDatabaseErrorHandler.def.hpp"
 
 namespace android::database
 {
-	class DefaultDatabaseErrorHandler : public JObject
+	// Fields
+	
+	// Constructors
+	inline DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler()
+		: JObject(
+			"android.database.DefaultDatabaseErrorHandler",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DefaultDatabaseErrorHandler::onCorruption(android::database::sqlite::SQLiteDatabase arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DefaultDatabaseErrorHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DefaultDatabaseErrorHandler(QJniObject obj);
-		
-		// Constructors
-		DefaultDatabaseErrorHandler();
-		
-		// Methods
-		void onCorruption(android::database::sqlite::SQLiteDatabase arg0) const;
-	};
+		callMethod<void>(
+			"onCorruption",
+			"(Landroid/database/sqlite/SQLiteDatabase;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::database
+
+// Base class headers
 

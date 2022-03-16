@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./DateFormat_BooleanAttribute.def.hpp"
 
 namespace android::icu::text
 {
-	class DateFormat_BooleanAttribute : public java::lang::Enum
+	// Fields
+	inline android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_ALLOW_NUMERIC()
 	{
-	public:
-		// Fields
-		static android::icu::text::DateFormat_BooleanAttribute PARSE_ALLOW_NUMERIC();
-		static android::icu::text::DateFormat_BooleanAttribute PARSE_ALLOW_WHITESPACE();
-		static android::icu::text::DateFormat_BooleanAttribute PARSE_MULTIPLE_PATTERNS_FOR_MATCH();
-		static android::icu::text::DateFormat_BooleanAttribute PARSE_PARTIAL_LITERAL_MATCH();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DateFormat_BooleanAttribute(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat_BooleanAttribute(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::DateFormat_BooleanAttribute valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"PARSE_ALLOW_NUMERIC",
+			"Landroid/icu/text/DateFormat$BooleanAttribute;"
+		);
+	}
+	inline android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_ALLOW_WHITESPACE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"PARSE_ALLOW_WHITESPACE",
+			"Landroid/icu/text/DateFormat$BooleanAttribute;"
+		);
+	}
+	inline android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_MULTIPLE_PATTERNS_FOR_MATCH()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"PARSE_MULTIPLE_PATTERNS_FOR_MATCH",
+			"Landroid/icu/text/DateFormat$BooleanAttribute;"
+		);
+	}
+	inline android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_PARTIAL_LITERAL_MATCH()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"PARSE_PARTIAL_LITERAL_MATCH",
+			"Landroid/icu/text/DateFormat$BooleanAttribute;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/DateFormat$BooleanAttribute;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray DateFormat_BooleanAttribute::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"values",
+			"()[Landroid/icu/text/DateFormat$BooleanAttribute;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

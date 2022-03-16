@@ -1,31 +1,49 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_RawContactsEntity.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_RawContactsEntity : public JObject
+	// Fields
+	inline JString ContactsContract_RawContactsEntity::CONTENT_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString DATA_ID();
-		static android::net::Uri PROFILE_CONTENT_URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_RawContactsEntity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_RawContactsEntity(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$RawContactsEntity",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_RawContactsEntity::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$RawContactsEntity",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString ContactsContract_RawContactsEntity::DATA_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$RawContactsEntity",
+			"DATA_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_RawContactsEntity::PROFILE_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$RawContactsEntity",
+			"PROFILE_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

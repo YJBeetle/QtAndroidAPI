@@ -1,30 +1,43 @@
 #pragma once
 
-#include "./BaseInterpolator.hpp"
-
-namespace android::content
-{
-	class Context;
-}
+#include "../../content/Context.def.hpp"
+#include "./AccelerateInterpolator.def.hpp"
 
 namespace android::view::animation
 {
-	class AccelerateInterpolator : public android::view::animation::BaseInterpolator
+	// Fields
+	
+	// Constructors
+	inline AccelerateInterpolator::AccelerateInterpolator()
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.AccelerateInterpolator",
+			"()V"
+		) {}
+	inline AccelerateInterpolator::AccelerateInterpolator(jfloat arg0)
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.AccelerateInterpolator",
+			"(F)V",
+			arg0
+		) {}
+	inline AccelerateInterpolator::AccelerateInterpolator(android::content::Context arg0, JObject arg1)
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.AccelerateInterpolator",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jfloat AccelerateInterpolator::getInterpolation(jfloat arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccelerateInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
-		AccelerateInterpolator(QJniObject obj);
-		
-		// Constructors
-		AccelerateInterpolator();
-		AccelerateInterpolator(jfloat arg0);
-		AccelerateInterpolator(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		jfloat getInterpolation(jfloat arg0) const;
-	};
+		return callMethod<jfloat>(
+			"getInterpolation",
+			"(F)F",
+			arg0
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./BaseInterpolator.hpp"
 

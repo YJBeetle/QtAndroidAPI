@@ -1,39 +1,75 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./WifiP2pDevice.def.hpp"
+#include "../../../os/Parcel.def.hpp"
+#include "../../../../JString.hpp"
+#include "./WifiP2pDeviceList.def.hpp"
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pDevice;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::net::wifi::p2p
-{
-	class WifiP2pDeviceList : public JObject
+	// Fields
+	inline JObject WifiP2pDeviceList::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiP2pDeviceList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pDeviceList(QJniObject obj);
-		
-		// Constructors
-		WifiP2pDeviceList();
-		WifiP2pDeviceList(android::net::wifi::p2p::WifiP2pDeviceList &arg0);
-		
-		// Methods
-		jint describeContents() const;
-		android::net::wifi::p2p::WifiP2pDevice get(JString arg0) const;
-		JObject getDeviceList() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.p2p.WifiP2pDeviceList",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline WifiP2pDeviceList::WifiP2pDeviceList()
+		: JObject(
+			"android.net.wifi.p2p.WifiP2pDeviceList",
+			"()V"
+		) {}
+	inline WifiP2pDeviceList::WifiP2pDeviceList(android::net::wifi::p2p::WifiP2pDeviceList &arg0)
+		: JObject(
+			"android.net.wifi.p2p.WifiP2pDeviceList",
+			"(Landroid/net/wifi/p2p/WifiP2pDeviceList;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint WifiP2pDeviceList::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::net::wifi::p2p::WifiP2pDevice WifiP2pDeviceList::get(JString arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pDevice;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject WifiP2pDeviceList::getDeviceList() const
+	{
+		return callObjectMethod(
+			"getDeviceList",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JString WifiP2pDeviceList::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void WifiP2pDeviceList::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::wifi::p2p
+
+// Base class headers
 

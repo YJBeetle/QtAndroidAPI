@@ -1,45 +1,151 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Telephony_MmsSms.def.hpp"
 
 namespace android::provider
 {
-	class Telephony_MmsSms : public JObject
+	// Fields
+	inline android::net::Uri Telephony_MmsSms::CONTENT_CONVERSATIONS_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_CONVERSATIONS_URI();
-		static android::net::Uri CONTENT_DRAFT_URI();
-		static android::net::Uri CONTENT_FILTER_BYPHONE_URI();
-		static android::net::Uri CONTENT_LOCKED_URI();
-		static android::net::Uri CONTENT_UNDELIVERED_URI();
-		static android::net::Uri CONTENT_URI();
-		static jint ERR_TYPE_GENERIC();
-		static jint ERR_TYPE_GENERIC_PERMANENT();
-		static jint ERR_TYPE_MMS_PROTO_PERMANENT();
-		static jint ERR_TYPE_MMS_PROTO_TRANSIENT();
-		static jint ERR_TYPE_SMS_PROTO_PERMANENT();
-		static jint ERR_TYPE_SMS_PROTO_TRANSIENT();
-		static jint ERR_TYPE_TRANSPORT_FAILURE();
-		static jint MMS_PROTO();
-		static jint NO_ERROR();
-		static android::net::Uri SEARCH_URI();
-		static jint SMS_PROTO();
-		static JString TYPE_DISCRIMINATOR_COLUMN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Telephony_MmsSms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_MmsSms(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"CONTENT_CONVERSATIONS_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri Telephony_MmsSms::CONTENT_DRAFT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"CONTENT_DRAFT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri Telephony_MmsSms::CONTENT_FILTER_BYPHONE_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"CONTENT_FILTER_BYPHONE_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri Telephony_MmsSms::CONTENT_LOCKED_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"CONTENT_LOCKED_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri Telephony_MmsSms::CONTENT_UNDELIVERED_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"CONTENT_UNDELIVERED_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri Telephony_MmsSms::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jint Telephony_MmsSms::ERR_TYPE_GENERIC()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"ERR_TYPE_GENERIC"
+		);
+	}
+	inline jint Telephony_MmsSms::ERR_TYPE_GENERIC_PERMANENT()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"ERR_TYPE_GENERIC_PERMANENT"
+		);
+	}
+	inline jint Telephony_MmsSms::ERR_TYPE_MMS_PROTO_PERMANENT()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"ERR_TYPE_MMS_PROTO_PERMANENT"
+		);
+	}
+	inline jint Telephony_MmsSms::ERR_TYPE_MMS_PROTO_TRANSIENT()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"ERR_TYPE_MMS_PROTO_TRANSIENT"
+		);
+	}
+	inline jint Telephony_MmsSms::ERR_TYPE_SMS_PROTO_PERMANENT()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"ERR_TYPE_SMS_PROTO_PERMANENT"
+		);
+	}
+	inline jint Telephony_MmsSms::ERR_TYPE_SMS_PROTO_TRANSIENT()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"ERR_TYPE_SMS_PROTO_TRANSIENT"
+		);
+	}
+	inline jint Telephony_MmsSms::ERR_TYPE_TRANSPORT_FAILURE()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"ERR_TYPE_TRANSPORT_FAILURE"
+		);
+	}
+	inline jint Telephony_MmsSms::MMS_PROTO()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"MMS_PROTO"
+		);
+	}
+	inline jint Telephony_MmsSms::NO_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"NO_ERROR"
+		);
+	}
+	inline android::net::Uri Telephony_MmsSms::SEARCH_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"SEARCH_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jint Telephony_MmsSms::SMS_PROTO()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$MmsSms",
+			"SMS_PROTO"
+		);
+	}
+	inline JString Telephony_MmsSms::TYPE_DISCRIMINATOR_COLUMN()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms",
+			"TYPE_DISCRIMINATOR_COLUMN",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

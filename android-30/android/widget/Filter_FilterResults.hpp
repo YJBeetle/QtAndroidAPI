@@ -1,26 +1,34 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./Filter_FilterResults.def.hpp"
 
 namespace android::widget
 {
-	class Filter_FilterResults : public JObject
+	// Fields
+	inline jint Filter_FilterResults::count()
 	{
-	public:
-		// Fields
-		jint count();
-		JObject values();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Filter_FilterResults(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Filter_FilterResults(QJniObject obj);
-		
-		// Constructors
-		Filter_FilterResults();
-		
-		// Methods
-	};
+		return getField<jint>(
+			"count"
+		);
+	}
+	inline JObject Filter_FilterResults::values()
+	{
+		return getObjectField(
+			"values",
+			"Ljava/lang/Object;"
+		);
+	}
+	
+	// Constructors
+	inline Filter_FilterResults::Filter_FilterResults()
+		: JObject(
+			"android.widget.Filter$FilterResults",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::widget
+
+// Base class headers
 

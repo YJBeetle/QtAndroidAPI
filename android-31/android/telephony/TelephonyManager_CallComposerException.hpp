@@ -1,36 +1,87 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-namespace java::io
-{
-	class IOException;
-}
+#include "../../java/io/IOException.def.hpp"
+#include "./TelephonyManager_CallComposerException.def.hpp"
 
 namespace android::telephony
 {
-	class TelephonyManager_CallComposerException : public java::lang::Exception
+	// Fields
+	inline jint TelephonyManager_CallComposerException::ERROR_AUTHENTICATION_FAILED()
 	{
-	public:
-		// Fields
-		static jint ERROR_AUTHENTICATION_FAILED();
-		static jint ERROR_FILE_TOO_LARGE();
-		static jint ERROR_INPUT_CLOSED();
-		static jint ERROR_IO_EXCEPTION();
-		static jint ERROR_NETWORK_UNAVAILABLE();
-		static jint ERROR_REMOTE_END_CLOSED();
-		static jint ERROR_UNKNOWN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyManager_CallComposerException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_CallComposerException(QJniObject obj);
-		
-		// Constructors
-		TelephonyManager_CallComposerException(jint arg0, java::io::IOException arg1);
-		
-		// Methods
-		jint getErrorCode() const;
-		java::io::IOException getIOException() const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"ERROR_AUTHENTICATION_FAILED"
+		);
+	}
+	inline jint TelephonyManager_CallComposerException::ERROR_FILE_TOO_LARGE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"ERROR_FILE_TOO_LARGE"
+		);
+	}
+	inline jint TelephonyManager_CallComposerException::ERROR_INPUT_CLOSED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"ERROR_INPUT_CLOSED"
+		);
+	}
+	inline jint TelephonyManager_CallComposerException::ERROR_IO_EXCEPTION()
+	{
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"ERROR_IO_EXCEPTION"
+		);
+	}
+	inline jint TelephonyManager_CallComposerException::ERROR_NETWORK_UNAVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"ERROR_NETWORK_UNAVAILABLE"
+		);
+	}
+	inline jint TelephonyManager_CallComposerException::ERROR_REMOTE_END_CLOSED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"ERROR_REMOTE_END_CLOSED"
+		);
+	}
+	inline jint TelephonyManager_CallComposerException::ERROR_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"ERROR_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	inline TelephonyManager_CallComposerException::TelephonyManager_CallComposerException(jint arg0, java::io::IOException arg1)
+		: java::lang::Exception(
+			"android.telephony.TelephonyManager$CallComposerException",
+			"(ILjava/io/IOException;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jint TelephonyManager_CallComposerException::getErrorCode() const
+	{
+		return callMethod<jint>(
+			"getErrorCode",
+			"()I"
+		);
+	}
+	inline java::io::IOException TelephonyManager_CallComposerException::getIOException() const
+	{
+		return callObjectMethod(
+			"getIOException",
+			"()Ljava/io/IOException;"
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

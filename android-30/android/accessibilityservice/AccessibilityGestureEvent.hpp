@@ -1,33 +1,62 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./AccessibilityGestureEvent.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class AccessibilityGestureEvent : public JObject
+	// Fields
+	inline JObject AccessibilityGestureEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityGestureEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityGestureEvent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jint getDisplayId() const;
-		jint getGestureId() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.accessibilityservice.AccessibilityGestureEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint AccessibilityGestureEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint AccessibilityGestureEvent::getDisplayId() const
+	{
+		return callMethod<jint>(
+			"getDisplayId",
+			"()I"
+		);
+	}
+	inline jint AccessibilityGestureEvent::getGestureId() const
+	{
+		return callMethod<jint>(
+			"getGestureId",
+			"()I"
+		);
+	}
+	inline JString AccessibilityGestureEvent::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void AccessibilityGestureEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

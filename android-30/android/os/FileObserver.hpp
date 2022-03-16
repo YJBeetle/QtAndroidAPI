@@ -1,49 +1,170 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::io
-{
-	class File;
-}
-class JString;
+#include "../../java/io/File.def.hpp"
+#include "../../JString.hpp"
+#include "./FileObserver.def.hpp"
 
 namespace android::os
 {
-	class FileObserver : public JObject
+	// Fields
+	inline jint FileObserver::ACCESS()
 	{
-	public:
-		// Fields
-		static jint ACCESS();
-		static jint ALL_EVENTS();
-		static jint ATTRIB();
-		static jint CLOSE_NOWRITE();
-		static jint CLOSE_WRITE();
-		static jint CREATE();
-		static jint DELETE();
-		static jint DELETE_SELF();
-		static jint MODIFY();
-		static jint MOVED_FROM();
-		static jint MOVED_TO();
-		static jint MOVE_SELF();
-		static jint OPEN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileObserver(QJniObject obj);
-		
-		// Constructors
-		FileObserver(java::io::File arg0);
-		FileObserver(JString arg0);
-		FileObserver(JObject arg0);
-		FileObserver(java::io::File arg0, jint arg1);
-		FileObserver(JString arg0, jint arg1);
-		FileObserver(JObject arg0, jint arg1);
-		
-		// Methods
-		void onEvent(jint arg0, JString arg1) const;
-		void startWatching() const;
-		void stopWatching() const;
-	};
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"ACCESS"
+		);
+	}
+	inline jint FileObserver::ALL_EVENTS()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"ALL_EVENTS"
+		);
+	}
+	inline jint FileObserver::ATTRIB()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"ATTRIB"
+		);
+	}
+	inline jint FileObserver::CLOSE_NOWRITE()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"CLOSE_NOWRITE"
+		);
+	}
+	inline jint FileObserver::CLOSE_WRITE()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"CLOSE_WRITE"
+		);
+	}
+	inline jint FileObserver::CREATE()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"CREATE"
+		);
+	}
+	inline jint FileObserver::DELETE()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"DELETE"
+		);
+	}
+	inline jint FileObserver::DELETE_SELF()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"DELETE_SELF"
+		);
+	}
+	inline jint FileObserver::MODIFY()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"MODIFY"
+		);
+	}
+	inline jint FileObserver::MOVED_FROM()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"MOVED_FROM"
+		);
+	}
+	inline jint FileObserver::MOVED_TO()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"MOVED_TO"
+		);
+	}
+	inline jint FileObserver::MOVE_SELF()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"MOVE_SELF"
+		);
+	}
+	inline jint FileObserver::OPEN()
+	{
+		return getStaticField<jint>(
+			"android.os.FileObserver",
+			"OPEN"
+		);
+	}
+	
+	// Constructors
+	inline FileObserver::FileObserver(java::io::File arg0)
+		: JObject(
+			"android.os.FileObserver",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	inline FileObserver::FileObserver(JString arg0)
+		: JObject(
+			"android.os.FileObserver",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline FileObserver::FileObserver(JObject arg0)
+		: JObject(
+			"android.os.FileObserver",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		) {}
+	inline FileObserver::FileObserver(java::io::File arg0, jint arg1)
+		: JObject(
+			"android.os.FileObserver",
+			"(Ljava/io/File;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	inline FileObserver::FileObserver(JString arg0, jint arg1)
+		: JObject(
+			"android.os.FileObserver",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline FileObserver::FileObserver(JObject arg0, jint arg1)
+		: JObject(
+			"android.os.FileObserver",
+			"(Ljava/util/List;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void FileObserver::onEvent(jint arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"onEvent",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void FileObserver::startWatching() const
+	{
+		callMethod<void>(
+			"startWatching",
+			"()V"
+		);
+	}
+	inline void FileObserver::stopWatching() const
+	{
+		callMethod<void>(
+			"stopWatching",
+			"()V"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

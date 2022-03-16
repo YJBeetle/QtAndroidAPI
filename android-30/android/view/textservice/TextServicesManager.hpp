@@ -1,35 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view::textservice
-{
-	class SpellCheckerSession;
-}
-namespace java::util
-{
-	class Locale;
-}
+#include "../../os/Bundle.def.hpp"
+#include "./SpellCheckerSession.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./TextServicesManager.def.hpp"
 
 namespace android::view::textservice
 {
-	class TextServicesManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TextServicesManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextServicesManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3) const;
-	};
+		return callObjectMethod(
+			"newSpellCheckerSession",
+			"(Landroid/os/Bundle;Ljava/util/Locale;Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListener;Z)Landroid/view/textservice/SpellCheckerSession;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3
+		);
+	}
 } // namespace android::view::textservice
+
+// Base class headers
 

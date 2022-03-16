@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../io/IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MalformedURLException.def.hpp"
 
 namespace java::net
 {
-	class MalformedURLException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MalformedURLException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		MalformedURLException(QJniObject obj);
-		
-		// Constructors
-		MalformedURLException();
-		MalformedURLException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MalformedURLException::MalformedURLException()
+		: java::io::IOException(
+			"java.net.MalformedURLException",
+			"()V"
+		) {}
+	inline MalformedURLException::MalformedURLException(JString arg0)
+		: java::io::IOException(
+			"java.net.MalformedURLException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 

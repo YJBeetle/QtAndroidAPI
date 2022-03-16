@@ -1,22 +1,24 @@
 #pragma once
 
-#include "./DeadObjectException.hpp"
+#include "./DeadSystemException.def.hpp"
 
 namespace android::os
 {
-	class DeadSystemException : public android::os::DeadObjectException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DeadSystemException(const char *className, const char *sig, Ts...agv) : android::os::DeadObjectException(className, sig, std::forward<Ts>(agv)...) {}
-		DeadSystemException(QJniObject obj);
-		
-		// Constructors
-		DeadSystemException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DeadSystemException::DeadSystemException()
+		: android::os::DeadObjectException(
+			"android.os.DeadSystemException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
+#include "./RemoteException.hpp"
+#include "./DeadObjectException.hpp"
 

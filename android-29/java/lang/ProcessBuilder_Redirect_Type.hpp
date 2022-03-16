@@ -1,31 +1,75 @@
 #pragma once
 
-#include "./Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ProcessBuilder_Redirect_Type.def.hpp"
 
 namespace java::lang
 {
-	class ProcessBuilder_Redirect_Type : public java::lang::Enum
+	// Fields
+	inline java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::APPEND()
 	{
-	public:
-		// Fields
-		static java::lang::ProcessBuilder_Redirect_Type APPEND();
-		static java::lang::ProcessBuilder_Redirect_Type INHERIT();
-		static java::lang::ProcessBuilder_Redirect_Type PIPE();
-		static java::lang::ProcessBuilder_Redirect_Type READ();
-		static java::lang::ProcessBuilder_Redirect_Type WRITE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ProcessBuilder_Redirect_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessBuilder_Redirect_Type(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::lang::ProcessBuilder_Redirect_Type valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"APPEND",
+			"Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::INHERIT()
+	{
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"INHERIT",
+			"Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::PIPE()
+	{
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"PIPE",
+			"Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::READ()
+	{
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"READ",
+			"Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
+	inline java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::WRITE()
+	{
+		return getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"WRITE",
+			"Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/ProcessBuilder$Redirect$Type;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ProcessBuilder_Redirect_Type::values()
+	{
+		return callStaticObjectMethod(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"values",
+			"()[Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
+#include "./Enum.hpp"
 

@@ -1,49 +1,71 @@
 #pragma once
 
-#include "../app/Fragment.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view
-{
-	class LayoutInflater;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::view
-{
-	class ViewGroup;
-}
-namespace android::webkit
-{
-	class WebView;
-}
+#include "../os/Bundle.def.hpp"
+#include "../view/LayoutInflater.def.hpp"
+#include "../view/View.def.hpp"
+#include "../view/ViewGroup.def.hpp"
+#include "./WebView.def.hpp"
+#include "./WebViewFragment.def.hpp"
 
 namespace android::webkit
 {
-	class WebViewFragment : public android::app::Fragment
+	// Fields
+	
+	// Constructors
+	inline WebViewFragment::WebViewFragment()
+		: android::app::Fragment(
+			"android.webkit.WebViewFragment",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::webkit::WebView WebViewFragment::getWebView() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebViewFragment(const char *className, const char *sig, Ts...agv) : android::app::Fragment(className, sig, std::forward<Ts>(agv)...) {}
-		WebViewFragment(QJniObject obj);
-		
-		// Constructors
-		WebViewFragment();
-		
-		// Methods
-		android::webkit::WebView getWebView() const;
-		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const;
-		void onDestroy() const;
-		void onDestroyView() const;
-		void onPause() const;
-		void onResume() const;
-	};
+		return callObjectMethod(
+			"getWebView",
+			"()Landroid/webkit/WebView;"
+		);
+	}
+	inline android::view::View WebViewFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const
+	{
+		return callObjectMethod(
+			"onCreateView",
+			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void WebViewFragment::onDestroy() const
+	{
+		callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
+	}
+	inline void WebViewFragment::onDestroyView() const
+	{
+		callMethod<void>(
+			"onDestroyView",
+			"()V"
+		);
+	}
+	inline void WebViewFragment::onPause() const
+	{
+		callMethod<void>(
+			"onPause",
+			"()V"
+		);
+	}
+	inline void WebViewFragment::onResume() const
+	{
+		callMethod<void>(
+			"onResume",
+			"()V"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
+#include "../app/Fragment.hpp"
 

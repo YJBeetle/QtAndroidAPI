@@ -1,24 +1,28 @@
 #pragma once
 
-#include "./WifiP2pServiceInfo.hpp"
-
-class JString;
+#include "../../../../../JString.hpp"
+#include "./WifiP2pUpnpServiceInfo.def.hpp"
 
 namespace android::net::wifi::p2p::nsd
 {
-	class WifiP2pUpnpServiceInfo : public android::net::wifi::p2p::nsd::WifiP2pServiceInfo
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::wifi::p2p::nsd::WifiP2pUpnpServiceInfo WifiP2pUpnpServiceInfo::newInstance(JString arg0, JString arg1, JObject arg2)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiP2pUpnpServiceInfo(const char *className, const char *sig, Ts...agv) : android::net::wifi::p2p::nsd::WifiP2pServiceInfo(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pUpnpServiceInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::net::wifi::p2p::nsd::WifiP2pUpnpServiceInfo newInstance(JString arg0, JString arg1, JObject arg2);
-	};
+		return callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pUpnpServiceInfo",
+			"newInstance",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceInfo;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
 } // namespace android::net::wifi::p2p::nsd
+
+// Base class headers
+#include "./WifiP2pServiceInfo.hpp"
 

@@ -1,35 +1,50 @@
 #pragma once
 
-#include "./BaseKeyListener.hpp"
-
-class JCharArray;
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view
-{
-	class View;
-}
-class JString;
+#include "../../../JCharArray.hpp"
+#include "../../view/KeyEvent.def.hpp"
+#include "../../view/View.def.hpp"
+#include "../../../JString.hpp"
+#include "./NumberKeyListener.def.hpp"
 
 namespace android::text::method
 {
-	class NumberKeyListener : public android::text::method::BaseKeyListener
+	// Fields
+	
+	// Constructors
+	inline NumberKeyListener::NumberKeyListener()
+		: android::text::method::BaseKeyListener(
+			"android.text.method.NumberKeyListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString NumberKeyListener::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NumberKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::BaseKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		NumberKeyListener(QJniObject obj);
-		
-		// Constructors
-		NumberKeyListener();
-		
-		// Methods
-		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const;
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
-	};
+		return callObjectMethod(
+			"filter",
+			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3.object(),
+			arg4,
+			arg5
+		);
+	}
+	inline jboolean NumberKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
+	{
+		return callMethod<jboolean>(
+			"onKeyDown",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object()
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./MetaKeyKeyListener.hpp"
+#include "./BaseKeyListener.hpp"
 

@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CertPath.def.hpp"
+#include "./CertPathValidatorSpi.def.hpp"
 
 namespace java::security::cert
 {
-	class CertPath;
-}
-
-namespace java::security::cert
-{
-	class CertPathValidatorSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline CertPathValidatorSpi::CertPathValidatorSpi()
+		: JObject(
+			"java.security.cert.CertPathValidatorSpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject CertPathValidatorSpi::engineGetRevocationChecker() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertPathValidatorSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathValidatorSpi(QJniObject obj);
-		
-		// Constructors
-		CertPathValidatorSpi();
-		
-		// Methods
-		JObject engineGetRevocationChecker() const;
-		JObject engineValidate(java::security::cert::CertPath arg0, JObject arg1) const;
-	};
+		return callObjectMethod(
+			"engineGetRevocationChecker",
+			"()Ljava/security/cert/CertPathChecker;"
+		);
+	}
+	inline JObject CertPathValidatorSpi::engineValidate(java::security::cert::CertPath arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"engineValidate",
+			"(Ljava/security/cert/CertPath;Ljava/security/cert/CertPathParameters;)Ljava/security/cert/CertPathValidatorResult;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

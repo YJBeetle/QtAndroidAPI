@@ -1,48 +1,108 @@
 #pragma once
 
+#include "../../os/Bundle.def.hpp"
+#include "../../os/LocaleList.def.hpp"
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class LocaleList;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./InlineSuggestionsRequest.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InlineSuggestionsRequest : public JObject
+	// Fields
+	inline JObject InlineSuggestionsRequest::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint SUGGESTION_COUNT_UNLIMITED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InlineSuggestionsRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlineSuggestionsRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::os::Bundle getExtras() const;
-		JString getHostPackageName() const;
-		JObject getInlinePresentationSpecs() const;
-		jint getMaxSuggestionCount() const;
-		android::os::LocaleList getSupportedLocales() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestionsRequest",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint InlineSuggestionsRequest::SUGGESTION_COUNT_UNLIMITED()
+	{
+		return getStaticField<jint>(
+			"android.view.inputmethod.InlineSuggestionsRequest",
+			"SUGGESTION_COUNT_UNLIMITED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint InlineSuggestionsRequest::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean InlineSuggestionsRequest::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::os::Bundle InlineSuggestionsRequest::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JString InlineSuggestionsRequest::getHostPackageName() const
+	{
+		return callObjectMethod(
+			"getHostPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject InlineSuggestionsRequest::getInlinePresentationSpecs() const
+	{
+		return callObjectMethod(
+			"getInlinePresentationSpecs",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint InlineSuggestionsRequest::getMaxSuggestionCount() const
+	{
+		return callMethod<jint>(
+			"getMaxSuggestionCount",
+			"()I"
+		);
+	}
+	inline android::os::LocaleList InlineSuggestionsRequest::getSupportedLocales() const
+	{
+		return callObjectMethod(
+			"getSupportedLocales",
+			"()Landroid/os/LocaleList;"
+		);
+	}
+	inline jint InlineSuggestionsRequest::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString InlineSuggestionsRequest::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void InlineSuggestionsRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

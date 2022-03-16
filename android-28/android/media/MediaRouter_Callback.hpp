@@ -1,44 +1,109 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRouter.def.hpp"
+#include "./MediaRouter_RouteGroup.def.hpp"
+#include "./MediaRouter_RouteInfo.def.hpp"
+#include "./MediaRouter_Callback.def.hpp"
 
 namespace android::media
 {
-	class MediaRouter;
-}
-namespace android::media
-{
-	class MediaRouter_RouteGroup;
-}
-namespace android::media
-{
-	class MediaRouter_RouteInfo;
-}
-
-namespace android::media
-{
-	class MediaRouter_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaRouter_Callback::MediaRouter_Callback()
+		: JObject(
+			"android.media.MediaRouter$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaRouter_Callback::onRouteAdded(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaRouter_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter_Callback(QJniObject obj);
-		
-		// Constructors
-		MediaRouter_Callback();
-		
-		// Methods
-		void onRouteAdded(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
-		void onRouteChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
-		void onRouteGrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2, jint arg3) const;
-		void onRoutePresentationDisplayChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
-		void onRouteRemoved(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
-		void onRouteSelected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2) const;
-		void onRouteUngrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2) const;
-		void onRouteUnselected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2) const;
-		void onRouteVolumeChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
-	};
+		callMethod<void>(
+			"onRouteAdded",
+			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaRouter_Callback::onRouteChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const
+	{
+		callMethod<void>(
+			"onRouteChanged",
+			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaRouter_Callback::onRouteGrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"onRouteGrouped",
+			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3
+		);
+	}
+	inline void MediaRouter_Callback::onRoutePresentationDisplayChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const
+	{
+		callMethod<void>(
+			"onRoutePresentationDisplayChanged",
+			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaRouter_Callback::onRouteRemoved(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const
+	{
+		callMethod<void>(
+			"onRouteRemoved",
+			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaRouter_Callback::onRouteSelected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2) const
+	{
+		callMethod<void>(
+			"onRouteSelected",
+			"(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void MediaRouter_Callback::onRouteUngrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2) const
+	{
+		callMethod<void>(
+			"onRouteUngrouped",
+			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void MediaRouter_Callback::onRouteUnselected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2) const
+	{
+		callMethod<void>(
+			"onRouteUnselected",
+			"(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void MediaRouter_Callback::onRouteVolumeChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const
+	{
+		callMethod<void>(
+			"onRouteVolumeChanged",
+			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../../../../java/io/InterruptedIOException.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./ConnectTimeoutException.def.hpp"
 
 namespace org::apache::http::conn
 {
-	class ConnectTimeoutException : public java::io::InterruptedIOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConnectTimeoutException(const char *className, const char *sig, Ts...agv) : java::io::InterruptedIOException(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectTimeoutException(QJniObject obj);
-		
-		// Constructors
-		ConnectTimeoutException();
-		ConnectTimeoutException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ConnectTimeoutException::ConnectTimeoutException()
+		: java::io::InterruptedIOException(
+			"org.apache.http.conn.ConnectTimeoutException",
+			"()V"
+		) {}
+	inline ConnectTimeoutException::ConnectTimeoutException(JString arg0)
+		: java::io::InterruptedIOException(
+			"org.apache.http.conn.ConnectTimeoutException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace org::apache::http::conn
+
+// Base class headers
+#include "../../../../java/lang/Exception.hpp"
+#include "../../../../java/io/IOException.hpp"
+#include "../../../../java/io/InterruptedIOException.hpp"
 

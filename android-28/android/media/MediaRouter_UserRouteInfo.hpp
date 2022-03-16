@@ -1,55 +1,148 @@
 #pragma once
 
-#include "./MediaRouter_RouteInfo.hpp"
-
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::media
-{
-	class MediaRouter_RouteCategory;
-}
-namespace android::media
-{
-	class MediaRouter_VolumeCallback;
-}
-namespace android::media
-{
-	class RemoteControlClient;
-}
-class JString;
+#include "../graphics/drawable/Drawable.def.hpp"
+#include "./MediaRouter_RouteCategory.def.hpp"
+#include "./MediaRouter_VolumeCallback.def.hpp"
+#include "./RemoteControlClient.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaRouter_UserRouteInfo.def.hpp"
 
 namespace android::media
 {
-	class MediaRouter_UserRouteInfo : public android::media::MediaRouter_RouteInfo
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::RemoteControlClient MediaRouter_UserRouteInfo::getRemoteControlClient() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaRouter_UserRouteInfo(const char *className, const char *sig, Ts...agv) : android::media::MediaRouter_RouteInfo(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter_UserRouteInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::media::RemoteControlClient getRemoteControlClient() const;
-		void requestSetVolume(jint arg0) const;
-		void requestUpdateVolume(jint arg0) const;
-		void setDescription(JString arg0) const;
-		void setIconDrawable(android::graphics::drawable::Drawable arg0) const;
-		void setIconResource(jint arg0) const;
-		void setName(jint arg0) const;
-		void setName(JString arg0) const;
-		void setPlaybackStream(jint arg0) const;
-		void setPlaybackType(jint arg0) const;
-		void setRemoteControlClient(android::media::RemoteControlClient arg0) const;
-		void setStatus(JString arg0) const;
-		void setVolume(jint arg0) const;
-		void setVolumeCallback(android::media::MediaRouter_VolumeCallback arg0) const;
-		void setVolumeHandling(jint arg0) const;
-		void setVolumeMax(jint arg0) const;
-	};
+		return callObjectMethod(
+			"getRemoteControlClient",
+			"()Landroid/media/RemoteControlClient;"
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::requestSetVolume(jint arg0) const
+	{
+		callMethod<void>(
+			"requestSetVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::requestUpdateVolume(jint arg0) const
+	{
+		callMethod<void>(
+			"requestUpdateVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setDescription(JString arg0) const
+	{
+		callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setIconDrawable(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"setIconDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setIconResource(jint arg0) const
+	{
+		callMethod<void>(
+			"setIconResource",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setName(jint arg0) const
+	{
+		callMethod<void>(
+			"setName",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setName(JString arg0) const
+	{
+		callMethod<void>(
+			"setName",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setPlaybackStream(jint arg0) const
+	{
+		callMethod<void>(
+			"setPlaybackStream",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setPlaybackType(jint arg0) const
+	{
+		callMethod<void>(
+			"setPlaybackType",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setRemoteControlClient(android::media::RemoteControlClient arg0) const
+	{
+		callMethod<void>(
+			"setRemoteControlClient",
+			"(Landroid/media/RemoteControlClient;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setStatus(JString arg0) const
+	{
+		callMethod<void>(
+			"setStatus",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setVolume(jint arg0) const
+	{
+		callMethod<void>(
+			"setVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setVolumeCallback(android::media::MediaRouter_VolumeCallback arg0) const
+	{
+		callMethod<void>(
+			"setVolumeCallback",
+			"(Landroid/media/MediaRouter$VolumeCallback;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setVolumeHandling(jint arg0) const
+	{
+		callMethod<void>(
+			"setVolumeHandling",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void MediaRouter_UserRouteInfo::setVolumeMax(jint arg0) const
+	{
+		callMethod<void>(
+			"setVolumeMax",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::media
+
+// Base class headers
+#include "./MediaRouter_RouteInfo.hpp"
 

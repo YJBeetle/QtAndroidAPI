@@ -1,32 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaDrm.def.hpp"
+#include "./metrics/LogSessionId.def.hpp"
+#include "./MediaDrm_PlaybackComponent.def.hpp"
 
 namespace android::media
 {
-	class MediaDrm;
-}
-namespace android::media::metrics
-{
-	class LogSessionId;
-}
-
-namespace android::media
-{
-	class MediaDrm_PlaybackComponent : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::metrics::LogSessionId MediaDrm_PlaybackComponent::getLogSessionId() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaDrm_PlaybackComponent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_PlaybackComponent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::media::metrics::LogSessionId getLogSessionId() const;
-		void setLogSessionId(android::media::metrics::LogSessionId arg0) const;
-	};
+		return callObjectMethod(
+			"getLogSessionId",
+			"()Landroid/media/metrics/LogSessionId;"
+		);
+	}
+	inline void MediaDrm_PlaybackComponent::setLogSessionId(android::media::metrics::LogSessionId arg0) const
+	{
+		callMethod<void>(
+			"setLogSessionId",
+			"(Landroid/media/metrics/LogSessionId;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

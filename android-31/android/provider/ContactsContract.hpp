@@ -1,40 +1,119 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract : public JObject
+	// Fields
+	inline JString ContactsContract::AUTHORITY()
 	{
-	public:
-		// Fields
-		static JString AUTHORITY();
-		static android::net::Uri AUTHORITY_URI();
-		static JString CALLER_IS_SYNCADAPTER();
-		static JString DEFERRED_SNIPPETING();
-		static JString DEFERRED_SNIPPETING_QUERY();
-		static JString DIRECTORY_PARAM_KEY();
-		static JString LIMIT_PARAM_KEY();
-		static JString PRIMARY_ACCOUNT_NAME();
-		static JString PRIMARY_ACCOUNT_TYPE();
-		static JString REMOVE_DUPLICATE_ENTRIES();
-		static JString STREQUENT_PHONE_ONLY();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract(QJniObject obj);
-		
-		// Constructors
-		ContactsContract();
-		
-		// Methods
-		static jboolean isProfileId(jlong arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract::AUTHORITY_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"AUTHORITY_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString ContactsContract::CALLER_IS_SYNCADAPTER()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"CALLER_IS_SYNCADAPTER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::DEFERRED_SNIPPETING()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"DEFERRED_SNIPPETING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::DEFERRED_SNIPPETING_QUERY()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"DEFERRED_SNIPPETING_QUERY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::DIRECTORY_PARAM_KEY()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"DIRECTORY_PARAM_KEY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::LIMIT_PARAM_KEY()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"LIMIT_PARAM_KEY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::PRIMARY_ACCOUNT_NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"PRIMARY_ACCOUNT_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::PRIMARY_ACCOUNT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"PRIMARY_ACCOUNT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::REMOVE_DUPLICATE_ENTRIES()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"REMOVE_DUPLICATE_ENTRIES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract::STREQUENT_PHONE_ONLY()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract",
+			"STREQUENT_PHONE_ONLY",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline ContactsContract::ContactsContract()
+		: JObject(
+			"android.provider.ContactsContract",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean ContactsContract::isProfileId(jlong arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.ContactsContract",
+			"isProfileId",
+			"(J)Z",
+			arg0
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

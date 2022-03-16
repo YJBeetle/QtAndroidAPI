@@ -1,33 +1,88 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./DoubleSummaryStatistics.def.hpp"
 
 namespace java::util
 {
-	class DoubleSummaryStatistics : public JObject
+	// Fields
+	
+	// Constructors
+	inline DoubleSummaryStatistics::DoubleSummaryStatistics()
+		: JObject(
+			"java.util.DoubleSummaryStatistics",
+			"()V"
+		) {}
+	inline DoubleSummaryStatistics::DoubleSummaryStatistics(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3)
+		: JObject(
+			"java.util.DoubleSummaryStatistics",
+			"(JDDD)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline void DoubleSummaryStatistics::accept(jdouble arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DoubleSummaryStatistics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DoubleSummaryStatistics(QJniObject obj);
-		
-		// Constructors
-		DoubleSummaryStatistics();
-		DoubleSummaryStatistics(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3);
-		
-		// Methods
-		void accept(jdouble arg0) const;
-		void combine(java::util::DoubleSummaryStatistics arg0) const;
-		jdouble getAverage() const;
-		jlong getCount() const;
-		jdouble getMax() const;
-		jdouble getMin() const;
-		jdouble getSum() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"accept",
+			"(D)V",
+			arg0
+		);
+	}
+	inline void DoubleSummaryStatistics::combine(java::util::DoubleSummaryStatistics arg0) const
+	{
+		callMethod<void>(
+			"combine",
+			"(Ljava/util/DoubleSummaryStatistics;)V",
+			arg0.object()
+		);
+	}
+	inline jdouble DoubleSummaryStatistics::getAverage() const
+	{
+		return callMethod<jdouble>(
+			"getAverage",
+			"()D"
+		);
+	}
+	inline jlong DoubleSummaryStatistics::getCount() const
+	{
+		return callMethod<jlong>(
+			"getCount",
+			"()J"
+		);
+	}
+	inline jdouble DoubleSummaryStatistics::getMax() const
+	{
+		return callMethod<jdouble>(
+			"getMax",
+			"()D"
+		);
+	}
+	inline jdouble DoubleSummaryStatistics::getMin() const
+	{
+		return callMethod<jdouble>(
+			"getMin",
+			"()D"
+		);
+	}
+	inline jdouble DoubleSummaryStatistics::getSum() const
+	{
+		return callMethod<jdouble>(
+			"getSum",
+			"()D"
+		);
+	}
+	inline JString DoubleSummaryStatistics::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

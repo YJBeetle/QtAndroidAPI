@@ -1,29 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./VisibilitySetterAction.def.hpp"
+#include "./VisibilitySetterAction_Builder.def.hpp"
 
 namespace android::service::autofill
 {
-	class VisibilitySetterAction;
-}
-
-namespace android::service::autofill
-{
-	class VisibilitySetterAction_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline VisibilitySetterAction_Builder::VisibilitySetterAction_Builder(jint arg0, jint arg1)
+		: JObject(
+			"android.service.autofill.VisibilitySetterAction$Builder",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline android::service::autofill::VisibilitySetterAction VisibilitySetterAction_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VisibilitySetterAction_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VisibilitySetterAction_Builder(QJniObject obj);
-		
-		// Constructors
-		VisibilitySetterAction_Builder(jint arg0, jint arg1);
-		
-		// Methods
-		android::service::autofill::VisibilitySetterAction build() const;
-		android::service::autofill::VisibilitySetterAction_Builder setVisibility(jint arg0, jint arg1) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/service/autofill/VisibilitySetterAction;"
+		);
+	}
+	inline android::service::autofill::VisibilitySetterAction_Builder VisibilitySetterAction_Builder::setVisibility(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setVisibility",
+			"(II)Landroid/service/autofill/VisibilitySetterAction$Builder;",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

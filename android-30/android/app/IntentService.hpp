@@ -1,34 +1,75 @@
 #pragma once
 
-#include "./Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-class JString;
+#include "../content/Intent.def.hpp"
+#include "../../JString.hpp"
+#include "./IntentService.def.hpp"
 
 namespace android::app
 {
-	class IntentService : public android::app::Service
+	// Fields
+	
+	// Constructors
+	inline IntentService::IntentService(JString arg0)
+		: android::app::Service(
+			"android.app.IntentService",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JObject IntentService::onBind(android::content::Intent arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IntentService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		IntentService(QJniObject obj);
-		
-		// Constructors
-		IntentService(JString arg0);
-		
-		// Methods
-		JObject onBind(android::content::Intent arg0) const;
-		void onCreate() const;
-		void onDestroy() const;
-		void onStart(android::content::Intent arg0, jint arg1) const;
-		jint onStartCommand(android::content::Intent arg0, jint arg1, jint arg2) const;
-		void setIntentRedelivery(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void IntentService::onCreate() const
+	{
+		callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	inline void IntentService::onDestroy() const
+	{
+		callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
+	}
+	inline void IntentService::onStart(android::content::Intent arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onStart",
+			"(Landroid/content/Intent;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline jint IntentService::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"onStartCommand",
+			"(Landroid/content/Intent;II)I",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline void IntentService::setIntentRedelivery(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setIntentRedelivery",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "./Service.hpp"
 

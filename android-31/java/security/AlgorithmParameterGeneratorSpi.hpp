@@ -1,31 +1,22 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AlgorithmParameters.def.hpp"
+#include "./SecureRandom.def.hpp"
+#include "./AlgorithmParameterGeneratorSpi.def.hpp"
 
 namespace java::security
 {
-	class AlgorithmParameters;
-}
-namespace java::security
-{
-	class SecureRandom;
-}
-
-namespace java::security
-{
-	class AlgorithmParameterGeneratorSpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlgorithmParameterGeneratorSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlgorithmParameterGeneratorSpi(QJniObject obj);
-		
-		// Constructors
-		AlgorithmParameterGeneratorSpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi()
+		: JObject(
+			"java.security.AlgorithmParameterGeneratorSpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
 

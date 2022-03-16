@@ -1,53 +1,81 @@
 #pragma once
 
-#include "./ScriptIntrinsic.hpp"
+#include "./Allocation.def.hpp"
+#include "./Element.def.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Script_FieldID.def.hpp"
+#include "./Script_KernelID.def.hpp"
+#include "./Script_LaunchOptions.def.hpp"
+#include "./ScriptIntrinsicBlur.def.hpp"
 
 namespace android::renderscript
 {
-	class Allocation;
-}
-namespace android::renderscript
-{
-	class Element;
-}
-namespace android::renderscript
-{
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Script_FieldID;
-}
-namespace android::renderscript
-{
-	class Script_KernelID;
-}
-namespace android::renderscript
-{
-	class Script_LaunchOptions;
-}
-
-namespace android::renderscript
-{
-	class ScriptIntrinsicBlur : public android::renderscript::ScriptIntrinsic
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::renderscript::ScriptIntrinsicBlur ScriptIntrinsicBlur::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ScriptIntrinsicBlur(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsicBlur(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::renderscript::ScriptIntrinsicBlur create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
-		void forEach(android::renderscript::Allocation arg0) const;
-		void forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const;
-		android::renderscript::Script_FieldID getFieldID_Input() const;
-		android::renderscript::Script_KernelID getKernelID() const;
-		void setInput(android::renderscript::Allocation arg0) const;
-		void setRadius(jfloat arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.renderscript.ScriptIntrinsicBlur",
+			"create",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ScriptIntrinsicBlur::forEach(android::renderscript::Allocation arg0) const
+	{
+		callMethod<void>(
+			"forEach",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.object()
+		);
+	}
+	inline void ScriptIntrinsicBlur::forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const
+	{
+		callMethod<void>(
+			"forEach",
+			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::renderscript::Script_FieldID ScriptIntrinsicBlur::getFieldID_Input() const
+	{
+		return callObjectMethod(
+			"getFieldID_Input",
+			"()Landroid/renderscript/Script$FieldID;"
+		);
+	}
+	inline android::renderscript::Script_KernelID ScriptIntrinsicBlur::getKernelID() const
+	{
+		return callObjectMethod(
+			"getKernelID",
+			"()Landroid/renderscript/Script$KernelID;"
+		);
+	}
+	inline void ScriptIntrinsicBlur::setInput(android::renderscript::Allocation arg0) const
+	{
+		callMethod<void>(
+			"setInput",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.object()
+		);
+	}
+	inline void ScriptIntrinsicBlur::setRadius(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setRadius",
+			"(F)V",
+			arg0
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "./BaseObj.hpp"
+#include "./Script.hpp"
+#include "./ScriptIntrinsic.hpp"
 

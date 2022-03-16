@@ -1,32 +1,60 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::io
-{
-	class Writer;
-}
+#include "../../java/io/Writer.def.hpp"
+#include "./GLDebugHelper.def.hpp"
 
 namespace android::opengl
 {
-	class GLDebugHelper : public JObject
+	// Fields
+	inline jint GLDebugHelper::CONFIG_CHECK_GL_ERROR()
 	{
-	public:
-		// Fields
-		static jint CONFIG_CHECK_GL_ERROR();
-		static jint CONFIG_CHECK_THREAD();
-		static jint CONFIG_LOG_ARGUMENT_NAMES();
-		static jint ERROR_WRONG_THREAD();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GLDebugHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GLDebugHelper(QJniObject obj);
-		
-		// Constructors
-		GLDebugHelper();
-		
-		// Methods
-		static JObject wrap(JObject arg0, jint arg1, java::io::Writer arg2);
-	};
+		return getStaticField<jint>(
+			"android.opengl.GLDebugHelper",
+			"CONFIG_CHECK_GL_ERROR"
+		);
+	}
+	inline jint GLDebugHelper::CONFIG_CHECK_THREAD()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLDebugHelper",
+			"CONFIG_CHECK_THREAD"
+		);
+	}
+	inline jint GLDebugHelper::CONFIG_LOG_ARGUMENT_NAMES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLDebugHelper",
+			"CONFIG_LOG_ARGUMENT_NAMES"
+		);
+	}
+	inline jint GLDebugHelper::ERROR_WRONG_THREAD()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLDebugHelper",
+			"ERROR_WRONG_THREAD"
+		);
+	}
+	
+	// Constructors
+	inline GLDebugHelper::GLDebugHelper()
+		: JObject(
+			"android.opengl.GLDebugHelper",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject GLDebugHelper::wrap(JObject arg0, jint arg1, java::io::Writer arg2)
+	{
+		return callStaticObjectMethod(
+			"android.opengl.GLDebugHelper",
+			"wrap",
+			"(Ljavax/microedition/khronos/egl/EGL;ILjava/io/Writer;)Ljavax/microedition/khronos/egl/EGL;",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
 } // namespace android::opengl
+
+// Base class headers
 

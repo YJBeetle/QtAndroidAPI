@@ -1,33 +1,67 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./InputDevice.def.hpp"
+#include "./InputEvent.def.hpp"
 
 namespace android::view
 {
-	class InputDevice;
-}
-
-namespace android::view
-{
-	class InputEvent : public JObject
+	// Fields
+	inline JObject InputEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InputEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputEvent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::view::InputDevice getDevice() const;
-		jint getDeviceId() const;
-		jlong getEventTime() const;
-		jint getSource() const;
-		jboolean isFromSource(jint arg0) const;
-	};
+		return getStaticObjectField(
+			"android.view.InputEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint InputEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::view::InputDevice InputEvent::getDevice() const
+	{
+		return callObjectMethod(
+			"getDevice",
+			"()Landroid/view/InputDevice;"
+		);
+	}
+	inline jint InputEvent::getDeviceId() const
+	{
+		return callMethod<jint>(
+			"getDeviceId",
+			"()I"
+		);
+	}
+	inline jlong InputEvent::getEventTime() const
+	{
+		return callMethod<jlong>(
+			"getEventTime",
+			"()J"
+		);
+	}
+	inline jint InputEvent::getSource() const
+	{
+		return callMethod<jint>(
+			"getSource",
+			"()I"
+		);
+	}
+	inline jboolean InputEvent::isFromSource(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isFromSource",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

@@ -1,27 +1,46 @@
 #pragma once
 
-#include "./EapSessionConfig_EapMethodConfig.hpp"
-
-class JObject;
+#include "../../../JObject.hpp"
+#include "./EapSessionConfig_EapSimConfig.def.hpp"
 
 namespace android::net::eap
 {
-	class EapSessionConfig_EapSimConfig : public android::net::eap::EapSessionConfig_EapMethodConfig
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean EapSessionConfig_EapSimConfig::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EapSessionConfig_EapSimConfig(const char *className, const char *sig, Ts...agv) : android::net::eap::EapSessionConfig_EapMethodConfig(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_EapSimConfig(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getAppType() const;
-		jint getSubId() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint EapSessionConfig_EapSimConfig::getAppType() const
+	{
+		return callMethod<jint>(
+			"getAppType",
+			"()I"
+		);
+	}
+	inline jint EapSessionConfig_EapSimConfig::getSubId() const
+	{
+		return callMethod<jint>(
+			"getSubId",
+			"()I"
+		);
+	}
+	inline jint EapSessionConfig_EapSimConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::eap
+
+// Base class headers
+#include "./EapSessionConfig_EapMethodConfig.hpp"
 

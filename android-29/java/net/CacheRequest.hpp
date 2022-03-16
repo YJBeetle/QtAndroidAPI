@@ -1,29 +1,35 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::io
-{
-	class OutputStream;
-}
+#include "../io/OutputStream.def.hpp"
+#include "./CacheRequest.def.hpp"
 
 namespace java::net
 {
-	class CacheRequest : public JObject
+	// Fields
+	
+	// Constructors
+	inline CacheRequest::CacheRequest()
+		: JObject(
+			"java.net.CacheRequest",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CacheRequest::abort() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CacheRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CacheRequest(QJniObject obj);
-		
-		// Constructors
-		CacheRequest();
-		
-		// Methods
-		void abort() const;
-		java::io::OutputStream getBody() const;
-	};
+		callMethod<void>(
+			"abort",
+			"()V"
+		);
+	}
+	inline java::io::OutputStream CacheRequest::getBody() const
+	{
+		return callObjectMethod(
+			"getBody",
+			"()Ljava/io/OutputStream;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

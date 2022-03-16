@@ -1,40 +1,84 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./FillRequest.def.hpp"
 
 namespace android::service::autofill
 {
-	class FillRequest : public JObject
+	// Fields
+	inline JObject FillRequest::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint FLAG_MANUAL_REQUEST();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FillRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FillRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::os::Bundle getClientState() const;
-		JObject getFillContexts() const;
-		jint getFlags() const;
-		jint getId() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.autofill.FillRequest",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint FillRequest::FLAG_MANUAL_REQUEST()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.FillRequest",
+			"FLAG_MANUAL_REQUEST"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint FillRequest::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::os::Bundle FillRequest::getClientState() const
+	{
+		return callObjectMethod(
+			"getClientState",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JObject FillRequest::getFillContexts() const
+	{
+		return callObjectMethod(
+			"getFillContexts",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint FillRequest::getFlags() const
+	{
+		return callMethod<jint>(
+			"getFlags",
+			"()I"
+		);
+	}
+	inline jint FillRequest::getId() const
+	{
+		return callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	inline JString FillRequest::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void FillRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

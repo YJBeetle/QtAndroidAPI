@@ -1,75 +1,222 @@
 #pragma once
 
-#include "../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-namespace android::telecom
-{
-	class Conference;
-}
-namespace android::telecom
-{
-	class Connection;
-}
-namespace android::telecom
-{
-	class ConnectionRequest;
-}
-namespace android::telecom
-{
-	class PhoneAccountHandle;
-}
-namespace android::telecom
-{
-	class RemoteConference;
-}
-namespace android::telecom
-{
-	class RemoteConnection;
-}
-class JString;
+#include "../content/Intent.def.hpp"
+#include "./Conference.def.hpp"
+#include "./Connection.def.hpp"
+#include "./ConnectionRequest.def.hpp"
+#include "./PhoneAccountHandle.def.hpp"
+#include "./RemoteConference.def.hpp"
+#include "./RemoteConnection.def.hpp"
+#include "../../JString.hpp"
+#include "./ConnectionService.def.hpp"
 
 namespace android::telecom
 {
-	class ConnectionService : public android::app::Service
+	// Fields
+	inline JString ConnectionService::SERVICE_INTERFACE()
 	{
-	public:
-		// Fields
-		static JString SERVICE_INTERFACE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConnectionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectionService(QJniObject obj);
-		
-		// Constructors
-		ConnectionService();
-		
-		// Methods
-		void addConference(android::telecom::Conference arg0) const;
-		void addExistingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::Connection arg1) const;
-		void conferenceRemoteConnections(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection arg1) const;
-		void connectionServiceFocusReleased() const;
-		android::telecom::RemoteConnection createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		android::telecom::RemoteConnection createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		JObject getAllConferences() const;
-		JObject getAllConnections() const;
-		JObject onBind(android::content::Intent arg0) const;
-		void onConference(android::telecom::Connection arg0, android::telecom::Connection arg1) const;
-		void onConnectionServiceFocusGained() const;
-		void onConnectionServiceFocusLost() const;
-		android::telecom::Connection onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		void onCreateIncomingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		android::telecom::Connection onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		android::telecom::Connection onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		void onCreateOutgoingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		android::telecom::Connection onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const;
-		void onHandoverFailed(android::telecom::ConnectionRequest arg0, jint arg1) const;
-		void onRemoteConferenceAdded(android::telecom::RemoteConference arg0) const;
-		void onRemoteExistingConnectionAdded(android::telecom::RemoteConnection arg0) const;
-		jboolean onUnbind(android::content::Intent arg0) const;
-	};
+		return getStaticObjectField(
+			"android.telecom.ConnectionService",
+			"SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline ConnectionService::ConnectionService()
+		: android::app::Service(
+			"android.telecom.ConnectionService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ConnectionService::addConference(android::telecom::Conference arg0) const
+	{
+		callMethod<void>(
+			"addConference",
+			"(Landroid/telecom/Conference;)V",
+			arg0.object()
+		);
+	}
+	inline void ConnectionService::addExistingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::Connection arg1) const
+	{
+		callMethod<void>(
+			"addExistingConnection",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/Connection;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ConnectionService::conferenceRemoteConnections(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection arg1) const
+	{
+		callMethod<void>(
+			"conferenceRemoteConnections",
+			"(Landroid/telecom/RemoteConnection;Landroid/telecom/RemoteConnection;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ConnectionService::connectionServiceFocusReleased() const
+	{
+		callMethod<void>(
+			"connectionServiceFocusReleased",
+			"()V"
+		);
+	}
+	inline android::telecom::RemoteConnection ConnectionService::createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		return callObjectMethod(
+			"createRemoteIncomingConnection",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/RemoteConnection;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::telecom::RemoteConnection ConnectionService::createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		return callObjectMethod(
+			"createRemoteOutgoingConnection",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/RemoteConnection;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JObject ConnectionService::getAllConferences() const
+	{
+		return callObjectMethod(
+			"getAllConferences",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JObject ConnectionService::getAllConnections() const
+	{
+		return callObjectMethod(
+			"getAllConnections",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JObject ConnectionService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void ConnectionService::onConference(android::telecom::Connection arg0, android::telecom::Connection arg1) const
+	{
+		callMethod<void>(
+			"onConference",
+			"(Landroid/telecom/Connection;Landroid/telecom/Connection;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ConnectionService::onConnectionServiceFocusGained() const
+	{
+		callMethod<void>(
+			"onConnectionServiceFocusGained",
+			"()V"
+		);
+	}
+	inline void ConnectionService::onConnectionServiceFocusLost() const
+	{
+		callMethod<void>(
+			"onConnectionServiceFocusLost",
+			"()V"
+		);
+	}
+	inline android::telecom::Connection ConnectionService::onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		return callObjectMethod(
+			"onCreateIncomingConnection",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ConnectionService::onCreateIncomingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		callMethod<void>(
+			"onCreateIncomingConnectionFailed",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::telecom::Connection ConnectionService::onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		return callObjectMethod(
+			"onCreateIncomingHandoverConnection",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::telecom::Connection ConnectionService::onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		return callObjectMethod(
+			"onCreateOutgoingConnection",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ConnectionService::onCreateOutgoingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		callMethod<void>(
+			"onCreateOutgoingConnectionFailed",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::telecom::Connection ConnectionService::onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
+	{
+		return callObjectMethod(
+			"onCreateOutgoingHandoverConnection",
+			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ConnectionService::onHandoverFailed(android::telecom::ConnectionRequest arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onHandoverFailed",
+			"(Landroid/telecom/ConnectionRequest;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void ConnectionService::onRemoteConferenceAdded(android::telecom::RemoteConference arg0) const
+	{
+		callMethod<void>(
+			"onRemoteConferenceAdded",
+			"(Landroid/telecom/RemoteConference;)V",
+			arg0.object()
+		);
+	}
+	inline void ConnectionService::onRemoteExistingConnectionAdded(android::telecom::RemoteConnection arg0) const
+	{
+		callMethod<void>(
+			"onRemoteExistingConnectionAdded",
+			"(Landroid/telecom/RemoteConnection;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean ConnectionService::onUnbind(android::content::Intent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onUnbind",
+			"(Landroid/content/Intent;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../app/Service.hpp"
 

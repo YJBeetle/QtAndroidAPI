@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./SAXException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SAXNotSupportedException.def.hpp"
 
 namespace org::xml::sax
 {
-	class SAXNotSupportedException : public org::xml::sax::SAXException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SAXNotSupportedException(const char *className, const char *sig, Ts...agv) : org::xml::sax::SAXException(className, sig, std::forward<Ts>(agv)...) {}
-		SAXNotSupportedException(QJniObject obj);
-		
-		// Constructors
-		SAXNotSupportedException();
-		SAXNotSupportedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SAXNotSupportedException::SAXNotSupportedException()
+		: org::xml::sax::SAXException(
+			"org.xml.sax.SAXNotSupportedException",
+			"()V"
+		) {}
+	inline SAXNotSupportedException::SAXNotSupportedException(JString arg0)
+		: org::xml::sax::SAXException(
+			"org.xml.sax.SAXNotSupportedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace org::xml::sax
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./SAXException.hpp"
 

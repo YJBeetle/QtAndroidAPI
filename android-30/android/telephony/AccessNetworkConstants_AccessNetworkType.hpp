@@ -1,28 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AccessNetworkConstants_AccessNetworkType.def.hpp"
 
 namespace android::telephony
 {
-	class AccessNetworkConstants_AccessNetworkType : public JObject
+	// Fields
+	inline jint AccessNetworkConstants_AccessNetworkType::CDMA2000()
 	{
-	public:
-		// Fields
-		static jint CDMA2000();
-		static jint EUTRAN();
-		static jint GERAN();
-		static jint IWLAN();
-		static jint NGRAN();
-		static jint UNKNOWN();
-		static jint UTRAN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessNetworkConstants_AccessNetworkType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants_AccessNetworkType(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$AccessNetworkType",
+			"CDMA2000"
+		);
+	}
+	inline jint AccessNetworkConstants_AccessNetworkType::EUTRAN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$AccessNetworkType",
+			"EUTRAN"
+		);
+	}
+	inline jint AccessNetworkConstants_AccessNetworkType::GERAN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$AccessNetworkType",
+			"GERAN"
+		);
+	}
+	inline jint AccessNetworkConstants_AccessNetworkType::IWLAN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$AccessNetworkType",
+			"IWLAN"
+		);
+	}
+	inline jint AccessNetworkConstants_AccessNetworkType::NGRAN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$AccessNetworkType",
+			"NGRAN"
+		);
+	}
+	inline jint AccessNetworkConstants_AccessNetworkType::UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$AccessNetworkType",
+			"UNKNOWN"
+		);
+	}
+	inline jint AccessNetworkConstants_AccessNetworkType::UTRAN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$AccessNetworkType",
+			"UTRAN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

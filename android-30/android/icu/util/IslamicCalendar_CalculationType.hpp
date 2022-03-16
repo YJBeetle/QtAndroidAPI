@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./IslamicCalendar_CalculationType.def.hpp"
 
 namespace android::icu::util
 {
-	class IslamicCalendar_CalculationType : public java::lang::Enum
+	// Fields
+	inline android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC()
 	{
-	public:
-		// Fields
-		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC();
-		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_CIVIL();
-		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_TBLA();
-		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_UMALQURA();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IslamicCalendar_CalculationType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		IslamicCalendar_CalculationType(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::util::IslamicCalendar_CalculationType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.util.IslamicCalendar$CalculationType",
+			"ISLAMIC",
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
+	}
+	inline android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_CIVIL()
+	{
+		return getStaticObjectField(
+			"android.icu.util.IslamicCalendar$CalculationType",
+			"ISLAMIC_CIVIL",
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
+	}
+	inline android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_TBLA()
+	{
+		return getStaticObjectField(
+			"android.icu.util.IslamicCalendar$CalculationType",
+			"ISLAMIC_TBLA",
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
+	}
+	inline android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_UMALQURA()
+	{
+		return getStaticObjectField(
+			"android.icu.util.IslamicCalendar$CalculationType",
+			"ISLAMIC_UMALQURA",
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.IslamicCalendar$CalculationType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/util/IslamicCalendar$CalculationType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray IslamicCalendar_CalculationType::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.IslamicCalendar$CalculationType",
+			"values",
+			"()[Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

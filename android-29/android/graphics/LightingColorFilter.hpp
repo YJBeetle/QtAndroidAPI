@@ -1,24 +1,37 @@
 #pragma once
 
-#include "./ColorFilter.hpp"
+#include "./LightingColorFilter.def.hpp"
 
 namespace android::graphics
 {
-	class LightingColorFilter : public android::graphics::ColorFilter
+	// Fields
+	
+	// Constructors
+	inline LightingColorFilter::LightingColorFilter(jint arg0, jint arg1)
+		: android::graphics::ColorFilter(
+			"android.graphics.LightingColorFilter",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jint LightingColorFilter::getColorAdd() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LightingColorFilter(const char *className, const char *sig, Ts...agv) : android::graphics::ColorFilter(className, sig, std::forward<Ts>(agv)...) {}
-		LightingColorFilter(QJniObject obj);
-		
-		// Constructors
-		LightingColorFilter(jint arg0, jint arg1);
-		
-		// Methods
-		jint getColorAdd() const;
-		jint getColorMultiply() const;
-	};
+		return callMethod<jint>(
+			"getColorAdd",
+			"()I"
+		);
+	}
+	inline jint LightingColorFilter::getColorMultiply() const
+	{
+		return callMethod<jint>(
+			"getColorMultiply",
+			"()I"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "./ColorFilter.hpp"
 

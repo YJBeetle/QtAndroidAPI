@@ -1,49 +1,112 @@
 #pragma once
 
+#include "../../JIntArray.hpp"
+#include "./NetworkCapabilities.def.hpp"
+#include "./NetworkSpecifier.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-class JIntArray;
-namespace android::net
-{
-	class NetworkCapabilities;
-}
-namespace android::net
-{
-	class NetworkSpecifier;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./NetworkRequest.def.hpp"
 
 namespace android::net
 {
-	class NetworkRequest : public JObject
+	// Fields
+	inline JObject NetworkRequest::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean canBeSatisfiedBy(android::net::NetworkCapabilities arg0) const;
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JIntArray getCapabilities() const;
-		android::net::NetworkSpecifier getNetworkSpecifier() const;
-		JIntArray getTransportTypes() const;
-		jboolean hasCapability(jint arg0) const;
-		jboolean hasTransport(jint arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.NetworkRequest",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean NetworkRequest::canBeSatisfiedBy(android::net::NetworkCapabilities arg0) const
+	{
+		return callMethod<jboolean>(
+			"canBeSatisfiedBy",
+			"(Landroid/net/NetworkCapabilities;)Z",
+			arg0.object()
+		);
+	}
+	inline jint NetworkRequest::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean NetworkRequest::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JIntArray NetworkRequest::getCapabilities() const
+	{
+		return callObjectMethod(
+			"getCapabilities",
+			"()[I"
+		);
+	}
+	inline android::net::NetworkSpecifier NetworkRequest::getNetworkSpecifier() const
+	{
+		return callObjectMethod(
+			"getNetworkSpecifier",
+			"()Landroid/net/NetworkSpecifier;"
+		);
+	}
+	inline JIntArray NetworkRequest::getTransportTypes() const
+	{
+		return callObjectMethod(
+			"getTransportTypes",
+			"()[I"
+		);
+	}
+	inline jboolean NetworkRequest::hasCapability(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"hasCapability",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean NetworkRequest::hasTransport(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"hasTransport",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jint NetworkRequest::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString NetworkRequest::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void NetworkRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

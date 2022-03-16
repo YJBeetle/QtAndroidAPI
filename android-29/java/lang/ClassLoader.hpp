@@ -1,85 +1,190 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../io/File.def.hpp"
+#include "../io/InputStream.def.hpp"
+#include "../../JClass.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-class JObjectArray;
-class JArray;
-class JArray;
-namespace java::io
-{
-	class File;
-}
-namespace java::io
-{
-	class InputStream;
-}
-class JClass;
-class JObject;
-namespace java::lang
-{
-	class Package;
-}
-class JString;
-namespace java::lang
-{
-	class Void;
-}
-namespace java::net
-{
-	class URL;
-}
-namespace java::nio
-{
-	class ByteBuffer;
-}
-namespace java::security
-{
-	class CodeSource;
-}
-namespace java::security
-{
-	class ProtectionDomain;
-}
-namespace java::util::concurrent
-{
-	class ConcurrentHashMap;
-}
+#include "./Package.def.hpp"
+#include "../../JString.hpp"
+#include "./Void.def.hpp"
+#include "../net/URL.def.hpp"
+#include "../nio/ByteBuffer.def.hpp"
+#include "../security/CodeSource.def.hpp"
+#include "../security/ProtectionDomain.def.hpp"
+#include "../util/concurrent/ConcurrentHashMap.def.hpp"
+#include "./ClassLoader.def.hpp"
 
 namespace java::lang
 {
-	class ClassLoader : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::lang::ClassLoader ClassLoader::getPlatformClassLoader()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ClassLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClassLoader(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::lang::ClassLoader getPlatformClassLoader();
-		static java::lang::ClassLoader getSystemClassLoader();
-		static java::net::URL getSystemResource(JString arg0);
-		static java::io::InputStream getSystemResourceAsStream(JString arg0);
-		static JObject getSystemResources(JString arg0);
-		void clearAssertionStatus() const;
-		java::lang::Package getDefinedPackage(JString arg0) const;
-		JArray getDefinedPackages() const;
-		JString getName() const;
-		java::lang::ClassLoader getParent() const;
-		java::net::URL getResource(JString arg0) const;
-		java::io::InputStream getResourceAsStream(JString arg0) const;
-		JObject getResources(JString arg0) const;
-		JObject getUnnamedModule() const;
-		jboolean isRegisteredAsParallelCapable() const;
-		JClass loadClass(JString arg0) const;
-		JObject resources(JString arg0) const;
-		void setClassAssertionStatus(JString arg0, jboolean arg1) const;
-		void setDefaultAssertionStatus(jboolean arg0) const;
-		void setPackageAssertionStatus(JString arg0, jboolean arg1) const;
-	};
+		return callStaticObjectMethod(
+			"java.lang.ClassLoader",
+			"getPlatformClassLoader",
+			"()Ljava/lang/ClassLoader;"
+		);
+	}
+	inline java::lang::ClassLoader ClassLoader::getSystemClassLoader()
+	{
+		return callStaticObjectMethod(
+			"java.lang.ClassLoader",
+			"getSystemClassLoader",
+			"()Ljava/lang/ClassLoader;"
+		);
+	}
+	inline java::net::URL ClassLoader::getSystemResource(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.ClassLoader",
+			"getSystemResource",
+			"(Ljava/lang/String;)Ljava/net/URL;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::io::InputStream ClassLoader::getSystemResourceAsStream(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.ClassLoader",
+			"getSystemResourceAsStream",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject ClassLoader::getSystemResources(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.ClassLoader",
+			"getSystemResources",
+			"(Ljava/lang/String;)Ljava/util/Enumeration;",
+			arg0.object<jstring>()
+		);
+	}
+	inline void ClassLoader::clearAssertionStatus() const
+	{
+		callMethod<void>(
+			"clearAssertionStatus",
+			"()V"
+		);
+	}
+	inline java::lang::Package ClassLoader::getDefinedPackage(JString arg0) const
+	{
+		return callObjectMethod(
+			"getDefinedPackage",
+			"(Ljava/lang/String;)Ljava/lang/Package;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ClassLoader::getDefinedPackages() const
+	{
+		return callObjectMethod(
+			"getDefinedPackages",
+			"()[Ljava/lang/Package;"
+		);
+	}
+	inline JString ClassLoader::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::lang::ClassLoader ClassLoader::getParent() const
+	{
+		return callObjectMethod(
+			"getParent",
+			"()Ljava/lang/ClassLoader;"
+		);
+	}
+	inline java::net::URL ClassLoader::getResource(JString arg0) const
+	{
+		return callObjectMethod(
+			"getResource",
+			"(Ljava/lang/String;)Ljava/net/URL;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::io::InputStream ClassLoader::getResourceAsStream(JString arg0) const
+	{
+		return callObjectMethod(
+			"getResourceAsStream",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject ClassLoader::getResources(JString arg0) const
+	{
+		return callObjectMethod(
+			"getResources",
+			"(Ljava/lang/String;)Ljava/util/Enumeration;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject ClassLoader::getUnnamedModule() const
+	{
+		return callObjectMethod(
+			"getUnnamedModule",
+			"()Ljava/lang/Module;"
+		);
+	}
+	inline jboolean ClassLoader::isRegisteredAsParallelCapable() const
+	{
+		return callMethod<jboolean>(
+			"isRegisteredAsParallelCapable",
+			"()Z"
+		);
+	}
+	inline JClass ClassLoader::loadClass(JString arg0) const
+	{
+		return callObjectMethod(
+			"loadClass",
+			"(Ljava/lang/String;)Ljava/lang/Class;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject ClassLoader::resources(JString arg0) const
+	{
+		return callObjectMethod(
+			"resources",
+			"(Ljava/lang/String;)Ljava/util/stream/Stream;",
+			arg0.object<jstring>()
+		);
+	}
+	inline void ClassLoader::setClassAssertionStatus(JString arg0, jboolean arg1) const
+	{
+		callMethod<void>(
+			"setClassAssertionStatus",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void ClassLoader::setDefaultAssertionStatus(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDefaultAssertionStatus",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ClassLoader::setPackageAssertionStatus(JString arg0, jboolean arg1) const
+	{
+		callMethod<void>(
+			"setPackageAssertionStatus",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
 

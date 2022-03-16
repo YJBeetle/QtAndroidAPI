@@ -1,30 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./DriverPropertyInfo.def.hpp"
 
 namespace java::sql
 {
-	class DriverPropertyInfo : public JObject
+	// Fields
+	inline JArray DriverPropertyInfo::choices()
 	{
-	public:
-		// Fields
-		JArray choices();
-		JString description();
-		JString name();
-		jboolean required();
-		JString value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DriverPropertyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DriverPropertyInfo(QJniObject obj);
-		
-		// Constructors
-		DriverPropertyInfo(JString arg0, JString arg1);
-		
-		// Methods
-	};
+		return getObjectField(
+			"choices",
+			"[Ljava/lang/String;"
+		);
+	}
+	inline JString DriverPropertyInfo::description()
+	{
+		return getObjectField(
+			"description",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DriverPropertyInfo::name()
+	{
+		return getObjectField(
+			"name",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jboolean DriverPropertyInfo::required()
+	{
+		return getField<jboolean>(
+			"required"
+		);
+	}
+	inline JString DriverPropertyInfo::value()
+	{
+		return getObjectField(
+			"value",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline DriverPropertyInfo::DriverPropertyInfo(JString arg0, JString arg1)
+		: JObject(
+			"java.sql.DriverPropertyInfo",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::sql
+
+// Base class headers
 

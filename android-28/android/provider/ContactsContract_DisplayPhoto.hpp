@@ -1,31 +1,49 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_DisplayPhoto.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_DisplayPhoto : public JObject
+	// Fields
+	inline android::net::Uri ContactsContract_DisplayPhoto::CONTENT_MAX_DIMENSIONS_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_MAX_DIMENSIONS_URI();
-		static android::net::Uri CONTENT_URI();
-		static JString DISPLAY_MAX_DIM();
-		static JString THUMBNAIL_MAX_DIM();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_DisplayPhoto(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_DisplayPhoto(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"CONTENT_MAX_DIMENSIONS_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri ContactsContract_DisplayPhoto::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString ContactsContract_DisplayPhoto::DISPLAY_MAX_DIM()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"DISPLAY_MAX_DIM",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_DisplayPhoto::THUMBNAIL_MAX_DIM()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"THUMBNAIL_MAX_DIM",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

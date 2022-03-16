@@ -1,30 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
-namespace java::security::cert
-{
-	class Certificate;
-}
+#include "../../../JString.hpp"
+#include "./Certificate.def.hpp"
+#include "./CRL.def.hpp"
 
 namespace java::security::cert
 {
-	class CRL : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString CRL::getType() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CRL(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CRL(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getType() const;
-		jboolean isRevoked(java::security::cert::Certificate arg0) const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean CRL::isRevoked(java::security::cert::Certificate arg0) const
+	{
+		return callMethod<jboolean>(
+			"isRevoked",
+			"(Ljava/security/cert/Certificate;)Z",
+			arg0.object()
+		);
+	}
+	inline JString CRL::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

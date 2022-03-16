@@ -1,29 +1,49 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./CollectionCertStoreParameters.def.hpp"
 
 namespace java::security::cert
 {
-	class CollectionCertStoreParameters : public JObject
+	// Fields
+	
+	// Constructors
+	inline CollectionCertStoreParameters::CollectionCertStoreParameters()
+		: JObject(
+			"java.security.cert.CollectionCertStoreParameters",
+			"()V"
+		) {}
+	inline CollectionCertStoreParameters::CollectionCertStoreParameters(JObject arg0)
+		: JObject(
+			"java.security.cert.CollectionCertStoreParameters",
+			"(Ljava/util/Collection;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject CollectionCertStoreParameters::clone() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CollectionCertStoreParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CollectionCertStoreParameters(QJniObject obj);
-		
-		// Constructors
-		CollectionCertStoreParameters();
-		CollectionCertStoreParameters(JObject arg0);
-		
-		// Methods
-		JObject clone() const;
-		JObject getCollection() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject CollectionCertStoreParameters::getCollection() const
+	{
+		return callObjectMethod(
+			"getCollection",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JString CollectionCertStoreParameters::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

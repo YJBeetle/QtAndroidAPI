@@ -1,52 +1,141 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./NetworkInfo_DetailedState.def.hpp"
+#include "./NetworkInfo_State.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./NetworkInfo.def.hpp"
 
 namespace android::net
 {
-	class NetworkInfo_DetailedState;
-}
-namespace android::net
-{
-	class NetworkInfo_State;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::net
-{
-	class NetworkInfo : public JObject
+	// Fields
+	inline JObject NetworkInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::net::NetworkInfo_DetailedState getDetailedState() const;
-		JString getExtraInfo() const;
-		JString getReason() const;
-		android::net::NetworkInfo_State getState() const;
-		jint getSubtype() const;
-		JString getSubtypeName() const;
-		jint getType() const;
-		JString getTypeName() const;
-		jboolean isAvailable() const;
-		jboolean isConnected() const;
-		jboolean isConnectedOrConnecting() const;
-		jboolean isFailover() const;
-		jboolean isRoaming() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.NetworkInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint NetworkInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::net::NetworkInfo_DetailedState NetworkInfo::getDetailedState() const
+	{
+		return callObjectMethod(
+			"getDetailedState",
+			"()Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	inline JString NetworkInfo::getExtraInfo() const
+	{
+		return callObjectMethod(
+			"getExtraInfo",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString NetworkInfo::getReason() const
+	{
+		return callObjectMethod(
+			"getReason",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::net::NetworkInfo_State NetworkInfo::getState() const
+	{
+		return callObjectMethod(
+			"getState",
+			"()Landroid/net/NetworkInfo$State;"
+		);
+	}
+	inline jint NetworkInfo::getSubtype() const
+	{
+		return callMethod<jint>(
+			"getSubtype",
+			"()I"
+		);
+	}
+	inline JString NetworkInfo::getSubtypeName() const
+	{
+		return callObjectMethod(
+			"getSubtypeName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint NetworkInfo::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline JString NetworkInfo::getTypeName() const
+	{
+		return callObjectMethod(
+			"getTypeName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean NetworkInfo::isAvailable() const
+	{
+		return callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
+		);
+	}
+	inline jboolean NetworkInfo::isConnected() const
+	{
+		return callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
+	inline jboolean NetworkInfo::isConnectedOrConnecting() const
+	{
+		return callMethod<jboolean>(
+			"isConnectedOrConnecting",
+			"()Z"
+		);
+	}
+	inline jboolean NetworkInfo::isFailover() const
+	{
+		return callMethod<jboolean>(
+			"isFailover",
+			"()Z"
+		);
+	}
+	inline jboolean NetworkInfo::isRoaming() const
+	{
+		return callMethod<jboolean>(
+			"isRoaming",
+			"()Z"
+		);
+	}
+	inline JString NetworkInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void NetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

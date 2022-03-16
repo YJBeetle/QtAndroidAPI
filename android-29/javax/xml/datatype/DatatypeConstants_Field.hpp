@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DatatypeConstants_Field.def.hpp"
 
 namespace javax::xml::datatype
 {
-	class DatatypeConstants_Field : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint DatatypeConstants_Field::getId() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DatatypeConstants_Field(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatatypeConstants_Field(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getId() const;
-		JString toString() const;
-	};
+		return callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	inline JString DatatypeConstants_Field::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace javax::xml::datatype
+
+// Base class headers
 

@@ -1,30 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::text
-{
-	class TextPaint;
-}
+#include "../TextPaint.def.hpp"
+#include "./CharacterStyle.def.hpp"
 
 namespace android::text::style
 {
-	class CharacterStyle : public JObject
+	// Fields
+	
+	// Constructors
+	inline CharacterStyle::CharacterStyle()
+		: JObject(
+			"android.text.style.CharacterStyle",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::style::CharacterStyle CharacterStyle::wrap(android::text::style::CharacterStyle arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CharacterStyle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharacterStyle(QJniObject obj);
-		
-		// Constructors
-		CharacterStyle();
-		
-		// Methods
-		static android::text::style::CharacterStyle wrap(android::text::style::CharacterStyle arg0);
-		android::text::style::CharacterStyle getUnderlying() const;
-		void updateDrawState(android::text::TextPaint arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.text.style.CharacterStyle",
+			"wrap",
+			"(Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;",
+			arg0.object()
+		);
+	}
+	inline android::text::style::CharacterStyle CharacterStyle::getUnderlying() const
+	{
+		return callObjectMethod(
+			"getUnderlying",
+			"()Landroid/text/style/CharacterStyle;"
+		);
+	}
+	inline void CharacterStyle::updateDrawState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
 

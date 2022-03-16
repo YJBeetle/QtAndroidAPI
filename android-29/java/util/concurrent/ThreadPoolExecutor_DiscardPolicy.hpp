@@ -1,28 +1,30 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ThreadPoolExecutor.def.hpp"
+#include "./ThreadPoolExecutor_DiscardPolicy.def.hpp"
 
 namespace java::util::concurrent
 {
-	class ThreadPoolExecutor;
-}
-
-namespace java::util::concurrent
-{
-	class ThreadPoolExecutor_DiscardPolicy : public JObject
+	// Fields
+	
+	// Constructors
+	inline ThreadPoolExecutor_DiscardPolicy::ThreadPoolExecutor_DiscardPolicy()
+		: JObject(
+			"java.util.concurrent.ThreadPoolExecutor$DiscardPolicy",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ThreadPoolExecutor_DiscardPolicy::rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ThreadPoolExecutor_DiscardPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadPoolExecutor_DiscardPolicy(QJniObject obj);
-		
-		// Constructors
-		ThreadPoolExecutor_DiscardPolicy();
-		
-		// Methods
-		void rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1) const;
-	};
+		callMethod<void>(
+			"rejectedExecution",
+			"(Ljava/lang/Runnable;Ljava/util/concurrent/ThreadPoolExecutor;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
 

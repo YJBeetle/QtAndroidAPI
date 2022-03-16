@@ -1,40 +1,106 @@
 #pragma once
 
-#include "./BaseBundle.hpp"
+#include "./Parcel.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./PersistableBundle.def.hpp"
 
 namespace android::os
 {
-	class Parcel;
-}
-class JObject;
-class JString;
-
-namespace android::os
-{
-	class PersistableBundle : public android::os::BaseBundle
+	// Fields
+	inline JObject PersistableBundle::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static android::os::PersistableBundle EMPTY();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PersistableBundle(const char *className, const char *sig, Ts...agv) : android::os::BaseBundle(className, sig, std::forward<Ts>(agv)...) {}
-		PersistableBundle(QJniObject obj);
-		
-		// Constructors
-		PersistableBundle();
-		PersistableBundle(android::os::PersistableBundle &arg0);
-		PersistableBundle(jint arg0);
-		
-		// Methods
-		JObject clone() const;
-		android::os::PersistableBundle deepCopy() const;
-		jint describeContents() const;
-		android::os::PersistableBundle getPersistableBundle(JString arg0) const;
-		void putPersistableBundle(JString arg0, android::os::PersistableBundle arg1) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.os.PersistableBundle",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline android::os::PersistableBundle PersistableBundle::EMPTY()
+	{
+		return getStaticObjectField(
+			"android.os.PersistableBundle",
+			"EMPTY",
+			"Landroid/os/PersistableBundle;"
+		);
+	}
+	
+	// Constructors
+	inline PersistableBundle::PersistableBundle()
+		: android::os::BaseBundle(
+			"android.os.PersistableBundle",
+			"()V"
+		) {}
+	inline PersistableBundle::PersistableBundle(android::os::PersistableBundle &arg0)
+		: android::os::BaseBundle(
+			"android.os.PersistableBundle",
+			"(Landroid/os/PersistableBundle;)V",
+			arg0.object()
+		) {}
+	inline PersistableBundle::PersistableBundle(jint arg0)
+		: android::os::BaseBundle(
+			"android.os.PersistableBundle",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline JObject PersistableBundle::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline android::os::PersistableBundle PersistableBundle::deepCopy() const
+	{
+		return callObjectMethod(
+			"deepCopy",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	inline jint PersistableBundle::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::os::PersistableBundle PersistableBundle::getPersistableBundle(JString arg0) const
+	{
+		return callObjectMethod(
+			"getPersistableBundle",
+			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
+			arg0.object<jstring>()
+		);
+	}
+	inline void PersistableBundle::putPersistableBundle(JString arg0, android::os::PersistableBundle arg1) const
+	{
+		callMethod<void>(
+			"putPersistableBundle",
+			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JString PersistableBundle::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PersistableBundle::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::os
+
+// Base class headers
+#include "./BaseBundle.hpp"
 

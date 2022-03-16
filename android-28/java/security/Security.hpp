@@ -1,55 +1,126 @@
 #pragma once
 
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../io/File.def.hpp"
+#include "../../JClass.hpp"
 #include "../../JObject.hpp"
-
-class JObjectArray;
-class JArray;
-class JArray;
-namespace java::io
-{
-	class File;
-}
-class JClass;
-class JObject;
-class JString;
-namespace java::security
-{
-	class Provider;
-}
-namespace java::util
-{
-	class LinkedHashSet;
-}
-namespace java::util
-{
-	class Properties;
-}
+#include "../../JString.hpp"
+#include "./Provider.def.hpp"
+#include "../util/LinkedHashSet.def.hpp"
+#include "../util/Properties.def.hpp"
+#include "./Security.def.hpp"
 
 namespace java::security
 {
-	class Security : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint Security::addProvider(java::security::Provider arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Security(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Security(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jint addProvider(java::security::Provider arg0);
-		static JString getAlgorithmProperty(JString arg0, JString arg1);
-		static JObject getAlgorithms(JString arg0);
-		static JString getProperty(JString arg0);
-		static java::security::Provider getProvider(JString arg0);
-		static JArray getProviders();
-		static JArray getProviders(JString arg0);
-		static JArray getProviders(JObject arg0);
-		static jint insertProviderAt(java::security::Provider arg0, jint arg1);
-		static void removeProvider(JString arg0);
-		static void setProperty(JString arg0, JString arg1);
-	};
+		return callStaticMethod<jint>(
+			"java.security.Security",
+			"addProvider",
+			"(Ljava/security/Provider;)I",
+			arg0.object()
+		);
+	}
+	inline JString Security::getAlgorithmProperty(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.Security",
+			"getAlgorithmProperty",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline JObject Security::getAlgorithms(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.Security",
+			"getAlgorithms",
+			"(Ljava/lang/String;)Ljava/util/Set;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString Security::getProperty(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.Security",
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::security::Provider Security::getProvider(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.Security",
+			"getProvider",
+			"(Ljava/lang/String;)Ljava/security/Provider;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Security::getProviders()
+	{
+		return callStaticObjectMethod(
+			"java.security.Security",
+			"getProviders",
+			"()[Ljava/security/Provider;"
+		);
+	}
+	inline JArray Security::getProviders(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.Security",
+			"getProviders",
+			"(Ljava/lang/String;)[Ljava/security/Provider;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Security::getProviders(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.Security",
+			"getProviders",
+			"(Ljava/util/Map;)[Ljava/security/Provider;",
+			arg0.object()
+		);
+	}
+	inline jint Security::insertProviderAt(java::security::Provider arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.security.Security",
+			"insertProviderAt",
+			"(Ljava/security/Provider;I)I",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void Security::removeProvider(JString arg0)
+	{
+		callStaticMethod<void>(
+			"java.security.Security",
+			"removeProvider",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Security::setProperty(JString arg0, JString arg1)
+	{
+		callStaticMethod<void>(
+			"java.security.Security",
+			"setProperty",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

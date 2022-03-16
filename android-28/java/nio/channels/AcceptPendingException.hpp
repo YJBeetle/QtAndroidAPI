@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalStateException.hpp"
+#include "./AcceptPendingException.def.hpp"
 
 namespace java::nio::channels
 {
-	class AcceptPendingException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AcceptPendingException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		AcceptPendingException(QJniObject obj);
-		
-		// Constructors
-		AcceptPendingException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AcceptPendingException::AcceptPendingException()
+		: java::lang::IllegalStateException(
+			"java.nio.channels.AcceptPendingException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalStateException.hpp"
 

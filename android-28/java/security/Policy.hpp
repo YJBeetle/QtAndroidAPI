@@ -1,65 +1,138 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::security
-{
-	class CodeSource;
-}
-namespace java::security
-{
-	class NoSuchAlgorithmException;
-}
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
-namespace java::security
-{
-	class ProtectionDomain;
-}
-namespace java::security
-{
-	class Provider;
-}
-namespace java::util
-{
-	class WeakHashMap;
-}
+#include "../../JString.hpp"
+#include "./CodeSource.def.hpp"
+#include "./NoSuchAlgorithmException.def.hpp"
+#include "./Permission.def.hpp"
+#include "./PermissionCollection.def.hpp"
+#include "./ProtectionDomain.def.hpp"
+#include "./Provider.def.hpp"
+#include "../util/WeakHashMap.def.hpp"
+#include "./Policy.def.hpp"
 
 namespace java::security
 {
-	class Policy : public JObject
+	// Fields
+	inline java::security::PermissionCollection Policy::UNSUPPORTED_EMPTY_COLLECTION()
 	{
-	public:
-		// Fields
-		static java::security::PermissionCollection UNSUPPORTED_EMPTY_COLLECTION();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Policy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Policy(QJniObject obj);
-		
-		// Constructors
-		Policy();
-		
-		// Methods
-		static java::security::Policy getInstance(JString arg0, JObject arg1);
-		static java::security::Policy getInstance(JString arg0, JObject arg1, JString arg2);
-		static java::security::Policy getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
-		static java::security::Policy getPolicy();
-		static void setPolicy(java::security::Policy arg0);
-		JObject getParameters() const;
-		java::security::PermissionCollection getPermissions(java::security::CodeSource arg0) const;
-		java::security::PermissionCollection getPermissions(java::security::ProtectionDomain arg0) const;
-		java::security::Provider getProvider() const;
-		JString getType() const;
-		jboolean implies(java::security::ProtectionDomain arg0, java::security::Permission arg1) const;
-		void refresh() const;
-	};
+		return getStaticObjectField(
+			"java.security.Policy",
+			"UNSUPPORTED_EMPTY_COLLECTION",
+			"Ljava/security/PermissionCollection;"
+		);
+	}
+	
+	// Constructors
+	inline Policy::Policy()
+		: JObject(
+			"java.security.Policy",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::security::Policy Policy::getInstance(JString arg0, JObject arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.Policy",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Policy$Parameters;)Ljava/security/Policy;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline java::security::Policy Policy::getInstance(JString arg0, JObject arg1, JString arg2)
+	{
+		return callStaticObjectMethod(
+			"java.security.Policy",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/lang/String;)Ljava/security/Policy;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object<jstring>()
+		);
+	}
+	inline java::security::Policy Policy::getInstance(JString arg0, JObject arg1, java::security::Provider arg2)
+	{
+		return callStaticObjectMethod(
+			"java.security.Policy",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/security/Provider;)Ljava/security/Policy;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline java::security::Policy Policy::getPolicy()
+	{
+		return callStaticObjectMethod(
+			"java.security.Policy",
+			"getPolicy",
+			"()Ljava/security/Policy;"
+		);
+	}
+	inline void Policy::setPolicy(java::security::Policy arg0)
+	{
+		callStaticMethod<void>(
+			"java.security.Policy",
+			"setPolicy",
+			"(Ljava/security/Policy;)V",
+			arg0.object()
+		);
+	}
+	inline JObject Policy::getParameters() const
+	{
+		return callObjectMethod(
+			"getParameters",
+			"()Ljava/security/Policy$Parameters;"
+		);
+	}
+	inline java::security::PermissionCollection Policy::getPermissions(java::security::CodeSource arg0) const
+	{
+		return callObjectMethod(
+			"getPermissions",
+			"(Ljava/security/CodeSource;)Ljava/security/PermissionCollection;",
+			arg0.object()
+		);
+	}
+	inline java::security::PermissionCollection Policy::getPermissions(java::security::ProtectionDomain arg0) const
+	{
+		return callObjectMethod(
+			"getPermissions",
+			"(Ljava/security/ProtectionDomain;)Ljava/security/PermissionCollection;",
+			arg0.object()
+		);
+	}
+	inline java::security::Provider Policy::getProvider() const
+	{
+		return callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	inline JString Policy::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean Policy::implies(java::security::ProtectionDomain arg0, java::security::Permission arg1) const
+	{
+		return callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/ProtectionDomain;Ljava/security/Permission;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void Policy::refresh() const
+	{
+		callMethod<void>(
+			"refresh",
+			"()V"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

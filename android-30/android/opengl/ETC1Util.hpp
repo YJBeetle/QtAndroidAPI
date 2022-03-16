@@ -1,45 +1,92 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ETC1Util_ETC1Texture.def.hpp"
+#include "../../java/io/InputStream.def.hpp"
+#include "../../java/io/OutputStream.def.hpp"
+#include "../../java/nio/Buffer.def.hpp"
+#include "./ETC1Util.def.hpp"
 
 namespace android::opengl
 {
-	class ETC1Util_ETC1Texture;
-}
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-namespace java::nio
-{
-	class Buffer;
-}
-
-namespace android::opengl
-{
-	class ETC1Util : public JObject
+	// Fields
+	
+	// Constructors
+	inline ETC1Util::ETC1Util()
+		: JObject(
+			"android.opengl.ETC1Util",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::opengl::ETC1Util_ETC1Texture ETC1Util::compressTexture(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ETC1Util(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ETC1Util(QJniObject obj);
-		
-		// Constructors
-		ETC1Util();
-		
-		// Methods
-		static android::opengl::ETC1Util_ETC1Texture compressTexture(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static android::opengl::ETC1Util_ETC1Texture createTexture(java::io::InputStream arg0);
-		static jboolean isETC1Supported();
-		static void loadTexture(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::opengl::ETC1Util_ETC1Texture arg5);
-		static void loadTexture(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, java::io::InputStream arg5);
-		static void writeTexture(android::opengl::ETC1Util_ETC1Texture arg0, java::io::OutputStream arg1);
-	};
+		return callStaticObjectMethod(
+			"android.opengl.ETC1Util",
+			"compressTexture",
+			"(Ljava/nio/Buffer;IIII)Landroid/opengl/ETC1Util$ETC1Texture;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	inline android::opengl::ETC1Util_ETC1Texture ETC1Util::createTexture(java::io::InputStream arg0)
+	{
+		return callStaticObjectMethod(
+			"android.opengl.ETC1Util",
+			"createTexture",
+			"(Ljava/io/InputStream;)Landroid/opengl/ETC1Util$ETC1Texture;",
+			arg0.object()
+		);
+	}
+	inline jboolean ETC1Util::isETC1Supported()
+	{
+		return callStaticMethod<jboolean>(
+			"android.opengl.ETC1Util",
+			"isETC1Supported",
+			"()Z"
+		);
+	}
+	inline void ETC1Util::loadTexture(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::opengl::ETC1Util_ETC1Texture arg5)
+	{
+		callStaticMethod<void>(
+			"android.opengl.ETC1Util",
+			"loadTexture",
+			"(IIIIILandroid/opengl/ETC1Util$ETC1Texture;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.object()
+		);
+	}
+	inline void ETC1Util::loadTexture(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, java::io::InputStream arg5)
+	{
+		callStaticMethod<void>(
+			"android.opengl.ETC1Util",
+			"loadTexture",
+			"(IIIIILjava/io/InputStream;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.object()
+		);
+	}
+	inline void ETC1Util::writeTexture(android::opengl::ETC1Util_ETC1Texture arg0, java::io::OutputStream arg1)
+	{
+		callStaticMethod<void>(
+			"android.opengl.ETC1Util",
+			"writeTexture",
+			"(Landroid/opengl/ETC1Util$ETC1Texture;Ljava/io/OutputStream;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::opengl
+
+// Base class headers
 

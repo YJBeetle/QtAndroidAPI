@@ -1,0 +1,83 @@
+#pragma once
+
+#include "../../../JObject.hpp"
+
+class JIntArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+namespace android::content::pm
+{
+	class ApplicationInfo;
+}
+namespace android::content::pm
+{
+	class SigningInfo;
+}
+namespace android::os
+{
+	class Parcel;
+}
+class JString;
+
+namespace android::content::pm
+{
+	class PackageInfo : public JObject
+	{
+	public:
+		// Fields
+		static JObject CREATOR();
+		static jint INSTALL_LOCATION_AUTO();
+		static jint INSTALL_LOCATION_INTERNAL_ONLY();
+		static jint INSTALL_LOCATION_PREFER_EXTERNAL();
+		static jint REQUESTED_PERMISSION_GRANTED();
+		JArray activities();
+		android::content::pm::ApplicationInfo applicationInfo();
+		jint baseRevisionCode();
+		JArray configPreferences();
+		JArray featureGroups();
+		jlong firstInstallTime();
+		JIntArray gids();
+		jint installLocation();
+		JArray instrumentation();
+		jlong lastUpdateTime();
+		JString packageName();
+		JArray permissions();
+		JArray providers();
+		JArray receivers();
+		JArray reqFeatures();
+		JArray requestedPermissions();
+		JIntArray requestedPermissionsFlags();
+		JArray services();
+		JString sharedUserId();
+		jint sharedUserLabel();
+		JArray signatures();
+		android::content::pm::SigningInfo signingInfo();
+		JArray splitNames();
+		JIntArray splitRevisionCodes();
+		jint versionCode();
+		JString versionName();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit PackageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		PackageInfo(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		PackageInfo();
+		
+		// Methods
+		jint describeContents() const;
+		jlong getLongVersionCode() const;
+		void setLongVersionCode(jlong arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
+	};
+} // namespace android::content::pm
+

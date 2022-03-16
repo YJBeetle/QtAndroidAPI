@@ -1,43 +1,150 @@
 #pragma once
 
-#include "../helpers/DefaultHandler.hpp"
-
-class JCharArray;
-class JString;
-namespace org::xml::sax
-{
-	class InputSource;
-}
+#include "../../../../JCharArray.hpp"
+#include "../../../../JString.hpp"
+#include "../InputSource.def.hpp"
+#include "./DefaultHandler2.def.hpp"
 
 namespace org::xml::sax::ext
 {
-	class DefaultHandler2 : public org::xml::sax::helpers::DefaultHandler
+	// Fields
+	
+	// Constructors
+	inline DefaultHandler2::DefaultHandler2()
+		: org::xml::sax::helpers::DefaultHandler(
+			"org.xml.sax.ext.DefaultHandler2",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DefaultHandler2::attributeDecl(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DefaultHandler2(const char *className, const char *sig, Ts...agv) : org::xml::sax::helpers::DefaultHandler(className, sig, std::forward<Ts>(agv)...) {}
-		DefaultHandler2(QJniObject obj);
-		
-		// Constructors
-		DefaultHandler2();
-		
-		// Methods
-		void attributeDecl(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const;
-		void comment(JCharArray arg0, jint arg1, jint arg2) const;
-		void elementDecl(JString arg0, JString arg1) const;
-		void endCDATA() const;
-		void endDTD() const;
-		void endEntity(JString arg0) const;
-		void externalEntityDecl(JString arg0, JString arg1, JString arg2) const;
-		org::xml::sax::InputSource getExternalSubset(JString arg0, JString arg1) const;
-		void internalEntityDecl(JString arg0, JString arg1) const;
-		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1) const;
-		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1, JString arg2, JString arg3) const;
-		void startCDATA() const;
-		void startDTD(JString arg0, JString arg1, JString arg2) const;
-		void startEntity(JString arg0) const;
-	};
+		callMethod<void>(
+			"attributeDecl",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
+		);
+	}
+	inline void DefaultHandler2::comment(JCharArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"comment",
+			"([CII)V",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void DefaultHandler2::elementDecl(JString arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"elementDecl",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline void DefaultHandler2::endCDATA() const
+	{
+		callMethod<void>(
+			"endCDATA",
+			"()V"
+		);
+	}
+	inline void DefaultHandler2::endDTD() const
+	{
+		callMethod<void>(
+			"endDTD",
+			"()V"
+		);
+	}
+	inline void DefaultHandler2::endEntity(JString arg0) const
+	{
+		callMethod<void>(
+			"endEntity",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void DefaultHandler2::externalEntityDecl(JString arg0, JString arg1, JString arg2) const
+	{
+		callMethod<void>(
+			"externalEntityDecl",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		);
+	}
+	inline org::xml::sax::InputSource DefaultHandler2::getExternalSubset(JString arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"getExternalSubset",
+			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline void DefaultHandler2::internalEntityDecl(JString arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"internalEntityDecl",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline org::xml::sax::InputSource DefaultHandler2::resolveEntity(JString arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"resolveEntity",
+			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline org::xml::sax::InputSource DefaultHandler2::resolveEntity(JString arg0, JString arg1, JString arg2, JString arg3) const
+	{
+		return callObjectMethod(
+			"resolveEntity",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		);
+	}
+	inline void DefaultHandler2::startCDATA() const
+	{
+		callMethod<void>(
+			"startCDATA",
+			"()V"
+		);
+	}
+	inline void DefaultHandler2::startDTD(JString arg0, JString arg1, JString arg2) const
+	{
+		callMethod<void>(
+			"startDTD",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		);
+	}
+	inline void DefaultHandler2::startEntity(JString arg0) const
+	{
+		callMethod<void>(
+			"startEntity",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace org::xml::sax::ext
+
+// Base class headers
+#include "../helpers/DefaultHandler.hpp"
 

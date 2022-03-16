@@ -1,27 +1,37 @@
 #pragma once
 
-#include "../Error.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./AnnotationFormatError.def.hpp"
 
 namespace java::lang::annotation
 {
-	class AnnotationFormatError : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AnnotationFormatError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		AnnotationFormatError(QJniObject obj);
-		
-		// Constructors
-		AnnotationFormatError(JString arg0);
-		AnnotationFormatError(JThrowable arg0);
-		AnnotationFormatError(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AnnotationFormatError::AnnotationFormatError(JString arg0)
+		: java::lang::Error(
+			"java.lang.annotation.AnnotationFormatError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline AnnotationFormatError::AnnotationFormatError(JThrowable arg0)
+		: java::lang::Error(
+			"java.lang.annotation.AnnotationFormatError",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline AnnotationFormatError::AnnotationFormatError(JString arg0, JThrowable arg1)
+		: java::lang::Error(
+			"java.lang.annotation.AnnotationFormatError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang::annotation
+
+// Base class headers
+#include "../Error.hpp"
 

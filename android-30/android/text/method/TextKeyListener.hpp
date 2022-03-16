@@ -1,49 +1,148 @@
 #pragma once
 
-#include "./BaseKeyListener.hpp"
+#include "./TextKeyListener_Capitalize.def.hpp"
+#include "../../view/KeyEvent.def.hpp"
+#include "../../view/View.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "./TextKeyListener.def.hpp"
 
 namespace android::text::method
 {
-	class TextKeyListener_Capitalize;
-}
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view
-{
-	class View;
-}
-class JString;
-class JObject;
-
-namespace android::text::method
-{
-	class TextKeyListener : public android::text::method::BaseKeyListener
+	// Fields
+	
+	// Constructors
+	inline TextKeyListener::TextKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1)
+		: android::text::method::BaseKeyListener(
+			"android.text.method.TextKeyListener",
+			"(Landroid/text/method/TextKeyListener$Capitalize;Z)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void TextKeyListener::clear(JObject arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TextKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::BaseKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		TextKeyListener(QJniObject obj);
-		
-		// Constructors
-		TextKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);
-		
-		// Methods
-		static void clear(JObject arg0);
-		static android::text::method::TextKeyListener getInstance();
-		static android::text::method::TextKeyListener getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
-		static jboolean shouldCap(android::text::method::TextKeyListener_Capitalize arg0, JString arg1, jint arg2);
-		jint getInputType() const;
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
-		jboolean onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2) const;
-		jboolean onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
-		void onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
-		void onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
-		void onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
-		void release() const;
-	};
+		callStaticMethod<void>(
+			"android.text.method.TextKeyListener",
+			"clear",
+			"(Landroid/text/Editable;)V",
+			arg0.object()
+		);
+	}
+	inline android::text::method::TextKeyListener TextKeyListener::getInstance()
+	{
+		return callStaticObjectMethod(
+			"android.text.method.TextKeyListener",
+			"getInstance",
+			"()Landroid/text/method/TextKeyListener;"
+		);
+	}
+	inline android::text::method::TextKeyListener TextKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
+	{
+		return callStaticObjectMethod(
+			"android.text.method.TextKeyListener",
+			"getInstance",
+			"(ZLandroid/text/method/TextKeyListener$Capitalize;)Landroid/text/method/TextKeyListener;",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline jboolean TextKeyListener::shouldCap(android::text::method::TextKeyListener_Capitalize arg0, JString arg1, jint arg2)
+	{
+		return callStaticMethod<jboolean>(
+			"android.text.method.TextKeyListener",
+			"shouldCap",
+			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2
+		);
+	}
+	inline jint TextKeyListener::getInputType() const
+	{
+		return callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
+	inline jboolean TextKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
+	{
+		return callMethod<jboolean>(
+			"onKeyDown",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object()
+		);
+	}
+	inline jboolean TextKeyListener::onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2) const
+	{
+		return callMethod<jboolean>(
+			"onKeyOther",
+			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline jboolean TextKeyListener::onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
+	{
+		return callMethod<jboolean>(
+			"onKeyUp",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object()
+		);
+	}
+	inline void TextKeyListener::onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"onSpanAdded",
+			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
+			arg0.object(),
+			arg1.object<jobject>(),
+			arg2,
+			arg3
+		);
+	}
+	inline void TextKeyListener::onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
+	{
+		callMethod<void>(
+			"onSpanChanged",
+			"(Landroid/text/Spannable;Ljava/lang/Object;IIII)V",
+			arg0.object(),
+			arg1.object<jobject>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
+	inline void TextKeyListener::onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"onSpanRemoved",
+			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
+			arg0.object(),
+			arg1.object<jobject>(),
+			arg2,
+			arg3
+		);
+	}
+	inline void TextKeyListener::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./MetaKeyKeyListener.hpp"
+#include "./BaseKeyListener.hpp"
 

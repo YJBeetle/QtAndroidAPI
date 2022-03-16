@@ -1,31 +1,45 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JString;
+#include "../../java/io/FileDescriptor.def.hpp"
+#include "../../JString.hpp"
+#include "./IpSecManager_UdpEncapsulationSocket.def.hpp"
 
 namespace android::net
 {
-	class IpSecManager_UdpEncapsulationSocket : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void IpSecManager_UdpEncapsulationSocket::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IpSecManager_UdpEncapsulationSocket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager_UdpEncapsulationSocket(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		java::io::FileDescriptor getFileDescriptor() const;
-		jint getPort() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline java::io::FileDescriptor IpSecManager_UdpEncapsulationSocket::getFileDescriptor() const
+	{
+		return callObjectMethod(
+			"getFileDescriptor",
+			"()Ljava/io/FileDescriptor;"
+		);
+	}
+	inline jint IpSecManager_UdpEncapsulationSocket::getPort() const
+	{
+		return callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
+	inline JString IpSecManager_UdpEncapsulationSocket::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

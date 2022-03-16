@@ -1,28 +1,30 @@
 #pragma once
 
-#include "./CameraCaptureSession.hpp"
+#include "./CaptureRequest.def.hpp"
+#include "./CameraConstrainedHighSpeedCaptureSession.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CaptureRequest;
-}
-
-namespace android::hardware::camera2
-{
-	class CameraConstrainedHighSpeedCaptureSession : public android::hardware::camera2::CameraCaptureSession
+	// Fields
+	
+	// Constructors
+	inline CameraConstrainedHighSpeedCaptureSession::CameraConstrainedHighSpeedCaptureSession()
+		: android::hardware::camera2::CameraCaptureSession(
+			"android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject CameraConstrainedHighSpeedCaptureSession::createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CameraConstrainedHighSpeedCaptureSession(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraCaptureSession(className, sig, std::forward<Ts>(agv)...) {}
-		CameraConstrainedHighSpeedCaptureSession(QJniObject obj);
-		
-		// Constructors
-		CameraConstrainedHighSpeedCaptureSession();
-		
-		// Methods
-		JObject createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0) const;
-	};
+		return callObjectMethod(
+			"createHighSpeedRequestList",
+			"(Landroid/hardware/camera2/CaptureRequest;)Ljava/util/List;",
+			arg0.object()
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
+#include "./CameraCaptureSession.hpp"
 

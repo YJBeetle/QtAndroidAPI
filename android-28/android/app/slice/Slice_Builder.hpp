@@ -1,65 +1,139 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::app
-{
-	class PendingIntent;
-}
-namespace android::app
-{
-	class RemoteInput;
-}
-namespace android::app::slice
-{
-	class Slice;
-}
-namespace android::app::slice
-{
-	class SliceSpec;
-}
-namespace android::graphics::drawable
-{
-	class Icon;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-class JString;
+#include "../PendingIntent.def.hpp"
+#include "../RemoteInput.def.hpp"
+#include "./Slice.def.hpp"
+#include "./SliceSpec.def.hpp"
+#include "../../graphics/drawable/Icon.def.hpp"
+#include "../../net/Uri.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./Slice_Builder.def.hpp"
 
 namespace android::app::slice
 {
-	class Slice_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline Slice_Builder::Slice_Builder(android::app::slice::Slice_Builder &arg0)
+		: JObject(
+			"android.app.slice.Slice$Builder",
+			"(Landroid/app/slice/Slice$Builder;)V",
+			arg0.object()
+		) {}
+	inline Slice_Builder::Slice_Builder(android::net::Uri arg0, android::app::slice::SliceSpec arg1)
+		: JObject(
+			"android.app.slice.Slice$Builder",
+			"(Landroid/net/Uri;Landroid/app/slice/SliceSpec;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::app::slice::Slice_Builder Slice_Builder::addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, JString arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Slice_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Slice_Builder(QJniObject obj);
-		
-		// Constructors
-		Slice_Builder(android::app::slice::Slice_Builder &arg0);
-		Slice_Builder(android::net::Uri arg0, android::app::slice::SliceSpec arg1);
-		
-		// Methods
-		android::app::slice::Slice_Builder addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, JString arg2) const;
-		android::app::slice::Slice_Builder addBundle(android::os::Bundle arg0, JString arg1, JObject arg2) const;
-		android::app::slice::Slice_Builder addHints(JObject arg0) const;
-		android::app::slice::Slice_Builder addIcon(android::graphics::drawable::Icon arg0, JString arg1, JObject arg2) const;
-		android::app::slice::Slice_Builder addInt(jint arg0, JString arg1, JObject arg2) const;
-		android::app::slice::Slice_Builder addLong(jlong arg0, JString arg1, JObject arg2) const;
-		android::app::slice::Slice_Builder addRemoteInput(android::app::RemoteInput arg0, JString arg1, JObject arg2) const;
-		android::app::slice::Slice_Builder addSubSlice(android::app::slice::Slice arg0, JString arg1) const;
-		android::app::slice::Slice_Builder addText(JString arg0, JString arg1, JObject arg2) const;
-		android::app::slice::Slice build() const;
-		android::app::slice::Slice_Builder setCallerNeeded(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"addAction",
+			"(Landroid/app/PendingIntent;Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addBundle(android::os::Bundle arg0, JString arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"addBundle",
+			"(Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addHints(JObject arg0) const
+	{
+		return callObjectMethod(
+			"addHints",
+			"(Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addIcon(android::graphics::drawable::Icon arg0, JString arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"addIcon",
+			"(Landroid/graphics/drawable/Icon;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addInt(jint arg0, JString arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"addInt",
+			"(ILjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addLong(jlong arg0, JString arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"addLong",
+			"(JLjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addRemoteInput(android::app::RemoteInput arg0, JString arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"addRemoteInput",
+			"(Landroid/app/RemoteInput;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addSubSlice(android::app::slice::Slice arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"addSubSlice",
+			"(Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::addText(JString arg0, JString arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"addText",
+			"(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::slice::Slice Slice_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/slice/Slice;"
+		);
+	}
+	inline android::app::slice::Slice_Builder Slice_Builder::setCallerNeeded(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setCallerNeeded",
+			"(Z)Landroid/app/slice/Slice$Builder;",
+			arg0
+		);
+	}
 } // namespace android::app::slice
+
+// Base class headers
 

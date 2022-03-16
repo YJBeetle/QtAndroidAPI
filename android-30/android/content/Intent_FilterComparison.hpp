@@ -1,31 +1,45 @@
 #pragma once
 
+#include "./Intent.def.hpp"
 #include "../../JObject.hpp"
+#include "./Intent_FilterComparison.def.hpp"
 
 namespace android::content
 {
-	class Intent;
-}
-class JObject;
-
-namespace android::content
-{
-	class Intent_FilterComparison : public JObject
+	// Fields
+	
+	// Constructors
+	inline Intent_FilterComparison::Intent_FilterComparison(android::content::Intent arg0)
+		: JObject(
+			"android.content.Intent$FilterComparison",
+			"(Landroid/content/Intent;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean Intent_FilterComparison::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Intent_FilterComparison(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Intent_FilterComparison(QJniObject obj);
-		
-		// Constructors
-		Intent_FilterComparison(android::content::Intent arg0);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		android::content::Intent getIntent() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::content::Intent Intent_FilterComparison::getIntent() const
+	{
+		return callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	inline jint Intent_FilterComparison::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

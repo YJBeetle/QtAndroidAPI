@@ -1,35 +1,49 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../content/ContentResolver.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Settings_NameValueTable.def.hpp"
 
 namespace android::provider
 {
-	class Settings_NameValueTable : public JObject
+	// Fields
+	inline JString Settings_NameValueTable::NAME()
 	{
-	public:
-		// Fields
-		static JString NAME();
-		static JString VALUE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Settings_NameValueTable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_NameValueTable(QJniObject obj);
-		
-		// Constructors
-		Settings_NameValueTable();
-		
-		// Methods
-		static android::net::Uri getUriFor(android::net::Uri arg0, JString arg1);
-	};
+		return getStaticObjectField(
+			"android.provider.Settings$NameValueTable",
+			"NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings_NameValueTable::VALUE()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings$NameValueTable",
+			"VALUE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Settings_NameValueTable::Settings_NameValueTable()
+		: JObject(
+			"android.provider.Settings$NameValueTable",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::net::Uri Settings_NameValueTable::getUriFor(android::net::Uri arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.Settings$NameValueTable",
+			"getUriFor",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,38 +1,70 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SigningInfo.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./InstallSourceInfo.def.hpp"
 
 namespace android::content::pm
 {
-	class SigningInfo;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::content::pm
-{
-	class InstallSourceInfo : public JObject
+	// Fields
+	inline JObject InstallSourceInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InstallSourceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InstallSourceInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString getInitiatingPackageName() const;
-		android::content::pm::SigningInfo getInitiatingPackageSigningInfo() const;
-		JString getInstallingPackageName() const;
-		JString getOriginatingPackageName() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.InstallSourceInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint InstallSourceInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString InstallSourceInfo::getInitiatingPackageName() const
+	{
+		return callObjectMethod(
+			"getInitiatingPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::content::pm::SigningInfo InstallSourceInfo::getInitiatingPackageSigningInfo() const
+	{
+		return callObjectMethod(
+			"getInitiatingPackageSigningInfo",
+			"()Landroid/content/pm/SigningInfo;"
+		);
+	}
+	inline JString InstallSourceInfo::getInstallingPackageName() const
+	{
+		return callObjectMethod(
+			"getInstallingPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString InstallSourceInfo::getOriginatingPackageName() const
+	{
+		return callObjectMethod(
+			"getOriginatingPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void InstallSourceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

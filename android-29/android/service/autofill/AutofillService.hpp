@@ -1,61 +1,102 @@
 #pragma once
 
-#include "../../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-namespace android::os
-{
-	class CancellationSignal;
-}
-namespace android::service::autofill
-{
-	class FillCallback;
-}
-namespace android::service::autofill
-{
-	class FillEventHistory;
-}
-namespace android::service::autofill
-{
-	class FillRequest;
-}
-namespace android::service::autofill
-{
-	class SaveCallback;
-}
-namespace android::service::autofill
-{
-	class SaveRequest;
-}
-class JString;
+#include "../../content/Intent.def.hpp"
+#include "../../os/CancellationSignal.def.hpp"
+#include "./FillCallback.def.hpp"
+#include "./FillEventHistory.def.hpp"
+#include "./FillRequest.def.hpp"
+#include "./SaveCallback.def.hpp"
+#include "./SaveRequest.def.hpp"
+#include "../../../JString.hpp"
+#include "./AutofillService.def.hpp"
 
 namespace android::service::autofill
 {
-	class AutofillService : public android::app::Service
+	// Fields
+	inline JString AutofillService::SERVICE_INTERFACE()
 	{
-	public:
-		// Fields
-		static JString SERVICE_INTERFACE();
-		static JString SERVICE_META_DATA();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AutofillService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		AutofillService(QJniObject obj);
-		
-		// Constructors
-		AutofillService();
-		
-		// Methods
-		android::service::autofill::FillEventHistory getFillEventHistory() const;
-		JObject onBind(android::content::Intent arg0) const;
-		void onConnected() const;
-		void onCreate() const;
-		void onDisconnected() const;
-		void onFillRequest(android::service::autofill::FillRequest arg0, android::os::CancellationSignal arg1, android::service::autofill::FillCallback arg2) const;
-		void onSaveRequest(android::service::autofill::SaveRequest arg0, android::service::autofill::SaveCallback arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.autofill.AutofillService",
+			"SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString AutofillService::SERVICE_META_DATA()
+	{
+		return getStaticObjectField(
+			"android.service.autofill.AutofillService",
+			"SERVICE_META_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline AutofillService::AutofillService()
+		: android::app::Service(
+			"android.service.autofill.AutofillService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::service::autofill::FillEventHistory AutofillService::getFillEventHistory() const
+	{
+		return callObjectMethod(
+			"getFillEventHistory",
+			"()Landroid/service/autofill/FillEventHistory;"
+		);
+	}
+	inline JObject AutofillService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void AutofillService::onConnected() const
+	{
+		callMethod<void>(
+			"onConnected",
+			"()V"
+		);
+	}
+	inline void AutofillService::onCreate() const
+	{
+		callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	inline void AutofillService::onDisconnected() const
+	{
+		callMethod<void>(
+			"onDisconnected",
+			"()V"
+		);
+	}
+	inline void AutofillService::onFillRequest(android::service::autofill::FillRequest arg0, android::os::CancellationSignal arg1, android::service::autofill::FillCallback arg2) const
+	{
+		callMethod<void>(
+			"onFillRequest",
+			"(Landroid/service/autofill/FillRequest;Landroid/os/CancellationSignal;Landroid/service/autofill/FillCallback;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void AutofillService::onSaveRequest(android::service::autofill::SaveRequest arg0, android::service::autofill::SaveCallback arg1) const
+	{
+		callMethod<void>(
+			"onSaveRequest",
+			"(Landroid/service/autofill/SaveRequest;Landroid/service/autofill/SaveCallback;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
+#include "../../app/Service.hpp"
 

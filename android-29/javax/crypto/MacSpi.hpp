@@ -1,30 +1,30 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-namespace java::nio
-{
-	class ByteBuffer;
-}
+#include "../../java/nio/ByteBuffer.def.hpp"
+#include "./MacSpi.def.hpp"
 
 namespace javax::crypto
 {
-	class MacSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline MacSpi::MacSpi()
+		: JObject(
+			"javax.crypto.MacSpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject MacSpi::clone() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MacSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MacSpi(QJniObject obj);
-		
-		// Constructors
-		MacSpi();
-		
-		// Methods
-		JObject clone() const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
 } // namespace javax::crypto
+
+// Base class headers
 

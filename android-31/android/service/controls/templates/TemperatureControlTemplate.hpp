@@ -1,44 +1,140 @@
 #pragma once
 
-#include "./ControlTemplate.hpp"
+#include "./ControlTemplate.def.hpp"
+#include "../../../../JString.hpp"
+#include "./TemperatureControlTemplate.def.hpp"
 
 namespace android::service::controls::templates
 {
-	class ControlTemplate;
-}
-class JString;
-
-namespace android::service::controls::templates
-{
-	class TemperatureControlTemplate : public android::service::controls::templates::ControlTemplate
+	// Fields
+	inline jint TemperatureControlTemplate::FLAG_MODE_COOL()
 	{
-	public:
-		// Fields
-		static jint FLAG_MODE_COOL();
-		static jint FLAG_MODE_ECO();
-		static jint FLAG_MODE_HEAT();
-		static jint FLAG_MODE_HEAT_COOL();
-		static jint FLAG_MODE_OFF();
-		static jint MODE_COOL();
-		static jint MODE_ECO();
-		static jint MODE_HEAT();
-		static jint MODE_HEAT_COOL();
-		static jint MODE_OFF();
-		static jint MODE_UNKNOWN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TemperatureControlTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		TemperatureControlTemplate(QJniObject obj);
-		
-		// Constructors
-		TemperatureControlTemplate(JString arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4);
-		
-		// Methods
-		jint getCurrentActiveMode() const;
-		jint getCurrentMode() const;
-		jint getModes() const;
-		android::service::controls::templates::ControlTemplate getTemplate() const;
-		jint getTemplateType() const;
-	};
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"FLAG_MODE_COOL"
+		);
+	}
+	inline jint TemperatureControlTemplate::FLAG_MODE_ECO()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"FLAG_MODE_ECO"
+		);
+	}
+	inline jint TemperatureControlTemplate::FLAG_MODE_HEAT()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"FLAG_MODE_HEAT"
+		);
+	}
+	inline jint TemperatureControlTemplate::FLAG_MODE_HEAT_COOL()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"FLAG_MODE_HEAT_COOL"
+		);
+	}
+	inline jint TemperatureControlTemplate::FLAG_MODE_OFF()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"FLAG_MODE_OFF"
+		);
+	}
+	inline jint TemperatureControlTemplate::MODE_COOL()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"MODE_COOL"
+		);
+	}
+	inline jint TemperatureControlTemplate::MODE_ECO()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"MODE_ECO"
+		);
+	}
+	inline jint TemperatureControlTemplate::MODE_HEAT()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"MODE_HEAT"
+		);
+	}
+	inline jint TemperatureControlTemplate::MODE_HEAT_COOL()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"MODE_HEAT_COOL"
+		);
+	}
+	inline jint TemperatureControlTemplate::MODE_OFF()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"MODE_OFF"
+		);
+	}
+	inline jint TemperatureControlTemplate::MODE_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"MODE_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	inline TemperatureControlTemplate::TemperatureControlTemplate(JString arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4)
+		: android::service::controls::templates::ControlTemplate(
+			"android.service.controls.templates.TemperatureControlTemplate",
+			"(Ljava/lang/String;Landroid/service/controls/templates/ControlTemplate;III)V",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2,
+			arg3,
+			arg4
+		) {}
+	
+	// Methods
+	inline jint TemperatureControlTemplate::getCurrentActiveMode() const
+	{
+		return callMethod<jint>(
+			"getCurrentActiveMode",
+			"()I"
+		);
+	}
+	inline jint TemperatureControlTemplate::getCurrentMode() const
+	{
+		return callMethod<jint>(
+			"getCurrentMode",
+			"()I"
+		);
+	}
+	inline jint TemperatureControlTemplate::getModes() const
+	{
+		return callMethod<jint>(
+			"getModes",
+			"()I"
+		);
+	}
+	inline android::service::controls::templates::ControlTemplate TemperatureControlTemplate::getTemplate() const
+	{
+		return callObjectMethod(
+			"getTemplate",
+			"()Landroid/service/controls/templates/ControlTemplate;"
+		);
+	}
+	inline jint TemperatureControlTemplate::getTemplateType() const
+	{
+		return callMethod<jint>(
+			"getTemplateType",
+			"()I"
+		);
+	}
 } // namespace android::service::controls::templates
+
+// Base class headers
+#include "./ControlTemplate.hpp"
 

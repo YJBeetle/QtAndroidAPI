@@ -1,33 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WebView.def.hpp"
+#include "./WebViewRenderProcess.def.hpp"
+#include "./WebViewRenderProcessClient.def.hpp"
 
 namespace android::webkit
 {
-	class WebView;
-}
-namespace android::webkit
-{
-	class WebViewRenderProcess;
-}
-
-namespace android::webkit
-{
-	class WebViewRenderProcessClient : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebViewRenderProcessClient::WebViewRenderProcessClient()
+		: JObject(
+			"android.webkit.WebViewRenderProcessClient",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void WebViewRenderProcessClient::onRenderProcessResponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebViewRenderProcessClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebViewRenderProcessClient(QJniObject obj);
-		
-		// Constructors
-		WebViewRenderProcessClient();
-		
-		// Methods
-		void onRenderProcessResponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const;
-		void onRenderProcessUnresponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const;
-	};
+		callMethod<void>(
+			"onRenderProcessResponsive",
+			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void WebViewRenderProcessClient::onRenderProcessUnresponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const
+	{
+		callMethod<void>(
+			"onRenderProcessUnresponsive",
+			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

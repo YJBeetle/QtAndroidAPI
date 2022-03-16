@@ -1,42 +1,171 @@
 #pragma once
 
+#include "../../../../JClass.hpp"
 #include "../../../../JObject.hpp"
-
-class JClass;
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./AtomicIntegerFieldUpdater.def.hpp"
 
 namespace java::util::concurrent::atomic
 {
-	class AtomicIntegerFieldUpdater : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::concurrent::atomic::AtomicIntegerFieldUpdater AtomicIntegerFieldUpdater::newUpdater(JClass arg0, JString arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AtomicIntegerFieldUpdater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicIntegerFieldUpdater(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::util::concurrent::atomic::AtomicIntegerFieldUpdater newUpdater(JClass arg0, JString arg1);
-		jint accumulateAndGet(JObject arg0, jint arg1, JObject arg2) const;
-		jint addAndGet(JObject arg0, jint arg1) const;
-		jboolean compareAndSet(JObject arg0, jint arg1, jint arg2) const;
-		jint decrementAndGet(JObject arg0) const;
-		jint get(JObject arg0) const;
-		jint getAndAccumulate(JObject arg0, jint arg1, JObject arg2) const;
-		jint getAndAdd(JObject arg0, jint arg1) const;
-		jint getAndDecrement(JObject arg0) const;
-		jint getAndIncrement(JObject arg0) const;
-		jint getAndSet(JObject arg0, jint arg1) const;
-		jint getAndUpdate(JObject arg0, JObject arg1) const;
-		jint incrementAndGet(JObject arg0) const;
-		void lazySet(JObject arg0, jint arg1) const;
-		void set(JObject arg0, jint arg1) const;
-		jint updateAndGet(JObject arg0, JObject arg1) const;
-		jboolean weakCompareAndSet(JObject arg0, jint arg1, jint arg2) const;
-	};
+		return callStaticObjectMethod(
+			"java.util.concurrent.atomic.AtomicIntegerFieldUpdater",
+			"newUpdater",
+			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;",
+			arg0.object<jclass>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::accumulateAndGet(JObject arg0, jint arg1, JObject arg2) const
+	{
+		return callMethod<jint>(
+			"accumulateAndGet",
+			"(Ljava/lang/Object;ILjava/util/function/IntBinaryOperator;)I",
+			arg0.object<jobject>(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::addAndGet(JObject arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"addAndGet",
+			"(Ljava/lang/Object;I)I",
+			arg0.object<jobject>(),
+			arg1
+		);
+	}
+	inline jboolean AtomicIntegerFieldUpdater::compareAndSet(JObject arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jboolean>(
+			"compareAndSet",
+			"(Ljava/lang/Object;II)Z",
+			arg0.object<jobject>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::decrementAndGet(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"decrementAndGet",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::get(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"get",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::getAndAccumulate(JObject arg0, jint arg1, JObject arg2) const
+	{
+		return callMethod<jint>(
+			"getAndAccumulate",
+			"(Ljava/lang/Object;ILjava/util/function/IntBinaryOperator;)I",
+			arg0.object<jobject>(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::getAndAdd(JObject arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"getAndAdd",
+			"(Ljava/lang/Object;I)I",
+			arg0.object<jobject>(),
+			arg1
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::getAndDecrement(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"getAndDecrement",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::getAndIncrement(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"getAndIncrement",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::getAndSet(JObject arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"getAndSet",
+			"(Ljava/lang/Object;I)I",
+			arg0.object<jobject>(),
+			arg1
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::getAndUpdate(JObject arg0, JObject arg1) const
+	{
+		return callMethod<jint>(
+			"getAndUpdate",
+			"(Ljava/lang/Object;Ljava/util/function/IntUnaryOperator;)I",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::incrementAndGet(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"incrementAndGet",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline void AtomicIntegerFieldUpdater::lazySet(JObject arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"lazySet",
+			"(Ljava/lang/Object;I)V",
+			arg0.object<jobject>(),
+			arg1
+		);
+	}
+	inline void AtomicIntegerFieldUpdater::set(JObject arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"set",
+			"(Ljava/lang/Object;I)V",
+			arg0.object<jobject>(),
+			arg1
+		);
+	}
+	inline jint AtomicIntegerFieldUpdater::updateAndGet(JObject arg0, JObject arg1) const
+	{
+		return callMethod<jint>(
+			"updateAndGet",
+			"(Ljava/lang/Object;Ljava/util/function/IntUnaryOperator;)I",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline jboolean AtomicIntegerFieldUpdater::weakCompareAndSet(JObject arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jboolean>(
+			"weakCompareAndSet",
+			"(Ljava/lang/Object;II)Z",
+			arg0.object<jobject>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::util::concurrent::atomic
+
+// Base class headers
 

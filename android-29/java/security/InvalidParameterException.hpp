@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../lang/IllegalArgumentException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./InvalidParameterException.def.hpp"
 
 namespace java::security
 {
-	class InvalidParameterException : public java::lang::IllegalArgumentException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InvalidParameterException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidParameterException(QJniObject obj);
-		
-		// Constructors
-		InvalidParameterException();
-		InvalidParameterException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InvalidParameterException::InvalidParameterException()
+		: java::lang::IllegalArgumentException(
+			"java.security.InvalidParameterException",
+			"()V"
+		) {}
+	inline InvalidParameterException::InvalidParameterException(JString arg0)
+		: java::lang::IllegalArgumentException(
+			"java.security.InvalidParameterException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
 

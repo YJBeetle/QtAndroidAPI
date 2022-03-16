@@ -1,60 +1,210 @@
 #pragma once
 
-#include "../../lang/Enum.hpp"
-
-class JArray;
-class JObject;
-class JString;
-namespace java::lang
-{
-	class Thread;
-}
-namespace java::time
-{
-	class Duration;
-}
-namespace java::time::temporal
-{
-	class ChronoUnit;
-}
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "../../lang/Thread.def.hpp"
+#include "../../time/Duration.def.hpp"
+#include "../../time/temporal/ChronoUnit.def.hpp"
+#include "./TimeUnit.def.hpp"
 
 namespace java::util::concurrent
 {
-	class TimeUnit : public java::lang::Enum
+	// Fields
+	inline java::util::concurrent::TimeUnit TimeUnit::DAYS()
 	{
-	public:
-		// Fields
-		static java::util::concurrent::TimeUnit DAYS();
-		static java::util::concurrent::TimeUnit HOURS();
-		static java::util::concurrent::TimeUnit MICROSECONDS();
-		static java::util::concurrent::TimeUnit MILLISECONDS();
-		static java::util::concurrent::TimeUnit MINUTES();
-		static java::util::concurrent::TimeUnit NANOSECONDS();
-		static java::util::concurrent::TimeUnit SECONDS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TimeUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeUnit(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::util::concurrent::TimeUnit of(java::time::temporal::ChronoUnit arg0);
-		static java::util::concurrent::TimeUnit valueOf(JString arg0);
-		static JArray values();
-		jlong convert(java::time::Duration arg0) const;
-		jlong convert(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
-		void sleep(jlong arg0) const;
-		void timedJoin(java::lang::Thread arg0, jlong arg1) const;
-		void timedWait(JObject arg0, jlong arg1) const;
-		java::time::temporal::ChronoUnit toChronoUnit() const;
-		jlong toDays(jlong arg0) const;
-		jlong toHours(jlong arg0) const;
-		jlong toMicros(jlong arg0) const;
-		jlong toMillis(jlong arg0) const;
-		jlong toMinutes(jlong arg0) const;
-		jlong toNanos(jlong arg0) const;
-		jlong toSeconds(jlong arg0) const;
-	};
+		return getStaticObjectField(
+			"java.util.concurrent.TimeUnit",
+			"DAYS",
+			"Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	inline java::util::concurrent::TimeUnit TimeUnit::HOURS()
+	{
+		return getStaticObjectField(
+			"java.util.concurrent.TimeUnit",
+			"HOURS",
+			"Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	inline java::util::concurrent::TimeUnit TimeUnit::MICROSECONDS()
+	{
+		return getStaticObjectField(
+			"java.util.concurrent.TimeUnit",
+			"MICROSECONDS",
+			"Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	inline java::util::concurrent::TimeUnit TimeUnit::MILLISECONDS()
+	{
+		return getStaticObjectField(
+			"java.util.concurrent.TimeUnit",
+			"MILLISECONDS",
+			"Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	inline java::util::concurrent::TimeUnit TimeUnit::MINUTES()
+	{
+		return getStaticObjectField(
+			"java.util.concurrent.TimeUnit",
+			"MINUTES",
+			"Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	inline java::util::concurrent::TimeUnit TimeUnit::NANOSECONDS()
+	{
+		return getStaticObjectField(
+			"java.util.concurrent.TimeUnit",
+			"NANOSECONDS",
+			"Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	inline java::util::concurrent::TimeUnit TimeUnit::SECONDS()
+	{
+		return getStaticObjectField(
+			"java.util.concurrent.TimeUnit",
+			"SECONDS",
+			"Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::concurrent::TimeUnit TimeUnit::of(java::time::temporal::ChronoUnit arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.concurrent.TimeUnit",
+			"of",
+			"(Ljava/time/temporal/ChronoUnit;)Ljava/util/concurrent/TimeUnit;",
+			arg0.object()
+		);
+	}
+	inline java::util::concurrent::TimeUnit TimeUnit::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.concurrent.TimeUnit",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray TimeUnit::values()
+	{
+		return callStaticObjectMethod(
+			"java.util.concurrent.TimeUnit",
+			"values",
+			"()[Ljava/util/concurrent/TimeUnit;"
+		);
+	}
+	inline jlong TimeUnit::convert(java::time::Duration arg0) const
+	{
+		return callMethod<jlong>(
+			"convert",
+			"(Ljava/time/Duration;)J",
+			arg0.object()
+		);
+	}
+	inline jlong TimeUnit::convert(jlong arg0, java::util::concurrent::TimeUnit arg1) const
+	{
+		return callMethod<jlong>(
+			"convert",
+			"(JLjava/util/concurrent/TimeUnit;)J",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void TimeUnit::sleep(jlong arg0) const
+	{
+		callMethod<void>(
+			"sleep",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void TimeUnit::timedJoin(java::lang::Thread arg0, jlong arg1) const
+	{
+		callMethod<void>(
+			"timedJoin",
+			"(Ljava/lang/Thread;J)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void TimeUnit::timedWait(JObject arg0, jlong arg1) const
+	{
+		callMethod<void>(
+			"timedWait",
+			"(Ljava/lang/Object;J)V",
+			arg0.object<jobject>(),
+			arg1
+		);
+	}
+	inline java::time::temporal::ChronoUnit TimeUnit::toChronoUnit() const
+	{
+		return callObjectMethod(
+			"toChronoUnit",
+			"()Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	inline jlong TimeUnit::toDays(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"toDays",
+			"(J)J",
+			arg0
+		);
+	}
+	inline jlong TimeUnit::toHours(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"toHours",
+			"(J)J",
+			arg0
+		);
+	}
+	inline jlong TimeUnit::toMicros(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"toMicros",
+			"(J)J",
+			arg0
+		);
+	}
+	inline jlong TimeUnit::toMillis(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"toMillis",
+			"(J)J",
+			arg0
+		);
+	}
+	inline jlong TimeUnit::toMinutes(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"toMinutes",
+			"(J)J",
+			arg0
+		);
+	}
+	inline jlong TimeUnit::toNanos(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"toNanos",
+			"(J)J",
+			arg0
+		);
+	}
+	inline jlong TimeUnit::toSeconds(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"toSeconds",
+			"(J)J",
+			arg0
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../../lang/Enum.hpp"
 

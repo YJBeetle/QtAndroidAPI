@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./WindowManager_BadTokenException.def.hpp"
 
 namespace android::view
 {
-	class WindowManager_BadTokenException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WindowManager_BadTokenException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		WindowManager_BadTokenException(QJniObject obj);
-		
-		// Constructors
-		WindowManager_BadTokenException();
-		WindowManager_BadTokenException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline WindowManager_BadTokenException::WindowManager_BadTokenException()
+		: java::lang::RuntimeException(
+			"android.view.WindowManager$BadTokenException",
+			"()V"
+		) {}
+	inline WindowManager_BadTokenException::WindowManager_BadTokenException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.view.WindowManager$BadTokenException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::view
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

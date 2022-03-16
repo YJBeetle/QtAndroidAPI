@@ -1,52 +1,171 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./RoutingSessionInfo.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./RoutingSessionInfo_Builder.def.hpp"
 
 namespace android::media
 {
-	class RoutingSessionInfo;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-class JString;
-
-namespace android::media
-{
-	class RoutingSessionInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(android::media::RoutingSessionInfo arg0)
+		: JObject(
+			"android.media.RoutingSessionInfo$Builder",
+			"(Landroid/media/RoutingSessionInfo;)V",
+			arg0.object()
+		) {}
+	inline RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(JString arg0, JString arg1)
+		: JObject(
+			"android.media.RoutingSessionInfo$Builder",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addDeselectableRoute(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RoutingSessionInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RoutingSessionInfo_Builder(QJniObject obj);
-		
-		// Constructors
-		RoutingSessionInfo_Builder(android::media::RoutingSessionInfo arg0);
-		RoutingSessionInfo_Builder(JString arg0, JString arg1);
-		
-		// Methods
-		android::media::RoutingSessionInfo_Builder addDeselectableRoute(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder addSelectableRoute(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder addSelectedRoute(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder addTransferableRoute(JString arg0) const;
-		android::media::RoutingSessionInfo build() const;
-		android::media::RoutingSessionInfo_Builder clearDeselectableRoutes() const;
-		android::media::RoutingSessionInfo_Builder clearSelectableRoutes() const;
-		android::media::RoutingSessionInfo_Builder clearSelectedRoutes() const;
-		android::media::RoutingSessionInfo_Builder clearTransferableRoutes() const;
-		android::media::RoutingSessionInfo_Builder removeDeselectableRoute(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder removeSelectableRoute(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder removeSelectedRoute(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder removeTransferableRoute(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder setControlHints(android::os::Bundle arg0) const;
-		android::media::RoutingSessionInfo_Builder setName(JString arg0) const;
-		android::media::RoutingSessionInfo_Builder setVolume(jint arg0) const;
-		android::media::RoutingSessionInfo_Builder setVolumeHandling(jint arg0) const;
-		android::media::RoutingSessionInfo_Builder setVolumeMax(jint arg0) const;
-	};
+		return callObjectMethod(
+			"addDeselectableRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addSelectableRoute(JString arg0) const
+	{
+		return callObjectMethod(
+			"addSelectableRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addSelectedRoute(JString arg0) const
+	{
+		return callObjectMethod(
+			"addSelectedRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addTransferableRoute(JString arg0) const
+	{
+		return callObjectMethod(
+			"addTransferableRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo RoutingSessionInfo_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/RoutingSessionInfo;"
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::clearDeselectableRoutes() const
+	{
+		return callObjectMethod(
+			"clearDeselectableRoutes",
+			"()Landroid/media/RoutingSessionInfo$Builder;"
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::clearSelectableRoutes() const
+	{
+		return callObjectMethod(
+			"clearSelectableRoutes",
+			"()Landroid/media/RoutingSessionInfo$Builder;"
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::clearSelectedRoutes() const
+	{
+		return callObjectMethod(
+			"clearSelectedRoutes",
+			"()Landroid/media/RoutingSessionInfo$Builder;"
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::clearTransferableRoutes() const
+	{
+		return callObjectMethod(
+			"clearTransferableRoutes",
+			"()Landroid/media/RoutingSessionInfo$Builder;"
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeDeselectableRoute(JString arg0) const
+	{
+		return callObjectMethod(
+			"removeDeselectableRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeSelectableRoute(JString arg0) const
+	{
+		return callObjectMethod(
+			"removeSelectableRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeSelectedRoute(JString arg0) const
+	{
+		return callObjectMethod(
+			"removeSelectedRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeTransferableRoute(JString arg0) const
+	{
+		return callObjectMethod(
+			"removeTransferableRoute",
+			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setControlHints(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setControlHints",
+			"(Landroid/os/Bundle;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setName(JString arg0) const
+	{
+		return callObjectMethod(
+			"setName",
+			"(Ljava/lang/CharSequence;)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setVolume(jint arg0) const
+	{
+		return callObjectMethod(
+			"setVolume",
+			"(I)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setVolumeHandling(jint arg0) const
+	{
+		return callObjectMethod(
+			"setVolumeHandling",
+			"(I)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setVolumeMax(jint arg0) const
+	{
+		return callObjectMethod(
+			"setVolumeMax",
+			"(I)Landroid/media/RoutingSessionInfo$Builder;",
+			arg0
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

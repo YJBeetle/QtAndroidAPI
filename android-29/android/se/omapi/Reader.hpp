@@ -1,36 +1,53 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SEService.def.hpp"
+#include "./Session.def.hpp"
+#include "../../../JString.hpp"
+#include "./Reader.def.hpp"
 
 namespace android::se::omapi
 {
-	class SEService;
-}
-namespace android::se::omapi
-{
-	class Session;
-}
-class JString;
-
-namespace android::se::omapi
-{
-	class Reader : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void Reader::closeSessions() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Reader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Reader(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void closeSessions() const;
-		JString getName() const;
-		android::se::omapi::SEService getSEService() const;
-		jboolean isSecureElementPresent() const;
-		android::se::omapi::Session openSession() const;
-	};
+		callMethod<void>(
+			"closeSessions",
+			"()V"
+		);
+	}
+	inline JString Reader::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::se::omapi::SEService Reader::getSEService() const
+	{
+		return callObjectMethod(
+			"getSEService",
+			"()Landroid/se/omapi/SEService;"
+		);
+	}
+	inline jboolean Reader::isSecureElementPresent() const
+	{
+		return callMethod<jboolean>(
+			"isSecureElementPresent",
+			"()Z"
+		);
+	}
+	inline android::se::omapi::Session Reader::openSession() const
+	{
+		return callObjectMethod(
+			"openSession",
+			"()Landroid/se/omapi/Session;"
+		);
+	}
 } // namespace android::se::omapi
+
+// Base class headers
 

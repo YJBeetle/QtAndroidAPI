@@ -1,43 +1,104 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaFormat.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaPlayer_TrackInfo.def.hpp"
 
 namespace android::media
 {
-	class MediaFormat;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::media
-{
-	class MediaPlayer_TrackInfo : public JObject
+	// Fields
+	inline jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_AUDIO()
 	{
-	public:
-		// Fields
-		static jint MEDIA_TRACK_TYPE_AUDIO();
-		static jint MEDIA_TRACK_TYPE_METADATA();
-		static jint MEDIA_TRACK_TYPE_SUBTITLE();
-		static jint MEDIA_TRACK_TYPE_TIMEDTEXT();
-		static jint MEDIA_TRACK_TYPE_UNKNOWN();
-		static jint MEDIA_TRACK_TYPE_VIDEO();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaPlayer_TrackInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_TrackInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::media::MediaFormat getFormat() const;
-		JString getLanguage() const;
-		jint getTrackType() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaPlayer$TrackInfo",
+			"MEDIA_TRACK_TYPE_AUDIO"
+		);
+	}
+	inline jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_METADATA()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaPlayer$TrackInfo",
+			"MEDIA_TRACK_TYPE_METADATA"
+		);
+	}
+	inline jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_SUBTITLE()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaPlayer$TrackInfo",
+			"MEDIA_TRACK_TYPE_SUBTITLE"
+		);
+	}
+	inline jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_TIMEDTEXT()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaPlayer$TrackInfo",
+			"MEDIA_TRACK_TYPE_TIMEDTEXT"
+		);
+	}
+	inline jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaPlayer$TrackInfo",
+			"MEDIA_TRACK_TYPE_UNKNOWN"
+		);
+	}
+	inline jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_VIDEO()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaPlayer$TrackInfo",
+			"MEDIA_TRACK_TYPE_VIDEO"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint MediaPlayer_TrackInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::media::MediaFormat MediaPlayer_TrackInfo::getFormat() const
+	{
+		return callObjectMethod(
+			"getFormat",
+			"()Landroid/media/MediaFormat;"
+		);
+	}
+	inline JString MediaPlayer_TrackInfo::getLanguage() const
+	{
+		return callObjectMethod(
+			"getLanguage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint MediaPlayer_TrackInfo::getTrackType() const
+	{
+		return callMethod<jint>(
+			"getTrackType",
+			"()I"
+		);
+	}
+	inline JString MediaPlayer_TrackInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void MediaPlayer_TrackInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

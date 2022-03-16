@@ -1,29 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-class JString;
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./PhoneNumberFormattingTextWatcher.def.hpp"
 
 namespace android::telephony
 {
-	class PhoneNumberFormattingTextWatcher : public JObject
+	// Fields
+	
+	// Constructors
+	inline PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher()
+		: JObject(
+			"android.telephony.PhoneNumberFormattingTextWatcher",
+			"()V"
+		) {}
+	inline PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(JString arg0)
+		: JObject(
+			"android.telephony.PhoneNumberFormattingTextWatcher",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline void PhoneNumberFormattingTextWatcher::afterTextChanged(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PhoneNumberFormattingTextWatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneNumberFormattingTextWatcher(QJniObject obj);
-		
-		// Constructors
-		PhoneNumberFormattingTextWatcher();
-		PhoneNumberFormattingTextWatcher(JString arg0);
-		
-		// Methods
-		void afterTextChanged(JObject arg0) const;
-		void beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const;
-		void onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const;
-	};
+		callMethod<void>(
+			"afterTextChanged",
+			"(Landroid/text/Editable;)V",
+			arg0.object()
+		);
+	}
+	inline void PhoneNumberFormattingTextWatcher::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"beforeTextChanged",
+			"(Ljava/lang/CharSequence;III)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void PhoneNumberFormattingTextWatcher::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"onTextChanged",
+			"(Ljava/lang/CharSequence;III)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 
