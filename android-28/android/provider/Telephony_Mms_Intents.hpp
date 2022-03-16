@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Telephony_Mms_Intents.def.hpp"
 
 namespace android::provider
 {
-	class Telephony_Mms_Intents : public JObject
+	// Fields
+	inline JString Telephony_Mms_Intents::CONTENT_CHANGED_ACTION()
 	{
-	public:
-		// Fields
-		static JString CONTENT_CHANGED_ACTION();
-		static JString DELETED_CONTENTS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Telephony_Mms_Intents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Mms_Intents(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Intents",
+			"CONTENT_CHANGED_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Intents::DELETED_CONTENTS()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Intents",
+			"DELETED_CONTENTS",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

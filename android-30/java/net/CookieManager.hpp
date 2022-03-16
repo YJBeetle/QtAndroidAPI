@@ -1,37 +1,64 @@
 #pragma once
 
-#include "./CookieHandler.hpp"
-
-class JString;
-namespace java::net
-{
-	class HttpCookie;
-}
-namespace java::net
-{
-	class URI;
-}
+#include "../../JString.hpp"
+#include "./HttpCookie.def.hpp"
+#include "./URI.def.hpp"
+#include "./CookieManager.def.hpp"
 
 namespace java::net
 {
-	class CookieManager : public java::net::CookieHandler
+	// Fields
+	
+	// Constructors
+	inline CookieManager::CookieManager()
+		: java::net::CookieHandler(
+			"java.net.CookieManager",
+			"()V"
+		) {}
+	inline CookieManager::CookieManager(JObject arg0, JObject arg1)
+		: java::net::CookieHandler(
+			"java.net.CookieManager",
+			"(Ljava/net/CookieStore;Ljava/net/CookiePolicy;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject CookieManager::get(java::net::URI arg0, JObject arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CookieManager(const char *className, const char *sig, Ts...agv) : java::net::CookieHandler(className, sig, std::forward<Ts>(agv)...) {}
-		CookieManager(QJniObject obj);
-		
-		// Constructors
-		CookieManager();
-		CookieManager(JObject arg0, JObject arg1);
-		
-		// Methods
-		JObject get(java::net::URI arg0, JObject arg1) const;
-		JObject getCookieStore() const;
-		void put(java::net::URI arg0, JObject arg1) const;
-		void setCookiePolicy(JObject arg0) const;
-	};
+		return callObjectMethod(
+			"get",
+			"(Ljava/net/URI;Ljava/util/Map;)Ljava/util/Map;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JObject CookieManager::getCookieStore() const
+	{
+		return callObjectMethod(
+			"getCookieStore",
+			"()Ljava/net/CookieStore;"
+		);
+	}
+	inline void CookieManager::put(java::net::URI arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"put",
+			"(Ljava/net/URI;Ljava/util/Map;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void CookieManager::setCookiePolicy(JObject arg0) const
+	{
+		callMethod<void>(
+			"setCookiePolicy",
+			"(Ljava/net/CookiePolicy;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "./CookieHandler.hpp"
 

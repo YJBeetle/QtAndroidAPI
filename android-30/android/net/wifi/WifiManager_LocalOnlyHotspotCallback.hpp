@@ -1,34 +1,72 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./WifiManager_LocalOnlyHotspotReservation.def.hpp"
+#include "./WifiManager_LocalOnlyHotspotCallback.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiManager_LocalOnlyHotspotReservation;
-}
-
-namespace android::net::wifi
-{
-	class WifiManager_LocalOnlyHotspotCallback : public JObject
+	// Fields
+	inline jint WifiManager_LocalOnlyHotspotCallback::ERROR_GENERIC()
 	{
-	public:
-		// Fields
-		static jint ERROR_GENERIC();
-		static jint ERROR_INCOMPATIBLE_MODE();
-		static jint ERROR_NO_CHANNEL();
-		static jint ERROR_TETHERING_DISALLOWED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiManager_LocalOnlyHotspotCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_LocalOnlyHotspotCallback(QJniObject obj);
-		
-		// Constructors
-		WifiManager_LocalOnlyHotspotCallback();
-		
-		// Methods
-		void onFailed(jint arg0) const;
-		void onStarted(android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0) const;
-		void onStopped() const;
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
+			"ERROR_GENERIC"
+		);
+	}
+	inline jint WifiManager_LocalOnlyHotspotCallback::ERROR_INCOMPATIBLE_MODE()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
+			"ERROR_INCOMPATIBLE_MODE"
+		);
+	}
+	inline jint WifiManager_LocalOnlyHotspotCallback::ERROR_NO_CHANNEL()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
+			"ERROR_NO_CHANNEL"
+		);
+	}
+	inline jint WifiManager_LocalOnlyHotspotCallback::ERROR_TETHERING_DISALLOWED()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
+			"ERROR_TETHERING_DISALLOWED"
+		);
+	}
+	
+	// Constructors
+	inline WifiManager_LocalOnlyHotspotCallback::WifiManager_LocalOnlyHotspotCallback()
+		: JObject(
+			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0) const
+	{
+		callMethod<void>(
+			"onFailed",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WifiManager_LocalOnlyHotspotCallback::onStarted(android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0) const
+	{
+		callMethod<void>(
+			"onStarted",
+			"(Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;)V",
+			arg0.object()
+		);
+	}
+	inline void WifiManager_LocalOnlyHotspotCallback::onStopped() const
+	{
+		callMethod<void>(
+			"onStopped",
+			"()V"
+		);
+	}
 } // namespace android::net::wifi
+
+// Base class headers
 

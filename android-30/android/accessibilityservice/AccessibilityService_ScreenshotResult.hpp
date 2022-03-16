@@ -1,33 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class ColorSpace;
-}
-namespace android::hardware
-{
-	class HardwareBuffer;
-}
+#include "../graphics/ColorSpace.def.hpp"
+#include "../hardware/HardwareBuffer.def.hpp"
+#include "./AccessibilityService_ScreenshotResult.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class AccessibilityService_ScreenshotResult : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::ColorSpace AccessibilityService_ScreenshotResult::getColorSpace() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityService_ScreenshotResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService_ScreenshotResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::ColorSpace getColorSpace() const;
-		android::hardware::HardwareBuffer getHardwareBuffer() const;
-		jlong getTimestamp() const;
-	};
+		return callObjectMethod(
+			"getColorSpace",
+			"()Landroid/graphics/ColorSpace;"
+		);
+	}
+	inline android::hardware::HardwareBuffer AccessibilityService_ScreenshotResult::getHardwareBuffer() const
+	{
+		return callObjectMethod(
+			"getHardwareBuffer",
+			"()Landroid/hardware/HardwareBuffer;"
+		);
+	}
+	inline jlong AccessibilityService_ScreenshotResult::getTimestamp() const
+	{
+		return callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

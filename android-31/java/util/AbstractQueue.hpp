@@ -1,28 +1,54 @@
 #pragma once
 
-#include "./AbstractCollection.hpp"
-
-class JObject;
+#include "../../JObject.hpp"
+#include "./AbstractQueue.def.hpp"
 
 namespace java::util
 {
-	class AbstractQueue : public java::util::AbstractCollection
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean AbstractQueue::add(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AbstractQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractCollection(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractQueue(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean add(JObject arg0) const;
-		jboolean addAll(JObject arg0) const;
-		void clear() const;
-		JObject element() const;
-		JObject remove() const;
-	};
+		return callMethod<jboolean>(
+			"add",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean AbstractQueue::addAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"addAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline void AbstractQueue::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline JObject AbstractQueue::element() const
+	{
+		return callObjectMethod(
+			"element",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject AbstractQueue::remove() const
+	{
+		return callObjectMethod(
+			"remove",
+			"()Ljava/lang/Object;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "./AbstractCollection.hpp"
 

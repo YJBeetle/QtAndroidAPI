@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MutableChar.def.hpp"
 
 namespace android::util
 {
-	class MutableChar : public JObject
+	// Fields
+	inline jchar MutableChar::value()
 	{
-	public:
-		// Fields
-		jchar value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MutableChar(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableChar(QJniObject obj);
-		
-		// Constructors
-		MutableChar(jchar arg0);
-		
-		// Methods
-	};
+		return getField<jchar>(
+			"value"
+		);
+	}
+	
+	// Constructors
+	inline MutableChar::MutableChar(jchar arg0)
+		: JObject(
+			"android.util.MutableChar",
+			"(C)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

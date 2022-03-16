@@ -1,27 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_Contacts_Photo.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Contacts_Photo : public JObject
+	// Fields
+	inline JString ContactsContract_Contacts_Photo::CONTENT_DIRECTORY()
 	{
-	public:
-		// Fields
-		static JString CONTENT_DIRECTORY();
-		static JString DISPLAY_PHOTO();
-		static JString PHOTO();
-		static JString PHOTO_FILE_ID();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Contacts_Photo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Contacts_Photo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Contacts$Photo",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Contacts_Photo::DISPLAY_PHOTO()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Contacts$Photo",
+			"DISPLAY_PHOTO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Contacts_Photo::PHOTO()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Contacts$Photo",
+			"PHOTO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Contacts_Photo::PHOTO_FILE_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Contacts$Photo",
+			"PHOTO_FILE_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,30 +1,41 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::util
-{
-	class Locale;
-}
+#include "../../JString.hpp"
+#include "../../java/util/Locale.def.hpp"
+#include "./InputFilter_AllCaps.def.hpp"
 
 namespace android::text
 {
-	class InputFilter_AllCaps : public JObject
+	// Fields
+	
+	// Constructors
+	inline InputFilter_AllCaps::InputFilter_AllCaps()
+		: JObject(
+			"android.text.InputFilter$AllCaps",
+			"()V"
+		) {}
+	inline InputFilter_AllCaps::InputFilter_AllCaps(java::util::Locale arg0)
+		: JObject(
+			"android.text.InputFilter$AllCaps",
+			"(Ljava/util/Locale;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JString InputFilter_AllCaps::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InputFilter_AllCaps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputFilter_AllCaps(QJniObject obj);
-		
-		// Constructors
-		InputFilter_AllCaps();
-		InputFilter_AllCaps(java::util::Locale arg0);
-		
-		// Methods
-		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const;
-	};
+		return callObjectMethod(
+			"filter",
+			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3.object(),
+			arg4,
+			arg5
+		);
+	}
 } // namespace android::text
+
+// Base class headers
 

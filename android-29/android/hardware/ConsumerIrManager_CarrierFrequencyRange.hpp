@@ -1,29 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ConsumerIrManager.def.hpp"
+#include "./ConsumerIrManager_CarrierFrequencyRange.def.hpp"
 
 namespace android::hardware
 {
-	class ConsumerIrManager;
-}
-
-namespace android::hardware
-{
-	class ConsumerIrManager_CarrierFrequencyRange : public JObject
+	// Fields
+	
+	// Constructors
+	inline ConsumerIrManager_CarrierFrequencyRange::ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.hardware.ConsumerIrManager$CarrierFrequencyRange",
+			"(Landroid/hardware/ConsumerIrManager;II)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline jint ConsumerIrManager_CarrierFrequencyRange::getMaxFrequency() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConsumerIrManager_CarrierFrequencyRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConsumerIrManager_CarrierFrequencyRange(QJniObject obj);
-		
-		// Constructors
-		ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2);
-		
-		// Methods
-		jint getMaxFrequency() const;
-		jint getMinFrequency() const;
-	};
+		return callMethod<jint>(
+			"getMaxFrequency",
+			"()I"
+		);
+	}
+	inline jint ConsumerIrManager_CarrierFrequencyRange::getMinFrequency() const
+	{
+		return callMethod<jint>(
+			"getMinFrequency",
+			"()I"
+		);
+	}
 } // namespace android::hardware
+
+// Base class headers
 

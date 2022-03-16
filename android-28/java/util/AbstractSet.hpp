@@ -1,26 +1,40 @@
 #pragma once
 
-#include "./AbstractCollection.hpp"
-
-class JObject;
+#include "../../JObject.hpp"
+#include "./AbstractSet.def.hpp"
 
 namespace java::util
 {
-	class AbstractSet : public java::util::AbstractCollection
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean AbstractSet::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AbstractSet(const char *className, const char *sig, Ts...agv) : java::util::AbstractCollection(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractSet(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		jboolean removeAll(JObject arg0) const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AbstractSet::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean AbstractSet::removeAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "./AbstractCollection.hpp"
 

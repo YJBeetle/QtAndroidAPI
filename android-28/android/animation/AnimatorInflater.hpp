@@ -1,37 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Animator.def.hpp"
+#include "./StateListAnimator.def.hpp"
+#include "../content/Context.def.hpp"
+#include "./AnimatorInflater.def.hpp"
 
 namespace android::animation
 {
-	class Animator;
-}
-namespace android::animation
-{
-	class StateListAnimator;
-}
-namespace android::content
-{
-	class Context;
-}
-
-namespace android::animation
-{
-	class AnimatorInflater : public JObject
+	// Fields
+	
+	// Constructors
+	inline AnimatorInflater::AnimatorInflater()
+		: JObject(
+			"android.animation.AnimatorInflater",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::animation::Animator AnimatorInflater::loadAnimator(android::content::Context arg0, jint arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AnimatorInflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AnimatorInflater(QJniObject obj);
-		
-		// Constructors
-		AnimatorInflater();
-		
-		// Methods
-		static android::animation::Animator loadAnimator(android::content::Context arg0, jint arg1);
-		static android::animation::StateListAnimator loadStateListAnimator(android::content::Context arg0, jint arg1);
-	};
+		return callStaticObjectMethod(
+			"android.animation.AnimatorInflater",
+			"loadAnimator",
+			"(Landroid/content/Context;I)Landroid/animation/Animator;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::animation::StateListAnimator AnimatorInflater::loadStateListAnimator(android::content::Context arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.animation.AnimatorInflater",
+			"loadStateListAnimator",
+			"(Landroid/content/Context;I)Landroid/animation/StateListAnimator;",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::animation
+
+// Base class headers
 

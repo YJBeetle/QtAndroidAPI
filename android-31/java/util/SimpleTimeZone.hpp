@@ -1,70 +1,285 @@
 #pragma once
 
-#include "./TimeZone.hpp"
-
-class JByteArray;
-class JIntArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JObject;
-class JString;
-namespace java::util
-{
-	class Date;
-}
-namespace java::util
-{
-	class TimeZone;
-}
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./Date.def.hpp"
+#include "./TimeZone.def.hpp"
+#include "./SimpleTimeZone.def.hpp"
 
 namespace java::util
 {
-	class SimpleTimeZone : public java::util::TimeZone
+	// Fields
+	inline jint SimpleTimeZone::STANDARD_TIME()
 	{
-	public:
-		// Fields
-		static jint STANDARD_TIME();
-		static jint UTC_TIME();
-		static jint WALL_TIME();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SimpleTimeZone(const char *className, const char *sig, Ts...agv) : java::util::TimeZone(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleTimeZone(QJniObject obj);
-		
-		// Constructors
-		SimpleTimeZone(jint arg0, JString arg1);
-		SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
-		SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
-		
-		// Methods
-		JObject clone() const;
-		jboolean equals(JObject arg0) const;
-		jint getDSTSavings() const;
-		jint getOffset(jlong arg0) const;
-		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
-		jint getRawOffset() const;
-		jboolean hasSameRules(java::util::TimeZone arg0) const;
-		jint hashCode() const;
-		jboolean inDaylightTime(java::util::Date arg0) const;
-		jboolean observesDaylightTime() const;
-		void setDSTSavings(jint arg0) const;
-		void setEndRule(jint arg0, jint arg1, jint arg2) const;
-		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3) const;
-		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const;
-		void setRawOffset(jint arg0) const;
-		void setStartRule(jint arg0, jint arg1, jint arg2) const;
-		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3) const;
-		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const;
-		void setStartYear(jint arg0) const;
-		JString toString() const;
-		jboolean useDaylightTime() const;
-	};
+		return getStaticField<jint>(
+			"java.util.SimpleTimeZone",
+			"STANDARD_TIME"
+		);
+	}
+	inline jint SimpleTimeZone::UTC_TIME()
+	{
+		return getStaticField<jint>(
+			"java.util.SimpleTimeZone",
+			"UTC_TIME"
+		);
+	}
+	inline jint SimpleTimeZone::WALL_TIME()
+	{
+		return getStaticField<jint>(
+			"java.util.SimpleTimeZone",
+			"WALL_TIME"
+		);
+	}
+	
+	// Constructors
+	inline SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1)
+		: java::util::TimeZone(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	inline SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+		: java::util::TimeZone(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIII)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9
+		) {}
+	inline SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
+		: java::util::TimeZone(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIIII)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10
+		) {}
+	inline SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12)
+		: java::util::TimeZone(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIIIIII)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10,
+			arg11,
+			arg12
+		) {}
+	
+	// Methods
+	inline JObject SimpleTimeZone::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jboolean SimpleTimeZone::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint SimpleTimeZone::getDSTSavings() const
+	{
+		return callMethod<jint>(
+			"getDSTSavings",
+			"()I"
+		);
+	}
+	inline jint SimpleTimeZone::getOffset(jlong arg0) const
+	{
+		return callMethod<jint>(
+			"getOffset",
+			"(J)I",
+			arg0
+		);
+	}
+	inline jint SimpleTimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
+	{
+		return callMethod<jint>(
+			"getOffset",
+			"(IIIIII)I",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
+	inline jint SimpleTimeZone::getRawOffset() const
+	{
+		return callMethod<jint>(
+			"getRawOffset",
+			"()I"
+		);
+	}
+	inline jboolean SimpleTimeZone::hasSameRules(java::util::TimeZone arg0) const
+	{
+		return callMethod<jboolean>(
+			"hasSameRules",
+			"(Ljava/util/TimeZone;)Z",
+			arg0.object()
+		);
+	}
+	inline jint SimpleTimeZone::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean SimpleTimeZone::inDaylightTime(java::util::Date arg0) const
+	{
+		return callMethod<jboolean>(
+			"inDaylightTime",
+			"(Ljava/util/Date;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean SimpleTimeZone::observesDaylightTime() const
+	{
+		return callMethod<jboolean>(
+			"observesDaylightTime",
+			"()Z"
+		);
+	}
+	inline void SimpleTimeZone::setDSTSavings(jint arg0) const
+	{
+		callMethod<void>(
+			"setDSTSavings",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"setEndRule",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"setEndRule",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const
+	{
+		callMethod<void>(
+			"setEndRule",
+			"(IIIIZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	inline void SimpleTimeZone::setRawOffset(jint arg0) const
+	{
+		callMethod<void>(
+			"setRawOffset",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"setStartRule",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"setStartRule",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const
+	{
+		callMethod<void>(
+			"setStartRule",
+			"(IIIIZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	inline void SimpleTimeZone::setStartYear(jint arg0) const
+	{
+		callMethod<void>(
+			"setStartYear",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JString SimpleTimeZone::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean SimpleTimeZone::useDaylightTime() const
+	{
+		return callMethod<jboolean>(
+			"useDaylightTime",
+			"()Z"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "./TimeZone.hpp"
 

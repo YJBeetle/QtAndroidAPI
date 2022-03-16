@@ -1,37 +1,46 @@
 #pragma once
 
-#include "./LinkageError.hpp"
-
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JString;
-class JThrowable;
+#include "../../JArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./ExceptionInInitializerError.def.hpp"
 
 namespace java::lang
 {
-	class ExceptionInInitializerError : public java::lang::LinkageError
+	// Fields
+	
+	// Constructors
+	inline ExceptionInInitializerError::ExceptionInInitializerError()
+		: java::lang::LinkageError(
+			"java.lang.ExceptionInInitializerError",
+			"()V"
+		) {}
+	inline ExceptionInInitializerError::ExceptionInInitializerError(JString arg0)
+		: java::lang::LinkageError(
+			"java.lang.ExceptionInInitializerError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ExceptionInInitializerError::ExceptionInInitializerError(JThrowable arg0)
+		: java::lang::LinkageError(
+			"java.lang.ExceptionInInitializerError",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline JThrowable ExceptionInInitializerError::getException() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ExceptionInInitializerError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		ExceptionInInitializerError(QJniObject obj);
-		
-		// Constructors
-		ExceptionInInitializerError();
-		ExceptionInInitializerError(JString arg0);
-		ExceptionInInitializerError(JThrowable arg0);
-		
-		// Methods
-		JThrowable getException() const;
-	};
+		return callObjectMethod(
+			"getException",
+			"()Ljava/lang/Throwable;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./LinkageError.hpp"
 

@@ -1,34 +1,45 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AudioAttributes.def.hpp"
+#include "../os/Handler.def.hpp"
+#include "./AudioFocusRequest.def.hpp"
 
 namespace android::media
 {
-	class AudioAttributes;
-}
-namespace android::os
-{
-	class Handler;
-}
-
-namespace android::media
-{
-	class AudioFocusRequest : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean AudioFocusRequest::acceptsDelayedFocusGain() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AudioFocusRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioFocusRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean acceptsDelayedFocusGain() const;
-		android::media::AudioAttributes getAudioAttributes() const;
-		jint getFocusGain() const;
-		jboolean willPauseWhenDucked() const;
-	};
+		return callMethod<jboolean>(
+			"acceptsDelayedFocusGain",
+			"()Z"
+		);
+	}
+	inline android::media::AudioAttributes AudioFocusRequest::getAudioAttributes() const
+	{
+		return callObjectMethod(
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
+	}
+	inline jint AudioFocusRequest::getFocusGain() const
+	{
+		return callMethod<jint>(
+			"getFocusGain",
+			"()I"
+		);
+	}
+	inline jboolean AudioFocusRequest::willPauseWhenDucked() const
+	{
+		return callMethod<jboolean>(
+			"willPauseWhenDucked",
+			"()Z"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

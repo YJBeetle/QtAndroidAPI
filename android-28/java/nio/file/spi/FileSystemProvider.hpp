@@ -1,90 +1,285 @@
 #pragma once
 
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../io/InputStream.def.hpp"
+#include "../../../io/OutputStream.def.hpp"
+#include "../../../../JClass.hpp"
 #include "../../../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JArray;
-class JArray;
-class JArray;
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-class JClass;
-class JObject;
-class JString;
-namespace java::lang
-{
-	class Void;
-}
-namespace java::net
-{
-	class URI;
-}
-namespace java::nio::channels
-{
-	class AsynchronousFileChannel;
-}
-namespace java::nio::channels
-{
-	class FileChannel;
-}
-namespace java::nio::file
-{
-	class FileStore;
-}
-namespace java::nio::file
-{
-	class FileSystem;
-}
+#include "../../../../JString.hpp"
+#include "../../../lang/Void.def.hpp"
+#include "../../../net/URI.def.hpp"
+#include "../../channels/AsynchronousFileChannel.def.hpp"
+#include "../../channels/FileChannel.def.hpp"
+#include "../FileStore.def.hpp"
+#include "../FileSystem.def.hpp"
+#include "./FileSystemProvider.def.hpp"
 
 namespace java::nio::file::spi
 {
-	class FileSystemProvider : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject FileSystemProvider::installedProviders()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileSystemProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileSystemProvider(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject installedProviders();
-		void checkAccess(JObject arg0, JArray arg1) const;
-		void copy(JObject arg0, JObject arg1, JArray arg2) const;
-		void createDirectory(JObject arg0, JArray arg1) const;
-		void createLink(JObject arg0, JObject arg1) const;
-		void createSymbolicLink(JObject arg0, JObject arg1, JArray arg2) const;
-		void delete_(JObject arg0) const;
-		jboolean deleteIfExists(JObject arg0) const;
-		JObject getFileAttributeView(JObject arg0, JClass arg1, JArray arg2) const;
-		java::nio::file::FileStore getFileStore(JObject arg0) const;
-		java::nio::file::FileSystem getFileSystem(java::net::URI arg0) const;
-		JObject getPath(java::net::URI arg0) const;
-		JString getScheme() const;
-		jboolean isHidden(JObject arg0) const;
-		jboolean isSameFile(JObject arg0, JObject arg1) const;
-		void move(JObject arg0, JObject arg1, JArray arg2) const;
-		java::nio::channels::AsynchronousFileChannel newAsynchronousFileChannel(JObject arg0, JObject arg1, JObject arg2, JArray arg3) const;
-		JObject newByteChannel(JObject arg0, JObject arg1, JArray arg2) const;
-		JObject newDirectoryStream(JObject arg0, JObject arg1) const;
-		java::nio::channels::FileChannel newFileChannel(JObject arg0, JObject arg1, JArray arg2) const;
-		java::nio::file::FileSystem newFileSystem(java::net::URI arg0, JObject arg1) const;
-		java::nio::file::FileSystem newFileSystem(JObject arg0, JObject arg1) const;
-		java::io::InputStream newInputStream(JObject arg0, JArray arg1) const;
-		java::io::OutputStream newOutputStream(JObject arg0, JArray arg1) const;
-		JObject readAttributes(JObject arg0, JClass arg1, JArray arg2) const;
-		JObject readAttributes(JObject arg0, JString arg1, JArray arg2) const;
-		JObject readSymbolicLink(JObject arg0) const;
-		void setAttribute(JObject arg0, JString arg1, JObject arg2, JArray arg3) const;
-	};
+		return callStaticObjectMethod(
+			"java.nio.file.spi.FileSystemProvider",
+			"installedProviders",
+			"()Ljava/util/List;"
+		);
+	}
+	inline void FileSystemProvider::checkAccess(JObject arg0, JArray arg1) const
+	{
+		callMethod<void>(
+			"checkAccess",
+			"(Ljava/nio/file/Path;[Ljava/nio/file/AccessMode;)V",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
+	inline void FileSystemProvider::copy(JObject arg0, JObject arg1, JArray arg2) const
+	{
+		callMethod<void>(
+			"copy",
+			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>()
+		);
+	}
+	inline void FileSystemProvider::createDirectory(JObject arg0, JArray arg1) const
+	{
+		callMethod<void>(
+			"createDirectory",
+			"(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)V",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
+	inline void FileSystemProvider::createLink(JObject arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"createLink",
+			"(Ljava/nio/file/Path;Ljava/nio/file/Path;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void FileSystemProvider::createSymbolicLink(JObject arg0, JObject arg1, JArray arg2) const
+	{
+		callMethod<void>(
+			"createSymbolicLink",
+			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>()
+		);
+	}
+	inline void FileSystemProvider::delete_(JObject arg0) const
+	{
+		callMethod<void>(
+			"delete",
+			"(Ljava/nio/file/Path;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean FileSystemProvider::deleteIfExists(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"deleteIfExists",
+			"(Ljava/nio/file/Path;)Z",
+			arg0.object()
+		);
+	}
+	inline JObject FileSystemProvider::getFileAttributeView(JObject arg0, JClass arg1, JArray arg2) const
+	{
+		return callObjectMethod(
+			"getFileAttributeView",
+			"(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/FileAttributeView;",
+			arg0.object(),
+			arg1.object<jclass>(),
+			arg2.object<jarray>()
+		);
+	}
+	inline java::nio::file::FileStore FileSystemProvider::getFileStore(JObject arg0) const
+	{
+		return callObjectMethod(
+			"getFileStore",
+			"(Ljava/nio/file/Path;)Ljava/nio/file/FileStore;",
+			arg0.object()
+		);
+	}
+	inline java::nio::file::FileSystem FileSystemProvider::getFileSystem(java::net::URI arg0) const
+	{
+		return callObjectMethod(
+			"getFileSystem",
+			"(Ljava/net/URI;)Ljava/nio/file/FileSystem;",
+			arg0.object()
+		);
+	}
+	inline JObject FileSystemProvider::getPath(java::net::URI arg0) const
+	{
+		return callObjectMethod(
+			"getPath",
+			"(Ljava/net/URI;)Ljava/nio/file/Path;",
+			arg0.object()
+		);
+	}
+	inline JString FileSystemProvider::getScheme() const
+	{
+		return callObjectMethod(
+			"getScheme",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean FileSystemProvider::isHidden(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"isHidden",
+			"(Ljava/nio/file/Path;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean FileSystemProvider::isSameFile(JObject arg0, JObject arg1) const
+	{
+		return callMethod<jboolean>(
+			"isSameFile",
+			"(Ljava/nio/file/Path;Ljava/nio/file/Path;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void FileSystemProvider::move(JObject arg0, JObject arg1, JArray arg2) const
+	{
+		callMethod<void>(
+			"move",
+			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>()
+		);
+	}
+	inline java::nio::channels::AsynchronousFileChannel FileSystemProvider::newAsynchronousFileChannel(JObject arg0, JObject arg1, JObject arg2, JArray arg3) const
+	{
+		return callObjectMethod(
+			"newAsynchronousFileChannel",
+			"(Ljava/nio/file/Path;Ljava/util/Set;Ljava/util/concurrent/ExecutorService;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/AsynchronousFileChannel;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object<jarray>()
+		);
+	}
+	inline JObject FileSystemProvider::newByteChannel(JObject arg0, JObject arg1, JArray arg2) const
+	{
+		return callObjectMethod(
+			"newByteChannel",
+			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/SeekableByteChannel;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>()
+		);
+	}
+	inline JObject FileSystemProvider::newDirectoryStream(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"newDirectoryStream",
+			"(Ljava/nio/file/Path;Ljava/nio/file/DirectoryStream$Filter;)Ljava/nio/file/DirectoryStream;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline java::nio::channels::FileChannel FileSystemProvider::newFileChannel(JObject arg0, JObject arg1, JArray arg2) const
+	{
+		return callObjectMethod(
+			"newFileChannel",
+			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/FileChannel;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>()
+		);
+	}
+	inline java::nio::file::FileSystem FileSystemProvider::newFileSystem(java::net::URI arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"newFileSystem",
+			"(Ljava/net/URI;Ljava/util/Map;)Ljava/nio/file/FileSystem;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline java::nio::file::FileSystem FileSystemProvider::newFileSystem(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"newFileSystem",
+			"(Ljava/nio/file/Path;Ljava/util/Map;)Ljava/nio/file/FileSystem;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline java::io::InputStream FileSystemProvider::newInputStream(JObject arg0, JArray arg1) const
+	{
+		return callObjectMethod(
+			"newInputStream",
+			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
+	inline java::io::OutputStream FileSystemProvider::newOutputStream(JObject arg0, JArray arg1) const
+	{
+		return callObjectMethod(
+			"newOutputStream",
+			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
+	inline JObject FileSystemProvider::readAttributes(JObject arg0, JClass arg1, JArray arg2) const
+	{
+		return callObjectMethod(
+			"readAttributes",
+			"(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/BasicFileAttributes;",
+			arg0.object(),
+			arg1.object<jclass>(),
+			arg2.object<jarray>()
+		);
+	}
+	inline JObject FileSystemProvider::readAttributes(JObject arg0, JString arg1, JArray arg2) const
+	{
+		return callObjectMethod(
+			"readAttributes",
+			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/util/Map;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
+		);
+	}
+	inline JObject FileSystemProvider::readSymbolicLink(JObject arg0) const
+	{
+		return callObjectMethod(
+			"readSymbolicLink",
+			"(Ljava/nio/file/Path;)Ljava/nio/file/Path;",
+			arg0.object()
+		);
+	}
+	inline void FileSystemProvider::setAttribute(JObject arg0, JString arg1, JObject arg2, JArray arg3) const
+	{
+		callMethod<void>(
+			"setAttribute",
+			"(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/Object;[Ljava/nio/file/LinkOption;)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object<jobject>(),
+			arg3.object<jarray>()
+		);
+	}
 } // namespace java::nio::file::spi
+
+// Base class headers
 

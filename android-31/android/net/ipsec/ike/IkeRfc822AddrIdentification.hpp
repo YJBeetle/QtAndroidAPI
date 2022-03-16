@@ -1,28 +1,46 @@
 #pragma once
 
-#include "./IkeIdentification.hpp"
-
-class JObject;
-class JString;
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
+#include "./IkeRfc822AddrIdentification.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeRfc822AddrIdentification : public android::net::ipsec::ike::IkeIdentification
+	// Fields
+	inline JString IkeRfc822AddrIdentification::rfc822Name()
 	{
-	public:
-		// Fields
-		JString rfc822Name();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IkeRfc822AddrIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeRfc822AddrIdentification(QJniObject obj);
-		
-		// Constructors
-		IkeRfc822AddrIdentification(JString arg0);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return getObjectField(
+			"rfc822Name",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline IkeRfc822AddrIdentification::IkeRfc822AddrIdentification(JString arg0)
+		: android::net::ipsec::ike::IkeIdentification(
+			"android.net.ipsec.ike.IkeRfc822AddrIdentification",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jboolean IkeRfc822AddrIdentification::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint IkeRfc822AddrIdentification::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
+#include "./IkeIdentification.hpp"
 

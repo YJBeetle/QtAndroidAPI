@@ -1,28 +1,42 @@
 #pragma once
 
-#include "./Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./ReflectiveOperationException.def.hpp"
 
 namespace java::lang
 {
-	class ReflectiveOperationException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ReflectiveOperationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ReflectiveOperationException(QJniObject obj);
-		
-		// Constructors
-		ReflectiveOperationException();
-		ReflectiveOperationException(JString arg0);
-		ReflectiveOperationException(JThrowable arg0);
-		ReflectiveOperationException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ReflectiveOperationException::ReflectiveOperationException()
+		: java::lang::Exception(
+			"java.lang.ReflectiveOperationException",
+			"()V"
+		) {}
+	inline ReflectiveOperationException::ReflectiveOperationException(JString arg0)
+		: java::lang::Exception(
+			"java.lang.ReflectiveOperationException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ReflectiveOperationException::ReflectiveOperationException(JThrowable arg0)
+		: java::lang::Exception(
+			"java.lang.ReflectiveOperationException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline ReflectiveOperationException::ReflectiveOperationException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"java.lang.ReflectiveOperationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
 

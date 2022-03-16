@@ -1,29 +1,53 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./AppSearchSchema.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean AppSearchSchema::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JObject getProperties() const;
-		JString getSchemaType() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject AppSearchSchema::getProperties() const
+	{
+		return callObjectMethod(
+			"getProperties",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString AppSearchSchema::getSchemaType() const
+	{
+		return callObjectMethod(
+			"getSchemaType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint AppSearchSchema::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString AppSearchSchema::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

@@ -1,54 +1,76 @@
 #pragma once
 
-#include "../../app/Service.hpp"
-
-class JArray;
-namespace android::content
-{
-	class Intent;
-}
-namespace android::content::res
-{
-	class Configuration;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::service::voice
-{
-	class VoiceInteractionSession;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-namespace java::io
-{
-	class PrintWriter;
-}
+#include "../../../JArray.hpp"
+#include "../../content/Intent.def.hpp"
+#include "../../content/res/Configuration.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "./VoiceInteractionSession.def.hpp"
+#include "../../../java/io/FileDescriptor.def.hpp"
+#include "../../../java/io/PrintWriter.def.hpp"
+#include "./VoiceInteractionSessionService.def.hpp"
 
 namespace android::service::voice
 {
-	class VoiceInteractionSessionService : public android::app::Service
+	// Fields
+	
+	// Constructors
+	inline VoiceInteractionSessionService::VoiceInteractionSessionService()
+		: android::app::Service(
+			"android.service.voice.VoiceInteractionSessionService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject VoiceInteractionSessionService::onBind(android::content::Intent arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSessionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSessionService(QJniObject obj);
-		
-		// Constructors
-		VoiceInteractionSessionService();
-		
-		// Methods
-		JObject onBind(android::content::Intent arg0) const;
-		void onConfigurationChanged(android::content::res::Configuration arg0) const;
-		void onCreate() const;
-		void onLowMemory() const;
-		android::service::voice::VoiceInteractionSession onNewSession(android::os::Bundle arg0) const;
-		void onTrimMemory(jint arg0) const;
-	};
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void VoiceInteractionSessionService::onConfigurationChanged(android::content::res::Configuration arg0) const
+	{
+		callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.object()
+		);
+	}
+	inline void VoiceInteractionSessionService::onCreate() const
+	{
+		callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	inline void VoiceInteractionSessionService::onLowMemory() const
+	{
+		callMethod<void>(
+			"onLowMemory",
+			"()V"
+		);
+	}
+	inline android::service::voice::VoiceInteractionSession VoiceInteractionSessionService::onNewSession(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"onNewSession",
+			"(Landroid/os/Bundle;)Landroid/service/voice/VoiceInteractionSession;",
+			arg0.object()
+		);
+	}
+	inline void VoiceInteractionSessionService::onTrimMemory(jint arg0) const
+	{
+		callMethod<void>(
+			"onTrimMemory",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::service::voice
+
+// Base class headers
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
+#include "../../app/Service.hpp"
 

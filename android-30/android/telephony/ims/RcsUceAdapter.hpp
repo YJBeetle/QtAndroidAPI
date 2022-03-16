@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./RcsUceAdapter.def.hpp"
 
 namespace android::telephony::ims
 {
-	class RcsUceAdapter : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean RcsUceAdapter::isUceSettingEnabled() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RcsUceAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RcsUceAdapter(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean isUceSettingEnabled() const;
-	};
+		return callMethod<jboolean>(
+			"isUceSettingEnabled",
+			"()Z"
+		);
+	}
 } // namespace android::telephony::ims
+
+// Base class headers
 

@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ArithmeticException.def.hpp"
 
 namespace java::lang
 {
-	class ArithmeticException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ArithmeticException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ArithmeticException(QJniObject obj);
-		
-		// Constructors
-		ArithmeticException();
-		ArithmeticException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ArithmeticException::ArithmeticException()
+		: java::lang::RuntimeException(
+			"java.lang.ArithmeticException",
+			"()V"
+		) {}
+	inline ArithmeticException::ArithmeticException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.ArithmeticException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

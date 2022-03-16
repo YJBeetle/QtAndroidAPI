@@ -1,27 +1,40 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./VcnManager_VcnStatusCallback.def.hpp"
 
 namespace android::net::vcn
 {
-	class VcnManager_VcnStatusCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline VcnManager_VcnStatusCallback::VcnManager_VcnStatusCallback()
+		: JObject(
+			"android.net.vcn.VcnManager$VcnStatusCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void VcnManager_VcnStatusCallback::onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VcnManager_VcnStatusCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VcnManager_VcnStatusCallback(QJniObject obj);
-		
-		// Constructors
-		VcnManager_VcnStatusCallback();
-		
-		// Methods
-		void onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2) const;
-		void onStatusChanged(jint arg0) const;
-	};
+		callMethod<void>(
+			"onGatewayConnectionError",
+			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jthrowable>()
+		);
+	}
+	inline void VcnManager_VcnStatusCallback::onStatusChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onStatusChanged",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::net::vcn
+
+// Base class headers
 

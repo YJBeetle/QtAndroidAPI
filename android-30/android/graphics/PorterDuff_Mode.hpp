@@ -1,44 +1,179 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./PorterDuff_Mode.def.hpp"
 
 namespace android::graphics
 {
-	class PorterDuff_Mode : public java::lang::Enum
+	// Fields
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::ADD()
 	{
-	public:
-		// Fields
-		static android::graphics::PorterDuff_Mode ADD();
-		static android::graphics::PorterDuff_Mode CLEAR();
-		static android::graphics::PorterDuff_Mode DARKEN();
-		static android::graphics::PorterDuff_Mode DST();
-		static android::graphics::PorterDuff_Mode DST_ATOP();
-		static android::graphics::PorterDuff_Mode DST_IN();
-		static android::graphics::PorterDuff_Mode DST_OUT();
-		static android::graphics::PorterDuff_Mode DST_OVER();
-		static android::graphics::PorterDuff_Mode LIGHTEN();
-		static android::graphics::PorterDuff_Mode MULTIPLY();
-		static android::graphics::PorterDuff_Mode OVERLAY();
-		static android::graphics::PorterDuff_Mode SCREEN();
-		static android::graphics::PorterDuff_Mode SRC();
-		static android::graphics::PorterDuff_Mode SRC_ATOP();
-		static android::graphics::PorterDuff_Mode SRC_IN();
-		static android::graphics::PorterDuff_Mode SRC_OUT();
-		static android::graphics::PorterDuff_Mode SRC_OVER();
-		static android::graphics::PorterDuff_Mode XOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PorterDuff_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PorterDuff_Mode(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::PorterDuff_Mode valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"ADD",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::CLEAR()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"CLEAR",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::DARKEN()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"DARKEN",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::DST()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"DST",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_ATOP()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"DST_ATOP",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_IN()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"DST_IN",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_OUT()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"DST_OUT",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_OVER()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"DST_OVER",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::LIGHTEN()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"LIGHTEN",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::MULTIPLY()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"MULTIPLY",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::OVERLAY()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"OVERLAY",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::SCREEN()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"SCREEN",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"SRC",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_ATOP()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"SRC_ATOP",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_IN()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"SRC_IN",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_OUT()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"SRC_OUT",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_OVER()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"SRC_OVER",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::XOR()
+	{
+		return getStaticObjectField(
+			"android.graphics.PorterDuff$Mode",
+			"XOR",
+			"Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::PorterDuff_Mode PorterDuff_Mode::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.PorterDuff$Mode",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray PorterDuff_Mode::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.PorterDuff$Mode",
+			"values",
+			"()[Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

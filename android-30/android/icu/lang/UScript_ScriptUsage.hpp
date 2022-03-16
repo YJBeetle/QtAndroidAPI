@@ -1,32 +1,83 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./UScript_ScriptUsage.def.hpp"
 
 namespace android::icu::lang
 {
-	class UScript_ScriptUsage : public java::lang::Enum
+	// Fields
+	inline android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::ASPIRATIONAL()
 	{
-	public:
-		// Fields
-		static android::icu::lang::UScript_ScriptUsage ASPIRATIONAL();
-		static android::icu::lang::UScript_ScriptUsage EXCLUDED();
-		static android::icu::lang::UScript_ScriptUsage LIMITED_USE();
-		static android::icu::lang::UScript_ScriptUsage NOT_ENCODED();
-		static android::icu::lang::UScript_ScriptUsage RECOMMENDED();
-		static android::icu::lang::UScript_ScriptUsage UNKNOWN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UScript_ScriptUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UScript_ScriptUsage(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::lang::UScript_ScriptUsage valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.lang.UScript$ScriptUsage",
+			"ASPIRATIONAL",
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
+	}
+	inline android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::EXCLUDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UScript$ScriptUsage",
+			"EXCLUDED",
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
+	}
+	inline android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::LIMITED_USE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UScript$ScriptUsage",
+			"LIMITED_USE",
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
+	}
+	inline android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::NOT_ENCODED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UScript$ScriptUsage",
+			"NOT_ENCODED",
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
+	}
+	inline android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::RECOMMENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UScript$ScriptUsage",
+			"RECOMMENDED",
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
+	}
+	inline android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::UNKNOWN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UScript$ScriptUsage",
+			"UNKNOWN",
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.lang.UScript$ScriptUsage",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/lang/UScript$ScriptUsage;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray UScript_ScriptUsage::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.lang.UScript$ScriptUsage",
+			"values",
+			"()[Landroid/icu/lang/UScript$ScriptUsage;"
+		);
+	}
 } // namespace android::icu::lang
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

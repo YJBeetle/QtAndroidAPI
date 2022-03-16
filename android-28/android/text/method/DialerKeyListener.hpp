@@ -1,31 +1,48 @@
 #pragma once
 
-#include "./NumberKeyListener.hpp"
-
-class JCharArray;
-namespace android::view
-{
-	class KeyEvent;
-}
+#include "../../../JCharArray.hpp"
+#include "../../view/KeyEvent.def.hpp"
+#include "./DialerKeyListener.def.hpp"
 
 namespace android::text::method
 {
-	class DialerKeyListener : public android::text::method::NumberKeyListener
+	// Fields
+	inline JCharArray DialerKeyListener::CHARACTERS()
 	{
-	public:
-		// Fields
-		static JCharArray CHARACTERS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DialerKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::NumberKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		DialerKeyListener(QJniObject obj);
-		
-		// Constructors
-		DialerKeyListener();
-		
-		// Methods
-		static android::text::method::DialerKeyListener getInstance();
-		jint getInputType() const;
-	};
+		return getStaticObjectField(
+			"android.text.method.DialerKeyListener",
+			"CHARACTERS",
+			"[C"
+		);
+	}
+	
+	// Constructors
+	inline DialerKeyListener::DialerKeyListener()
+		: android::text::method::NumberKeyListener(
+			"android.text.method.DialerKeyListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::method::DialerKeyListener DialerKeyListener::getInstance()
+	{
+		return callStaticObjectMethod(
+			"android.text.method.DialerKeyListener",
+			"getInstance",
+			"()Landroid/text/method/DialerKeyListener;"
+		);
+	}
+	inline jint DialerKeyListener::getInputType() const
+	{
+		return callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./MetaKeyKeyListener.hpp"
+#include "./BaseKeyListener.hpp"
+#include "./NumberKeyListener.hpp"
 

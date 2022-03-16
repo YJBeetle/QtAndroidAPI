@@ -1,27 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaFeature_HdrType.def.hpp"
 
 namespace android::media
 {
-	class MediaFeature_HdrType : public JObject
+	// Fields
+	inline JString MediaFeature_HdrType::DOLBY_VISION()
 	{
-	public:
-		// Fields
-		static JString DOLBY_VISION();
-		static JString HDR10();
-		static JString HDR10_PLUS();
-		static JString HLG();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaFeature_HdrType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaFeature_HdrType(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.media.MediaFeature$HdrType",
+			"DOLBY_VISION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaFeature_HdrType::HDR10()
+	{
+		return getStaticObjectField(
+			"android.media.MediaFeature$HdrType",
+			"HDR10",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaFeature_HdrType::HDR10_PLUS()
+	{
+		return getStaticObjectField(
+			"android.media.MediaFeature$HdrType",
+			"HDR10_PLUS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaFeature_HdrType::HLG()
+	{
+		return getStaticObjectField(
+			"android.media.MediaFeature$HdrType",
+			"HLG",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

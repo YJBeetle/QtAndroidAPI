@@ -1,37 +1,87 @@
 #pragma once
 
+#include "../util/ULocale.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::icu::util
-{
-	class ULocale;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./LocaleDisplayNames_UiListItem.def.hpp"
 
 namespace android::icu::text
 {
-	class LocaleDisplayNames_UiListItem : public JObject
+	// Fields
+	inline android::icu::util::ULocale LocaleDisplayNames_UiListItem::minimized()
 	{
-	public:
-		// Fields
-		android::icu::util::ULocale minimized();
-		android::icu::util::ULocale modified();
-		JString nameInDisplayLocale();
-		JString nameInSelf();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LocaleDisplayNames_UiListItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleDisplayNames_UiListItem(QJniObject obj);
-		
-		// Constructors
-		LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, JString arg2, JString arg3);
-		
-		// Methods
-		static JObject getComparator(JObject arg0, jboolean arg1);
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getObjectField(
+			"minimized",
+			"Landroid/icu/util/ULocale;"
+		);
+	}
+	inline android::icu::util::ULocale LocaleDisplayNames_UiListItem::modified()
+	{
+		return getObjectField(
+			"modified",
+			"Landroid/icu/util/ULocale;"
+		);
+	}
+	inline JString LocaleDisplayNames_UiListItem::nameInDisplayLocale()
+	{
+		return getObjectField(
+			"nameInDisplayLocale",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString LocaleDisplayNames_UiListItem::nameInSelf()
+	{
+		return getObjectField(
+			"nameInSelf",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, JString arg2, JString arg3)
+		: JObject(
+			"android.icu.text.LocaleDisplayNames$UiListItem",
+			"(Landroid/icu/util/ULocale;Landroid/icu/util/ULocale;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JObject LocaleDisplayNames_UiListItem::getComparator(JObject arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.LocaleDisplayNames$UiListItem",
+			"getComparator",
+			"(Ljava/util/Comparator;Z)Ljava/util/Comparator;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline jboolean LocaleDisplayNames_UiListItem::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint LocaleDisplayNames_UiListItem::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString LocaleDisplayNames_UiListItem::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

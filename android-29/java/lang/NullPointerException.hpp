@@ -1,28 +1,44 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./NullPointerException.def.hpp"
 
 namespace java::lang
 {
-	class NullPointerException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline NullPointerException::NullPointerException()
+		: java::lang::RuntimeException(
+			"java.lang.NullPointerException",
+			"()V"
+		) {}
+	inline NullPointerException::NullPointerException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.NullPointerException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JThrowable NullPointerException::fillInStackTrace() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NullPointerException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		NullPointerException(QJniObject obj);
-		
-		// Constructors
-		NullPointerException();
-		NullPointerException(JString arg0);
-		
-		// Methods
-		JThrowable fillInStackTrace() const;
-		JString getMessage() const;
-	};
+		return callObjectMethod(
+			"fillInStackTrace",
+			"()Ljava/lang/Throwable;"
+		);
+	}
+	inline JString NullPointerException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

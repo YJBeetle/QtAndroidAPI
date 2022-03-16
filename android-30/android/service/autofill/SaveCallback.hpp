@@ -1,30 +1,40 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class IntentSender;
-}
-class JString;
+#include "../../content/IntentSender.def.hpp"
+#include "../../../JString.hpp"
+#include "./SaveCallback.def.hpp"
 
 namespace android::service::autofill
 {
-	class SaveCallback : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void SaveCallback::onFailure(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SaveCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SaveCallback(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void onFailure(JString arg0) const;
-		void onSuccess() const;
-		void onSuccess(android::content::IntentSender arg0) const;
-	};
+		callMethod<void>(
+			"onFailure",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void SaveCallback::onSuccess() const
+	{
+		callMethod<void>(
+			"onSuccess",
+			"()V"
+		);
+	}
+	inline void SaveCallback::onSuccess(android::content::IntentSender arg0) const
+	{
+		callMethod<void>(
+			"onSuccess",
+			"(Landroid/content/IntentSender;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

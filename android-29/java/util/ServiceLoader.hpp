@@ -1,62 +1,98 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JClass;
-namespace java::lang
-{
-	class ClassLoader;
-}
-class JString;
-class JThrowable;
-namespace java::lang
-{
-	class Void;
-}
-namespace java::lang::reflect
-{
-	class Constructor;
-}
-namespace java::lang::reflect
-{
-	class Method;
-}
-namespace java::net
-{
-	class URL;
-}
-namespace java::security
-{
-	class AccessControlContext;
-}
-namespace java::util
-{
-	class Optional;
-}
+#include "../../JClass.hpp"
+#include "../lang/ClassLoader.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "../lang/Void.def.hpp"
+#include "../lang/reflect/Constructor.def.hpp"
+#include "../lang/reflect/Method.def.hpp"
+#include "../net/URL.def.hpp"
+#include "../security/AccessControlContext.def.hpp"
+#include "./Optional.def.hpp"
+#include "./ServiceLoader.def.hpp"
 
 namespace java::util
 {
-	class ServiceLoader : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::ServiceLoader ServiceLoader::load(JClass arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ServiceLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceLoader(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::util::ServiceLoader load(JClass arg0);
-		static java::util::ServiceLoader load(JClass arg0, java::lang::ClassLoader arg1);
-		static java::util::ServiceLoader load(JObject arg0, JClass arg1);
-		static java::util::ServiceLoader loadInstalled(JClass arg0);
-		java::util::Optional findFirst() const;
-		JObject iterator() const;
-		void reload() const;
-		JObject stream() const;
-		JString toString() const;
-	};
+		return callStaticObjectMethod(
+			"java.util.ServiceLoader",
+			"load",
+			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",
+			arg0.object<jclass>()
+		);
+	}
+	inline java::util::ServiceLoader ServiceLoader::load(JClass arg0, java::lang::ClassLoader arg1)
+	{
+		return callStaticObjectMethod(
+			"java.util.ServiceLoader",
+			"load",
+			"(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;",
+			arg0.object<jclass>(),
+			arg1.object()
+		);
+	}
+	inline java::util::ServiceLoader ServiceLoader::load(JObject arg0, JClass arg1)
+	{
+		return callStaticObjectMethod(
+			"java.util.ServiceLoader",
+			"load",
+			"(Ljava/lang/ModuleLayer;Ljava/lang/Class;)Ljava/util/ServiceLoader;",
+			arg0.object(),
+			arg1.object<jclass>()
+		);
+	}
+	inline java::util::ServiceLoader ServiceLoader::loadInstalled(JClass arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.ServiceLoader",
+			"loadInstalled",
+			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",
+			arg0.object<jclass>()
+		);
+	}
+	inline java::util::Optional ServiceLoader::findFirst() const
+	{
+		return callObjectMethod(
+			"findFirst",
+			"()Ljava/util/Optional;"
+		);
+	}
+	inline JObject ServiceLoader::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline void ServiceLoader::reload() const
+	{
+		callMethod<void>(
+			"reload",
+			"()V"
+		);
+	}
+	inline JObject ServiceLoader::stream() const
+	{
+		return callObjectMethod(
+			"stream",
+			"()Ljava/util/stream/Stream;"
+		);
+	}
+	inline JString ServiceLoader::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

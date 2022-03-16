@@ -1,32 +1,58 @@
 #pragma once
 
-#include "../../io/FilterInputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class InputStream;
-}
+#include "../../../JByteArray.hpp"
+#include "../../io/InputStream.def.hpp"
+#include "./CheckedInputStream.def.hpp"
 
 namespace java::util::zip
 {
-	class CheckedInputStream : public java::io::FilterInputStream
+	// Fields
+	
+	// Constructors
+	inline CheckedInputStream::CheckedInputStream(java::io::InputStream arg0, JObject arg1)
+		: java::io::FilterInputStream(
+			"java.util.zip.CheckedInputStream",
+			"(Ljava/io/InputStream;Ljava/util/zip/Checksum;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject CheckedInputStream::getChecksum() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CheckedInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		CheckedInputStream(QJniObject obj);
-		
-		// Constructors
-		CheckedInputStream(java::io::InputStream arg0, JObject arg1);
-		
-		// Methods
-		JObject getChecksum() const;
-		jint read() const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-		jlong skip(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"getChecksum",
+			"()Ljava/util/zip/Checksum;"
+		);
+	}
+	inline jint CheckedInputStream::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	inline jint CheckedInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jlong CheckedInputStream::skip(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
+		);
+	}
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../io/InputStream.hpp"
+#include "../../io/FilterInputStream.hpp"
 

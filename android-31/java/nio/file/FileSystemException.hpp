@@ -1,29 +1,60 @@
 #pragma once
 
-#include "../../io/IOException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./FileSystemException.def.hpp"
 
 namespace java::nio::file
 {
-	class FileSystemException : public java::io::IOException
+	// Fields
+	
+	// Constructors
+	inline FileSystemException::FileSystemException(JString arg0)
+		: java::io::IOException(
+			"java.nio.file.FileSystemException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline FileSystemException::FileSystemException(JString arg0, JString arg1, JString arg2)
+		: java::io::IOException(
+			"java.nio.file.FileSystemException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString FileSystemException::getFile() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileSystemException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		FileSystemException(QJniObject obj);
-		
-		// Constructors
-		FileSystemException(JString arg0);
-		FileSystemException(JString arg0, JString arg1, JString arg2);
-		
-		// Methods
-		JString getFile() const;
-		JString getMessage() const;
-		JString getOtherFile() const;
-		JString getReason() const;
-	};
+		return callObjectMethod(
+			"getFile",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString FileSystemException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString FileSystemException::getOtherFile() const
+	{
+		return callObjectMethod(
+			"getOtherFile",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString FileSystemException::getReason() const
+	{
+		return callObjectMethod(
+			"getReason",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 

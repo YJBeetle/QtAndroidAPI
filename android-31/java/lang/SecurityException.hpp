@@ -1,28 +1,43 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./SecurityException.def.hpp"
 
 namespace java::lang
 {
-	class SecurityException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SecurityException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		SecurityException(QJniObject obj);
-		
-		// Constructors
-		SecurityException();
-		SecurityException(JString arg0);
-		SecurityException(JThrowable arg0);
-		SecurityException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SecurityException::SecurityException()
+		: java::lang::RuntimeException(
+			"java.lang.SecurityException",
+			"()V"
+		) {}
+	inline SecurityException::SecurityException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.SecurityException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SecurityException::SecurityException(JThrowable arg0)
+		: java::lang::RuntimeException(
+			"java.lang.SecurityException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline SecurityException::SecurityException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"java.lang.SecurityException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

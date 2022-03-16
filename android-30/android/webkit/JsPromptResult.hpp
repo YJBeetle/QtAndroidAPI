@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./JsResult.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./JsPromptResult.def.hpp"
 
 namespace android::webkit
 {
-	class JsPromptResult : public android::webkit::JsResult
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void JsPromptResult::confirm(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit JsPromptResult(const char *className, const char *sig, Ts...agv) : android::webkit::JsResult(className, sig, std::forward<Ts>(agv)...) {}
-		JsPromptResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void confirm(JString arg0) const;
-	};
+		callMethod<void>(
+			"confirm",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
+#include "./JsResult.hpp"
 

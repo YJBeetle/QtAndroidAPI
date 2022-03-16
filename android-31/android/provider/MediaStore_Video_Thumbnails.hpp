@@ -1,61 +1,175 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::graphics
-{
-	class Bitmap;
-}
-namespace android::graphics
-{
-	class BitmapFactory_Options;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::util
-{
-	class Size;
-}
-class JString;
+#include "../content/ContentResolver.def.hpp"
+#include "../graphics/Bitmap.def.hpp"
+#include "../graphics/BitmapFactory_Options.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../util/Size.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaStore_Video_Thumbnails.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Video_Thumbnails : public JObject
+	// Fields
+	inline JString MediaStore_Video_Thumbnails::DATA()
 	{
-	public:
-		// Fields
-		static JString DATA();
-		static JString DEFAULT_SORT_ORDER();
-		static android::net::Uri EXTERNAL_CONTENT_URI();
-		static jint FULL_SCREEN_KIND();
-		static JString HEIGHT();
-		static android::net::Uri INTERNAL_CONTENT_URI();
-		static JString KIND();
-		static jint MICRO_KIND();
-		static jint MINI_KIND();
-		static JString VIDEO_ID();
-		static JString WIDTH();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore_Video_Thumbnails(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Video_Thumbnails(QJniObject obj);
-		
-		// Constructors
-		MediaStore_Video_Thumbnails();
-		
-		// Methods
-		static void cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1);
-		static void cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1, jlong arg2);
-		static android::net::Uri getContentUri(JString arg0);
-		static android::util::Size getKindSize(jint arg0);
-		static android::graphics::Bitmap getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
-		static android::graphics::Bitmap getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4);
-	};
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaStore_Video_Thumbnails::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri MediaStore_Video_Thumbnails::EXTERNAL_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"EXTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jint MediaStore_Video_Thumbnails::FULL_SCREEN_KIND()
+	{
+		return getStaticField<jint>(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"FULL_SCREEN_KIND"
+		);
+	}
+	inline JString MediaStore_Video_Thumbnails::HEIGHT()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"HEIGHT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri MediaStore_Video_Thumbnails::INTERNAL_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"INTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString MediaStore_Video_Thumbnails::KIND()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"KIND",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint MediaStore_Video_Thumbnails::MICRO_KIND()
+	{
+		return getStaticField<jint>(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"MICRO_KIND"
+		);
+	}
+	inline jint MediaStore_Video_Thumbnails::MINI_KIND()
+	{
+		return getStaticField<jint>(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"MINI_KIND"
+		);
+	}
+	inline JString MediaStore_Video_Thumbnails::VIDEO_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"VIDEO_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaStore_Video_Thumbnails::WIDTH()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"WIDTH",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails()
+		: JObject(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaStore_Video_Thumbnails::cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1)
+	{
+		callStaticMethod<void>(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"cancelThumbnailRequest",
+			"(Landroid/content/ContentResolver;J)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void MediaStore_Video_Thumbnails::cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1, jlong arg2)
+	{
+		callStaticMethod<void>(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"cancelThumbnailRequest",
+			"(Landroid/content/ContentResolver;JJ)V",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline android::net::Uri MediaStore_Video_Thumbnails::getContentUri(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::util::Size MediaStore_Video_Thumbnails::getKindSize(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"getKindSize",
+			"(I)Landroid/util/Size;",
+			arg0
+		);
+	}
+	inline android::graphics::Bitmap MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"getThumbnail",
+			"(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3.object()
+		);
+	}
+	inline android::graphics::Bitmap MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"getThumbnail",
+			"(Landroid/content/ContentResolver;JJILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.object()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

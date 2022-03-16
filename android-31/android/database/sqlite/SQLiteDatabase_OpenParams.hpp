@@ -1,31 +1,72 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SQLiteDatabase_OpenParams.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteDatabase_OpenParams : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject SQLiteDatabase_OpenParams::getCursorFactory() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SQLiteDatabase_OpenParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteDatabase_OpenParams(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getCursorFactory() const;
-		JObject getErrorHandler() const;
-		jlong getIdleConnectionTimeout() const;
-		JString getJournalMode() const;
-		jint getLookasideSlotCount() const;
-		jint getLookasideSlotSize() const;
-		jint getOpenFlags() const;
-		JString getSynchronousMode() const;
-	};
+		return callObjectMethod(
+			"getCursorFactory",
+			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
+		);
+	}
+	inline JObject SQLiteDatabase_OpenParams::getErrorHandler() const
+	{
+		return callObjectMethod(
+			"getErrorHandler",
+			"()Landroid/database/DatabaseErrorHandler;"
+		);
+	}
+	inline jlong SQLiteDatabase_OpenParams::getIdleConnectionTimeout() const
+	{
+		return callMethod<jlong>(
+			"getIdleConnectionTimeout",
+			"()J"
+		);
+	}
+	inline JString SQLiteDatabase_OpenParams::getJournalMode() const
+	{
+		return callObjectMethod(
+			"getJournalMode",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint SQLiteDatabase_OpenParams::getLookasideSlotCount() const
+	{
+		return callMethod<jint>(
+			"getLookasideSlotCount",
+			"()I"
+		);
+	}
+	inline jint SQLiteDatabase_OpenParams::getLookasideSlotSize() const
+	{
+		return callMethod<jint>(
+			"getLookasideSlotSize",
+			"()I"
+		);
+	}
+	inline jint SQLiteDatabase_OpenParams::getOpenFlags() const
+	{
+		return callMethod<jint>(
+			"getOpenFlags",
+			"()I"
+		);
+	}
+	inline JString SQLiteDatabase_OpenParams::getSynchronousMode() const
+	{
+		return callObjectMethod(
+			"getSynchronousMode",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::database::sqlite
+
+// Base class headers
 

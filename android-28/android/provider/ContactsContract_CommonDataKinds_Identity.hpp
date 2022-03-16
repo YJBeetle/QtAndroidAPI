@@ -1,29 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_CommonDataKinds_Identity.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_CommonDataKinds_Identity : public JObject
+	// Fields
+	inline JString ContactsContract_CommonDataKinds_Identity::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString EXTRA_ADDRESS_BOOK_INDEX();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static JString IDENTITY();
-		static JString NAMESPACE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Identity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Identity(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Identity",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Identity::EXTRA_ADDRESS_BOOK_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Identity",
+			"EXTRA_ADDRESS_BOOK_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Identity::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Identity",
+			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Identity::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Identity",
+			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Identity::IDENTITY()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Identity",
+			"IDENTITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Identity::NAMESPACE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Identity",
+			"NAMESPACE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

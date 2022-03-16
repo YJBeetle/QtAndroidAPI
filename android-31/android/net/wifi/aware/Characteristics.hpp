@@ -1,36 +1,89 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../../os/Parcel.def.hpp"
+#include "./Characteristics.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class Characteristics : public JObject
+	// Fields
+	inline JObject Characteristics::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint WIFI_AWARE_CIPHER_SUITE_NCS_SK_128();
-		static jint WIFI_AWARE_CIPHER_SUITE_NCS_SK_256();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Characteristics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Characteristics(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jint getMaxMatchFilterLength() const;
-		jint getMaxServiceNameLength() const;
-		jint getMaxServiceSpecificInfoLength() const;
-		jint getSupportedCipherSuites() const;
-		jboolean isInstantCommunicationModeSupported() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.aware.Characteristics",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint Characteristics::WIFI_AWARE_CIPHER_SUITE_NCS_SK_128()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.aware.Characteristics",
+			"WIFI_AWARE_CIPHER_SUITE_NCS_SK_128"
+		);
+	}
+	inline jint Characteristics::WIFI_AWARE_CIPHER_SUITE_NCS_SK_256()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.aware.Characteristics",
+			"WIFI_AWARE_CIPHER_SUITE_NCS_SK_256"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint Characteristics::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint Characteristics::getMaxMatchFilterLength() const
+	{
+		return callMethod<jint>(
+			"getMaxMatchFilterLength",
+			"()I"
+		);
+	}
+	inline jint Characteristics::getMaxServiceNameLength() const
+	{
+		return callMethod<jint>(
+			"getMaxServiceNameLength",
+			"()I"
+		);
+	}
+	inline jint Characteristics::getMaxServiceSpecificInfoLength() const
+	{
+		return callMethod<jint>(
+			"getMaxServiceSpecificInfoLength",
+			"()I"
+		);
+	}
+	inline jint Characteristics::getSupportedCipherSuites() const
+	{
+		return callMethod<jint>(
+			"getSupportedCipherSuites",
+			"()I"
+		);
+	}
+	inline jboolean Characteristics::isInstantCommunicationModeSupported() const
+	{
+		return callMethod<jboolean>(
+			"isInstantCommunicationModeSupported",
+			"()Z"
+		);
+	}
+	inline void Characteristics::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
 

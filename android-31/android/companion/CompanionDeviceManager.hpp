@@ -1,47 +1,85 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AssociationRequest.def.hpp"
+#include "./CompanionDeviceManager_Callback.def.hpp"
+#include "../content/ComponentName.def.hpp"
+#include "../os/Handler.def.hpp"
+#include "../../JString.hpp"
+#include "./CompanionDeviceManager.def.hpp"
 
 namespace android::companion
 {
-	class AssociationRequest;
-}
-namespace android::companion
-{
-	class CompanionDeviceManager_Callback;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::os
-{
-	class Handler;
-}
-class JString;
-
-namespace android::companion
-{
-	class CompanionDeviceManager : public JObject
+	// Fields
+	inline JString CompanionDeviceManager::EXTRA_DEVICE()
 	{
-	public:
-		// Fields
-		static JString EXTRA_DEVICE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CompanionDeviceManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CompanionDeviceManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2) const;
-		void disassociate(JString arg0) const;
-		JObject getAssociations() const;
-		jboolean hasNotificationAccess(android::content::ComponentName arg0) const;
-		void requestNotificationAccess(android::content::ComponentName arg0) const;
-		void startObservingDevicePresence(JString arg0) const;
-		void stopObservingDevicePresence(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"android.companion.CompanionDeviceManager",
+			"EXTRA_DEVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void CompanionDeviceManager::associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2) const
+	{
+		callMethod<void>(
+			"associate",
+			"(Landroid/companion/AssociationRequest;Landroid/companion/CompanionDeviceManager$Callback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void CompanionDeviceManager::disassociate(JString arg0) const
+	{
+		callMethod<void>(
+			"disassociate",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject CompanionDeviceManager::getAssociations() const
+	{
+		return callObjectMethod(
+			"getAssociations",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jboolean CompanionDeviceManager::hasNotificationAccess(android::content::ComponentName arg0) const
+	{
+		return callMethod<jboolean>(
+			"hasNotificationAccess",
+			"(Landroid/content/ComponentName;)Z",
+			arg0.object()
+		);
+	}
+	inline void CompanionDeviceManager::requestNotificationAccess(android::content::ComponentName arg0) const
+	{
+		callMethod<void>(
+			"requestNotificationAccess",
+			"(Landroid/content/ComponentName;)V",
+			arg0.object()
+		);
+	}
+	inline void CompanionDeviceManager::startObservingDevicePresence(JString arg0) const
+	{
+		callMethod<void>(
+			"startObservingDevicePresence",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void CompanionDeviceManager::stopObservingDevicePresence(JString arg0) const
+	{
+		callMethod<void>(
+			"stopObservingDevicePresence",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::companion
+
+// Base class headers
 

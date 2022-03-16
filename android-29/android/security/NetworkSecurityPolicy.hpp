@@ -1,26 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NetworkSecurityPolicy.def.hpp"
 
 namespace android::security
 {
-	class NetworkSecurityPolicy : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::security::NetworkSecurityPolicy NetworkSecurityPolicy::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkSecurityPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkSecurityPolicy(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::security::NetworkSecurityPolicy getInstance();
-		jboolean isCleartextTrafficPermitted() const;
-		jboolean isCleartextTrafficPermitted(JString arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.security.NetworkSecurityPolicy",
+			"getInstance",
+			"()Landroid/security/NetworkSecurityPolicy;"
+		);
+	}
+	inline jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted() const
+	{
+		return callMethod<jboolean>(
+			"isCleartextTrafficPermitted",
+			"()Z"
+		);
+	}
+	inline jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"isCleartextTrafficPermitted",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

@@ -1,29 +1,33 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Telephony_Mms_Inbox.def.hpp"
 
 namespace android::provider
 {
-	class Telephony_Mms_Inbox : public JObject
+	// Fields
+	inline android::net::Uri Telephony_Mms_Inbox::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		static JString DEFAULT_SORT_ORDER();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Telephony_Mms_Inbox(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Mms_Inbox(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Inbox",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Telephony_Mms_Inbox::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Inbox",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

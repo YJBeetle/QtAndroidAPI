@@ -1,28 +1,56 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_CommonDataKinds_Note.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_CommonDataKinds_Note : public JObject
+	// Fields
+	inline JString ContactsContract_CommonDataKinds_Note::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString EXTRA_ADDRESS_BOOK_INDEX();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static JString NOTE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Note(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Note(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Note",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Note::EXTRA_ADDRESS_BOOK_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Note",
+			"EXTRA_ADDRESS_BOOK_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Note::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Note",
+			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Note::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Note",
+			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Note::NOTE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Note",
+			"NOTE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

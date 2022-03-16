@@ -1,28 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GpsSatellite.def.hpp"
 
 namespace android::location
 {
-	class GpsSatellite : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jfloat GpsSatellite::getAzimuth() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GpsSatellite(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GpsSatellite(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jfloat getAzimuth() const;
-		jfloat getElevation() const;
-		jint getPrn() const;
-		jfloat getSnr() const;
-		jboolean hasAlmanac() const;
-		jboolean hasEphemeris() const;
-		jboolean usedInFix() const;
-	};
+		return callMethod<jfloat>(
+			"getAzimuth",
+			"()F"
+		);
+	}
+	inline jfloat GpsSatellite::getElevation() const
+	{
+		return callMethod<jfloat>(
+			"getElevation",
+			"()F"
+		);
+	}
+	inline jint GpsSatellite::getPrn() const
+	{
+		return callMethod<jint>(
+			"getPrn",
+			"()I"
+		);
+	}
+	inline jfloat GpsSatellite::getSnr() const
+	{
+		return callMethod<jfloat>(
+			"getSnr",
+			"()F"
+		);
+	}
+	inline jboolean GpsSatellite::hasAlmanac() const
+	{
+		return callMethod<jboolean>(
+			"hasAlmanac",
+			"()Z"
+		);
+	}
+	inline jboolean GpsSatellite::hasEphemeris() const
+	{
+		return callMethod<jboolean>(
+			"hasEphemeris",
+			"()Z"
+		);
+	}
+	inline jboolean GpsSatellite::usedInFix() const
+	{
+		return callMethod<jboolean>(
+			"usedInFix",
+			"()Z"
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

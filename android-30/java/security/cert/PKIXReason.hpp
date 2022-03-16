@@ -1,34 +1,99 @@
 #pragma once
 
-#include "../../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./PKIXReason.def.hpp"
 
 namespace java::security::cert
 {
-	class PKIXReason : public java::lang::Enum
+	// Fields
+	inline java::security::cert::PKIXReason PKIXReason::INVALID_KEY_USAGE()
 	{
-	public:
-		// Fields
-		static java::security::cert::PKIXReason INVALID_KEY_USAGE();
-		static java::security::cert::PKIXReason INVALID_NAME();
-		static java::security::cert::PKIXReason INVALID_POLICY();
-		static java::security::cert::PKIXReason NAME_CHAINING();
-		static java::security::cert::PKIXReason NOT_CA_CERT();
-		static java::security::cert::PKIXReason NO_TRUST_ANCHOR();
-		static java::security::cert::PKIXReason PATH_TOO_LONG();
-		static java::security::cert::PKIXReason UNRECOGNIZED_CRIT_EXT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PKIXReason(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXReason(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::security::cert::PKIXReason valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"INVALID_KEY_USAGE",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	inline java::security::cert::PKIXReason PKIXReason::INVALID_NAME()
+	{
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"INVALID_NAME",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	inline java::security::cert::PKIXReason PKIXReason::INVALID_POLICY()
+	{
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"INVALID_POLICY",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	inline java::security::cert::PKIXReason PKIXReason::NAME_CHAINING()
+	{
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"NAME_CHAINING",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	inline java::security::cert::PKIXReason PKIXReason::NOT_CA_CERT()
+	{
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"NOT_CA_CERT",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	inline java::security::cert::PKIXReason PKIXReason::NO_TRUST_ANCHOR()
+	{
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"NO_TRUST_ANCHOR",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	inline java::security::cert::PKIXReason PKIXReason::PATH_TOO_LONG()
+	{
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"PATH_TOO_LONG",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	inline java::security::cert::PKIXReason PKIXReason::UNRECOGNIZED_CRIT_EXT()
+	{
+		return getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"UNRECOGNIZED_CRIT_EXT",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::security::cert::PKIXReason PKIXReason::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.PKIXReason",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/security/cert/PKIXReason;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray PKIXReason::values()
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.PKIXReason",
+			"values",
+			"()[Ljava/security/cert/PKIXReason;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
+#include "../../lang/Enum.hpp"
 

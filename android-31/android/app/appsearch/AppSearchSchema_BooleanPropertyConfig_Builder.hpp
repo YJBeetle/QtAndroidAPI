@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AppSearchSchema_BooleanPropertyConfig.def.hpp"
+#include "../../../JString.hpp"
+#include "./AppSearchSchema_BooleanPropertyConfig_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema_BooleanPropertyConfig;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class AppSearchSchema_BooleanPropertyConfig_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AppSearchSchema_BooleanPropertyConfig_Builder::AppSearchSchema_BooleanPropertyConfig_Builder(JString arg0)
+		: JObject(
+			"android.app.appsearch.AppSearchSchema$BooleanPropertyConfig$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::AppSearchSchema_BooleanPropertyConfig AppSearchSchema_BooleanPropertyConfig_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_BooleanPropertyConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_BooleanPropertyConfig_Builder(QJniObject obj);
-		
-		// Constructors
-		AppSearchSchema_BooleanPropertyConfig_Builder(JString arg0);
-		
-		// Methods
-		android::app::appsearch::AppSearchSchema_BooleanPropertyConfig build() const;
-		android::app::appsearch::AppSearchSchema_BooleanPropertyConfig_Builder setCardinality(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/AppSearchSchema$BooleanPropertyConfig;"
+		);
+	}
+	inline android::app::appsearch::AppSearchSchema_BooleanPropertyConfig_Builder AppSearchSchema_BooleanPropertyConfig_Builder::setCardinality(jint arg0) const
+	{
+		return callObjectMethod(
+			"setCardinality",
+			"(I)Landroid/app/appsearch/AppSearchSchema$BooleanPropertyConfig$Builder;",
+			arg0
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

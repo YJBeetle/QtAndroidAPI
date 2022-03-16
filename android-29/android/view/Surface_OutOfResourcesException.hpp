@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Surface_OutOfResourcesException.def.hpp"
 
 namespace android::view
 {
-	class Surface_OutOfResourcesException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Surface_OutOfResourcesException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		Surface_OutOfResourcesException(QJniObject obj);
-		
-		// Constructors
-		Surface_OutOfResourcesException();
-		Surface_OutOfResourcesException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Surface_OutOfResourcesException::Surface_OutOfResourcesException()
+		: java::lang::RuntimeException(
+			"android.view.Surface$OutOfResourcesException",
+			"()V"
+		) {}
+	inline Surface_OutOfResourcesException::Surface_OutOfResourcesException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.view.Surface$OutOfResourcesException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::view
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

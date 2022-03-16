@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ClientInfoStatus.def.hpp"
 
 namespace java::sql
 {
-	class ClientInfoStatus : public java::lang::Enum
+	// Fields
+	inline java::sql::ClientInfoStatus ClientInfoStatus::REASON_UNKNOWN()
 	{
-	public:
-		// Fields
-		static java::sql::ClientInfoStatus REASON_UNKNOWN();
-		static java::sql::ClientInfoStatus REASON_UNKNOWN_PROPERTY();
-		static java::sql::ClientInfoStatus REASON_VALUE_INVALID();
-		static java::sql::ClientInfoStatus REASON_VALUE_TRUNCATED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ClientInfoStatus(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ClientInfoStatus(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::sql::ClientInfoStatus valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.sql.ClientInfoStatus",
+			"REASON_UNKNOWN",
+			"Ljava/sql/ClientInfoStatus;"
+		);
+	}
+	inline java::sql::ClientInfoStatus ClientInfoStatus::REASON_UNKNOWN_PROPERTY()
+	{
+		return getStaticObjectField(
+			"java.sql.ClientInfoStatus",
+			"REASON_UNKNOWN_PROPERTY",
+			"Ljava/sql/ClientInfoStatus;"
+		);
+	}
+	inline java::sql::ClientInfoStatus ClientInfoStatus::REASON_VALUE_INVALID()
+	{
+		return getStaticObjectField(
+			"java.sql.ClientInfoStatus",
+			"REASON_VALUE_INVALID",
+			"Ljava/sql/ClientInfoStatus;"
+		);
+	}
+	inline java::sql::ClientInfoStatus ClientInfoStatus::REASON_VALUE_TRUNCATED()
+	{
+		return getStaticObjectField(
+			"java.sql.ClientInfoStatus",
+			"REASON_VALUE_TRUNCATED",
+			"Ljava/sql/ClientInfoStatus;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::sql::ClientInfoStatus ClientInfoStatus::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.sql.ClientInfoStatus",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ClientInfoStatus::values()
+	{
+		return callStaticObjectMethod(
+			"java.sql.ClientInfoStatus",
+			"values",
+			"()[Ljava/sql/ClientInfoStatus;"
+		);
+	}
 } // namespace java::sql
+
+// Base class headers
+#include "../lang/Enum.hpp"
 

@@ -1,31 +1,74 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Call_RttCall.def.hpp"
 
 namespace android::telecom
 {
-	class Call_RttCall : public JObject
+	// Fields
+	inline jint Call_RttCall::RTT_MODE_FULL()
 	{
-	public:
-		// Fields
-		static jint RTT_MODE_FULL();
-		static jint RTT_MODE_HCO();
-		static jint RTT_MODE_VCO();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Call_RttCall(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Call_RttCall(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getRttAudioMode() const;
-		JString read() const;
-		JString readImmediately() const;
-		void setRttMode(jint arg0) const;
-		void write(JString arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.telecom.Call$RttCall",
+			"RTT_MODE_FULL"
+		);
+	}
+	inline jint Call_RttCall::RTT_MODE_HCO()
+	{
+		return getStaticField<jint>(
+			"android.telecom.Call$RttCall",
+			"RTT_MODE_HCO"
+		);
+	}
+	inline jint Call_RttCall::RTT_MODE_VCO()
+	{
+		return getStaticField<jint>(
+			"android.telecom.Call$RttCall",
+			"RTT_MODE_VCO"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint Call_RttCall::getRttAudioMode() const
+	{
+		return callMethod<jint>(
+			"getRttAudioMode",
+			"()I"
+		);
+	}
+	inline JString Call_RttCall::read() const
+	{
+		return callObjectMethod(
+			"read",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Call_RttCall::readImmediately() const
+	{
+		return callObjectMethod(
+			"readImmediately",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Call_RttCall::setRttMode(jint arg0) const
+	{
+		callMethod<void>(
+			"setRttMode",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Call_RttCall::write(JString arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
 

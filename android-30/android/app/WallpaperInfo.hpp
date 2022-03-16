@@ -1,77 +1,184 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content::pm
-{
-	class PackageManager;
-}
-namespace android::content::pm
-{
-	class ResolveInfo;
-}
-namespace android::content::pm
-{
-	class ServiceInfo;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-class JString;
+#include "../content/ComponentName.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../content/pm/PackageManager.def.hpp"
+#include "../content/pm/ResolveInfo.def.hpp"
+#include "../content/pm/ServiceInfo.def.hpp"
+#include "../graphics/drawable/Drawable.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./WallpaperInfo.def.hpp"
 
 namespace android::app
 {
-	class WallpaperInfo : public JObject
+	// Fields
+	inline JObject WallpaperInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WallpaperInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WallpaperInfo(QJniObject obj);
-		
-		// Constructors
-		WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
-		
-		// Methods
-		jint describeContents() const;
-		void dump(JObject arg0, JString arg1) const;
-		android::content::ComponentName getComponent() const;
-		JString getPackageName() const;
-		android::content::pm::ServiceInfo getServiceInfo() const;
-		JString getServiceName() const;
-		JString getSettingsActivity() const;
-		android::net::Uri getSettingsSliceUri() const;
-		jboolean getShowMetadataInPreview() const;
-		JString loadAuthor(android::content::pm::PackageManager arg0) const;
-		JString loadContextDescription(android::content::pm::PackageManager arg0) const;
-		android::net::Uri loadContextUri(android::content::pm::PackageManager arg0) const;
-		JString loadDescription(android::content::pm::PackageManager arg0) const;
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
-		JString loadLabel(android::content::pm::PackageManager arg0) const;
-		android::graphics::drawable::Drawable loadThumbnail(android::content::pm::PackageManager arg0) const;
-		jboolean supportsMultipleDisplays() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.WallpaperInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline WallpaperInfo::WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
+		: JObject(
+			"android.app.WallpaperInfo",
+			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jint WallpaperInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void WallpaperInfo::dump(JObject arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::content::ComponentName WallpaperInfo::getComponent() const
+	{
+		return callObjectMethod(
+			"getComponent",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	inline JString WallpaperInfo::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::content::pm::ServiceInfo WallpaperInfo::getServiceInfo() const
+	{
+		return callObjectMethod(
+			"getServiceInfo",
+			"()Landroid/content/pm/ServiceInfo;"
+		);
+	}
+	inline JString WallpaperInfo::getServiceName() const
+	{
+		return callObjectMethod(
+			"getServiceName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WallpaperInfo::getSettingsActivity() const
+	{
+		return callObjectMethod(
+			"getSettingsActivity",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri WallpaperInfo::getSettingsSliceUri() const
+	{
+		return callObjectMethod(
+			"getSettingsSliceUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jboolean WallpaperInfo::getShowMetadataInPreview() const
+	{
+		return callMethod<jboolean>(
+			"getShowMetadataInPreview",
+			"()Z"
+		);
+	}
+	inline JString WallpaperInfo::loadAuthor(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadAuthor",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline JString WallpaperInfo::loadContextDescription(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadContextDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline android::net::Uri WallpaperInfo::loadContextUri(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadContextUri",
+			"(Landroid/content/pm/PackageManager;)Landroid/net/Uri;",
+			arg0.object()
+		);
+	}
+	inline JString WallpaperInfo::loadDescription(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::drawable::Drawable WallpaperInfo::loadIcon(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.object()
+		);
+	}
+	inline JString WallpaperInfo::loadLabel(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::drawable::Drawable WallpaperInfo::loadThumbnail(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadThumbnail",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.object()
+		);
+	}
+	inline jboolean WallpaperInfo::supportsMultipleDisplays() const
+	{
+		return callMethod<jboolean>(
+			"supportsMultipleDisplays",
+			"()Z"
+		);
+	}
+	inline JString WallpaperInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void WallpaperInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

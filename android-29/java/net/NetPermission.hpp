@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../security/BasicPermission.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NetPermission.def.hpp"
 
 namespace java::net
 {
-	class NetPermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		NetPermission(QJniObject obj);
-		
-		// Constructors
-		NetPermission(JString arg0);
-		NetPermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NetPermission::NetPermission(JString arg0)
+		: java::security::BasicPermission(
+			"java.net.NetPermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline NetPermission::NetPermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"java.net.NetPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
+#include "../security/Permission.hpp"
+#include "../security/BasicPermission.hpp"
 

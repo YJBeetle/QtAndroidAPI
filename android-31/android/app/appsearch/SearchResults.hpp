@@ -1,23 +1,31 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SearchResults.def.hpp"
 
 namespace android::app::appsearch
 {
-	class SearchResults : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void SearchResults::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SearchResults(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchResults(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void getNextPage(JObject arg0, JObject arg1) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void SearchResults::getNextPage(JObject arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"getNextPage",
+			"(Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

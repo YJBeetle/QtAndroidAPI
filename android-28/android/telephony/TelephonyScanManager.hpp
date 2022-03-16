@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TelephonyScanManager.def.hpp"
 
 namespace android::telephony
 {
-	class TelephonyScanManager : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyScanManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyScanManager(QJniObject obj);
-		
-		// Constructors
-		TelephonyScanManager();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TelephonyScanManager::TelephonyScanManager()
+		: JObject(
+			"android.telephony.TelephonyScanManager",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

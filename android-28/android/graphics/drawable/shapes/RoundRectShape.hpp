@@ -1,52 +1,57 @@
 #pragma once
 
-#include "./RectShape.hpp"
-
-class JFloatArray;
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class Outline;
-}
-namespace android::graphics
-{
-	class Paint;
-}
-namespace android::graphics
-{
-	class RectF;
-}
-namespace android::graphics::drawable::shapes
-{
-	class RectShape;
-}
-namespace android::graphics::drawable::shapes
-{
-	class Shape;
-}
-class JObject;
+#include "../../../../JFloatArray.hpp"
+#include "../../Canvas.def.hpp"
+#include "../../Outline.def.hpp"
+#include "../../Paint.def.hpp"
+#include "../../RectF.def.hpp"
+#include "./RectShape.def.hpp"
+#include "./Shape.def.hpp"
+#include "../../../../JObject.hpp"
+#include "./RoundRectShape.def.hpp"
 
 namespace android::graphics::drawable::shapes
 {
-	class RoundRectShape : public android::graphics::drawable::shapes::RectShape
+	// Fields
+	
+	// Constructors
+	inline RoundRectShape::RoundRectShape(JFloatArray arg0, android::graphics::RectF arg1, JFloatArray arg2)
+		: android::graphics::drawable::shapes::RectShape(
+			"android.graphics.drawable.shapes.RoundRectShape",
+			"([FLandroid/graphics/RectF;[F)V",
+			arg0.object<jfloatArray>(),
+			arg1.object(),
+			arg2.object<jfloatArray>()
+		) {}
+	
+	// Methods
+	inline android::graphics::drawable::shapes::RoundRectShape RoundRectShape::clone() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RoundRectShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::RectShape(className, sig, std::forward<Ts>(agv)...) {}
-		RoundRectShape(QJniObject obj);
-		
-		// Constructors
-		RoundRectShape(JFloatArray arg0, android::graphics::RectF arg1, JFloatArray arg2);
-		
-		// Methods
-		android::graphics::drawable::shapes::RoundRectShape clone() const;
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
-		void getOutline(android::graphics::Outline arg0) const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Landroid/graphics/drawable/shapes/RoundRectShape;"
+		);
+	}
+	inline void RoundRectShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void RoundRectShape::getOutline(android::graphics::Outline arg0) const
+	{
+		callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics::drawable::shapes
+
+// Base class headers
+#include "./Shape.hpp"
+#include "./RectShape.hpp"
 

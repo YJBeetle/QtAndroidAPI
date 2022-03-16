@@ -1,21 +1,15 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./IkeIdentification.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeIdentification : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IkeIdentification(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeIdentification(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net::ipsec::ike
+
+// Base class headers
 

@@ -1,48 +1,101 @@
 #pragma once
 
-#include "./OutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class File;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JObject;
-class JString;
-namespace java::nio::channels
-{
-	class FileChannel;
-}
+#include "../../JByteArray.hpp"
+#include "./File.def.hpp"
+#include "./FileDescriptor.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../nio/channels/FileChannel.def.hpp"
+#include "./FileOutputStream.def.hpp"
 
 namespace java::io
 {
-	class FileOutputStream : public java::io::OutputStream
+	// Fields
+	
+	// Constructors
+	inline FileOutputStream::FileOutputStream(java::io::File arg0)
+		: java::io::OutputStream(
+			"java.io.FileOutputStream",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	inline FileOutputStream::FileOutputStream(java::io::FileDescriptor arg0)
+		: java::io::OutputStream(
+			"java.io.FileOutputStream",
+			"(Ljava/io/FileDescriptor;)V",
+			arg0.object()
+		) {}
+	inline FileOutputStream::FileOutputStream(JString arg0)
+		: java::io::OutputStream(
+			"java.io.FileOutputStream",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline FileOutputStream::FileOutputStream(java::io::File arg0, jboolean arg1)
+		: java::io::OutputStream(
+			"java.io.FileOutputStream",
+			"(Ljava/io/File;Z)V",
+			arg0.object(),
+			arg1
+		) {}
+	inline FileOutputStream::FileOutputStream(JString arg0, jboolean arg1)
+		: java::io::OutputStream(
+			"java.io.FileOutputStream",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void FileOutputStream::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileOutputStream(const char *className, const char *sig, Ts...agv) : java::io::OutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		FileOutputStream(QJniObject obj);
-		
-		// Constructors
-		FileOutputStream(java::io::File arg0);
-		FileOutputStream(java::io::FileDescriptor arg0);
-		FileOutputStream(JString arg0);
-		FileOutputStream(java::io::File arg0, jboolean arg1);
-		FileOutputStream(JString arg0, jboolean arg1);
-		
-		// Methods
-		void close() const;
-		java::nio::channels::FileChannel getChannel() const;
-		java::io::FileDescriptor getFD() const;
-		void write(JByteArray arg0) const;
-		void write(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline java::nio::channels::FileChannel FileOutputStream::getChannel() const
+	{
+		return callObjectMethod(
+			"getChannel",
+			"()Ljava/nio/channels/FileChannel;"
+		);
+	}
+	inline java::io::FileDescriptor FileOutputStream::getFD() const
+	{
+		return callObjectMethod(
+			"getFD",
+			"()Ljava/io/FileDescriptor;"
+		);
+	}
+	inline void FileOutputStream::write(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void FileOutputStream::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void FileOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./OutputStream.hpp"
 

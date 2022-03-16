@@ -1,39 +1,139 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_interpolator.def.hpp"
 
 namespace android
 {
-	class R_interpolator : public JObject
+	// Fields
+	inline jint R_interpolator::accelerate_cubic()
 	{
-	public:
-		// Fields
-		static jint accelerate_cubic();
-		static jint accelerate_decelerate();
-		static jint accelerate_quad();
-		static jint accelerate_quint();
-		static jint anticipate();
-		static jint anticipate_overshoot();
-		static jint bounce();
-		static jint cycle();
-		static jint decelerate_cubic();
-		static jint decelerate_quad();
-		static jint decelerate_quint();
-		static jint fast_out_extra_slow_in();
-		static jint fast_out_linear_in();
-		static jint fast_out_slow_in();
-		static jint linear();
-		static jint linear_out_slow_in();
-		static jint overshoot();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_interpolator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_interpolator(QJniObject obj);
-		
-		// Constructors
-		R_interpolator();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"accelerate_cubic"
+		);
+	}
+	inline jint R_interpolator::accelerate_decelerate()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"accelerate_decelerate"
+		);
+	}
+	inline jint R_interpolator::accelerate_quad()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"accelerate_quad"
+		);
+	}
+	inline jint R_interpolator::accelerate_quint()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"accelerate_quint"
+		);
+	}
+	inline jint R_interpolator::anticipate()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"anticipate"
+		);
+	}
+	inline jint R_interpolator::anticipate_overshoot()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"anticipate_overshoot"
+		);
+	}
+	inline jint R_interpolator::bounce()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"bounce"
+		);
+	}
+	inline jint R_interpolator::cycle()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"cycle"
+		);
+	}
+	inline jint R_interpolator::decelerate_cubic()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"decelerate_cubic"
+		);
+	}
+	inline jint R_interpolator::decelerate_quad()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"decelerate_quad"
+		);
+	}
+	inline jint R_interpolator::decelerate_quint()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"decelerate_quint"
+		);
+	}
+	inline jint R_interpolator::fast_out_extra_slow_in()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"fast_out_extra_slow_in"
+		);
+	}
+	inline jint R_interpolator::fast_out_linear_in()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"fast_out_linear_in"
+		);
+	}
+	inline jint R_interpolator::fast_out_slow_in()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"fast_out_slow_in"
+		);
+	}
+	inline jint R_interpolator::linear()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"linear"
+		);
+	}
+	inline jint R_interpolator::linear_out_slow_in()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"linear_out_slow_in"
+		);
+	}
+	inline jint R_interpolator::overshoot()
+	{
+		return getStaticField<jint>(
+			"android.R$interpolator",
+			"overshoot"
+		);
+	}
+	
+	// Constructors
+	inline R_interpolator::R_interpolator()
+		: JObject(
+			"android.R$interpolator",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

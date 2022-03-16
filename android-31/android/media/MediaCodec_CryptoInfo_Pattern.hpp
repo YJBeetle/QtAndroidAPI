@@ -1,25 +1,45 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaCodec_CryptoInfo_Pattern.def.hpp"
 
 namespace android::media
 {
-	class MediaCodec_CryptoInfo_Pattern : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1)
+		: JObject(
+			"android.media.MediaCodec$CryptoInfo$Pattern",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jint MediaCodec_CryptoInfo_Pattern::getEncryptBlocks() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodec_CryptoInfo_Pattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_CryptoInfo_Pattern(QJniObject obj);
-		
-		// Constructors
-		MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1);
-		
-		// Methods
-		jint getEncryptBlocks() const;
-		jint getSkipBlocks() const;
-		void set(jint arg0, jint arg1) const;
-	};
+		return callMethod<jint>(
+			"getEncryptBlocks",
+			"()I"
+		);
+	}
+	inline jint MediaCodec_CryptoInfo_Pattern::getSkipBlocks() const
+	{
+		return callMethod<jint>(
+			"getSkipBlocks",
+			"()I"
+		);
+	}
+	inline void MediaCodec_CryptoInfo_Pattern::set(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"set",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

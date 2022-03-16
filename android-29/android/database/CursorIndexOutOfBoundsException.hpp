@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../java/lang/IndexOutOfBoundsException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./CursorIndexOutOfBoundsException.def.hpp"
 
 namespace android::database
 {
-	class CursorIndexOutOfBoundsException : public java::lang::IndexOutOfBoundsException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CursorIndexOutOfBoundsException(const char *className, const char *sig, Ts...agv) : java::lang::IndexOutOfBoundsException(className, sig, std::forward<Ts>(agv)...) {}
-		CursorIndexOutOfBoundsException(QJniObject obj);
-		
-		// Constructors
-		CursorIndexOutOfBoundsException(JString arg0);
-		CursorIndexOutOfBoundsException(jint arg0, jint arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(JString arg0)
+		: java::lang::IndexOutOfBoundsException(
+			"android.database.CursorIndexOutOfBoundsException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(jint arg0, jint arg1)
+		: java::lang::IndexOutOfBoundsException(
+			"android.database.CursorIndexOutOfBoundsException",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
 } // namespace android::database
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "../../java/lang/IndexOutOfBoundsException.hpp"
 

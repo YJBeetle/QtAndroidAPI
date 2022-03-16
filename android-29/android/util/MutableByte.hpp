@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MutableByte.def.hpp"
 
 namespace android::util
 {
-	class MutableByte : public JObject
+	// Fields
+	inline jbyte MutableByte::value()
 	{
-	public:
-		// Fields
-		jbyte value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MutableByte(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableByte(QJniObject obj);
-		
-		// Constructors
-		MutableByte(jbyte arg0);
-		
-		// Methods
-	};
+		return getField<jbyte>(
+			"value"
+		);
+	}
+	
+	// Constructors
+	inline MutableByte::MutableByte(jbyte arg0)
+		: JObject(
+			"android.util.MutableByte",
+			"(B)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

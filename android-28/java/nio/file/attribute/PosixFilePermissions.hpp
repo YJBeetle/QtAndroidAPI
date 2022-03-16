@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
+#include "../../../../JString.hpp"
+#include "../../../lang/StringBuilder.def.hpp"
+#include "./PosixFilePermissions.def.hpp"
 
 namespace java::nio::file::attribute
 {
-	class PosixFilePermissions : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject PosixFilePermissions::asFileAttribute(JObject arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PosixFilePermissions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PosixFilePermissions(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject asFileAttribute(JObject arg0);
-		static JObject fromString(JString arg0);
-		static JString toString(JObject arg0);
-	};
+		return callStaticObjectMethod(
+			"java.nio.file.attribute.PosixFilePermissions",
+			"asFileAttribute",
+			"(Ljava/util/Set;)Ljava/nio/file/attribute/FileAttribute;",
+			arg0.object()
+		);
+	}
+	inline JObject PosixFilePermissions::fromString(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.attribute.PosixFilePermissions",
+			"fromString",
+			"(Ljava/lang/String;)Ljava/util/Set;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString PosixFilePermissions::toString(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.attribute.PosixFilePermissions",
+			"toString",
+			"(Ljava/util/Set;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
 } // namespace java::nio::file::attribute
+
+// Base class headers
 

@@ -1,34 +1,45 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AudioAttributes.def.hpp"
+#include "./SoundPool.def.hpp"
+#include "./SoundPool_Builder.def.hpp"
 
 namespace android::media
 {
-	class AudioAttributes;
-}
-namespace android::media
-{
-	class SoundPool;
-}
-
-namespace android::media
-{
-	class SoundPool_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline SoundPool_Builder::SoundPool_Builder()
+		: JObject(
+			"android.media.SoundPool$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::media::SoundPool SoundPool_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SoundPool_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SoundPool_Builder(QJniObject obj);
-		
-		// Constructors
-		SoundPool_Builder();
-		
-		// Methods
-		android::media::SoundPool build() const;
-		android::media::SoundPool_Builder setAudioAttributes(android::media::AudioAttributes arg0) const;
-		android::media::SoundPool_Builder setMaxStreams(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/SoundPool;"
+		);
+	}
+	inline android::media::SoundPool_Builder SoundPool_Builder::setAudioAttributes(android::media::AudioAttributes arg0) const
+	{
+		return callObjectMethod(
+			"setAudioAttributes",
+			"(Landroid/media/AudioAttributes;)Landroid/media/SoundPool$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::media::SoundPool_Builder SoundPool_Builder::setMaxStreams(jint arg0) const
+	{
+		return callObjectMethod(
+			"setMaxStreams",
+			"(I)Landroid/media/SoundPool$Builder;",
+			arg0
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

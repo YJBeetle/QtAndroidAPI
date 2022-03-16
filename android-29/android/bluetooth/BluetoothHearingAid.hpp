@@ -1,36 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-namespace android::bluetooth
-{
-	class BluetoothDevice;
-}
-namespace android::content
-{
-	class Context;
-}
-class JString;
+#include "../../JIntArray.hpp"
+#include "./BluetoothDevice.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "./BluetoothHearingAid.def.hpp"
 
 namespace android::bluetooth
 {
-	class BluetoothHearingAid : public JObject
+	// Fields
+	inline JString BluetoothHearingAid::ACTION_CONNECTION_STATE_CHANGED()
 	{
-	public:
-		// Fields
-		static JString ACTION_CONNECTION_STATE_CHANGED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothHearingAid(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHearingAid(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getConnectedDevices() const;
-		jint getConnectionState(android::bluetooth::BluetoothDevice arg0) const;
-		JObject getDevicesMatchingConnectionStates(JIntArray arg0) const;
-	};
+		return getStaticObjectField(
+			"android.bluetooth.BluetoothHearingAid",
+			"ACTION_CONNECTION_STATE_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject BluetoothHearingAid::getConnectedDevices() const
+	{
+		return callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint BluetoothHearingAid::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
+	{
+		return callMethod<jint>(
+			"getConnectionState",
+			"(Landroid/bluetooth/BluetoothDevice;)I",
+			arg0.object()
+		);
+	}
+	inline JObject BluetoothHearingAid::getDevicesMatchingConnectionStates(JIntArray arg0) const
+	{
+		return callObjectMethod(
+			"getDevicesMatchingConnectionStates",
+			"([I)Ljava/util/List;",
+			arg0.object<jintArray>()
+		);
+	}
 } // namespace android::bluetooth
+
+// Base class headers
 

@@ -1,34 +1,45 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ServiceWorkerClient.def.hpp"
+#include "./ServiceWorkerWebSettings.def.hpp"
+#include "./ServiceWorkerController.def.hpp"
 
 namespace android::webkit
 {
-	class ServiceWorkerClient;
-}
-namespace android::webkit
-{
-	class ServiceWorkerWebSettings;
-}
-
-namespace android::webkit
-{
-	class ServiceWorkerController : public JObject
+	// Fields
+	
+	// Constructors
+	inline ServiceWorkerController::ServiceWorkerController()
+		: JObject(
+			"android.webkit.ServiceWorkerController",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::webkit::ServiceWorkerController ServiceWorkerController::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ServiceWorkerController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceWorkerController(QJniObject obj);
-		
-		// Constructors
-		ServiceWorkerController();
-		
-		// Methods
-		static android::webkit::ServiceWorkerController getInstance();
-		android::webkit::ServiceWorkerWebSettings getServiceWorkerWebSettings() const;
-		void setServiceWorkerClient(android::webkit::ServiceWorkerClient arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.webkit.ServiceWorkerController",
+			"getInstance",
+			"()Landroid/webkit/ServiceWorkerController;"
+		);
+	}
+	inline android::webkit::ServiceWorkerWebSettings ServiceWorkerController::getServiceWorkerWebSettings() const
+	{
+		return callObjectMethod(
+			"getServiceWorkerWebSettings",
+			"()Landroid/webkit/ServiceWorkerWebSettings;"
+		);
+	}
+	inline void ServiceWorkerController::setServiceWorkerClient(android::webkit::ServiceWorkerClient arg0) const
+	{
+		callMethod<void>(
+			"setServiceWorkerClient",
+			"(Landroid/webkit/ServiceWorkerClient;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

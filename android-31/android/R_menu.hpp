@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_menu.def.hpp"
 
 namespace android
 {
-	class R_menu : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_menu(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_menu(QJniObject obj);
-		
-		// Constructors
-		R_menu();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline R_menu::R_menu()
+		: JObject(
+			"android.R$menu",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

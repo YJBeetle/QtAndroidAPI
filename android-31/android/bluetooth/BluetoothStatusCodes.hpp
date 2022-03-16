@@ -1,27 +1,57 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./BluetoothStatusCodes.def.hpp"
 
 namespace android::bluetooth
 {
-	class BluetoothStatusCodes : public JObject
+	// Fields
+	inline jint BluetoothStatusCodes::ERROR_BLUETOOTH_NOT_ALLOWED()
 	{
-	public:
-		// Fields
-		static jint ERROR_BLUETOOTH_NOT_ALLOWED();
-		static jint ERROR_BLUETOOTH_NOT_ENABLED();
-		static jint ERROR_DEVICE_NOT_BONDED();
-		static jint ERROR_MISSING_BLUETOOTH_CONNECT_PERMISSION();
-		static jint ERROR_UNKNOWN();
-		static jint SUCCESS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothStatusCodes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothStatusCodes(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothStatusCodes",
+			"ERROR_BLUETOOTH_NOT_ALLOWED"
+		);
+	}
+	inline jint BluetoothStatusCodes::ERROR_BLUETOOTH_NOT_ENABLED()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothStatusCodes",
+			"ERROR_BLUETOOTH_NOT_ENABLED"
+		);
+	}
+	inline jint BluetoothStatusCodes::ERROR_DEVICE_NOT_BONDED()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothStatusCodes",
+			"ERROR_DEVICE_NOT_BONDED"
+		);
+	}
+	inline jint BluetoothStatusCodes::ERROR_MISSING_BLUETOOTH_CONNECT_PERMISSION()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothStatusCodes",
+			"ERROR_MISSING_BLUETOOTH_CONNECT_PERMISSION"
+		);
+	}
+	inline jint BluetoothStatusCodes::ERROR_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothStatusCodes",
+			"ERROR_UNKNOWN"
+		);
+	}
+	inline jint BluetoothStatusCodes::SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothStatusCodes",
+			"SUCCESS"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::bluetooth
+
+// Base class headers
 

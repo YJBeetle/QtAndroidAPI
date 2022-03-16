@@ -1,24 +1,26 @@
 #pragma once
 
-#include "../../java/lang/IllegalStateException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaCasStateException.def.hpp"
 
 namespace android::media
 {
-	class MediaCasStateException : public java::lang::IllegalStateException
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString MediaCasStateException::getDiagnosticInfo() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaCasStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasStateException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getDiagnosticInfo() const;
-	};
+		return callObjectMethod(
+			"getDiagnosticInfo",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "../../java/lang/IllegalStateException.hpp"
 

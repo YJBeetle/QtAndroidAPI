@@ -1,28 +1,41 @@
 #pragma once
 
+#include "../../JString.hpp"
 #include "../../JThrowable.hpp"
-
-class JString;
-class JThrowable;
+#include "./Exception.def.hpp"
 
 namespace java::lang
 {
-	class Exception : public JThrowable
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Exception(const char *className, const char *sig, Ts...agv) : JThrowable(className, sig, std::forward<Ts>(agv)...) {}
-		Exception(QJniObject obj);
-		
-		// Constructors
-		Exception();
-		Exception(JString arg0);
-		Exception(JThrowable arg0);
-		Exception(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Exception::Exception()
+		: JThrowable(
+			"java.lang.Exception",
+			"()V"
+		) {}
+	inline Exception::Exception(JString arg0)
+		: JThrowable(
+			"java.lang.Exception",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline Exception::Exception(JThrowable arg0)
+		: JThrowable(
+			"java.lang.Exception",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline Exception::Exception(JString arg0, JThrowable arg1)
+		: JThrowable(
+			"java.lang.Exception",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
 

@@ -1,34 +1,106 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TracingConfig.def.hpp"
 
 namespace android::webkit
 {
-	class TracingConfig : public JObject
+	// Fields
+	inline jint TracingConfig::CATEGORIES_ALL()
 	{
-	public:
-		// Fields
-		static jint CATEGORIES_ALL();
-		static jint CATEGORIES_ANDROID_WEBVIEW();
-		static jint CATEGORIES_FRAME_VIEWER();
-		static jint CATEGORIES_INPUT_LATENCY();
-		static jint CATEGORIES_JAVASCRIPT_AND_RENDERING();
-		static jint CATEGORIES_NONE();
-		static jint CATEGORIES_RENDERING();
-		static jint CATEGORIES_WEB_DEVELOPER();
-		static jint RECORD_CONTINUOUSLY();
-		static jint RECORD_UNTIL_FULL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TracingConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TracingConfig(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getCustomIncludedCategories() const;
-		jint getPredefinedCategories() const;
-		jint getTracingMode() const;
-	};
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_ALL"
+		);
+	}
+	inline jint TracingConfig::CATEGORIES_ANDROID_WEBVIEW()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_ANDROID_WEBVIEW"
+		);
+	}
+	inline jint TracingConfig::CATEGORIES_FRAME_VIEWER()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_FRAME_VIEWER"
+		);
+	}
+	inline jint TracingConfig::CATEGORIES_INPUT_LATENCY()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_INPUT_LATENCY"
+		);
+	}
+	inline jint TracingConfig::CATEGORIES_JAVASCRIPT_AND_RENDERING()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_JAVASCRIPT_AND_RENDERING"
+		);
+	}
+	inline jint TracingConfig::CATEGORIES_NONE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_NONE"
+		);
+	}
+	inline jint TracingConfig::CATEGORIES_RENDERING()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_RENDERING"
+		);
+	}
+	inline jint TracingConfig::CATEGORIES_WEB_DEVELOPER()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"CATEGORIES_WEB_DEVELOPER"
+		);
+	}
+	inline jint TracingConfig::RECORD_CONTINUOUSLY()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"RECORD_CONTINUOUSLY"
+		);
+	}
+	inline jint TracingConfig::RECORD_UNTIL_FULL()
+	{
+		return getStaticField<jint>(
+			"android.webkit.TracingConfig",
+			"RECORD_UNTIL_FULL"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject TracingConfig::getCustomIncludedCategories() const
+	{
+		return callObjectMethod(
+			"getCustomIncludedCategories",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint TracingConfig::getPredefinedCategories() const
+	{
+		return callMethod<jint>(
+			"getPredefinedCategories",
+			"()I"
+		);
+	}
+	inline jint TracingConfig::getTracingMode() const
+	{
+		return callMethod<jint>(
+			"getTracingMode",
+			"()I"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

@@ -1,30 +1,36 @@
 #pragma once
 
-#include "../util/AndroidException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
+#include "../../java/lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "./IntentSender_SendIntentException.def.hpp"
 
 namespace android::content
 {
-	class IntentSender_SendIntentException : public android::util::AndroidException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IntentSender_SendIntentException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		IntentSender_SendIntentException(QJniObject obj);
-		
-		// Constructors
-		IntentSender_SendIntentException();
-		IntentSender_SendIntentException(java::lang::Exception arg0);
-		IntentSender_SendIntentException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IntentSender_SendIntentException::IntentSender_SendIntentException()
+		: android::util::AndroidException(
+			"android.content.IntentSender$SendIntentException",
+			"()V"
+		) {}
+	inline IntentSender_SendIntentException::IntentSender_SendIntentException(java::lang::Exception arg0)
+		: android::util::AndroidException(
+			"android.content.IntentSender$SendIntentException",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	inline IntentSender_SendIntentException::IntentSender_SendIntentException(JString arg0)
+		: android::util::AndroidException(
+			"android.content.IntentSender$SendIntentException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::content
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
 

@@ -1,28 +1,54 @@
 #pragma once
 
-#include "../io/IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./HttpRetryException.def.hpp"
 
 namespace java::net
 {
-	class HttpRetryException : public java::io::IOException
+	// Fields
+	
+	// Constructors
+	inline HttpRetryException::HttpRetryException(JString arg0, jint arg1)
+		: java::io::IOException(
+			"java.net.HttpRetryException",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline HttpRetryException::HttpRetryException(JString arg0, jint arg1, JString arg2)
+		: java::io::IOException(
+			"java.net.HttpRetryException",
+			"(Ljava/lang/String;ILjava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString HttpRetryException::getLocation() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit HttpRetryException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		HttpRetryException(QJniObject obj);
-		
-		// Constructors
-		HttpRetryException(JString arg0, jint arg1);
-		HttpRetryException(JString arg0, jint arg1, JString arg2);
-		
-		// Methods
-		JString getLocation() const;
-		JString getReason() const;
-		jint responseCode() const;
-	};
+		return callObjectMethod(
+			"getLocation",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString HttpRetryException::getReason() const
+	{
+		return callObjectMethod(
+			"getReason",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint HttpRetryException::responseCode() const
+	{
+		return callMethod<jint>(
+			"responseCode",
+			"()I"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 

@@ -1,26 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Config.def.hpp"
 
 namespace android::util
 {
-	class Config : public JObject
+	// Fields
+	inline jboolean Config::DEBUG()
 	{
-	public:
-		// Fields
-		static jboolean DEBUG();
-		static jboolean LOGD();
-		static jboolean LOGV();
-		static jboolean PROFILE();
-		static jboolean RELEASE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Config(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Config(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jboolean>(
+			"android.util.Config",
+			"DEBUG"
+		);
+	}
+	inline jboolean Config::LOGD()
+	{
+		return getStaticField<jboolean>(
+			"android.util.Config",
+			"LOGD"
+		);
+	}
+	inline jboolean Config::LOGV()
+	{
+		return getStaticField<jboolean>(
+			"android.util.Config",
+			"LOGV"
+		);
+	}
+	inline jboolean Config::PROFILE()
+	{
+		return getStaticField<jboolean>(
+			"android.util.Config",
+			"PROFILE"
+		);
+	}
+	inline jboolean Config::RELEASE()
+	{
+		return getStaticField<jboolean>(
+			"android.util.Config",
+			"RELEASE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

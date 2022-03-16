@@ -1,31 +1,40 @@
 #pragma once
 
+#include "../../JArray.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-class JObject;
-namespace java::net
-{
-	class URLConnection;
-}
+#include "./URLConnection.def.hpp"
+#include "./ContentHandler.def.hpp"
 
 namespace java::net
 {
-	class ContentHandler : public JObject
+	// Fields
+	
+	// Constructors
+	inline ContentHandler::ContentHandler()
+		: JObject(
+			"java.net.ContentHandler",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject ContentHandler::getContent(java::net::URLConnection arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContentHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentHandler(QJniObject obj);
-		
-		// Constructors
-		ContentHandler();
-		
-		// Methods
-		JObject getContent(java::net::URLConnection arg0) const;
-		JObject getContent(java::net::URLConnection arg0, JArray arg1) const;
-	};
+		return callObjectMethod(
+			"getContent",
+			"(Ljava/net/URLConnection;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline JObject ContentHandler::getContent(java::net::URLConnection arg0, JArray arg1) const
+	{
+		return callObjectMethod(
+			"getContent",
+			"(Ljava/net/URLConnection;[Ljava/lang/Class;)Ljava/lang/Object;",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

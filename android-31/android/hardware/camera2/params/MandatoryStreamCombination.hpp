@@ -1,29 +1,53 @@
 #pragma once
 
+#include "../../../../JString.hpp"
 #include "../../../../JObject.hpp"
-
-class JString;
-class JObject;
+#include "./MandatoryStreamCombination.def.hpp"
 
 namespace android::hardware::camera2::params
 {
-	class MandatoryStreamCombination : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MandatoryStreamCombination::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MandatoryStreamCombination(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MandatoryStreamCombination(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getDescription() const;
-		JObject getStreamsInformation() const;
-		jint hashCode() const;
-		jboolean isReprocessable() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString MandatoryStreamCombination::getDescription() const
+	{
+		return callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JObject MandatoryStreamCombination::getStreamsInformation() const
+	{
+		return callObjectMethod(
+			"getStreamsInformation",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint MandatoryStreamCombination::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean MandatoryStreamCombination::isReprocessable() const
+	{
+		return callMethod<jboolean>(
+			"isReprocessable",
+			"()Z"
+		);
+	}
 } // namespace android::hardware::camera2::params
+
+// Base class headers
 

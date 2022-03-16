@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./LinkageError.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UnsatisfiedLinkError.def.hpp"
 
 namespace java::lang
 {
-	class UnsatisfiedLinkError : public java::lang::LinkageError
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UnsatisfiedLinkError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		UnsatisfiedLinkError(QJniObject obj);
-		
-		// Constructors
-		UnsatisfiedLinkError();
-		UnsatisfiedLinkError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UnsatisfiedLinkError::UnsatisfiedLinkError()
+		: java::lang::LinkageError(
+			"java.lang.UnsatisfiedLinkError",
+			"()V"
+		) {}
+	inline UnsatisfiedLinkError::UnsatisfiedLinkError(JString arg0)
+		: java::lang::LinkageError(
+			"java.lang.UnsatisfiedLinkError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./LinkageError.hpp"
 

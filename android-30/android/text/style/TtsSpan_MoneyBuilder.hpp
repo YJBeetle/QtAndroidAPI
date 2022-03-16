@@ -1,29 +1,63 @@
 #pragma once
 
-#include "./TtsSpan_SemioticClassBuilder.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TtsSpan_MoneyBuilder.def.hpp"
 
 namespace android::text::style
 {
-	class TtsSpan_MoneyBuilder : public android::text::style::TtsSpan_SemioticClassBuilder
+	// Fields
+	
+	// Constructors
+	inline TtsSpan_MoneyBuilder::TtsSpan_MoneyBuilder()
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$MoneyBuilder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setCurrency(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TtsSpan_MoneyBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_MoneyBuilder(QJniObject obj);
-		
-		// Constructors
-		TtsSpan_MoneyBuilder();
-		
-		// Methods
-		android::text::style::TtsSpan_MoneyBuilder setCurrency(JString arg0) const;
-		android::text::style::TtsSpan_MoneyBuilder setFractionalPart(JString arg0) const;
-		android::text::style::TtsSpan_MoneyBuilder setIntegerPart(JString arg0) const;
-		android::text::style::TtsSpan_MoneyBuilder setIntegerPart(jlong arg0) const;
-		android::text::style::TtsSpan_MoneyBuilder setQuantity(JString arg0) const;
-	};
+		return callObjectMethod(
+			"setCurrency",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setFractionalPart(JString arg0) const
+	{
+		return callObjectMethod(
+			"setFractionalPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setIntegerPart(JString arg0) const
+	{
+		return callObjectMethod(
+			"setIntegerPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setIntegerPart(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setIntegerPart",
+			"(J)Landroid/text/style/TtsSpan$MoneyBuilder;",
+			arg0
+		);
+	}
+	inline android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setQuantity(JString arg0) const
+	{
+		return callObjectMethod(
+			"setQuantity",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./TtsSpan_Builder.hpp"
+#include "./TtsSpan_SemioticClassBuilder.hpp"
 

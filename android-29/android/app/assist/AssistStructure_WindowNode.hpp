@@ -1,34 +1,66 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AssistStructure_ViewNode.def.hpp"
+#include "../../../JString.hpp"
+#include "./AssistStructure_WindowNode.def.hpp"
 
 namespace android::app::assist
 {
-	class AssistStructure_ViewNode;
-}
-class JString;
-
-namespace android::app::assist
-{
-	class AssistStructure_WindowNode : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint AssistStructure_WindowNode::getDisplayId() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AssistStructure_WindowNode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AssistStructure_WindowNode(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getDisplayId() const;
-		jint getHeight() const;
-		jint getLeft() const;
-		android::app::assist::AssistStructure_ViewNode getRootViewNode() const;
-		JString getTitle() const;
-		jint getTop() const;
-		jint getWidth() const;
-	};
+		return callMethod<jint>(
+			"getDisplayId",
+			"()I"
+		);
+	}
+	inline jint AssistStructure_WindowNode::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint AssistStructure_WindowNode::getLeft() const
+	{
+		return callMethod<jint>(
+			"getLeft",
+			"()I"
+		);
+	}
+	inline android::app::assist::AssistStructure_ViewNode AssistStructure_WindowNode::getRootViewNode() const
+	{
+		return callObjectMethod(
+			"getRootViewNode",
+			"()Landroid/app/assist/AssistStructure$ViewNode;"
+		);
+	}
+	inline JString AssistStructure_WindowNode::getTitle() const
+	{
+		return callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint AssistStructure_WindowNode::getTop() const
+	{
+		return callMethod<jint>(
+			"getTop",
+			"()I"
+		);
+	}
+	inline jint AssistStructure_WindowNode::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
 } // namespace android::app::assist
+
+// Base class headers
 

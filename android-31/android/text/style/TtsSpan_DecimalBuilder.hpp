@@ -1,30 +1,72 @@
 #pragma once
 
-#include "./TtsSpan_SemioticClassBuilder.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TtsSpan_DecimalBuilder.def.hpp"
 
 namespace android::text::style
 {
-	class TtsSpan_DecimalBuilder : public android::text::style::TtsSpan_SemioticClassBuilder
+	// Fields
+	
+	// Constructors
+	inline TtsSpan_DecimalBuilder::TtsSpan_DecimalBuilder()
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$DecimalBuilder",
+			"()V"
+		) {}
+	inline TtsSpan_DecimalBuilder::TtsSpan_DecimalBuilder(JString arg0, JString arg1)
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$DecimalBuilder",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	inline TtsSpan_DecimalBuilder::TtsSpan_DecimalBuilder(jdouble arg0, jint arg1, jint arg2)
+		: android::text::style::TtsSpan_SemioticClassBuilder(
+			"android.text.style.TtsSpan$DecimalBuilder",
+			"(DII)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TtsSpan_DecimalBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_DecimalBuilder(QJniObject obj);
-		
-		// Constructors
-		TtsSpan_DecimalBuilder();
-		TtsSpan_DecimalBuilder(JString arg0, JString arg1);
-		TtsSpan_DecimalBuilder(jdouble arg0, jint arg1, jint arg2);
-		
-		// Methods
-		android::text::style::TtsSpan_DecimalBuilder setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2) const;
-		android::text::style::TtsSpan_DecimalBuilder setFractionalPart(JString arg0) const;
-		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(JString arg0) const;
-		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"setArgumentsFromDouble",
+			"(DII)Landroid/text/style/TtsSpan$DecimalBuilder;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setFractionalPart(JString arg0) const
+	{
+		return callObjectMethod(
+			"setFractionalPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setIntegerPart(JString arg0) const
+	{
+		return callObjectMethod(
+			"setIntegerPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setIntegerPart(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setIntegerPart",
+			"(J)Landroid/text/style/TtsSpan$DecimalBuilder;",
+			arg0
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./TtsSpan_Builder.hpp"
+#include "./TtsSpan_SemioticClassBuilder.hpp"
 

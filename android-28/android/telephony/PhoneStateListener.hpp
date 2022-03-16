@@ -1,60 +1,206 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CellLocation.def.hpp"
+#include "./ServiceState.def.hpp"
+#include "./SignalStrength.def.hpp"
+#include "../../JString.hpp"
+#include "./PhoneStateListener.def.hpp"
 
 namespace android::telephony
 {
-	class CellLocation;
-}
-namespace android::telephony
-{
-	class ServiceState;
-}
-namespace android::telephony
-{
-	class SignalStrength;
-}
-class JString;
-
-namespace android::telephony
-{
-	class PhoneStateListener : public JObject
+	// Fields
+	inline jint PhoneStateListener::LISTEN_CALL_FORWARDING_INDICATOR()
 	{
-	public:
-		// Fields
-		static jint LISTEN_CALL_FORWARDING_INDICATOR();
-		static jint LISTEN_CALL_STATE();
-		static jint LISTEN_CELL_INFO();
-		static jint LISTEN_CELL_LOCATION();
-		static jint LISTEN_DATA_ACTIVITY();
-		static jint LISTEN_DATA_CONNECTION_STATE();
-		static jint LISTEN_MESSAGE_WAITING_INDICATOR();
-		static jint LISTEN_NONE();
-		static jint LISTEN_SERVICE_STATE();
-		static jint LISTEN_SIGNAL_STRENGTH();
-		static jint LISTEN_SIGNAL_STRENGTHS();
-		static jint LISTEN_USER_MOBILE_DATA_STATE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PhoneStateListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneStateListener(QJniObject obj);
-		
-		// Constructors
-		PhoneStateListener();
-		
-		// Methods
-		void onCallForwardingIndicatorChanged(jboolean arg0) const;
-		void onCallStateChanged(jint arg0, JString arg1) const;
-		void onCellInfoChanged(JObject arg0) const;
-		void onCellLocationChanged(android::telephony::CellLocation arg0) const;
-		void onDataActivity(jint arg0) const;
-		void onDataConnectionStateChanged(jint arg0) const;
-		void onDataConnectionStateChanged(jint arg0, jint arg1) const;
-		void onMessageWaitingIndicatorChanged(jboolean arg0) const;
-		void onServiceStateChanged(android::telephony::ServiceState arg0) const;
-		void onSignalStrengthChanged(jint arg0) const;
-		void onSignalStrengthsChanged(android::telephony::SignalStrength arg0) const;
-		void onUserMobileDataStateChanged(jboolean arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_CALL_FORWARDING_INDICATOR"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_CALL_STATE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_CALL_STATE"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_CELL_INFO()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_CELL_INFO"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_CELL_LOCATION()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_CELL_LOCATION"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_DATA_ACTIVITY()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_DATA_ACTIVITY"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_DATA_CONNECTION_STATE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_DATA_CONNECTION_STATE"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_MESSAGE_WAITING_INDICATOR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_MESSAGE_WAITING_INDICATOR"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_NONE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_NONE"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_SERVICE_STATE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_SERVICE_STATE"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_SIGNAL_STRENGTH()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_SIGNAL_STRENGTH"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_SIGNAL_STRENGTHS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_SIGNAL_STRENGTHS"
+		);
+	}
+	inline jint PhoneStateListener::LISTEN_USER_MOBILE_DATA_STATE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.PhoneStateListener",
+			"LISTEN_USER_MOBILE_DATA_STATE"
+		);
+	}
+	
+	// Constructors
+	inline PhoneStateListener::PhoneStateListener()
+		: JObject(
+			"android.telephony.PhoneStateListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void PhoneStateListener::onCallForwardingIndicatorChanged(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onCallForwardingIndicatorChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void PhoneStateListener::onCallStateChanged(jint arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"onCallStateChanged",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void PhoneStateListener::onCellInfoChanged(JObject arg0) const
+	{
+		callMethod<void>(
+			"onCellInfoChanged",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
+	inline void PhoneStateListener::onCellLocationChanged(android::telephony::CellLocation arg0) const
+	{
+		callMethod<void>(
+			"onCellLocationChanged",
+			"(Landroid/telephony/CellLocation;)V",
+			arg0.object()
+		);
+	}
+	inline void PhoneStateListener::onDataActivity(jint arg0) const
+	{
+		callMethod<void>(
+			"onDataActivity",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PhoneStateListener::onDataConnectionStateChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onDataConnectionStateChanged",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PhoneStateListener::onDataConnectionStateChanged(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onDataConnectionStateChanged",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void PhoneStateListener::onMessageWaitingIndicatorChanged(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onMessageWaitingIndicatorChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void PhoneStateListener::onServiceStateChanged(android::telephony::ServiceState arg0) const
+	{
+		callMethod<void>(
+			"onServiceStateChanged",
+			"(Landroid/telephony/ServiceState;)V",
+			arg0.object()
+		);
+	}
+	inline void PhoneStateListener::onSignalStrengthChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onSignalStrengthChanged",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PhoneStateListener::onSignalStrengthsChanged(android::telephony::SignalStrength arg0) const
+	{
+		callMethod<void>(
+			"onSignalStrengthsChanged",
+			"(Landroid/telephony/SignalStrength;)V",
+			arg0.object()
+		);
+	}
+	inline void PhoneStateListener::onUserMobileDataStateChanged(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onUserMobileDataStateChanged",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

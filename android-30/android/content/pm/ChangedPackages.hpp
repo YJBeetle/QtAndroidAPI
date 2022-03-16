@@ -1,32 +1,61 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./ChangedPackages.def.hpp"
 
 namespace android::content::pm
 {
-	class ChangedPackages : public JObject
+	// Fields
+	inline JObject ChangedPackages::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ChangedPackages(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ChangedPackages(QJniObject obj);
-		
-		// Constructors
-		ChangedPackages(jint arg0, JObject arg1);
-		
-		// Methods
-		jint describeContents() const;
-		JObject getPackageNames() const;
-		jint getSequenceNumber() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.ChangedPackages",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline ChangedPackages::ChangedPackages(jint arg0, JObject arg1)
+		: JObject(
+			"android.content.pm.ChangedPackages",
+			"(ILjava/util/List;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jint ChangedPackages::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JObject ChangedPackages::getPackageNames() const
+	{
+		return callObjectMethod(
+			"getPackageNames",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint ChangedPackages::getSequenceNumber() const
+	{
+		return callMethod<jint>(
+			"getSequenceNumber",
+			"()I"
+		);
+	}
+	inline void ChangedPackages::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

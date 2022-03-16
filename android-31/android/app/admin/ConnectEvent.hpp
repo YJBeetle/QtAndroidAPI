@@ -1,37 +1,64 @@
 #pragma once
 
-#include "./NetworkEvent.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/net/InetAddress.def.hpp"
+#include "./ConnectEvent.def.hpp"
 
 namespace android::app::admin
 {
-	class ConnectEvent : public android::app::admin::NetworkEvent
+	// Fields
+	inline JObject ConnectEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConnectEvent(const char *className, const char *sig, Ts...agv) : android::app::admin::NetworkEvent(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectEvent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		java::net::InetAddress getInetAddress() const;
-		jint getPort() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.admin.ConnectEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint ConnectEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline java::net::InetAddress ConnectEvent::getInetAddress() const
+	{
+		return callObjectMethod(
+			"getInetAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline jint ConnectEvent::getPort() const
+	{
+		return callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
+	inline JString ConnectEvent::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ConnectEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::admin
+
+// Base class headers
+#include "./NetworkEvent.hpp"
 

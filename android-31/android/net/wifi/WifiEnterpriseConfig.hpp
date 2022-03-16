@@ -1,80 +1,379 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-namespace java::security::cert
-{
-	class X509Certificate;
-}
+#include "../../../JArray.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/security/cert/X509Certificate.def.hpp"
+#include "./WifiEnterpriseConfig.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiEnterpriseConfig : public JObject
+	// Fields
+	inline JObject WifiEnterpriseConfig::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static JString EXTRA_WAPI_AS_CERTIFICATE_DATA();
-		static JString EXTRA_WAPI_AS_CERTIFICATE_NAME();
-		static JString EXTRA_WAPI_USER_CERTIFICATE_DATA();
-		static JString EXTRA_WAPI_USER_CERTIFICATE_NAME();
-		static JString WAPI_AS_CERTIFICATE();
-		static JString WAPI_USER_CERTIFICATE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiEnterpriseConfig(QJniObject obj);
-		
-		// Constructors
-		WifiEnterpriseConfig();
-		WifiEnterpriseConfig(android::net::wifi::WifiEnterpriseConfig &arg0);
-		
-		// Methods
-		jint describeContents() const;
-		JString getAltSubjectMatch() const;
-		JString getAnonymousIdentity() const;
-		java::security::cert::X509Certificate getCaCertificate() const;
-		JArray getCaCertificates() const;
-		java::security::cert::X509Certificate getClientCertificate() const;
-		JArray getClientCertificateChain() const;
-		JString getClientKeyPairAlias() const;
-		JObject getClientPrivateKey() const;
-		JString getDecoratedIdentityPrefix() const;
-		JString getDomainSuffixMatch() const;
-		jint getEapMethod() const;
-		JString getIdentity() const;
-		JString getPassword() const;
-		jint getPhase2Method() const;
-		JString getPlmn() const;
-		JString getRealm() const;
-		JString getSubjectMatch() const;
-		jboolean isAuthenticationSimBased() const;
-		jboolean isEapMethodServerCertUsed() const;
-		jboolean isServerCertValidationEnabled() const;
-		void setAltSubjectMatch(JString arg0) const;
-		void setAnonymousIdentity(JString arg0) const;
-		void setCaCertificate(java::security::cert::X509Certificate arg0) const;
-		void setCaCertificates(JArray arg0) const;
-		void setClientKeyEntry(JObject arg0, java::security::cert::X509Certificate arg1) const;
-		void setClientKeyEntryWithCertificateChain(JObject arg0, JArray arg1) const;
-		void setClientKeyPairAlias(JString arg0) const;
-		void setDecoratedIdentityPrefix(JString arg0) const;
-		void setDomainSuffixMatch(JString arg0) const;
-		void setEapMethod(jint arg0) const;
-		void setIdentity(JString arg0) const;
-		void setPassword(JString arg0) const;
-		void setPhase2Method(jint arg0) const;
-		void setPlmn(JString arg0) const;
-		void setRealm(JString arg0) const;
-		void setSubjectMatch(JString arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::EXTRA_WAPI_AS_CERTIFICATE_DATA()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"EXTRA_WAPI_AS_CERTIFICATE_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::EXTRA_WAPI_AS_CERTIFICATE_NAME()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"EXTRA_WAPI_AS_CERTIFICATE_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::EXTRA_WAPI_USER_CERTIFICATE_DATA()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"EXTRA_WAPI_USER_CERTIFICATE_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::EXTRA_WAPI_USER_CERTIFICATE_NAME()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"EXTRA_WAPI_USER_CERTIFICATE_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::WAPI_AS_CERTIFICATE()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"WAPI_AS_CERTIFICATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::WAPI_USER_CERTIFICATE()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"WAPI_USER_CERTIFICATE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline WifiEnterpriseConfig::WifiEnterpriseConfig()
+		: JObject(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"()V"
+		) {}
+	inline WifiEnterpriseConfig::WifiEnterpriseConfig(android::net::wifi::WifiEnterpriseConfig &arg0)
+		: JObject(
+			"android.net.wifi.WifiEnterpriseConfig",
+			"(Landroid/net/wifi/WifiEnterpriseConfig;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint WifiEnterpriseConfig::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getAltSubjectMatch() const
+	{
+		return callObjectMethod(
+			"getAltSubjectMatch",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getAnonymousIdentity() const
+	{
+		return callObjectMethod(
+			"getAnonymousIdentity",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::security::cert::X509Certificate WifiEnterpriseConfig::getCaCertificate() const
+	{
+		return callObjectMethod(
+			"getCaCertificate",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	inline JArray WifiEnterpriseConfig::getCaCertificates() const
+	{
+		return callObjectMethod(
+			"getCaCertificates",
+			"()[Ljava/security/cert/X509Certificate;"
+		);
+	}
+	inline java::security::cert::X509Certificate WifiEnterpriseConfig::getClientCertificate() const
+	{
+		return callObjectMethod(
+			"getClientCertificate",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	inline JArray WifiEnterpriseConfig::getClientCertificateChain() const
+	{
+		return callObjectMethod(
+			"getClientCertificateChain",
+			"()[Ljava/security/cert/X509Certificate;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getClientKeyPairAlias() const
+	{
+		return callObjectMethod(
+			"getClientKeyPairAlias",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject WifiEnterpriseConfig::getClientPrivateKey() const
+	{
+		return callObjectMethod(
+			"getClientPrivateKey",
+			"()Ljava/security/PrivateKey;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getDecoratedIdentityPrefix() const
+	{
+		return callObjectMethod(
+			"getDecoratedIdentityPrefix",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getDomainSuffixMatch() const
+	{
+		return callObjectMethod(
+			"getDomainSuffixMatch",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint WifiEnterpriseConfig::getEapMethod() const
+	{
+		return callMethod<jint>(
+			"getEapMethod",
+			"()I"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getIdentity() const
+	{
+		return callObjectMethod(
+			"getIdentity",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getPassword() const
+	{
+		return callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint WifiEnterpriseConfig::getPhase2Method() const
+	{
+		return callMethod<jint>(
+			"getPhase2Method",
+			"()I"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getPlmn() const
+	{
+		return callObjectMethod(
+			"getPlmn",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getRealm() const
+	{
+		return callObjectMethod(
+			"getRealm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WifiEnterpriseConfig::getSubjectMatch() const
+	{
+		return callObjectMethod(
+			"getSubjectMatch",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean WifiEnterpriseConfig::isAuthenticationSimBased() const
+	{
+		return callMethod<jboolean>(
+			"isAuthenticationSimBased",
+			"()Z"
+		);
+	}
+	inline jboolean WifiEnterpriseConfig::isEapMethodServerCertUsed() const
+	{
+		return callMethod<jboolean>(
+			"isEapMethodServerCertUsed",
+			"()Z"
+		);
+	}
+	inline jboolean WifiEnterpriseConfig::isServerCertValidationEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isServerCertValidationEnabled",
+			"()Z"
+		);
+	}
+	inline void WifiEnterpriseConfig::setAltSubjectMatch(JString arg0) const
+	{
+		callMethod<void>(
+			"setAltSubjectMatch",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setAnonymousIdentity(JString arg0) const
+	{
+		callMethod<void>(
+			"setAnonymousIdentity",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setCaCertificate(java::security::cert::X509Certificate arg0) const
+	{
+		callMethod<void>(
+			"setCaCertificate",
+			"(Ljava/security/cert/X509Certificate;)V",
+			arg0.object()
+		);
+	}
+	inline void WifiEnterpriseConfig::setCaCertificates(JArray arg0) const
+	{
+		callMethod<void>(
+			"setCaCertificates",
+			"([Ljava/security/cert/X509Certificate;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setClientKeyEntry(JObject arg0, java::security::cert::X509Certificate arg1) const
+	{
+		callMethod<void>(
+			"setClientKeyEntry",
+			"(Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void WifiEnterpriseConfig::setClientKeyEntryWithCertificateChain(JObject arg0, JArray arg1) const
+	{
+		callMethod<void>(
+			"setClientKeyEntryWithCertificateChain",
+			"(Ljava/security/PrivateKey;[Ljava/security/cert/X509Certificate;)V",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setClientKeyPairAlias(JString arg0) const
+	{
+		callMethod<void>(
+			"setClientKeyPairAlias",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setDecoratedIdentityPrefix(JString arg0) const
+	{
+		callMethod<void>(
+			"setDecoratedIdentityPrefix",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setDomainSuffixMatch(JString arg0) const
+	{
+		callMethod<void>(
+			"setDomainSuffixMatch",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setEapMethod(jint arg0) const
+	{
+		callMethod<void>(
+			"setEapMethod",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WifiEnterpriseConfig::setIdentity(JString arg0) const
+	{
+		callMethod<void>(
+			"setIdentity",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setPassword(JString arg0) const
+	{
+		callMethod<void>(
+			"setPassword",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setPhase2Method(jint arg0) const
+	{
+		callMethod<void>(
+			"setPhase2Method",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WifiEnterpriseConfig::setPlmn(JString arg0) const
+	{
+		callMethod<void>(
+			"setPlmn",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setRealm(JString arg0) const
+	{
+		callMethod<void>(
+			"setRealm",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WifiEnterpriseConfig::setSubjectMatch(JString arg0) const
+	{
+		callMethod<void>(
+			"setSubjectMatch",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString WifiEnterpriseConfig::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void WifiEnterpriseConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::wifi
+
+// Base class headers
 

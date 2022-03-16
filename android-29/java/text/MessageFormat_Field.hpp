@@ -1,25 +1,27 @@
 #pragma once
 
-#include "./Format_Field.hpp"
-
-class JObject;
-class JString;
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./MessageFormat_Field.def.hpp"
 
 namespace java::text
 {
-	class MessageFormat_Field : public java::text::Format_Field
+	// Fields
+	inline java::text::MessageFormat_Field MessageFormat_Field::ARGUMENT()
 	{
-	public:
-		// Fields
-		static java::text::MessageFormat_Field ARGUMENT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MessageFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		MessageFormat_Field(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"java.text.MessageFormat$Field",
+			"ARGUMENT",
+			"Ljava/text/MessageFormat$Field;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::text
+
+// Base class headers
+#include "./AttributedCharacterIterator_Attribute.hpp"
+#include "./Format_Field.hpp"
 

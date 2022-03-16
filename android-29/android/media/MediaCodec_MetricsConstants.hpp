@@ -1,33 +1,96 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaCodec_MetricsConstants.def.hpp"
 
 namespace android::media
 {
-	class MediaCodec_MetricsConstants : public JObject
+	// Fields
+	inline JString MediaCodec_MetricsConstants::CODEC()
 	{
-	public:
-		// Fields
-		static JString CODEC();
-		static JString ENCODER();
-		static JString HEIGHT();
-		static JString MIME_TYPE();
-		static JString MODE();
-		static JString MODE_AUDIO();
-		static JString MODE_VIDEO();
-		static JString ROTATION();
-		static JString SECURE();
-		static JString WIDTH();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodec_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_MetricsConstants(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"CODEC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::ENCODER()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"ENCODER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::HEIGHT()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"HEIGHT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::MIME_TYPE()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"MIME_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::MODE()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"MODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::MODE_AUDIO()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"MODE_AUDIO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::MODE_VIDEO()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"MODE_VIDEO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::ROTATION()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"ROTATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::SECURE()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"SECURE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaCodec_MetricsConstants::WIDTH()
+	{
+		return getStaticObjectField(
+			"android.media.MediaCodec$MetricsConstants",
+			"WIDTH",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

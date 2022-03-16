@@ -1,28 +1,33 @@
 #pragma once
 
-#include "./Notation.hpp"
+#include "./NumberFormatter_SignDisplay.def.hpp"
+#include "./ScientificNotation.def.hpp"
 
 namespace android::icu::number
 {
-	class NumberFormatter_SignDisplay;
-}
-
-namespace android::icu::number
-{
-	class ScientificNotation : public android::icu::number::Notation
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::ScientificNotation ScientificNotation::withExponentSignDisplay(android::icu::number::NumberFormatter_SignDisplay arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ScientificNotation(const char *className, const char *sig, Ts...agv) : android::icu::number::Notation(className, sig, std::forward<Ts>(agv)...) {}
-		ScientificNotation(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::icu::number::ScientificNotation withExponentSignDisplay(android::icu::number::NumberFormatter_SignDisplay arg0) const;
-		android::icu::number::ScientificNotation withMinExponentDigits(jint arg0) const;
-	};
+		return callObjectMethod(
+			"withExponentSignDisplay",
+			"(Landroid/icu/number/NumberFormatter$SignDisplay;)Landroid/icu/number/ScientificNotation;",
+			arg0.object()
+		);
+	}
+	inline android::icu::number::ScientificNotation ScientificNotation::withMinExponentDigits(jint arg0) const
+	{
+		return callObjectMethod(
+			"withMinExponentDigits",
+			"(I)Landroid/icu/number/ScientificNotation;",
+			arg0
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
+#include "./Notation.hpp"
 

@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_plurals.def.hpp"
 
 namespace android
 {
-	class R_plurals : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_plurals(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_plurals(QJniObject obj);
-		
-		// Constructors
-		R_plurals();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline R_plurals::R_plurals()
+		: JObject(
+			"android.R$plurals",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

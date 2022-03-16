@@ -1,41 +1,155 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./IDNA_Error.def.hpp"
 
 namespace android::icu::text
 {
-	class IDNA_Error : public java::lang::Enum
+	// Fields
+	inline android::icu::text::IDNA_Error IDNA_Error::BIDI()
 	{
-	public:
-		// Fields
-		static android::icu::text::IDNA_Error BIDI();
-		static android::icu::text::IDNA_Error CONTEXTJ();
-		static android::icu::text::IDNA_Error CONTEXTO_DIGITS();
-		static android::icu::text::IDNA_Error CONTEXTO_PUNCTUATION();
-		static android::icu::text::IDNA_Error DISALLOWED();
-		static android::icu::text::IDNA_Error DOMAIN_NAME_TOO_LONG();
-		static android::icu::text::IDNA_Error EMPTY_LABEL();
-		static android::icu::text::IDNA_Error HYPHEN_3_4();
-		static android::icu::text::IDNA_Error INVALID_ACE_LABEL();
-		static android::icu::text::IDNA_Error LABEL_HAS_DOT();
-		static android::icu::text::IDNA_Error LABEL_TOO_LONG();
-		static android::icu::text::IDNA_Error LEADING_COMBINING_MARK();
-		static android::icu::text::IDNA_Error LEADING_HYPHEN();
-		static android::icu::text::IDNA_Error PUNYCODE();
-		static android::icu::text::IDNA_Error TRAILING_HYPHEN();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IDNA_Error(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		IDNA_Error(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::IDNA_Error valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"BIDI",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::CONTEXTJ()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"CONTEXTJ",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::CONTEXTO_DIGITS()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"CONTEXTO_DIGITS",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::CONTEXTO_PUNCTUATION()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"CONTEXTO_PUNCTUATION",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::DISALLOWED()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"DISALLOWED",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::DOMAIN_NAME_TOO_LONG()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"DOMAIN_NAME_TOO_LONG",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::EMPTY_LABEL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"EMPTY_LABEL",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::HYPHEN_3_4()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"HYPHEN_3_4",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::INVALID_ACE_LABEL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"INVALID_ACE_LABEL",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::LABEL_HAS_DOT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LABEL_HAS_DOT",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::LABEL_TOO_LONG()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LABEL_TOO_LONG",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::LEADING_COMBINING_MARK()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LEADING_COMBINING_MARK",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::LEADING_HYPHEN()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LEADING_HYPHEN",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::PUNYCODE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"PUNYCODE",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	inline android::icu::text::IDNA_Error IDNA_Error::TRAILING_HYPHEN()
+	{
+		return getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"TRAILING_HYPHEN",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::IDNA_Error IDNA_Error::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.IDNA$Error",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/IDNA$Error;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray IDNA_Error::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.IDNA$Error",
+			"values",
+			"()[Landroid/icu/text/IDNA$Error;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

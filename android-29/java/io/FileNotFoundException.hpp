@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./FileNotFoundException.def.hpp"
 
 namespace java::io
 {
-	class FileNotFoundException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileNotFoundException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		FileNotFoundException(QJniObject obj);
-		
-		// Constructors
-		FileNotFoundException();
-		FileNotFoundException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline FileNotFoundException::FileNotFoundException()
+		: java::io::IOException(
+			"java.io.FileNotFoundException",
+			"()V"
+		) {}
+	inline FileNotFoundException::FileNotFoundException(JString arg0)
+		: java::io::IOException(
+			"java.io.FileNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
 

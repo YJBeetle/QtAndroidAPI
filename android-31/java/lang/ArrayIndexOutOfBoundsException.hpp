@@ -1,26 +1,36 @@
 #pragma once
 
-#include "./IndexOutOfBoundsException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ArrayIndexOutOfBoundsException.def.hpp"
 
 namespace java::lang
 {
-	class ArrayIndexOutOfBoundsException : public java::lang::IndexOutOfBoundsException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ArrayIndexOutOfBoundsException(const char *className, const char *sig, Ts...agv) : java::lang::IndexOutOfBoundsException(className, sig, std::forward<Ts>(agv)...) {}
-		ArrayIndexOutOfBoundsException(QJniObject obj);
-		
-		// Constructors
-		ArrayIndexOutOfBoundsException();
-		ArrayIndexOutOfBoundsException(jint arg0);
-		ArrayIndexOutOfBoundsException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException()
+		: java::lang::IndexOutOfBoundsException(
+			"java.lang.ArrayIndexOutOfBoundsException",
+			"()V"
+		) {}
+	inline ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException(jint arg0)
+		: java::lang::IndexOutOfBoundsException(
+			"java.lang.ArrayIndexOutOfBoundsException",
+			"(I)V",
+			arg0
+		) {}
+	inline ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException(JString arg0)
+		: java::lang::IndexOutOfBoundsException(
+			"java.lang.ArrayIndexOutOfBoundsException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
+#include "./IndexOutOfBoundsException.hpp"
 

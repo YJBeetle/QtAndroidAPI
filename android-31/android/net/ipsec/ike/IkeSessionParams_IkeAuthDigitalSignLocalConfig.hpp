@@ -1,32 +1,54 @@
 #pragma once
 
-#include "./IkeSessionParams_IkeAuthConfig.hpp"
-
-class JObject;
-namespace java::security::cert
-{
-	class X509Certificate;
-}
+#include "../../../../JObject.hpp"
+#include "../../../../java/security/cert/X509Certificate.def.hpp"
+#include "./IkeSessionParams_IkeAuthDigitalSignLocalConfig.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionParams_IkeAuthDigitalSignLocalConfig : public android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean IkeSessionParams_IkeAuthDigitalSignLocalConfig::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IkeSessionParams_IkeAuthDigitalSignLocalConfig(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams_IkeAuthDigitalSignLocalConfig(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		java::security::cert::X509Certificate getClientEndCertificate() const;
-		JObject getIntermediateCertificates() const;
-		JObject getPrivateKey() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::security::cert::X509Certificate IkeSessionParams_IkeAuthDigitalSignLocalConfig::getClientEndCertificate() const
+	{
+		return callObjectMethod(
+			"getClientEndCertificate",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	inline JObject IkeSessionParams_IkeAuthDigitalSignLocalConfig::getIntermediateCertificates() const
+	{
+		return callObjectMethod(
+			"getIntermediateCertificates",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject IkeSessionParams_IkeAuthDigitalSignLocalConfig::getPrivateKey() const
+	{
+		return callObjectMethod(
+			"getPrivateKey",
+			"()Ljava/security/PrivateKey;"
+		);
+	}
+	inline jint IkeSessionParams_IkeAuthDigitalSignLocalConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
+#include "./IkeSessionParams_IkeAuthConfig.hpp"
 

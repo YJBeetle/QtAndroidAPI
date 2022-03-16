@@ -1,30 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./TextClassificationContext.def.hpp"
+#include "./TextClassificationManager.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextClassificationContext;
-}
-
-namespace android::view::textclassifier
-{
-	class TextClassificationManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject TextClassificationManager::createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TextClassificationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassificationManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0) const;
-		JObject getTextClassifier() const;
-		void setTextClassificationSessionFactory(JObject arg0) const;
-		void setTextClassifier(JObject arg0) const;
-	};
+		return callObjectMethod(
+			"createTextClassificationSession",
+			"(Landroid/view/textclassifier/TextClassificationContext;)Landroid/view/textclassifier/TextClassifier;",
+			arg0.object()
+		);
+	}
+	inline JObject TextClassificationManager::getTextClassifier() const
+	{
+		return callObjectMethod(
+			"getTextClassifier",
+			"()Landroid/view/textclassifier/TextClassifier;"
+		);
+	}
+	inline void TextClassificationManager::setTextClassificationSessionFactory(JObject arg0) const
+	{
+		callMethod<void>(
+			"setTextClassificationSessionFactory",
+			"(Landroid/view/textclassifier/TextClassificationSessionFactory;)V",
+			arg0.object()
+		);
+	}
+	inline void TextClassificationManager::setTextClassifier(JObject arg0) const
+	{
+		callMethod<void>(
+			"setTextClassifier",
+			"(Landroid/view/textclassifier/TextClassifier;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

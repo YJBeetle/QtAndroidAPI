@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SyncStateContract.def.hpp"
 
 namespace android::provider
 {
-	class SyncStateContract : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SyncStateContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncStateContract(QJniObject obj);
-		
-		// Constructors
-		SyncStateContract();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SyncStateContract::SyncStateContract()
+		: JObject(
+			"android.provider.SyncStateContract",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::security
-{
-	class KeyPair;
-}
+#include "../../java/security/KeyPair.def.hpp"
+#include "./AttestedKeyPair.def.hpp"
 
 namespace android::security
 {
-	class AttestedKeyPair : public JObject
+	// Fields
+	
+	// Constructors
+	inline AttestedKeyPair::AttestedKeyPair(java::security::KeyPair arg0, JObject arg1)
+		: JObject(
+			"android.security.AttestedKeyPair",
+			"(Ljava/security/KeyPair;Ljava/util/List;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject AttestedKeyPair::getAttestationRecord() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AttestedKeyPair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttestedKeyPair(QJniObject obj);
-		
-		// Constructors
-		AttestedKeyPair(java::security::KeyPair arg0, JObject arg1);
-		
-		// Methods
-		JObject getAttestationRecord() const;
-		java::security::KeyPair getKeyPair() const;
-	};
+		return callObjectMethod(
+			"getAttestationRecord",
+			"()Ljava/util/List;"
+		);
+	}
+	inline java::security::KeyPair AttestedKeyPair::getKeyPair() const
+	{
+		return callObjectMethod(
+			"getKeyPair",
+			"()Ljava/security/KeyPair;"
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

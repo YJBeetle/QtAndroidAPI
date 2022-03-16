@@ -1,32 +1,75 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-class JString;
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
+#include "./MtpDeviceInfo.def.hpp"
 
 namespace android::mtp
 {
-	class MtpDeviceInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JIntArray MtpDeviceInfo::getEventsSupported() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MtpDeviceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MtpDeviceInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JIntArray getEventsSupported() const;
-		JString getManufacturer() const;
-		JString getModel() const;
-		JIntArray getOperationsSupported() const;
-		JString getSerialNumber() const;
-		JString getVersion() const;
-		jboolean isEventSupported(jint arg0) const;
-		jboolean isOperationSupported(jint arg0) const;
-	};
+		return callObjectMethod(
+			"getEventsSupported",
+			"()[I"
+		);
+	}
+	inline JString MtpDeviceInfo::getManufacturer() const
+	{
+		return callObjectMethod(
+			"getManufacturer",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString MtpDeviceInfo::getModel() const
+	{
+		return callObjectMethod(
+			"getModel",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JIntArray MtpDeviceInfo::getOperationsSupported() const
+	{
+		return callObjectMethod(
+			"getOperationsSupported",
+			"()[I"
+		);
+	}
+	inline JString MtpDeviceInfo::getSerialNumber() const
+	{
+		return callObjectMethod(
+			"getSerialNumber",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString MtpDeviceInfo::getVersion() const
+	{
+		return callObjectMethod(
+			"getVersion",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean MtpDeviceInfo::isEventSupported(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isEventSupported",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean MtpDeviceInfo::isOperationSupported(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isOperationSupported",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::mtp
+
+// Base class headers
 

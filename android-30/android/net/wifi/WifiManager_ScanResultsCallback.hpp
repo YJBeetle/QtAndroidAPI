@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./WifiManager_ScanResultsCallback.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiManager_ScanResultsCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline WifiManager_ScanResultsCallback::WifiManager_ScanResultsCallback()
+		: JObject(
+			"android.net.wifi.WifiManager$ScanResultsCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void WifiManager_ScanResultsCallback::onScanResultsAvailable() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiManager_ScanResultsCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_ScanResultsCallback(QJniObject obj);
-		
-		// Constructors
-		WifiManager_ScanResultsCallback();
-		
-		// Methods
-		void onScanResultsAvailable() const;
-	};
+		callMethod<void>(
+			"onScanResultsAvailable",
+			"()V"
+		);
+	}
 } // namespace android::net::wifi
+
+// Base class headers
 

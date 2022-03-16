@@ -1,28 +1,43 @@
 #pragma once
 
-#include "../lang/RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./ConcurrentModificationException.def.hpp"
 
 namespace java::util
 {
-	class ConcurrentModificationException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConcurrentModificationException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ConcurrentModificationException(QJniObject obj);
-		
-		// Constructors
-		ConcurrentModificationException();
-		ConcurrentModificationException(JString arg0);
-		ConcurrentModificationException(JThrowable arg0);
-		ConcurrentModificationException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ConcurrentModificationException::ConcurrentModificationException()
+		: java::lang::RuntimeException(
+			"java.util.ConcurrentModificationException",
+			"()V"
+		) {}
+	inline ConcurrentModificationException::ConcurrentModificationException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.util.ConcurrentModificationException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ConcurrentModificationException::ConcurrentModificationException(JThrowable arg0)
+		: java::lang::RuntimeException(
+			"java.util.ConcurrentModificationException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline ConcurrentModificationException::ConcurrentModificationException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"java.util.ConcurrentModificationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 

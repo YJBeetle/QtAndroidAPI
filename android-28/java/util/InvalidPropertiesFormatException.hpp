@@ -1,34 +1,33 @@
 #pragma once
 
-#include "../io/IOException.hpp"
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JString;
-class JThrowable;
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./InvalidPropertiesFormatException.def.hpp"
 
 namespace java::util
 {
-	class InvalidPropertiesFormatException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InvalidPropertiesFormatException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidPropertiesFormatException(QJniObject obj);
-		
-		// Constructors
-		InvalidPropertiesFormatException(JString arg0);
-		InvalidPropertiesFormatException(JThrowable arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InvalidPropertiesFormatException::InvalidPropertiesFormatException(JString arg0)
+		: java::io::IOException(
+			"java.util.InvalidPropertiesFormatException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline InvalidPropertiesFormatException::InvalidPropertiesFormatException(JThrowable arg0)
+		: java::io::IOException(
+			"java.util.InvalidPropertiesFormatException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 

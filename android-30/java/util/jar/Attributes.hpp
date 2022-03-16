@@ -1,54 +1,175 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
+#include "../../io/DataOutputStream.def.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class DataOutputStream;
-}
-class JObject;
-class JString;
-namespace java::util::jar
-{
-	class Attributes_Name;
-}
+#include "../../../JString.hpp"
+#include "./Attributes_Name.def.hpp"
+#include "./Attributes.def.hpp"
 
 namespace java::util::jar
 {
-	class Attributes : public JObject
+	// Fields
+	
+	// Constructors
+	inline Attributes::Attributes()
+		: JObject(
+			"java.util.jar.Attributes",
+			"()V"
+		) {}
+	inline Attributes::Attributes(jint arg0)
+		: JObject(
+			"java.util.jar.Attributes",
+			"(I)V",
+			arg0
+		) {}
+	inline Attributes::Attributes(java::util::jar::Attributes &arg0)
+		: JObject(
+			"java.util.jar.Attributes",
+			"(Ljava/util/jar/Attributes;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void Attributes::clear() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Attributes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Attributes(QJniObject obj);
-		
-		// Constructors
-		Attributes();
-		Attributes(jint arg0);
-		Attributes(java::util::jar::Attributes &arg0);
-		
-		// Methods
-		void clear() const;
-		JObject clone() const;
-		jboolean containsKey(JObject arg0) const;
-		jboolean containsValue(JObject arg0) const;
-		JObject entrySet() const;
-		jboolean equals(JObject arg0) const;
-		JObject get(JObject arg0) const;
-		JString getValue(JString arg0) const;
-		JString getValue(java::util::jar::Attributes_Name arg0) const;
-		jint hashCode() const;
-		jboolean isEmpty() const;
-		JObject keySet() const;
-		JObject put(JObject arg0, JObject arg1) const;
-		void putAll(JObject arg0) const;
-		JString putValue(JString arg0, JString arg1) const;
-		JObject remove(JObject arg0) const;
-		jint size() const;
-		JObject values() const;
-	};
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline JObject Attributes::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jboolean Attributes::containsKey(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean Attributes::containsValue(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsValue",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject Attributes::entrySet() const
+	{
+		return callObjectMethod(
+			"entrySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jboolean Attributes::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject Attributes::get(JObject arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString Attributes::getValue(JString arg0) const
+	{
+		return callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString Attributes::getValue(java::util::jar::Attributes_Name arg0) const
+	{
+		return callObjectMethod(
+			"getValue",
+			"(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline jint Attributes::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean Attributes::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline JObject Attributes::keySet() const
+	{
+		return callObjectMethod(
+			"keySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject Attributes::put(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"put",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline void Attributes::putAll(JObject arg0) const
+	{
+		callMethod<void>(
+			"putAll",
+			"(Ljava/util/Map;)V",
+			arg0.object()
+		);
+	}
+	inline JString Attributes::putValue(JString arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"putValue",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline JObject Attributes::remove(JObject arg0) const
+	{
+		return callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Attributes::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JObject Attributes::values() const
+	{
+		return callObjectMethod(
+			"values",
+			"()Ljava/util/Collection;"
+		);
+	}
 } // namespace java::util::jar
+
+// Base class headers
 

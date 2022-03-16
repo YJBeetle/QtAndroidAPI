@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./IllegalArgumentException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllegalThreadStateException.def.hpp"
 
 namespace java::lang
 {
-	class IllegalThreadStateException : public java::lang::IllegalArgumentException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IllegalThreadStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalThreadStateException(QJniObject obj);
-		
-		// Constructors
-		IllegalThreadStateException();
-		IllegalThreadStateException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IllegalThreadStateException::IllegalThreadStateException()
+		: java::lang::IllegalArgumentException(
+			"java.lang.IllegalThreadStateException",
+			"()V"
+		) {}
+	inline IllegalThreadStateException::IllegalThreadStateException(JString arg0)
+		: java::lang::IllegalArgumentException(
+			"java.lang.IllegalThreadStateException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
+#include "./IllegalArgumentException.hpp"
 

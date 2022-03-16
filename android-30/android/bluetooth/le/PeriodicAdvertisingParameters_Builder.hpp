@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PeriodicAdvertisingParameters.def.hpp"
+#include "./PeriodicAdvertisingParameters_Builder.def.hpp"
 
 namespace android::bluetooth::le
 {
-	class PeriodicAdvertisingParameters;
-}
-
-namespace android::bluetooth::le
-{
-	class PeriodicAdvertisingParameters_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PeriodicAdvertisingParameters_Builder::PeriodicAdvertisingParameters_Builder()
+		: JObject(
+			"android.bluetooth.le.PeriodicAdvertisingParameters$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::bluetooth::le::PeriodicAdvertisingParameters PeriodicAdvertisingParameters_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PeriodicAdvertisingParameters_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PeriodicAdvertisingParameters_Builder(QJniObject obj);
-		
-		// Constructors
-		PeriodicAdvertisingParameters_Builder();
-		
-		// Methods
-		android::bluetooth::le::PeriodicAdvertisingParameters build() const;
-		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setIncludeTxPower(jboolean arg0) const;
-		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setInterval(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/bluetooth/le/PeriodicAdvertisingParameters;"
+		);
+	}
+	inline android::bluetooth::le::PeriodicAdvertisingParameters_Builder PeriodicAdvertisingParameters_Builder::setIncludeTxPower(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setIncludeTxPower",
+			"(Z)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;",
+			arg0
+		);
+	}
+	inline android::bluetooth::le::PeriodicAdvertisingParameters_Builder PeriodicAdvertisingParameters_Builder::setInterval(jint arg0) const
+	{
+		return callObjectMethod(
+			"setInterval",
+			"(I)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;",
+			arg0
+		);
+	}
 } // namespace android::bluetooth::le
+
+// Base class headers
 

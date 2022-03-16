@@ -1,25 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./EncoderProfiles.def.hpp"
 
 namespace android::media
 {
-	class EncoderProfiles : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject EncoderProfiles::getAudioProfiles() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EncoderProfiles(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EncoderProfiles(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getAudioProfiles() const;
-		jint getDefaultDurationSeconds() const;
-		jint getRecommendedFileFormat() const;
-		JObject getVideoProfiles() const;
-	};
+		return callObjectMethod(
+			"getAudioProfiles",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint EncoderProfiles::getDefaultDurationSeconds() const
+	{
+		return callMethod<jint>(
+			"getDefaultDurationSeconds",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles::getRecommendedFileFormat() const
+	{
+		return callMethod<jint>(
+			"getRecommendedFileFormat",
+			"()I"
+		);
+	}
+	inline JObject EncoderProfiles::getVideoProfiles() const
+	{
+		return callObjectMethod(
+			"getVideoProfiles",
+			"()Ljava/util/List;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

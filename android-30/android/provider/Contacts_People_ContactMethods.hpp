@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Contacts_People_ContactMethods.def.hpp"
 
 namespace android::provider
 {
-	class Contacts_People_ContactMethods : public JObject
+	// Fields
+	inline JString Contacts_People_ContactMethods::CONTENT_DIRECTORY()
 	{
-	public:
-		// Fields
-		static JString CONTENT_DIRECTORY();
-		static JString DEFAULT_SORT_ORDER();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Contacts_People_ContactMethods(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_People_ContactMethods(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Contacts$People$ContactMethods",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_People_ContactMethods::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$People$ContactMethods",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

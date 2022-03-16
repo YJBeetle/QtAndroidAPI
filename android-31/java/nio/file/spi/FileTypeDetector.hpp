@@ -1,28 +1,25 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
-namespace java::lang
-{
-	class Void;
-}
+#include "../../../../JString.hpp"
+#include "../../../lang/Void.def.hpp"
+#include "./FileTypeDetector.def.hpp"
 
 namespace java::nio::file::spi
 {
-	class FileTypeDetector : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString FileTypeDetector::probeContentType(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FileTypeDetector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileTypeDetector(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString probeContentType(JObject arg0) const;
-	};
+		return callObjectMethod(
+			"probeContentType",
+			"(Ljava/nio/file/Path;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
 } // namespace java::nio::file::spi
+
+// Base class headers
 

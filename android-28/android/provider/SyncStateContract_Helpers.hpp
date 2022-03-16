@@ -1,51 +1,104 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::accounts
-{
-	class Account;
-}
-namespace android::content
-{
-	class ContentProviderClient;
-}
-namespace android::content
-{
-	class ContentProviderOperation;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::util
-{
-	class Pair;
-}
+#include "../../JByteArray.hpp"
+#include "../accounts/Account.def.hpp"
+#include "../content/ContentProviderClient.def.hpp"
+#include "../content/ContentProviderOperation.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../util/Pair.def.hpp"
+#include "./SyncStateContract_Helpers.def.hpp"
 
 namespace android::provider
 {
-	class SyncStateContract_Helpers : public JObject
+	// Fields
+	
+	// Constructors
+	inline SyncStateContract_Helpers::SyncStateContract_Helpers()
+		: JObject(
+			"android.provider.SyncStateContract$Helpers",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JByteArray SyncStateContract_Helpers::get(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SyncStateContract_Helpers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncStateContract_Helpers(QJniObject obj);
-		
-		// Constructors
-		SyncStateContract_Helpers();
-		
-		// Methods
-		static JByteArray get(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
-		static android::util::Pair getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
-		static android::net::Uri insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, JByteArray arg3);
-		static android::content::ContentProviderOperation newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, JByteArray arg2);
-		static android::content::ContentProviderOperation newUpdateOperation(android::net::Uri arg0, JByteArray arg1);
-		static void set(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, JByteArray arg3);
-		static void update(android::content::ContentProviderClient arg0, android::net::Uri arg1, JByteArray arg2);
-	};
+		return callStaticObjectMethod(
+			"android.provider.SyncStateContract$Helpers",
+			"get",
+			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)[B",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::util::Pair SyncStateContract_Helpers::getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.SyncStateContract$Helpers",
+			"getWithUri",
+			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)Landroid/util/Pair;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::net::Uri SyncStateContract_Helpers::insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, JByteArray arg3)
+	{
+		return callStaticObjectMethod(
+			"android.provider.SyncStateContract$Helpers",
+			"insert",
+			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object<jbyteArray>()
+		);
+	}
+	inline android::content::ContentProviderOperation SyncStateContract_Helpers::newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, JByteArray arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.SyncStateContract$Helpers",
+			"newSetOperation",
+			"(Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline android::content::ContentProviderOperation SyncStateContract_Helpers::newUpdateOperation(android::net::Uri arg0, JByteArray arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.SyncStateContract$Helpers",
+			"newUpdateOperation",
+			"(Landroid/net/Uri;[B)Landroid/content/ContentProviderOperation;",
+			arg0.object(),
+			arg1.object<jbyteArray>()
+		);
+	}
+	inline void SyncStateContract_Helpers::set(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, JByteArray arg3)
+	{
+		callStaticMethod<void>(
+			"android.provider.SyncStateContract$Helpers",
+			"set",
+			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;[B)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object<jbyteArray>()
+		);
+	}
+	inline void SyncStateContract_Helpers::update(android::content::ContentProviderClient arg0, android::net::Uri arg1, JByteArray arg2)
+	{
+		callStaticMethod<void>(
+			"android.provider.SyncStateContract$Helpers",
+			"update",
+			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;[B)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jbyteArray>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

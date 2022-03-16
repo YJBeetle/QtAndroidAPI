@@ -1,34 +1,89 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./DrmSupportInfo.def.hpp"
 
 namespace android::drm
 {
-	class DrmSupportInfo : public JObject
+	// Fields
+	
+	// Constructors
+	inline DrmSupportInfo::DrmSupportInfo()
+		: JObject(
+			"android.drm.DrmSupportInfo",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DrmSupportInfo::addFileSuffix(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DrmSupportInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmSupportInfo(QJniObject obj);
-		
-		// Constructors
-		DrmSupportInfo();
-		
-		// Methods
-		void addFileSuffix(JString arg0) const;
-		void addMimeType(JString arg0) const;
-		jboolean equals(JObject arg0) const;
-		JString getDescriprition() const;
-		JString getDescription() const;
-		JObject getFileSuffixIterator() const;
-		JObject getMimeTypeIterator() const;
-		jint hashCode() const;
-		void setDescription(JString arg0) const;
-	};
+		callMethod<void>(
+			"addFileSuffix",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void DrmSupportInfo::addMimeType(JString arg0) const
+	{
+		callMethod<void>(
+			"addMimeType",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean DrmSupportInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString DrmSupportInfo::getDescriprition() const
+	{
+		return callObjectMethod(
+			"getDescriprition",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DrmSupportInfo::getDescription() const
+	{
+		return callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject DrmSupportInfo::getFileSuffixIterator() const
+	{
+		return callObjectMethod(
+			"getFileSuffixIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline JObject DrmSupportInfo::getMimeTypeIterator() const
+	{
+		return callObjectMethod(
+			"getMimeTypeIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline jint DrmSupportInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void DrmSupportInfo::setDescription(JString arg0) const
+	{
+		callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::drm
+
+// Base class headers
 

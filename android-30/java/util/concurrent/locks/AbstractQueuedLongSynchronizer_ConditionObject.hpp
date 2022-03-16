@@ -1,42 +1,77 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-namespace java::util
-{
-	class Date;
-}
-namespace java::util::concurrent
-{
-	class TimeUnit;
-}
-namespace java::util::concurrent::locks
-{
-	class AbstractQueuedLongSynchronizer;
-}
+#include "../../Date.def.hpp"
+#include "../TimeUnit.def.hpp"
+#include "./AbstractQueuedLongSynchronizer.def.hpp"
+#include "./AbstractQueuedLongSynchronizer_ConditionObject.def.hpp"
 
 namespace java::util::concurrent::locks
 {
-	class AbstractQueuedLongSynchronizer_ConditionObject : public JObject
+	// Fields
+	
+	// Constructors
+	inline AbstractQueuedLongSynchronizer_ConditionObject::AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer arg0)
+		: JObject(
+			"java.util.concurrent.locks.AbstractQueuedLongSynchronizer$ConditionObject",
+			"(Ljava/util/concurrent/locks/AbstractQueuedLongSynchronizer;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean AbstractQueuedLongSynchronizer_ConditionObject::await(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AbstractQueuedLongSynchronizer_ConditionObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractQueuedLongSynchronizer_ConditionObject(QJniObject obj);
-		
-		// Constructors
-		AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer arg0);
-		
-		// Methods
-		jboolean await(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
-		void await() const;
-		jlong awaitNanos(jlong arg0) const;
-		void awaitUninterruptibly() const;
-		jboolean awaitUntil(java::util::Date arg0) const;
-		void signal() const;
-		void signalAll() const;
-	};
+		return callMethod<jboolean>(
+			"await",
+			"(JLjava/util/concurrent/TimeUnit;)Z",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void AbstractQueuedLongSynchronizer_ConditionObject::await() const
+	{
+		callMethod<void>(
+			"await",
+			"()V"
+		);
+	}
+	inline jlong AbstractQueuedLongSynchronizer_ConditionObject::awaitNanos(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"awaitNanos",
+			"(J)J",
+			arg0
+		);
+	}
+	inline void AbstractQueuedLongSynchronizer_ConditionObject::awaitUninterruptibly() const
+	{
+		callMethod<void>(
+			"awaitUninterruptibly",
+			"()V"
+		);
+	}
+	inline jboolean AbstractQueuedLongSynchronizer_ConditionObject::awaitUntil(java::util::Date arg0) const
+	{
+		return callMethod<jboolean>(
+			"awaitUntil",
+			"(Ljava/util/Date;)Z",
+			arg0.object()
+		);
+	}
+	inline void AbstractQueuedLongSynchronizer_ConditionObject::signal() const
+	{
+		callMethod<void>(
+			"signal",
+			"()V"
+		);
+	}
+	inline void AbstractQueuedLongSynchronizer_ConditionObject::signalAll() const
+	{
+		callMethod<void>(
+			"signalAll",
+			"()V"
+		);
+	}
 } // namespace java::util::concurrent::locks
+
+// Base class headers
 

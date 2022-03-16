@@ -1,32 +1,33 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-namespace android::media::projection
-{
-	class MediaProjection;
-}
+#include "../../content/Intent.def.hpp"
+#include "./MediaProjection.def.hpp"
+#include "./MediaProjectionManager.def.hpp"
 
 namespace android::media::projection
 {
-	class MediaProjectionManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::content::Intent MediaProjectionManager::createScreenCaptureIntent() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaProjectionManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaProjectionManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::content::Intent createScreenCaptureIntent() const;
-		android::media::projection::MediaProjection getMediaProjection(jint arg0, android::content::Intent arg1) const;
-	};
+		return callObjectMethod(
+			"createScreenCaptureIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	inline android::media::projection::MediaProjection MediaProjectionManager::getMediaProjection(jint arg0, android::content::Intent arg1) const
+	{
+		return callObjectMethod(
+			"getMediaProjection",
+			"(ILandroid/content/Intent;)Landroid/media/projection/MediaProjection;",
+			arg0,
+			arg1.object()
+		);
+	}
 } // namespace android::media::projection
+
+// Base class headers
 

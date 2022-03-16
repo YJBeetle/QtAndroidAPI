@@ -1,35 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Element.def.hpp"
+#include "./RenderScript.def.hpp"
+#include "../../JString.hpp"
+#include "./Element_Builder.def.hpp"
 
 namespace android::renderscript
 {
-	class Element;
-}
-namespace android::renderscript
-{
-	class RenderScript;
-}
-class JString;
-
-namespace android::renderscript
-{
-	class Element_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline Element_Builder::Element_Builder(android::renderscript::RenderScript arg0)
+		: JObject(
+			"android.renderscript.Element$Builder",
+			"(Landroid/renderscript/RenderScript;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Element_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Element_Builder(QJniObject obj);
-		
-		// Constructors
-		Element_Builder(android::renderscript::RenderScript arg0);
-		
-		// Methods
-		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1) const;
-		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1, jint arg2) const;
-		android::renderscript::Element create() const;
-	};
+		return callObjectMethod(
+			"add",
+			"(Landroid/renderscript/Element;Ljava/lang/String;)Landroid/renderscript/Element$Builder;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"add",
+			"(Landroid/renderscript/Element;Ljava/lang/String;I)Landroid/renderscript/Element$Builder;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2
+		);
+	}
+	inline android::renderscript::Element Element_Builder::create() const
+	{
+		return callObjectMethod(
+			"create",
+			"()Landroid/renderscript/Element;"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
 

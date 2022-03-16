@@ -1,27 +1,39 @@
 #pragma once
 
-#include "../../../java/security/InvalidKeyException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./KeyNotYetValidException.def.hpp"
 
 namespace android::security::keystore
 {
-	class KeyNotYetValidException : public java::security::InvalidKeyException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyNotYetValidException(const char *className, const char *sig, Ts...agv) : java::security::InvalidKeyException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyNotYetValidException(QJniObject obj);
-		
-		// Constructors
-		KeyNotYetValidException();
-		KeyNotYetValidException(JString arg0);
-		KeyNotYetValidException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline KeyNotYetValidException::KeyNotYetValidException()
+		: java::security::InvalidKeyException(
+			"android.security.keystore.KeyNotYetValidException",
+			"()V"
+		) {}
+	inline KeyNotYetValidException::KeyNotYetValidException(JString arg0)
+		: java::security::InvalidKeyException(
+			"android.security.keystore.KeyNotYetValidException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline KeyNotYetValidException::KeyNotYetValidException(JString arg0, JThrowable arg1)
+		: java::security::InvalidKeyException(
+			"android.security.keystore.KeyNotYetValidException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::security::keystore
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/security/GeneralSecurityException.hpp"
+#include "../../../java/security/KeyException.hpp"
+#include "../../../java/security/InvalidKeyException.hpp"
 

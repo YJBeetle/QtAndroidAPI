@@ -1,85 +1,357 @@
 #pragma once
 
+#include "../../JArray.hpp"
+#include "../content/pm/PackageManager.def.hpp"
+#include "../content/pm/ResolveInfo.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-namespace android::content::pm
-{
-	class PackageManager;
-}
-namespace android::content::pm
-{
-	class ResolveInfo;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./AccessibilityServiceInfo.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class AccessibilityServiceInfo : public JObject
+	// Fields
+	inline jint AccessibilityServiceInfo::CAPABILITY_CAN_CONTROL_MAGNIFICATION()
 	{
-	public:
-		// Fields
-		static jint CAPABILITY_CAN_CONTROL_MAGNIFICATION();
-		static jint CAPABILITY_CAN_PERFORM_GESTURES();
-		static jint CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY();
-		static jint CAPABILITY_CAN_REQUEST_FILTER_KEY_EVENTS();
-		static jint CAPABILITY_CAN_REQUEST_FINGERPRINT_GESTURES();
-		static jint CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION();
-		static jint CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT();
-		static JObject CREATOR();
-		static jint DEFAULT();
-		static jint FEEDBACK_ALL_MASK();
-		static jint FEEDBACK_AUDIBLE();
-		static jint FEEDBACK_BRAILLE();
-		static jint FEEDBACK_GENERIC();
-		static jint FEEDBACK_HAPTIC();
-		static jint FEEDBACK_SPOKEN();
-		static jint FEEDBACK_VISUAL();
-		static jint FLAG_ENABLE_ACCESSIBILITY_VOLUME();
-		static jint FLAG_INCLUDE_NOT_IMPORTANT_VIEWS();
-		static jint FLAG_REPORT_VIEW_IDS();
-		static jint FLAG_REQUEST_ACCESSIBILITY_BUTTON();
-		static jint FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY();
-		static jint FLAG_REQUEST_FILTER_KEY_EVENTS();
-		static jint FLAG_REQUEST_FINGERPRINT_GESTURES();
-		static jint FLAG_REQUEST_TOUCH_EXPLORATION_MODE();
-		static jint FLAG_RETRIEVE_INTERACTIVE_WINDOWS();
-		jint eventTypes();
-		jint feedbackType();
-		jint flags();
-		jlong notificationTimeout();
-		JArray packageNames();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityServiceInfo(QJniObject obj);
-		
-		// Constructors
-		AccessibilityServiceInfo();
-		
-		// Methods
-		static JString capabilityToString(jint arg0);
-		static JString feedbackTypeToString(jint arg0);
-		static JString flagToString(jint arg0);
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jboolean getCanRetrieveWindowContent() const;
-		jint getCapabilities() const;
-		JString getDescription() const;
-		JString getId() const;
-		android::content::pm::ResolveInfo getResolveInfo() const;
-		JString getSettingsActivityName() const;
-		jint hashCode() const;
-		JString loadDescription(android::content::pm::PackageManager arg0) const;
-		JString loadSummary(android::content::pm::PackageManager arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CAPABILITY_CAN_CONTROL_MAGNIFICATION"
+		);
+	}
+	inline jint AccessibilityServiceInfo::CAPABILITY_CAN_PERFORM_GESTURES()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CAPABILITY_CAN_PERFORM_GESTURES"
+		);
+	}
+	inline jint AccessibilityServiceInfo::CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY"
+		);
+	}
+	inline jint AccessibilityServiceInfo::CAPABILITY_CAN_REQUEST_FILTER_KEY_EVENTS()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CAPABILITY_CAN_REQUEST_FILTER_KEY_EVENTS"
+		);
+	}
+	inline jint AccessibilityServiceInfo::CAPABILITY_CAN_REQUEST_FINGERPRINT_GESTURES()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CAPABILITY_CAN_REQUEST_FINGERPRINT_GESTURES"
+		);
+	}
+	inline jint AccessibilityServiceInfo::CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION"
+		);
+	}
+	inline jint AccessibilityServiceInfo::CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT"
+		);
+	}
+	inline JObject AccessibilityServiceInfo::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint AccessibilityServiceInfo::DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"DEFAULT"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FEEDBACK_ALL_MASK()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FEEDBACK_ALL_MASK"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FEEDBACK_AUDIBLE()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FEEDBACK_AUDIBLE"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FEEDBACK_BRAILLE()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FEEDBACK_BRAILLE"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FEEDBACK_GENERIC()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FEEDBACK_GENERIC"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FEEDBACK_HAPTIC()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FEEDBACK_HAPTIC"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FEEDBACK_SPOKEN()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FEEDBACK_SPOKEN"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FEEDBACK_VISUAL()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FEEDBACK_VISUAL"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_ENABLE_ACCESSIBILITY_VOLUME()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_ENABLE_ACCESSIBILITY_VOLUME"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_INCLUDE_NOT_IMPORTANT_VIEWS()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_INCLUDE_NOT_IMPORTANT_VIEWS"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_REPORT_VIEW_IDS()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_REPORT_VIEW_IDS"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_REQUEST_ACCESSIBILITY_BUTTON()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_REQUEST_ACCESSIBILITY_BUTTON"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_REQUEST_FILTER_KEY_EVENTS()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_REQUEST_FILTER_KEY_EVENTS"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_REQUEST_FINGERPRINT_GESTURES()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_REQUEST_FINGERPRINT_GESTURES"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_REQUEST_TOUCH_EXPLORATION_MODE()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_REQUEST_TOUCH_EXPLORATION_MODE"
+		);
+	}
+	inline jint AccessibilityServiceInfo::FLAG_RETRIEVE_INTERACTIVE_WINDOWS()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"FLAG_RETRIEVE_INTERACTIVE_WINDOWS"
+		);
+	}
+	inline jint AccessibilityServiceInfo::eventTypes()
+	{
+		return getField<jint>(
+			"eventTypes"
+		);
+	}
+	inline jint AccessibilityServiceInfo::feedbackType()
+	{
+		return getField<jint>(
+			"feedbackType"
+		);
+	}
+	inline jint AccessibilityServiceInfo::flags()
+	{
+		return getField<jint>(
+			"flags"
+		);
+	}
+	inline jlong AccessibilityServiceInfo::notificationTimeout()
+	{
+		return getField<jlong>(
+			"notificationTimeout"
+		);
+	}
+	inline JArray AccessibilityServiceInfo::packageNames()
+	{
+		return getObjectField(
+			"packageNames",
+			"[Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline AccessibilityServiceInfo::AccessibilityServiceInfo()
+		: JObject(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString AccessibilityServiceInfo::capabilityToString(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"capabilityToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline JString AccessibilityServiceInfo::feedbackTypeToString(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"feedbackTypeToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline JString AccessibilityServiceInfo::flagToString(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.accessibilityservice.AccessibilityServiceInfo",
+			"flagToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline jint AccessibilityServiceInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean AccessibilityServiceInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean AccessibilityServiceInfo::getCanRetrieveWindowContent() const
+	{
+		return callMethod<jboolean>(
+			"getCanRetrieveWindowContent",
+			"()Z"
+		);
+	}
+	inline jint AccessibilityServiceInfo::getCapabilities() const
+	{
+		return callMethod<jint>(
+			"getCapabilities",
+			"()I"
+		);
+	}
+	inline JString AccessibilityServiceInfo::getDescription() const
+	{
+		return callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString AccessibilityServiceInfo::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::content::pm::ResolveInfo AccessibilityServiceInfo::getResolveInfo() const
+	{
+		return callObjectMethod(
+			"getResolveInfo",
+			"()Landroid/content/pm/ResolveInfo;"
+		);
+	}
+	inline JString AccessibilityServiceInfo::getSettingsActivityName() const
+	{
+		return callObjectMethod(
+			"getSettingsActivityName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint AccessibilityServiceInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString AccessibilityServiceInfo::loadDescription(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString AccessibilityServiceInfo::loadSummary(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadSummary",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline JString AccessibilityServiceInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void AccessibilityServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

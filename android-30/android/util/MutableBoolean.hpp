@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MutableBoolean.def.hpp"
 
 namespace android::util
 {
-	class MutableBoolean : public JObject
+	// Fields
+	inline jboolean MutableBoolean::value()
 	{
-	public:
-		// Fields
-		jboolean value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MutableBoolean(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableBoolean(QJniObject obj);
-		
-		// Constructors
-		MutableBoolean(jboolean arg0);
-		
-		// Methods
-	};
+		return getField<jboolean>(
+			"value"
+		);
+	}
+	
+	// Constructors
+	inline MutableBoolean::MutableBoolean(jboolean arg0)
+		: JObject(
+			"android.util.MutableBoolean",
+			"(Z)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

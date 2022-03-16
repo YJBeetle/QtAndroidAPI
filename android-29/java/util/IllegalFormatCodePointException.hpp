@@ -1,26 +1,40 @@
 #pragma once
 
-#include "./IllegalFormatException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllegalFormatCodePointException.def.hpp"
 
 namespace java::util
 {
-	class IllegalFormatCodePointException : public java::util::IllegalFormatException
+	// Fields
+	
+	// Constructors
+	inline IllegalFormatCodePointException::IllegalFormatCodePointException(jint arg0)
+		: java::util::IllegalFormatException(
+			"java.util.IllegalFormatCodePointException",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jint IllegalFormatCodePointException::getCodePoint() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IllegalFormatCodePointException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalFormatCodePointException(QJniObject obj);
-		
-		// Constructors
-		IllegalFormatCodePointException(jint arg0);
-		
-		// Methods
-		jint getCodePoint() const;
-		JString getMessage() const;
-	};
+		return callMethod<jint>(
+			"getCodePoint",
+			"()I"
+		);
+	}
+	inline JString IllegalFormatCodePointException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
+#include "./IllegalFormatException.hpp"
 

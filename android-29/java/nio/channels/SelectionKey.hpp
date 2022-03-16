@@ -1,50 +1,155 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-namespace java::nio::channels
-{
-	class SelectableChannel;
-}
-namespace java::nio::channels
-{
-	class Selector;
-}
+#include "./SelectableChannel.def.hpp"
+#include "./Selector.def.hpp"
+#include "./SelectionKey.def.hpp"
 
 namespace java::nio::channels
 {
-	class SelectionKey : public JObject
+	// Fields
+	inline jint SelectionKey::OP_ACCEPT()
 	{
-	public:
-		// Fields
-		static jint OP_ACCEPT();
-		static jint OP_CONNECT();
-		static jint OP_READ();
-		static jint OP_WRITE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SelectionKey(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SelectionKey(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject attach(JObject arg0) const;
-		JObject attachment() const;
-		void cancel() const;
-		java::nio::channels::SelectableChannel channel() const;
-		jint interestOps() const;
-		java::nio::channels::SelectionKey interestOps(jint arg0) const;
-		jint interestOpsAnd(jint arg0) const;
-		jint interestOpsOr(jint arg0) const;
-		jboolean isAcceptable() const;
-		jboolean isConnectable() const;
-		jboolean isReadable() const;
-		jboolean isValid() const;
-		jboolean isWritable() const;
-		jint readyOps() const;
-		java::nio::channels::Selector selector() const;
-	};
+		return getStaticField<jint>(
+			"java.nio.channels.SelectionKey",
+			"OP_ACCEPT"
+		);
+	}
+	inline jint SelectionKey::OP_CONNECT()
+	{
+		return getStaticField<jint>(
+			"java.nio.channels.SelectionKey",
+			"OP_CONNECT"
+		);
+	}
+	inline jint SelectionKey::OP_READ()
+	{
+		return getStaticField<jint>(
+			"java.nio.channels.SelectionKey",
+			"OP_READ"
+		);
+	}
+	inline jint SelectionKey::OP_WRITE()
+	{
+		return getStaticField<jint>(
+			"java.nio.channels.SelectionKey",
+			"OP_WRITE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject SelectionKey::attach(JObject arg0) const
+	{
+		return callObjectMethod(
+			"attach",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject SelectionKey::attachment() const
+	{
+		return callObjectMethod(
+			"attachment",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline void SelectionKey::cancel() const
+	{
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline java::nio::channels::SelectableChannel SelectionKey::channel() const
+	{
+		return callObjectMethod(
+			"channel",
+			"()Ljava/nio/channels/SelectableChannel;"
+		);
+	}
+	inline jint SelectionKey::interestOps() const
+	{
+		return callMethod<jint>(
+			"interestOps",
+			"()I"
+		);
+	}
+	inline java::nio::channels::SelectionKey SelectionKey::interestOps(jint arg0) const
+	{
+		return callObjectMethod(
+			"interestOps",
+			"(I)Ljava/nio/channels/SelectionKey;",
+			arg0
+		);
+	}
+	inline jint SelectionKey::interestOpsAnd(jint arg0) const
+	{
+		return callMethod<jint>(
+			"interestOpsAnd",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint SelectionKey::interestOpsOr(jint arg0) const
+	{
+		return callMethod<jint>(
+			"interestOpsOr",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jboolean SelectionKey::isAcceptable() const
+	{
+		return callMethod<jboolean>(
+			"isAcceptable",
+			"()Z"
+		);
+	}
+	inline jboolean SelectionKey::isConnectable() const
+	{
+		return callMethod<jboolean>(
+			"isConnectable",
+			"()Z"
+		);
+	}
+	inline jboolean SelectionKey::isReadable() const
+	{
+		return callMethod<jboolean>(
+			"isReadable",
+			"()Z"
+		);
+	}
+	inline jboolean SelectionKey::isValid() const
+	{
+		return callMethod<jboolean>(
+			"isValid",
+			"()Z"
+		);
+	}
+	inline jboolean SelectionKey::isWritable() const
+	{
+		return callMethod<jboolean>(
+			"isWritable",
+			"()Z"
+		);
+	}
+	inline jint SelectionKey::readyOps() const
+	{
+		return callMethod<jint>(
+			"readyOps",
+			"()I"
+		);
+	}
+	inline java::nio::channels::Selector SelectionKey::selector() const
+	{
+		return callObjectMethod(
+			"selector",
+			"()Ljava/nio/channels/Selector;"
+		);
+	}
 } // namespace java::nio::channels
+
+// Base class headers
 

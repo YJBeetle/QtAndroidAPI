@@ -1,34 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-namespace android::security
-{
-	class AppUriAuthenticationPolicy;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "./AppUriAuthenticationPolicy.def.hpp"
+#include "../../JString.hpp"
+#include "./AppUriAuthenticationPolicy_Builder.def.hpp"
 
 namespace android::security
 {
-	class AppUriAuthenticationPolicy_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AppUriAuthenticationPolicy_Builder::AppUriAuthenticationPolicy_Builder()
+		: JObject(
+			"android.security.AppUriAuthenticationPolicy$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::security::AppUriAuthenticationPolicy_Builder AppUriAuthenticationPolicy_Builder::addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppUriAuthenticationPolicy_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppUriAuthenticationPolicy_Builder(QJniObject obj);
-		
-		// Constructors
-		AppUriAuthenticationPolicy_Builder();
-		
-		// Methods
-		android::security::AppUriAuthenticationPolicy_Builder addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2) const;
-		android::security::AppUriAuthenticationPolicy build() const;
-	};
+		return callObjectMethod(
+			"addAppAndUriMapping",
+			"(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)Landroid/security/AppUriAuthenticationPolicy$Builder;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object<jstring>()
+		);
+	}
+	inline android::security::AppUriAuthenticationPolicy AppUriAuthenticationPolicy_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/security/AppUriAuthenticationPolicy;"
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

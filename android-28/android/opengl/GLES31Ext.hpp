@@ -1,282 +1,1997 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JIntArray;
-class JArray;
-class JString;
-namespace java::nio
-{
-	class ByteBuffer;
-}
-namespace java::nio
-{
-	class IntBuffer;
-}
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "../../java/nio/ByteBuffer.def.hpp"
+#include "../../java/nio/IntBuffer.def.hpp"
+#include "./GLES31Ext.def.hpp"
 
 namespace android::opengl
 {
-	class GLES31Ext : public JObject
+	// Fields
+	inline jint GLES31Ext::GL_BLEND_ADVANCED_COHERENT_KHR()
 	{
-	public:
-		// Fields
-		static jint GL_BLEND_ADVANCED_COHERENT_KHR();
-		static jint GL_BUFFER_KHR();
-		static jint GL_CLAMP_TO_BORDER_EXT();
-		static jint GL_COLORBURN_KHR();
-		static jint GL_COLORDODGE_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_10x10_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_10x5_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_10x6_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_10x8_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_12x10_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_12x12_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_4x4_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_5x4_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_5x5_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_6x5_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_6x6_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_8x5_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_8x6_KHR();
-		static jint GL_COMPRESSED_RGBA_ASTC_8x8_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR();
-		static jint GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR();
-		static jint GL_CONTEXT_FLAG_DEBUG_BIT_KHR();
-		static jint GL_DARKEN_KHR();
-		static jint GL_DEBUG_CALLBACK_FUNCTION_KHR();
-		static jint GL_DEBUG_CALLBACK_USER_PARAM_KHR();
-		static jint GL_DEBUG_GROUP_STACK_DEPTH_KHR();
-		static jint GL_DEBUG_LOGGED_MESSAGES_KHR();
-		static jint GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR();
-		static jint GL_DEBUG_OUTPUT_KHR();
-		static jint GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR();
-		static jint GL_DEBUG_SEVERITY_HIGH_KHR();
-		static jint GL_DEBUG_SEVERITY_LOW_KHR();
-		static jint GL_DEBUG_SEVERITY_MEDIUM_KHR();
-		static jint GL_DEBUG_SEVERITY_NOTIFICATION_KHR();
-		static jint GL_DEBUG_SOURCE_API_KHR();
-		static jint GL_DEBUG_SOURCE_APPLICATION_KHR();
-		static jint GL_DEBUG_SOURCE_OTHER_KHR();
-		static jint GL_DEBUG_SOURCE_SHADER_COMPILER_KHR();
-		static jint GL_DEBUG_SOURCE_THIRD_PARTY_KHR();
-		static jint GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR();
-		static jint GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR();
-		static jint GL_DEBUG_TYPE_ERROR_KHR();
-		static jint GL_DEBUG_TYPE_MARKER_KHR();
-		static jint GL_DEBUG_TYPE_OTHER_KHR();
-		static jint GL_DEBUG_TYPE_PERFORMANCE_KHR();
-		static jint GL_DEBUG_TYPE_POP_GROUP_KHR();
-		static jint GL_DEBUG_TYPE_PORTABILITY_KHR();
-		static jint GL_DEBUG_TYPE_PUSH_GROUP_KHR();
-		static jint GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR();
-		static jint GL_DECODE_EXT();
-		static jint GL_DIFFERENCE_KHR();
-		static jint GL_EXCLUSION_KHR();
-		static jint GL_FIRST_VERTEX_CONVENTION_EXT();
-		static jint GL_FRACTIONAL_EVEN_EXT();
-		static jint GL_FRACTIONAL_ODD_EXT();
-		static jint GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES();
-		static jint GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT();
-		static jint GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT();
-		static jint GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT();
-		static jint GL_GEOMETRY_LINKED_INPUT_TYPE_EXT();
-		static jint GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT();
-		static jint GL_GEOMETRY_LINKED_VERTICES_OUT_EXT();
-		static jint GL_GEOMETRY_SHADER_BIT_EXT();
-		static jint GL_GEOMETRY_SHADER_EXT();
-		static jint GL_GEOMETRY_SHADER_INVOCATIONS_EXT();
-		static jint GL_HARDLIGHT_KHR();
-		static jint GL_HSL_COLOR_KHR();
-		static jint GL_HSL_HUE_KHR();
-		static jint GL_HSL_LUMINOSITY_KHR();
-		static jint GL_HSL_SATURATION_KHR();
-		static jint GL_IMAGE_BUFFER_EXT();
-		static jint GL_IMAGE_CUBE_MAP_ARRAY_EXT();
-		static jint GL_INT_IMAGE_BUFFER_EXT();
-		static jint GL_INT_IMAGE_CUBE_MAP_ARRAY_EXT();
-		static jint GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES();
-		static jint GL_INT_SAMPLER_BUFFER_EXT();
-		static jint GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT();
-		static jint GL_ISOLINES_EXT();
-		static jint GL_IS_PER_PATCH_EXT();
-		static jint GL_LAST_VERTEX_CONVENTION_EXT();
-		static jint GL_LAYER_PROVOKING_VERTEX_EXT();
-		static jint GL_LIGHTEN_KHR();
-		static jint GL_LINES_ADJACENCY_EXT();
-		static jint GL_LINE_STRIP_ADJACENCY_EXT();
-		static jint GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT();
-		static jint GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT();
-		static jint GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT();
-		static jint GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR();
-		static jint GL_MAX_DEBUG_LOGGED_MESSAGES_KHR();
-		static jint GL_MAX_DEBUG_MESSAGE_LENGTH_KHR();
-		static jint GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES();
-		static jint GL_MAX_FRAMEBUFFER_LAYERS_EXT();
-		static jint GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT();
-		static jint GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT();
-		static jint GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT();
-		static jint GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT();
-		static jint GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT();
-		static jint GL_MAX_GEOMETRY_OUTPUT_VERTICES_EXT();
-		static jint GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT();
-		static jint GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT();
-		static jint GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT();
-		static jint GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT();
-		static jint GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT();
-		static jint GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT();
-		static jint GL_MAX_LABEL_LENGTH_KHR();
-		static jint GL_MAX_PATCH_VERTICES_EXT();
-		static jint GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT();
-		static jint GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT();
-		static jint GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT();
-		static jint GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT();
-		static jint GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT();
-		static jint GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT();
-		static jint GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT();
-		static jint GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT();
-		static jint GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT();
-		static jint GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT();
-		static jint GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT();
-		static jint GL_MAX_TESS_GEN_LEVEL_EXT();
-		static jint GL_MAX_TESS_PATCH_COMPONENTS_EXT();
-		static jint GL_MAX_TEXTURE_BUFFER_SIZE_EXT();
-		static jint GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES();
-		static jint GL_MIN_SAMPLE_SHADING_VALUE_OES();
-		static jint GL_MULTIPLY_KHR();
-		static jint GL_OVERLAY_KHR();
-		static jint GL_PATCHES_EXT();
-		static jint GL_PATCH_VERTICES_EXT();
-		static jint GL_PRIMITIVES_GENERATED_EXT();
-		static jint GL_PRIMITIVE_BOUNDING_BOX_EXT();
-		static jint GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED();
-		static jint GL_PROGRAM_KHR();
-		static jint GL_QUADS_EXT();
-		static jint GL_QUERY_KHR();
-		static jint GL_REFERENCED_BY_GEOMETRY_SHADER_EXT();
-		static jint GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT();
-		static jint GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT();
-		static jint GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES();
-		static jint GL_SAMPLER_BUFFER_EXT();
-		static jint GL_SAMPLER_CUBE_MAP_ARRAY_EXT();
-		static jint GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT();
-		static jint GL_SAMPLER_KHR();
-		static jint GL_SAMPLE_SHADING_OES();
-		static jint GL_SCREEN_KHR();
-		static jint GL_SHADER_KHR();
-		static jint GL_SKIP_DECODE_EXT();
-		static jint GL_SOFTLIGHT_KHR();
-		static jint GL_STACK_OVERFLOW_KHR();
-		static jint GL_STACK_UNDERFLOW_KHR();
-		static jint GL_STENCIL_INDEX8_OES();
-		static jint GL_STENCIL_INDEX_OES();
-		static jint GL_TESS_CONTROL_OUTPUT_VERTICES_EXT();
-		static jint GL_TESS_CONTROL_SHADER_BIT_EXT();
-		static jint GL_TESS_CONTROL_SHADER_EXT();
-		static jint GL_TESS_EVALUATION_SHADER_BIT_EXT();
-		static jint GL_TESS_EVALUATION_SHADER_EXT();
-		static jint GL_TESS_GEN_MODE_EXT();
-		static jint GL_TESS_GEN_POINT_MODE_EXT();
-		static jint GL_TESS_GEN_SPACING_EXT();
-		static jint GL_TESS_GEN_VERTEX_ORDER_EXT();
-		static jint GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES();
-		static jint GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES();
-		static jint GL_TEXTURE_BINDING_BUFFER_EXT();
-		static jint GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT();
-		static jint GL_TEXTURE_BORDER_COLOR_EXT();
-		static jint GL_TEXTURE_BUFFER_BINDING_EXT();
-		static jint GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT();
-		static jint GL_TEXTURE_BUFFER_EXT();
-		static jint GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT();
-		static jint GL_TEXTURE_BUFFER_OFFSET_EXT();
-		static jint GL_TEXTURE_BUFFER_SIZE_EXT();
-		static jint GL_TEXTURE_CUBE_MAP_ARRAY_EXT();
-		static jint GL_TEXTURE_SRGB_DECODE_EXT();
-		static jint GL_TRIANGLES_ADJACENCY_EXT();
-		static jint GL_TRIANGLE_STRIP_ADJACENCY_EXT();
-		static jint GL_UNDEFINED_VERTEX_EXT();
-		static jint GL_UNSIGNED_INT_IMAGE_BUFFER_EXT();
-		static jint GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_EXT();
-		static jint GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES();
-		static jint GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT();
-		static jint GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT();
-		static jint GL_VERTEX_ARRAY_KHR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GLES31Ext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GLES31Ext(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static void glBlendBarrierKHR();
-		static void glBlendEquationSeparateiEXT(jint arg0, jint arg1, jint arg2);
-		static void glBlendEquationiEXT(jint arg0, jint arg1);
-		static void glBlendFuncSeparateiEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glBlendFunciEXT(jint arg0, jint arg1, jint arg2);
-		static void glColorMaskiEXT(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4);
-		static void glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14);
-		static void glDebugMessageCallbackKHR(JObject arg0);
-		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5);
-		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4, jint arg5, jboolean arg6);
-		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, JString arg4);
-		static void glDisableiEXT(jint arg0, jint arg1);
-		static void glEnableiEXT(jint arg0, jint arg1);
-		static void glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3);
-		static JObject glGetDebugMessageCallbackKHR();
-		static JArray glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4);
-		static JArray glGetDebugMessageLogKHR(jint arg0, JIntArray arg1, jint arg2, JIntArray arg3, jint arg4, JIntArray arg5, jint arg6, JIntArray arg7, jint arg8);
-		static jint glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, java::nio::ByteBuffer arg6);
-		static jint glGetDebugMessageLogKHR(jint arg0, jint arg1, JIntArray arg2, jint arg3, JIntArray arg4, jint arg5, JIntArray arg6, jint arg7, JIntArray arg8, jint arg9, JIntArray arg10, jint arg11, JByteArray arg12, jint arg13);
-		static JString glGetObjectLabelKHR(jint arg0, jint arg1);
-		static JString glGetObjectPtrLabelKHR(jlong arg0);
-		static void glGetSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static void glGetSamplerParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static void glGetTexParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static jboolean glIsEnablediEXT(jint arg0, jint arg1);
-		static void glMinSampleShadingOES(jfloat arg0);
-		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, JString arg3);
-		static void glObjectPtrLabelKHR(jlong arg0, JString arg1);
-		static void glPatchParameteriEXT(jint arg0, jint arg1);
-		static void glPopDebugGroupKHR();
-		static void glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
-		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, JString arg3);
-		static void glSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static void glTexBufferEXT(jint arg0, jint arg1, jint arg2);
-		static void glTexBufferRangeEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glTexParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static void glTexParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
-		static void glTexStorage3DMultisampleOES(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
-	};
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_BLEND_ADVANCED_COHERENT_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_BUFFER_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_BUFFER_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_CLAMP_TO_BORDER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_CLAMP_TO_BORDER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_COLORBURN_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COLORBURN_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COLORDODGE_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COLORDODGE_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_10x10_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_10x10_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_10x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_10x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_10x6_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_10x6_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_10x8_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_10x8_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_12x10_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_12x10_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_12x12_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_12x12_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_4x4_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_4x4_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_5x4_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_5x4_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_5x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_5x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_6x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_6x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_6x6_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_6x6_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_8x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_8x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_8x6_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_8x6_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_RGBA_ASTC_8x8_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_RGBA_ASTC_8x8_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_CONTEXT_FLAG_DEBUG_BIT_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_CONTEXT_FLAG_DEBUG_BIT_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DARKEN_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DARKEN_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_CALLBACK_FUNCTION_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_CALLBACK_FUNCTION_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_CALLBACK_USER_PARAM_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_CALLBACK_USER_PARAM_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_GROUP_STACK_DEPTH_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_GROUP_STACK_DEPTH_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_LOGGED_MESSAGES_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_LOGGED_MESSAGES_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_OUTPUT_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_OUTPUT_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SEVERITY_HIGH_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SEVERITY_HIGH_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SEVERITY_LOW_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SEVERITY_LOW_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SEVERITY_MEDIUM_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SEVERITY_MEDIUM_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SEVERITY_NOTIFICATION_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SEVERITY_NOTIFICATION_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SOURCE_API_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SOURCE_API_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SOURCE_APPLICATION_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SOURCE_APPLICATION_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SOURCE_OTHER_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SOURCE_OTHER_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SOURCE_SHADER_COMPILER_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SOURCE_SHADER_COMPILER_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SOURCE_THIRD_PARTY_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SOURCE_THIRD_PARTY_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_ERROR_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_ERROR_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_MARKER_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_MARKER_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_OTHER_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_OTHER_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_PERFORMANCE_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_PERFORMANCE_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_POP_GROUP_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_POP_GROUP_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_PORTABILITY_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_PORTABILITY_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_PUSH_GROUP_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_PUSH_GROUP_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_DECODE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DECODE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_DIFFERENCE_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_DIFFERENCE_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_EXCLUSION_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_EXCLUSION_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_FIRST_VERTEX_CONVENTION_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_FIRST_VERTEX_CONVENTION_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_FRACTIONAL_EVEN_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_FRACTIONAL_EVEN_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_FRACTIONAL_ODD_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_FRACTIONAL_ODD_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_GEOMETRY_LINKED_INPUT_TYPE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_GEOMETRY_LINKED_INPUT_TYPE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_GEOMETRY_LINKED_VERTICES_OUT_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_GEOMETRY_LINKED_VERTICES_OUT_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_GEOMETRY_SHADER_BIT_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_GEOMETRY_SHADER_BIT_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_GEOMETRY_SHADER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_GEOMETRY_SHADER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_GEOMETRY_SHADER_INVOCATIONS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_GEOMETRY_SHADER_INVOCATIONS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_HARDLIGHT_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_HARDLIGHT_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_HSL_COLOR_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_HSL_COLOR_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_HSL_HUE_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_HSL_HUE_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_HSL_LUMINOSITY_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_HSL_LUMINOSITY_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_HSL_SATURATION_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_HSL_SATURATION_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_IMAGE_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_IMAGE_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_IMAGE_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_IMAGE_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_INT_IMAGE_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_INT_IMAGE_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_INT_IMAGE_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_INT_IMAGE_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_INT_SAMPLER_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_INT_SAMPLER_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_ISOLINES_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_ISOLINES_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_IS_PER_PATCH_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_IS_PER_PATCH_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_LAST_VERTEX_CONVENTION_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_LAST_VERTEX_CONVENTION_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_LAYER_PROVOKING_VERTEX_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_LAYER_PROVOKING_VERTEX_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_LIGHTEN_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_LIGHTEN_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_LINES_ADJACENCY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_LINES_ADJACENCY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_LINE_STRIP_ADJACENCY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_LINE_STRIP_ADJACENCY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_DEBUG_LOGGED_MESSAGES_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_DEBUG_LOGGED_MESSAGES_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_DEBUG_MESSAGE_LENGTH_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_DEBUG_MESSAGE_LENGTH_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_FRAMEBUFFER_LAYERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_FRAMEBUFFER_LAYERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_OUTPUT_VERTICES_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_OUTPUT_VERTICES_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_LABEL_LENGTH_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_LABEL_LENGTH_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_PATCH_VERTICES_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_PATCH_VERTICES_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_GEN_LEVEL_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_GEN_LEVEL_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TESS_PATCH_COMPONENTS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TESS_PATCH_COMPONENTS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MAX_TEXTURE_BUFFER_SIZE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MAX_TEXTURE_BUFFER_SIZE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_MIN_SAMPLE_SHADING_VALUE_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MIN_SAMPLE_SHADING_VALUE_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_MULTIPLY_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_MULTIPLY_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_OVERLAY_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_OVERLAY_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_PATCHES_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_PATCHES_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_PATCH_VERTICES_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_PATCH_VERTICES_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_PRIMITIVES_GENERATED_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_PRIMITIVES_GENERATED_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_PRIMITIVE_BOUNDING_BOX_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_PRIMITIVE_BOUNDING_BOX_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED"
+		);
+	}
+	inline jint GLES31Ext::GL_PROGRAM_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_PROGRAM_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_QUADS_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_QUADS_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_QUERY_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_QUERY_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_REFERENCED_BY_GEOMETRY_SHADER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_REFERENCED_BY_GEOMETRY_SHADER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_SAMPLER_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SAMPLER_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_SAMPLER_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SAMPLER_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_SAMPLER_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SAMPLER_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_SAMPLE_SHADING_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SAMPLE_SHADING_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_SCREEN_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SCREEN_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_SHADER_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SHADER_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_SKIP_DECODE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SKIP_DECODE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_SOFTLIGHT_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_SOFTLIGHT_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_STACK_OVERFLOW_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_STACK_OVERFLOW_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_STACK_UNDERFLOW_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_STACK_UNDERFLOW_KHR"
+		);
+	}
+	inline jint GLES31Ext::GL_STENCIL_INDEX8_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_STENCIL_INDEX8_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_STENCIL_INDEX_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_STENCIL_INDEX_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_CONTROL_OUTPUT_VERTICES_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_CONTROL_OUTPUT_VERTICES_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_CONTROL_SHADER_BIT_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_CONTROL_SHADER_BIT_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_CONTROL_SHADER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_CONTROL_SHADER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_EVALUATION_SHADER_BIT_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_EVALUATION_SHADER_BIT_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_EVALUATION_SHADER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_EVALUATION_SHADER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_GEN_MODE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_GEN_MODE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_GEN_POINT_MODE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_GEN_POINT_MODE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_GEN_SPACING_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_GEN_SPACING_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TESS_GEN_VERTEX_ORDER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TESS_GEN_VERTEX_ORDER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BINDING_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BINDING_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BORDER_COLOR_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BORDER_COLOR_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BUFFER_BINDING_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BUFFER_BINDING_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BUFFER_OFFSET_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BUFFER_OFFSET_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_BUFFER_SIZE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_BUFFER_SIZE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TEXTURE_SRGB_DECODE_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TEXTURE_SRGB_DECODE_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TRIANGLES_ADJACENCY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TRIANGLES_ADJACENCY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_TRIANGLE_STRIP_ADJACENCY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_TRIANGLE_STRIP_ADJACENCY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_UNDEFINED_VERTEX_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_UNDEFINED_VERTEX_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_UNSIGNED_INT_IMAGE_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_UNSIGNED_INT_IMAGE_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES"
+		);
+	}
+	inline jint GLES31Ext::GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT"
+		);
+	}
+	inline jint GLES31Ext::GL_VERTEX_ARRAY_KHR()
+	{
+		return getStaticField<jint>(
+			"android.opengl.GLES31Ext",
+			"GL_VERTEX_ARRAY_KHR"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void GLES31Ext::glBlendBarrierKHR()
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendBarrierKHR",
+			"()V"
+		);
+	}
+	inline void GLES31Ext::glBlendEquationSeparateiEXT(jint arg0, jint arg1, jint arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendEquationSeparateiEXT",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline void GLES31Ext::glBlendEquationiEXT(jint arg0, jint arg1)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendEquationiEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void GLES31Ext::glBlendFuncSeparateiEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendFuncSeparateiEXT",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	inline void GLES31Ext::glBlendFunciEXT(jint arg0, jint arg1, jint arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendFunciEXT",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline void GLES31Ext::glColorMaskiEXT(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glColorMaskiEXT",
+			"(IZZZZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	inline void GLES31Ext::glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glCopyImageSubDataEXT",
+			"(IIIIIIIIIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10,
+			arg11,
+			arg12,
+			arg13,
+			arg14
+		);
+	}
+	inline void GLES31Ext::glDebugMessageCallbackKHR(JObject arg0)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glDebugMessageCallbackKHR",
+			"(Landroid/opengl/GLES31Ext$DebugProcKHR;)V",
+			arg0.object()
+		);
+	}
+	inline void GLES31Ext::glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glDebugMessageControlKHR",
+			"(IIIILjava/nio/IntBuffer;Z)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object(),
+			arg5
+		);
+	}
+	inline void GLES31Ext::glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4, jint arg5, jboolean arg6)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glDebugMessageControlKHR",
+			"(IIII[IIZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jintArray>(),
+			arg5,
+			arg6
+		);
+	}
+	inline void GLES31Ext::glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, JString arg4)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glDebugMessageInsertKHR",
+			"(IIIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jstring>()
+		);
+	}
+	inline void GLES31Ext::glDisableiEXT(jint arg0, jint arg1)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glDisableiEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void GLES31Ext::glEnableiEXT(jint arg0, jint arg1)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glEnableiEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void GLES31Ext::glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glFramebufferTextureEXT",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline JObject GLES31Ext::glGetDebugMessageCallbackKHR()
+	{
+		return callStaticObjectMethod(
+			"android.opengl.GLES31Ext",
+			"glGetDebugMessageCallbackKHR",
+			"()Landroid/opengl/GLES31Ext$DebugProcKHR;"
+		);
+	}
+	inline JArray GLES31Ext::glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4)
+	{
+		return callStaticObjectMethod(
+			"android.opengl.GLES31Ext",
+			"glGetDebugMessageLogKHR",
+			"(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)[Ljava/lang/String;",
+			arg0,
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline JArray GLES31Ext::glGetDebugMessageLogKHR(jint arg0, JIntArray arg1, jint arg2, JIntArray arg3, jint arg4, JIntArray arg5, jint arg6, JIntArray arg7, jint arg8)
+	{
+		return callStaticObjectMethod(
+			"android.opengl.GLES31Ext",
+			"glGetDebugMessageLogKHR",
+			"(I[II[II[II[II)[Ljava/lang/String;",
+			arg0,
+			arg1.object<jintArray>(),
+			arg2,
+			arg3.object<jintArray>(),
+			arg4,
+			arg5.object<jintArray>(),
+			arg6,
+			arg7.object<jintArray>(),
+			arg8
+		);
+	}
+	inline jint GLES31Ext::glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, java::nio::ByteBuffer arg6)
+	{
+		return callStaticMethod<jint>(
+			"android.opengl.GLES31Ext",
+			"glGetDebugMessageLogKHR",
+			"(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I",
+			arg0,
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
+		);
+	}
+	inline jint GLES31Ext::glGetDebugMessageLogKHR(jint arg0, jint arg1, JIntArray arg2, jint arg3, JIntArray arg4, jint arg5, JIntArray arg6, jint arg7, JIntArray arg8, jint arg9, JIntArray arg10, jint arg11, JByteArray arg12, jint arg13)
+	{
+		return callStaticMethod<jint>(
+			"android.opengl.GLES31Ext",
+			"glGetDebugMessageLogKHR",
+			"(II[II[II[II[II[II[BI)I",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3,
+			arg4.object<jintArray>(),
+			arg5,
+			arg6.object<jintArray>(),
+			arg7,
+			arg8.object<jintArray>(),
+			arg9,
+			arg10.object<jintArray>(),
+			arg11,
+			arg12.object<jbyteArray>(),
+			arg13
+		);
+	}
+	inline JString GLES31Ext::glGetObjectLabelKHR(jint arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.opengl.GLES31Ext",
+			"glGetObjectLabelKHR",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
+		);
+	}
+	inline JString GLES31Ext::glGetObjectPtrLabelKHR(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.opengl.GLES31Ext",
+			"glGetObjectPtrLabelKHR",
+			"(J)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetSamplerParameterIivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetSamplerParameterIivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetSamplerParameterIuivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetSamplerParameterIuivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline void GLES31Ext::glGetTexParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetTexParameterIivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glGetTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetTexParameterIivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline void GLES31Ext::glGetTexParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetTexParameterIuivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glGetTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glGetTexParameterIuivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline jboolean GLES31Ext::glIsEnablediEXT(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.opengl.GLES31Ext",
+			"glIsEnablediEXT",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline void GLES31Ext::glMinSampleShadingOES(jfloat arg0)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glMinSampleShadingOES",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, JString arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectLabelKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.object<jstring>()
+		);
+	}
+	inline void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, JString arg1)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectPtrLabelKHR",
+			"(JLjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void GLES31Ext::glPatchParameteriEXT(jint arg0, jint arg1)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPatchParameteriEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void GLES31Ext::glPopDebugGroupKHR()
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPopDebugGroupKHR",
+			"()V"
+		);
+	}
+	inline void GLES31Ext::glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPrimitiveBoundingBoxEXT",
+			"(FFFFFFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		);
+	}
+	inline void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, JString arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPushDebugGroupKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.object<jstring>()
+		);
+	}
+	inline void GLES31Ext::glSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glSamplerParameterIivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glSamplerParameterIivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline void GLES31Ext::glSamplerParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glSamplerParameterIuivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glSamplerParameterIuivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline void GLES31Ext::glTexBufferEXT(jint arg0, jint arg1, jint arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexBufferEXT",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline void GLES31Ext::glTexBufferRangeEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexBufferRangeEXT",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	inline void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIuivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIuivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
+	inline void GLES31Ext::glTexStorage3DMultisampleOES(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
+	{
+		callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexStorage3DMultisampleOES",
+			"(IIIIIIZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
 } // namespace android::opengl
+
+// Base class headers
 

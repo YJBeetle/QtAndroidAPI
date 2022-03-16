@@ -1,37 +1,69 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./FingerprintGestureController_FingerprintGestureCallback.def.hpp"
+#include "../os/Handler.def.hpp"
+#include "./FingerprintGestureController.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class FingerprintGestureController_FingerprintGestureCallback;
-}
-namespace android::os
-{
-	class Handler;
-}
-
-namespace android::accessibilityservice
-{
-	class FingerprintGestureController : public JObject
+	// Fields
+	inline jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_DOWN()
 	{
-	public:
-		// Fields
-		static jint FINGERPRINT_GESTURE_SWIPE_DOWN();
-		static jint FINGERPRINT_GESTURE_SWIPE_LEFT();
-		static jint FINGERPRINT_GESTURE_SWIPE_RIGHT();
-		static jint FINGERPRINT_GESTURE_SWIPE_UP();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FingerprintGestureController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FingerprintGestureController(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean isGestureDetectionAvailable() const;
-		void registerFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0, android::os::Handler arg1) const;
-		void unregisterFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.accessibilityservice.FingerprintGestureController",
+			"FINGERPRINT_GESTURE_SWIPE_DOWN"
+		);
+	}
+	inline jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_LEFT()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.FingerprintGestureController",
+			"FINGERPRINT_GESTURE_SWIPE_LEFT"
+		);
+	}
+	inline jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_RIGHT()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.FingerprintGestureController",
+			"FINGERPRINT_GESTURE_SWIPE_RIGHT"
+		);
+	}
+	inline jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_UP()
+	{
+		return getStaticField<jint>(
+			"android.accessibilityservice.FingerprintGestureController",
+			"FINGERPRINT_GESTURE_SWIPE_UP"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean FingerprintGestureController::isGestureDetectionAvailable() const
+	{
+		return callMethod<jboolean>(
+			"isGestureDetectionAvailable",
+			"()Z"
+		);
+	}
+	inline void FingerprintGestureController::registerFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0, android::os::Handler arg1) const
+	{
+		callMethod<void>(
+			"registerFingerprintGestureCallback",
+			"(Landroid/accessibilityservice/FingerprintGestureController$FingerprintGestureCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void FingerprintGestureController::unregisterFingerprintGestureCallback(android::accessibilityservice::FingerprintGestureController_FingerprintGestureCallback arg0) const
+	{
+		callMethod<void>(
+			"unregisterFingerprintGestureCallback",
+			"(Landroid/accessibilityservice/FingerprintGestureController$FingerprintGestureCallback;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

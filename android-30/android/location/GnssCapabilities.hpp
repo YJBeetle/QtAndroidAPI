@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GnssCapabilities.def.hpp"
 
 namespace android::location
 {
-	class GnssCapabilities : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean GnssCapabilities::hasGnssAntennaInfo() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GnssCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssCapabilities(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean hasGnssAntennaInfo() const;
-	};
+		return callMethod<jboolean>(
+			"hasGnssAntennaInfo",
+			"()Z"
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

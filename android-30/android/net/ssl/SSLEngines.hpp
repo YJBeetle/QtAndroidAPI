@@ -1,28 +1,35 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace javax::net::ssl
-{
-	class SSLEngine;
-}
+#include "../../../javax/net/ssl/SSLEngine.def.hpp"
+#include "./SSLEngines.def.hpp"
 
 namespace android::net::ssl
 {
-	class SSLEngines : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean SSLEngines::isSupportedEngine(javax::net::ssl::SSLEngine arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SSLEngines(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLEngines(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isSupportedEngine(javax::net::ssl::SSLEngine arg0);
-		static void setUseSessionTickets(javax::net::ssl::SSLEngine arg0, jboolean arg1);
-	};
+		return callStaticMethod<jboolean>(
+			"android.net.ssl.SSLEngines",
+			"isSupportedEngine",
+			"(Ljavax/net/ssl/SSLEngine;)Z",
+			arg0.object()
+		);
+	}
+	inline void SSLEngines::setUseSessionTickets(javax::net::ssl::SSLEngine arg0, jboolean arg1)
+	{
+		callStaticMethod<void>(
+			"android.net.ssl.SSLEngines",
+			"setUseSessionTickets",
+			"(Ljavax/net/ssl/SSLEngine;Z)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::ssl
+
+// Base class headers
 

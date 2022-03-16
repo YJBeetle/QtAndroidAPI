@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PackageHealthStats.def.hpp"
 
 namespace android::os::health
 {
-	class PackageHealthStats : public JObject
+	// Fields
+	inline jint PackageHealthStats::MEASUREMENTS_WAKEUP_ALARMS_COUNT()
 	{
-	public:
-		// Fields
-		static jint MEASUREMENTS_WAKEUP_ALARMS_COUNT();
-		static jint STATS_SERVICES();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PackageHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageHealthStats(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.os.health.PackageHealthStats",
+			"MEASUREMENTS_WAKEUP_ALARMS_COUNT"
+		);
+	}
+	inline jint PackageHealthStats::STATS_SERVICES()
+	{
+		return getStaticField<jint>(
+			"android.os.health.PackageHealthStats",
+			"STATS_SERVICES"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::os::health
+
+// Base class headers
 

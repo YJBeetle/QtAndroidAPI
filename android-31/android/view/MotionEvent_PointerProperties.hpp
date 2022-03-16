@@ -1,31 +1,69 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./MotionEvent_PointerProperties.def.hpp"
 
 namespace android::view
 {
-	class MotionEvent_PointerProperties : public JObject
+	// Fields
+	inline jint MotionEvent_PointerProperties::id()
 	{
-	public:
-		// Fields
-		jint id();
-		jint toolType();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MotionEvent_PointerProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MotionEvent_PointerProperties(QJniObject obj);
-		
-		// Constructors
-		MotionEvent_PointerProperties();
-		MotionEvent_PointerProperties(android::view::MotionEvent_PointerProperties &arg0);
-		
-		// Methods
-		void clear() const;
-		void copyFrom(android::view::MotionEvent_PointerProperties arg0) const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return getField<jint>(
+			"id"
+		);
+	}
+	inline jint MotionEvent_PointerProperties::toolType()
+	{
+		return getField<jint>(
+			"toolType"
+		);
+	}
+	
+	// Constructors
+	inline MotionEvent_PointerProperties::MotionEvent_PointerProperties()
+		: JObject(
+			"android.view.MotionEvent$PointerProperties",
+			"()V"
+		) {}
+	inline MotionEvent_PointerProperties::MotionEvent_PointerProperties(android::view::MotionEvent_PointerProperties &arg0)
+		: JObject(
+			"android.view.MotionEvent$PointerProperties",
+			"(Landroid/view/MotionEvent$PointerProperties;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void MotionEvent_PointerProperties::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline void MotionEvent_PointerProperties::copyFrom(android::view::MotionEvent_PointerProperties arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"(Landroid/view/MotionEvent$PointerProperties;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean MotionEvent_PointerProperties::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint MotionEvent_PointerProperties::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

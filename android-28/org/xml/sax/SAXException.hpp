@@ -1,45 +1,74 @@
 #pragma once
 
-#include "../../../java/lang/Exception.hpp"
-
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
-class JThrowable;
+#include "../../../JArray.hpp"
+#include "../../../java/io/ObjectInputStream.def.hpp"
+#include "../../../java/io/ObjectOutputStream.def.hpp"
+#include "../../../java/lang/Exception.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./SAXException.def.hpp"
 
 namespace org::xml::sax
 {
-	class SAXException : public java::lang::Exception
+	// Fields
+	
+	// Constructors
+	inline SAXException::SAXException()
+		: java::lang::Exception(
+			"org.xml.sax.SAXException",
+			"()V"
+		) {}
+	inline SAXException::SAXException(java::lang::Exception arg0)
+		: java::lang::Exception(
+			"org.xml.sax.SAXException",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	inline SAXException::SAXException(JString arg0)
+		: java::lang::Exception(
+			"org.xml.sax.SAXException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SAXException::SAXException(JString arg0, java::lang::Exception arg1)
+		: java::lang::Exception(
+			"org.xml.sax.SAXException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JThrowable SAXException::getCause() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SAXException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		SAXException(QJniObject obj);
-		
-		// Constructors
-		SAXException();
-		SAXException(java::lang::Exception arg0);
-		SAXException(JString arg0);
-		SAXException(JString arg0, java::lang::Exception arg1);
-		
-		// Methods
-		JThrowable getCause() const;
-		java::lang::Exception getException() const;
-		JString getMessage() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getCause",
+			"()Ljava/lang/Throwable;"
+		);
+	}
+	inline java::lang::Exception SAXException::getException() const
+	{
+		return callObjectMethod(
+			"getException",
+			"()Ljava/lang/Exception;"
+		);
+	}
+	inline JString SAXException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString SAXException::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace org::xml::sax
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
 

@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./SocketException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./PortUnreachableException.def.hpp"
 
 namespace java::net
 {
-	class PortUnreachableException : public java::net::SocketException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PortUnreachableException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
-		PortUnreachableException(QJniObject obj);
-		
-		// Constructors
-		PortUnreachableException();
-		PortUnreachableException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PortUnreachableException::PortUnreachableException()
+		: java::net::SocketException(
+			"java.net.PortUnreachableException",
+			"()V"
+		) {}
+	inline PortUnreachableException::PortUnreachableException(JString arg0)
+		: java::net::SocketException(
+			"java.net.PortUnreachableException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
+#include "./SocketException.hpp"
 

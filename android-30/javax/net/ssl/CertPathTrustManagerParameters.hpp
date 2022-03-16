@@ -1,23 +1,28 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CertPathTrustManagerParameters.def.hpp"
 
 namespace javax::net::ssl
 {
-	class CertPathTrustManagerParameters : public JObject
+	// Fields
+	
+	// Constructors
+	inline CertPathTrustManagerParameters::CertPathTrustManagerParameters(JObject arg0)
+		: JObject(
+			"javax.net.ssl.CertPathTrustManagerParameters",
+			"(Ljava/security/cert/CertPathParameters;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject CertPathTrustManagerParameters::getParameters() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertPathTrustManagerParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathTrustManagerParameters(QJniObject obj);
-		
-		// Constructors
-		CertPathTrustManagerParameters(JObject arg0);
-		
-		// Methods
-		JObject getParameters() const;
-	};
+		return callObjectMethod(
+			"getParameters",
+			"()Ljava/security/cert/CertPathParameters;"
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
 

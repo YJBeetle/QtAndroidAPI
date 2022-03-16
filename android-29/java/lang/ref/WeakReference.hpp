@@ -1,29 +1,31 @@
 #pragma once
 
-#include "./Reference.hpp"
-
-class JObject;
-namespace java::lang::ref
-{
-	class ReferenceQueue;
-}
+#include "../../../JObject.hpp"
+#include "./ReferenceQueue.def.hpp"
+#include "./WeakReference.def.hpp"
 
 namespace java::lang::ref
 {
-	class WeakReference : public java::lang::ref::Reference
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WeakReference(const char *className, const char *sig, Ts...agv) : java::lang::ref::Reference(className, sig, std::forward<Ts>(agv)...) {}
-		WeakReference(QJniObject obj);
-		
-		// Constructors
-		WeakReference(JObject arg0);
-		WeakReference(JObject arg0, java::lang::ref::ReferenceQueue arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline WeakReference::WeakReference(JObject arg0)
+		: java::lang::ref::Reference(
+			"java.lang.ref.WeakReference",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		) {}
+	inline WeakReference::WeakReference(JObject arg0, java::lang::ref::ReferenceQueue arg1)
+		: java::lang::ref::Reference(
+			"java.lang.ref.WeakReference",
+			"(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V",
+			arg0.object<jobject>(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace java::lang::ref
+
+// Base class headers
+#include "./Reference.hpp"
 

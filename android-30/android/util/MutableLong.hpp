@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MutableLong.def.hpp"
 
 namespace android::util
 {
-	class MutableLong : public JObject
+	// Fields
+	inline jlong MutableLong::value()
 	{
-	public:
-		// Fields
-		jlong value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MutableLong(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableLong(QJniObject obj);
-		
-		// Constructors
-		MutableLong(jlong arg0);
-		
-		// Methods
-	};
+		return getField<jlong>(
+			"value"
+		);
+	}
+	
+	// Constructors
+	inline MutableLong::MutableLong(jlong arg0)
+		: JObject(
+			"android.util.MutableLong",
+			"(J)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

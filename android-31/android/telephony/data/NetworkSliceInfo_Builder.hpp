@@ -1,33 +1,68 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./NetworkSliceInfo.def.hpp"
+#include "./NetworkSliceInfo_Builder.def.hpp"
 
 namespace android::telephony::data
 {
-	class NetworkSliceInfo;
-}
-
-namespace android::telephony::data
-{
-	class NetworkSliceInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline NetworkSliceInfo_Builder::NetworkSliceInfo_Builder()
+		: JObject(
+			"android.telephony.data.NetworkSliceInfo$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::telephony::data::NetworkSliceInfo NetworkSliceInfo_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkSliceInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkSliceInfo_Builder(QJniObject obj);
-		
-		// Constructors
-		NetworkSliceInfo_Builder();
-		
-		// Methods
-		android::telephony::data::NetworkSliceInfo build() const;
-		android::telephony::data::NetworkSliceInfo_Builder setMappedHplmnSliceDifferentiator(jint arg0) const;
-		android::telephony::data::NetworkSliceInfo_Builder setMappedHplmnSliceServiceType(jint arg0) const;
-		android::telephony::data::NetworkSliceInfo_Builder setSliceDifferentiator(jint arg0) const;
-		android::telephony::data::NetworkSliceInfo_Builder setSliceServiceType(jint arg0) const;
-		android::telephony::data::NetworkSliceInfo_Builder setStatus(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/telephony/data/NetworkSliceInfo;"
+		);
+	}
+	inline android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setMappedHplmnSliceDifferentiator(jint arg0) const
+	{
+		return callObjectMethod(
+			"setMappedHplmnSliceDifferentiator",
+			"(I)Landroid/telephony/data/NetworkSliceInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setMappedHplmnSliceServiceType(jint arg0) const
+	{
+		return callObjectMethod(
+			"setMappedHplmnSliceServiceType",
+			"(I)Landroid/telephony/data/NetworkSliceInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setSliceDifferentiator(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSliceDifferentiator",
+			"(I)Landroid/telephony/data/NetworkSliceInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setSliceServiceType(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSliceServiceType",
+			"(I)Landroid/telephony/data/NetworkSliceInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setStatus(jint arg0) const
+	{
+		return callObjectMethod(
+			"setStatus",
+			"(I)Landroid/telephony/data/NetworkSliceInfo$Builder;",
+			arg0
+		);
+	}
 } // namespace android::telephony::data
+
+// Base class headers
 

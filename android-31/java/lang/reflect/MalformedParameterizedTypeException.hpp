@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../RuntimeException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./MalformedParameterizedTypeException.def.hpp"
 
 namespace java::lang::reflect
 {
-	class MalformedParameterizedTypeException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MalformedParameterizedTypeException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		MalformedParameterizedTypeException(QJniObject obj);
-		
-		// Constructors
-		MalformedParameterizedTypeException();
-		MalformedParameterizedTypeException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MalformedParameterizedTypeException::MalformedParameterizedTypeException()
+		: java::lang::RuntimeException(
+			"java.lang.reflect.MalformedParameterizedTypeException",
+			"()V"
+		) {}
+	inline MalformedParameterizedTypeException::MalformedParameterizedTypeException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.reflect.MalformedParameterizedTypeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang::reflect
+
+// Base class headers
+#include "../Exception.hpp"
+#include "../RuntimeException.hpp"
 

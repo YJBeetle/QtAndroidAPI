@@ -1,33 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./CalendarContract_CalendarCache.def.hpp"
 
 namespace android::provider
 {
-	class CalendarContract_CalendarCache : public JObject
+	// Fields
+	inline JString CalendarContract_CalendarCache::KEY_TIMEZONE_INSTANCES()
 	{
-	public:
-		// Fields
-		static JString KEY_TIMEZONE_INSTANCES();
-		static JString KEY_TIMEZONE_INSTANCES_PREVIOUS();
-		static JString KEY_TIMEZONE_TYPE();
-		static JString TIMEZONE_TYPE_AUTO();
-		static JString TIMEZONE_TYPE_HOME();
-		static android::net::Uri URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CalendarContract_CalendarCache(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_CalendarCache(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.CalendarContract$CalendarCache",
+			"KEY_TIMEZONE_INSTANCES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CalendarContract_CalendarCache::KEY_TIMEZONE_INSTANCES_PREVIOUS()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$CalendarCache",
+			"KEY_TIMEZONE_INSTANCES_PREVIOUS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CalendarContract_CalendarCache::KEY_TIMEZONE_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$CalendarCache",
+			"KEY_TIMEZONE_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CalendarContract_CalendarCache::TIMEZONE_TYPE_AUTO()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$CalendarCache",
+			"TIMEZONE_TYPE_AUTO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CalendarContract_CalendarCache::TIMEZONE_TYPE_HOME()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$CalendarCache",
+			"TIMEZONE_TYPE_HOME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri CalendarContract_CalendarCache::URI()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$CalendarCache",
+			"URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

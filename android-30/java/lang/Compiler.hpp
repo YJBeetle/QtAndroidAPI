@@ -1,30 +1,61 @@
 #pragma once
 
+#include "../../JClass.hpp"
 #include "../../JObject.hpp"
-
-class JClass;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./Compiler.def.hpp"
 
 namespace java::lang
 {
-	class Compiler : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject Compiler::command(JObject arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Compiler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Compiler(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject command(JObject arg0);
-		static jboolean compileClass(JClass arg0);
-		static jboolean compileClasses(JString arg0);
-		static void disable();
-		static void enable();
-	};
+		return callStaticObjectMethod(
+			"java.lang.Compiler",
+			"command",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean Compiler::compileClass(JClass arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Compiler",
+			"compileClass",
+			"(Ljava/lang/Class;)Z",
+			arg0.object<jclass>()
+		);
+	}
+	inline jboolean Compiler::compileClasses(JString arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Compiler",
+			"compileClasses",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Compiler::disable()
+	{
+		callStaticMethod<void>(
+			"java.lang.Compiler",
+			"disable",
+			"()V"
+		);
+	}
+	inline void Compiler::enable()
+	{
+		callStaticMethod<void>(
+			"java.lang.Compiler",
+			"enable",
+			"()V"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
 

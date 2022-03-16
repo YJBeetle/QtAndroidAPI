@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../ClassFormatError.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./GenericSignatureFormatError.def.hpp"
 
 namespace java::lang::reflect
 {
-	class GenericSignatureFormatError : public java::lang::ClassFormatError
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GenericSignatureFormatError(const char *className, const char *sig, Ts...agv) : java::lang::ClassFormatError(className, sig, std::forward<Ts>(agv)...) {}
-		GenericSignatureFormatError(QJniObject obj);
-		
-		// Constructors
-		GenericSignatureFormatError();
-		GenericSignatureFormatError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline GenericSignatureFormatError::GenericSignatureFormatError()
+		: java::lang::ClassFormatError(
+			"java.lang.reflect.GenericSignatureFormatError",
+			"()V"
+		) {}
+	inline GenericSignatureFormatError::GenericSignatureFormatError(JString arg0)
+		: java::lang::ClassFormatError(
+			"java.lang.reflect.GenericSignatureFormatError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang::reflect
+
+// Base class headers
+#include "../Error.hpp"
+#include "../LinkageError.hpp"
+#include "../ClassFormatError.hpp"
 

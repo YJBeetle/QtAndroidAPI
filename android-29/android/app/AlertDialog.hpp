@@ -1,81 +1,243 @@
 #pragma once
 
-#include "./Dialog.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Message;
-}
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::widget
-{
-	class Button;
-}
-namespace android::widget
-{
-	class ListView;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../graphics/drawable/Drawable.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../os/Message.def.hpp"
+#include "../view/KeyEvent.def.hpp"
+#include "../view/View.def.hpp"
+#include "../widget/Button.def.hpp"
+#include "../widget/ListView.def.hpp"
+#include "../../JString.hpp"
+#include "./AlertDialog.def.hpp"
 
 namespace android::app
 {
-	class AlertDialog : public android::app::Dialog
+	// Fields
+	inline jint AlertDialog::THEME_DEVICE_DEFAULT_DARK()
 	{
-	public:
-		// Fields
-		static jint THEME_DEVICE_DEFAULT_DARK();
-		static jint THEME_DEVICE_DEFAULT_LIGHT();
-		static jint THEME_HOLO_DARK();
-		static jint THEME_HOLO_LIGHT();
-		static jint THEME_TRADITIONAL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlertDialog(const char *className, const char *sig, Ts...agv) : android::app::Dialog(className, sig, std::forward<Ts>(agv)...) {}
-		AlertDialog(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::widget::Button getButton(jint arg0) const;
-		android::widget::ListView getListView() const;
-		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1) const;
-		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1) const;
-		void setButton(JString arg0, JObject arg1) const;
-		void setButton(JString arg0, android::os::Message arg1) const;
-		void setButton(jint arg0, JString arg1, JObject arg2) const;
-		void setButton(jint arg0, JString arg1, android::os::Message arg2) const;
-		void setButton2(JString arg0, JObject arg1) const;
-		void setButton2(JString arg0, android::os::Message arg1) const;
-		void setButton3(JString arg0, JObject arg1) const;
-		void setButton3(JString arg0, android::os::Message arg1) const;
-		void setCustomTitle(android::view::View arg0) const;
-		void setIcon(android::graphics::drawable::Drawable arg0) const;
-		void setIcon(jint arg0) const;
-		void setIconAttribute(jint arg0) const;
-		void setInverseBackgroundForced(jboolean arg0) const;
-		void setMessage(JString arg0) const;
-		void setTitle(JString arg0) const;
-		void setView(android::view::View arg0) const;
-		void setView(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
-	};
+		return getStaticField<jint>(
+			"android.app.AlertDialog",
+			"THEME_DEVICE_DEFAULT_DARK"
+		);
+	}
+	inline jint AlertDialog::THEME_DEVICE_DEFAULT_LIGHT()
+	{
+		return getStaticField<jint>(
+			"android.app.AlertDialog",
+			"THEME_DEVICE_DEFAULT_LIGHT"
+		);
+	}
+	inline jint AlertDialog::THEME_HOLO_DARK()
+	{
+		return getStaticField<jint>(
+			"android.app.AlertDialog",
+			"THEME_HOLO_DARK"
+		);
+	}
+	inline jint AlertDialog::THEME_HOLO_LIGHT()
+	{
+		return getStaticField<jint>(
+			"android.app.AlertDialog",
+			"THEME_HOLO_LIGHT"
+		);
+	}
+	inline jint AlertDialog::THEME_TRADITIONAL()
+	{
+		return getStaticField<jint>(
+			"android.app.AlertDialog",
+			"THEME_TRADITIONAL"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::widget::Button AlertDialog::getButton(jint arg0) const
+	{
+		return callObjectMethod(
+			"getButton",
+			"(I)Landroid/widget/Button;",
+			arg0
+		);
+	}
+	inline android::widget::ListView AlertDialog::getListView() const
+	{
+		return callObjectMethod(
+			"getListView",
+			"()Landroid/widget/ListView;"
+		);
+	}
+	inline jboolean AlertDialog::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
+	{
+		return callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline jboolean AlertDialog::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
+	{
+		return callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void AlertDialog::setButton(JString arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"setButton",
+			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AlertDialog::setButton(JString arg0, android::os::Message arg1) const
+	{
+		callMethod<void>(
+			"setButton",
+			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AlertDialog::setButton(jint arg0, JString arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"setButton",
+			"(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void AlertDialog::setButton(jint arg0, JString arg1, android::os::Message arg2) const
+	{
+		callMethod<void>(
+			"setButton",
+			"(ILjava/lang/CharSequence;Landroid/os/Message;)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void AlertDialog::setButton2(JString arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"setButton2",
+			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AlertDialog::setButton2(JString arg0, android::os::Message arg1) const
+	{
+		callMethod<void>(
+			"setButton2",
+			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AlertDialog::setButton3(JString arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"setButton3",
+			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AlertDialog::setButton3(JString arg0, android::os::Message arg1) const
+	{
+		callMethod<void>(
+			"setButton3",
+			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void AlertDialog::setCustomTitle(android::view::View arg0) const
+	{
+		callMethod<void>(
+			"setCustomTitle",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		);
+	}
+	inline void AlertDialog::setIcon(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"setIcon",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline void AlertDialog::setIcon(jint arg0) const
+	{
+		callMethod<void>(
+			"setIcon",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void AlertDialog::setIconAttribute(jint arg0) const
+	{
+		callMethod<void>(
+			"setIconAttribute",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void AlertDialog::setInverseBackgroundForced(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setInverseBackgroundForced",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void AlertDialog::setMessage(JString arg0) const
+	{
+		callMethod<void>(
+			"setMessage",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void AlertDialog::setTitle(JString arg0) const
+	{
+		callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void AlertDialog::setView(android::view::View arg0) const
+	{
+		callMethod<void>(
+			"setView",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		);
+	}
+	inline void AlertDialog::setView(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
+	{
+		callMethod<void>(
+			"setView",
+			"(Landroid/view/View;IIII)V",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./Dialog.hpp"
 

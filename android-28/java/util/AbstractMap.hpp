@@ -1,39 +1,130 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./AbstractMap.def.hpp"
 
 namespace java::util
 {
-	class AbstractMap : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AbstractMap::clear() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AbstractMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractMap(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void clear() const;
-		jboolean containsKey(JObject arg0) const;
-		jboolean containsValue(JObject arg0) const;
-		JObject entrySet() const;
-		jboolean equals(JObject arg0) const;
-		JObject get(JObject arg0) const;
-		jint hashCode() const;
-		jboolean isEmpty() const;
-		JObject keySet() const;
-		JObject put(JObject arg0, JObject arg1) const;
-		void putAll(JObject arg0) const;
-		JObject remove(JObject arg0) const;
-		jint size() const;
-		JString toString() const;
-		JObject values() const;
-	};
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline jboolean AbstractMap::containsKey(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean AbstractMap::containsValue(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsValue",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject AbstractMap::entrySet() const
+	{
+		return callObjectMethod(
+			"entrySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jboolean AbstractMap::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject AbstractMap::get(JObject arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AbstractMap::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean AbstractMap::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline JObject AbstractMap::keySet() const
+	{
+		return callObjectMethod(
+			"keySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject AbstractMap::put(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"put",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline void AbstractMap::putAll(JObject arg0) const
+	{
+		callMethod<void>(
+			"putAll",
+			"(Ljava/util/Map;)V",
+			arg0.object()
+		);
+	}
+	inline JObject AbstractMap::remove(JObject arg0) const
+	{
+		return callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AbstractMap::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JString AbstractMap::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject AbstractMap::values() const
+	{
+		return callObjectMethod(
+			"values",
+			"()Ljava/util/Collection;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

@@ -1,60 +1,116 @@
 #pragma once
 
-#include "./DeflaterOutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
-class JString;
-namespace java::nio::charset
-{
-	class Charset;
-}
-namespace java::util
-{
-	class HashSet;
-}
-namespace java::util
-{
-	class Vector;
-}
-namespace java::util::zip
-{
-	class CRC32;
-}
-namespace java::util::zip
-{
-	class ZipEntry;
-}
+#include "../../../JByteArray.hpp"
+#include "../../io/OutputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "../../nio/charset/Charset.def.hpp"
+#include "../HashSet.def.hpp"
+#include "../Vector.def.hpp"
+#include "./CRC32.def.hpp"
+#include "./ZipEntry.def.hpp"
+#include "./ZipOutputStream.def.hpp"
 
 namespace java::util::zip
 {
-	class ZipOutputStream : public java::util::zip::DeflaterOutputStream
+	// Fields
+	inline jint ZipOutputStream::DEFLATED()
 	{
-	public:
-		// Fields
-		static jint DEFLATED();
-		static jint STORED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ZipOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::DeflaterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		ZipOutputStream(QJniObject obj);
-		
-		// Constructors
-		ZipOutputStream(java::io::OutputStream arg0);
-		ZipOutputStream(java::io::OutputStream arg0, java::nio::charset::Charset arg1);
-		
-		// Methods
-		void close() const;
-		void closeEntry() const;
-		void finish() const;
-		void putNextEntry(java::util::zip::ZipEntry arg0) const;
-		void setComment(JString arg0) const;
-		void setLevel(jint arg0) const;
-		void setMethod(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		return getStaticField<jint>(
+			"java.util.zip.ZipOutputStream",
+			"DEFLATED"
+		);
+	}
+	inline jint ZipOutputStream::STORED()
+	{
+		return getStaticField<jint>(
+			"java.util.zip.ZipOutputStream",
+			"STORED"
+		);
+	}
+	
+	// Constructors
+	inline ZipOutputStream::ZipOutputStream(java::io::OutputStream arg0)
+		: java::util::zip::DeflaterOutputStream(
+			"java.util.zip.ZipOutputStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		) {}
+	inline ZipOutputStream::ZipOutputStream(java::io::OutputStream arg0, java::nio::charset::Charset arg1)
+		: java::util::zip::DeflaterOutputStream(
+			"java.util.zip.ZipOutputStream",
+			"(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void ZipOutputStream::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void ZipOutputStream::closeEntry() const
+	{
+		callMethod<void>(
+			"closeEntry",
+			"()V"
+		);
+	}
+	inline void ZipOutputStream::finish() const
+	{
+		callMethod<void>(
+			"finish",
+			"()V"
+		);
+	}
+	inline void ZipOutputStream::putNextEntry(java::util::zip::ZipEntry arg0) const
+	{
+		callMethod<void>(
+			"putNextEntry",
+			"(Ljava/util/zip/ZipEntry;)V",
+			arg0.object()
+		);
+	}
+	inline void ZipOutputStream::setComment(JString arg0) const
+	{
+		callMethod<void>(
+			"setComment",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void ZipOutputStream::setLevel(jint arg0) const
+	{
+		callMethod<void>(
+			"setLevel",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ZipOutputStream::setMethod(jint arg0) const
+	{
+		callMethod<void>(
+			"setMethod",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ZipOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../io/OutputStream.hpp"
+#include "../../io/FilterOutputStream.hpp"
+#include "./DeflaterOutputStream.hpp"
 

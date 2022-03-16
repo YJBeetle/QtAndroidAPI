@@ -1,32 +1,57 @@
 #pragma once
 
-#include "../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-class JString;
+#include "../content/Intent.def.hpp"
+#include "../../JString.hpp"
+#include "./CompanionDeviceService.def.hpp"
 
 namespace android::companion
 {
-	class CompanionDeviceService : public android::app::Service
+	// Fields
+	inline JString CompanionDeviceService::SERVICE_INTERFACE()
 	{
-	public:
-		// Fields
-		static JString SERVICE_INTERFACE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CompanionDeviceService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CompanionDeviceService(QJniObject obj);
-		
-		// Constructors
-		CompanionDeviceService();
-		
-		// Methods
-		JObject onBind(android::content::Intent arg0) const;
-		void onDeviceAppeared(JString arg0) const;
-		void onDeviceDisappeared(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"android.companion.CompanionDeviceService",
+			"SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline CompanionDeviceService::CompanionDeviceService()
+		: android::app::Service(
+			"android.companion.CompanionDeviceService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject CompanionDeviceService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void CompanionDeviceService::onDeviceAppeared(JString arg0) const
+	{
+		callMethod<void>(
+			"onDeviceAppeared",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void CompanionDeviceService::onDeviceDisappeared(JString arg0) const
+	{
+		callMethod<void>(
+			"onDeviceDisappeared",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::companion
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../app/Service.hpp"
 

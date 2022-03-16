@@ -1,31 +1,81 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-class JString;
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
+#include "./StateSet.def.hpp"
 
 namespace android::util
 {
-	class StateSet : public JObject
+	// Fields
+	inline JIntArray StateSet::NOTHING()
 	{
-	public:
-		// Fields
-		static JIntArray NOTHING();
-		static JIntArray WILD_CARD();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StateSet(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StateSet(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JString dump(JIntArray arg0);
-		static jboolean isWildCard(JIntArray arg0);
-		static jboolean stateSetMatches(JIntArray arg0, JIntArray arg1);
-		static jboolean stateSetMatches(JIntArray arg0, jint arg1);
-		static JIntArray trimStateSet(JIntArray arg0, jint arg1);
-	};
+		return getStaticObjectField(
+			"android.util.StateSet",
+			"NOTHING",
+			"[I"
+		);
+	}
+	inline JIntArray StateSet::WILD_CARD()
+	{
+		return getStaticObjectField(
+			"android.util.StateSet",
+			"WILD_CARD",
+			"[I"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString StateSet::dump(JIntArray arg0)
+	{
+		return callStaticObjectMethod(
+			"android.util.StateSet",
+			"dump",
+			"([I)Ljava/lang/String;",
+			arg0.object<jintArray>()
+		);
+	}
+	inline jboolean StateSet::isWildCard(JIntArray arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StateSet",
+			"isWildCard",
+			"([I)Z",
+			arg0.object<jintArray>()
+		);
+	}
+	inline jboolean StateSet::stateSetMatches(JIntArray arg0, JIntArray arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StateSet",
+			"stateSetMatches",
+			"([I[I)Z",
+			arg0.object<jintArray>(),
+			arg1.object<jintArray>()
+		);
+	}
+	inline jboolean StateSet::stateSetMatches(JIntArray arg0, jint arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StateSet",
+			"stateSetMatches",
+			"([II)Z",
+			arg0.object<jintArray>(),
+			arg1
+		);
+	}
+	inline JIntArray StateSet::trimStateSet(JIntArray arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.util.StateSet",
+			"trimStateSet",
+			"([II)[I",
+			arg0.object<jintArray>(),
+			arg1
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

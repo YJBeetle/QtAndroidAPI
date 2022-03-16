@@ -1,47 +1,73 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JByteArray;
-namespace android::net::wifi::aware
-{
-	class DiscoverySession;
-}
-namespace android::net::wifi::aware
-{
-	class PeerHandle;
-}
-namespace android::net::wifi::aware
-{
-	class PublishDiscoverySession;
-}
-namespace android::net::wifi::aware
-{
-	class WifiAwareNetworkSpecifier;
-}
-class JString;
+#include "../../../../JByteArray.hpp"
+#include "./DiscoverySession.def.hpp"
+#include "./PeerHandle.def.hpp"
+#include "./PublishDiscoverySession.def.hpp"
+#include "./WifiAwareNetworkSpecifier.def.hpp"
+#include "../../../../JString.hpp"
+#include "./WifiAwareNetworkSpecifier_Builder.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class WifiAwareNetworkSpecifier_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::PublishDiscoverySession arg0)
+		: JObject(
+			"android.net.wifi.aware.WifiAwareNetworkSpecifier$Builder",
+			"(Landroid/net/wifi/aware/PublishDiscoverySession;)V",
+			arg0.object()
+		) {}
+	inline WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession arg0, android::net::wifi::aware::PeerHandle arg1)
+		: JObject(
+			"android.net.wifi.aware.WifiAwareNetworkSpecifier$Builder",
+			"(Landroid/net/wifi/aware/DiscoverySession;Landroid/net/wifi/aware/PeerHandle;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::net::wifi::aware::WifiAwareNetworkSpecifier WifiAwareNetworkSpecifier_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiAwareNetworkSpecifier_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiAwareNetworkSpecifier_Builder(QJniObject obj);
-		
-		// Constructors
-		WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::PublishDiscoverySession arg0);
-		WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession arg0, android::net::wifi::aware::PeerHandle arg1);
-		
-		// Methods
-		android::net::wifi::aware::WifiAwareNetworkSpecifier build() const;
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPmk(JByteArray arg0) const;
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPort(jint arg0) const;
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPskPassphrase(JString arg0) const;
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setTransportProtocol(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;"
+		);
+	}
+	inline android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPmk(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"setPmk",
+			"([B)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPort(jint arg0) const
+	{
+		return callObjectMethod(
+			"setPort",
+			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
+			arg0
+		);
+	}
+	inline android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPskPassphrase(JString arg0) const
+	{
+		return callObjectMethod(
+			"setPskPassphrase",
+			"(Ljava/lang/String;)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setTransportProtocol(jint arg0) const
+	{
+		return callObjectMethod(
+			"setTransportProtocol",
+			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
+			arg0
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
 

@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::media
-{
-	class AudioFormat;
-}
+#include "../../../JByteArray.hpp"
+#include "../../media/AudioFormat.def.hpp"
+#include "./AlwaysOnHotwordDetector_EventPayload.def.hpp"
 
 namespace android::service::voice
 {
-	class AlwaysOnHotwordDetector_EventPayload : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::AudioFormat AlwaysOnHotwordDetector_EventPayload::getCaptureAudioFormat() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlwaysOnHotwordDetector_EventPayload(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlwaysOnHotwordDetector_EventPayload(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::media::AudioFormat getCaptureAudioFormat() const;
-		JByteArray getTriggerAudio() const;
-	};
+		return callObjectMethod(
+			"getCaptureAudioFormat",
+			"()Landroid/media/AudioFormat;"
+		);
+	}
+	inline JByteArray AlwaysOnHotwordDetector_EventPayload::getTriggerAudio() const
+	{
+		return callObjectMethod(
+			"getTriggerAudio",
+			"()[B"
+		);
+	}
 } // namespace android::service::voice
+
+// Base class headers
 

@@ -1,28 +1,47 @@
 #pragma once
 
-#include "./EapSessionConfig_EapMethodConfig.hpp"
-
-class JObject;
-class JString;
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "./EapSessionConfig_EapMsChapV2Config.def.hpp"
 
 namespace android::net::eap
 {
-	class EapSessionConfig_EapMsChapV2Config : public android::net::eap::EapSessionConfig_EapMethodConfig
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean EapSessionConfig_EapMsChapV2Config::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EapSessionConfig_EapMsChapV2Config(const char *className, const char *sig, Ts...agv) : android::net::eap::EapSessionConfig_EapMethodConfig(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_EapMsChapV2Config(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getPassword() const;
-		JString getUsername() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString EapSessionConfig_EapMsChapV2Config::getPassword() const
+	{
+		return callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString EapSessionConfig_EapMsChapV2Config::getUsername() const
+	{
+		return callObjectMethod(
+			"getUsername",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint EapSessionConfig_EapMsChapV2Config::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::eap
+
+// Base class headers
+#include "./EapSessionConfig_EapMethodConfig.hpp"
 

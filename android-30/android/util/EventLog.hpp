@@ -1,33 +1,96 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-class JObjectArray;
-class JString;
+#include "../../JIntArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JString.hpp"
+#include "./EventLog.def.hpp"
 
 namespace android::util
 {
-	class EventLog : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint EventLog::getTagCode(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EventLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EventLog(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jint getTagCode(JString arg0);
-		static JString getTagName(jint arg0);
-		static void readEvents(JIntArray arg0, JObject arg1);
-		static jint writeEvent(jint arg0, JObjectArray arg1);
-		static jint writeEvent(jint arg0, jfloat arg1);
-		static jint writeEvent(jint arg0, jint arg1);
-		static jint writeEvent(jint arg0, JString arg1);
-		static jint writeEvent(jint arg0, jlong arg1);
-	};
+		return callStaticMethod<jint>(
+			"android.util.EventLog",
+			"getTagCode",
+			"(Ljava/lang/String;)I",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString EventLog::getTagName(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.util.EventLog",
+			"getTagName",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline void EventLog::readEvents(JIntArray arg0, JObject arg1)
+	{
+		callStaticMethod<void>(
+			"android.util.EventLog",
+			"readEvents",
+			"([ILjava/util/Collection;)V",
+			arg0.object<jintArray>(),
+			arg1.object()
+		);
+	}
+	inline jint EventLog::writeEvent(jint arg0, JObjectArray arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.util.EventLog",
+			"writeEvent",
+			"(I[Ljava/lang/Object;)I",
+			arg0,
+			arg1.object<jobjectArray>()
+		);
+	}
+	inline jint EventLog::writeEvent(jint arg0, jfloat arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.util.EventLog",
+			"writeEvent",
+			"(IF)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jint EventLog::writeEvent(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.util.EventLog",
+			"writeEvent",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jint EventLog::writeEvent(jint arg0, JString arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.util.EventLog",
+			"writeEvent",
+			"(ILjava/lang/String;)I",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline jint EventLog::writeEvent(jint arg0, jlong arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.util.EventLog",
+			"writeEvent",
+			"(IJ)I",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

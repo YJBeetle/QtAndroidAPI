@@ -1,29 +1,35 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::security
-{
-	class KeyStore_Builder;
-}
+#include "../../../java/security/KeyStore_Builder.def.hpp"
+#include "./KeyStoreBuilderParameters.def.hpp"
 
 namespace javax::net::ssl
 {
-	class KeyStoreBuilderParameters : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyStoreBuilderParameters::KeyStoreBuilderParameters(java::security::KeyStore_Builder arg0)
+		: JObject(
+			"javax.net.ssl.KeyStoreBuilderParameters",
+			"(Ljava/security/KeyStore$Builder;)V",
+			arg0.object()
+		) {}
+	inline KeyStoreBuilderParameters::KeyStoreBuilderParameters(JObject arg0)
+		: JObject(
+			"javax.net.ssl.KeyStoreBuilderParameters",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject KeyStoreBuilderParameters::getParameters() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyStoreBuilderParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStoreBuilderParameters(QJniObject obj);
-		
-		// Constructors
-		KeyStoreBuilderParameters(java::security::KeyStore_Builder arg0);
-		KeyStoreBuilderParameters(JObject arg0);
-		
-		// Methods
-		JObject getParameters() const;
-	};
+		return callObjectMethod(
+			"getParameters",
+			"()Ljava/util/List;"
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
 

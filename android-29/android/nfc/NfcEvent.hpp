@@ -1,29 +1,35 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./NfcAdapter.def.hpp"
+#include "./NfcEvent.def.hpp"
 
 namespace android::nfc
 {
-	class NfcAdapter;
-}
-
-namespace android::nfc
-{
-	class NfcEvent : public JObject
+	// Fields
+	inline android::nfc::NfcAdapter NfcEvent::nfcAdapter()
 	{
-	public:
-		// Fields
-		android::nfc::NfcAdapter nfcAdapter();
-		jint peerLlcpMajorVersion();
-		jint peerLlcpMinorVersion();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NfcEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NfcEvent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getObjectField(
+			"nfcAdapter",
+			"Landroid/nfc/NfcAdapter;"
+		);
+	}
+	inline jint NfcEvent::peerLlcpMajorVersion()
+	{
+		return getField<jint>(
+			"peerLlcpMajorVersion"
+		);
+	}
+	inline jint NfcEvent::peerLlcpMinorVersion()
+	{
+		return getField<jint>(
+			"peerLlcpMinorVersion"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::nfc
+
+// Base class headers
 

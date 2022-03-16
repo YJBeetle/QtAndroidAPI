@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_Contacts_AggregationSuggestions.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Contacts_AggregationSuggestions : public JObject
+	// Fields
+	inline JString ContactsContract_Contacts_AggregationSuggestions::CONTENT_DIRECTORY()
 	{
-	public:
-		// Fields
-		static JString CONTENT_DIRECTORY();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Contacts_AggregationSuggestions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Contacts_AggregationSuggestions(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Contacts$AggregationSuggestions",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,44 +1,113 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-class JString;
-namespace java::lang
-{
-	class StringBuffer;
-}
-namespace java::text
-{
-	class RuleBasedCollator;
-}
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
+#include "../lang/StringBuffer.def.hpp"
+#include "./RuleBasedCollator.def.hpp"
+#include "./CollationElementIterator.def.hpp"
 
 namespace java::text
 {
-	class CollationElementIterator : public JObject
+	// Fields
+	inline jint CollationElementIterator::NULLORDER()
 	{
-	public:
-		// Fields
-		static jint NULLORDER();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CollationElementIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CollationElementIterator(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jint primaryOrder(jint arg0);
-		static jshort secondaryOrder(jint arg0);
-		static jshort tertiaryOrder(jint arg0);
-		jint getMaxExpansion(jint arg0) const;
-		jint getOffset() const;
-		jint next() const;
-		jint previous() const;
-		void reset() const;
-		void setOffset(jint arg0) const;
-		void setText(JString arg0) const;
-		void setText(JObject arg0) const;
-	};
+		return getStaticField<jint>(
+			"java.text.CollationElementIterator",
+			"NULLORDER"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint CollationElementIterator::primaryOrder(jint arg0)
+	{
+		return callStaticMethod<jint>(
+			"java.text.CollationElementIterator",
+			"primaryOrder",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jshort CollationElementIterator::secondaryOrder(jint arg0)
+	{
+		return callStaticMethod<jshort>(
+			"java.text.CollationElementIterator",
+			"secondaryOrder",
+			"(I)S",
+			arg0
+		);
+	}
+	inline jshort CollationElementIterator::tertiaryOrder(jint arg0)
+	{
+		return callStaticMethod<jshort>(
+			"java.text.CollationElementIterator",
+			"tertiaryOrder",
+			"(I)S",
+			arg0
+		);
+	}
+	inline jint CollationElementIterator::getMaxExpansion(jint arg0) const
+	{
+		return callMethod<jint>(
+			"getMaxExpansion",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint CollationElementIterator::getOffset() const
+	{
+		return callMethod<jint>(
+			"getOffset",
+			"()I"
+		);
+	}
+	inline jint CollationElementIterator::next() const
+	{
+		return callMethod<jint>(
+			"next",
+			"()I"
+		);
+	}
+	inline jint CollationElementIterator::previous() const
+	{
+		return callMethod<jint>(
+			"previous",
+			"()I"
+		);
+	}
+	inline void CollationElementIterator::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline void CollationElementIterator::setOffset(jint arg0) const
+	{
+		callMethod<void>(
+			"setOffset",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void CollationElementIterator::setText(JString arg0) const
+	{
+		callMethod<void>(
+			"setText",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void CollationElementIterator::setText(JObject arg0) const
+	{
+		callMethod<void>(
+			"setText",
+			"(Ljava/text/CharacterIterator;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::text
+
+// Base class headers
 

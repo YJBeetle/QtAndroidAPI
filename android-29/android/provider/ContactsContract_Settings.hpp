@@ -1,30 +1,41 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_Settings.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Settings : public JObject
+	// Fields
+	inline JString ContactsContract_Settings::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Settings(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Settings",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Settings::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Settings",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_Settings::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Settings",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

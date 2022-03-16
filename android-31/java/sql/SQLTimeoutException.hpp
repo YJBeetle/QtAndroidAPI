@@ -1,32 +1,76 @@
 #pragma once
 
-#include "./SQLTransientException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./SQLTimeoutException.def.hpp"
 
 namespace java::sql
 {
-	class SQLTimeoutException : public java::sql::SQLTransientException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SQLTimeoutException(const char *className, const char *sig, Ts...agv) : java::sql::SQLTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLTimeoutException(QJniObject obj);
-		
-		// Constructors
-		SQLTimeoutException();
-		SQLTimeoutException(JString arg0);
-		SQLTimeoutException(JThrowable arg0);
-		SQLTimeoutException(JString arg0, JString arg1);
-		SQLTimeoutException(JString arg0, JThrowable arg1);
-		SQLTimeoutException(JString arg0, JString arg1, jint arg2);
-		SQLTimeoutException(JString arg0, JString arg1, JThrowable arg2);
-		SQLTimeoutException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SQLTimeoutException::SQLTimeoutException()
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"()V"
+		) {}
+	inline SQLTimeoutException::SQLTimeoutException(JString arg0)
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SQLTimeoutException::SQLTimeoutException(JThrowable arg0)
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline SQLTimeoutException::SQLTimeoutException(JString arg0, JString arg1)
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	inline SQLTimeoutException::SQLTimeoutException(JString arg0, JThrowable arg1)
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	inline SQLTimeoutException::SQLTimeoutException(JString arg0, JString arg1, jint arg2)
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	inline SQLTimeoutException::SQLTimeoutException(JString arg0, JString arg1, JThrowable arg2)
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
+		) {}
+	inline SQLTimeoutException::SQLTimeoutException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
+		: java::sql::SQLTransientException(
+			"java.sql.SQLTimeoutException",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2,
+			arg3.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::sql
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./SQLException.hpp"
+#include "./SQLTransientException.hpp"
 

@@ -1,29 +1,40 @@
 #pragma once
 
-#include "../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
+#include "../content/Intent.def.hpp"
+#include "./RemoteViewsService.def.hpp"
 
 namespace android::widget
 {
-	class RemoteViewsService : public android::app::Service
+	// Fields
+	
+	// Constructors
+	inline RemoteViewsService::RemoteViewsService()
+		: android::app::Service(
+			"android.widget.RemoteViewsService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject RemoteViewsService::onBind(android::content::Intent arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RemoteViewsService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViewsService(QJniObject obj);
-		
-		// Constructors
-		RemoteViewsService();
-		
-		// Methods
-		JObject onBind(android::content::Intent arg0) const;
-		JObject onGetViewFactory(android::content::Intent arg0) const;
-	};
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline JObject RemoteViewsService::onGetViewFactory(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onGetViewFactory",
+			"(Landroid/content/Intent;)Landroid/widget/RemoteViewsService$RemoteViewsFactory;",
+			arg0.object()
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../app/Service.hpp"
 

@@ -1,32 +1,32 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Font.def.hpp"
+#include "../../../java/util/ArrayList.def.hpp"
+#include "./FontFamily.def.hpp"
 
 namespace android::graphics::fonts
 {
-	class Font;
-}
-namespace java::util
-{
-	class ArrayList;
-}
-
-namespace android::graphics::fonts
-{
-	class FontFamily : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::fonts::Font FontFamily::getFont(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FontFamily(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontFamily(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::fonts::Font getFont(jint arg0) const;
-		jint getSize() const;
-	};
+		return callObjectMethod(
+			"getFont",
+			"(I)Landroid/graphics/fonts/Font;",
+			arg0
+		);
+	}
+	inline jint FontFamily::getSize() const
+	{
+		return callMethod<jint>(
+			"getSize",
+			"()I"
+		);
+	}
 } // namespace android::graphics::fonts
+
+// Base class headers
 

@@ -1,45 +1,99 @@
 #pragma once
 
+#include "./AccessibilityService.def.hpp"
+#include "../graphics/Region.def.hpp"
+#include "../os/Handler.def.hpp"
 #include "../../JObject.hpp"
+#include "./AccessibilityService_MagnificationController.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class AccessibilityService;
-}
-namespace android::graphics
-{
-	class Region;
-}
-namespace android::os
-{
-	class Handler;
-}
-class JObject;
-
-namespace android::accessibilityservice
-{
-	class AccessibilityService_MagnificationController : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AccessibilityService_MagnificationController::addListener(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityService_MagnificationController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService_MagnificationController(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void addListener(JObject arg0) const;
-		void addListener(JObject arg0, android::os::Handler arg1) const;
-		jfloat getCenterX() const;
-		jfloat getCenterY() const;
-		android::graphics::Region getMagnificationRegion() const;
-		jfloat getScale() const;
-		jboolean removeListener(JObject arg0) const;
-		jboolean reset(jboolean arg0) const;
-		jboolean setCenter(jfloat arg0, jfloat arg1, jboolean arg2) const;
-		jboolean setScale(jfloat arg0, jboolean arg1) const;
-	};
+		callMethod<void>(
+			"addListener",
+			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;)V",
+			arg0.object()
+		);
+	}
+	inline void AccessibilityService_MagnificationController::addListener(JObject arg0, android::os::Handler arg1) const
+	{
+		callMethod<void>(
+			"addListener",
+			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jfloat AccessibilityService_MagnificationController::getCenterX() const
+	{
+		return callMethod<jfloat>(
+			"getCenterX",
+			"()F"
+		);
+	}
+	inline jfloat AccessibilityService_MagnificationController::getCenterY() const
+	{
+		return callMethod<jfloat>(
+			"getCenterY",
+			"()F"
+		);
+	}
+	inline android::graphics::Region AccessibilityService_MagnificationController::getMagnificationRegion() const
+	{
+		return callObjectMethod(
+			"getMagnificationRegion",
+			"()Landroid/graphics/Region;"
+		);
+	}
+	inline jfloat AccessibilityService_MagnificationController::getScale() const
+	{
+		return callMethod<jfloat>(
+			"getScale",
+			"()F"
+		);
+	}
+	inline jboolean AccessibilityService_MagnificationController::removeListener(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"removeListener",
+			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean AccessibilityService_MagnificationController::reset(jboolean arg0) const
+	{
+		return callMethod<jboolean>(
+			"reset",
+			"(Z)Z",
+			arg0
+		);
+	}
+	inline jboolean AccessibilityService_MagnificationController::setCenter(jfloat arg0, jfloat arg1, jboolean arg2) const
+	{
+		return callMethod<jboolean>(
+			"setCenter",
+			"(FFZ)Z",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean AccessibilityService_MagnificationController::setScale(jfloat arg0, jboolean arg1) const
+	{
+		return callMethod<jboolean>(
+			"setScale",
+			"(FZ)Z",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

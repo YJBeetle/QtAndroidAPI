@@ -1,25 +1,31 @@
 #pragma once
 
-#include "./BasicPermission.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./SecurityPermission.def.hpp"
 
 namespace java::security
 {
-	class SecurityPermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SecurityPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		SecurityPermission(QJniObject obj);
-		
-		// Constructors
-		SecurityPermission(JString arg0);
-		SecurityPermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SecurityPermission::SecurityPermission(JString arg0)
+		: java::security::BasicPermission(
+			"java.security.SecurityPermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SecurityPermission::SecurityPermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"java.security.SecurityPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "./Permission.hpp"
+#include "./BasicPermission.hpp"
 

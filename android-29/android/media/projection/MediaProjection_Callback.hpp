@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MediaProjection_Callback.def.hpp"
 
 namespace android::media::projection
 {
-	class MediaProjection_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaProjection_Callback::MediaProjection_Callback()
+		: JObject(
+			"android.media.projection.MediaProjection$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaProjection_Callback::onStop() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaProjection_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaProjection_Callback(QJniObject obj);
-		
-		// Constructors
-		MediaProjection_Callback();
-		
-		// Methods
-		void onStop() const;
-	};
+		callMethod<void>(
+			"onStop",
+			"()V"
+		);
+	}
 } // namespace android::media::projection
+
+// Base class headers
 

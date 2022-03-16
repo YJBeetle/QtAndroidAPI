@@ -1,43 +1,128 @@
 #pragma once
 
-#include "./CellIdentity.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./CellIdentityLte.def.hpp"
 
 namespace android::telephony
 {
-	class CellIdentityLte : public android::telephony::CellIdentity
+	// Fields
+	inline JObject CellIdentityLte::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CellIdentityLte(const char *className, const char *sig, Ts...agv) : android::telephony::CellIdentity(className, sig, std::forward<Ts>(agv)...) {}
-		CellIdentityLte(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getBandwidth() const;
-		jint getCi() const;
-		jint getEarfcn() const;
-		jint getMcc() const;
-		JString getMccString() const;
-		jint getMnc() const;
-		JString getMncString() const;
-		JString getMobileNetworkOperator() const;
-		jint getPci() const;
-		jint getTac() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.CellIdentityLte",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean CellIdentityLte::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint CellIdentityLte::getBandwidth() const
+	{
+		return callMethod<jint>(
+			"getBandwidth",
+			"()I"
+		);
+	}
+	inline jint CellIdentityLte::getCi() const
+	{
+		return callMethod<jint>(
+			"getCi",
+			"()I"
+		);
+	}
+	inline jint CellIdentityLte::getEarfcn() const
+	{
+		return callMethod<jint>(
+			"getEarfcn",
+			"()I"
+		);
+	}
+	inline jint CellIdentityLte::getMcc() const
+	{
+		return callMethod<jint>(
+			"getMcc",
+			"()I"
+		);
+	}
+	inline JString CellIdentityLte::getMccString() const
+	{
+		return callObjectMethod(
+			"getMccString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint CellIdentityLte::getMnc() const
+	{
+		return callMethod<jint>(
+			"getMnc",
+			"()I"
+		);
+	}
+	inline JString CellIdentityLte::getMncString() const
+	{
+		return callObjectMethod(
+			"getMncString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString CellIdentityLte::getMobileNetworkOperator() const
+	{
+		return callObjectMethod(
+			"getMobileNetworkOperator",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint CellIdentityLte::getPci() const
+	{
+		return callMethod<jint>(
+			"getPci",
+			"()I"
+		);
+	}
+	inline jint CellIdentityLte::getTac() const
+	{
+		return callMethod<jint>(
+			"getTac",
+			"()I"
+		);
+	}
+	inline jint CellIdentityLte::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString CellIdentityLte::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void CellIdentityLte::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
+#include "./CellIdentity.hpp"
 

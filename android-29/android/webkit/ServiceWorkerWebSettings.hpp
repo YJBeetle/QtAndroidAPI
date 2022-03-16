@@ -1,30 +1,80 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ServiceWorkerWebSettings.def.hpp"
 
 namespace android::webkit
 {
-	class ServiceWorkerWebSettings : public JObject
+	// Fields
+	
+	// Constructors
+	inline ServiceWorkerWebSettings::ServiceWorkerWebSettings()
+		: JObject(
+			"android.webkit.ServiceWorkerWebSettings",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean ServiceWorkerWebSettings::getAllowContentAccess() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ServiceWorkerWebSettings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceWorkerWebSettings(QJniObject obj);
-		
-		// Constructors
-		ServiceWorkerWebSettings();
-		
-		// Methods
-		jboolean getAllowContentAccess() const;
-		jboolean getAllowFileAccess() const;
-		jboolean getBlockNetworkLoads() const;
-		jint getCacheMode() const;
-		void setAllowContentAccess(jboolean arg0) const;
-		void setAllowFileAccess(jboolean arg0) const;
-		void setBlockNetworkLoads(jboolean arg0) const;
-		void setCacheMode(jint arg0) const;
-	};
+		return callMethod<jboolean>(
+			"getAllowContentAccess",
+			"()Z"
+		);
+	}
+	inline jboolean ServiceWorkerWebSettings::getAllowFileAccess() const
+	{
+		return callMethod<jboolean>(
+			"getAllowFileAccess",
+			"()Z"
+		);
+	}
+	inline jboolean ServiceWorkerWebSettings::getBlockNetworkLoads() const
+	{
+		return callMethod<jboolean>(
+			"getBlockNetworkLoads",
+			"()Z"
+		);
+	}
+	inline jint ServiceWorkerWebSettings::getCacheMode() const
+	{
+		return callMethod<jint>(
+			"getCacheMode",
+			"()I"
+		);
+	}
+	inline void ServiceWorkerWebSettings::setAllowContentAccess(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAllowContentAccess",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ServiceWorkerWebSettings::setAllowFileAccess(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAllowFileAccess",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ServiceWorkerWebSettings::setBlockNetworkLoads(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setBlockNetworkLoads",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ServiceWorkerWebSettings::setCacheMode(jint arg0) const
+	{
+		callMethod<void>(
+			"setCacheMode",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

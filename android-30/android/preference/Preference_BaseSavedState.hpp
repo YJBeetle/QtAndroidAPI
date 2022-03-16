@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../view/AbsSavedState.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../os/Parcel.def.hpp"
+#include "./Preference_BaseSavedState.def.hpp"
 
 namespace android::preference
 {
-	class Preference_BaseSavedState : public android::view::AbsSavedState
+	// Fields
+	inline JObject Preference_BaseSavedState::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Preference_BaseSavedState(const char *className, const char *sig, Ts...agv) : android::view::AbsSavedState(className, sig, std::forward<Ts>(agv)...) {}
-		Preference_BaseSavedState(QJniObject obj);
-		
-		// Constructors
-		Preference_BaseSavedState(android::os::Parcel arg0);
-		Preference_BaseSavedState(JObject arg0);
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.preference.Preference$BaseSavedState",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline Preference_BaseSavedState::Preference_BaseSavedState(android::os::Parcel arg0)
+		: android::view::AbsSavedState(
+			"android.preference.Preference$BaseSavedState",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		) {}
+	inline Preference_BaseSavedState::Preference_BaseSavedState(JObject arg0)
+		: android::view::AbsSavedState(
+			"android.preference.Preference$BaseSavedState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
 } // namespace android::preference
+
+// Base class headers
+#include "../view/AbsSavedState.hpp"
 

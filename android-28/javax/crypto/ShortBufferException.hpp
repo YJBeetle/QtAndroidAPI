@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/security/GeneralSecurityException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ShortBufferException.def.hpp"
 
 namespace javax::crypto
 {
-	class ShortBufferException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ShortBufferException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		ShortBufferException(QJniObject obj);
-		
-		// Constructors
-		ShortBufferException();
-		ShortBufferException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ShortBufferException::ShortBufferException()
+		: java::security::GeneralSecurityException(
+			"javax.crypto.ShortBufferException",
+			"()V"
+		) {}
+	inline ShortBufferException::ShortBufferException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"javax.crypto.ShortBufferException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/security/GeneralSecurityException.hpp"
 

@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ConfirmationNotAvailableException.def.hpp"
 
 namespace android::security
 {
-	class ConfirmationNotAvailableException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConfirmationNotAvailableException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationNotAvailableException(QJniObject obj);
-		
-		// Constructors
-		ConfirmationNotAvailableException();
-		ConfirmationNotAvailableException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ConfirmationNotAvailableException::ConfirmationNotAvailableException()
+		: java::lang::Exception(
+			"android.security.ConfirmationNotAvailableException",
+			"()V"
+		) {}
+	inline ConfirmationNotAvailableException::ConfirmationNotAvailableException(JString arg0)
+		: java::lang::Exception(
+			"android.security.ConfirmationNotAvailableException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::security
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

@@ -1,68 +1,220 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JArray;
-namespace android::app
-{
-	class Activity;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::security
-{
-	class AppUriAuthenticationPolicy;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../app/Activity.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../content/Intent.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "./AppUriAuthenticationPolicy.def.hpp"
+#include "../../JString.hpp"
+#include "./KeyChain.def.hpp"
 
 namespace android::security
 {
-	class KeyChain : public JObject
+	// Fields
+	inline JString KeyChain::ACTION_KEYCHAIN_CHANGED()
 	{
-	public:
-		// Fields
-		static JString ACTION_KEYCHAIN_CHANGED();
-		static JString ACTION_KEY_ACCESS_CHANGED();
-		static JString ACTION_STORAGE_CHANGED();
-		static JString ACTION_TRUST_STORE_CHANGED();
-		static JString EXTRA_CERTIFICATE();
-		static JString EXTRA_KEY_ACCESSIBLE();
-		static JString EXTRA_KEY_ALIAS();
-		static JString EXTRA_NAME();
-		static JString EXTRA_PKCS12();
-		static JString KEY_ALIAS_SELECTION_DENIED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyChain(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyChain(QJniObject obj);
-		
-		// Constructors
-		KeyChain();
-		
-		// Methods
-		static void choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, JArray arg2, JArray arg3, android::net::Uri arg4, JString arg5);
-		static void choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, JArray arg2, JArray arg3, JString arg4, jint arg5, JString arg6);
-		static android::content::Intent createInstallIntent();
-		static android::content::Intent createManageCredentialsIntent(android::security::AppUriAuthenticationPolicy arg0);
-		static JArray getCertificateChain(android::content::Context arg0, JString arg1);
-		static android::security::AppUriAuthenticationPolicy getCredentialManagementAppPolicy(android::content::Context arg0);
-		static JObject getPrivateKey(android::content::Context arg0, JString arg1);
-		static jboolean isBoundKeyAlgorithm(JString arg0);
-		static jboolean isCredentialManagementApp(android::content::Context arg0);
-		static jboolean isKeyAlgorithmSupported(JString arg0);
-		static jboolean removeCredentialManagementApp(android::content::Context arg0);
-	};
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"ACTION_KEYCHAIN_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::ACTION_KEY_ACCESS_CHANGED()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"ACTION_KEY_ACCESS_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::ACTION_STORAGE_CHANGED()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"ACTION_STORAGE_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::ACTION_TRUST_STORE_CHANGED()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"ACTION_TRUST_STORE_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::EXTRA_CERTIFICATE()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"EXTRA_CERTIFICATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::EXTRA_KEY_ACCESSIBLE()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"EXTRA_KEY_ACCESSIBLE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::EXTRA_KEY_ALIAS()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"EXTRA_KEY_ALIAS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::EXTRA_NAME()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"EXTRA_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::EXTRA_PKCS12()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"EXTRA_PKCS12",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString KeyChain::KEY_ALIAS_SELECTION_DENIED()
+	{
+		return getStaticObjectField(
+			"android.security.KeyChain",
+			"KEY_ALIAS_SELECTION_DENIED",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline KeyChain::KeyChain()
+		: JObject(
+			"android.security.KeyChain",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void KeyChain::choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, JArray arg2, JArray arg3, android::net::Uri arg4, JString arg5)
+	{
+		callStaticMethod<void>(
+			"android.security.KeyChain",
+			"choosePrivateKeyAlias",
+			"(Landroid/app/Activity;Landroid/security/KeyChainAliasCallback;[Ljava/lang/String;[Ljava/security/Principal;Landroid/net/Uri;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>(),
+			arg3.object<jarray>(),
+			arg4.object(),
+			arg5.object<jstring>()
+		);
+	}
+	inline void KeyChain::choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, JArray arg2, JArray arg3, JString arg4, jint arg5, JString arg6)
+	{
+		callStaticMethod<void>(
+			"android.security.KeyChain",
+			"choosePrivateKeyAlias",
+			"(Landroid/app/Activity;Landroid/security/KeyChainAliasCallback;[Ljava/lang/String;[Ljava/security/Principal;Ljava/lang/String;ILjava/lang/String;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>(),
+			arg5,
+			arg6.object<jstring>()
+		);
+	}
+	inline android::content::Intent KeyChain::createInstallIntent()
+	{
+		return callStaticObjectMethod(
+			"android.security.KeyChain",
+			"createInstallIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	inline android::content::Intent KeyChain::createManageCredentialsIntent(android::security::AppUriAuthenticationPolicy arg0)
+	{
+		return callStaticObjectMethod(
+			"android.security.KeyChain",
+			"createManageCredentialsIntent",
+			"(Landroid/security/AppUriAuthenticationPolicy;)Landroid/content/Intent;",
+			arg0.object()
+		);
+	}
+	inline JArray KeyChain::getCertificateChain(android::content::Context arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.security.KeyChain",
+			"getCertificateChain",
+			"(Landroid/content/Context;Ljava/lang/String;)[Ljava/security/cert/X509Certificate;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::security::AppUriAuthenticationPolicy KeyChain::getCredentialManagementAppPolicy(android::content::Context arg0)
+	{
+		return callStaticObjectMethod(
+			"android.security.KeyChain",
+			"getCredentialManagementAppPolicy",
+			"(Landroid/content/Context;)Landroid/security/AppUriAuthenticationPolicy;",
+			arg0.object()
+		);
+	}
+	inline JObject KeyChain::getPrivateKey(android::content::Context arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.security.KeyChain",
+			"getPrivateKey",
+			"(Landroid/content/Context;Ljava/lang/String;)Ljava/security/PrivateKey;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jboolean KeyChain::isBoundKeyAlgorithm(JString arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.security.KeyChain",
+			"isBoundKeyAlgorithm",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean KeyChain::isCredentialManagementApp(android::content::Context arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.security.KeyChain",
+			"isCredentialManagementApp",
+			"(Landroid/content/Context;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean KeyChain::isKeyAlgorithmSupported(JString arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.security.KeyChain",
+			"isKeyAlgorithmSupported",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean KeyChain::removeCredentialManagementApp(android::content::Context arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.security.KeyChain",
+			"removeCredentialManagementApp",
+			"(Landroid/content/Context;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

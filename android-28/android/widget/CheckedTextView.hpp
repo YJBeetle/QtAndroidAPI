@@ -1,65 +1,183 @@
 #pragma once
 
-#include "./TextView.hpp"
-
-class JIntArray;
-namespace android::content
-{
-	class Context;
-}
-namespace android::content::res
-{
-	class ColorStateList;
-}
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class PorterDuff_Mode;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-class JString;
+#include "../../JIntArray.hpp"
+#include "../content/Context.def.hpp"
+#include "../content/res/ColorStateList.def.hpp"
+#include "../graphics/Canvas.def.hpp"
+#include "../graphics/PorterDuff_Mode.def.hpp"
+#include "../graphics/drawable/Drawable.def.hpp"
+#include "../../JString.hpp"
+#include "./CheckedTextView.def.hpp"
 
 namespace android::widget
 {
-	class CheckedTextView : public android::widget::TextView
+	// Fields
+	
+	// Constructors
+	inline CheckedTextView::CheckedTextView(android::content::Context arg0)
+		: android::widget::TextView(
+			"android.widget.CheckedTextView",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline CheckedTextView::CheckedTextView(android::content::Context arg0, JObject arg1)
+		: android::widget::TextView(
+			"android.widget.CheckedTextView",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline CheckedTextView::CheckedTextView(android::content::Context arg0, JObject arg1, jint arg2)
+		: android::widget::TextView(
+			"android.widget.CheckedTextView",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		) {}
+	inline CheckedTextView::CheckedTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: android::widget::TextView(
+			"android.widget.CheckedTextView",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline void CheckedTextView::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CheckedTextView(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		CheckedTextView(QJniObject obj);
-		
-		// Constructors
-		CheckedTextView(android::content::Context arg0);
-		CheckedTextView(android::content::Context arg0, JObject arg1);
-		CheckedTextView(android::content::Context arg0, JObject arg1, jint arg2);
-		CheckedTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
-		
-		// Methods
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1) const;
-		JString getAccessibilityClassName() const;
-		android::graphics::drawable::Drawable getCheckMarkDrawable() const;
-		android::content::res::ColorStateList getCheckMarkTintList() const;
-		android::graphics::PorterDuff_Mode getCheckMarkTintMode() const;
-		jboolean isChecked() const;
-		void jumpDrawablesToCurrentState() const;
-		void onRestoreInstanceState(JObject arg0) const;
-		void onRtlPropertiesChanged(jint arg0) const;
-		JObject onSaveInstanceState() const;
-		void setCheckMarkDrawable(android::graphics::drawable::Drawable arg0) const;
-		void setCheckMarkDrawable(jint arg0) const;
-		void setCheckMarkTintList(android::content::res::ColorStateList arg0) const;
-		void setCheckMarkTintMode(android::graphics::PorterDuff_Mode arg0) const;
-		void setChecked(jboolean arg0) const;
-		void setVisibility(jint arg0) const;
-		void toggle() const;
-	};
+		callMethod<void>(
+			"drawableHotspotChanged",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	inline JString CheckedTextView::getAccessibilityClassName() const
+	{
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::graphics::drawable::Drawable CheckedTextView::getCheckMarkDrawable() const
+	{
+		return callObjectMethod(
+			"getCheckMarkDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline android::content::res::ColorStateList CheckedTextView::getCheckMarkTintList() const
+	{
+		return callObjectMethod(
+			"getCheckMarkTintList",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	inline android::graphics::PorterDuff_Mode CheckedTextView::getCheckMarkTintMode() const
+	{
+		return callObjectMethod(
+			"getCheckMarkTintMode",
+			"()Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	inline jboolean CheckedTextView::isChecked() const
+	{
+		return callMethod<jboolean>(
+			"isChecked",
+			"()Z"
+		);
+	}
+	inline void CheckedTextView::jumpDrawablesToCurrentState() const
+	{
+		callMethod<void>(
+			"jumpDrawablesToCurrentState",
+			"()V"
+		);
+	}
+	inline void CheckedTextView::onRestoreInstanceState(JObject arg0) const
+	{
+		callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.object()
+		);
+	}
+	inline void CheckedTextView::onRtlPropertiesChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onRtlPropertiesChanged",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JObject CheckedTextView::onSaveInstanceState() const
+	{
+		return callObjectMethod(
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;"
+		);
+	}
+	inline void CheckedTextView::setCheckMarkDrawable(android::graphics::drawable::Drawable arg0) const
+	{
+		callMethod<void>(
+			"setCheckMarkDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.object()
+		);
+	}
+	inline void CheckedTextView::setCheckMarkDrawable(jint arg0) const
+	{
+		callMethod<void>(
+			"setCheckMarkDrawable",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void CheckedTextView::setCheckMarkTintList(android::content::res::ColorStateList arg0) const
+	{
+		callMethod<void>(
+			"setCheckMarkTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.object()
+		);
+	}
+	inline void CheckedTextView::setCheckMarkTintMode(android::graphics::PorterDuff_Mode arg0) const
+	{
+		callMethod<void>(
+			"setCheckMarkTintMode",
+			"(Landroid/graphics/PorterDuff$Mode;)V",
+			arg0.object()
+		);
+	}
+	inline void CheckedTextView::setChecked(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setChecked",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void CheckedTextView::setVisibility(jint arg0) const
+	{
+		callMethod<void>(
+			"setVisibility",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void CheckedTextView::toggle() const
+	{
+		callMethod<void>(
+			"toggle",
+			"()V"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "./TextView.hpp"
 

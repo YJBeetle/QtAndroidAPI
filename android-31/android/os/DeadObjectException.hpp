@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./RemoteException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./DeadObjectException.def.hpp"
 
 namespace android::os
 {
-	class DeadObjectException : public android::os::RemoteException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DeadObjectException(const char *className, const char *sig, Ts...agv) : android::os::RemoteException(className, sig, std::forward<Ts>(agv)...) {}
-		DeadObjectException(QJniObject obj);
-		
-		// Constructors
-		DeadObjectException();
-		DeadObjectException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DeadObjectException::DeadObjectException()
+		: android::os::RemoteException(
+			"android.os.DeadObjectException",
+			"()V"
+		) {}
+	inline DeadObjectException::DeadObjectException(JString arg0)
+		: android::os::RemoteException(
+			"android.os.DeadObjectException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
+#include "./RemoteException.hpp"
 

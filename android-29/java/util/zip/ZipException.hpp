@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../io/IOException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./ZipException.def.hpp"
 
 namespace java::util::zip
 {
-	class ZipException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ZipException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		ZipException(QJniObject obj);
-		
-		// Constructors
-		ZipException();
-		ZipException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ZipException::ZipException()
+		: java::io::IOException(
+			"java.util.zip.ZipException",
+			"()V"
+		) {}
+	inline ZipException::ZipException(JString arg0)
+		: java::io::IOException(
+			"java.util.zip.ZipException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 

@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
+#include "../../JByteArray.hpp"
+#include "./AudioDescriptor.def.hpp"
 
 namespace android::media
 {
-	class AudioDescriptor : public JObject
+	// Fields
+	inline jint AudioDescriptor::STANDARD_EDID()
 	{
-	public:
-		// Fields
-		static jint STANDARD_EDID();
-		static jint STANDARD_NONE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AudioDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioDescriptor(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JByteArray getDescriptor() const;
-		jint getEncapsulationType() const;
-		jint getStandard() const;
-	};
+		return getStaticField<jint>(
+			"android.media.AudioDescriptor",
+			"STANDARD_EDID"
+		);
+	}
+	inline jint AudioDescriptor::STANDARD_NONE()
+	{
+		return getStaticField<jint>(
+			"android.media.AudioDescriptor",
+			"STANDARD_NONE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray AudioDescriptor::getDescriptor() const
+	{
+		return callObjectMethod(
+			"getDescriptor",
+			"()[B"
+		);
+	}
+	inline jint AudioDescriptor::getEncapsulationType() const
+	{
+		return callMethod<jint>(
+			"getEncapsulationType",
+			"()I"
+		);
+	}
+	inline jint AudioDescriptor::getStandard() const
+	{
+		return callMethod<jint>(
+			"getStandard",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

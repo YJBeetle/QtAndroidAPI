@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./TooManyListenersException.def.hpp"
 
 namespace java::util
 {
-	class TooManyListenersException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TooManyListenersException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		TooManyListenersException(QJniObject obj);
-		
-		// Constructors
-		TooManyListenersException();
-		TooManyListenersException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TooManyListenersException::TooManyListenersException()
+		: java::lang::Exception(
+			"java.util.TooManyListenersException",
+			"()V"
+		) {}
+	inline TooManyListenersException::TooManyListenersException(JString arg0)
+		: java::lang::Exception(
+			"java.util.TooManyListenersException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
 

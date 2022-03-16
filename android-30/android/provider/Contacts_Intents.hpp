@@ -1,31 +1,77 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Contacts_Intents.def.hpp"
 
 namespace android::provider
 {
-	class Contacts_Intents : public JObject
+	// Fields
+	inline JString Contacts_Intents::ATTACH_IMAGE()
 	{
-	public:
-		// Fields
-		static JString ATTACH_IMAGE();
-		static JString EXTRA_CREATE_DESCRIPTION();
-		static JString EXTRA_FORCE_CREATE();
-		static JString SEARCH_SUGGESTION_CLICKED();
-		static JString SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED();
-		static JString SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED();
-		static JString SHOW_OR_CREATE_CONTACT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Contacts_Intents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Intents(QJniObject obj);
-		
-		// Constructors
-		Contacts_Intents();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents",
+			"ATTACH_IMAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents::EXTRA_CREATE_DESCRIPTION()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents",
+			"EXTRA_CREATE_DESCRIPTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents::EXTRA_FORCE_CREATE()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents",
+			"EXTRA_FORCE_CREATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents::SEARCH_SUGGESTION_CLICKED()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents",
+			"SEARCH_SUGGESTION_CLICKED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents::SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents",
+			"SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents::SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents",
+			"SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents::SHOW_OR_CREATE_CONTACT()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents",
+			"SHOW_OR_CREATE_CONTACT",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Contacts_Intents::Contacts_Intents()
+		: JObject(
+			"android.provider.Contacts$Intents",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

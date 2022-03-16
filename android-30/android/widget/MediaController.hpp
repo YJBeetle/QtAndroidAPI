@@ -1,55 +1,143 @@
 #pragma once
 
-#include "./FrameLayout.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view
-{
-	class MotionEvent;
-}
-namespace android::view
-{
-	class View;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../view/KeyEvent.def.hpp"
+#include "../view/MotionEvent.def.hpp"
+#include "../view/View.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaController.def.hpp"
 
 namespace android::widget
 {
-	class MediaController : public android::widget::FrameLayout
+	// Fields
+	
+	// Constructors
+	inline MediaController::MediaController(android::content::Context arg0)
+		: android::widget::FrameLayout(
+			"android.widget.MediaController",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline MediaController::MediaController(android::content::Context arg0, JObject arg1)
+		: android::widget::FrameLayout(
+			"android.widget.MediaController",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline MediaController::MediaController(android::content::Context arg0, jboolean arg1)
+		: android::widget::FrameLayout(
+			"android.widget.MediaController",
+			"(Landroid/content/Context;Z)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean MediaController::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaController(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		MediaController(QJniObject obj);
-		
-		// Constructors
-		MediaController(android::content::Context arg0);
-		MediaController(android::content::Context arg0, JObject arg1);
-		MediaController(android::content::Context arg0, jboolean arg1);
-		
-		// Methods
-		jboolean dispatchKeyEvent(android::view::KeyEvent arg0) const;
-		JString getAccessibilityClassName() const;
-		void hide() const;
-		jboolean isShowing() const;
-		void onFinishInflate() const;
-		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
-		jboolean onTrackballEvent(android::view::MotionEvent arg0) const;
-		void setAnchorView(android::view::View arg0) const;
-		void setEnabled(jboolean arg0) const;
-		void setMediaPlayer(JObject arg0) const;
-		void setPrevNextListeners(JObject arg0, JObject arg1) const;
-		void show() const;
-		void show(jint arg0) const;
-	};
+		return callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline JString MediaController::getAccessibilityClassName() const
+	{
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline void MediaController::hide() const
+	{
+		callMethod<void>(
+			"hide",
+			"()V"
+		);
+	}
+	inline jboolean MediaController::isShowing() const
+	{
+		return callMethod<jboolean>(
+			"isShowing",
+			"()Z"
+		);
+	}
+	inline void MediaController::onFinishInflate() const
+	{
+		callMethod<void>(
+			"onFinishInflate",
+			"()V"
+		);
+	}
+	inline jboolean MediaController::onTouchEvent(android::view::MotionEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean MediaController::onTrackballEvent(android::view::MotionEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline void MediaController::setAnchorView(android::view::View arg0) const
+	{
+		callMethod<void>(
+			"setAnchorView",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaController::setEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void MediaController::setMediaPlayer(JObject arg0) const
+	{
+		callMethod<void>(
+			"setMediaPlayer",
+			"(Landroid/widget/MediaController$MediaPlayerControl;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaController::setPrevNextListeners(JObject arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"setPrevNextListeners",
+			"(Landroid/view/View$OnClickListener;Landroid/view/View$OnClickListener;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaController::show() const
+	{
+		callMethod<void>(
+			"show",
+			"()V"
+		);
+	}
+	inline void MediaController::show(jint arg0) const
+	{
+		callMethod<void>(
+			"show",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "./FrameLayout.hpp"
 

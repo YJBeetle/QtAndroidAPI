@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./FullBackupDataOutput.def.hpp"
 
 namespace android::app::backup
 {
-	class FullBackupDataOutput : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jlong FullBackupDataOutput::getQuota() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FullBackupDataOutput(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FullBackupDataOutput(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jlong getQuota() const;
-		jint getTransportFlags() const;
-	};
+		return callMethod<jlong>(
+			"getQuota",
+			"()J"
+		);
+	}
+	inline jint FullBackupDataOutput::getTransportFlags() const
+	{
+		return callMethod<jint>(
+			"getTransportFlags",
+			"()I"
+		);
+	}
 } // namespace android::app::backup
+
+// Base class headers
 

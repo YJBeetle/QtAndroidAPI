@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalStateException.hpp"
+#include "./ClosedFileSystemException.def.hpp"
 
 namespace java::nio::file
 {
-	class ClosedFileSystemException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ClosedFileSystemException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ClosedFileSystemException(QJniObject obj);
-		
-		// Constructors
-		ClosedFileSystemException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ClosedFileSystemException::ClosedFileSystemException()
+		: java::lang::IllegalStateException(
+			"java.nio.file.ClosedFileSystemException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalStateException.hpp"
 

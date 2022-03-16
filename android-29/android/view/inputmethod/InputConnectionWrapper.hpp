@@ -1,84 +1,255 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Handler;
-}
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view::inputmethod
-{
-	class CompletionInfo;
-}
-namespace android::view::inputmethod
-{
-	class CorrectionInfo;
-}
-namespace android::view::inputmethod
-{
-	class ExtractedText;
-}
-namespace android::view::inputmethod
-{
-	class ExtractedTextRequest;
-}
-namespace android::view::inputmethod
-{
-	class InputContentInfo;
-}
-class JString;
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Handler.def.hpp"
+#include "../KeyEvent.def.hpp"
+#include "./CompletionInfo.def.hpp"
+#include "./CorrectionInfo.def.hpp"
+#include "./ExtractedText.def.hpp"
+#include "./ExtractedTextRequest.def.hpp"
+#include "./InputContentInfo.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./InputConnectionWrapper.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InputConnectionWrapper : public JObject
+	// Fields
+	
+	// Constructors
+	inline InputConnectionWrapper::InputConnectionWrapper(JObject arg0, jboolean arg1)
+		: JObject(
+			"android.view.inputmethod.InputConnectionWrapper",
+			"(Landroid/view/inputmethod/InputConnection;Z)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean InputConnectionWrapper::beginBatchEdit() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InputConnectionWrapper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputConnectionWrapper(QJniObject obj);
-		
-		// Constructors
-		InputConnectionWrapper(JObject arg0, jboolean arg1);
-		
-		// Methods
-		jboolean beginBatchEdit() const;
-		jboolean clearMetaKeyStates(jint arg0) const;
-		void closeConnection() const;
-		jboolean commitCompletion(android::view::inputmethod::CompletionInfo arg0) const;
-		jboolean commitContent(android::view::inputmethod::InputContentInfo arg0, jint arg1, android::os::Bundle arg2) const;
-		jboolean commitCorrection(android::view::inputmethod::CorrectionInfo arg0) const;
-		jboolean commitText(JString arg0, jint arg1) const;
-		jboolean deleteSurroundingText(jint arg0, jint arg1) const;
-		jboolean deleteSurroundingTextInCodePoints(jint arg0, jint arg1) const;
-		jboolean endBatchEdit() const;
-		jboolean finishComposingText() const;
-		jint getCursorCapsMode(jint arg0) const;
-		android::view::inputmethod::ExtractedText getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1) const;
-		android::os::Handler getHandler() const;
-		JString getSelectedText(jint arg0) const;
-		JString getTextAfterCursor(jint arg0, jint arg1) const;
-		JString getTextBeforeCursor(jint arg0, jint arg1) const;
-		jboolean performContextMenuAction(jint arg0) const;
-		jboolean performEditorAction(jint arg0) const;
-		jboolean performPrivateCommand(JString arg0, android::os::Bundle arg1) const;
-		jboolean reportFullscreenMode(jboolean arg0) const;
-		jboolean requestCursorUpdates(jint arg0) const;
-		jboolean sendKeyEvent(android::view::KeyEvent arg0) const;
-		jboolean setComposingRegion(jint arg0, jint arg1) const;
-		jboolean setComposingText(JString arg0, jint arg1) const;
-		jboolean setSelection(jint arg0, jint arg1) const;
-		void setTarget(JObject arg0) const;
-	};
+		return callMethod<jboolean>(
+			"beginBatchEdit",
+			"()Z"
+		);
+	}
+	inline jboolean InputConnectionWrapper::clearMetaKeyStates(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"clearMetaKeyStates",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline void InputConnectionWrapper::closeConnection() const
+	{
+		callMethod<void>(
+			"closeConnection",
+			"()V"
+		);
+	}
+	inline jboolean InputConnectionWrapper::commitCompletion(android::view::inputmethod::CompletionInfo arg0) const
+	{
+		return callMethod<jboolean>(
+			"commitCompletion",
+			"(Landroid/view/inputmethod/CompletionInfo;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean InputConnectionWrapper::commitContent(android::view::inputmethod::InputContentInfo arg0, jint arg1, android::os::Bundle arg2) const
+	{
+		return callMethod<jboolean>(
+			"commitContent",
+			"(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline jboolean InputConnectionWrapper::commitCorrection(android::view::inputmethod::CorrectionInfo arg0) const
+	{
+		return callMethod<jboolean>(
+			"commitCorrection",
+			"(Landroid/view/inputmethod/CorrectionInfo;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean InputConnectionWrapper::commitText(JString arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"commitText",
+			"(Ljava/lang/CharSequence;I)Z",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline jboolean InputConnectionWrapper::deleteSurroundingText(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"deleteSurroundingText",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean InputConnectionWrapper::deleteSurroundingTextInCodePoints(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"deleteSurroundingTextInCodePoints",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean InputConnectionWrapper::endBatchEdit() const
+	{
+		return callMethod<jboolean>(
+			"endBatchEdit",
+			"()Z"
+		);
+	}
+	inline jboolean InputConnectionWrapper::finishComposingText() const
+	{
+		return callMethod<jboolean>(
+			"finishComposingText",
+			"()Z"
+		);
+	}
+	inline jint InputConnectionWrapper::getCursorCapsMode(jint arg0) const
+	{
+		return callMethod<jint>(
+			"getCursorCapsMode",
+			"(I)I",
+			arg0
+		);
+	}
+	inline android::view::inputmethod::ExtractedText InputConnectionWrapper::getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getExtractedText",
+			"(Landroid/view/inputmethod/ExtractedTextRequest;I)Landroid/view/inputmethod/ExtractedText;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::os::Handler InputConnectionWrapper::getHandler() const
+	{
+		return callObjectMethod(
+			"getHandler",
+			"()Landroid/os/Handler;"
+		);
+	}
+	inline JString InputConnectionWrapper::getSelectedText(jint arg0) const
+	{
+		return callObjectMethod(
+			"getSelectedText",
+			"(I)Ljava/lang/CharSequence;",
+			arg0
+		);
+	}
+	inline JString InputConnectionWrapper::getTextAfterCursor(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getTextAfterCursor",
+			"(II)Ljava/lang/CharSequence;",
+			arg0,
+			arg1
+		);
+	}
+	inline JString InputConnectionWrapper::getTextBeforeCursor(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getTextBeforeCursor",
+			"(II)Ljava/lang/CharSequence;",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean InputConnectionWrapper::performContextMenuAction(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"performContextMenuAction",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean InputConnectionWrapper::performEditorAction(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"performEditorAction",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean InputConnectionWrapper::performPrivateCommand(JString arg0, android::os::Bundle arg1) const
+	{
+		return callMethod<jboolean>(
+			"performPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline jboolean InputConnectionWrapper::reportFullscreenMode(jboolean arg0) const
+	{
+		return callMethod<jboolean>(
+			"reportFullscreenMode",
+			"(Z)Z",
+			arg0
+		);
+	}
+	inline jboolean InputConnectionWrapper::requestCursorUpdates(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"requestCursorUpdates",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean InputConnectionWrapper::sendKeyEvent(android::view::KeyEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"sendKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean InputConnectionWrapper::setComposingRegion(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"setComposingRegion",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean InputConnectionWrapper::setComposingText(JString arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"setComposingText",
+			"(Ljava/lang/CharSequence;I)Z",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline jboolean InputConnectionWrapper::setSelection(jint arg0, jint arg1) const
+	{
+		return callMethod<jboolean>(
+			"setSelection",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	inline void InputConnectionWrapper::setTarget(JObject arg0) const
+	{
+		callMethod<void>(
+			"setTarget",
+			"(Landroid/view/inputmethod/InputConnection;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

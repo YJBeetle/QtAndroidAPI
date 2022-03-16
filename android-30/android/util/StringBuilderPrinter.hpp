@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
+#include "../../JString.hpp"
+#include "../../java/lang/StringBuilder.def.hpp"
+#include "./StringBuilderPrinter.def.hpp"
 
 namespace android::util
 {
-	class StringBuilderPrinter : public JObject
+	// Fields
+	
+	// Constructors
+	inline StringBuilderPrinter::StringBuilderPrinter(java::lang::StringBuilder arg0)
+		: JObject(
+			"android.util.StringBuilderPrinter",
+			"(Ljava/lang/StringBuilder;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void StringBuilderPrinter::println(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StringBuilderPrinter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StringBuilderPrinter(QJniObject obj);
-		
-		// Constructors
-		StringBuilderPrinter(java::lang::StringBuilder arg0);
-		
-		// Methods
-		void println(JString arg0) const;
-	};
+		callMethod<void>(
+			"println",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

@@ -1,46 +1,124 @@
 #pragma once
 
-#include "./OutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
-class JString;
-namespace java::nio::charset
-{
-	class Charset;
-}
+#include "../../JByteArray.hpp"
+#include "./OutputStream.def.hpp"
+#include "../../JString.hpp"
+#include "../nio/charset/Charset.def.hpp"
+#include "./ByteArrayOutputStream.def.hpp"
 
 namespace java::io
 {
-	class ByteArrayOutputStream : public java::io::OutputStream
+	// Fields
+	
+	// Constructors
+	inline ByteArrayOutputStream::ByteArrayOutputStream()
+		: java::io::OutputStream(
+			"java.io.ByteArrayOutputStream",
+			"()V"
+		) {}
+	inline ByteArrayOutputStream::ByteArrayOutputStream(jint arg0)
+		: java::io::OutputStream(
+			"java.io.ByteArrayOutputStream",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline void ByteArrayOutputStream::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ByteArrayOutputStream(const char *className, const char *sig, Ts...agv) : java::io::OutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		ByteArrayOutputStream(QJniObject obj);
-		
-		// Constructors
-		ByteArrayOutputStream();
-		ByteArrayOutputStream(jint arg0);
-		
-		// Methods
-		void close() const;
-		void reset() const;
-		jint size() const;
-		JByteArray toByteArray() const;
-		JString toString() const;
-		JString toString(jint arg0) const;
-		JString toString(JString arg0) const;
-		JString toString(java::nio::charset::Charset arg0) const;
-		void write(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-		void writeBytes(JByteArray arg0) const;
-		void writeTo(java::io::OutputStream arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void ByteArrayOutputStream::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline jint ByteArrayOutputStream::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JByteArray ByteArrayOutputStream::toByteArray() const
+	{
+		return callObjectMethod(
+			"toByteArray",
+			"()[B"
+		);
+	}
+	inline JString ByteArrayOutputStream::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString ByteArrayOutputStream::toString(jint arg0) const
+	{
+		return callObjectMethod(
+			"toString",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline JString ByteArrayOutputStream::toString(JString arg0) const
+	{
+		return callObjectMethod(
+			"toString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString ByteArrayOutputStream::toString(java::nio::charset::Charset arg0) const
+	{
+		return callObjectMethod(
+			"toString",
+			"(Ljava/nio/charset/Charset;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline void ByteArrayOutputStream::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ByteArrayOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void ByteArrayOutputStream::writeBytes(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"writeBytes",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void ByteArrayOutputStream::writeTo(java::io::OutputStream arg0) const
+	{
+		callMethod<void>(
+			"writeTo",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./OutputStream.hpp"
 

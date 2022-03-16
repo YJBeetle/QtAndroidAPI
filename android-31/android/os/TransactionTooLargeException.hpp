@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./RemoteException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./TransactionTooLargeException.def.hpp"
 
 namespace android::os
 {
-	class TransactionTooLargeException : public android::os::RemoteException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TransactionTooLargeException(const char *className, const char *sig, Ts...agv) : android::os::RemoteException(className, sig, std::forward<Ts>(agv)...) {}
-		TransactionTooLargeException(QJniObject obj);
-		
-		// Constructors
-		TransactionTooLargeException();
-		TransactionTooLargeException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TransactionTooLargeException::TransactionTooLargeException()
+		: android::os::RemoteException(
+			"android.os.TransactionTooLargeException",
+			"()V"
+		) {}
+	inline TransactionTooLargeException::TransactionTooLargeException(JString arg0)
+		: android::os::RemoteException(
+			"android.os.TransactionTooLargeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
+#include "./RemoteException.hpp"
 

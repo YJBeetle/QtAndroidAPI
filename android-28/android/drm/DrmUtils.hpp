@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::drm
-{
-	class DrmUtils_ExtendedMetadataParser;
-}
+#include "../../JByteArray.hpp"
+#include "./DrmUtils_ExtendedMetadataParser.def.hpp"
+#include "./DrmUtils.def.hpp"
 
 namespace android::drm
 {
-	class DrmUtils : public JObject
+	// Fields
+	
+	// Constructors
+	inline DrmUtils::DrmUtils()
+		: JObject(
+			"android.drm.DrmUtils",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::drm::DrmUtils_ExtendedMetadataParser DrmUtils::getExtendedMetadataParser(JByteArray arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DrmUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmUtils(QJniObject obj);
-		
-		// Constructors
-		DrmUtils();
-		
-		// Methods
-		static android::drm::DrmUtils_ExtendedMetadataParser getExtendedMetadataParser(JByteArray arg0);
-	};
+		return callStaticObjectMethod(
+			"android.drm.DrmUtils",
+			"getExtendedMetadataParser",
+			"([B)Landroid/drm/DrmUtils$ExtendedMetadataParser;",
+			arg0.object<jbyteArray>()
+		);
+	}
 } // namespace android::drm
+
+// Base class headers
 

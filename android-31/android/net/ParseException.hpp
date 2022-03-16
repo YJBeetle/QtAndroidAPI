@@ -1,27 +1,39 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./ParseException.def.hpp"
 
 namespace android::net
 {
-	class ParseException : public java::lang::RuntimeException
+	// Fields
+	inline JString ParseException::response()
 	{
-	public:
-		// Fields
-		JString response();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ParseException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ParseException(QJniObject obj);
-		
-		// Constructors
-		ParseException(JString arg0);
-		ParseException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+		return getObjectField(
+			"response",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline ParseException::ParseException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.net.ParseException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ParseException::ParseException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"android.net.ParseException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::net
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./Manifest.def.hpp"
 
 namespace android
 {
-	class Manifest : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Manifest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Manifest(QJniObject obj);
-		
-		// Constructors
-		Manifest();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Manifest::Manifest()
+		: JObject(
+			"android.Manifest",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

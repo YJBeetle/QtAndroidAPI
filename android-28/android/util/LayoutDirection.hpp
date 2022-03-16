@@ -1,25 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./LayoutDirection.def.hpp"
 
 namespace android::util
 {
-	class LayoutDirection : public JObject
+	// Fields
+	inline jint LayoutDirection::INHERIT()
 	{
-	public:
-		// Fields
-		static jint INHERIT();
-		static jint LOCALE();
-		static jint LTR();
-		static jint RTL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LayoutDirection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LayoutDirection(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.util.LayoutDirection",
+			"INHERIT"
+		);
+	}
+	inline jint LayoutDirection::LOCALE()
+	{
+		return getStaticField<jint>(
+			"android.util.LayoutDirection",
+			"LOCALE"
+		);
+	}
+	inline jint LayoutDirection::LTR()
+	{
+		return getStaticField<jint>(
+			"android.util.LayoutDirection",
+			"LTR"
+		);
+	}
+	inline jint LayoutDirection::RTL()
+	{
+		return getStaticField<jint>(
+			"android.util.LayoutDirection",
+			"RTL"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

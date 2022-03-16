@@ -1,31 +1,79 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./View_MeasureSpec.def.hpp"
 
 namespace android::view
 {
-	class View_MeasureSpec : public JObject
+	// Fields
+	inline jint View_MeasureSpec::AT_MOST()
 	{
-	public:
-		// Fields
-		static jint AT_MOST();
-		static jint EXACTLY();
-		static jint UNSPECIFIED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit View_MeasureSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		View_MeasureSpec(QJniObject obj);
-		
-		// Constructors
-		View_MeasureSpec();
-		
-		// Methods
-		static jint getMode(jint arg0);
-		static jint getSize(jint arg0);
-		static jint makeMeasureSpec(jint arg0, jint arg1);
-		static JString toString(jint arg0);
-	};
+		return getStaticField<jint>(
+			"android.view.View$MeasureSpec",
+			"AT_MOST"
+		);
+	}
+	inline jint View_MeasureSpec::EXACTLY()
+	{
+		return getStaticField<jint>(
+			"android.view.View$MeasureSpec",
+			"EXACTLY"
+		);
+	}
+	inline jint View_MeasureSpec::UNSPECIFIED()
+	{
+		return getStaticField<jint>(
+			"android.view.View$MeasureSpec",
+			"UNSPECIFIED"
+		);
+	}
+	
+	// Constructors
+	inline View_MeasureSpec::View_MeasureSpec()
+		: JObject(
+			"android.view.View$MeasureSpec",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint View_MeasureSpec::getMode(jint arg0)
+	{
+		return callStaticMethod<jint>(
+			"android.view.View$MeasureSpec",
+			"getMode",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint View_MeasureSpec::getSize(jint arg0)
+	{
+		return callStaticMethod<jint>(
+			"android.view.View$MeasureSpec",
+			"getSize",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint View_MeasureSpec::makeMeasureSpec(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.view.View$MeasureSpec",
+			"makeMeasureSpec",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline JString View_MeasureSpec::toString(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.view.View$MeasureSpec",
+			"toString",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

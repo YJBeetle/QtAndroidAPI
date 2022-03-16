@@ -1,30 +1,41 @@
 #pragma once
 
-#include "./VoiceInteractionSession_Request.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "./VoiceInteractionSession_CommandRequest.def.hpp"
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_CommandRequest : public android::service::voice::VoiceInteractionSession_Request
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString VoiceInteractionSession_CommandRequest::getCommand() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_CommandRequest(const char *className, const char *sig, Ts...agv) : android::service::voice::VoiceInteractionSession_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_CommandRequest(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getCommand() const;
-		void sendIntermediateResult(android::os::Bundle arg0) const;
-		void sendResult(android::os::Bundle arg0) const;
-	};
+		return callObjectMethod(
+			"getCommand",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void VoiceInteractionSession_CommandRequest::sendIntermediateResult(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"sendIntermediateResult",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
+	inline void VoiceInteractionSession_CommandRequest::sendResult(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"sendResult",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::service::voice
+
+// Base class headers
+#include "./VoiceInteractionSession_Request.hpp"
 

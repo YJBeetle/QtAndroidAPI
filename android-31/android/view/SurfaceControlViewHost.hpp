@@ -1,44 +1,67 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class Display;
-}
-namespace android::view
-{
-	class SurfaceControlViewHost_SurfacePackage;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../content/Context.def.hpp"
+#include "./Display.def.hpp"
+#include "./SurfaceControlViewHost_SurfacePackage.def.hpp"
+#include "./View.def.hpp"
+#include "./SurfaceControlViewHost.def.hpp"
 
 namespace android::view
 {
-	class SurfaceControlViewHost : public JObject
+	// Fields
+	
+	// Constructors
+	inline SurfaceControlViewHost::SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, JObject arg2)
+		: JObject(
+			"android.view.SurfaceControlViewHost",
+			"(Landroid/content/Context;Landroid/view/Display;Landroid/os/IBinder;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline android::view::SurfaceControlViewHost_SurfacePackage SurfaceControlViewHost::getSurfacePackage() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SurfaceControlViewHost(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceControlViewHost(QJniObject obj);
-		
-		// Constructors
-		SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, JObject arg2);
-		
-		// Methods
-		android::view::SurfaceControlViewHost_SurfacePackage getSurfacePackage() const;
-		android::view::View getView() const;
-		void relayout(jint arg0, jint arg1) const;
-		void release() const;
-		void setView(android::view::View arg0, jint arg1, jint arg2) const;
-	};
+		return callObjectMethod(
+			"getSurfacePackage",
+			"()Landroid/view/SurfaceControlViewHost$SurfacePackage;"
+		);
+	}
+	inline android::view::View SurfaceControlViewHost::getView() const
+	{
+		return callObjectMethod(
+			"getView",
+			"()Landroid/view/View;"
+		);
+	}
+	inline void SurfaceControlViewHost::relayout(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"relayout",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void SurfaceControlViewHost::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	inline void SurfaceControlViewHost::setView(android::view::View arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"setView",
+			"(Landroid/view/View;II)V",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

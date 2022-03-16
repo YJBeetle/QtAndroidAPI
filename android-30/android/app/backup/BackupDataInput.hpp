@@ -1,29 +1,55 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-class JString;
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
+#include "./BackupDataInput.def.hpp"
 
 namespace android::app::backup
 {
-	class BackupDataInput : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint BackupDataInput::getDataSize() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BackupDataInput(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BackupDataInput(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getDataSize() const;
-		JString getKey() const;
-		jint readEntityData(JByteArray arg0, jint arg1, jint arg2) const;
-		jboolean readNextHeader() const;
-		void skipEntityData() const;
-	};
+		return callMethod<jint>(
+			"getDataSize",
+			"()I"
+		);
+	}
+	inline JString BackupDataInput::getKey() const
+	{
+		return callObjectMethod(
+			"getKey",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint BackupDataInput::readEntityData(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"readEntityData",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean BackupDataInput::readNextHeader() const
+	{
+		return callMethod<jboolean>(
+			"readNextHeader",
+			"()Z"
+		);
+	}
+	inline void BackupDataInput::skipEntityData() const
+	{
+		callMethod<void>(
+			"skipEntityData",
+			"()V"
+		);
+	}
 } // namespace android::app::backup
+
+// Base class headers
 

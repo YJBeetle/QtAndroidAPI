@@ -1,24 +1,35 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./EGLContext.def.hpp"
 
 namespace javax::microedition::khronos::egl
 {
-	class EGLContext : public JObject
+	// Fields
+	
+	// Constructors
+	inline EGLContext::EGLContext()
+		: JObject(
+			"javax.microedition.khronos.egl.EGLContext",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject EGLContext::getEGL()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EGLContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EGLContext(QJniObject obj);
-		
-		// Constructors
-		EGLContext();
-		
-		// Methods
-		static JObject getEGL();
-		JObject getGL() const;
-	};
+		return callStaticObjectMethod(
+			"javax.microedition.khronos.egl.EGLContext",
+			"getEGL",
+			"()Ljavax/microedition/khronos/egl/EGL;"
+		);
+	}
+	inline JObject EGLContext::getGL() const
+	{
+		return callObjectMethod(
+			"getGL",
+			"()Ljavax/microedition/khronos/opengles/GL;"
+		);
+	}
 } // namespace javax::microedition::khronos::egl
+
+// Base class headers
 

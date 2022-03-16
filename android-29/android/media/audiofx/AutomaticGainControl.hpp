@@ -1,23 +1,33 @@
 #pragma once
 
-#include "./AudioEffect.hpp"
+#include "./AutomaticGainControl.def.hpp"
 
 namespace android::media::audiofx
 {
-	class AutomaticGainControl : public android::media::audiofx::AudioEffect
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::audiofx::AutomaticGainControl AutomaticGainControl::create(jint arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AutomaticGainControl(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		AutomaticGainControl(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::media::audiofx::AutomaticGainControl create(jint arg0);
-		static jboolean isAvailable();
-	};
+		return callStaticObjectMethod(
+			"android.media.audiofx.AutomaticGainControl",
+			"create",
+			"(I)Landroid/media/audiofx/AutomaticGainControl;",
+			arg0
+		);
+	}
+	inline jboolean AutomaticGainControl::isAvailable()
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.audiofx.AutomaticGainControl",
+			"isAvailable",
+			"()Z"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./AudioEffect.hpp"
 

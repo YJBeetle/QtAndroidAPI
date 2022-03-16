@@ -1,37 +1,46 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ContentProviderClient;
-}
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::net
-{
-	class Uri;
-}
+#include "../content/ContentProviderClient.def.hpp"
+#include "../content/ContentResolver.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "./CalendarContract_EventsEntity.def.hpp"
 
 namespace android::provider
 {
-	class CalendarContract_EventsEntity : public JObject
+	// Fields
+	inline android::net::Uri CalendarContract_EventsEntity::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CalendarContract_EventsEntity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_EventsEntity(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject newEntityIterator(JObject arg0, android::content::ContentProviderClient arg1);
-		static JObject newEntityIterator(JObject arg0, android::content::ContentResolver arg1);
-	};
+		return getStaticObjectField(
+			"android.provider.CalendarContract$EventsEntity",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject CalendarContract_EventsEntity::newEntityIterator(JObject arg0, android::content::ContentProviderClient arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.CalendarContract$EventsEntity",
+			"newEntityIterator",
+			"(Landroid/database/Cursor;Landroid/content/ContentProviderClient;)Landroid/content/EntityIterator;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JObject CalendarContract_EventsEntity::newEntityIterator(JObject arg0, android::content::ContentResolver arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.CalendarContract$EventsEntity",
+			"newEntityIterator",
+			"(Landroid/database/Cursor;Landroid/content/ContentResolver;)Landroid/content/EntityIterator;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

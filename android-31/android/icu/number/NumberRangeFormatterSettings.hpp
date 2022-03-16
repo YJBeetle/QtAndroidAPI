@@ -1,42 +1,74 @@
 #pragma once
 
+#include "./NumberRangeFormatter_RangeCollapse.def.hpp"
+#include "./NumberRangeFormatter_RangeIdentityFallback.def.hpp"
+#include "./UnlocalizedNumberFormatter.def.hpp"
 #include "../../../JObject.hpp"
+#include "./NumberRangeFormatterSettings.def.hpp"
 
 namespace android::icu::number
 {
-	class NumberRangeFormatter_RangeCollapse;
-}
-namespace android::icu::number
-{
-	class NumberRangeFormatter_RangeIdentityFallback;
-}
-namespace android::icu::number
-{
-	class UnlocalizedNumberFormatter;
-}
-class JObject;
-
-namespace android::icu::number
-{
-	class NumberRangeFormatterSettings : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::collapse(android::icu::number::NumberRangeFormatter_RangeCollapse arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NumberRangeFormatterSettings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatterSettings(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::icu::number::NumberRangeFormatterSettings collapse(android::icu::number::NumberRangeFormatter_RangeCollapse arg0) const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		android::icu::number::NumberRangeFormatterSettings identityFallback(android::icu::number::NumberRangeFormatter_RangeIdentityFallback arg0) const;
-		android::icu::number::NumberRangeFormatterSettings numberFormatterBoth(android::icu::number::UnlocalizedNumberFormatter arg0) const;
-		android::icu::number::NumberRangeFormatterSettings numberFormatterFirst(android::icu::number::UnlocalizedNumberFormatter arg0) const;
-		android::icu::number::NumberRangeFormatterSettings numberFormatterSecond(android::icu::number::UnlocalizedNumberFormatter arg0) const;
-	};
+		return callObjectMethod(
+			"collapse",
+			"(Landroid/icu/number/NumberRangeFormatter$RangeCollapse;)Landroid/icu/number/NumberRangeFormatterSettings;",
+			arg0.object()
+		);
+	}
+	inline jboolean NumberRangeFormatterSettings::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint NumberRangeFormatterSettings::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::identityFallback(android::icu::number::NumberRangeFormatter_RangeIdentityFallback arg0) const
+	{
+		return callObjectMethod(
+			"identityFallback",
+			"(Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;)Landroid/icu/number/NumberRangeFormatterSettings;",
+			arg0.object()
+		);
+	}
+	inline android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterBoth(android::icu::number::UnlocalizedNumberFormatter arg0) const
+	{
+		return callObjectMethod(
+			"numberFormatterBoth",
+			"(Landroid/icu/number/UnlocalizedNumberFormatter;)Landroid/icu/number/NumberRangeFormatterSettings;",
+			arg0.object()
+		);
+	}
+	inline android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterFirst(android::icu::number::UnlocalizedNumberFormatter arg0) const
+	{
+		return callObjectMethod(
+			"numberFormatterFirst",
+			"(Landroid/icu/number/UnlocalizedNumberFormatter;)Landroid/icu/number/NumberRangeFormatterSettings;",
+			arg0.object()
+		);
+	}
+	inline android::icu::number::NumberRangeFormatterSettings NumberRangeFormatterSettings::numberFormatterSecond(android::icu::number::UnlocalizedNumberFormatter arg0) const
+	{
+		return callObjectMethod(
+			"numberFormatterSecond",
+			"(Landroid/icu/number/UnlocalizedNumberFormatter;)Landroid/icu/number/NumberRangeFormatterSettings;",
+			arg0.object()
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
 

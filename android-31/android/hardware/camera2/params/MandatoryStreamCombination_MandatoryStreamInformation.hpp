@@ -1,30 +1,66 @@
 #pragma once
 
 #include "../../../../JObject.hpp"
-
-class JObject;
+#include "./MandatoryStreamCombination_MandatoryStreamInformation.def.hpp"
 
 namespace android::hardware::camera2::params
 {
-	class MandatoryStreamCombination_MandatoryStreamInformation : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MandatoryStreamCombination_MandatoryStreamInformation::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MandatoryStreamCombination_MandatoryStreamInformation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MandatoryStreamCombination_MandatoryStreamInformation(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JObject getAvailableSizes() const;
-		jint getFormat() const;
-		jint hashCode() const;
-		jboolean isInput() const;
-		jboolean isMaximumSize() const;
-		jboolean isUltraHighResolution() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes() const
+	{
+		return callObjectMethod(
+			"getAvailableSizes",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint MandatoryStreamCombination_MandatoryStreamInformation::getFormat() const
+	{
+		return callMethod<jint>(
+			"getFormat",
+			"()I"
+		);
+	}
+	inline jint MandatoryStreamCombination_MandatoryStreamInformation::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean MandatoryStreamCombination_MandatoryStreamInformation::isInput() const
+	{
+		return callMethod<jboolean>(
+			"isInput",
+			"()Z"
+		);
+	}
+	inline jboolean MandatoryStreamCombination_MandatoryStreamInformation::isMaximumSize() const
+	{
+		return callMethod<jboolean>(
+			"isMaximumSize",
+			"()Z"
+		);
+	}
+	inline jboolean MandatoryStreamCombination_MandatoryStreamInformation::isUltraHighResolution() const
+	{
+		return callMethod<jboolean>(
+			"isUltraHighResolution",
+			"()Z"
+		);
+	}
 } // namespace android::hardware::camera2::params
+
+// Base class headers
 

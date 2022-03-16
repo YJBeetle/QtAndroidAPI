@@ -1,29 +1,30 @@
 #pragma once
 
-#include "./ForkJoinTask.hpp"
-
-class JObject;
-namespace java::lang
-{
-	class Void;
-}
+#include "../../../JObject.hpp"
+#include "../../lang/Void.def.hpp"
+#include "./RecursiveAction.def.hpp"
 
 namespace java::util::concurrent
 {
-	class RecursiveAction : public java::util::concurrent::ForkJoinTask
+	// Fields
+	
+	// Constructors
+	inline RecursiveAction::RecursiveAction()
+		: java::util::concurrent::ForkJoinTask(
+			"java.util.concurrent.RecursiveAction",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::lang::Void RecursiveAction::getRawResult() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RecursiveAction(const char *className, const char *sig, Ts...agv) : java::util::concurrent::ForkJoinTask(className, sig, std::forward<Ts>(agv)...) {}
-		RecursiveAction(QJniObject obj);
-		
-		// Constructors
-		RecursiveAction();
-		
-		// Methods
-		java::lang::Void getRawResult() const;
-	};
+		return callObjectMethod(
+			"getRawResult",
+			"()Ljava/lang/Void;"
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "./ForkJoinTask.hpp"
 

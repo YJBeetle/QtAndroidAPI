@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./GeneralSecurityException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UnrecoverableEntryException.def.hpp"
 
 namespace java::security
 {
-	class UnrecoverableEntryException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UnrecoverableEntryException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		UnrecoverableEntryException(QJniObject obj);
-		
-		// Constructors
-		UnrecoverableEntryException();
-		UnrecoverableEntryException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UnrecoverableEntryException::UnrecoverableEntryException()
+		: java::security::GeneralSecurityException(
+			"java.security.UnrecoverableEntryException",
+			"()V"
+		) {}
+	inline UnrecoverableEntryException::UnrecoverableEntryException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.UnrecoverableEntryException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./GeneralSecurityException.hpp"
 

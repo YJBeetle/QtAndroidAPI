@@ -1,62 +1,255 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../content/ContentResolver.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_Directory.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Directory : public JObject
+	// Fields
+	inline JString ContactsContract_Directory::ACCOUNT_NAME()
 	{
-	public:
-		// Fields
-		static JString ACCOUNT_NAME();
-		static JString ACCOUNT_TYPE();
-		static JString CALLER_PACKAGE_PARAM_KEY();
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static jlong DEFAULT();
-		static JString DIRECTORY_AUTHORITY();
-		static JString DISPLAY_NAME();
-		static android::net::Uri ENTERPRISE_CONTENT_URI();
-		static jlong ENTERPRISE_DEFAULT();
-		static jlong ENTERPRISE_LOCAL_INVISIBLE();
-		static JString EXPORT_SUPPORT();
-		static jint EXPORT_SUPPORT_ANY_ACCOUNT();
-		static jint EXPORT_SUPPORT_NONE();
-		static jint EXPORT_SUPPORT_SAME_ACCOUNT_ONLY();
-		static jlong LOCAL_INVISIBLE();
-		static JString PACKAGE_NAME();
-		static JString PHOTO_SUPPORT();
-		static jint PHOTO_SUPPORT_FULL();
-		static jint PHOTO_SUPPORT_FULL_SIZE_ONLY();
-		static jint PHOTO_SUPPORT_NONE();
-		static jint PHOTO_SUPPORT_THUMBNAIL_ONLY();
-		static JString SHORTCUT_SUPPORT();
-		static jint SHORTCUT_SUPPORT_DATA_ITEMS_ONLY();
-		static jint SHORTCUT_SUPPORT_FULL();
-		static jint SHORTCUT_SUPPORT_NONE();
-		static JString TYPE_RESOURCE_ID();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Directory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Directory(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isEnterpriseDirectoryId(jlong arg0);
-		static jboolean isRemoteDirectoryId(jlong arg0);
-		static void notifyDirectoryChange(android::content::ContentResolver arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"ACCOUNT_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Directory::ACCOUNT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"ACCOUNT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Directory::CALLER_PACKAGE_PARAM_KEY()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"CALLER_PACKAGE_PARAM_KEY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Directory::CONTENT_ITEM_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Directory::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_Directory::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jlong ContactsContract_Directory::DEFAULT()
+	{
+		return getStaticField<jlong>(
+			"android.provider.ContactsContract$Directory",
+			"DEFAULT"
+		);
+	}
+	inline JString ContactsContract_Directory::DIRECTORY_AUTHORITY()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"DIRECTORY_AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Directory::DISPLAY_NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"DISPLAY_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_Directory::ENTERPRISE_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"ENTERPRISE_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jlong ContactsContract_Directory::ENTERPRISE_DEFAULT()
+	{
+		return getStaticField<jlong>(
+			"android.provider.ContactsContract$Directory",
+			"ENTERPRISE_DEFAULT"
+		);
+	}
+	inline jlong ContactsContract_Directory::ENTERPRISE_LOCAL_INVISIBLE()
+	{
+		return getStaticField<jlong>(
+			"android.provider.ContactsContract$Directory",
+			"ENTERPRISE_LOCAL_INVISIBLE"
+		);
+	}
+	inline JString ContactsContract_Directory::EXPORT_SUPPORT()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"EXPORT_SUPPORT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint ContactsContract_Directory::EXPORT_SUPPORT_ANY_ACCOUNT()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"EXPORT_SUPPORT_ANY_ACCOUNT"
+		);
+	}
+	inline jint ContactsContract_Directory::EXPORT_SUPPORT_NONE()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"EXPORT_SUPPORT_NONE"
+		);
+	}
+	inline jint ContactsContract_Directory::EXPORT_SUPPORT_SAME_ACCOUNT_ONLY()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"EXPORT_SUPPORT_SAME_ACCOUNT_ONLY"
+		);
+	}
+	inline jlong ContactsContract_Directory::LOCAL_INVISIBLE()
+	{
+		return getStaticField<jlong>(
+			"android.provider.ContactsContract$Directory",
+			"LOCAL_INVISIBLE"
+		);
+	}
+	inline JString ContactsContract_Directory::PACKAGE_NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"PACKAGE_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_Directory::PHOTO_SUPPORT()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"PHOTO_SUPPORT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint ContactsContract_Directory::PHOTO_SUPPORT_FULL()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"PHOTO_SUPPORT_FULL"
+		);
+	}
+	inline jint ContactsContract_Directory::PHOTO_SUPPORT_FULL_SIZE_ONLY()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"PHOTO_SUPPORT_FULL_SIZE_ONLY"
+		);
+	}
+	inline jint ContactsContract_Directory::PHOTO_SUPPORT_NONE()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"PHOTO_SUPPORT_NONE"
+		);
+	}
+	inline jint ContactsContract_Directory::PHOTO_SUPPORT_THUMBNAIL_ONLY()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"PHOTO_SUPPORT_THUMBNAIL_ONLY"
+		);
+	}
+	inline JString ContactsContract_Directory::SHORTCUT_SUPPORT()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"SHORTCUT_SUPPORT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint ContactsContract_Directory::SHORTCUT_SUPPORT_DATA_ITEMS_ONLY()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"SHORTCUT_SUPPORT_DATA_ITEMS_ONLY"
+		);
+	}
+	inline jint ContactsContract_Directory::SHORTCUT_SUPPORT_FULL()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"SHORTCUT_SUPPORT_FULL"
+		);
+	}
+	inline jint ContactsContract_Directory::SHORTCUT_SUPPORT_NONE()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$Directory",
+			"SHORTCUT_SUPPORT_NONE"
+		);
+	}
+	inline JString ContactsContract_Directory::TYPE_RESOURCE_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Directory",
+			"TYPE_RESOURCE_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean ContactsContract_Directory::isEnterpriseDirectoryId(jlong arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.ContactsContract$Directory",
+			"isEnterpriseDirectoryId",
+			"(J)Z",
+			arg0
+		);
+	}
+	inline jboolean ContactsContract_Directory::isRemoteDirectoryId(jlong arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.ContactsContract$Directory",
+			"isRemoteDirectoryId",
+			"(J)Z",
+			arg0
+		);
+	}
+	inline void ContactsContract_Directory::notifyDirectoryChange(android::content::ContentResolver arg0)
+	{
+		callStaticMethod<void>(
+			"android.provider.ContactsContract$Directory",
+			"notifyDirectoryChange",
+			"(Landroid/content/ContentResolver;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,44 +1,113 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./TvTrackInfo.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./TvTrackInfo_Builder.def.hpp"
 
 namespace android::media::tv
 {
-	class TvTrackInfo;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-class JString;
-
-namespace android::media::tv
-{
-	class TvTrackInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline TvTrackInfo_Builder::TvTrackInfo_Builder(jint arg0, JString arg1)
+		: JObject(
+			"android.media.tv.TvTrackInfo$Builder",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::media::tv::TvTrackInfo TvTrackInfo_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TvTrackInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvTrackInfo_Builder(QJniObject obj);
-		
-		// Constructors
-		TvTrackInfo_Builder(jint arg0, JString arg1);
-		
-		// Methods
-		android::media::tv::TvTrackInfo build() const;
-		android::media::tv::TvTrackInfo_Builder setAudioChannelCount(jint arg0) const;
-		android::media::tv::TvTrackInfo_Builder setAudioSampleRate(jint arg0) const;
-		android::media::tv::TvTrackInfo_Builder setDescription(JString arg0) const;
-		android::media::tv::TvTrackInfo_Builder setExtra(android::os::Bundle arg0) const;
-		android::media::tv::TvTrackInfo_Builder setLanguage(JString arg0) const;
-		android::media::tv::TvTrackInfo_Builder setVideoActiveFormatDescription(jbyte arg0) const;
-		android::media::tv::TvTrackInfo_Builder setVideoFrameRate(jfloat arg0) const;
-		android::media::tv::TvTrackInfo_Builder setVideoHeight(jint arg0) const;
-		android::media::tv::TvTrackInfo_Builder setVideoPixelAspectRatio(jfloat arg0) const;
-		android::media::tv::TvTrackInfo_Builder setVideoWidth(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/tv/TvTrackInfo;"
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioChannelCount(jint arg0) const
+	{
+		return callObjectMethod(
+			"setAudioChannelCount",
+			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioSampleRate(jint arg0) const
+	{
+		return callObjectMethod(
+			"setAudioSampleRate",
+			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setDescription(JString arg0) const
+	{
+		return callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setExtra(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setExtra",
+			"(Landroid/os/Bundle;)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setLanguage(JString arg0) const
+	{
+		return callObjectMethod(
+			"setLanguage",
+			"(Ljava/lang/String;)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoActiveFormatDescription(jbyte arg0) const
+	{
+		return callObjectMethod(
+			"setVideoActiveFormatDescription",
+			"(B)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoFrameRate(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"setVideoFrameRate",
+			"(F)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoHeight(jint arg0) const
+	{
+		return callObjectMethod(
+			"setVideoHeight",
+			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoPixelAspectRatio(jfloat arg0) const
+	{
+		return callObjectMethod(
+			"setVideoPixelAspectRatio",
+			"(F)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoWidth(jint arg0) const
+	{
+		return callObjectMethod(
+			"setVideoWidth",
+			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
 } // namespace android::media::tv
+
+// Base class headers
 

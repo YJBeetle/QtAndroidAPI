@@ -1,30 +1,43 @@
 #pragma once
 
-#include "../view/View_BaseSavedState.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./TextView_SavedState.def.hpp"
 
 namespace android::widget
 {
-	class TextView_SavedState : public android::view::View_BaseSavedState
+	// Fields
+	inline JObject TextView_SavedState::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TextView_SavedState(const char *className, const char *sig, Ts...agv) : android::view::View_BaseSavedState(className, sig, std::forward<Ts>(agv)...) {}
-		TextView_SavedState(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.widget.TextView$SavedState",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString TextView_SavedState::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void TextView_SavedState::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/AbsSavedState.hpp"
+#include "../view/View_BaseSavedState.hpp"
 

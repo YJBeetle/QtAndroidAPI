@@ -1,28 +1,30 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./KeyguardManager.def.hpp"
+#include "./KeyguardManager_KeyguardLock.def.hpp"
 
 namespace android::app
 {
-	class KeyguardManager;
-}
-
-namespace android::app
-{
-	class KeyguardManager_KeyguardLock : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void KeyguardManager_KeyguardLock::disableKeyguard() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyguardManager_KeyguardLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyguardManager_KeyguardLock(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void disableKeyguard() const;
-		void reenableKeyguard() const;
-	};
+		callMethod<void>(
+			"disableKeyguard",
+			"()V"
+		);
+	}
+	inline void KeyguardManager_KeyguardLock::reenableKeyguard() const
+	{
+		callMethod<void>(
+			"reenableKeyguard",
+			"()V"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

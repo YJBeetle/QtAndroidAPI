@@ -1,44 +1,92 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class ClipDescription;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../content/ClipDescription.def.hpp"
+#include "../../net/Uri.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./InputContentInfo.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InputContentInfo : public JObject
+	// Fields
+	inline JObject InputContentInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InputContentInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputContentInfo(QJniObject obj);
-		
-		// Constructors
-		InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1);
-		InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1, android::net::Uri arg2);
-		
-		// Methods
-		jint describeContents() const;
-		android::net::Uri getContentUri() const;
-		android::content::ClipDescription getDescription() const;
-		android::net::Uri getLinkUri() const;
-		void releasePermission() const;
-		void requestPermission() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.inputmethod.InputContentInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline InputContentInfo::InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1)
+		: JObject(
+			"android.view.inputmethod.InputContentInfo",
+			"(Landroid/net/Uri;Landroid/content/ClipDescription;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline InputContentInfo::InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1, android::net::Uri arg2)
+		: JObject(
+			"android.view.inputmethod.InputContentInfo",
+			"(Landroid/net/Uri;Landroid/content/ClipDescription;Landroid/net/Uri;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline jint InputContentInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::net::Uri InputContentInfo::getContentUri() const
+	{
+		return callObjectMethod(
+			"getContentUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline android::content::ClipDescription InputContentInfo::getDescription() const
+	{
+		return callObjectMethod(
+			"getDescription",
+			"()Landroid/content/ClipDescription;"
+		);
+	}
+	inline android::net::Uri InputContentInfo::getLinkUri() const
+	{
+		return callObjectMethod(
+			"getLinkUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline void InputContentInfo::releasePermission() const
+	{
+		callMethod<void>(
+			"releasePermission",
+			"()V"
+		);
+	}
+	inline void InputContentInfo::requestPermission() const
+	{
+		callMethod<void>(
+			"requestPermission",
+			"()V"
+		);
+	}
+	inline void InputContentInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./SocketException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NoRouteToHostException.def.hpp"
 
 namespace java::net
 {
-	class NoRouteToHostException : public java::net::SocketException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoRouteToHostException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
-		NoRouteToHostException(QJniObject obj);
-		
-		// Constructors
-		NoRouteToHostException();
-		NoRouteToHostException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoRouteToHostException::NoRouteToHostException()
+		: java::net::SocketException(
+			"java.net.NoRouteToHostException",
+			"()V"
+		) {}
+	inline NoRouteToHostException::NoRouteToHostException(JString arg0)
+		: java::net::SocketException(
+			"java.net.NoRouteToHostException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
+#include "./SocketException.hpp"
 

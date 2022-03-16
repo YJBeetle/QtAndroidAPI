@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrawFilter.def.hpp"
 
 namespace android::graphics
 {
-	class DrawFilter : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DrawFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrawFilter(QJniObject obj);
-		
-		// Constructors
-		DrawFilter();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DrawFilter::DrawFilter()
+		: JObject(
+			"android.graphics.DrawFilter",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
 

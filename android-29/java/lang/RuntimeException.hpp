@@ -1,28 +1,42 @@
 #pragma once
 
-#include "./Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./RuntimeException.def.hpp"
 
 namespace java::lang
 {
-	class RuntimeException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RuntimeException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		RuntimeException(QJniObject obj);
-		
-		// Constructors
-		RuntimeException();
-		RuntimeException(JString arg0);
-		RuntimeException(JThrowable arg0);
-		RuntimeException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline RuntimeException::RuntimeException()
+		: java::lang::Exception(
+			"java.lang.RuntimeException",
+			"()V"
+		) {}
+	inline RuntimeException::RuntimeException(JString arg0)
+		: java::lang::Exception(
+			"java.lang.RuntimeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline RuntimeException::RuntimeException(JThrowable arg0)
+		: java::lang::Exception(
+			"java.lang.RuntimeException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline RuntimeException::RuntimeException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"java.lang.RuntimeException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
 

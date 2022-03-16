@@ -1,46 +1,124 @@
 #pragma once
 
+#include "../../JArray.hpp"
+#include "./Uri.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./ProxyInfo.def.hpp"
 
 namespace android::net
 {
-	class ProxyInfo : public JObject
+	// Fields
+	inline JObject ProxyInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ProxyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProxyInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::net::ProxyInfo buildDirectProxy(JString arg0, jint arg1);
-		static android::net::ProxyInfo buildDirectProxy(JString arg0, jint arg1, JObject arg2);
-		static android::net::ProxyInfo buildPacProxy(android::net::Uri arg0);
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JArray getExclusionList() const;
-		JString getHost() const;
-		android::net::Uri getPacFileUrl() const;
-		jint getPort() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.ProxyInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::ProxyInfo ProxyInfo::buildDirectProxy(JString arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.net.ProxyInfo",
+			"buildDirectProxy",
+			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline android::net::ProxyInfo ProxyInfo::buildDirectProxy(JString arg0, jint arg1, JObject arg2)
+	{
+		return callStaticObjectMethod(
+			"android.net.ProxyInfo",
+			"buildDirectProxy",
+			"(Ljava/lang/String;ILjava/util/List;)Landroid/net/ProxyInfo;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline android::net::ProxyInfo ProxyInfo::buildPacProxy(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.net.ProxyInfo",
+			"buildPacProxy",
+			"(Landroid/net/Uri;)Landroid/net/ProxyInfo;",
+			arg0.object()
+		);
+	}
+	inline jint ProxyInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean ProxyInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JArray ProxyInfo::getExclusionList() const
+	{
+		return callObjectMethod(
+			"getExclusionList",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JString ProxyInfo::getHost() const
+	{
+		return callObjectMethod(
+			"getHost",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ProxyInfo::getPacFileUrl() const
+	{
+		return callObjectMethod(
+			"getPacFileUrl",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jint ProxyInfo::getPort() const
+	{
+		return callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
+	inline jint ProxyInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString ProxyInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ProxyInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

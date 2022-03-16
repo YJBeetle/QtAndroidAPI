@@ -1,43 +1,128 @@
 #pragma once
 
-#include "./CellIdentity.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./CellIdentityGsm.def.hpp"
 
 namespace android::telephony
 {
-	class CellIdentityGsm : public android::telephony::CellIdentity
+	// Fields
+	inline JObject CellIdentityGsm::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CellIdentityGsm(const char *className, const char *sig, Ts...agv) : android::telephony::CellIdentity(className, sig, std::forward<Ts>(agv)...) {}
-		CellIdentityGsm(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getArfcn() const;
-		jint getBsic() const;
-		jint getCid() const;
-		jint getLac() const;
-		jint getMcc() const;
-		JString getMccString() const;
-		jint getMnc() const;
-		JString getMncString() const;
-		JString getMobileNetworkOperator() const;
-		jint getPsc() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.CellIdentityGsm",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean CellIdentityGsm::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint CellIdentityGsm::getArfcn() const
+	{
+		return callMethod<jint>(
+			"getArfcn",
+			"()I"
+		);
+	}
+	inline jint CellIdentityGsm::getBsic() const
+	{
+		return callMethod<jint>(
+			"getBsic",
+			"()I"
+		);
+	}
+	inline jint CellIdentityGsm::getCid() const
+	{
+		return callMethod<jint>(
+			"getCid",
+			"()I"
+		);
+	}
+	inline jint CellIdentityGsm::getLac() const
+	{
+		return callMethod<jint>(
+			"getLac",
+			"()I"
+		);
+	}
+	inline jint CellIdentityGsm::getMcc() const
+	{
+		return callMethod<jint>(
+			"getMcc",
+			"()I"
+		);
+	}
+	inline JString CellIdentityGsm::getMccString() const
+	{
+		return callObjectMethod(
+			"getMccString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint CellIdentityGsm::getMnc() const
+	{
+		return callMethod<jint>(
+			"getMnc",
+			"()I"
+		);
+	}
+	inline JString CellIdentityGsm::getMncString() const
+	{
+		return callObjectMethod(
+			"getMncString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString CellIdentityGsm::getMobileNetworkOperator() const
+	{
+		return callObjectMethod(
+			"getMobileNetworkOperator",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint CellIdentityGsm::getPsc() const
+	{
+		return callMethod<jint>(
+			"getPsc",
+			"()I"
+		);
+	}
+	inline jint CellIdentityGsm::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString CellIdentityGsm::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void CellIdentityGsm::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
+#include "./CellIdentity.hpp"
 

@@ -1,37 +1,63 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GnssClock.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./GnssMeasurementsEvent.def.hpp"
 
 namespace android::location
 {
-	class GnssClock;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::location
-{
-	class GnssMeasurementsEvent : public JObject
+	// Fields
+	inline JObject GnssMeasurementsEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GnssMeasurementsEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssMeasurementsEvent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::location::GnssClock getClock() const;
-		JObject getMeasurements() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.location.GnssMeasurementsEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint GnssMeasurementsEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::location::GnssClock GnssMeasurementsEvent::getClock() const
+	{
+		return callObjectMethod(
+			"getClock",
+			"()Landroid/location/GnssClock;"
+		);
+	}
+	inline JObject GnssMeasurementsEvent::getMeasurements() const
+	{
+		return callObjectMethod(
+			"getMeasurements",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JString GnssMeasurementsEvent::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void GnssMeasurementsEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

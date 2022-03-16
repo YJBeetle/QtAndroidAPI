@@ -1,38 +1,62 @@
 #pragma once
 
+#include "./MeasureUnit.def.hpp"
+#include "../../../java/lang/Number.def.hpp"
 #include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "./Measure.def.hpp"
 
 namespace android::icu::util
 {
-	class MeasureUnit;
-}
-namespace java::lang
-{
-	class Number;
-}
-class JObject;
-class JString;
-
-namespace android::icu::util
-{
-	class Measure : public JObject
+	// Fields
+	
+	// Constructors
+	inline Measure::Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1)
+		: JObject(
+			"android.icu.util.Measure",
+			"(Ljava/lang/Number;Landroid/icu/util/MeasureUnit;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jboolean Measure::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Measure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Measure(QJniObject obj);
-		
-		// Constructors
-		Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		java::lang::Number getNumber() const;
-		android::icu::util::MeasureUnit getUnit() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::lang::Number Measure::getNumber() const
+	{
+		return callObjectMethod(
+			"getNumber",
+			"()Ljava/lang/Number;"
+		);
+	}
+	inline android::icu::util::MeasureUnit Measure::getUnit() const
+	{
+		return callObjectMethod(
+			"getUnit",
+			"()Landroid/icu/util/MeasureUnit;"
+		);
+	}
+	inline jint Measure::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString Measure::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
 

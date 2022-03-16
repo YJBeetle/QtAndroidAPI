@@ -1,37 +1,62 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Point;
-}
-namespace android::graphics
-{
-	class Rect;
-}
+#include "../graphics/Point.def.hpp"
+#include "../graphics/Rect.def.hpp"
+#include "./Camera_Face.def.hpp"
 
 namespace android::hardware
 {
-	class Camera_Face : public JObject
+	// Fields
+	inline jint Camera_Face::id()
 	{
-	public:
-		// Fields
-		jint id();
-		android::graphics::Point leftEye();
-		android::graphics::Point mouth();
-		android::graphics::Rect rect();
-		android::graphics::Point rightEye();
-		jint score();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Camera_Face(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_Face(QJniObject obj);
-		
-		// Constructors
-		Camera_Face();
-		
-		// Methods
-	};
+		return getField<jint>(
+			"id"
+		);
+	}
+	inline android::graphics::Point Camera_Face::leftEye()
+	{
+		return getObjectField(
+			"leftEye",
+			"Landroid/graphics/Point;"
+		);
+	}
+	inline android::graphics::Point Camera_Face::mouth()
+	{
+		return getObjectField(
+			"mouth",
+			"Landroid/graphics/Point;"
+		);
+	}
+	inline android::graphics::Rect Camera_Face::rect()
+	{
+		return getObjectField(
+			"rect",
+			"Landroid/graphics/Rect;"
+		);
+	}
+	inline android::graphics::Point Camera_Face::rightEye()
+	{
+		return getObjectField(
+			"rightEye",
+			"Landroid/graphics/Point;"
+		);
+	}
+	inline jint Camera_Face::score()
+	{
+		return getField<jint>(
+			"score"
+		);
+	}
+	
+	// Constructors
+	inline Camera_Face::Camera_Face()
+		: JObject(
+			"android.hardware.Camera$Face",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::hardware
+
+// Base class headers
 

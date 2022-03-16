@@ -1,29 +1,38 @@
 #pragma once
 
-#include "./BaseInterpolator.hpp"
-
-namespace android::content
-{
-	class Context;
-}
+#include "../../content/Context.def.hpp"
+#include "./CycleInterpolator.def.hpp"
 
 namespace android::view::animation
 {
-	class CycleInterpolator : public android::view::animation::BaseInterpolator
+	// Fields
+	
+	// Constructors
+	inline CycleInterpolator::CycleInterpolator(jfloat arg0)
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.CycleInterpolator",
+			"(F)V",
+			arg0
+		) {}
+	inline CycleInterpolator::CycleInterpolator(android::content::Context arg0, JObject arg1)
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.CycleInterpolator",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jfloat CycleInterpolator::getInterpolation(jfloat arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CycleInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
-		CycleInterpolator(QJniObject obj);
-		
-		// Constructors
-		CycleInterpolator(jfloat arg0);
-		CycleInterpolator(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		jfloat getInterpolation(jfloat arg0) const;
-	};
+		return callMethod<jfloat>(
+			"getInterpolation",
+			"(F)F",
+			arg0
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./BaseInterpolator.hpp"
 

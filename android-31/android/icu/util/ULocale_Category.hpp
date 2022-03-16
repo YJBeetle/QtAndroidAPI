@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./ULocale_Category.def.hpp"
 
 namespace android::icu::util
 {
-	class ULocale_Category : public java::lang::Enum
+	// Fields
+	inline android::icu::util::ULocale_Category ULocale_Category::DISPLAY()
 	{
-	public:
-		// Fields
-		static android::icu::util::ULocale_Category DISPLAY();
-		static android::icu::util::ULocale_Category FORMAT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ULocale_Category(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale_Category(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::util::ULocale_Category valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.util.ULocale$Category",
+			"DISPLAY",
+			"Landroid/icu/util/ULocale$Category;"
+		);
+	}
+	inline android::icu::util::ULocale_Category ULocale_Category::FORMAT()
+	{
+		return getStaticObjectField(
+			"android.icu.util.ULocale$Category",
+			"FORMAT",
+			"Landroid/icu/util/ULocale$Category;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::util::ULocale_Category ULocale_Category::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.ULocale$Category",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/util/ULocale$Category;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ULocale_Category::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.ULocale$Category",
+			"values",
+			"()[Landroid/icu/util/ULocale$Category;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

@@ -1,48 +1,86 @@
 #pragma once
 
-#include "./CaseMap.hpp"
+#include "./BreakIterator.def.hpp"
+#include "./CaseMap.def.hpp"
+#include "./Edits.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./CaseMap_Title.def.hpp"
 
 namespace android::icu::text
 {
-	class BreakIterator;
-}
-namespace android::icu::text
-{
-	class CaseMap;
-}
-namespace android::icu::text
-{
-	class Edits;
-}
-class JString;
-class JString;
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::icu::text
-{
-	class CaseMap_Title : public android::icu::text::CaseMap
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::CaseMap_Title CaseMap_Title::adjustToCased() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CaseMap_Title(const char *className, const char *sig, Ts...agv) : android::icu::text::CaseMap(className, sig, std::forward<Ts>(agv)...) {}
-		CaseMap_Title(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::icu::text::CaseMap_Title adjustToCased() const;
-		JObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4) const;
-		JString apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2) const;
-		android::icu::text::CaseMap_Title noBreakAdjustment() const;
-		android::icu::text::CaseMap_Title noLowercase() const;
-		android::icu::text::CaseMap_Title omitUnchangedText() const;
-		android::icu::text::CaseMap_Title sentences() const;
-		android::icu::text::CaseMap_Title wholeString() const;
-	};
+		return callObjectMethod(
+			"adjustToCased",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
+	inline JObject CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4) const
+	{
+		return callObjectMethod(
+			"apply",
+			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;Ljava/lang/Appendable;Landroid/icu/text/Edits;)Ljava/lang/Appendable;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline JString CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2) const
+	{
+		return callObjectMethod(
+			"apply",
+			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;)Ljava/lang/String;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>()
+		);
+	}
+	inline android::icu::text::CaseMap_Title CaseMap_Title::noBreakAdjustment() const
+	{
+		return callObjectMethod(
+			"noBreakAdjustment",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
+	inline android::icu::text::CaseMap_Title CaseMap_Title::noLowercase() const
+	{
+		return callObjectMethod(
+			"noLowercase",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
+	inline android::icu::text::CaseMap_Title CaseMap_Title::omitUnchangedText() const
+	{
+		return callObjectMethod(
+			"omitUnchangedText",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
+	inline android::icu::text::CaseMap_Title CaseMap_Title::sentences() const
+	{
+		return callObjectMethod(
+			"sentences",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
+	inline android::icu::text::CaseMap_Title CaseMap_Title::wholeString() const
+	{
+		return callObjectMethod(
+			"wholeString",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "./CaseMap.hpp"
 

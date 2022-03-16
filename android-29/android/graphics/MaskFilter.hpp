@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MaskFilter.def.hpp"
 
 namespace android::graphics
 {
-	class MaskFilter : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MaskFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MaskFilter(QJniObject obj);
-		
-		// Constructors
-		MaskFilter();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MaskFilter::MaskFilter()
+		: JObject(
+			"android.graphics.MaskFilter",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
 

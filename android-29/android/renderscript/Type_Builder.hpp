@@ -1,42 +1,80 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Element.def.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Type.def.hpp"
+#include "./Type_Builder.def.hpp"
 
 namespace android::renderscript
 {
-	class Element;
-}
-namespace android::renderscript
-{
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Type;
-}
-
-namespace android::renderscript
-{
-	class Type_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline Type_Builder::Type_Builder(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
+		: JObject(
+			"android.renderscript.Type$Builder",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::renderscript::Type Type_Builder::create() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Type_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Type_Builder(QJniObject obj);
-		
-		// Constructors
-		Type_Builder(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
-		
-		// Methods
-		android::renderscript::Type create() const;
-		android::renderscript::Type_Builder setFaces(jboolean arg0) const;
-		android::renderscript::Type_Builder setMipmaps(jboolean arg0) const;
-		android::renderscript::Type_Builder setX(jint arg0) const;
-		android::renderscript::Type_Builder setY(jint arg0) const;
-		android::renderscript::Type_Builder setYuvFormat(jint arg0) const;
-		android::renderscript::Type_Builder setZ(jint arg0) const;
-	};
+		return callObjectMethod(
+			"create",
+			"()Landroid/renderscript/Type;"
+		);
+	}
+	inline android::renderscript::Type_Builder Type_Builder::setFaces(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setFaces",
+			"(Z)Landroid/renderscript/Type$Builder;",
+			arg0
+		);
+	}
+	inline android::renderscript::Type_Builder Type_Builder::setMipmaps(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setMipmaps",
+			"(Z)Landroid/renderscript/Type$Builder;",
+			arg0
+		);
+	}
+	inline android::renderscript::Type_Builder Type_Builder::setX(jint arg0) const
+	{
+		return callObjectMethod(
+			"setX",
+			"(I)Landroid/renderscript/Type$Builder;",
+			arg0
+		);
+	}
+	inline android::renderscript::Type_Builder Type_Builder::setY(jint arg0) const
+	{
+		return callObjectMethod(
+			"setY",
+			"(I)Landroid/renderscript/Type$Builder;",
+			arg0
+		);
+	}
+	inline android::renderscript::Type_Builder Type_Builder::setYuvFormat(jint arg0) const
+	{
+		return callObjectMethod(
+			"setYuvFormat",
+			"(I)Landroid/renderscript/Type$Builder;",
+			arg0
+		);
+	}
+	inline android::renderscript::Type_Builder Type_Builder::setZ(jint arg0) const
+	{
+		return callObjectMethod(
+			"setZ",
+			"(I)Landroid/renderscript/Type$Builder;",
+			arg0
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
 

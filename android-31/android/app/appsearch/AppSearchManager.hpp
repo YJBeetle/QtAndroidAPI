@@ -1,28 +1,35 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AppSearchManager_SearchContext.def.hpp"
+#include "./AppSearchManager.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchManager_SearchContext;
-}
-
-namespace android::app::appsearch
-{
-	class AppSearchManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AppSearchManager::createGlobalSearchSession(JObject arg0, JObject arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void createGlobalSearchSession(JObject arg0, JObject arg1) const;
-		void createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, JObject arg1, JObject arg2) const;
-	};
+		callMethod<void>(
+			"createGlobalSearchSession",
+			"(Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void AppSearchManager::createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, JObject arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"createSearchSession",
+			"(Landroid/app/appsearch/AppSearchManager$SearchContext;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

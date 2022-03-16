@@ -1,42 +1,90 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view::animation
-{
-	class Animation;
-}
-namespace android::view::animation
-{
-	class LayoutAnimationController;
-}
+#include "../../content/Context.def.hpp"
+#include "./Animation.def.hpp"
+#include "./LayoutAnimationController.def.hpp"
+#include "./AnimationUtils.def.hpp"
 
 namespace android::view::animation
 {
-	class AnimationUtils : public JObject
+	// Fields
+	
+	// Constructors
+	inline AnimationUtils::AnimationUtils()
+		: JObject(
+			"android.view.animation.AnimationUtils",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jlong AnimationUtils::currentAnimationTimeMillis()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AnimationUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AnimationUtils(QJniObject obj);
-		
-		// Constructors
-		AnimationUtils();
-		
-		// Methods
-		static jlong currentAnimationTimeMillis();
-		static android::view::animation::Animation loadAnimation(android::content::Context arg0, jint arg1);
-		static JObject loadInterpolator(android::content::Context arg0, jint arg1);
-		static android::view::animation::LayoutAnimationController loadLayoutAnimation(android::content::Context arg0, jint arg1);
-		static android::view::animation::Animation makeInAnimation(android::content::Context arg0, jboolean arg1);
-		static android::view::animation::Animation makeInChildBottomAnimation(android::content::Context arg0);
-		static android::view::animation::Animation makeOutAnimation(android::content::Context arg0, jboolean arg1);
-	};
+		return callStaticMethod<jlong>(
+			"android.view.animation.AnimationUtils",
+			"currentAnimationTimeMillis",
+			"()J"
+		);
+	}
+	inline android::view::animation::Animation AnimationUtils::loadAnimation(android::content::Context arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"loadAnimation",
+			"(Landroid/content/Context;I)Landroid/view/animation/Animation;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline JObject AnimationUtils::loadInterpolator(android::content::Context arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"loadInterpolator",
+			"(Landroid/content/Context;I)Landroid/view/animation/Interpolator;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::view::animation::LayoutAnimationController AnimationUtils::loadLayoutAnimation(android::content::Context arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"loadLayoutAnimation",
+			"(Landroid/content/Context;I)Landroid/view/animation/LayoutAnimationController;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::view::animation::Animation AnimationUtils::makeInAnimation(android::content::Context arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"makeInAnimation",
+			"(Landroid/content/Context;Z)Landroid/view/animation/Animation;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::view::animation::Animation AnimationUtils::makeInChildBottomAnimation(android::content::Context arg0)
+	{
+		return callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"makeInChildBottomAnimation",
+			"(Landroid/content/Context;)Landroid/view/animation/Animation;",
+			arg0.object()
+		);
+	}
+	inline android::view::animation::Animation AnimationUtils::makeOutAnimation(android::content::Context arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"makeOutAnimation",
+			"(Landroid/content/Context;Z)Landroid/view/animation/Animation;",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
 

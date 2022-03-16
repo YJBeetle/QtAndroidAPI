@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../java/io/IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MalformedJsonException.def.hpp"
 
 namespace android::util
 {
-	class MalformedJsonException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MalformedJsonException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		MalformedJsonException(QJniObject obj);
-		
-		// Constructors
-		MalformedJsonException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MalformedJsonException::MalformedJsonException(JString arg0)
+		: java::io::IOException(
+			"android.util.MalformedJsonException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/io/IOException.hpp"
 

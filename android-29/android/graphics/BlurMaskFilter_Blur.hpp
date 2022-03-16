@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./BlurMaskFilter_Blur.def.hpp"
 
 namespace android::graphics
 {
-	class BlurMaskFilter_Blur : public java::lang::Enum
+	// Fields
+	inline android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::INNER()
 	{
-	public:
-		// Fields
-		static android::graphics::BlurMaskFilter_Blur INNER();
-		static android::graphics::BlurMaskFilter_Blur NORMAL();
-		static android::graphics::BlurMaskFilter_Blur OUTER();
-		static android::graphics::BlurMaskFilter_Blur SOLID();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BlurMaskFilter_Blur(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		BlurMaskFilter_Blur(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::BlurMaskFilter_Blur valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.BlurMaskFilter$Blur",
+			"INNER",
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
+	}
+	inline android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::NORMAL()
+	{
+		return getStaticObjectField(
+			"android.graphics.BlurMaskFilter$Blur",
+			"NORMAL",
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
+	}
+	inline android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::OUTER()
+	{
+		return getStaticObjectField(
+			"android.graphics.BlurMaskFilter$Blur",
+			"OUTER",
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
+	}
+	inline android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::SOLID()
+	{
+		return getStaticObjectField(
+			"android.graphics.BlurMaskFilter$Blur",
+			"SOLID",
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BlurMaskFilter$Blur",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/BlurMaskFilter$Blur;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray BlurMaskFilter_Blur::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BlurMaskFilter$Blur",
+			"values",
+			"()[Landroid/graphics/BlurMaskFilter$Blur;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

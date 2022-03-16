@@ -1,32 +1,34 @@
 #pragma once
 
-#include "./VoiceInteractor_Request.hpp"
+#include "./VoiceInteractor_Prompt.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./VoiceInteractor_ConfirmationRequest.def.hpp"
 
 namespace android::app
 {
-	class VoiceInteractor_Prompt;
-}
-namespace android::os
-{
-	class Bundle;
-}
-
-namespace android::app
-{
-	class VoiceInteractor_ConfirmationRequest : public android::app::VoiceInteractor_Request
+	// Fields
+	
+	// Constructors
+	inline VoiceInteractor_ConfirmationRequest::VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1)
+		: android::app::VoiceInteractor_Request(
+			"android.app.VoiceInteractor$ConfirmationRequest",
+			"(Landroid/app/VoiceInteractor$Prompt;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void VoiceInteractor_ConfirmationRequest::onConfirmationResult(jboolean arg0, android::os::Bundle arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractor_ConfirmationRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_ConfirmationRequest(QJniObject obj);
-		
-		// Constructors
-		VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
-		
-		// Methods
-		void onConfirmationResult(jboolean arg0, android::os::Bundle arg1) const;
-	};
+		callMethod<void>(
+			"onConfirmationResult",
+			"(ZLandroid/os/Bundle;)V",
+			arg0,
+			arg1.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./VoiceInteractor_Request.hpp"
 

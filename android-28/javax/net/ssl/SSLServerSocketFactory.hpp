@@ -1,30 +1,40 @@
 #pragma once
 
-#include "../ServerSocketFactory.hpp"
-
-class JArray;
-namespace javax::net
-{
-	class ServerSocketFactory;
-}
+#include "../../../JArray.hpp"
+#include "../ServerSocketFactory.def.hpp"
+#include "./SSLServerSocketFactory.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLServerSocketFactory : public javax::net::ServerSocketFactory
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline javax::net::ServerSocketFactory SSLServerSocketFactory::getDefault()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SSLServerSocketFactory(const char *className, const char *sig, Ts...agv) : javax::net::ServerSocketFactory(className, sig, std::forward<Ts>(agv)...) {}
-		SSLServerSocketFactory(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static javax::net::ServerSocketFactory getDefault();
-		JArray getDefaultCipherSuites() const;
-		JArray getSupportedCipherSuites() const;
-	};
+		return callStaticObjectMethod(
+			"javax.net.ssl.SSLServerSocketFactory",
+			"getDefault",
+			"()Ljavax/net/ServerSocketFactory;"
+		);
+	}
+	inline JArray SSLServerSocketFactory::getDefaultCipherSuites() const
+	{
+		return callObjectMethod(
+			"getDefaultCipherSuites",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray SSLServerSocketFactory::getSupportedCipherSuites() const
+	{
+		return callObjectMethod(
+			"getSupportedCipherSuites",
+			"()[Ljava/lang/String;"
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../ServerSocketFactory.hpp"
 

@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
+#include "../../../JByteArray.hpp"
+#include "./CarrierMessagingService_SendMmsResult.def.hpp"
 
 namespace android::service::carrier
 {
-	class CarrierMessagingService_SendMmsResult : public JObject
+	// Fields
+	
+	// Constructors
+	inline CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(jint arg0, JByteArray arg1)
+		: JObject(
+			"android.service.carrier.CarrierMessagingService$SendMmsResult",
+			"(I[B)V",
+			arg0,
+			arg1.object<jbyteArray>()
+		) {}
+	
+	// Methods
+	inline JByteArray CarrierMessagingService_SendMmsResult::getSendConfPdu() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CarrierMessagingService_SendMmsResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierMessagingService_SendMmsResult(QJniObject obj);
-		
-		// Constructors
-		CarrierMessagingService_SendMmsResult(jint arg0, JByteArray arg1);
-		
-		// Methods
-		JByteArray getSendConfPdu() const;
-		jint getSendStatus() const;
-	};
+		return callObjectMethod(
+			"getSendConfPdu",
+			"()[B"
+		);
+	}
+	inline jint CarrierMessagingService_SendMmsResult::getSendStatus() const
+	{
+		return callMethod<jint>(
+			"getSendStatus",
+			"()I"
+		);
+	}
 } // namespace android::service::carrier
+
+// Base class headers
 

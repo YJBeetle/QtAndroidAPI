@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./KeyPair.def.hpp"
 
 namespace java::security
 {
-	class KeyPair : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyPair::KeyPair(JObject arg0, JObject arg1)
+		: JObject(
+			"java.security.KeyPair",
+			"(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject KeyPair::getPrivate() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyPair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyPair(QJniObject obj);
-		
-		// Constructors
-		KeyPair(JObject arg0, JObject arg1);
-		
-		// Methods
-		JObject getPrivate() const;
-		JObject getPublic() const;
-	};
+		return callObjectMethod(
+			"getPrivate",
+			"()Ljava/security/PrivateKey;"
+		);
+	}
+	inline JObject KeyPair::getPublic() const
+	{
+		return callObjectMethod(
+			"getPublic",
+			"()Ljava/security/PublicKey;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

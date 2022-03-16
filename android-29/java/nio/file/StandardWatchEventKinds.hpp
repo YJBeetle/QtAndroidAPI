@@ -1,25 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./StandardWatchEventKinds.def.hpp"
 
 namespace java::nio::file
 {
-	class StandardWatchEventKinds : public JObject
+	// Fields
+	inline JObject StandardWatchEventKinds::ENTRY_CREATE()
 	{
-	public:
-		// Fields
-		static JObject ENTRY_CREATE();
-		static JObject ENTRY_DELETE();
-		static JObject ENTRY_MODIFY();
-		static JObject OVERFLOW();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StandardWatchEventKinds(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StandardWatchEventKinds(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"java.nio.file.StandardWatchEventKinds",
+			"ENTRY_CREATE",
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
+	}
+	inline JObject StandardWatchEventKinds::ENTRY_DELETE()
+	{
+		return getStaticObjectField(
+			"java.nio.file.StandardWatchEventKinds",
+			"ENTRY_DELETE",
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
+	}
+	inline JObject StandardWatchEventKinds::ENTRY_MODIFY()
+	{
+		return getStaticObjectField(
+			"java.nio.file.StandardWatchEventKinds",
+			"ENTRY_MODIFY",
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
+	}
+	inline JObject StandardWatchEventKinds::OVERFLOW()
+	{
+		return getStaticObjectField(
+			"java.nio.file.StandardWatchEventKinds",
+			"OVERFLOW",
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
 

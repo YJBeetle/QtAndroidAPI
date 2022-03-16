@@ -1,31 +1,70 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./Pair.def.hpp"
 
 namespace android::util
 {
-	class Pair : public JObject
+	// Fields
+	inline JObject Pair::first()
 	{
-	public:
-		// Fields
-		JObject first();
-		JObject second();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Pair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Pair(QJniObject obj);
-		
-		// Constructors
-		Pair(JObject arg0, JObject arg1);
-		
-		// Methods
-		static android::util::Pair create(JObject arg0, JObject arg1);
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getObjectField(
+			"first",
+			"Ljava/lang/Object;"
+		);
+	}
+	inline JObject Pair::second()
+	{
+		return getObjectField(
+			"second",
+			"Ljava/lang/Object;"
+		);
+	}
+	
+	// Constructors
+	inline Pair::Pair(JObject arg0, JObject arg1)
+		: JObject(
+			"android.util.Pair",
+			"(Ljava/lang/Object;Ljava/lang/Object;)V",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		) {}
+	
+	// Methods
+	inline android::util::Pair Pair::create(JObject arg0, JObject arg1)
+	{
+		return callStaticObjectMethod(
+			"android.util.Pair",
+			"create",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline jboolean Pair::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Pair::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString Pair::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

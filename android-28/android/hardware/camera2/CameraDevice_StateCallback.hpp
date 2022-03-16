@@ -1,36 +1,89 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CameraDevice.def.hpp"
+#include "./CameraDevice_StateCallback.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CameraDevice;
-}
-
-namespace android::hardware::camera2
-{
-	class CameraDevice_StateCallback : public JObject
+	// Fields
+	inline jint CameraDevice_StateCallback::ERROR_CAMERA_DEVICE()
 	{
-	public:
-		// Fields
-		static jint ERROR_CAMERA_DEVICE();
-		static jint ERROR_CAMERA_DISABLED();
-		static jint ERROR_CAMERA_IN_USE();
-		static jint ERROR_CAMERA_SERVICE();
-		static jint ERROR_MAX_CAMERAS_IN_USE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CameraDevice_StateCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraDevice_StateCallback(QJniObject obj);
-		
-		// Constructors
-		CameraDevice_StateCallback();
-		
-		// Methods
-		void onClosed(android::hardware::camera2::CameraDevice arg0) const;
-		void onDisconnected(android::hardware::camera2::CameraDevice arg0) const;
-		void onError(android::hardware::camera2::CameraDevice arg0, jint arg1) const;
-		void onOpened(android::hardware::camera2::CameraDevice arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice$StateCallback",
+			"ERROR_CAMERA_DEVICE"
+		);
+	}
+	inline jint CameraDevice_StateCallback::ERROR_CAMERA_DISABLED()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice$StateCallback",
+			"ERROR_CAMERA_DISABLED"
+		);
+	}
+	inline jint CameraDevice_StateCallback::ERROR_CAMERA_IN_USE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice$StateCallback",
+			"ERROR_CAMERA_IN_USE"
+		);
+	}
+	inline jint CameraDevice_StateCallback::ERROR_CAMERA_SERVICE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice$StateCallback",
+			"ERROR_CAMERA_SERVICE"
+		);
+	}
+	inline jint CameraDevice_StateCallback::ERROR_MAX_CAMERAS_IN_USE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice$StateCallback",
+			"ERROR_MAX_CAMERAS_IN_USE"
+		);
+	}
+	
+	// Constructors
+	inline CameraDevice_StateCallback::CameraDevice_StateCallback()
+		: JObject(
+			"android.hardware.camera2.CameraDevice$StateCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CameraDevice_StateCallback::onClosed(android::hardware::camera2::CameraDevice arg0) const
+	{
+		callMethod<void>(
+			"onClosed",
+			"(Landroid/hardware/camera2/CameraDevice;)V",
+			arg0.object()
+		);
+	}
+	inline void CameraDevice_StateCallback::onDisconnected(android::hardware::camera2::CameraDevice arg0) const
+	{
+		callMethod<void>(
+			"onDisconnected",
+			"(Landroid/hardware/camera2/CameraDevice;)V",
+			arg0.object()
+		);
+	}
+	inline void CameraDevice_StateCallback::onError(android::hardware::camera2::CameraDevice arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onError",
+			"(Landroid/hardware/camera2/CameraDevice;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void CameraDevice_StateCallback::onOpened(android::hardware::camera2::CameraDevice arg0) const
+	{
+		callMethod<void>(
+			"onOpened",
+			"(Landroid/hardware/camera2/CameraDevice;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
 

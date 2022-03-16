@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./LinkageError.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NoClassDefFoundError.def.hpp"
 
 namespace java::lang
 {
-	class NoClassDefFoundError : public java::lang::LinkageError
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoClassDefFoundError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		NoClassDefFoundError(QJniObject obj);
-		
-		// Constructors
-		NoClassDefFoundError();
-		NoClassDefFoundError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoClassDefFoundError::NoClassDefFoundError()
+		: java::lang::LinkageError(
+			"java.lang.NoClassDefFoundError",
+			"()V"
+		) {}
+	inline NoClassDefFoundError::NoClassDefFoundError(JString arg0)
+		: java::lang::LinkageError(
+			"java.lang.NoClassDefFoundError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./LinkageError.hpp"
 

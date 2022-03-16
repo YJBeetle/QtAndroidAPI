@@ -1,35 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TracingConfig.def.hpp"
+#include "../../java/io/OutputStream.def.hpp"
+#include "./TracingController.def.hpp"
 
 namespace android::webkit
 {
-	class TracingConfig;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-
-namespace android::webkit
-{
-	class TracingController : public JObject
+	// Fields
+	
+	// Constructors
+	inline TracingController::TracingController()
+		: JObject(
+			"android.webkit.TracingController",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::webkit::TracingController TracingController::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TracingController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TracingController(QJniObject obj);
-		
-		// Constructors
-		TracingController();
-		
-		// Methods
-		static android::webkit::TracingController getInstance();
-		jboolean isTracing() const;
-		void start(android::webkit::TracingConfig arg0) const;
-		jboolean stop(java::io::OutputStream arg0, JObject arg1) const;
-	};
+		return callStaticObjectMethod(
+			"android.webkit.TracingController",
+			"getInstance",
+			"()Landroid/webkit/TracingController;"
+		);
+	}
+	inline jboolean TracingController::isTracing() const
+	{
+		return callMethod<jboolean>(
+			"isTracing",
+			"()Z"
+		);
+	}
+	inline void TracingController::start(android::webkit::TracingConfig arg0) const
+	{
+		callMethod<void>(
+			"start",
+			"(Landroid/webkit/TracingConfig;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean TracingController::stop(java::io::OutputStream arg0, JObject arg1) const
+	{
+		return callMethod<jboolean>(
+			"stop",
+			"(Ljava/io/OutputStream;Ljava/util/concurrent/Executor;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

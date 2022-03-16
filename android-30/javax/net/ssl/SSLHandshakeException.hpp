@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./SSLException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SSLHandshakeException.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLHandshakeException : public javax::net::ssl::SSLException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SSLHandshakeException(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SSLException(className, sig, std::forward<Ts>(agv)...) {}
-		SSLHandshakeException(QJniObject obj);
-		
-		// Constructors
-		SSLHandshakeException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SSLHandshakeException::SSLHandshakeException(JString arg0)
+		: javax::net::ssl::SSLException(
+			"javax.net.ssl.SSLHandshakeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/io/IOException.hpp"
+#include "./SSLException.hpp"
 

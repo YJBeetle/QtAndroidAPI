@@ -1,35 +1,71 @@
 #pragma once
 
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./TextClassificationSessionId.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextClassificationSessionId : public JObject
+	// Fields
+	inline JObject TextClassificationSessionId::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TextClassificationSessionId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassificationSessionId(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JString getValue() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.textclassifier.TextClassificationSessionId",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint TextClassificationSessionId::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean TextClassificationSessionId::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString TextClassificationSessionId::getValue() const
+	{
+		return callObjectMethod(
+			"getValue",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint TextClassificationSessionId::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString TextClassificationSessionId::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void TextClassificationSessionId::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

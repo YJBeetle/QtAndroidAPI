@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JClass;
+#include "../../JClass.hpp"
+#include "./Void.def.hpp"
 
 namespace java::lang
 {
-	class Void : public JObject
+	// Fields
+	inline JClass Void::TYPE()
 	{
-	public:
-		// Fields
-		static JClass TYPE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Void(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Void(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"java.lang.Void",
+			"TYPE",
+			"Ljava/lang/Class;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
 

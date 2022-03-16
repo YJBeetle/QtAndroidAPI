@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class IntentSender;
-}
-class JString;
+#include "../content/IntentSender.def.hpp"
+#include "../../JString.hpp"
+#include "./CompanionDeviceManager_Callback.def.hpp"
 
 namespace android::companion
 {
-	class CompanionDeviceManager_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline CompanionDeviceManager_Callback::CompanionDeviceManager_Callback()
+		: JObject(
+			"android.companion.CompanionDeviceManager$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CompanionDeviceManager_Callback::onDeviceFound(android::content::IntentSender arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CompanionDeviceManager_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CompanionDeviceManager_Callback(QJniObject obj);
-		
-		// Constructors
-		CompanionDeviceManager_Callback();
-		
-		// Methods
-		void onDeviceFound(android::content::IntentSender arg0) const;
-		void onFailure(JString arg0) const;
-	};
+		callMethod<void>(
+			"onDeviceFound",
+			"(Landroid/content/IntentSender;)V",
+			arg0.object()
+		);
+	}
+	inline void CompanionDeviceManager_Callback::onFailure(JString arg0) const
+	{
+		callMethod<void>(
+			"onFailure",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::companion
+
+// Base class headers
 

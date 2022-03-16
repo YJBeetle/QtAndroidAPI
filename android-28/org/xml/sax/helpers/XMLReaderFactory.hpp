@@ -1,31 +1,36 @@
 #pragma once
 
+#include "../../../../JClass.hpp"
+#include "../../../../java/lang/ClassLoader.def.hpp"
 #include "../../../../JObject.hpp"
-
-class JClass;
-namespace java::lang
-{
-	class ClassLoader;
-}
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./XMLReaderFactory.def.hpp"
 
 namespace org::xml::sax::helpers
 {
-	class XMLReaderFactory : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject XMLReaderFactory::createXMLReader()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit XMLReaderFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XMLReaderFactory(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject createXMLReader();
-		static JObject createXMLReader(JString arg0);
-	};
+		return callStaticObjectMethod(
+			"org.xml.sax.helpers.XMLReaderFactory",
+			"createXMLReader",
+			"()Lorg/xml/sax/XMLReader;"
+		);
+	}
+	inline JObject XMLReaderFactory::createXMLReader(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"org.xml.sax.helpers.XMLReaderFactory",
+			"createXMLReader",
+			"(Ljava/lang/String;)Lorg/xml/sax/XMLReader;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace org::xml::sax::helpers
+
+// Base class headers
 

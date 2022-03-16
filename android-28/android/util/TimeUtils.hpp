@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::util
-{
-	class TimeZone;
-}
+#include "../../JString.hpp"
+#include "../../java/util/TimeZone.def.hpp"
+#include "./TimeUtils.def.hpp"
 
 namespace android::util
 {
-	class TimeUtils : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::TimeZone TimeUtils::getTimeZone(jint arg0, jboolean arg1, jlong arg2, JString arg3)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TimeUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimeUtils(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::util::TimeZone getTimeZone(jint arg0, jboolean arg1, jlong arg2, JString arg3);
-		static JString getTimeZoneDatabaseVersion();
-	};
+		return callStaticObjectMethod(
+			"android.util.TimeUtils",
+			"getTimeZone",
+			"(IZJLjava/lang/String;)Ljava/util/TimeZone;",
+			arg0,
+			arg1,
+			arg2,
+			arg3.object<jstring>()
+		);
+	}
+	inline JString TimeUtils::getTimeZoneDatabaseVersion()
+	{
+		return callStaticObjectMethod(
+			"android.util.TimeUtils",
+			"getTimeZoneDatabaseVersion",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

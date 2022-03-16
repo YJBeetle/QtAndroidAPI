@@ -1,22 +1,21 @@
 #pragma once
 
-#include "./Error.hpp"
+#include "./ThreadDeath.def.hpp"
 
 namespace java::lang
 {
-	class ThreadDeath : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ThreadDeath(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadDeath(QJniObject obj);
-		
-		// Constructors
-		ThreadDeath();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ThreadDeath::ThreadDeath()
+		: java::lang::Error(
+			"java.lang.ThreadDeath",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
 

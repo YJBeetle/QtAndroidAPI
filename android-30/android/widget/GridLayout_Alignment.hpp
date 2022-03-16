@@ -1,21 +1,15 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GridLayout_Alignment.def.hpp"
 
 namespace android::widget
 {
-	class GridLayout_Alignment : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GridLayout_Alignment(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayout_Alignment(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::widget
+
+// Base class headers
 

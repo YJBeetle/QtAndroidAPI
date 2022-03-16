@@ -1,38 +1,105 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-class JString;
+#include "../../content/Intent.def.hpp"
+#include "../../../JString.hpp"
+#include "./RoleManager.def.hpp"
 
 namespace android::app::role
 {
-	class RoleManager : public JObject
+	// Fields
+	inline JString RoleManager::ROLE_ASSISTANT()
 	{
-	public:
-		// Fields
-		static JString ROLE_ASSISTANT();
-		static JString ROLE_BROWSER();
-		static JString ROLE_CALL_REDIRECTION();
-		static JString ROLE_CALL_SCREENING();
-		static JString ROLE_DIALER();
-		static JString ROLE_EMERGENCY();
-		static JString ROLE_HOME();
-		static JString ROLE_SMS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RoleManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RoleManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::content::Intent createRequestRoleIntent(JString arg0) const;
-		jboolean isRoleAvailable(JString arg0) const;
-		jboolean isRoleHeld(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_ASSISTANT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RoleManager::ROLE_BROWSER()
+	{
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_BROWSER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RoleManager::ROLE_CALL_REDIRECTION()
+	{
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_CALL_REDIRECTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RoleManager::ROLE_CALL_SCREENING()
+	{
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_CALL_SCREENING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RoleManager::ROLE_DIALER()
+	{
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_DIALER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RoleManager::ROLE_EMERGENCY()
+	{
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_EMERGENCY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RoleManager::ROLE_HOME()
+	{
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_HOME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RoleManager::ROLE_SMS()
+	{
+		return getStaticObjectField(
+			"android.app.role.RoleManager",
+			"ROLE_SMS",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::content::Intent RoleManager::createRequestRoleIntent(JString arg0) const
+	{
+		return callObjectMethod(
+			"createRequestRoleIntent",
+			"(Ljava/lang/String;)Landroid/content/Intent;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean RoleManager::isRoleAvailable(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"isRoleAvailable",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean RoleManager::isRoleHeld(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"isRoleHeld",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::app::role
+
+// Base class headers
 

@@ -1,24 +1,25 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UserManager_UserOperationException.def.hpp"
 
 namespace android::os
 {
-	class UserManager_UserOperationException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint UserManager_UserOperationException::getUserOperationResult() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UserManager_UserOperationException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UserManager_UserOperationException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint getUserOperationResult() const;
-	};
+		return callMethod<jint>(
+			"getUserOperationResult",
+			"()I"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

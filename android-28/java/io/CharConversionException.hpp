@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./CharConversionException.def.hpp"
 
 namespace java::io
 {
-	class CharConversionException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CharConversionException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		CharConversionException(QJniObject obj);
-		
-		// Constructors
-		CharConversionException();
-		CharConversionException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CharConversionException::CharConversionException()
+		: java::io::IOException(
+			"java.io.CharConversionException",
+			"()V"
+		) {}
+	inline CharConversionException::CharConversionException(JString arg0)
+		: java::io::IOException(
+			"java.io.CharConversionException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
 

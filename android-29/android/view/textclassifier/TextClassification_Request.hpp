@@ -1,50 +1,94 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class LocaleList;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-class JString;
-namespace java::time
-{
-	class ZonedDateTime;
-}
+#include "../../os/Bundle.def.hpp"
+#include "../../os/LocaleList.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/time/ZonedDateTime.def.hpp"
+#include "./TextClassification_Request.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextClassification_Request : public JObject
+	// Fields
+	inline JObject TextClassification_Request::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TextClassification_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassification_Request(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString getCallingPackageName() const;
-		android::os::LocaleList getDefaultLocales() const;
-		jint getEndIndex() const;
-		android::os::Bundle getExtras() const;
-		java::time::ZonedDateTime getReferenceTime() const;
-		jint getStartIndex() const;
-		JString getText() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.textclassifier.TextClassification$Request",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint TextClassification_Request::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString TextClassification_Request::getCallingPackageName() const
+	{
+		return callObjectMethod(
+			"getCallingPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::os::LocaleList TextClassification_Request::getDefaultLocales() const
+	{
+		return callObjectMethod(
+			"getDefaultLocales",
+			"()Landroid/os/LocaleList;"
+		);
+	}
+	inline jint TextClassification_Request::getEndIndex() const
+	{
+		return callMethod<jint>(
+			"getEndIndex",
+			"()I"
+		);
+	}
+	inline android::os::Bundle TextClassification_Request::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline java::time::ZonedDateTime TextClassification_Request::getReferenceTime() const
+	{
+		return callObjectMethod(
+			"getReferenceTime",
+			"()Ljava/time/ZonedDateTime;"
+		);
+	}
+	inline jint TextClassification_Request::getStartIndex() const
+	{
+		return callMethod<jint>(
+			"getStartIndex",
+			"()I"
+		);
+	}
+	inline JString TextClassification_Request::getText() const
+	{
+		return callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline void TextClassification_Request::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

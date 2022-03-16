@@ -1,47 +1,72 @@
 #pragma once
 
+#include "../../JArray.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-class JObject;
-class JString;
-namespace java::lang
-{
-	class StringBuffer;
-}
-namespace java::text
-{
-	class AttributedCharacterIterator_Attribute;
-}
-namespace java::text
-{
-	class FieldPosition;
-}
-namespace java::text
-{
-	class ParsePosition;
-}
+#include "../../JString.hpp"
+#include "../lang/StringBuffer.def.hpp"
+#include "./AttributedCharacterIterator_Attribute.def.hpp"
+#include "./FieldPosition.def.hpp"
+#include "./ParsePosition.def.hpp"
+#include "./Format.def.hpp"
 
 namespace java::text
 {
-	class Format : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject Format::clone() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Format(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Format(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject clone() const;
-		JString format(JObject arg0) const;
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
-		JObject formatToCharacterIterator(JObject arg0) const;
-		JObject parseObject(JString arg0) const;
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JString Format::format(JObject arg0) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/lang/Object;)Ljava/lang/String;",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::lang::StringBuffer Format::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0.object<jobject>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JObject Format::formatToCharacterIterator(JObject arg0) const
+	{
+		return callObjectMethod(
+			"formatToCharacterIterator",
+			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject Format::parseObject(JString arg0) const
+	{
+		return callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject Format::parseObject(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
 } // namespace java::text
+
+// Base class headers
 

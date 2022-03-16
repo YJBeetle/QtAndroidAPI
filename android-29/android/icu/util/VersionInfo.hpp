@@ -1,70 +1,390 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./VersionInfo.def.hpp"
 
 namespace android::icu::util
 {
-	class VersionInfo : public JObject
+	// Fields
+	inline android::icu::util::VersionInfo VersionInfo::ICU_VERSION()
 	{
-	public:
-		// Fields
-		static android::icu::util::VersionInfo ICU_VERSION();
-		static android::icu::util::VersionInfo UCOL_BUILDER_VERSION();
-		static android::icu::util::VersionInfo UCOL_RUNTIME_VERSION();
-		static android::icu::util::VersionInfo UNICODE_10_0();
-		static android::icu::util::VersionInfo UNICODE_11_0();
-		static android::icu::util::VersionInfo UNICODE_1_0();
-		static android::icu::util::VersionInfo UNICODE_1_0_1();
-		static android::icu::util::VersionInfo UNICODE_1_1_0();
-		static android::icu::util::VersionInfo UNICODE_1_1_5();
-		static android::icu::util::VersionInfo UNICODE_2_0();
-		static android::icu::util::VersionInfo UNICODE_2_1_2();
-		static android::icu::util::VersionInfo UNICODE_2_1_5();
-		static android::icu::util::VersionInfo UNICODE_2_1_8();
-		static android::icu::util::VersionInfo UNICODE_2_1_9();
-		static android::icu::util::VersionInfo UNICODE_3_0();
-		static android::icu::util::VersionInfo UNICODE_3_0_1();
-		static android::icu::util::VersionInfo UNICODE_3_1_0();
-		static android::icu::util::VersionInfo UNICODE_3_1_1();
-		static android::icu::util::VersionInfo UNICODE_3_2();
-		static android::icu::util::VersionInfo UNICODE_4_0();
-		static android::icu::util::VersionInfo UNICODE_4_0_1();
-		static android::icu::util::VersionInfo UNICODE_4_1();
-		static android::icu::util::VersionInfo UNICODE_5_0();
-		static android::icu::util::VersionInfo UNICODE_5_1();
-		static android::icu::util::VersionInfo UNICODE_5_2();
-		static android::icu::util::VersionInfo UNICODE_6_0();
-		static android::icu::util::VersionInfo UNICODE_6_1();
-		static android::icu::util::VersionInfo UNICODE_6_2();
-		static android::icu::util::VersionInfo UNICODE_6_3();
-		static android::icu::util::VersionInfo UNICODE_7_0();
-		static android::icu::util::VersionInfo UNICODE_8_0();
-		static android::icu::util::VersionInfo UNICODE_9_0();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VersionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VersionInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::util::VersionInfo getInstance(jint arg0);
-		static android::icu::util::VersionInfo getInstance(JString arg0);
-		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1);
-		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1, jint arg2);
-		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1, jint arg2, jint arg3);
-		jint compareTo(android::icu::util::VersionInfo arg0) const;
-		jint compareTo(JObject arg0) const;
-		jboolean equals(JObject arg0) const;
-		jint getMajor() const;
-		jint getMicro() const;
-		jint getMilli() const;
-		jint getMinor() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"ICU_VERSION",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UCOL_BUILDER_VERSION()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UCOL_BUILDER_VERSION",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UCOL_RUNTIME_VERSION()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UCOL_RUNTIME_VERSION",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_10_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_10_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_11_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_11_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_1_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_1_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_1_0_1()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_1_0_1",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_1_1_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_1_1_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_1_1_5()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_1_1_5",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_2_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_2_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_2_1_2()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_2_1_2",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_2_1_5()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_2_1_5",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_2_1_8()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_2_1_8",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_2_1_9()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_2_1_9",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_3_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_3_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_3_0_1()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_3_0_1",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_3_1_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_3_1_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_3_1_1()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_3_1_1",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_3_2()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_3_2",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_4_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_4_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_4_0_1()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_4_0_1",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_4_1()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_4_1",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_5_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_5_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_5_1()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_5_1",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_5_2()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_5_2",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_6_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_6_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_6_1()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_6_1",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_6_2()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_6_2",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_6_3()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_6_3",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_7_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_7_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_8_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_8_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::UNICODE_9_0()
+	{
+		return getStaticObjectField(
+			"android.icu.util.VersionInfo",
+			"UNICODE_9_0",
+			"Landroid/icu/util/VersionInfo;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::util::VersionInfo VersionInfo::getInstance(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.VersionInfo",
+			"getInstance",
+			"(I)Landroid/icu/util/VersionInfo;",
+			arg0
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::getInstance(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.VersionInfo",
+			"getInstance",
+			"(Ljava/lang/String;)Landroid/icu/util/VersionInfo;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::getInstance(jint arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.VersionInfo",
+			"getInstance",
+			"(II)Landroid/icu/util/VersionInfo;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::getInstance(jint arg0, jint arg1, jint arg2)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.VersionInfo",
+			"getInstance",
+			"(III)Landroid/icu/util/VersionInfo;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline android::icu::util::VersionInfo VersionInfo::getInstance(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.VersionInfo",
+			"getInstance",
+			"(IIII)Landroid/icu/util/VersionInfo;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline jint VersionInfo::compareTo(android::icu::util::VersionInfo arg0) const
+	{
+		return callMethod<jint>(
+			"compareTo",
+			"(Landroid/icu/util/VersionInfo;)I",
+			arg0.object()
+		);
+	}
+	inline jint VersionInfo::compareTo(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"compareTo",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean VersionInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint VersionInfo::getMajor() const
+	{
+		return callMethod<jint>(
+			"getMajor",
+			"()I"
+		);
+	}
+	inline jint VersionInfo::getMicro() const
+	{
+		return callMethod<jint>(
+			"getMicro",
+			"()I"
+		);
+	}
+	inline jint VersionInfo::getMilli() const
+	{
+		return callMethod<jint>(
+			"getMilli",
+			"()I"
+		);
+	}
+	inline jint VersionInfo::getMinor() const
+	{
+		return callMethod<jint>(
+			"getMinor",
+			"()I"
+		);
+	}
+	inline jint VersionInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString VersionInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
 

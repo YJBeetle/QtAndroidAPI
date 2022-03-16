@@ -1,79 +1,161 @@
 #pragma once
 
-#include "../zip/ZipFile.hpp"
-
-class JByteArray;
-class JArray;
-namespace java::io
-{
-	class File;
-}
-namespace java::io
-{
-	class InputStream;
-}
-class JString;
-namespace java::lang
-{
-	class ThreadLocal;
-}
-namespace java::lang::ref
-{
-	class SoftReference;
-}
-namespace java::net
-{
-	class URL;
-}
-namespace java::security
-{
-	class CodeSource;
-}
-namespace java::util::jar
-{
-	class JarEntry;
-}
-namespace java::util::jar
-{
-	class Manifest;
-}
-namespace java::util::zip
-{
-	class ZipEntry;
-}
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../io/File.def.hpp"
+#include "../../io/InputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "../../lang/ThreadLocal.def.hpp"
+#include "../../lang/ref/SoftReference.def.hpp"
+#include "../../net/URL.def.hpp"
+#include "../../security/CodeSource.def.hpp"
+#include "./JarEntry.def.hpp"
+#include "./Manifest.def.hpp"
+#include "../zip/ZipEntry.def.hpp"
+#include "./JarFile.def.hpp"
 
 namespace java::util::jar
 {
-	class JarFile : public java::util::zip::ZipFile
+	// Fields
+	inline JString JarFile::MANIFEST_NAME()
 	{
-	public:
-		// Fields
-		static JString MANIFEST_NAME();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit JarFile(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipFile(className, sig, std::forward<Ts>(agv)...) {}
-		JarFile(QJniObject obj);
-		
-		// Constructors
-		JarFile(java::io::File arg0);
-		JarFile(JString arg0);
-		JarFile(java::io::File arg0, jboolean arg1);
-		JarFile(JString arg0, jboolean arg1);
-		JarFile(java::io::File arg0, jboolean arg1, jint arg2);
-		JarFile(java::io::File arg0, jboolean arg1, jint arg2, JObject arg3);
-		
-		// Methods
-		static JObject baseVersion();
-		static JObject runtimeVersion();
-		JObject entries() const;
-		java::util::zip::ZipEntry getEntry(JString arg0) const;
-		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0) const;
-		java::util::jar::JarEntry getJarEntry(JString arg0) const;
-		java::util::jar::Manifest getManifest() const;
-		JObject getVersion() const;
-		jboolean isMultiRelease() const;
-		JObject stream() const;
-		JObject versionedStream() const;
-	};
+		return getStaticObjectField(
+			"java.util.jar.JarFile",
+			"MANIFEST_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline JarFile::JarFile(java::io::File arg0)
+		: java::util::zip::ZipFile(
+			"java.util.jar.JarFile",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	inline JarFile::JarFile(JString arg0)
+		: java::util::zip::ZipFile(
+			"java.util.jar.JarFile",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline JarFile::JarFile(java::io::File arg0, jboolean arg1)
+		: java::util::zip::ZipFile(
+			"java.util.jar.JarFile",
+			"(Ljava/io/File;Z)V",
+			arg0.object(),
+			arg1
+		) {}
+	inline JarFile::JarFile(JString arg0, jboolean arg1)
+		: java::util::zip::ZipFile(
+			"java.util.jar.JarFile",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline JarFile::JarFile(java::io::File arg0, jboolean arg1, jint arg2)
+		: java::util::zip::ZipFile(
+			"java.util.jar.JarFile",
+			"(Ljava/io/File;ZI)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	inline JarFile::JarFile(java::io::File arg0, jboolean arg1, jint arg2, JObject arg3)
+		: java::util::zip::ZipFile(
+			"java.util.jar.JarFile",
+			"(Ljava/io/File;ZILjava/lang/Runtime$Version;)V",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline JObject JarFile::baseVersion()
+	{
+		return callStaticObjectMethod(
+			"java.util.jar.JarFile",
+			"baseVersion",
+			"()Ljava/lang/Runtime$Version;"
+		);
+	}
+	inline JObject JarFile::runtimeVersion()
+	{
+		return callStaticObjectMethod(
+			"java.util.jar.JarFile",
+			"runtimeVersion",
+			"()Ljava/lang/Runtime$Version;"
+		);
+	}
+	inline JObject JarFile::entries() const
+	{
+		return callObjectMethod(
+			"entries",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline java::util::zip::ZipEntry JarFile::getEntry(JString arg0) const
+	{
+		return callObjectMethod(
+			"getEntry",
+			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::io::InputStream JarFile::getInputStream(java::util::zip::ZipEntry arg0) const
+	{
+		return callObjectMethod(
+			"getInputStream",
+			"(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;",
+			arg0.object()
+		);
+	}
+	inline java::util::jar::JarEntry JarFile::getJarEntry(JString arg0) const
+	{
+		return callObjectMethod(
+			"getJarEntry",
+			"(Ljava/lang/String;)Ljava/util/jar/JarEntry;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::util::jar::Manifest JarFile::getManifest() const
+	{
+		return callObjectMethod(
+			"getManifest",
+			"()Ljava/util/jar/Manifest;"
+		);
+	}
+	inline JObject JarFile::getVersion() const
+	{
+		return callObjectMethod(
+			"getVersion",
+			"()Ljava/lang/Runtime$Version;"
+		);
+	}
+	inline jboolean JarFile::isMultiRelease() const
+	{
+		return callMethod<jboolean>(
+			"isMultiRelease",
+			"()Z"
+		);
+	}
+	inline JObject JarFile::stream() const
+	{
+		return callObjectMethod(
+			"stream",
+			"()Ljava/util/stream/Stream;"
+		);
+	}
+	inline JObject JarFile::versionedStream() const
+	{
+		return callObjectMethod(
+			"versionedStream",
+			"()Ljava/util/stream/Stream;"
+		);
+	}
 } // namespace java::util::jar
+
+// Base class headers
+#include "../zip/ZipFile.hpp"
 

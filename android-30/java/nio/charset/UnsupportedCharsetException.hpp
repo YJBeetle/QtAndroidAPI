@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../lang/IllegalArgumentException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./UnsupportedCharsetException.def.hpp"
 
 namespace java::nio::charset
 {
-	class UnsupportedCharsetException : public java::lang::IllegalArgumentException
+	// Fields
+	
+	// Constructors
+	inline UnsupportedCharsetException::UnsupportedCharsetException(JString arg0)
+		: java::lang::IllegalArgumentException(
+			"java.nio.charset.UnsupportedCharsetException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString UnsupportedCharsetException::getCharsetName() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UnsupportedCharsetException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		UnsupportedCharsetException(QJniObject obj);
-		
-		// Constructors
-		UnsupportedCharsetException(JString arg0);
-		
-		// Methods
-		JString getCharsetName() const;
-	};
+		return callObjectMethod(
+			"getCharsetName",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::charset
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalArgumentException.hpp"
 

@@ -1,38 +1,72 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::bluetooth::le
-{
-	class AdvertiseData;
-}
-namespace android::os
-{
-	class ParcelUuid;
-}
+#include "../../../JByteArray.hpp"
+#include "./AdvertiseData.def.hpp"
+#include "../../os/ParcelUuid.def.hpp"
+#include "./AdvertiseData_Builder.def.hpp"
 
 namespace android::bluetooth::le
 {
-	class AdvertiseData_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AdvertiseData_Builder::AdvertiseData_Builder()
+		: JObject(
+			"android.bluetooth.le.AdvertiseData$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addManufacturerData(jint arg0, JByteArray arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AdvertiseData_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AdvertiseData_Builder(QJniObject obj);
-		
-		// Constructors
-		AdvertiseData_Builder();
-		
-		// Methods
-		android::bluetooth::le::AdvertiseData_Builder addManufacturerData(jint arg0, JByteArray arg1) const;
-		android::bluetooth::le::AdvertiseData_Builder addServiceData(android::os::ParcelUuid arg0, JByteArray arg1) const;
-		android::bluetooth::le::AdvertiseData_Builder addServiceUuid(android::os::ParcelUuid arg0) const;
-		android::bluetooth::le::AdvertiseData build() const;
-		android::bluetooth::le::AdvertiseData_Builder setIncludeDeviceName(jboolean arg0) const;
-		android::bluetooth::le::AdvertiseData_Builder setIncludeTxPowerLevel(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"addManufacturerData",
+			"(I[B)Landroid/bluetooth/le/AdvertiseData$Builder;",
+			arg0,
+			arg1.object<jbyteArray>()
+		);
+	}
+	inline android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addServiceData(android::os::ParcelUuid arg0, JByteArray arg1) const
+	{
+		return callObjectMethod(
+			"addServiceData",
+			"(Landroid/os/ParcelUuid;[B)Landroid/bluetooth/le/AdvertiseData$Builder;",
+			arg0.object(),
+			arg1.object<jbyteArray>()
+		);
+	}
+	inline android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addServiceUuid(android::os::ParcelUuid arg0) const
+	{
+		return callObjectMethod(
+			"addServiceUuid",
+			"(Landroid/os/ParcelUuid;)Landroid/bluetooth/le/AdvertiseData$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::bluetooth::le::AdvertiseData AdvertiseData_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/bluetooth/le/AdvertiseData;"
+		);
+	}
+	inline android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::setIncludeDeviceName(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setIncludeDeviceName",
+			"(Z)Landroid/bluetooth/le/AdvertiseData$Builder;",
+			arg0
+		);
+	}
+	inline android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::setIncludeTxPowerLevel(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setIncludeTxPowerLevel",
+			"(Z)Landroid/bluetooth/le/AdvertiseData$Builder;",
+			arg0
+		);
+	}
 } // namespace android::bluetooth::le
+
+// Base class headers
 

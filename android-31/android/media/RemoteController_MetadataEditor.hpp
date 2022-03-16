@@ -1,27 +1,24 @@
 #pragma once
 
-#include "./MediaMetadataEditor.hpp"
+#include "./RemoteController.def.hpp"
+#include "./RemoteController_MetadataEditor.def.hpp"
 
 namespace android::media
 {
-	class RemoteController;
-}
-
-namespace android::media
-{
-	class RemoteController_MetadataEditor : public android::media::MediaMetadataEditor
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void RemoteController_MetadataEditor::apply() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RemoteController_MetadataEditor(const char *className, const char *sig, Ts...agv) : android::media::MediaMetadataEditor(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteController_MetadataEditor(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void apply() const;
-	};
+		callMethod<void>(
+			"apply",
+			"()V"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
+#include "./MediaMetadataEditor.hpp"
 

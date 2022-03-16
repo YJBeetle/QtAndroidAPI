@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./WindowInspector.def.hpp"
 
 namespace android::view::inspector
 {
-	class WindowInspector : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject WindowInspector::getGlobalWindowViews()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WindowInspector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInspector(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject getGlobalWindowViews();
-	};
+		return callStaticObjectMethod(
+			"android.view.inspector.WindowInspector",
+			"getGlobalWindowViews",
+			"()Ljava/util/List;"
+		);
+	}
 } // namespace android::view::inspector
+
+// Base class headers
 

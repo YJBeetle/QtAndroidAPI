@@ -1,43 +1,86 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::view
-{
-	class ViewGroup;
-}
+#include "../content/Context.def.hpp"
+#include "../view/View.def.hpp"
+#include "../view/ViewGroup.def.hpp"
+#include "./Scene.def.hpp"
 
 namespace android::transition
 {
-	class Scene : public JObject
+	// Fields
+	
+	// Constructors
+	inline Scene::Scene(android::view::ViewGroup arg0)
+		: JObject(
+			"android.transition.Scene",
+			"(Landroid/view/ViewGroup;)V",
+			arg0.object()
+		) {}
+	inline Scene::Scene(android::view::ViewGroup arg0, android::view::View arg1)
+		: JObject(
+			"android.transition.Scene",
+			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline Scene::Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1)
+		: JObject(
+			"android.transition.Scene",
+			"(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::transition::Scene Scene::getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Scene(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Scene(QJniObject obj);
-		
-		// Constructors
-		Scene(android::view::ViewGroup arg0);
-		Scene(android::view::ViewGroup arg0, android::view::View arg1);
-		Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1);
-		
-		// Methods
-		static android::transition::Scene getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2);
-		void enter() const;
-		void exit() const;
-		android::view::ViewGroup getSceneRoot() const;
-		void setEnterAction(JObject arg0) const;
-		void setExitAction(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.transition.Scene",
+			"getSceneForLayout",
+			"(Landroid/view/ViewGroup;ILandroid/content/Context;)Landroid/transition/Scene;",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void Scene::enter() const
+	{
+		callMethod<void>(
+			"enter",
+			"()V"
+		);
+	}
+	inline void Scene::exit() const
+	{
+		callMethod<void>(
+			"exit",
+			"()V"
+		);
+	}
+	inline android::view::ViewGroup Scene::getSceneRoot() const
+	{
+		return callObjectMethod(
+			"getSceneRoot",
+			"()Landroid/view/ViewGroup;"
+		);
+	}
+	inline void Scene::setEnterAction(JObject arg0) const
+	{
+		callMethod<void>(
+			"setEnterAction",
+			"(Ljava/lang/Runnable;)V",
+			arg0.object()
+		);
+	}
+	inline void Scene::setExitAction(JObject arg0) const
+	{
+		callMethod<void>(
+			"setExitAction",
+			"(Ljava/lang/Runnable;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
 

@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./StandardProtocolFamily.def.hpp"
 
 namespace java::net
 {
-	class StandardProtocolFamily : public java::lang::Enum
+	// Fields
+	inline java::net::StandardProtocolFamily StandardProtocolFamily::INET()
 	{
-	public:
-		// Fields
-		static java::net::StandardProtocolFamily INET();
-		static java::net::StandardProtocolFamily INET6();
-		static java::net::StandardProtocolFamily UNIX();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StandardProtocolFamily(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		StandardProtocolFamily(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::net::StandardProtocolFamily valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.net.StandardProtocolFamily",
+			"INET",
+			"Ljava/net/StandardProtocolFamily;"
+		);
+	}
+	inline java::net::StandardProtocolFamily StandardProtocolFamily::INET6()
+	{
+		return getStaticObjectField(
+			"java.net.StandardProtocolFamily",
+			"INET6",
+			"Ljava/net/StandardProtocolFamily;"
+		);
+	}
+	inline java::net::StandardProtocolFamily StandardProtocolFamily::UNIX()
+	{
+		return getStaticObjectField(
+			"java.net.StandardProtocolFamily",
+			"UNIX",
+			"Ljava/net/StandardProtocolFamily;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::net::StandardProtocolFamily StandardProtocolFamily::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.net.StandardProtocolFamily",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/net/StandardProtocolFamily;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray StandardProtocolFamily::values()
+	{
+		return callStaticObjectMethod(
+			"java.net.StandardProtocolFamily",
+			"values",
+			"()[Ljava/net/StandardProtocolFamily;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Enum.hpp"
 

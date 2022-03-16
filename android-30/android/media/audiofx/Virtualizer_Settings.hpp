@@ -1,27 +1,40 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./Virtualizer_Settings.def.hpp"
 
 namespace android::media::audiofx
 {
-	class Virtualizer_Settings : public JObject
+	// Fields
+	inline jshort Virtualizer_Settings::strength()
 	{
-	public:
-		// Fields
-		jshort strength();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Virtualizer_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Virtualizer_Settings(QJniObject obj);
-		
-		// Constructors
-		Virtualizer_Settings();
-		Virtualizer_Settings(JString arg0);
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jshort>(
+			"strength"
+		);
+	}
+	
+	// Constructors
+	inline Virtualizer_Settings::Virtualizer_Settings()
+		: JObject(
+			"android.media.audiofx.Virtualizer$Settings",
+			"()V"
+		) {}
+	inline Virtualizer_Settings::Virtualizer_Settings(JString arg0)
+		: JObject(
+			"android.media.audiofx.Virtualizer$Settings",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString Virtualizer_Settings::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
 

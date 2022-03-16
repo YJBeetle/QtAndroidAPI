@@ -1,56 +1,80 @@
 #pragma once
 
-#include "./URLConnection.hpp"
-
-class JArray;
-class JString;
-namespace java::net
-{
-	class URL;
-}
-namespace java::net
-{
-	class URLConnection;
-}
-namespace java::util::jar
-{
-	class Attributes;
-}
-namespace java::util::jar
-{
-	class JarEntry;
-}
-namespace java::util::jar
-{
-	class JarFile;
-}
-namespace java::util::jar
-{
-	class Manifest;
-}
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./URL.def.hpp"
+#include "./URLConnection.def.hpp"
+#include "../util/jar/Attributes.def.hpp"
+#include "../util/jar/JarEntry.def.hpp"
+#include "../util/jar/JarFile.def.hpp"
+#include "../util/jar/Manifest.def.hpp"
+#include "./JarURLConnection.def.hpp"
 
 namespace java::net
 {
-	class JarURLConnection : public java::net::URLConnection
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::jar::Attributes JarURLConnection::getAttributes() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit JarURLConnection(const char *className, const char *sig, Ts...agv) : java::net::URLConnection(className, sig, std::forward<Ts>(agv)...) {}
-		JarURLConnection(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		java::util::jar::Attributes getAttributes() const;
-		JArray getCertificates() const;
-		JString getEntryName() const;
-		java::util::jar::JarEntry getJarEntry() const;
-		java::util::jar::JarFile getJarFile() const;
-		java::net::URL getJarFileURL() const;
-		java::util::jar::Attributes getMainAttributes() const;
-		java::util::jar::Manifest getManifest() const;
-	};
+		return callObjectMethod(
+			"getAttributes",
+			"()Ljava/util/jar/Attributes;"
+		);
+	}
+	inline JArray JarURLConnection::getCertificates() const
+	{
+		return callObjectMethod(
+			"getCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		);
+	}
+	inline JString JarURLConnection::getEntryName() const
+	{
+		return callObjectMethod(
+			"getEntryName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::util::jar::JarEntry JarURLConnection::getJarEntry() const
+	{
+		return callObjectMethod(
+			"getJarEntry",
+			"()Ljava/util/jar/JarEntry;"
+		);
+	}
+	inline java::util::jar::JarFile JarURLConnection::getJarFile() const
+	{
+		return callObjectMethod(
+			"getJarFile",
+			"()Ljava/util/jar/JarFile;"
+		);
+	}
+	inline java::net::URL JarURLConnection::getJarFileURL() const
+	{
+		return callObjectMethod(
+			"getJarFileURL",
+			"()Ljava/net/URL;"
+		);
+	}
+	inline java::util::jar::Attributes JarURLConnection::getMainAttributes() const
+	{
+		return callObjectMethod(
+			"getMainAttributes",
+			"()Ljava/util/jar/Attributes;"
+		);
+	}
+	inline java::util::jar::Manifest JarURLConnection::getManifest() const
+	{
+		return callObjectMethod(
+			"getManifest",
+			"()Ljava/util/jar/Manifest;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "./URLConnection.hpp"
 

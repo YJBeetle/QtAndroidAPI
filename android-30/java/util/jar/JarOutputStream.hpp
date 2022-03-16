@@ -1,38 +1,44 @@
 #pragma once
 
-#include "../zip/ZipOutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
-namespace java::util::jar
-{
-	class Manifest;
-}
-namespace java::util::zip
-{
-	class ZipEntry;
-}
+#include "../../../JByteArray.hpp"
+#include "../../io/OutputStream.def.hpp"
+#include "./Manifest.def.hpp"
+#include "../zip/ZipEntry.def.hpp"
+#include "./JarOutputStream.def.hpp"
 
 namespace java::util::jar
 {
-	class JarOutputStream : public java::util::zip::ZipOutputStream
+	// Fields
+	
+	// Constructors
+	inline JarOutputStream::JarOutputStream(java::io::OutputStream arg0)
+		: java::util::zip::ZipOutputStream(
+			"java.util.jar.JarOutputStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		) {}
+	inline JarOutputStream::JarOutputStream(java::io::OutputStream arg0, java::util::jar::Manifest arg1)
+		: java::util::zip::ZipOutputStream(
+			"java.util.jar.JarOutputStream",
+			"(Ljava/io/OutputStream;Ljava/util/jar/Manifest;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void JarOutputStream::putNextEntry(java::util::zip::ZipEntry arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit JarOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		JarOutputStream(QJniObject obj);
-		
-		// Constructors
-		JarOutputStream(java::io::OutputStream arg0);
-		JarOutputStream(java::io::OutputStream arg0, java::util::jar::Manifest arg1);
-		
-		// Methods
-		void putNextEntry(java::util::zip::ZipEntry arg0) const;
-	};
+		callMethod<void>(
+			"putNextEntry",
+			"(Ljava/util/zip/ZipEntry;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::util::jar
+
+// Base class headers
+#include "../../io/OutputStream.hpp"
+#include "../../io/FilterOutputStream.hpp"
+#include "../zip/DeflaterOutputStream.hpp"
+#include "../zip/ZipOutputStream.hpp"
 

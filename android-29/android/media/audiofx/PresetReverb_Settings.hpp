@@ -1,27 +1,40 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./PresetReverb_Settings.def.hpp"
 
 namespace android::media::audiofx
 {
-	class PresetReverb_Settings : public JObject
+	// Fields
+	inline jshort PresetReverb_Settings::preset()
 	{
-	public:
-		// Fields
-		jshort preset();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PresetReverb_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PresetReverb_Settings(QJniObject obj);
-		
-		// Constructors
-		PresetReverb_Settings();
-		PresetReverb_Settings(JString arg0);
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jshort>(
+			"preset"
+		);
+	}
+	
+	// Constructors
+	inline PresetReverb_Settings::PresetReverb_Settings()
+		: JObject(
+			"android.media.audiofx.PresetReverb$Settings",
+			"()V"
+		) {}
+	inline PresetReverb_Settings::PresetReverb_Settings(JString arg0)
+		: JObject(
+			"android.media.audiofx.PresetReverb$Settings",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString PresetReverb_Settings::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
 

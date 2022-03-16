@@ -1,27 +1,53 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Float4.def.hpp"
 
 namespace android::renderscript
 {
-	class Float4 : public JObject
+	// Fields
+	inline jfloat Float4::w()
 	{
-	public:
-		// Fields
-		jfloat w();
-		jfloat x();
-		jfloat y();
-		jfloat z();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Float4(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Float4(QJniObject obj);
-		
-		// Constructors
-		Float4();
-		Float4(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		
-		// Methods
-	};
+		return getField<jfloat>(
+			"w"
+		);
+	}
+	inline jfloat Float4::x()
+	{
+		return getField<jfloat>(
+			"x"
+		);
+	}
+	inline jfloat Float4::y()
+	{
+		return getField<jfloat>(
+			"y"
+		);
+	}
+	inline jfloat Float4::z()
+	{
+		return getField<jfloat>(
+			"z"
+		);
+	}
+	
+	// Constructors
+	inline Float4::Float4()
+		: JObject(
+			"android.renderscript.Float4",
+			"()V"
+		) {}
+	inline Float4::Float4(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+		: JObject(
+			"android.renderscript.Float4",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

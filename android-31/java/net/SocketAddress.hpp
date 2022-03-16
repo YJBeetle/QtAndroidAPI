@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SocketAddress.def.hpp"
 
 namespace java::net
 {
-	class SocketAddress : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SocketAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SocketAddress(QJniObject obj);
-		
-		// Constructors
-		SocketAddress();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SocketAddress::SocketAddress()
+		: JObject(
+			"java.net.SocketAddress",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
 

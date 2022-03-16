@@ -1,36 +1,62 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AudioPlaybackCaptureConfiguration.def.hpp"
+#include "./projection/MediaProjection.def.hpp"
+#include "./AudioPlaybackCaptureConfiguration_Builder.def.hpp"
 
 namespace android::media
 {
-	class AudioPlaybackCaptureConfiguration;
-}
-namespace android::media::projection
-{
-	class MediaProjection;
-}
-
-namespace android::media
-{
-	class AudioPlaybackCaptureConfiguration_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0)
+		: JObject(
+			"android.media.AudioPlaybackCaptureConfiguration$Builder",
+			"(Landroid/media/projection/MediaProjection;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::addMatchingUid(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AudioPlaybackCaptureConfiguration_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioPlaybackCaptureConfiguration_Builder(QJniObject obj);
-		
-		// Constructors
-		AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0);
-		
-		// Methods
-		android::media::AudioPlaybackCaptureConfiguration_Builder addMatchingUid(jint arg0) const;
-		android::media::AudioPlaybackCaptureConfiguration_Builder addMatchingUsage(jint arg0) const;
-		android::media::AudioPlaybackCaptureConfiguration build() const;
-		android::media::AudioPlaybackCaptureConfiguration_Builder excludeUid(jint arg0) const;
-		android::media::AudioPlaybackCaptureConfiguration_Builder excludeUsage(jint arg0) const;
-	};
+		return callObjectMethod(
+			"addMatchingUid",
+			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
+			arg0
+		);
+	}
+	inline android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::addMatchingUsage(jint arg0) const
+	{
+		return callObjectMethod(
+			"addMatchingUsage",
+			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
+			arg0
+		);
+	}
+	inline android::media::AudioPlaybackCaptureConfiguration AudioPlaybackCaptureConfiguration_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/AudioPlaybackCaptureConfiguration;"
+		);
+	}
+	inline android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::excludeUid(jint arg0) const
+	{
+		return callObjectMethod(
+			"excludeUid",
+			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
+			arg0
+		);
+	}
+	inline android::media::AudioPlaybackCaptureConfiguration_Builder AudioPlaybackCaptureConfiguration_Builder::excludeUsage(jint arg0) const
+	{
+		return callObjectMethod(
+			"excludeUsage",
+			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
+			arg0
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

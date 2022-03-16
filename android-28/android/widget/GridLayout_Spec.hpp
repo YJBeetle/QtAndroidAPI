@@ -1,29 +1,32 @@
 #pragma once
 
+#include "./GridLayout_Alignment.def.hpp"
 #include "../../JObject.hpp"
+#include "./GridLayout_Spec.def.hpp"
 
 namespace android::widget
 {
-	class GridLayout_Alignment;
-}
-class JObject;
-
-namespace android::widget
-{
-	class GridLayout_Spec : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean GridLayout_Spec::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GridLayout_Spec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayout_Spec(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint GridLayout_Spec::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
 

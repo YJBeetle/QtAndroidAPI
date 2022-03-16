@@ -1,95 +1,352 @@
 #pragma once
 
+#include "../../../JArray.hpp"
+#include "../../content/ClipData.def.hpp"
+#include "../../content/ComponentName.def.hpp"
+#include "../../net/NetworkRequest.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../os/PersistableBundle.def.hpp"
 #include "../../../JObject.hpp"
-
-class JArray;
-namespace android::content
-{
-	class ClipData;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::net
-{
-	class NetworkRequest;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::os
-{
-	class PersistableBundle;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./JobInfo.def.hpp"
 
 namespace android::app::job
 {
-	class JobInfo : public JObject
+	// Fields
+	inline jint JobInfo::BACKOFF_POLICY_EXPONENTIAL()
 	{
-	public:
-		// Fields
-		static jint BACKOFF_POLICY_EXPONENTIAL();
-		static jint BACKOFF_POLICY_LINEAR();
-		static JObject CREATOR();
-		static jlong DEFAULT_INITIAL_BACKOFF_MILLIS();
-		static jlong MAX_BACKOFF_DELAY_MILLIS();
-		static jint NETWORK_BYTES_UNKNOWN();
-		static jint NETWORK_TYPE_ANY();
-		static jint NETWORK_TYPE_CELLULAR();
-		static jint NETWORK_TYPE_METERED();
-		static jint NETWORK_TYPE_NONE();
-		static jint NETWORK_TYPE_NOT_ROAMING();
-		static jint NETWORK_TYPE_UNMETERED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit JobInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jlong getMinFlexMillis();
-		static jlong getMinPeriodMillis();
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getBackoffPolicy() const;
-		android::content::ClipData getClipData() const;
-		jint getClipGrantFlags() const;
-		jlong getEstimatedNetworkDownloadBytes() const;
-		jlong getEstimatedNetworkUploadBytes() const;
-		android::os::PersistableBundle getExtras() const;
-		jlong getFlexMillis() const;
-		jint getId() const;
-		jlong getInitialBackoffMillis() const;
-		jlong getIntervalMillis() const;
-		jlong getMaxExecutionDelayMillis() const;
-		jlong getMinLatencyMillis() const;
-		jint getNetworkType() const;
-		android::net::NetworkRequest getRequiredNetwork() const;
-		android::content::ComponentName getService() const;
-		android::os::Bundle getTransientExtras() const;
-		jlong getTriggerContentMaxDelay() const;
-		jlong getTriggerContentUpdateDelay() const;
-		JArray getTriggerContentUris() const;
-		jint hashCode() const;
-		jboolean isImportantWhileForeground() const;
-		jboolean isPeriodic() const;
-		jboolean isPersisted() const;
-		jboolean isPrefetch() const;
-		jboolean isRequireBatteryNotLow() const;
-		jboolean isRequireCharging() const;
-		jboolean isRequireDeviceIdle() const;
-		jboolean isRequireStorageNotLow() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"BACKOFF_POLICY_EXPONENTIAL"
+		);
+	}
+	inline jint JobInfo::BACKOFF_POLICY_LINEAR()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"BACKOFF_POLICY_LINEAR"
+		);
+	}
+	inline JObject JobInfo::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.app.job.JobInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jlong JobInfo::DEFAULT_INITIAL_BACKOFF_MILLIS()
+	{
+		return getStaticField<jlong>(
+			"android.app.job.JobInfo",
+			"DEFAULT_INITIAL_BACKOFF_MILLIS"
+		);
+	}
+	inline jlong JobInfo::MAX_BACKOFF_DELAY_MILLIS()
+	{
+		return getStaticField<jlong>(
+			"android.app.job.JobInfo",
+			"MAX_BACKOFF_DELAY_MILLIS"
+		);
+	}
+	inline jint JobInfo::NETWORK_BYTES_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"NETWORK_BYTES_UNKNOWN"
+		);
+	}
+	inline jint JobInfo::NETWORK_TYPE_ANY()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"NETWORK_TYPE_ANY"
+		);
+	}
+	inline jint JobInfo::NETWORK_TYPE_CELLULAR()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"NETWORK_TYPE_CELLULAR"
+		);
+	}
+	inline jint JobInfo::NETWORK_TYPE_METERED()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"NETWORK_TYPE_METERED"
+		);
+	}
+	inline jint JobInfo::NETWORK_TYPE_NONE()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"NETWORK_TYPE_NONE"
+		);
+	}
+	inline jint JobInfo::NETWORK_TYPE_NOT_ROAMING()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"NETWORK_TYPE_NOT_ROAMING"
+		);
+	}
+	inline jint JobInfo::NETWORK_TYPE_UNMETERED()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobInfo",
+			"NETWORK_TYPE_UNMETERED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jlong JobInfo::getMinFlexMillis()
+	{
+		return callStaticMethod<jlong>(
+			"android.app.job.JobInfo",
+			"getMinFlexMillis",
+			"()J"
+		);
+	}
+	inline jlong JobInfo::getMinPeriodMillis()
+	{
+		return callStaticMethod<jlong>(
+			"android.app.job.JobInfo",
+			"getMinPeriodMillis",
+			"()J"
+		);
+	}
+	inline jint JobInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean JobInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint JobInfo::getBackoffPolicy() const
+	{
+		return callMethod<jint>(
+			"getBackoffPolicy",
+			"()I"
+		);
+	}
+	inline android::content::ClipData JobInfo::getClipData() const
+	{
+		return callObjectMethod(
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	inline jint JobInfo::getClipGrantFlags() const
+	{
+		return callMethod<jint>(
+			"getClipGrantFlags",
+			"()I"
+		);
+	}
+	inline jlong JobInfo::getEstimatedNetworkDownloadBytes() const
+	{
+		return callMethod<jlong>(
+			"getEstimatedNetworkDownloadBytes",
+			"()J"
+		);
+	}
+	inline jlong JobInfo::getEstimatedNetworkUploadBytes() const
+	{
+		return callMethod<jlong>(
+			"getEstimatedNetworkUploadBytes",
+			"()J"
+		);
+	}
+	inline android::os::PersistableBundle JobInfo::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	inline jlong JobInfo::getFlexMillis() const
+	{
+		return callMethod<jlong>(
+			"getFlexMillis",
+			"()J"
+		);
+	}
+	inline jint JobInfo::getId() const
+	{
+		return callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	inline jlong JobInfo::getInitialBackoffMillis() const
+	{
+		return callMethod<jlong>(
+			"getInitialBackoffMillis",
+			"()J"
+		);
+	}
+	inline jlong JobInfo::getIntervalMillis() const
+	{
+		return callMethod<jlong>(
+			"getIntervalMillis",
+			"()J"
+		);
+	}
+	inline jlong JobInfo::getMaxExecutionDelayMillis() const
+	{
+		return callMethod<jlong>(
+			"getMaxExecutionDelayMillis",
+			"()J"
+		);
+	}
+	inline jlong JobInfo::getMinLatencyMillis() const
+	{
+		return callMethod<jlong>(
+			"getMinLatencyMillis",
+			"()J"
+		);
+	}
+	inline jint JobInfo::getNetworkType() const
+	{
+		return callMethod<jint>(
+			"getNetworkType",
+			"()I"
+		);
+	}
+	inline android::net::NetworkRequest JobInfo::getRequiredNetwork() const
+	{
+		return callObjectMethod(
+			"getRequiredNetwork",
+			"()Landroid/net/NetworkRequest;"
+		);
+	}
+	inline android::content::ComponentName JobInfo::getService() const
+	{
+		return callObjectMethod(
+			"getService",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	inline android::os::Bundle JobInfo::getTransientExtras() const
+	{
+		return callObjectMethod(
+			"getTransientExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline jlong JobInfo::getTriggerContentMaxDelay() const
+	{
+		return callMethod<jlong>(
+			"getTriggerContentMaxDelay",
+			"()J"
+		);
+	}
+	inline jlong JobInfo::getTriggerContentUpdateDelay() const
+	{
+		return callMethod<jlong>(
+			"getTriggerContentUpdateDelay",
+			"()J"
+		);
+	}
+	inline JArray JobInfo::getTriggerContentUris() const
+	{
+		return callObjectMethod(
+			"getTriggerContentUris",
+			"()[Landroid/app/job/JobInfo$TriggerContentUri;"
+		);
+	}
+	inline jint JobInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean JobInfo::isImportantWhileForeground() const
+	{
+		return callMethod<jboolean>(
+			"isImportantWhileForeground",
+			"()Z"
+		);
+	}
+	inline jboolean JobInfo::isPeriodic() const
+	{
+		return callMethod<jboolean>(
+			"isPeriodic",
+			"()Z"
+		);
+	}
+	inline jboolean JobInfo::isPersisted() const
+	{
+		return callMethod<jboolean>(
+			"isPersisted",
+			"()Z"
+		);
+	}
+	inline jboolean JobInfo::isPrefetch() const
+	{
+		return callMethod<jboolean>(
+			"isPrefetch",
+			"()Z"
+		);
+	}
+	inline jboolean JobInfo::isRequireBatteryNotLow() const
+	{
+		return callMethod<jboolean>(
+			"isRequireBatteryNotLow",
+			"()Z"
+		);
+	}
+	inline jboolean JobInfo::isRequireCharging() const
+	{
+		return callMethod<jboolean>(
+			"isRequireCharging",
+			"()Z"
+		);
+	}
+	inline jboolean JobInfo::isRequireDeviceIdle() const
+	{
+		return callMethod<jboolean>(
+			"isRequireDeviceIdle",
+			"()Z"
+		);
+	}
+	inline jboolean JobInfo::isRequireStorageNotLow() const
+	{
+		return callMethod<jboolean>(
+			"isRequireStorageNotLow",
+			"()Z"
+		);
+	}
+	inline JString JobInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void JobInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::job
+
+// Base class headers
 

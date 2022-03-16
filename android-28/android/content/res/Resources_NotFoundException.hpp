@@ -1,30 +1,37 @@
 #pragma once
 
-#include "../../../java/lang/RuntimeException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
+#include "../../../java/lang/Exception.def.hpp"
+#include "../../../JString.hpp"
+#include "./Resources_NotFoundException.def.hpp"
 
 namespace android::content::res
 {
-	class Resources_NotFoundException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Resources_NotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		Resources_NotFoundException(QJniObject obj);
-		
-		// Constructors
-		Resources_NotFoundException();
-		Resources_NotFoundException(JString arg0);
-		Resources_NotFoundException(JString arg0, java::lang::Exception arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Resources_NotFoundException::Resources_NotFoundException()
+		: java::lang::RuntimeException(
+			"android.content.res.Resources$NotFoundException",
+			"()V"
+		) {}
+	inline Resources_NotFoundException::Resources_NotFoundException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.content.res.Resources$NotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline Resources_NotFoundException::Resources_NotFoundException(JString arg0, java::lang::Exception arg1)
+		: java::lang::RuntimeException(
+			"android.content.res.Resources$NotFoundException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace android::content::res
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
 

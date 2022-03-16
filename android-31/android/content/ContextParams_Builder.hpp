@@ -1,36 +1,52 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AttributionSource.def.hpp"
+#include "./ContextParams.def.hpp"
+#include "../../JString.hpp"
+#include "./ContextParams_Builder.def.hpp"
 
 namespace android::content
 {
-	class AttributionSource;
-}
-namespace android::content
-{
-	class ContextParams;
-}
-class JString;
-
-namespace android::content
-{
-	class ContextParams_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ContextParams_Builder::ContextParams_Builder()
+		: JObject(
+			"android.content.ContextParams$Builder",
+			"()V"
+		) {}
+	inline ContextParams_Builder::ContextParams_Builder(android::content::ContextParams arg0)
+		: JObject(
+			"android.content.ContextParams$Builder",
+			"(Landroid/content/ContextParams;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::content::ContextParams ContextParams_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContextParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContextParams_Builder(QJniObject obj);
-		
-		// Constructors
-		ContextParams_Builder();
-		ContextParams_Builder(android::content::ContextParams arg0);
-		
-		// Methods
-		android::content::ContextParams build() const;
-		android::content::ContextParams_Builder setAttributionTag(JString arg0) const;
-		android::content::ContextParams_Builder setNextAttributionSource(android::content::AttributionSource arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/content/ContextParams;"
+		);
+	}
+	inline android::content::ContextParams_Builder ContextParams_Builder::setAttributionTag(JString arg0) const
+	{
+		return callObjectMethod(
+			"setAttributionTag",
+			"(Ljava/lang/String;)Landroid/content/ContextParams$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::content::ContextParams_Builder ContextParams_Builder::setNextAttributionSource(android::content::AttributionSource arg0) const
+	{
+		return callObjectMethod(
+			"setNextAttributionSource",
+			"(Landroid/content/AttributionSource;)Landroid/content/ContextParams$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

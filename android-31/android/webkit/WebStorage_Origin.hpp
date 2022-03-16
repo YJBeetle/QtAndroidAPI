@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./WebStorage_Origin.def.hpp"
 
 namespace android::webkit
 {
-	class WebStorage_Origin : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString WebStorage_Origin::getOrigin() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebStorage_Origin(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebStorage_Origin(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getOrigin() const;
-		jlong getQuota() const;
-		jlong getUsage() const;
-	};
+		return callObjectMethod(
+			"getOrigin",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong WebStorage_Origin::getQuota() const
+	{
+		return callMethod<jlong>(
+			"getQuota",
+			"()J"
+		);
+	}
+	inline jlong WebStorage_Origin::getUsage() const
+	{
+		return callMethod<jlong>(
+			"getUsage",
+			"()J"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

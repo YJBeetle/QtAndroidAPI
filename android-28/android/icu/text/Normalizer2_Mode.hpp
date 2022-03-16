@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./Normalizer2_Mode.def.hpp"
 
 namespace android::icu::text
 {
-	class Normalizer2_Mode : public java::lang::Enum
+	// Fields
+	inline android::icu::text::Normalizer2_Mode Normalizer2_Mode::COMPOSE()
 	{
-	public:
-		// Fields
-		static android::icu::text::Normalizer2_Mode COMPOSE();
-		static android::icu::text::Normalizer2_Mode COMPOSE_CONTIGUOUS();
-		static android::icu::text::Normalizer2_Mode DECOMPOSE();
-		static android::icu::text::Normalizer2_Mode FCD();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Normalizer2_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer2_Mode(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::Normalizer2_Mode valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.Normalizer2$Mode",
+			"COMPOSE",
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
+	}
+	inline android::icu::text::Normalizer2_Mode Normalizer2_Mode::COMPOSE_CONTIGUOUS()
+	{
+		return getStaticObjectField(
+			"android.icu.text.Normalizer2$Mode",
+			"COMPOSE_CONTIGUOUS",
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
+	}
+	inline android::icu::text::Normalizer2_Mode Normalizer2_Mode::DECOMPOSE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.Normalizer2$Mode",
+			"DECOMPOSE",
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
+	}
+	inline android::icu::text::Normalizer2_Mode Normalizer2_Mode::FCD()
+	{
+		return getStaticObjectField(
+			"android.icu.text.Normalizer2$Mode",
+			"FCD",
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::Normalizer2_Mode Normalizer2_Mode::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.Normalizer2$Mode",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/Normalizer2$Mode;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Normalizer2_Mode::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.Normalizer2$Mode",
+			"values",
+			"()[Landroid/icu/text/Normalizer2$Mode;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

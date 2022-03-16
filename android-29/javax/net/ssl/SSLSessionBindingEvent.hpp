@@ -1,26 +1,38 @@
 #pragma once
 
-#include "../../../java/util/EventObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SSLSessionBindingEvent.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLSessionBindingEvent : public java::util::EventObject
+	// Fields
+	
+	// Constructors
+	inline SSLSessionBindingEvent::SSLSessionBindingEvent(JObject arg0, JString arg1)
+		: java::util::EventObject(
+			"javax.net.ssl.SSLSessionBindingEvent",
+			"(Ljavax/net/ssl/SSLSession;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString SSLSessionBindingEvent::getName() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SSLSessionBindingEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLSessionBindingEvent(QJniObject obj);
-		
-		// Constructors
-		SSLSessionBindingEvent(JObject arg0, JString arg1);
-		
-		// Methods
-		JString getName() const;
-		JObject getSession() const;
-	};
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject SSLSessionBindingEvent::getSession() const
+	{
+		return callObjectMethod(
+			"getSession",
+			"()Ljavax/net/ssl/SSLSession;"
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/util/EventObject.hpp"
 

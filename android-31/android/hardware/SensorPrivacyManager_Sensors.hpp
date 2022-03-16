@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SensorPrivacyManager_Sensors.def.hpp"
 
 namespace android::hardware
 {
-	class SensorPrivacyManager_Sensors : public JObject
+	// Fields
+	inline jint SensorPrivacyManager_Sensors::CAMERA()
 	{
-	public:
-		// Fields
-		static jint CAMERA();
-		static jint MICROPHONE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SensorPrivacyManager_Sensors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SensorPrivacyManager_Sensors(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.hardware.SensorPrivacyManager$Sensors",
+			"CAMERA"
+		);
+	}
+	inline jint SensorPrivacyManager_Sensors::MICROPHONE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.SensorPrivacyManager$Sensors",
+			"MICROPHONE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::hardware
+
+// Base class headers
 

@@ -1,30 +1,78 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./NetworkScan.def.hpp"
 
 namespace android::telephony
 {
-	class NetworkScan : public JObject
+	// Fields
+	inline jint NetworkScan::ERROR_INTERRUPTED()
 	{
-	public:
-		// Fields
-		static jint ERROR_INTERRUPTED();
-		static jint ERROR_INVALID_SCAN();
-		static jint ERROR_INVALID_SCANID();
-		static jint ERROR_MODEM_ERROR();
-		static jint ERROR_MODEM_UNAVAILABLE();
-		static jint ERROR_RADIO_INTERFACE_ERROR();
-		static jint ERROR_UNSUPPORTED();
-		static jint SUCCESS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NetworkScan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkScan(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void stopScan() const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"ERROR_INTERRUPTED"
+		);
+	}
+	inline jint NetworkScan::ERROR_INVALID_SCAN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"ERROR_INVALID_SCAN"
+		);
+	}
+	inline jint NetworkScan::ERROR_INVALID_SCANID()
+	{
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"ERROR_INVALID_SCANID"
+		);
+	}
+	inline jint NetworkScan::ERROR_MODEM_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"ERROR_MODEM_ERROR"
+		);
+	}
+	inline jint NetworkScan::ERROR_MODEM_UNAVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"ERROR_MODEM_UNAVAILABLE"
+		);
+	}
+	inline jint NetworkScan::ERROR_RADIO_INTERFACE_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"ERROR_RADIO_INTERFACE_ERROR"
+		);
+	}
+	inline jint NetworkScan::ERROR_UNSUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"ERROR_UNSUPPORTED"
+		);
+	}
+	inline jint NetworkScan::SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.NetworkScan",
+			"SUCCESS"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void NetworkScan::stopScan() const
+	{
+		callMethod<void>(
+			"stopScan",
+			"()V"
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

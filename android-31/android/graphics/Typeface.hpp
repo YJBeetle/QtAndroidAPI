@@ -1,54 +1,198 @@
 #pragma once
 
+#include "../content/res/AssetManager.def.hpp"
+#include "../../java/io/File.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::content::res
-{
-	class AssetManager;
-}
-namespace java::io
-{
-	class File;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./Typeface.def.hpp"
 
 namespace android::graphics
 {
-	class Typeface : public JObject
+	// Fields
+	inline jint Typeface::BOLD()
 	{
-	public:
-		// Fields
-		static jint BOLD();
-		static jint BOLD_ITALIC();
-		static android::graphics::Typeface DEFAULT();
-		static android::graphics::Typeface DEFAULT_BOLD();
-		static jint ITALIC();
-		static android::graphics::Typeface MONOSPACE();
-		static jint NORMAL();
-		static android::graphics::Typeface SANS_SERIF();
-		static android::graphics::Typeface SERIF();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Typeface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Typeface(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Typeface create(android::graphics::Typeface arg0, jint arg1);
-		static android::graphics::Typeface create(JString arg0, jint arg1);
-		static android::graphics::Typeface create(android::graphics::Typeface arg0, jint arg1, jboolean arg2);
-		static android::graphics::Typeface createFromAsset(android::content::res::AssetManager arg0, JString arg1);
-		static android::graphics::Typeface createFromFile(java::io::File arg0);
-		static android::graphics::Typeface createFromFile(JString arg0);
-		static android::graphics::Typeface defaultFromStyle(jint arg0);
-		jboolean equals(JObject arg0) const;
-		jint getStyle() const;
-		jint getWeight() const;
-		jint hashCode() const;
-		jboolean isBold() const;
-		jboolean isItalic() const;
-	};
+		return getStaticField<jint>(
+			"android.graphics.Typeface",
+			"BOLD"
+		);
+	}
+	inline jint Typeface::BOLD_ITALIC()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Typeface",
+			"BOLD_ITALIC"
+		);
+	}
+	inline android::graphics::Typeface Typeface::DEFAULT()
+	{
+		return getStaticObjectField(
+			"android.graphics.Typeface",
+			"DEFAULT",
+			"Landroid/graphics/Typeface;"
+		);
+	}
+	inline android::graphics::Typeface Typeface::DEFAULT_BOLD()
+	{
+		return getStaticObjectField(
+			"android.graphics.Typeface",
+			"DEFAULT_BOLD",
+			"Landroid/graphics/Typeface;"
+		);
+	}
+	inline jint Typeface::ITALIC()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Typeface",
+			"ITALIC"
+		);
+	}
+	inline android::graphics::Typeface Typeface::MONOSPACE()
+	{
+		return getStaticObjectField(
+			"android.graphics.Typeface",
+			"MONOSPACE",
+			"Landroid/graphics/Typeface;"
+		);
+	}
+	inline jint Typeface::NORMAL()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Typeface",
+			"NORMAL"
+		);
+	}
+	inline android::graphics::Typeface Typeface::SANS_SERIF()
+	{
+		return getStaticObjectField(
+			"android.graphics.Typeface",
+			"SANS_SERIF",
+			"Landroid/graphics/Typeface;"
+		);
+	}
+	inline android::graphics::Typeface Typeface::SERIF()
+	{
+		return getStaticObjectField(
+			"android.graphics.Typeface",
+			"SERIF",
+			"Landroid/graphics/Typeface;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Typeface Typeface::create(android::graphics::Typeface arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"create",
+			"(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::graphics::Typeface Typeface::create(JString arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"create",
+			"(Ljava/lang/String;I)Landroid/graphics/Typeface;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline android::graphics::Typeface Typeface::create(android::graphics::Typeface arg0, jint arg1, jboolean arg2)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"create",
+			"(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline android::graphics::Typeface Typeface::createFromAsset(android::content::res::AssetManager arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"createFromAsset",
+			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::graphics::Typeface Typeface::createFromFile(java::io::File arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"createFromFile",
+			"(Ljava/io/File;)Landroid/graphics/Typeface;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Typeface Typeface::createFromFile(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"createFromFile",
+			"(Ljava/lang/String;)Landroid/graphics/Typeface;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::graphics::Typeface Typeface::defaultFromStyle(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"defaultFromStyle",
+			"(I)Landroid/graphics/Typeface;",
+			arg0
+		);
+	}
+	inline jboolean Typeface::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Typeface::getStyle() const
+	{
+		return callMethod<jint>(
+			"getStyle",
+			"()I"
+		);
+	}
+	inline jint Typeface::getWeight() const
+	{
+		return callMethod<jint>(
+			"getWeight",
+			"()I"
+		);
+	}
+	inline jint Typeface::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean Typeface::isBold() const
+	{
+		return callMethod<jboolean>(
+			"isBold",
+			"()Z"
+		);
+	}
+	inline jboolean Typeface::isItalic() const
+	{
+		return callMethod<jboolean>(
+			"isItalic",
+			"()Z"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

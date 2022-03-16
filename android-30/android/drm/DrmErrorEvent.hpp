@@ -1,37 +1,91 @@
 #pragma once
 
-#include "./DrmEvent.hpp"
-
-class JString;
-namespace java::util
-{
-	class HashMap;
-}
+#include "../../JString.hpp"
+#include "../../java/util/HashMap.def.hpp"
+#include "./DrmErrorEvent.def.hpp"
 
 namespace android::drm
 {
-	class DrmErrorEvent : public android::drm::DrmEvent
+	// Fields
+	inline jint DrmErrorEvent::TYPE_ACQUIRE_DRM_INFO_FAILED()
 	{
-	public:
-		// Fields
-		static jint TYPE_ACQUIRE_DRM_INFO_FAILED();
-		static jint TYPE_NOT_SUPPORTED();
-		static jint TYPE_NO_INTERNET_CONNECTION();
-		static jint TYPE_OUT_OF_MEMORY();
-		static jint TYPE_PROCESS_DRM_INFO_FAILED();
-		static jint TYPE_REMOVE_ALL_RIGHTS_FAILED();
-		static jint TYPE_RIGHTS_NOT_INSTALLED();
-		static jint TYPE_RIGHTS_RENEWAL_NOT_ALLOWED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DrmErrorEvent(const char *className, const char *sig, Ts...agv) : android::drm::DrmEvent(className, sig, std::forward<Ts>(agv)...) {}
-		DrmErrorEvent(QJniObject obj);
-		
-		// Constructors
-		DrmErrorEvent(jint arg0, jint arg1, JString arg2);
-		DrmErrorEvent(jint arg0, jint arg1, JString arg2, java::util::HashMap arg3);
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_ACQUIRE_DRM_INFO_FAILED"
+		);
+	}
+	inline jint DrmErrorEvent::TYPE_NOT_SUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_NOT_SUPPORTED"
+		);
+	}
+	inline jint DrmErrorEvent::TYPE_NO_INTERNET_CONNECTION()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_NO_INTERNET_CONNECTION"
+		);
+	}
+	inline jint DrmErrorEvent::TYPE_OUT_OF_MEMORY()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_OUT_OF_MEMORY"
+		);
+	}
+	inline jint DrmErrorEvent::TYPE_PROCESS_DRM_INFO_FAILED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_PROCESS_DRM_INFO_FAILED"
+		);
+	}
+	inline jint DrmErrorEvent::TYPE_REMOVE_ALL_RIGHTS_FAILED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_REMOVE_ALL_RIGHTS_FAILED"
+		);
+	}
+	inline jint DrmErrorEvent::TYPE_RIGHTS_NOT_INSTALLED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_RIGHTS_NOT_INSTALLED"
+		);
+	}
+	inline jint DrmErrorEvent::TYPE_RIGHTS_RENEWAL_NOT_ALLOWED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmErrorEvent",
+			"TYPE_RIGHTS_RENEWAL_NOT_ALLOWED"
+		);
+	}
+	
+	// Constructors
+	inline DrmErrorEvent::DrmErrorEvent(jint arg0, jint arg1, JString arg2)
+		: android::drm::DrmEvent(
+			"android.drm.DrmErrorEvent",
+			"(IILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	inline DrmErrorEvent::DrmErrorEvent(jint arg0, jint arg1, JString arg2, java::util::HashMap arg3)
+		: android::drm::DrmEvent(
+			"android.drm.DrmErrorEvent",
+			"(IILjava/lang/String;Ljava/util/HashMap;)V",
+			arg0,
+			arg1,
+			arg2.object<jstring>(),
+			arg3.object()
+		) {}
+	
+	// Methods
 } // namespace android::drm
+
+// Base class headers
+#include "./DrmEvent.hpp"
 

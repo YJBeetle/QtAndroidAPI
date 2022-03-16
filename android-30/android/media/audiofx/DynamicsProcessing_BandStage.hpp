@@ -1,26 +1,39 @@
 #pragma once
 
-#include "./DynamicsProcessing_Stage.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DynamicsProcessing_BandStage.def.hpp"
 
 namespace android::media::audiofx
 {
-	class DynamicsProcessing_BandStage : public android::media::audiofx::DynamicsProcessing_Stage
+	// Fields
+	
+	// Constructors
+	inline DynamicsProcessing_BandStage::DynamicsProcessing_BandStage(jboolean arg0, jboolean arg1, jint arg2)
+		: android::media::audiofx::DynamicsProcessing_Stage(
+			"android.media.audiofx.DynamicsProcessing$BandStage",
+			"(ZZI)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline jint DynamicsProcessing_BandStage::getBandCount() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DynamicsProcessing_BandStage(const char *className, const char *sig, Ts...agv) : android::media::audiofx::DynamicsProcessing_Stage(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing_BandStage(QJniObject obj);
-		
-		// Constructors
-		DynamicsProcessing_BandStage(jboolean arg0, jboolean arg1, jint arg2);
-		
-		// Methods
-		jint getBandCount() const;
-		JString toString() const;
-	};
+		return callMethod<jint>(
+			"getBandCount",
+			"()I"
+		);
+	}
+	inline JString DynamicsProcessing_BandStage::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./DynamicsProcessing_Stage.hpp"
 

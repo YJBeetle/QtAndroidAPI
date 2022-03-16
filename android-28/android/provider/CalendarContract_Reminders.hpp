@@ -1,33 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::net
-{
-	class Uri;
-}
+#include "../../JArray.hpp"
+#include "../content/ContentResolver.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "./CalendarContract_Reminders.def.hpp"
 
 namespace android::provider
 {
-	class CalendarContract_Reminders : public JObject
+	// Fields
+	inline android::net::Uri CalendarContract_Reminders::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CalendarContract_Reminders(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_Reminders(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JObject query(android::content::ContentResolver arg0, jlong arg1, JArray arg2);
-	};
+		return getStaticObjectField(
+			"android.provider.CalendarContract$Reminders",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject CalendarContract_Reminders::query(android::content::ContentResolver arg0, jlong arg1, JArray arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.CalendarContract$Reminders",
+			"query",
+			"(Landroid/content/ContentResolver;J[Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0.object(),
+			arg1,
+			arg2.object<jarray>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

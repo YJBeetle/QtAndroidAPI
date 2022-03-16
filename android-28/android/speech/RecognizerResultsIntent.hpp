@@ -1,30 +1,72 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./RecognizerResultsIntent.def.hpp"
 
 namespace android::speech
 {
-	class RecognizerResultsIntent : public JObject
+	// Fields
+	inline JString RecognizerResultsIntent::ACTION_VOICE_SEARCH_RESULTS()
 	{
-	public:
-		// Fields
-		static JString ACTION_VOICE_SEARCH_RESULTS();
-		static JString EXTRA_VOICE_SEARCH_RESULT_HTML();
-		static JString EXTRA_VOICE_SEARCH_RESULT_HTML_BASE_URLS();
-		static JString EXTRA_VOICE_SEARCH_RESULT_HTTP_HEADERS();
-		static JString EXTRA_VOICE_SEARCH_RESULT_STRINGS();
-		static JString EXTRA_VOICE_SEARCH_RESULT_URLS();
-		static JString URI_SCHEME_INLINE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RecognizerResultsIntent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RecognizerResultsIntent(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.speech.RecognizerResultsIntent",
+			"ACTION_VOICE_SEARCH_RESULTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RecognizerResultsIntent::EXTRA_VOICE_SEARCH_RESULT_HTML()
+	{
+		return getStaticObjectField(
+			"android.speech.RecognizerResultsIntent",
+			"EXTRA_VOICE_SEARCH_RESULT_HTML",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RecognizerResultsIntent::EXTRA_VOICE_SEARCH_RESULT_HTML_BASE_URLS()
+	{
+		return getStaticObjectField(
+			"android.speech.RecognizerResultsIntent",
+			"EXTRA_VOICE_SEARCH_RESULT_HTML_BASE_URLS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RecognizerResultsIntent::EXTRA_VOICE_SEARCH_RESULT_HTTP_HEADERS()
+	{
+		return getStaticObjectField(
+			"android.speech.RecognizerResultsIntent",
+			"EXTRA_VOICE_SEARCH_RESULT_HTTP_HEADERS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RecognizerResultsIntent::EXTRA_VOICE_SEARCH_RESULT_STRINGS()
+	{
+		return getStaticObjectField(
+			"android.speech.RecognizerResultsIntent",
+			"EXTRA_VOICE_SEARCH_RESULT_STRINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RecognizerResultsIntent::EXTRA_VOICE_SEARCH_RESULT_URLS()
+	{
+		return getStaticObjectField(
+			"android.speech.RecognizerResultsIntent",
+			"EXTRA_VOICE_SEARCH_RESULT_URLS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RecognizerResultsIntent::URI_SCHEME_INLINE()
+	{
+		return getStaticObjectField(
+			"android.speech.RecognizerResultsIntent",
+			"URI_SCHEME_INLINE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::speech
+
+// Base class headers
 

@@ -1,26 +1,23 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JClass;
-class JString;
+#include "../../JByteArray.hpp"
+#include "../../JClass.hpp"
+#include "../../JString.hpp"
+#include "./AlgorithmParametersSpi.def.hpp"
 
 namespace java::security
 {
-	class AlgorithmParametersSpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlgorithmParametersSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlgorithmParametersSpi(QJniObject obj);
-		
-		// Constructors
-		AlgorithmParametersSpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AlgorithmParametersSpi::AlgorithmParametersSpi()
+		: JObject(
+			"java.security.AlgorithmParametersSpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
 

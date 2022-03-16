@@ -1,27 +1,39 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./Character_Subset.def.hpp"
 
 namespace java::lang
 {
-	class Character_Subset : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean Character_Subset::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Character_Subset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Character_Subset(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Character_Subset::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString Character_Subset::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
 

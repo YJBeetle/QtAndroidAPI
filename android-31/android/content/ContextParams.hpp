@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AttributionSource.def.hpp"
+#include "../../JString.hpp"
+#include "./ContextParams.def.hpp"
 
 namespace android::content
 {
-	class AttributionSource;
-}
-class JString;
-
-namespace android::content
-{
-	class ContextParams : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString ContextParams::getAttributionTag() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContextParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContextParams(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString getAttributionTag() const;
-		android::content::AttributionSource getNextAttributionSource() const;
-	};
+		return callObjectMethod(
+			"getAttributionTag",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::content::AttributionSource ContextParams::getNextAttributionSource() const
+	{
+		return callObjectMethod(
+			"getNextAttributionSource",
+			"()Landroid/content/AttributionSource;"
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

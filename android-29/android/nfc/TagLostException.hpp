@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/io/IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./TagLostException.def.hpp"
 
 namespace android::nfc
 {
-	class TagLostException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TagLostException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		TagLostException(QJniObject obj);
-		
-		// Constructors
-		TagLostException();
-		TagLostException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TagLostException::TagLostException()
+		: java::io::IOException(
+			"android.nfc.TagLostException",
+			"()V"
+		) {}
+	inline TagLostException::TagLostException(JString arg0)
+		: java::io::IOException(
+			"android.nfc.TagLostException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::nfc
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/io/IOException.hpp"
 

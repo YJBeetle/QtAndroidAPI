@@ -1,127 +1,780 @@
 #pragma once
 
-#include "./CameraMetadata.hpp"
+#include "./CameraCharacteristics_Key.def.hpp"
+#include "./params/RecommendedStreamConfigurationMap.def.hpp"
+#include "../../../JObject.hpp"
+#include "./CameraCharacteristics.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CameraCharacteristics_Key;
-}
-namespace android::hardware::camera2::params
-{
-	class RecommendedStreamConfigurationMap;
-}
-class JObject;
-
-namespace android::hardware::camera2
-{
-	class CameraCharacteristics : public android::hardware::camera2::CameraMetadata
+	// Fields
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES()
 	{
-	public:
-		// Fields
-		static android::hardware::camera2::CameraCharacteristics_Key COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AE_AVAILABLE_ANTIBANDING_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AE_AVAILABLE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AE_COMPENSATION_RANGE();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AE_COMPENSATION_STEP();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AE_LOCK_AVAILABLE();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AF_AVAILABLE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AVAILABLE_EFFECTS();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AVAILABLE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AVAILABLE_SCENE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AWB_AVAILABLE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_AWB_LOCK_AVAILABLE();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_MAX_REGIONS_AE();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_MAX_REGIONS_AF();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_MAX_REGIONS_AWB();
-		static android::hardware::camera2::CameraCharacteristics_Key CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE();
-		static android::hardware::camera2::CameraCharacteristics_Key DEPTH_DEPTH_IS_EXCLUSIVE();
-		static android::hardware::camera2::CameraCharacteristics_Key DISTORTION_CORRECTION_AVAILABLE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key EDGE_AVAILABLE_EDGE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key FLASH_INFO_AVAILABLE();
-		static android::hardware::camera2::CameraCharacteristics_Key HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key INFO_SUPPORTED_HARDWARE_LEVEL();
-		static android::hardware::camera2::CameraCharacteristics_Key INFO_VERSION();
-		static android::hardware::camera2::CameraCharacteristics_Key JPEG_AVAILABLE_THUMBNAIL_SIZES();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_DISTORTION();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_FACING();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INFO_AVAILABLE_APERTURES();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INFO_AVAILABLE_FILTER_DENSITIES();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INFO_AVAILABLE_FOCAL_LENGTHS();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INFO_FOCUS_DISTANCE_CALIBRATION();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INFO_HYPERFOCAL_DISTANCE();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INFO_MINIMUM_FOCUS_DISTANCE();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_INTRINSIC_CALIBRATION();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_POSE_REFERENCE();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_POSE_ROTATION();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_POSE_TRANSLATION();
-		static android::hardware::camera2::CameraCharacteristics_Key LENS_RADIAL_DISTORTION();
-		static android::hardware::camera2::CameraCharacteristics_Key LOGICAL_MULTI_CAMERA_SENSOR_SYNC_TYPE();
-		static android::hardware::camera2::CameraCharacteristics_Key NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key REPROCESS_MAX_CAPTURE_STALL();
-		static android::hardware::camera2::CameraCharacteristics_Key REQUEST_AVAILABLE_CAPABILITIES();
-		static android::hardware::camera2::CameraCharacteristics_Key REQUEST_MAX_NUM_INPUT_STREAMS();
-		static android::hardware::camera2::CameraCharacteristics_Key REQUEST_MAX_NUM_OUTPUT_PROC();
-		static android::hardware::camera2::CameraCharacteristics_Key REQUEST_MAX_NUM_OUTPUT_PROC_STALLING();
-		static android::hardware::camera2::CameraCharacteristics_Key REQUEST_MAX_NUM_OUTPUT_RAW();
-		static android::hardware::camera2::CameraCharacteristics_Key REQUEST_PARTIAL_RESULT_COUNT();
-		static android::hardware::camera2::CameraCharacteristics_Key REQUEST_PIPELINE_MAX_DEPTH();
-		static android::hardware::camera2::CameraCharacteristics_Key SCALER_AVAILABLE_MAX_DIGITAL_ZOOM();
-		static android::hardware::camera2::CameraCharacteristics_Key SCALER_CROPPING_TYPE();
-		static android::hardware::camera2::CameraCharacteristics_Key SCALER_MANDATORY_STREAM_COMBINATIONS();
-		static android::hardware::camera2::CameraCharacteristics_Key SCALER_STREAM_CONFIGURATION_MAP();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_AVAILABLE_TEST_PATTERN_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_BLACK_LEVEL_PATTERN();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_CALIBRATION_TRANSFORM1();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_CALIBRATION_TRANSFORM2();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_COLOR_TRANSFORM1();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_COLOR_TRANSFORM2();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_FORWARD_MATRIX1();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_FORWARD_MATRIX2();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_ACTIVE_ARRAY_SIZE();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_COLOR_FILTER_ARRANGEMENT();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_EXPOSURE_TIME_RANGE();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_LENS_SHADING_APPLIED();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_MAX_FRAME_DURATION();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_PHYSICAL_SIZE();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_PIXEL_ARRAY_SIZE();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_SENSITIVITY_RANGE();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_TIMESTAMP_SOURCE();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_INFO_WHITE_LEVEL();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_MAX_ANALOG_SENSITIVITY();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_OPTICAL_BLACK_REGIONS();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_ORIENTATION();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_REFERENCE_ILLUMINANT1();
-		static android::hardware::camera2::CameraCharacteristics_Key SENSOR_REFERENCE_ILLUMINANT2();
-		static android::hardware::camera2::CameraCharacteristics_Key SHADING_AVAILABLE_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key STATISTICS_INFO_AVAILABLE_OIS_DATA_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key STATISTICS_INFO_MAX_FACE_COUNT();
-		static android::hardware::camera2::CameraCharacteristics_Key SYNC_MAX_LATENCY();
-		static android::hardware::camera2::CameraCharacteristics_Key TONEMAP_AVAILABLE_TONE_MAP_MODES();
-		static android::hardware::camera2::CameraCharacteristics_Key TONEMAP_MAX_CURVE_POINTS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CameraCharacteristics(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraMetadata(className, sig, std::forward<Ts>(agv)...) {}
-		CameraCharacteristics(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject get(android::hardware::camera2::CameraCharacteristics_Key arg0) const;
-		JObject getAvailableCaptureRequestKeys() const;
-		JObject getAvailableCaptureResultKeys() const;
-		JObject getAvailablePhysicalCameraRequestKeys() const;
-		JObject getAvailableSessionKeys() const;
-		JObject getKeys() const;
-		JObject getKeysNeedingPermission() const;
-		JObject getPhysicalCameraIds() const;
-		android::hardware::camera2::params::RecommendedStreamConfigurationMap getRecommendedStreamConfigurationMap(jint arg0) const;
-	};
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_AVAILABLE_ANTIBANDING_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AE_AVAILABLE_ANTIBANDING_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_AVAILABLE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AE_AVAILABLE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_COMPENSATION_RANGE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AE_COMPENSATION_RANGE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_COMPENSATION_STEP()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AE_COMPENSATION_STEP",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_LOCK_AVAILABLE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AE_LOCK_AVAILABLE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AF_AVAILABLE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AF_AVAILABLE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_EFFECTS()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AVAILABLE_EFFECTS",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AVAILABLE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_SCENE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AVAILABLE_SCENE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AWB_AVAILABLE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AWB_AVAILABLE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AWB_LOCK_AVAILABLE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_AWB_LOCK_AVAILABLE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_MAX_REGIONS_AE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_MAX_REGIONS_AE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_MAX_REGIONS_AF()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_MAX_REGIONS_AF",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_MAX_REGIONS_AWB()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_MAX_REGIONS_AWB",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::DEPTH_DEPTH_IS_EXCLUSIVE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"DEPTH_DEPTH_IS_EXCLUSIVE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::DISTORTION_CORRECTION_AVAILABLE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"DISTORTION_CORRECTION_AVAILABLE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::EDGE_AVAILABLE_EDGE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"EDGE_AVAILABLE_EDGE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::FLASH_INFO_AVAILABLE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"FLASH_INFO_AVAILABLE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::INFO_SUPPORTED_HARDWARE_LEVEL()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"INFO_SUPPORTED_HARDWARE_LEVEL",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::INFO_VERSION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"INFO_VERSION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::JPEG_AVAILABLE_THUMBNAIL_SIZES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"JPEG_AVAILABLE_THUMBNAIL_SIZES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_DISTORTION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_DISTORTION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_FACING()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_FACING",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_APERTURES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INFO_AVAILABLE_APERTURES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_FILTER_DENSITIES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INFO_AVAILABLE_FILTER_DENSITIES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_FOCAL_LENGTHS()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INFO_AVAILABLE_FOCAL_LENGTHS",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_FOCUS_DISTANCE_CALIBRATION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INFO_FOCUS_DISTANCE_CALIBRATION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_HYPERFOCAL_DISTANCE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INFO_HYPERFOCAL_DISTANCE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_MINIMUM_FOCUS_DISTANCE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INFO_MINIMUM_FOCUS_DISTANCE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INTRINSIC_CALIBRATION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_INTRINSIC_CALIBRATION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_POSE_REFERENCE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_POSE_REFERENCE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_POSE_ROTATION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_POSE_ROTATION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_POSE_TRANSLATION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_POSE_TRANSLATION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_RADIAL_DISTORTION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LENS_RADIAL_DISTORTION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LOGICAL_MULTI_CAMERA_SENSOR_SYNC_TYPE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"LOGICAL_MULTI_CAMERA_SENSOR_SYNC_TYPE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REPROCESS_MAX_CAPTURE_STALL()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REPROCESS_MAX_CAPTURE_STALL",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_AVAILABLE_CAPABILITIES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REQUEST_AVAILABLE_CAPABILITIES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_INPUT_STREAMS()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REQUEST_MAX_NUM_INPUT_STREAMS",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_PROC()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REQUEST_MAX_NUM_OUTPUT_PROC",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_PROC_STALLING()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REQUEST_MAX_NUM_OUTPUT_PROC_STALLING",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_RAW()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REQUEST_MAX_NUM_OUTPUT_RAW",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_PARTIAL_RESULT_COUNT()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REQUEST_PARTIAL_RESULT_COUNT",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_PIPELINE_MAX_DEPTH()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"REQUEST_PIPELINE_MAX_DEPTH",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_AVAILABLE_MAX_DIGITAL_ZOOM()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SCALER_AVAILABLE_MAX_DIGITAL_ZOOM",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_CROPPING_TYPE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SCALER_CROPPING_TYPE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_MANDATORY_STREAM_COMBINATIONS()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SCALER_MANDATORY_STREAM_COMBINATIONS",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_STREAM_CONFIGURATION_MAP()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SCALER_STREAM_CONFIGURATION_MAP",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_AVAILABLE_TEST_PATTERN_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_AVAILABLE_TEST_PATTERN_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_BLACK_LEVEL_PATTERN()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_BLACK_LEVEL_PATTERN",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_CALIBRATION_TRANSFORM1()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_CALIBRATION_TRANSFORM1",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_CALIBRATION_TRANSFORM2()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_CALIBRATION_TRANSFORM2",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_COLOR_TRANSFORM1()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_COLOR_TRANSFORM1",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_COLOR_TRANSFORM2()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_COLOR_TRANSFORM2",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_FORWARD_MATRIX1()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_FORWARD_MATRIX1",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_FORWARD_MATRIX2()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_FORWARD_MATRIX2",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_ACTIVE_ARRAY_SIZE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_ACTIVE_ARRAY_SIZE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_COLOR_FILTER_ARRANGEMENT()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_COLOR_FILTER_ARRANGEMENT",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_EXPOSURE_TIME_RANGE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_EXPOSURE_TIME_RANGE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_LENS_SHADING_APPLIED()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_LENS_SHADING_APPLIED",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_MAX_FRAME_DURATION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_MAX_FRAME_DURATION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_PHYSICAL_SIZE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_PHYSICAL_SIZE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_PIXEL_ARRAY_SIZE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_PIXEL_ARRAY_SIZE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_SENSITIVITY_RANGE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_SENSITIVITY_RANGE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_TIMESTAMP_SOURCE()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_TIMESTAMP_SOURCE",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_WHITE_LEVEL()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_INFO_WHITE_LEVEL",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_MAX_ANALOG_SENSITIVITY()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_MAX_ANALOG_SENSITIVITY",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_OPTICAL_BLACK_REGIONS()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_OPTICAL_BLACK_REGIONS",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_ORIENTATION()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_ORIENTATION",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_REFERENCE_ILLUMINANT1()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_REFERENCE_ILLUMINANT1",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_REFERENCE_ILLUMINANT2()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SENSOR_REFERENCE_ILLUMINANT2",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SHADING_AVAILABLE_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SHADING_AVAILABLE_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_OIS_DATA_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"STATISTICS_INFO_AVAILABLE_OIS_DATA_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_MAX_FACE_COUNT()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"STATISTICS_INFO_MAX_FACE_COUNT",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SYNC_MAX_LATENCY()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"SYNC_MAX_LATENCY",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::TONEMAP_AVAILABLE_TONE_MAP_MODES()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"TONEMAP_AVAILABLE_TONE_MAP_MODES",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	inline android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::TONEMAP_MAX_CURVE_POINTS()
+	{
+		return getStaticObjectField(
+			"android.hardware.camera2.CameraCharacteristics",
+			"TONEMAP_MAX_CURVE_POINTS",
+			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject CameraCharacteristics::get(android::hardware::camera2::CameraCharacteristics_Key arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline JObject CameraCharacteristics::getAvailableCaptureRequestKeys() const
+	{
+		return callObjectMethod(
+			"getAvailableCaptureRequestKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject CameraCharacteristics::getAvailableCaptureResultKeys() const
+	{
+		return callObjectMethod(
+			"getAvailableCaptureResultKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys() const
+	{
+		return callObjectMethod(
+			"getAvailablePhysicalCameraRequestKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject CameraCharacteristics::getAvailableSessionKeys() const
+	{
+		return callObjectMethod(
+			"getAvailableSessionKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject CameraCharacteristics::getKeys() const
+	{
+		return callObjectMethod(
+			"getKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject CameraCharacteristics::getKeysNeedingPermission() const
+	{
+		return callObjectMethod(
+			"getKeysNeedingPermission",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject CameraCharacteristics::getPhysicalCameraIds() const
+	{
+		return callObjectMethod(
+			"getPhysicalCameraIds",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline android::hardware::camera2::params::RecommendedStreamConfigurationMap CameraCharacteristics::getRecommendedStreamConfigurationMap(jint arg0) const
+	{
+		return callObjectMethod(
+			"getRecommendedStreamConfigurationMap",
+			"(I)Landroid/hardware/camera2/params/RecommendedStreamConfigurationMap;",
+			arg0
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
+#include "./CameraMetadata.hpp"
 

@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MutableFloat.def.hpp"
 
 namespace android::util
 {
-	class MutableFloat : public JObject
+	// Fields
+	inline jfloat MutableFloat::value()
 	{
-	public:
-		// Fields
-		jfloat value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MutableFloat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableFloat(QJniObject obj);
-		
-		// Constructors
-		MutableFloat(jfloat arg0);
-		
-		// Methods
-	};
+		return getField<jfloat>(
+			"value"
+		);
+	}
+	
+	// Constructors
+	inline MutableFloat::MutableFloat(jfloat arg0)
+		: JObject(
+			"android.util.MutableFloat",
+			"(F)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

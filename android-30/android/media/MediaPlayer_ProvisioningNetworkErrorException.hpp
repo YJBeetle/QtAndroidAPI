@@ -1,24 +1,24 @@
 #pragma once
 
-#include "./MediaDrmException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaPlayer_ProvisioningNetworkErrorException.def.hpp"
 
 namespace android::media
 {
-	class MediaPlayer_ProvisioningNetworkErrorException : public android::media::MediaDrmException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaPlayer_ProvisioningNetworkErrorException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_ProvisioningNetworkErrorException(QJniObject obj);
-		
-		// Constructors
-		MediaPlayer_ProvisioningNetworkErrorException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MediaPlayer_ProvisioningNetworkErrorException::MediaPlayer_ProvisioningNetworkErrorException(JString arg0)
+		: android::media::MediaDrmException(
+			"android.media.MediaPlayer$ProvisioningNetworkErrorException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "./MediaDrmException.hpp"
 

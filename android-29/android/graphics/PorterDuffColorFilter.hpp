@@ -1,30 +1,40 @@
 #pragma once
 
-#include "./ColorFilter.hpp"
+#include "./PorterDuff_Mode.def.hpp"
+#include "../../JObject.hpp"
+#include "./PorterDuffColorFilter.def.hpp"
 
 namespace android::graphics
 {
-	class PorterDuff_Mode;
-}
-class JObject;
-
-namespace android::graphics
-{
-	class PorterDuffColorFilter : public android::graphics::ColorFilter
+	// Fields
+	
+	// Constructors
+	inline PorterDuffColorFilter::PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1)
+		: android::graphics::ColorFilter(
+			"android.graphics.PorterDuffColorFilter",
+			"(ILandroid/graphics/PorterDuff$Mode;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jboolean PorterDuffColorFilter::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PorterDuffColorFilter(const char *className, const char *sig, Ts...agv) : android::graphics::ColorFilter(className, sig, std::forward<Ts>(agv)...) {}
-		PorterDuffColorFilter(QJniObject obj);
-		
-		// Constructors
-		PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PorterDuffColorFilter::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "./ColorFilter.hpp"
 

@@ -1,117 +1,584 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::app
-{
-	class PendingIntent;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::telephony
-{
-	class SmsManager_FinancialSmsCallback;
-}
-class JString;
-namespace java::util
-{
-	class ArrayList;
-}
+#include "../../JByteArray.hpp"
+#include "../app/PendingIntent.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./SmsManager_FinancialSmsCallback.def.hpp"
+#include "../../JString.hpp"
+#include "../../java/util/ArrayList.def.hpp"
+#include "./SmsManager.def.hpp"
 
 namespace android::telephony
 {
-	class SmsManager : public JObject
+	// Fields
+	inline JString SmsManager::EXTRA_MMS_DATA()
 	{
-	public:
-		// Fields
-		static JString EXTRA_MMS_DATA();
-		static JString EXTRA_MMS_HTTP_STATUS();
-		static JString MMS_CONFIG_ALIAS_ENABLED();
-		static JString MMS_CONFIG_ALIAS_MAX_CHARS();
-		static JString MMS_CONFIG_ALIAS_MIN_CHARS();
-		static JString MMS_CONFIG_ALLOW_ATTACH_AUDIO();
-		static JString MMS_CONFIG_APPEND_TRANSACTION_ID();
-		static JString MMS_CONFIG_EMAIL_GATEWAY_NUMBER();
-		static JString MMS_CONFIG_GROUP_MMS_ENABLED();
-		static JString MMS_CONFIG_HTTP_PARAMS();
-		static JString MMS_CONFIG_HTTP_SOCKET_TIMEOUT();
-		static JString MMS_CONFIG_MAX_IMAGE_HEIGHT();
-		static JString MMS_CONFIG_MAX_IMAGE_WIDTH();
-		static JString MMS_CONFIG_MAX_MESSAGE_SIZE();
-		static JString MMS_CONFIG_MESSAGE_TEXT_MAX_SIZE();
-		static JString MMS_CONFIG_MMS_DELIVERY_REPORT_ENABLED();
-		static JString MMS_CONFIG_MMS_ENABLED();
-		static JString MMS_CONFIG_MMS_READ_REPORT_ENABLED();
-		static JString MMS_CONFIG_MULTIPART_SMS_ENABLED();
-		static JString MMS_CONFIG_NAI_SUFFIX();
-		static JString MMS_CONFIG_NOTIFY_WAP_MMSC_ENABLED();
-		static JString MMS_CONFIG_RECIPIENT_LIMIT();
-		static JString MMS_CONFIG_SEND_MULTIPART_SMS_AS_SEPARATE_MESSAGES();
-		static JString MMS_CONFIG_SHOW_CELL_BROADCAST_APP_LINKS();
-		static JString MMS_CONFIG_SMS_DELIVERY_REPORT_ENABLED();
-		static JString MMS_CONFIG_SMS_TO_MMS_TEXT_LENGTH_THRESHOLD();
-		static JString MMS_CONFIG_SMS_TO_MMS_TEXT_THRESHOLD();
-		static JString MMS_CONFIG_SUBJECT_MAX_LENGTH();
-		static JString MMS_CONFIG_SUPPORT_HTTP_CHARSET_HEADER();
-		static JString MMS_CONFIG_SUPPORT_MMS_CONTENT_DISPOSITION();
-		static JString MMS_CONFIG_UA_PROF_TAG_NAME();
-		static JString MMS_CONFIG_UA_PROF_URL();
-		static JString MMS_CONFIG_USER_AGENT();
-		static jint MMS_ERROR_CONFIGURATION_ERROR();
-		static jint MMS_ERROR_HTTP_FAILURE();
-		static jint MMS_ERROR_INVALID_APN();
-		static jint MMS_ERROR_IO_ERROR();
-		static jint MMS_ERROR_NO_DATA_NETWORK();
-		static jint MMS_ERROR_RETRY();
-		static jint MMS_ERROR_UNABLE_CONNECT_MMS();
-		static jint MMS_ERROR_UNSPECIFIED();
-		static jint RESULT_ERROR_GENERIC_FAILURE();
-		static jint RESULT_ERROR_LIMIT_EXCEEDED();
-		static jint RESULT_ERROR_NO_SERVICE();
-		static jint RESULT_ERROR_NULL_PDU();
-		static jint RESULT_ERROR_RADIO_OFF();
-		static jint RESULT_ERROR_SHORT_CODE_NEVER_ALLOWED();
-		static jint RESULT_ERROR_SHORT_CODE_NOT_ALLOWED();
-		static jint STATUS_ON_ICC_FREE();
-		static jint STATUS_ON_ICC_READ();
-		static jint STATUS_ON_ICC_SENT();
-		static jint STATUS_ON_ICC_UNREAD();
-		static jint STATUS_ON_ICC_UNSENT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SmsManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::telephony::SmsManager getDefault();
-		static jint getDefaultSmsSubscriptionId();
-		static android::telephony::SmsManager getSmsManagerForSubscriptionId(jint arg0);
-		JString createAppSpecificSmsToken(android::app::PendingIntent arg0) const;
-		JString createAppSpecificSmsTokenWithPackageInfo(JString arg0, android::app::PendingIntent arg1) const;
-		java::util::ArrayList divideMessage(JString arg0) const;
-		void downloadMultimediaMessage(android::content::Context arg0, JString arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const;
-		android::os::Bundle getCarrierConfigValues() const;
-		void getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2) const;
-		jint getSubscriptionId() const;
-		void injectSmsPdu(JByteArray arg0, JString arg1, android::app::PendingIntent arg2) const;
-		void sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5) const;
-		void sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, JString arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const;
-		void sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4) const;
-		void sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const;
-		void sendTextMessageWithoutPersisting(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"EXTRA_MMS_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::EXTRA_MMS_HTTP_STATUS()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"EXTRA_MMS_HTTP_STATUS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_ALIAS_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_ALIAS_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_ALIAS_MAX_CHARS()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_ALIAS_MAX_CHARS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_ALIAS_MIN_CHARS()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_ALIAS_MIN_CHARS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_ALLOW_ATTACH_AUDIO()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_ALLOW_ATTACH_AUDIO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_APPEND_TRANSACTION_ID()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_APPEND_TRANSACTION_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_EMAIL_GATEWAY_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_EMAIL_GATEWAY_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_GROUP_MMS_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_GROUP_MMS_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_HTTP_PARAMS()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_HTTP_PARAMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_HTTP_SOCKET_TIMEOUT()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_HTTP_SOCKET_TIMEOUT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MAX_IMAGE_HEIGHT()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MAX_IMAGE_HEIGHT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MAX_IMAGE_WIDTH()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MAX_IMAGE_WIDTH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MAX_MESSAGE_SIZE()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MAX_MESSAGE_SIZE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MESSAGE_TEXT_MAX_SIZE()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MESSAGE_TEXT_MAX_SIZE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MMS_DELIVERY_REPORT_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MMS_DELIVERY_REPORT_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MMS_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MMS_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MMS_READ_REPORT_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MMS_READ_REPORT_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_MULTIPART_SMS_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_MULTIPART_SMS_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_NAI_SUFFIX()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_NAI_SUFFIX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_NOTIFY_WAP_MMSC_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_NOTIFY_WAP_MMSC_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_RECIPIENT_LIMIT()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_RECIPIENT_LIMIT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SEND_MULTIPART_SMS_AS_SEPARATE_MESSAGES()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SEND_MULTIPART_SMS_AS_SEPARATE_MESSAGES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SHOW_CELL_BROADCAST_APP_LINKS()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SHOW_CELL_BROADCAST_APP_LINKS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SMS_DELIVERY_REPORT_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SMS_DELIVERY_REPORT_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SMS_TO_MMS_TEXT_LENGTH_THRESHOLD()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SMS_TO_MMS_TEXT_LENGTH_THRESHOLD",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SMS_TO_MMS_TEXT_THRESHOLD()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SMS_TO_MMS_TEXT_THRESHOLD",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SUBJECT_MAX_LENGTH()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SUBJECT_MAX_LENGTH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SUPPORT_HTTP_CHARSET_HEADER()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SUPPORT_HTTP_CHARSET_HEADER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_SUPPORT_MMS_CONTENT_DISPOSITION()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_SUPPORT_MMS_CONTENT_DISPOSITION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_UA_PROF_TAG_NAME()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_UA_PROF_TAG_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_UA_PROF_URL()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_UA_PROF_URL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SmsManager::MMS_CONFIG_USER_AGENT()
+	{
+		return getStaticObjectField(
+			"android.telephony.SmsManager",
+			"MMS_CONFIG_USER_AGENT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_CONFIGURATION_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_CONFIGURATION_ERROR"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_HTTP_FAILURE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_HTTP_FAILURE"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_INVALID_APN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_INVALID_APN"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_IO_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_IO_ERROR"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_NO_DATA_NETWORK()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_NO_DATA_NETWORK"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_RETRY()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_RETRY"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_UNABLE_CONNECT_MMS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_UNABLE_CONNECT_MMS"
+		);
+	}
+	inline jint SmsManager::MMS_ERROR_UNSPECIFIED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"MMS_ERROR_UNSPECIFIED"
+		);
+	}
+	inline jint SmsManager::RESULT_ERROR_GENERIC_FAILURE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"RESULT_ERROR_GENERIC_FAILURE"
+		);
+	}
+	inline jint SmsManager::RESULT_ERROR_LIMIT_EXCEEDED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"RESULT_ERROR_LIMIT_EXCEEDED"
+		);
+	}
+	inline jint SmsManager::RESULT_ERROR_NO_SERVICE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"RESULT_ERROR_NO_SERVICE"
+		);
+	}
+	inline jint SmsManager::RESULT_ERROR_NULL_PDU()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"RESULT_ERROR_NULL_PDU"
+		);
+	}
+	inline jint SmsManager::RESULT_ERROR_RADIO_OFF()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"RESULT_ERROR_RADIO_OFF"
+		);
+	}
+	inline jint SmsManager::RESULT_ERROR_SHORT_CODE_NEVER_ALLOWED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"RESULT_ERROR_SHORT_CODE_NEVER_ALLOWED"
+		);
+	}
+	inline jint SmsManager::RESULT_ERROR_SHORT_CODE_NOT_ALLOWED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"RESULT_ERROR_SHORT_CODE_NOT_ALLOWED"
+		);
+	}
+	inline jint SmsManager::STATUS_ON_ICC_FREE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"STATUS_ON_ICC_FREE"
+		);
+	}
+	inline jint SmsManager::STATUS_ON_ICC_READ()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"STATUS_ON_ICC_READ"
+		);
+	}
+	inline jint SmsManager::STATUS_ON_ICC_SENT()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"STATUS_ON_ICC_SENT"
+		);
+	}
+	inline jint SmsManager::STATUS_ON_ICC_UNREAD()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"STATUS_ON_ICC_UNREAD"
+		);
+	}
+	inline jint SmsManager::STATUS_ON_ICC_UNSENT()
+	{
+		return getStaticField<jint>(
+			"android.telephony.SmsManager",
+			"STATUS_ON_ICC_UNSENT"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::telephony::SmsManager SmsManager::getDefault()
+	{
+		return callStaticObjectMethod(
+			"android.telephony.SmsManager",
+			"getDefault",
+			"()Landroid/telephony/SmsManager;"
+		);
+	}
+	inline jint SmsManager::getDefaultSmsSubscriptionId()
+	{
+		return callStaticMethod<jint>(
+			"android.telephony.SmsManager",
+			"getDefaultSmsSubscriptionId",
+			"()I"
+		);
+	}
+	inline android::telephony::SmsManager SmsManager::getSmsManagerForSubscriptionId(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.telephony.SmsManager",
+			"getSmsManagerForSubscriptionId",
+			"(I)Landroid/telephony/SmsManager;",
+			arg0
+		);
+	}
+	inline JString SmsManager::createAppSpecificSmsToken(android::app::PendingIntent arg0) const
+	{
+		return callObjectMethod(
+			"createAppSpecificSmsToken",
+			"(Landroid/app/PendingIntent;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString SmsManager::createAppSpecificSmsTokenWithPackageInfo(JString arg0, android::app::PendingIntent arg1) const
+	{
+		return callObjectMethod(
+			"createAppSpecificSmsTokenWithPackageInfo",
+			"(Ljava/lang/String;Landroid/app/PendingIntent;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline java::util::ArrayList SmsManager::divideMessage(JString arg0) const
+	{
+		return callObjectMethod(
+			"divideMessage",
+			"(Ljava/lang/String;)Ljava/util/ArrayList;",
+			arg0.object<jstring>()
+		);
+	}
+	inline void SmsManager::downloadMultimediaMessage(android::content::Context arg0, JString arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const
+	{
+		callMethod<void>(
+			"downloadMultimediaMessage",
+			"(Landroid/content/Context;Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;Landroid/app/PendingIntent;)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline android::os::Bundle SmsManager::getCarrierConfigValues() const
+	{
+		return callObjectMethod(
+			"getCarrierConfigValues",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2) const
+	{
+		callMethod<void>(
+			"getSmsMessagesForFinancialApp",
+			"(Landroid/os/Bundle;Ljava/util/concurrent/Executor;Landroid/telephony/SmsManager$FinancialSmsCallback;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline jint SmsManager::getSubscriptionId() const
+	{
+		return callMethod<jint>(
+			"getSubscriptionId",
+			"()I"
+		);
+	}
+	inline void SmsManager::injectSmsPdu(JByteArray arg0, JString arg1, android::app::PendingIntent arg2) const
+	{
+		callMethod<void>(
+			"injectSmsPdu",
+			"([BLjava/lang/String;Landroid/app/PendingIntent;)V",
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void SmsManager::sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5) const
+	{
+		callMethod<void>(
+			"sendDataMessage",
+			"(Ljava/lang/String;Ljava/lang/String;S[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2,
+			arg3.object<jbyteArray>(),
+			arg4.object(),
+			arg5.object()
+		);
+	}
+	inline void SmsManager::sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, JString arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const
+	{
+		callMethod<void>(
+			"sendMultimediaMessage",
+			"(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/PendingIntent;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline void SmsManager::sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4) const
+	{
+		callMethod<void>(
+			"sendMultipartTextMessage",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline void SmsManager::sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const
+	{
+		callMethod<void>(
+			"sendTextMessage",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline void SmsManager::sendTextMessageWithoutPersisting(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const
+	{
+		callMethod<void>(
+			"sendTextMessageWithoutPersisting",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

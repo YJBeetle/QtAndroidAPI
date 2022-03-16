@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_bool.def.hpp"
 
 namespace android
 {
-	class R_bool : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_bool(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_bool(QJniObject obj);
-		
-		// Constructors
-		R_bool();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline R_bool::R_bool()
+		: JObject(
+			"android.R$bool",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

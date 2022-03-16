@@ -1,39 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./PictureInPictureParams.def.hpp"
+#include "../graphics/Rect.def.hpp"
+#include "../util/Rational.def.hpp"
+#include "./PictureInPictureParams_Builder.def.hpp"
 
 namespace android::app
 {
-	class PictureInPictureParams;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::util
-{
-	class Rational;
-}
-
-namespace android::app
-{
-	class PictureInPictureParams_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PictureInPictureParams_Builder::PictureInPictureParams_Builder()
+		: JObject(
+			"android.app.PictureInPictureParams$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::app::PictureInPictureParams PictureInPictureParams_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PictureInPictureParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PictureInPictureParams_Builder(QJniObject obj);
-		
-		// Constructors
-		PictureInPictureParams_Builder();
-		
-		// Methods
-		android::app::PictureInPictureParams build() const;
-		android::app::PictureInPictureParams_Builder setActions(JObject arg0) const;
-		android::app::PictureInPictureParams_Builder setAspectRatio(android::util::Rational arg0) const;
-		android::app::PictureInPictureParams_Builder setSourceRectHint(android::graphics::Rect arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/PictureInPictureParams;"
+		);
+	}
+	inline android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setActions(JObject arg0) const
+	{
+		return callObjectMethod(
+			"setActions",
+			"(Ljava/util/List;)Landroid/app/PictureInPictureParams$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setAspectRatio(android::util::Rational arg0) const
+	{
+		return callObjectMethod(
+			"setAspectRatio",
+			"(Landroid/util/Rational;)Landroid/app/PictureInPictureParams$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setSourceRectHint(android::graphics::Rect arg0) const
+	{
+		return callObjectMethod(
+			"setSourceRectHint",
+			"(Landroid/graphics/Rect;)Landroid/app/PictureInPictureParams$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

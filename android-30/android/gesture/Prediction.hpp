@@ -1,26 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Prediction.def.hpp"
 
 namespace android::gesture
 {
-	class Prediction : public JObject
+	// Fields
+	inline JString Prediction::name()
 	{
-	public:
-		// Fields
-		JString name();
-		jdouble score();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Prediction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Prediction(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return getObjectField(
+			"name",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jdouble Prediction::score()
+	{
+		return getField<jdouble>(
+			"score"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString Prediction::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::gesture
+
+// Base class headers
 

@@ -1,49 +1,165 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./Debug_MemoryInfo.def.hpp"
 
 namespace android::os
 {
-	class Parcel;
-}
-class JString;
-
-namespace android::os
-{
-	class Debug_MemoryInfo : public JObject
+	// Fields
+	inline JObject Debug_MemoryInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		jint dalvikPrivateDirty();
-		jint dalvikPss();
-		jint dalvikSharedDirty();
-		jint nativePrivateDirty();
-		jint nativePss();
-		jint nativeSharedDirty();
-		jint otherPrivateDirty();
-		jint otherPss();
-		jint otherSharedDirty();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Debug_MemoryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Debug_MemoryInfo(QJniObject obj);
-		
-		// Constructors
-		Debug_MemoryInfo();
-		
-		// Methods
-		jint describeContents() const;
-		JString getMemoryStat(JString arg0) const;
-		JObject getMemoryStats() const;
-		jint getTotalPrivateClean() const;
-		jint getTotalPrivateDirty() const;
-		jint getTotalPss() const;
-		jint getTotalSharedClean() const;
-		jint getTotalSharedDirty() const;
-		jint getTotalSwappablePss() const;
-		void readFromParcel(android::os::Parcel arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.os.Debug$MemoryInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint Debug_MemoryInfo::dalvikPrivateDirty()
+	{
+		return getField<jint>(
+			"dalvikPrivateDirty"
+		);
+	}
+	inline jint Debug_MemoryInfo::dalvikPss()
+	{
+		return getField<jint>(
+			"dalvikPss"
+		);
+	}
+	inline jint Debug_MemoryInfo::dalvikSharedDirty()
+	{
+		return getField<jint>(
+			"dalvikSharedDirty"
+		);
+	}
+	inline jint Debug_MemoryInfo::nativePrivateDirty()
+	{
+		return getField<jint>(
+			"nativePrivateDirty"
+		);
+	}
+	inline jint Debug_MemoryInfo::nativePss()
+	{
+		return getField<jint>(
+			"nativePss"
+		);
+	}
+	inline jint Debug_MemoryInfo::nativeSharedDirty()
+	{
+		return getField<jint>(
+			"nativeSharedDirty"
+		);
+	}
+	inline jint Debug_MemoryInfo::otherPrivateDirty()
+	{
+		return getField<jint>(
+			"otherPrivateDirty"
+		);
+	}
+	inline jint Debug_MemoryInfo::otherPss()
+	{
+		return getField<jint>(
+			"otherPss"
+		);
+	}
+	inline jint Debug_MemoryInfo::otherSharedDirty()
+	{
+		return getField<jint>(
+			"otherSharedDirty"
+		);
+	}
+	
+	// Constructors
+	inline Debug_MemoryInfo::Debug_MemoryInfo()
+		: JObject(
+			"android.os.Debug$MemoryInfo",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint Debug_MemoryInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString Debug_MemoryInfo::getMemoryStat(JString arg0) const
+	{
+		return callObjectMethod(
+			"getMemoryStat",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject Debug_MemoryInfo::getMemoryStats() const
+	{
+		return callObjectMethod(
+			"getMemoryStats",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline jint Debug_MemoryInfo::getTotalPrivateClean() const
+	{
+		return callMethod<jint>(
+			"getTotalPrivateClean",
+			"()I"
+		);
+	}
+	inline jint Debug_MemoryInfo::getTotalPrivateDirty() const
+	{
+		return callMethod<jint>(
+			"getTotalPrivateDirty",
+			"()I"
+		);
+	}
+	inline jint Debug_MemoryInfo::getTotalPss() const
+	{
+		return callMethod<jint>(
+			"getTotalPss",
+			"()I"
+		);
+	}
+	inline jint Debug_MemoryInfo::getTotalSharedClean() const
+	{
+		return callMethod<jint>(
+			"getTotalSharedClean",
+			"()I"
+		);
+	}
+	inline jint Debug_MemoryInfo::getTotalSharedDirty() const
+	{
+		return callMethod<jint>(
+			"getTotalSharedDirty",
+			"()I"
+		);
+	}
+	inline jint Debug_MemoryInfo::getTotalSwappablePss() const
+	{
+		return callMethod<jint>(
+			"getTotalSwappablePss",
+			"()I"
+		);
+	}
+	inline void Debug_MemoryInfo::readFromParcel(android::os::Parcel arg0) const
+	{
+		callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		);
+	}
+	inline void Debug_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

@@ -1,35 +1,77 @@
 #pragma once
 
-#include "./DrmEvent.hpp"
-
-class JString;
-namespace java::util
-{
-	class HashMap;
-}
+#include "../../JString.hpp"
+#include "../../java/util/HashMap.def.hpp"
+#include "./DrmInfoEvent.def.hpp"
 
 namespace android::drm
 {
-	class DrmInfoEvent : public android::drm::DrmEvent
+	// Fields
+	inline jint DrmInfoEvent::TYPE_ACCOUNT_ALREADY_REGISTERED()
 	{
-	public:
-		// Fields
-		static jint TYPE_ACCOUNT_ALREADY_REGISTERED();
-		static jint TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT();
-		static jint TYPE_REMOVE_RIGHTS();
-		static jint TYPE_RIGHTS_INSTALLED();
-		static jint TYPE_RIGHTS_REMOVED();
-		static jint TYPE_WAIT_FOR_RIGHTS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DrmInfoEvent(const char *className, const char *sig, Ts...agv) : android::drm::DrmEvent(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInfoEvent(QJniObject obj);
-		
-		// Constructors
-		DrmInfoEvent(jint arg0, jint arg1, JString arg2);
-		DrmInfoEvent(jint arg0, jint arg1, JString arg2, java::util::HashMap arg3);
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.drm.DrmInfoEvent",
+			"TYPE_ACCOUNT_ALREADY_REGISTERED"
+		);
+	}
+	inline jint DrmInfoEvent::TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmInfoEvent",
+			"TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT"
+		);
+	}
+	inline jint DrmInfoEvent::TYPE_REMOVE_RIGHTS()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmInfoEvent",
+			"TYPE_REMOVE_RIGHTS"
+		);
+	}
+	inline jint DrmInfoEvent::TYPE_RIGHTS_INSTALLED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmInfoEvent",
+			"TYPE_RIGHTS_INSTALLED"
+		);
+	}
+	inline jint DrmInfoEvent::TYPE_RIGHTS_REMOVED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmInfoEvent",
+			"TYPE_RIGHTS_REMOVED"
+		);
+	}
+	inline jint DrmInfoEvent::TYPE_WAIT_FOR_RIGHTS()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmInfoEvent",
+			"TYPE_WAIT_FOR_RIGHTS"
+		);
+	}
+	
+	// Constructors
+	inline DrmInfoEvent::DrmInfoEvent(jint arg0, jint arg1, JString arg2)
+		: android::drm::DrmEvent(
+			"android.drm.DrmInfoEvent",
+			"(IILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	inline DrmInfoEvent::DrmInfoEvent(jint arg0, jint arg1, JString arg2, java::util::HashMap arg3)
+		: android::drm::DrmEvent(
+			"android.drm.DrmInfoEvent",
+			"(IILjava/lang/String;Ljava/util/HashMap;)V",
+			arg0,
+			arg1,
+			arg2.object<jstring>(),
+			arg3.object()
+		) {}
+	
+	// Methods
 } // namespace android::drm
+
+// Base class headers
+#include "./DrmEvent.hpp"
 

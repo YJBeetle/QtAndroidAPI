@@ -1,33 +1,62 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "./MediaBrowserService_BrowserRoot.def.hpp"
 
 namespace android::service::media
 {
-	class MediaBrowserService_BrowserRoot : public JObject
+	// Fields
+	inline JString MediaBrowserService_BrowserRoot::EXTRA_OFFLINE()
 	{
-	public:
-		// Fields
-		static JString EXTRA_OFFLINE();
-		static JString EXTRA_RECENT();
-		static JString EXTRA_SUGGESTED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaBrowserService_BrowserRoot(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowserService_BrowserRoot(QJniObject obj);
-		
-		// Constructors
-		MediaBrowserService_BrowserRoot(JString arg0, android::os::Bundle arg1);
-		
-		// Methods
-		android::os::Bundle getExtras() const;
-		JString getRootId() const;
-	};
+		return getStaticObjectField(
+			"android.service.media.MediaBrowserService$BrowserRoot",
+			"EXTRA_OFFLINE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaBrowserService_BrowserRoot::EXTRA_RECENT()
+	{
+		return getStaticObjectField(
+			"android.service.media.MediaBrowserService$BrowserRoot",
+			"EXTRA_RECENT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaBrowserService_BrowserRoot::EXTRA_SUGGESTED()
+	{
+		return getStaticObjectField(
+			"android.service.media.MediaBrowserService$BrowserRoot",
+			"EXTRA_SUGGESTED",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(JString arg0, android::os::Bundle arg1)
+		: JObject(
+			"android.service.media.MediaBrowserService$BrowserRoot",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::os::Bundle MediaBrowserService_BrowserRoot::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JString MediaBrowserService_BrowserRoot::getRootId() const
+	{
+		return callObjectMethod(
+			"getRootId",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::service::media
+
+// Base class headers
 

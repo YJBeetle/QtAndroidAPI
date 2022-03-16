@@ -1,32 +1,74 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./AppSearchSchema_PropertyConfig.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema_PropertyConfig : public JObject
+	// Fields
+	inline jint AppSearchSchema_PropertyConfig::CARDINALITY_OPTIONAL()
 	{
-	public:
-		// Fields
-		static jint CARDINALITY_OPTIONAL();
-		static jint CARDINALITY_REPEATED();
-		static jint CARDINALITY_REQUIRED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_PropertyConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_PropertyConfig(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getCardinality() const;
-		JString getName() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$PropertyConfig",
+			"CARDINALITY_OPTIONAL"
+		);
+	}
+	inline jint AppSearchSchema_PropertyConfig::CARDINALITY_REPEATED()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$PropertyConfig",
+			"CARDINALITY_REPEATED"
+		);
+	}
+	inline jint AppSearchSchema_PropertyConfig::CARDINALITY_REQUIRED()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$PropertyConfig",
+			"CARDINALITY_REQUIRED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean AppSearchSchema_PropertyConfig::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint AppSearchSchema_PropertyConfig::getCardinality() const
+	{
+		return callMethod<jint>(
+			"getCardinality",
+			"()I"
+		);
+	}
+	inline JString AppSearchSchema_PropertyConfig::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint AppSearchSchema_PropertyConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString AppSearchSchema_PropertyConfig::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

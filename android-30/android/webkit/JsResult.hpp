@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./JsResult.def.hpp"
 
 namespace android::webkit
 {
-	class JsResult : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void JsResult::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit JsResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JsResult(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void cancel() const;
-		void confirm() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline void JsResult::confirm() const
+	{
+		callMethod<void>(
+			"confirm",
+			"()V"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

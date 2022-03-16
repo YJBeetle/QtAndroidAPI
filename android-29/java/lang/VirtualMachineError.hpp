@@ -1,28 +1,42 @@
 #pragma once
 
-#include "./Error.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./VirtualMachineError.def.hpp"
 
 namespace java::lang
 {
-	class VirtualMachineError : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VirtualMachineError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		VirtualMachineError(QJniObject obj);
-		
-		// Constructors
-		VirtualMachineError();
-		VirtualMachineError(JString arg0);
-		VirtualMachineError(JThrowable arg0);
-		VirtualMachineError(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline VirtualMachineError::VirtualMachineError()
+		: java::lang::Error(
+			"java.lang.VirtualMachineError",
+			"()V"
+		) {}
+	inline VirtualMachineError::VirtualMachineError(JString arg0)
+		: java::lang::Error(
+			"java.lang.VirtualMachineError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline VirtualMachineError::VirtualMachineError(JThrowable arg0)
+		: java::lang::Error(
+			"java.lang.VirtualMachineError",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline VirtualMachineError::VirtualMachineError(JString arg0, JThrowable arg1)
+		: java::lang::Error(
+			"java.lang.VirtualMachineError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
 

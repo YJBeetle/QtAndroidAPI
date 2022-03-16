@@ -1,34 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./KeyPair.def.hpp"
+#include "./SecureRandom.def.hpp"
+#include "./KeyPairGeneratorSpi.def.hpp"
 
 namespace java::security
 {
-	class KeyPair;
-}
-namespace java::security
-{
-	class SecureRandom;
-}
-
-namespace java::security
-{
-	class KeyPairGeneratorSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyPairGeneratorSpi::KeyPairGeneratorSpi()
+		: JObject(
+			"java.security.KeyPairGeneratorSpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::security::KeyPair KeyPairGeneratorSpi::generateKeyPair() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyPairGeneratorSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyPairGeneratorSpi(QJniObject obj);
-		
-		// Constructors
-		KeyPairGeneratorSpi();
-		
-		// Methods
-		java::security::KeyPair generateKeyPair() const;
-		void initialize(jint arg0, java::security::SecureRandom arg1) const;
-		void initialize(JObject arg0, java::security::SecureRandom arg1) const;
-	};
+		return callObjectMethod(
+			"generateKeyPair",
+			"()Ljava/security/KeyPair;"
+		);
+	}
+	inline void KeyPairGeneratorSpi::initialize(jint arg0, java::security::SecureRandom arg1) const
+	{
+		callMethod<void>(
+			"initialize",
+			"(ILjava/security/SecureRandom;)V",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void KeyPairGeneratorSpi::initialize(JObject arg0, java::security::SecureRandom arg1) const
+	{
+		callMethod<void>(
+			"initialize",
+			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

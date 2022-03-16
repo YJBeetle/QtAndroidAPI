@@ -1,44 +1,135 @@
 #pragma once
 
+#include "../../../../os/Parcel.def.hpp"
 #include "../../../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../../../JString.hpp"
+#include "./Credential_UserCredential.def.hpp"
 
 namespace android::net::wifi::hotspot2::pps
 {
-	class Credential_UserCredential : public JObject
+	// Fields
+	inline JObject Credential_UserCredential::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Credential_UserCredential(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Credential_UserCredential(QJniObject obj);
-		
-		// Constructors
-		Credential_UserCredential();
-		Credential_UserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential &arg0);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getEapType() const;
-		JString getNonEapInnerMethod() const;
-		JString getPassword() const;
-		JString getUsername() const;
-		jint hashCode() const;
-		void setEapType(jint arg0) const;
-		void setNonEapInnerMethod(JString arg0) const;
-		void setPassword(JString arg0) const;
-		void setUsername(JString arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.hotspot2.pps.Credential$UserCredential",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline Credential_UserCredential::Credential_UserCredential()
+		: JObject(
+			"android.net.wifi.hotspot2.pps.Credential$UserCredential",
+			"()V"
+		) {}
+	inline Credential_UserCredential::Credential_UserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential &arg0)
+		: JObject(
+			"android.net.wifi.hotspot2.pps.Credential$UserCredential",
+			"(Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint Credential_UserCredential::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean Credential_UserCredential::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Credential_UserCredential::getEapType() const
+	{
+		return callMethod<jint>(
+			"getEapType",
+			"()I"
+		);
+	}
+	inline JString Credential_UserCredential::getNonEapInnerMethod() const
+	{
+		return callObjectMethod(
+			"getNonEapInnerMethod",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Credential_UserCredential::getPassword() const
+	{
+		return callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Credential_UserCredential::getUsername() const
+	{
+		return callObjectMethod(
+			"getUsername",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint Credential_UserCredential::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void Credential_UserCredential::setEapType(jint arg0) const
+	{
+		callMethod<void>(
+			"setEapType",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Credential_UserCredential::setNonEapInnerMethod(JString arg0) const
+	{
+		callMethod<void>(
+			"setNonEapInnerMethod",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Credential_UserCredential::setPassword(JString arg0) const
+	{
+		callMethod<void>(
+			"setPassword",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Credential_UserCredential::setUsername(JString arg0) const
+	{
+		callMethod<void>(
+			"setUsername",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString Credential_UserCredential::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Credential_UserCredential::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::wifi::hotspot2::pps
+
+// Base class headers
 

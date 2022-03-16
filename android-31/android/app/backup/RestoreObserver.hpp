@@ -1,27 +1,46 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./RestoreObserver.def.hpp"
 
 namespace android::app::backup
 {
-	class RestoreObserver : public JObject
+	// Fields
+	
+	// Constructors
+	inline RestoreObserver::RestoreObserver()
+		: JObject(
+			"android.app.backup.RestoreObserver",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void RestoreObserver::onUpdate(jint arg0, JString arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RestoreObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RestoreObserver(QJniObject obj);
-		
-		// Constructors
-		RestoreObserver();
-		
-		// Methods
-		void onUpdate(jint arg0, JString arg1) const;
-		void restoreFinished(jint arg0) const;
-		void restoreStarting(jint arg0) const;
-	};
+		callMethod<void>(
+			"onUpdate",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void RestoreObserver::restoreFinished(jint arg0) const
+	{
+		callMethod<void>(
+			"restoreFinished",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void RestoreObserver::restoreStarting(jint arg0) const
+	{
+		callMethod<void>(
+			"restoreStarting",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::app::backup
+
+// Base class headers
 

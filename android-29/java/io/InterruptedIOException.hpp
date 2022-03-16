@@ -1,26 +1,35 @@
 #pragma once
 
-#include "./IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./InterruptedIOException.def.hpp"
 
 namespace java::io
 {
-	class InterruptedIOException : public java::io::IOException
+	// Fields
+	inline jint InterruptedIOException::bytesTransferred()
 	{
-	public:
-		// Fields
-		jint bytesTransferred();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InterruptedIOException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		InterruptedIOException(QJniObject obj);
-		
-		// Constructors
-		InterruptedIOException();
-		InterruptedIOException(JString arg0);
-		
-		// Methods
-	};
+		return getField<jint>(
+			"bytesTransferred"
+		);
+	}
+	
+	// Constructors
+	inline InterruptedIOException::InterruptedIOException()
+		: java::io::IOException(
+			"java.io.InterruptedIOException",
+			"()V"
+		) {}
+	inline InterruptedIOException::InterruptedIOException(JString arg0)
+		: java::io::IOException(
+			"java.io.InterruptedIOException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
 

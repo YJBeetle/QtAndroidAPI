@@ -1,64 +1,145 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::graphics
-{
-	class Bitmap;
-}
-namespace android::graphics
-{
-	class BitmapFactory_Options;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::util
-{
-	class TypedValue;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-namespace java::io
-{
-	class InputStream;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "../content/res/Resources.def.hpp"
+#include "./Bitmap.def.hpp"
+#include "./BitmapFactory_Options.def.hpp"
+#include "./Rect.def.hpp"
+#include "../util/TypedValue.def.hpp"
+#include "../../java/io/FileDescriptor.def.hpp"
+#include "../../java/io/InputStream.def.hpp"
+#include "../../JString.hpp"
+#include "./BitmapFactory.def.hpp"
 
 namespace android::graphics
 {
-	class BitmapFactory : public JObject
+	// Fields
+	
+	// Constructors
+	inline BitmapFactory::BitmapFactory()
+		: JObject(
+			"android.graphics.BitmapFactory",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::graphics::Bitmap BitmapFactory::decodeByteArray(JByteArray arg0, jint arg1, jint arg2)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BitmapFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BitmapFactory(QJniObject obj);
-		
-		// Constructors
-		BitmapFactory();
-		
-		// Methods
-		static android::graphics::Bitmap decodeByteArray(JByteArray arg0, jint arg1, jint arg2);
-		static android::graphics::Bitmap decodeByteArray(JByteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
-		static android::graphics::Bitmap decodeFile(JString arg0);
-		static android::graphics::Bitmap decodeFile(JString arg0, android::graphics::BitmapFactory_Options arg1);
-		static android::graphics::Bitmap decodeFileDescriptor(java::io::FileDescriptor arg0);
-		static android::graphics::Bitmap decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
-		static android::graphics::Bitmap decodeResource(android::content::res::Resources arg0, jint arg1);
-		static android::graphics::Bitmap decodeResource(android::content::res::Resources arg0, jint arg1, android::graphics::BitmapFactory_Options arg2);
-		static android::graphics::Bitmap decodeResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, android::graphics::Rect arg3, android::graphics::BitmapFactory_Options arg4);
-		static android::graphics::Bitmap decodeStream(java::io::InputStream arg0);
-		static android::graphics::Bitmap decodeStream(java::io::InputStream arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
-	};
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeByteArray",
+			"([BII)Landroid/graphics/Bitmap;",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeByteArray(JByteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeByteArray",
+			"([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3.object()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeFile(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeFile",
+			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeFile(JString arg0, android::graphics::BitmapFactory_Options arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeFile",
+			"(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeFileDescriptor",
+			"(Ljava/io/FileDescriptor;)Landroid/graphics/Bitmap;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeFileDescriptor",
+			"(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeResource(android::content::res::Resources arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeResource",
+			"(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeResource(android::content::res::Resources arg0, jint arg1, android::graphics::BitmapFactory_Options arg2)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeResource",
+			"(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, android::graphics::Rect arg3, android::graphics::BitmapFactory_Options arg4)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeResourceStream",
+			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeStream(java::io::InputStream arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeStream",
+			"(Ljava/io/InputStream;)Landroid/graphics/Bitmap;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Bitmap BitmapFactory::decodeStream(java::io::InputStream arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapFactory",
+			"decodeStream",
+			"(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

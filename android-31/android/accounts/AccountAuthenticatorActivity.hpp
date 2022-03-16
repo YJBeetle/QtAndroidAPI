@@ -1,29 +1,40 @@
 #pragma once
 
-#include "../app/Activity.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
+#include "../os/Bundle.def.hpp"
+#include "./AccountAuthenticatorActivity.def.hpp"
 
 namespace android::accounts
 {
-	class AccountAuthenticatorActivity : public android::app::Activity
+	// Fields
+	
+	// Constructors
+	inline AccountAuthenticatorActivity::AccountAuthenticatorActivity()
+		: android::app::Activity(
+			"android.accounts.AccountAuthenticatorActivity",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void AccountAuthenticatorActivity::finish() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccountAuthenticatorActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
-		AccountAuthenticatorActivity(QJniObject obj);
-		
-		// Constructors
-		AccountAuthenticatorActivity();
-		
-		// Methods
-		void finish() const;
-		void setAccountAuthenticatorResult(android::os::Bundle arg0) const;
-	};
+		callMethod<void>(
+			"finish",
+			"()V"
+		);
+	}
+	inline void AccountAuthenticatorActivity::setAccountAuthenticatorResult(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"setAccountAuthenticatorResult",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::accounts
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../view/ContextThemeWrapper.hpp"
+#include "../app/Activity.hpp"
 

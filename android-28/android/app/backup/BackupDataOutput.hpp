@@ -1,32 +1,50 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JString;
+#include "../../../JByteArray.hpp"
+#include "../../../java/io/FileDescriptor.def.hpp"
+#include "../../../JString.hpp"
+#include "./BackupDataOutput.def.hpp"
 
 namespace android::app::backup
 {
-	class BackupDataOutput : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jlong BackupDataOutput::getQuota() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BackupDataOutput(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BackupDataOutput(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jlong getQuota() const;
-		jint getTransportFlags() const;
-		jint writeEntityData(JByteArray arg0, jint arg1) const;
-		jint writeEntityHeader(JString arg0, jint arg1) const;
-	};
+		return callMethod<jlong>(
+			"getQuota",
+			"()J"
+		);
+	}
+	inline jint BackupDataOutput::getTransportFlags() const
+	{
+		return callMethod<jint>(
+			"getTransportFlags",
+			"()I"
+		);
+	}
+	inline jint BackupDataOutput::writeEntityData(JByteArray arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"writeEntityData",
+			"([BI)I",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline jint BackupDataOutput::writeEntityHeader(JString arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"writeEntityHeader",
+			"(Ljava/lang/String;I)I",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::app::backup
+
+// Base class headers
 

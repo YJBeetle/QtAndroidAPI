@@ -1,25 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./RangeValueIterator_Element.def.hpp"
 
 namespace android::icu::util
 {
-	class RangeValueIterator_Element : public JObject
+	// Fields
+	inline jint RangeValueIterator_Element::limit()
 	{
-	public:
-		// Fields
-		jint limit();
-		jint start();
-		jint value();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RangeValueIterator_Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RangeValueIterator_Element(QJniObject obj);
-		
-		// Constructors
-		RangeValueIterator_Element();
-		
-		// Methods
-	};
+		return getField<jint>(
+			"limit"
+		);
+	}
+	inline jint RangeValueIterator_Element::start()
+	{
+		return getField<jint>(
+			"start"
+		);
+	}
+	inline jint RangeValueIterator_Element::value()
+	{
+		return getField<jint>(
+			"value"
+		);
+	}
+	
+	// Constructors
+	inline RangeValueIterator_Element::RangeValueIterator_Element()
+		: JObject(
+			"android.icu.util.RangeValueIterator$Element",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::icu::util
+
+// Base class headers
 

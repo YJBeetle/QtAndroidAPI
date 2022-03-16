@@ -1,41 +1,114 @@
 #pragma once
 
+#include "./Parcel.def.hpp"
 #include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./WorkSource.def.hpp"
 
 namespace android::os
 {
-	class Parcel;
-}
-class JObject;
-class JString;
-
-namespace android::os
-{
-	class WorkSource : public JObject
+	// Fields
+	inline JObject WorkSource::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WorkSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WorkSource(QJniObject obj);
-		
-		// Constructors
-		WorkSource();
-		WorkSource(android::os::WorkSource &arg0);
-		
-		// Methods
-		jboolean add(android::os::WorkSource arg0) const;
-		void clear() const;
-		jint describeContents() const;
-		jboolean diff(android::os::WorkSource arg0) const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		jboolean remove(android::os::WorkSource arg0) const;
-		void set(android::os::WorkSource arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.os.WorkSource",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline WorkSource::WorkSource()
+		: JObject(
+			"android.os.WorkSource",
+			"()V"
+		) {}
+	inline WorkSource::WorkSource(android::os::WorkSource &arg0)
+		: JObject(
+			"android.os.WorkSource",
+			"(Landroid/os/WorkSource;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean WorkSource::add(android::os::WorkSource arg0) const
+	{
+		return callMethod<jboolean>(
+			"add",
+			"(Landroid/os/WorkSource;)Z",
+			arg0.object()
+		);
+	}
+	inline void WorkSource::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline jint WorkSource::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean WorkSource::diff(android::os::WorkSource arg0) const
+	{
+		return callMethod<jboolean>(
+			"diff",
+			"(Landroid/os/WorkSource;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean WorkSource::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint WorkSource::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean WorkSource::remove(android::os::WorkSource arg0) const
+	{
+		return callMethod<jboolean>(
+			"remove",
+			"(Landroid/os/WorkSource;)Z",
+			arg0.object()
+		);
+	}
+	inline void WorkSource::set(android::os::WorkSource arg0) const
+	{
+		callMethod<void>(
+			"set",
+			"(Landroid/os/WorkSource;)V",
+			arg0.object()
+		);
+	}
+	inline JString WorkSource::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void WorkSource::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

@@ -1,38 +1,62 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
-namespace java::net
-{
-	class Inet4Address;
-}
-namespace java::net
-{
-	class InetAddress;
-}
+#include "../../JString.hpp"
+#include "./Inet4Address.def.hpp"
+#include "./InetAddress.def.hpp"
+#include "./InterfaceAddress.def.hpp"
 
 namespace java::net
 {
-	class InterfaceAddress : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean InterfaceAddress::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InterfaceAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InterfaceAddress(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		java::net::InetAddress getAddress() const;
-		java::net::InetAddress getBroadcast() const;
-		jshort getNetworkPrefixLength() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::net::InetAddress InterfaceAddress::getAddress() const
+	{
+		return callObjectMethod(
+			"getAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline java::net::InetAddress InterfaceAddress::getBroadcast() const
+	{
+		return callObjectMethod(
+			"getBroadcast",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline jshort InterfaceAddress::getNetworkPrefixLength() const
+	{
+		return callMethod<jshort>(
+			"getNetworkPrefixLength",
+			"()S"
+		);
+	}
+	inline jint InterfaceAddress::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString InterfaceAddress::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

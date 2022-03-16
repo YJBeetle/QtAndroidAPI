@@ -1,60 +1,200 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JString;
-namespace java::util::concurrent::atomic
-{
-	class AtomicLong;
-}
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../../JString.hpp"
+#include "./concurrent/atomic/AtomicLong.def.hpp"
+#include "./Random.def.hpp"
 
 namespace java::util
 {
-	class Random : public JObject
+	// Fields
+	
+	// Constructors
+	inline Random::Random()
+		: JObject(
+			"java.util.Random",
+			"()V"
+		) {}
+	inline Random::Random(jlong arg0)
+		: JObject(
+			"java.util.Random",
+			"(J)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline JObject Random::doubles() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Random(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Random(QJniObject obj);
-		
-		// Constructors
-		Random();
-		Random(jlong arg0);
-		
-		// Methods
-		JObject doubles() const;
-		JObject doubles(jlong arg0) const;
-		JObject doubles(jdouble arg0, jdouble arg1) const;
-		JObject doubles(jlong arg0, jdouble arg1, jdouble arg2) const;
-		JObject ints() const;
-		JObject ints(jlong arg0) const;
-		JObject ints(jint arg0, jint arg1) const;
-		JObject ints(jlong arg0, jint arg1, jint arg2) const;
-		JObject longs() const;
-		JObject longs(jlong arg0) const;
-		JObject longs(jlong arg0, jlong arg1) const;
-		JObject longs(jlong arg0, jlong arg1, jlong arg2) const;
-		jboolean nextBoolean() const;
-		void nextBytes(JByteArray arg0) const;
-		jdouble nextDouble() const;
-		jfloat nextFloat() const;
-		jdouble nextGaussian() const;
-		jint nextInt() const;
-		jint nextInt(jint arg0) const;
-		jlong nextLong() const;
-		void setSeed(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"doubles",
+			"()Ljava/util/stream/DoubleStream;"
+		);
+	}
+	inline JObject Random::doubles(jlong arg0) const
+	{
+		return callObjectMethod(
+			"doubles",
+			"(J)Ljava/util/stream/DoubleStream;",
+			arg0
+		);
+	}
+	inline JObject Random::doubles(jdouble arg0, jdouble arg1) const
+	{
+		return callObjectMethod(
+			"doubles",
+			"(DD)Ljava/util/stream/DoubleStream;",
+			arg0,
+			arg1
+		);
+	}
+	inline JObject Random::doubles(jlong arg0, jdouble arg1, jdouble arg2) const
+	{
+		return callObjectMethod(
+			"doubles",
+			"(JDD)Ljava/util/stream/DoubleStream;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline JObject Random::ints() const
+	{
+		return callObjectMethod(
+			"ints",
+			"()Ljava/util/stream/IntStream;"
+		);
+	}
+	inline JObject Random::ints(jlong arg0) const
+	{
+		return callObjectMethod(
+			"ints",
+			"(J)Ljava/util/stream/IntStream;",
+			arg0
+		);
+	}
+	inline JObject Random::ints(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"ints",
+			"(II)Ljava/util/stream/IntStream;",
+			arg0,
+			arg1
+		);
+	}
+	inline JObject Random::ints(jlong arg0, jint arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"ints",
+			"(JII)Ljava/util/stream/IntStream;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline JObject Random::longs() const
+	{
+		return callObjectMethod(
+			"longs",
+			"()Ljava/util/stream/LongStream;"
+		);
+	}
+	inline JObject Random::longs(jlong arg0) const
+	{
+		return callObjectMethod(
+			"longs",
+			"(J)Ljava/util/stream/LongStream;",
+			arg0
+		);
+	}
+	inline JObject Random::longs(jlong arg0, jlong arg1) const
+	{
+		return callObjectMethod(
+			"longs",
+			"(JJ)Ljava/util/stream/LongStream;",
+			arg0,
+			arg1
+		);
+	}
+	inline JObject Random::longs(jlong arg0, jlong arg1, jlong arg2) const
+	{
+		return callObjectMethod(
+			"longs",
+			"(JJJ)Ljava/util/stream/LongStream;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean Random::nextBoolean() const
+	{
+		return callMethod<jboolean>(
+			"nextBoolean",
+			"()Z"
+		);
+	}
+	inline void Random::nextBytes(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"nextBytes",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline jdouble Random::nextDouble() const
+	{
+		return callMethod<jdouble>(
+			"nextDouble",
+			"()D"
+		);
+	}
+	inline jfloat Random::nextFloat() const
+	{
+		return callMethod<jfloat>(
+			"nextFloat",
+			"()F"
+		);
+	}
+	inline jdouble Random::nextGaussian() const
+	{
+		return callMethod<jdouble>(
+			"nextGaussian",
+			"()D"
+		);
+	}
+	inline jint Random::nextInt() const
+	{
+		return callMethod<jint>(
+			"nextInt",
+			"()I"
+		);
+	}
+	inline jint Random::nextInt(jint arg0) const
+	{
+		return callMethod<jint>(
+			"nextInt",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jlong Random::nextLong() const
+	{
+		return callMethod<jlong>(
+			"nextLong",
+			"()J"
+		);
+	}
+	inline void Random::setSeed(jlong arg0) const
+	{
+		callMethod<void>(
+			"setSeed",
+			"(J)V",
+			arg0
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

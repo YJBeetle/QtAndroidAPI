@@ -1,37 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
-namespace java::net
-{
-	class Socket;
-}
-namespace javax::net::ssl
-{
-	class SSLEngine;
-}
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/net/Socket.def.hpp"
+#include "./SSLEngine.def.hpp"
+#include "./X509ExtendedTrustManager.def.hpp"
 
 namespace javax::net::ssl
 {
-	class X509ExtendedTrustManager : public JObject
+	// Fields
+	
+	// Constructors
+	inline X509ExtendedTrustManager::X509ExtendedTrustManager()
+		: JObject(
+			"javax.net.ssl.X509ExtendedTrustManager",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit X509ExtendedTrustManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X509ExtendedTrustManager(QJniObject obj);
-		
-		// Constructors
-		X509ExtendedTrustManager();
-		
-		// Methods
-		void checkClientTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const;
-		void checkClientTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const;
-		void checkServerTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const;
-		void checkServerTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const;
-	};
+		callMethod<void>(
+			"checkClientTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const
+	{
+		callMethod<void>(
+			"checkClientTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, java::net::Socket arg2) const
+	{
+		callMethod<void>(
+			"checkServerTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2) const
+	{
+		callMethod<void>(
+			"checkServerTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
 

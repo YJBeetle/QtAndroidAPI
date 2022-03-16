@@ -1,34 +1,56 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace java::io
-{
-	class File;
-}
+#include "../content/Context.def.hpp"
+#include "../../java/io/File.def.hpp"
+#include "./RecoverySystem.def.hpp"
 
 namespace android::os
 {
-	class RecoverySystem : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void RecoverySystem::installPackage(android::content::Context arg0, java::io::File arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RecoverySystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RecoverySystem(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static void installPackage(android::content::Context arg0, java::io::File arg1);
-		static void rebootWipeCache(android::content::Context arg0);
-		static void rebootWipeUserData(android::content::Context arg0);
-		static void verifyPackage(java::io::File arg0, JObject arg1, java::io::File arg2);
-	};
+		callStaticMethod<void>(
+			"android.os.RecoverySystem",
+			"installPackage",
+			"(Landroid/content/Context;Ljava/io/File;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void RecoverySystem::rebootWipeCache(android::content::Context arg0)
+	{
+		callStaticMethod<void>(
+			"android.os.RecoverySystem",
+			"rebootWipeCache",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		);
+	}
+	inline void RecoverySystem::rebootWipeUserData(android::content::Context arg0)
+	{
+		callStaticMethod<void>(
+			"android.os.RecoverySystem",
+			"rebootWipeUserData",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		);
+	}
+	inline void RecoverySystem::verifyPackage(java::io::File arg0, JObject arg1, java::io::File arg2)
+	{
+		callStaticMethod<void>(
+			"android.os.RecoverySystem",
+			"verifyPackage",
+			"(Ljava/io/File;Landroid/os/RecoverySystem$ProgressListener;Ljava/io/File;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

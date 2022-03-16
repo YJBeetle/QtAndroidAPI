@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CollationKey_BoundMode.def.hpp"
 
 namespace android::icu::text
 {
-	class CollationKey_BoundMode : public JObject
+	// Fields
+	inline jint CollationKey_BoundMode::LOWER()
 	{
-	public:
-		// Fields
-		static jint LOWER();
-		static jint UPPER();
-		static jint UPPER_LONG();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CollationKey_BoundMode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CollationKey_BoundMode(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.icu.text.CollationKey$BoundMode",
+			"LOWER"
+		);
+	}
+	inline jint CollationKey_BoundMode::UPPER()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.CollationKey$BoundMode",
+			"UPPER"
+		);
+	}
+	inline jint CollationKey_BoundMode::UPPER_LONG()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.CollationKey$BoundMode",
+			"UPPER_LONG"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::icu::text
+
+// Base class headers
 

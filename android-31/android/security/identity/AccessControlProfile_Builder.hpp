@@ -1,39 +1,55 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AccessControlProfile.def.hpp"
+#include "./AccessControlProfileId.def.hpp"
+#include "../../../java/security/cert/X509Certificate.def.hpp"
+#include "./AccessControlProfile_Builder.def.hpp"
 
 namespace android::security::identity
 {
-	class AccessControlProfile;
-}
-namespace android::security::identity
-{
-	class AccessControlProfileId;
-}
-namespace java::security::cert
-{
-	class X509Certificate;
-}
-
-namespace android::security::identity
-{
-	class AccessControlProfile_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AccessControlProfile_Builder::AccessControlProfile_Builder(android::security::identity::AccessControlProfileId arg0)
+		: JObject(
+			"android.security.identity.AccessControlProfile$Builder",
+			"(Landroid/security/identity/AccessControlProfileId;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::security::identity::AccessControlProfile AccessControlProfile_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccessControlProfile_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlProfile_Builder(QJniObject obj);
-		
-		// Constructors
-		AccessControlProfile_Builder(android::security::identity::AccessControlProfileId arg0);
-		
-		// Methods
-		android::security::identity::AccessControlProfile build() const;
-		android::security::identity::AccessControlProfile_Builder setReaderCertificate(java::security::cert::X509Certificate arg0) const;
-		android::security::identity::AccessControlProfile_Builder setUserAuthenticationRequired(jboolean arg0) const;
-		android::security::identity::AccessControlProfile_Builder setUserAuthenticationTimeout(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/security/identity/AccessControlProfile;"
+		);
+	}
+	inline android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setReaderCertificate(java::security::cert::X509Certificate arg0) const
+	{
+		return callObjectMethod(
+			"setReaderCertificate",
+			"(Ljava/security/cert/X509Certificate;)Landroid/security/identity/AccessControlProfile$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setUserAuthenticationRequired(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setUserAuthenticationRequired",
+			"(Z)Landroid/security/identity/AccessControlProfile$Builder;",
+			arg0
+		);
+	}
+	inline android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setUserAuthenticationTimeout(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setUserAuthenticationTimeout",
+			"(J)Landroid/security/identity/AccessControlProfile$Builder;",
+			arg0
+		);
+	}
 } // namespace android::security::identity
+
+// Base class headers
 

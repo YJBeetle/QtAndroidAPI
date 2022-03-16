@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./ParserConfigurationException.def.hpp"
 
 namespace javax::xml::parsers
 {
-	class ParserConfigurationException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ParserConfigurationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ParserConfigurationException(QJniObject obj);
-		
-		// Constructors
-		ParserConfigurationException();
-		ParserConfigurationException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ParserConfigurationException::ParserConfigurationException()
+		: java::lang::Exception(
+			"javax.xml.parsers.ParserConfigurationException",
+			"()V"
+		) {}
+	inline ParserConfigurationException::ParserConfigurationException(JString arg0)
+		: java::lang::Exception(
+			"javax.xml.parsers.ParserConfigurationException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::xml::parsers
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
 

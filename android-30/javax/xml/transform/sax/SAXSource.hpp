@@ -1,39 +1,104 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
-namespace org::xml::sax
-{
-	class InputSource;
-}
+#include "../../../../JString.hpp"
+#include "../../../../org/xml/sax/InputSource.def.hpp"
+#include "./SAXSource.def.hpp"
 
 namespace javax::xml::transform::sax
 {
-	class SAXSource : public JObject
+	// Fields
+	inline JString SAXSource::FEATURE()
 	{
-	public:
-		// Fields
-		static JString FEATURE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SAXSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SAXSource(QJniObject obj);
-		
-		// Constructors
-		SAXSource();
-		SAXSource(org::xml::sax::InputSource arg0);
-		SAXSource(JObject arg0, org::xml::sax::InputSource arg1);
-		
-		// Methods
-		static org::xml::sax::InputSource sourceToInputSource(JObject arg0);
-		org::xml::sax::InputSource getInputSource() const;
-		JString getSystemId() const;
-		JObject getXMLReader() const;
-		jboolean isEmpty() const;
-		void setInputSource(org::xml::sax::InputSource arg0) const;
-		void setSystemId(JString arg0) const;
-		void setXMLReader(JObject arg0) const;
-	};
+		return getStaticObjectField(
+			"javax.xml.transform.sax.SAXSource",
+			"FEATURE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline SAXSource::SAXSource()
+		: JObject(
+			"javax.xml.transform.sax.SAXSource",
+			"()V"
+		) {}
+	inline SAXSource::SAXSource(org::xml::sax::InputSource arg0)
+		: JObject(
+			"javax.xml.transform.sax.SAXSource",
+			"(Lorg/xml/sax/InputSource;)V",
+			arg0.object()
+		) {}
+	inline SAXSource::SAXSource(JObject arg0, org::xml::sax::InputSource arg1)
+		: JObject(
+			"javax.xml.transform.sax.SAXSource",
+			"(Lorg/xml/sax/XMLReader;Lorg/xml/sax/InputSource;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline org::xml::sax::InputSource SAXSource::sourceToInputSource(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"javax.xml.transform.sax.SAXSource",
+			"sourceToInputSource",
+			"(Ljavax/xml/transform/Source;)Lorg/xml/sax/InputSource;",
+			arg0.object()
+		);
+	}
+	inline org::xml::sax::InputSource SAXSource::getInputSource() const
+	{
+		return callObjectMethod(
+			"getInputSource",
+			"()Lorg/xml/sax/InputSource;"
+		);
+	}
+	inline JString SAXSource::getSystemId() const
+	{
+		return callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject SAXSource::getXMLReader() const
+	{
+		return callObjectMethod(
+			"getXMLReader",
+			"()Lorg/xml/sax/XMLReader;"
+		);
+	}
+	inline jboolean SAXSource::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline void SAXSource::setInputSource(org::xml::sax::InputSource arg0) const
+	{
+		callMethod<void>(
+			"setInputSource",
+			"(Lorg/xml/sax/InputSource;)V",
+			arg0.object()
+		);
+	}
+	inline void SAXSource::setSystemId(JString arg0) const
+	{
+		callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void SAXSource::setXMLReader(JObject arg0) const
+	{
+		callMethod<void>(
+			"setXMLReader",
+			"(Lorg/xml/sax/XMLReader;)V",
+			arg0.object()
+		);
+	}
 } // namespace javax::xml::transform::sax
+
+// Base class headers
 

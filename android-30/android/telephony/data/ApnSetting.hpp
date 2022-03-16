@@ -1,88 +1,388 @@
 #pragma once
 
+#include "../../net/Uri.def.hpp"
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
+#include "../../../JString.hpp"
+#include "../../../java/net/InetAddress.def.hpp"
+#include "./ApnSetting.def.hpp"
 
 namespace android::telephony::data
 {
-	class ApnSetting : public JObject
+	// Fields
+	inline jint ApnSetting::AUTH_TYPE_CHAP()
 	{
-	public:
-		// Fields
-		static jint AUTH_TYPE_CHAP();
-		static jint AUTH_TYPE_NONE();
-		static jint AUTH_TYPE_PAP();
-		static jint AUTH_TYPE_PAP_OR_CHAP();
-		static JObject CREATOR();
-		static jint MVNO_TYPE_GID();
-		static jint MVNO_TYPE_ICCID();
-		static jint MVNO_TYPE_IMSI();
-		static jint MVNO_TYPE_SPN();
-		static jint PROTOCOL_IP();
-		static jint PROTOCOL_IPV4V6();
-		static jint PROTOCOL_IPV6();
-		static jint PROTOCOL_NON_IP();
-		static jint PROTOCOL_PPP();
-		static jint PROTOCOL_UNSTRUCTURED();
-		static jint TYPE_CBS();
-		static jint TYPE_DEFAULT();
-		static jint TYPE_DUN();
-		static jint TYPE_EMERGENCY();
-		static jint TYPE_FOTA();
-		static jint TYPE_HIPRI();
-		static jint TYPE_IA();
-		static jint TYPE_IMS();
-		static jint TYPE_MCX();
-		static jint TYPE_MMS();
-		static jint TYPE_SUPL();
-		static jint TYPE_XCAP();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ApnSetting(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApnSetting(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JString getApnName() const;
-		jint getApnTypeBitmask() const;
-		jint getAuthType() const;
-		jint getCarrierId() const;
-		JString getEntryName() const;
-		jint getId() const;
-		java::net::InetAddress getMmsProxyAddress() const;
-		JString getMmsProxyAddressAsString() const;
-		jint getMmsProxyPort() const;
-		android::net::Uri getMmsc() const;
-		jint getMvnoType() const;
-		jint getNetworkTypeBitmask() const;
-		JString getOperatorNumeric() const;
-		JString getPassword() const;
-		jint getProtocol() const;
-		java::net::InetAddress getProxyAddress() const;
-		JString getProxyAddressAsString() const;
-		jint getProxyPort() const;
-		jint getRoamingProtocol() const;
-		JString getUser() const;
-		jboolean isEnabled() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"AUTH_TYPE_CHAP"
+		);
+	}
+	inline jint ApnSetting::AUTH_TYPE_NONE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"AUTH_TYPE_NONE"
+		);
+	}
+	inline jint ApnSetting::AUTH_TYPE_PAP()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"AUTH_TYPE_PAP"
+		);
+	}
+	inline jint ApnSetting::AUTH_TYPE_PAP_OR_CHAP()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"AUTH_TYPE_PAP_OR_CHAP"
+		);
+	}
+	inline JObject ApnSetting::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.telephony.data.ApnSetting",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint ApnSetting::MVNO_TYPE_GID()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"MVNO_TYPE_GID"
+		);
+	}
+	inline jint ApnSetting::MVNO_TYPE_ICCID()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"MVNO_TYPE_ICCID"
+		);
+	}
+	inline jint ApnSetting::MVNO_TYPE_IMSI()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"MVNO_TYPE_IMSI"
+		);
+	}
+	inline jint ApnSetting::MVNO_TYPE_SPN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"MVNO_TYPE_SPN"
+		);
+	}
+	inline jint ApnSetting::PROTOCOL_IP()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"PROTOCOL_IP"
+		);
+	}
+	inline jint ApnSetting::PROTOCOL_IPV4V6()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"PROTOCOL_IPV4V6"
+		);
+	}
+	inline jint ApnSetting::PROTOCOL_IPV6()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"PROTOCOL_IPV6"
+		);
+	}
+	inline jint ApnSetting::PROTOCOL_NON_IP()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"PROTOCOL_NON_IP"
+		);
+	}
+	inline jint ApnSetting::PROTOCOL_PPP()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"PROTOCOL_PPP"
+		);
+	}
+	inline jint ApnSetting::PROTOCOL_UNSTRUCTURED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"PROTOCOL_UNSTRUCTURED"
+		);
+	}
+	inline jint ApnSetting::TYPE_CBS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_CBS"
+		);
+	}
+	inline jint ApnSetting::TYPE_DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_DEFAULT"
+		);
+	}
+	inline jint ApnSetting::TYPE_DUN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_DUN"
+		);
+	}
+	inline jint ApnSetting::TYPE_EMERGENCY()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_EMERGENCY"
+		);
+	}
+	inline jint ApnSetting::TYPE_FOTA()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_FOTA"
+		);
+	}
+	inline jint ApnSetting::TYPE_HIPRI()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_HIPRI"
+		);
+	}
+	inline jint ApnSetting::TYPE_IA()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_IA"
+		);
+	}
+	inline jint ApnSetting::TYPE_IMS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_IMS"
+		);
+	}
+	inline jint ApnSetting::TYPE_MCX()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_MCX"
+		);
+	}
+	inline jint ApnSetting::TYPE_MMS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_MMS"
+		);
+	}
+	inline jint ApnSetting::TYPE_SUPL()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_SUPL"
+		);
+	}
+	inline jint ApnSetting::TYPE_XCAP()
+	{
+		return getStaticField<jint>(
+			"android.telephony.data.ApnSetting",
+			"TYPE_XCAP"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint ApnSetting::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean ApnSetting::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString ApnSetting::getApnName() const
+	{
+		return callObjectMethod(
+			"getApnName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ApnSetting::getApnTypeBitmask() const
+	{
+		return callMethod<jint>(
+			"getApnTypeBitmask",
+			"()I"
+		);
+	}
+	inline jint ApnSetting::getAuthType() const
+	{
+		return callMethod<jint>(
+			"getAuthType",
+			"()I"
+		);
+	}
+	inline jint ApnSetting::getCarrierId() const
+	{
+		return callMethod<jint>(
+			"getCarrierId",
+			"()I"
+		);
+	}
+	inline JString ApnSetting::getEntryName() const
+	{
+		return callObjectMethod(
+			"getEntryName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ApnSetting::getId() const
+	{
+		return callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	inline java::net::InetAddress ApnSetting::getMmsProxyAddress() const
+	{
+		return callObjectMethod(
+			"getMmsProxyAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline JString ApnSetting::getMmsProxyAddressAsString() const
+	{
+		return callObjectMethod(
+			"getMmsProxyAddressAsString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ApnSetting::getMmsProxyPort() const
+	{
+		return callMethod<jint>(
+			"getMmsProxyPort",
+			"()I"
+		);
+	}
+	inline android::net::Uri ApnSetting::getMmsc() const
+	{
+		return callObjectMethod(
+			"getMmsc",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jint ApnSetting::getMvnoType() const
+	{
+		return callMethod<jint>(
+			"getMvnoType",
+			"()I"
+		);
+	}
+	inline jint ApnSetting::getNetworkTypeBitmask() const
+	{
+		return callMethod<jint>(
+			"getNetworkTypeBitmask",
+			"()I"
+		);
+	}
+	inline JString ApnSetting::getOperatorNumeric() const
+	{
+		return callObjectMethod(
+			"getOperatorNumeric",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString ApnSetting::getPassword() const
+	{
+		return callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ApnSetting::getProtocol() const
+	{
+		return callMethod<jint>(
+			"getProtocol",
+			"()I"
+		);
+	}
+	inline java::net::InetAddress ApnSetting::getProxyAddress() const
+	{
+		return callObjectMethod(
+			"getProxyAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline JString ApnSetting::getProxyAddressAsString() const
+	{
+		return callObjectMethod(
+			"getProxyAddressAsString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ApnSetting::getProxyPort() const
+	{
+		return callMethod<jint>(
+			"getProxyPort",
+			"()I"
+		);
+	}
+	inline jint ApnSetting::getRoamingProtocol() const
+	{
+		return callMethod<jint>(
+			"getRoamingProtocol",
+			"()I"
+		);
+	}
+	inline JString ApnSetting::getUser() const
+	{
+		return callObjectMethod(
+			"getUser",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean ApnSetting::isEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	inline JString ApnSetting::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ApnSetting::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony::data
+
+// Base class headers
 

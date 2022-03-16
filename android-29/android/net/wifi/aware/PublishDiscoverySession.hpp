@@ -1,31 +1,26 @@
 #pragma once
 
-#include "./DiscoverySession.hpp"
+#include "./PublishConfig.def.hpp"
+#include "./WifiAwareManager.def.hpp"
+#include "./PublishDiscoverySession.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class PublishConfig;
-}
-namespace android::net::wifi::aware
-{
-	class WifiAwareManager;
-}
-
-namespace android::net::wifi::aware
-{
-	class PublishDiscoverySession : public android::net::wifi::aware::DiscoverySession
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void PublishDiscoverySession::updatePublish(android::net::wifi::aware::PublishConfig arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PublishDiscoverySession(const char *className, const char *sig, Ts...agv) : android::net::wifi::aware::DiscoverySession(className, sig, std::forward<Ts>(agv)...) {}
-		PublishDiscoverySession(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void updatePublish(android::net::wifi::aware::PublishConfig arg0) const;
-	};
+		callMethod<void>(
+			"updatePublish",
+			"(Landroid/net/wifi/aware/PublishConfig;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
+#include "./DiscoverySession.hpp"
 

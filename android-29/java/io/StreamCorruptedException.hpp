@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./ObjectStreamException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./StreamCorruptedException.def.hpp"
 
 namespace java::io
 {
-	class StreamCorruptedException : public java::io::ObjectStreamException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StreamCorruptedException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		StreamCorruptedException(QJniObject obj);
-		
-		// Constructors
-		StreamCorruptedException();
-		StreamCorruptedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline StreamCorruptedException::StreamCorruptedException()
+		: java::io::ObjectStreamException(
+			"java.io.StreamCorruptedException",
+			"()V"
+		) {}
+	inline StreamCorruptedException::StreamCorruptedException(JString arg0)
+		: java::io::ObjectStreamException(
+			"java.io.StreamCorruptedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 

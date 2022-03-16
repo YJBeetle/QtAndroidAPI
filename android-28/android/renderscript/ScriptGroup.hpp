@@ -1,40 +1,60 @@
 #pragma once
 
-#include "./BaseObj.hpp"
-
-class JObjectArray;
-namespace android::renderscript
-{
-	class Allocation;
-}
-namespace android::renderscript
-{
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Script_KernelID;
-}
+#include "../../JObjectArray.hpp"
+#include "./Allocation.def.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Script_KernelID.def.hpp"
+#include "./ScriptGroup.def.hpp"
 
 namespace android::renderscript
 {
-	class ScriptGroup : public android::renderscript::BaseObj
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void ScriptGroup::destroy() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ScriptGroup(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptGroup(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void destroy() const;
-		JObjectArray execute(JObjectArray arg0) const;
-		void execute() const;
-		void setInput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const;
-		void setOutput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const;
-	};
+		callMethod<void>(
+			"destroy",
+			"()V"
+		);
+	}
+	inline JObjectArray ScriptGroup::execute(JObjectArray arg0) const
+	{
+		return callObjectMethod(
+			"execute",
+			"([Ljava/lang/Object;)[Ljava/lang/Object;",
+			arg0.object<jobjectArray>()
+		);
+	}
+	inline void ScriptGroup::execute() const
+	{
+		callMethod<void>(
+			"execute",
+			"()V"
+		);
+	}
+	inline void ScriptGroup::setInput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const
+	{
+		callMethod<void>(
+			"setInput",
+			"(Landroid/renderscript/Script$KernelID;Landroid/renderscript/Allocation;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ScriptGroup::setOutput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const
+	{
+		callMethod<void>(
+			"setOutput",
+			"(Landroid/renderscript/Script$KernelID;Landroid/renderscript/Allocation;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "./BaseObj.hpp"
 

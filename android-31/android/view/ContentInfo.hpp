@@ -1,55 +1,135 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ClipData;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../content/ClipData.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./ContentInfo.def.hpp"
 
 namespace android::view
 {
-	class ContentInfo : public JObject
+	// Fields
+	inline JObject ContentInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint FLAG_CONVERT_TO_PLAIN_TEXT();
-		static jint SOURCE_APP();
-		static jint SOURCE_AUTOFILL();
-		static jint SOURCE_CLIPBOARD();
-		static jint SOURCE_DRAG_AND_DROP();
-		static jint SOURCE_INPUT_METHOD();
-		static jint SOURCE_PROCESS_TEXT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ContentInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::content::ClipData getClip() const;
-		android::os::Bundle getExtras() const;
-		jint getFlags() const;
-		android::net::Uri getLinkUri() const;
-		jint getSource() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.ContentInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint ContentInfo::FLAG_CONVERT_TO_PLAIN_TEXT()
+	{
+		return getStaticField<jint>(
+			"android.view.ContentInfo",
+			"FLAG_CONVERT_TO_PLAIN_TEXT"
+		);
+	}
+	inline jint ContentInfo::SOURCE_APP()
+	{
+		return getStaticField<jint>(
+			"android.view.ContentInfo",
+			"SOURCE_APP"
+		);
+	}
+	inline jint ContentInfo::SOURCE_AUTOFILL()
+	{
+		return getStaticField<jint>(
+			"android.view.ContentInfo",
+			"SOURCE_AUTOFILL"
+		);
+	}
+	inline jint ContentInfo::SOURCE_CLIPBOARD()
+	{
+		return getStaticField<jint>(
+			"android.view.ContentInfo",
+			"SOURCE_CLIPBOARD"
+		);
+	}
+	inline jint ContentInfo::SOURCE_DRAG_AND_DROP()
+	{
+		return getStaticField<jint>(
+			"android.view.ContentInfo",
+			"SOURCE_DRAG_AND_DROP"
+		);
+	}
+	inline jint ContentInfo::SOURCE_INPUT_METHOD()
+	{
+		return getStaticField<jint>(
+			"android.view.ContentInfo",
+			"SOURCE_INPUT_METHOD"
+		);
+	}
+	inline jint ContentInfo::SOURCE_PROCESS_TEXT()
+	{
+		return getStaticField<jint>(
+			"android.view.ContentInfo",
+			"SOURCE_PROCESS_TEXT"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint ContentInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::content::ClipData ContentInfo::getClip() const
+	{
+		return callObjectMethod(
+			"getClip",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	inline android::os::Bundle ContentInfo::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline jint ContentInfo::getFlags() const
+	{
+		return callMethod<jint>(
+			"getFlags",
+			"()I"
+		);
+	}
+	inline android::net::Uri ContentInfo::getLinkUri() const
+	{
+		return callObjectMethod(
+			"getLinkUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jint ContentInfo::getSource() const
+	{
+		return callMethod<jint>(
+			"getSource",
+			"()I"
+		);
+	}
+	inline JString ContentInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ContentInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

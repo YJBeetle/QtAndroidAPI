@@ -1,51 +1,101 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::content::res
-{
-	class AssetManager;
-}
-namespace android::graphics
-{
-	class Typeface;
-}
-namespace java::io
-{
-	class File;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../content/res/AssetManager.def.hpp"
+#include "./Typeface.def.hpp"
+#include "../../java/io/File.def.hpp"
+#include "../../java/io/FileDescriptor.def.hpp"
+#include "../../JString.hpp"
+#include "./Typeface_Builder.def.hpp"
 
 namespace android::graphics
 {
-	class Typeface_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline Typeface_Builder::Typeface_Builder(java::io::File arg0)
+		: JObject(
+			"android.graphics.Typeface$Builder",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	inline Typeface_Builder::Typeface_Builder(java::io::FileDescriptor arg0)
+		: JObject(
+			"android.graphics.Typeface$Builder",
+			"(Ljava/io/FileDescriptor;)V",
+			arg0.object()
+		) {}
+	inline Typeface_Builder::Typeface_Builder(JString arg0)
+		: JObject(
+			"android.graphics.Typeface$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline Typeface_Builder::Typeface_Builder(android::content::res::AssetManager arg0, JString arg1)
+		: JObject(
+			"android.graphics.Typeface$Builder",
+			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::graphics::Typeface Typeface_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Typeface_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Typeface_Builder(QJniObject obj);
-		
-		// Constructors
-		Typeface_Builder(java::io::File arg0);
-		Typeface_Builder(java::io::FileDescriptor arg0);
-		Typeface_Builder(JString arg0);
-		Typeface_Builder(android::content::res::AssetManager arg0, JString arg1);
-		
-		// Methods
-		android::graphics::Typeface build() const;
-		android::graphics::Typeface_Builder setFallback(JString arg0) const;
-		android::graphics::Typeface_Builder setFontVariationSettings(JArray arg0) const;
-		android::graphics::Typeface_Builder setFontVariationSettings(JString arg0) const;
-		android::graphics::Typeface_Builder setItalic(jboolean arg0) const;
-		android::graphics::Typeface_Builder setTtcIndex(jint arg0) const;
-		android::graphics::Typeface_Builder setWeight(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/graphics/Typeface;"
+		);
+	}
+	inline android::graphics::Typeface_Builder Typeface_Builder::setFallback(JString arg0) const
+	{
+		return callObjectMethod(
+			"setFallback",
+			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::graphics::Typeface_Builder Typeface_Builder::setFontVariationSettings(JArray arg0) const
+	{
+		return callObjectMethod(
+			"setFontVariationSettings",
+			"([Landroid/graphics/fonts/FontVariationAxis;)Landroid/graphics/Typeface$Builder;",
+			arg0.object<jarray>()
+		);
+	}
+	inline android::graphics::Typeface_Builder Typeface_Builder::setFontVariationSettings(JString arg0) const
+	{
+		return callObjectMethod(
+			"setFontVariationSettings",
+			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::graphics::Typeface_Builder Typeface_Builder::setItalic(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setItalic",
+			"(Z)Landroid/graphics/Typeface$Builder;",
+			arg0
+		);
+	}
+	inline android::graphics::Typeface_Builder Typeface_Builder::setTtcIndex(jint arg0) const
+	{
+		return callObjectMethod(
+			"setTtcIndex",
+			"(I)Landroid/graphics/Typeface$Builder;",
+			arg0
+		);
+	}
+	inline android::graphics::Typeface_Builder Typeface_Builder::setWeight(jint arg0) const
+	{
+		return callObjectMethod(
+			"setWeight",
+			"(I)Landroid/graphics/Typeface$Builder;",
+			arg0
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

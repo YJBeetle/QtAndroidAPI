@@ -1,32 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaSync.def.hpp"
+#include "../../java/nio/ByteBuffer.def.hpp"
+#include "./MediaSync_Callback.def.hpp"
 
 namespace android::media
 {
-	class MediaSync;
-}
-namespace java::nio
-{
-	class ByteBuffer;
-}
-
-namespace android::media
-{
-	class MediaSync_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaSync_Callback::MediaSync_Callback()
+		: JObject(
+			"android.media.MediaSync$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaSync_Callback::onAudioBufferConsumed(android::media::MediaSync arg0, java::nio::ByteBuffer arg1, jint arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaSync_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSync_Callback(QJniObject obj);
-		
-		// Constructors
-		MediaSync_Callback();
-		
-		// Methods
-		void onAudioBufferConsumed(android::media::MediaSync arg0, java::nio::ByteBuffer arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"onAudioBufferConsumed",
+			"(Landroid/media/MediaSync;Ljava/nio/ByteBuffer;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

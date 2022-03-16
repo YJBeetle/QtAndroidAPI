@@ -1,24 +1,25 @@
 #pragma once
 
-#include "../util/AndroidRuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ReceiverCallNotAllowedException.def.hpp"
 
 namespace android::content
 {
-	class ReceiverCallNotAllowedException : public android::util::AndroidRuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ReceiverCallNotAllowedException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ReceiverCallNotAllowedException(QJniObject obj);
-		
-		// Constructors
-		ReceiverCallNotAllowedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(JString arg0)
+		: android::util::AndroidRuntimeException(
+			"android.content.ReceiverCallNotAllowedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::content
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "../util/AndroidRuntimeException.hpp"
 

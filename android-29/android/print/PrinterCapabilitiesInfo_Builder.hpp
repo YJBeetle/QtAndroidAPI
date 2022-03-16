@@ -1,49 +1,77 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./PrintAttributes_Margins.def.hpp"
+#include "./PrintAttributes_MediaSize.def.hpp"
+#include "./PrintAttributes_Resolution.def.hpp"
+#include "./PrinterCapabilitiesInfo.def.hpp"
+#include "./PrinterId.def.hpp"
+#include "./PrinterCapabilitiesInfo_Builder.def.hpp"
 
 namespace android::print
 {
-	class PrintAttributes_Margins;
-}
-namespace android::print
-{
-	class PrintAttributes_MediaSize;
-}
-namespace android::print
-{
-	class PrintAttributes_Resolution;
-}
-namespace android::print
-{
-	class PrinterCapabilitiesInfo;
-}
-namespace android::print
-{
-	class PrinterId;
-}
-
-namespace android::print
-{
-	class PrinterCapabilitiesInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PrinterCapabilitiesInfo_Builder::PrinterCapabilitiesInfo_Builder(android::print::PrinterId arg0)
+		: JObject(
+			"android.print.PrinterCapabilitiesInfo$Builder",
+			"(Landroid/print/PrinterId;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::addMediaSize(android::print::PrintAttributes_MediaSize arg0, jboolean arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PrinterCapabilitiesInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrinterCapabilitiesInfo_Builder(QJniObject obj);
-		
-		// Constructors
-		PrinterCapabilitiesInfo_Builder(android::print::PrinterId arg0);
-		
-		// Methods
-		android::print::PrinterCapabilitiesInfo_Builder addMediaSize(android::print::PrintAttributes_MediaSize arg0, jboolean arg1) const;
-		android::print::PrinterCapabilitiesInfo_Builder addResolution(android::print::PrintAttributes_Resolution arg0, jboolean arg1) const;
-		android::print::PrinterCapabilitiesInfo build() const;
-		android::print::PrinterCapabilitiesInfo_Builder setColorModes(jint arg0, jint arg1) const;
-		android::print::PrinterCapabilitiesInfo_Builder setDuplexModes(jint arg0, jint arg1) const;
-		android::print::PrinterCapabilitiesInfo_Builder setMinMargins(android::print::PrintAttributes_Margins arg0) const;
-	};
+		return callObjectMethod(
+			"addMediaSize",
+			"(Landroid/print/PrintAttributes$MediaSize;Z)Landroid/print/PrinterCapabilitiesInfo$Builder;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::addResolution(android::print::PrintAttributes_Resolution arg0, jboolean arg1) const
+	{
+		return callObjectMethod(
+			"addResolution",
+			"(Landroid/print/PrintAttributes$Resolution;Z)Landroid/print/PrinterCapabilitiesInfo$Builder;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::print::PrinterCapabilitiesInfo PrinterCapabilitiesInfo_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/print/PrinterCapabilitiesInfo;"
+		);
+	}
+	inline android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::setColorModes(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setColorModes",
+			"(II)Landroid/print/PrinterCapabilitiesInfo$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::setDuplexModes(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setDuplexModes",
+			"(II)Landroid/print/PrinterCapabilitiesInfo$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::setMinMargins(android::print::PrintAttributes_Margins arg0) const
+	{
+		return callObjectMethod(
+			"setMinMargins",
+			"(Landroid/print/PrintAttributes$Margins;)Landroid/print/PrinterCapabilitiesInfo$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

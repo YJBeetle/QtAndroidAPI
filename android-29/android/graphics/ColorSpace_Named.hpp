@@ -1,42 +1,163 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ColorSpace_Named.def.hpp"
 
 namespace android::graphics
 {
-	class ColorSpace_Named : public java::lang::Enum
+	// Fields
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::ACES()
 	{
-	public:
-		// Fields
-		static android::graphics::ColorSpace_Named ACES();
-		static android::graphics::ColorSpace_Named ACESCG();
-		static android::graphics::ColorSpace_Named ADOBE_RGB();
-		static android::graphics::ColorSpace_Named BT2020();
-		static android::graphics::ColorSpace_Named BT709();
-		static android::graphics::ColorSpace_Named CIE_LAB();
-		static android::graphics::ColorSpace_Named CIE_XYZ();
-		static android::graphics::ColorSpace_Named DCI_P3();
-		static android::graphics::ColorSpace_Named DISPLAY_P3();
-		static android::graphics::ColorSpace_Named EXTENDED_SRGB();
-		static android::graphics::ColorSpace_Named LINEAR_EXTENDED_SRGB();
-		static android::graphics::ColorSpace_Named LINEAR_SRGB();
-		static android::graphics::ColorSpace_Named NTSC_1953();
-		static android::graphics::ColorSpace_Named PRO_PHOTO_RGB();
-		static android::graphics::ColorSpace_Named SMPTE_C();
-		static android::graphics::ColorSpace_Named SRGB();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ColorSpace_Named(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Named(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::ColorSpace_Named valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"ACES",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::ACESCG()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"ACESCG",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::ADOBE_RGB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"ADOBE_RGB",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::BT2020()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"BT2020",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::BT709()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"BT709",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::CIE_LAB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"CIE_LAB",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::CIE_XYZ()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"CIE_XYZ",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::DCI_P3()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"DCI_P3",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::DISPLAY_P3()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"DISPLAY_P3",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::EXTENDED_SRGB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"EXTENDED_SRGB",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::LINEAR_EXTENDED_SRGB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"LINEAR_EXTENDED_SRGB",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::LINEAR_SRGB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"LINEAR_SRGB",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::NTSC_1953()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"NTSC_1953",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::PRO_PHOTO_RGB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"PRO_PHOTO_RGB",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::SMPTE_C()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"SMPTE_C",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::SRGB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Named",
+			"SRGB",
+			"Landroid/graphics/ColorSpace$Named;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::ColorSpace_Named ColorSpace_Named::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$Named",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Named;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ColorSpace_Named::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$Named",
+			"values",
+			"()[Landroid/graphics/ColorSpace$Named;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

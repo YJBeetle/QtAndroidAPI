@@ -1,27 +1,60 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CameraProfile.def.hpp"
 
 namespace android::media
 {
-	class CameraProfile : public JObject
+	// Fields
+	inline jint CameraProfile::QUALITY_HIGH()
 	{
-	public:
-		// Fields
-		static jint QUALITY_HIGH();
-		static jint QUALITY_LOW();
-		static jint QUALITY_MEDIUM();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CameraProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraProfile(QJniObject obj);
-		
-		// Constructors
-		CameraProfile();
-		
-		// Methods
-		static jint getJpegEncodingQualityParameter(jint arg0);
-		static jint getJpegEncodingQualityParameter(jint arg0, jint arg1);
-	};
+		return getStaticField<jint>(
+			"android.media.CameraProfile",
+			"QUALITY_HIGH"
+		);
+	}
+	inline jint CameraProfile::QUALITY_LOW()
+	{
+		return getStaticField<jint>(
+			"android.media.CameraProfile",
+			"QUALITY_LOW"
+		);
+	}
+	inline jint CameraProfile::QUALITY_MEDIUM()
+	{
+		return getStaticField<jint>(
+			"android.media.CameraProfile",
+			"QUALITY_MEDIUM"
+		);
+	}
+	
+	// Constructors
+	inline CameraProfile::CameraProfile()
+		: JObject(
+			"android.media.CameraProfile",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint CameraProfile::getJpegEncodingQualityParameter(jint arg0)
+	{
+		return callStaticMethod<jint>(
+			"android.media.CameraProfile",
+			"getJpegEncodingQualityParameter",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint CameraProfile::getJpegEncodingQualityParameter(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.media.CameraProfile",
+			"getJpegEncodingQualityParameter",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

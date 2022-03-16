@@ -1,48 +1,98 @@
 #pragma once
 
-#include "./StateListDrawable.hpp"
-
-class JIntArray;
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::content::res
-{
-	class Resources_Theme;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::graphics::drawable
-{
-	class DrawableContainer_DrawableContainerState;
-}
+#include "../../../JIntArray.hpp"
+#include "../../content/res/Resources.def.hpp"
+#include "../../content/res/Resources_Theme.def.hpp"
+#include "./Drawable.def.hpp"
+#include "./DrawableContainer_DrawableContainerState.def.hpp"
+#include "./AnimatedStateListDrawable.def.hpp"
 
 namespace android::graphics::drawable
 {
-	class AnimatedStateListDrawable : public android::graphics::drawable::StateListDrawable
+	// Fields
+	
+	// Constructors
+	inline AnimatedStateListDrawable::AnimatedStateListDrawable()
+		: android::graphics::drawable::StateListDrawable(
+			"android.graphics.drawable.AnimatedStateListDrawable",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void AnimatedStateListDrawable::addState(JIntArray arg0, android::graphics::drawable::Drawable arg1, jint arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AnimatedStateListDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::StateListDrawable(className, sig, std::forward<Ts>(agv)...) {}
-		AnimatedStateListDrawable(QJniObject obj);
-		
-		// Constructors
-		AnimatedStateListDrawable();
-		
-		// Methods
-		void addState(JIntArray arg0, android::graphics::drawable::Drawable arg1, jint arg2) const;
-		void addTransition(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2, jboolean arg3) const;
-		void applyTheme(android::content::res::Resources_Theme arg0) const;
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
-		jboolean isStateful() const;
-		void jumpToCurrentState() const;
-		android::graphics::drawable::Drawable mutate() const;
-		jboolean setVisible(jboolean arg0, jboolean arg1) const;
-	};
+		callMethod<void>(
+			"addState",
+			"([ILandroid/graphics/drawable/Drawable;I)V",
+			arg0.object<jintArray>(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline void AnimatedStateListDrawable::addTransition(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2, jboolean arg3) const
+	{
+		callMethod<void>(
+			"addTransition",
+			"(IILandroid/graphics/drawable/Drawable;Z)V",
+			arg0,
+			arg1,
+			arg2.object(),
+			arg3
+		);
+	}
+	inline void AnimatedStateListDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
+	{
+		callMethod<void>(
+			"applyTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.object()
+		);
+	}
+	inline void AnimatedStateListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
+	{
+		callMethod<void>(
+			"inflate",
+			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline jboolean AnimatedStateListDrawable::isStateful() const
+	{
+		return callMethod<jboolean>(
+			"isStateful",
+			"()Z"
+		);
+	}
+	inline void AnimatedStateListDrawable::jumpToCurrentState() const
+	{
+		callMethod<void>(
+			"jumpToCurrentState",
+			"()V"
+		);
+	}
+	inline android::graphics::drawable::Drawable AnimatedStateListDrawable::mutate() const
+	{
+		return callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline jboolean AnimatedStateListDrawable::setVisible(jboolean arg0, jboolean arg1) const
+	{
+		return callMethod<jboolean>(
+			"setVisible",
+			"(ZZ)Z",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::graphics::drawable
+
+// Base class headers
+#include "./Drawable.hpp"
+#include "./DrawableContainer.hpp"
+#include "./StateListDrawable.hpp"
 

@@ -1,31 +1,53 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MidiReceiver.def.hpp"
+#include "./MidiSender.def.hpp"
 
 namespace android::media::midi
 {
-	class MidiReceiver;
-}
-
-namespace android::media::midi
-{
-	class MidiSender : public JObject
+	// Fields
+	
+	// Constructors
+	inline MidiSender::MidiSender()
+		: JObject(
+			"android.media.midi.MidiSender",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MidiSender::connect(android::media::midi::MidiReceiver arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MidiSender(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiSender(QJniObject obj);
-		
-		// Constructors
-		MidiSender();
-		
-		// Methods
-		void connect(android::media::midi::MidiReceiver arg0) const;
-		void disconnect(android::media::midi::MidiReceiver arg0) const;
-		void onConnect(android::media::midi::MidiReceiver arg0) const;
-		void onDisconnect(android::media::midi::MidiReceiver arg0) const;
-	};
+		callMethod<void>(
+			"connect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.object()
+		);
+	}
+	inline void MidiSender::disconnect(android::media::midi::MidiReceiver arg0) const
+	{
+		callMethod<void>(
+			"disconnect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.object()
+		);
+	}
+	inline void MidiSender::onConnect(android::media::midi::MidiReceiver arg0) const
+	{
+		callMethod<void>(
+			"onConnect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.object()
+		);
+	}
+	inline void MidiSender::onDisconnect(android::media::midi::MidiReceiver arg0) const
+	{
+		callMethod<void>(
+			"onDisconnect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media::midi
+
+// Base class headers
 

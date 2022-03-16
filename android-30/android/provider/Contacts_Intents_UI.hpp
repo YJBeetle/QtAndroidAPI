@@ -1,35 +1,109 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Contacts_Intents_UI.def.hpp"
 
 namespace android::provider
 {
-	class Contacts_Intents_UI : public JObject
+	// Fields
+	inline JString Contacts_Intents_UI::FILTER_CONTACTS_ACTION()
 	{
-	public:
-		// Fields
-		static JString FILTER_CONTACTS_ACTION();
-		static JString FILTER_TEXT_EXTRA_KEY();
-		static JString GROUP_NAME_EXTRA_KEY();
-		static JString LIST_ALL_CONTACTS_ACTION();
-		static JString LIST_CONTACTS_WITH_PHONES_ACTION();
-		static JString LIST_DEFAULT();
-		static JString LIST_FREQUENT_ACTION();
-		static JString LIST_GROUP_ACTION();
-		static JString LIST_STARRED_ACTION();
-		static JString LIST_STREQUENT_ACTION();
-		static JString TITLE_EXTRA_KEY();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Contacts_Intents_UI(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Intents_UI(QJniObject obj);
-		
-		// Constructors
-		Contacts_Intents_UI();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"FILTER_CONTACTS_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::FILTER_TEXT_EXTRA_KEY()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"FILTER_TEXT_EXTRA_KEY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::GROUP_NAME_EXTRA_KEY()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"GROUP_NAME_EXTRA_KEY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::LIST_ALL_CONTACTS_ACTION()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"LIST_ALL_CONTACTS_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::LIST_CONTACTS_WITH_PHONES_ACTION()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"LIST_CONTACTS_WITH_PHONES_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::LIST_DEFAULT()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"LIST_DEFAULT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::LIST_FREQUENT_ACTION()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"LIST_FREQUENT_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::LIST_GROUP_ACTION()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"LIST_GROUP_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::LIST_STARRED_ACTION()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"LIST_STARRED_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::LIST_STREQUENT_ACTION()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"LIST_STREQUENT_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Intents_UI::TITLE_EXTRA_KEY()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Intents$UI",
+			"TITLE_EXTRA_KEY",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Contacts_Intents_UI::Contacts_Intents_UI()
+		: JObject(
+			"android.provider.Contacts$Intents$UI",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

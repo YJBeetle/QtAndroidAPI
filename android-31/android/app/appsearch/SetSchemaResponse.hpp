@@ -1,25 +1,43 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SetSchemaResponse.def.hpp"
 
 namespace android::app::appsearch
 {
-	class SetSchemaResponse : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject SetSchemaResponse::getDeletedTypes() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SetSchemaResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SetSchemaResponse(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject getDeletedTypes() const;
-		JObject getIncompatibleTypes() const;
-		JObject getMigratedTypes() const;
-		JObject getMigrationFailures() const;
-	};
+		return callObjectMethod(
+			"getDeletedTypes",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject SetSchemaResponse::getIncompatibleTypes() const
+	{
+		return callObjectMethod(
+			"getIncompatibleTypes",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject SetSchemaResponse::getMigratedTypes() const
+	{
+		return callObjectMethod(
+			"getMigratedTypes",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject SetSchemaResponse::getMigrationFailures() const
+	{
+		return callObjectMethod(
+			"getMigrationFailures",
+			"()Ljava/util/List;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

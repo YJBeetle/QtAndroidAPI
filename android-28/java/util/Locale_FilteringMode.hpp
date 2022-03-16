@@ -1,31 +1,75 @@
 #pragma once
 
-#include "../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Locale_FilteringMode.def.hpp"
 
 namespace java::util
 {
-	class Locale_FilteringMode : public java::lang::Enum
+	// Fields
+	inline java::util::Locale_FilteringMode Locale_FilteringMode::AUTOSELECT_FILTERING()
 	{
-	public:
-		// Fields
-		static java::util::Locale_FilteringMode AUTOSELECT_FILTERING();
-		static java::util::Locale_FilteringMode EXTENDED_FILTERING();
-		static java::util::Locale_FilteringMode IGNORE_EXTENDED_RANGES();
-		static java::util::Locale_FilteringMode MAP_EXTENDED_RANGES();
-		static java::util::Locale_FilteringMode REJECT_EXTENDED_RANGES();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Locale_FilteringMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Locale_FilteringMode(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static java::util::Locale_FilteringMode valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.util.Locale$FilteringMode",
+			"AUTOSELECT_FILTERING",
+			"Ljava/util/Locale$FilteringMode;"
+		);
+	}
+	inline java::util::Locale_FilteringMode Locale_FilteringMode::EXTENDED_FILTERING()
+	{
+		return getStaticObjectField(
+			"java.util.Locale$FilteringMode",
+			"EXTENDED_FILTERING",
+			"Ljava/util/Locale$FilteringMode;"
+		);
+	}
+	inline java::util::Locale_FilteringMode Locale_FilteringMode::IGNORE_EXTENDED_RANGES()
+	{
+		return getStaticObjectField(
+			"java.util.Locale$FilteringMode",
+			"IGNORE_EXTENDED_RANGES",
+			"Ljava/util/Locale$FilteringMode;"
+		);
+	}
+	inline java::util::Locale_FilteringMode Locale_FilteringMode::MAP_EXTENDED_RANGES()
+	{
+		return getStaticObjectField(
+			"java.util.Locale$FilteringMode",
+			"MAP_EXTENDED_RANGES",
+			"Ljava/util/Locale$FilteringMode;"
+		);
+	}
+	inline java::util::Locale_FilteringMode Locale_FilteringMode::REJECT_EXTENDED_RANGES()
+	{
+		return getStaticObjectField(
+			"java.util.Locale$FilteringMode",
+			"REJECT_EXTENDED_RANGES",
+			"Ljava/util/Locale$FilteringMode;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::Locale_FilteringMode Locale_FilteringMode::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale$FilteringMode",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Locale_FilteringMode::values()
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale$FilteringMode",
+			"values",
+			"()[Ljava/util/Locale$FilteringMode;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Enum.hpp"
 

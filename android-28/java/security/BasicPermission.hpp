@@ -1,43 +1,71 @@
 #pragma once
 
-#include "./Permission.hpp"
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JObject;
-class JString;
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
+#include "../io/ObjectInputStream.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./Permission.def.hpp"
+#include "./PermissionCollection.def.hpp"
+#include "./BasicPermission.def.hpp"
 
 namespace java::security
 {
-	class BasicPermission : public java::security::Permission
+	// Fields
+	
+	// Constructors
+	inline BasicPermission::BasicPermission(JString arg0)
+		: java::security::Permission(
+			"java.security.BasicPermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline BasicPermission::BasicPermission(JString arg0, JString arg1)
+		: java::security::Permission(
+			"java.security.BasicPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jboolean BasicPermission::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BasicPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		BasicPermission(QJniObject obj);
-		
-		// Constructors
-		BasicPermission(JString arg0);
-		BasicPermission(JString arg0, JString arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getActions() const;
-		jint hashCode() const;
-		jboolean implies(java::security::Permission arg0) const;
-		java::security::PermissionCollection newPermissionCollection() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString BasicPermission::getActions() const
+	{
+		return callObjectMethod(
+			"getActions",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint BasicPermission::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean BasicPermission::implies(java::security::Permission arg0) const
+	{
+		return callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/Permission;)Z",
+			arg0.object()
+		);
+	}
+	inline java::security::PermissionCollection BasicPermission::newPermissionCollection() const
+	{
+		return callObjectMethod(
+			"newPermissionCollection",
+			"()Ljava/security/PermissionCollection;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
+#include "./Permission.hpp"
 

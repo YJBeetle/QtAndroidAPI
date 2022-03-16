@@ -1,31 +1,50 @@
 #pragma once
 
-#include "./BaseInterpolator.hpp"
-
-namespace android::content
-{
-	class Context;
-}
+#include "../../content/Context.def.hpp"
+#include "./AnticipateOvershootInterpolator.def.hpp"
 
 namespace android::view::animation
 {
-	class AnticipateOvershootInterpolator : public android::view::animation::BaseInterpolator
+	// Fields
+	
+	// Constructors
+	inline AnticipateOvershootInterpolator::AnticipateOvershootInterpolator()
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.AnticipateOvershootInterpolator",
+			"()V"
+		) {}
+	inline AnticipateOvershootInterpolator::AnticipateOvershootInterpolator(jfloat arg0)
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.AnticipateOvershootInterpolator",
+			"(F)V",
+			arg0
+		) {}
+	inline AnticipateOvershootInterpolator::AnticipateOvershootInterpolator(android::content::Context arg0, JObject arg1)
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.AnticipateOvershootInterpolator",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline AnticipateOvershootInterpolator::AnticipateOvershootInterpolator(jfloat arg0, jfloat arg1)
+		: android::view::animation::BaseInterpolator(
+			"android.view.animation.AnticipateOvershootInterpolator",
+			"(FF)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jfloat AnticipateOvershootInterpolator::getInterpolation(jfloat arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AnticipateOvershootInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
-		AnticipateOvershootInterpolator(QJniObject obj);
-		
-		// Constructors
-		AnticipateOvershootInterpolator();
-		AnticipateOvershootInterpolator(jfloat arg0);
-		AnticipateOvershootInterpolator(android::content::Context arg0, JObject arg1);
-		AnticipateOvershootInterpolator(jfloat arg0, jfloat arg1);
-		
-		// Methods
-		jfloat getInterpolation(jfloat arg0) const;
-	};
+		return callMethod<jfloat>(
+			"getInterpolation",
+			"(F)F",
+			arg0
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./BaseInterpolator.hpp"
 

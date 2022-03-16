@@ -1,35 +1,72 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./BluetoothLeDeviceFilter.def.hpp"
 
 namespace android::companion
 {
-	class BluetoothLeDeviceFilter : public JObject
+	// Fields
+	inline JObject BluetoothLeDeviceFilter::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothLeDeviceFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothLeDeviceFilter(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jint getRenamePrefixLengthLimit();
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.companion.BluetoothLeDeviceFilter",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint BluetoothLeDeviceFilter::getRenamePrefixLengthLimit()
+	{
+		return callStaticMethod<jint>(
+			"android.companion.BluetoothLeDeviceFilter",
+			"getRenamePrefixLengthLimit",
+			"()I"
+		);
+	}
+	inline jint BluetoothLeDeviceFilter::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean BluetoothLeDeviceFilter::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint BluetoothLeDeviceFilter::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString BluetoothLeDeviceFilter::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void BluetoothLeDeviceFilter::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::companion
+
+// Base class headers
 

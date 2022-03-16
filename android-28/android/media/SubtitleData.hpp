@@ -1,31 +1,45 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../JByteArray.hpp"
+#include "../os/Parcel.def.hpp"
+#include "./SubtitleData.def.hpp"
 
 namespace android::media
 {
-	class SubtitleData : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray SubtitleData::getData() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SubtitleData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubtitleData(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JByteArray getData() const;
-		jlong getDurationUs() const;
-		jlong getStartTimeUs() const;
-		jint getTrackIndex() const;
-	};
+		return callObjectMethod(
+			"getData",
+			"()[B"
+		);
+	}
+	inline jlong SubtitleData::getDurationUs() const
+	{
+		return callMethod<jlong>(
+			"getDurationUs",
+			"()J"
+		);
+	}
+	inline jlong SubtitleData::getStartTimeUs() const
+	{
+		return callMethod<jlong>(
+			"getStartTimeUs",
+			"()J"
+		);
+	}
+	inline jint SubtitleData::getTrackIndex() const
+	{
+		return callMethod<jint>(
+			"getTrackIndex",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

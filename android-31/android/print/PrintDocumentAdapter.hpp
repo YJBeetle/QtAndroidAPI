@@ -1,54 +1,73 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class CancellationSignal;
-}
-namespace android::os
-{
-	class ParcelFileDescriptor;
-}
-namespace android::print
-{
-	class PrintAttributes;
-}
-namespace android::print
-{
-	class PrintDocumentAdapter_LayoutResultCallback;
-}
-namespace android::print
-{
-	class PrintDocumentAdapter_WriteResultCallback;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../os/CancellationSignal.def.hpp"
+#include "../os/ParcelFileDescriptor.def.hpp"
+#include "./PrintAttributes.def.hpp"
+#include "./PrintDocumentAdapter_LayoutResultCallback.def.hpp"
+#include "./PrintDocumentAdapter_WriteResultCallback.def.hpp"
+#include "../../JString.hpp"
+#include "./PrintDocumentAdapter.def.hpp"
 
 namespace android::print
 {
-	class PrintDocumentAdapter : public JObject
+	// Fields
+	inline JString PrintDocumentAdapter::EXTRA_PRINT_PREVIEW()
 	{
-	public:
-		// Fields
-		static JString EXTRA_PRINT_PREVIEW();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PrintDocumentAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocumentAdapter(QJniObject obj);
-		
-		// Constructors
-		PrintDocumentAdapter();
-		
-		// Methods
-		void onFinish() const;
-		void onLayout(android::print::PrintAttributes arg0, android::print::PrintAttributes arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_LayoutResultCallback arg3, android::os::Bundle arg4) const;
-		void onStart() const;
-		void onWrite(JArray arg0, android::os::ParcelFileDescriptor arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_WriteResultCallback arg3) const;
-	};
+		return getStaticObjectField(
+			"android.print.PrintDocumentAdapter",
+			"EXTRA_PRINT_PREVIEW",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline PrintDocumentAdapter::PrintDocumentAdapter()
+		: JObject(
+			"android.print.PrintDocumentAdapter",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void PrintDocumentAdapter::onFinish() const
+	{
+		callMethod<void>(
+			"onFinish",
+			"()V"
+		);
+	}
+	inline void PrintDocumentAdapter::onLayout(android::print::PrintAttributes arg0, android::print::PrintAttributes arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_LayoutResultCallback arg3, android::os::Bundle arg4) const
+	{
+		callMethod<void>(
+			"onLayout",
+			"(Landroid/print/PrintAttributes;Landroid/print/PrintAttributes;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$LayoutResultCallback;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline void PrintDocumentAdapter::onStart() const
+	{
+		callMethod<void>(
+			"onStart",
+			"()V"
+		);
+	}
+	inline void PrintDocumentAdapter::onWrite(JArray arg0, android::os::ParcelFileDescriptor arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_WriteResultCallback arg3) const
+	{
+		callMethod<void>(
+			"onWrite",
+			"([Landroid/print/PageRange;Landroid/os/ParcelFileDescriptor;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V",
+			arg0.object<jarray>(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

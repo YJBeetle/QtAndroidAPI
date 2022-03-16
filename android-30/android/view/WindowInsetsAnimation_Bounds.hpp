@@ -1,32 +1,53 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Insets;
-}
-class JString;
+#include "../graphics/Insets.def.hpp"
+#include "../../JString.hpp"
+#include "./WindowInsetsAnimation_Bounds.def.hpp"
 
 namespace android::view
 {
-	class WindowInsetsAnimation_Bounds : public JObject
+	// Fields
+	
+	// Constructors
+	inline WindowInsetsAnimation_Bounds::WindowInsetsAnimation_Bounds(android::graphics::Insets arg0, android::graphics::Insets arg1)
+		: JObject(
+			"android.view.WindowInsetsAnimation$Bounds",
+			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::Insets WindowInsetsAnimation_Bounds::getLowerBound() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WindowInsetsAnimation_Bounds(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsetsAnimation_Bounds(QJniObject obj);
-		
-		// Constructors
-		WindowInsetsAnimation_Bounds(android::graphics::Insets arg0, android::graphics::Insets arg1);
-		
-		// Methods
-		android::graphics::Insets getLowerBound() const;
-		android::graphics::Insets getUpperBound() const;
-		android::view::WindowInsetsAnimation_Bounds inset(android::graphics::Insets arg0) const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getLowerBound",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	inline android::graphics::Insets WindowInsetsAnimation_Bounds::getUpperBound() const
+	{
+		return callObjectMethod(
+			"getUpperBound",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	inline android::view::WindowInsetsAnimation_Bounds WindowInsetsAnimation_Bounds::inset(android::graphics::Insets arg0) const
+	{
+		return callObjectMethod(
+			"inset",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsetsAnimation$Bounds;",
+			arg0.object()
+		);
+	}
+	inline JString WindowInsetsAnimation_Bounds::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

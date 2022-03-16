@@ -1,45 +1,66 @@
 #pragma once
 
-#include "./Transition.hpp"
-
-class JArray;
-namespace android::animation
-{
-	class Animator;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::transition
-{
-	class TransitionValues;
-}
-namespace android::view
-{
-	class ViewGroup;
-}
+#include "../../JArray.hpp"
+#include "../animation/Animator.def.hpp"
+#include "../content/Context.def.hpp"
+#include "./TransitionValues.def.hpp"
+#include "../view/ViewGroup.def.hpp"
+#include "./ChangeImageTransform.def.hpp"
 
 namespace android::transition
 {
-	class ChangeImageTransform : public android::transition::Transition
+	// Fields
+	
+	// Constructors
+	inline ChangeImageTransform::ChangeImageTransform()
+		: android::transition::Transition(
+			"android.transition.ChangeImageTransform",
+			"()V"
+		) {}
+	inline ChangeImageTransform::ChangeImageTransform(android::content::Context arg0, JObject arg1)
+		: android::transition::Transition(
+			"android.transition.ChangeImageTransform",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void ChangeImageTransform::captureEndValues(android::transition::TransitionValues arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ChangeImageTransform(const char *className, const char *sig, Ts...agv) : android::transition::Transition(className, sig, std::forward<Ts>(agv)...) {}
-		ChangeImageTransform(QJniObject obj);
-		
-		// Constructors
-		ChangeImageTransform();
-		ChangeImageTransform(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		void captureEndValues(android::transition::TransitionValues arg0) const;
-		void captureStartValues(android::transition::TransitionValues arg0) const;
-		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const;
-		JArray getTransitionProperties() const;
-	};
+		callMethod<void>(
+			"captureEndValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.object()
+		);
+	}
+	inline void ChangeImageTransform::captureStartValues(android::transition::TransitionValues arg0) const
+	{
+		callMethod<void>(
+			"captureStartValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.object()
+		);
+	}
+	inline android::animation::Animator ChangeImageTransform::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const
+	{
+		return callObjectMethod(
+			"createAnimator",
+			"(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JArray ChangeImageTransform::getTransitionProperties() const
+	{
+		return callObjectMethod(
+			"getTransitionProperties",
+			"()[Ljava/lang/String;"
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
+#include "./Transition.hpp"
 

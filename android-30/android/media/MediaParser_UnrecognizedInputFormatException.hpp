@@ -1,21 +1,17 @@
 #pragma once
 
-#include "../../java/io/IOException.hpp"
+#include "./MediaParser_UnrecognizedInputFormatException.def.hpp"
 
 namespace android::media
 {
-	class MediaParser_UnrecognizedInputFormatException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaParser_UnrecognizedInputFormatException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_UnrecognizedInputFormatException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/io/IOException.hpp"
 

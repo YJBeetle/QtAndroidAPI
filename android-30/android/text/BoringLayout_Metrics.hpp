@@ -1,26 +1,35 @@
 #pragma once
 
-#include "../graphics/Paint_FontMetricsInt.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./BoringLayout_Metrics.def.hpp"
 
 namespace android::text
 {
-	class BoringLayout_Metrics : public android::graphics::Paint_FontMetricsInt
+	// Fields
+	inline jint BoringLayout_Metrics::width()
 	{
-	public:
-		// Fields
-		jint width();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BoringLayout_Metrics(const char *className, const char *sig, Ts...agv) : android::graphics::Paint_FontMetricsInt(className, sig, std::forward<Ts>(agv)...) {}
-		BoringLayout_Metrics(QJniObject obj);
-		
-		// Constructors
-		BoringLayout_Metrics();
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jint>(
+			"width"
+		);
+	}
+	
+	// Constructors
+	inline BoringLayout_Metrics::BoringLayout_Metrics()
+		: android::graphics::Paint_FontMetricsInt(
+			"android.text.BoringLayout$Metrics",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString BoringLayout_Metrics::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::text
+
+// Base class headers
+#include "../graphics/Paint_FontMetricsInt.hpp"
 

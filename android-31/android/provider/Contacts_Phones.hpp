@@ -1,41 +1,91 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::content
-{
-	class Context;
-}
-namespace android::net
-{
-	class Uri;
-}
-class JString;
-class JString;
+#include "../../JArray.hpp"
+#include "../content/Context.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./Contacts_Phones.def.hpp"
 
 namespace android::provider
 {
-	class Contacts_Phones : public JObject
+	// Fields
+	inline android::net::Uri Contacts_Phones::CONTENT_FILTER_URL()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_FILTER_URL();
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString DEFAULT_SORT_ORDER();
-		static JString PERSON_ID();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Contacts_Phones(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Phones(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JString getDisplayLabel(android::content::Context arg0, jint arg1, JString arg2);
-		static JString getDisplayLabel(android::content::Context arg0, jint arg1, JString arg2, JArray arg3);
-	};
+		return getStaticObjectField(
+			"android.provider.Contacts$Phones",
+			"CONTENT_FILTER_URL",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Contacts_Phones::CONTENT_ITEM_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Phones",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Phones::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Phones",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Contacts_Phones::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Phones",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Contacts_Phones::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Phones",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_Phones::PERSON_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$Phones",
+			"PERSON_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString Contacts_Phones::getDisplayLabel(android::content::Context arg0, jint arg1, JString arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.Contacts$Phones",
+			"getDisplayLabel",
+			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>()
+		);
+	}
+	inline JString Contacts_Phones::getDisplayLabel(android::content::Context arg0, jint arg1, JString arg2, JArray arg3)
+	{
+		return callStaticObjectMethod(
+			"android.provider.Contacts$Phones",
+			"getDisplayLabel",
+			"(Landroid/content/Context;ILjava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

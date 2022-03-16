@@ -1,37 +1,107 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./Transliterator_Position.def.hpp"
 
 namespace android::icu::text
 {
-	class Transliterator_Position : public JObject
+	// Fields
+	inline jint Transliterator_Position::contextLimit()
 	{
-	public:
-		// Fields
-		jint contextLimit();
-		jint contextStart();
-		jint limit();
-		jint start();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Transliterator_Position(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Transliterator_Position(QJniObject obj);
-		
-		// Constructors
-		Transliterator_Position();
-		Transliterator_Position(android::icu::text::Transliterator_Position &arg0);
-		Transliterator_Position(jint arg0, jint arg1, jint arg2);
-		Transliterator_Position(jint arg0, jint arg1, jint arg2, jint arg3);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		void set(android::icu::text::Transliterator_Position arg0) const;
-		JString toString() const;
-		void validate(jint arg0) const;
-	};
+		return getField<jint>(
+			"contextLimit"
+		);
+	}
+	inline jint Transliterator_Position::contextStart()
+	{
+		return getField<jint>(
+			"contextStart"
+		);
+	}
+	inline jint Transliterator_Position::limit()
+	{
+		return getField<jint>(
+			"limit"
+		);
+	}
+	inline jint Transliterator_Position::start()
+	{
+		return getField<jint>(
+			"start"
+		);
+	}
+	
+	// Constructors
+	inline Transliterator_Position::Transliterator_Position()
+		: JObject(
+			"android.icu.text.Transliterator$Position",
+			"()V"
+		) {}
+	inline Transliterator_Position::Transliterator_Position(android::icu::text::Transliterator_Position &arg0)
+		: JObject(
+			"android.icu.text.Transliterator$Position",
+			"(Landroid/icu/text/Transliterator$Position;)V",
+			arg0.object()
+		) {}
+	inline Transliterator_Position::Transliterator_Position(jint arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.icu.text.Transliterator$Position",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	inline Transliterator_Position::Transliterator_Position(jint arg0, jint arg1, jint arg2, jint arg3)
+		: JObject(
+			"android.icu.text.Transliterator$Position",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline jboolean Transliterator_Position::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Transliterator_Position::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void Transliterator_Position::set(android::icu::text::Transliterator_Position arg0) const
+	{
+		callMethod<void>(
+			"set",
+			"(Landroid/icu/text/Transliterator$Position;)V",
+			arg0.object()
+		);
+	}
+	inline JString Transliterator_Position::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Transliterator_Position::validate(jint arg0) const
+	{
+		callMethod<void>(
+			"validate",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

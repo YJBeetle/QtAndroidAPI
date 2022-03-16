@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./CertificateException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./CertificateExpiredException.def.hpp"
 
 namespace javax::security::cert
 {
-	class CertificateExpiredException : public javax::security::cert::CertificateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertificateExpiredException(const char *className, const char *sig, Ts...agv) : javax::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateExpiredException(QJniObject obj);
-		
-		// Constructors
-		CertificateExpiredException();
-		CertificateExpiredException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CertificateExpiredException::CertificateExpiredException()
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateExpiredException",
+			"()V"
+		) {}
+	inline CertificateExpiredException::CertificateExpiredException(JString arg0)
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateExpiredException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::security::cert
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./CertificateException.hpp"
 

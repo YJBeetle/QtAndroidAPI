@@ -1,46 +1,94 @@
 #pragma once
 
+#include "./GnssAntennaInfo_PhaseCenterOffset.def.hpp"
+#include "./GnssAntennaInfo_SphericalCorrections.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./GnssAntennaInfo.def.hpp"
 
 namespace android::location
 {
-	class GnssAntennaInfo_PhaseCenterOffset;
-}
-namespace android::location
-{
-	class GnssAntennaInfo_SphericalCorrections;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
-
-namespace android::location
-{
-	class GnssAntennaInfo : public JObject
+	// Fields
+	inline JObject GnssAntennaInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GnssAntennaInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jdouble getCarrierFrequencyMHz() const;
-		android::location::GnssAntennaInfo_PhaseCenterOffset getPhaseCenterOffset() const;
-		android::location::GnssAntennaInfo_SphericalCorrections getPhaseCenterVariationCorrections() const;
-		android::location::GnssAntennaInfo_SphericalCorrections getSignalGainCorrections() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.location.GnssAntennaInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint GnssAntennaInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean GnssAntennaInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jdouble GnssAntennaInfo::getCarrierFrequencyMHz() const
+	{
+		return callMethod<jdouble>(
+			"getCarrierFrequencyMHz",
+			"()D"
+		);
+	}
+	inline android::location::GnssAntennaInfo_PhaseCenterOffset GnssAntennaInfo::getPhaseCenterOffset() const
+	{
+		return callObjectMethod(
+			"getPhaseCenterOffset",
+			"()Landroid/location/GnssAntennaInfo$PhaseCenterOffset;"
+		);
+	}
+	inline android::location::GnssAntennaInfo_SphericalCorrections GnssAntennaInfo::getPhaseCenterVariationCorrections() const
+	{
+		return callObjectMethod(
+			"getPhaseCenterVariationCorrections",
+			"()Landroid/location/GnssAntennaInfo$SphericalCorrections;"
+		);
+	}
+	inline android::location::GnssAntennaInfo_SphericalCorrections GnssAntennaInfo::getSignalGainCorrections() const
+	{
+		return callObjectMethod(
+			"getSignalGainCorrections",
+			"()Landroid/location/GnssAntennaInfo$SphericalCorrections;"
+		);
+	}
+	inline jint GnssAntennaInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString GnssAntennaInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void GnssAntennaInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

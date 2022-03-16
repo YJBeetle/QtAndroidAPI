@@ -1,81 +1,287 @@
 #pragma once
 
+#include "../../JCharArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
 #include "../../JObject.hpp"
-
-class JCharArray;
-class JIntArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JObject;
-class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
-namespace java::net
-{
-	class URL;
-}
-namespace java::nio::charset
-{
-	class CharsetEncoder;
-}
+#include "../../JString.hpp"
+#include "../lang/StringBuilder.def.hpp"
+#include "./URL.def.hpp"
+#include "../nio/charset/CharsetEncoder.def.hpp"
+#include "./URI.def.hpp"
 
 namespace java::net
 {
-	class URI : public JObject
+	// Fields
+	
+	// Constructors
+	inline URI::URI(JString arg0)
+		: JObject(
+			"java.net.URI",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline URI::URI(JString arg0, JString arg1, JString arg2)
+		: JObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	inline URI::URI(JString arg0, JString arg1, JString arg2, JString arg3)
+		: JObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		) {}
+	inline URI::URI(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
+		: JObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
+		) {}
+	inline URI::URI(JString arg0, JString arg1, JString arg2, jint arg3, JString arg4, JString arg5, JString arg6)
+		: JObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3,
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
+			arg6.object<jstring>()
+		) {}
+	
+	// Methods
+	inline java::net::URI URI::create(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit URI(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URI(QJniObject obj);
-		
-		// Constructors
-		URI(JString arg0);
-		URI(JString arg0, JString arg1, JString arg2);
-		URI(JString arg0, JString arg1, JString arg2, JString arg3);
-		URI(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
-		URI(JString arg0, JString arg1, JString arg2, jint arg3, JString arg4, JString arg5, JString arg6);
-		
-		// Methods
-		static java::net::URI create(JString arg0);
-		jint compareTo(JObject arg0) const;
-		jint compareTo(java::net::URI arg0) const;
-		jboolean equals(JObject arg0) const;
-		JString getAuthority() const;
-		JString getFragment() const;
-		JString getHost() const;
-		JString getPath() const;
-		jint getPort() const;
-		JString getQuery() const;
-		JString getRawAuthority() const;
-		JString getRawFragment() const;
-		JString getRawPath() const;
-		JString getRawQuery() const;
-		JString getRawSchemeSpecificPart() const;
-		JString getRawUserInfo() const;
-		JString getScheme() const;
-		JString getSchemeSpecificPart() const;
-		JString getUserInfo() const;
-		jint hashCode() const;
-		jboolean isAbsolute() const;
-		jboolean isOpaque() const;
-		java::net::URI normalize() const;
-		java::net::URI parseServerAuthority() const;
-		java::net::URI relativize(java::net::URI arg0) const;
-		java::net::URI resolve(JString arg0) const;
-		java::net::URI resolve(java::net::URI arg0) const;
-		JString toASCIIString() const;
-		JString toString() const;
-		java::net::URL toURL() const;
-	};
+		return callStaticObjectMethod(
+			"java.net.URI",
+			"create",
+			"(Ljava/lang/String;)Ljava/net/URI;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint URI::compareTo(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"compareTo",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint URI::compareTo(java::net::URI arg0) const
+	{
+		return callMethod<jint>(
+			"compareTo",
+			"(Ljava/net/URI;)I",
+			arg0.object()
+		);
+	}
+	inline jboolean URI::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString URI::getAuthority() const
+	{
+		return callObjectMethod(
+			"getAuthority",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getFragment() const
+	{
+		return callObjectMethod(
+			"getFragment",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getHost() const
+	{
+		return callObjectMethod(
+			"getHost",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getPath() const
+	{
+		return callObjectMethod(
+			"getPath",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint URI::getPort() const
+	{
+		return callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
+	inline JString URI::getQuery() const
+	{
+		return callObjectMethod(
+			"getQuery",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getRawAuthority() const
+	{
+		return callObjectMethod(
+			"getRawAuthority",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getRawFragment() const
+	{
+		return callObjectMethod(
+			"getRawFragment",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getRawPath() const
+	{
+		return callObjectMethod(
+			"getRawPath",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getRawQuery() const
+	{
+		return callObjectMethod(
+			"getRawQuery",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getRawSchemeSpecificPart() const
+	{
+		return callObjectMethod(
+			"getRawSchemeSpecificPart",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getRawUserInfo() const
+	{
+		return callObjectMethod(
+			"getRawUserInfo",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getScheme() const
+	{
+		return callObjectMethod(
+			"getScheme",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getSchemeSpecificPart() const
+	{
+		return callObjectMethod(
+			"getSchemeSpecificPart",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::getUserInfo() const
+	{
+		return callObjectMethod(
+			"getUserInfo",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint URI::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean URI::isAbsolute() const
+	{
+		return callMethod<jboolean>(
+			"isAbsolute",
+			"()Z"
+		);
+	}
+	inline jboolean URI::isOpaque() const
+	{
+		return callMethod<jboolean>(
+			"isOpaque",
+			"()Z"
+		);
+	}
+	inline java::net::URI URI::normalize() const
+	{
+		return callObjectMethod(
+			"normalize",
+			"()Ljava/net/URI;"
+		);
+	}
+	inline java::net::URI URI::parseServerAuthority() const
+	{
+		return callObjectMethod(
+			"parseServerAuthority",
+			"()Ljava/net/URI;"
+		);
+	}
+	inline java::net::URI URI::relativize(java::net::URI arg0) const
+	{
+		return callObjectMethod(
+			"relativize",
+			"(Ljava/net/URI;)Ljava/net/URI;",
+			arg0.object()
+		);
+	}
+	inline java::net::URI URI::resolve(JString arg0) const
+	{
+		return callObjectMethod(
+			"resolve",
+			"(Ljava/lang/String;)Ljava/net/URI;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::net::URI URI::resolve(java::net::URI arg0) const
+	{
+		return callObjectMethod(
+			"resolve",
+			"(Ljava/net/URI;)Ljava/net/URI;",
+			arg0.object()
+		);
+	}
+	inline JString URI::toASCIIString() const
+	{
+		return callObjectMethod(
+			"toASCIIString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString URI::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::net::URL URI::toURL() const
+	{
+		return callObjectMethod(
+			"toURL",
+			"()Ljava/net/URL;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

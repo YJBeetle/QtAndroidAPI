@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./RenderScript_Priority.def.hpp"
 
 namespace android::renderscript
 {
-	class RenderScript_Priority : public java::lang::Enum
+	// Fields
+	inline android::renderscript::RenderScript_Priority RenderScript_Priority::LOW()
 	{
-	public:
-		// Fields
-		static android::renderscript::RenderScript_Priority LOW();
-		static android::renderscript::RenderScript_Priority NORMAL();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RenderScript_Priority(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript_Priority(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::renderscript::RenderScript_Priority valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.renderscript.RenderScript$Priority",
+			"LOW",
+			"Landroid/renderscript/RenderScript$Priority;"
+		);
+	}
+	inline android::renderscript::RenderScript_Priority RenderScript_Priority::NORMAL()
+	{
+		return getStaticObjectField(
+			"android.renderscript.RenderScript$Priority",
+			"NORMAL",
+			"Landroid/renderscript/RenderScript$Priority;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::renderscript::RenderScript_Priority RenderScript_Priority::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.RenderScript$Priority",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$Priority;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray RenderScript_Priority::values()
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.RenderScript$Priority",
+			"values",
+			"()[Landroid/renderscript/RenderScript$Priority;"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

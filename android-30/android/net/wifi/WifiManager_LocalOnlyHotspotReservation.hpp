@@ -1,37 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SoftApConfiguration.def.hpp"
+#include "./WifiConfiguration.def.hpp"
+#include "./WifiManager.def.hpp"
+#include "./WifiManager_LocalOnlyHotspotReservation.def.hpp"
 
 namespace android::net::wifi
 {
-	class SoftApConfiguration;
-}
-namespace android::net::wifi
-{
-	class WifiConfiguration;
-}
-namespace android::net::wifi
-{
-	class WifiManager;
-}
-
-namespace android::net::wifi
-{
-	class WifiManager_LocalOnlyHotspotReservation : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void WifiManager_LocalOnlyHotspotReservation::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiManager_LocalOnlyHotspotReservation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_LocalOnlyHotspotReservation(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		android::net::wifi::SoftApConfiguration getSoftApConfiguration() const;
-		android::net::wifi::WifiConfiguration getWifiConfiguration() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline android::net::wifi::SoftApConfiguration WifiManager_LocalOnlyHotspotReservation::getSoftApConfiguration() const
+	{
+		return callObjectMethod(
+			"getSoftApConfiguration",
+			"()Landroid/net/wifi/SoftApConfiguration;"
+		);
+	}
+	inline android::net::wifi::WifiConfiguration WifiManager_LocalOnlyHotspotReservation::getWifiConfiguration() const
+	{
+		return callObjectMethod(
+			"getWifiConfiguration",
+			"()Landroid/net/wifi/WifiConfiguration;"
+		);
+	}
 } // namespace android::net::wifi
+
+// Base class headers
 

@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::app
-{
-	class Notification;
-}
+#include "../app/Notification.def.hpp"
+#include "./MediaSession2Service_MediaNotification.def.hpp"
 
 namespace android::media
 {
-	class MediaSession2Service_MediaNotification : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(jint arg0, android::app::Notification arg1)
+		: JObject(
+			"android.media.MediaSession2Service$MediaNotification",
+			"(ILandroid/app/Notification;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::app::Notification MediaSession2Service_MediaNotification::getNotification() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaSession2Service_MediaNotification(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession2Service_MediaNotification(QJniObject obj);
-		
-		// Constructors
-		MediaSession2Service_MediaNotification(jint arg0, android::app::Notification arg1);
-		
-		// Methods
-		android::app::Notification getNotification() const;
-		jint getNotificationId() const;
-	};
+		return callObjectMethod(
+			"getNotification",
+			"()Landroid/app/Notification;"
+		);
+	}
+	inline jint MediaSession2Service_MediaNotification::getNotificationId() const
+	{
+		return callMethod<jint>(
+			"getNotificationId",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

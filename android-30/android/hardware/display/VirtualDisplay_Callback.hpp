@@ -1,25 +1,41 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./VirtualDisplay_Callback.def.hpp"
 
 namespace android::hardware::display
 {
-	class VirtualDisplay_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline VirtualDisplay_Callback::VirtualDisplay_Callback()
+		: JObject(
+			"android.hardware.display.VirtualDisplay$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void VirtualDisplay_Callback::onPaused() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VirtualDisplay_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VirtualDisplay_Callback(QJniObject obj);
-		
-		// Constructors
-		VirtualDisplay_Callback();
-		
-		// Methods
-		void onPaused() const;
-		void onResumed() const;
-		void onStopped() const;
-	};
+		callMethod<void>(
+			"onPaused",
+			"()V"
+		);
+	}
+	inline void VirtualDisplay_Callback::onResumed() const
+	{
+		callMethod<void>(
+			"onResumed",
+			"()V"
+		);
+	}
+	inline void VirtualDisplay_Callback::onStopped() const
+	{
+		callMethod<void>(
+			"onStopped",
+			"()V"
+		);
+	}
 } // namespace android::hardware::display
+
+// Base class headers
 

@@ -1,40 +1,61 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::view
-{
-	class MotionEvent;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../graphics/Rect.def.hpp"
+#include "./MotionEvent.def.hpp"
+#include "./View.def.hpp"
+#include "./TouchDelegate.def.hpp"
 
 namespace android::view
 {
-	class TouchDelegate : public JObject
+	// Fields
+	inline jint TouchDelegate::ABOVE()
 	{
-	public:
-		// Fields
-		static jint ABOVE();
-		static jint BELOW();
-		static jint TO_LEFT();
-		static jint TO_RIGHT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TouchDelegate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TouchDelegate(QJniObject obj);
-		
-		// Constructors
-		TouchDelegate(android::graphics::Rect arg0, android::view::View arg1);
-		
-		// Methods
-		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.view.TouchDelegate",
+			"ABOVE"
+		);
+	}
+	inline jint TouchDelegate::BELOW()
+	{
+		return getStaticField<jint>(
+			"android.view.TouchDelegate",
+			"BELOW"
+		);
+	}
+	inline jint TouchDelegate::TO_LEFT()
+	{
+		return getStaticField<jint>(
+			"android.view.TouchDelegate",
+			"TO_LEFT"
+		);
+	}
+	inline jint TouchDelegate::TO_RIGHT()
+	{
+		return getStaticField<jint>(
+			"android.view.TouchDelegate",
+			"TO_RIGHT"
+		);
+	}
+	
+	// Constructors
+	inline TouchDelegate::TouchDelegate(android::graphics::Rect arg0, android::view::View arg1)
+		: JObject(
+			"android.view.TouchDelegate",
+			"(Landroid/graphics/Rect;Landroid/view/View;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jboolean TouchDelegate::onTouchEvent(android::view::MotionEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

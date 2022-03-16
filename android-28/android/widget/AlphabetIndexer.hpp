@@ -1,32 +1,72 @@
 #pragma once
 
-#include "../database/DataSetObserver.hpp"
-
-class JObjectArray;
-class JString;
-class JString;
+#include "../../JObjectArray.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./AlphabetIndexer.def.hpp"
 
 namespace android::widget
 {
-	class AlphabetIndexer : public android::database::DataSetObserver
+	// Fields
+	
+	// Constructors
+	inline AlphabetIndexer::AlphabetIndexer(JObject arg0, jint arg1, JString arg2)
+		: android::database::DataSetObserver(
+			"android.widget.AlphabetIndexer",
+			"(Landroid/database/Cursor;ILjava/lang/CharSequence;)V",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint AlphabetIndexer::getPositionForSection(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlphabetIndexer(const char *className, const char *sig, Ts...agv) : android::database::DataSetObserver(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabetIndexer(QJniObject obj);
-		
-		// Constructors
-		AlphabetIndexer(JObject arg0, jint arg1, JString arg2);
-		
-		// Methods
-		jint getPositionForSection(jint arg0) const;
-		jint getSectionForPosition(jint arg0) const;
-		JObjectArray getSections() const;
-		void onChanged() const;
-		void onInvalidated() const;
-		void setCursor(JObject arg0) const;
-	};
+		return callMethod<jint>(
+			"getPositionForSection",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint AlphabetIndexer::getSectionForPosition(jint arg0) const
+	{
+		return callMethod<jint>(
+			"getSectionForPosition",
+			"(I)I",
+			arg0
+		);
+	}
+	inline JObjectArray AlphabetIndexer::getSections() const
+	{
+		return callObjectMethod(
+			"getSections",
+			"()[Ljava/lang/Object;"
+		);
+	}
+	inline void AlphabetIndexer::onChanged() const
+	{
+		callMethod<void>(
+			"onChanged",
+			"()V"
+		);
+	}
+	inline void AlphabetIndexer::onInvalidated() const
+	{
+		callMethod<void>(
+			"onInvalidated",
+			"()V"
+		);
+	}
+	inline void AlphabetIndexer::setCursor(JObject arg0) const
+	{
+		callMethod<void>(
+			"setCursor",
+			"(Landroid/database/Cursor;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../database/DataSetObserver.hpp"
 

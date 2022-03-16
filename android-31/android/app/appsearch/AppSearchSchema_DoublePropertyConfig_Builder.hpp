@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AppSearchSchema_DoublePropertyConfig.def.hpp"
+#include "../../../JString.hpp"
+#include "./AppSearchSchema_DoublePropertyConfig_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema_DoublePropertyConfig;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class AppSearchSchema_DoublePropertyConfig_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AppSearchSchema_DoublePropertyConfig_Builder::AppSearchSchema_DoublePropertyConfig_Builder(JString arg0)
+		: JObject(
+			"android.app.appsearch.AppSearchSchema$DoublePropertyConfig$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::AppSearchSchema_DoublePropertyConfig AppSearchSchema_DoublePropertyConfig_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_DoublePropertyConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_DoublePropertyConfig_Builder(QJniObject obj);
-		
-		// Constructors
-		AppSearchSchema_DoublePropertyConfig_Builder(JString arg0);
-		
-		// Methods
-		android::app::appsearch::AppSearchSchema_DoublePropertyConfig build() const;
-		android::app::appsearch::AppSearchSchema_DoublePropertyConfig_Builder setCardinality(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/AppSearchSchema$DoublePropertyConfig;"
+		);
+	}
+	inline android::app::appsearch::AppSearchSchema_DoublePropertyConfig_Builder AppSearchSchema_DoublePropertyConfig_Builder::setCardinality(jint arg0) const
+	{
+		return callObjectMethod(
+			"setCardinality",
+			"(I)Landroid/app/appsearch/AppSearchSchema$DoublePropertyConfig$Builder;",
+			arg0
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

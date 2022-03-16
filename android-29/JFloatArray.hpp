@@ -5,6 +5,6 @@ class JFloatArray : public JArray
 public:
     template<typename ...Ts>
     explicit JFloatArray(const char *className, const char *sig, Ts...agv) : JArray(className, sig, std::forward<Ts>(agv)...) {}
-    JFloatArray(QJniObject obj);
+    JFloatArray(QJniObject obj) : JArray(obj) {}
     
 };

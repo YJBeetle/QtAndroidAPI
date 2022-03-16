@@ -1,30 +1,40 @@
 #pragma once
 
-#include "../RuntimeException.hpp"
-
-class JString;
-namespace java::lang::reflect
-{
-	class Method;
-}
+#include "../../../JString.hpp"
+#include "../reflect/Method.def.hpp"
+#include "./AnnotationTypeMismatchException.def.hpp"
 
 namespace java::lang::annotation
 {
-	class AnnotationTypeMismatchException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline AnnotationTypeMismatchException::AnnotationTypeMismatchException(java::lang::reflect::Method arg0, JString arg1)
+		: java::lang::RuntimeException(
+			"java.lang.annotation.AnnotationTypeMismatchException",
+			"(Ljava/lang/reflect/Method;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline java::lang::reflect::Method AnnotationTypeMismatchException::element() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AnnotationTypeMismatchException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		AnnotationTypeMismatchException(QJniObject obj);
-		
-		// Constructors
-		AnnotationTypeMismatchException(java::lang::reflect::Method arg0, JString arg1);
-		
-		// Methods
-		java::lang::reflect::Method element() const;
-		JString foundType() const;
-	};
+		return callObjectMethod(
+			"element",
+			"()Ljava/lang/reflect/Method;"
+		);
+	}
+	inline JString AnnotationTypeMismatchException::foundType() const
+	{
+		return callObjectMethod(
+			"foundType",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::lang::annotation
+
+// Base class headers
+#include "../Exception.hpp"
+#include "../RuntimeException.hpp"
 

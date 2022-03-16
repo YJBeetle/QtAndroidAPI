@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./SurfaceTexture_OutOfResourcesException.def.hpp"
 
 namespace android::graphics
 {
-	class SurfaceTexture_OutOfResourcesException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SurfaceTexture_OutOfResourcesException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceTexture_OutOfResourcesException(QJniObject obj);
-		
-		// Constructors
-		SurfaceTexture_OutOfResourcesException();
-		SurfaceTexture_OutOfResourcesException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException()
+		: java::lang::Exception(
+			"android.graphics.SurfaceTexture$OutOfResourcesException",
+			"()V"
+		) {}
+	inline SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(JString arg0)
+		: java::lang::Exception(
+			"android.graphics.SurfaceTexture$OutOfResourcesException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

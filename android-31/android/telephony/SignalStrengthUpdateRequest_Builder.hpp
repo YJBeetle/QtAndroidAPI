@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SignalStrengthUpdateRequest.def.hpp"
+#include "./SignalStrengthUpdateRequest_Builder.def.hpp"
 
 namespace android::telephony
 {
-	class SignalStrengthUpdateRequest;
-}
-
-namespace android::telephony
-{
-	class SignalStrengthUpdateRequest_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline SignalStrengthUpdateRequest_Builder::SignalStrengthUpdateRequest_Builder()
+		: JObject(
+			"android.telephony.SignalStrengthUpdateRequest$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::telephony::SignalStrengthUpdateRequest SignalStrengthUpdateRequest_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SignalStrengthUpdateRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SignalStrengthUpdateRequest_Builder(QJniObject obj);
-		
-		// Constructors
-		SignalStrengthUpdateRequest_Builder();
-		
-		// Methods
-		android::telephony::SignalStrengthUpdateRequest build() const;
-		android::telephony::SignalStrengthUpdateRequest_Builder setReportingRequestedWhileIdle(jboolean arg0) const;
-		android::telephony::SignalStrengthUpdateRequest_Builder setSignalThresholdInfos(JObject arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/telephony/SignalStrengthUpdateRequest;"
+		);
+	}
+	inline android::telephony::SignalStrengthUpdateRequest_Builder SignalStrengthUpdateRequest_Builder::setReportingRequestedWhileIdle(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setReportingRequestedWhileIdle",
+			"(Z)Landroid/telephony/SignalStrengthUpdateRequest$Builder;",
+			arg0
+		);
+	}
+	inline android::telephony::SignalStrengthUpdateRequest_Builder SignalStrengthUpdateRequest_Builder::setSignalThresholdInfos(JObject arg0) const
+	{
+		return callObjectMethod(
+			"setSignalThresholdInfos",
+			"(Ljava/util/Collection;)Landroid/telephony/SignalStrengthUpdateRequest$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

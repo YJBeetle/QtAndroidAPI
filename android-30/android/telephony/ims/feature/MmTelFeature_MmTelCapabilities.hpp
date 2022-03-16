@@ -1,31 +1,67 @@
 #pragma once
 
 #include "../../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./MmTelFeature_MmTelCapabilities.def.hpp"
 
 namespace android::telephony::ims::feature
 {
-	class MmTelFeature_MmTelCapabilities : public JObject
+	// Fields
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_SMS()
 	{
-	public:
-		// Fields
-		static jint CAPABILITY_TYPE_SMS();
-		static jint CAPABILITY_TYPE_UT();
-		static jint CAPABILITY_TYPE_VIDEO();
-		static jint CAPABILITY_TYPE_VOICE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MmTelFeature_MmTelCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MmTelFeature_MmTelCapabilities(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_SMS"
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_UT()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_UT"
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_VIDEO()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_VIDEO"
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_VOICE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_VOICE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MmTelFeature_MmTelCapabilities::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString MmTelFeature_MmTelCapabilities::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::telephony::ims::feature
+
+// Base class headers
 

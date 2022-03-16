@@ -1,26 +1,33 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./TypeNotPresentException.def.hpp"
 
 namespace java::lang
 {
-	class TypeNotPresentException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline TypeNotPresentException::TypeNotPresentException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"java.lang.TypeNotPresentException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline JString TypeNotPresentException::typeName() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TypeNotPresentException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		TypeNotPresentException(QJniObject obj);
-		
-		// Constructors
-		TypeNotPresentException(JString arg0, JThrowable arg1);
-		
-		// Methods
-		JString typeName() const;
-	};
+		return callObjectMethod(
+			"typeName",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

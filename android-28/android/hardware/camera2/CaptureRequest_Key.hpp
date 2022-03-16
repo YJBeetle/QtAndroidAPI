@@ -1,29 +1,47 @@
 #pragma once
 
+#include "../../../JClass.hpp"
 #include "../../../JObject.hpp"
-
-class JClass;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./CaptureRequest_Key.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CaptureRequest_Key : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean CaptureRequest_Key::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CaptureRequest_Key(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptureRequest_Key(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getName() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString CaptureRequest_Key::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint CaptureRequest_Key::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString CaptureRequest_Key::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
 

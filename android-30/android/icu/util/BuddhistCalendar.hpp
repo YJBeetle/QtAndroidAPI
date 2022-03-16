@@ -1,50 +1,98 @@
 #pragma once
 
-#include "./GregorianCalendar.hpp"
+#include "./TimeZone.def.hpp"
+#include "./ULocale.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/util/Date.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./BuddhistCalendar.def.hpp"
 
 namespace android::icu::util
 {
-	class TimeZone;
-}
-namespace android::icu::util
-{
-	class ULocale;
-}
-class JString;
-namespace java::util
-{
-	class Date;
-}
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::icu::util
-{
-	class BuddhistCalendar : public android::icu::util::GregorianCalendar
+	// Fields
+	inline jint BuddhistCalendar::BE()
 	{
-	public:
-		// Fields
-		static jint BE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BuddhistCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::GregorianCalendar(className, sig, std::forward<Ts>(agv)...) {}
-		BuddhistCalendar(QJniObject obj);
-		
-		// Constructors
-		BuddhistCalendar();
-		BuddhistCalendar(android::icu::util::TimeZone arg0);
-		BuddhistCalendar(android::icu::util::ULocale arg0);
-		BuddhistCalendar(java::util::Date arg0);
-		BuddhistCalendar(java::util::Locale arg0);
-		BuddhistCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
-		BuddhistCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1);
-		BuddhistCalendar(jint arg0, jint arg1, jint arg2);
-		BuddhistCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		
-		// Methods
-		JString getType() const;
-	};
+		return getStaticField<jint>(
+			"android.icu.util.BuddhistCalendar",
+			"BE"
+		);
+	}
+	
+	// Constructors
+	inline BuddhistCalendar::BuddhistCalendar()
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"()V"
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(android::icu::util::TimeZone arg0)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(Landroid/icu/util/TimeZone;)V",
+			arg0.object()
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(android::icu::util::ULocale arg0)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(Landroid/icu/util/ULocale;)V",
+			arg0.object()
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(java::util::Date arg0)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(Ljava/util/Date;)V",
+			arg0.object()
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(java::util::Locale arg0)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(Ljava/util/Locale;)V",
+			arg0.object()
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(jint arg0, jint arg1, jint arg2)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	inline BuddhistCalendar::BuddhistCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+		: android::icu::util::GregorianCalendar(
+			"android.icu.util.BuddhistCalendar",
+			"(IIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		) {}
+	
+	// Methods
+	inline JString BuddhistCalendar::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
+#include "./Calendar.hpp"
+#include "./GregorianCalendar.hpp"
 

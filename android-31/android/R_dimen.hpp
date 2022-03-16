@@ -1,31 +1,83 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_dimen.def.hpp"
 
 namespace android
 {
-	class R_dimen : public JObject
+	// Fields
+	inline jint R_dimen::app_icon_size()
 	{
-	public:
-		// Fields
-		static jint app_icon_size();
-		static jint dialog_min_width_major();
-		static jint dialog_min_width_minor();
-		static jint notification_large_icon_height();
-		static jint notification_large_icon_width();
-		static jint system_app_widget_background_radius();
-		static jint system_app_widget_inner_radius();
-		static jint thumbnail_height();
-		static jint thumbnail_width();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit R_dimen(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_dimen(QJniObject obj);
-		
-		// Constructors
-		R_dimen();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"app_icon_size"
+		);
+	}
+	inline jint R_dimen::dialog_min_width_major()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"dialog_min_width_major"
+		);
+	}
+	inline jint R_dimen::dialog_min_width_minor()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"dialog_min_width_minor"
+		);
+	}
+	inline jint R_dimen::notification_large_icon_height()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"notification_large_icon_height"
+		);
+	}
+	inline jint R_dimen::notification_large_icon_width()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"notification_large_icon_width"
+		);
+	}
+	inline jint R_dimen::system_app_widget_background_radius()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"system_app_widget_background_radius"
+		);
+	}
+	inline jint R_dimen::system_app_widget_inner_radius()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"system_app_widget_inner_radius"
+		);
+	}
+	inline jint R_dimen::thumbnail_height()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"thumbnail_height"
+		);
+	}
+	inline jint R_dimen::thumbnail_width()
+	{
+		return getStaticField<jint>(
+			"android.R$dimen",
+			"thumbnail_width"
+		);
+	}
+	
+	// Constructors
+	inline R_dimen::R_dimen()
+		: JObject(
+			"android.R$dimen",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Allocation_MipmapControl.def.hpp"
 
 namespace android::renderscript
 {
-	class Allocation_MipmapControl : public java::lang::Enum
+	// Fields
+	inline android::renderscript::Allocation_MipmapControl Allocation_MipmapControl::MIPMAP_FULL()
 	{
-	public:
-		// Fields
-		static android::renderscript::Allocation_MipmapControl MIPMAP_FULL();
-		static android::renderscript::Allocation_MipmapControl MIPMAP_NONE();
-		static android::renderscript::Allocation_MipmapControl MIPMAP_ON_SYNC_TO_TEXTURE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Allocation_MipmapControl(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Allocation_MipmapControl(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::renderscript::Allocation_MipmapControl valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.renderscript.Allocation$MipmapControl",
+			"MIPMAP_FULL",
+			"Landroid/renderscript/Allocation$MipmapControl;"
+		);
+	}
+	inline android::renderscript::Allocation_MipmapControl Allocation_MipmapControl::MIPMAP_NONE()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Allocation$MipmapControl",
+			"MIPMAP_NONE",
+			"Landroid/renderscript/Allocation$MipmapControl;"
+		);
+	}
+	inline android::renderscript::Allocation_MipmapControl Allocation_MipmapControl::MIPMAP_ON_SYNC_TO_TEXTURE()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Allocation$MipmapControl",
+			"MIPMAP_ON_SYNC_TO_TEXTURE",
+			"Landroid/renderscript/Allocation$MipmapControl;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::renderscript::Allocation_MipmapControl Allocation_MipmapControl::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation$MipmapControl",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/renderscript/Allocation$MipmapControl;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Allocation_MipmapControl::values()
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation$MipmapControl",
+			"values",
+			"()[Landroid/renderscript/Allocation$MipmapControl;"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

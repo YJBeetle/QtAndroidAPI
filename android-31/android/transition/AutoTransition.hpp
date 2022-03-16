@@ -1,28 +1,30 @@
 #pragma once
 
-#include "./TransitionSet.hpp"
-
-namespace android::content
-{
-	class Context;
-}
+#include "../content/Context.def.hpp"
+#include "./AutoTransition.def.hpp"
 
 namespace android::transition
 {
-	class AutoTransition : public android::transition::TransitionSet
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AutoTransition(const char *className, const char *sig, Ts...agv) : android::transition::TransitionSet(className, sig, std::forward<Ts>(agv)...) {}
-		AutoTransition(QJniObject obj);
-		
-		// Constructors
-		AutoTransition();
-		AutoTransition(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AutoTransition::AutoTransition()
+		: android::transition::TransitionSet(
+			"android.transition.AutoTransition",
+			"()V"
+		) {}
+	inline AutoTransition::AutoTransition(android::content::Context arg0, JObject arg1)
+		: android::transition::TransitionSet(
+			"android.transition.AutoTransition",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace android::transition
+
+// Base class headers
+#include "./Transition.hpp"
+#include "./TransitionSet.hpp"
 

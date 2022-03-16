@@ -1,58 +1,131 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class ClipData;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../content/ClipData.def.hpp"
+#include "../../content/Intent.def.hpp"
+#include "../../net/Uri.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./AssistContent.def.hpp"
 
 namespace android::app::assist
 {
-	class AssistContent : public JObject
+	// Fields
+	inline JObject AssistContent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AssistContent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AssistContent(QJniObject obj);
-		
-		// Constructors
-		AssistContent();
-		
-		// Methods
-		jint describeContents() const;
-		android::content::ClipData getClipData() const;
-		android::os::Bundle getExtras() const;
-		android::content::Intent getIntent() const;
-		JString getStructuredData() const;
-		android::net::Uri getWebUri() const;
-		jboolean isAppProvidedIntent() const;
-		jboolean isAppProvidedWebUri() const;
-		void setClipData(android::content::ClipData arg0) const;
-		void setIntent(android::content::Intent arg0) const;
-		void setStructuredData(JString arg0) const;
-		void setWebUri(android::net::Uri arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.assist.AssistContent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline AssistContent::AssistContent()
+		: JObject(
+			"android.app.assist.AssistContent",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint AssistContent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::content::ClipData AssistContent::getClipData() const
+	{
+		return callObjectMethod(
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	inline android::os::Bundle AssistContent::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline android::content::Intent AssistContent::getIntent() const
+	{
+		return callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	inline JString AssistContent::getStructuredData() const
+	{
+		return callObjectMethod(
+			"getStructuredData",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri AssistContent::getWebUri() const
+	{
+		return callObjectMethod(
+			"getWebUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jboolean AssistContent::isAppProvidedIntent() const
+	{
+		return callMethod<jboolean>(
+			"isAppProvidedIntent",
+			"()Z"
+		);
+	}
+	inline jboolean AssistContent::isAppProvidedWebUri() const
+	{
+		return callMethod<jboolean>(
+			"isAppProvidedWebUri",
+			"()Z"
+		);
+	}
+	inline void AssistContent::setClipData(android::content::ClipData arg0) const
+	{
+		callMethod<void>(
+			"setClipData",
+			"(Landroid/content/ClipData;)V",
+			arg0.object()
+		);
+	}
+	inline void AssistContent::setIntent(android::content::Intent arg0) const
+	{
+		callMethod<void>(
+			"setIntent",
+			"(Landroid/content/Intent;)V",
+			arg0.object()
+		);
+	}
+	inline void AssistContent::setStructuredData(JString arg0) const
+	{
+		callMethod<void>(
+			"setStructuredData",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void AssistContent::setWebUri(android::net::Uri arg0) const
+	{
+		callMethod<void>(
+			"setWebUri",
+			"(Landroid/net/Uri;)V",
+			arg0.object()
+		);
+	}
+	inline void AssistContent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::assist
+
+// Base class headers
 

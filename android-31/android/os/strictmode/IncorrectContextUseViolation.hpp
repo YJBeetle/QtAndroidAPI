@@ -1,25 +1,25 @@
 #pragma once
 
-#include "./Violation.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./IncorrectContextUseViolation.def.hpp"
 
 namespace android::os::strictmode
 {
-	class IncorrectContextUseViolation : public android::os::strictmode::Violation
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IncorrectContextUseViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		IncorrectContextUseViolation(QJniObject obj);
-		
-		// Constructors
-		IncorrectContextUseViolation(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IncorrectContextUseViolation::IncorrectContextUseViolation(JString arg0, JThrowable arg1)
+		: android::os::strictmode::Violation(
+			"android.os.strictmode.IncorrectContextUseViolation",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::os::strictmode
+
+// Base class headers
+#include "./Violation.hpp"
 

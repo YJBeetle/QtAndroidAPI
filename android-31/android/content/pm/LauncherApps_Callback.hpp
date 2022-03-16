@@ -1,43 +1,119 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class UserHandle;
-}
-class JString;
+#include "../../../JArray.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../os/UserHandle.def.hpp"
+#include "../../../JString.hpp"
+#include "./LauncherApps_Callback.def.hpp"
 
 namespace android::content::pm
 {
-	class LauncherApps_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline LauncherApps_Callback::LauncherApps_Callback()
+		: JObject(
+			"android.content.pm.LauncherApps$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void LauncherApps_Callback::onPackageAdded(JString arg0, android::os::UserHandle arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LauncherApps_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherApps_Callback(QJniObject obj);
-		
-		// Constructors
-		LauncherApps_Callback();
-		
-		// Methods
-		void onPackageAdded(JString arg0, android::os::UserHandle arg1) const;
-		void onPackageChanged(JString arg0, android::os::UserHandle arg1) const;
-		void onPackageLoadingProgressChanged(JString arg0, android::os::UserHandle arg1, jfloat arg2) const;
-		void onPackageRemoved(JString arg0, android::os::UserHandle arg1) const;
-		void onPackagesAvailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const;
-		void onPackagesSuspended(JArray arg0, android::os::UserHandle arg1) const;
-		void onPackagesSuspended(JArray arg0, android::os::UserHandle arg1, android::os::Bundle arg2) const;
-		void onPackagesUnavailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const;
-		void onPackagesUnsuspended(JArray arg0, android::os::UserHandle arg1) const;
-		void onShortcutsChanged(JString arg0, JObject arg1, android::os::UserHandle arg2) const;
-	};
+		callMethod<void>(
+			"onPackageAdded",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps_Callback::onPackageChanged(JString arg0, android::os::UserHandle arg1) const
+	{
+		callMethod<void>(
+			"onPackageChanged",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps_Callback::onPackageLoadingProgressChanged(JString arg0, android::os::UserHandle arg1, jfloat arg2) const
+	{
+		callMethod<void>(
+			"onPackageLoadingProgressChanged",
+			"(Ljava/lang/String;Landroid/os/UserHandle;F)V",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline void LauncherApps_Callback::onPackageRemoved(JString arg0, android::os::UserHandle arg1) const
+	{
+		callMethod<void>(
+			"onPackageRemoved",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps_Callback::onPackagesAvailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const
+	{
+		callMethod<void>(
+			"onPackagesAvailable",
+			"([Ljava/lang/String;Landroid/os/UserHandle;Z)V",
+			arg0.object<jarray>(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline void LauncherApps_Callback::onPackagesSuspended(JArray arg0, android::os::UserHandle arg1) const
+	{
+		callMethod<void>(
+			"onPackagesSuspended",
+			"([Ljava/lang/String;Landroid/os/UserHandle;)V",
+			arg0.object<jarray>(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps_Callback::onPackagesSuspended(JArray arg0, android::os::UserHandle arg1, android::os::Bundle arg2) const
+	{
+		callMethod<void>(
+			"onPackagesSuspended",
+			"([Ljava/lang/String;Landroid/os/UserHandle;Landroid/os/Bundle;)V",
+			arg0.object<jarray>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void LauncherApps_Callback::onPackagesUnavailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const
+	{
+		callMethod<void>(
+			"onPackagesUnavailable",
+			"([Ljava/lang/String;Landroid/os/UserHandle;Z)V",
+			arg0.object<jarray>(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline void LauncherApps_Callback::onPackagesUnsuspended(JArray arg0, android::os::UserHandle arg1) const
+	{
+		callMethod<void>(
+			"onPackagesUnsuspended",
+			"([Ljava/lang/String;Landroid/os/UserHandle;)V",
+			arg0.object<jarray>(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps_Callback::onShortcutsChanged(JString arg0, JObject arg1, android::os::UserHandle arg2) const
+	{
+		callMethod<void>(
+			"onShortcutsChanged",
+			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

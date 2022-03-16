@@ -1,29 +1,55 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DateTimePatternGenerator_PatternInfo.def.hpp"
 
 namespace android::icu::text
 {
-	class DateTimePatternGenerator_PatternInfo : public JObject
+	// Fields
+	inline jint DateTimePatternGenerator_PatternInfo::BASE_CONFLICT()
 	{
-	public:
-		// Fields
-		static jint BASE_CONFLICT();
-		static jint CONFLICT();
-		static jint OK();
-		JString conflictingPattern();
-		jint status();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DateTimePatternGenerator_PatternInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateTimePatternGenerator_PatternInfo(QJniObject obj);
-		
-		// Constructors
-		DateTimePatternGenerator_PatternInfo();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.icu.text.DateTimePatternGenerator$PatternInfo",
+			"BASE_CONFLICT"
+		);
+	}
+	inline jint DateTimePatternGenerator_PatternInfo::CONFLICT()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.DateTimePatternGenerator$PatternInfo",
+			"CONFLICT"
+		);
+	}
+	inline jint DateTimePatternGenerator_PatternInfo::OK()
+	{
+		return getStaticField<jint>(
+			"android.icu.text.DateTimePatternGenerator$PatternInfo",
+			"OK"
+		);
+	}
+	inline JString DateTimePatternGenerator_PatternInfo::conflictingPattern()
+	{
+		return getObjectField(
+			"conflictingPattern",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint DateTimePatternGenerator_PatternInfo::status()
+	{
+		return getField<jint>(
+			"status"
+		);
+	}
+	
+	// Constructors
+	inline DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo()
+		: JObject(
+			"android.icu.text.DateTimePatternGenerator$PatternInfo",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::icu::text
+
+// Base class headers
 

@@ -1,49 +1,132 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::graphics
-{
-	class BlendMode;
-}
-namespace android::graphics
-{
-	class Canvas;
-}
+#include "../content/Context.def.hpp"
+#include "../graphics/BlendMode.def.hpp"
+#include "../graphics/Canvas.def.hpp"
+#include "./EdgeEffect.def.hpp"
 
 namespace android::widget
 {
-	class EdgeEffect : public JObject
+	// Fields
+	inline android::graphics::BlendMode EdgeEffect::DEFAULT_BLEND_MODE()
 	{
-	public:
-		// Fields
-		static android::graphics::BlendMode DEFAULT_BLEND_MODE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EdgeEffect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EdgeEffect(QJniObject obj);
-		
-		// Constructors
-		EdgeEffect(android::content::Context arg0);
-		
-		// Methods
-		jboolean draw(android::graphics::Canvas arg0) const;
-		void finish() const;
-		android::graphics::BlendMode getBlendMode() const;
-		jint getColor() const;
-		jint getMaxHeight() const;
-		jboolean isFinished() const;
-		void onAbsorb(jint arg0) const;
-		void onPull(jfloat arg0) const;
-		void onPull(jfloat arg0, jfloat arg1) const;
-		void onRelease() const;
-		void setBlendMode(android::graphics::BlendMode arg0) const;
-		void setColor(jint arg0) const;
-		void setSize(jint arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.widget.EdgeEffect",
+			"DEFAULT_BLEND_MODE",
+			"Landroid/graphics/BlendMode;"
+		);
+	}
+	
+	// Constructors
+	inline EdgeEffect::EdgeEffect(android::content::Context arg0)
+		: JObject(
+			"android.widget.EdgeEffect",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean EdgeEffect::draw(android::graphics::Canvas arg0) const
+	{
+		return callMethod<jboolean>(
+			"draw",
+			"(Landroid/graphics/Canvas;)Z",
+			arg0.object()
+		);
+	}
+	inline void EdgeEffect::finish() const
+	{
+		callMethod<void>(
+			"finish",
+			"()V"
+		);
+	}
+	inline android::graphics::BlendMode EdgeEffect::getBlendMode() const
+	{
+		return callObjectMethod(
+			"getBlendMode",
+			"()Landroid/graphics/BlendMode;"
+		);
+	}
+	inline jint EdgeEffect::getColor() const
+	{
+		return callMethod<jint>(
+			"getColor",
+			"()I"
+		);
+	}
+	inline jint EdgeEffect::getMaxHeight() const
+	{
+		return callMethod<jint>(
+			"getMaxHeight",
+			"()I"
+		);
+	}
+	inline jboolean EdgeEffect::isFinished() const
+	{
+		return callMethod<jboolean>(
+			"isFinished",
+			"()Z"
+		);
+	}
+	inline void EdgeEffect::onAbsorb(jint arg0) const
+	{
+		callMethod<void>(
+			"onAbsorb",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void EdgeEffect::onPull(jfloat arg0) const
+	{
+		callMethod<void>(
+			"onPull",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void EdgeEffect::onPull(jfloat arg0, jfloat arg1) const
+	{
+		callMethod<void>(
+			"onPull",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void EdgeEffect::onRelease() const
+	{
+		callMethod<void>(
+			"onRelease",
+			"()V"
+		);
+	}
+	inline void EdgeEffect::setBlendMode(android::graphics::BlendMode arg0) const
+	{
+		callMethod<void>(
+			"setBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.object()
+		);
+	}
+	inline void EdgeEffect::setColor(jint arg0) const
+	{
+		callMethod<void>(
+			"setColor",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void EdgeEffect::setSize(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"setSize",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
 

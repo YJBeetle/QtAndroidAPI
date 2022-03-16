@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./EOFException.def.hpp"
 
 namespace java::io
 {
-	class EOFException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit EOFException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		EOFException(QJniObject obj);
-		
-		// Constructors
-		EOFException();
-		EOFException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline EOFException::EOFException()
+		: java::io::IOException(
+			"java.io.EOFException",
+			"()V"
+		) {}
+	inline EOFException::EOFException(JString arg0)
+		: java::io::IOException(
+			"java.io.EOFException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
 

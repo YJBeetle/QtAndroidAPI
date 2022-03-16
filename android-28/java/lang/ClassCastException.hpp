@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ClassCastException.def.hpp"
 
 namespace java::lang
 {
-	class ClassCastException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ClassCastException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ClassCastException(QJniObject obj);
-		
-		// Constructors
-		ClassCastException();
-		ClassCastException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ClassCastException::ClassCastException()
+		: java::lang::RuntimeException(
+			"java.lang.ClassCastException",
+			"()V"
+		) {}
+	inline ClassCastException::ClassCastException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.ClassCastException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

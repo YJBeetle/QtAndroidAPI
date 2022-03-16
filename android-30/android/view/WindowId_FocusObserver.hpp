@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WindowId.def.hpp"
+#include "./WindowId_FocusObserver.def.hpp"
 
 namespace android::view
 {
-	class WindowId;
-}
-
-namespace android::view
-{
-	class WindowId_FocusObserver : public JObject
+	// Fields
+	
+	// Constructors
+	inline WindowId_FocusObserver::WindowId_FocusObserver()
+		: JObject(
+			"android.view.WindowId$FocusObserver",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void WindowId_FocusObserver::onFocusGained(android::view::WindowId arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WindowId_FocusObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowId_FocusObserver(QJniObject obj);
-		
-		// Constructors
-		WindowId_FocusObserver();
-		
-		// Methods
-		void onFocusGained(android::view::WindowId arg0) const;
-		void onFocusLost(android::view::WindowId arg0) const;
-	};
+		callMethod<void>(
+			"onFocusGained",
+			"(Landroid/view/WindowId;)V",
+			arg0.object()
+		);
+	}
+	inline void WindowId_FocusObserver::onFocusLost(android::view::WindowId arg0) const
+	{
+		callMethod<void>(
+			"onFocusLost",
+			"(Landroid/view/WindowId;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

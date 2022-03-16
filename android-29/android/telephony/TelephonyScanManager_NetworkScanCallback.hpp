@@ -1,25 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TelephonyScanManager_NetworkScanCallback.def.hpp"
 
 namespace android::telephony
 {
-	class TelephonyScanManager_NetworkScanCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline TelephonyScanManager_NetworkScanCallback::TelephonyScanManager_NetworkScanCallback()
+		: JObject(
+			"android.telephony.TelephonyScanManager$NetworkScanCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void TelephonyScanManager_NetworkScanCallback::onComplete() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyScanManager_NetworkScanCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyScanManager_NetworkScanCallback(QJniObject obj);
-		
-		// Constructors
-		TelephonyScanManager_NetworkScanCallback();
-		
-		// Methods
-		void onComplete() const;
-		void onError(jint arg0) const;
-		void onResults(JObject arg0) const;
-	};
+		callMethod<void>(
+			"onComplete",
+			"()V"
+		);
+	}
+	inline void TelephonyScanManager_NetworkScanCallback::onError(jint arg0) const
+	{
+		callMethod<void>(
+			"onError",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void TelephonyScanManager_NetworkScanCallback::onResults(JObject arg0) const
+	{
+		callMethod<void>(
+			"onResults",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

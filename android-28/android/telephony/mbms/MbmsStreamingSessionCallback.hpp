@@ -1,27 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./MbmsStreamingSessionCallback.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsStreamingSessionCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MbmsStreamingSessionCallback::MbmsStreamingSessionCallback()
+		: JObject(
+			"android.telephony.mbms.MbmsStreamingSessionCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MbmsStreamingSessionCallback::onError(jint arg0, JString arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MbmsStreamingSessionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsStreamingSessionCallback(QJniObject obj);
-		
-		// Constructors
-		MbmsStreamingSessionCallback();
-		
-		// Methods
-		void onError(jint arg0, JString arg1) const;
-		void onMiddlewareReady() const;
-		void onStreamingServicesUpdated(JObject arg0) const;
-	};
+		callMethod<void>(
+			"onError",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void MbmsStreamingSessionCallback::onMiddlewareReady() const
+	{
+		callMethod<void>(
+			"onMiddlewareReady",
+			"()V"
+		);
+	}
+	inline void MbmsStreamingSessionCallback::onStreamingServicesUpdated(JObject arg0) const
+	{
+		callMethod<void>(
+			"onStreamingServicesUpdated",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::telephony::mbms
+
+// Base class headers
 

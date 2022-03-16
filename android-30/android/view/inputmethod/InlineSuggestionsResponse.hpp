@@ -1,35 +1,71 @@
 #pragma once
 
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./InlineSuggestionsResponse.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InlineSuggestionsResponse : public JObject
+	// Fields
+	inline JObject InlineSuggestionsResponse::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit InlineSuggestionsResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlineSuggestionsResponse(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JObject getInlineSuggestions() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestionsResponse",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint InlineSuggestionsResponse::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean InlineSuggestionsResponse::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject InlineSuggestionsResponse::getInlineSuggestions() const
+	{
+		return callObjectMethod(
+			"getInlineSuggestions",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint InlineSuggestionsResponse::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString InlineSuggestionsResponse::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void InlineSuggestionsResponse::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

@@ -1,26 +1,37 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./TimerTask.def.hpp"
 
 namespace java::util
 {
-	class TimerTask : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean TimerTask::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TimerTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimerTask(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean cancel() const;
-		void run() const;
-		jlong scheduledExecutionTime() const;
-	};
+		return callMethod<jboolean>(
+			"cancel",
+			"()Z"
+		);
+	}
+	inline void TimerTask::run() const
+	{
+		callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
+	inline jlong TimerTask::scheduledExecutionTime() const
+	{
+		return callMethod<jlong>(
+			"scheduledExecutionTime",
+			"()J"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

@@ -1,33 +1,63 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
+#include "./PictureInPictureUiState.def.hpp"
 
 namespace android::app
 {
-	class PictureInPictureUiState : public JObject
+	// Fields
+	inline JObject PictureInPictureUiState::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PictureInPictureUiState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PictureInPictureUiState(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		jboolean isStashed() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.PictureInPictureUiState",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PictureInPictureUiState::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean PictureInPictureUiState::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PictureInPictureUiState::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean PictureInPictureUiState::isStashed() const
+	{
+		return callMethod<jboolean>(
+			"isStashed",
+			"()Z"
+		);
+	}
+	inline void PictureInPictureUiState::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

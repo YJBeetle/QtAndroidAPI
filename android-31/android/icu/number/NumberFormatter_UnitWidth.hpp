@@ -1,31 +1,75 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./NumberFormatter_UnitWidth.def.hpp"
 
 namespace android::icu::number
 {
-	class NumberFormatter_UnitWidth : public java::lang::Enum
+	// Fields
+	inline android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::FULL_NAME()
 	{
-	public:
-		// Fields
-		static android::icu::number::NumberFormatter_UnitWidth FULL_NAME();
-		static android::icu::number::NumberFormatter_UnitWidth HIDDEN();
-		static android::icu::number::NumberFormatter_UnitWidth ISO_CODE();
-		static android::icu::number::NumberFormatter_UnitWidth NARROW();
-		static android::icu::number::NumberFormatter_UnitWidth SHORT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NumberFormatter_UnitWidth(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatter_UnitWidth(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::number::NumberFormatter_UnitWidth valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$UnitWidth",
+			"FULL_NAME",
+			"Landroid/icu/number/NumberFormatter$UnitWidth;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::HIDDEN()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$UnitWidth",
+			"HIDDEN",
+			"Landroid/icu/number/NumberFormatter$UnitWidth;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::ISO_CODE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$UnitWidth",
+			"ISO_CODE",
+			"Landroid/icu/number/NumberFormatter$UnitWidth;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::NARROW()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$UnitWidth",
+			"NARROW",
+			"Landroid/icu/number/NumberFormatter$UnitWidth;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$UnitWidth",
+			"SHORT",
+			"Landroid/icu/number/NumberFormatter$UnitWidth;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberFormatter$UnitWidth",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/number/NumberFormatter$UnitWidth;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray NumberFormatter_UnitWidth::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberFormatter$UnitWidth",
+			"values",
+			"()[Landroid/icu/number/NumberFormatter$UnitWidth;"
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

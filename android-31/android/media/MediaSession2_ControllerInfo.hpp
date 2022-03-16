@@ -1,39 +1,69 @@
 #pragma once
 
+#include "./session/MediaSessionManager_RemoteUserInfo.def.hpp"
+#include "../os/Bundle.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::media::session
-{
-	class MediaSessionManager_RemoteUserInfo;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./MediaSession2_ControllerInfo.def.hpp"
 
 namespace android::media
 {
-	class MediaSession2_ControllerInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MediaSession2_ControllerInfo::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaSession2_ControllerInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession2_ControllerInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		android::os::Bundle getConnectionHints() const;
-		JString getPackageName() const;
-		android::media::session::MediaSessionManager_RemoteUserInfo getRemoteUserInfo() const;
-		jint getUid() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::os::Bundle MediaSession2_ControllerInfo::getConnectionHints() const
+	{
+		return callObjectMethod(
+			"getConnectionHints",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JString MediaSession2_ControllerInfo::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::media::session::MediaSessionManager_RemoteUserInfo MediaSession2_ControllerInfo::getRemoteUserInfo() const
+	{
+		return callObjectMethod(
+			"getRemoteUserInfo",
+			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
+		);
+	}
+	inline jint MediaSession2_ControllerInfo::getUid() const
+	{
+		return callMethod<jint>(
+			"getUid",
+			"()I"
+		);
+	}
+	inline jint MediaSession2_ControllerInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString MediaSession2_ControllerInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

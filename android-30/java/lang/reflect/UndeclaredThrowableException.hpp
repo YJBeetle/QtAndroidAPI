@@ -1,36 +1,42 @@
 #pragma once
 
-#include "../RuntimeException.hpp"
-
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JString;
-class JThrowable;
+#include "../../../JArray.hpp"
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../io/ObjectOutputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./UndeclaredThrowableException.def.hpp"
 
 namespace java::lang::reflect
 {
-	class UndeclaredThrowableException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline UndeclaredThrowableException::UndeclaredThrowableException(JThrowable arg0)
+		: java::lang::RuntimeException(
+			"java.lang.reflect.UndeclaredThrowableException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline UndeclaredThrowableException::UndeclaredThrowableException(JThrowable arg0, JString arg1)
+		: java::lang::RuntimeException(
+			"java.lang.reflect.UndeclaredThrowableException",
+			"(Ljava/lang/Throwable;Ljava/lang/String;)V",
+			arg0.object<jthrowable>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JThrowable UndeclaredThrowableException::getUndeclaredThrowable() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UndeclaredThrowableException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UndeclaredThrowableException(QJniObject obj);
-		
-		// Constructors
-		UndeclaredThrowableException(JThrowable arg0);
-		UndeclaredThrowableException(JThrowable arg0, JString arg1);
-		
-		// Methods
-		JThrowable getUndeclaredThrowable() const;
-	};
+		return callObjectMethod(
+			"getUndeclaredThrowable",
+			"()Ljava/lang/Throwable;"
+		);
+	}
 } // namespace java::lang::reflect
+
+// Base class headers
+#include "../Exception.hpp"
+#include "../RuntimeException.hpp"
 

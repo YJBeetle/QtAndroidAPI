@@ -1,26 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./IntFlagMapping.def.hpp"
 
 namespace android::view::inspector
 {
-	class IntFlagMapping : public JObject
+	// Fields
+	
+	// Constructors
+	inline IntFlagMapping::IntFlagMapping()
+		: JObject(
+			"android.view.inspector.IntFlagMapping",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void IntFlagMapping::add(jint arg0, jint arg1, JString arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IntFlagMapping(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IntFlagMapping(QJniObject obj);
-		
-		// Constructors
-		IntFlagMapping();
-		
-		// Methods
-		void add(jint arg0, jint arg1, JString arg2) const;
-		JObject get(jint arg0) const;
-	};
+		callMethod<void>(
+			"add",
+			"(IILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2.object<jstring>()
+		);
+	}
+	inline JObject IntFlagMapping::get(jint arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(I)Ljava/util/Set;",
+			arg0
+		);
+	}
 } // namespace android::view::inspector
+
+// Base class headers
 

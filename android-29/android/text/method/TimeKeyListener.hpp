@@ -1,33 +1,63 @@
 #pragma once
 
-#include "./NumberKeyListener.hpp"
-
-class JCharArray;
-namespace java::util
-{
-	class Locale;
-}
+#include "../../../JCharArray.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./TimeKeyListener.def.hpp"
 
 namespace android::text::method
 {
-	class TimeKeyListener : public android::text::method::NumberKeyListener
+	// Fields
+	inline JCharArray TimeKeyListener::CHARACTERS()
 	{
-	public:
-		// Fields
-		static JCharArray CHARACTERS();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TimeKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::NumberKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		TimeKeyListener(QJniObject obj);
-		
-		// Constructors
-		TimeKeyListener();
-		TimeKeyListener(java::util::Locale arg0);
-		
-		// Methods
-		static android::text::method::TimeKeyListener getInstance();
-		static android::text::method::TimeKeyListener getInstance(java::util::Locale arg0);
-		jint getInputType() const;
-	};
+		return getStaticObjectField(
+			"android.text.method.TimeKeyListener",
+			"CHARACTERS",
+			"[C"
+		);
+	}
+	
+	// Constructors
+	inline TimeKeyListener::TimeKeyListener()
+		: android::text::method::NumberKeyListener(
+			"android.text.method.TimeKeyListener",
+			"()V"
+		) {}
+	inline TimeKeyListener::TimeKeyListener(java::util::Locale arg0)
+		: android::text::method::NumberKeyListener(
+			"android.text.method.TimeKeyListener",
+			"(Ljava/util/Locale;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::text::method::TimeKeyListener TimeKeyListener::getInstance()
+	{
+		return callStaticObjectMethod(
+			"android.text.method.TimeKeyListener",
+			"getInstance",
+			"()Landroid/text/method/TimeKeyListener;"
+		);
+	}
+	inline android::text::method::TimeKeyListener TimeKeyListener::getInstance(java::util::Locale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.text.method.TimeKeyListener",
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/text/method/TimeKeyListener;",
+			arg0.object()
+		);
+	}
+	inline jint TimeKeyListener::getInputType() const
+	{
+		return callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./MetaKeyKeyListener.hpp"
+#include "./BaseKeyListener.hpp"
+#include "./NumberKeyListener.hpp"
 

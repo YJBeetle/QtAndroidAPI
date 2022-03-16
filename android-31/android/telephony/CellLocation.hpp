@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CellLocation.def.hpp"
 
 namespace android::telephony
 {
-	class CellLocation : public JObject
+	// Fields
+	
+	// Constructors
+	inline CellLocation::CellLocation()
+		: JObject(
+			"android.telephony.CellLocation",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::telephony::CellLocation CellLocation::getEmpty()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CellLocation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CellLocation(QJniObject obj);
-		
-		// Constructors
-		CellLocation();
-		
-		// Methods
-		static android::telephony::CellLocation getEmpty();
-		static void requestLocationUpdate();
-	};
+		return callStaticObjectMethod(
+			"android.telephony.CellLocation",
+			"getEmpty",
+			"()Landroid/telephony/CellLocation;"
+		);
+	}
+	inline void CellLocation::requestLocationUpdate()
+	{
+		callStaticMethod<void>(
+			"android.telephony.CellLocation",
+			"requestLocationUpdate",
+			"()V"
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

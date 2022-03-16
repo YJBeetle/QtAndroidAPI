@@ -1,31 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../os/Parcel.def.hpp"
+#include "./CaptivePortal.def.hpp"
 
 namespace android::net
 {
-	class CaptivePortal : public JObject
+	// Fields
+	inline JObject CaptivePortal::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CaptivePortal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptivePortal(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		void ignoreNetwork() const;
-		void reportCaptivePortalDismissed() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.CaptivePortal",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint CaptivePortal::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void CaptivePortal::ignoreNetwork() const
+	{
+		callMethod<void>(
+			"ignoreNetwork",
+			"()V"
+		);
+	}
+	inline void CaptivePortal::reportCaptivePortalDismissed() const
+	{
+		callMethod<void>(
+			"reportCaptivePortalDismissed",
+			"()V"
+		);
+	}
+	inline void CaptivePortal::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

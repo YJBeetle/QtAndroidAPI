@@ -1,37 +1,135 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JString;
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "./Base64.def.hpp"
 
 namespace android::util
 {
-	class Base64 : public JObject
+	// Fields
+	inline jint Base64::CRLF()
 	{
-	public:
-		// Fields
-		static jint CRLF();
-		static jint DEFAULT();
-		static jint NO_CLOSE();
-		static jint NO_PADDING();
-		static jint NO_WRAP();
-		static jint URL_SAFE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Base64(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Base64(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static JByteArray decode(JByteArray arg0, jint arg1);
-		static JByteArray decode(JString arg0, jint arg1);
-		static JByteArray decode(JByteArray arg0, jint arg1, jint arg2, jint arg3);
-		static JByteArray encode(JByteArray arg0, jint arg1);
-		static JByteArray encode(JByteArray arg0, jint arg1, jint arg2, jint arg3);
-		static JString encodeToString(JByteArray arg0, jint arg1);
-		static JString encodeToString(JByteArray arg0, jint arg1, jint arg2, jint arg3);
-	};
+		return getStaticField<jint>(
+			"android.util.Base64",
+			"CRLF"
+		);
+	}
+	inline jint Base64::DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.util.Base64",
+			"DEFAULT"
+		);
+	}
+	inline jint Base64::NO_CLOSE()
+	{
+		return getStaticField<jint>(
+			"android.util.Base64",
+			"NO_CLOSE"
+		);
+	}
+	inline jint Base64::NO_PADDING()
+	{
+		return getStaticField<jint>(
+			"android.util.Base64",
+			"NO_PADDING"
+		);
+	}
+	inline jint Base64::NO_WRAP()
+	{
+		return getStaticField<jint>(
+			"android.util.Base64",
+			"NO_WRAP"
+		);
+	}
+	inline jint Base64::URL_SAFE()
+	{
+		return getStaticField<jint>(
+			"android.util.Base64",
+			"URL_SAFE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray Base64::decode(JByteArray arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.util.Base64",
+			"decode",
+			"([BI)[B",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline JByteArray Base64::decode(JString arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.util.Base64",
+			"decode",
+			"(Ljava/lang/String;I)[B",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline JByteArray Base64::decode(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.util.Base64",
+			"decode",
+			"([BIII)[B",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline JByteArray Base64::encode(JByteArray arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.util.Base64",
+			"encode",
+			"([BI)[B",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline JByteArray Base64::encode(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.util.Base64",
+			"encode",
+			"([BIII)[B",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline JString Base64::encodeToString(JByteArray arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.util.Base64",
+			"encodeToString",
+			"([BI)Ljava/lang/String;",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline JString Base64::encodeToString(JByteArray arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.util.Base64",
+			"encodeToString",
+			"([BIII)Ljava/lang/String;",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

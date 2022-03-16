@@ -1,32 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::app::appsearch
-{
-	class RemoveByDocumentIdRequest;
-}
-class JString;
+#include "../../../JArray.hpp"
+#include "./RemoveByDocumentIdRequest.def.hpp"
+#include "../../../JString.hpp"
+#include "./RemoveByDocumentIdRequest_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class RemoveByDocumentIdRequest_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline RemoveByDocumentIdRequest_Builder::RemoveByDocumentIdRequest_Builder(JString arg0)
+		: JObject(
+			"android.app.appsearch.RemoveByDocumentIdRequest$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(JArray arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RemoveByDocumentIdRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoveByDocumentIdRequest_Builder(QJniObject obj);
-		
-		// Constructors
-		RemoveByDocumentIdRequest_Builder(JString arg0);
-		
-		// Methods
-		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JArray arg0) const;
-		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JObject arg0) const;
-		android::app::appsearch::RemoveByDocumentIdRequest build() const;
-	};
+		return callObjectMethod(
+			"addIds",
+			"([Ljava/lang/String;)Landroid/app/appsearch/RemoveByDocumentIdRequest$Builder;",
+			arg0.object<jarray>()
+		);
+	}
+	inline android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(JObject arg0) const
+	{
+		return callObjectMethod(
+			"addIds",
+			"(Ljava/util/Collection;)Landroid/app/appsearch/RemoveByDocumentIdRequest$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::appsearch::RemoveByDocumentIdRequest RemoveByDocumentIdRequest_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/RemoveByDocumentIdRequest;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

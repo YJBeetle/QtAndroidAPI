@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalStateException.hpp"
+#include "./AlreadyConnectedException.def.hpp"
 
 namespace java::nio::channels
 {
-	class AlreadyConnectedException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AlreadyConnectedException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		AlreadyConnectedException(QJniObject obj);
-		
-		// Constructors
-		AlreadyConnectedException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AlreadyConnectedException::AlreadyConnectedException()
+		: java::lang::IllegalStateException(
+			"java.nio.channels.AlreadyConnectedException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalStateException.hpp"
 

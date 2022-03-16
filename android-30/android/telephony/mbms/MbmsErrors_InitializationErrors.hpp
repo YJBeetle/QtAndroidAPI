@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MbmsErrors_InitializationErrors.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors_InitializationErrors : public JObject
+	// Fields
+	inline jint MbmsErrors_InitializationErrors::ERROR_APP_PERMISSIONS_NOT_GRANTED()
 	{
-	public:
-		// Fields
-		static jint ERROR_APP_PERMISSIONS_NOT_GRANTED();
-		static jint ERROR_DUPLICATE_INITIALIZE();
-		static jint ERROR_UNABLE_TO_INITIALIZE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MbmsErrors_InitializationErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_InitializationErrors(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$InitializationErrors",
+			"ERROR_APP_PERMISSIONS_NOT_GRANTED"
+		);
+	}
+	inline jint MbmsErrors_InitializationErrors::ERROR_DUPLICATE_INITIALIZE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$InitializationErrors",
+			"ERROR_DUPLICATE_INITIALIZE"
+		);
+	}
+	inline jint MbmsErrors_InitializationErrors::ERROR_UNABLE_TO_INITIALIZE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$InitializationErrors",
+			"ERROR_UNABLE_TO_INITIALIZE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony::mbms
+
+// Base class headers
 

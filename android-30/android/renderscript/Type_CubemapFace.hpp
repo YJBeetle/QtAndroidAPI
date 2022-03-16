@@ -1,35 +1,107 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Type_CubemapFace.def.hpp"
 
 namespace android::renderscript
 {
-	class Type_CubemapFace : public java::lang::Enum
+	// Fields
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::NEGATIVE_X()
 	{
-	public:
-		// Fields
-		static android::renderscript::Type_CubemapFace NEGATIVE_X();
-		static android::renderscript::Type_CubemapFace NEGATIVE_Y();
-		static android::renderscript::Type_CubemapFace NEGATIVE_Z();
-		static android::renderscript::Type_CubemapFace POSITIVE_X();
-		static android::renderscript::Type_CubemapFace POSITIVE_Y();
-		static android::renderscript::Type_CubemapFace POSITIVE_Z();
-		static android::renderscript::Type_CubemapFace POSITVE_X();
-		static android::renderscript::Type_CubemapFace POSITVE_Y();
-		static android::renderscript::Type_CubemapFace POSITVE_Z();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Type_CubemapFace(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Type_CubemapFace(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::renderscript::Type_CubemapFace valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"NEGATIVE_X",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::NEGATIVE_Y()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"NEGATIVE_Y",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::NEGATIVE_Z()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"NEGATIVE_Z",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::POSITIVE_X()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"POSITIVE_X",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::POSITIVE_Y()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"POSITIVE_Y",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::POSITIVE_Z()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"POSITIVE_Z",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::POSITVE_X()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"POSITVE_X",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::POSITVE_Y()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"POSITVE_Y",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::POSITVE_Z()
+	{
+		return getStaticObjectField(
+			"android.renderscript.Type$CubemapFace",
+			"POSITVE_Z",
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::renderscript::Type_CubemapFace Type_CubemapFace::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Type$CubemapFace",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/renderscript/Type$CubemapFace;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Type_CubemapFace::values()
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Type$CubemapFace",
+			"values",
+			"()[Landroid/renderscript/Type$CubemapFace;"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

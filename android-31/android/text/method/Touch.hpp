@@ -1,38 +1,61 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::text
-{
-	class Layout;
-}
-namespace android::view
-{
-	class MotionEvent;
-}
-namespace android::widget
-{
-	class TextView;
-}
+#include "../Layout.def.hpp"
+#include "../../view/MotionEvent.def.hpp"
+#include "../../widget/TextView.def.hpp"
+#include "./Touch.def.hpp"
 
 namespace android::text::method
 {
-	class Touch : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint Touch::getInitialScrollX(android::widget::TextView arg0, JObject arg1)
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Touch(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Touch(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jint getInitialScrollX(android::widget::TextView arg0, JObject arg1);
-		static jint getInitialScrollY(android::widget::TextView arg0, JObject arg1);
-		static jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
-		static void scrollTo(android::widget::TextView arg0, android::text::Layout arg1, jint arg2, jint arg3);
-	};
+		return callStaticMethod<jint>(
+			"android.text.method.Touch",
+			"getInitialScrollX",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;)I",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jint Touch::getInitialScrollY(android::widget::TextView arg0, JObject arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.text.method.Touch",
+			"getInitialScrollY",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;)I",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean Touch::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
+	{
+		return callStaticMethod<jboolean>(
+			"android.text.method.Touch",
+			"onTouchEvent",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void Touch::scrollTo(android::widget::TextView arg0, android::text::Layout arg1, jint arg2, jint arg3)
+	{
+		callStaticMethod<void>(
+			"android.text.method.Touch",
+			"scrollTo",
+			"(Landroid/widget/TextView;Landroid/text/Layout;II)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
 

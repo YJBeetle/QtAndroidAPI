@@ -1,32 +1,60 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaStore_Downloads.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Downloads : public JObject
+	// Fields
+	inline JString MediaStore_Downloads::CONTENT_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_TYPE();
-		static android::net::Uri EXTERNAL_CONTENT_URI();
-		static android::net::Uri INTERNAL_CONTENT_URI();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore_Downloads(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Downloads(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::net::Uri getContentUri(JString arg0);
-		static android::net::Uri getContentUri(JString arg0, jlong arg1);
-	};
+		return getStaticObjectField(
+			"android.provider.MediaStore$Downloads",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri MediaStore_Downloads::EXTERNAL_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Downloads",
+			"EXTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri MediaStore_Downloads::INTERNAL_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Downloads",
+			"INTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::Uri MediaStore_Downloads::getContentUri(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Downloads",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::net::Uri MediaStore_Downloads::getContentUri(JString arg0, jlong arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Downloads",
+			"getContentUri",
+			"(Ljava/lang/String;J)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,28 +1,31 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LightsRequest.def.hpp"
+#include "./LightsManager_LightsSession.def.hpp"
 
 namespace android::hardware::lights
 {
-	class LightsRequest;
-}
-
-namespace android::hardware::lights
-{
-	class LightsManager_LightsSession : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void LightsManager_LightsSession::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LightsManager_LightsSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LightsManager_LightsSession(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void requestLights(android::hardware::lights::LightsRequest arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void LightsManager_LightsSession::requestLights(android::hardware::lights::LightsRequest arg0) const
+	{
+		callMethod<void>(
+			"requestLights",
+			"(Landroid/hardware/lights/LightsRequest;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::hardware::lights
+
+// Base class headers
 

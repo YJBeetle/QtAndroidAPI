@@ -1,23 +1,28 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./KeyStore_CallbackHandlerProtection.def.hpp"
 
 namespace java::security
 {
-	class KeyStore_CallbackHandlerProtection : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(JObject arg0)
+		: JObject(
+			"java.security.KeyStore$CallbackHandlerProtection",
+			"(Ljavax/security/auth/callback/CallbackHandler;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject KeyStore_CallbackHandlerProtection::getCallbackHandler() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyStore_CallbackHandlerProtection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_CallbackHandlerProtection(QJniObject obj);
-		
-		// Constructors
-		KeyStore_CallbackHandlerProtection(JObject arg0);
-		
-		// Methods
-		JObject getCallbackHandler() const;
-	};
+		return callObjectMethod(
+			"getCallbackHandler",
+			"()Ljavax/security/auth/callback/CallbackHandler;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

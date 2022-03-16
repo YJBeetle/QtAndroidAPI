@@ -1,32 +1,52 @@
 #pragma once
 
-#include "./Property.hpp"
-
-namespace java::lang
-{
-	class Float;
-}
-class JObject;
-class JString;
+#include "../../java/lang/Float.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./FloatProperty.def.hpp"
 
 namespace android::util
 {
-	class FloatProperty : public android::util::Property
+	// Fields
+	
+	// Constructors
+	inline FloatProperty::FloatProperty(JString arg0)
+		: android::util::Property(
+			"android.util.FloatProperty",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline void FloatProperty::set(JObject arg0, java::lang::Float arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FloatProperty(const char *className, const char *sig, Ts...agv) : android::util::Property(className, sig, std::forward<Ts>(agv)...) {}
-		FloatProperty(QJniObject obj);
-		
-		// Constructors
-		FloatProperty(JString arg0);
-		
-		// Methods
-		void set(JObject arg0, java::lang::Float arg1) const;
-		void set(JObject arg0, JObject arg1) const;
-		void setValue(JObject arg0, jfloat arg1) const;
-	};
+		callMethod<void>(
+			"set",
+			"(Ljava/lang/Object;Ljava/lang/Float;)V",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline void FloatProperty::set(JObject arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"set",
+			"(Ljava/lang/Object;Ljava/lang/Object;)V",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline void FloatProperty::setValue(JObject arg0, jfloat arg1) const
+	{
+		callMethod<void>(
+			"setValue",
+			"(Ljava/lang/Object;F)V",
+			arg0.object<jobject>(),
+			arg1
+		);
+	}
 } // namespace android::util
+
+// Base class headers
+#include "./Property.hpp"
 

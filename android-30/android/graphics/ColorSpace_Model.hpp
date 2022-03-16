@@ -1,31 +1,74 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ColorSpace_Model.def.hpp"
 
 namespace android::graphics
 {
-	class ColorSpace_Model : public java::lang::Enum
+	// Fields
+	inline android::graphics::ColorSpace_Model ColorSpace_Model::CMYK()
 	{
-	public:
-		// Fields
-		static android::graphics::ColorSpace_Model CMYK();
-		static android::graphics::ColorSpace_Model LAB();
-		static android::graphics::ColorSpace_Model RGB();
-		static android::graphics::ColorSpace_Model XYZ();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ColorSpace_Model(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Model(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::ColorSpace_Model valueOf(JString arg0);
-		static JArray values();
-		jint getComponentCount() const;
-	};
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Model",
+			"CMYK",
+			"Landroid/graphics/ColorSpace$Model;"
+		);
+	}
+	inline android::graphics::ColorSpace_Model ColorSpace_Model::LAB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Model",
+			"LAB",
+			"Landroid/graphics/ColorSpace$Model;"
+		);
+	}
+	inline android::graphics::ColorSpace_Model ColorSpace_Model::RGB()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Model",
+			"RGB",
+			"Landroid/graphics/ColorSpace$Model;"
+		);
+	}
+	inline android::graphics::ColorSpace_Model ColorSpace_Model::XYZ()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Model",
+			"XYZ",
+			"Landroid/graphics/ColorSpace$Model;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::ColorSpace_Model ColorSpace_Model::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$Model",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ColorSpace_Model::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$Model",
+			"values",
+			"()[Landroid/graphics/ColorSpace$Model;"
+		);
+	}
+	inline jint ColorSpace_Model::getComponentCount() const
+	{
+		return callMethod<jint>(
+			"getComponentCount",
+			"()I"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Spannable_Factory.def.hpp"
 
 namespace android::text
 {
-	class Spannable_Factory : public JObject
+	// Fields
+	
+	// Constructors
+	inline Spannable_Factory::Spannable_Factory()
+		: JObject(
+			"android.text.Spannable$Factory",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::Spannable_Factory Spannable_Factory::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Spannable_Factory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Spannable_Factory(QJniObject obj);
-		
-		// Constructors
-		Spannable_Factory();
-		
-		// Methods
-		static android::text::Spannable_Factory getInstance();
-		JObject newSpannable(JString arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.text.Spannable$Factory",
+			"getInstance",
+			"()Landroid/text/Spannable$Factory;"
+		);
+	}
+	inline JObject Spannable_Factory::newSpannable(JString arg0) const
+	{
+		return callObjectMethod(
+			"newSpannable",
+			"(Ljava/lang/CharSequence;)Landroid/text/Spannable;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::text
+
+// Base class headers
 

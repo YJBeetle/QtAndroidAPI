@@ -1,45 +1,119 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./VersionedPackage.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./SharedLibraryInfo.def.hpp"
 
 namespace android::content::pm
 {
-	class VersionedPackage;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::content::pm
-{
-	class SharedLibraryInfo : public JObject
+	// Fields
+	inline JObject SharedLibraryInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint TYPE_BUILTIN();
-		static jint TYPE_DYNAMIC();
-		static jint TYPE_STATIC();
-		static jint VERSION_UNDEFINED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SharedLibraryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SharedLibraryInfo(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::content::pm::VersionedPackage getDeclaringPackage() const;
-		JObject getDependentPackages() const;
-		jlong getLongVersion() const;
-		JString getName() const;
-		jint getType() const;
-		jint getVersion() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.SharedLibraryInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint SharedLibraryInfo::TYPE_BUILTIN()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.SharedLibraryInfo",
+			"TYPE_BUILTIN"
+		);
+	}
+	inline jint SharedLibraryInfo::TYPE_DYNAMIC()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.SharedLibraryInfo",
+			"TYPE_DYNAMIC"
+		);
+	}
+	inline jint SharedLibraryInfo::TYPE_STATIC()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.SharedLibraryInfo",
+			"TYPE_STATIC"
+		);
+	}
+	inline jint SharedLibraryInfo::VERSION_UNDEFINED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.SharedLibraryInfo",
+			"VERSION_UNDEFINED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint SharedLibraryInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::content::pm::VersionedPackage SharedLibraryInfo::getDeclaringPackage() const
+	{
+		return callObjectMethod(
+			"getDeclaringPackage",
+			"()Landroid/content/pm/VersionedPackage;"
+		);
+	}
+	inline JObject SharedLibraryInfo::getDependentPackages() const
+	{
+		return callObjectMethod(
+			"getDependentPackages",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jlong SharedLibraryInfo::getLongVersion() const
+	{
+		return callMethod<jlong>(
+			"getLongVersion",
+			"()J"
+		);
+	}
+	inline JString SharedLibraryInfo::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint SharedLibraryInfo::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline jint SharedLibraryInfo::getVersion() const
+	{
+		return callMethod<jint>(
+			"getVersion",
+			"()I"
+		);
+	}
+	inline JString SharedLibraryInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void SharedLibraryInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

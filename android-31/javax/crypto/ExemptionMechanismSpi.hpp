@@ -1,28 +1,22 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace java::security
-{
-	class AlgorithmParameters;
-}
+#include "../../JByteArray.hpp"
+#include "../../java/security/AlgorithmParameters.def.hpp"
+#include "./ExemptionMechanismSpi.def.hpp"
 
 namespace javax::crypto
 {
-	class ExemptionMechanismSpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ExemptionMechanismSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExemptionMechanismSpi(QJniObject obj);
-		
-		// Constructors
-		ExemptionMechanismSpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ExemptionMechanismSpi::ExemptionMechanismSpi()
+		: JObject(
+			"javax.crypto.ExemptionMechanismSpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
 

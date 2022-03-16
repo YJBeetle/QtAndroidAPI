@@ -1,49 +1,164 @@
 #pragma once
 
-#include "./ThreadPoolExecutor.hpp"
-
-class JObject;
-namespace java::util::concurrent
-{
-	class TimeUnit;
-}
-namespace java::util::concurrent::atomic
-{
-	class AtomicLong;
-}
+#include "../../../JObject.hpp"
+#include "./TimeUnit.def.hpp"
+#include "./atomic/AtomicLong.def.hpp"
+#include "./ScheduledThreadPoolExecutor.def.hpp"
 
 namespace java::util::concurrent
 {
-	class ScheduledThreadPoolExecutor : public java::util::concurrent::ThreadPoolExecutor
+	// Fields
+	
+	// Constructors
+	inline ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0)
+		: java::util::concurrent::ThreadPoolExecutor(
+			"java.util.concurrent.ScheduledThreadPoolExecutor",
+			"(I)V",
+			arg0
+		) {}
+	inline ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, JObject arg1)
+		: java::util::concurrent::ThreadPoolExecutor(
+			"java.util.concurrent.ScheduledThreadPoolExecutor",
+			"(ILjava/util/concurrent/RejectedExecutionHandler;)V",
+			arg0,
+			arg1.object()
+		) {}
+	inline ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, JObject arg1, JObject arg2)
+		: java::util::concurrent::ThreadPoolExecutor(
+			"java.util.concurrent.ScheduledThreadPoolExecutor",
+			"(ILjava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline void ScheduledThreadPoolExecutor::execute(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ScheduledThreadPoolExecutor(const char *className, const char *sig, Ts...agv) : java::util::concurrent::ThreadPoolExecutor(className, sig, std::forward<Ts>(agv)...) {}
-		ScheduledThreadPoolExecutor(QJniObject obj);
-		
-		// Constructors
-		ScheduledThreadPoolExecutor(jint arg0);
-		ScheduledThreadPoolExecutor(jint arg0, JObject arg1);
-		ScheduledThreadPoolExecutor(jint arg0, JObject arg1, JObject arg2);
-		
-		// Methods
-		void execute(JObject arg0) const;
-		jboolean getContinueExistingPeriodicTasksAfterShutdownPolicy() const;
-		jboolean getExecuteExistingDelayedTasksAfterShutdownPolicy() const;
-		JObject getQueue() const;
-		jboolean getRemoveOnCancelPolicy() const;
-		JObject schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
-		JObject scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const;
-		JObject scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const;
-		void setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0) const;
-		void setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0) const;
-		void setRemoveOnCancelPolicy(jboolean arg0) const;
-		void shutdown() const;
-		JObject shutdownNow() const;
-		JObject submit(JObject arg0) const;
-		JObject submit(JObject arg0, JObject arg1) const;
-	};
+		callMethod<void>(
+			"execute",
+			"(Ljava/lang/Runnable;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean ScheduledThreadPoolExecutor::getContinueExistingPeriodicTasksAfterShutdownPolicy() const
+	{
+		return callMethod<jboolean>(
+			"getContinueExistingPeriodicTasksAfterShutdownPolicy",
+			"()Z"
+		);
+	}
+	inline jboolean ScheduledThreadPoolExecutor::getExecuteExistingDelayedTasksAfterShutdownPolicy() const
+	{
+		return callMethod<jboolean>(
+			"getExecuteExistingDelayedTasksAfterShutdownPolicy",
+			"()Z"
+		);
+	}
+	inline JObject ScheduledThreadPoolExecutor::getQueue() const
+	{
+		return callObjectMethod(
+			"getQueue",
+			"()Ljava/util/concurrent/BlockingQueue;"
+		);
+	}
+	inline jboolean ScheduledThreadPoolExecutor::getRemoveOnCancelPolicy() const
+	{
+		return callMethod<jboolean>(
+			"getRemoveOnCancelPolicy",
+			"()Z"
+		);
+	}
+	inline JObject ScheduledThreadPoolExecutor::schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
+	{
+		return callObjectMethod(
+			"schedule",
+			"(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline JObject ScheduledThreadPoolExecutor::scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const
+	{
+		return callObjectMethod(
+			"scheduleAtFixedRate",
+			"(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3.object()
+		);
+	}
+	inline JObject ScheduledThreadPoolExecutor::scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const
+	{
+		return callObjectMethod(
+			"scheduleWithFixedDelay",
+			"(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3.object()
+		);
+	}
+	inline void ScheduledThreadPoolExecutor::setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setContinueExistingPeriodicTasksAfterShutdownPolicy",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ScheduledThreadPoolExecutor::setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setExecuteExistingDelayedTasksAfterShutdownPolicy",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ScheduledThreadPoolExecutor::setRemoveOnCancelPolicy(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setRemoveOnCancelPolicy",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ScheduledThreadPoolExecutor::shutdown() const
+	{
+		callMethod<void>(
+			"shutdown",
+			"()V"
+		);
+	}
+	inline JObject ScheduledThreadPoolExecutor::shutdownNow() const
+	{
+		return callObjectMethod(
+			"shutdownNow",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject ScheduledThreadPoolExecutor::submit(JObject arg0) const
+	{
+		return callObjectMethod(
+			"submit",
+			"(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;",
+			arg0.object()
+		);
+	}
+	inline JObject ScheduledThreadPoolExecutor::submit(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"submit",
+			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
+			arg0.object(),
+			arg1.object<jobject>()
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "./AbstractExecutorService.hpp"
+#include "./ThreadPoolExecutor.hpp"
 

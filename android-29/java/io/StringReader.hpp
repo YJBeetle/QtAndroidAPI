@@ -1,33 +1,85 @@
 #pragma once
 
-#include "./Reader.hpp"
-
-class JCharArray;
-class JString;
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
+#include "./StringReader.def.hpp"
 
 namespace java::io
 {
-	class StringReader : public java::io::Reader
+	// Fields
+	
+	// Constructors
+	inline StringReader::StringReader(JString arg0)
+		: java::io::Reader(
+			"java.io.StringReader",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline void StringReader::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StringReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
-		StringReader(QJniObject obj);
-		
-		// Constructors
-		StringReader(JString arg0);
-		
-		// Methods
-		void close() const;
-		void mark(jint arg0) const;
-		jboolean markSupported() const;
-		jint read() const;
-		jint read(JCharArray arg0, jint arg1, jint arg2) const;
-		jboolean ready() const;
-		void reset() const;
-		jlong skip(jlong arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void StringReader::mark(jint arg0) const
+	{
+		callMethod<void>(
+			"mark",
+			"(I)V",
+			arg0
+		);
+	}
+	inline jboolean StringReader::markSupported() const
+	{
+		return callMethod<jboolean>(
+			"markSupported",
+			"()Z"
+		);
+	}
+	inline jint StringReader::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	inline jint StringReader::read(JCharArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([CII)I",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jboolean StringReader::ready() const
+	{
+		return callMethod<jboolean>(
+			"ready",
+			"()Z"
+		);
+	}
+	inline void StringReader::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline jlong StringReader::skip(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./Reader.hpp"
 

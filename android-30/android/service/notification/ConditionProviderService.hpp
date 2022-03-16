@@ -1,55 +1,140 @@
 #pragma once
 
-#include "../../app/Service.hpp"
-
-class JArray;
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::service::notification
-{
-	class Condition;
-}
-class JString;
+#include "../../../JArray.hpp"
+#include "../../content/ComponentName.def.hpp"
+#include "../../content/Intent.def.hpp"
+#include "../../net/Uri.def.hpp"
+#include "./Condition.def.hpp"
+#include "../../../JString.hpp"
+#include "./ConditionProviderService.def.hpp"
 
 namespace android::service::notification
 {
-	class ConditionProviderService : public android::app::Service
+	// Fields
+	inline JString ConditionProviderService::EXTRA_RULE_ID()
 	{
-	public:
-		// Fields
-		static JString EXTRA_RULE_ID();
-		static JString META_DATA_CONFIGURATION_ACTIVITY();
-		static JString META_DATA_RULE_INSTANCE_LIMIT();
-		static JString META_DATA_RULE_TYPE();
-		static JString SERVICE_INTERFACE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ConditionProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		ConditionProviderService(QJniObject obj);
-		
-		// Constructors
-		ConditionProviderService();
-		
-		// Methods
-		static void requestRebind(android::content::ComponentName arg0);
-		void notifyCondition(android::service::notification::Condition arg0) const;
-		void notifyConditions(JArray arg0) const;
-		JObject onBind(android::content::Intent arg0) const;
-		void onConnected() const;
-		void onRequestConditions(jint arg0) const;
-		void onSubscribe(android::net::Uri arg0) const;
-		void onUnsubscribe(android::net::Uri arg0) const;
-		void requestUnbind() const;
-	};
+		return getStaticObjectField(
+			"android.service.notification.ConditionProviderService",
+			"EXTRA_RULE_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ConditionProviderService::META_DATA_CONFIGURATION_ACTIVITY()
+	{
+		return getStaticObjectField(
+			"android.service.notification.ConditionProviderService",
+			"META_DATA_CONFIGURATION_ACTIVITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ConditionProviderService::META_DATA_RULE_INSTANCE_LIMIT()
+	{
+		return getStaticObjectField(
+			"android.service.notification.ConditionProviderService",
+			"META_DATA_RULE_INSTANCE_LIMIT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ConditionProviderService::META_DATA_RULE_TYPE()
+	{
+		return getStaticObjectField(
+			"android.service.notification.ConditionProviderService",
+			"META_DATA_RULE_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ConditionProviderService::SERVICE_INTERFACE()
+	{
+		return getStaticObjectField(
+			"android.service.notification.ConditionProviderService",
+			"SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline ConditionProviderService::ConditionProviderService()
+		: android::app::Service(
+			"android.service.notification.ConditionProviderService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ConditionProviderService::requestRebind(android::content::ComponentName arg0)
+	{
+		callStaticMethod<void>(
+			"android.service.notification.ConditionProviderService",
+			"requestRebind",
+			"(Landroid/content/ComponentName;)V",
+			arg0.object()
+		);
+	}
+	inline void ConditionProviderService::notifyCondition(android::service::notification::Condition arg0) const
+	{
+		callMethod<void>(
+			"notifyCondition",
+			"(Landroid/service/notification/Condition;)V",
+			arg0.object()
+		);
+	}
+	inline void ConditionProviderService::notifyConditions(JArray arg0) const
+	{
+		callMethod<void>(
+			"notifyConditions",
+			"([Landroid/service/notification/Condition;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline JObject ConditionProviderService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void ConditionProviderService::onConnected() const
+	{
+		callMethod<void>(
+			"onConnected",
+			"()V"
+		);
+	}
+	inline void ConditionProviderService::onRequestConditions(jint arg0) const
+	{
+		callMethod<void>(
+			"onRequestConditions",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ConditionProviderService::onSubscribe(android::net::Uri arg0) const
+	{
+		callMethod<void>(
+			"onSubscribe",
+			"(Landroid/net/Uri;)V",
+			arg0.object()
+		);
+	}
+	inline void ConditionProviderService::onUnsubscribe(android::net::Uri arg0) const
+	{
+		callMethod<void>(
+			"onUnsubscribe",
+			"(Landroid/net/Uri;)V",
+			arg0.object()
+		);
+	}
+	inline void ConditionProviderService::requestUnbind() const
+	{
+		callMethod<void>(
+			"requestUnbind",
+			"()V"
+		);
+	}
 } // namespace android::service::notification
+
+// Base class headers
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
+#include "../../app/Service.hpp"
 

@@ -1,35 +1,60 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JBooleanArray;
-namespace android::app
-{
-	class VoiceInteractor_Request;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
+#include "./VoiceInteractor_Request.def.hpp"
+#include "../../JString.hpp"
+#include "./VoiceInteractor.def.hpp"
 
 namespace android::app
 {
-	class VoiceInteractor : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		android::app::VoiceInteractor_Request getActiveRequest(JString arg0) const;
-		JArray getActiveRequests() const;
-		jboolean submitRequest(android::app::VoiceInteractor_Request arg0) const;
-		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1) const;
-		JBooleanArray supportsCommands(JArray arg0) const;
-	};
+		return callObjectMethod(
+			"getActiveRequest",
+			"(Ljava/lang/String;)Landroid/app/VoiceInteractor$Request;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray VoiceInteractor::getActiveRequests() const
+	{
+		return callObjectMethod(
+			"getActiveRequests",
+			"()[Landroid/app/VoiceInteractor$Request;"
+		);
+	}
+	inline jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0) const
+	{
+		return callMethod<jboolean>(
+			"submitRequest",
+			"(Landroid/app/VoiceInteractor$Request;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1) const
+	{
+		return callMethod<jboolean>(
+			"submitRequest",
+			"(Landroid/app/VoiceInteractor$Request;Ljava/lang/String;)Z",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline JBooleanArray VoiceInteractor::supportsCommands(JArray arg0) const
+	{
+		return callObjectMethod(
+			"supportsCommands",
+			"([Ljava/lang/String;)[Z",
+			arg0.object<jarray>()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

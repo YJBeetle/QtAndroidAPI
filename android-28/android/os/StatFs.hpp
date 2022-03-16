@@ -1,36 +1,107 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./StatFs.def.hpp"
 
 namespace android::os
 {
-	class StatFs : public JObject
+	// Fields
+	
+	// Constructors
+	inline StatFs::StatFs(JString arg0)
+		: JObject(
+			"android.os.StatFs",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint StatFs::getAvailableBlocks() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit StatFs(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StatFs(QJniObject obj);
-		
-		// Constructors
-		StatFs(JString arg0);
-		
-		// Methods
-		jint getAvailableBlocks() const;
-		jlong getAvailableBlocksLong() const;
-		jlong getAvailableBytes() const;
-		jint getBlockCount() const;
-		jlong getBlockCountLong() const;
-		jint getBlockSize() const;
-		jlong getBlockSizeLong() const;
-		jint getFreeBlocks() const;
-		jlong getFreeBlocksLong() const;
-		jlong getFreeBytes() const;
-		jlong getTotalBytes() const;
-		void restat(JString arg0) const;
-	};
+		return callMethod<jint>(
+			"getAvailableBlocks",
+			"()I"
+		);
+	}
+	inline jlong StatFs::getAvailableBlocksLong() const
+	{
+		return callMethod<jlong>(
+			"getAvailableBlocksLong",
+			"()J"
+		);
+	}
+	inline jlong StatFs::getAvailableBytes() const
+	{
+		return callMethod<jlong>(
+			"getAvailableBytes",
+			"()J"
+		);
+	}
+	inline jint StatFs::getBlockCount() const
+	{
+		return callMethod<jint>(
+			"getBlockCount",
+			"()I"
+		);
+	}
+	inline jlong StatFs::getBlockCountLong() const
+	{
+		return callMethod<jlong>(
+			"getBlockCountLong",
+			"()J"
+		);
+	}
+	inline jint StatFs::getBlockSize() const
+	{
+		return callMethod<jint>(
+			"getBlockSize",
+			"()I"
+		);
+	}
+	inline jlong StatFs::getBlockSizeLong() const
+	{
+		return callMethod<jlong>(
+			"getBlockSizeLong",
+			"()J"
+		);
+	}
+	inline jint StatFs::getFreeBlocks() const
+	{
+		return callMethod<jint>(
+			"getFreeBlocks",
+			"()I"
+		);
+	}
+	inline jlong StatFs::getFreeBlocksLong() const
+	{
+		return callMethod<jlong>(
+			"getFreeBlocksLong",
+			"()J"
+		);
+	}
+	inline jlong StatFs::getFreeBytes() const
+	{
+		return callMethod<jlong>(
+			"getFreeBytes",
+			"()J"
+		);
+	}
+	inline jlong StatFs::getTotalBytes() const
+	{
+		return callMethod<jlong>(
+			"getTotalBytes",
+			"()J"
+		);
+	}
+	inline void StatFs::restat(JString arg0) const
+	{
+		callMethod<void>(
+			"restat",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

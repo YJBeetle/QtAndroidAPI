@@ -1,26 +1,40 @@
 #pragma once
 
-#include "./IllegalFormatException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllegalFormatWidthException.def.hpp"
 
 namespace java::util
 {
-	class IllegalFormatWidthException : public java::util::IllegalFormatException
+	// Fields
+	
+	// Constructors
+	inline IllegalFormatWidthException::IllegalFormatWidthException(jint arg0)
+		: java::util::IllegalFormatException(
+			"java.util.IllegalFormatWidthException",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline JString IllegalFormatWidthException::getMessage() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IllegalFormatWidthException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalFormatWidthException(QJniObject obj);
-		
-		// Constructors
-		IllegalFormatWidthException(jint arg0);
-		
-		// Methods
-		JString getMessage() const;
-		jint getWidth() const;
-	};
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint IllegalFormatWidthException::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
+#include "./IllegalFormatException.hpp"
 

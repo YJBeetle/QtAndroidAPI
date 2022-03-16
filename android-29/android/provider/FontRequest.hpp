@@ -1,30 +1,68 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./FontRequest.def.hpp"
 
 namespace android::provider
 {
-	class FontRequest : public JObject
+	// Fields
+	
+	// Constructors
+	inline FontRequest::FontRequest(JString arg0, JString arg1, JString arg2)
+		: JObject(
+			"android.provider.FontRequest",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	inline FontRequest::FontRequest(JString arg0, JString arg1, JString arg2, JObject arg3)
+		: JObject(
+			"android.provider.FontRequest",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline JObject FontRequest::getCertificates() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit FontRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontRequest(QJniObject obj);
-		
-		// Constructors
-		FontRequest(JString arg0, JString arg1, JString arg2);
-		FontRequest(JString arg0, JString arg1, JString arg2, JObject arg3);
-		
-		// Methods
-		JObject getCertificates() const;
-		JString getProviderAuthority() const;
-		JString getProviderPackage() const;
-		JString getQuery() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getCertificates",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString FontRequest::getProviderAuthority() const
+	{
+		return callObjectMethod(
+			"getProviderAuthority",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString FontRequest::getProviderPackage() const
+	{
+		return callObjectMethod(
+			"getProviderPackage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString FontRequest::getQuery() const
+	{
+		return callObjectMethod(
+			"getQuery",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString FontRequest::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

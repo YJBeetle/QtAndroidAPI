@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Editable_Factory.def.hpp"
 
 namespace android::text
 {
-	class Editable_Factory : public JObject
+	// Fields
+	
+	// Constructors
+	inline Editable_Factory::Editable_Factory()
+		: JObject(
+			"android.text.Editable$Factory",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::Editable_Factory Editable_Factory::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Editable_Factory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Editable_Factory(QJniObject obj);
-		
-		// Constructors
-		Editable_Factory();
-		
-		// Methods
-		static android::text::Editable_Factory getInstance();
-		JObject newEditable(JString arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.text.Editable$Factory",
+			"getInstance",
+			"()Landroid/text/Editable$Factory;"
+		);
+	}
+	inline JObject Editable_Factory::newEditable(JString arg0) const
+	{
+		return callObjectMethod(
+			"newEditable",
+			"(Ljava/lang/CharSequence;)Landroid/text/Editable;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::text
+
+// Base class headers
 

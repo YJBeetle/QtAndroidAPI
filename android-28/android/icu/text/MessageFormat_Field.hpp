@@ -1,25 +1,27 @@
 #pragma once
 
-#include "../../../java/text/Format_Field.hpp"
-
-class JObject;
-class JString;
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "./MessageFormat_Field.def.hpp"
 
 namespace android::icu::text
 {
-	class MessageFormat_Field : public java::text::Format_Field
+	// Fields
+	inline android::icu::text::MessageFormat_Field MessageFormat_Field::ARGUMENT()
 	{
-	public:
-		// Fields
-		static android::icu::text::MessageFormat_Field ARGUMENT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MessageFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		MessageFormat_Field(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.icu.text.MessageFormat$Field",
+			"ARGUMENT",
+			"Landroid/icu/text/MessageFormat$Field;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/text/AttributedCharacterIterator_Attribute.hpp"
+#include "../../../java/text/Format_Field.hpp"
 

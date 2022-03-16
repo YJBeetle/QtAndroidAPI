@@ -1,49 +1,68 @@
 #pragma once
 
-#include "./RectShape.hpp"
-
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class Outline;
-}
-namespace android::graphics
-{
-	class Paint;
-}
-namespace android::graphics::drawable::shapes
-{
-	class RectShape;
-}
-namespace android::graphics::drawable::shapes
-{
-	class Shape;
-}
-class JObject;
+#include "../../Canvas.def.hpp"
+#include "../../Outline.def.hpp"
+#include "../../Paint.def.hpp"
+#include "./RectShape.def.hpp"
+#include "./Shape.def.hpp"
+#include "../../../../JObject.hpp"
+#include "./ArcShape.def.hpp"
 
 namespace android::graphics::drawable::shapes
 {
-	class ArcShape : public android::graphics::drawable::shapes::RectShape
+	// Fields
+	
+	// Constructors
+	inline ArcShape::ArcShape(jfloat arg0, jfloat arg1)
+		: android::graphics::drawable::shapes::RectShape(
+			"android.graphics.drawable.shapes.ArcShape",
+			"(FF)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline android::graphics::drawable::shapes::ArcShape ArcShape::clone() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ArcShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::RectShape(className, sig, std::forward<Ts>(agv)...) {}
-		ArcShape(QJniObject obj);
-		
-		// Constructors
-		ArcShape(jfloat arg0, jfloat arg1);
-		
-		// Methods
-		android::graphics::drawable::shapes::ArcShape clone() const;
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
-		void getOutline(android::graphics::Outline arg0) const;
-		jfloat getStartAngle() const;
-		jfloat getSweepAngle() const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Landroid/graphics/drawable/shapes/ArcShape;"
+		);
+	}
+	inline void ArcShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ArcShape::getOutline(android::graphics::Outline arg0) const
+	{
+		callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.object()
+		);
+	}
+	inline jfloat ArcShape::getStartAngle() const
+	{
+		return callMethod<jfloat>(
+			"getStartAngle",
+			"()F"
+		);
+	}
+	inline jfloat ArcShape::getSweepAngle() const
+	{
+		return callMethod<jfloat>(
+			"getSweepAngle",
+			"()F"
+		);
+	}
 } // namespace android::graphics::drawable::shapes
+
+// Base class headers
+#include "./Shape.hpp"
+#include "./RectShape.hpp"
 

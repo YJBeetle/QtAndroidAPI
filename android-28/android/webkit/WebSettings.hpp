@@ -1,158 +1,851 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::webkit
-{
-	class WebSettings_LayoutAlgorithm;
-}
-namespace android::webkit
-{
-	class WebSettings_PluginState;
-}
-namespace android::webkit
-{
-	class WebSettings_RenderPriority;
-}
-namespace android::webkit
-{
-	class WebSettings_TextSize;
-}
-namespace android::webkit
-{
-	class WebSettings_ZoomDensity;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "./WebSettings_LayoutAlgorithm.def.hpp"
+#include "./WebSettings_PluginState.def.hpp"
+#include "./WebSettings_RenderPriority.def.hpp"
+#include "./WebSettings_TextSize.def.hpp"
+#include "./WebSettings_ZoomDensity.def.hpp"
+#include "../../JString.hpp"
+#include "./WebSettings.def.hpp"
 
 namespace android::webkit
 {
-	class WebSettings : public JObject
+	// Fields
+	inline jint WebSettings::LOAD_CACHE_ELSE_NETWORK()
 	{
-	public:
-		// Fields
-		static jint LOAD_CACHE_ELSE_NETWORK();
-		static jint LOAD_CACHE_ONLY();
-		static jint LOAD_DEFAULT();
-		static jint LOAD_NORMAL();
-		static jint LOAD_NO_CACHE();
-		static jint MENU_ITEM_NONE();
-		static jint MENU_ITEM_PROCESS_TEXT();
-		static jint MENU_ITEM_SHARE();
-		static jint MENU_ITEM_WEB_SEARCH();
-		static jint MIXED_CONTENT_ALWAYS_ALLOW();
-		static jint MIXED_CONTENT_COMPATIBILITY_MODE();
-		static jint MIXED_CONTENT_NEVER_ALLOW();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WebSettings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebSettings(QJniObject obj);
-		
-		// Constructors
-		WebSettings();
-		
-		// Methods
-		static JString getDefaultUserAgent(android::content::Context arg0);
-		jboolean enableSmoothTransition() const;
-		jboolean getAllowContentAccess() const;
-		jboolean getAllowFileAccess() const;
-		jboolean getAllowFileAccessFromFileURLs() const;
-		jboolean getAllowUniversalAccessFromFileURLs() const;
-		jboolean getBlockNetworkImage() const;
-		jboolean getBlockNetworkLoads() const;
-		jboolean getBuiltInZoomControls() const;
-		jint getCacheMode() const;
-		JString getCursiveFontFamily() const;
-		jboolean getDatabaseEnabled() const;
-		JString getDatabasePath() const;
-		jint getDefaultFixedFontSize() const;
-		jint getDefaultFontSize() const;
-		JString getDefaultTextEncodingName() const;
-		android::webkit::WebSettings_ZoomDensity getDefaultZoom() const;
-		jint getDisabledActionModeMenuItems() const;
-		jboolean getDisplayZoomControls() const;
-		jboolean getDomStorageEnabled() const;
-		JString getFantasyFontFamily() const;
-		JString getFixedFontFamily() const;
-		jboolean getJavaScriptCanOpenWindowsAutomatically() const;
-		jboolean getJavaScriptEnabled() const;
-		android::webkit::WebSettings_LayoutAlgorithm getLayoutAlgorithm() const;
-		jboolean getLightTouchEnabled() const;
-		jboolean getLoadWithOverviewMode() const;
-		jboolean getLoadsImagesAutomatically() const;
-		jboolean getMediaPlaybackRequiresUserGesture() const;
-		jint getMinimumFontSize() const;
-		jint getMinimumLogicalFontSize() const;
-		jint getMixedContentMode() const;
-		jboolean getOffscreenPreRaster() const;
-		android::webkit::WebSettings_PluginState getPluginState() const;
-		jboolean getSafeBrowsingEnabled() const;
-		JString getSansSerifFontFamily() const;
-		jboolean getSaveFormData() const;
-		jboolean getSavePassword() const;
-		JString getSerifFontFamily() const;
-		JString getStandardFontFamily() const;
-		android::webkit::WebSettings_TextSize getTextSize() const;
-		jint getTextZoom() const;
-		jboolean getUseWideViewPort() const;
-		JString getUserAgentString() const;
-		void setAllowContentAccess(jboolean arg0) const;
-		void setAllowFileAccess(jboolean arg0) const;
-		void setAllowFileAccessFromFileURLs(jboolean arg0) const;
-		void setAllowUniversalAccessFromFileURLs(jboolean arg0) const;
-		void setAppCacheEnabled(jboolean arg0) const;
-		void setAppCacheMaxSize(jlong arg0) const;
-		void setAppCachePath(JString arg0) const;
-		void setBlockNetworkImage(jboolean arg0) const;
-		void setBlockNetworkLoads(jboolean arg0) const;
-		void setBuiltInZoomControls(jboolean arg0) const;
-		void setCacheMode(jint arg0) const;
-		void setCursiveFontFamily(JString arg0) const;
-		void setDatabaseEnabled(jboolean arg0) const;
-		void setDatabasePath(JString arg0) const;
-		void setDefaultFixedFontSize(jint arg0) const;
-		void setDefaultFontSize(jint arg0) const;
-		void setDefaultTextEncodingName(JString arg0) const;
-		void setDefaultZoom(android::webkit::WebSettings_ZoomDensity arg0) const;
-		void setDisabledActionModeMenuItems(jint arg0) const;
-		void setDisplayZoomControls(jboolean arg0) const;
-		void setDomStorageEnabled(jboolean arg0) const;
-		void setEnableSmoothTransition(jboolean arg0) const;
-		void setFantasyFontFamily(JString arg0) const;
-		void setFixedFontFamily(JString arg0) const;
-		void setGeolocationDatabasePath(JString arg0) const;
-		void setGeolocationEnabled(jboolean arg0) const;
-		void setJavaScriptCanOpenWindowsAutomatically(jboolean arg0) const;
-		void setJavaScriptEnabled(jboolean arg0) const;
-		void setLayoutAlgorithm(android::webkit::WebSettings_LayoutAlgorithm arg0) const;
-		void setLightTouchEnabled(jboolean arg0) const;
-		void setLoadWithOverviewMode(jboolean arg0) const;
-		void setLoadsImagesAutomatically(jboolean arg0) const;
-		void setMediaPlaybackRequiresUserGesture(jboolean arg0) const;
-		void setMinimumFontSize(jint arg0) const;
-		void setMinimumLogicalFontSize(jint arg0) const;
-		void setMixedContentMode(jint arg0) const;
-		void setNeedInitialFocus(jboolean arg0) const;
-		void setOffscreenPreRaster(jboolean arg0) const;
-		void setPluginState(android::webkit::WebSettings_PluginState arg0) const;
-		void setRenderPriority(android::webkit::WebSettings_RenderPriority arg0) const;
-		void setSafeBrowsingEnabled(jboolean arg0) const;
-		void setSansSerifFontFamily(JString arg0) const;
-		void setSaveFormData(jboolean arg0) const;
-		void setSavePassword(jboolean arg0) const;
-		void setSerifFontFamily(JString arg0) const;
-		void setStandardFontFamily(JString arg0) const;
-		void setSupportMultipleWindows(jboolean arg0) const;
-		void setSupportZoom(jboolean arg0) const;
-		void setTextSize(android::webkit::WebSettings_TextSize arg0) const;
-		void setTextZoom(jint arg0) const;
-		void setUseWideViewPort(jboolean arg0) const;
-		void setUserAgentString(JString arg0) const;
-		jboolean supportMultipleWindows() const;
-		jboolean supportZoom() const;
-	};
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"LOAD_CACHE_ELSE_NETWORK"
+		);
+	}
+	inline jint WebSettings::LOAD_CACHE_ONLY()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"LOAD_CACHE_ONLY"
+		);
+	}
+	inline jint WebSettings::LOAD_DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"LOAD_DEFAULT"
+		);
+	}
+	inline jint WebSettings::LOAD_NORMAL()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"LOAD_NORMAL"
+		);
+	}
+	inline jint WebSettings::LOAD_NO_CACHE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"LOAD_NO_CACHE"
+		);
+	}
+	inline jint WebSettings::MENU_ITEM_NONE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"MENU_ITEM_NONE"
+		);
+	}
+	inline jint WebSettings::MENU_ITEM_PROCESS_TEXT()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"MENU_ITEM_PROCESS_TEXT"
+		);
+	}
+	inline jint WebSettings::MENU_ITEM_SHARE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"MENU_ITEM_SHARE"
+		);
+	}
+	inline jint WebSettings::MENU_ITEM_WEB_SEARCH()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"MENU_ITEM_WEB_SEARCH"
+		);
+	}
+	inline jint WebSettings::MIXED_CONTENT_ALWAYS_ALLOW()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"MIXED_CONTENT_ALWAYS_ALLOW"
+		);
+	}
+	inline jint WebSettings::MIXED_CONTENT_COMPATIBILITY_MODE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"MIXED_CONTENT_COMPATIBILITY_MODE"
+		);
+	}
+	inline jint WebSettings::MIXED_CONTENT_NEVER_ALLOW()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebSettings",
+			"MIXED_CONTENT_NEVER_ALLOW"
+		);
+	}
+	
+	// Constructors
+	inline WebSettings::WebSettings()
+		: JObject(
+			"android.webkit.WebSettings",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString WebSettings::getDefaultUserAgent(android::content::Context arg0)
+	{
+		return callStaticObjectMethod(
+			"android.webkit.WebSettings",
+			"getDefaultUserAgent",
+			"(Landroid/content/Context;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline jboolean WebSettings::enableSmoothTransition() const
+	{
+		return callMethod<jboolean>(
+			"enableSmoothTransition",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getAllowContentAccess() const
+	{
+		return callMethod<jboolean>(
+			"getAllowContentAccess",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getAllowFileAccess() const
+	{
+		return callMethod<jboolean>(
+			"getAllowFileAccess",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getAllowFileAccessFromFileURLs() const
+	{
+		return callMethod<jboolean>(
+			"getAllowFileAccessFromFileURLs",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getAllowUniversalAccessFromFileURLs() const
+	{
+		return callMethod<jboolean>(
+			"getAllowUniversalAccessFromFileURLs",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getBlockNetworkImage() const
+	{
+		return callMethod<jboolean>(
+			"getBlockNetworkImage",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getBlockNetworkLoads() const
+	{
+		return callMethod<jboolean>(
+			"getBlockNetworkLoads",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getBuiltInZoomControls() const
+	{
+		return callMethod<jboolean>(
+			"getBuiltInZoomControls",
+			"()Z"
+		);
+	}
+	inline jint WebSettings::getCacheMode() const
+	{
+		return callMethod<jint>(
+			"getCacheMode",
+			"()I"
+		);
+	}
+	inline JString WebSettings::getCursiveFontFamily() const
+	{
+		return callObjectMethod(
+			"getCursiveFontFamily",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean WebSettings::getDatabaseEnabled() const
+	{
+		return callMethod<jboolean>(
+			"getDatabaseEnabled",
+			"()Z"
+		);
+	}
+	inline JString WebSettings::getDatabasePath() const
+	{
+		return callObjectMethod(
+			"getDatabasePath",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint WebSettings::getDefaultFixedFontSize() const
+	{
+		return callMethod<jint>(
+			"getDefaultFixedFontSize",
+			"()I"
+		);
+	}
+	inline jint WebSettings::getDefaultFontSize() const
+	{
+		return callMethod<jint>(
+			"getDefaultFontSize",
+			"()I"
+		);
+	}
+	inline JString WebSettings::getDefaultTextEncodingName() const
+	{
+		return callObjectMethod(
+			"getDefaultTextEncodingName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::webkit::WebSettings_ZoomDensity WebSettings::getDefaultZoom() const
+	{
+		return callObjectMethod(
+			"getDefaultZoom",
+			"()Landroid/webkit/WebSettings$ZoomDensity;"
+		);
+	}
+	inline jint WebSettings::getDisabledActionModeMenuItems() const
+	{
+		return callMethod<jint>(
+			"getDisabledActionModeMenuItems",
+			"()I"
+		);
+	}
+	inline jboolean WebSettings::getDisplayZoomControls() const
+	{
+		return callMethod<jboolean>(
+			"getDisplayZoomControls",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getDomStorageEnabled() const
+	{
+		return callMethod<jboolean>(
+			"getDomStorageEnabled",
+			"()Z"
+		);
+	}
+	inline JString WebSettings::getFantasyFontFamily() const
+	{
+		return callObjectMethod(
+			"getFantasyFontFamily",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WebSettings::getFixedFontFamily() const
+	{
+		return callObjectMethod(
+			"getFixedFontFamily",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean WebSettings::getJavaScriptCanOpenWindowsAutomatically() const
+	{
+		return callMethod<jboolean>(
+			"getJavaScriptCanOpenWindowsAutomatically",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getJavaScriptEnabled() const
+	{
+		return callMethod<jboolean>(
+			"getJavaScriptEnabled",
+			"()Z"
+		);
+	}
+	inline android::webkit::WebSettings_LayoutAlgorithm WebSettings::getLayoutAlgorithm() const
+	{
+		return callObjectMethod(
+			"getLayoutAlgorithm",
+			"()Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
+	inline jboolean WebSettings::getLightTouchEnabled() const
+	{
+		return callMethod<jboolean>(
+			"getLightTouchEnabled",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getLoadWithOverviewMode() const
+	{
+		return callMethod<jboolean>(
+			"getLoadWithOverviewMode",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getLoadsImagesAutomatically() const
+	{
+		return callMethod<jboolean>(
+			"getLoadsImagesAutomatically",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getMediaPlaybackRequiresUserGesture() const
+	{
+		return callMethod<jboolean>(
+			"getMediaPlaybackRequiresUserGesture",
+			"()Z"
+		);
+	}
+	inline jint WebSettings::getMinimumFontSize() const
+	{
+		return callMethod<jint>(
+			"getMinimumFontSize",
+			"()I"
+		);
+	}
+	inline jint WebSettings::getMinimumLogicalFontSize() const
+	{
+		return callMethod<jint>(
+			"getMinimumLogicalFontSize",
+			"()I"
+		);
+	}
+	inline jint WebSettings::getMixedContentMode() const
+	{
+		return callMethod<jint>(
+			"getMixedContentMode",
+			"()I"
+		);
+	}
+	inline jboolean WebSettings::getOffscreenPreRaster() const
+	{
+		return callMethod<jboolean>(
+			"getOffscreenPreRaster",
+			"()Z"
+		);
+	}
+	inline android::webkit::WebSettings_PluginState WebSettings::getPluginState() const
+	{
+		return callObjectMethod(
+			"getPluginState",
+			"()Landroid/webkit/WebSettings$PluginState;"
+		);
+	}
+	inline jboolean WebSettings::getSafeBrowsingEnabled() const
+	{
+		return callMethod<jboolean>(
+			"getSafeBrowsingEnabled",
+			"()Z"
+		);
+	}
+	inline JString WebSettings::getSansSerifFontFamily() const
+	{
+		return callObjectMethod(
+			"getSansSerifFontFamily",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean WebSettings::getSaveFormData() const
+	{
+		return callMethod<jboolean>(
+			"getSaveFormData",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::getSavePassword() const
+	{
+		return callMethod<jboolean>(
+			"getSavePassword",
+			"()Z"
+		);
+	}
+	inline JString WebSettings::getSerifFontFamily() const
+	{
+		return callObjectMethod(
+			"getSerifFontFamily",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WebSettings::getStandardFontFamily() const
+	{
+		return callObjectMethod(
+			"getStandardFontFamily",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::webkit::WebSettings_TextSize WebSettings::getTextSize() const
+	{
+		return callObjectMethod(
+			"getTextSize",
+			"()Landroid/webkit/WebSettings$TextSize;"
+		);
+	}
+	inline jint WebSettings::getTextZoom() const
+	{
+		return callMethod<jint>(
+			"getTextZoom",
+			"()I"
+		);
+	}
+	inline jboolean WebSettings::getUseWideViewPort() const
+	{
+		return callMethod<jboolean>(
+			"getUseWideViewPort",
+			"()Z"
+		);
+	}
+	inline JString WebSettings::getUserAgentString() const
+	{
+		return callObjectMethod(
+			"getUserAgentString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void WebSettings::setAllowContentAccess(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAllowContentAccess",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setAllowFileAccess(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAllowFileAccess",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setAllowFileAccessFromFileURLs(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAllowFileAccessFromFileURLs",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setAllowUniversalAccessFromFileURLs(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAllowUniversalAccessFromFileURLs",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setAppCacheEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAppCacheEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setAppCacheMaxSize(jlong arg0) const
+	{
+		callMethod<void>(
+			"setAppCacheMaxSize",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setAppCachePath(JString arg0) const
+	{
+		callMethod<void>(
+			"setAppCachePath",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setBlockNetworkImage(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setBlockNetworkImage",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setBlockNetworkLoads(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setBlockNetworkLoads",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setBuiltInZoomControls(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setBuiltInZoomControls",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setCacheMode(jint arg0) const
+	{
+		callMethod<void>(
+			"setCacheMode",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setCursiveFontFamily(JString arg0) const
+	{
+		callMethod<void>(
+			"setCursiveFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setDatabaseEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDatabaseEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setDatabasePath(JString arg0) const
+	{
+		callMethod<void>(
+			"setDatabasePath",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setDefaultFixedFontSize(jint arg0) const
+	{
+		callMethod<void>(
+			"setDefaultFixedFontSize",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setDefaultFontSize(jint arg0) const
+	{
+		callMethod<void>(
+			"setDefaultFontSize",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setDefaultTextEncodingName(JString arg0) const
+	{
+		callMethod<void>(
+			"setDefaultTextEncodingName",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setDefaultZoom(android::webkit::WebSettings_ZoomDensity arg0) const
+	{
+		callMethod<void>(
+			"setDefaultZoom",
+			"(Landroid/webkit/WebSettings$ZoomDensity;)V",
+			arg0.object()
+		);
+	}
+	inline void WebSettings::setDisabledActionModeMenuItems(jint arg0) const
+	{
+		callMethod<void>(
+			"setDisabledActionModeMenuItems",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setDisplayZoomControls(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDisplayZoomControls",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setDomStorageEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDomStorageEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setEnableSmoothTransition(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setEnableSmoothTransition",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setFantasyFontFamily(JString arg0) const
+	{
+		callMethod<void>(
+			"setFantasyFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setFixedFontFamily(JString arg0) const
+	{
+		callMethod<void>(
+			"setFixedFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setGeolocationDatabasePath(JString arg0) const
+	{
+		callMethod<void>(
+			"setGeolocationDatabasePath",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setGeolocationEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setGeolocationEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setJavaScriptCanOpenWindowsAutomatically(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setJavaScriptCanOpenWindowsAutomatically",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setJavaScriptEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setJavaScriptEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setLayoutAlgorithm(android::webkit::WebSettings_LayoutAlgorithm arg0) const
+	{
+		callMethod<void>(
+			"setLayoutAlgorithm",
+			"(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
+			arg0.object()
+		);
+	}
+	inline void WebSettings::setLightTouchEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setLightTouchEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setLoadWithOverviewMode(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setLoadWithOverviewMode",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setLoadsImagesAutomatically(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setLoadsImagesAutomatically",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setMediaPlaybackRequiresUserGesture(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setMediaPlaybackRequiresUserGesture",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setMinimumFontSize(jint arg0) const
+	{
+		callMethod<void>(
+			"setMinimumFontSize",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setMinimumLogicalFontSize(jint arg0) const
+	{
+		callMethod<void>(
+			"setMinimumLogicalFontSize",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setMixedContentMode(jint arg0) const
+	{
+		callMethod<void>(
+			"setMixedContentMode",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setNeedInitialFocus(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setNeedInitialFocus",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setOffscreenPreRaster(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setOffscreenPreRaster",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setPluginState(android::webkit::WebSettings_PluginState arg0) const
+	{
+		callMethod<void>(
+			"setPluginState",
+			"(Landroid/webkit/WebSettings$PluginState;)V",
+			arg0.object()
+		);
+	}
+	inline void WebSettings::setRenderPriority(android::webkit::WebSettings_RenderPriority arg0) const
+	{
+		callMethod<void>(
+			"setRenderPriority",
+			"(Landroid/webkit/WebSettings$RenderPriority;)V",
+			arg0.object()
+		);
+	}
+	inline void WebSettings::setSafeBrowsingEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setSafeBrowsingEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setSansSerifFontFamily(JString arg0) const
+	{
+		callMethod<void>(
+			"setSansSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setSaveFormData(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setSaveFormData",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setSavePassword(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setSavePassword",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setSerifFontFamily(JString arg0) const
+	{
+		callMethod<void>(
+			"setSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setStandardFontFamily(JString arg0) const
+	{
+		callMethod<void>(
+			"setStandardFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void WebSettings::setSupportMultipleWindows(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setSupportMultipleWindows",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setSupportZoom(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setSupportZoom",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setTextSize(android::webkit::WebSettings_TextSize arg0) const
+	{
+		callMethod<void>(
+			"setTextSize",
+			"(Landroid/webkit/WebSettings$TextSize;)V",
+			arg0.object()
+		);
+	}
+	inline void WebSettings::setTextZoom(jint arg0) const
+	{
+		callMethod<void>(
+			"setTextZoom",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setUseWideViewPort(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setUseWideViewPort",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void WebSettings::setUserAgentString(JString arg0) const
+	{
+		callMethod<void>(
+			"setUserAgentString",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean WebSettings::supportMultipleWindows() const
+	{
+		return callMethod<jboolean>(
+			"supportMultipleWindows",
+			"()Z"
+		);
+	}
+	inline jboolean WebSettings::supportZoom() const
+	{
+		return callMethod<jboolean>(
+			"supportZoom",
+			"()Z"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

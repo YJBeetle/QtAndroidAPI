@@ -1,31 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GestureDescription_StrokeDescription.def.hpp"
+#include "./GestureDescription.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class GestureDescription_StrokeDescription;
-}
-
-namespace android::accessibilityservice
-{
-	class GestureDescription : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jlong GestureDescription::getMaxGestureDuration()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GestureDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureDescription(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static jlong getMaxGestureDuration();
-		static jint getMaxStrokeCount();
-		jint getDisplayId() const;
-		android::accessibilityservice::GestureDescription_StrokeDescription getStroke(jint arg0) const;
-		jint getStrokeCount() const;
-	};
+		return callStaticMethod<jlong>(
+			"android.accessibilityservice.GestureDescription",
+			"getMaxGestureDuration",
+			"()J"
+		);
+	}
+	inline jint GestureDescription::getMaxStrokeCount()
+	{
+		return callStaticMethod<jint>(
+			"android.accessibilityservice.GestureDescription",
+			"getMaxStrokeCount",
+			"()I"
+		);
+	}
+	inline jint GestureDescription::getDisplayId() const
+	{
+		return callMethod<jint>(
+			"getDisplayId",
+			"()I"
+		);
+	}
+	inline android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription::getStroke(jint arg0) const
+	{
+		return callObjectMethod(
+			"getStroke",
+			"(I)Landroid/accessibilityservice/GestureDescription$StrokeDescription;",
+			arg0
+		);
+	}
+	inline jint GestureDescription::getStrokeCount() const
+	{
+		return callMethod<jint>(
+			"getStrokeCount",
+			"()I"
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

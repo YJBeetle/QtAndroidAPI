@@ -1,40 +1,117 @@
 #pragma once
 
-#include "../content/ContextWrapper.hpp"
-
-namespace android::content::res
-{
-	class Configuration;
-}
-class JString;
+#include "../content/res/Configuration.def.hpp"
+#include "../../JString.hpp"
+#include "./Application.def.hpp"
 
 namespace android::app
 {
-	class Application : public android::content::ContextWrapper
+	// Fields
+	
+	// Constructors
+	inline Application::Application()
+		: android::content::ContextWrapper(
+			"android.app.Application",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString Application::getProcessName()
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Application(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		Application(QJniObject obj);
-		
-		// Constructors
-		Application();
-		
-		// Methods
-		static JString getProcessName();
-		void onConfigurationChanged(android::content::res::Configuration arg0) const;
-		void onCreate() const;
-		void onLowMemory() const;
-		void onTerminate() const;
-		void onTrimMemory(jint arg0) const;
-		void registerActivityLifecycleCallbacks(JObject arg0) const;
-		void registerComponentCallbacks(JObject arg0) const;
-		void registerOnProvideAssistDataListener(JObject arg0) const;
-		void unregisterActivityLifecycleCallbacks(JObject arg0) const;
-		void unregisterComponentCallbacks(JObject arg0) const;
-		void unregisterOnProvideAssistDataListener(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.app.Application",
+			"getProcessName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Application::onConfigurationChanged(android::content::res::Configuration arg0) const
+	{
+		callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.object()
+		);
+	}
+	inline void Application::onCreate() const
+	{
+		callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	inline void Application::onLowMemory() const
+	{
+		callMethod<void>(
+			"onLowMemory",
+			"()V"
+		);
+	}
+	inline void Application::onTerminate() const
+	{
+		callMethod<void>(
+			"onTerminate",
+			"()V"
+		);
+	}
+	inline void Application::onTrimMemory(jint arg0) const
+	{
+		callMethod<void>(
+			"onTrimMemory",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Application::registerActivityLifecycleCallbacks(JObject arg0) const
+	{
+		callMethod<void>(
+			"registerActivityLifecycleCallbacks",
+			"(Landroid/app/Application$ActivityLifecycleCallbacks;)V",
+			arg0.object()
+		);
+	}
+	inline void Application::registerComponentCallbacks(JObject arg0) const
+	{
+		callMethod<void>(
+			"registerComponentCallbacks",
+			"(Landroid/content/ComponentCallbacks;)V",
+			arg0.object()
+		);
+	}
+	inline void Application::registerOnProvideAssistDataListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"registerOnProvideAssistDataListener",
+			"(Landroid/app/Application$OnProvideAssistDataListener;)V",
+			arg0.object()
+		);
+	}
+	inline void Application::unregisterActivityLifecycleCallbacks(JObject arg0) const
+	{
+		callMethod<void>(
+			"unregisterActivityLifecycleCallbacks",
+			"(Landroid/app/Application$ActivityLifecycleCallbacks;)V",
+			arg0.object()
+		);
+	}
+	inline void Application::unregisterComponentCallbacks(JObject arg0) const
+	{
+		callMethod<void>(
+			"unregisterComponentCallbacks",
+			"(Landroid/content/ComponentCallbacks;)V",
+			arg0.object()
+		);
+	}
+	inline void Application::unregisterOnProvideAssistDataListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"unregisterOnProvideAssistDataListener",
+			"(Landroid/app/Application$OnProvideAssistDataListener;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
 

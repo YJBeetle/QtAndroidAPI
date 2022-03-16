@@ -1,38 +1,62 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-namespace java::io
-{
-	class IOException;
-}
-class JString;
-class JThrowable;
-namespace java::net
-{
-	class SocketException;
-}
+#include "../../java/io/IOException.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "../../java/net/SocketException.def.hpp"
+#include "./ErrnoException.def.hpp"
 
 namespace android::system
 {
-	class ErrnoException : public java::lang::Exception
+	// Fields
+	inline jint ErrnoException::errno_()
 	{
-	public:
-		// Fields
-		jint errno_();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ErrnoException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ErrnoException(QJniObject obj);
-		
-		// Constructors
-		ErrnoException(JString arg0, jint arg1);
-		ErrnoException(JString arg0, jint arg1, JThrowable arg2);
-		
-		// Methods
-		JString getMessage() const;
-		java::io::IOException rethrowAsIOException() const;
-		java::net::SocketException rethrowAsSocketException() const;
-	};
+		return getField<jint>(
+			"errno"
+		);
+	}
+	
+	// Constructors
+	inline ErrnoException::ErrnoException(JString arg0, jint arg1)
+		: java::lang::Exception(
+			"android.system.ErrnoException",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline ErrnoException::ErrnoException(JString arg0, jint arg1, JThrowable arg2)
+		: java::lang::Exception(
+			"android.system.ErrnoException",
+			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline JString ErrnoException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::io::IOException ErrnoException::rethrowAsIOException() const
+	{
+		return callObjectMethod(
+			"rethrowAsIOException",
+			"()Ljava/io/IOException;"
+		);
+	}
+	inline java::net::SocketException ErrnoException::rethrowAsSocketException() const
+	{
+		return callObjectMethod(
+			"rethrowAsSocketException",
+			"()Ljava/net/SocketException;"
+		);
+	}
 } // namespace android::system
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

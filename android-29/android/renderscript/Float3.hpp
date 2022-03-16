@@ -1,26 +1,46 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Float3.def.hpp"
 
 namespace android::renderscript
 {
-	class Float3 : public JObject
+	// Fields
+	inline jfloat Float3::x()
 	{
-	public:
-		// Fields
-		jfloat x();
-		jfloat y();
-		jfloat z();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Float3(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Float3(QJniObject obj);
-		
-		// Constructors
-		Float3();
-		Float3(jfloat arg0, jfloat arg1, jfloat arg2);
-		
-		// Methods
-	};
+		return getField<jfloat>(
+			"x"
+		);
+	}
+	inline jfloat Float3::y()
+	{
+		return getField<jfloat>(
+			"y"
+		);
+	}
+	inline jfloat Float3::z()
+	{
+		return getField<jfloat>(
+			"z"
+		);
+	}
+	
+	// Constructors
+	inline Float3::Float3()
+		: JObject(
+			"android.renderscript.Float3",
+			"()V"
+		) {}
+	inline Float3::Float3(jfloat arg0, jfloat arg1, jfloat arg2)
+		: JObject(
+			"android.renderscript.Float3",
+			"(FFF)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NegativeArraySizeException.def.hpp"
 
 namespace java::lang
 {
-	class NegativeArraySizeException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NegativeArraySizeException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		NegativeArraySizeException(QJniObject obj);
-		
-		// Constructors
-		NegativeArraySizeException();
-		NegativeArraySizeException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NegativeArraySizeException::NegativeArraySizeException()
+		: java::lang::RuntimeException(
+			"java.lang.NegativeArraySizeException",
+			"()V"
+		) {}
+	inline NegativeArraySizeException::NegativeArraySizeException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.NegativeArraySizeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

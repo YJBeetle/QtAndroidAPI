@@ -1,28 +1,44 @@
 #pragma once
 
-#include "./CertificateException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./CertificateEncodingException.def.hpp"
 
 namespace java::security::cert
 {
-	class CertificateEncodingException : public java::security::cert::CertificateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertificateEncodingException(const char *className, const char *sig, Ts...agv) : java::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateEncodingException(QJniObject obj);
-		
-		// Constructors
-		CertificateEncodingException();
-		CertificateEncodingException(JString arg0);
-		CertificateEncodingException(JThrowable arg0);
-		CertificateEncodingException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CertificateEncodingException::CertificateEncodingException()
+		: java::security::cert::CertificateException(
+			"java.security.cert.CertificateEncodingException",
+			"()V"
+		) {}
+	inline CertificateEncodingException::CertificateEncodingException(JString arg0)
+		: java::security::cert::CertificateException(
+			"java.security.cert.CertificateEncodingException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline CertificateEncodingException::CertificateEncodingException(JThrowable arg0)
+		: java::security::cert::CertificateException(
+			"java.security.cert.CertificateEncodingException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline CertificateEncodingException::CertificateEncodingException(JString arg0, JThrowable arg1)
+		: java::security::cert::CertificateException(
+			"java.security.cert.CertificateEncodingException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::security::cert
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../GeneralSecurityException.hpp"
+#include "./CertificateException.hpp"
 

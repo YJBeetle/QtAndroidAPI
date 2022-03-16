@@ -1,24 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CertStoreSpi.def.hpp"
 
 namespace java::security::cert
 {
-	class CertStoreSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline CertStoreSpi::CertStoreSpi(JObject arg0)
+		: JObject(
+			"java.security.cert.CertStoreSpi",
+			"(Ljava/security/cert/CertStoreParameters;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject CertStoreSpi::engineGetCRLs(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CertStoreSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertStoreSpi(QJniObject obj);
-		
-		// Constructors
-		CertStoreSpi(JObject arg0);
-		
-		// Methods
-		JObject engineGetCRLs(JObject arg0) const;
-		JObject engineGetCertificates(JObject arg0) const;
-	};
+		return callObjectMethod(
+			"engineGetCRLs",
+			"(Ljava/security/cert/CRLSelector;)Ljava/util/Collection;",
+			arg0.object()
+		);
+	}
+	inline JObject CertStoreSpi::engineGetCertificates(JObject arg0) const
+	{
+		return callObjectMethod(
+			"engineGetCertificates",
+			"(Ljava/security/cert/CertSelector;)Ljava/util/Collection;",
+			arg0.object()
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

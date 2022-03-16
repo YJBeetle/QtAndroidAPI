@@ -1,38 +1,90 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./UnicodeSet.def.hpp"
+#include "../../../JString.hpp"
+#include "./UnicodeSetIterator.def.hpp"
 
 namespace android::icu::text
 {
-	class UnicodeSet;
-}
-class JString;
-
-namespace android::icu::text
-{
-	class UnicodeSetIterator : public JObject
+	// Fields
+	inline jint UnicodeSetIterator::IS_STRING()
 	{
-	public:
-		// Fields
-		static jint IS_STRING();
-		jint codepoint();
-		jint codepointEnd();
-		JString string();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UnicodeSetIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetIterator(QJniObject obj);
-		
-		// Constructors
-		UnicodeSetIterator();
-		UnicodeSetIterator(android::icu::text::UnicodeSet arg0);
-		
-		// Methods
-		JString getString() const;
-		jboolean next() const;
-		jboolean nextRange() const;
-		void reset() const;
-		void reset(android::icu::text::UnicodeSet arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.icu.text.UnicodeSetIterator",
+			"IS_STRING"
+		);
+	}
+	inline jint UnicodeSetIterator::codepoint()
+	{
+		return getField<jint>(
+			"codepoint"
+		);
+	}
+	inline jint UnicodeSetIterator::codepointEnd()
+	{
+		return getField<jint>(
+			"codepointEnd"
+		);
+	}
+	inline JString UnicodeSetIterator::string()
+	{
+		return getObjectField(
+			"string",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline UnicodeSetIterator::UnicodeSetIterator()
+		: JObject(
+			"android.icu.text.UnicodeSetIterator",
+			"()V"
+		) {}
+	inline UnicodeSetIterator::UnicodeSetIterator(android::icu::text::UnicodeSet arg0)
+		: JObject(
+			"android.icu.text.UnicodeSetIterator",
+			"(Landroid/icu/text/UnicodeSet;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JString UnicodeSetIterator::getString() const
+	{
+		return callObjectMethod(
+			"getString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean UnicodeSetIterator::next() const
+	{
+		return callMethod<jboolean>(
+			"next",
+			"()Z"
+		);
+	}
+	inline jboolean UnicodeSetIterator::nextRange() const
+	{
+		return callMethod<jboolean>(
+			"nextRange",
+			"()Z"
+		);
+	}
+	inline void UnicodeSetIterator::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline void UnicodeSetIterator::reset(android::icu::text::UnicodeSet arg0) const
+	{
+		callMethod<void>(
+			"reset",
+			"(Landroid/icu/text/UnicodeSet;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

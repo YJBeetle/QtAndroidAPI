@@ -1,21 +1,17 @@
 #pragma once
 
-#include "./IkeException.hpp"
+#include "./IkeNonProtocolException.def.hpp"
 
 namespace android::net::ipsec::ike::exceptions
 {
-	class IkeNonProtocolException : public android::net::ipsec::ike::exceptions::IkeException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit IkeNonProtocolException(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::exceptions::IkeException(className, sig, std::forward<Ts>(agv)...) {}
-		IkeNonProtocolException(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net::ipsec::ike::exceptions
+
+// Base class headers
+#include "../../../../../java/lang/Exception.hpp"
+#include "./IkeException.hpp"
 

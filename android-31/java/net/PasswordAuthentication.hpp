@@ -1,27 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JCharArray;
-class JString;
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
+#include "./PasswordAuthentication.def.hpp"
 
 namespace java::net
 {
-	class PasswordAuthentication : public JObject
+	// Fields
+	
+	// Constructors
+	inline PasswordAuthentication::PasswordAuthentication(JString arg0, JCharArray arg1)
+		: JObject(
+			"java.net.PasswordAuthentication",
+			"(Ljava/lang/String;[C)V",
+			arg0.object<jstring>(),
+			arg1.object<jcharArray>()
+		) {}
+	
+	// Methods
+	inline JCharArray PasswordAuthentication::getPassword() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PasswordAuthentication(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PasswordAuthentication(QJniObject obj);
-		
-		// Constructors
-		PasswordAuthentication(JString arg0, JCharArray arg1);
-		
-		// Methods
-		JCharArray getPassword() const;
-		JString getUserName() const;
-	};
+		return callObjectMethod(
+			"getPassword",
+			"()[C"
+		);
+	}
+	inline JString PasswordAuthentication::getUserName() const
+	{
+		return callObjectMethod(
+			"getUserName",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

@@ -1,33 +1,96 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./OutputKeys.def.hpp"
 
 namespace javax::xml::transform
 {
-	class OutputKeys : public JObject
+	// Fields
+	inline JString OutputKeys::CDATA_SECTION_ELEMENTS()
 	{
-	public:
-		// Fields
-		static JString CDATA_SECTION_ELEMENTS();
-		static JString DOCTYPE_PUBLIC();
-		static JString DOCTYPE_SYSTEM();
-		static JString ENCODING();
-		static JString INDENT();
-		static JString MEDIA_TYPE();
-		static JString METHOD_();
-		static JString OMIT_XML_DECLARATION();
-		static JString STANDALONE();
-		static JString VERSION();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit OutputKeys(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OutputKeys(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"CDATA_SECTION_ELEMENTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::DOCTYPE_PUBLIC()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"DOCTYPE_PUBLIC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::DOCTYPE_SYSTEM()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"DOCTYPE_SYSTEM",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::ENCODING()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"ENCODING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::INDENT()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"INDENT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::MEDIA_TYPE()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"MEDIA_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::METHOD_()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"METHOD",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::OMIT_XML_DECLARATION()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"OMIT_XML_DECLARATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::STANDALONE()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"STANDALONE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString OutputKeys::VERSION()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"VERSION",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace javax::xml::transform
+
+// Base class headers
 

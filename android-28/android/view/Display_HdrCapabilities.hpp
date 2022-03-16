@@ -1,41 +1,113 @@
 #pragma once
 
+#include "../../JIntArray.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-class JIntArray;
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
+#include "./Display_HdrCapabilities.def.hpp"
 
 namespace android::view
 {
-	class Display_HdrCapabilities : public JObject
+	// Fields
+	inline JObject Display_HdrCapabilities::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint HDR_TYPE_DOLBY_VISION();
-		static jint HDR_TYPE_HDR10();
-		static jint HDR_TYPE_HLG();
-		static jfloat INVALID_LUMINANCE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Display_HdrCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Display_HdrCapabilities(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jfloat getDesiredMaxAverageLuminance() const;
-		jfloat getDesiredMaxLuminance() const;
-		jfloat getDesiredMinLuminance() const;
-		JIntArray getSupportedHdrTypes() const;
-		jint hashCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.Display$HdrCapabilities",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint Display_HdrCapabilities::HDR_TYPE_DOLBY_VISION()
+	{
+		return getStaticField<jint>(
+			"android.view.Display$HdrCapabilities",
+			"HDR_TYPE_DOLBY_VISION"
+		);
+	}
+	inline jint Display_HdrCapabilities::HDR_TYPE_HDR10()
+	{
+		return getStaticField<jint>(
+			"android.view.Display$HdrCapabilities",
+			"HDR_TYPE_HDR10"
+		);
+	}
+	inline jint Display_HdrCapabilities::HDR_TYPE_HLG()
+	{
+		return getStaticField<jint>(
+			"android.view.Display$HdrCapabilities",
+			"HDR_TYPE_HLG"
+		);
+	}
+	inline jfloat Display_HdrCapabilities::INVALID_LUMINANCE()
+	{
+		return getStaticField<jfloat>(
+			"android.view.Display$HdrCapabilities",
+			"INVALID_LUMINANCE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint Display_HdrCapabilities::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean Display_HdrCapabilities::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance() const
+	{
+		return callMethod<jfloat>(
+			"getDesiredMaxAverageLuminance",
+			"()F"
+		);
+	}
+	inline jfloat Display_HdrCapabilities::getDesiredMaxLuminance() const
+	{
+		return callMethod<jfloat>(
+			"getDesiredMaxLuminance",
+			"()F"
+		);
+	}
+	inline jfloat Display_HdrCapabilities::getDesiredMinLuminance() const
+	{
+		return callMethod<jfloat>(
+			"getDesiredMinLuminance",
+			"()F"
+		);
+	}
+	inline JIntArray Display_HdrCapabilities::getSupportedHdrTypes() const
+	{
+		return callObjectMethod(
+			"getSupportedHdrTypes",
+			"()[I"
+		);
+	}
+	inline jint Display_HdrCapabilities::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void Display_HdrCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

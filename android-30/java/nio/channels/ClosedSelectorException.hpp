@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalStateException.hpp"
+#include "./ClosedSelectorException.def.hpp"
 
 namespace java::nio::channels
 {
-	class ClosedSelectorException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ClosedSelectorException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ClosedSelectorException(QJniObject obj);
-		
-		// Constructors
-		ClosedSelectorException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ClosedSelectorException::ClosedSelectorException()
+		: java::lang::IllegalStateException(
+			"java.nio.channels.ClosedSelectorException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalStateException.hpp"
 

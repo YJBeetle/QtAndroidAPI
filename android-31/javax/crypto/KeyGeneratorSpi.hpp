@@ -1,27 +1,21 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::security
-{
-	class SecureRandom;
-}
+#include "../../java/security/SecureRandom.def.hpp"
+#include "./KeyGeneratorSpi.def.hpp"
 
 namespace javax::crypto
 {
-	class KeyGeneratorSpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit KeyGeneratorSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyGeneratorSpi(QJniObject obj);
-		
-		// Constructors
-		KeyGeneratorSpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline KeyGeneratorSpi::KeyGeneratorSpi()
+		: JObject(
+			"javax.crypto.KeyGeneratorSpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
 

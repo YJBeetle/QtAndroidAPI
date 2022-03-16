@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./CarrierConfigManager_Ims.def.hpp"
 
 namespace android::telephony
 {
-	class CarrierConfigManager_Ims : public JObject
+	// Fields
+	inline JString CarrierConfigManager_Ims::KEY_PREFIX()
 	{
-	public:
-		// Fields
-		static JString KEY_PREFIX();
-		static JString KEY_WIFI_OFF_DEFERRING_TIME_MILLIS_INT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager_Ims(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_Ims(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$Ims",
+			"KEY_PREFIX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CarrierConfigManager_Ims::KEY_WIFI_OFF_DEFERRING_TIME_MILLIS_INT()
+	{
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$Ims",
+			"KEY_WIFI_OFF_DEFERRING_TIME_MILLIS_INT",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

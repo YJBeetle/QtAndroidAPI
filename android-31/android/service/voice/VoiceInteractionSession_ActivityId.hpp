@@ -1,25 +1,31 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
+#include "./VoiceInteractionSession_ActivityId.def.hpp"
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_ActivityId : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean VoiceInteractionSession_ActivityId::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_ActivityId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_ActivityId(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint VoiceInteractionSession_ActivityId::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::service::voice
+
+// Base class headers
 

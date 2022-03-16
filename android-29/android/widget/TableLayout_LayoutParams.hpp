@@ -1,44 +1,61 @@
 #pragma once
 
-#include "./LinearLayout_LayoutParams.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::content::res
-{
-	class TypedArray;
-}
-namespace android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace android::view
-{
-	class ViewGroup_MarginLayoutParams;
-}
+#include "../content/Context.def.hpp"
+#include "../content/res/TypedArray.def.hpp"
+#include "../view/ViewGroup_LayoutParams.def.hpp"
+#include "../view/ViewGroup_MarginLayoutParams.def.hpp"
+#include "./TableLayout_LayoutParams.def.hpp"
 
 namespace android::widget
 {
-	class TableLayout_LayoutParams : public android::widget::LinearLayout_LayoutParams
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TableLayout_LayoutParams(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		TableLayout_LayoutParams(QJniObject obj);
-		
-		// Constructors
-		TableLayout_LayoutParams();
-		TableLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
-		TableLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0);
-		TableLayout_LayoutParams(android::content::Context arg0, JObject arg1);
-		TableLayout_LayoutParams(jint arg0, jint arg1);
-		TableLayout_LayoutParams(jint arg0, jint arg1, jfloat arg2);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TableLayout_LayoutParams::TableLayout_LayoutParams()
+		: android::widget::LinearLayout_LayoutParams(
+			"android.widget.TableLayout$LayoutParams",
+			"()V"
+		) {}
+	inline TableLayout_LayoutParams::TableLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
+		: android::widget::LinearLayout_LayoutParams(
+			"android.widget.TableLayout$LayoutParams",
+			"(Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.object()
+		) {}
+	inline TableLayout_LayoutParams::TableLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0)
+		: android::widget::LinearLayout_LayoutParams(
+			"android.widget.TableLayout$LayoutParams",
+			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
+			arg0.object()
+		) {}
+	inline TableLayout_LayoutParams::TableLayout_LayoutParams(android::content::Context arg0, JObject arg1)
+		: android::widget::LinearLayout_LayoutParams(
+			"android.widget.TableLayout$LayoutParams",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline TableLayout_LayoutParams::TableLayout_LayoutParams(jint arg0, jint arg1)
+		: android::widget::LinearLayout_LayoutParams(
+			"android.widget.TableLayout$LayoutParams",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	inline TableLayout_LayoutParams::TableLayout_LayoutParams(jint arg0, jint arg1, jfloat arg2)
+		: android::widget::LinearLayout_LayoutParams(
+			"android.widget.TableLayout$LayoutParams",
+			"(IIF)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
 } // namespace android::widget
+
+// Base class headers
+#include "../view/ViewGroup_LayoutParams.hpp"
+#include "../view/ViewGroup_MarginLayoutParams.hpp"
+#include "./LinearLayout_LayoutParams.hpp"
 

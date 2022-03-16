@@ -1,24 +1,34 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./RenderProcessGoneDetail.def.hpp"
 
 namespace android::webkit
 {
-	class RenderProcessGoneDetail : public JObject
+	// Fields
+	
+	// Constructors
+	inline RenderProcessGoneDetail::RenderProcessGoneDetail()
+		: JObject(
+			"android.webkit.RenderProcessGoneDetail",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean RenderProcessGoneDetail::didCrash() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit RenderProcessGoneDetail(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RenderProcessGoneDetail(QJniObject obj);
-		
-		// Constructors
-		RenderProcessGoneDetail();
-		
-		// Methods
-		jboolean didCrash() const;
-		jint rendererPriorityAtExit() const;
-	};
+		return callMethod<jboolean>(
+			"didCrash",
+			"()Z"
+		);
+	}
+	inline jint RenderProcessGoneDetail::rendererPriorityAtExit() const
+	{
+		return callMethod<jint>(
+			"rendererPriorityAtExit",
+			"()I"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

@@ -1,30 +1,60 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./DateInterval.def.hpp"
 
 namespace android::icu::util
 {
-	class DateInterval : public JObject
+	// Fields
+	
+	// Constructors
+	inline DateInterval::DateInterval(jlong arg0, jlong arg1)
+		: JObject(
+			"android.icu.util.DateInterval",
+			"(JJ)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean DateInterval::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DateInterval(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateInterval(QJniObject obj);
-		
-		// Constructors
-		DateInterval(jlong arg0, jlong arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jlong getFromDate() const;
-		jlong getToDate() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jlong DateInterval::getFromDate() const
+	{
+		return callMethod<jlong>(
+			"getFromDate",
+			"()J"
+		);
+	}
+	inline jlong DateInterval::getToDate() const
+	{
+		return callMethod<jlong>(
+			"getToDate",
+			"()J"
+		);
+	}
+	inline jint DateInterval::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString DateInterval::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
 

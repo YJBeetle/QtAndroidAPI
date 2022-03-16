@@ -1,28 +1,42 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./AccountsException.def.hpp"
 
 namespace android::accounts
 {
-	class AccountsException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AccountsException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		AccountsException(QJniObject obj);
-		
-		// Constructors
-		AccountsException();
-		AccountsException(JString arg0);
-		AccountsException(JThrowable arg0);
-		AccountsException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AccountsException::AccountsException()
+		: java::lang::Exception(
+			"android.accounts.AccountsException",
+			"()V"
+		) {}
+	inline AccountsException::AccountsException(JString arg0)
+		: java::lang::Exception(
+			"android.accounts.AccountsException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline AccountsException::AccountsException(JThrowable arg0)
+		: java::lang::Exception(
+			"android.accounts.AccountsException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline AccountsException::AccountsException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"android.accounts.AccountsException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::accounts
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

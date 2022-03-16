@@ -1,32 +1,55 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./BiometricPrompt_AuthenticationResult.def.hpp"
+#include "../../../JString.hpp"
+#include "./BiometricPrompt_AuthenticationCallback.def.hpp"
 
 namespace android::hardware::biometrics
 {
-	class BiometricPrompt_AuthenticationResult;
-}
-class JString;
-
-namespace android::hardware::biometrics
-{
-	class BiometricPrompt_AuthenticationCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline BiometricPrompt_AuthenticationCallback::BiometricPrompt_AuthenticationCallback()
+		: JObject(
+			"android.hardware.biometrics.BiometricPrompt$AuthenticationCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void BiometricPrompt_AuthenticationCallback::onAuthenticationError(jint arg0, JString arg1) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BiometricPrompt_AuthenticationCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricPrompt_AuthenticationCallback(QJniObject obj);
-		
-		// Constructors
-		BiometricPrompt_AuthenticationCallback();
-		
-		// Methods
-		void onAuthenticationError(jint arg0, JString arg1) const;
-		void onAuthenticationFailed() const;
-		void onAuthenticationHelp(jint arg0, JString arg1) const;
-		void onAuthenticationSucceeded(android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0) const;
-	};
+		callMethod<void>(
+			"onAuthenticationError",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void BiometricPrompt_AuthenticationCallback::onAuthenticationFailed() const
+	{
+		callMethod<void>(
+			"onAuthenticationFailed",
+			"()V"
+		);
+	}
+	inline void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"onAuthenticationHelp",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void BiometricPrompt_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0) const
+	{
+		callMethod<void>(
+			"onAuthenticationSucceeded",
+			"(Landroid/hardware/biometrics/BiometricPrompt$AuthenticationResult;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::hardware::biometrics
+
+// Base class headers
 

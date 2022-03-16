@@ -1,28 +1,55 @@
 #pragma once
 
-#include "../../lang/IllegalArgumentException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./PatternSyntaxException.def.hpp"
 
 namespace java::util::regex
 {
-	class PatternSyntaxException : public java::lang::IllegalArgumentException
+	// Fields
+	
+	// Constructors
+	inline PatternSyntaxException::PatternSyntaxException(JString arg0, JString arg1, jint arg2)
+		: java::lang::IllegalArgumentException(
+			"java.util.regex.PatternSyntaxException",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	
+	// Methods
+	inline JString PatternSyntaxException::getDescription() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PatternSyntaxException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		PatternSyntaxException(QJniObject obj);
-		
-		// Constructors
-		PatternSyntaxException(JString arg0, JString arg1, jint arg2);
-		
-		// Methods
-		JString getDescription() const;
-		jint getIndex() const;
-		JString getMessage() const;
-		JString getPattern() const;
-	};
+		return callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint PatternSyntaxException::getIndex() const
+	{
+		return callMethod<jint>(
+			"getIndex",
+			"()I"
+		);
+	}
+	inline JString PatternSyntaxException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString PatternSyntaxException::getPattern() const
+	{
+		return callObjectMethod(
+			"getPattern",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::regex
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalArgumentException.hpp"
 

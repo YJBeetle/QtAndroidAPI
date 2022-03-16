@@ -1,30 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./UrlQuerySanitizer.def.hpp"
+#include "../../JString.hpp"
+#include "./UrlQuerySanitizer_ParameterValuePair.def.hpp"
 
 namespace android::net
 {
-	class UrlQuerySanitizer;
-}
-class JString;
-
-namespace android::net
-{
-	class UrlQuerySanitizer_ParameterValuePair : public JObject
+	// Fields
+	inline JString UrlQuerySanitizer_ParameterValuePair::mParameter()
 	{
-	public:
-		// Fields
-		JString mParameter();
-		JString mValue();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UrlQuerySanitizer_ParameterValuePair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UrlQuerySanitizer_ParameterValuePair(QJniObject obj);
-		
-		// Constructors
-		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, JString arg1, JString arg2);
-		
-		// Methods
-	};
+		return getObjectField(
+			"mParameter",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString UrlQuerySanitizer_ParameterValuePair::mValue()
+	{
+		return getObjectField(
+			"mValue",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, JString arg1, JString arg2)
+		: JObject(
+			"android.net.UrlQuerySanitizer$ParameterValuePair",
+			"(Landroid/net/UrlQuerySanitizer;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::net
+
+// Base class headers
 

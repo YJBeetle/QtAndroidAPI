@@ -1,26 +1,32 @@
 #pragma once
 
-#include "./IdentityCredentialException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./NoAuthenticationKeyAvailableException.def.hpp"
 
 namespace android::security::identity
 {
-	class NoAuthenticationKeyAvailableException : public android::security::identity::IdentityCredentialException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit NoAuthenticationKeyAvailableException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		NoAuthenticationKeyAvailableException(QJniObject obj);
-		
-		// Constructors
-		NoAuthenticationKeyAvailableException(JString arg0);
-		NoAuthenticationKeyAvailableException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(JString arg0)
+		: android::security::identity::IdentityCredentialException(
+			"android.security.identity.NoAuthenticationKeyAvailableException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(JString arg0, JThrowable arg1)
+		: android::security::identity::IdentityCredentialException(
+			"android.security.identity.NoAuthenticationKeyAvailableException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::security::identity
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./IdentityCredentialException.hpp"
 

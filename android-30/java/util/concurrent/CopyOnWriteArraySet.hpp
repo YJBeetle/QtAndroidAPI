@@ -1,47 +1,161 @@
 #pragma once
 
-#include "../AbstractSet.hpp"
-
-class JObjectArray;
-class JObject;
-namespace java::util::concurrent
-{
-	class CopyOnWriteArrayList;
-}
+#include "../../../JObjectArray.hpp"
+#include "../../../JObject.hpp"
+#include "./CopyOnWriteArrayList.def.hpp"
+#include "./CopyOnWriteArraySet.def.hpp"
 
 namespace java::util::concurrent
 {
-	class CopyOnWriteArraySet : public java::util::AbstractSet
+	// Fields
+	
+	// Constructors
+	inline CopyOnWriteArraySet::CopyOnWriteArraySet()
+		: java::util::AbstractSet(
+			"java.util.concurrent.CopyOnWriteArraySet",
+			"()V"
+		) {}
+	inline CopyOnWriteArraySet::CopyOnWriteArraySet(JObject arg0)
+		: java::util::AbstractSet(
+			"java.util.concurrent.CopyOnWriteArraySet",
+			"(Ljava/util/Collection;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean CopyOnWriteArraySet::add(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CopyOnWriteArraySet(const char *className, const char *sig, Ts...agv) : java::util::AbstractSet(className, sig, std::forward<Ts>(agv)...) {}
-		CopyOnWriteArraySet(QJniObject obj);
-		
-		// Constructors
-		CopyOnWriteArraySet();
-		CopyOnWriteArraySet(JObject arg0);
-		
-		// Methods
-		jboolean add(JObject arg0) const;
-		jboolean addAll(JObject arg0) const;
-		void clear() const;
-		jboolean contains(JObject arg0) const;
-		jboolean containsAll(JObject arg0) const;
-		jboolean equals(JObject arg0) const;
-		void forEach(JObject arg0) const;
-		jboolean isEmpty() const;
-		JObject iterator() const;
-		jboolean remove(JObject arg0) const;
-		jboolean removeAll(JObject arg0) const;
-		jboolean removeIf(JObject arg0) const;
-		jboolean retainAll(JObject arg0) const;
-		jint size() const;
-		JObject spliterator() const;
-		JObjectArray toArray() const;
-		JObjectArray toArray(JObjectArray arg0) const;
-	};
+		return callMethod<jboolean>(
+			"add",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::addAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"addAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline void CopyOnWriteArraySet::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::contains(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"contains",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::containsAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline void CopyOnWriteArraySet::forEach(JObject arg0) const
+	{
+		callMethod<void>(
+			"forEach",
+			"(Ljava/util/function/Consumer;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline JObject CopyOnWriteArraySet::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::remove(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::removeAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::removeIf(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"removeIf",
+			"(Ljava/util/function/Predicate;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean CopyOnWriteArraySet::retainAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"retainAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jint CopyOnWriteArraySet::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JObject CopyOnWriteArraySet::spliterator() const
+	{
+		return callObjectMethod(
+			"spliterator",
+			"()Ljava/util/Spliterator;"
+		);
+	}
+	inline JObjectArray CopyOnWriteArraySet::toArray() const
+	{
+		return callObjectMethod(
+			"toArray",
+			"()[Ljava/lang/Object;"
+		);
+	}
+	inline JObjectArray CopyOnWriteArraySet::toArray(JObjectArray arg0) const
+	{
+		return callObjectMethod(
+			"toArray",
+			"([Ljava/lang/Object;)[Ljava/lang/Object;",
+			arg0.object<jobjectArray>()
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../AbstractCollection.hpp"
+#include "../AbstractSet.hpp"
 

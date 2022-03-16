@@ -1,29 +1,47 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./DrmInitData_SchemeInitData.def.hpp"
 
 namespace android::media
 {
-	class DrmInitData_SchemeInitData : public JObject
+	// Fields
+	inline JByteArray DrmInitData_SchemeInitData::data()
 	{
-	public:
-		// Fields
-		JByteArray data();
-		JString mimeType();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DrmInitData_SchemeInitData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInitData_SchemeInitData(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return getObjectField(
+			"data",
+			"[B"
+		);
+	}
+	inline JString DrmInitData_SchemeInitData::mimeType()
+	{
+		return getObjectField(
+			"mimeType",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean DrmInitData_SchemeInitData::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint DrmInitData_SchemeInitData::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

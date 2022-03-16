@@ -1,33 +1,39 @@
 #pragma once
 
-#include "./CharacterStyle.hpp"
-
-namespace android::graphics
-{
-	class MaskFilter;
-}
-namespace android::text
-{
-	class TextPaint;
-}
+#include "../../graphics/MaskFilter.def.hpp"
+#include "../TextPaint.def.hpp"
+#include "./MaskFilterSpan.def.hpp"
 
 namespace android::text::style
 {
-	class MaskFilterSpan : public android::text::style::CharacterStyle
+	// Fields
+	
+	// Constructors
+	inline MaskFilterSpan::MaskFilterSpan(android::graphics::MaskFilter arg0)
+		: android::text::style::CharacterStyle(
+			"android.text.style.MaskFilterSpan",
+			"(Landroid/graphics/MaskFilter;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::MaskFilter MaskFilterSpan::getMaskFilter() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MaskFilterSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
-		MaskFilterSpan(QJniObject obj);
-		
-		// Constructors
-		MaskFilterSpan(android::graphics::MaskFilter arg0);
-		
-		// Methods
-		android::graphics::MaskFilter getMaskFilter() const;
-		void updateDrawState(android::text::TextPaint arg0) const;
-	};
+		return callObjectMethod(
+			"getMaskFilter",
+			"()Landroid/graphics/MaskFilter;"
+		);
+	}
+	inline void MaskFilterSpan::updateDrawState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./CharacterStyle.hpp"
 

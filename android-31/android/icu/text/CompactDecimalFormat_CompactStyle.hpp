@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./CompactDecimalFormat_CompactStyle.def.hpp"
 
 namespace android::icu::text
 {
-	class CompactDecimalFormat_CompactStyle : public java::lang::Enum
+	// Fields
+	inline android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::LONG()
 	{
-	public:
-		// Fields
-		static android::icu::text::CompactDecimalFormat_CompactStyle LONG();
-		static android::icu::text::CompactDecimalFormat_CompactStyle SHORT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit CompactDecimalFormat_CompactStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CompactDecimalFormat_CompactStyle(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::CompactDecimalFormat_CompactStyle valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.CompactDecimalFormat$CompactStyle",
+			"LONG",
+			"Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
+		);
+	}
+	inline android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.CompactDecimalFormat$CompactStyle",
+			"SHORT",
+			"Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.CompactDecimalFormat$CompactStyle",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/CompactDecimalFormat$CompactStyle;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray CompactDecimalFormat_CompactStyle::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.CompactDecimalFormat$CompactStyle",
+			"values",
+			"()[Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

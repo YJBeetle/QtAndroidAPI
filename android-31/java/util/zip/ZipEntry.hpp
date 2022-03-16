@@ -1,64 +1,246 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
-namespace java::nio::file::attribute
-{
-	class FileTime;
-}
-namespace java::time
-{
-	class LocalDateTime;
-}
+#include "../../../JString.hpp"
+#include "../../nio/file/attribute/FileTime.def.hpp"
+#include "../../time/LocalDateTime.def.hpp"
+#include "./ZipEntry.def.hpp"
 
 namespace java::util::zip
 {
-	class ZipEntry : public JObject
+	// Fields
+	inline jint ZipEntry::DEFLATED()
 	{
-	public:
-		// Fields
-		static jint DEFLATED();
-		static jint STORED();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit ZipEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZipEntry(QJniObject obj);
-		
-		// Constructors
-		ZipEntry(JString arg0);
-		ZipEntry(java::util::zip::ZipEntry &arg0);
-		
-		// Methods
-		JObject clone() const;
-		JString getComment() const;
-		jlong getCompressedSize() const;
-		jlong getCrc() const;
-		java::nio::file::attribute::FileTime getCreationTime() const;
-		JByteArray getExtra() const;
-		java::nio::file::attribute::FileTime getLastAccessTime() const;
-		java::nio::file::attribute::FileTime getLastModifiedTime() const;
-		jint getMethod() const;
-		JString getName() const;
-		jlong getSize() const;
-		jlong getTime() const;
-		java::time::LocalDateTime getTimeLocal() const;
-		jint hashCode() const;
-		jboolean isDirectory() const;
-		void setComment(JString arg0) const;
-		void setCompressedSize(jlong arg0) const;
-		void setCrc(jlong arg0) const;
-		java::util::zip::ZipEntry setCreationTime(java::nio::file::attribute::FileTime arg0) const;
-		void setExtra(JByteArray arg0) const;
-		java::util::zip::ZipEntry setLastAccessTime(java::nio::file::attribute::FileTime arg0) const;
-		java::util::zip::ZipEntry setLastModifiedTime(java::nio::file::attribute::FileTime arg0) const;
-		void setMethod(jint arg0) const;
-		void setSize(jlong arg0) const;
-		void setTime(jlong arg0) const;
-		void setTimeLocal(java::time::LocalDateTime arg0) const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"java.util.zip.ZipEntry",
+			"DEFLATED"
+		);
+	}
+	inline jint ZipEntry::STORED()
+	{
+		return getStaticField<jint>(
+			"java.util.zip.ZipEntry",
+			"STORED"
+		);
+	}
+	
+	// Constructors
+	inline ZipEntry::ZipEntry(JString arg0)
+		: JObject(
+			"java.util.zip.ZipEntry",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ZipEntry::ZipEntry(java::util::zip::ZipEntry &arg0)
+		: JObject(
+			"java.util.zip.ZipEntry",
+			"(Ljava/util/zip/ZipEntry;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject ZipEntry::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JString ZipEntry::getComment() const
+	{
+		return callObjectMethod(
+			"getComment",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong ZipEntry::getCompressedSize() const
+	{
+		return callMethod<jlong>(
+			"getCompressedSize",
+			"()J"
+		);
+	}
+	inline jlong ZipEntry::getCrc() const
+	{
+		return callMethod<jlong>(
+			"getCrc",
+			"()J"
+		);
+	}
+	inline java::nio::file::attribute::FileTime ZipEntry::getCreationTime() const
+	{
+		return callObjectMethod(
+			"getCreationTime",
+			"()Ljava/nio/file/attribute/FileTime;"
+		);
+	}
+	inline JByteArray ZipEntry::getExtra() const
+	{
+		return callObjectMethod(
+			"getExtra",
+			"()[B"
+		);
+	}
+	inline java::nio::file::attribute::FileTime ZipEntry::getLastAccessTime() const
+	{
+		return callObjectMethod(
+			"getLastAccessTime",
+			"()Ljava/nio/file/attribute/FileTime;"
+		);
+	}
+	inline java::nio::file::attribute::FileTime ZipEntry::getLastModifiedTime() const
+	{
+		return callObjectMethod(
+			"getLastModifiedTime",
+			"()Ljava/nio/file/attribute/FileTime;"
+		);
+	}
+	inline jint ZipEntry::getMethod() const
+	{
+		return callMethod<jint>(
+			"getMethod",
+			"()I"
+		);
+	}
+	inline JString ZipEntry::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong ZipEntry::getSize() const
+	{
+		return callMethod<jlong>(
+			"getSize",
+			"()J"
+		);
+	}
+	inline jlong ZipEntry::getTime() const
+	{
+		return callMethod<jlong>(
+			"getTime",
+			"()J"
+		);
+	}
+	inline java::time::LocalDateTime ZipEntry::getTimeLocal() const
+	{
+		return callObjectMethod(
+			"getTimeLocal",
+			"()Ljava/time/LocalDateTime;"
+		);
+	}
+	inline jint ZipEntry::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean ZipEntry::isDirectory() const
+	{
+		return callMethod<jboolean>(
+			"isDirectory",
+			"()Z"
+		);
+	}
+	inline void ZipEntry::setComment(JString arg0) const
+	{
+		callMethod<void>(
+			"setComment",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void ZipEntry::setCompressedSize(jlong arg0) const
+	{
+		callMethod<void>(
+			"setCompressedSize",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void ZipEntry::setCrc(jlong arg0) const
+	{
+		callMethod<void>(
+			"setCrc",
+			"(J)V",
+			arg0
+		);
+	}
+	inline java::util::zip::ZipEntry ZipEntry::setCreationTime(java::nio::file::attribute::FileTime arg0) const
+	{
+		return callObjectMethod(
+			"setCreationTime",
+			"(Ljava/nio/file/attribute/FileTime;)Ljava/util/zip/ZipEntry;",
+			arg0.object()
+		);
+	}
+	inline void ZipEntry::setExtra(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"setExtra",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline java::util::zip::ZipEntry ZipEntry::setLastAccessTime(java::nio::file::attribute::FileTime arg0) const
+	{
+		return callObjectMethod(
+			"setLastAccessTime",
+			"(Ljava/nio/file/attribute/FileTime;)Ljava/util/zip/ZipEntry;",
+			arg0.object()
+		);
+	}
+	inline java::util::zip::ZipEntry ZipEntry::setLastModifiedTime(java::nio::file::attribute::FileTime arg0) const
+	{
+		return callObjectMethod(
+			"setLastModifiedTime",
+			"(Ljava/nio/file/attribute/FileTime;)Ljava/util/zip/ZipEntry;",
+			arg0.object()
+		);
+	}
+	inline void ZipEntry::setMethod(jint arg0) const
+	{
+		callMethod<void>(
+			"setMethod",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ZipEntry::setSize(jlong arg0) const
+	{
+		callMethod<void>(
+			"setSize",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void ZipEntry::setTime(jlong arg0) const
+	{
+		callMethod<void>(
+			"setTime",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void ZipEntry::setTimeLocal(java::time::LocalDateTime arg0) const
+	{
+		callMethod<void>(
+			"setTimeLocal",
+			"(Ljava/time/LocalDateTime;)V",
+			arg0.object()
+		);
+	}
+	inline JString ZipEntry::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::zip
+
+// Base class headers
 

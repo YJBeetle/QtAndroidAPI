@@ -1,32 +1,80 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./SAXResult.def.hpp"
 
 namespace javax::xml::transform::sax
 {
-	class SAXResult : public JObject
+	// Fields
+	inline JString SAXResult::FEATURE()
 	{
-	public:
-		// Fields
-		static JString FEATURE();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SAXResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SAXResult(QJniObject obj);
-		
-		// Constructors
-		SAXResult();
-		SAXResult(JObject arg0);
-		
-		// Methods
-		JObject getHandler() const;
-		JObject getLexicalHandler() const;
-		JString getSystemId() const;
-		void setHandler(JObject arg0) const;
-		void setLexicalHandler(JObject arg0) const;
-		void setSystemId(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"javax.xml.transform.sax.SAXResult",
+			"FEATURE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline SAXResult::SAXResult()
+		: JObject(
+			"javax.xml.transform.sax.SAXResult",
+			"()V"
+		) {}
+	inline SAXResult::SAXResult(JObject arg0)
+		: JObject(
+			"javax.xml.transform.sax.SAXResult",
+			"(Lorg/xml/sax/ContentHandler;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject SAXResult::getHandler() const
+	{
+		return callObjectMethod(
+			"getHandler",
+			"()Lorg/xml/sax/ContentHandler;"
+		);
+	}
+	inline JObject SAXResult::getLexicalHandler() const
+	{
+		return callObjectMethod(
+			"getLexicalHandler",
+			"()Lorg/xml/sax/ext/LexicalHandler;"
+		);
+	}
+	inline JString SAXResult::getSystemId() const
+	{
+		return callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void SAXResult::setHandler(JObject arg0) const
+	{
+		callMethod<void>(
+			"setHandler",
+			"(Lorg/xml/sax/ContentHandler;)V",
+			arg0.object()
+		);
+	}
+	inline void SAXResult::setLexicalHandler(JObject arg0) const
+	{
+		callMethod<void>(
+			"setLexicalHandler",
+			"(Lorg/xml/sax/ext/LexicalHandler;)V",
+			arg0.object()
+		);
+	}
+	inline void SAXResult::setSystemId(JString arg0) const
+	{
+		callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace javax::xml::transform::sax
+
+// Base class headers
 

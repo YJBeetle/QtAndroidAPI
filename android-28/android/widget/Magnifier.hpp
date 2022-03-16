@@ -1,33 +1,66 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::view
-{
-	class View;
-}
+#include "../view/View.def.hpp"
+#include "./Magnifier.def.hpp"
 
 namespace android::widget
 {
-	class Magnifier : public JObject
+	// Fields
+	
+	// Constructors
+	inline Magnifier::Magnifier(android::view::View arg0)
+		: JObject(
+			"android.widget.Magnifier",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void Magnifier::dismiss() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Magnifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Magnifier(QJniObject obj);
-		
-		// Constructors
-		Magnifier(android::view::View arg0);
-		
-		// Methods
-		void dismiss() const;
-		jint getHeight() const;
-		jint getWidth() const;
-		jfloat getZoom() const;
-		void show(jfloat arg0, jfloat arg1) const;
-		void update() const;
-	};
+		callMethod<void>(
+			"dismiss",
+			"()V"
+		);
+	}
+	inline jint Magnifier::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint Magnifier::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	inline jfloat Magnifier::getZoom() const
+	{
+		return callMethod<jfloat>(
+			"getZoom",
+			"()F"
+		);
+	}
+	inline void Magnifier::show(jfloat arg0, jfloat arg1) const
+	{
+		callMethod<void>(
+			"show",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void Magnifier::update() const
+	{
+		callMethod<void>(
+			"update",
+			"()V"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
 

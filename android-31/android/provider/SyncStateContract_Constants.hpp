@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./SyncStateContract_Constants.def.hpp"
 
 namespace android::provider
 {
-	class SyncStateContract_Constants : public JObject
+	// Fields
+	inline JString SyncStateContract_Constants::CONTENT_DIRECTORY()
 	{
-	public:
-		// Fields
-		static JString CONTENT_DIRECTORY();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SyncStateContract_Constants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncStateContract_Constants(QJniObject obj);
-		
-		// Constructors
-		SyncStateContract_Constants();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.SyncStateContract$Constants",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline SyncStateContract_Constants::SyncStateContract_Constants()
+		: JObject(
+			"android.provider.SyncStateContract$Constants",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

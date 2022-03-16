@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../lang/Exception.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TimeoutException.def.hpp"
 
 namespace java::util::concurrent
 {
-	class TimeoutException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TimeoutException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		TimeoutException(QJniObject obj);
-		
-		// Constructors
-		TimeoutException();
-		TimeoutException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TimeoutException::TimeoutException()
+		: java::lang::Exception(
+			"java.util.concurrent.TimeoutException",
+			"()V"
+		) {}
+	inline TimeoutException::TimeoutException(JString arg0)
+		: java::lang::Exception(
+			"java.util.concurrent.TimeoutException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../../lang/Exception.hpp"
 

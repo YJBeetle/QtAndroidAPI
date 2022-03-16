@@ -1,25 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SafeBrowsingResponse.def.hpp"
 
 namespace android::webkit
 {
-	class SafeBrowsingResponse : public JObject
+	// Fields
+	
+	// Constructors
+	inline SafeBrowsingResponse::SafeBrowsingResponse()
+		: JObject(
+			"android.webkit.SafeBrowsingResponse",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void SafeBrowsingResponse::backToSafety(jboolean arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SafeBrowsingResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SafeBrowsingResponse(QJniObject obj);
-		
-		// Constructors
-		SafeBrowsingResponse();
-		
-		// Methods
-		void backToSafety(jboolean arg0) const;
-		void proceed(jboolean arg0) const;
-		void showInterstitial(jboolean arg0) const;
-	};
+		callMethod<void>(
+			"backToSafety",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SafeBrowsingResponse::proceed(jboolean arg0) const
+	{
+		callMethod<void>(
+			"proceed",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SafeBrowsingResponse::showInterstitial(jboolean arg0) const
+	{
+		callMethod<void>(
+			"showInterstitial",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

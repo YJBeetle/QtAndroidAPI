@@ -1,106 +1,465 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class IntentSender;
-}
-namespace android::graphics
-{
-	class Bitmap;
-}
-namespace android::graphics
-{
-	class Point;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class CancellationSignal;
-}
-namespace android::provider
-{
-	class DocumentsContract_Path;
-}
-class JString;
+#include "../content/ContentResolver.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../content/IntentSender.def.hpp"
+#include "../graphics/Bitmap.def.hpp"
+#include "../graphics/Point.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../os/CancellationSignal.def.hpp"
+#include "./DocumentsContract_Path.def.hpp"
+#include "../../JString.hpp"
+#include "./DocumentsContract.def.hpp"
 
 namespace android::provider
 {
-	class DocumentsContract : public JObject
+	// Fields
+	inline JString DocumentsContract::ACTION_DOCUMENT_SETTINGS()
 	{
-	public:
-		// Fields
-		static JString ACTION_DOCUMENT_SETTINGS();
-		static JString EXTRA_ERROR();
-		static JString EXTRA_EXCLUDE_SELF();
-		static JString EXTRA_INFO();
-		static JString EXTRA_INITIAL_URI();
-		static JString EXTRA_LOADING();
-		static JString EXTRA_ORIENTATION();
-		static JString EXTRA_PROMPT();
-		static JString METADATA_EXIF();
-		static JString METADATA_TREE_COUNT();
-		static JString METADATA_TREE_SIZE();
-		static JString METADATA_TYPES();
-		static JString PROVIDER_INTERFACE();
-		static JString QUERY_ARG_DISPLAY_NAME();
-		static JString QUERY_ARG_EXCLUDE_MEDIA();
-		static JString QUERY_ARG_FILE_SIZE_OVER();
-		static JString QUERY_ARG_LAST_MODIFIED_AFTER();
-		static JString QUERY_ARG_MIME_TYPES();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit DocumentsContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DocumentsContract(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::net::Uri buildChildDocumentsUri(JString arg0, JString arg1);
-		static android::net::Uri buildChildDocumentsUriUsingTree(android::net::Uri arg0, JString arg1);
-		static android::net::Uri buildDocumentUri(JString arg0, JString arg1);
-		static android::net::Uri buildDocumentUriUsingTree(android::net::Uri arg0, JString arg1);
-		static android::net::Uri buildRecentDocumentsUri(JString arg0, JString arg1);
-		static android::net::Uri buildRootUri(JString arg0, JString arg1);
-		static android::net::Uri buildRootsUri(JString arg0);
-		static android::net::Uri buildSearchDocumentsUri(JString arg0, JString arg1, JString arg2);
-		static android::net::Uri buildTreeDocumentUri(JString arg0, JString arg1);
-		static android::net::Uri copyDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2);
-		static android::net::Uri createDocument(android::content::ContentResolver arg0, android::net::Uri arg1, JString arg2, JString arg3);
-		static android::content::IntentSender createWebLinkIntent(android::content::ContentResolver arg0, android::net::Uri arg1, android::os::Bundle arg2);
-		static jboolean deleteDocument(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static void ejectRoot(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static android::provider::DocumentsContract_Path findDocumentPath(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static JString getDocumentId(android::net::Uri arg0);
-		static android::os::Bundle getDocumentMetadata(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static android::graphics::Bitmap getDocumentThumbnail(android::content::ContentResolver arg0, android::net::Uri arg1, android::graphics::Point arg2, android::os::CancellationSignal arg3);
-		static JString getRootId(android::net::Uri arg0);
-		static JString getSearchDocumentsQuery(android::net::Uri arg0);
-		static JString getTreeDocumentId(android::net::Uri arg0);
-		static jboolean isChildDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2);
-		static jboolean isDocumentUri(android::content::Context arg0, android::net::Uri arg1);
-		static jboolean isRootUri(android::content::Context arg0, android::net::Uri arg1);
-		static jboolean isRootsUri(android::content::Context arg0, android::net::Uri arg1);
-		static jboolean isTreeUri(android::net::Uri arg0);
-		static android::net::Uri moveDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2, android::net::Uri arg3);
-		static jboolean removeDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2);
-		static android::net::Uri renameDocument(android::content::ContentResolver arg0, android::net::Uri arg1, JString arg2);
-	};
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"ACTION_DOCUMENT_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::EXTRA_ERROR()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"EXTRA_ERROR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::EXTRA_EXCLUDE_SELF()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"EXTRA_EXCLUDE_SELF",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::EXTRA_INFO()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"EXTRA_INFO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::EXTRA_INITIAL_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"EXTRA_INITIAL_URI",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::EXTRA_LOADING()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"EXTRA_LOADING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::EXTRA_ORIENTATION()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"EXTRA_ORIENTATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::EXTRA_PROMPT()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"EXTRA_PROMPT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::METADATA_EXIF()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"METADATA_EXIF",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::METADATA_TREE_COUNT()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"METADATA_TREE_COUNT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::METADATA_TREE_SIZE()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"METADATA_TREE_SIZE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::METADATA_TYPES()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"METADATA_TYPES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::PROVIDER_INTERFACE()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"PROVIDER_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::QUERY_ARG_DISPLAY_NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"QUERY_ARG_DISPLAY_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::QUERY_ARG_EXCLUDE_MEDIA()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"QUERY_ARG_EXCLUDE_MEDIA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::QUERY_ARG_FILE_SIZE_OVER()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"QUERY_ARG_FILE_SIZE_OVER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::QUERY_ARG_LAST_MODIFIED_AFTER()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"QUERY_ARG_LAST_MODIFIED_AFTER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DocumentsContract::QUERY_ARG_MIME_TYPES()
+	{
+		return getStaticObjectField(
+			"android.provider.DocumentsContract",
+			"QUERY_ARG_MIME_TYPES",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::Uri DocumentsContract::buildChildDocumentsUri(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildChildDocumentsUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildChildDocumentsUriUsingTree(android::net::Uri arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildChildDocumentsUriUsingTree",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildDocumentUri(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildDocumentUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildDocumentUriUsingTree(android::net::Uri arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildDocumentUriUsingTree",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildRecentDocumentsUri(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildRecentDocumentsUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildRootUri(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildRootUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildRootsUri(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildRootsUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildSearchDocumentsUri(JString arg0, JString arg1, JString arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildSearchDocumentsUri",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::buildTreeDocumentUri(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildTreeDocumentUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri DocumentsContract::copyDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"copyDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::net::Uri DocumentsContract::createDocument(android::content::ContentResolver arg0, android::net::Uri arg1, JString arg2, JString arg3)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"createDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		);
+	}
+	inline android::content::IntentSender DocumentsContract::createWebLinkIntent(android::content::ContentResolver arg0, android::net::Uri arg1, android::os::Bundle arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"createWebLinkIntent",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/os/Bundle;)Landroid/content/IntentSender;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline jboolean DocumentsContract::deleteDocument(android::content::ContentResolver arg0, android::net::Uri arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.DocumentsContract",
+			"deleteDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void DocumentsContract::ejectRoot(android::content::ContentResolver arg0, android::net::Uri arg1)
+	{
+		callStaticMethod<void>(
+			"android.provider.DocumentsContract",
+			"ejectRoot",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::provider::DocumentsContract_Path DocumentsContract::findDocumentPath(android::content::ContentResolver arg0, android::net::Uri arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"findDocumentPath",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/provider/DocumentsContract$Path;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JString DocumentsContract::getDocumentId(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"getDocumentId",
+			"(Landroid/net/Uri;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline android::os::Bundle DocumentsContract::getDocumentMetadata(android::content::ContentResolver arg0, android::net::Uri arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"getDocumentMetadata",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/os/Bundle;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::graphics::Bitmap DocumentsContract::getDocumentThumbnail(android::content::ContentResolver arg0, android::net::Uri arg1, android::graphics::Point arg2, android::os::CancellationSignal arg3)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"getDocumentThumbnail",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/graphics/Point;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline JString DocumentsContract::getRootId(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"getRootId",
+			"(Landroid/net/Uri;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString DocumentsContract::getSearchDocumentsQuery(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"getSearchDocumentsQuery",
+			"(Landroid/net/Uri;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString DocumentsContract::getTreeDocumentId(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"getTreeDocumentId",
+			"(Landroid/net/Uri;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline jboolean DocumentsContract::isChildDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.DocumentsContract",
+			"isChildDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline jboolean DocumentsContract::isDocumentUri(android::content::Context arg0, android::net::Uri arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.DocumentsContract",
+			"isDocumentUri",
+			"(Landroid/content/Context;Landroid/net/Uri;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean DocumentsContract::isRootUri(android::content::Context arg0, android::net::Uri arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.DocumentsContract",
+			"isRootUri",
+			"(Landroid/content/Context;Landroid/net/Uri;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean DocumentsContract::isRootsUri(android::content::Context arg0, android::net::Uri arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.DocumentsContract",
+			"isRootsUri",
+			"(Landroid/content/Context;Landroid/net/Uri;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean DocumentsContract::isTreeUri(android::net::Uri arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.DocumentsContract",
+			"isTreeUri",
+			"(Landroid/net/Uri;)Z",
+			arg0.object()
+		);
+	}
+	inline android::net::Uri DocumentsContract::moveDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2, android::net::Uri arg3)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"moveDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline jboolean DocumentsContract::removeDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.DocumentsContract",
+			"removeDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::net::Uri DocumentsContract::renameDocument(android::content::ContentResolver arg0, android::net::Uri arg1, JString arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"renameDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

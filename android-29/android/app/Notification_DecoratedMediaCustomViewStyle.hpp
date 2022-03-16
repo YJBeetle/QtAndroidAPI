@@ -1,22 +1,22 @@
 #pragma once
 
-#include "./Notification_MediaStyle.hpp"
+#include "./Notification_DecoratedMediaCustomViewStyle.def.hpp"
 
 namespace android::app
 {
-	class Notification_DecoratedMediaCustomViewStyle : public android::app::Notification_MediaStyle
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Notification_DecoratedMediaCustomViewStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_MediaStyle(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_DecoratedMediaCustomViewStyle(QJniObject obj);
-		
-		// Constructors
-		Notification_DecoratedMediaCustomViewStyle();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Notification_DecoratedMediaCustomViewStyle::Notification_DecoratedMediaCustomViewStyle()
+		: android::app::Notification_MediaStyle(
+			"android.app.Notification$DecoratedMediaCustomViewStyle",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::app
+
+// Base class headers
+#include "./Notification_Style.hpp"
+#include "./Notification_MediaStyle.hpp"
 

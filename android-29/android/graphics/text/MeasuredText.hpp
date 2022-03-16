@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JCharArray;
-namespace android::graphics
-{
-	class Rect;
-}
+#include "../../../JCharArray.hpp"
+#include "../Rect.def.hpp"
+#include "./MeasuredText.def.hpp"
 
 namespace android::graphics::text
 {
-	class MeasuredText : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void MeasuredText::getBounds(jint arg0, jint arg1, android::graphics::Rect arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MeasuredText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MeasuredText(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2) const;
-		jfloat getCharWidthAt(jint arg0) const;
-		jfloat getWidth(jint arg0, jint arg1) const;
-	};
+		callMethod<void>(
+			"getBounds",
+			"(IILandroid/graphics/Rect;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline jfloat MeasuredText::getCharWidthAt(jint arg0) const
+	{
+		return callMethod<jfloat>(
+			"getCharWidthAt",
+			"(I)F",
+			arg0
+		);
+	}
+	inline jfloat MeasuredText::getWidth(jint arg0, jint arg1) const
+	{
+		return callMethod<jfloat>(
+			"getWidth",
+			"(II)F",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::graphics::text
+
+// Base class headers
 

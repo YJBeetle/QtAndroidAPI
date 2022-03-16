@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./UserPrincipalLookupService.def.hpp"
 
 namespace java::nio::file::attribute
 {
-	class UserPrincipalLookupService : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject UserPrincipalLookupService::lookupPrincipalByGroupName(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit UserPrincipalLookupService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UserPrincipalLookupService(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		JObject lookupPrincipalByGroupName(JString arg0) const;
-		JObject lookupPrincipalByName(JString arg0) const;
-	};
+		return callObjectMethod(
+			"lookupPrincipalByGroupName",
+			"(Ljava/lang/String;)Ljava/nio/file/attribute/GroupPrincipal;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject UserPrincipalLookupService::lookupPrincipalByName(JString arg0) const
+	{
+		return callObjectMethod(
+			"lookupPrincipalByName",
+			"(Ljava/lang/String;)Ljava/nio/file/attribute/UserPrincipal;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace java::nio::file::attribute
+
+// Base class headers
 

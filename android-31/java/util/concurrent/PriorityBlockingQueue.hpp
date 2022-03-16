@@ -1,75 +1,243 @@
 #pragma once
 
-#include "../AbstractQueue.hpp"
-
-class JLongArray;
-class JObjectArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JObject;
-class JString;
-namespace java::util
-{
-	class PriorityQueue;
-}
-namespace java::util::concurrent
-{
-	class TimeUnit;
-}
-namespace java::util::concurrent::locks
-{
-	class ReentrantLock;
-}
+#include "../../../JLongArray.hpp"
+#include "../../../JObjectArray.hpp"
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../io/ObjectOutputStream.def.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "../PriorityQueue.def.hpp"
+#include "./TimeUnit.def.hpp"
+#include "./locks/ReentrantLock.def.hpp"
+#include "./PriorityBlockingQueue.def.hpp"
 
 namespace java::util::concurrent
 {
-	class PriorityBlockingQueue : public java::util::AbstractQueue
+	// Fields
+	
+	// Constructors
+	inline PriorityBlockingQueue::PriorityBlockingQueue()
+		: java::util::AbstractQueue(
+			"java.util.concurrent.PriorityBlockingQueue",
+			"()V"
+		) {}
+	inline PriorityBlockingQueue::PriorityBlockingQueue(jint arg0)
+		: java::util::AbstractQueue(
+			"java.util.concurrent.PriorityBlockingQueue",
+			"(I)V",
+			arg0
+		) {}
+	inline PriorityBlockingQueue::PriorityBlockingQueue(JObject arg0)
+		: java::util::AbstractQueue(
+			"java.util.concurrent.PriorityBlockingQueue",
+			"(Ljava/util/Collection;)V",
+			arg0.object()
+		) {}
+	inline PriorityBlockingQueue::PriorityBlockingQueue(jint arg0, JObject arg1)
+		: java::util::AbstractQueue(
+			"java.util.concurrent.PriorityBlockingQueue",
+			"(ILjava/util/Comparator;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jboolean PriorityBlockingQueue::add(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PriorityBlockingQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractQueue(className, sig, std::forward<Ts>(agv)...) {}
-		PriorityBlockingQueue(QJniObject obj);
-		
-		// Constructors
-		PriorityBlockingQueue();
-		PriorityBlockingQueue(jint arg0);
-		PriorityBlockingQueue(JObject arg0);
-		PriorityBlockingQueue(jint arg0, JObject arg1);
-		
-		// Methods
-		jboolean add(JObject arg0) const;
-		void clear() const;
-		JObject comparator() const;
-		jboolean contains(JObject arg0) const;
-		jint drainTo(JObject arg0) const;
-		jint drainTo(JObject arg0, jint arg1) const;
-		void forEach(JObject arg0) const;
-		JObject iterator() const;
-		jboolean offer(JObject arg0) const;
-		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
-		JObject peek() const;
-		JObject poll() const;
-		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
-		void put(JObject arg0) const;
-		jint remainingCapacity() const;
-		jboolean remove(JObject arg0) const;
-		jboolean removeAll(JObject arg0) const;
-		jboolean removeIf(JObject arg0) const;
-		jboolean retainAll(JObject arg0) const;
-		jint size() const;
-		JObject spliterator() const;
-		JObject take() const;
-		JObjectArray toArray() const;
-		JObjectArray toArray(JObjectArray arg0) const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"add",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline void PriorityBlockingQueue::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline JObject PriorityBlockingQueue::comparator() const
+	{
+		return callObjectMethod(
+			"comparator",
+			"()Ljava/util/Comparator;"
+		);
+	}
+	inline jboolean PriorityBlockingQueue::contains(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"contains",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PriorityBlockingQueue::drainTo(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"drainTo",
+			"(Ljava/util/Collection;)I",
+			arg0.object()
+		);
+	}
+	inline jint PriorityBlockingQueue::drainTo(JObject arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"drainTo",
+			"(Ljava/util/Collection;I)I",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void PriorityBlockingQueue::forEach(JObject arg0) const
+	{
+		callMethod<void>(
+			"forEach",
+			"(Ljava/util/function/Consumer;)V",
+			arg0.object()
+		);
+	}
+	inline JObject PriorityBlockingQueue::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline jboolean PriorityBlockingQueue::offer(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"offer",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean PriorityBlockingQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
+	{
+		return callMethod<jboolean>(
+			"offer",
+			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
+			arg0.object<jobject>(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline JObject PriorityBlockingQueue::peek() const
+	{
+		return callObjectMethod(
+			"peek",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject PriorityBlockingQueue::poll() const
+	{
+		return callObjectMethod(
+			"poll",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject PriorityBlockingQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const
+	{
+		return callObjectMethod(
+			"poll",
+			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void PriorityBlockingQueue::put(JObject arg0) const
+	{
+		callMethod<void>(
+			"put",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PriorityBlockingQueue::remainingCapacity() const
+	{
+		return callMethod<jint>(
+			"remainingCapacity",
+			"()I"
+		);
+	}
+	inline jboolean PriorityBlockingQueue::remove(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean PriorityBlockingQueue::removeAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean PriorityBlockingQueue::removeIf(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"removeIf",
+			"(Ljava/util/function/Predicate;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean PriorityBlockingQueue::retainAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"retainAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jint PriorityBlockingQueue::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JObject PriorityBlockingQueue::spliterator() const
+	{
+		return callObjectMethod(
+			"spliterator",
+			"()Ljava/util/Spliterator;"
+		);
+	}
+	inline JObject PriorityBlockingQueue::take() const
+	{
+		return callObjectMethod(
+			"take",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObjectArray PriorityBlockingQueue::toArray() const
+	{
+		return callObjectMethod(
+			"toArray",
+			"()[Ljava/lang/Object;"
+		);
+	}
+	inline JObjectArray PriorityBlockingQueue::toArray(JObjectArray arg0) const
+	{
+		return callObjectMethod(
+			"toArray",
+			"([Ljava/lang/Object;)[Ljava/lang/Object;",
+			arg0.object<jobjectArray>()
+		);
+	}
+	inline JString PriorityBlockingQueue::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../AbstractCollection.hpp"
+#include "../AbstractQueue.hpp"
 

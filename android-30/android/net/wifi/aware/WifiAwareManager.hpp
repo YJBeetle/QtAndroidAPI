@@ -1,46 +1,75 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./AttachCallback.def.hpp"
+#include "./Characteristics.def.hpp"
+#include "./IdentityChangedListener.def.hpp"
+#include "../../../os/Handler.def.hpp"
+#include "../../../../JString.hpp"
+#include "./WifiAwareManager.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class AttachCallback;
-}
-namespace android::net::wifi::aware
-{
-	class Characteristics;
-}
-namespace android::net::wifi::aware
-{
-	class IdentityChangedListener;
-}
-namespace android::os
-{
-	class Handler;
-}
-class JString;
-
-namespace android::net::wifi::aware
-{
-	class WifiAwareManager : public JObject
+	// Fields
+	inline JString WifiAwareManager::ACTION_WIFI_AWARE_STATE_CHANGED()
 	{
-	public:
-		// Fields
-		static JString ACTION_WIFI_AWARE_STATE_CHANGED();
-		static jint WIFI_AWARE_DATA_PATH_ROLE_INITIATOR();
-		static jint WIFI_AWARE_DATA_PATH_ROLE_RESPONDER();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit WifiAwareManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiAwareManager(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1) const;
-		void attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2) const;
-		android::net::wifi::aware::Characteristics getCharacteristics() const;
-		jboolean isAvailable() const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.aware.WifiAwareManager",
+			"ACTION_WIFI_AWARE_STATE_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint WifiAwareManager::WIFI_AWARE_DATA_PATH_ROLE_INITIATOR()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.aware.WifiAwareManager",
+			"WIFI_AWARE_DATA_PATH_ROLE_INITIATOR"
+		);
+	}
+	inline jint WifiAwareManager::WIFI_AWARE_DATA_PATH_ROLE_RESPONDER()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.aware.WifiAwareManager",
+			"WIFI_AWARE_DATA_PATH_ROLE_RESPONDER"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1) const
+	{
+		callMethod<void>(
+			"attach",
+			"(Landroid/net/wifi/aware/AttachCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2) const
+	{
+		callMethod<void>(
+			"attach",
+			"(Landroid/net/wifi/aware/AttachCallback;Landroid/net/wifi/aware/IdentityChangedListener;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::net::wifi::aware::Characteristics WifiAwareManager::getCharacteristics() const
+	{
+		return callObjectMethod(
+			"getCharacteristics",
+			"()Landroid/net/wifi/aware/Characteristics;"
+		);
+	}
+	inline jboolean WifiAwareManager::isAvailable() const
+	{
+		return callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
 

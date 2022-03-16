@@ -1,42 +1,42 @@
 #pragma once
 
-#include "../Selector.hpp"
-
-class JObject;
-namespace java::nio::channels
-{
-	class SelectionKey;
-}
-namespace java::nio::channels::spi
-{
-	class AbstractSelectableChannel;
-}
-namespace java::nio::channels::spi
-{
-	class AbstractSelectionKey;
-}
-namespace java::nio::channels::spi
-{
-	class SelectorProvider;
-}
+#include "../../../../JObject.hpp"
+#include "../SelectionKey.def.hpp"
+#include "./AbstractSelectableChannel.def.hpp"
+#include "./AbstractSelectionKey.def.hpp"
+#include "./SelectorProvider.def.hpp"
+#include "./AbstractSelector.def.hpp"
 
 namespace java::nio::channels::spi
 {
-	class AbstractSelector : public java::nio::channels::Selector
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AbstractSelector::close() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit AbstractSelector(const char *className, const char *sig, Ts...agv) : java::nio::channels::Selector(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractSelector(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jboolean isOpen() const;
-		java::nio::channels::spi::SelectorProvider provider() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jboolean AbstractSelector::isOpen() const
+	{
+		return callMethod<jboolean>(
+			"isOpen",
+			"()Z"
+		);
+	}
+	inline java::nio::channels::spi::SelectorProvider AbstractSelector::provider() const
+	{
+		return callObjectMethod(
+			"provider",
+			"()Ljava/nio/channels/spi/SelectorProvider;"
+		);
+	}
 } // namespace java::nio::channels::spi
+
+// Base class headers
+#include "../Selector.hpp"
 

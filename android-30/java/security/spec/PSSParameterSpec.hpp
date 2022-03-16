@@ -1,33 +1,89 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./PSSParameterSpec.def.hpp"
 
 namespace java::security::spec
 {
-	class PSSParameterSpec : public JObject
+	// Fields
+	inline java::security::spec::PSSParameterSpec PSSParameterSpec::DEFAULT()
 	{
-	public:
-		// Fields
-		static java::security::spec::PSSParameterSpec DEFAULT();
-		static jint TRAILER_FIELD_BC();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit PSSParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PSSParameterSpec(QJniObject obj);
-		
-		// Constructors
-		PSSParameterSpec(jint arg0);
-		PSSParameterSpec(JString arg0, JString arg1, JObject arg2, jint arg3, jint arg4);
-		
-		// Methods
-		JString getDigestAlgorithm() const;
-		JString getMGFAlgorithm() const;
-		JObject getMGFParameters() const;
-		jint getSaltLength() const;
-		jint getTrailerField() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"java.security.spec.PSSParameterSpec",
+			"DEFAULT",
+			"Ljava/security/spec/PSSParameterSpec;"
+		);
+	}
+	inline jint PSSParameterSpec::TRAILER_FIELD_BC()
+	{
+		return getStaticField<jint>(
+			"java.security.spec.PSSParameterSpec",
+			"TRAILER_FIELD_BC"
+		);
+	}
+	
+	// Constructors
+	inline PSSParameterSpec::PSSParameterSpec(jint arg0)
+		: JObject(
+			"java.security.spec.PSSParameterSpec",
+			"(I)V",
+			arg0
+		) {}
+	inline PSSParameterSpec::PSSParameterSpec(JString arg0, JString arg1, JObject arg2, jint arg3, jint arg4)
+		: JObject(
+			"java.security.spec.PSSParameterSpec",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;II)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3,
+			arg4
+		) {}
+	
+	// Methods
+	inline JString PSSParameterSpec::getDigestAlgorithm() const
+	{
+		return callObjectMethod(
+			"getDigestAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString PSSParameterSpec::getMGFAlgorithm() const
+	{
+		return callObjectMethod(
+			"getMGFAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject PSSParameterSpec::getMGFParameters() const
+	{
+		return callObjectMethod(
+			"getMGFParameters",
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
+	}
+	inline jint PSSParameterSpec::getSaltLength() const
+	{
+		return callMethod<jint>(
+			"getSaltLength",
+			"()I"
+		);
+	}
+	inline jint PSSParameterSpec::getTrailerField() const
+	{
+		return callMethod<jint>(
+			"getTrailerField",
+			"()I"
+		);
+	}
+	inline JString PSSParameterSpec::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
 

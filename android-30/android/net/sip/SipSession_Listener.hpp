@@ -1,44 +1,129 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SipProfile.def.hpp"
+#include "./SipSession.def.hpp"
+#include "../../../JString.hpp"
+#include "./SipSession_Listener.def.hpp"
 
 namespace android::net::sip
 {
-	class SipProfile;
-}
-namespace android::net::sip
-{
-	class SipSession;
-}
-class JString;
-
-namespace android::net::sip
-{
-	class SipSession_Listener : public JObject
+	// Fields
+	
+	// Constructors
+	inline SipSession_Listener::SipSession_Listener()
+		: JObject(
+			"android.net.sip.SipSession$Listener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void SipSession_Listener::onCallBusy(android::net::sip::SipSession arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit SipSession_Listener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SipSession_Listener(QJniObject obj);
-		
-		// Constructors
-		SipSession_Listener();
-		
-		// Methods
-		void onCallBusy(android::net::sip::SipSession arg0) const;
-		void onCallChangeFailed(android::net::sip::SipSession arg0, jint arg1, JString arg2) const;
-		void onCallEnded(android::net::sip::SipSession arg0) const;
-		void onCallEstablished(android::net::sip::SipSession arg0, JString arg1) const;
-		void onCalling(android::net::sip::SipSession arg0) const;
-		void onError(android::net::sip::SipSession arg0, jint arg1, JString arg2) const;
-		void onRegistering(android::net::sip::SipSession arg0) const;
-		void onRegistrationDone(android::net::sip::SipSession arg0, jint arg1) const;
-		void onRegistrationFailed(android::net::sip::SipSession arg0, jint arg1, JString arg2) const;
-		void onRegistrationTimeout(android::net::sip::SipSession arg0) const;
-		void onRinging(android::net::sip::SipSession arg0, android::net::sip::SipProfile arg1, JString arg2) const;
-		void onRingingBack(android::net::sip::SipSession arg0) const;
-	};
+		callMethod<void>(
+			"onCallBusy",
+			"(Landroid/net/sip/SipSession;)V",
+			arg0.object()
+		);
+	}
+	inline void SipSession_Listener::onCallChangeFailed(android::net::sip::SipSession arg0, jint arg1, JString arg2) const
+	{
+		callMethod<void>(
+			"onCallChangeFailed",
+			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>()
+		);
+	}
+	inline void SipSession_Listener::onCallEnded(android::net::sip::SipSession arg0) const
+	{
+		callMethod<void>(
+			"onCallEnded",
+			"(Landroid/net/sip/SipSession;)V",
+			arg0.object()
+		);
+	}
+	inline void SipSession_Listener::onCallEstablished(android::net::sip::SipSession arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"onCallEstablished",
+			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline void SipSession_Listener::onCalling(android::net::sip::SipSession arg0) const
+	{
+		callMethod<void>(
+			"onCalling",
+			"(Landroid/net/sip/SipSession;)V",
+			arg0.object()
+		);
+	}
+	inline void SipSession_Listener::onError(android::net::sip::SipSession arg0, jint arg1, JString arg2) const
+	{
+		callMethod<void>(
+			"onError",
+			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>()
+		);
+	}
+	inline void SipSession_Listener::onRegistering(android::net::sip::SipSession arg0) const
+	{
+		callMethod<void>(
+			"onRegistering",
+			"(Landroid/net/sip/SipSession;)V",
+			arg0.object()
+		);
+	}
+	inline void SipSession_Listener::onRegistrationDone(android::net::sip::SipSession arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onRegistrationDone",
+			"(Landroid/net/sip/SipSession;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void SipSession_Listener::onRegistrationFailed(android::net::sip::SipSession arg0, jint arg1, JString arg2) const
+	{
+		callMethod<void>(
+			"onRegistrationFailed",
+			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>()
+		);
+	}
+	inline void SipSession_Listener::onRegistrationTimeout(android::net::sip::SipSession arg0) const
+	{
+		callMethod<void>(
+			"onRegistrationTimeout",
+			"(Landroid/net/sip/SipSession;)V",
+			arg0.object()
+		);
+	}
+	inline void SipSession_Listener::onRinging(android::net::sip::SipSession arg0, android::net::sip::SipProfile arg1, JString arg2) const
+	{
+		callMethod<void>(
+			"onRinging",
+			"(Landroid/net/sip/SipSession;Landroid/net/sip/SipProfile;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>()
+		);
+	}
+	inline void SipSession_Listener::onRingingBack(android::net::sip::SipSession arg0) const
+	{
+		callMethod<void>(
+			"onRingingBack",
+			"(Landroid/net/sip/SipSession;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::net::sip
+
+// Base class headers
 

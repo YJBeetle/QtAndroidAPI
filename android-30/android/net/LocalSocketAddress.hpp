@@ -1,31 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./LocalSocketAddress_Namespace.def.hpp"
+#include "../../JString.hpp"
+#include "./LocalSocketAddress.def.hpp"
 
 namespace android::net
 {
-	class LocalSocketAddress_Namespace;
-}
-class JString;
-
-namespace android::net
-{
-	class LocalSocketAddress : public JObject
+	// Fields
+	
+	// Constructors
+	inline LocalSocketAddress::LocalSocketAddress(JString arg0)
+		: JObject(
+			"android.net.LocalSocketAddress",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline LocalSocketAddress::LocalSocketAddress(JString arg0, android::net::LocalSocketAddress_Namespace arg1)
+		: JObject(
+			"android.net.LocalSocketAddress",
+			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JString LocalSocketAddress::getName() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit LocalSocketAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocalSocketAddress(QJniObject obj);
-		
-		// Constructors
-		LocalSocketAddress(JString arg0);
-		LocalSocketAddress(JString arg0, android::net::LocalSocketAddress_Namespace arg1);
-		
-		// Methods
-		JString getName() const;
-		android::net::LocalSocketAddress_Namespace getNamespace() const;
-	};
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::net::LocalSocketAddress_Namespace LocalSocketAddress::getNamespace() const
+	{
+		return callObjectMethod(
+			"getNamespace",
+			"()Landroid/net/LocalSocketAddress$Namespace;"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

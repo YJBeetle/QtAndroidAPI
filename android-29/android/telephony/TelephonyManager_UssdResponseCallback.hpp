@@ -1,31 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TelephonyManager.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./TelephonyManager_UssdResponseCallback.def.hpp"
 
 namespace android::telephony
 {
-	class TelephonyManager;
-}
-class JString;
-class JString;
-
-namespace android::telephony
-{
-	class TelephonyManager_UssdResponseCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback()
+		: JObject(
+			"android.telephony.TelephonyManager$UssdResponseCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyManager_UssdResponseCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_UssdResponseCallback(QJniObject obj);
-		
-		// Constructors
-		TelephonyManager_UssdResponseCallback();
-		
-		// Methods
-		void onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2) const;
-		void onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"onReceiveUssdResponse",
+			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		);
+	}
+	inline void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"onReceiveUssdResponseFailed",
+			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

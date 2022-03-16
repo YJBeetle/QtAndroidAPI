@@ -1,27 +1,40 @@
 #pragma once
 
-#include "./TypeConverter.hpp"
-
-class JClass;
-class JObject;
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "./BidirectionalTypeConverter.def.hpp"
 
 namespace android::animation
 {
-	class BidirectionalTypeConverter : public android::animation::TypeConverter
+	// Fields
+	
+	// Constructors
+	inline BidirectionalTypeConverter::BidirectionalTypeConverter(JClass arg0, JClass arg1)
+		: android::animation::TypeConverter(
+			"android.animation.BidirectionalTypeConverter",
+			"(Ljava/lang/Class;Ljava/lang/Class;)V",
+			arg0.object<jclass>(),
+			arg1.object<jclass>()
+		) {}
+	
+	// Methods
+	inline JObject BidirectionalTypeConverter::convertBack(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit BidirectionalTypeConverter(const char *className, const char *sig, Ts...agv) : android::animation::TypeConverter(className, sig, std::forward<Ts>(agv)...) {}
-		BidirectionalTypeConverter(QJniObject obj);
-		
-		// Constructors
-		BidirectionalTypeConverter(JClass arg0, JClass arg1);
-		
-		// Methods
-		JObject convertBack(JObject arg0) const;
-		android::animation::BidirectionalTypeConverter invert() const;
-	};
+		return callObjectMethod(
+			"convertBack",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::animation::BidirectionalTypeConverter BidirectionalTypeConverter::invert() const
+	{
+		return callObjectMethod(
+			"invert",
+			"()Landroid/animation/BidirectionalTypeConverter;"
+		);
+	}
 } // namespace android::animation
+
+// Base class headers
+#include "./TypeConverter.hpp"
 

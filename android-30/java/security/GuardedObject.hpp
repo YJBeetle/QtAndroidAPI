@@ -1,29 +1,31 @@
 #pragma once
 
+#include "../io/ObjectOutputStream.def.hpp"
 #include "../../JObject.hpp"
-
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JObject;
+#include "./GuardedObject.def.hpp"
 
 namespace java::security
 {
-	class GuardedObject : public JObject
+	// Fields
+	
+	// Constructors
+	inline GuardedObject::GuardedObject(JObject arg0, JObject arg1)
+		: JObject(
+			"java.security.GuardedObject",
+			"(Ljava/lang/Object;Ljava/security/Guard;)V",
+			arg0.object<jobject>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject GuardedObject::getObject() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit GuardedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GuardedObject(QJniObject obj);
-		
-		// Constructors
-		GuardedObject(JObject arg0, JObject arg1);
-		
-		// Methods
-		JObject getObject() const;
-	};
+		return callObjectMethod(
+			"getObject",
+			"()Ljava/lang/Object;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

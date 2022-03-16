@@ -1,38 +1,70 @@
 #pragma once
 
-#include "./ClickableSpan.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::view
-{
-	class View;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../view/View.def.hpp"
+#include "../../../JString.hpp"
+#include "./URLSpan.def.hpp"
 
 namespace android::text::style
 {
-	class URLSpan : public android::text::style::ClickableSpan
+	// Fields
+	
+	// Constructors
+	inline URLSpan::URLSpan(android::os::Parcel arg0)
+		: android::text::style::ClickableSpan(
+			"android.text.style.URLSpan",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		) {}
+	inline URLSpan::URLSpan(JString arg0)
+		: android::text::style::ClickableSpan(
+			"android.text.style.URLSpan",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint URLSpan::describeContents() const
 	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit URLSpan(const char *className, const char *sig, Ts...agv) : android::text::style::ClickableSpan(className, sig, std::forward<Ts>(agv)...) {}
-		URLSpan(QJniObject obj);
-		
-		// Constructors
-		URLSpan(android::os::Parcel arg0);
-		URLSpan(JString arg0);
-		
-		// Methods
-		jint describeContents() const;
-		jint getSpanTypeId() const;
-		JString getURL() const;
-		void onClick(android::view::View arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint URLSpan::getSpanTypeId() const
+	{
+		return callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
+	inline JString URLSpan::getURL() const
+	{
+		return callObjectMethod(
+			"getURL",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void URLSpan::onClick(android::view::View arg0) const
+	{
+		callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		);
+	}
+	inline void URLSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./CharacterStyle.hpp"
+#include "./ClickableSpan.hpp"
 

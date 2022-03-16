@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Paint_Align.def.hpp"
 
 namespace android::graphics
 {
-	class Paint_Align : public java::lang::Enum
+	// Fields
+	inline android::graphics::Paint_Align Paint_Align::CENTER()
 	{
-	public:
-		// Fields
-		static android::graphics::Paint_Align CENTER();
-		static android::graphics::Paint_Align LEFT();
-		static android::graphics::Paint_Align RIGHT();
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit Paint_Align(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_Align(QJniObject obj);
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Paint_Align valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Paint$Align",
+			"CENTER",
+			"Landroid/graphics/Paint$Align;"
+		);
+	}
+	inline android::graphics::Paint_Align Paint_Align::LEFT()
+	{
+		return getStaticObjectField(
+			"android.graphics.Paint$Align",
+			"LEFT",
+			"Landroid/graphics/Paint$Align;"
+		);
+	}
+	inline android::graphics::Paint_Align Paint_Align::RIGHT()
+	{
+		return getStaticObjectField(
+			"android.graphics.Paint$Align",
+			"RIGHT",
+			"Landroid/graphics/Paint$Align;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Paint_Align Paint_Align::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Paint$Align",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Paint$Align;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Paint_Align::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Paint$Align",
+			"values",
+			"()[Landroid/graphics/Paint$Align;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

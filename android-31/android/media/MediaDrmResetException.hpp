@@ -1,24 +1,25 @@
 #pragma once
 
-#include "../../java/lang/IllegalStateException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaDrmResetException.def.hpp"
 
 namespace android::media
 {
-	class MediaDrmResetException : public java::lang::IllegalStateException
-	{
-	public:
-		// Fields
-		
-		// QJniObject forward
-		template<typename ...Ts> explicit MediaDrmResetException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrmResetException(QJniObject obj);
-		
-		// Constructors
-		MediaDrmResetException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MediaDrmResetException::MediaDrmResetException(JString arg0)
+		: java::lang::IllegalStateException(
+			"android.media.MediaDrmResetException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "../../java/lang/IllegalStateException.hpp"
 
